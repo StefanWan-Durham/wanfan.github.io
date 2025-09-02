@@ -23,7 +23,7 @@ const translations = {
     nav_contact: '联系我',
     // Hero
     hero_title: '你好，我是万凡',
-  hero_subtitle: '杜伦大学计算机科学博士 — 打造可靠、可控、可解释的 AI 系统。',
+  hero_subtitle: '杜伦大学计算机科学专业博士 — 打造可靠、可控、可解释的 AI 系统。',
   hero_btn_contact: '联系我',
   hero_btn_selected: '精选作品',
   hero_btn_cv: '下载简历',
