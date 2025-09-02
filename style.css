@@ -590,9 +590,11 @@ header {
   .about-hero { gap: .75rem; }
   .about-portrait { width: 84px; height: 84px; padding: 4px; }
 }
-/* Blog post hero spacing */
-.blog-post .page-hero { height: 260px; }
+/* Blog post hero spacing: allow content to grow to avoid clipping on tall titles/meta */
+.blog-post .page-hero { min-height: 260px; height: auto; }
 .blog-post .page-hero { padding-top: calc(120px + env(safe-area-inset-top)); }
+/* Override global overflow to prevent text clipping at the bottom in posts */
+.blog-post .page-hero { overflow: visible; }
 /* Keep the title comfortably away from the navbar, with symmetric margins */
 .blog-post .page-hero .post-title { margin: .6rem 0; }
 .blog-post .page-hero .post-meta { opacity: .95; }
@@ -1010,7 +1012,7 @@ header {
 }
 
 /* Blog: post navigation */
-.post-nav { display:flex; gap:.6rem; align-items:center; }
+.post-nav { display:flex; gap:.6rem; align-items:center; flex-wrap: wrap; justify-content: space-between; }
 .post-nav .btn[aria-disabled="true"] { opacity:.6; pointer-events:none; }
 
 /* Article TOC */
@@ -1157,9 +1159,16 @@ footer {
   .page-hero { padding-top: 78px; }
   /* Keep extra space on blog hero too for small screens */
   /* Ensure blog title clears the fixed navbar and safe area on iOS */
-  .blog-post .page-hero { padding-top: calc(120px + env(safe-area-inset-top)); }
-  .blog-post .page-hero { height: 260px; }
-  .blog-post .page-hero .post-title { font-size: 1.5rem; }
+  .blog-post .page-hero { padding-top: calc(128px + env(safe-area-inset-top)); }
+  .blog-post .page-hero { min-height: 260px; height: auto; overflow: visible; }
+  .blog-post .page-hero .post-title { font-size: clamp(1.25rem, 5.6vw, 1.5rem); margin-top: .25rem; }
+  .blog-post .page-hero .post-meta { margin-bottom: .25rem; }
+  /* Post navigation: wrap and prevent overflow */
+  .post-nav { flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+  .post-nav .btn { flex: 1 1 calc(50% - .5rem); text-align: center; }
+  .post-nav .btn[aria-disabled="true"] { flex-basis: calc(50% - .5rem); }
+  .post-nav .btn:first-child { flex-basis: 100%; }
+  .post-nav .muted { display: none; }
   .about-photo img { max-height: min(85vh, 560px); object-position: 50% 36%; }
   .interests-list {
     grid-template-columns: 1fr;

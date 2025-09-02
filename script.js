@@ -128,7 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = `#${h.id}`;
-        a.textContent = h.textContent.trim();
+  // Remove any leading numbering like "1.", "2)", "(3)", or full-width variants to avoid double numbering in the OL
+  const raw = (h.textContent || '').replace(/\s+/g, ' ').trim();
+  const cleaned = raw.replace(/^\s*(?:\d+[\.\) 、]|[\(（]\d+[\)）])\s*/, '');
+  a.textContent = cleaned || raw;
         li.appendChild(a);
         toc.appendChild(li);
       });
