@@ -27,6 +27,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Trigger About portrait effect when clicking About link in nav
+  (function wireAboutNavEffect(){
+    const aboutLinks = Array.from(document.querySelectorAll('a[href$="about.html"], a[href="#about"], a[data-nav="about"]'));
+    if (!aboutLinks.length) return;
+    aboutLinks.forEach(a => {
+      a.addEventListener('click', (e) => {
+        try { sessionStorage.setItem('triggerAboutFx', '1'); } catch {}
+        // If link stays on this page (hash/nav), trigger immediately
+        const href = a.getAttribute('href') || '';
+        const isHash = href.startsWith('#');
+        const samePageAbout = href.includes('#about');
+        if (isHash || samePageAbout) {
+          const target = document.querySelector('.about-portrait.fx-tilt') || document.querySelector('.about-photo .fx-tilt');
+          if (target && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            target.classList.remove('fx-pop');
+            // force reflow to restart animation
+            void target.offsetWidth;
+            target.classList.add('fx-pop');
+            target.addEventListener('animationend', () => target.classList.remove('fx-pop'), { once: true });
+          }
+        }
+      }, { passive: true });
+    });
+  })();
+
   // Fade‑in sections as they scroll into view
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -309,6 +334,71 @@ document.addEventListener('DOMContentLoaded', () => {
   else btn.textContent = map[cur] || '';
     }
   });
+
+  // If landing on About page (or About section in home), trigger a one-off pop effect
+  (function triggerAboutFxOnLoad(){
+    const flag = (()=>{ try { return sessionStorage.getItem('triggerAboutFx'); } catch { return null; } })();
+    if (!flag) return;
+    try { sessionStorage.removeItem('triggerAboutFx'); } catch {}
+    // Prefer About page portrait
+    const target = document.querySelector('.about-portrait.fx-tilt') || document.querySelector('.about-photo .fx-tilt');
+    if (!target) return;
+    // Respect reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    target.classList.add('fx-pop');
+    // Remove class after animation end to allow future triggers
+    target.addEventListener('animationend', () => target.classList.remove('fx-pop'), { once: true });
+  })();
+
+  // About page: subtle parallax tilt + moving highlight on portrait
+  (function parallaxPortrait(){
+    const card = document.querySelector('.about-portrait.fx-tilt');
+    if (!card) return;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+    if (prefersReduced || !hasFinePointer) return; // skip on touch or reduced motion
+
+    const maxTilt = 8; // degrees
+    const damp = 18;    // lower = snappier
+    let rx = 0, ry = 0; // current rotation
+    let vx = 0, vy = 0; // velocity for smoothing
+    let rafId = 0;
+
+    function animate(){
+      // exponential smoothing
+      rx += (vx - rx) / damp;
+      ry += (vy - ry) / damp;
+      card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      rafId = requestAnimationFrame(animate);
+    }
+
+    function onMove(e){
+      const rect = card.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const x = (e.clientX - cx) / (rect.width / 2); // [-1,1]
+      const y = (e.clientY - cy) / (rect.height / 2); // [-1,1]
+      // target rotations (invert y for natural tilt)
+      vy = Math.max(-maxTilt, Math.min(maxTilt, -y * maxTilt));
+      vx = Math.max(-maxTilt, Math.min(maxTilt, x * maxTilt));
+      // shift highlight with cursor (0%..100%)
+      const px = `${50 + x * 20}%`;
+      const py = `${50 + y * 20}%`;
+      card.style.setProperty('--fx-x', px);
+      card.style.setProperty('--fx-y', py);
+    }
+
+    function reset(){
+      vx = vy = rx = ry = 0;
+      card.style.transform = 'none';
+      card.style.removeProperty('--fx-x');
+      card.style.removeProperty('--fx-y');
+    }
+
+    card.addEventListener('mouseenter', () => { cancelAnimationFrame(rafId); rafId = requestAnimationFrame(animate); });
+    card.addEventListener('mousemove', onMove);
+    card.addEventListener('mouseleave', () => { cancelAnimationFrame(rafId); reset(); });
+  })();
 
   // Publications: inline PDF viewer modal
   (function setupPdfModal(){

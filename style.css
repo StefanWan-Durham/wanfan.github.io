@@ -379,6 +379,7 @@ header {
 }
 .theme-toggle:focus-visible { outline: none; box-shadow: var(--ring); }
 .theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-bulb { display: none; }
 .theme-toggle .icon-moon { display: none; }
 .theme-toggle .icon-system { display: none; }
 
@@ -387,10 +388,16 @@ header {
 [data-theme="light"] .theme-toggle .icon-moon { display: inline; }
 [data-theme="light"] .theme-toggle .icon-system { display: none; }
 
-/* dark theme explicit: show sun to indicate switching to light */
-[data-theme="dark"] .theme-toggle .icon-sun { display: inline; }
+/* dark theme explicit: show bulb to indicate switching to light */
+[data-theme="dark"] .theme-toggle .icon-bulb { display: inline; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 [data-theme="dark"] .theme-toggle .icon-system { display: none; }
+
+/* aesthetic: warm glow when hovering the bulb (dark theme) */
+[data-theme="dark"] .theme-toggle:hover .icon-bulb {
+  color: #ffea7a; /* warm light */
+  filter: drop-shadow(0 0 8px rgba(255, 234, 122, 0.6));
+}
 
 /* System-follow icon behavior disabled */
 
@@ -398,6 +405,43 @@ header {
 /* :root[data-theme-mode="system"] .theme-toggle .icon-system { display: inline; } */
 /* :root[data-theme-mode="system"] .theme-toggle .icon-sun,
 :root[data-theme-mode="system"] .theme-toggle .icon-moon { display: none; } */
+
+/* About: interactive portrait effects */
+.about-hero { display: grid; align-items: center; grid-template-columns: 1fr auto; gap: 1rem; }
+.about-portrait { position: relative; width: 200px; height: 200px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); }
+.about-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fx-tilt { transition: transform 300ms ease, box-shadow 300ms ease; transform-style: preserve-3d; }
+.fx-tilt:hover { transform: perspective(700px) rotateX(6deg) rotateY(-6deg) translateY(-2px); box-shadow: 0 20px 40px rgba(2,6,23,0.18); }
+.fx-tilt:active { transform: perspective(700px) rotateX(2deg) rotateY(-2deg) translateY(0); }
+.fx-tilt .fx-glow { position: absolute; inset: -1px; border-radius: 22px; pointer-events: none; }
+.fx-tilt .fx-glow::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120px 120px at var(--fx-x, 20%) var(--fx-y, 20%), rgba(255,255,255,0.25), transparent 60%), linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0)); mix-blend-mode: screen; }
+.fx-tilt .fx-glow::after { content: ""; position: absolute; inset: 0; border-radius: 22px; box-shadow: 0 0 0 1px rgba(255,255,255,0.35) inset, 0 0 24px rgba(99,102,241,0.25), 0 0 12px rgba(14,165,233,0.25); }
+
+/* Dark theme tuning */
+:root[data-theme="dark"] .fx-tilt .fx-glow::before { background: radial-gradient(120px 120px at var(--fx-x, 20%) var(--fx-y, 20%), rgba(255,255,255,0.22), transparent 60%), linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0)); }
+:root[data-theme="dark"] .fx-tilt .fx-glow::after { box-shadow: 0 0 0 1px rgba(255,255,255,0.24) inset, 0 0 24px rgba(99,102,241,0.28), 0 0 12px rgba(14,165,233,0.28); }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fx-tilt, .fx-tilt:hover, .fx-tilt:active { transition: none; transform: none; }
+}
+
+/* Programmatic pop animation to draw attention once */
+@keyframes fxPopTilt {
+  0% { transform: perspective(700px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1); }
+  22% { transform: perspective(700px) rotateX(10deg) rotateY(-10deg) translateY(-3px) scale(1.028); }
+  60% { transform: perspective(700px) rotateX(4deg) rotateY(-4deg) translateY(-1px) scale(1.012); }
+  100% { transform: perspective(700px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1); }
+}
+@keyframes fxGlowPulse {
+  0% { box-shadow: 0 0 0 1px rgba(255,255,255,0.28) inset, 0 0 16px rgba(99,102,241,0.28), 0 0 8px rgba(14,165,233,0.28); }
+  22% { box-shadow: 0 0 0 1px rgba(255,255,255,0.5) inset, 0 0 36px rgba(99,102,241,0.45), 0 0 22px rgba(14,165,233,0.45); }
+  60% { box-shadow: 0 0 0 1px rgba(255,255,255,0.38) inset, 0 0 26px rgba(99,102,241,0.36), 0 0 14px rgba(14,165,233,0.36); }
+  100% { box-shadow: 0 0 0 1px rgba(255,255,255,0.28) inset, 0 0 16px rgba(99,102,241,0.28), 0 0 8px rgba(14,165,233,0.28); }
+}
+.fx-tilt.fx-pop { animation: fxPopTilt 900ms cubic-bezier(.2,.8,.2,1); }
+.fx-tilt.fx-pop .fx-glow::after { animation: fxGlowPulse 900ms ease; }
+.fx-tilt.fx-pop .fx-glow::before { filter: brightness(1.15); }
 
 /* System-mode border tweaks disabled */
 
