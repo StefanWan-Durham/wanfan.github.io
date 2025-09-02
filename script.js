@@ -236,10 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const cur = localStorage.getItem('lang') || 'en';
     const labelEl = langBtn.querySelector('.label');
     if (labelEl) {
-      labelEl.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
+  labelEl.textContent = map[cur] || '';
     } else {
-      // Fallback if no inner span exists
-      langBtn.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
+  // Fallback if no inner span exists (avoid removing the icon)
+  langBtn.textContent = map[cur] || '';
     }
   }
   setLangLabel();
@@ -300,8 +300,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const map = { en: 'English', zh: '中文', es: 'Español' };
       const cur = localStorage.getItem('lang') || 'en';
       const labelEl = btn.querySelector('.label');
-      if (labelEl) labelEl.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
-      else btn.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
+  if (labelEl) labelEl.textContent = map[cur] || '';
+  else btn.textContent = map[cur] || '';
     }
   });
 
