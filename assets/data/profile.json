@@ -1,0 +1,143 @@
+{
+  "name": "Fan Wan",
+  "avatar": "assets/avatar.svg",
+  "photo": "assets/FanWAN.jpg",
+  "cv": "assets/cv.pdf",
+  "social": {
+    "scholar": "https://scholar.google.com/citations?user=Ft_70SQAAAAJ",
+    "github": "https://github.com/stefanwan-durham"
+  },
+  "home": {
+    "zh": {
+      "hero_title": "你好，我是万凡",
+      "hero_subtitle": "杜伦大学计算机科学博士 — 打造可靠、可控、可解释的 AI 系统。",
+      "about_title": "把 LLM 变成可交付的产品。",
+      "about_intro": "我专注企业级知识检索与问答、知识平台、多模态理解与生成，目标是让模型听懂企业知识、保护数据隐私、并输出可验证答案。曾任杜伦大学 HI-Lab 实验室主管，单年内带领团队发表 10 余篇学术论文。现在在一家中央企业做 AI 研发，面向真实业务交付稳定系统。",
+      "deliver_title": "我能为你带来什么",
+      "deliver": [
+        "企业级问答系统落地：从知识建模、RAG/GraphRAG 方案到线上服务与治理闭环",
+        "LLM 微调与下游任务：指令对齐、检索增强、工具调用/Agent 与评测集构建",
+        "联邦学习与合规：在隐私与效率间取得工程可行的平衡",
+        "平台化与可运维：数据流/检索链路可观测，A/B 与回归评测，提示与策略灰度发布"
+      ],
+      "method_title": "我的做事方法",
+      "method": [
+        "一体化链路：数据 → 检索 → 推理 → 评测 → 迭代",
+        "可解释与可验证：指标优先，答案可追溯、可重现",
+        "小步快跑：以最小可用原型上线，真实反馈驱动优化"
+      ],
+      "focus_title": "近期关注",
+      "focus": [
+        "RAG / GraphRAG 的检索感知训练与可信回答",
+        "LLM 微调在多场景任务的泛化与对齐",
+        "联邦学习在异质数据与资源受限条件下的高效实践"
+      ]
+    },
+    "en": {
+      "hero_title": "Hi, I'm Fan Wan",
+      "hero_subtitle": "Durham CS PhD — Engineering Trustworthy, Controllable, Explainable AI.",
+      "about_title": "I turn LLM research into shipped products.",
+      "about_intro": "I build enterprise-grade search & QA, knowledge platforms, and multimodal understanding/generation—aiming for models that understand enterprise knowledge, preserve privacy, and deliver verifiable answers. Former Lab Manager at Durham’s HI-Lab; led my team to publish 10+ papers in a single year. Now in AI R&D at a central state-owned enterprise, delivering stable systems for real business use.",
+      "deliver_title": "What I deliver",
+      "deliver": [
+        "Production-ready enterprise QA: knowledge modeling, RAG/GraphRAG design, live services, and governance",
+        "LLM fine-tuning & downstream tasks: instruction alignment, retrieval augmentation, tool use/agents, and evaluation sets",
+        "Federated learning & compliance: practical trade-offs between privacy and efficiency across domains",
+        "Platform & Ops: observable data/retrieval pipelines, A/B & regression evaluation, gradual prompt/policy rollout"
+      ],
+      "method_title": "How I work",
+      "method": [
+        "End-to-end loop: data → retrieval → reasoning → evaluation → iteration",
+        "Explainable & auditable: metrics first, answers traceable and reproducible",
+        "Ship small, learn fast: MVP to production, optimize from real traffic"
+      ],
+      "focus_title": "Current focus",
+      "focus": [
+        "Retrieval-aware training for robust RAG/GraphRAG and trustworthy answers",
+        "LLM fine-tuning for diverse downstream tasks and alignment",
+        "Efficient federated learning under heterogeneous data and limited resources"
+      ]
+    },
+    "es": {
+      "hero_title": "Hola, soy Fan Wan",
+      "hero_subtitle": "Ph.D. en Ciencias de la Computación (Durham) — Ingeniería de IA confiable, controlable y explicable.",
+      "about_title": "Convierto la investigación en LLM en productos reales.",
+      "about_intro": "Desarrollo búsqueda y QA empresariales, plataformas de conocimiento y comprensión/generación multimodal: modelos que comprenden el conocimiento corporativo, protegen la privacidad y ofrecen respuestas verificables. Fui Lab Manager del HI-Lab de Durham; en un solo año lideré al equipo para publicar más de diez artículos. Actualmente trabajo en I+D de IA en una empresa pública estatal, entregando sistemas estables para uso empresarial real.",
+      "deliver_title": "Qué aporto",
+      "deliver": [
+        "QA empresarial en producción: modelado del conocimiento, diseño RAG/GraphRAG, servicios en vivo y gobernanza",
+        "Ajuste fino de LLM y tareas downstream: alineación por instrucciones, aumento por retrieval, uso de herramientas/agentes y conjuntos de evaluación",
+        "Aprendizaje federado y cumplimiento: equilibrio práctico entre privacidad y eficiencia en múltiples dominios",
+        "Plataforma y operación: tuberías observables de datos/retrieval, evaluación A/B y de regresión, despliegues graduales de prompts y políticas"
+      ],
+      "method_title": "Cómo trabajo",
+      "method": [
+        "Bucle de extremo a extremo: datos → retrieval → razonamiento → evaluación → iteración",
+        "Explicable y verificable: métricas primero, respuestas trazables y reproducibles",
+        "Iteración ágil: MVP a producción, optimización guiada por tráfico real"
+      ],
+      "focus_title": "Foco actual",
+      "focus": [
+        "Entrenamiento sensible al retrieval para RAG/GraphRAG fiable",
+        "Ajuste fino de LLM para tareas downstream y alineación",
+        "Aprendizaje federado eficiente con datos heterogéneos y recursos limitados"
+      ]
+    }
+  },
+  "about": {
+    "zh": {
+      "title": "关于我",
+      "bio_title": "个人简介",
+      "bio_p1": "我是一名专注于大语言模型产业化的研究者，获英国纽卡斯尔大学硕士、杜伦大学计算机科学博士（2025），曾任杜伦大学 HI-Lab 实验室主管。我的目标是把研究做成可运行的系统：让模型理解企业知识、保护隐私，并给出可验证答案。",
+      "bio_p2": "当前在一家中央企业从事 AI 研发，与产品和业务团队协作，将前沿方法打磨为稳定、可运维的能力。我的方法论是 可复现、可评测、可维护。近期工作聚焦于知识增强型 LLM、联邦学习、以及 LLM 微调与下游任务，并通过复盘与开源持续推进迭代。",
+      "education": [
+        { "title": "杜伦大学 · 博士 (2020.10 – 2025.01)", "desc": "计算机科学专业，研究方向涵盖计算机视觉、多模态算法和大语言模型。" },
+        { "title": "纽卡斯尔大学 · 硕士 (2017.09 – 2018.08)", "desc": "计算机科学专业，以优秀成绩毕业，主修编程、数据库和软件工程等课程。" },
+        { "title": "山西农业大学 · 学士 (2013.09 – 2017.07)", "desc": "软件工程专业，掌握数据结构、计算机网络、Web 开发等基础课程。" }
+      ],
+      "interests_title": "研究兴趣",
+      "interests": [
+        "机器学习与联邦学习",
+        "计算机视觉与多媒体分析",
+        "大语言模型与 AI 智能体",
+        "隐私保护算法与分布式 AI"
+      ]
+    },
+    "en": {
+      "title": "About",
+      "bio_title": "Biography",
+      "bio_p1": "I’m a researcher focused on the industrialization of large language models—M.Sc. (Newcastle) and Ph.D. in Computer Science (Durham, 2025); former Lab Manager at Durham’s HI-Lab. My aim is to turn research into operable systems: models that understand enterprise knowledge, safeguard privacy, and deliver verifiable answers.",
+      "bio_p2": "I currently work in AI R&D at a central state-owned enterprise, partnering with product and business teams to transform frontier methods into dependable, maintainable capabilities. Operating principles: reproducible, measurable, maintainable. Recent work centers on knowledge-augmented LLMs, federated learning, and LLM fine-tuning & downstream tasks, with continuous iteration via postmortems and open-source releases.",
+      "education": [
+        { "title": "Durham University · Ph.D. (Oct 2020 – Jan 2025)", "desc": "Computer Science with a focus on computer vision, multimodal algorithms and large language models." },
+        { "title": "Newcastle University · M.Sc. (Sep 2017 – Aug 2018)", "desc": "Computer Science, graduated with distinction; major courses included programming, databases and software engineering." },
+        { "title": "Shanxi Agricultural University · B.Sc. (Sep 2013 – Jul 2017)", "desc": "Software Engineering, learned fundamentals such as data structures, computer networks and web development." }
+      ],
+      "interests_title": "Research Interests",
+      "interests": [
+        "Machine Learning & Federated Learning",
+        "Computer Vision & Multimedia Analysis",
+        "Large Language Models & AI Agents",
+        "Privacy-Preserving Algorithms & Distributed AI"
+      ]
+    },
+    "es": {
+      "title": "Acerca de",
+      "bio_title": "Biografía",
+      "bio_p1": "Obtuve mi maestría en Ciencias de la Computación en la Universidad de Newcastle en 2018 (con distinción) y completé mi doctorado en Ciencias de la Computación en la Universidad de Durham en enero de 2025. Durante mis estudios de doctorado me enfoqué en visión por computadora y algoritmos multimodales y exploré activamente modelos de lenguaje grandes y sus aplicaciones a problemas reales.",
+      "bio_p2": "Actualmente trabajo como investigador en Tongfang Knowledge Network Digital Technology Co., Ltd., parte de la Corporación Nacional Nuclear de China, dedicado a aplicar modelos de lenguaje grandes a los escenarios de la industria nuclear. Me apasionan el aprendizaje automático, el aprendizaje federado, la visión por computadora, el análisis multimedia y las tecnologías AIGC, y participo en diversas colaboraciones interdisciplinarias.",
+      "education": [
+        { "title": "Universidad de Durham · Doctorado (octubre 2020 – enero 2025)", "desc": "Ciencias de la Computación, con enfoque en visión por computadora, algoritmos multimodales y modelos de lenguaje grandes." },
+        { "title": "Universidad de Newcastle · Maestría (septiembre 2017 – agosto 2018)", "desc": "Ciencias de la Computación, graduado con distinción; cursos principales como programación, bases de datos e ingeniería de software." },
+        { "title": "Universidad Agrícola de Shanxi · Licenciatura (septiembre 2013 – julio 2017)", "desc": "Ingeniería de Software, aprendió fundamentos incluyendo estructuras de datos, redes informáticas y desarrollo web." }
+      ],
+      "interests_title": "Intereses de investigación",
+      "interests": [
+        "Aprendizaje automático y aprendizaje federado",
+        "Visión por computadora y análisis multimedia",
+        "Modelos de lenguaje grandes y agentes de IA",
+        "Algoritmos de preservación de privacidad e IA distribuida"
+      ]
+    }
+  }
+}

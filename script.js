@@ -39,13 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const isHash = href.startsWith('#');
         const samePageAbout = href.includes('#about');
         if (isHash || samePageAbout) {
-          const target = document.querySelector('.about-portrait.fx-tilt') || document.querySelector('.about-photo .fx-tilt');
+          const target = document.querySelector('.about-portrait.fx-reveal') || document.querySelector('.about-photo .fx-tilt');
           if (target && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            target.classList.remove('fx-pop');
-            // force reflow to restart animation
-            void target.offsetWidth;
-            target.classList.add('fx-pop');
-            target.addEventListener('animationend', () => target.classList.remove('fx-pop'), { once: true });
+            triggerAboutReveal(target);
           }
         }
       }, { passive: true });
@@ -73,6 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function getActiveLang(){
       return localStorage.getItem('lang') || document.documentElement.lang || 'zh';
     }
+    function updateTocLabel(){
+      const tocWrap = document.querySelector('.toc');
+      if (!tocWrap) return;
+      const lang = getActiveLang();
+      const label = lang === 'en' ? 'Contents' : (lang === 'es' ? 'Índice' : '目录');
+      tocWrap.setAttribute('aria-label', label);
+      const strong = tocWrap.querySelector('strong');
+      if (strong) strong.textContent = label;
+    }
     function syncLangBlocks(){
       const lang = getActiveLang();
       const blocks = isPost.querySelectorAll('.i18n-block');
@@ -92,7 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const toc = document.querySelector('.toc ol');
       if (!toc) return;
       toc.innerHTML = '';
-      const active = isPost.querySelector('.i18n-block:not([hidden])') || isPost;
+      // Prefer the visible article block that actually has h2 headings
+      const visibleBlocks = Array.from(isPost.querySelectorAll('.i18n-block:not([hidden])'));
+      let active = visibleBlocks.find(b => b.closest('.container.prose') && b.querySelector('h2[id]'))
+               || visibleBlocks.find(b => b.querySelector('h2[id]'))
+               || isPost;
       const headings = active.querySelectorAll('h2[id]');
       headings.forEach(h => {
         const li = document.createElement('li');
@@ -140,15 +149,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    // Toggle localized hero image according to language
+    function syncPostHero(){
+      const lang = getActiveLang();
+      const arts = isPost.querySelectorAll('.post-hero-art');
+      arts.forEach(el => {
+        const l = el.getAttribute('data-lang');
+        if (l === lang) { el.hidden = false; }
+        else { el.hidden = true; }
+      });
+    }
+
     // Initial sync
     syncLangBlocks();
+    updateTocLabel();
     buildToc();
     updateReadingTime();
+    syncPostHero();
     // Rebuild when language changes
     window.addEventListener('language-changed', () => {
       syncLangBlocks();
+      updateTocLabel();
       buildToc();
       updateReadingTime();
+      syncPostHero();
     });
   })();
 
@@ -287,12 +311,11 @@ document.addEventListener('DOMContentLoaded', () => {
     langMenu.querySelectorAll('li[data-lang]').forEach(item => {
       item.addEventListener('click', () => {
         const code = item.getAttribute('data-lang');
-        if (langSelect) {
-          langSelect.value = code;
-          localStorage.setItem('lang', code);
-          if (typeof translatePage === 'function') translatePage(code);
-          setLangLabel();
-        }
+        // Persist and apply language regardless of presence of <select>
+        try { localStorage.setItem('lang', code); } catch {}
+        if (langSelect) { langSelect.value = code; }
+        if (typeof translatePage === 'function') translatePage(code);
+        setLangLabel();
         langMenu.setAttribute('hidden', '');
         langBtn.setAttribute('aria-expanded', 'false');
       });
@@ -337,18 +360,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // If landing on About page (or About section in home), trigger a one-off pop effect
   (function triggerAboutFxOnLoad(){
+    const target = document.querySelector('.about-portrait.fx-reveal') || document.querySelector('.about-photo .fx-tilt');
+    if (!target) return; // only on pages that have the element
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const flag = (()=>{ try { return sessionStorage.getItem('triggerAboutFx'); } catch { return null; } })();
-    if (!flag) return;
+    if (prefersReduced) return; // respect reduced motion, image will show via CSS
+    // Trigger on explicit nav intent or on page refresh/load directly (no flag)
     try { sessionStorage.removeItem('triggerAboutFx'); } catch {}
-    // Prefer About page portrait
-    const target = document.querySelector('.about-portrait.fx-tilt') || document.querySelector('.about-photo .fx-tilt');
-    if (!target) return;
-    // Respect reduced motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    target.classList.add('fx-pop');
-    // Remove class after animation end to allow future triggers
-    target.addEventListener('animationend', () => target.classList.remove('fx-pop'), { once: true });
+    triggerAboutReveal(target);
   })();
+
+  function triggerAboutReveal(target){
+    // If we have the reveal effect, use it; else fallback to pop
+    if (target.classList && target.classList.contains('fx-reveal')){
+      target.classList.remove('revealed');
+      // force reflow
+      void target.offsetWidth;
+      target.classList.add('revealed');
+    } else {
+      target.classList.remove('fx-pop');
+      void target.offsetWidth;
+      target.classList.add('fx-pop');
+      target.addEventListener('animationend', () => target.classList.remove('fx-pop'), { once: true });
+    }
+  }
 
   // About page: subtle parallax tilt + moving highlight on portrait
   (function parallaxPortrait(){

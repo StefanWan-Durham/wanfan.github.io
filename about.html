@@ -29,7 +29,7 @@
   <script defer src="lang.js"></script>
   <script defer src="script.js"></script>
   <link rel="manifest" href="manifest.webmanifest">
-</head>
+ </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <header>
@@ -96,9 +96,9 @@
       <span class="shape shape4"></span>
     </div>
     <div class="container about-hero">
-      <h1 data-i18n="about_title">关于我</h1>
+      <h1 data-i18n="about_title" data-profile="about.title">关于我</h1>
       <!-- Decorative round portrait aligned with title, constrained to container width -->
-      <div class="about-portrait fx-tilt" aria-hidden="true">
+  <div class="about-portrait fx-tilt fx-reveal" aria-hidden="true">
         <img src="assets/about_me.jpg" alt="Fan Wan" width="200" height="200" decoding="async" fetchpriority="high" />
         <span class="fx-glow" aria-hidden="true"></span>
       </div>
@@ -108,17 +108,17 @@
   <!-- Biography Section -->
   <section class="bio section">
     <div class="container">
-      <h2 data-i18n="bio_title">个人简介</h2>
-      <p data-i18n="bio_p1">我于2018年获得英国纽卡斯尔大学计算机科学硕士学位（荣誉），并于2025年1月在英国杜伦大学完成计算机科学博士学位。在博士研究期间，我专注于计算机视觉与多模态算法，并积极探索大语言模型及其在实际问题中的应用。</p>
-      <p data-i18n="bio_p2">目前，我在中国核工业集团同方知网数字技术有限公司担任研究员，致力于将大语言模型应用于核工业场景。我对机器学习、联邦学习、计算机视觉、多媒体分析和 AIGC 技术充满热情，并参与多项跨学科合作。</p>
+  <h2 data-i18n="bio_title" data-profile="about.bio_title">个人简介</h2>
+  <p data-i18n="bio_p1" data-profile="about.bio_p1">我于2018年获得英国纽卡斯尔大学计算机科学硕士学位（荣誉），并于2025年1月在英国杜伦大学完成计算机科学博士学位。在博士研究期间，我专注于计算机视觉与多模态算法，并积极探索大语言模型及其在实际问题中的应用。</p>
+  <p data-i18n="bio_p2" data-profile="about.bio_p2">目前，我在中国核工业集团同方知网数字技术有限公司担任研究员，致力于将大语言模型应用于核工业场景。我对机器学习、联邦学习、计算机视觉、多媒体分析和 AIGC 技术充满热情，并参与多项跨学科合作。</p>
     </div>
   </section>
 
   <!-- Education Section -->
   <section class="education section">
     <div class="container">
-      <h2 data-i18n="education_title">教育经历</h2>
-      <div class="timeline">
+      <h2 data-i18n="education_title" data-profile="about.education_title">教育经历</h2>
+      <div class="timeline" id="edu-list">
         <div class="timeline-item">
           <h3 data-i18n="edu_phd_title">杜伦大学 · 博士 (2020.10 – 2025.01)</h3>
           <p data-i18n="edu_phd_desc">计算机科学专业，研究方向涵盖计算机视觉、多模态算法和大语言模型。</p>
@@ -138,8 +138,8 @@
   <!-- Interests Section -->
   <section class="interests section">
     <div class="container">
-      <h2 data-i18n="interests_title">研究兴趣</h2>
-      <ul class="interests-list">
+      <h2 data-i18n="interests_title" data-profile="about.interests_title">研究兴趣</h2>
+      <ul class="interests-list" id="interests-list">
         <li data-i18n="interest_ml">机器学习与联邦学习</li>
         <li data-i18n="interest_cv">计算机视觉与多媒体分析</li>
         <li data-i18n="interest_llm">大语言模型与 AI 智能体</li>
@@ -154,5 +154,78 @@
       <p>© <span id="year"></span> Fan Wan</p>
     </div>
   </footer>
+  <script>
+  // Hydrate About content from assets/data/profile.json and update on language changes
+  (function(){
+    async function hydrate(){
+      try{
+        const res = await fetch('assets/data/profile.json', { cache: 'no-store' });
+        if(!res.ok) return;
+        const data = await res.json();
+        const lang = (localStorage.getItem('lang') || document.documentElement.lang || 'zh').slice(0,2);
+        const about = data.about?.[lang] || data.about?.zh || {};
+        // Simple text fields
+        document.querySelectorAll('[data-profile]')?.forEach(el => {
+          const key = el.getAttribute('data-profile');
+          const path = key.split('.');
+          let cur = data;
+          for(const p of path){ cur = (cur||{})[p]; }
+          if (key.startsWith('about.') && about){
+            const ak = key.replace(/^about\./,'');
+            if (about[ak]) cur = about[ak];
+          }
+          if (typeof cur === 'string') el.textContent = cur;
+        });
+        // Education list
+        const edu = document.getElementById('edu-list');
+        if (edu && Array.isArray(about.education)){
+          edu.innerHTML = about.education.map(it => `
+            <div class="timeline-item">
+              <h3>${it.title}</h3>
+              <p>${it.desc}</p>
+            </div>
+          `).join('');
+          // Linkify university names similar to global enhancement
+          const map = {
+            zh: [
+              { name: '杜伦大学', url: 'https://www.durham.ac.uk/' },
+              { name: '纽卡斯尔大学', url: 'https://www.ncl.ac.uk/' },
+              { name: '山西农业大学', url: 'https://www.sxau.edu.cn/' }
+            ],
+            en: [
+              { name: 'Durham University', url: 'https://www.durham.ac.uk/' },
+              { name: 'Newcastle University', url: 'https://www.ncl.ac.uk/' },
+              { name: 'Shanxi Agricultural University', url: 'https://www.sxau.edu.cn/' }
+            ],
+            es: [
+              { name: 'Universidad de Durham', url: 'https://www.durham.ac.uk/' },
+              { name: 'Universidad de Newcastle', url: 'https://www.ncl.ac.uk/' },
+              { name: 'Universidad Agrícola de Shanxi', url: 'https://www.sxau.edu.cn/' }
+            ]
+          };
+          const list = map[lang] || map.zh;
+          edu.querySelectorAll('.timeline-item h3').forEach(h3 => {
+            let text = h3.textContent || '';
+            for (const it of list) {
+              if (text.includes(it.name)) {
+                const safe = it.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                text = text.replace(new RegExp(safe), `<a href="${it.url}" target="_blank" rel="noopener">${it.name}</a>`);
+                break;
+              }
+            }
+            h3.innerHTML = text;
+          });
+        }
+        // Interests list
+        const ul = document.getElementById('interests-list');
+        if (ul && Array.isArray(about.interests)){
+          ul.innerHTML = about.interests.map(t => `<li>${t}</li>`).join('');
+        }
+      }catch(e){/* noop */}
+    }
+    hydrate();
+    window.addEventListener('language-changed', hydrate);
+  })();
+  </script>
 </body>
 </html>

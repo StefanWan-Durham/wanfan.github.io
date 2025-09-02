@@ -485,8 +485,8 @@ header {
 }
 
 .hero p {
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-  margin-bottom: 2rem;
+  font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+  margin-bottom: 1.6rem;
 }
 
 /* Hero actions layout */
@@ -535,14 +535,113 @@ header {
   border-radius: 50%;
   box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--border), white 30%);
 }
+/* For reveal variant, remove the soft frame so initial state is visually seamless */
+.about-portrait.fx-reveal {
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+/* Hide glow until after reveal starts, then fade it in */
+.about-portrait.fx-reveal .fx-glow { opacity: 0; transition: opacity 600ms ease 1s; }
+.about-portrait.fx-reveal.revealed .fx-glow { opacity: 1; }
+/* Reveal effect: use the same animated gradient as the page hero background */
+.page-hero ~ .about .about-portrait.fx-reveal::before,
+.about-hero .about-portrait.fx-reveal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--hero-bg);
+  background-size: 200% 200%;
+  animation: gradientShift 18s ease infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+.about-portrait.fx-reveal img { opacity: 0; transition: opacity 1.1s ease .55s; clip-path: circle(0% at 50% 50%); }
+.about-portrait.fx-reveal.revealed img { opacity: 1; animation: imgCircleReveal 1400ms ease .4s forwards; }
+/* Subtle scale-in for ceremony */
+.about-portrait.fx-reveal { transform: scale(0.985); transition: transform 1200ms cubic-bezier(.2,.8,.2,1) .4s; }
+.about-portrait.fx-reveal.revealed { transform: scale(1); }
+@keyframes circleReveal {
+  0% { clip-path: circle(100% at 50% 50%); }
+  100% { clip-path: circle(0% at 50% 50%); }
+}
+.about-portrait.fx-reveal.revealed::before { animation: none; display: none !important; }
+
+/* New: image-based reveal to ensure indistinguishable initial state (no overlay) */
+@keyframes imgCircleReveal {
+  0% { clip-path: circle(0% at 50% 50%); }
+  100% { clip-path: circle(100% at 50% 50%); }
+}
+
+/* Disable overlay entirely so the initial view is exactly the page background */
+.about-portrait.fx-reveal::before { display: none !important; }
+
+/* Reduced motion: show image immediately, hide overlay */
+@media (prefers-reduced-motion: reduce) {
+  .about-portrait.fx-reveal img { opacity: 1 !important; clip-path: none !important; animation: none !important; transition: none !important; }
+  .about-portrait.fx-reveal::before { display: none !important; }
+}
 @media (max-width: 640px) {
   .about-hero { gap: .75rem; }
   .about-portrait { width: 84px; height: 84px; padding: 4px; }
 }
 /* Blog post hero spacing */
 .blog-post .page-hero { height: 280px; }
-.blog-post .page-hero .post-title { margin-bottom: .35rem; }
+.blog-post .page-hero { padding-top: calc(110px + env(safe-area-inset-top)); }
+/* Keep the title comfortably away from the navbar, with symmetric margins */
+.blog-post .page-hero .post-title { margin: .6rem 0; }
 .blog-post .page-hero .post-meta { opacity: .95; }
+
+/* Blog typography (prose-like) */
+.blog-post .i18n-block { font-size: 1.02rem; line-height: 1.75; }
+.blog-post .i18n-block h2 { font-size: clamp(1.15rem, 2.2vw, 1.55rem); line-height: 1.35; margin-top: 2.2rem; margin-bottom: .85rem; letter-spacing: .2px; }
+.blog-post .i18n-block h3 { font-size: clamp(1.05rem, 1.9vw, 1.25rem); line-height: 1.4; margin-top: 1.6rem; margin-bottom: .6rem; }
+.blog-post .i18n-block p,
+.blog-post .i18n-block ul,
+.blog-post .i18n-block ol,
+.blog-post .i18n-block blockquote,
+.blog-post .i18n-block pre,
+.blog-post .i18n-block table { margin-top: .9rem; margin-bottom: .9rem; }
+.blog-post .i18n-block ul,
+.blog-post .i18n-block ol { padding-left: 1.25rem; }
+.blog-post .i18n-block li + li { margin-top: .35rem; }
+.blog-post .i18n-block blockquote { border-left: 3px solid color-mix(in oklab, var(--border), currentColor 10%); background: color-mix(in oklab, var(--surface), white 6%); padding: .75rem .95rem; border-radius: 8px; }
+:root[data-theme="dark"] .blog-post .i18n-block blockquote { background: color-mix(in oklab, var(--surface), black 6%); }
+.blog-post .i18n-block pre { background: color-mix(in oklab, var(--surface), white 6%); border: 1px solid var(--border); border-radius: 10px; padding: .9rem 1rem; overflow-x: auto; box-shadow: var(--shadow-sm); }
+:root[data-theme="dark"] .blog-post .i18n-block pre { background: color-mix(in oklab, var(--surface), black 6%); }
+.blog-post .i18n-block code:not(pre code) { background: color-mix(in oklab, var(--surface), white 8%); border: 1px solid var(--border); border-radius: 6px; padding: .05rem .35rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: .95em; }
+:root[data-theme="dark"] .blog-post .i18n-block code:not(pre code) { background: color-mix(in oklab, var(--surface), black 8%); }
+.blog-post .i18n-block .muted { color: var(--muted); }
+/* Blog links: ensure contrast, especially in dark theme */
+.blog-post .i18n-block a { color: color-mix(in oklab, var(--primary), black 10%); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.2px; }
+.blog-post .i18n-block a:hover, .blog-post .i18n-block a:focus-visible { color: var(--primary-600); }
+:root[data-theme="dark"] .blog-post .i18n-block a { color: #93c5fd; text-decoration-color: currentColor; }
+:root[data-theme="dark"] .blog-post .i18n-block a:visited { color: #a5b4fc; }
+:root[data-theme="dark"] .blog-post .i18n-block a:hover, :root[data-theme="dark"] .blog-post .i18n-block a:focus-visible { color: #bfdbfe; }
+
+/* Prose width: match page title container width for consistency */
+.blog-post .container.prose { max-width: 1200px; }
+
+/* Magazine-style drop cap for the first paragraph of each language block */
+.blog-post .i18n-block p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.2em;
+  line-height: 0.9;
+  padding: 0 .18em 0 0;
+  font-weight: 700;
+  color: color-mix(in oklab, var(--accent), var(--text) 20%);
+}
+/* Opt-in class to apply drop cap elsewhere when desired */
+.blog-post .i18n-block .dropcap::first-letter { all: unset; }
+.blog-post .i18n-block .dropcap:first-letter {
+  float: left;
+  font-size: 3.2em;
+  line-height: 0.9;
+  padding: 0 .18em 0 0;
+  font-weight: 700;
+  color: color-mix(in oklab, var(--accent), var(--text) 20%);
+}
 
 /* Background shapes and gradient for hero/page-hero */
 .hero, .page-hero { background-size: 200% 200%; animation: gradientShift 18s ease infinite; }
@@ -565,6 +664,64 @@ header {
              linear-gradient(135deg, #0b1220 0%, #0f172a 50%, #111827 100%);
 }
 .hero, .page-hero { background: var(--hero-bg); }
+
+/* Tables (blog selection matrices) */
+.table-wrap { overflow-x: auto; margin: 12px 0; border: 1px solid var(--border); border-radius: 10px; }
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: .98rem; }
+.table-wrap th, .table-wrap td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--border); }
+.table-wrap thead th { font-weight: 600; background: color-mix(in oklab, var(--surface), white 6%); position: sticky; top: 0; z-index: 1; }
+:root[data-theme="dark"] .table-wrap thead th { background: color-mix(in oklab, var(--surface), black 6%); }
+.table-wrap tbody tr:nth-child(odd) { background: color-mix(in oklab, var(--surface), white 3%); }
+:root[data-theme="dark"] .table-wrap tbody tr:nth-child(odd) { background: color-mix(in oklab, var(--surface), black 3%); }
+.table-wrap tbody tr:hover { background: color-mix(in oklab, var(--surface), white 4%); }
+:root[data-theme="dark"] .table-wrap tbody tr:hover { background: color-mix(in oklab, var(--surface), black 4%); }
+
+/* Code highlight theme hooks (works now; integrates later with Prism/HLJS) */
+.blog-post pre code { display: block; color: color-mix(in oklab, var(--text), black 5%); }
+/* Prism-like tokens */
+.blog-post pre code .token.comment,
+.blog-post pre code .token.prolog,
+.blog-post pre code .token.doctype,
+.blog-post pre code .token.cdata { color: #708090; }
+.blog-post pre code .token.punctuation { color: #56677b; }
+.blog-post pre code .token.property,
+.blog-post pre code .token.tag,
+.blog-post pre code .token.constant,
+.blog-post pre code .token.symbol,
+.blog-post pre code .token.deleted { color: #d14; }
+.blog-post pre code .token.boolean,
+.blog-post pre code .token.number { color: #b75501; }
+.blog-post pre code .token.selector,
+.blog-post pre code .token.attr-name,
+.blog-post pre code .token.string,
+.blog-post pre code .token.char,
+.blog-post pre code .token.builtin,
+.blog-post pre code .token.inserted { color: #0f7b6c; }
+.blog-post pre code .token.operator,
+.blog-post pre code .token.entity,
+.blog-post pre code .token.url { color: #5a6b7b; }
+.blog-post pre code .token.atrule,
+.blog-post pre code .token.attr-value,
+.blog-post pre code .token.keyword { color: #6f42c1; }
+.blog-post pre code .token.function,
+.blog-post pre code .token.class-name { color: #005cc5; }
+.blog-post pre code .token.regex,
+.blog-post pre code .token.important,
+.blog-post pre code .token.variable { color: #e36209; }
+.blog-post pre code .token.bold { font-weight: 700; }
+.blog-post pre code .token.italic { font-style: italic; }
+
+/* HLJS compatibility */
+.blog-post pre code.hljs { color: color-mix(in oklab, var(--text), black 5%); }
+.blog-post pre code .hljs-comment { color: #708090; }
+.blog-post pre code .hljs-keyword { color: #6f42c1; }
+.blog-post pre code .hljs-string { color: #0f7b6c; }
+.blog-post pre code .hljs-number { color: #b75501; }
+.blog-post pre code .hljs-title { color: #005cc5; }
+
+/* Localized hero art in posts */
+.post-hero-art { margin: 12px 0 16px; }
+.post-hero-art img { width: 100%; display: block; border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
 
 .bg-shapes {
   position: absolute;
@@ -638,10 +795,12 @@ header {
 /* About Section */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.15fr 0.85fr; /* give text a bit more space to reduce wrapping */
   gap: 2rem;
-  align-items: center;
+  align-items: start; /* align to top for height consistency */
 }
+/* Vertically center the photo column relative to the text block for unified alignment */
+.about-photo { align-self: center; display: flex; align-items: center; justify-content: center; }
 .about-photo img {
   border-radius: 16px;
   background-color: transparent; /* avoid visible fill around image */
@@ -651,7 +810,7 @@ header {
   width: 100%;
   aspect-ratio: 3 / 4; /* natural portrait frame, avoids letterboxing */
   height: auto;
-  max-height: 720px; /* cap extreme height on wide screens */
+  max-height: 640px; /* cap to help align with text height */
   object-fit: cover; /* fill frame with no side bars */
   object-position: 50% 32%; /* lift to show roof while keeping subject */
 }
@@ -664,6 +823,26 @@ header {
   margin-bottom: 1rem;
   color: var(--muted);
 }
+.about-text .lead { font-size: 1.05rem; line-height: 1.75; color: color-mix(in oklab, var(--text), var(--muted) 25%); margin-bottom: 1.1rem; }
+.feature-columns { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: .5rem; }
+.feature-group { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: .8rem .9rem; box-shadow: var(--shadow-sm); }
+.feature-group h3 { font-size: 1.02rem; color: var(--secondary); margin-bottom: .45rem; letter-spacing: .1px; }
+.feature-group ul { list-style: disc; padding-left: 1.05rem; display: grid; gap: .25rem; color: var(--text); font-size: .94rem; line-height: 1.5; }
+.feature-group li { color: var(--muted); break-inside: avoid; }
+/* Prevent overflow on mobile for long English/Spanish tokens */
+.feature-group ul, .feature-group li { overflow-wrap: anywhere; word-break: break-word; hyphens: auto; }
+
+/* Desktop: use two wider columns to reduce wrapping (better height balance with photo) */
+@media (min-width: 900px) {
+  .feature-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* On very wide screens, split the first list into two columns to shorten vertical length */
+@media (min-width: 1100px) {
+  #home-deliver-list { columns: 2; column-gap: 1.2rem; }
+  #home-deliver-list li { break-inside: avoid; }
+}
+/* (moved above; keeping declarations here removed to avoid duplication) */
 
 /* Timeline */
 .timeline {
@@ -964,10 +1143,16 @@ footer {
   .theme-toggle { width: 34px; height: 34px; }
   .about-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem; /* slightly tighter gap on mobile */
   }
+  /* Reset photo alignment on mobile to avoid odd spacing when stacked */
+  .about-photo { align-self: start; }
+  .about-text .lead { font-size: 1rem; line-height: 1.7; }
   /* tighter vertical rhythm on mobile */
   .section { padding: 3rem 0; }
   .page-hero { padding-top: 78px; }
+  /* Keep extra space on blog hero too for small screens */
+  .blog-post .page-hero { padding-top: 96px; }
   .blog-post .page-hero { height: 260px; }
   .blog-post .page-hero .post-title { font-size: 1.6rem; }
   .about-photo img { max-height: min(85vh, 560px); object-position: 50% 36%; }
@@ -977,6 +1162,11 @@ footer {
   .timeline-item h3 {
     font-size: 1rem;
   }
+}
+
+/* Very small devices: further cap image height */
+@media (max-width: 380px) {
+  .about-photo img { max-height: min(70vh, 480px); }
 }
 
 /* Reduced motion preference */
