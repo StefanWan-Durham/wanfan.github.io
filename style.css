@@ -22,7 +22,7 @@ img {
   max-width: 100%;
   display: block;
 }
-
+ 
 /* Design tokens */
 :root {
   /* Brand */
@@ -37,7 +37,6 @@ img {
 
   /* Neutrals */
   --bg: #f8fafc; /* slate-50 */
-  --surface: #ffffff; /* card/nav surface */
   --surface-2: #f1f5f9; /* subtle section */
   --text: #0f172a; /* slate-900 */
   --muted: #475569; /* slate-600 */
@@ -565,6 +564,7 @@ header {
   gap: 1.5rem;
   margin-top: 1rem;
 }
+.publications h2 { font-size: clamp(1.5rem, 2.3vw, 1.9rem); color: var(--primary); letter-spacing: .2px; margin-bottom: .25rem; }
 .pub-item {
   background-color: var(--surface);
   border-left: 4px solid var(--primary);
@@ -573,22 +573,65 @@ header {
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.2s ease;
+  /* Desktop: lay out content and actions side-by-side */
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1.25rem;
+  align-items: center;
 }
-.pub-item h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: var(--secondary);
-}
+.pub-item h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem; color: color-mix(in oklab, var(--text), var(--primary) 12%); letter-spacing: .1px; }
 .pub-item p {
   font-size: 0.95rem;
   color: var(--muted);
   margin-bottom: 0.3rem;
+  line-height: 1.55;
 }
 .pub-item:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   border-color: color-mix(in oklab, var(--border), var(--primary) 18%);
 }
+.pub-actions { display:flex; gap:.6rem; align-self: center; justify-self: end; }
+.pub-item .pub-meta { grid-column: 1; }
+.pub-item h3, .pub-item p { grid-column: auto; }
+.pub-item .pub-actions { grid-column: 2; }
+.pub-item .pub-actions .btn { padding: 0.55rem 1rem; font-size: 0.95rem; border-radius: 10px; display: inline-flex; align-items: center; border: 1px solid var(--primary); color: var(--primary); background: transparent; }
+.pub-item .pub-actions .btn .icon { margin-right: .4rem; }
+.pub-item .pub-actions .btn.outline { color: var(--primary); border-color: var(--primary); background: transparent; }
+.pub-item .pub-actions .btn.outline:hover {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-600);
+}
+.pub-item .pub-actions .btn.outline:active { transform: translateY(0); }
+.pub-item .pub-actions .btn.outline:focus-visible { box-shadow: var(--ring); }
+
+/* Venue and authors polish */
+.pub-item .pub-venue { color: color-mix(in oklab, var(--muted), var(--text) 25%); font-weight: 500; font-style: italic; }
+.pub-item .pub-authors { color: color-mix(in oklab, var(--muted), var(--text) 20%); font-size: .93rem; }
+.pub-item .pub-authors strong { color: color-mix(in oklab, var(--text), var(--muted) 30%); font-weight: 500; }
+.pub-item .pub-actions .btn.primary { box-shadow: var(--shadow-sm); }
+.pub-item .pub-actions .btn.primary:hover { box-shadow: var(--shadow-md); }
+
+/* Mobile: stack actions under content with a divider */
+@media (max-width: 768px) {
+  .pub-item { display: block; }
+  .pub-actions { margin-top: .75rem; flex-wrap: wrap; justify-content: flex-start; border-top: 1px solid var(--border); padding-top: .75rem; }
+}
+@media (max-width: 640px) { .pub-actions .btn { padding: .5rem .85rem; font-size: .92rem; } }
+
+/* Modal viewer */
+.modal[hidden] { display: none !important; }
+.modal { position: fixed; inset: 0; z-index: 2000; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(2,6,23,.6); backdrop-filter: blur(2px); }
+.modal-dialog { position: relative; margin: 4vh auto; width: min(92vw, 1100px); height: 88vh; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow-md); display:flex; flex-direction: column; overflow:hidden; }
+.modal-header { display:flex; align-items:center; justify-content: space-between; padding: .75rem 1rem; border-bottom: 1px solid var(--border); background: var(--surface-2); }
+.modal-body { position: relative; flex: 1; }
+.modal-close { background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: .25rem .5rem; cursor: pointer; color: var(--text); }
+.modal-close:hover { box-shadow: var(--shadow-sm); }
+.modal-body iframe { width: 100%; height: 100%; border: 0; background: #111; }
+.modal-fallback { padding: 1rem; color: var(--muted); }
 
 /* Blog page */
 .blog .blog-posts {

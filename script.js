@@ -207,4 +207,53 @@ document.addEventListener('DOMContentLoaded', () => {
       else btn.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
     }
   });
+
+  // Publications: inline PDF viewer modal
+  (function setupPdfModal(){
+    const modal = document.getElementById('pdf-modal');
+    if (!modal) return;
+    const frame = document.getElementById('pdf-frame');
+    const fallback = document.getElementById('pdf-fallback');
+    const titleEl = document.getElementById('pdf-title');
+    function openModal(src){
+      if (frame) frame.src = src || '';
+      if (fallback) fallback.hidden = !!src;
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      modal.hidden = true;
+      if (frame) frame.src = '';
+      document.body.style.overflow = '';
+    }
+    modal.addEventListener('click', (e)=>{
+      if (e.target && (e.target.hasAttribute('data-close'))) closeModal();
+    });
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+    document.querySelectorAll('.view-pdf[data-pdf]')?.forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const src = btn.getAttribute('data-pdf');
+        // Set dynamic title: PDF Viewer – <paper title>
+        try {
+          const h = btn.closest('.pub-item')?.querySelector('h3')?.textContent?.trim();
+          if (titleEl) titleEl.textContent = h ? `PDF Viewer – ${h}` : (window.translations?.[localStorage.getItem('lang')||'en']?.pdf_viewer_title || 'PDF Viewer');
+        } catch {}
+        // Probe availability before showing iframe to avoid broken content
+        try {
+          const head = await fetch(src, { method: 'HEAD' });
+          if (head.ok) {
+            openModal(src);
+          } else {
+            if (fallback) fallback.hidden = false;
+            openModal('');
+          }
+        } catch {
+          if (fallback) fallback.hidden = false;
+          openModal('');
+        }
+      });
+    });
+  })();
 });
