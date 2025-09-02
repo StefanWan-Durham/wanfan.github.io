@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <link rel="stylesheet" href="style.css">
   <script defer src="lang.js"></script>
   <script defer src="script.js"></script>
@@ -35,14 +36,14 @@
     <nav class="navbar container">
       <a href="index.html" class="brand" aria-label="Home">
         <img src="assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
-        <span class="logo" data-i18n="nav_home">Home</span>
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-        <li><a href="about.html" data-i18n="nav_about">About</a></li>
-        <li><a href="publications.html" data-i18n="nav_research">Research</a></li>
-        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
-        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="index.html"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
       </ul>
       <div class="nav-actions">
         <div class="lang-switcher">
@@ -82,7 +83,9 @@
       <span class="shape shape4"></span>
     </div>
     <div class="container">
-      <h1 data-i18n="blog_title">博客</h1>
+  <h1 data-i18n="blog_title">博客</h1>
+  <p class="subtitle" data-i18n="blog_subtitle">关于人工智能、研究和工程的笔记</p>
+    <div style="margin-top: 20px;"></div> <!-- Added top spacing for mobile -->
     </div>
   </section>
 
@@ -90,14 +93,28 @@
     <div class="container">
       <p data-i18n="blog_desc">在这里，我将分享关于机器学习、计算机视觉、大语言模型以及职业发展的思考与心得。敬请期待我的最新文章。</p>
       <div class="blog-posts">
-  <article class="card post-card">
-          <a href="blog/future-of-rag-2025-kblam.html" aria-label="RAG 2025 路线图">
-            <img src="assets/blog/rag-future-2025-hero.svg" alt="RAG 2025 路线图封面" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
+        <article class="card post-card">
+          <a href="blog/future-of-rag-2025-kblam.html" aria-label="RAG 2025 roadmap">
+            <img src="assets/blog/rag-future-2025-hero.svg" alt="RAG 2025 cover" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
           </a>
           <div>
-            <h3 style="margin:0 0 6px 0"><a href="blog/future-of-rag-2025-kblam.html" style="text-decoration:none;color:var(--text)">RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</a></h3>
-            <p class="muted" style="margin:0 0 6px 0">发表于 2025-09-02 · 预计阅读 9 分钟</p>
-            <p class="muted" style="margin:0">更大的上下文与更强的模型并没有让 RAG 过时；过时的是“天真向量检索”。本文结合 KBLaM 实战，总结 2025 年的 5 条升级路线与选型矩阵。</p>
+            <h3 style="margin:0 0 6px 0">
+              <a href="blog/future-of-rag-2025-kblam.html" style="text-decoration:none;color:var(--text)">
+                <span class="i18n l-zh">RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</span>
+                <span class="i18n l-en">Is RAG obsolete? 2025 roadmap: from long context to GraphRAG, Retrieval‑Aware Training and KBLaM</span>
+                <span class="i18n l-es">¿Quedará obsoleto RAG? Hoja de ruta 2025: del contexto largo a GraphRAG, entrenamiento sensible a la recuperación y KBLaM</span>
+              </a>
+            </h3>
+            <p class="muted" style="margin:0 0 6px 0">
+              <span class="i18n l-zh">发表于 2025-09-02 · 预计阅读 9 分钟</span>
+              <span class="i18n l-en">Published on 2025-09-02 · Estimated read 9 min</span>
+              <span class="i18n l-es">Publicado el 2025-09-02 · Lectura 9 min</span>
+            </p>
+            <p class="muted" style="margin:0">
+              <span class="i18n l-zh">更大的上下文与更强的模型并没有让 RAG 过时；过时的是“天真向量检索”。本文结合 KBLaM 实战，总结 2025 年的 5 条升级路线与选型矩阵。</span>
+              <span class="i18n l-en">Bigger context windows and stronger models didn’t make RAG outdated; what’s outdated is naive vector retrieval. This post summarizes five 2025 upgrade paths and a selection matrix with KBLaM practice.</span>
+              <span class="i18n l-es">Contextos más grandes y modelos más potentes no dejaron obsoleto RAG; lo obsoleto es la recuperación vectorial ingenua. Este artículo resume cinco rutas de mejora para 2025 y una matriz de selección con la práctica de KBLaM.</span>
+            </p>
           </div>
         </article>
       </div>

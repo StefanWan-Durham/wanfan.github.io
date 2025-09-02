@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <link rel="stylesheet" href="style.css">
   <script defer src="lang.js"></script>
   <script defer src="script.js"></script>
@@ -35,14 +36,14 @@
     <nav class="navbar container">
       <a href="index.html" class="brand" aria-label="Home">
         <img src="assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
-        <span class="logo" data-i18n="nav_home">Home</span>
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-        <li><a href="about.html" data-i18n="nav_about">About</a></li>
-        <li><a href="publications.html" data-i18n="nav_research">Research</a></li>
-        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
-        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="index.html"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
       </ul>
       <div class="nav-actions">
         <div class="lang-switcher">
@@ -81,8 +82,12 @@
       <span class="shape shape3"></span>
       <span class="shape shape4"></span>
     </div>
-    <div class="container">
+    <div class="container about-hero">
       <h1 data-i18n="about_title">关于我</h1>
+      <!-- Decorative round portrait aligned with title, constrained to container width -->
+      <div class="about-portrait" aria-hidden="true">
+        <img src="assets/about_me.jpg" alt="Fan Wan" width="200" height="200" decoding="async" fetchpriority="high" />
+      </div>
     </div>
   </section>
 

@@ -41,6 +41,92 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(section);
   });
 
+  // Blog enhancements: lang-block toggle, auto TOC from active lang, highlight + reading time
+  (function enhanceBlog(){
+    const isPost = document.querySelector('main.blog-post');
+    if (!isPost) return;
+    function getActiveLang(){
+      return localStorage.getItem('lang') || document.documentElement.lang || 'zh';
+    }
+    function syncLangBlocks(){
+      const lang = getActiveLang();
+      const blocks = isPost.querySelectorAll('.i18n-block');
+      if (blocks.length) {
+        blocks.forEach(b => {
+          const bLang = b.getAttribute('data-lang');
+          if (bLang === lang) {
+            b.hidden = false;
+          } else {
+            b.hidden = true;
+          }
+        });
+      }
+    }
+    // Build TOC from the visible language block only
+    function buildToc(){
+      const toc = document.querySelector('.toc ol');
+      if (!toc) return;
+      toc.innerHTML = '';
+      const active = isPost.querySelector('.i18n-block:not([hidden])') || isPost;
+      const headings = active.querySelectorAll('h2[id]');
+      headings.forEach(h => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${h.id}`;
+        a.textContent = h.textContent.trim();
+        li.appendChild(a);
+        toc.appendChild(li);
+      });
+      // Active highlight
+      const links = Array.from(toc.querySelectorAll('a'));
+      const map = new Map();
+      links.forEach(a => {
+        const id = a.getAttribute('href').slice(1);
+        const sec = document.getElementById(id);
+        if (sec) map.set(sec, a);
+      });
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          const link = map.get(e.target);
+          if (!link) return;
+          if (e.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: [0, 1.0] });
+      map.forEach((_, sec) => io.observe(sec));
+    }
+    function updateReadingTime(){
+      const active = isPost.querySelector('.i18n-block:not([hidden])') || isPost;
+      const metaP = isPost.querySelector('.page-hero .i18n-block:not([hidden]) .post-meta') || document.querySelector('.page-hero .post-meta');
+      if (metaP && active) {
+        const text = active.innerText || '';
+        const words = text.trim().split(/\s+/).filter(Boolean).length;
+        const minutes = Math.max(1, Math.round(words / 260));
+        const lang = getActiveLang();
+        const label = lang === 'en' ? `Estimated read ${minutes} min` : lang === 'es' ? `Lectura ${minutes} min` : `预计阅读 ${minutes} 分钟`;
+        // Replace any existing time segment at the end of meta text
+        if (/预计阅读|Estimated read|Lectura/.test(metaP.textContent)) {
+          metaP.textContent = metaP.textContent.replace(/(预计阅读.*|Estimated read.*|Lectura .*?)$/, label);
+        } else {
+          metaP.textContent += ` · ${label}`;
+        }
+      }
+    }
+
+    // Initial sync
+    syncLangBlocks();
+    buildToc();
+    updateReadingTime();
+    // Rebuild when language changes
+    window.addEventListener('language-changed', () => {
+      syncLangBlocks();
+      buildToc();
+      updateReadingTime();
+    });
+  })();
+
   // Theme toggle: manual light/dark override with localStorage persistence
   const THEME_KEY = 'theme'; // 'light' | 'dark' | 'system'
   const root = document.documentElement;

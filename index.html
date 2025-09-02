@@ -40,6 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <link rel="stylesheet" href="style.css">
   <script defer src="lang.js"></script>
   <script defer src="script.js"></script>
@@ -52,14 +53,18 @@
     <nav class="navbar container">
       <a href="index.html" class="brand" aria-label="Home">
         <img src="assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
-        <span class="logo" data-i18n="nav_home">Home</span>
+        <span class="logo">
+          <span class="i18n l-zh">首页</span>
+          <span class="i18n l-en">Home</span>
+          <span class="i18n l-es">Inicio</span>
+        </span>
       </a>
       <ul class="nav-links">
-  <li><a href="index.html" data-i18n="nav_home"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> Home</a></li>
-        <li><a href="about.html" data-i18n="nav_about">About</a></li>
-        <li><a href="publications.html" data-i18n="nav_research">Research</a></li>
-        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
-        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
       </ul>
       <div class="nav-actions">
         <div class="lang-switcher">
@@ -101,11 +106,7 @@
     <div class="hero-content container">
       <h1 data-i18n="hero_title">你好，我是万凡</h1>
       <p data-i18n="hero_subtitle">研究员 · 计算机科学博士</p>
-      <div class="hero-buttons">
-        <a href="#portfolio" class="btn secondary" data-i18n="hero_btn_selected">Selected Work</a>
-        <a href="assets/cv.pdf" class="btn outline" target="_blank" rel="noopener" data-i18n="hero_btn_cv">Download CV</a>
-        <a href="contact.html" class="btn primary" data-i18n="hero_btn_contact"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 10H7"/><path d="M21 6H3"/><path d="M21 14H3"/><path d="M21 18H7"/></svg></span> 联系我</a>
-      </div>
+  <div class="hero-buttons"><!-- intentionally empty --></div>
     </div>
   </section>
 
@@ -123,7 +124,7 @@
     </div>
   </section>
 
-  <!-- Research Summary Section -->
+  <!-- Research Summary Section — temporarily disabled per request
   <section class="research-summary section" id="research-summary">
     <div class="container">
       <h2 data-i18n="research_title">学术出版物</h2>
@@ -131,8 +132,9 @@
       <a href="publications.html" class="btn primary" data-i18n="research_btn">查看研究成果</a>
     </div>
   </section>
+  -->
 
-  <!-- Portfolio Section (作品集) -->
+  <!-- Portfolio Section (作品集) — temporarily disabled per request; keep commented to align across all languages
   <section class="portfolio section" id="portfolio">
     <div class="container">
       <h2 data-i18n="portfolio_title">Portfolio</h2>
@@ -167,24 +169,9 @@
       </div>
     </div>
   </section>
+  -->
 
-  <!-- Blog Summary Section -->
-  <section class="blog-summary section" id="blog-summary">
-    <div class="container">
-      <h2 data-i18n="blog_title">博客</h2>
-      <p data-i18n="blog_desc">在这里，我将分享关于机器学习、计算机视觉、大语言模型以及职业发展的思考与心得。敬请期待我的最新文章。</p>
-  <a href="blog.html" class="btn primary" data-i18n="blog_btn">进入博客</a>
-    </div>
-  </section>
-
-  <!-- Contact Summary Section -->
-  <section class="contact-summary section" id="contact-summary">
-    <div class="container">
-      <h2 data-i18n="contact_title">联系我</h2>
-      <p data-i18n="contact_desc">如果你对合作或交流感兴趣，欢迎通过邮件或社交媒体与我取得联系。</p>
-      <a href="contact.html" class="btn primary" data-i18n="contact_btn">联系页面</a>
-    </div>
-  </section>
+  <!-- Blog and Contact summary sections removed per request -->
   </main>
   <footer>
     <div class="container">
@@ -193,7 +180,9 @@
         <p class="muted" data-i18n="footer_cta_desc">我可提供 LLM 应用、计算机视觉与多媒体分析相关的咨询与合作。</p>
         <div>
           <a class="btn primary" href="contact.html" data-i18n="hero_btn_contact">联系我</a>
+          <!-- CV download intentionally disabled per user request
           <a class="btn outline" href="assets/cv.pdf" target="_blank" rel="noopener">Download CV</a>
+          -->
         </div>
       </div>
       <p>© <span id="year"></span> Fan Wan</p>

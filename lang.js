@@ -36,7 +36,8 @@ const translations = {
     research_desc: '我在机器学习、计算机视觉和多媒体分析等领域发表了多篇论文，涵盖联邦学习、神经辐射场和零样本学习等主题。点击下方按钮查看完整列表。',
     research_btn: '查看研究成果',
     // Blog summary
-    blog_title: '博客',
+  blog_title: '博客',
+  blog_subtitle: '关于人工智能、研究和工程的笔记',
     blog_desc: '在这里，我将分享关于机器学习、计算机视觉、大语言模型以及职业发展的思考与心得。敬请期待我的最新文章。',
     blog_btn: '进入博客',
     blog_coming_soon_title: '敬请期待',
@@ -69,6 +70,9 @@ const translations = {
     interest_cv: '计算机视觉与多媒体分析',
     interest_llm: '大语言模型与 AI 智能体',
     interest_privacy: '隐私保护算法与分布式 AI',
+  publications_more_title: '更多论文',
+  co_corresponding: '\u2020共同通讯',
+  co_first: '*共同一作',
     // Publications page
     publications_list_title: '代表性论文',
   view_pdf: '在线阅读 PDF',
@@ -108,7 +112,8 @@ const translations = {
     research_title: 'Research Publications',
     research_desc: 'I have published several papers in areas such as machine learning, computer vision and multimedia analysis, covering topics like federated learning, neural radiance fields and zero-shot learning. Click the button below to view the full list.',
     research_btn: 'View Research',
-    blog_title: 'Blog',
+  blog_title: 'Blog',
+  blog_subtitle: 'Notes on AI, research, and engineering',
     blog_desc: 'Here I will share my thoughts and insights on machine learning, computer vision, large language models and career development. Stay tuned for my latest posts.',
     blog_btn: 'Visit Blog',
     blog_coming_soon_title: 'Coming Soon',
@@ -140,6 +145,9 @@ const translations = {
     interest_llm: 'Large Language Models & AI Agents',
     interest_privacy: 'Privacy‑Preserving Algorithms & Distributed AI',
     publications_list_title: 'Selected Publications',
+  publications_more_title: 'More Publications',
+  co_corresponding: '\u2020Co‑corresponding',
+  co_first: '*Co‑first author',
   view_pdf: 'View PDF',
   download_pdf: 'Download PDF',
   pdf_viewer_title: 'PDF Viewer',
@@ -175,7 +183,8 @@ const translations = {
     research_title: 'Publicaciones de investigación',
     research_desc: 'He publicado varios trabajos en áreas como aprendizaje automático, visión por computadora y análisis multimedia, cubriendo temas como aprendizaje federado, campos de radiancia neural y aprendizaje de cero muestras. Haga clic en el botón de abajo para ver la lista completa.',
     research_btn: 'Ver investigación',
-    blog_title: 'Blog',
+  blog_title: 'Blog',
+  blog_subtitle: 'Notas sobre IA, investigación e ingeniería',
     blog_desc: 'Aquí compartiré mis pensamientos e ideas sobre aprendizaje automático, visión por computadora, modelos de lenguaje grandes y desarrollo profesional. Mantente al tanto de mis publicaciones más recientes.',
     blog_btn: 'Visitar blog',
     blog_coming_soon_title: 'Próximamente',
@@ -207,6 +216,9 @@ const translations = {
     interest_llm: 'Modelos de lenguaje grandes y agentes de IA',
     interest_privacy: 'Algoritmos de preservación de privacidad y IA distribuida',
     publications_list_title: 'Publicaciones seleccionadas',
+  publications_more_title: 'Más publicaciones',
+  co_corresponding: '\u2020Autor corresponsal conjunto',
+  co_first: '*Autor/a co‑principal',
   view_pdf: 'Ver PDF',
   download_pdf: 'Descargar PDF',
   pdf_viewer_title: 'Visor de PDF',
@@ -288,7 +300,8 @@ function translatePage(lang) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const langSelect = document.getElementById('lang-select');
-  const defaultLang = localStorage.getItem('lang') || 'en';
+  // Prefer user's saved choice, else the document's declared language, else zh
+  const defaultLang = localStorage.getItem('lang') || document.documentElement.lang || 'zh';
   // Expose for other scripts
   try { window.translations = translations; } catch {}
   translatePage(defaultLang);

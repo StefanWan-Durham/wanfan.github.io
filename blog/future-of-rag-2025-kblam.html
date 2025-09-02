@@ -20,6 +20,7 @@
 
   <meta name="theme-color" content="#0f172a">
   <link rel="stylesheet" href="../style.css">
+  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
 </head>
@@ -29,14 +30,14 @@
     <nav class="navbar container">
       <a href="../index.html" class="brand" aria-label="Home">
         <img src="../assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
-        <span class="logo" data-i18n="nav_home">Home</span>
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
-        <li><a href="../about.html" data-i18n="nav_about">About</a></li>
-        <li><a href="../publications.html" data-i18n="nav_research">Research</a></li>
-        <li><a href="../blog.html" data-i18n="nav_blog">Blog</a></li>
-        <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="../index.html"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="../contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
       </ul>
       <div class="nav-actions">
         <div class="lang-switcher">
@@ -62,94 +63,223 @@
   </header>
 
   <main id="main" class="blog-post">
-  <section class="page-hero section" style="height: 260px;">
+  <section class="page-hero section" style="height: 280px;">
       <div class="container">
-        <h1>RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</h1>
-        <p class="muted">发表于 2025-09-02 · 预计阅读 9 分钟</p>
-      </div>
+          <div class="i18n-block" data-lang="zh">
+            <h1 class="post-title">RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</h1>
+            <p class="muted post-meta">发表于 2025-09-02 · 预计阅读 9 分钟</p>
+          </div>
+          <div class="i18n-block" data-lang="en" hidden>
+            <h1 class="post-title">Is RAG obsolete? 2025 roadmap from “long context” to GraphRAG, Retrieval‑Aware Training and KBLaM</h1>
+            <p class="muted post-meta">Published on 2025-09-02 · Estimated read 9 min</p>
+          </div>
+        </div>
     </section>
 
     <section class="section">
       <div class="container" style="max-width: 860px;">
   <img src="../assets/blog/rag-future-2025-hero.svg" alt="RAG 2025 路线图封面" style="width:100%;border-radius:14px;border:1px solid var(--border);box-shadow:var(--shadow-sm);margin-bottom:1rem" />
-        <!-- Body copied from your provided blog1.html, trimmed styles moved to global -->
-        <!-- BEGIN BODY -->
-        <p class="meta muted">结论先行：<b>RAG 不会被淘汰，但“天真向量检索 RAG”会被替代</b>。未来形态是「<b>结构化检索</b> + <b>检索感知训练</b> + <b>代理式编排</b> +（必要时）<b>参数级知识更新</b>」的组合拳。长上下文模型降低对检索的依赖，但在成本、稳健性与可审计性上，RAG 仍是工业可行解。</p>
+        
         <nav class="toc card" aria-label="目录" style="padding:16px;margin:12px 0;">
           <strong>目录</strong>
-          <ol>
-            <li><a href="#future-judgement">未来判断：长上下文≠RAG 的终点</a></li>
-            <li><a href="#kblam">KBLaM：从“知识库增强”到行业级 RAG+</a></li>
-            <li><a href="#upgrades">2025 的 5 条升级路线</a></li>
-            <li><a href="#matrix">选型矩阵</a></li>
-            <li><a href="#forecast">未来 12 个月的预测</a></li>
-            <li><a href="#refs">参考与延伸阅读</a></li>
-          </ol>
+          <ol></ol>
         </nav>
 
-        <!-- Sections (abbrev) -->
-        <section id="future-judgement"><h2>未来判断</h2><p>更长上下文≠RAG 终点，工程上仍需检索与可审计性。</p>
-          <ul>
-            <li>长上下文降低检索频率，但无法替代“可追溯证据链”。</li>
-            <li>工业场景更看重稳定性、成本与合规留痕。</li>
-            <li>答案需要“可解释+可复现”，而不仅是“看起来正确”。</li>
-          </ul>
-        </section>
-        <section id="kblam"><h2>KBLaM</h2><p>定位：可信知识、证据链与受限环境的稳定性。</p>
-          <p>KBLaM（Knowledge-Backed Language Model）强调“以知识为一等公民”。核心三件事：</p>
-          <ol>
-            <li>结构化与半结构化知识的统一检索（文本+图谱）。</li>
-            <li>检索感知训练，让模型学会“何时检索、检什么”。</li>
-            <li>可审计算法与工具链：来源、版本与使用范围明确。</li>
-          </ol>
-        </section>
-        <section id="upgrades"><h2>升级路线</h2>
-          <ul>
-            <li>Self-RAG / RAFT / RA-DIT（检索感知）</li>
-            <li>GraphRAG（结构化检索）</li>
-            <li>Agentic RAG + MCP</li>
-            <li>模型编辑（必要时）</li>
-            <li>新鲜度检索</li>
-          </ul>
-          <p class="muted">工程建议：先打好“检索与数据治理”底座，再考虑昂贵的参数级更新。</p>
-        </section>
-        <section id="matrix"><h2>选型矩阵</h2><p>根据时效、规模、结构化需求选择路线。</p>
-          <ul>
-            <li>高时效+强结构：GraphRAG + 实时爬取/流式索引。</li>
-            <li>强可审计：Self-RAG/RAFT + 明确证据链存档。</li>
-            <li>工具复杂多样：MCP 统一协议，Agent 负责编排。</li>
-          </ul>
-        </section>
+        <!-- Multilingual blocks: zh and en -->
+        <article class="i18n-block" data-lang="zh">
+          <p class="meta muted">结论先行：<b>RAG 不会被淘汰，但“天真向量检索 RAG”会被替代</b>。未来形态是「<b>结构化检索</b> + <b>检索感知训练</b> + <b>代理式编排</b> +（必要时）<b>参数级知识更新</b>」的组合拳。长上下文模型降低对检索的依赖，但在成本、稳健性与可审计性上，RAG 仍是工业可行解。</p>
+          <section id="future-judgement"><h2>未来判断</h2><p>更长上下文≠RAG 终点，工程上仍需检索与可审计性。</p>
+            <ul>
+              <li>长上下文降低检索频率，但无法替代“可追溯证据链”。</li>
+              <li>工业场景更看重稳定性、成本与合规留痕。</li>
+              <li>答案需要“可解释+可复现”，而不仅是“看起来正确”。</li>
+            </ul>
+          </section>
+          <section id="kblam"><h2>KBLaM</h2><p>定位：可信知识、证据链与受限环境的稳定性。</p>
+            <p>KBLaM（Knowledge-Backed Language Model）强调“以知识为一等公民”。核心三件事：</p>
+            <ol>
+              <li>结构化与半结构化知识的统一检索（文本+图谱）。</li>
+              <li>检索感知训练，让模型学会“何时检索、检什么”。</li>
+              <li>可审计算法与工具链：来源、版本与使用范围明确。</li>
+            </ol>
+          </section>
+          <section id="upgrades"><h2>升级路线</h2>
+            <ul>
+              <li>Self-RAG / RAFT / RA-DIT（检索感知）</li>
+              <li>GraphRAG（结构化检索）</li>
+              <li>Agentic RAG + MCP</li>
+              <li>模型编辑（必要时）</li>
+              <li>新鲜度检索</li>
+            </ul>
+            <p class="muted">工程建议：先打好“检索与数据治理”底座，再考虑昂贵的参数级更新。</p>
+          </section>
+          <section id="matrix"><h2>选型矩阵</h2><p>根据时效、规模、结构化需求选择路线。</p>
+            <ul>
+              <li>高时效+强结构：GraphRAG + 实时爬取/流式索引。</li>
+              <li>强可审计：Self-RAG/RAFT + 明确证据链存档。</li>
+              <li>工具复杂多样：MCP 统一协议，Agent 负责编排。</li>
+            </ul>
+          </section>
+          <section id="refs">
+            <h2>参考与延伸阅读（官方来源）</h2>
+            <ul>
+              <li>Self-RAG：
+                <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> ·
+                <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> ·
+                <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
+              </li>
+              <li>RAFT（Retrieval-Augmented Fine-Tuning, 2024）：
+                <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
+              </li>
+              <li>RA-DIT（2023）：
+                <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> ·
+                <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
+              </li>
+              <li>GraphRAG：
+                <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> ·
+                <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
+              </li>
+              <li>MCP：
+                <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> ·
+                <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> ·
+                <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
+              </li>
+              <li>Google Gemini 1.5（长上下文）：
+                <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Official Blog</a>
+              </li>
+            </ul>
+          </section>
+        </article>
 
-        <section id="refs">
-          <h2>参考与延伸阅读（官方来源）</h2>
-          <ul>
-            <li>Self-RAG：
-              <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> ·
-              <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> ·
-              <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li>RAFT（Retrieval-Augmented Fine-Tuning, 2024）：
-              <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
-            </li>
-            <li>RA-DIT（2023）：
-              <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> ·
-              <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
-            </li>
-            <li>GraphRAG：
-              <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> ·
-              <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li>MCP：
-              <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> ·
-              <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> ·
-              <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
-            </li>
-            <li>Google Gemini 1.5（长上下文）：
-              <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Official Blog</a>
-            </li>
-          </ul>
-        </section>
+        <article class="i18n-block" data-lang="en" hidden>
+          <p class="meta muted">TL;DR: <b>RAG won’t be obsolete, but naive vector-retrieval RAG will.</b> The 2025 stack combines <b>structured retrieval</b> + <b>retrieval-aware training</b> + <b>agentic orchestration</b> and, when needed, <b>parameter updates</b>. Longer context reduces retrieval frequency but RAG remains practical for cost, robustness and auditability.</p>
+          <section id="future-judgement-en"><h2>Future Judgement</h2><p>Longer context ≠ the end of RAG; engineering still needs retrieval and auditability.</p>
+            <ul>
+              <li>Long context lowers recall frequency but doesn’t replace traceable evidence chains.</li>
+              <li>Industry cares about stability, cost and compliance trails.</li>
+              <li>Answers must be explainable and reproducible, not just plausible.</li>
+            </ul>
+          </section>
+          <section id="kblam-en"><h2>KBLaM</h2><p>Positioning: trusted knowledge, evidence chains and stability under constraints.</p>
+            <p>KBLaM (Knowledge-Backed Language Model) treats knowledge as a first-class citizen. Three pillars:</p>
+            <ol>
+              <li>Unified retrieval for structured and semi-structured knowledge (text + graphs).</li>
+              <li>Retrieval-aware training so the model learns when and what to retrieve.</li>
+              <li>Auditable algorithms and toolchains with clear provenance, versions and usage scope.</li>
+            </ol>
+          </section>
+          <section id="upgrades-en"><h2>Upgrade Paths</h2>
+            <ul>
+              <li>Self-RAG / RAFT / RA-DIT (retrieval awareness)</li>
+              <li>GraphRAG (structured retrieval)</li>
+              <li>Agentic RAG + MCP</li>
+              <li>Model editing (when necessary)</li>
+              <li>Freshness retrieval</li>
+            </ul>
+            <p class="muted">Advice: build retrieval and data governance foundations first before expensive parameter updates.</p>
+          </section>
+          <section id="matrix-en"><h2>Selection Matrix</h2><p>Choose by timeliness, scale and structure.</p>
+            <ul>
+              <li>High timeliness + strong structure: GraphRAG + real-time crawling/streaming index.</li>
+              <li>High auditability: Self-RAG/RAFT + explicit evidence-chain archiving.</li>
+              <li>Complex tools: MCP as a unified protocol; Agent handles orchestration.</li>
+            </ul>
+          </section>
+          <section id="refs-en">
+            <h2>References (official sources)</h2>
+            <ul>
+              <li>Self-RAG:
+                <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> ·
+                <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> ·
+                <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
+              </li>
+              <li>RAFT (Retrieval-Augmented Fine-Tuning, 2024):
+                <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
+              </li>
+              <li>RA-DIT (2023):
+                <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> ·
+                <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
+              </li>
+              <li>GraphRAG:
+                <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> ·
+                <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
+              </li>
+              <li>MCP:
+                <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> ·
+                <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> ·
+                <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
+              </li>
+              <li>Google Gemini 1.5 (long context):
+                <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Official Blog</a>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <article class="i18n-block" data-lang="es" hidden>
+          <p class="meta muted">Resumen: <b>RAG no quedará obsoleto, pero el RAG de recuperación vectorial ingenua sí.</b> La pila de 2025 combina <b>recuperación estructurada</b> + <b>entrenamiento sensible a la recuperación</b> + <b>orquestación con agentes</b> y, cuando sea necesario, <b>actualizaciones de parámetros</b>. El contexto largo reduce la frecuencia de recuperación, pero RAG sigue siendo práctico por coste, robustez y auditabilidad.</p>
+          <section id="future-judgement-es"><h2>Juicio de futuro</h2><p>Contexto más largo ≠ fin de RAG; en ingeniería se sigue necesitando recuperación y trazabilidad.</p>
+            <ul>
+              <li>El contexto largo reduce la frecuencia de recuperación pero no sustituye cadenas de evidencia trazables.</li>
+              <li>La industria valora estabilidad, coste y huella de cumplimiento.</li>
+              <li>Las respuestas deben ser explicables y reproducibles, no solo plausibles.</li>
+            </ul>
+          </section>
+          <section id="kblam-es"><h2>KBLaM</h2><p>Posicionamiento: conocimiento confiable, cadenas de evidencia y estabilidad bajo restricciones.</p>
+            <p>KBLaM (Knowledge-Backed Language Model) trata el conocimiento como ciudadano de primera clase. Tres pilares:</p>
+            <ol>
+              <li>Recuperación unificada para conocimiento estructurado y semiestructurado (texto + grafos).</li>
+              <li>Entrenamiento sensible a la recuperación para aprender cuándo y qué recuperar.</li>
+              <li>Algoritmos y cadenas de herramientas auditables con procedencia, versiones y alcance claros.</li>
+            </ol>
+          </section>
+          <section id="upgrades-es"><h2>Rutas de mejora</h2>
+            <ul>
+              <li>Self-RAG / RAFT / RA-DIT (sensibilidad a la recuperación)</li>
+              <li>GraphRAG (recuperación estructurada)</li>
+              <li>RAG con agentes + MCP</li>
+              <li>Edición de modelo (cuando sea necesario)</li>
+              <li>Recuperación por frescura</li>
+            </ul>
+            <p class="muted">Consejo: primero construya las bases de recuperación y gobernanza de datos antes de costosas actualizaciones de parámetros.</p>
+          </section>
+          <section id="matrix-es"><h2>Matriz de selección</h2><p>Elegir por oportunidad, escala y estructura.</p>
+            <ul>
+              <li>Alta oportunidad + fuerte estructura: GraphRAG + rastreo en tiempo real/índice en flujo.</li>
+              <li>Alta auditabilidad: Self-RAG/RAFT + archivado explícito de cadenas de evidencia.</li>
+              <li>Herramientas complejas: MCP como protocolo unificado; los agentes orquestan.</li>
+            </ul>
+          </section>
+          <section id="refs-es">
+            <h2>Referencias (fuentes oficiales)</h2>
+            <ul>
+              <li>Self-RAG:
+                <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> ·
+                <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> ·
+                <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
+              </li>
+              <li>RAFT (Retrieval-Augmented Fine-Tuning, 2024):
+                <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
+              </li>
+              <li>RA-DIT (2023):
+                <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> ·
+                <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
+              </li>
+              <li>GraphRAG:
+                <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> ·
+                <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
+              </li>
+              <li>MCP:
+                <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> ·
+                <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> ·
+                <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
+              </li>
+              <li>Google Gemini 1.5 (contexto largo):
+                <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Blog oficial</a>
+              </li>
+            </ul>
+          </section>
+        </article>
 
         <hr style="margin: 24px 0">
         <nav class="post-nav" aria-label="文章导航">

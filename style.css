@@ -88,6 +88,12 @@ img {
   }
 }
 
+/* --- Language visibility helpers --- */
+.i18n { display: none; }
+html[lang="zh"] .i18n.l-zh { display: inline; }
+html[lang="en"] .i18n.l-en { display: inline; }
+html[lang="es"] .i18n.l-es { display: inline; }
+
 /* Utility classes */
 .container {
   width: 90%;
@@ -159,6 +165,16 @@ img {
   background: var(--text);
 }
 
+/* Subtle glassmorphism variant for buttons (used when enabled) */
+.btn.glass {
+  background: color-mix(in oklab, var(--surface) 20%, transparent);
+  border: 1px solid color-mix(in oklab, var(--border), white 20%);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  color: #fff;
+}
+.btn.glass:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+
 .btn:focus-visible {
   outline: none;
   box-shadow: var(--ring);
@@ -213,6 +229,7 @@ header {
   font-weight: 700;
   color: var(--primary);
 }
+@media (max-width: 768px){ .logo { font-size: 1.25rem; } }
 
 .nav-links {
   list-style: none;
@@ -336,13 +353,14 @@ header {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* fallback */
+  min-height: 100svh; /* better on mobile address bar */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  padding-top: 80px;
+  padding-top: calc(80px + env(safe-area-inset-top));
   color: #fff;
 }
 
@@ -379,14 +397,42 @@ header {
   overflow: hidden;
   color: #fff;
 }
-.page-hero { padding-top: 80px; }
-.page-hero .container {
-  position: relative;
-  z-index: 1;
-}
+.page-hero { padding-top: calc(84px + env(safe-area-inset-top)); }
+.page-hero .container { position: relative; z-index: 1; }
 .page-hero h1 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
 }
+
+/* About page: round portrait overlay in hero */
+.about-hero { display:flex; align-items:center; justify-content: space-between; gap: 1rem; margin-top: clamp(14px, 4.5vh, 36px); }
+.about-portrait {
+  position: relative; /* inside container */
+  width: clamp(96px, 14vw, 160px);
+  height: clamp(96px, 14vw, 160px);
+  border-radius: 50%;
+  padding: 6px; /* soft frame */
+  background: color-mix(in oklab, #fff 22%, transparent);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.18), 0 0 0 1px color-mix(in oklab, var(--border), white 20%);
+  backdrop-filter: blur(2px) saturate(120%);
+  -webkit-backdrop-filter: blur(2px) saturate(120%);
+}
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 50% 28%; /* more headroom: move image down inside frame */
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--border), white 30%);
+}
+@media (max-width: 640px) {
+  .about-hero { gap: .75rem; }
+  .about-portrait { width: 84px; height: 84px; padding: 4px; }
+}
+/* Blog post hero spacing */
+.blog-post .page-hero { height: 280px; }
+.blog-post .page-hero .post-title { margin-bottom: .35rem; }
+.blog-post .page-hero .post-meta { opacity: .95; }
 
 /* Background shapes and gradient for hero/page-hero */
 .hero, .page-hero { background-size: 200% 200%; animation: gradientShift 18s ease infinite; }
@@ -488,15 +534,16 @@ header {
 }
 .about-photo img {
   border-radius: 16px;
-  background-color: var(--surface);
+  background-color: transparent; /* avoid visible fill around image */
   border: 1px solid var(--border);
   box-shadow: var(--shadow-md);
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 3; /* even taller to reveal full body */
-  max-height: 720px;
-  object-fit: cover;
-  object-position: 50% 90%; /* favor lower crop to include feet */
+  aspect-ratio: 3 / 4; /* natural portrait frame, avoids letterboxing */
+  height: auto;
+  max-height: 720px; /* cap extreme height on wide screens */
+  object-fit: cover; /* fill frame with no side bars */
+  object-position: 50% 32%; /* lift to show roof while keeping subject */
 }
 .about-text h2 {
   font-size: clamp(1.8rem, 3vw, 2.2rem);
@@ -646,6 +693,7 @@ header {
 .blog .blog-posts {
   margin-top: 2rem;
 }
+.blog .post-card h3 { line-height: 1.3; }
 
 /* Blog list/card */
 .post-card { display:grid; grid-template-columns:140px 1fr; gap:14px; padding:12px; align-items:center; }
@@ -678,6 +726,7 @@ header {
 .toc ol { list-style: decimal; padding-left: 1.2rem; display: grid; gap: .35rem; margin-top:.25rem; }
 .toc a { color: color-mix(in oklab, var(--text), var(--primary) 10%); text-decoration: none; }
 .toc a:hover { text-decoration: underline; color: var(--primary); }
+.toc a.active { color: var(--primary); font-weight: 600; text-decoration: none; }
 
 /* Contact form */
 .contact-form {
@@ -801,7 +850,12 @@ footer {
   .about-grid {
     grid-template-columns: 1fr;
   }
-  .about-photo img { aspect-ratio: auto; max-height: none; }
+  /* tighter vertical rhythm on mobile */
+  .section { padding: 3rem 0; }
+  .page-hero { padding-top: 78px; }
+  .blog-post .page-hero { height: 260px; }
+  .blog-post .page-hero .post-title { font-size: 1.6rem; }
+  .about-photo img { max-height: min(85vh, 560px); object-position: 50% 36%; }
   .interests-list {
     grid-template-columns: 1fr;
   }

@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <link rel="stylesheet" href="style.css">
   <script defer src="lang.js"></script>
   <script defer src="script.js"></script>
@@ -35,14 +36,14 @@
     <nav class="navbar container">
       <a href="index.html" class="brand" aria-label="Home">
         <img src="assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
-        <span class="logo" data-i18n="nav_home">Home</span>
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-        <li><a href="about.html" data-i18n="nav_about">About</a></li>
-        <li><a href="publications.html" data-i18n="nav_research">Research</a></li>
-        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
-        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="index.html"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
       </ul>
       <div class="nav-actions">
         <div class="lang-switcher">
@@ -99,7 +100,6 @@
           </div>
           <div class="pub-actions">
             <button class="btn outline view-pdf" data-pdf="assets/papers/sentinel-guided-zsl.pdf"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M13 2v6h6"/></svg></span><span class="label" data-i18n="view_pdf">View PDF</span></button>
-            <a class="btn outline" href="assets/papers/sentinel-guided-zsl.pdf" download type="application/pdf" rel="noopener"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 19h16"/></svg></span><span class="label" data-i18n="download_pdf">Download PDF</span></a>
           </div>
         </div>
         <div class="pub-item">
@@ -110,18 +110,16 @@
           </div>
           <div class="pub-actions">
             <button class="btn outline view-pdf" data-pdf="assets/papers/community-aware-fvs.pdf"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M13 2v6h6"/></svg></span><span class="label" data-i18n="view_pdf">View PDF</span></button>
-            <a class="btn outline" href="assets/papers/community-aware-fvs.pdf" download type="application/pdf" rel="noopener"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 19h16"/></svg></span><span class="label" data-i18n="download_pdf">Download PDF</span></a>
           </div>
         </div>
         <div class="pub-item">
           <div class="pub-meta">
             <h3>AdaGA‑NeRF for Sparse‑View Synthesis</h3>
             <p class="pub-venue">IEEE Transactions on Multimedia, 2025 – Accept with Minor Revision.</p>
-            <p class="pub-authors"><strong>Authors:</strong> F. Wan, Z. Jiang, Y. Li, Y. Long</p>
+            <p class="pub-authors"><strong>Authors:</strong> F. Wan, Z. Jiang, Y. Li, X. Miao, X. Qiu, T. Zhang, Y. Long</p>
           </div>
           <div class="pub-actions">
             <button class="btn outline view-pdf" data-pdf="assets/papers/adaga-nerf.pdf"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M13 2v6h6"/></svg></span><span class="label" data-i18n="view_pdf">View PDF</span></button>
-            <a class="btn outline" href="assets/papers/adaga-nerf.pdf" download type="application/pdf" rel="noopener"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 19h16"/></svg></span><span class="label" data-i18n="download_pdf">Download PDF</span></a>
           </div>
         </div>
         <div class="pub-item">
@@ -132,29 +130,65 @@
           </div>
           <div class="pub-actions">
             <button class="btn outline view-pdf" data-pdf="assets/papers/asynchronous-pfl.pdf"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M13 2v6h6"/></svg></span><span class="label" data-i18n="view_pdf">View PDF</span></button>
-            <a class="btn outline" href="assets/papers/asynchronous-pfl.pdf" download type="application/pdf" rel="noopener"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 19h16"/></svg></span><span class="label" data-i18n="download_pdf">Download PDF</span></a>
           </div>
         </div>
         <div class="pub-item">
           <div class="pub-meta">
             <h3>Privacy‑Enhanced Zero‑Shot Learning via Data‑Free Knowledge Transfer</h3>
             <p class="pub-venue">IEEE International Conference on Multimedia and Expo (ICME), 2023 – Oral Paper.</p>
-            <p class="pub-authors"><strong>Authors:</strong> R. Gao*, F. Wan*, D. Organisciak, J. Pu, H. Duan, P. Zhang, X. Hou, Y. Long</p>
+            <p class="pub-authors"><strong>Authors:</strong> R. Gao*, F. Wan*, D. Organisciak, J. Pu, H. Duan, P. Zhang, X. Hou, Y. Long <span class="tag" data-i18n="co_first">*共同一作</span></p>
           </div>
           <div class="pub-actions">
             <button class="btn outline view-pdf" data-pdf="assets/papers/privacy-enhanced-zsl.pdf"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M13 2v6h6"/></svg></span><span class="label" data-i18n="view_pdf">View PDF</span></button>
-            <a class="btn outline" href="assets/papers/privacy-enhanced-zsl.pdf" download type="application/pdf" rel="noopener"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 19h16"/></svg></span><span class="label" data-i18n="download_pdf">Download PDF</span></a>
           </div>
         </div>
         <div class="pub-item">
           <div class="pub-meta">
             <h3>Sid‑NeRF: Few‑Shot NeRF Based on Scene Information Distribution</h3>
             <p class="pub-venue">IEEE International Conference on Multimedia and Expo (ICME), 2024 – Oral Paper.</p>
-            <p class="pub-authors"><strong>Authors:</strong> Y. Li*, F. Wan*, Y. Long</p>
+            <p class="pub-authors"><strong>Authors:</strong> Y. Li*, F. Wan*, Y. Long <span class="tag" data-i18n="co_first">*共同一作</span></p>
           </div>
           <div class="pub-actions">
             <button class="btn outline view-pdf" data-pdf="assets/papers/sid-nerf.pdf"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M13 2v6h6"/></svg></span><span class="label" data-i18n="view_pdf">View PDF</span></button>
-            <a class="btn outline" href="assets/papers/sid-nerf.pdf" download type="application/pdf" rel="noopener"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 19h16"/></svg></span><span class="label" data-i18n="download_pdf">Download PDF</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Publications -->
+  <section class="publications section">
+    <div class="container">
+      <h2 data-i18n="publications_more_title">更多出版物</h2>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="pub-meta">
+            <h3>Enhanced Privacy and Efficiency in Machine Learning Through Innovative Paradigms</h3>
+            <p class="pub-venue">core.ac.uk.</p>
+            <p class="pub-authors"><strong>Authors:</strong> F. Wan</p>
+          </div>
+          <div class="pub-actions">
+            <button class="btn outline view-pdf" data-pdf="assets/papers/innovative-privacy-paradigms.pdf"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M13 2v6h6"/></svg></span><span class="label" data-i18n="view_pdf">View PDF</span></button>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-meta">
+            <h3>A2d2c: Adaptive Attention-Driven Dynamic Convolution – Bridging Attention and Local Features Adaption</h3>
+            <p class="pub-venue">Available at SSRN 5210103.</p>
+            <p class="pub-authors"><strong>Authors:</strong> T. Zhang, F. Wan†, X. Miao, J. Deng, X. Xie, Y. Long† <span class="tag" data-i18n="co_corresponding">†共同通讯</span></p>
+          </div>
+          <div class="pub-actions">
+            <button class="btn outline view-pdf" data-pdf="assets/papers/a2d2c.pdf"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M13 2v6h6"/></svg></span><span class="label" data-i18n="view_pdf">View PDF</span></button>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-meta">
+            <h3>Dynamic Convolution and Graph-Coupled Attention for Cross-Subject EEG-Vision Decoding</h3>
+            <p class="pub-venue">BMVC.</p>
+            <p class="pub-authors"><strong>Authors:</strong> T. Zhang, F. Wan†, K. Sun, X. Miao, Y. Sun, M. Shao, Y. Long† <span class="tag" data-i18n="co_corresponding">†共同通讯</span></p>
+          </div>
+          <div class="pub-actions">
+            <button class="btn outline view-pdf" data-pdf="assets/papers/eeg-vision-decoding.pdf"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h7l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M13 2v6h6"/></svg></span><span class="label" data-i18n="view_pdf">View PDF</span></button>
           </div>
         </div>
       </div>
