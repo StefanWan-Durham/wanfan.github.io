@@ -1157,9 +1157,9 @@ footer {
   .page-hero { padding-top: 78px; }
   /* Keep extra space on blog hero too for small screens */
   /* Ensure blog title clears the fixed navbar and safe area on iOS */
-  .blog-post .page-hero { padding-top: calc(110px + env(safe-area-inset-top)); }
+  .blog-post .page-hero { padding-top: calc(120px + env(safe-area-inset-top)); }
   .blog-post .page-hero { height: 260px; }
-  .blog-post .page-hero .post-title { font-size: 1.6rem; }
+  .blog-post .page-hero .post-title { font-size: 1.5rem; }
   .about-photo img { max-height: min(85vh, 560px); object-position: 50% 36%; }
   .interests-list {
     grid-template-columns: 1fr;

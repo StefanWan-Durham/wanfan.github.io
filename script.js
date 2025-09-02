@@ -66,6 +66,27 @@ document.addEventListener('DOMContentLoaded', () => {
   (function enhanceBlog(){
     const isPost = document.querySelector('main.blog-post');
     if (!isPost) return;
+    // Ensure the URL variant matches selected language so OG/Twitter share cards stay consistent
+    (function ensurePageLangURL(){
+      const path = location.pathname;
+      const pageLang = path.endsWith('.en.html') ? 'en' : path.endsWith('.es.html') ? 'es' : 'zh';
+      function targetFor(lang){
+        if (lang === 'en') return path.endsWith('.en.html') ? path : path.replace(/\.es\.html$|\.html$/, '.en.html');
+        if (lang === 'es') return path.endsWith('.es.html') ? path : path.replace(/\.en\.html$|\.html$/, '.es.html');
+        // zh default: no lang suffix
+        return path.replace(/\.(en|es)\.html$/, '.html');
+      }
+      // On load, prefer current page variant and persist it
+      try { localStorage.setItem('lang', pageLang); } catch {}
+      // On language change, redirect to the corresponding variant
+      window.addEventListener('language-changed', (e) => {
+        const lang = (e && e.detail && e.detail.lang) || (localStorage.getItem('lang') || 'zh');
+        if (lang !== pageLang) {
+          const target = targetFor(lang);
+          if (target && target !== path) location.href = target + location.search + location.hash;
+        }
+      });
+    })();
     function getActiveLang(){
       return localStorage.getItem('lang') || document.documentElement.lang || 'zh';
     }
@@ -357,6 +378,36 @@ document.addEventListener('DOMContentLoaded', () => {
   else btn.textContent = map[cur] || '';
     }
   });
+
+  // Blog list page: switch card link and thumbnail per language
+  (function syncBlogListCards(){
+    const isBlogList = location.pathname.endsWith('/blog.html') || document.querySelector('main .blog-posts');
+    if (!isBlogList) return;
+    function apply() {
+      const lang = localStorage.getItem('lang') || document.documentElement.lang || 'zh';
+      document.querySelectorAll('.post-card').forEach(card => {
+        const link = card.querySelector('a.post-link');
+        const img = card.querySelector('img.post-thumb');
+        // Determine the target href for this language from the primary link's data attributes
+        let targetHref = '';
+        if (link) {
+          targetHref = link.getAttribute(`data-href-${lang}`) || link.getAttribute('href') || '';
+          if (targetHref) link.setAttribute('href', targetHref);
+        }
+        // Also update the title link (inside h3) to point to the same language-specific URL
+        const titleLink = card.querySelector('h3 a');
+        if (titleLink && targetHref) {
+          titleLink.setAttribute('href', targetHref);
+        }
+        if (img) {
+          const src = img.getAttribute(`data-src-${lang}`) || img.getAttribute('src');
+          if (src) img.setAttribute('src', src);
+        }
+      });
+    }
+    apply();
+    window.addEventListener('language-changed', apply);
+  })();
 
   // If landing on About page (or About section in home), trigger a one-off pop effect
   (function triggerAboutFxOnLoad(){

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Is RAG obsolete? 2025 roadmap from “long context” to GraphRAG, Retrieval‑Aware Training and KBLaM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bigger context windows didn’t kill RAG; what’s outdated is naive vector retrieval. With KBLaM practice: five 2025 upgrade paths and a selection matrix.">
+  <meta name="author" content="Fan Wan">
+
+  <link rel="canonical" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.en.html">
+  <link rel="alternate" hreflang="zh" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.html">
+  <link rel="alternate" hreflang="en" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.en.html">
+  <link rel="alternate" hreflang="es" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.es.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Is RAG obsolete? 2025 roadmap: GraphRAG, Retrieval‑Aware Training and KBLaM">
+  <meta property="og:description" content="Five upgrade paths for 2025 and a selection matrix with KBLaM practice.">
+  <meta property="og:url" content="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.en.html">
+  <meta property="og:image" content="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/rag-hero-en.v5.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Is RAG obsolete? 2025 roadmap (with KBLaM)">
+  <meta name="twitter:description" content="Long context ≠ the end of RAG. Structured retrieval + retrieval-aware training + agentic orchestration + (optional) parameter updates.">
+  <meta name="twitter:image" content="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/rag-hero-en.v5.svg">
+
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <script>try{var L='en';localStorage.setItem('lang',L);document.documentElement.setAttribute('lang',L);}catch(e){}</script>
+  <script defer src="../lang.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <nav class="navbar container">
+      <a href="../index.html" class="brand" aria-label="Home">
+        <img src="../assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="../contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label"></span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/><path d="M12 2v2"/><path d="M4 10h2"/><path d="M18 10h2"/><path d="M5.5 5.5l1.4 1.4"/><path d="M18.5 5.5l-1.4 1.4"/></g></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon icon-system" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><path d="M8 20h8M12 16v4"/></g></svg>
+        </button>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="blog-post">
+    <section class="page-hero section">
+      <div class="container">
+        <div class="i18n-block" data-lang="en">
+          <h1 class="post-title">Is RAG obsolete? 2025 roadmap from “long context” to GraphRAG, Retrieval‑Aware Training and KBLaM</h1>
+          <p class="muted post-meta">Published on 2025-09-02 · Estimated read 9 min</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <div class="post-hero-art" data-lang="en">
+          <img src="../assets/blog/rag-hero-en.v5.svg" alt="RAG 2025 Roadmap (English)"/>
+        </div>
+        <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;">
+          <strong>Contents</strong>
+          <ol></ol>
+        </nav>
+        <article class="i18n-block" data-lang="en">
+          <p>Reader’s note: Over the past year, one hallway question keeps coming back—“Will long‑context models make RAG obsolete?” Rather than just answer yes/no, this piece tells the story behind the trend: why many teams felt RAG was flaky, why more context alone doesn’t buy trustworthy answers, and what a 2025, end‑to‑end, engineering‑ready stack looks like.</p>
+          <h2 id="tldr-en">TL;DR</h2>
+          <p>RAG isn’t dying—<b>naïve vector-RAG with context dumping</b> is. In 2025, competitive stacks converge on five pillars: <b>Structured Retrieval (GraphRAG) + Retrieval-Aware Training (Self-RAG / RA-DIT / RAFT) + Agentic Orchestration (Agentic RAG + MCP) + Freshness/Streaming Indexing + (when needed) Parameter-level Knowledge Updates (fine-tuning / model editing)</b>. This article offers evaluation criteria, a selection matrix, and a deployment checklist, and shows how <b>KBLaM</b> builds <b>trustworthy, controllable, explainable</b> systems in high-compliance, low-connectivity settings.</p>
+
+          <h2 id="why-en">1. Why “longer context” ≠ the end of RAG</h2>
+          <p>An analogy: dumping everything into the prompt is like giving the model a bigger backpack; retrieval is a living map that updates and points the way. A bigger backpack doesn’t guarantee you know where to go—or why.</p>
+          <ul>
+            <li><b>Cost &amp; scalability</b>: Shoving massive corpora into the prompt drives inference cost up; <b>retrieve → curate</b> remains cheaper and more predictable.</li>
+            <li><b>Timeliness</b>: Parameters are hard to update at minute-scale; external stores can be <b>hot-swapped</b>.</li>
+            <li><b>Audit &amp; compliance</b>: RAG yields <b>traceable evidence chains</b> (source, version, time), essential in regulated domains.</li>
+            <li><b>Privacy &amp; domain isolation</b>: Externalized knowledge works better with <b>access control and compartmentalization</b>.</li>
+            <li><b>Robustness</b>: Retrieval→re-rank→extract pipelines are <b>modular</b> and regression-test-able; pure long-context prompting is harder to debug.</li>
+          </ul>
+          <blockquote><p>Bottom line: <b>Bigger context reduces retrieval frequency; it doesn’t remove the need for retrieval</b>.</p>
+          <p>Vignette: A utility firm stuffed 30k pages of SOPs into long‑context prompts. P95 cost spiked and answers wavered. Switching to “retrieve → evidence pack → extractive generation” cut cost and latency, and made answers auditable.</p></blockquote>
+
+          <h2 id="naive-fail-en">2. Naïve RAG failure modes (to avoid now)</h2>
+          <p>If RAG feels brittle, it’s often not because “retrieval is wrong” but because the <em>approach</em> is. These traps are common:</p>
+          <ol>
+            <li><b>Vector-only retrieval</b> ignores structure (tables/code/temporal relations).</li>
+            <li><b>Crude chunking</b> splits evidence; k-NN pulls partial or wrong spans.</li>
+            <li><b>Context stuffing</b> increases noise and distracts attention.</li>
+            <li><b>No type-specific retrievers</b> and <b>no cross-encoder re-rankers</b>.</li>
+            <li><b>No freshness policy</b> for volatile content (laws, procedures, markets).</li>
+            <li><b>No audit trail</b> from answer → evidence → original sources.</li>
+          </ol>
+
+          <h2 id="five-piece-en">3. The 2025 RAG “five-piece set”</h2>
+          <p>Getting RAG right means separating concerns: find knowledge, package evidence, and express answers. Mature 2025 stacks converge on these five pieces.</p>
+          <h3 id="graphrag-en">3.1 Structured Retrieval (GraphRAG)</h3>
+          <ul>
+            <li><b>Idea</b>: Jointly index text + knowledge graphs; use entities/relations/events as a <b>skeleton</b> and text as <b>flesh</b>.</li>
+            <li><b>When</b>: Regulations, procedures, asset registries, <b>multi-hop</b> reasoning.</li>
+            <li><b>Engineering</b>: Multi-index (BM25 + Dense + Cross-Encoder), “graph-then-text” or “text-then-graph” fusion, <b>evidence packaging</b> (paths + spans).</li>
+          </ul>
+          <p class="muted">Example: For regulations QA, first find the “article → term → applicability” path in the graph, then pull matching spans as an evidence pack—more stable and cheaper than dumping ten paragraphs.</p>
+
+          <h3 id="retrieval-aware-en">3.2 Retrieval-Aware Training (Self-RAG / RA-DIT / RAFT)</h3>
+          <ul>
+            <li><b>Goal</b>: Teach the model <b>when/what to retrieve</b>.</li>
+            <li><b>Practice</b>:
+              <ul>
+                <li>Self-RAG: generation with <b>self-evaluation + re-retrieve</b> loops.</li>
+                <li>RA-DIT/RAFT: inject retrieval signals/losses during fine-tuning.</li>
+              </ul>
+            </li>
+            <li><b>Benefit</b>: Less useless retrieval, <b>more faithful answers</b>.</li>
+          </ul>
+          <p class="muted">Analogy: Teach the model “when to open the dictionary and which page,” instead of carrying the whole dictionary everywhere.</p>
+
+          <h3 id="agentic-mcp-en">3.3 Agentic RAG + MCP</h3>
+          <ul>
+            <li><b>Why</b>: Real tasks are <b>multi-step</b> with tools (SQL/search/code/sim).</li>
+            <li><b>How</b>: Unify tools via MCP; add <b>stop conditions</b>, <b>budgets/latency caps</b>, and <b>cache policies</b>.</li>
+          </ul>
+          <p class="muted">Scenario: Root‑cause analysis may need “check logs → run SQL → compare telemetry → validate procedures.” Agents orchestrate guarded steps; RAG supplies evidence and explanations.</p>
+
+          <h3 id="freshness-en">3.4 Freshness &amp; streaming</h3>
+          <ul>
+            <li>Incremental ingestion, TTL, version selection; rolling evaluation on “last-7-days” questions.</li>
+          </ul>
+
+          <h3 id="param-updates-en">3.5 Parameter-level updates (optional)</h3>
+          <ul>
+            <li><b>When</b>: Highly repetitive, short, stable facts.</li>
+            <li><b>How</b>: Lightweight fine-tuning (LoRA) or <b>surgical editing</b> (ROME/MEMIT).</li>
+            <li><b>Caution</b>: Keep <b>evidence-first</b> principle and provenance logs.</li>
+          </ul>
+
+          <h2 id="kblam-en-2">4. KBLaM: a trustworthy baseline for constrained &amp; regulated environments</h2>
+          <p>When networks are constrained and compliance is strict, “traceable and reproducible” matters more than “more eloquent.” <b>KBLaM</b> offers an engineering base—from knowledge modeling to audit trails.</p>
+          <h3 id="kblam-components-en">4.1 Components</h3>
+          <ol>
+            <li><b>Unified Knowledge Layer</b>: text (para/table/image captions) + <b>KG</b> (entities/relations/events) + metadata (time, version, clearance).</li>
+            <li><b>Retrieval Planner</b>: rules + learned router (intent → retriever types → multi-hop strategy).</li>
+            <li><b>Evidence Chain Builder</b>: package source/ID/version/time/offsets/graph paths.</li>
+            <li><b>Generation &amp; Adjudication</b>: extraction-first; verify via SQL/rules if needed.</li>
+            <li><b>Offline Eval &amp; Audit</b>: reproducible test sets; monitor <b>faithfulness/coverage/cost/latency</b>.</li>
+          </ol>
+
+          <h3 id="kblam-flow-en">4.2 Minimal flow (pseudo)</h3>
+          <pre><code class="language-text">intent = classify(q)
+plan   = plan_query(intent)
+C      = retrieve_multistage(q, plan)           # BM25 + Dense + Cross-Encoder
+if plan.requires_graph: C = merge(C, graph_paths(q, entities(C)))
+E      = pack_evidence(C)
+a0     = generate_answer(q, E)
+a      = verify_and_refine(a0) if needs_verify(a0) else a0
+log(a, E, cost, latency, versions)</code></pre>
+
+          <h3 id="tips-en">4.3 Practical tips</h3>
+          <p>Chunk structurally → multi-retriever recall → cross-encoder re-rank → compress evidence into <b>bullet-point claims with citations</b> → stream updates with versioning.</p>
+
+          <h2 id="matrix-en-2">5. Selection matrix (2025)</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Use case</th><th>Timeliness</th><th>Structure</th><th>Constraint</th><th>Recommended stack</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Regulations / procedures QA</td><td>Medium</td><td>High</td><td>Audit-heavy</td><td><b>GraphRAG + Self-RAG/RAFT</b>, evidence-first</td></tr>
+                <tr><td>Ops/alerts handling</td><td>High</td><td>Medium</td><td>Low-connectivity</td><td><b>Event stream + streaming index + Agentic RAG</b></td></tr>
+                <tr><td>SOP templating</td><td>Low</td><td>Medium</td><td>High consistency</td><td><b>Light FT + template extraction</b>, optional editing</td></tr>
+                <tr><td>News/market monitoring</td><td>Very high</td><td>Low</td><td>Cost-sensitive</td><td><b>Real-time crawl + BM25/Dense + light gen</b></td></tr>
+                <tr><td>Multi-hop reasoning</td><td>Medium</td><td>High</td><td>Explainability</td><td><b>GraphRAG + path visualization + ReAct/Plan-Exec</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="eval-en">6. Evaluation &amp; governance</h2>
+          <ul>
+            <li>Track <b>faithfulness</b>, <b>evidence coverage</b>, <b>groundedness</b>, <b>P95 latency</b>, <b>cost/query</b>, <b>change resilience</b>, and <b>audit logs</b> (Q → plan → evidence → answer → tool calls → versions).</li>
+          </ul>
+
+          <h2 id="checklist-en">7. Implementation checklist</h2>
+          <p>Data governance (PII scrub, compartmentalization) · Retrieval baseline (BM25 + Dense + X-encoder, type-specific retrievers) · Claim-Evidence templates with inline citations · Agent caps (tools/$/latency) · Offline eval set (≥1k Qs) · Gray release + monitoring.</p>
+
+          <blockquote><p><b>Conclusion</b>: RAG isn’t obsolete. The <b>trustworthy, controllable, explainable</b> RAG stack is the center of 2025 practice; <b>KBLaM</b> is a strong blueprint for regulated, air-gapped environments.</p></blockquote>
+          <h2 id="refs-en">References (official sources)</h2>
+          <ul>
+            <li>Self-RAG:
+              <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> ·
+              <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> ·
+              <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
+            </li>
+            <li>RAFT (Retrieval-Augmented Fine-Tuning, 2024):
+              <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
+            </li>
+            <li>RA-DIT (2023):
+              <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> ·
+              <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
+            </li>
+            <li>GraphRAG:
+              <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> ·
+              <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
+            </li>
+            <li>MCP:
+              <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> ·
+              <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> ·
+              <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
+            </li>
+            <li>Google Gemini 1.5 (long context):
+              <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Official Blog</a>
+            </li>
+          </ul>
+        </article>
+
+        <hr style="margin: 24px 0">
+        <nav class="post-nav" aria-label="Post navigation">
+          <a class="btn outline" href="../blog.html">← Back to Blog</a>
+          <span class="muted" style="margin:0 .5rem">·</span>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">Previous</a>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">Next</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container"><p>© <span id="year"></span> Fan Wan</p></div>
+  </footer>
+</body>
+</html>

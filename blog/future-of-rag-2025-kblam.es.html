@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>¿Quedará obsoleto RAG? Hoja de ruta 2025: del contexto largo a GraphRAG, entrenamiento sensible a la recuperación y KBLaM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ventanas de contexto más grandes no eliminaron RAG; lo obsoleto es la recuperación vectorial ingenua. Con la práctica de KBLaM: cinco rutas de mejora para 2025 y una matriz de selección.">
+  <meta name="author" content="Fan Wan">
+
+  <link rel="canonical" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.es.html">
+  <link rel="alternate" hreflang="zh" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.html">
+  <link rel="alternate" hreflang="en" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.en.html">
+  <link rel="alternate" hreflang="es" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.es.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="¿Quedará obsoleto RAG? Hoja de ruta 2025 (con KBLaM)">
+  <meta property="og:description" content="Cinco rutas de mejora para 2025 y una matriz de selección con la práctica de KBLaM.">
+  <meta property="og:url" content="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.es.html">
+  <meta property="og:image" content="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/rag-hero-es.v5.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="¿RAG obsoleto? Hoja de ruta 2025 (KBLaM)">
+  <meta name="twitter:description" content="Contexto largo ≠ fin de RAG. Recuperación estructurada + entrenamiento sensible a la recuperación + orquestación con agentes + (opcional) actualización de parámetros.">
+  <meta name="twitter:image" content="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/rag-hero-es.v5.svg">
+
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <script>try{var L='es';localStorage.setItem('lang',L);document.documentElement.setAttribute('lang',L);}catch(e){}</script>
+  <script defer src="../lang.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+  <header>
+    <nav class="navbar container">
+      <a href="../index.html" class="brand" aria-label="Inicio">
+        <img src="../assets/logo.svg" alt="Logo de Fan Wan" class="brand-logo" width="28" height="28" />
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="../contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label"></span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/><path d="M12 2v2"/><path d="M4 10h2"/><path d="M18 10h2"/><path d="M5.5 5.5l1.4 1.4"/><path d="M18.5 5.5l-1.4 1.4"/></g></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon icon-system" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><path d="M8 20h8M12 16v4"/></g></svg>
+        </button>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="blog-post">
+    <section class="page-hero section">
+      <div class="container">
+        <div class="i18n-block" data-lang="es">
+          <h1 class="post-title">¿Quedará obsoleto RAG? Hoja de ruta 2025: del contexto largo a GraphRAG, entrenamiento sensible a la recuperación y KBLaM</h1>
+          <p class="muted post-meta">Publicado el 2025-09-02 · Lectura 9 min</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <div class="post-hero-art" data-lang="es">
+          <img src="../assets/blog/rag-hero-es.v5.svg" alt="Hoja de ruta RAG 2025 (Español)"/>
+        </div>
+        <nav class="toc card" aria-label="Índice" style="padding:16px;margin:12px 0;">
+          <strong>Índice</strong>
+          <ol></ol>
+        </nav>
+        <article class="i18n-block" data-lang="es">
+          <p>Nota para el lector: En el último año se repite la pregunta de pasillo: “¿El contexto largo hará obsoleto a RAG?”. Más que responder sí/no, aquí contamos la historia: por qué muchos sintieron a RAG frágil, por qué más contexto no asegura respuestas confiables y cómo luce en 2025 una pila lista para ingeniería, de punta a punta.</p>
+          <h2 id="tldr-es">Resumen (TL;DR)</h2>
+          <p>RAG no muere: lo que muere es el <b>RAG ingenuo de vectores + pegar contexto</b>. En 2025, las pilas ganadoras convergen en cinco pilares: <b>Recuperación estructurada (GraphRAG) + Entrenamiento sensible a la recuperación (Self-RAG / RA-DIT / RAFT) + Orquestación con agentes (Agentic RAG + MCP) + Actualidad/índices en streaming + (cuando convenga) actualizaciones a nivel de parámetros (fine-tuning / edición del modelo)</b>. Presentamos criterios de evaluación, matriz de selección y lista de implantación, y mostramos cómo <b>KBLaM</b> construye sistemas <b>fiables, controlables y explicables</b> en entornos con alta regulación y baja conectividad.</p>
+
+          <h2 id="why-es">1. Por qué “más contexto” ≠ el fin de RAG</h2>
+          <p>Analogía: volcar todo en el prompt es darle a un modelo una mochila más grande; la recuperación es un mapa vivo que se actualiza y guía. Una mochila enorme no garantiza saber a dónde ir, ni por qué.</p>
+          <ul>
+            <li><b>Coste y escalado</b>: meter grandes corpus en el prompt dispara el coste; <b>recuperar → curar</b> sigue siendo más eficiente.</li>
+            <li><b>Actualidad</b>: el conocimiento en parámetros no se actualiza a escala de minutos; las fuentes externas sí.</li>
+            <li><b>Auditoría y cumplimiento</b>: RAG aporta <b>cadenas de evidencia trazables</b> (fuente, versión, fecha).</li>
+            <li><b>Privacidad y aislamientos</b>: el conocimiento externalizado juega mejor con <b>controles de acceso</b> y separación por dominios.</li>
+            <li><b>Robustez</b>: recuperar→reordenar→extraer es una tubería <b>modular</b>; el prompting puro de contexto largo es más difícil de depurar.</li>
+          </ul>
+          <blockquote><p>Conclusión: <b>Más contexto reduce la frecuencia de recuperación, no elimina la necesidad de recuperar</b>.</p>
+          <p>Viñeta: Una empresa de servicios volcó 30k páginas de SOP en prompts de contexto largo. El P95 de coste subió y las respuestas fluctuaron. Con “recuperar → paquete de evidencia → generación extractiva”, bajaron coste y latencia, y las respuestas quedaron auditables.</p></blockquote>
+
+          <h2 id="naive-fail-es">2. Modos de fallo del RAG ingenuo (evítalos)</h2>
+          <p>Si RAG te parece endeble, a menudo no es que “la recuperación esté mal”, sino que el <em>enfoque</em> lo está. Estas trampas son habituales:</p>
+          <ol>
+            <li><b>Solo vectores</b>, sin estructura (tablas/código/temporalidad).</li>
+            <li><b>Fragmentación burda</b> que rompe la evidencia.</li>
+            <li><b>Sobrecarga de contexto</b> que introduce ruido.</li>
+            <li><b>Sin recuperadores específicos</b> ni <b>reordenadores de cruce</b>.</li>
+            <li><b>Sin política de frescura</b> para contenidos volátiles.</li>
+            <li><b>Sin trazabilidad</b> respuesta → evidencia → fuente.</li>
+          </ol>
+
+          <h2 id="five-piece-es">3. El “juego de cinco piezas” en 2025</h2>
+          <p>Hacer bien RAG es separar preocupaciones: hallar conocimiento, empaquetar evidencia y expresar respuestas. En 2025, las pilas maduras convergen en estas cinco piezas.</p>
+          <h3 id="graphrag-es">3.1 Recuperación estructurada (GraphRAG)</h3>
+          <p>Índice conjunto texto + grafo; ideal para normativa, procesos, activos y <b>razonamiento multi‑salto</b>. Multi‑índice (BM25 + Denso + Cross‑Encoder), fusión grafo↔texto y <b>paquetes de evidencia</b>.</p>
+          <p class="muted">Ejemplo: En QA de normativa, primero halla la ruta “artículo → término → aplicabilidad” en el grafo, y luego extrae los fragmentos como paquete de evidencia: más estable y barato que verter diez párrafos.</p>
+
+          <h3 id="retrieval-aware-es">3.2 Entrenamiento sensible a la recuperación (Self‑RAG / RA‑DIT / RAFT)</h3>
+          <p>Enseña <b>cuándo y qué recuperar</b>; bucles de autoevaluación y señales de recuperación en el fine‑tuning → <b>respuestas más fieles y explicables</b>.</p>
+          <p class="muted">Analogía: Enseñar “cuándo abrir el diccionario y en qué página”, en vez de cargarlo entero siempre.</p>
+
+          <h3 id="agentic-mcp-es">3.3 Agentes + MCP</h3>
+          <p>Tareas reales = <b>pasos múltiples</b> con herramientas. Unifica herramientas vía MCP; añade <b>límites de parada, presupuesto y latencia</b>, y <b>cachés</b>.</p>
+          <p class="muted">Escenario: Un análisis de causas raíz puede requerir “revisar logs → ejecutar SQL → comparar telemetría → validar procedimientos”. Agentes orquestan pasos con resguardos; RAG aporta evidencia y explicación.</p>
+
+          <h3 id="freshness-es">3.4 Frescura y streaming</h3>
+          <p>Ingesta incremental, TTL, selección de versiones, evaluación rodante.</p>
+
+          <h3 id="param-updates-es">3.5 Actualizaciones en parámetros (opcional)</h3>
+          <p>Para hechos cortos, estables, repetitivos: <b>fine-tuning ligero</b> o <b>edición quirúrgica</b>. Mantén principio <b>evidencia-primero</b> y bitácoras de procedencia.</p>
+
+          <h2 id="kblam-es-2">4. KBLaM: línea base fiable para entornos restringidos y regulados</h2>
+          <p>Con redes limitadas y cumplimiento estricto, “trazable y reproducible” pesa más que “elocuente”. <b>KBLaM</b> ofrece una base de ingeniería: del modelado de conocimiento a la trazabilidad de auditoría.</p>
+          <h3 id="kblam-components-es">4.1 Componentes</h3>
+          <p>Capa de conocimiento unificado (texto + <b>KG</b> + metadatos) · Planificador de recuperación · Constructor de cadenas de evidencia · Generación preferentemente <b>extractiva</b> con verificación · Evaluación y auditoría offline.</p>
+
+          <h3 id="kblam-flow-es">4.2 Flujo mínimo (pseudo)</h3>
+          <pre><code class="language-text">intent = clasificar(q)
+plan   = planificar(q)
+C      = recuperar_multietapa(q)                     # BM25 + Denso + Cross-Encoder
+si necesita_grafo: C = fusionar(C, rutas_grafo(q))
+E      = empaquetar_evidencia(C)
+a0     = generar(q, E)
+a      = verificar_y_refinar(a0) si hace falta
+registrar(a, E, coste, latencia, versiones)</code></pre>
+
+          <h3 id="tips-es">4.3 Consejos prácticos</h3>
+          <p>Fragmenta con estructura → recuperadores por tipo → reordenamiento de cruce → comprime evidencia en <b>puntos con citas</b> → actualiza en streaming con versionado.</p>
+
+          <h2 id="matrix-es-2">5. Matriz de selección (2025)</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Caso de uso</th><th>Actualidad</th><th>Estructura</th><th>Restricciones</th><th>Pila recomendada</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>QA de normativa/procesos</td><td>Media</td><td>Alta</td><td>Auditoría</td><td><b>GraphRAG + Self-RAG/RAFT</b>, evidencia-primero</td></tr>
+                <tr><td>Operación/alertas</td><td>Alta</td><td>Media</td><td>Baja conectividad</td><td><b>Eventos + índice en streaming + Agentes</b></td></tr>
+                <tr><td>Plantillas de SOP</td><td>Baja</td><td>Media</td><td>Alta consistencia</td><td><b>Fine-tuning ligero + extracción</b>, edición opcional</td></tr>
+                <tr><td>Noticias/mercado</td><td>Muy alta</td><td>Baja</td><td>Sensible a coste</td><td><b>Rastreo en tiempo real + BM25/Denso + generación ligera</b></td></tr>
+                <tr><td>Razonamiento multi-salto</td><td>Media</td><td>Alta</td><td>Explicabilidad</td><td><b>GraphRAG + rutas visibles + ReAct/Plan-Exec</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="eval-es">6. Evaluación y gobernanza</h2>
+          <p>Mide <b>fidelidad</b>, <b>cobertura de evidencia</b>, <b>anclaje</b>, <b>latencia P95</b>, <b>coste/pregunta</b>, <b>resiliencia a cambios</b> y <b>bitácoras de auditoría</b>.</p>
+
+          <h2 id="checklist-es">7. Lista de implantación</h2>
+          <p>Gobernanza de datos · Recuperación base (BM25 + Denso + X-encoder) · Plantillas Claim-Evidence con citas en línea · Límites de agente (herramientas/$/latencia) · Conjunto offline (≥1k preguntas) · Despliegue gradual + monitorización.</p>
+
+          <blockquote><p><b>Conclusión</b>: RAG no está obsoleto. El RAG <b>fiable, controlable y explicable</b> es el centro de la práctica en 2025; <b>KBLaM</b> ofrece un plano sólido para entornos regulados y con conectividad limitada.</p></blockquote>
+          <h2 id="refs-es">Referencias (fuentes oficiales)</h2>
+          <ul>
+            <li>Self-RAG:
+              <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> ·
+              <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> ·
+              <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
+            </li>
+            <li>RAFT (Retrieval-Augmented Fine-Tuning, 2024):
+              <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
+            </li>
+            <li>RA-DIT (2023):
+              <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> ·
+              <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
+            </li>
+            <li>GraphRAG:
+              <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> ·
+              <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
+            </li>
+            <li>MCP:
+              <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> ·
+              <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> ·
+              <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
+            </li>
+            <li>Google Gemini 1.5 (contexto largo):
+              <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Blog oficial</a>
+            </li>
+          </ul>
+        </article>
+
+        <hr style="margin: 24px 0">
+        <nav class="post-nav" aria-label="Navegación del artículo">
+          <a class="btn outline" href="../blog.html">← Volver al blog</a>
+          <span class="muted" style="margin:0 .5rem">·</span>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">Anterior</a>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">Siguiente</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container"><p>© <span id="year"></span> Fan Wan</p></div>
+  </footer>
+</body>
+</html>
