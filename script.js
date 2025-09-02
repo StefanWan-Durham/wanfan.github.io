@@ -128,16 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // Theme toggle: manual light/dark override with localStorage persistence
-  const THEME_KEY = 'theme'; // 'light' | 'dark' | 'system'
+  // Note: 'system' mode temporarily disabled per request.
+  const THEME_KEY = 'theme'; // 'light' | 'dark'
   const root = document.documentElement;
   const toggleBtn = document.getElementById('theme-toggle');
   function getEffectiveTheme() {
     const saved = localStorage.getItem(THEME_KEY);
-    if (saved === 'light' || saved === 'dark') return saved;
-    // system: infer from media query
-    try {
-      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    } catch { return 'light'; }
+  if (saved === 'light' || saved === 'dark') return saved;
+  // System-follow disabled: default to dark if unset
+  return 'dark';
   }
   function currentLang() {
     return localStorage.getItem('lang') || document.documentElement.lang || 'zh';
@@ -154,8 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
       root.setAttribute('data-theme', 'dark');
       root.setAttribute('data-theme-mode', 'dark');
     } else {
-      root.removeAttribute('data-theme'); // follow system
-      root.setAttribute('data-theme-mode', 'system');
+      // Fallback: force dark (system mode disabled)
+      theme = 'dark';
+      root.setAttribute('data-theme', 'dark');
+      root.setAttribute('data-theme-mode', 'dark');
     }
     localStorage.setItem(THEME_KEY, theme);
   }
@@ -168,21 +169,25 @@ document.addEventListener('DOMContentLoaded', () => {
     root.setAttribute('data-theme-mode', 'dark');
   }
   if (toggleBtn) {
-    const modeText = savedTheme === 'system' ? t('theme_mode_system') : savedTheme === 'dark' ? t('theme_mode_dark') : t('theme_mode_light');
+    // Show tooltip as the action: switching to the other theme
+    const nextInit = (savedTheme === 'dark') ? 'light' : 'dark';
+    const actionText = nextInit === 'dark' ? t('theme_switch_to_dark') : t('theme_switch_to_light');
     toggleBtn.setAttribute('aria-label', t('theme_toggle_label'));
-    toggleBtn.setAttribute('title', `${t('theme_toggle_label')} (${modeText})`);
+    toggleBtn.setAttribute('title', actionText);
   }
 
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
-      // Cycle through: dark -> light -> system -> dark
+      // Cycle through: dark -> light -> dark
       const current = localStorage.getItem(THEME_KEY) || 'dark';
-      const order = ['dark','light','system'];
+      const order = ['dark','light'];
       const idx = order.indexOf(current);
       const next = order[(idx + 1) % order.length];
-      applyTheme(next);
-      const title = next === 'system' ? t('theme_mode_system') : next === 'dark' ? t('theme_mode_dark') : t('theme_mode_light');
-      toggleBtn.title = `${t('theme_toggle_label')} (${title})`;
+  applyTheme(next);
+  // After switching, compute the next target again for tooltip
+  const nextTarget = next === 'dark' ? 'light' : 'dark';
+  const actionText2 = nextTarget === 'dark' ? t('theme_switch_to_dark') : t('theme_switch_to_light');
+  toggleBtn.title = actionText2;
     });
   }
 

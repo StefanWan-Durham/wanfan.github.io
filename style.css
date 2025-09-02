@@ -180,6 +180,57 @@ html[lang="es"] .i18n.l-es { display: inline; }
   box-shadow: var(--ring);
 }
 
+/* Contact page: improve readability of footer links in dark theme */
+:root[data-theme="dark"] .contact a {
+  color: #e5e7eb; /* near-white text for clarity */
+  text-decoration-color: currentColor;
+}
+:root[data-theme="dark"] .contact a:hover,
+:root[data-theme="dark"] .contact a:focus-visible {
+  color: #e0e7ff; /* slightly brighter on hover */
+}
+
+/* --- Education timeline link styling --- */
+.education .timeline h3 a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.25px;
+  text-decoration-color: color-mix(in oklab, var(--primary) 50%, transparent);
+}
+.education .timeline h3 a:hover,
+.education .timeline h3 a:focus-visible {
+  color: var(--primary-600);
+  text-decoration-color: var(--primary-600);
+}
+
+/* Dark theme: brighten link color for readability on deep backgrounds */
+:root[data-theme="dark"] .education .timeline h3 a {
+  /* Tasteful off‑white with a hint of brand primary for premium feel */
+  color: color-mix(in oklab, #ffffff 82%, var(--primary) 18%);
+  text-decoration: underline;
+  text-decoration-thickness: 1.25px;
+  text-decoration-color: currentColor;
+}
+:root[data-theme="dark"] .education .timeline h3 a:hover,
+:root[data-theme="dark"] .education .timeline h3 a:focus-visible {
+  color: #ffffff;
+  text-decoration-color: currentColor;
+}
+
+/* System-follow dark without manual override */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .education .timeline h3 a {
+  color: color-mix(in oklab, #ffffff 82%, var(--primary) 18%);
+  text-decoration-color: currentColor;
+  }
+  :root:not([data-theme]) .education .timeline h3 a:hover,
+  :root:not([data-theme]) .education .timeline h3 a:focus-visible {
+  color: #ffffff;
+  text-decoration-color: currentColor;
+  }
+}
+
 /* Skip link for keyboard users */
 .skip-link {
   position: absolute;
@@ -262,23 +313,12 @@ header {
 .nav-links li a .icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Ensure sufficient contrast for links in dark theme */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) .nav-links li a { color: #e5e7eb; }
-  :root:not([data-theme]) .nav-links li a:hover { color: #93c5fd; }
-}
+/* System-follow disabled; keep explicit dark styles only */
 :root[data-theme="dark"] .nav-links li a { color: #e5e7eb; }
 :root[data-theme="dark"] .nav-links li a:hover { color: #93c5fd; }
 
-/* In 'system' mode (no explicit data-theme), adjust nav link contrast per OS theme */
-:root[data-theme-mode="system"] .nav-links li a { color: var(--text); }
-@media (prefers-color-scheme: dark) {
-  :root[data-theme-mode="system"] .nav-links li a { color: #e5e7eb; }
-  :root[data-theme-mode="system"] .nav-links li a:hover { color: #93c5fd; }
-}
-@media (prefers-color-scheme: light) {
-  :root[data-theme-mode="system"] .nav-links li a { color: #0f172a; }
-  :root[data-theme-mode="system"] .nav-links li a:hover { color: #1d4ed8; }
-}
+/* System mode disabled */
+/* :root[data-theme-mode="system"] ... commented out */
 
 .icon-btn { display: inline-flex; align-items: center; gap: .45rem; }
 .icon-btn .icon { width: 1rem; height: 1rem; }
@@ -342,40 +382,24 @@ header {
 .theme-toggle .icon-moon { display: none; }
 .theme-toggle .icon-system { display: none; }
 
-/* light theme explicit */
-[data-theme="light"] .theme-toggle .icon-sun { display: inline; }
-[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+/* light theme explicit: show moon to indicate switching to dark */
+[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+[data-theme="light"] .theme-toggle .icon-moon { display: inline; }
 [data-theme="light"] .theme-toggle .icon-system { display: none; }
 
-/* dark theme explicit */
-[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
-[data-theme="dark"] .theme-toggle .icon-moon { display: inline; }
+/* dark theme explicit: show sun to indicate switching to light */
+[data-theme="dark"] .theme-toggle .icon-sun { display: inline; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 [data-theme="dark"] .theme-toggle .icon-system { display: none; }
 
-/* default (follow system): show moon in dark preference, else sun */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) .theme-toggle .icon-sun { display: none; }
-  :root:not([data-theme]) .theme-toggle .icon-moon { display: inline; }
-}
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) .theme-toggle .icon-sun { display: inline; }
-  :root:not([data-theme]) .theme-toggle .icon-moon { display: none; }
-}
+/* System-follow icon behavior disabled */
 
-/* Distinct icon when user picked mode 'system' */
-:root[data-theme-mode="system"] .theme-toggle .icon-system { display: inline; }
-:root[data-theme-mode="system"] .theme-toggle .icon-sun,
-:root[data-theme-mode="system"] .theme-toggle .icon-moon { display: none; }
+/* System icon disabled */
+/* :root[data-theme-mode="system"] .theme-toggle .icon-system { display: inline; } */
+/* :root[data-theme-mode="system"] .theme-toggle .icon-sun,
+:root[data-theme-mode="system"] .theme-toggle .icon-moon { display: none; } */
 
-/* In 'follow system' mode, make borders less prominent so they don't look white and distracting */
-:root[data-theme-mode="system"] header { border-bottom-color: color-mix(in oklab, var(--border), transparent 70%); }
-:root[data-theme-mode="system"] .btn.outline,
-:root[data-theme-mode="system"] .theme-toggle { border-color: color-mix(in oklab, var(--border), transparent 60%); }
-@media (prefers-color-scheme: light) {
-  :root[data-theme-mode="system"] header { border-bottom-color: color-mix(in oklab, var(--border), transparent 82%); }
-  :root[data-theme-mode="system"] .btn.outline,
-  :root[data-theme-mode="system"] .theme-toggle { border-color: color-mix(in oklab, var(--border), transparent 75%); }
-}
+/* System-mode border tweaks disabled */
 
 /* Hamburger for mobile */
 .hamburger {

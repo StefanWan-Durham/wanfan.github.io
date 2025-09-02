@@ -94,7 +94,9 @@ const translations = {
   theme_toggle_label: '主题切换',
   theme_mode_system: '跟随系统',
   theme_mode_dark: '深色模式',
-  theme_mode_light: '浅色模式'
+  theme_mode_light: '浅色模式',
+  theme_switch_to_light: '切换为浅色模式',
+  theme_switch_to_dark: '切换为深色模式'
   },
   en: {
     site_title: 'Fan Wan · Personal Website',
@@ -167,7 +169,9 @@ const translations = {
   theme_toggle_label: 'Toggle theme',
   theme_mode_system: 'Follow system',
   theme_mode_dark: 'Dark mode',
-  theme_mode_light: 'Light mode'
+  theme_mode_light: 'Light mode',
+  theme_switch_to_light: 'Switch to light theme',
+  theme_switch_to_dark: 'Switch to dark theme'
   },
   es: {
     site_title: 'Fan Wan · Sitio personal',
@@ -240,7 +244,9 @@ const translations = {
   theme_toggle_label: 'Cambiar tema',
   theme_mode_system: 'Seguir sistema',
   theme_mode_dark: 'Modo oscuro',
-  theme_mode_light: 'Modo claro'
+  theme_mode_light: 'Modo claro',
+  theme_switch_to_light: 'Cambiar a modo claro',
+  theme_switch_to_dark: 'Cambiar a modo oscuro'
   }
 };
 
