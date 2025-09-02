@@ -623,8 +623,8 @@ header {
 /* Prose width: match page title container width for consistency */
 .blog-post .container.prose { max-width: 1200px; }
 
-/* Magazine-style drop cap for the first paragraph of each language block */
-.blog-post .i18n-block p:first-of-type::first-letter {
+/* Magazine-style drop cap for the first paragraph of each language block (content area only) */
+.blog-post .container.prose .i18n-block p:first-of-type::first-letter {
   float: left;
   font-size: 3.2em;
   line-height: 0.9;
