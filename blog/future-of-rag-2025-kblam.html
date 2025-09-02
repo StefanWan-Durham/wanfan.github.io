@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="更大的上下文与更强的模型并没有让 RAG 过时；过时的是“天真向量检索”。本文结合 KBLaM 实战，总结 2025 年的 5 条升级路线与选型矩阵。">
+  <meta name="author" content="Fan Wan">
+
+  <link rel="canonical" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图">
+  <meta property="og:description" content="结合 KBLaM 实战，总结 2025 年 RAG 的 5 条升级路线与选型矩阵。">
+  <meta property="og:url" content="https://stefanwan-durham.github.io/wanfan.github.io/blog/future-of-rag-2025-kblam.html">
+  <meta property="og:image" content="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/rag-future-2025-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RAG 会被淘汰吗？2025 路线图（含 KBLaM）">
+  <meta name="twitter:description" content="更大的上下文≠RAG 的终点。结构化检索 + 检索感知训练 + 代理式编排 +（必要时）参数更新。">
+  <meta name="twitter:image" content="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/rag-future-2025-hero.png">
+
+  <meta name="theme-color" content="#0f172a">
+  <link rel="stylesheet" href="../style.css">
+  <script defer src="../lang.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <nav class="navbar container">
+      <a href="../index.html" class="brand" aria-label="Home">
+        <img src="../assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo" data-i18n="nav_home">Home</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="../about.html" data-i18n="nav_about">About</a></li>
+        <li><a href="../publications.html" data-i18n="nav_research">Research</a></li>
+        <li><a href="../blog.html" data-i18n="nav_blog">Blog</a></li>
+        <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label">Language</span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l-1.5-1.5M20.5 20.5L19 19M5 19l-1.5 1.5M20.5 3.5L19 5"/></g></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="blog-post">
+    <section class="page-hero section" style="height: 220px;">
+      <div class="container">
+        <h1>RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</h1>
+        <p class="muted">发表于 2025-09-02 · 预计阅读 9 分钟</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 860px;">
+        <img src="../assets/blog/rag-future-2025-hero.png" alt="RAG 2025 路线图封面" style="width:100%;border-radius:14px;border:1px solid var(--border);box-shadow:var(--shadow-sm);margin-bottom:1rem" />
+        <!-- Body copied from your provided blog1.html, trimmed styles moved to global -->
+        <!-- BEGIN BODY -->
+        <p class="meta muted">结论先行：<b>RAG 不会被淘汰，但“天真向量检索 RAG”会被替代</b>。未来形态是「<b>结构化检索</b> + <b>检索感知训练</b> + <b>代理式编排</b> +（必要时）<b>参数级知识更新</b>」的组合拳。长上下文模型降低对检索的依赖，但在成本、稳健性与可审计性上，RAG 仍是工业可行解。</p>
+        <nav class="toc card" aria-label="目录" style="padding:16px;margin:12px 0;">
+          <strong>目录</strong>
+          <ol>
+            <li><a href="#future-judgement">1. 未来判断：长上下文≠RAG 的终点</a></li>
+            <li><a href="#kblam">2. KBLaM：从“知识库增强”到行业级 RAG+</a></li>
+            <li><a href="#upgrades">3. 2025 的 5 条升级路线</a></li>
+            <li><a href="#matrix">4. 选型矩阵</a></li>
+            <li><a href="#forecast">5. 未来 12 个月的预测</a></li>
+            <li><a href="#refs">6. 参考与延伸阅读</a></li>
+          </ol>
+        </nav>
+
+        <!-- Sections (abbrev) -->
+        <section id="future-judgement"><h2>1. 未来判断</h2><p>更长上下文≠RAG 终点，工程上仍需检索与可审计性。</p></section>
+        <section id="kblam"><h2>2. KBLaM</h2><p>定位：可信知识、证据链与受限环境的稳定性。</p></section>
+        <section id="upgrades"><h2>3. 升级路线</h2>
+          <ul>
+            <li>Self-RAG / RAFT / RA-DIT（检索感知）</li>
+            <li>GraphRAG（结构化检索）</li>
+            <li>Agentic RAG + MCP</li>
+            <li>模型编辑（必要时）</li>
+            <li>新鲜度检索</li>
+          </ul>
+        </section>
+        <section id="matrix"><h2>4. 选型矩阵</h2><p>根据时效、规模、结构化需求选择路线。</p></section>
+
+        <section id="refs">
+          <h2>6. 参考与延伸阅读（官方来源）</h2>
+          <ul>
+            <li>Self-RAG：
+              <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> ·
+              <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> ·
+              <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
+            </li>
+            <li>RAFT（Retrieval-Augmented Fine-Tuning, 2024）：
+              <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
+            </li>
+            <li>RA-DIT（2023）：
+              <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> ·
+              <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
+            </li>
+            <li>GraphRAG：
+              <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> ·
+              <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
+            </li>
+            <li>MCP：
+              <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> ·
+              <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> ·
+              <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
+            </li>
+            <li>Google Gemini 1.5（长上下文）：
+              <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Official Blog</a>
+            </li>
+          </ul>
+        </section>
+
+        <hr style="margin: 24px 0">
+        <nav class="post-nav" aria-label="文章导航">
+          <a class="btn outline" href="../blog.html">← 返回博客</a>
+          <span class="muted" style="margin:0 .5rem">·</span>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">上一篇</a>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">下一篇</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Fan Wan</p>
+    </div>
+  </footer>
+</body>
+</html>

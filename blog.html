@@ -89,12 +89,17 @@
   <section class="blog section">
     <div class="container">
       <p data-i18n="blog_desc">在这里，我将分享关于机器学习、计算机视觉、大语言模型以及职业发展的思考与心得。敬请期待我的最新文章。</p>
-      <!-- Placeholder for blog posts -->
       <div class="blog-posts">
-        <div class="post-placeholder">
-          <h3 data-i18n="blog_coming_soon_title">敬请期待</h3>
-          <p data-i18n="blog_coming_soon_desc">博客内容正在筹备中，请稍后再来。</p>
-        </div>
+        <article class="card" style="display:grid;grid-template-columns:140px 1fr;gap:14px;padding:12px;align-items:center;">
+          <a href="blog/future-of-rag-2025-kblam.html" aria-label="RAG 2025 路线图">
+            <img src="assets/blog/rag-future-2025-hero.png" alt="RAG 2025 路线图封面" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
+          </a>
+          <div>
+            <h3 style="margin:0 0 6px 0"><a href="blog/future-of-rag-2025-kblam.html" style="text-decoration:none;color:var(--text)">RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</a></h3>
+            <p class="muted" style="margin:0 0 6px 0">发表于 2025-09-02 · 预计阅读 9 分钟</p>
+            <p class="muted" style="margin:0">更大的上下文与更强的模型并没有让 RAG 过时；过时的是“天真向量检索”。本文结合 KBLaM 实战，总结 2025 年的 5 条升级路线与选型矩阵。</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>

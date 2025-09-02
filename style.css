@@ -652,6 +652,10 @@ header {
   color: var(--secondary);
 }
 
+/* Blog: post navigation */
+.post-nav { display:flex; gap:.6rem; align-items:center; }
+.post-nav .btn[aria-disabled="true"] { opacity:.6; pointer-events:none; }
+
 /* Contact form */
 .contact-form {
   display: grid;
