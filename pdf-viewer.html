@@ -8,26 +8,72 @@
   <meta name="theme-color" content="#0ea5e9">
   <link rel="stylesheet" href="style.css">
   <style>
-    body,html{height:100%;}
+    html,body{height:100%;}
     .viewer-wrap{display:grid; grid-template-rows:auto 1fr; height:100%;}
     .viewer-bar{display:flex; align-items:center; gap:.6rem; padding:.6rem .8rem; background: var(--surface-2); border-bottom:1px solid var(--border);} 
     .viewer-bar .back{display:inline-flex; align-items:center; gap:.35rem; padding:.45rem .8rem; border:1px solid var(--border); border-radius:10px; background:var(--surface); color:var(--text); text-decoration:none;}
+    .viewer-bar .back:hover{background: var(--text); color:#fff; border-color: var(--text);}    
+    .viewer-bar .open{display:inline-flex; align-items:center; gap:.35rem; padding:.45rem .8rem; border:1px solid var(--border); border-radius:10px; background:var(--surface); color:var(--text); text-decoration:none;}
+    .viewer-bar .open:hover{background: var(--text); color:#fff; border-color: var(--text);} 
     .viewer-bar .title{font-weight:600; color: var(--text); flex:1; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
-    iframe{width:100%; height:100%; border:0; background:#111;}
+    .pages{height:100%; overflow:auto; -webkit-overflow-scrolling: touch; background: var(--surface);} 
+    .page{display:block; margin: 10px auto; background:#fff; box-shadow: var(--shadow-sm); border-radius: 4px;}
+    .loading, .error { padding: 1rem; color: var(--muted); }
   </style>
+  <!-- PDF.js from CDN for reliable mobile rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" integrity="sha256-FG1qO3KqQnYbT3b8xP7yFyK/0VXqRoaDiGqk4Rz0Gco=" crossorigin="anonymous"></script>
   <script defer>
   document.addEventListener('DOMContentLoaded', ()=>{
     const params = new URLSearchParams(location.search);
     const src = params.get('src');
     const title = params.get('title');
-    const iframe = document.getElementById('f');
     if (title) document.getElementById('t').textContent = decodeURIComponent(title);
-    if (src) iframe.src = src;
+
     const backBtn = document.getElementById('back');
     backBtn.addEventListener('click', (e)=>{
       e.preventDefault();
       if (document.referrer && new URL(document.referrer).origin === location.origin) history.back();
       else location.href = 'publications.html';
+    });
+
+    const openBtn = document.getElementById('open');
+    openBtn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      if (src) window.open(src, '_blank', 'noopener');
+    });
+
+    const container = document.getElementById('pages');
+    const status = document.getElementById('status');
+    if (!src) { status.textContent = 'PDF not available.'; return; }
+
+    // Configure PDF.js worker
+    try { pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js'; } catch {}
+
+    status.textContent = 'Loading…';
+    pdfjsLib.getDocument(src).promise.then(async (pdf)=>{
+      status.textContent = '';
+      const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+      const renderPage = async (num)=>{
+        const page = await pdf.getPage(num);
+        const viewport = page.getViewport({ scale: 1 });
+        const targetWidth = container.clientWidth - 16; // padding margin
+        const scale = Math.max(0.5, Math.min(3, targetWidth / viewport.width));
+        const scaled = page.getViewport({ scale });
+        const canvas = document.createElement('canvas');
+        canvas.className = 'page';
+        canvas.width = Math.floor(scaled.width * dpr);
+        canvas.height = Math.floor(scaled.height * dpr);
+        canvas.style.width = Math.floor(scaled.width) + 'px';
+        canvas.style.height = Math.floor(scaled.height) + 'px';
+        const ctx = canvas.getContext('2d');
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        container.appendChild(canvas);
+        await page.render({ canvasContext: ctx, viewport: scaled, intent: 'display' }).promise;
+      };
+      for (let n=1; n<=pdf.numPages; n++) { await renderPage(n); }
+    }).catch((err)=>{
+      status.textContent = 'Failed to load PDF. You can still open it in a new tab.';
+      console.error(err);
     });
   });
   </script>
@@ -37,8 +83,11 @@
     <div class="viewer-bar">
       <a href="#" id="back" class="back" aria-label="Back">← <span>Back</span></a>
       <div id="t" class="title">PDF</div>
+      <a href="#" id="open" class="open" aria-label="Open in new tab">⇱ <span>Open</span></a>
     </div>
-    <iframe id="f" title="PDF"></iframe>
+    <div id="pages" class="pages">
+      <div id="status" class="loading"></div>
+    </div>
   </div>
 </body>
 </html>
