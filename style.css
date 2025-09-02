@@ -257,6 +257,10 @@ header {
   color: var(--primary);
 }
 
+/* Ensure inline icons in nav links (e.g., Home) render consistently */
+.nav-links li a .icon { width: 1rem; height: 1rem; display: inline-block; vertical-align: -2px; margin-right: .35rem; }
+.nav-links li a .icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
 /* Ensure sufficient contrast for links in dark theme */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) .nav-links li a { color: #e5e7eb; }
@@ -264,6 +268,17 @@ header {
 }
 :root[data-theme="dark"] .nav-links li a { color: #e5e7eb; }
 :root[data-theme="dark"] .nav-links li a:hover { color: #93c5fd; }
+
+/* In 'system' mode (no explicit data-theme), adjust nav link contrast per OS theme */
+:root[data-theme-mode="system"] .nav-links li a { color: var(--text); }
+@media (prefers-color-scheme: dark) {
+  :root[data-theme-mode="system"] .nav-links li a { color: #e5e7eb; }
+  :root[data-theme-mode="system"] .nav-links li a:hover { color: #93c5fd; }
+}
+@media (prefers-color-scheme: light) {
+  :root[data-theme-mode="system"] .nav-links li a { color: #0f172a; }
+  :root[data-theme-mode="system"] .nav-links li a:hover { color: #1d4ed8; }
+}
 
 .icon-btn { display: inline-flex; align-items: center; gap: .45rem; }
 .icon-btn .icon { width: 1rem; height: 1rem; }
@@ -315,17 +330,27 @@ header {
   transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.2s ease, color 0.2s ease;
 }
 .theme-toggle .icon { width: 1.1rem; height: 1.1rem; }
-.theme-toggle:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.theme-toggle:hover { 
+  transform: translateY(-1px); 
+  box-shadow: var(--shadow-md);
+  background: var(--text);
+  color: #fff;
+  border-color: var(--text);
+}
 .theme-toggle:focus-visible { outline: none; box-shadow: var(--ring); }
 .theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: none; }
+.theme-toggle .icon-system { display: none; }
 
 /* light theme explicit */
 [data-theme="light"] .theme-toggle .icon-sun { display: inline; }
 [data-theme="light"] .theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle .icon-system { display: none; }
 
 /* dark theme explicit */
 [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: inline; }
+[data-theme="dark"] .theme-toggle .icon-system { display: none; }
 
 /* default (follow system): show moon in dark preference, else sun */
 @media (prefers-color-scheme: dark) {
@@ -335,6 +360,21 @@ header {
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) .theme-toggle .icon-sun { display: inline; }
   :root:not([data-theme]) .theme-toggle .icon-moon { display: none; }
+}
+
+/* Distinct icon when user picked mode 'system' */
+:root[data-theme-mode="system"] .theme-toggle .icon-system { display: inline; }
+:root[data-theme-mode="system"] .theme-toggle .icon-sun,
+:root[data-theme-mode="system"] .theme-toggle .icon-moon { display: none; }
+
+/* In 'follow system' mode, make borders less prominent so they don't look white and distracting */
+:root[data-theme-mode="system"] header { border-bottom-color: color-mix(in oklab, var(--border), transparent 70%); }
+:root[data-theme-mode="system"] .btn.outline,
+:root[data-theme-mode="system"] .theme-toggle { border-color: color-mix(in oklab, var(--border), transparent 60%); }
+@media (prefers-color-scheme: light) {
+  :root[data-theme-mode="system"] header { border-bottom-color: color-mix(in oklab, var(--border), transparent 82%); }
+  :root[data-theme-mode="system"] .btn.outline,
+  :root[data-theme-mode="system"] .theme-toggle { border-color: color-mix(in oklab, var(--border), transparent 75%); }
 }
 
 /* Hamburger for mobile */
@@ -754,6 +794,11 @@ header {
   font-size: 1rem;
   background: var(--surface);
   color: var(--text);
+}
+.contact-form .btn[type="submit"],
+.contact-form button[type="submit"] {
+  width: 100%;
+  justify-self: stretch;
 }
 .form-group input:focus,
 .form-group textarea:focus {

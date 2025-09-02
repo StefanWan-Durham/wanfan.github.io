@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0ea5e9">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body,html{height:100%;}
+    .viewer-wrap{display:grid; grid-template-rows:auto 1fr; height:100%;}
+    .viewer-bar{display:flex; align-items:center; gap:.6rem; padding:.6rem .8rem; background: var(--surface-2); border-bottom:1px solid var(--border);} 
+    .viewer-bar .back{display:inline-flex; align-items:center; gap:.35rem; padding:.45rem .8rem; border:1px solid var(--border); border-radius:10px; background:var(--surface); color:var(--text); text-decoration:none;}
+    .viewer-bar .title{font-weight:600; color: var(--text); flex:1; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+    iframe{width:100%; height:100%; border:0; background:#111;}
+  </style>
+  <script defer>
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const params = new URLSearchParams(location.search);
+    const src = params.get('src');
+    const title = params.get('title');
+    const iframe = document.getElementById('f');
+    if (title) document.getElementById('t').textContent = decodeURIComponent(title);
+    if (src) iframe.src = src;
+    const backBtn = document.getElementById('back');
+    backBtn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      if (document.referrer && new URL(document.referrer).origin === location.origin) history.back();
+      else location.href = 'publications.html';
+    });
+  });
+  </script>
+</head>
+<body>
+  <div class="viewer-wrap">
+    <div class="viewer-bar">
+      <a href="#" id="back" class="back" aria-label="Back">← <span>Back</span></a>
+      <div id="t" class="title">PDF</div>
+    </div>
+    <iframe id="f" title="PDF"></iframe>
+  </div>
+</body>
+</html>

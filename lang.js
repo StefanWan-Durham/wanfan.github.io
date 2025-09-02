@@ -23,7 +23,7 @@ const translations = {
     nav_contact: '联系我',
     // Hero
     hero_title: '你好，我是万凡',
-  hero_subtitle: '研究员｜大模型在核工业与多媒体场景的应用（RAG/Agent/安全合规）',
+  hero_subtitle: '杜伦大学计算机科学博士 — 打造可靠、可控、可解释的 AI 系统。',
   hero_btn_contact: '联系我',
   hero_btn_selected: '精选作品',
   hero_btn_cv: '下载简历',
@@ -51,6 +51,7 @@ const translations = {
     contact_title: '联系我',
     contact_desc: '如果你对合作或交流感兴趣，欢迎通过邮件或社交媒体与我取得联系。',
     contact_btn: '联系页面',
+  contact_or_email: '或通过邮箱：',
   // Footer CTA
   footer_cta_title: '一起合作？',
   footer_cta_desc: '我可提供 LLM 应用、计算机视觉与多媒体分析相关的咨询与合作。',
@@ -102,7 +103,7 @@ const translations = {
     nav_blog: 'Blog',
     nav_contact: 'Contact',
     hero_title: "Hi, I'm Fan Wan",
-  hero_subtitle: 'Researcher | Applying LLMs to nuclear and multimedia (RAG/Agents/Safety)',
+  hero_subtitle: 'Durham CS PhD — Engineering Trustworthy, Controllable, Explainable AI.',
   hero_btn_contact: 'Contact me',
   hero_btn_selected: 'Selected Work',
   hero_btn_cv: 'Download CV',
@@ -126,6 +127,7 @@ const translations = {
     contact_title: 'Contact Me',
     contact_desc: 'If you are interested in collaboration or communication, feel free to contact me via email or social media.',
     contact_btn: 'Contact Page',
+  contact_or_email: 'Or email:',
   // Footer CTA
   footer_cta_title: 'Collaborate?',
   footer_cta_desc: 'I can help with LLM applications, computer vision and multimedia analysis.',
@@ -173,7 +175,7 @@ const translations = {
     nav_blog: 'Blog',
     nav_contact: 'Contacto',
     hero_title: 'Hola, soy Fan Wan',
-  hero_subtitle: 'Investigador | LLMs en nuclear y multimedia (RAG/Agentes/Seguridad)',
+  hero_subtitle: 'Ph.D. en Ciencias de la Computación (Durham) — Ingeniería de IA confiable, controlable y explicable.',
   hero_btn_contact: 'Contáctame',
   hero_btn_selected: 'Trabajos destacados',
   hero_btn_cv: 'Descargar CV',
@@ -197,6 +199,7 @@ const translations = {
     contact_title: 'Contáctame',
     contact_desc: 'Si estás interesado en colaborar o conversar, no dudes en contactarme por correo electrónico o redes sociales.',
     contact_btn: 'Página de contacto',
+  contact_or_email: 'O por correo:',
   // Footer CTA
   footer_cta_title: '¿Colaboramos?',
   footer_cta_desc: 'Puedo ayudar con aplicaciones LLM, visión por computadora y análisis multimedia.',

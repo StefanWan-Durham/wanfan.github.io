@@ -149,17 +149,24 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyTheme(theme) {
     if (theme === 'light') {
       root.setAttribute('data-theme', 'light');
+      root.setAttribute('data-theme-mode', 'light');
     } else if (theme === 'dark') {
       root.setAttribute('data-theme', 'dark');
+      root.setAttribute('data-theme-mode', 'dark');
     } else {
       root.removeAttribute('data-theme'); // follow system
+      root.setAttribute('data-theme-mode', 'system');
     }
     localStorage.setItem(THEME_KEY, theme);
   }
 
-  // Initialize theme from storage or default to system
-  const savedTheme = localStorage.getItem(THEME_KEY) || 'system';
+  // Initialize theme from storage or default to dark (as requested)
+  const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
   applyTheme(savedTheme);
+  if (!localStorage.getItem(THEME_KEY)) {
+    // reflect default in attribute for correct icon on first paint
+    root.setAttribute('data-theme-mode', 'dark');
+  }
   if (toggleBtn) {
     const modeText = savedTheme === 'system' ? t('theme_mode_system') : savedTheme === 'dark' ? t('theme_mode_dark') : t('theme_mode_light');
     toggleBtn.setAttribute('aria-label', t('theme_toggle_label'));
@@ -168,14 +175,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
-      // Toggle to the opposite of the EFFECTIVE theme so it changes on first click
-      const effective = getEffectiveTheme();
-      const next = effective === 'dark' ? 'light' : 'dark';
+      // Cycle through: dark -> light -> system -> dark
+      const current = localStorage.getItem(THEME_KEY) || 'dark';
+      const order = ['dark','light','system'];
+      const idx = order.indexOf(current);
+      const next = order[(idx + 1) % order.length];
       applyTheme(next);
-      const title = next === 'dark' ? t('theme_mode_dark') : t('theme_mode_light');
+      const title = next === 'system' ? t('theme_mode_system') : next === 'dark' ? t('theme_mode_dark') : t('theme_mode_light');
       toggleBtn.title = `${t('theme_toggle_label')} (${title})`;
     });
   }
+
+  // Removed time-based 'auto' theme mode per request
 
   // Render portfolio from JSON
   async function renderPortfolio(filter = 'all') {
@@ -332,9 +343,11 @@ document.addEventListener('DOMContentLoaded', () => {
           const h = btn.closest('.pub-item')?.querySelector('h3')?.textContent?.trim();
           if (titleEl) titleEl.textContent = h ? `PDF Viewer – ${h}` : (window.translations?.[localStorage.getItem('lang')||'en']?.pdf_viewer_title || 'PDF Viewer');
         } catch {}
-        // On mobile devices, open in a new tab for native scrolling
+        // On mobile devices, open a dedicated viewer page with a back button
         if (isMobile() && src) {
-          try { window.open(src, '_blank', 'noopener'); return; } catch {}
+          const t = encodeURIComponent(titleEl?.textContent || 'PDF');
+          location.href = `pdf-viewer.html?src=${encodeURIComponent(src)}&title=${t}`;
+          return;
         }
         // Probe availability before showing iframe to avoid broken content
         try {
