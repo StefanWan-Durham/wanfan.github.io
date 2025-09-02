@@ -241,7 +241,9 @@ header {
 /* Right-aligned actions cluster */
 .nav-actions { display: flex; align-items: center; gap: .6rem; justify-self: end; position: relative; flex-wrap: nowrap; }
 .nav-actions .lang-switcher { position: relative; }
-.nav-actions .theme-toggle { margin-left: .2rem; }
+/* Keep equal spacing between language, theme and menu buttons */
+.nav-actions .theme-toggle { margin-left: 0; }
+.nav-actions .btn { margin-right: 0; }
 .lang-switcher .lang-menu { right: 0; left: auto; }
 
 .nav-links li a {
@@ -298,7 +300,7 @@ header {
 }
 
 .theme-toggle {
-  margin-left: 0.75rem;
+  margin-left: 0; /* spacing is handled by parent gap */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -679,14 +681,14 @@ header {
 
 /* Modal viewer */
 .modal[hidden] { display: none !important; }
-.modal { position: fixed; inset: 0; z-index: 2000; }
+.modal { position: fixed; inset: 0; z-index: 2000; overscroll-behavior: contain; }
 .modal-backdrop { position: absolute; inset: 0; background: rgba(2,6,23,.6); backdrop-filter: blur(2px); }
-.modal-dialog { position: relative; margin: 4vh auto; width: min(92vw, 1100px); height: 88vh; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow-md); display:flex; flex-direction: column; overflow:hidden; }
+.modal-dialog { position: relative; margin: 4vh auto; width: min(92vw, 1100px); height: 88svh; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow-md); display:flex; flex-direction: column; overflow:hidden; }
 .modal-header { display:flex; align-items:center; justify-content: space-between; padding: .75rem 1rem; border-bottom: 1px solid var(--border); background: var(--surface-2); }
-.modal-body { position: relative; flex: 1; }
+.modal-body { position: relative; flex: 1; overflow: auto; -webkit-overflow-scrolling: touch; }
 .modal-close { background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: .25rem .5rem; cursor: pointer; color: var(--text); }
 .modal-close:hover { box-shadow: var(--shadow-sm); }
-.modal-body iframe { width: 100%; height: 100%; border: 0; background: #111; }
+.modal-body iframe { width: 100%; height: 100%; min-height: 100%; display: block; border: 0; background: #111; }
 .modal-fallback { padding: 1rem; color: var(--muted); }
 
 /* Blog page */
@@ -845,7 +847,7 @@ footer {
   /* shrink language button on narrow screens and avoid overlap with brand */
   .icon-btn .label { display: none; }
   .icon-btn { padding: .5rem; }
-  .nav-actions { gap: .4rem; }
+  .nav-actions { gap: .5rem; }
   .theme-toggle { width: 34px; height: 34px; }
   .about-grid {
     grid-template-columns: 1fr;

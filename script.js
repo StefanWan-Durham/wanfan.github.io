@@ -301,6 +301,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const frame = document.getElementById('pdf-frame');
     const fallback = document.getElementById('pdf-fallback');
     const titleEl = document.getElementById('pdf-title');
+    const isMobile = () => {
+      try {
+        const ua = navigator.userAgent || '';
+        return /iPhone|iPad|Android|Mobile/i.test(ua) || window.innerWidth < 768;
+      } catch { return window.innerWidth < 768; }
+    };
     function openModal(src){
       if (frame) frame.src = src || '';
       if (fallback) fallback.hidden = !!src;
@@ -326,6 +332,10 @@ document.addEventListener('DOMContentLoaded', () => {
           const h = btn.closest('.pub-item')?.querySelector('h3')?.textContent?.trim();
           if (titleEl) titleEl.textContent = h ? `PDF Viewer – ${h}` : (window.translations?.[localStorage.getItem('lang')||'en']?.pdf_viewer_title || 'PDF Viewer');
         } catch {}
+        // On mobile devices, open in a new tab for native scrolling
+        if (isMobile() && src) {
+          try { window.open(src, '_blank', 'noopener'); return; } catch {}
+        }
         // Probe availability before showing iframe to avoid broken content
         try {
           const head = await fetch(src, { method: 'HEAD' });
@@ -342,4 +352,47 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   })();
+
+  // Enhance Education section: add official website links to schools
+  function enhanceEducationLinks(){
+    const root = document;
+    const container = root.querySelector('.education .timeline');
+    if (!container) return;
+    const lang = (localStorage.getItem('lang') || document.documentElement.lang || 'zh').slice(0,2);
+    /** @type {Record<string, Array<{name:string,url:string}>>} */
+    const map = {
+      zh: [
+        { name: '杜伦大学', url: 'https://www.durham.ac.uk/' },
+        { name: '纽卡斯尔大学', url: 'https://www.ncl.ac.uk/' },
+        { name: '山西农业大学', url: 'https://www.sxau.edu.cn/' }
+      ],
+      en: [
+        { name: 'Durham University', url: 'https://www.durham.ac.uk/' },
+        { name: 'Newcastle University', url: 'https://www.ncl.ac.uk/' },
+        { name: 'Shanxi Agricultural University', url: 'https://www.sxau.edu.cn/' }
+      ],
+      es: [
+        { name: 'Universidad de Durham', url: 'https://www.durham.ac.uk/' },
+        { name: 'Universidad de Newcastle', url: 'https://www.ncl.ac.uk/' },
+        { name: 'Universidad Agrícola de Shanxi', url: 'https://www.sxau.edu.cn/' }
+      ]
+    };
+    const items = container.querySelectorAll('.timeline-item h3');
+    items.forEach(h3 => {
+      const text = h3.textContent || '';
+      const list = map[lang] || map.zh;
+      let replaced = text;
+      for (const it of list) {
+        if (replaced.includes(it.name)) {
+          // Replace first occurrence with anchor
+          const safeName = it.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          replaced = replaced.replace(new RegExp(safeName), `<a href="${it.url}" target="_blank" rel="noopener">${it.name}</a>`);
+          break;
+        }
+      }
+      h3.innerHTML = replaced;
+    });
+  }
+  enhanceEducationLinks();
+  window.addEventListener('language-changed', enhanceEducationLinks);
 });
