@@ -343,10 +343,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const h = btn.closest('.pub-item')?.querySelector('h3')?.textContent?.trim();
           if (titleEl) titleEl.textContent = h ? `PDF Viewer – ${h}` : (window.translations?.[localStorage.getItem('lang')||'en']?.pdf_viewer_title || 'PDF Viewer');
         } catch {}
-        // On mobile devices, open a dedicated viewer page with a back button
+        // On mobile devices, open the PDF directly in a new tab (native viewer)
         if (isMobile() && src) {
-          const t = encodeURIComponent(titleEl?.textContent || 'PDF');
-          location.href = `pdf-viewer.html?src=${encodeURIComponent(src)}&title=${t}`;
+          try { window.open(src, '_blank', 'noopener,noreferrer'); } catch { location.href = src; }
           return;
         }
         // Probe availability before showing iframe to avoid broken content
