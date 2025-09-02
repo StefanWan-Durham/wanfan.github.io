@@ -122,6 +122,10 @@ html[lang="es"] .i18n.l-es { display: inline; }
   transform: translateY(0);
 }
 
+/* Safety: on blog posts, ensure the content section (immediately after page-hero)
+  is visible even if IntersectionObserver fails or is delayed */
+.blog-post .section + .section { opacity: 1; transform: none; }
+
 .btn {
   display: inline-block;
   padding: 0.8rem 1.6rem;
@@ -587,8 +591,8 @@ header {
   .about-portrait { width: 84px; height: 84px; padding: 4px; }
 }
 /* Blog post hero spacing */
-.blog-post .page-hero { height: 280px; }
-.blog-post .page-hero { padding-top: calc(110px + env(safe-area-inset-top)); }
+.blog-post .page-hero { height: 260px; }
+.blog-post .page-hero { padding-top: calc(120px + env(safe-area-inset-top)); }
 /* Keep the title comfortably away from the navbar, with symmetric margins */
 .blog-post .page-hero .post-title { margin: .6rem 0; }
 .blog-post .page-hero .post-meta { opacity: .95; }
@@ -1152,7 +1156,8 @@ footer {
   .section { padding: 3rem 0; }
   .page-hero { padding-top: 78px; }
   /* Keep extra space on blog hero too for small screens */
-  .blog-post .page-hero { padding-top: 96px; }
+  /* Ensure blog title clears the fixed navbar and safe area on iOS */
+  .blog-post .page-hero { padding-top: calc(110px + env(safe-area-inset-top)); }
   .blog-post .page-hero { height: 260px; }
   .blog-post .page-hero .post-title { font-size: 1.6rem; }
   .about-photo img { max-height: min(85vh, 560px); object-position: 50% 36%; }
@@ -1162,6 +1167,8 @@ footer {
   .timeline-item h3 {
     font-size: 1rem;
   }
+  /* On mobile, bypass fade-in to avoid rare IO timing issues: show sections immediately */
+  .blog-post .section { opacity: 1; transform: none; }
 }
 
 /* Very small devices: further cap image height */
