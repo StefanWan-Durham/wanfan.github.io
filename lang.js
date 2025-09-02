@@ -74,6 +74,7 @@ const translations = {
   publications_more_title: '更多论文',
   co_corresponding: '\u2020共同通讯',
   co_first: '*共同一作',
+  phd_thesis: '博士学位论文',
     // Publications page
     publications_list_title: '代表性论文',
   view_pdf: '在线阅读 PDF',
@@ -150,6 +151,7 @@ const translations = {
   publications_more_title: 'More Publications',
   co_corresponding: '\u2020Co‑corresponding',
   co_first: '*Co‑first author',
+  phd_thesis: 'Ph.D. thesis',
   view_pdf: 'View PDF',
   download_pdf: 'Download PDF',
   pdf_viewer_title: 'PDF Viewer',
@@ -222,6 +224,7 @@ const translations = {
   publications_more_title: 'Más publicaciones',
   co_corresponding: '\u2020Autor corresponsal conjunto',
   co_first: '*Autor/a co‑principal',
+  phd_thesis: 'Tesis doctoral',
   view_pdf: 'Ver PDF',
   download_pdf: 'Descargar PDF',
   pdf_viewer_title: 'Visor de PDF',
