@@ -34,7 +34,10 @@
       </ul>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <button id="lang-button" class="btn outline" aria-haspopup="listbox" aria-expanded="false">Language</button>
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label">Language</span>
+          </button>
           <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
             <li role="option" data-lang="en">English</li>
             <li role="option" data-lang="zh">中文</li>
@@ -47,8 +50,8 @@
           </select>
         </div>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-          <span class="icon-sun" aria-hidden="true">☀</span>
-          <span class="icon-moon" aria-hidden="true">🌙</span>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l-1.5-1.5M20.5 20.5L19 19M5 19l-1.5 1.5M20.5 3.5L19 5"/></g></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="hamburger" id="hamburger">
           <span></span><span></span><span></span>

@@ -210,7 +210,7 @@ header {
 }
 
 /* Right-aligned actions cluster */
-.nav-actions { display: flex; align-items: center; gap: .6rem; justify-self: end; position: relative; }
+.nav-actions { display: flex; align-items: center; gap: .6rem; justify-self: end; position: relative; flex-wrap: nowrap; }
 .nav-actions .lang-switcher { position: relative; }
 .nav-actions .theme-toggle { margin-left: .2rem; }
 .lang-switcher .lang-menu { right: 0; left: auto; }
@@ -226,6 +226,8 @@ header {
   color: var(--primary);
 }
 
+.icon-btn { display: inline-flex; align-items: center; gap: .45rem; }
+.icon-btn .icon { width: 1rem; height: 1rem; }
 .lang-switcher select {
   -webkit-appearance: none;
   appearance: none;
@@ -273,6 +275,7 @@ header {
   cursor: pointer;
   transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.2s ease, color 0.2s ease;
 }
+.theme-toggle .icon { width: 1.1rem; height: 1.1rem; }
 .theme-toggle:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
 .theme-toggle:focus-visible { outline: none; box-shadow: var(--ring); }
 .theme-toggle .icon-sun { display: none; }
@@ -679,6 +682,7 @@ footer {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .navbar { grid-template-columns: 1fr auto auto; }
   .nav-links {
     position: absolute;
     top: 60px;
@@ -698,6 +702,11 @@ footer {
   .hamburger {
     display: flex;
   }
+  /* shrink language button on narrow screens and avoid overlap with brand */
+  .icon-btn .label { display: none; }
+  .icon-btn { padding: .5rem; }
+  .nav-actions { gap: .4rem; }
+  .theme-toggle { width: 34px; height: 34px; }
   .about-grid {
     grid-template-columns: 1fr;
   }

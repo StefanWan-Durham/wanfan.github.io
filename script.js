@@ -137,7 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!langBtn) return;
     const map = { en: 'English', zh: '中文', es: 'Español' };
     const cur = localStorage.getItem('lang') || 'en';
-    langBtn.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
+    const labelEl = langBtn.querySelector('.label');
+    if (labelEl) {
+      labelEl.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
+    } else {
+      // Fallback if no inner span exists
+      langBtn.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
+    }
   }
   setLangLabel();
   if (langBtn && langMenu) {
@@ -196,7 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btn) {
       const map = { en: 'English', zh: '中文', es: 'Español' };
       const cur = localStorage.getItem('lang') || 'en';
-      btn.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
+      const labelEl = btn.querySelector('.label');
+      if (labelEl) labelEl.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
+      else btn.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
     }
   });
 });

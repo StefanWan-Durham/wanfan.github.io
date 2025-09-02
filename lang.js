@@ -254,6 +254,16 @@ function translatePage(lang) {
     toggleBtn.setAttribute('title', `${translations[lang].theme_toggle_label}（${modeText}）`);
   }
 
+  // Update language button text without removing its icon
+  const langBtn = document.getElementById('lang-button');
+  if (langBtn) {
+    const map = { en: 'English', zh: '中文', es: 'Español' };
+    const labelEl = langBtn.querySelector('.label');
+    const cur = localStorage.getItem('lang') || 'en';
+    if (labelEl) labelEl.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
+    else langBtn.textContent = `Language` + (map[cur] ? ` · ${map[cur]}` : '');
+  }
+
   // Notify others that language changed (for components needing rerender)
   try { window.dispatchEvent(new CustomEvent('language-changed', { detail: { lang } })); } catch {}
 }
