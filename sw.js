@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fw-site-v2';
+const CACHE_NAME = 'fw-site-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -6,12 +6,14 @@ const ASSETS = [
   './publications.html',
   './blog.html',
   './contact.html',
+  './404.html',
   './style.css',
   './script.js',
   './lang.js',
+  './manifest.webmanifest',
   './assets/logo.svg',
   './assets/avatar.svg',
-  './assets/og-template.svg',
+  // Keep only critical assets; large images should be fetched on demand
   './portfolio.json'
 ];
 self.addEventListener('install', (event) => {

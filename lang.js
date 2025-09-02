@@ -23,8 +23,10 @@ const translations = {
     nav_contact: '联系我',
     // Hero
     hero_title: '你好，我是万凡',
-    hero_subtitle: '研究员 · 计算机科学博士',
+  hero_subtitle: '研究员｜大模型在核工业与多媒体场景的应用（RAG/Agent/安全合规）',
   hero_btn_contact: '联系我',
+  hero_btn_selected: '精选作品',
+  hero_btn_cv: '下载简历',
     // Home – About summary
     about_title: '关于我',
     about_p1: '我于2018年获得英国纽卡斯尔大学计算机科学硕士学位（荣誉），并于2025年在英国杜伦大学完成计算机科学博士学位。目前在中国核工业集团同方知网数字技术有限公司担任研究员。',
@@ -92,8 +94,10 @@ const translations = {
     nav_blog: 'Blog',
     nav_contact: 'Contact',
     hero_title: "Hi, I'm Fan Wan",
-    hero_subtitle: 'Researcher · Ph.D. in Computer Science',
+  hero_subtitle: 'Researcher | Applying LLMs to nuclear and multimedia (RAG/Agents/Safety)',
   hero_btn_contact: 'Contact me',
+  hero_btn_selected: 'Selected Work',
+  hero_btn_cv: 'Download CV',
     about_title: 'About Me',
     about_p1: "I obtained my Master’s degree in Computer Science from Newcastle University in 2018 (with distinction) and completed my Ph.D. in Computer Science at Durham University in January 2025. I currently work as a researcher at Tongfang Knowledge Network Digital Technology Co., Ltd., part of China National Nuclear Corporation.",
     about_p2: 'My research focuses on applying large language models (LLMs) in real-world nuclear industry scenarios. I am passionate about machine learning, computer vision, multimedia analysis and developing LLM-based agents and downstream tasks.',
@@ -153,8 +157,10 @@ const translations = {
     nav_blog: 'Blog',
     nav_contact: 'Contacto',
     hero_title: 'Hola, soy Fan Wan',
-    hero_subtitle: 'Investigador · Doctor en Ciencias de la Computación',
+  hero_subtitle: 'Investigador | LLMs en nuclear y multimedia (RAG/Agentes/Seguridad)',
   hero_btn_contact: 'Contáctame',
+  hero_btn_selected: 'Trabajos destacados',
+  hero_btn_cv: 'Descargar CV',
     about_title: 'Sobre mí',
     about_p1: 'Obtuve mi maestría en Ciencias de la Computación en la Universidad de Newcastle en 2018 (con distinción) y completé mi doctorado en Ciencias de la Computación en la Universidad de Durham en enero de 2025. Actualmente trabajo como investigador en Tongfang Knowledge Network Digital Technology Co., Ltd., parte de la Corporación Nacional Nuclear de China.',
     about_p2: 'Mi investigación se centra en aplicar modelos de lenguaje grandes (LLM) en escenarios reales de la industria nuclear. Me apasionan el aprendizaje automático, la visión por computadora, el análisis multimedia y el desarrollo de agentes basados en LLM y tareas posteriores.',
@@ -217,7 +223,7 @@ const translations = {
  */
 function translatePage(lang) {
   // Set the lang attribute on the document root
-  document.documentElement.lang = lang;
+  document.documentElement.setAttribute('lang', lang);
   // Translate text content
   const elements = document.querySelectorAll('[data-i18n]');
   elements.forEach(el => {
@@ -271,6 +277,8 @@ function translatePage(lang) {
 document.addEventListener('DOMContentLoaded', () => {
   const langSelect = document.getElementById('lang-select');
   const defaultLang = localStorage.getItem('lang') || 'en';
+  // Expose for other scripts
+  try { window.translations = translations; } catch {}
   translatePage(defaultLang);
   if (langSelect) {
     langSelect.value = defaultLang;

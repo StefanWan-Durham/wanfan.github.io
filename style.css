@@ -165,6 +165,19 @@ img {
   box-shadow: var(--ring);
 }
 
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #111827;
+  color: #fff;
+  padding: 8px 12px;
+  z-index: 10000;
+  border-radius: 0 0 8px 8px;
+}
+.skip-link:focus { top: 0; box-shadow: var(--ring); }
+
 /* Navbar */
 header {
   position: fixed;
@@ -225,6 +238,14 @@ header {
 .nav-links li a:hover {
   color: var(--primary);
 }
+
+/* Ensure sufficient contrast for links in dark theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .nav-links li a { color: #e5e7eb; }
+  :root:not([data-theme]) .nav-links li a:hover { color: #93c5fd; }
+}
+:root[data-theme="dark"] .nav-links li a { color: #e5e7eb; }
+:root[data-theme="dark"] .nav-links li a:hover { color: #93c5fd; }
 
 .icon-btn { display: inline-flex; align-items: center; gap: .45rem; }
 .icon-btn .icon { width: 1rem; height: 1rem; }

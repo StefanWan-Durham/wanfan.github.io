@@ -8,31 +8,37 @@
   <meta name="theme-color" content="#0ea5e9">
   <!-- SEO / Open Graph -->
   <meta name="description" content="Fan Wan · Research · LLM · Computer Vision · Multimedia">
+  <link rel="canonical" href="https://stefanwan-durham.github.io/wanfan.github.io/index.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Fan Wan · Personal Website">
   <meta property="og:description" content="Research · LLM · Computer Vision · Multimedia">
-  <meta property="og:image" content="assets/og-template.svg">
-  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="assets/placeholder.jpg">
+  <meta property="og:url" content="https://stefanwan-durham.github.io/wanfan.github.io/index.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fan Wan · Personal Website">
   <meta name="twitter:description" content="Research · LLM · Computer Vision · Multimedia">
-  <meta name="twitter:image" content="assets/og-template.svg">
-  <link rel="alternate" hreflang="zh" href="https://example.com/index.html">
-  <link rel="alternate" hreflang="en" href="https://example.com/index.html?lang=en">
-  <link rel="alternate" hreflang="es" href="https://example.com/index.html?lang=es">
+  <meta name="twitter:image" content="assets/placeholder.jpg">
+  <link rel="alternate" hreflang="zh" href="https://stefanwan-durham.github.io/wanfan.github.io/index.html">
+  <link rel="alternate" hreflang="en" href="https://stefanwan-durham.github.io/wanfan.github.io/index.html?lang=en">
+  <link rel="alternate" hreflang="es" href="https://stefanwan-durham.github.io/wanfan.github.io/index.html?lang=es">
   <link rel="alternate" type="application/rss+xml" title="Fan Wan RSS" href="rss.xml">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Fan Wan",
-    "url": "https://example.com/",
-    "image": "https://example.com/assets/avatar.svg",
+    "url": "https://stefanwan-durham.github.io/wanfan.github.io/",
+    "image": "https://stefanwan-durham.github.io/wanfan.github.io/assets/avatar.svg",
     "jobTitle": "Researcher",
     "worksFor": {"@type":"Organization","name":"CNNC · Tongfang Knowledge Network"},
-    "sameAs": []
+    "sameAs": [
+      "https://scholar.google.com/citations?user=Ft_70SQAAAAJ",
+      "https://github.com/stefanwan-durham"
+    ]
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script defer src="lang.js"></script>
@@ -40,6 +46,7 @@
   <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <!-- Navigation -->
   <header>
     <nav class="navbar container">
@@ -82,6 +89,7 @@
     </nav>
   </header>
 
+  <main id="main">
   <!-- Hero Section -->
   <section class="hero section" id="hero">
     <div class="bg-shapes">
@@ -94,7 +102,9 @@
       <h1 data-i18n="hero_title">你好，我是万凡</h1>
       <p data-i18n="hero_subtitle">研究员 · 计算机科学博士</p>
       <div class="hero-buttons">
-  <a href="contact.html" class="btn primary" data-i18n="hero_btn_contact"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 10H7"/><path d="M21 6H3"/><path d="M21 14H3"/><path d="M21 18H7"/></svg></span> 联系我</a>
+        <a href="#portfolio" class="btn secondary" data-i18n="hero_btn_selected">Selected Work</a>
+        <a href="assets/cv.pdf" class="btn outline" target="_blank" rel="noopener" data-i18n="hero_btn_cv">Download CV</a>
+        <a href="contact.html" class="btn primary" data-i18n="hero_btn_contact"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 10H7"/><path d="M21 6H3"/><path d="M21 14H3"/><path d="M21 18H7"/></svg></span> 联系我</a>
       </div>
     </div>
   </section>
@@ -108,7 +118,7 @@
         <p data-i18n="about_p2">我的研究聚焦于大语言模型在核工业实际场景中的应用。同时热衷于机器学习、计算机视觉、多媒体分析，以及基于大模型的智能体和下游任务开发。</p>
       </div>
       <div class="about-photo">
-        <img src="assets/FanWAN.jpg" alt="profile photo" />
+        <img src="assets/FanWAN.jpg" alt="Fan Wan portrait" width="296" height="444" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
@@ -175,7 +185,7 @@
       <a href="contact.html" class="btn primary" data-i18n="contact_btn">联系页面</a>
     </div>
   </section>
-
+  </main>
   <footer>
     <div class="container">
       <div class="footer-cta">
@@ -183,7 +193,7 @@
         <p class="muted" data-i18n="footer_cta_desc">我可提供 LLM 应用、计算机视觉与多媒体分析相关的咨询与合作。</p>
         <div>
           <a class="btn primary" href="contact.html" data-i18n="hero_btn_contact">联系我</a>
-          
+          <a class="btn outline" href="assets/cv.pdf" target="_blank" rel="noopener">Download CV</a>
         </div>
       </div>
       <p>© <span id="year"></span> Fan Wan</p>
