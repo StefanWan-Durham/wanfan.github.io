@@ -1,0 +1,26 @@
+[
+  {
+    "badge": "LLM Agent",
+    "category": "LLM",
+    "title": {"zh":"核工业知识检索智能体","en":"Nuclear Industry Knowledge RAG Agent","es":"Agente de búsqueda de conocimientos nucleares"},
+    "summary": {
+      "zh":"问题：非结构化资料难以检索与问答；方案：基于检索增强与工具调用的多智能体；成果：内部试点平均检索准确率+27%。",
+      "en":"Problem: Hard to QA unstructured documents; Solution: multi-agent with RAG & tool calling; Result: +27% accuracy in pilot.",
+      "es":"Problema: Difícil consultar documentos no estructurados; Solución: multiagente con RAG y herramientas; Resultado: +27% en piloto."
+    },
+    "role": {"zh":"方案/算法","en":"Solution/Algorithm","es":"Solución/Algoritmo"},
+    "stack": ["RAG","Embeddings","Functions"]
+  },
+  {
+    "badge": "CV",
+    "category": "CV",
+    "title": {"zh":"少视角 NeRF 重建","en":"Sparse-view NeRF Reconstruction","es":"Reconstrucción NeRF de vistas escasas"},
+    "summary": {
+      "zh":"问题：视角稀疏导致重建质量差；方案：自适应几何与外观先验；成果：SSIM/PSNR 提升，训练耗时降低。",
+      "en":"Problem: Sparse views degrade quality; Solution: adaptive geometry & appearance priors; Result: better SSIM/PSNR, less training time.",
+      "es":"Problema: Vistas escasas degradan calidad; Solución: geometría adaptativa y priors; Resultado: mejor SSIM/PSNR y menos tiempo."
+    },
+    "role": {"zh":"第一作者","en":"First Author","es":"Primer Autor"},
+    "stack": ["NeRF","Adaptive","Regularization"]
+  }
+]

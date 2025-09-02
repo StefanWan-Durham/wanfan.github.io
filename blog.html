@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="blog_title">博客 · Fan Wan</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="description" content="Blog · Thoughts on LLM, CV, Multimedia, Career">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="博客 · Fan Wan">
+  <meta property="og:description" content="Thoughts on ML/CV/LLM/Career">
+  <meta property="og:image" content="assets/og-template.svg">
+  <meta property="og:url" content="https://example.com/blog.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="lang.js"></script>
+  <script defer src="script.js"></script>
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+  <header>
+    <nav class="navbar container">
+      <a href="index.html" class="brand" aria-label="Home">
+        <img src="assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo" data-i18n="nav_home">Home</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+        <li><a href="publications.html" data-i18n="nav_research">Research</a></li>
+        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline" aria-haspopup="listbox" aria-expanded="false">Language</button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+          <select id="lang-select" hidden>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="icon-sun" aria-hidden="true">☀</span>
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero section">
+    <div class="bg-shapes">
+      <span class="shape shape1"></span>
+      <span class="shape shape2"></span>
+      <span class="shape shape3"></span>
+      <span class="shape shape4"></span>
+    </div>
+    <div class="container">
+      <h1 data-i18n="blog_title">博客</h1>
+    </div>
+  </section>
+
+  <section class="blog section">
+    <div class="container">
+      <p data-i18n="blog_desc">在这里，我将分享关于机器学习、计算机视觉、大语言模型以及职业发展的思考与心得。敬请期待我的最新文章。</p>
+      <!-- Placeholder for blog posts -->
+      <div class="blog-posts">
+        <div class="post-placeholder">
+          <h3 data-i18n="blog_coming_soon_title">敬请期待</h3>
+          <p data-i18n="blog_coming_soon_desc">博客内容正在筹备中，请稍后再来。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Fan Wan</p>
+    </div>
+  </footer>
+</body>
+</html>

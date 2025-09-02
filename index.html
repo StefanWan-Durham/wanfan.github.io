@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="site_title">Fan Wan · Personal Website</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0ea5e9">
+  <!-- SEO / Open Graph -->
+  <meta name="description" content="Fan Wan · Research · LLM · Computer Vision · Multimedia">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fan Wan · Personal Website">
+  <meta property="og:description" content="Research · LLM · Computer Vision · Multimedia">
+  <meta property="og:image" content="assets/og-template.svg">
+  <meta property="og:url" content="https://example.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fan Wan · Personal Website">
+  <meta name="twitter:description" content="Research · LLM · Computer Vision · Multimedia">
+  <meta name="twitter:image" content="assets/og-template.svg">
+  <link rel="alternate" hreflang="zh" href="https://example.com/index.html">
+  <link rel="alternate" hreflang="en" href="https://example.com/index.html?lang=en">
+  <link rel="alternate" hreflang="es" href="https://example.com/index.html?lang=es">
+  <link rel="alternate" type="application/rss+xml" title="Fan Wan RSS" href="rss.xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Fan Wan",
+    "url": "https://example.com/",
+    "image": "https://example.com/assets/avatar.svg",
+    "jobTitle": "Researcher",
+    "worksFor": {"@type":"Organization","name":"CNNC · Tongfang Knowledge Network"},
+    "sameAs": []
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="lang.js"></script>
+  <script defer src="script.js"></script>
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar container">
+      <a href="index.html" class="brand" aria-label="Home">
+        <img src="assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo" data-i18n="nav_home">Home</span>
+      </a>
+      <ul class="nav-links">
+  <li><a href="index.html" data-i18n="nav_home"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> Home</a></li>
+        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+        <li><a href="publications.html" data-i18n="nav_research">Research</a></li>
+        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline" aria-haspopup="listbox" aria-expanded="false">Language</button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+          <select id="lang-select" hidden>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="icon-sun" aria-hidden="true">☀</span>
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero section" id="hero">
+    <div class="bg-shapes">
+      <span class="shape shape1"></span>
+      <span class="shape shape2"></span>
+      <span class="shape shape3"></span>
+      <span class="shape shape4"></span>
+    </div>
+    <div class="hero-content container">
+      <h1 data-i18n="hero_title">你好，我是万凡</h1>
+      <p data-i18n="hero_subtitle">研究员 · 计算机科学博士</p>
+      <div class="hero-buttons">
+  <a href="contact.html" class="btn primary" data-i18n="hero_btn_contact"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 10H7"/><path d="M21 6H3"/><path d="M21 14H3"/><path d="M21 18H7"/></svg></span> 联系我</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2 data-i18n="about_title">关于我</h2>
+        <p data-i18n="about_p1">我于2018年获得英国纽卡斯尔大学计算机科学硕士学位（荣誉），并于2025年在英国杜伦大学完成计算机科学博士学位。目前在中国核工业集团同方知网数字技术有限公司担任研究员。</p>
+        <p data-i18n="about_p2">我的研究聚焦于大语言模型在核工业实际场景中的应用。同时热衷于机器学习、计算机视觉、多媒体分析，以及基于大模型的智能体和下游任务开发。</p>
+      </div>
+      <div class="about-photo">
+        <img src="assets/FanWAN.jpg" alt="profile photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Summary Section -->
+  <section class="research-summary section" id="research-summary">
+    <div class="container">
+      <h2 data-i18n="research_title">学术出版物</h2>
+      <p data-i18n="research_desc">我在机器学习、计算机视觉和多媒体分析等领域发表了多篇论文，涵盖联邦学习、神经辐射场和零样本学习等主题。点击下方按钮查看完整列表。</p>
+      <a href="publications.html" class="btn primary" data-i18n="research_btn">查看研究成果</a>
+    </div>
+  </section>
+
+  <!-- Portfolio Section (作品集) -->
+  <section class="portfolio section" id="portfolio">
+    <div class="container">
+      <h2 data-i18n="portfolio_title">Portfolio</h2>
+      <div class="portfolio-filters" style="margin: .5rem 0 1rem; display:flex; gap:.5rem; flex-wrap:wrap;">
+        <button class="btn outline" data-filter="all" data-i18n="portfolio_filter_all">All</button>
+        <button class="btn outline" data-filter="LLM" data-i18n="portfolio_filter_llm">LLM</button>
+        <button class="btn outline" data-filter="CV" data-i18n="portfolio_filter_cv">CV</button>
+      </div>
+      <div class="portfolio-grid">
+        <article class="card portfolio-item">
+          <div class="portfolio-content">
+            <div class="badge">LLM Agent</div>
+            <h3>核工业知识检索智能体</h3>
+            <p class="muted">问题：非结构化资料难以检索与问答；方案：基于检索增强与工具调用的多智能体；成果：内部试点平均检索准确率+27%。</p>
+            <ul class="portfolio-meta">
+              <li><span class="tag">角色：方案/算法</span></li>
+              <li><span class="tag">技术栈：RAG·Embeddings·函数调用</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="card portfolio-item">
+          <div class="portfolio-content">
+            <div class="badge success">CV</div>
+            <h3>少视角 NeRF 重建</h3>
+            <p class="muted">问题：视角稀疏导致重建质量差；方案：自适应几何与外观先验；成果：SSIM/PSNR 提升，训练耗时降低。</p>
+            <ul class="portfolio-meta">
+              <li><span class="tag">角色：第一作者</span></li>
+              <li><span class="tag">技术栈：NeRF·Ada·正则</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Summary Section -->
+  <section class="blog-summary section" id="blog-summary">
+    <div class="container">
+      <h2 data-i18n="blog_title">博客</h2>
+      <p data-i18n="blog_desc">在这里，我将分享关于机器学习、计算机视觉、大语言模型以及职业发展的思考与心得。敬请期待我的最新文章。</p>
+  <a href="blog.html" class="btn primary" data-i18n="blog_btn">进入博客</a>
+    </div>
+  </section>
+
+  <!-- Contact Summary Section -->
+  <section class="contact-summary section" id="contact-summary">
+    <div class="container">
+      <h2 data-i18n="contact_title">联系我</h2>
+      <p data-i18n="contact_desc">如果你对合作或交流感兴趣，欢迎通过邮件或社交媒体与我取得联系。</p>
+      <a href="contact.html" class="btn primary" data-i18n="contact_btn">联系页面</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-cta">
+        <h3 data-i18n="footer_cta_title">一起合作？</h3>
+        <p class="muted" data-i18n="footer_cta_desc">我可提供 LLM 应用、计算机视觉与多媒体分析相关的咨询与合作。</p>
+        <div>
+          <a class="btn primary" href="contact.html" data-i18n="hero_btn_contact">联系我</a>
+          
+        </div>
+      </div>
+      <p>© <span id="year"></span> Fan Wan</p>
+    </div>
+  </footer>
+</body>
+</html>

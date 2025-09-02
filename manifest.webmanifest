@@ -1,0 +1,13 @@
+{
+  "name": "Fan Wan · Personal Website",
+  "short_name": "FanWan",
+  "description": "Research · LLM · CV · Multimedia",
+  "start_url": "/FanWan_website_v2/index.html",
+  "scope": "/FanWan_website_v2/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    { "src": "assets/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
