@@ -1,0 +1,34 @@
+name: Build Blog from Markdown
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'content/blog/**'
+      - 'scripts/generate-blog.mjs'
+      - 'package.json'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci || npm i
+      - run: npm run site:build
+      - name: Commit generated blog pages & covers
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add blog/*.html assets/blog/*.png || true
+          if git diff --cached --quiet; then
+            echo "No blog changes to commit"
+          else
+            git commit -m "chore(blog): generate HTML & OG covers from Markdown"
+            git push
+          fi
