@@ -49,7 +49,7 @@ function wrapSvgText(text, {x=80, y=270, maxWidth=1000, lineHeight=1.2, fontSize
   return { tspans, lineCount: out.length };
 }
 
-async function renderPngFromText(title, desc, outPng){
+async function renderPngFromText(title, subline, outPng){
   const svg = await fs.readFile(tplPath, 'utf8');
   // Title: 56px, max 2 lines; we will also shrink in browser if still too wide
   const titleWrap = wrapSvgText(title, { x: 80, y: 270, maxWidth: 1000, lineHeight: 1.18, fontSize: 56, maxLines: 2 });
@@ -57,7 +57,7 @@ async function renderPngFromText(title, desc, outPng){
   // Add extra top padding if title wrapped; slightly smaller width to avoid edge clipping
   const extraTop = titleWrap.lineCount>1 ? Math.round((titleWrap.lineCount-1)*56*1.18) : 0;
   const descY = 340 + extraTop; // a tad lower than 330 for breathing room
-  const descWrap = wrapSvgText(desc, { x: 80, y: descY, maxWidth: 960, lineHeight: 1.22, fontSize: 28, maxLines: 4 });
+  const descWrap = wrapSvgText(subline, { x: 80, y: descY, maxWidth: 960, lineHeight: 1.22, fontSize: 28, maxLines: 4 });
   let filled = svg
     .replace(/<text id="og-title"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
     .replace(/id="og-title" x="80" y="270" font-size="56" font-weight="700">/i, `id="og-title" x="80" y="270" font-size="56" font-weight="700">${titleWrap.tspans}`)
@@ -121,9 +121,9 @@ async function processPost(dir){
       const [meta] = parseFrontMatter(raw);
       if (/^(true|1)$/i.test(String(meta.draft||'').trim())) { continue; }
       const title = meta.title || slug;
-      const desc = meta.description || '';
+  const subline = computeKeywords(slug, lang, meta);
       const outPng = path.join(root, 'assets', 'blog', `${slug}-${lang}.png`);
-      await renderPngFromText(title, desc, outPng);
+  await renderPngFromText(title, subline, outPng);
     } catch {}
   }
 }
@@ -144,3 +144,19 @@ async function main(){
 }
 
 main().catch(e=>{ console.error(e); process.exit(1); });
+
+// Choose a short, non-overflowing keyword subline per language/post.
+function computeKeywords(slug, lang, meta){
+  const fromMeta = (meta.keywords||'').trim();
+  if (fromMeta) return fromMeta;
+  // Defaults tailored for KBLaM summary
+  if (/kblam-project-summary/i.test(slug)){
+    if (lang==='zh') return 'LLM • 知识令牌 • 矩形注意力 • KBLaM';
+    if (lang==='es') return 'LLM • Tokens de conocimiento • Atención rectangular • KBLaM';
+    return 'LLM • Knowledge Tokens • Rectangular Attention • KBLaM';
+  }
+  // Generic fallback
+  if (lang==='zh') return 'Blog • AI • LLM';
+  if (lang==='es') return 'Blog • IA • LLM';
+  return 'Blog • AI • LLM';
+}

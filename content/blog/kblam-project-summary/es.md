@@ -5,6 +5,7 @@ date: 2025-09-03
 draft: false
 # Deja la portada vacía para usar la OG generada automáticamente
 cover:
+keywords: LLM • Tokens de conocimiento • Atención rectangular • KBLaM
 ---
 
 # Resumen y perspectivas del proyecto KBLaM

@@ -5,6 +5,7 @@ date: 2025-09-03
 draft: false
 # Leave cover empty to use the auto‑generated OG cover
 cover:
+keywords: LLM • Knowledge Tokens • Rectangular Attention • KBLaM
 ---
 
 # KBLaM Project Summary and Outlook
