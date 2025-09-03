@@ -10,6 +10,7 @@ import path from 'node:path';
 const root = path.resolve(new URL('.', import.meta.url).pathname, '..');
 const contentDir = path.join(root, 'content', 'blog');
 const outDir = path.join(root, 'blog');
+const siteOrigin = 'https://stefanwan-durham.github.io/wanfan.github.io/';
 
 function slugifyId(text) {
   return (text || '')
@@ -112,8 +113,8 @@ function mdToHtml(md) {
 function buildHtml({lang, slug, title, description, date, bodyHtml, cover}){
   const langLabel = lang==='en' ? 'English' : lang==='es' ? 'Español' : '中文';
   const titleForTwitter = lang==='en' ? `${title} (with KBLaM)` : title;
-  const url = `https://stefanwan-durham.github.io/wanfan.github.io/blog/${slug}${lang==='zh'?'':'.'+lang}.html`;
-  const ogImage = cover || 'https://stefanwan-durham.github.io/wanfan.github.io/assets/placeholder.jpg';
+  const url = `${siteOrigin}blog/${slug}${lang==='zh'?'':'.'+lang}.html`;
+  const ogImage = cover || `${siteOrigin}assets/placeholder.jpg`;
   const heroImg = cover?.startsWith('http') ? cover : (cover ? `../${cover.replace(/^\/?/, '')}` : '');
   const dateLabel = lang==='en' ? `Published on ${date}` : lang==='es' ? `Publicado el ${date}` : `发表于 ${date}`;
   const estRead = lang==='en' ? 'Estimated read' : lang==='es' ? 'Lectura' : '预计阅读';
@@ -269,14 +270,27 @@ async function buildPost(dir){
       const raw = await fs.readFile(file, 'utf8');
       const [meta, body] = parseFrontMatter(raw);
       if (/^(true|1)$/i.test(String(meta.draft||'').trim())) { continue; }
-  const title = meta.title || slug;
-  const description = meta.description || '';
-  const date = meta.date || new Date().toISOString().slice(0,10);
-  // If no explicit cover, default to generated PNG path: assets/blog/<slug>-<lang>.png
-  const coverRel = (meta.cover && !meta.cover.startsWith('http')) ? meta.cover.replace(/^\/?/,'') : (meta.cover || `assets/blog/${slug}-${lang}.png`);
-  const cover = meta.cover && meta.cover.startsWith('http') ? meta.cover : `https://stefanwan-durham.github.io/wanfan.github.io/${coverRel}`;
-  const bodyHtml = mdToHtml(body);
-  const html = buildHtml({lang, slug, title, description, date, bodyHtml, cover});
+      const title = meta.title || slug;
+      const description = meta.description || '';
+      const date = meta.date || new Date().toISOString().slice(0,10);
+      // Resolve a valid cover for hero/OG: prefer provided site path if exists; else PNG, then SVG, else placeholder
+      const preferRel = (meta.cover && !/^https?:\/\//i.test(meta.cover)) ? meta.cover.replace(/^\/?/,'') : '';
+      const pngRel = path.join('assets','blog',`${slug}-${lang}.png`);
+      const svgRel = path.join('assets','blog',`${slug}-${lang}.svg`);
+      let chosenRel = '';
+      if (preferRel) {
+        try { await fs.access(path.join(root, preferRel)); chosenRel = preferRel; } catch {}
+      }
+      if (!chosenRel) {
+        try { await fs.access(path.join(root, pngRel)); chosenRel = pngRel; } catch {}
+      }
+      if (!chosenRel) {
+        try { await fs.access(path.join(root, svgRel)); chosenRel = svgRel; } catch {}
+      }
+      if (!chosenRel) { chosenRel = 'assets/placeholder.jpg'; }
+      const cover = meta.cover && /^https?:\/\//i.test(meta.cover) ? meta.cover : `${siteOrigin}${chosenRel}`;
+      const bodyHtml = mdToHtml(body);
+      const html = buildHtml({lang, slug, title, description, date, bodyHtml, cover});
       const outPath = path.join(outDir, `${slug}${lang==='zh'?'':'.'+lang}.html`);
       await fs.writeFile(outPath, html, 'utf8');
       console.log('Wrote', path.relative(root, outPath));
