@@ -58,6 +58,9 @@ async function renderPngFromText(title, desc, outPng){
   .replace(/<text id="og-desc"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
   .replace(/id="og-desc" x="80" y="330" font-size="28" opacity="0.95">/i, `id="og-desc" x="80" y="${descY}" font-size="28" opacity="0.95">${descWrap.tspans}`);
   await fs.mkdir(path.dirname(outPng), { recursive: true });
+  // Always write updated SVG next to PNG so SVG references stay fresh
+  const outSvg = outPng.replace(/\.png$/i, '.svg');
+  await fs.writeFile(outSvg, filled, 'utf8');
   try {
     const puppeteer = (await import('puppeteer')).default;
     const browser = await puppeteer.launch({ headless: 'new' });
@@ -75,13 +78,10 @@ async function renderPngFromText(title, desc, outPng){
       while (bbox().width > maxW && size > 28) { size -= 2; el.setAttribute('font-size', String(size)); }
     });
     await page.screenshot({ path: outPng, type: 'png' });
-    await browser.close();
-    console.log('OG PNG generated at', outPng);
+  await browser.close();
+  console.log('OG PNG generated at', outPng);
   } catch (e) {
-    // Fallback: write SVG next to PNG path for visibility
-    const outSvg = outPng.replace(/\.png$/i, '.svg');
-    await fs.writeFile(outSvg, filled, 'utf8');
-    console.log('Puppeteer not available. Wrote SVG at', outSvg);
+  console.log('Puppeteer not available. Wrote SVG at', outSvg);
   }
 }
 
