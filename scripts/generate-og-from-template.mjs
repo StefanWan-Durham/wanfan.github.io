@@ -60,12 +60,12 @@ async function renderPngFromText(title, subline, outPng){
   const descBase = 270;
   const descY = descBase + extraTop;
   const descWrap = wrapSvgText(subline, { x: 80, y: descY, maxWidth: 960, lineHeight: 1.22, fontSize: 28, maxLines: 4 });
+  // Replace entire text nodes to ensure tspans are inserted correctly
   let filled = svg
-    // Clear any inner text; then replace the opening tag attributes in an id-based manner
-    .replace(/<text id="og-title"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
-    .replace(/id="og-title"[^>]*>/i, `id="og-title" x="80" y="${titleY}" font-size="56" font-weight="700">`)
-    .replace(/<text id="og-desc"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
-    .replace(/id="og-desc"[^>]*>/i, `id="og-desc" x="80" y="${descY}" font-size="28" opacity="0.95">`);
+    .replace(/<text id="og-title"[\s\S]*?<\/text>/i,
+      `<text id="og-title" x="80" y="${titleY}" font-size="56" font-weight="700">${titleWrap.tspans}</text>`)
+    .replace(/<text id="og-desc"[\s\S]*?<\/text>/i,
+      `<text id="og-desc" x="80" y="${descY}" font-size="28" opacity="0.95">${descWrap.tspans}</text>`);
   await fs.mkdir(path.dirname(outPng), { recursive: true });
   // Always write updated SVG next to PNG so SVG references stay fresh
   const outSvg = outPng.replace(/\.png$/i, '.svg');
