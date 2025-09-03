@@ -170,13 +170,10 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
 
 <p>表 1：开源嵌入模型对比</p>
 
-<p>| 模型                  | 架构           | 输出维度  | 优点           | 缺点          |</p>
-<p>| ------------------- | ------------ | ----- | ------------ | ----------- |</p>
-<p>| all‑MiniLM‑L6‑v2    | MiniLM (6 层) | 384   | 轻量、速度快       | 长句性能有限      |</p>
-<p>| BGE‑base‑en‑v1.5    | BERT         | 768   | 检索效果强，支持前缀指令 | 需要额外前缀，模型较大 |</p>
-<p>| E5‑base‑v2          | RoBERTa      | 768   | 表现均衡，无需前缀    | 长文本截断影响性能   |</p>
-<p>| nomic‑embed‑text‑v1 | GPT‑式        | ≈1024 | 支持长输入、多语言    | 参数量大、运行慢    |</p>
-<p>| all‑mpnet‑base‑v2   | MPNet        | 768   | 高质量检索        | 对资源要求高      |</p>
+<table>
+<thead><tr><th>模型</th><th>架构</th><th>输出维度</th><th>优点</th><th>缺点</th></tr></thead>
+<tbody><tr><td>all‑MiniLM‑L6‑v2</td><td>MiniLM (6 层)</td><td>384</td><td>轻量、速度快</td><td>长句性能有限</td></tr><tr><td>BGE‑base‑en‑v1.5</td><td>BERT</td><td>768</td><td>检索效果强，支持前缀指令</td><td>需要额外前缀，模型较大</td></tr><tr><td>E5‑base‑v2</td><td>RoBERTa</td><td>768</td><td>表现均衡，无需前缀</td><td>长文本截断影响性能</td></tr><tr><td>nomic‑embed‑text‑v1</td><td>GPT‑式</td><td>≈1024</td><td>支持长输入、多语言</td><td>参数量大、运行慢</td></tr><tr><td>all‑mpnet‑base‑v2</td><td>MPNet</td><td>768</td><td>高质量检索</td><td>对资源要求高</td></tr></tbody>
+</table>
 
 <ol>
 <li><b>大模型适配与显存管理</b>：原论文将 Llama3‑8B 作为 LLM 主干。我们已在个人电脑（Windows + RTX 2080 Ti）上验证可以加载并运行 <b>Llama‑3‑8B‑Instruct</b>，说明开源权重在 GPU 环境下能够正常推理。由于昇腾 910B 单卡显存仅 32 GB，服务器部署时需采用 8 卡模型并行与 ZeRO‑2 优化，并使用半精度（FP16）加载权重以控制显存占用；同时将 HuggingFace 权重转换为 MindSpore‑CKPT 格式。为支持矩形注意力，我们计划参考原仓库重写 <code>masked_add</code> 和 <code>softmax</code> 等底层算子，在 MindSpore 中实现并调优不同批次大小的速度与显存开销。这一适配方案尚处于实验阶段，后续将在服务器上验证其可行性。</li>
