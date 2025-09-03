@@ -19,8 +19,12 @@ function wrapSvgText(text, {x=80, y=270, maxWidth=1000, lineHeight=1.2, fontSize
   const safe = escapeXml(text);
   const isCJK = !/\s/.test(safe);
   const tokens = isCJK ? safe.split('') : safe.split(/\s+/);
-  const approxCharW = Math.max(10, Math.round(fontSize*0.36)); // rough width factor
-  const charsPerLine = Math.max(8, Math.floor(maxWidth/approxCharW));
+  // Use a conservative width estimate; CJK chars are wider per glyph
+  const baseFactor = isCJK ? 0.9 : 0.6; // ~0.9em for CJK, ~0.6em for Latin
+  const approxCharW = Math.max(10, Math.round(fontSize*baseFactor));
+  // Slightly reduce usable width for margin safety
+  const usable = Math.max(100, Math.floor(maxWidth*0.96));
+  const charsPerLine = Math.max(8, Math.floor(usable/approxCharW));
   const out = [];
   let cur = '';
   for (const t of tokens){
@@ -50,8 +54,10 @@ async function renderPngFromText(title, desc, outPng){
   // Title: 56px, max 2 lines; we will also shrink in browser if still too wide
   const titleWrap = wrapSvgText(title, { x: 80, y: 270, maxWidth: 1000, lineHeight: 1.18, fontSize: 56, maxLines: 2 });
   // Description: 28px, clamp to 4 lines with ellipsis, and place below title block
-  const descY = 330 + (titleWrap.lineCount>1? Math.round((titleWrap.lineCount-1)*56*1.18) : 0);
-  const descWrap = wrapSvgText(desc, { x: 80, y: descY, maxWidth: 1000, lineHeight: 1.25, fontSize: 28, maxLines: 4 });
+  // Add extra top padding if title wrapped; slightly smaller width to avoid edge clipping
+  const extraTop = titleWrap.lineCount>1 ? Math.round((titleWrap.lineCount-1)*56*1.18) : 0;
+  const descY = 340 + extraTop; // a tad lower than 330 for breathing room
+  const descWrap = wrapSvgText(desc, { x: 80, y: descY, maxWidth: 960, lineHeight: 1.22, fontSize: 28, maxLines: 4 });
   let filled = svg
     .replace(/<text id="og-title"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
     .replace(/id="og-title" x="80" y="270" font-size="56" font-weight="700">/i, `id="og-title" x="80" y="270" font-size="56" font-weight="700">${titleWrap.tspans}`)
