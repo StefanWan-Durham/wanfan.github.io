@@ -2,7 +2,7 @@
 title: Sample post: My second blog
 description: A sample post to validate the Markdown→HTML pipeline and OG cover rendering.
 date: 2025-09-05
-draft: false
+draft: true
 cover: assets/blog/my-second-post-en.png
 ---
 

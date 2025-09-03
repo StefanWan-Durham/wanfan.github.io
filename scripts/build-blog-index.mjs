@@ -10,9 +10,11 @@ const contentDir = path.join(root, 'content', 'blog');
 const blogIndexPath = path.join(root, 'blog.html');
 
 function parseFrontMatter(src){
-  const m = src.match(/^---\n([\s\S]*?)\n---\n?/);
-  if (!m) return [{}, src];
-  const body = src.slice(m[0].length);
+  // Normalize newlines so Windows CRLF also works
+  const norm = src.replace(/\r\n?/g, '\n');
+  const m = norm.match(/^---\n([\s\S]*?)\n---\n?/);
+  if (!m) return [{}, norm];
+  const body = norm.slice(m[0].length);
   const yaml = m[1];
   const meta = {};
   yaml.split(/\r?\n/).forEach(line => {
@@ -36,7 +38,10 @@ async function readPostMeta(slug){
     try{
       const raw = await fs.readFile(path.join(contentDir, slug, `${lang}.md`), 'utf8');
       const [meta] = parseFrontMatter(raw);
-      if (/^(true|1)$/i.test(String(meta.draft||'').trim())) { continue; }
+  const val = (x)=>String(x||'').trim();
+  const isTrue = (s)=>/^(true|1|yes|on)$/i.test(s);
+  const isFalse = (s)=>/^(false|0|no|off)$/i.test(s);
+  if (isTrue(val(meta.draft)) || isTrue(val(meta.hidden)) || isFalse(val(meta.published))) { continue; }
       metaByLang[lang] = {
         title: meta.title || slug,
         description: meta.description || '',

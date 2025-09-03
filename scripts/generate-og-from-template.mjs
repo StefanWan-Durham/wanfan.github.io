@@ -14,28 +14,44 @@ function escapeXml(s){
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-function wrapSvgText(text, {x=80, y=270, maxWidth=1000, lineHeight=1.2}){
-  // Naive word wrap at ~32 chars fallback for CJK: split by spaces, then by characters
+function wrapSvgText(text, {x=80, y=270, maxWidth=1000, lineHeight=1.2, fontSize=56, maxLines=0}){
+  // Naive word wrap; for CJK (no spaces) fall back to per-char split
   const safe = escapeXml(text);
-  const words = /\s/.test(safe) ? safe.split(/\s+/) : safe.split('');
-  const approxCharW = 20; // rough width at 56px for title; we'll shrink later in browser
+  const isCJK = !/\s/.test(safe);
+  const tokens = isCJK ? safe.split('') : safe.split(/\s+/);
+  const approxCharW = Math.max(10, Math.round(fontSize*0.36)); // rough width factor
   const charsPerLine = Math.max(8, Math.floor(maxWidth/approxCharW));
-  const lines = [];
+  const out = [];
   let cur = '';
-  for (const w of words){
-    const candidate = cur ? cur + ' ' + w : w;
-    if (candidate.length > charsPerLine && cur) { lines.push(cur); cur = w; }
-    else { cur = candidate; }
+  for (const t of tokens){
+    const candidate = cur ? (isCJK ? cur + t : cur + ' ' + t) : t;
+    if (candidate.length > charsPerLine && cur) {
+      out.push(cur);
+      cur = t;
+      if (maxLines && out.length >= maxLines) break;
+    } else {
+      cur = candidate;
+    }
   }
-  if (cur) lines.push(cur);
-  const tspans = lines.map((ln, i)=>`<tspan x="${x}" dy="${i===0?0:Math.round(56*lineHeight)}">${ln}</tspan>`).join('');
-  return { tspans, lineCount: lines.length };
+  if (cur && (!maxLines || out.length < maxLines)) out.push(cur);
+  if (maxLines && out.length > maxLines) out.length = maxLines;
+  // If clamped, add ellipsis to the last line
+  if (maxLines && out.length === maxLines) {
+    const last = out[maxLines-1] || '';
+    out[maxLines-1] = last.replace(/[\s\u2026]*$/, '') + '…';
+  }
+  const dy = Math.round(fontSize*lineHeight);
+  const tspans = out.map((ln, i)=>`<tspan x="${x}" dy="${i===0?0:dy}">${ln}</tspan>`).join('');
+  return { tspans, lineCount: out.length };
 }
 
 async function renderPngFromText(title, desc, outPng){
   const svg = await fs.readFile(tplPath, 'utf8');
-  const titleWrap = wrapSvgText(title, { x: 80, y: 270, maxWidth: 1000, lineHeight: 1.18 });
-  const descWrap = wrapSvgText(desc, { x: 80, y: 330 + (titleWrap.lineCount>1? (titleWrap.lineCount-1)*56*1.18 : 0), maxWidth: 1000, lineHeight: 1.25 });
+  // Title: 56px, max 2 lines; we will also shrink in browser if still too wide
+  const titleWrap = wrapSvgText(title, { x: 80, y: 270, maxWidth: 1000, lineHeight: 1.18, fontSize: 56, maxLines: 2 });
+  // Description: 28px, clamp to 4 lines with ellipsis, and place below title block
+  const descY = 330 + (titleWrap.lineCount>1? Math.round((titleWrap.lineCount-1)*56*1.18) : 0);
+  const descWrap = wrapSvgText(desc, { x: 80, y: descY, maxWidth: 1000, lineHeight: 1.25, fontSize: 28, maxLines: 4 });
   let filled = svg
     .replace(/<text id="og-title"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
     .replace(/id="og-title" x="80" y="270" font-size="56" font-weight="700">/i, `id="og-title" x="80" y="270" font-size="56" font-weight="700">${titleWrap.tspans}`)
@@ -49,7 +65,7 @@ async function renderPngFromText(title, desc, outPng){
     await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 });
     const dataUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(filled);
     await page.goto(dataUrl, { waitUntil: 'networkidle0' });
-    // Shrink title font-size if overflowing horizontally
+  // Shrink title font-size if overflowing horizontally
     await page.evaluate(() => {
       const el = document.getElementById('og-title');
       if (!el) return;

@@ -2,7 +2,7 @@
 title: Publicación de ejemplo: Mi segundo blog
 description: Una publicación de muestra para validar el flujo Markdown→HTML y la portada OG.
 date: 2025-09-05
-draft: false
+draft: true
 cover: assets/blog/my-second-post-es.png
 ---
 
