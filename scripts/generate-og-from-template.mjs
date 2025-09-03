@@ -55,8 +55,8 @@ async function renderPngFromText(title, desc, outPng){
   let filled = svg
     .replace(/<text id="og-title"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
     .replace(/id="og-title" x="80" y="270" font-size="56" font-weight="700">/i, `id="og-title" x="80" y="270" font-size="56" font-weight="700">${titleWrap.tspans}`)
-    .replace(/<text id="og-desc"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
-    .replace(/id="og-desc" x="80" y="330" font-size="28" opacity="0.95">/i, `id="og-desc" x="80" y="${330}" font-size="28" opacity="0.95">${descWrap.tspans}`);
+  .replace(/<text id="og-desc"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
+  .replace(/id="og-desc" x="80" y="330" font-size="28" opacity="0.95">/i, `id="og-desc" x="80" y="${descY}" font-size="28" opacity="0.95">${descWrap.tspans}`);
   await fs.mkdir(path.dirname(outPng), { recursive: true });
   try {
     const puppeteer = (await import('puppeteer')).default;
