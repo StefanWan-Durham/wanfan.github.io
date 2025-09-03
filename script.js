@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Blog enhancements: lang-block toggle, auto TOC from active lang, highlight + reading time
   (function enhanceBlog(){
     const isPost = document.querySelector('main.blog-post');
-    if (!isPost) return;
+  if (!isPost) return;
     // Ensure the URL variant matches selected language so OG/Twitter share cards stay consistent
     (function ensurePageLangURL(){
       const path = location.pathname;

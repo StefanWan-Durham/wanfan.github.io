@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fw-site-v3';
+const CACHE_NAME = 'fw-site-v4';
 const ASSETS = [
   './',
   './index.html',
@@ -36,24 +36,32 @@ self.addEventListener('fetch', (event) => {
 
   // Network-first for HTML, CSS and JS to avoid stale UI
   if (dest === 'document' || dest === 'style' || dest === 'script') {
-    event.respondWith(
-      fetch(req).then(res => {
-        const clone = res.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(req, clone));
+    event.respondWith((async () => {
+      try {
+        const res = await fetch(req);
+        if (res && (res.ok || res.type === 'opaque')) {
+          const clone = res.clone();
+          event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(req, clone)).catch(()=>{}));
+        }
         return res;
-      }).catch(() => caches.match(req))
-    );
+      } catch (e) {
+        const cached = await caches.match(req);
+        return cached || Promise.reject(e);
+      }
+    })());
     return;
   }
 
   // Stale-while-revalidate for other assets (images, fonts, etc.)
-  event.respondWith(
-    caches.match(req).then(cached => {
-      const fetchPromise = fetch(req).then(res => {
-        caches.open(CACHE_NAME).then(cache => cache.put(req, res.clone()));
-        return res;
-      }).catch(() => cached);
-      return cached || fetchPromise;
-    })
-  );
+  event.respondWith((async () => {
+    const cached = await caches.match(req);
+    const fetchPromise = fetch(req).then(res => {
+      if (res && (res.ok || res.type === 'opaque')) {
+        const clone = res.clone();
+        event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(req, clone)).catch(()=>{}));
+      }
+      return res;
+    }).catch(() => cached);
+    return cached || fetchPromise;
+  })());
 });
