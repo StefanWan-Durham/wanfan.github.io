@@ -47,13 +47,23 @@ async function readPostMeta(slug){
   return metaByLang;
 }
 
-function cardHtml(slug, metas){
+async function pickCover(slug, lang, metaCover){
+  // Prefer meta cover if provided, otherwise choose PNG, then SVG, else placeholder
+  if (metaCover) return metaCover;
+  const png = path.join('assets','blog',`${slug}-${lang}.png`);
+  const svg = path.join('assets','blog',`${slug}-${lang}.svg`);
+  try { await fs.access(path.join(root, png)); return png; } catch {}
+  try { await fs.access(path.join(root, svg)); return svg; } catch {}
+  return 'assets/placeholder.jpg';
+}
+
+async function cardHtml(slug, metas){
   const hrefZh = `blog/${slug}.html`;
   const hrefEn = `blog/${slug}.en.html`;
   const hrefEs = `blog/${slug}.es.html`;
-  const srcZh = metas.zh?.cover || `assets/blog/${slug}-zh.png`;
-  const srcEn = metas.en?.cover || `assets/blog/${slug}-en.png`;
-  const srcEs = metas.es?.cover || `assets/blog/${slug}-es.png`;
+  const srcZh = await pickCover(slug, 'zh', metas.zh?.cover);
+  const srcEn = await pickCover(slug, 'en', metas.en?.cover);
+  const srcEs = await pickCover(slug, 'es', metas.es?.cover);
   return `        <article class="card post-card">
           <a class="post-link" href="${hrefZh}" aria-label="${(metas.zh?.title||metas.en?.title||slug).replace(/"/g,'&quot;')}"
              data-href-zh="${hrefZh}"
@@ -145,9 +155,15 @@ async function main(){
     console.warn('Markers not found in blog.html; skip index update');
     return;
   }
-  const before = html.slice(0, html.indexOf('>', bIdx) + 1);
-  const after = html.slice(html.indexOf('>', eIdx) + 1);
-  const cards = metaList.map(({slug, metas}) => cardHtml(slug, metas)).join('\n');
+  const bEnd = html.indexOf('-->', bIdx);
+  const eEnd = html.indexOf('-->', eIdx);
+  if (bEnd === -1 || eEnd === -1) {
+    console.warn('Marker closures not found; skip index update');
+    return;
+  }
+  const before = html.slice(0, bEnd + 3);
+  const after = html.slice(eEnd + 3);
+  const cards = (await Promise.all(metaList.map(({slug, metas}) => cardHtml(slug, metas)))).join('\n');
   const out = before + '\n' + cards + '\n' + after;
   await fs.writeFile(blogIndexPath, out, 'utf8');
   console.log('blog.html updated with', metaList.length, 'posts');
