@@ -45,7 +45,7 @@ function escapeHtml(s){
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-function mdToHtml(md) {
+function mdToHtml(md, { slug } = {}) {
   // Very small markdown support: headings, paragraphs, lists, code fences, inline code, bold/italic, links, blockquotes
   const lines = md.replace(/\r\n?/g,'\n').split('\n');
   const out = [];
@@ -98,8 +98,24 @@ function mdToHtml(md) {
   function inline(s) {
     // Escapes first, then formatting
     let t = escapeHtml(s);
+    // Images ![alt](url) — replace before links to avoid leaving a stray '!'
+    t = t.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (m, alt, url) => {
+      let u = url;
+      // If relative (no protocol, not starting with '/' or '../' or 'data:'), prefix to content folder so it resolves from blog/<slug>.html
+      if (slug && !/^([a-z]+:)?\/\//i.test(u) && !u.startsWith('/') && !u.startsWith('../') && !u.startsWith('data:')) {
+        u = `../content/blog/${slug}/${u}`;
+      }
+      return `<img src="${u}" alt="${alt}">`;
+    });
     // Links [text](url)
-    t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, a, b) => `<a href="${b}" target="_blank" rel="noopener">${a}</a>`);
+    t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, a, b) => {
+      let u = b;
+      if (slug && !/^([a-z]+:)?\/\//i.test(u) && !u.startsWith('/')) {
+        // For local links to assets in the post folder, also prefix. If author intends site-root links, start with '/'.
+        u = `../content/blog/${slug}/${u}`;
+      }
+      return `<a href="${u}" target="_blank" rel="noopener">${a}</a>`;
+    });
     // Bold **text** or __text__
     t = t.replace(/(\*\*|__)(.+?)\1/g, '<b>$2</b>');
     // Italic *text* or _text_
@@ -289,7 +305,7 @@ async function buildPost(dir){
       }
       if (!chosenRel) { chosenRel = 'assets/placeholder.jpg'; }
       const cover = meta.cover && /^https?:\/\//i.test(meta.cover) ? meta.cover : `${siteOrigin}${chosenRel}`;
-      const bodyHtml = mdToHtml(body);
+  const bodyHtml = mdToHtml(body, { slug });
       const html = buildHtml({lang, slug, title, description, date, bodyHtml, cover});
       const outPath = path.join(outDir, `${slug}${lang==='zh'?'':'.'+lang}.html`);
       await fs.writeFile(outPath, html, 'utf8');
