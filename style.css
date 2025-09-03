@@ -405,13 +405,14 @@ header {
 
 /* --- Share toolbar & modal --- */
 .share-toolbar .btn { padding: .5rem .8rem; border-radius: 8px; }
+.share-toolbar .btn { font-weight: 500; }
 .share-toolbar .btn .icon { width: 16px; height: 16px; display: inline-block; vertical-align: -2px; margin-right: .4rem; stroke: currentColor; fill: none; stroke-width: 1.8; }
-.share-toolbar .btn span { font-size: 0.95rem; line-height: 1; }
-.share-toolbar .share-title { font-size: 0.95rem; color: var(--muted); }
+.share-toolbar .btn span { font-size: 14px; line-height: 1; }
+.share-toolbar .share-title { font-size: 14px; color: var(--muted); }
 @media (max-width: 480px) {
   .share-toolbar { gap: 6px; }
   .share-toolbar .btn { padding: .45rem .7rem; }
-  .share-toolbar .btn span { font-size: 0.92rem; }
+  .share-toolbar .btn span { font-size: 13px; }
   .share-toolbar .btn .icon { width: 16px; height: 16px; margin-right: .35rem; }
 }
 .modal { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: grid; place-items: center; z-index: 2000; }
