@@ -12,6 +12,7 @@ cover: assets/blog/my-second-post-zh.png
 
 - 要点一
 - 要点二
+- 我是来测试的
 
 > 这是一段引用。
 
