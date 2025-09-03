@@ -16,11 +16,11 @@ En los últimos meses hemos desplegado, depurado y estudiado a fondo **KBLaM** (
 
 ### 1.1 Diseño del modelo
 
-La idea central es mapear las tripletas de la base de conocimiento \(\langle \text{name},\,\text{property},\,\text{value} \rangle\) a vectores del tamaño de la caché clave‑valor del LLM, llamados **tokens de conocimiento**. El proceso es:
+La idea central es mapear las tripletas de la base de conocimiento $\langle \text{name},\,\text{property},\,\text{value} \rangle$ a vectores del tamaño de la caché clave‑valor del LLM, llamados **tokens de conocimiento**. El proceso es:
 
-1. **Codificación del conocimiento.** Un codificador \(f(\cdot)\) mapea “\<name\> y su \<property\>” y “\<value\>” a \(k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)\) y \(v_m = f(\text{value}_m)\). Adaptadores lineales los proyectan a los espacios de clave/valor de cada capa: \(\tilde{k}_m = \tilde{W}_K k_m\), \(\tilde{v}_m = \tilde{W}_V v_m\). Cada token de conocimiento contiene vectores para \(L\) capas.
-2. **Atención rectangular.** En inferencia, el modelo alimenta \(N\) tokens del prompt y \(M\) tokens de conocimiento. Para evitar \(O((N+M)^2)\), los tokens de conocimiento no se atienden entre sí; los tokens del prompt pueden atender a anteriores y a todos los de conocimiento, formando una matriz \((M+N)\!\times\!N\). La salida \(\tilde{y}_n\) suma: (a) valores del conocimiento ponderados por la similitud entre consulta y claves del conocimiento, y (b) autoatención entre tokens del prompt. El costo crece linealmente con \(M\), ventajoso cuando \(M\gg N\).
-3. **Ajuste instruccional con KB.** Dado el desfase semántico entre codificador y LLM, el paper entrena solo los adaptadores lineales y una cabeza de consulta, maximizando \(\log p_\theta(A\mid Q,KB)\) con una KB sintética (≈45k nombres, 135k tripletas) y sin tocar los pesos del LLM. Con AdamW durante 20k pasos en una A100, el modelo aprende a recuperar y a negarse cuando no hay evidencia.
+1. **Codificación del conocimiento.** Un codificador $f(\cdot)$ mapea “\<name\> y su \<property\>” y “\<value\>” a $k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)$ y $v_m = f(\text{value}_m)$. Adaptadores lineales los proyectan a los espacios de clave/valor de cada capa: $\tilde{k}_m = \tilde{W}_K k_m$, $\tilde{v}_m = \tilde{W}_V v_m$. Cada token de conocimiento contiene vectores para $L$ capas.
+2. **Atención rectangular.** En inferencia, el modelo alimenta $N$ tokens del prompt y $M$ tokens de conocimiento. Para evitar $O((N+M)^2)$, los tokens de conocimiento no se atienden entre sí; los tokens del prompt pueden atender a anteriores y a todos los de conocimiento, formando una matriz $(M+N)\!\times\!N$. La salida $\tilde{y}_n$ suma: (a) valores del conocimiento ponderados por la similitud entre consulta y claves del conocimiento, y (b) autoatención entre tokens del prompt. El costo crece linealmente con $M$, ventajoso cuando $M\gg N$.
+3. **Ajuste instruccional con KB.** Dado el desfase semántico entre codificador y LLM, el paper entrena solo los adaptadores lineales y una cabeza de consulta, maximizando $\log p_\theta(A\mid Q,KB)$ con una KB sintética (≈45k nombres, 135k tripletas) y sin tocar los pesos del LLM. Con AdamW durante 20k pasos en una A100, el modelo aprende a recuperar y a negarse cuando no hay evidencia.
 
 Para entender el flujo, la Figura 1 muestra las fases offline/online: offline se construye y codifica la KB; online la atención rectangular fusiona prompt y conocimiento antes de generar. El siguiente seudocódigo ilustra una capa de atención:
 
@@ -51,7 +51,7 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
 ### 1.2 Resultados experimentales
 
 - **Precisión e interpretabilidad en recuperación.** Las puntuaciones de atención actúan como señales implícitas de recuperación: las palabras de la pregunta se enfocan en los tokens correctos. En conjuntos sintéticos y Enron, KBLaM mantiene top‑1/top‑5 precisos con KBs grandes.
-- **Calidad en QA.** En QA de respuesta corta, multi‑entidad y abierta, la calidad (BERTScore o GPT‑4) iguala a concatenar todas las tripletas en contexto, con mucha menos memoria. Con >10k tripletas, el aprendizaje en contexto es inviable por memoria \(O((KN)^2)\), mientras KBLaM sigue estable.
+- **Calidad en QA.** En QA de respuesta corta, multi‑entidad y abierta, la calidad (BERTScore o GPT‑4) iguala a concatenar todas las tripletas en contexto, con mucha menos memoria. Con >10k tripletas, el aprendizaje en contexto es inviable por memoria $O((KN)^2)$, mientras KBLaM sigue estable.
 - **Comportamiento de negativa.** KBLaM detecta cuando la KB carece de evidencia y se niega educadamente; la tasa de falsas negativas crece más lento que en el enfoque en contexto.
 - **Limitaciones.** Vectores de longitud fija pierden números/nombres exactos; las KB sintéticas no siempre reflejan la distribución real; queda trabajo en multi‑salto, compresión controlable y construcción a partir de datos reales.
 
