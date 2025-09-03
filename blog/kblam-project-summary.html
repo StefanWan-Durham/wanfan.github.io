@@ -33,6 +33,7 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- Math (KaTeX) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
   <script>try{var L='zh';localStorage.setItem('lang',L);document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <script defer src="../lang.js"></script>
@@ -101,7 +102,7 @@
 <p>KBLAM 的核心思想是将知识库中的三元组 \(\langle \text{name}, \text{property}, \text{value}\rangle\) 映射为与 LLM 键值缓存等尺寸的向量，称为 <b>知识令牌</b>。具体过程如下：</p>
 
 <ol>
-<li><b>知识编码</b>：对于每个三元组，先用预训练的句子编码器 \(f(\cdot)\) 将“\&lt;name\&gt; 的 \&lt;property\&gt;”和“\&lt;value\&gt;”分别映射为 \(P\) 维的基础键向量 \(k<i>m = f(\text{property}</i>m\,\text{of}\,\text{name}<i>m)\) 和值向量 \(v</i>m = f(\text{value}<i>m)\)[1]。然后使用线性适配器将其投影到 LLM 每层的键、值空间：\(\tilde{k}</i>m = \tilde{W}<i>K k</i>m\)，\(\tilde{v}<i>m = \tilde{W}</i>V v_m\)[1]。每个知识令牌包含 \(L\) 层的键和值向量，因此在不同注意力层可以直接使用。</li>
+<li><b>知识编码</b>：对于每个三元组，先用预训练的句子编码器 \(f(\cdot)\) 将“\&lt;name\&gt; 的 \&lt;property\&gt;”和“\&lt;value\&gt;”分别映射为 \(P\) 维的基础键向量 \(k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)\) 和值向量 \(v_m = f(\text{value}_m)\)[1]。然后使用线性适配器将其投影到 LLM 每层的键、值空间：\(\tilde{k}_m = \tilde{W}_K k_m\)，\(\tilde{v}_m = \tilde{W}_V v_m\)[1]。每个知识令牌包含 \(L\) 层的键和值向量，因此在不同注意力层可以直接使用。</li>
 </ol>
 
 <ol>
@@ -114,7 +115,7 @@
 
 <p>为了帮助理解 KBLAM 的整体流程，图 1 展示了系统的离线和在线阶段：离线阶段先构建并编码知识库，生成知识令牌；在线阶段将用户提示经分词后输入矩形注意力和 LLM，以检索并生成答案。下面给出矩形注意力的伪代码，演示如何在一个注意力层内结合知识令牌与提示 token：</p>
 
-<p><img src="../content/blog/kblam-project-summary/kblam<i>work</i>flow.png" alt="KBLAM 流程图"></p>
+<p><img src="../content/blog/kblam-project-summary/kblam_work_flow.png" alt="KBLAM 流程图"></p>
 
 <p>图 1：KBLAM 在离线阶段构建并编码知识库生成知识令牌，在线阶段通过矩形注意力将提示与知识融合后输入 LLM 输出答案。</p>
 
@@ -170,17 +171,17 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
 
 <p>表 1：开源嵌入模型对比</p>
 
-<table>
+<div class="table-wrap"><table>
 <thead><tr><th>模型</th><th>架构</th><th>输出维度</th><th>优点</th><th>缺点</th></tr></thead>
 <tbody><tr><td>all‑MiniLM‑L6‑v2</td><td>MiniLM (6 层)</td><td>384</td><td>轻量、速度快</td><td>长句性能有限</td></tr><tr><td>BGE‑base‑en‑v1.5</td><td>BERT</td><td>768</td><td>检索效果强，支持前缀指令</td><td>需要额外前缀，模型较大</td></tr><tr><td>E5‑base‑v2</td><td>RoBERTa</td><td>768</td><td>表现均衡，无需前缀</td><td>长文本截断影响性能</td></tr><tr><td>nomic‑embed‑text‑v1</td><td>GPT‑式</td><td>≈1024</td><td>支持长输入、多语言</td><td>参数量大、运行慢</td></tr><tr><td>all‑mpnet‑base‑v2</td><td>MPNet</td><td>768</td><td>高质量检索</td><td>对资源要求高</td></tr></tbody>
-</table>
+</table></div>
 
 <ol>
 <li><b>大模型适配与显存管理</b>：原论文将 Llama3‑8B 作为 LLM 主干。我们已在个人电脑（Windows + RTX 2080 Ti）上验证可以加载并运行 <b>Llama‑3‑8B‑Instruct</b>，说明开源权重在 GPU 环境下能够正常推理。由于昇腾 910B 单卡显存仅 32 GB，服务器部署时需采用 8 卡模型并行与 ZeRO‑2 优化，并使用半精度（FP16）加载权重以控制显存占用；同时将 HuggingFace 权重转换为 MindSpore‑CKPT 格式。为支持矩形注意力，我们计划参考原仓库重写 <code>masked_add</code> 和 <code>softmax</code> 等底层算子，在 MindSpore 中实现并调优不同批次大小的速度与显存开销。这一适配方案尚处于实验阶段，后续将在服务器上验证其可行性。</li>
 </ol>
 
 <ol>
-<li><b>生态兼容问题</b>：麒麟 v10 默认缺少一些深度学习依赖，如 CUBLAS 和 libcusparse，且与 Ascend CANN 驱动存在版本冲突。我们通过编译 MindSpore 2.2 与 PyTorch 2.0（Ascend 适配版本），手工链接 libcann 库，并调整 <code>LD<i>LIBRARY</i>PATH</code>，同时将 Python 包索引指向内网源，从而解决了依赖安装难题。</li>
+<li><b>生态兼容问题</b>：麒麟 v10 默认缺少一些深度学习依赖，如 CUBLAS 和 libcusparse，且与 Ascend CANN 驱动存在版本冲突。我们通过编译 MindSpore 2.2 与 PyTorch 2.0（Ascend 适配版本），手工链接 libcann 库，并调整 <code>LD_LIBRARY_PATH</code>，同时将 Python 包索引指向内网源，从而解决了依赖安装难题。</li>
 </ol>
 
 <p>综合上述优化，我们在个人电脑上完成了 KBLAM 的主要实验，生成约 45 k 个英文名称和 135 k 条虚构三元组，训练线性适配器并验证推理效果。接下来将把流程迁移到昇腾 910B 服务器，测试矩形注意力实现和显存占用，并在此基础上进一步完善 KB 构建与模型微调流程。</p>
@@ -241,13 +242,13 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
 
 <h2 id="参考文献">参考文献</h2>
 
-<p>\[1] Taketomo Isazawa, Xi Wang, Liana Mikaelyan, Mathew Salvaris, James Hensman. “KBLaM: Knowledge Base Augmented Language Model.” <i>Proceedings of</i> 2025.</p>
+<p>[1] Taketomo Isazawa, Xi Wang, Liana Mikaelyan, Mathew Salvaris, James Hensman. “KBLaM: Knowledge Base Augmented Language Model.” <i>Proceedings of</i> 2025.</p>
 
-<p>\[2] 知识库融入大模型调研. 《知识库融入大模型调研》，2023。</p>
+<p>[2] 知识库融入大模型调研. 《知识库融入大模型调研》，2023。</p>
 
-<p>\[3] Naman Bansal. “Best Open‑Source Embedding Models Benchmarked and Ranked.” <i>Supermemory Blog</i>, 2025.</p>
+<p>[3] Naman Bansal. “Best Open‑Source Embedding Models Benchmarked and Ranked.” <i>Supermemory Blog</i>, 2025.</p>
 
-<p>\[4] Microsoft Research. “Introducing KBLaM: Bringing plug‑and‑play external knowledge to LLMs.” <i>Microsoft Research Blog</i>, 2025.</p>
+<p>[4] Microsoft Research. “Introducing KBLaM: Bringing plug‑and‑play external knowledge to LLMs.” <i>Microsoft Research Blog</i>, 2025.</p>
         </article>
         <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
           <strong class="share-title" data-i18n="share_label">分享</strong>
@@ -291,7 +292,7 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
   <script>
     (function(){
       if (window.hljs) { try { window.hljs.highlightAll(); } catch(e){} }
-      function render(){ try { if (window.renderMathInElement) window.renderMathInElement(document.body, { delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false}] }); } catch(e){} }
+      function render(){ try { if (window.renderMathInElement) window.renderMathInElement(document.body, { delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false},{left:'\(', right:'\)', display:false}] }); } catch(e){} }
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
     })();
   </script>
