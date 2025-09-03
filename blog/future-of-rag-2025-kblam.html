@@ -30,6 +30,7 @@
   <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
+  <script defer src="../assets/vendor/qrcode.min.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -311,6 +312,35 @@ OUTPUT: a with evidence pack</code></pre>
             </li>
           </ul>
         </article>
+
+        <!-- Share toolbar -->
+        <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <strong data-i18n="share_label">分享</strong>
+          <div class="spacer" style="flex:0 0 8px"></div>
+          <button class="btn outline share-btn" data-share="wechat">
+            <span data-i18n="share_wechat">微信</span>
+          </button>
+          <a class="btn outline share-btn" data-share="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          <button class="btn outline share-btn" data-share="copy">
+            <span data-i18n="share_copy">复制链接</span>
+          </button>
+          <a class="btn outline share-btn" data-share="download" download> <span data-i18n="share_download">下载封面</span></a>
+          <button class="btn outline share-btn" data-share="native">
+            <span data-i18n="share_share">系统分享</span>
+          </button>
+        </div>
+
+        <!-- Share modal (for WeChat QR) -->
+        <div id="share-modal" class="modal" hidden>
+          <div class="modal-content card" role="dialog" aria-modal="true" aria-labelledby="share-title">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <h3 id="share-title" data-i18n="share_wechat">微信</h3>
+              <button class="btn outline" data-close><span data-i18n="share_close">关闭</span></button>
+            </div>
+            <p class="muted" style="margin:8px 0" data-i18n="share_wechat_qr_tip">使用微信“扫一扫”分享本文</p>
+            <div id="qr" style="display:grid;place-items:center;padding:12px"></div>
+          </div>
+        </div>
 
         <article class="i18n-block" data-lang="en" hidden>
           <p>Reader’s note: Over the past year, one hallway question keeps coming back—“Will long‑context models make RAG obsolete?” Rather than just answer yes/no, this piece tells the story behind the trend: why many teams felt RAG was flaky, why more context alone doesn’t buy trustworthy answers, and what a 2025, end‑to‑end, engineering‑ready stack looks like.</p>

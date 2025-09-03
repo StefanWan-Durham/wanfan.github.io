@@ -403,6 +403,17 @@ header {
   filter: drop-shadow(0 0 8px rgba(255, 234, 122, 0.6));
 }
 
+/* --- Share toolbar & modal --- */
+.share-toolbar .btn { padding: .5rem .8rem; border-radius: 8px; }
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: grid; place-items: center; z-index: 2000; }
+.modal[hidden] { display: none; }
+.modal .modal-content { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; width: min(480px, 92vw); box-shadow: var(--shadow-md); }
+.modal .modal-content canvas, .modal .modal-content img { width: 200px; height: 200px; image-rendering: pixelated; }
+
+/* Slider verification */
+.slider-verify.done { outline: 2px solid color-mix(in oklab, var(--success), white 10%); }
+.slider-verify .slider-thumb { transition: left 120ms ease; }
+
 /* System-follow icon behavior disabled */
 
 /* System icon disabled */

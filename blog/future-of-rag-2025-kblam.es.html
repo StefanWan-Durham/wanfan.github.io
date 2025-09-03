@@ -28,6 +28,7 @@
   <script>try{var L='es';localStorage.setItem('lang',L);document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
+  <script defer src="../assets/vendor/qrcode.min.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido principal</a>
@@ -202,6 +203,35 @@ registrar(a, E, coste, latencia, versiones)</code></pre>
             </li>
           </ul>
         </article>
+
+        <!-- Share toolbar -->
+        <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <strong data-i18n="share_label">Compartir</strong>
+          <div class="spacer" style="flex:0 0 8px"></div>
+          <button class="btn outline share-btn" data-share="wechat">
+            <span data-i18n="share_wechat">WeChat</span>
+          </button>
+          <a class="btn outline share-btn" data-share="whatsapp" target="_blank" rel="noopener"><span data-i18n="share_whatsapp">WhatsApp</span></a>
+          <button class="btn outline share-btn" data-share="copy">
+            <span data-i18n="share_copy">Copiar enlace</span>
+          </button>
+          <a class="btn outline share-btn" data-share="download" download> <span data-i18n="share_download">Descargar portada</span></a>
+          <button class="btn outline share-btn" data-share="native">
+            <span data-i18n="share_share">Compartir…</span>
+          </button>
+        </div>
+
+        <!-- Share modal (for WeChat QR) -->
+        <div id="share-modal" class="modal" hidden>
+          <div class="modal-content card" role="dialog" aria-modal="true" aria-labelledby="share-title">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <h3 id="share-title" data-i18n="share_wechat">WeChat</h3>
+              <button class="btn outline" data-close><span data-i18n="share_close">Cerrar</span></button>
+            </div>
+            <p class="muted" style="margin:8px 0" data-i18n="share_wechat_qr_tip">Escanea en WeChat para compartir este artículo</p>
+            <div id="qr" style="display:grid;place-items:center;padding:12px"></div>
+          </div>
+        </div>
 
         <hr style="margin: 24px 0">
         <nav class="post-nav" aria-label="Navegación del artículo">

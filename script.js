@@ -198,6 +198,108 @@ document.addEventListener('DOMContentLoaded', () => {
       updateReadingTime();
       syncPostHero();
     });
+
+    // Share feature: WeChat QR, WhatsApp, Copy link, Download cover, Native share
+    (function initShare(){
+      const bar = document.querySelector('.share-toolbar');
+      if (!bar) return;
+      function activeLang(){ return localStorage.getItem('lang') || document.documentElement.lang || 'zh'; }
+      function currentUrl(){ return location.href.split('#')[0]; }
+      function postCover(){
+        const lang = activeLang();
+        // Try to read current visible hero image src
+        const art = document.querySelector('.post-hero-art:not([hidden]) img');
+        if (art && art.getAttribute('src')) return art.getAttribute('src');
+        // fallback by convention
+        if (lang==='en') return '../assets/blog/rag-hero-en.v5.svg';
+        if (lang==='es') return '../assets/blog/rag-hero-es.v5.svg';
+        return '../assets/blog/rag-hero-zh.v5.svg';
+      }
+      function whatsappHref(){
+        const text = encodeURIComponent(document.title + ' ' + currentUrl());
+        return 'https://wa.me/?text=' + text;
+      }
+      function setDownloadLink(a){
+        const src = postCover();
+        a.setAttribute('href', src);
+        // derive filename
+        const fn = src.split('/').pop() || 'cover.svg';
+        a.setAttribute('download', fn);
+      }
+      // Minimal QR generator for URL using a tiny SVG fallback (no external dep)
+      async function renderQR(target, text){
+        target.innerHTML = '';
+        function drawWithLib(){
+          try {
+            if (window.QRCode) {
+              target.innerHTML = '';
+              // eslint-disable-next-line no-new
+              new window.QRCode(target, { text, width: 220, height: 220, correctLevel: window.QRCode.CorrectLevel.M });
+              return true;
+            }
+          } catch {}
+          return false;
+        }
+        // Try local vendor lib (preferred)
+        if (drawWithLib()) return;
+        // Try to lazy-load from CDN as a resilience fallback when online
+        try {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+            s.async = true;
+            s.onload = resolve; s.onerror = reject;
+            document.head.appendChild(s);
+          });
+          if (drawWithLib()) return;
+        } catch {}
+        // Final fallback: show the URL text if no lib available
+        const note = document.createElement('div');
+        note.className = 'muted';
+        note.style.cssText = 'font-size:12px;word-break:break-all;text-align:center;max-width:280px;';
+        note.textContent = text;
+        target.appendChild(note);
+      }
+      function openModal(){ document.getElementById('share-modal')?.removeAttribute('hidden'); }
+      function closeModal(){ document.getElementById('share-modal')?.setAttribute('hidden',''); }
+
+      // Wire actions
+      const btnWeChat = bar.querySelector('[data-share="wechat"]');
+      const btnWhats = bar.querySelector('[data-share="whatsapp"]');
+      const btnCopy = bar.querySelector('[data-share="copy"]');
+      const btnDown = bar.querySelector('[data-share="download"]');
+      const btnNative = bar.querySelector('[data-share="native"]');
+      const modal = document.getElementById('share-modal');
+      const modalClose = modal?.querySelector('[data-close]');
+      const qr = document.getElementById('qr');
+      if (btnWhats) btnWhats.setAttribute('href', whatsappHref());
+      if (btnDown) setDownloadLink(btnDown);
+      if (btnWeChat) btnWeChat.addEventListener('click', () => { openModal(); renderQR(qr, currentUrl()); });
+      if (modalClose) modalClose.addEventListener('click', closeModal);
+      if (modal) modal.addEventListener('click', (e)=>{ if (e.target===modal) closeModal(); });
+      if (btnCopy) btnCopy.addEventListener('click', async ()=>{
+        try { await navigator.clipboard.writeText(currentUrl());
+          const lang = activeLang();
+          const ok = (window.translations?.[lang]?.share_copied) || 'Copied';
+          btnCopy.textContent = ok;
+          setTimeout(()=>{ btnCopy.querySelector ? (btnCopy.querySelector('span')? btnCopy.querySelector('span').textContent = (window.translations?.[lang]?.share_copy)||'Copy link' : btnCopy.textContent=(window.translations?.[lang]?.share_copy)||'Copy link') : null; }, 1400);
+        } catch {}
+      });
+      if (btnNative) btnNative.addEventListener('click', async ()=>{
+        if (navigator.share) {
+          try { await navigator.share({ title: document.title, url: currentUrl() }); } catch {}
+        } else {
+          // fallback to copy
+          try { await navigator.clipboard.writeText(currentUrl()); } catch {}
+        }
+      });
+
+      // Keep WhatsApp link and download cover in sync when language changes
+      window.addEventListener('language-changed', () => {
+        if (btnWhats) btnWhats.setAttribute('href', whatsappHref());
+        if (btnDown) setDownloadLink(btnDown);
+      });
+    })();
   })();
 
   // Theme toggle: manual light/dark override with localStorage persistence
@@ -381,6 +483,104 @@ document.addEventListener('DOMContentLoaded', () => {
   else btn.textContent = map[cur] || '';
     }
   });
+
+  // Contact form: AJAX submission with static fallback
+  (function enhanceContactForm(){
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    const status = document.getElementById('form-status');
+    const lang = localStorage.getItem('lang') || document.documentElement.lang || 'zh';
+    function t(k){ try { return (window.translations?.[lang]?.[k]) || ''; } catch { return ''; } }
+    // Slider verification wiring
+    let verified = false;
+    const slider = document.getElementById('slider-verify');
+    if (slider) {
+      const thumb = slider.querySelector('.slider-thumb');
+      const track = slider;
+      let dragging = false;
+      let startX = 0;
+      let startLeft = 0;
+      const max = () => track.clientWidth - thumb.clientWidth;
+      function setLeft(px){ thumb.style.left = Math.max(0, Math.min(max(), px)) + 'px'; }
+      function complete(){
+        verified = true;
+        slider.classList.add('done');
+        // lock thumb to end
+        setLeft(max());
+        thumb.style.cursor = 'default';
+        thumb.style.background = 'color-mix(in oklab, var(--success) 20%, var(--surface))';
+        slider.querySelector('.slider-track span')?.remove();
+        const check = document.createElement('span');
+        check.textContent = '✓';
+        check.style.color = 'var(--success)';
+        check.style.fontWeight = '700';
+        check.style.fontSize = '1rem';
+        const center = document.createElement('div');
+        center.style.cssText = 'position:absolute;inset:0;display:grid;place-items:center;color:var(--success)';
+        center.appendChild(check);
+        slider.appendChild(center);
+      }
+      function onDown(e){ dragging = true; startX = (e.touches?e.touches[0].clientX:e.clientX); startLeft = parseFloat(thumb.style.left||'0'); thumb.style.cursor='grabbing'; e.preventDefault(); }
+      function onMove(e){ if(!dragging) return; const x=(e.touches?e.touches[0].clientX:e.clientX); const dx=x-startX; setLeft(startLeft+dx); }
+      function onUp(){ if(!dragging) return; dragging=false; thumb.style.cursor='grab'; if(parseFloat(thumb.style.left||'0')>=max()-4){ complete(); } else { setLeft(0); } }
+      thumb.addEventListener('mousedown', onDown); thumb.addEventListener('touchstart', onDown, {passive:false});
+      window.addEventListener('mousemove', onMove, {passive:false}); window.addEventListener('touchmove', onMove, {passive:false});
+      window.addEventListener('mouseup', onUp); window.addEventListener('touchend', onUp);
+    }
+    // If redirected back with ?sent=1 (no-JS fallback), show success
+    try {
+      const url = new URL(location.href);
+      if (url.searchParams.get('sent') === '1' && status) {
+        status.hidden = false; status.className = 'alert success'; status.textContent = t('form_success');
+      }
+    } catch {}
+    function validate(){
+      const name = form.querySelector('#name');
+      const email = form.querySelector('#email');
+      const message = form.querySelector('#message');
+      if (!name?.value || !email?.value || !message?.value){ return { ok:false, reason:'required' }; }
+      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      return ok ? { ok:true } : { ok:false, reason:'email' };
+    }
+    form.addEventListener('submit', async (e) => {
+      // Progressive enhancement: use fetch if available
+      if (!window.fetch) return; // fall back to default submit
+      e.preventDefault();
+      if (!verified) {
+        if (status){ status.hidden = false; status.className = 'alert error'; status.textContent = t('verify_needed') || 'Please complete verification before submitting'; }
+        return;
+      }
+      const v = validate();
+      if (!v.ok){
+        if (status){
+          status.hidden = false; status.className = 'alert error';
+          status.textContent = v.reason==='email'? t('form_invalid_email') : t('form_required');
+        }
+        return;
+      }
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn){ btn.disabled = true; btn.style.opacity = .7; }
+      if (status){ status.hidden = false; status.className = 'alert'; status.textContent = '...'; }
+      try {
+        const data = new FormData(form);
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if (res.ok){
+          form.reset();
+          if (status){ status.className = 'alert success'; status.textContent = t('form_success'); }
+        } else {
+          throw new Error('send failed');
+        }
+      } catch {
+        if (status){
+          status.hidden = false; status.className = 'alert error';
+          const email = 'fan.wan.uk@gmail.com';
+          status.textContent = `${t('form_error')} ${email}`;
+        }
+      } finally {
+        if (btn){ btn.disabled = false; btn.style.opacity = 1; }
+      }
+    });
+  })();
 
   // Blog list page: switch card link and thumbnail per language
   (function syncBlogListCards(){

@@ -104,9 +104,17 @@
   <section class="contact section">
     <div class="container">
       <p data-i18n="contact_desc">如果你对合作或交流感兴趣，欢迎通过邮件或社交媒体与我取得联系。</p>
-      <!-- Replace action with your Formspree form ID when available -->
-      <form id="contact-form" class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+      <!-- Static-friendly email via FormSubmit; JS enhances to AJAX -->
+      <form id="contact-form" class="contact-form" action="https://formsubmit.co/fan.wan.uk@gmail.com" method="POST">
+        <!-- Honeypot field to block bots -->
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <!-- FormSubmit options -->
+        <!-- Server-side fallback CAPTCHA on for abuse bursts (clients get slider verify first). -->
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="New message from fanwan.github.io">
+        <!-- Non-JS fallback redirect after submit -->
+        <input type="hidden" name="_next" value="https://stefanwan-durham.github.io/wanfan.github.io/contact.html?sent=1">
         <div class="form-group">
           <label for="name" data-i18n="form_name">姓名</label>
           <input type="text" id="name" name="name" placeholder="Your name" data-i18n-placeholder="form_name_placeholder" required>
@@ -119,7 +127,20 @@
           <label for="message" data-i18n="form_message">留言</label>
           <textarea id="message" name="message" rows="5" placeholder="Your message" data-i18n-placeholder="form_message_placeholder" required></textarea>
         </div>
+        <!-- Human verification (client-side slider) -->
+        <div class="verify card" style="padding:10px 12px;border-radius:10px;border:1px solid var(--border);margin:6px 0 10px 0">
+          <label for="verify-slider" class="muted" data-i18n="verify_title">验证</label>
+          <div class="slider-verify" id="slider-verify" role="group" aria-label="Verification" style="position:relative;height:42px;background:var(--surface-2);border-radius:10px;overflow:hidden;border:1px solid var(--border);">
+            <div class="slider-track" style="position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:.95rem;">
+              <span data-i18n="verify_slide_label">向右滑动完成验证</span>
+            </div>
+            <div class="slider-thumb" style="position:absolute;left:0;top:0;width:42px;height:42px;background:var(--surface);border-right:1px solid var(--border);box-shadow:var(--shadow-sm);display:grid;place-items:center;cursor:grab;">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
         <button type="submit" class="btn primary" data-i18n="form_send">发送</button>
+        <p id="form-status" class="alert" hidden></p>
       </form>
 
       <div style="margin-top:1rem;">
