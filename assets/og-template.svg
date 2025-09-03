@@ -23,9 +23,10 @@
     <text id="og-desc" x="80" y="330" font-size="28" opacity="0.95">副标题/摘要 Subtitle</text>
     <g>
       <rect x="80" y="380" width="220" height="220" rx="24" fill="#ffffff" opacity="0.18"/>
-  <image href="assets/avatar.svg" x="80" y="380" width="220" height="220" preserveAspectRatio="xMidYMid slice"/>
+      <image href="assets/avatar.svg" x="80" y="380" width="220" height="220" preserveAspectRatio="xMidYMid slice"/>
     </g>
-  <text x="320" y="420" font-size="24" opacity="0.9">@FanWAN</text>
-    <text x="320" y="460" font-size="20" opacity="0.8">Research • LLM • CV • Multimedia</text>
+    <!-- Move handle and tagline downward to avoid overlapping with keywords/desc -->
+    <text x="320" y="520" font-size="24" opacity="0.9">@FanWAN</text>
+    <text x="320" y="560" font-size="20" opacity="0.8">Research • LLM • CV • Multimedia</text>
   </g>
 </svg>
