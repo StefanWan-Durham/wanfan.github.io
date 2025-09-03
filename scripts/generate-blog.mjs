@@ -87,10 +87,10 @@ function mdToHtml(md, { slug } = {}) {
           i++;
           rows.push(parseRow(peek));
         }
-        out.push('<table>');
+        out.push('<div class="table-wrap"><table>');
         out.push('<thead><tr>' + headers.map(h=>`<th>${h}</th>`).join('') + '</tr></thead>');
         if (rows.length) out.push('<tbody>' + rows.map(r=>'<tr>'+r.map(c=>`<td>${c}</td>`).join('')+'</tr>').join('') + '</tbody>');
-        out.push('</table>');
+        out.push('</table></div>');
         continue;
       }
     }
@@ -118,32 +118,39 @@ function mdToHtml(md, { slug } = {}) {
   return out.join('\n');
 
   function inline(s) {
-    // Escapes first, then formatting
+    // 1) Escape HTML
     let t = escapeHtml(s);
-    // Images ![alt](url) — replace before links to avoid leaving a stray '!'
+    // 2) Images first (so we create tags before formatting)
     t = t.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (m, alt, url) => {
       let u = url;
-      // If relative (no protocol, not starting with '/' or '../' or 'data:'), prefix to content folder so it resolves from blog/<slug>.html
       if (slug && !/^([a-z]+:)?\/\//i.test(u) && !u.startsWith('/') && !u.startsWith('../') && !u.startsWith('data:')) {
         u = `../content/blog/${slug}/${u}`;
       }
       return `<img src="${u}" alt="${alt}">`;
     });
-    // Links [text](url)
+    // 3) Links
     t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, a, b) => {
       let u = b;
       if (slug && !/^([a-z]+:)?\/\//i.test(u) && !u.startsWith('/')) {
-        // For local links to assets in the post folder, also prefix. If author intends site-root links, start with '/'.
         u = `../content/blog/${slug}/${u}`;
       }
       return `<a href="${u}" target="_blank" rel="noopener">${a}</a>`;
     });
-    // Bold **text** or __text__
+    // 4) Protect inline code
+    const codeTokens = [];
+    t = t.replace(/`([^`]+)`/g, (m, c) => { codeTokens.push(c); return `\u0000CODE${codeTokens.length-1}\u0000`; });
+    // 5) Protect math ($...$ and \( ... \))
+    const mathTokens = [];
+    t = t
+      .replace(/\$(?:[^$\\]|\\.)+\$/g, (m) => { mathTokens.push(m); return `\u0000MATH${mathTokens.length-1}\u0000`; })
+      .replace(/\\\((?:[^\\]|\\.)*?\\\)/g, (m) => { mathTokens.push(m); return `\u0000MATH${mathTokens.length-1}\u0000`; });
+    // 6) Bold (** or __)
     t = t.replace(/(\*\*|__)(.+?)\1/g, '<b>$2</b>');
-    // Italic *text* or _text_
-    t = t.replace(/(\*|_)([^*_].*?)\1/g, '<i>$2</i>');
-    // Inline code `code`
-    t = t.replace(/`([^`]+)`/g, '<code>$1</code>');
+    // 7) Italic using only *...* (not underscore to avoid breaking file_names)
+    t = t.replace(/\*(?!\*)([^*]+)\*/g, '<i>$1</i>');
+    // 8) Restore math and code
+    t = t.replace(/\u0000MATH(\d+)\u0000/g, (m, i) => mathTokens[+i] ?? m);
+    t = t.replace(/\u0000CODE(\d+)\u0000/g, (m, i) => `<code>${codeTokens[+i]}</code>`);
     return t;
   }
 }
@@ -191,6 +198,7 @@ function buildHtml({lang, slug, title, description, date, bodyHtml, cover}){
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- Math (KaTeX) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
   <script>try{var L='${lang}';localStorage.setItem('lang',L);document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <script defer src="../lang.js"></script>
@@ -291,7 +299,7 @@ ${bodyHtml}
   <script>
     (function(){
       if (window.hljs) { try { window.hljs.highlightAll(); } catch(e){} }
-      function render(){ try { if (window.renderMathInElement) window.renderMathInElement(document.body, { delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false}] }); } catch(e){} }
+      function render(){ try { if (window.renderMathInElement) window.renderMathInElement(document.body, { delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false},{left:'\\(', right:'\\)', display:false}] }); } catch(e){} }
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
     })();
   </script>

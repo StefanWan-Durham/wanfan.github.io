@@ -131,10 +131,10 @@ KBLAM 提出了利用知识令牌和矩形注意力将外部知识无缝融入�
 
 ## 参考文献
 
-\[1] Taketomo Isazawa, Xi Wang, Liana Mikaelyan, Mathew Salvaris, James Hensman. “KBLaM: Knowledge Base Augmented Language Model.” *Proceedings of* 2025.
+[1] Taketomo Isazawa, Xi Wang, Liana Mikaelyan, Mathew Salvaris, James Hensman. “KBLaM: Knowledge Base Augmented Language Model.” *Proceedings of* 2025.
 
-\[2] 知识库融入大模型调研. 《知识库融入大模型调研》，2023。
+[2] 知识库融入大模型调研. 《知识库融入大模型调研》，2023。
 
-\[3] Naman Bansal. “Best Open‑Source Embedding Models Benchmarked and Ranked.” *Supermemory Blog*, 2025.
+[3] Naman Bansal. “Best Open‑Source Embedding Models Benchmarked and Ranked.” *Supermemory Blog*, 2025.
 
-\[4] Microsoft Research. “Introducing KBLaM: Bringing plug‑and‑play external knowledge to LLMs.” *Microsoft Research Blog*, 2025.
+[4] Microsoft Research. “Introducing KBLaM: Bringing plug‑and‑play external knowledge to LLMs.” *Microsoft Research Blog*, 2025.

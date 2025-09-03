@@ -2,7 +2,7 @@
 title: 新文章示例：我的第二篇博客
 description: 这是一篇示例文章，用于验证 Markdown 到 HTML 的自动生成与封面渲染。
 date: 2025-09-05
-draft: false
+draft: true
 cover: assets/blog/my-second-post-zh.png
 ---
 
