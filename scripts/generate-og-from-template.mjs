@@ -51,19 +51,21 @@ function wrapSvgText(text, {x=80, y=270, maxWidth=1000, lineHeight=1.2, fontSize
 
 async function renderPngFromText(title, subline, outPng){
   const svg = await fs.readFile(tplPath, 'utf8');
-  // Title: move slightly upward to open space above avatar block
-  const titleY = 240; // was 270
+  // Title: move to the previous top header position after removing it in template
+  const titleY = 180; // occupy old "Fan Wan" line
   // Title: 56px, max 2 lines; we will also shrink in browser if still too wide
   const titleWrap = wrapSvgText(title, { x: 80, y: titleY, maxWidth: 1000, lineHeight: 1.18, fontSize: 56, maxLines: 2 });
-  // Keywords/subline: lift baseline to avoid overlap with the left-bottom avatar rectangle
+  // Keywords/subline: move up to the old title baseline; add extraTop if title wrapped
   const extraTop = titleWrap.lineCount>1 ? Math.round((titleWrap.lineCount-1)*56*1.18) : 0;
-  const descY = 300 + extraTop; // was 340
+  const descBase = 270;
+  const descY = descBase + extraTop;
   const descWrap = wrapSvgText(subline, { x: 80, y: descY, maxWidth: 960, lineHeight: 1.22, fontSize: 28, maxLines: 4 });
   let filled = svg
+    // Clear any inner text; then replace the opening tag attributes in an id-based manner
     .replace(/<text id="og-title"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
-    .replace(/id="og-title" x="80" y="270" font-size="56" font-weight="700">/i, `id="og-title" x="80" y="${titleY}" font-size="56" font-weight="700">${titleWrap.tspans}`)
-  .replace(/<text id="og-desc"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
-  .replace(/id="og-desc" x="80" y="330" font-size="28" opacity="0.95">/i, `id="og-desc" x="80" y="${descY}" font-size="28" opacity="0.95">${descWrap.tspans}`);
+    .replace(/id="og-title"[^>]*>/i, `id="og-title" x="80" y="${titleY}" font-size="56" font-weight="700">`)
+    .replace(/<text id="og-desc"[^>]*>[^<]*/i, (m)=> m.replace(/>[^<]*/, `>${''}`))
+    .replace(/id="og-desc"[^>]*>/i, `id="og-desc" x="80" y="${descY}" font-size="28" opacity="0.95">`);
   await fs.mkdir(path.dirname(outPng), { recursive: true });
   // Always write updated SVG next to PNG so SVG references stay fresh
   const outSvg = outPng.replace(/\.png$/i, '.svg');
