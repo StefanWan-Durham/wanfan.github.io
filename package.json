@@ -1,0 +1,12 @@
+{
+  "name": "wanfan.github.io",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "og:render": "node scripts/svg-to-png.mjs assets/blog/rag-hero-zh.v5.svg assets/blog/rag-hero-zh.v5.png && node scripts/svg-to-png.mjs assets/blog/rag-hero-en.v5.svg assets/blog/rag-hero-en.v5.png && node scripts/svg-to-png.mjs assets/blog/rag-hero-es.v5.svg assets/blog/rag-hero-es.v5.png"
+  },
+  "devDependencies": {
+    "puppeteer": "^22.15.0"
+  }
+}
