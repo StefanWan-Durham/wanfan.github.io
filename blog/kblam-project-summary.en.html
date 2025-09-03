@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>KBLaM Project Summary and Outlook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A review of KBLaM theory and experiments, lessons from deploying on indigenous servers, a concrete training plan, and thoughts on Chinese localization and future improvements.">
+  <meta name="author" content="Fan Wan">
+  <link rel="canonical" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/kblam-project-summary.en.html">
+  <link rel="alternate" hreflang="zh" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/kblam-project-summary.html">
+  <link rel="alternate" hreflang="en" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/kblam-project-summary.en.html">
+  <link rel="alternate" hreflang="es" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/kblam-project-summary.es.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="KBLaM Project Summary and Outlook">
+  <meta property="og:description" content="A review of KBLaM theory and experiments, lessons from deploying on indigenous servers, a concrete training plan, and thoughts on Chinese localization and future improvements.">
+  <meta property="og:url" content="https://stefanwan-durham.github.io/wanfan.github.io/blog/kblam-project-summary.en.html">
+  <meta property="og:image" content="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/kblam-project-summary-en.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/kblam-project-summary-en.svg">
+  <meta property="og:image:type" content="image/png">
+  <link rel="image_src" href="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/kblam-project-summary-en.svg">
+  <meta itemprop="image" content="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/kblam-project-summary-en.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KBLaM Project Summary and Outlook (with KBLaM)">
+  <meta name="twitter:description" content="A review of KBLaM theory and experiments, lessons from deploying on indigenous servers, a concrete training plan, and thoughts on Chinese localization and future improvements.">
+  <meta name="twitter:image" content="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/kblam-project-summary-en.svg">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <!-- Code highlight (Highlight.js) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Math (KaTeX) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script>try{var L='en';localStorage.setItem('lang',L);document.documentElement.setAttribute('lang',L);}catch(e){}</script>
+  <script defer src="../lang.js"></script>
+  <script defer src="../script.js"></script>
+  <script defer src="../assets/vendor/qrcode.min.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <nav class="navbar container">
+      <a href="../index.html" class="brand" aria-label="Home">
+        <img src="../assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="../contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label"></span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/><path d="M12 2v2"/><path d="M4 10h2"/><path d="M18 10h2"/><path d="M5.5 5.5l1.4 1.4"/><path d="M18.5 5.5l-1.4 1.4"/></g></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon icon-system" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><path d="M8 20h8M12 16v4"/></g></svg>
+        </button>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </nav>
+  </header>
+  <main id="main" class="blog-post">
+    <section class="page-hero section">
+      <div class="container">
+        <div class="i18n-block" data-lang="en">
+          <h1 class="post-title">KBLaM Project Summary and Outlook</h1>
+          <p class="muted post-meta">Published on 2025-09-03 · Estimated read 5 min</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container prose">
+        <div class="post-hero-art" data-lang="en"><img src="https://stefanwan-durham.github.io/wanfan.github.io/assets/blog/kblam-project-summary-en.svg" alt="Cover"/></div>
+        <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>Contents</strong><ol></ol></nav>
+        <article class="i18n-block" data-lang="en">
+
+<h1 id="kblam-project-summary-and-outlook">KBLaM Project Summary and Outlook</h1>
+
+<p>Over the past few months, we have deployed, debugged, and studied <b>KBLaM</b> (Knowledge Base augmented Language Model) in depth. Proposed by Microsoft Research in 2025, KBLaM injects structured knowledge directly into a pretrained LLM using a sentence encoder and linear adapters. It converts a knowledge base into continuous key–value vectors (knowledge tokens) and fuses them into the LLM through a modified rectangular attention mechanism, enabling the model to answer knowledge‑dependent questions without external retrieval. This article reviews KBLaM’s principles and experiments, summarizes our deployment experience on domestic servers, lays out the next training plan, discusses Chinese localization, and proposes improvements for KBLaM.</p>
+
+<h2 id="i-review-of-kblam-theory-and-experiments">I. Review of KBLaM Theory and Experiments</h2>
+
+<h3 id="11-model-design">1.1 Model design</h3>
+
+<p>The core idea is to map knowledge base triples \(\langle \text{name},\,\text{property},\,\text{value} \rangle\) into vectors matching the LLM’s key–value cache size, called <b>knowledge tokens</b>. The process is:</p>
+
+<ol>
+<li><b>Knowledge encoding.</b> For each triple, a pretrained sentence encoder \(f(\cdot)\) maps “\&lt;name\&gt;’s \&lt;property\&gt;” and “\&lt;value\&gt;” into base key vector \(k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)\) and value vector \(v_m = f(\text{value}_m)\). Linear adapters then project them to each layer’s key/value spaces: \(\tilde{k}_m = \tilde{W}_K k_m\), \(\tilde{v}_m = \tilde{W}_V v_m\). Each knowledge token carries key/value vectors for \(L\) layers and can be consumed directly by attention at different depths.</li>
+<li><b>Rectangular attention.</b> At inference, the model feeds \(N\) prompt tokens and \(M\) knowledge tokens into attention. To avoid \(O((N+M)^2)\) complexity, knowledge tokens do not attend to each other; prompt tokens may attend to prior prompts and to all knowledge tokens, yielding an \((M+N)\!\times\!N\) rectangular attention matrix. For layer \(l\), each output vector \(\tilde{y}_n\) sums two parts: a weighted sum over knowledge values (weights from similarity between the query and knowledge keys) and a standard self‑attention part among prompt tokens. This design makes compute and memory grow linearly with the number of triples, advantageous when \(M\gg N\).</li>
+<li><b>KB instruction tuning.</b> Because the sentence encoder and the LLM live in different semantic spaces, the paper trains only linear adapters and an extra query head via instruction tuning. Using a synthetic KB generated by GPT (≈45k names, 135k triples), it maximizes \(\log p_\theta(A\mid Q,KB)\) without changing LLM weights. Trained with AdamW for 20k steps on a single A100, the model learns retrieval behavior and refusal strategies without degrading its original reasoning ability.</li>
+</ol>
+
+<p>To visualize the overall flow, Figure 1 shows the offline/online stages: offline we build/encode the KB into knowledge tokens; online we feed tokenized prompts plus rectangular attention into the LLM to retrieve and generate answers. The pseudo‑code below illustrates how a single attention layer fuses knowledge tokens with prompt tokens:</p>
+
+<p><img src="../content/blog/kblam-project-summary/kblam_work_flow.png" alt="KBLaM workflow"></p>
+
+<p>Figure 1. Offline we build/encode a KB to generate knowledge tokens; online rectangular attention fuses prompts and knowledge before the LLM generates an answer.</p>
+
+<h4 id="13-rectangular-attention-pseudocode">1.3 Rectangular attention pseudo‑code</h4>
+
+<pre><code class="language-python">
+def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
+    """
+    Q: query matrix from prompt tokens, shape (N, d)
+    K_kb, V_kb: knowledge keys/values, shape (M, d)
+    K_text, V_text: self‑attention keys/values for prompt tokens
+    Returns: fused output that combines knowledge and prompt
+    """
+    # Attention over knowledge tokens
+    attn_kb = softmax(Q @ K_kb.T / sqrt(d))
+    output_kb = attn_kb @ V_kb
+    # Self‑attention among prompt tokens
+    attn_text = softmax(Q @ K_text.T / sqrt(d))
+    output_text = attn_text @ V_text
+    # Combined output
+    return output_kb + output_text
+</code></pre>
+
+<h3 id="12-experimental-results">1.2 Experimental results</h3>
+
+<ul>
+<li><b>Retrieval accuracy and interpretability.</b> Attention scores act as implicit retrieval signals: question words attend to the correct knowledge tokens for the asked triples. On synthetic and Enron datasets, KBLaM maintains precise top‑1/top‑5 retrieval under large KBs.</li>
+<li><b>Question answering quality.</b> On short‑answer, multi‑entity, and open‑ended QA, KBLaM’s answer quality (BERTScore or GPT‑4 ratings) matches in‑context concatenation of all triples, while greatly reducing memory. For KBs with &gt;10k triples, in‑context learning becomes infeasible due to \(O((KN)^2)\) memory, but KBLaM remains stable.</li>
+<li><b>Refusal behavior.</b> KBLaM can detect when the KB lacks relevant triples and politely refuse; as KB size grows, false‑refusal rises more slowly than with in‑context learning.</li>
+<li><b>Limitations.</b> Fixed‑length vectors for triples lose precise numerics/names; synthetic KBs may not match real‑world distributions, harming generalization; future work includes multi‑hop instructions, controllable compression, and building synthetic KBs from real data.</li>
+</ul>
+
+<h2 id="ii-deployment-journey-on-domestic-servers">II. Deployment Journey on Domestic Servers</h2>
+
+<p>Our environment uses Kylin v10 OS and eight Ascend 910B NPUs with no Internet access due to compliance. This differs greatly from the GPU + GPT/ada‑002 setup assumed by the paper, leading to several key adaptations:</p>
+
+<ol>
+<li><b>Synthetic KB and instruction data generation.</b> The original used GPT to create random names and properties. Without OpenAI access, we switched to local LLMs in an offline setting. Tests on Windows + RTX 2080 Ti with <b>Qwen3‑8B</b>, <b>Meta‑Llama‑3‑8B‑Instruct</b>, and <b>Meta‑Llama‑3.1‑8B‑Instruct</b> showed Qwen3‑8B’s think mode slows generation, while Llama‑3‑8B is weaker overall. We chose <b>Meta‑Llama‑3.1‑8B‑Instruct</b> for a quality–efficiency balance and generated ≈45k English names with attributes, carefully controlling template randomness and deduplicating triples.</li>
+<li><b>Replacing the sentence encoder.</b> The original used OpenAI ada‑002 (1536‑d). In our setting we use open‑source <b>all‑MiniLM‑L6‑v2</b> (384‑d). We re‑initialized the linear adapters and added normalization to match the LLM’s key/value dims. We’re also evaluating other English embedding models:</li>
+</ol>
+<ul>
+<li><b>BGE‑base‑en‑v1.5</b> (strong retrieval with hard negatives; prefix support)</li>
+<li><b>E5‑base‑v2</b> (balanced performance; no prefix required)</li>
+<li><b>nomic‑embed‑text‑v1</b> (longer inputs, multilingual; larger model)</li>
+<li><b>all‑mpnet‑base‑v2</b> and <b>gtr‑base</b> (768‑d, commonly used for QA retrieval)</li>
+</ul>
+
+<p>   We’ll benchmark these and pick the best for ≈45k triples. Reports indicate swapping encoders doesn’t hurt KBLaM retrieval if adapters are retrained.</p>
+
+<p>Table 1. Comparison of open‑source embedding models</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Model</th><th>Architecture</th><th>Dim</th><th>Pros</th><th>Cons</th></tr></thead>
+<tbody><tr><td>all‑MiniLM‑L6‑v2</td><td>MiniLM (6L)</td><td>384</td><td>Lightweight, fast</td><td>Longer‑sentence performance</td></tr><tr><td>BGE‑base‑en‑v1.5</td><td>BERT</td><td>768</td><td>Strong retrieval; prefixable</td><td>Larger; needs prefixes</td></tr><tr><td>E5‑base‑v2</td><td>RoBERTa</td><td>768</td><td>Balanced; no prefixes</td><td>Truncation on long texts</td></tr><tr><td>nomic‑embed‑text‑v1</td><td>GPT‑style</td><td>≈1024</td><td>Long inputs; multilingual</td><td>Large; slower</td></tr><tr><td>all‑mpnet‑base‑v2</td><td>MPNet</td><td>768</td><td>High‑quality retrieval</td><td>Higher resource needs</td></tr></tbody>
+</table></div>
+
+<ol>
+<li><b>LLM adaptation and memory management.</b> We verified <b>Llama‑3‑8B‑Instruct</b> on a personal PC (Windows + RTX 2080 Ti). For the server (32 GB per 910B card), we plan 8‑card model parallelism with ZeRO‑2 and FP16 weights, converting HF weights to MindSpore‑CKPT. To support rectangular attention, we will re‑implement kernels such as <code>masked_add</code> and <code>softmax</code> in MindSpore and tune batch sizes for speed/memory.</li>
+<li><b>Ecosystem compatibility.</b> Kylin v10 lacks some DL deps and conflicts with Ascend CANN versions. We compiled MindSpore 2.2 and Ascend‑adapted PyTorch 2.0, linked libcann manually, adjusted <code>LD_LIBRARY_PATH</code>, and mirrored Python packages to an internal index to complete installation offline.</li>
+</ol>
+
+<p>With these optimizations, we reproduced the main KBLaM experiments on a PC and are generating ≈45k names and 135k synthetic triples, training adapters and validating results. Next, we’ll move the flow to the 910B server, test rectangular attention and memory, and improve KB construction and fine‑tuning.</p>
+
+<h2 id="iii-next-training-plan">III. Next Training Plan</h2>
+
+<p>To raise performance and validate broader scenarios, we will follow a staged plan:</p>
+
+<ol>
+<li><b>Multi‑stage training</b></li>
+</ol>
+<ul>
+<li><b>Stage 1 (baseline):</b> Train adapters on ≈45k synthetic English triples. Single‑card batch size 32; ~30k steps; evaluate retrieval accuracy, BERTScore, and refusal rate.</li>
+<li><b>Stage 2 (expand KB):</b> Grow the KB to 50k, 100k+; train under 8‑card data parallelism; verify rectangular attention scalability; track memory and latency.</li>
+<li><b>Stage 3 (relations and multi‑hop):</b> Build knowledge graphs with inter‑entity relations; design single‑/multi‑hop and conflict‑reasoning tasks; extend instructions to elicit chain‑of‑thought–style explanations.</li>
+</ul>
+
+<ol>
+<li><b>Embedding model bake‑off</b>: Support BGE/E5/nomic/mpnet families in code, train/evaluate on the same KB, and compare retrieval and reasoning quality.</li>
+</ol>
+
+<ol>
+<li><b>Memory and speed analysis:</b> Increase KB size in batches (1k→10k→50k→100k), record memory/latency curves on Ascend NPUs, and quantify answer stability across KB scales.</li>
+</ol>
+
+<h2 id="iv-chinese-localization-plan">IV. Chinese Localization Plan</h2>
+
+<p>KBLaM’s reference implementation targets English. For Chinese deployment we propose:</p>
+
+<ol>
+<li><b>Chinese KB construction:</b> Use Chinese encyclopedias or enterprise docs; perform IE and entity linking to yield triples. Define domain‑specific entity/attribute sets beyond simple “description/purpose”, and include counterfactual or conflicting attributes to test robustness.</li>
+<li><b>Chinese sentence encoders:</b> Choose encoders trained on large Chinese corpora (e.g., <b>bge‑large‑zh</b>, <b>sent‑bert‑zh</b>); run them with Ascend‑PyTorch; fine‑tune when necessary.</li>
+<li><b>Chinese LLM and adapters:</b> Use open‑source Chinese LLMs (e.g., ChatGLM3, Yi‑34B). Re‑train adapters to match vocab/positional differences. Instruction templates should be native Chinese, e.g., “请说明…的用途”, “无法在知识库中找到相关信息”.</li>
+<li><b>Multi‑hop reasoning and chain explanations:</b> Include inter‑entity relations; design questions that require composing multiple tokens and produce explicit reasoning chains.</li>
+<li><b>Evaluation and safety:</b> Beyond accuracy, stress‑test robustness and safety with noise/conflicts; sanitize sensitive knowledge to avoid leakage during generation.</li>
+</ol>
+
+<h2 id="v-improvements-and-future-directions">V. Improvements and Future Directions</h2>
+
+<ol>
+<li><b>Hierarchical retrieval and mixtures:</b> Treat knowledge tokens as an index: first coarse retrieval with FAISS/Annoy (dense/sparse), then fine re‑ranking via rectangular attention; or introduce a gating network to activate only relevant knowledge blocks inside the LLM (MoE‑like), lowering compute while improving quality.</li>
+<li><b>Structure‑preserving encoding:</b> Move beyond fixed‑length pooling of “name+property” and “value”. Explore variable‑length sequence–graph encoders so tokens carry structural info (order, numbers, relations) and support multi‑hop reasoning.</li>
+<li><b>Adaptive compression and selection:</b> Learn per‑token dimensional budgets based on frequency, confidence, or domain relevance; skip injection for irrelevant items; borrow deformable‑attention‑style sampling to reduce compute.</li>
+<li><b>Richer instruction tuning and chain‑of‑thought:</b> Expand from single‑hop QA to multi‑hop, conflict detection, counterfactual queries, and rationale generation, using staged training and CoT/think prompts as supervision.</li>
+<li><b>External tools and verification:</b> Add a fact‑checking module at the end of generation (SPARQL/graph reasoning); use self‑consistency over the selected tokens; optionally combine with document/web retrieval to cross‑check facts.</li>
+<li><b>Domain adaptation and open/closed models:</b> Build domain KBs and instruction sets; pick focused LLMs (e.g., FinGPT/MedGPT) or use API proxies while keeping the KB local.</li>
+<li><b>Chinese and multilingual expansion:</b> Use multilingual encoders (e.g., multi‑qa‑mpnet‑base‑dot‑v1, gtr‑xxl) to map triples into a unified space, enabling cross‑lingual retrieval and generation, with language tags stored in tokens and conditional adapters per language.</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>KBLaM shows a promising end‑to‑end path to weave external knowledge into LLMs via knowledge tokens and rectangular attention. Despite challenges in offline, heterogeneous hardware, and Chinese localization, by swapping encoders and LLMs, re‑writing kernels, and designing local synthetic data, we validated KBLaM’s feasibility and planned the next training phase. With advances in hybrid retrieval, structural encoders, adaptive compression, and chain‑style reasoning, KBLaM can become an efficient bridge between knowledge bases and LLMs for enterprise knowledge management and QA.</p>
+
+<h2 id="references">References</h2>
+
+<p>[1] Taketomo Isazawa, Xi Wang, Liana Mikaelyan, Mathew Salvaris, James Hensman. “KBLaM: Knowledge Base Augmented Language Model.” Proceedings of 2025.</p>
+
+<p>[2] Survey on knowledge‑base augmented LLMs. 2023.</p>
+
+<p>[3] Naman Bansal. “Best Open‑Source Embedding Models Benchmarked and Ranked.” Supermemory Blog, 2025.</p>
+
+<p>[4] Microsoft Research. “Introducing KBLaM: Bringing plug‑and‑play external knowledge to LLMs.” Microsoft Research Blog, 2025.</p>
+
+        </article>
+        <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <strong class="share-title" data-i18n="share_label">Share</strong>
+          <div class="spacer" style="flex:0 0 8px"></div>
+          <button class="btn outline share-btn" data-share="wechat">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 3C4.46 3 2 5.08 2 7.65c0 1.52.84 2.88 2.15 3.8l-.53 1.93 2.06-1.24c.56.14 1.15.21 1.77.21 3.04 0 5.5-2.08 5.5-4.65S10.54 3 7.5 3zm-1.4 3.6a.9.9 0 110 1.8.9.9 0 010-1.8zm3.8 0a.9.9 0 110 1.8.9.9 0 010-1.8zM16.5 10c-2.86 0-5.17 1.86-5.17 4.15 0 1.27.7 2.4 1.78 3.17l-.44 1.6 1.72-1.03c.47.12.97.18 1.48.18 2.86 0 5.17-1.86 5.17-4.15S19.36 10 16.5 10zm-1.2 2.7a.9.9 0 110 1.8.9.9 0 010-1.8zm3.6 0a.9.9 0 110 1.8.9.9 0 010-1.8z" fill="currentColor" stroke="none"></path></svg>
+            <span data-i18n="share_wechat">WeChat</span>
+          </button>
+          <a class="btn outline share-btn" data-share="whatsapp" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-14.32 4.906L4 21l4.2-1.11A8 8 0 1 1 20 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 9.5c.5 2 2.5 3.5 4 4l1.2-.8c.3-.2.7-.1.9.2l.7 1.1c.2.3.1.7-.2.9-1 .7-2.1 1.1-3.3 1.1-2.9 0-5.3-2.4-5.3-5.3 0-1.2.4-2.3 1.1-3.3.2-.3.6-.4.9-.2l1.1.7c.3.2.4.6.2.9l-.8 1.2z"/></svg>
+            <span data-i18n="share_whatsapp">WhatsApp</span></a>
+          <button class="btn outline share-btn" data-share="copy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+            <span data-i18n="share_copy">Copy link</span></button>
+          <a class="btn outline share-btn" data-share="download" download><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10"/><path d="M8 9l4 4 4-4"/><path d="M5 21h14"/></svg>
+            <span data-i18n="share_download">Download cover</span></a>
+          <button class="btn outline share-btn" data-share="native"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 16V3"/><path d="M8 7l4-4 4 4"/></svg>
+            <span data-i18n="share_share">Share…</span></button>
+        </div>
+        <div id="share-modal" class="modal" hidden>
+          <div class="modal-content card" role="dialog" aria-modal="true" aria-labelledby="share-title">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <h3 id="share-title" data-i18n="share_wechat">WeChat</h3>
+              <button class="btn outline" data-close><span data-i18n="share_close">Close</span></button>
+            </div>
+            <p class="muted" style="margin:8px 0" data-i18n="share_wechat_qr_tip">Scan in WeChat to share this post</p>
+            <div id="qr" style="display:grid;place-items:center;padding:12px"></div>
+          </div>
+        </div>
+        <hr style="margin: 24px 0">
+        <nav class="post-nav" aria-label="Post navigation">
+          <a class="btn outline" href="../blog.html">← Back to Blog</a>
+          <span class="muted" style="margin:0 .5rem">·</span>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">Previous</a>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">Next</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container"><p>© <span id="year"></span> Fan Wan</p></div>
+  </footer>
+  <script>
+    (function(){
+      if (window.hljs) { try { window.hljs.highlightAll(); } catch(e){} }
+      function render(){ try { if (window.renderMathInElement) window.renderMathInElement(document.body, { delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false},{left:'\(', right:'\)', display:false}] }); } catch(e){} }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+    })();
+  </script>
+</body>
+</html>
