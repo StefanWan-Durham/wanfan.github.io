@@ -99,7 +99,7 @@
 
 <h3 id="11-模型设计">1.1 模型设计</h3>
 
-<p>KBLAM 的核心思想是将知识库中的三元组 $\langle \text{name}, \text{property}, \text{value}\rangle$ 映射为与 LLM 键值缓存等尺寸的向量，称为 <b>知识令牌</b>。具体过程如下：</p>
+<p>KBLAM 的核心思想是将知识库中的三元组 $\langle \text{name}$, $\text{property}$, $\text{value}\rangle$ 映射为与 LLM 键值缓存等尺寸的向量，称为 <b>知识令牌</b>。具体过程如下：</p>
 
 <ol>
 <li><b>知识编码</b>：对于每个三元组，先用预训练的句子编码器 $f(\cdot)$ 将“\&lt;name\&gt; 的 \&lt;property\&gt;”和“\&lt;value\&gt;”分别映射为 $P$ 维的基础键向量 $k_m = f(\text{property}_m\,\text{of}\, \text{name}_m)$和值向量 $v_m = f(\text{value}_m)$[1]。然后使用线性适配器将其投影到 LLM 每层的键、值空间：$\tilde{k}_m = \tilde{W}_K k_m$，$\tilde{v}_m = \tilde{W}_V v_m$ [1]。每个知识令牌包含 $L$ 层的键和值向量，因此在不同注意力层可以直接使用。</li>
