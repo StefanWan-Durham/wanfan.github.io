@@ -156,13 +156,23 @@ document.addEventListener('DOMContentLoaded', () => {
       map.forEach((_, sec) => io.observe(sec));
     }
     function updateReadingTime(){
-      const active = isPost.querySelector('.i18n-block:not([hidden])') || isPost;
+      // Prefer the main article content of the active language block
+      const activeArticle = isPost.querySelector('article.i18n-block:not([hidden])');
+      const active = activeArticle || isPost.querySelector('.i18n-block:not([hidden])') || isPost;
       const metaP = isPost.querySelector('.page-hero .i18n-block:not([hidden]) .post-meta') || document.querySelector('.page-hero .post-meta');
       if (metaP && active) {
-        const text = active.innerText || '';
-        const words = text.trim().split(/\s+/).filter(Boolean).length;
-        const minutes = Math.max(1, Math.round(words / 260));
         const lang = getActiveLang();
+        const text = (active.innerText || '').trim();
+        let minutes = 1;
+        if (lang === 'zh') {
+          // For Chinese, approximate by visible CJK characters (exclude spaces/punct), 500 chars/min
+          const chars = (text.match(/[\u4e00-\u9fff]/g) || []).length;
+          minutes = Math.max(1, Math.round(chars / 500));
+        } else {
+          // For Latin languages, use word count at ~260 wpm
+          const words = text.split(/\s+/).filter(Boolean).length;
+          minutes = Math.max(1, Math.round(words / 260));
+        }
         const label = lang === 'en' ? `Estimated read ${minutes} min` : lang === 'es' ? `Lectura ${minutes} min` : `预计阅读 ${minutes} 分钟`;
         // Replace any existing time segment at the end of meta text
         if (/预计阅读|Estimated read|Lectura/.test(metaP.textContent)) {

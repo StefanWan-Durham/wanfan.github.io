@@ -155,7 +155,7 @@ function mdToHtml(md, { slug } = {}) {
   }
 }
 
-function buildHtml({lang, slug, title, description, date, bodyHtml, cover}){
+function buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevNext}){
   const langLabel = lang==='en' ? 'English' : lang==='es' ? 'Español' : '中文';
   const titleForTwitter = lang==='en' ? `${title} (with KBLaM)` : title;
   const url = `${siteOrigin}blog/${slug}${lang==='zh'?'':'.'+lang}.html`;
@@ -287,8 +287,15 @@ ${bodyHtml}
         <nav class="post-nav" aria-label="Post navigation">
           <a class="btn outline" href="../blog.html">${lang==='en'?'← Back to Blog':(lang==='es'?'← Volver al blog':'← 返回博客')}</a>
           <span class="muted" style="margin:0 .5rem">·</span>
-          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">${lang==='en'?'Previous':'上一个'}</a>
-          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">${lang==='en'?'Next':'下一个'}</a>
+          ${(() => {
+            const prev = prevNext?.prev?.[lang] || prevNext?.prev?.zh || '';
+            const next = prevNext?.next?.[lang] || prevNext?.next?.zh || '';
+            const prevLabel = lang==='en'?'Previous':(lang==='es'?'Anterior':'上一个');
+            const nextLabel = lang==='en'?'Next':(lang==='es'?'Siguiente':'下一个');
+            const prevHtml = prev ? `<a class="btn outline" href="${prev}">${prevLabel}</a>` : `<a class=\"btn outline\" href=\"#\" aria-disabled=\"true\" onclick=\"return false;\">${prevLabel}</a>`;
+            const nextHtml = next ? `<a class="btn outline" href="${next}">${nextLabel}</a>` : `<a class=\"btn outline\" href=\"#\" aria-disabled=\"true\" onclick=\"return false;\">${nextLabel}</a>`;
+            return prevHtml + '\n          ' + nextHtml;
+          })()}
         </nav>
       </div>
     </section>
@@ -299,7 +306,7 @@ ${bodyHtml}
   <script>
     (function(){
       if (window.hljs) { try { window.hljs.highlightAll(); } catch(e){} }
-      function render(){ try { if (window.renderMathInElement) window.renderMathInElement(document.body, { delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false},{left:'\\(', right:'\\)', display:false}] }); } catch(e){} }
+      function render(){ try { if (window.renderMathInElement) window.renderMathInElement(document.body, { delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false}] }); } catch(e){} }
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
     })();
   </script>
@@ -310,6 +317,48 @@ ${bodyHtml}
 async function buildPost(dir){
   const slug = path.basename(dir);
   const langs = ['zh','en','es'];
+  // Determine prev/next by date across all posts
+  if (!globalThis.__postIndex) {
+    // Build an index of all posts with date and available langs
+    const names = await fs.readdir(contentDir).catch(()=>[]);
+    const items = [];
+    for (const n of names){
+      const p = path.join(contentDir, n);
+      const st = await fs.stat(p).catch(()=>null);
+      if (!st || !st.isDirectory()) continue;
+      // read zh/en/es to get a date; prefer zh then en then es
+      let metaDate = '';
+      const metaByLang = {};
+      for (const L of ['zh','en','es']){
+        try {
+          const raw = await fs.readFile(path.join(p, `${L}.md`), 'utf8');
+          const [m] = parseFrontMatter(raw);
+          if (m && !/^(true|1)$/i.test(String(m.draft||'').trim())){
+            metaByLang[L] = m;
+            metaDate = metaDate || (m.date || '1970-01-01');
+          }
+        } catch {}
+      }
+      if (Object.keys(metaByLang).length) items.push({ slug: n, date: metaDate, langs: Object.keys(metaByLang) });
+    }
+    items.sort((a,b)=> (a.date>b.date?1:(a.date<b.date?-1:0)) );
+    globalThis.__postIndex = items;
+  }
+  const index = globalThis.__postIndex;
+  const idx = index.findIndex(it => it.slug === slug);
+  const prevEntry = idx > 0 ? index[idx-1] : null;
+  const nextEntry = idx >= 0 && idx < index.length-1 ? index[idx+1] : null;
+  const prevNext = { prev:{}, next:{} };
+  if (prevEntry){
+    if (prevEntry.langs.includes('zh')) prevNext.prev.zh = `./${prevEntry.slug}.html`;
+    if (prevEntry.langs.includes('en')) prevNext.prev.en = `./${prevEntry.slug}.en.html`;
+    if (prevEntry.langs.includes('es')) prevNext.prev.es = `./${prevEntry.slug}.es.html`;
+  }
+  if (nextEntry){
+    if (nextEntry.langs.includes('zh')) prevNext.next.zh = `./${nextEntry.slug}.html`;
+    if (nextEntry.langs.includes('en')) prevNext.next.en = `./${nextEntry.slug}.en.html`;
+    if (nextEntry.langs.includes('es')) prevNext.next.es = `./${nextEntry.slug}.es.html`;
+  }
   for (const lang of langs){
     const file = path.join(dir, `${lang}.md`);
     try {
@@ -336,7 +385,7 @@ async function buildPost(dir){
       if (!chosenRel) { chosenRel = 'assets/placeholder.jpg'; }
       const cover = meta.cover && /^https?:\/\//i.test(meta.cover) ? meta.cover : `${siteOrigin}${chosenRel}`;
   const bodyHtml = mdToHtml(body, { slug });
-      const html = buildHtml({lang, slug, title, description, date, bodyHtml, cover});
+      const html = buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevNext});
       const outPath = path.join(outDir, `${slug}${lang==='zh'?'':'.'+lang}.html`);
       await fs.writeFile(outPath, html, 'utf8');
       console.log('Wrote', path.relative(root, outPath));
