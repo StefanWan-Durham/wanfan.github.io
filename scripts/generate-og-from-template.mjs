@@ -5,7 +5,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const root = path.resolve(new URL('..', import.meta.url).pathname, '..');
+// Resolve project root: scripts/ -> ..
+const root = path.resolve(new URL('.', import.meta.url).pathname, '..');
 const contentDir = path.join(root, 'content', 'blog');
 const tplPath = path.join(root, 'assets', 'og-template.svg');
 

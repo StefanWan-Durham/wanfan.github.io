@@ -4,7 +4,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const root = path.resolve(new URL('..', import.meta.url).pathname, '..');
+// Resolve project root: scripts/ -> ..
+const root = path.resolve(new URL('.', import.meta.url).pathname, '..');
 const contentDir = path.join(root, 'content', 'blog');
 const blogIndexPath = path.join(root, 'blog.html');
 
@@ -48,8 +49,11 @@ async function readPostMeta(slug){
 }
 
 async function pickCover(slug, lang, metaCover){
-  // Prefer meta cover if provided, otherwise choose PNG, then SVG, else placeholder
-  if (metaCover) return metaCover;
+  // Prefer meta cover if provided; if it's a site path, verify existence.
+  if (metaCover) {
+    if (/^https?:\/\//i.test(metaCover)) return metaCover;
+    try { await fs.access(path.join(root, metaCover.replace(/^\/?/, ''))); return metaCover; } catch {}
+  }
   const png = path.join('assets','blog',`${slug}-${lang}.png`);
   const svg = path.join('assets','blog',`${slug}-${lang}.svg`);
   try { await fs.access(path.join(root, png)); return png; } catch {}
@@ -161,8 +165,9 @@ async function main(){
     console.warn('Marker closures not found; skip index update');
     return;
   }
+  // Keep both markers; replace only the content between them
   const before = html.slice(0, bEnd + 3);
-  const after = html.slice(eEnd + 3);
+  const after = html.slice(eIdx); // include END marker and the rest
   const cards = (await Promise.all(metaList.map(({slug, metas}) => cardHtml(slug, metas)))).join('\n');
   const out = before + '\n' + cards + '\n' + after;
   await fs.writeFile(blogIndexPath, out, 'utf8');
