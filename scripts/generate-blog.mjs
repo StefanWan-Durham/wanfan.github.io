@@ -72,6 +72,28 @@ function mdToHtml(md, { slug } = {}) {
     // Blockquote
     const bq = line.match(/^>\s?(.*)$/);
     if (bq){ out.push(`<blockquote><p>${inline(bq[1])}</p></blockquote>`); continue; }
+    // Tables: header | separator | rows
+    if (/^\s*\|/.test(line)) {
+      const next = lines[i+1] || '';
+      const sepRe = /^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/;
+      if (sepRe.test(next)) {
+        const parseRow = (ln) => ln.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => inline(c.trim()));
+        const headers = parseRow(line);
+        i++; // consume separator
+        const rows = [];
+        while (i+1 < lines.length) {
+          const peek = lines[i+1];
+          if (!/^\s*\|/.test(peek)) break;
+          i++;
+          rows.push(parseRow(peek));
+        }
+        out.push('<table>');
+        out.push('<thead><tr>' + headers.map(h=>`<th>${h}</th>`).join('') + '</tr></thead>');
+        if (rows.length) out.push('<tbody>' + rows.map(r=>'<tr>'+r.map(c=>`<td>${c}</td>`).join('')+'</tr>').join('') + '</tbody>');
+        out.push('</table>');
+        continue;
+      }
+    }
     // Lists
     const ol = line.match(/^\s*\d+[\.)]\s+(.*)$/);
     const ul = line.match(/^\s*[-*+]\s+(.*)$/);
