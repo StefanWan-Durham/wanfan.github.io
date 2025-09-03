@@ -201,7 +201,7 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
 <ol>
 <li><b>Chinese KB construction:</b> Use Chinese encyclopedias or enterprise docs; perform IE and entity linking to yield triples. Define domain‑specific entity/attribute sets beyond simple “description/purpose”, and include counterfactual or conflicting attributes to test robustness.</li>
 <li><b>Chinese sentence encoders:</b> Choose encoders trained on large Chinese corpora (e.g., <b>bge‑large‑zh</b>, <b>sent‑bert‑zh</b>); run them with Ascend‑PyTorch; fine‑tune when necessary.</li>
-<li><b>Chinese LLM and adapters:</b> Use open‑source Chinese LLMs (e.g., ChatGLM3, Yi‑34B). Re‑train adapters to match vocab/positional differences. Instruction templates should be native Chinese, e.g., “请说明…的用途”, “无法在知识库中找到相关信息”.</li>
+<li><b>Chinese LLM and adapters:</b> Use open‑source Chinese LLMs (e.g., ChatGLM3, Yi‑34B). Re‑train adapters to match vocab/positional differences. Instruction templates should be native Chinese, e.g., "Please explain the purpose of...", "Unable to find relevant information in the knowledge base."</li>
 <li><b>Multi‑hop reasoning and chain explanations:</b> Include inter‑entity relations; design questions that require composing multiple tokens and produce explicit reasoning chains.</li>
 <li><b>Evaluation and safety:</b> Beyond accuracy, stress‑test robustness and safety with noise/conflicts; sanitize sensitive knowledge to avoid leakage during generation.</li>
 </ol>
