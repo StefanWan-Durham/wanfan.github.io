@@ -102,7 +102,7 @@ KBLaM’s reference implementation targets English. For Chinese deployment we pr
 
 1. **Chinese KB construction:** Use Chinese encyclopedias or enterprise docs; perform IE and entity linking to yield triples. Define domain‑specific entity/attribute sets beyond simple “description/purpose”, and include counterfactual or conflicting attributes to test robustness.
 2. **Chinese sentence encoders:** Choose encoders trained on large Chinese corpora (e.g., **bge‑large‑zh**, **sent‑bert‑zh**); run them with Ascend‑PyTorch; fine‑tune when necessary.
-3. **Chinese LLM and adapters:** Use open‑source Chinese LLMs (e.g., ChatGLM3, Yi‑34B). Re‑train adapters to match vocab/positional differences. Instruction templates should be native Chinese, e.g., “请说明…的用途”, “无法在知识库中找到相关信息”.
+3. **Chinese LLM and adapters:** Use open‑source Chinese LLMs (e.g., ChatGLM3, Yi‑34B). Re‑train adapters to match vocab/positional differences. Instruction templates should be native Chinese, e.g., "Please explain the purpose of...", "Unable to find relevant information in the knowledge base."
 4. **Multi‑hop reasoning and chain explanations:** Include inter‑entity relations; design questions that require composing multiple tokens and produce explicit reasoning chains.
 5. **Evaluation and safety:** Beyond accuracy, stress‑test robustness and safety with noise/conflicts; sanitize sensitive knowledge to avoid leakage during generation.
 
