@@ -8,7 +8,7 @@ cover:
 keywords: LLM • Knowledge Tokens • Rectangular Attention • KBLaM
 ---
 
-# KBLaM Project Summary and Outlook
+
 
 Over the past few months, we have deployed, debugged, and studied **KBLaM** (Knowledge Base augmented Language Model) in depth. Proposed by Microsoft Research in 2025, KBLaM injects structured knowledge directly into a pretrained LLM using a sentence encoder and linear adapters. It converts a knowledge base into continuous key–value vectors (knowledge tokens) and fuses them into the LLM through a modified rectangular attention mechanism, enabling the model to answer knowledge‑dependent questions without external retrieval. This article reviews KBLaM’s principles and experiments, summarizes our deployment experience on domestic servers, lays out the next training plan, discusses Chinese localization, and proposes improvements for KBLaM.
 
