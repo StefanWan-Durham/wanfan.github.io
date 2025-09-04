@@ -5,12 +5,16 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-// Resolve project root: scripts/ -> ..
-const root = path.resolve(new URL('.', import.meta.url).pathname, '..');
+// Resolve project root robustly across OSes: scripts/ -> ..
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const root = path.resolve(__dirname, '..');
 const contentDir = path.join(root, 'content', 'blog');
 const outDir = path.join(root, 'blog');
-const siteOrigin = 'https://stefanwan-durham.github.io/wanfan.github.io/';
+// Public site origin for absolute URLs in meta tags (OG/Twitter). Keep trailing slash.
+const siteOrigin = 'https://fanwan-ai.github.io/';
 
 function slugifyId(text) {
   return (text || '')
@@ -203,14 +207,14 @@ function mdToHtml(md, { slug } = {}) {
   return out.join('\n');
 }
 
-function buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevNext, orderList}){
+function buildHtml({lang, slug, title, description, date, bodyHtml, heroSrc, ogImage, prevNext, orderList}){
   const langLabel = lang==='en' ? 'English' : lang==='es' ? 'Español' : '中文';
   const titleForTwitter = lang==='en' ? `${title} (with KBLaM)` : title;
   const url = `${siteOrigin}blog/${slug}${lang==='zh'?'':'.'+lang}.html`;
-  const ogImage = cover || `${siteOrigin}assets/placeholder.jpg`;
-  const heroImg = cover?.startsWith('http') ? cover : (cover ? `../${cover.replace(/^\/?/, '')}` : '');
+  const heroImg = heroSrc || '';
   const dateLabel = lang==='en' ? `Published on ${date}` : lang==='es' ? `Publicado el ${date}` : `发表于 ${date}`;
   const estRead = lang==='en' ? 'Estimated read' : lang==='es' ? 'Lectura' : '预计阅读';
+  const ogType = ogImage.endsWith('.png') ? 'image/png' : ogImage.endsWith('.jpg') || ogImage.endsWith('.jpeg') ? 'image/jpeg' : ogImage.endsWith('.svg') ? 'image/svg+xml' : 'image/png';
   return `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -220,9 +224,9 @@ function buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevN
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="author" content="Fan Wan">
   <link rel="canonical" href="${url}">
-  <link rel="alternate" hreflang="zh" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/${slug}.html">
-  <link rel="alternate" hreflang="en" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/${slug}.en.html">
-  <link rel="alternate" hreflang="es" href="https://stefanwan-durham.github.io/wanfan.github.io/blog/${slug}.es.html">
+  <link rel="alternate" hreflang="zh" href="${siteOrigin}blog/${slug}.html">
+  <link rel="alternate" hreflang="en" href="${siteOrigin}blog/${slug}.en.html">
+  <link rel="alternate" hreflang="es" href="${siteOrigin}blog/${slug}.es.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
@@ -231,7 +235,7 @@ function buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevN
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:secure_url" content="${ogImage}">
-  <meta property="og:image:type" content="image/${ogImage.endsWith('.png')?'png':ogImage.endsWith('.jpg')||ogImage.endsWith('.jpeg')?'jpeg':'png'}">
+  <meta property="og:image:type" content="${ogType}">
   <link rel="image_src" href="${ogImage}">
   <meta itemprop="image" content="${ogImage}">
   <meta name="twitter:card" content="summary_large_image">
@@ -301,7 +305,7 @@ function buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevN
     </section>
     <section class="section">
       <div class="container prose">
-        ${heroImg ? `<div class="post-hero-art" data-lang="${lang}"><img src="${heroImg}" alt="Cover"/></div>` : ''}
+  ${heroImg ? `<div class="post-hero-art" data-lang="${lang}"><img src="${heroImg}" alt="Cover"/></div>` : ''}
         <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>${lang==='en'?'Contents':(lang==='es'?'Índice':'目录')}</strong><ol></ol></nav>
         <article class="i18n-block" data-lang="${lang}">
 ${bodyHtml}
@@ -415,7 +419,9 @@ async function buildPost(dir){
       const title = meta.title || slug;
       const description = meta.description || '';
       const date = meta.date || new Date().toISOString().slice(0,10);
-      // Resolve a valid cover for hero/OG: prefer provided site path if exists; else PNG, then SVG, else placeholder
+      // Resolve a valid cover for hero/OG
+      // - For OG: use absolute URL at siteOrigin
+      // - For hero image in page: use relative path from blog/ ("../assets/..."), avoid hardcoding domains
       const preferRel = (meta.cover && !/^https?:\/\//i.test(meta.cover)) ? meta.cover.replace(/^\/?/,'') : '';
       const pngRel = path.join('assets','blog',`${slug}-${lang}.png`);
       const svgRel = path.join('assets','blog',`${slug}-${lang}.svg`);
@@ -424,17 +430,23 @@ async function buildPost(dir){
         try { await fs.access(path.join(root, preferRel)); chosenRel = preferRel; } catch {}
       }
       if (!chosenRel) {
-        try { await fs.access(path.join(root, pngRel)); chosenRel = pngRel; } catch {}
-      }
-      if (!chosenRel) {
+        // Prefer SVG when available for crispness
         try { await fs.access(path.join(root, svgRel)); chosenRel = svgRel; } catch {}
       }
+      if (!chosenRel) {
+        try { await fs.access(path.join(root, pngRel)); chosenRel = pngRel; } catch {}
+      }
       if (!chosenRel) { chosenRel = 'assets/placeholder.jpg'; }
-      const cover = meta.cover && /^https?:\/\//i.test(meta.cover) ? meta.cover : `${siteOrigin}${chosenRel}`;
+      // Build OG absolute URL
+      const ogImage = meta.cover && /^https?:\/\//i.test(meta.cover) ? meta.cover : `${siteOrigin}${chosenRel}`;
+      // Build hero image src relative to /blog/*.html
+      const heroSrc = meta.cover && /^https?:\/\//i.test(meta.cover)
+        ? meta.cover
+        : `../${chosenRel.replace(/^\/?/, '')}`;
   const bodyHtml = mdToHtml(body, { slug });
   // Prepare order list using the computed global index (zh filenames, newest/oldest depends on index order)
   const orderList = (globalThis.__postIndex || []).map(it => `${it.slug}.html`);
-  const html = buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevNext, orderList});
+  const html = buildHtml({lang, slug, title, description, date, bodyHtml, heroSrc, ogImage, prevNext, orderList});
       const outPath = path.join(outDir, `${slug}${lang==='zh'?'':'.'+lang}.html`);
       await fs.writeFile(outPath, html, 'utf8');
       console.log('Wrote', path.relative(root, outPath));
