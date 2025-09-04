@@ -3,9 +3,12 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-// Resolve project root: scripts/ -> ..
-const root = path.resolve(new URL('.', import.meta.url).pathname, '..');
+// Resolve project root robustly across OSes: scripts/ -> ..
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const root = path.resolve(__dirname, '..');
 const contentDir = path.join(root, 'content', 'blog');
 const blogIndexPath = path.join(root, 'blog.html');
 

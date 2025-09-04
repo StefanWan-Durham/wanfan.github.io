@@ -1,134 +1,289 @@
 ---
 title: Is RAG obsolete? 2025 roadmap from “long context” to GraphRAG, Retrieval‑Aware Training and KBLaM
-description: RAG isn’t dying—naïve vector RAG with context dumping is. A 2025, engineering‑ready stack: GraphRAG, Retrieval‑Aware Training, Agentic orchestration, freshness/streaming, and targeted parameter updates. KBLaM as a trustworthy baseline.
+description: RAG isn’t dying—naïve vector RAG with context dumping is. This updated 2025 guide explains why long context can’t replace RAG, how to modernize RAG with GraphRAG and Retrieval‑Aware Training, and how to land it with KBLaM in real systems.
 date: 2025-09-02
+draft: false
 cover: assets/blog/rag-hero-en.v5.svg
 ---
 
-Reader’s note: Over the past year, one hallway question keeps coming back—“Will long‑context models make RAG obsolete?” Rather than just answer yes/no, this piece tells the story behind the trend: why many teams felt RAG was flaky, why more context alone doesn’t buy trustworthy answers, and what a 2025, end‑to‑end, engineering‑ready stack looks like.
+## 0. What problem does this article solve?
 
-## TL;DR
+Over the last year, a recurring debate has been: “If LLMs can read a million tokens in one go, do we still need retrieval‑augmented generation (RAG)?” Some argue we can just stuff everything into the prompt; others see RAG as a toolchain with plenty of room to grow.
 
-RAG isn’t dying—**naïve vector‑RAG with context dumping** is. In 2025, competitive stacks converge on five pillars: **Structured Retrieval (GraphRAG) + Retrieval‑Aware Training (Self‑RAG / RA‑DIT / RAFT) + Agentic Orchestration (Agentic RAG + MCP) + Freshness/Streaming Indexing + (when needed) Parameter‑level Knowledge Updates (fine‑tuning / model editing)**. This article offers evaluation criteria, a selection matrix, and a deployment checklist, and shows how **KBLaM** builds **trustworthy, controllable, explainable** systems in high‑compliance, low‑connectivity settings.
+This article goes beyond a yes/no answer. We explain **why** long context cannot replace RAG, **how** to modernize RAG so it stays central in 2025 and beyond, and **what it takes** to make it work in real projects. It’s our synthesis after surveying the literature and tracking enterprise practice.
 
-## 1. Why “longer context” ≠ the end of RAG
+We’ll cover:
 
-An analogy: dumping everything into the prompt is like giving the model a bigger backpack; retrieval is a living map that updates and points the way. A bigger backpack doesn’t guarantee you know where to go—or why.
+- **Real‑world constraints**: why long context can’t solve everything.
+- **Postmortems**: why naïve RAG fails in practice.
+- **The “five‑piece set”**: a modern engineering solution.
+- **Deep dives**: GraphRAG and Retrieval‑Aware Training.
+- **Deployment path**: how to run RAG in constrained environments (e.g., domestic servers, air‑gapped).
+- **Improvements and outlook**: where RAG should evolve next.
 
-- **Cost & scalability**: Shoving massive corpora into the prompt drives inference cost up; **retrieve → curate** remains cheaper and more predictable.
-- **Timeliness**: Parameters are hard to update at minute‑scale; external stores can be **hot‑swapped**.
-- **Audit & compliance**: RAG yields **traceable evidence chains** (source, version, time), essential in regulated domains.
-- **Privacy & domain isolation**: Externalized knowledge works better with **access control and compartmentalization**.
-- **Robustness**: Retrieval→re‑rank→extract pipelines are **modular** and regression‑test‑able; pure long‑context prompting is harder to debug.
+---
 
-> Bottom line: **Bigger context reduces retrieval frequency; it doesn’t remove the need for retrieval**.
->
-> Vignette: A utility firm stuffed 30k pages of SOPs into long‑context prompts. P95 cost spiked and answers wavered. Switching to “retrieve → evidence pack → extractive generation” cut cost and latency, and made answers auditable.
+## 1. Why “more context” isn’t the finish line
 
-## 2. Naïve RAG failure modes (to avoid now)
+From Gemini 1.5 to Claude 3, context windows have exploded—some to a million tokens. At first glance, that looks like “no more retrieval.” In practice, **a bigger backpack doesn’t make a better trip**.
 
-If RAG feels brittle, it’s often not because “retrieval is wrong” but because the _approach_ is. These traps are common:
+### 1.1 Cost and latency: your budget is finite
 
-1. **Vector‑only retrieval** ignores structure (tables/code/temporal relations).
-2. **Crude chunking** splits evidence; k‑NN pulls partial or wrong spans.
-3. **Context stuffing** increases noise and distracts attention.
-4. **No type‑specific retrievers** and **no cross‑encoder re‑rankers**.
-5. **No freshness policy** for volatile content (laws, procedures, markets).
-6. **No audit trail** from answer → evidence → original sources.
+More tokens mean more cost and latency. Teams report that cramming a 20k‑character document into 32k+ windows can make a single inference cost >5× more. Under concurrency, P95 latency can jump from <1s to several seconds—unacceptable for interactive apps (support bots, incident triage, etc.).
 
-## 3. The 2025 RAG “five‑piece set”
+### 1.2 Timeliness: knowledge updates outrun parameter updates
 
-Getting RAG right means separating concerns: find knowledge, package evidence, and express answers. Mature 2025 stacks converge on these five pieces.
+Enterprise knowledge changes daily; finance/news/social scenarios can change by the minute. Baking facts into parameters forces frequent fine‑tuning—costly and risky. RAG keeps knowledge external and **hot‑swappable** without touching the model.
 
-### 3.1 Structured Retrieval (GraphRAG)
+### 1.3 Compliance and auditability: provenance beats eloquence
 
-- **Idea**: Jointly index text + knowledge graphs; use entities/relations/events as a **skeleton** and text as **flesh**.
-- **When**: Regulations, procedures, asset registries, **multi‑hop** reasoning.
-- **Engineering**: Multi‑index (BM25 + Dense + Cross‑Encoder), “graph‑then‑text” or “text‑then‑graph” fusion, **evidence packaging** (paths + spans).
+Regulated domains (nuclear, power, water, finance) need not just correct answers but provenance: which doc, which clause, which release. Dump‑prompting mixes versions and loses traceability. RAG logs retrievals, snippets, versions, and timestamps—an auditable trail you can replay.
 
-Example: For regulations QA, first find the “article → term → applicability” path in the graph, then pull matching spans as an evidence pack—more stable and cheaper than dumping ten paragraphs.
+### 1.4 Privacy and compartmentalization: isolate by clearance
 
-### 3.2 Retrieval‑Aware Training (Self‑RAG / RA‑DIT / RAFT)
+Enterprises segment knowledge by clearance. Shoving everything into one window over‑exposes data. RAG retrieves per‑request within access control boundaries, enforcing isolation.
 
-- **Goal**: Teach the model **when/what to retrieve**.
-- **Practice**:
-  - Self‑RAG: generation with **self‑evaluation + re‑retrieve** loops.
-  - RA‑DIT/RAFT: inject retrieval signals/losses during fine‑tuning.
-- **Benefit**: Less useless retrieval, **more faithful answers**.
+**Bottom line**: long context is a bigger backpack; RAG is a live map. Real systems need both—complementary, not substitute.
 
-Analogy: Teach the model “when to open the dictionary and which page,” instead of carrying the whole dictionary everywhere.
+---
 
-### 3.3 Agentic RAG + MCP
+## 2. Why naïve RAG crashes—postmortems
 
-- **Why**: Real tasks are **multi‑step** with tools (SQL/search/code/sim).
-- **How**: Unify tools via MCP; add **stop conditions**, **budgets/latency caps**, and **cache policies**.
+The first RAG attempt often looks like: chunk PDFs → embed → k‑NN → take top‑k → stuff into the prompt. It “works” in demos but breaks in production. A few real‑world failure modes:
 
-Scenario: Root‑cause analysis may need “check logs → run SQL → compare telemetry → validate procedures.” Agents orchestrate guarded steps; RAG supplies evidence and explanations.
+### 2.1 Vector‑only, structure‑blind
 
-### 3.4 Freshness & streaming
+After chunking equipment manuals, a team used pure vector search. Asked “What’s valve B’s maintenance interval?”, the retriever returned a “valve size comparison table”—semantically related but not answering the numeric policy. Tables and time‑series need dedicated retrievers.
 
-- Incremental ingestion, TTL, version selection; rolling evaluation on “last‑7‑days” questions.
+### 2.2 Brutal chunking fragments facts
 
-### 3.5 Parameter‑level updates (optional)
+An SOP split by fixed length sliced definitions in half. “Safety conditions: (1) pressure ≥ 0.35 MPa; (2) 35–55 ℃” got split, and the model saw only (1), missing (2).
 
-- **When**: Highly repetitive, short, stable facts.
-- **How**: Lightweight fine‑tuning (LoRA) or **surgical editing** (ROME/MEMIT).
-- **Caution**: Keep **evidence‑first** principle and provenance logs.
+### 2.3 Context stuffing adds noise
 
-## 4. KBLaM: a trustworthy baseline for constrained & regulated environments
+Feeding 10–20 chunks “just in case” dilutes attention. In alarm triage, far more text about “principles/history” buried the actionable “steps,” yielding vague answers.
 
-When networks are constrained and compliance is strict, “traceable and reproducible” matters more than “more eloquent.” **KBLaM** offers an engineering base—from knowledge modeling to audit trails.
+### 2.4 Freshness, re‑ranking, auditability
 
-### 4.1 Components
+- **Freshness**: no incremental indexing → outdated laws/notices; version policy unclear.
+- **Re‑ranking**: no cross‑encoder → “related but not sufficient” comes first.
+- **No audit**: answers lack evidence trails regulators can inspect.
 
-1. **Unified Knowledge Layer**: text (para/table/image captions) + **KG** (entities/relations/events) + metadata (time, version, clearance).
-2. **Retrieval Planner**: rules + learned router (intent → retriever types → multi‑hop strategy).
-3. **Evidence Chain Builder**: package source/ID/version/time/offsets/graph paths.
-4. **Generation & Adjudication**: extraction‑first; verify via SQL/rules if needed.
-5. **Offline Eval & Audit**: reproducible test sets; monitor **faithfulness/coverage/cost/latency**.
+The issue isn’t retrieval per se—it’s using the wrong method. Separate retrieval, evidence packaging, generation, and verification to unlock RAG’s value.
 
-### 4.2 Minimal flow (pseudo)
+---
 
-```text
-intent = classify(q)
-plan   = plan_query(intent)
-C      = retrieve_multistage(q, plan)           # BM25 + Dense + Cross-Encoder
-if plan.requires_graph: C = merge(C, graph_paths(q, entities(C)))
-E      = pack_evidence(C)
-a0     = generate_answer(q, E)
-a      = verify_and_refine(a0) if needs_verify(a0) else a0
-log(a, E, cost, latency, versions)
+## 3. The new “five‑piece set”: skeleton, page‑flipping, tools, freshness, and minimal parameter updates
+
+From research and deployments, mature 2025 stacks converge on five pieces, each fixing a naïve‑RAG pain point:
+
+| Component | Role | Where it shines | Challenges |
+| --- | --- | --- | --- |
+| Structured retrieval (GraphRAG) | Build the knowledge skeleton | Multi‑doc hops, regulations, SOPs | KG extraction and upkeep |
+| Retrieval‑aware training | Learn when/what to retrieve | QA and summarization | Training cost and data |
+| Agentic orchestration | Plan multi‑step tools | Plans, queries, calculations | Safety and efficiency |
+| Freshness management | Keep the index alive | News, markets, high‑timeliness | Monitoring and version policy |
+| Parameter updates (optional) | Bake small, stable facts | Templates, disambiguation | Hallucinations and scope |
+
+We’ll unpack each piece and how to land it.
+
+---
+
+## 4. Structured retrieval (GraphRAG): build the skeleton for stability
+
+Graph‑shaped retrieval isn’t new; it’s finally practical at scale. The idea: add a **structured skeleton** (a KG or entity‑relation graph) alongside unstructured text “flesh.” Complex tasks—regulations, processes, root‑cause analysis—often follow paths along entities and relations.
+
+### 4.1 Building the graph: from text to skeleton
+
+**Chunk + extract**: chunk by headings/sections/paras with a sliding window; run NER/RE to extract entities/relations into a light KG. Keep entity/edge types simple (2–3 types) to start, e.g., “article → term → applicability” or “device → component → failure mode.”
+
+**Disambiguate/merge**: handle same‑name/different‑entity and synonyms; use fingerprint similarity (Jaccard/Cosine) and rules (geo codes, equipment IDs). Queue low‑confidence items for review.
+
+### 4.2 Multi‑retriever + cross‑encoder re‑rank
+
+Combine BM25 (keyword precision) and dense retrieval (semantic recall), then re‑rank top‑K with a cross‑encoder (e.g., bge‑reranker). This slashes “sounds relevant but doesn’t answer” mistakes.
+
+### 4.3 Path search: turn QA into route finding
+
+Augment candidates via KG paths. For “startup conditions of device A,” expand along components, actions, interlocks → pull matching clauses → then fetch the text spans. “Graph‑then‑text” or the inverse both work.
+
+### 4.4 Evidence packs: paths + spans, packaged
+
+Return a structured evidence pack: KG path, text spans, source/ID, version, timestamp, offsets. The generator cites the pack rather than free‑for‑all context, reducing noise and yielding a clear provenance chain.
+
+---
+
+## 5. Retrieval‑aware training: teach models to “flip pages,” not memorize
+
+Instead of passively swallowing context, make models aware of when/what to retrieve and how to cite.
+
+### 5.1 Self‑RAG: self‑check + re‑retrieve loops
+
+Draft → self‑evaluate → retrieve more → refine until confidence or step cap. Great for open‑domain QA/long‑form, but control loops and budget carefully.
+
+### 5.2 RAFT: label noise vs. evidence in training
+
+Label which retrieved chunks are distractors vs. valid evidence; require inline citations during training. The model learns to ignore noise and cite correctly.
+
+### 5.3 RA‑DIT: two‑way learning between retriever and generator
+
+First fine‑tune the LLM to cite; then tune retriever parameters (dense/BM25 thresholds) using model outputs so retrieval matches model needs. Best gains, more compute.
+
+### 5.4 Practical path: start small
+
+If you have annotations, start with RAFT‑style fine‑tuning on Q–A–evidence triples. With little data, bootstrap via synthetic labels then human‑review a slice. For RA‑DIT, iteratively tune recall and re‑rank stages—no need to do everything at once.
+
+---
+
+## 6. Agentic orchestration: multi‑step plans + tool calls
+
+Many tasks are not single‑turn. Think: check manual → pull telemetry → compute thresholds → compare maintenance plan → produce steps. RAG handles knowledge; an Agent handles planning and tool calls.
+
+### 6.1 Tool registry and routing
+
+Register tools (SQL, logs, spreadsheets, external APIs) with I/O schemas and permissions. The Agent chooses tools based on intent, feeds outputs back to retrieval/LLM.
+
+### 6.2 Safety caps and budgets
+
+Hard caps: max 4–6 tool calls; budget per query; P95 latency limits with safe fallbacks (“evidence‑only” answers if over cap).
+
+### 6.3 Caching and replay
+
+Cache common intents via (intent summary + evidence hash). Log tool inputs/outputs for reproducibility and audits.
+
+---
+
+## 7. Freshness and streaming indexes: keep knowledge alive
+
+### 7.1 CDC and incremental embeddings
+
+Capture inserts/updates/deletes; chunk/embed/update indexes hourly or faster for volatile domains.
+
+### 7.2 TTL and version policy
+
+Different TTLs per content type and switchable policies: “latest first,” “stable first,” or “historical snapshot.”
+
+### 7.3 Rolling eval and monitoring
+
+Maintain a last‑7‑days eval set; track recall hit rate, NDCG, P95 latency, and cost. Investigate drift quickly.
+
+---
+
+## 8. Parameter‑level updates (optional)
+
+Use LoRA/adapters for style/templates; surgical editing for rare fact fixes. Always keep evidence‑first generation to avoid overconfidence.
+
+---
+
+## 9. KBLaM: a trustworthy baseline for constrained environments
+
+We’ve deployed KBLaM on domestic servers with external retrieval and structural encodings. Ideas worth borrowing for “trustworthy, controllable, explainable” RAG.
+
+### 9.1 Unified knowledge layer: text, tables, graphs, metadata
+
+Unify modalities; use multi‑modal embeddings into one space; record provenance metadata (source/version/time/clearance).
+
+### 9.2 Evidence chain: question → evidence → answer
+
+Route by intent; retrieve/re‑rank; expand via KG; build evidence packs (source/version/path/offsets); generate; verify via SQL/rules if needed; log for audits.
+
+### 9.3 Minimal viable flow (pseudo)
+
+```python
+def answer(question):
+  intent = classify(question)
+  route = select_route(intent)
+  candidates = retrieve(question, route)
+  if intent.requires_graph:
+    path = graph_search(candidates)
+    candidates = merge(candidates, path)
+  evidence = pack(candidates)
+  draft = generate(question, evidence)
+  if need_verify(draft):
+    ans = verify_and_refine(draft)
+  else:
+    ans = draft
+  log(question, evidence, ans)
+  return ans
 ```
 
-### 4.3 Practical tips
+---
 
-Chunk structurally → multi‑retriever recall → cross‑encoder re‑rank → compress evidence into **bullet‑point claims with citations** → stream updates with versioning.
+## 10. Cost model and examples: do the math
 
-## 5. Selection matrix (2025)
+### 10.1 Input tokens dominate
 
-| Use case | Timeliness | Structure | Constraint | Recommended stack |
-| --- | --- | --- | --- | --- |
-| Regulations / procedures QA | Medium | High | Audit-heavy | **GraphRAG + Self‑RAG/RAFT**, evidence‑first |
-| Ops/alerts handling | High | Medium | Low-connectivity | **Event stream + streaming index + Agentic RAG** |
-| SOP templating | Low | Medium | High consistency | **Light FT + template extraction**, optional editing |
-| News/market monitoring | Very high | Low | Cost-sensitive | **Real-time crawl + BM25/Dense + light gen** |
-| Multi-hop reasoning | Medium | High | Explainability | **GraphRAG + path visualization + ReAct/Plan‑Exec** |
+“Dump context” may push inputs to 30k+ tokens; an evidence‑pack approach often needs 1–3 spans (~500–700 tokens each) → ~1.5k–2.1k total—often **10× less**.
 
-## 6. Evaluation & governance
+### 10.2 Retrieval adds a little cost, saves a lot
 
-Track **faithfulness**, **evidence coverage**, **groundedness**, **P95 latency**, **cost/query**, **change resilience**, and **audit logs** (Q → plan → evidence → answer → tool calls → versions).
+BM25/dense retrieval is cheap; cross‑encoder re‑rankers are small and CPU‑friendly. Overall, “retrieve then generate” wins in most cases.
 
-## 7. Implementation checklist
+### 10.3 Capability vs. cost trade‑offs
 
-Data governance (PII scrub, compartmentalization) · Retrieval baseline (BM25 + Dense + X‑encoder, type‑specific retrievers) · Claim‑Evidence templates with inline citations · Agent caps (tools/$/latency) · Offline eval set (≥1k Qs) · Gray release + monitoring.
+For content creation or truly long citations, hybrid strategies shine: RAG for facts, long context for free‑form prose. Count tokens/calls/costs and choose per need.
 
-> **Conclusion**: RAG isn’t obsolete. The **trustworthy, controllable, explainable** RAG stack is the center of 2025 practice; **KBLaM** is a strong blueprint for regulated, air‑gapped environments.
+---
 
-## References (official sources)
+## 11. Implementation checklist: from prototype to production
 
-- Self‑RAG: [arXiv](https://arxiv.org/abs/2310.11511) · [OpenReview](https://openreview.net/forum?id=VplGxL2Y1c) · [GitHub](https://github.com/AkariAsai/self-rag)
-- RAFT (Retrieval‑Augmented Fine‑Tuning, 2024): [arXiv](https://arxiv.org/abs/2403.10131)
-- RA‑DIT (2023): [arXiv](https://arxiv.org/abs/2310.01352) · [OpenReview](https://openreview.net/forum?id=3p3oI6G7pK)
-- GraphRAG: [Microsoft Research Blog](https://microsoft.github.io/graphrag/blog_posts/) · [GitHub](https://github.com/microsoft/graphrag)
-- MCP: [Anthropic Announcement](https://www.anthropic.com/news/model-context-protocol) · [GitHub](https://github.com/modelcontextprotocol) · [The Verge](https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool)
-- Google Gemini 1.5 (long context): [Official Blog](https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/)
+1. **Data governance**: scrub PII; classify by clearance; track source/version.
+2. **Chunking**: section‑based with sliding windows.
+3. **Retrieval baseline**: BM25 + dense + re‑rank; add table/code/figure retrievers.
+4. **Evidence packs**: include `source_id`, `url`, `version`, `timestamp`, `offset`, `path`, with a unique `answer_id`.
+5. **Generation templates**: claim‑evidence style with inline citations.
+6. **Agent caps**: tool list, step/budget limits; cache frequent queries.
+7. **Freshness**: incremental crawl/embeddings; TTL and version policies; rolling eval.
+8. **Monitoring/replay**: dashboards for recall/NDCG/P95/cost; replay question→evidence→answer→tools.
+9. **Gray release**: canary new models/strategies; compare to baseline; ramp up gradually.
+10. **Team ops**: clear owners for retrieval/KG/training/infra; fast feedback loops.
+
+---
+
+## 12. Next stops: where RAG should evolve
+
+### 12.1 Dynamic retrieval and gating
+
+Scale brings cost; add ExpertRAG‑style gating: only retrieve when internal knowledge is insufficient, and activate sparse “experts” per query.
+
+### 12.2 Hierarchical or hybrid retrieval
+
+Two‑stage “coarse → fine” pipelines (doc‑level sparse → in‑doc dense → cross‑encoder) help multi‑hop tasks (cf. HiRAG).
+
+### 12.3 Preserve structure in knowledge encodings
+
+Avoid compressing KGs into a single vector; encode triples or subgraphs; add numeric/date encodings; chain paths with CoT.
+
+### 12.4 Adaptive compression and knowledge selection
+
+Allocate vector capacity by importance (access frequency, confidence, business value); drop irrelevant tokens—MoE‑style routing.
+
+### 12.5 Multilingual and cross‑lingual retrieval
+
+Use multilingual embeddings (e.g., gtr/multi‑qa‑mpnet) with language tags/gates; cross‑lingual reasoning is the hard part.
+
+### 12.6 External checks and self‑consistency
+
+Post‑answer verification via graph/SQL; re‑retrieve or abstain on contradictions; check KG path coherence; optional web cross‑checks.
+
+---
+
+## 13. Conclusion: the map won’t go out of style
+
+RAG addresses “finding and citing knowledge,” largely orthogonal to window size. Long context helps, but not with cost, timeliness, audits, or privacy—and not with multi‑step structured tasks.
+
+The 2025 “five‑piece set” emerges: skeleton + page‑flipping + tools + freshness + modest parameter updates. GraphRAG guides complex paths; retrieval‑aware training teaches citation; agents manage plans; freshness prevents staleness; small parameter updates help templates. KBLaM’s unified layer, evidence packs, and audit trails offer a deployment blueprint for regulated settings.
+
+With dynamic gating, hierarchical retrieval, structured encodings, adaptive compression, and multilingual capability, RAG will keep evolving—likely fusing deeper with knowledge‑injection models like KBLaM. One constant remains: **under budget and in complex settings, retrieval is the LLM’s most reliable partner**. Bring a live map; any backpack gets lighter.
+
+---
+
+## References (recommended reading)
+
+1. Akari Asai et al., **Self‑RAG**, arXiv, 2024.
+2. Microsoft Research, **GraphRAG**, 2024.
+3. Naman Bansal, **Best Open‑Source Embedding Models Benchmarked and Ranked**, Supermemory Blog, 2025.
+4. Haoyu Huang et al., **HiRAG: Retrieval‑Augmented Generation with Hierarchical Knowledge**, arXiv, 2025.
+5. Esmail Gumaan, **ExpertRAG: Efficient RAG with Mixture of Experts**, arXiv, 2025.
+6. Hang Luo et al., **Causal Graphs Meet Thoughts: Enhancing Complex Reasoning in Graph‑Augmented LLMs**, arXiv, 2025.
+7. Wei Liu et al., **XRAG: Cross‑lingual Retrieval‑Augmented Generation**, arXiv, 2025.

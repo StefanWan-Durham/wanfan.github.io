@@ -2,17 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>¿Quedará obsoleto RAG? Hoja de ruta 2025: del contexto largo a GraphRAG, entrenamiento sensible a la recuperación y KBLaM</title>
+  <title>¿Está obsoleto RAG? Hoja de ruta 2025: del “contexto largo” a GraphRAG, Entrenamiento Consciente de Recuperación y KBLaM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="RAG no muere; muere el RAG ingenuo de vectores con pegado de contexto. En 2025: GraphRAG, entrenamiento sensible a la recuperación, orquestación con agentes, frescura/streaming y actualizaciones puntuales en parámetros. KBLaM como línea base fiable.">
+  <meta name="description" content="RAG no muere—lo que muere es el RAG ingenuo de volcar todo al prompt. Esta guía 2025 explica por qué el contexto largo no reemplaza a RAG, cómo modernizarlo con GraphRAG y entrenamiento consciente de recuperación, y cómo aterrizarlo con KBLaM en sistemas reales.">
   <meta name="author" content="Fan Wan">
   <link rel="canonical" href="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.es.html">
   <link rel="alternate" hreflang="zh" href="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.html">
   <link rel="alternate" hreflang="en" href="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.en.html">
   <link rel="alternate" hreflang="es" href="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.es.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="¿Quedará obsoleto RAG? Hoja de ruta 2025: del contexto largo a GraphRAG, entrenamiento sensible a la recuperación y KBLaM">
-  <meta property="og:description" content="RAG no muere; muere el RAG ingenuo de vectores con pegado de contexto. En 2025: GraphRAG, entrenamiento sensible a la recuperación, orquestación con agentes, frescura/streaming y actualizaciones puntuales en parámetros. KBLaM como línea base fiable.">
+  <meta property="og:title" content="¿Está obsoleto RAG? Hoja de ruta 2025: del “contexto largo” a GraphRAG, Entrenamiento Consciente de Recuperación y KBLaM">
+  <meta property="og:description" content="RAG no muere—lo que muere es el RAG ingenuo de volcar todo al prompt. Esta guía 2025 explica por qué el contexto largo no reemplaza a RAG, cómo modernizarlo con GraphRAG y entrenamiento consciente de recuperación, y cómo aterrizarlo con KBLaM en sistemas reales.">
   <meta property="og:url" content="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.es.html">
   <meta property="og:image" content="https://fanwan-ai.github.io/assets/blog/rag-hero-es.v5.svg">
   <meta property="og:image:width" content="1200">
@@ -22,8 +22,8 @@
   <link rel="image_src" href="https://fanwan-ai.github.io/assets/blog/rag-hero-es.v5.svg">
   <meta itemprop="image" content="https://fanwan-ai.github.io/assets/blog/rag-hero-es.v5.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="¿Quedará obsoleto RAG? Hoja de ruta 2025: del contexto largo a GraphRAG, entrenamiento sensible a la recuperación y KBLaM">
-  <meta name="twitter:description" content="RAG no muere; muere el RAG ingenuo de vectores con pegado de contexto. En 2025: GraphRAG, entrenamiento sensible a la recuperación, orquestación con agentes, frescura/streaming y actualizaciones puntuales en parámetros. KBLaM como línea base fiable.">
+  <meta name="twitter:title" content="¿Está obsoleto RAG? Hoja de ruta 2025: del “contexto largo” a GraphRAG, Entrenamiento Consciente de Recuperación y KBLaM">
+  <meta name="twitter:description" content="RAG no muere—lo que muere es el RAG ingenuo de volcar todo al prompt. Esta guía 2025 explica por qué el contexto largo no reemplaza a RAG, cómo modernizarlo con GraphRAG y entrenamiento consciente de recuperación, y cómo aterrizarlo con KBLaM en sistemas reales.">
   <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/blog/rag-hero-es.v5.svg">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
@@ -81,7 +81,7 @@
     <section class="page-hero section">
       <div class="container">
         <div class="i18n-block" data-lang="es">
-          <h1 class="post-title">¿Quedará obsoleto RAG? Hoja de ruta 2025: del contexto largo a GraphRAG, entrenamiento sensible a la recuperación y KBLaM</h1>
+          <h1 class="post-title">¿Está obsoleto RAG? Hoja de ruta 2025: del “contexto largo” a GraphRAG, Entrenamiento Consciente de Recuperación y KBLaM</h1>
           <p class="muted post-meta">Publicado el 2025-09-02 · Lectura 5 min</p>
         </div>
       </div>
@@ -116,7 +116,7 @@
 </ul>
 
 <blockquote><p>Conclusión: <b>Más contexto reduce la frecuencia de recuperación, no elimina la necesidad de recuperar</b>.</p></blockquote>
-<blockquote><p></p></blockquote>
+
 <blockquote><p>Viñeta: Una empresa de servicios volcó 30k páginas de SOP en prompts de contexto largo. El P95 de coste subió y las respuestas fluctuaron. Con “recuperar → paquete de evidencia → generación extractiva”, bajaron coste y latencia, y las respuestas quedaron auditables.</p></blockquote>
 
 <h2 id="2-modos-de-fallo-del-rag-ingenuo-evtalos">2. Modos de fallo del RAG ingenuo (evítalos)</h2>
@@ -186,43 +186,317 @@ si necesita_grafo: C = fusionar(C, rutas_grafo(q))
 E      = empaquetar_evidencia(C)
 a0     = generar(q, E)
 a      = verificar_y_refinar(a0) si hace falta
-registrar(a, E, coste, latencia, versiones)
 </code></pre>
 
-<h3 id="43-consejos-prcticos">4.3 Consejos prácticos</h3>
+<h2 id="0-qu-problema-resuelve-este-artculo">0. ¿Qué problema resuelve este artículo?</h2>
 
-<p>Fragmenta con estructura → recuperadores por tipo → reordenamiento de cruce → comprime evidencia en <b>puntos con citas</b> → actualiza en streaming con versionado.</p>
+<p>La discusión recurrente del último año: “Si los LLM leen un millón de tokens de una sentada, ¿seguimos necesitando RAG?”. Unos dicen “mete todo al prompt”; otros ven en RAG una cadena de herramientas con mucho margen.</p>
 
-<h2 id="5-matriz-de-seleccin-2025">5. Matriz de selección (2025)</h2>
+<p>Vamos más allá del sí/no. Explicamos <b>por qué</b> el contexto largo no reemplaza a RAG, <b>cómo</b> modernizar RAG para que siga siendo central en 2025 y más allá, y <b>qué hace falta</b> para que funcione en proyectos reales. Es nuestra síntesis tras revisar la literatura y seguir la práctica empresarial.</p>
 
-<div class="table-wrap"><table><thead><tr><th>Caso de uso</th><th>Actualidad</th><th>Estructura</th><th>Restricciones</th><th>Pila recomendada</th></tr></thead><tbody><tr><td>QA de normativa/procesos</td><td>Media</td><td>Alta</td><td>Auditoría</td><td><b>GraphRAG + Self‑RAG/RAFT</b>, evidencia‑primero</td></tr><tr><td>Operación/alertas</td><td>Alta</td><td>Media</td><td>Baja conectividad</td><td><b>Eventos + índice en streaming + Agentes</b></td></tr><tr><td>Plantillas de SOP</td><td>Baja</td><td>Media</td><td>Alta consistencia</td><td><b>Fine‑tuning ligero + extracción</b>, edición opcional</td></tr><tr><td>Noticias/mercado</td><td>Muy alta</td><td>Baja</td><td>Sensible a coste</td><td><b>Rastreo en tiempo real + BM25/Denso + generación ligera</b></td></tr><tr><td>Razonamiento multi‑salto</td><td>Media</td><td>Alta</td><td>Explicabilidad</td><td><b>GraphRAG + rutas visibles + ReAct/Plan‑Exec</b></td></tr></tbody></table></div>
-
-<h2 id="6-evaluacin-y-gobernanza">6. Evaluación y gobernanza</h2>
-
-<p>Mide <b>fidelidad</b>, <b>cobertura de evidencia</b>, <b>anclaje</b>, <b>latencia P95</b>, <b>coste/pregunta</b>, <b>resiliencia a cambios</b> y <b>bitácoras de auditoría</b>.</p>
-
-<h2 id="7-lista-de-implantacin">7. Lista de implantación</h2>
-
-<p>Gobernanza de datos · Recuperación base (BM25 + Denso + X‑encoder) · Plantillas Claim‑Evidence con citas en línea · Límites de agente (herramientas/$/latencia) · Conjunto offline (≥1k preguntas) · Despliegue gradual + monitorización.</p>
-
-<blockquote><p><b>Conclusión</b>: RAG no está obsoleto. El RAG <b>fiable, controlable y explicable</b> es el centro de la práctica en 2025; <b>KBLaM</b> ofrece un plano sólido para entornos regulados y con conectividad limitada.</p></blockquote>
-
-<h2 id="referencias-fuentes-oficiales">Referencias (fuentes oficiales)</h2>
+<p>Veremos:</p>
 
 <ul>
-<li>Self‑RAG: <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> · <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> · <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
+<li><b>Restricciones reales</b>: por qué el contexto largo no lo arregla todo.
 </li>
-<li>RAFT (Retrieval‑Augmented Fine‑Tuning, 2024): <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
+<li><b>Autopsias</b>: por qué falla el RAG ingenuo.
 </li>
-<li>RA‑DIT (2023): <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> · <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
+<li><b>El “juego de cinco piezas”</b>: solución de ingeniería moderna.
 </li>
-<li>GraphRAG: <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> · <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
+<li><b>A fondo</b>: GraphRAG y Entrenamiento Consciente de Recuperación.
 </li>
-<li>MCP: <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> · <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
+<li><b>Despliegue</b>: cómo operarlo en entornos restringidos (p. ej., servidores domésticos, redes aisladas).
 </li>
-<li>Google Gemini 1.5 (contexto largo): <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Blog oficial</a>
+<li><b>Mejoras y perspectiva</b>: hacia dónde debería evolucionar RAG.
 </li>
 </ul>
+
+<hr>
+
+<h2 id="1-por-qu-ms-contexto-no-es-la-meta-final">1. Por qué “más contexto” no es la meta final</h2>
+
+<p>De Gemini 1.5 a Claude 3, las ventanas crecieron—algunas hasta el millón de tokens. A simple vista parece “adiós recuperación”. En la práctica, <b>una mochila más grande no garantiza un mejor viaje</b>.</p>
+
+<h3 id="11-coste-y-latencia-el-presupuesto-manda">1.1 Coste y latencia: el presupuesto manda</h3>
+
+<p>Más tokens → más coste y latencia. Equipos reportan que meter un documento de 20k caracteres en ventanas 32k+ puede costar &gt;5× por inferencia. Con concurrencia, el P95 pasa de &lt;1s a varios segundos—inaceptable para apps interactivas.</p>
+
+<h3 id="12-actualidad-las-actualizaciones-superan-a-los-parmetros">1.2 Actualidad: las actualizaciones superan a los parámetros</h3>
+
+<p>El conocimiento empresarial cambia a diario; finanzas/noticias/social pueden cambiar por minuto. Hornear hechos en parámetros fuerza ajustes frecuentes—caros y arriesgados. RAG mantiene el conocimiento externo y <b>intercambiable en caliente</b>.</p>
+
+<h3 id="13-cumplimiento-y-auditora-la-procedencia-gana">1.3 Cumplimiento y auditoría: la procedencia gana</h3>
+
+<p>Dominios regulados necesitan no solo respuestas correctas, sino procedencia: qué documento, qué cláusula, qué versión. Volcar al prompt mezcla versiones y pierde trazabilidad. RAG registra recuperaciones, fragmentos, versiones y tiempos para una auditoría reproducible.</p>
+
+<h3 id="14-privacidad-y-compartimentos">1.4 Privacidad y compartimentos</h3>
+
+<p>Las empresas segmentan por niveles de acceso. Meter todo en una sola ventana sobre‑expone datos. RAG recupera por solicitud dentro de los límites de control de acceso.</p>
+
+<p><b>Conclusión</b>: el contexto largo es una mochila; RAG es un mapa vivo. Los sistemas reales necesitan ambos—complementarios, no sustitutos.</p>
+
+<hr>
+
+<h2 id="2-por-qu-se-rompe-el-rag-ingenuoautopsias">2. Por qué se rompe el RAG ingenuo—autopsias</h2>
+
+<p>El primer RAG suele ser: trocear PDFs → embed → k‑NN → top‑k → al prompt. Sirve en demos, falla en producción. Algunos modos reales de fallo:</p>
+
+<h3 id="21-solo-vectorial-ciego-a-la-estructura">2.1 Solo vectorial, ciego a la estructura</h3>
+
+<p>Tras trocear manuales, un equipo usó búsqueda vectorial pura. A “¿cada cuánto se mantiene la válvula B?” devolvió una “tabla de tamaños de válvulas”—relacionada, pero sin la política numérica. Tablas y series temporales requieren recuperadores dedicados.</p>
+
+<h3 id="22-troceado-brusco-fragmenta-hechos">2.2 Troceado brusco fragmenta hechos</h3>
+
+<p>Una definición quedó partida por longitud fija. “Condiciones de seguridad: (1) presión ≥ 0,35 MPa; (2) 35–55 ℃” se separó; el modelo vio solo (1) y omitió (2).</p>
+
+<h3 id="23-volcar-contexto-aade-ruido">2.3 Volcar contexto añade ruido</h3>
+
+<p>Meter 10–20 fragmentos “por si acaso” diluye la atención. En triaje de alarmas, mucho texto sobre “principios/historia” enterró los “pasos” útiles.</p>
+
+<h3 id="24-frescura-rerank-y-trazabilidad">2.4 Frescura, re‑rank y trazabilidad</h3>
+
+<ul>
+<li><b>Frescura</b>: sin indexación incremental → leyes/avisos desactualizados.
+</li>
+<li><b>Re‑rank</b>: sin cross‑encoder → lo “relacionado” gana sobre lo “suficiente”.
+</li>
+<li><b>Sin auditoría</b>: respuestas sin rastro de evidencia.
+</li>
+</ul>
+
+<p>No es la recuperación per se—es el método equivocado. Separa recuperación, empaquetado de evidencia, generación y verificación para desbloquear el valor de RAG.</p>
+
+<hr>
+
+<h2 id="3-el-nuevo-juego-de-cinco-piezas-esqueleto-pasar-pginas-herramientas-frescura-y-pequeos-toques-al-modelo">3. El nuevo “juego de cinco piezas”: esqueleto, pasar páginas, herramientas, frescura y pequeños toques al modelo</h2>
+
+<p>De la investigación y despliegues, los stacks de 2025 convergen en cinco piezas, cada una corrigiendo un dolor del RAG ingenuo:</p>
+
+<div class="table-wrap"><table><thead><tr><th>Componente</th><th>Rol</th><th>Dónde brilla</th><th>Desafíos</th></tr></thead><tbody><tr><td>Recuperación estructurada (GraphRAG)</td><td>Esqueleto del conocimiento</td><td>Saltos múltiples, regulaciones, SOPs</td><td>Extracción y mantenimiento del KG</td></tr><tr><td>Entrenamiento consciente de recuperación</td><td>Cuándo/qué recuperar</td><td>QA y resumen</td><td>Coste de entrenamiento y datos</td></tr><tr><td>Orquestación agente</td><td>Planes multi‑paso con herramientas</td><td>Planes, consultas, cálculos</td><td>Seguridad y eficiencia</td></tr><tr><td>Gestión de frescura</td><td>Índice vivo</td><td>Noticias, mercados, alta actualidad</td><td>Monitoreo y política de versiones</td></tr><tr><td>Actualizaciones de parámetros (opcional)</td><td>Hechos pequeños y estables</td><td>Plantillas, desambiguación</td><td>Alucinaciones y alcance</td></tr></tbody></table></div>
+
+<p>Desglosamos cada pieza y cómo aterrizarla.</p>
+
+<hr>
+
+<h2 id="4-recuperacin-estructurada-graphrag-construye-el-esqueleto">4. Recuperación estructurada (GraphRAG): construye el esqueleto</h2>
+
+<p>La recuperación con forma de grafo no es nueva; ahora es práctica a escala. La idea: añadir un <b>esqueleto estructurado</b> (KG o grafo entidad‑relación) junto a la “carne” de texto. Tareas complejas—regulaciones, procesos, análisis causal—siguen rutas por entidades y relaciones.</p>
+
+<h3 id="41-construir-el-grafo-del-texto-al-esqueleto">4.1 Construir el grafo: del texto al esqueleto</h3>
+
+<p><b>Trocea + extrae</b>: por secciones/encabezados/párrafos con ventana deslizante; ejecuta NER/RE para extraer entidades/relaciones a un KG ligero. Mantén tipos simples (2–3) al inicio.</p>
+
+<p><b>Desambiguar/unir</b>: homónimos y sinónimos; similitud de huellas (Jaccard/Coseno) y reglas (códigos, IDs). Revisión humana para baja confianza.</p>
+
+<h3 id="42-multirecuperador-rerank-con-crossencoder">4.2 Multi‑recuperador + re‑rank con cross‑encoder</h3>
+
+<p>BM25 (precisión) + denso (recobro) y re‑rank del top‑K con cross‑encoder. Reduce el “suena relevante pero no responde”.</p>
+
+<h3 id="43-bsqueda-de-rutas-convertir-qa-en-encontrar-caminos">4.3 Búsqueda de rutas: convertir QA en encontrar caminos</h3>
+
+<p>Amplía candidatos vía rutas en el KG; luego trae spans de texto. “Grafo‑luego‑texto” o al revés.</p>
+
+<h3 id="44-paquetes-de-evidencia-rutas-spans">4.4 Paquetes de evidencia: rutas + spans</h3>
+
+<p>Devuelve un paquete estructurado: ruta de KG, spans, fuente/ID, versión, tiempo, offsets. El generador cita el paquete, reduce ruido y deja procedencia clara.</p>
+
+<hr>
+
+<h2 id="5-entrenamiento-consciente-de-recuperacin-pasar-pginas-no-memorizar">5. Entrenamiento consciente de recuperación: “pasar páginas”, no memorizar</h2>
+
+<p>Haz que el modelo sepa cuándo/qué recuperar y cómo citar.</p>
+
+<h3 id="51-selfrag-autochequeo-rerecuperar">5.1 Self‑RAG: auto‑chequeo + re‑recuperar</h3>
+
+<p>Borrador → auto‑evaluar → recuperar más → refinar hasta confianza o tope de pasos.</p>
+
+<h3 id="52-raft-etiquetar-ruido-vs-evidencia">5.2 RAFT: etiquetar ruido vs. evidencia</h3>
+
+<p>Anota qué fragmentos recuperados distraen vs. cuáles valen; exige citas en entrenamiento.</p>
+
+<h3 id="53-radit-aprendizaje-bidireccional">5.3 RA‑DIT: aprendizaje bidireccional</h3>
+
+<p>Primero afina el LLM para citar; luego ajusta el recuperador (umbrales denso/BM25) con las salidas del modelo.</p>
+
+<h3 id="54-camino-prctico-empieza-pequeo">5.4 Camino práctico: empieza pequeño</h3>
+
+<p>Con anotaciones, empieza con RAFT en tríos pregunta‑respuesta‑evidencia. Con pocos datos, arranca sintético y revisa una muestra.</p>
+
+<hr>
+
+<h2 id="6-orquestacin-agente-planes-y-herramientas">6. Orquestación agente: planes y herramientas</h2>
+
+<p>Muchas tareas no son de un turno: consultar manual → leer telemetría → calcular umbrales → comparar plan de mantenimiento → escribir pasos. RAG gestiona conocimiento; un Agente planifica y llama herramientas.</p>
+
+<h3 id="61-registro-de-herramientas-y-enrutamiento">6.1 Registro de herramientas y enrutamiento</h3>
+
+<p>Registra herramientas (SQL, logs, hojas, APIs) con I/O y permisos. El Agente elige según intención y realimenta recuperación/LLM.</p>
+
+<h3 id="62-lmites-y-presupuestos">6.2 Límites y presupuestos</h3>
+
+<p>Topes duros: máx. 4–6 llamadas; presupuesto por consulta; límites de P95 y fallback seguro (“solo evidencia” si se excede).</p>
+
+<h3 id="63-cach-y-reproduccin">6.3 Caché y reproducción</h3>
+
+<p>Cachea intenciones comunes con (resumen + hash de evidencia). Registra entradas/salidas para reproducibilidad y auditorías.</p>
+
+<hr>
+
+<h2 id="7-frescura-e-ndices-en-streaming">7. Frescura e índices en streaming</h2>
+
+<h3 id="71-cdc-y-embeddings-incrementales">7.1 CDC y embeddings incrementales</h3>
+
+<p>Captura altas/bajas/cambios; trocea/embebe/actualiza por hora o más rápido en dominios volátiles.</p>
+
+<h3 id="72-ttl-y-poltica-de-versiones">7.2 TTL y política de versiones</h3>
+
+<p>TTLs por tipo de contenido y políticas conmutables: “último primero”, “estable primero” o “instantánea histórica”.</p>
+
+<h3 id="73-evaluacin-rodante-y-monitoreo">7.3 Evaluación rodante y monitoreo</h3>
+
+<p>Mantén un set de últimos 7 días; sigue tasa de acierto, NDCG, P95 y coste.</p>
+
+<hr>
+
+<h2 id="8-actualizaciones-a-nivel-de-parmetros-opcional">8. Actualizaciones a nivel de parámetros (opcional)</h2>
+
+<p>Usa LoRA/adapters para estilo/plantillas; edición quirúrgica para hechos raros. Mantén generación evidencia‑primero.</p>
+
+<hr>
+
+<h2 id="9-kblam-base-confiable-para-entornos-restringidos">9. KBLaM: base confiable para entornos restringidos</h2>
+
+<p>Hemos desplegado KBLaM en servidores domésticos con recuperación externa y codificaciones estructurales. Ideas útiles para un RAG “confiable, controlable y explicable”.</p>
+
+<h3 id="91-capa-unificada-de-conocimiento">9.1 Capa unificada de conocimiento</h3>
+
+<p>Une texto, tablas, grafos y metadatos; embeddings multilingües; registra procedencia (fuente/versión/tiempo/nivel).</p>
+
+<h3 id="92-cadena-de-evidencia-pregunta-evidencia-respuesta">9.2 Cadena de evidencia: pregunta → evidencia → respuesta</h3>
+
+<p>Enruta por intención; recupera/re‑rank; expande con KG; empaqueta evidencia (fuente/versión/ruta/offsets); genera; verifica por SQL/reglas si hace falta; registra para auditoría.</p>
+
+<h3 id="93-flujo-mnimo-pseudo">9.3 Flujo mínimo (pseudo)</h3>
+
+<pre><code class="language-python">
+def responder(pregunta):
+	intención = clasificar(pregunta)
+	ruta = seleccionar_ruta(intención)
+	candidatos = recuperar(pregunta, ruta)
+	if intención.requiere_grafo:
+		camino = buscar_en_grafo(candidatos)
+		candidatos = unir(candidatos, camino)
+	evidencia = empaquetar(candidatos)
+	borrador = generar(pregunta, evidencia)
+	if requiere_verificar(borrador):
+		resp = verificar_y_refinar(borrador)
+	else:
+		resp = borrador
+	log(pregunta, evidencia, resp)
+	return resp
+</code></pre>
+
+<hr>
+
+<h2 id="10-modelo-de-costes-y-ejemplos">10. Modelo de costes y ejemplos</h2>
+
+<h3 id="101-los-tokens-de-entrada-dominan">10.1 Los tokens de entrada dominan</h3>
+
+<p>“Volcar contexto” puede subir entradas a 30k+ tokens; un paquete de evidencia suele requerir 1–3 spans (~500–700 tokens c/u) → ~1,5k–2,1k en total—muchas veces <b>10× menos</b>.</p>
+
+<h3 id="102-recuperar-cuesta-poco-y-ahorra-mucho">10.2 Recuperar cuesta poco y ahorra mucho</h3>
+
+<p>BM25/denso son baratos; los re‑rankers con cross‑encoder son pequeños y van bien en CPU. “Recuperar y luego generar” gana a menudo.</p>
+
+<h3 id="103-capacidades-vs-coste">10.3 Capacidades vs. coste</h3>
+
+<p>Para creación de contenido o citas largas, los híbridos funcionan: RAG para hechos, contexto largo para prosa. Cuenta tokens/llamadas/costes y elige según necesidad.</p>
+
+<hr>
+
+<h2 id="11-checklist-de-prototipo-a-produccin">11. Checklist: de prototipo a producción</h2>
+
+<ol>
+<li><b>Gobernanza de datos</b>: limpia PII; niveles de acceso; fuente/versión.
+</li>
+<li><b>Troceado</b>: por secciones con ventana deslizante.
+</li>
+<li><b>Recuperación base</b>: BM25 + denso + re‑rank; añade recuperadores de tablas/código/figuras.
+</li>
+<li><b>Paquetes de evidencia</b>: <code>source_id</code>, <code>url</code>, <code>version</code>, <code>timestamp</code>, <code>offset</code>, <code>path</code>, y <code>answer_id</code>.
+</li>
+<li><b>Plantillas de generación</b>: afirmación‑evidencia con citas en línea.
+</li>
+<li><b>Límites de agente</b>: lista de herramientas, pasos/presupuesto; caché de consultas frecuentes.
+</li>
+<li><b>Frescura</b>: crawling/embeddings incrementales; TTL y políticas; evaluación rodante.
+</li>
+<li><b>Monitoreo/reproducción</b>: paneles para recall/NDCG/P95/coste; reproduce pregunta→evidencia→respuesta→herramientas.
+</li>
+<li><b>Despliegue gradual</b>: canarios para modelos/estrategias; compara con baseline; aumenta poco a poco.
+</li>
+<li><b>Operación del equipo</b>: responsables claros y ciclos rápidos.
+</li>
+</ol>
+
+<hr>
+
+<h2 id="12-prximos-pasos-hacia-dnde-debera-evolucionar-rag">12. Próximos pasos: hacia dónde debería evolucionar RAG</h2>
+
+<h3 id="121-recuperacin-dinmica-y-gating">12.1 Recuperación dinámica y gating</h3>
+
+<p>A escala, el coste manda; añade gating tipo ExpertRAG: solo recuperar cuando el conocimiento interno sea insuficiente y activar “expertos” dispersos por consulta.</p>
+
+<h3 id="122-recuperacin-jerrquica-o-hbrida">12.2 Recuperación jerárquica o híbrida</h3>
+
+<p>Dos etapas “grueso → fino” (sparse por documento → denso en documento → cross‑encoder) ayudan en multi‑salto (véase HiRAG).</p>
+
+<h3 id="123-conservar-estructura-en-las-codificaciones">12.3 Conservar estructura en las codificaciones</h3>
+
+<p>Evita comprimir KGs a un vector; codifica tríos o subgrafos; añade numéricos/fechas; encadena rutas con CoT.</p>
+
+<h3 id="124-compresin-adaptativa-y-seleccin-de-conocimiento">12.4 Compresión adaptativa y selección de conocimiento</h3>
+
+<p>Asigna capacidad vectorial por importancia (frecuencia, confianza, valor); descarta tokens irrelevantes—enrutamiento tipo MoE.</p>
+
+<h3 id="125-recuperacin-multilinge-y-cruzada">12.5 Recuperación multilingüe y cruzada</h3>
+
+<p>Embeddings multilingües (gtr/multi‑qa‑mpnet) con etiquetas/puertas de idioma; lo difícil es el razonamiento cruzado.</p>
+
+<h3 id="126-chequeos-externos-y-autoconsistencia">12.6 Chequeos externos y auto‑consistencia</h3>
+
+<p>Verificación post‑respuesta vía grafo/SQL; re‑recuperar o abstenerse ante contradicciones; comprobar coherencia de rutas; comprobaciones web opcionales.</p>
+
+<hr>
+
+<h2 id="13-conclusin-el-mapa-no-pasa-de-moda">13. Conclusión: el mapa no pasa de moda</h2>
+
+<p>RAG resuelve “encontrar y citar conocimiento”, en gran medida ortogonal al tamaño de la ventana. El contexto largo ayuda, pero no con coste, actualidad, auditorías o privacidad—ni con tareas estructuradas multi‑paso.</p>
+
+<p>El “juego de cinco piezas” 2025 emerge: esqueleto + pasar páginas + herramientas + frescura + toques moderados al modelo. GraphRAG guía caminos complejos; el entrenamiento consciente enseña a citar; los agentes gestionan planes; la frescura evita caducidad; pequeñas actualizaciones ayudan a plantillas. La capa unificada, los paquetes de evidencia y las pistas de auditoría de KBLaM brindan un plano para entornos regulados.</p>
+
+<p>Con gating dinámico, recuperación jerárquica, codificaciones estructuradas, compresión adaptativa y capacidad multilingüe, RAG seguirá evolucionando—posiblemente fusionándose más con modelos de inyección de conocimiento como KBLaM. Lo constante: <b>con presupuesto y en escenarios complejos, la recuperación es la pareja más fiable del LLM</b>. Lleva un mapa vivo; cualquier mochila pesa menos.</p>
+
+<hr>
+
+<h2 id="referencias-lecturas-recomendadas">Referencias (lecturas recomendadas)</h2>
+
+<ol>
+<li>Akari Asai et al., <b>Self‑RAG</b>, arXiv, 2024.
+</li>
+<li>Microsoft Research, <b>GraphRAG</b>, 2024.
+</li>
+<li>Naman Bansal, <b>Best Open‑Source Embedding Models Benchmarked and Ranked</b>, Supermemory Blog, 2025.
+</li>
+<li>Haoyu Huang et al., <b>HiRAG: Retrieval‑Augmented Generation with Hierarchical Knowledge</b>, arXiv, 2025.
+</li>
+<li>Esmail Gumaan, <b>ExpertRAG: Efficient RAG with Mixture of Experts</b>, arXiv, 2025.
+</li>
+<li>Hang Luo et al., <b>Causal Graphs Meet Thoughts: Enhancing Complex Reasoning in Graph‑Augmented LLMs</b>, arXiv, 2025.
+</li>
+<li>Wei Liu et al., <b>XRAG: Cross‑lingual Retrieval‑Augmented Generation</b>, arXiv, 2025.
+</li>
+</ol>
 
         </article>
   <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
