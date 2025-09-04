@@ -26,9 +26,11 @@ function slugifyId(text) {
 }
 
 function parseFrontMatter(src) {
-  const m = src.match(/^---\n([\s\S]*?)\n---\n?/);
+  // Normalize line endings to support CRLF/LF
+  const normalized = src.replace(/\r\n?/g, '\n');
+  const m = normalized.match(/^---\n([\s\S]*?)\n---\n?/);
   if (!m) return [{}, src];
-  const body = src.slice(m[0].length);
+  const body = normalized.slice(m[0].length);
   const yaml = m[1];
   const meta = {};
   yaml.split(/\r?\n/).forEach(line => {
