@@ -66,6 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
   (function enhanceBlog(){
     const isPost = document.querySelector('main.blog-post');
   if (!isPost) return;
+    // Ensure tables are wrapped for consistent styling without touching list logic
+    (function wrapTables(){
+      const blocks = isPost.querySelectorAll('article.i18n-block');
+      blocks.forEach(block => {
+        block.querySelectorAll(':scope > table, :scope p > table').forEach(tbl => {
+          if (tbl.closest('.table-wrap')) return;
+          const wrap = document.createElement('div');
+          wrap.className = 'table-wrap';
+          tbl.parentNode.insertBefore(wrap, tbl);
+          wrap.appendChild(tbl);
+        });
+      });
+    })();
     // Ensure the URL variant matches selected language so OG/Twitter share cards stay consistent
     (function ensurePageLangURL(){
       const path = location.pathname;

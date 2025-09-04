@@ -42,85 +42,41 @@ function parseFrontMatter(src) {
 }
 
 function escapeHtml(s){
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 function mdToHtml(md, { slug } = {}) {
-  // Very small markdown support: headings, paragraphs, lists, code fences, inline code, bold/italic, links, blockquotes
   const lines = md.replace(/\r\n?/g,'\n').split('\n');
   const out = [];
   let inCode = false; let codeLang = '';
-  let inList = false; let listType = 'ul';
-  for (let i=0;i<lines.length;i++){
-    let line = lines[i];
-    // Code fence
-    const fence = line.match(/^```(.*)$/);
-    if (fence){
-      if (!inCode){ inCode=true; codeLang = (fence[1]||'').trim(); out.push(`<pre><code class="language-${escapeHtml(codeLang)}">`); }
-      else { inCode=false; out.push('</code></pre>'); }
-      continue;
-    }
-    if (inCode){ out.push(escapeHtml(line)); continue; }
-    // Headings
-    const h = line.match(/^(#{1,6})\s+(.*)$/);
-    if (h){
-      const level = h[1].length; const text = h[2].trim();
-      const id = slugifyId(text) || `h${i}`;
-      out.push(`<h${level} id="${id}">${inline(text)}</h${level}>`);
-      continue;
-    }
-    // Blockquote
-    const bq = line.match(/^>\s?(.*)$/);
-    if (bq){ out.push(`<blockquote><p>${inline(bq[1])}</p></blockquote>`); continue; }
-    // Tables: header | separator | rows
-    if (/^\s*\|/.test(line)) {
-      const next = lines[i+1] || '';
-      const sepRe = /^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/;
-      if (sepRe.test(next)) {
-        const parseRow = (ln) => ln.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => inline(c.trim()));
-        const headers = parseRow(line);
-        i++; // consume separator
-        const rows = [];
-        while (i+1 < lines.length) {
-          const peek = lines[i+1];
-          if (!/^\s*\|/.test(peek)) break;
-          i++;
-          rows.push(parseRow(peek));
-        }
-        out.push('<div class="table-wrap"><table>');
-        out.push('<thead><tr>' + headers.map(h=>`<th>${h}</th>`).join('') + '</tr></thead>');
-        if (rows.length) out.push('<tbody>' + rows.map(r=>'<tr>'+r.map(c=>`<td>${c}</td>`).join('')+'</tr>').join('') + '</tbody>');
-        out.push('</table></div>');
-        continue;
-      }
-    }
-    // Lists
-    const ol = line.match(/^\s*\d+[\.)]\s+(.*)$/);
-    const ul = line.match(/^\s*[-*+]\s+(.*)$/);
-    if (ol || ul){
-      const curType = ol ? 'ol' : 'ul';
-      if (!inList){ inList = true; listType = curType; out.push(`<${listType}>`); }
-      else if (listType !== curType){ out.push(`</${listType}>`); listType = curType; out.push(`<${listType}>`); }
-      const item = (ol ? ol[1] : ul[1]).trim();
-      out.push(`<li>${inline(item)}</li>`);
-      // Lookahead: if next line is not a list, close the list
-      const next = lines[i+1] || '';
-      if (!/^\s*(\d+[\.)]|[-*+])\s+/.test(next)) { out.push(`</${listType}>`); inList=false; }
-      continue;
-    }
-    // Horizontal rule
-    if (/^---+$/.test(line)){ out.push('<hr>'); continue; }
-    // Blank
-    if (!line.trim()) { out.push(''); continue; }
-    // Paragraph
-    out.push(`<p>${inline(line)}</p>`);
-  }
-  return out.join('\n');
+  const listStack = [];
+  let liOpen = false;
 
-  function inline(s) {
+  const getIndent = (s) => {
+    const m = s.match(/^(\s*)/)[1] || '';
+    return m.replace(/\t/g, '  ').length; // treat tab as 2 spaces
+  };
+  const top = () => listStack[listStack.length - 1];
+  const openList = (type, indent, startNum) => {
+    if (type === 'ol' && typeof startNum === 'number' && startNum > 1) {
+      out.push(`<ol start="${startNum}">`);
+    } else {
+      out.push(`<${type}>`);
+    }
+    listStack.push({ type, indent });
+    liOpen = false;
+  };
+  const closeList = () => { if (liOpen) { out.push('</li>'); liOpen = false; } const l = listStack.pop(); out.push(`</${l.type}>`); };
+  const closeAllLists = () => { while (listStack.length) { closeList(); } };
+
+  const isHeading = (s) => /^(#{1,6})\s+/.test(s);
+  const isBlockquote = (s) => /^>\s?/.test(s);
+  const isHr = (s) => /^---+$/.test(s.trim());
+
+  const inlineFmt = (s) => {
     // 1) Escape HTML
     let t = escapeHtml(s);
-    // 2) Images first (so we create tags before formatting)
+    // 2) Images first
     t = t.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (m, alt, url) => {
       let u = url;
       if (slug && !/^([a-z]+:)?\/\//i.test(u) && !u.startsWith('/') && !u.startsWith('../') && !u.startsWith('data:')) {
@@ -146,13 +102,105 @@ function mdToHtml(md, { slug } = {}) {
       .replace(/\\\((?:[^\\]|\\.)*?\\\)/g, (m) => { mathTokens.push(m); return `\u0000MATH${mathTokens.length-1}\u0000`; });
     // 6) Bold (** or __)
     t = t.replace(/(\*\*|__)(.+?)\1/g, '<b>$2</b>');
-    // 7) Italic using only *...* (not underscore to avoid breaking file_names)
+    // 7) Italic using *...* only
     t = t.replace(/\*(?!\*)([^*]+)\*/g, '<i>$1</i>');
     // 8) Restore math and code
     t = t.replace(/\u0000MATH(\d+)\u0000/g, (m, i) => mathTokens[+i] ?? m);
     t = t.replace(/\u0000CODE(\d+)\u0000/g, (m, i) => `<code>${codeTokens[+i]}</code>`);
     return t;
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const fence = line.match(/^```(.*)$/);
+    if (fence) {
+      if (!inCode) { inCode = true; codeLang = (fence[1]||'').trim(); closeAllLists(); out.push(`<pre><code class="language-${escapeHtml(codeLang)}">`); }
+      else { inCode = false; out.push('</code></pre>'); }
+      continue;
+    }
+    if (inCode) { out.push(escapeHtml(line)); continue; }
+
+    const indent = getIndent(line);
+    const trimmed = line.trimStart();
+    const mOl = trimmed.match(/^(\d+)[\.)]\s+(.*)$/);
+    const mUl = trimmed.match(/^[-*+]\s+(.*)$/);
+
+    if (!trimmed) {
+      if (listStack.length) {
+        const rawNext = lines[i+1] ?? '';
+        const next = rawNext.trimStart();
+        const nextIndent = getIndent(rawNext);
+        const isNextList = /^\d+[\.)]\s+/.test(next) || /^[-*+]\s+/.test(next);
+        const isNextTable = next.startsWith('|');
+        // 不要在表格前关闭列表；允许空行后接着继续当前列表项内容
+        if (!next || (!isNextList && !isNextTable && !(nextIndent > (top()?.indent ?? 0)))) {
+          closeAllLists();
+        }
+      }
+      out.push('');
+      continue;
+    }
+
+    if (mOl || mUl) {
+      const desired = mOl ? 'ol' : 'ul';
+      const startNum = mOl ? parseInt(mOl[1], 10) : undefined;
+      const text = (mOl ? mOl[2] : mUl[1]).trim();
+      while (listStack.length && indent < top().indent) { closeList(); }
+      if (!listStack.length || indent > top().indent) {
+        if (listStack.length && !liOpen) { out.push('<li>'); liOpen = true; }
+        openList(desired, indent, startNum);
+      } else if (top().type !== desired) {
+        closeList();
+        openList(desired, indent, startNum);
+      }
+      if (liOpen) { out.push('</li>'); }
+      out.push(`<li>${inlineFmt(text)}`);
+      liOpen = true;
+      continue;
+    }
+
+    // Table block (GitHub-style): header row starting with '|' followed by separator '|---|'
+    const rawNext = lines[i+1] ?? '';
+    const nextTrim = rawNext.trim();
+    const isHeader = trimmed.startsWith('|');
+    const isSep = /^\|?\s*[:\-]+(?:\s*\|\s*[:\-]+)*\s*\|?$/.test(nextTrim);
+    if (isHeader && isSep) {
+      const headerCells = trimmed.replace(/^\|/, '').replace(/\|$/, '').split('|').map(c=>c.trim());
+      i += 1; // skip separator
+      const rows = [];
+      let j = i + 1;
+      while (j < lines.length) {
+        const r = lines[j];
+        if (!r.trim()) break;
+        if (!r.trimStart().startsWith('|')) break;
+        const cells = r.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(c=>c.trim());
+        rows.push(cells);
+        j++;
+      }
+      i = j - 1;
+  const thead = `<thead><tr>${headerCells.map(h=>`<th>${inlineFmt(h)}</th>`).join('')}</tr></thead>`;
+  const tbody = `<tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${inlineFmt(c)}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  // Wrap in .table-wrap for consistent styling even without JS
+  out.push(`<div class="table-wrap"><table>${thead}${tbody}</table></div>`);
+      continue;
+    }
+
+    if (listStack.length) { out.push(`<p>${inlineFmt(trimmed)}</p>`); continue; }
+
+    if (isHeading(trimmed)) {
+      const h = trimmed.match(/^(#{1,6})\s+(.*)$/);
+      const level = h[1].length; const text = h[2].trim();
+      const id = slugifyId(text) || `h${i}`;
+      out.push(`<h${level} id="${id}">${inlineFmt(text)}</h${level}>`);
+      continue;
+    }
+    if (isBlockquote(trimmed)) { out.push(`<blockquote><p>${inlineFmt(trimmed.replace(/^>\s?/, ''))}</p></blockquote>`); continue; }
+    if (isHr(line)) { out.push('<hr>'); continue; }
+    out.push(`<p>${inlineFmt(line.trim())}</p>`);
   }
+  if (inCode) { out.push('</code></pre>'); }
+  while (listStack.length) { closeList(); }
+  return out.join('\n');
 }
 
 function buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevNext}){

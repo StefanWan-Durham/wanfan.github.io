@@ -692,16 +692,29 @@ header {
 }
 .hero, .page-hero { background: var(--hero-bg); }
 
-/* Tables (blog selection matrices) */
-.table-wrap { overflow-x: auto; margin: 12px 0; border: 1px solid var(--border); border-radius: 10px; }
-.table-wrap table { width: 100%; border-collapse: collapse; font-size: .98rem; }
-.table-wrap th, .table-wrap td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--border); }
-.table-wrap thead th { font-weight: 600; background: color-mix(in oklab, var(--surface), white 6%); position: sticky; top: 0; z-index: 1; }
+/* Tables (blog) – refined look with subtle grid lines */
+.table-wrap { overflow-x: auto; margin: 12px 0; border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow-sm); background: var(--surface); }
+.table-wrap table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: .98rem; }
+.table-wrap th, .table-wrap td { text-align: left; padding: .6rem .75rem; }
+/* Horizontal separators */
+.table-wrap thead th { font-weight: 600; background: color-mix(in oklab, var(--surface), white 6%); position: sticky; top: 0; z-index: 1; border-bottom: 1px solid var(--border); }
 :root[data-theme="dark"] .table-wrap thead th { background: color-mix(in oklab, var(--surface), black 6%); }
+.table-wrap tbody td { border-bottom: 1px solid var(--border); }
+/* Vertical separators (no double border on first column) */
+.table-wrap th + th, .table-wrap td + td { border-left: 1px solid var(--border); }
+/* Rounded corners by clipping inner table to wrapper */
+.table-wrap { overflow: hidden; }
+/* Row striping and hover */
 .table-wrap tbody tr:nth-child(odd) { background: color-mix(in oklab, var(--surface), white 3%); }
 :root[data-theme="dark"] .table-wrap tbody tr:nth-child(odd) { background: color-mix(in oklab, var(--surface), black 3%); }
-.table-wrap tbody tr:hover { background: color-mix(in oklab, var(--surface), white 4%); }
-:root[data-theme="dark"] .table-wrap tbody tr:hover { background: color-mix(in oklab, var(--surface), black 4%); }
+.table-wrap tbody tr:hover { background: color-mix(in oklab, var(--surface), white 5%); }
+:root[data-theme="dark"] .table-wrap tbody tr:hover { background: color-mix(in oklab, var(--surface), black 5%); }
+/* Make standalone tables (if any) look acceptable even without wrapper */
+.blog-post .i18n-block table { width: 100%; border-collapse: collapse; font-size: .98rem; margin: 12px 0; }
+.blog-post .i18n-block table th, .blog-post .i18n-block table td { padding: .6rem .75rem; border-bottom: 1px solid var(--border); }
+.blog-post .i18n-block table th + th, .blog-post .i18n-block table td + td { border-left: 1px solid var(--border); }
+.blog-post .i18n-block table thead th { background: color-mix(in oklab, var(--surface), white 6%); }
+:root[data-theme="dark"] .blog-post .i18n-block table thead th { background: color-mix(in oklab, var(--surface), black 6%); }
 
 /* Code highlight theme hooks (works now; integrates later with Prism/HLJS) */
 .blog-post pre code { display: block; color: color-mix(in oklab, var(--text), black 5%); }

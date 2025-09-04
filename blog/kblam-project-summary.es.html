@@ -102,9 +102,12 @@
 <p>La idea central es mapear las tripletas de la base de conocimiento $\langle \text{name},\,\text{property},\,\text{value} \rangle$ a vectores del tamaño de la caché clave‑valor del LLM, llamados <b>tokens de conocimiento</b>. El proceso es:</p>
 
 <ol>
-<li><b>Codificación del conocimiento.</b> Un codificador $f(\cdot)$ mapea “\&lt;name\&gt; y su \&lt;property\&gt;” y “\&lt;value\&gt;” a $k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)$ y $v_m = f(\text{value}_m)$. Adaptadores lineales los proyectan a los espacios de clave/valor de cada capa: $\tilde{k}_m = \tilde{W}_K k_m$, $\tilde{v}_m = \tilde{W}_V v_m$. Cada token de conocimiento contiene vectores para $L$ capas.</li>
-<li><b>Atención rectangular.</b> En inferencia, el modelo alimenta $N$ tokens del prompt y $M$ tokens de conocimiento. Para evitar $O((N+M)^2)$, los tokens de conocimiento no se atienden entre sí; los tokens del prompt pueden atender a anteriores y a todos los de conocimiento, formando una matriz $(M+N)\!\times\!N$. La salida $\tilde{y}_n$ suma: (a) valores del conocimiento ponderados por la similitud entre consulta y claves del conocimiento, y (b) autoatención entre tokens del prompt. El costo crece linealmente con $M$, ventajoso cuando $M\gg N$.</li>
-<li><b>Ajuste instruccional con KB.</b> Dado el desfase semántico entre codificador y LLM, el paper entrena solo los adaptadores lineales y una cabeza de consulta, maximizando $\log p_\theta(A\mid Q,KB)$ con una KB sintética (≈45k nombres, 135k tripletas) y sin tocar los pesos del LLM. Con AdamW durante 20k pasos en una A100, el modelo aprende a recuperar y a negarse cuando no hay evidencia.</li>
+<li><b>Codificación del conocimiento.</b> Un codificador $f(\cdot)$ mapea “\&lt;name\&gt; y su \&lt;property\&gt;” y “\&lt;value\&gt;” a $k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)$ y $v_m = f(\text{value}_m)$. Adaptadores lineales los proyectan a los espacios de clave/valor de cada capa: $\tilde{k}_m = \tilde{W}_K k_m$, $\tilde{v}_m = \tilde{W}_V v_m$. Cada token de conocimiento contiene vectores para $L$ capas.
+</li>
+<li><b>Atención rectangular.</b> En inferencia, el modelo alimenta $N$ tokens del prompt y $M$ tokens de conocimiento. Para evitar $O((N+M)^2)$, los tokens de conocimiento no se atienden entre sí; los tokens del prompt pueden atender a anteriores y a todos los de conocimiento, formando una matriz $(M+N)\!\times\!N$. La salida $\tilde{y}_n$ suma: (a) valores del conocimiento ponderados por la similitud entre consulta y claves del conocimiento, y (b) autoatención entre tokens del prompt. El costo crece linealmente con $M$, ventajoso cuando $M\gg N$.
+</li>
+<li><b>Ajuste instruccional con KB.</b> Dado el desfase semántico entre codificador y LLM, el paper entrena solo los adaptadores lineales y una cabeza de consulta, maximizando $\log p_\theta(A\mid Q,KB)$ con una KB sintética (≈45k nombres, 135k tripletas) y sin tocar los pesos del LLM. Con AdamW durante 20k pasos en una A100, el modelo aprende a recuperar y a negarse cuando no hay evidencia.
+</li>
 </ol>
 
 <p>Para entender el flujo, la Figura 1 muestra las fases offline/online: offline se construye y codifica la KB; online la atención rectangular fusiona prompt y conocimiento antes de generar. El siguiente seudocódigo ilustra una capa de atención:</p>
@@ -117,12 +120,12 @@
 
 <pre><code class="language-python">
 def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
-    """
+    &quot;&quot;&quot;
     Q: matriz de consulta de los tokens del prompt, forma (N, d)
     K_kb, V_kb: claves/valores del conocimiento, forma (M, d)
     K_text, V_text: claves/valores de autoatención del prompt
     Devuelve: salida fusionada conocimiento + prompt
-    """
+    &quot;&quot;&quot;
     # Atención sobre tokens de conocimiento
     attn_kb = softmax(Q @ K_kb.T / sqrt(d))
     output_kb = attn_kb @ V_kb
@@ -136,10 +139,14 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
 <h3 id="12-resultados-experimentales">1.2 Resultados experimentales</h3>
 
 <ul>
-<li><b>Precisión e interpretabilidad en recuperación.</b> Las puntuaciones de atención actúan como señales implícitas de recuperación: las palabras de la pregunta se enfocan en los tokens correctos. En conjuntos sintéticos y Enron, KBLaM mantiene top‑1/top‑5 precisos con KBs grandes.</li>
-<li><b>Calidad en QA.</b> En QA de respuesta corta, multi‑entidad y abierta, la calidad (BERTScore o GPT‑4) iguala a concatenar todas las tripletas en contexto, con mucha menos memoria. Con &gt;10k tripletas, el aprendizaje en contexto es inviable por memoria $O((KN)^2)$, mientras KBLaM sigue estable.</li>
-<li><b>Comportamiento de negativa.</b> KBLaM detecta cuando la KB carece de evidencia y se niega educadamente; la tasa de falsas negativas crece más lento que en el enfoque en contexto.</li>
-<li><b>Limitaciones.</b> Vectores de longitud fija pierden números/nombres exactos; las KB sintéticas no siempre reflejan la distribución real; queda trabajo en multi‑salto, compresión controlable y construcción a partir de datos reales.</li>
+<li><b>Precisión e interpretabilidad en recuperación.</b> Las puntuaciones de atención actúan como señales implícitas de recuperación: las palabras de la pregunta se enfocan en los tokens correctos. En conjuntos sintéticos y Enron, KBLaM mantiene top‑1/top‑5 precisos con KBs grandes.
+</li>
+<li><b>Calidad en QA.</b> En QA de respuesta corta, multi‑entidad y abierta, la calidad (BERTScore o GPT‑4) iguala a concatenar todas las tripletas en contexto, con mucha menos memoria. Con &gt;10k tripletas, el aprendizaje en contexto es inviable por memoria $O((KN)^2)$, mientras KBLaM sigue estable.
+</li>
+<li><b>Comportamiento de negativa.</b> KBLaM detecta cuando la KB carece de evidencia y se niega educadamente; la tasa de falsas negativas crece más lento que en el enfoque en contexto.
+</li>
+<li><b>Limitaciones.</b> Vectores de longitud fija pierden números/nombres exactos; las KB sintéticas no siempre reflejan la distribución real; queda trabajo en multi‑salto, compresión controlable y construcción a partir de datos reales.
+</li>
 </ul>
 
 <h2 id="ii-despliegue-en-servidores-nacionales">II. Despliegue en servidores nacionales</h2>
@@ -147,25 +154,26 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
 <p>Nuestro entorno usa Kylin v10 y ocho NPUs Ascend 910B sin acceso a Internet. Esto difiere del entorno GPU + GPT/ada‑002 del paper, por lo que adaptamos:</p>
 
 <ol>
-<li><b>Generación de KB e instrucciones.</b> Sin OpenAI, usamos LLMs locales offline. En Windows + RTX 2080 Ti probamos <b>Qwen3‑8B</b>, <b>Meta‑Llama‑3‑8B‑Instruct</b> y <b>Meta‑Llama‑3.1‑8B‑Instruct</b>; elegimos <b>Meta‑Llama‑3.1‑8B‑Instruct</b> por equilibrio calidad‑eficiencia y generamos ≈45k nombres con atributos, controlando aleatoriedad y deduplicación.</li>
-<li><b>Sustitución del codificador de oraciones.</b> En lugar de ada‑002 (1536‑d), usamos <b>all‑MiniLM‑L6‑v2</b> (384‑d), re‑inicializando adaptadores y normalización. Evaluamos además:</li>
-</ol>
+<li><b>Generación de KB e instrucciones.</b> Sin OpenAI, usamos LLMs locales offline. En Windows + RTX 2080 Ti probamos <b>Qwen3‑8B</b>, <b>Meta‑Llama‑3‑8B‑Instruct</b> y <b>Meta‑Llama‑3.1‑8B‑Instruct</b>; elegimos <b>Meta‑Llama‑3.1‑8B‑Instruct</b> por equilibrio calidad‑eficiencia y generamos ≈45k nombres con atributos, controlando aleatoriedad y deduplicación.
+</li>
+<li><b>Sustitución del codificador de oraciones.</b> En lugar de ada‑002 (1536‑d), usamos <b>all‑MiniLM‑L6‑v2</b> (384‑d), re‑inicializando adaptadores y normalización. Evaluamos además:
 <ul>
-<li><b>BGE‑base‑en‑v1.5</b>, <b>E5‑base‑v2</b>, <b>nomic‑embed‑text‑v1</b>, <b>all‑mpnet‑base‑v2</b>, <b>gtr‑base</b>.</li>
+<li><b>BGE‑base‑en‑v1.5</b>, <b>E5‑base‑v2</b>, <b>nomic‑embed‑text‑v1</b>, <b>all‑mpnet‑base‑v2</b>, <b>gtr‑base</b>.
+</li>
 </ul>
+</ol>
 
-<p>   Elegiremos el mejor para ≈45k tripletas. Estudios señalan que, re‑entrenando adaptadores, cambiar el encoder no degrada la recuperación.</p>
+<p>Elegiremos el mejor para ≈45k tripletas. Estudios señalan que, re‑entrenando adaptadores, cambiar el encoder no degrada la recuperación.</p>
 
 <p>Tabla 1. Comparativa de modelos de incrustación open‑source</p>
 
-<div class="table-wrap"><table>
-<thead><tr><th>Modelo</th><th>Arquitectura</th><th>Dim</th><th>Pros</th><th>Contras</th></tr></thead>
-<tbody><tr><td>all‑MiniLM‑L6‑v2</td><td>MiniLM (6L)</td><td>384</td><td>Ligero, rápido</td><td>Peor en oraciones largas</td></tr><tr><td>BGE‑base‑en‑v1.5</td><td>BERT</td><td>768</td><td>Recuperación fuerte; prefijos</td><td>Modelo más grande</td></tr><tr><td>E5‑base‑v2</td><td>RoBERTa</td><td>768</td><td>Equilibrado; sin prefijos</td><td>Truncamiento en textos largos</td></tr><tr><td>nomic‑embed‑text‑v1</td><td>Tipo GPT</td><td>≈1024</td><td>Entradas largas; multilingüe</td><td>Grande; más lento</td></tr><tr><td>all‑mpnet‑base‑v2</td><td>MPNet</td><td>768</td><td>Recuperación de alta calidad</td><td>Más demanda de recursos</td></tr></tbody>
-</table></div>
+<div class="table-wrap"><table><thead><tr><th>Modelo</th><th>Arquitectura</th><th>Dim</th><th>Pros</th><th>Contras</th></tr></thead><tbody><tr><td>all‑MiniLM‑L6‑v2</td><td>MiniLM (6L)</td><td>384</td><td>Ligero, rápido</td><td>Peor en oraciones largas</td></tr><tr><td>BGE‑base‑en‑v1.5</td><td>BERT</td><td>768</td><td>Recuperación fuerte; prefijos</td><td>Modelo más grande</td></tr><tr><td>E5‑base‑v2</td><td>RoBERTa</td><td>768</td><td>Equilibrado; sin prefijos</td><td>Truncamiento en textos largos</td></tr><tr><td>nomic‑embed‑text‑v1</td><td>Tipo GPT</td><td>≈1024</td><td>Entradas largas; multilingüe</td><td>Grande; más lento</td></tr><tr><td>all‑mpnet‑base‑v2</td><td>MPNet</td><td>768</td><td>Recuperación de alta calidad</td><td>Más demanda de recursos</td></tr></tbody></table></div>
 
-<ol>
-<li><b>Adaptación del LLM y memoria.</b> Verificamos <b>Llama‑3‑8B‑Instruct</b> en PC personal; en servidor (32 GB por 910B) planeamos paralelismo en 8 tarjetas con ZeRO‑2 y FP16, convirtiendo pesos HF a MindSpore‑CKPT. Para la atención rectangular re‑implementaremos <code>masked_add</code> y <code>softmax</code> en MindSpore y ajustaremos lotes.</li>
-<li><b>Compatibilidad del ecosistema.</b> Kylin v10 carece de algunas dependencias y choca con CANN. Compilamos MindSpore 2.2 y PyTorch 2.0 adaptado a Ascend, enlazamos libcann y ajustamos <code>LD_LIBRARY_PATH</code>, usando un índice interno de paquetes.</li>
+<ol start="3">
+<li><b>Adaptación del LLM y memoria.</b> Verificamos <b>Llama‑3‑8B‑Instruct</b> en PC personal; en servidor (32 GB por 910B) planeamos paralelismo en 8 tarjetas con ZeRO‑2 y FP16, convirtiendo pesos HF a MindSpore‑CKPT. Para la atención rectangular re‑implementaremos <code>masked_add</code> y <code>softmax</code> en MindSpore y ajustaremos lotes.
+</li>
+<li><b>Compatibilidad del ecosistema.</b> Kylin v10 carece de algunas dependencias y choca con CANN. Compilamos MindSpore 2.2 y PyTorch 2.0 adaptado a Ascend, enlazamos libcann y ajustamos <code>LD_LIBRARY_PATH</code>, usando un índice interno de paquetes.
+</li>
 </ol>
 
 <p>Con lo anterior, reproducimos los principales experimentos en PC y estamos generando ≈45k nombres y 135k tripletas sintéticas, entrenando adaptadores y validando. Después migraremos el flujo al servidor 910B, probaremos atención rectangular y memoria, y afinaremos la construcción de KB y el fine‑tuning.</p>
@@ -173,42 +181,55 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
 <h2 id="iii-plan-de-entrenamiento">III. Plan de entrenamiento</h2>
 
 <ol>
-<li><b>Entrenamiento en etapas</b></li>
-</ol>
+<li><b>Entrenamiento en etapas</b>
 <ul>
-<li><b>Etapa 1 (línea base):</b> Adaptadores sobre ≈45k tripletas. Lote 32 por tarjeta; ~30k pasos; métricas de recuperación, BERTScore y tasa de negativa.</li>
-<li><b>Etapa 2 (ampliar KB):</b> 50k, 100k+; paralelismo de datos en 8 tarjetas; escalabilidad de la atención rectangular; memoria y latencia.</li>
-<li><b>Etapa 3 (relaciones y multi‑salto):</b> Grafo de conocimiento con relaciones; tareas de uno/múltiples saltos y conflictos; explicaciones tipo cadena de pensamiento.</li>
+<li><b>Etapa 1 (línea base):</b> Adaptadores sobre ≈45k tripletas. Lote 32 por tarjeta; ~30k pasos; métricas de recuperación, BERTScore y tasa de negativa.
+</li>
+<li><b>Etapa 2 (ampliar KB):</b> 50k, 100k+; paralelismo de datos en 8 tarjetas; escalabilidad de la atención rectangular; memoria y latencia.
+</li>
+<li><b>Etapa 3 (relaciones y multi‑salto):</b> Grafo de conocimiento con relaciones; tareas de uno/múltiples saltos y conflictos; explicaciones tipo cadena de pensamiento.
+
+</li>
 </ul>
+<li><b>Comparativa de encoders:</b> Soportar BGE/E5/nomic/mpnet/gtr, entrenar y evaluar en la misma KB y comparar calidad de recuperación/razonamiento.
 
-<ol>
-<li><b>Comparativa de encoders:</b> Soportar BGE/E5/nomic/mpnet/gtr, entrenar y evaluar en la misma KB y comparar calidad de recuperación/razonamiento.</li>
-</ol>
-
-<ol>
-<li><b>Memoria y velocidad:</b> Aumentar el tamaño de la KB por lotes (1k→10k→50k→100k), registrar curvas de memoria/latencia en NPUs Ascend y estabilidad de respuestas.</li>
+</li>
+<li><b>Memoria y velocidad:</b> Aumentar el tamaño de la KB por lotes (1k→10k→50k→100k), registrar curvas de memoria/latencia en NPUs Ascend y estabilidad de respuestas.
+</li>
 </ol>
 
 <h2 id="iv-localizacin-al-chino">IV. Localización al chino</h2>
 
 <ol>
-<li><b>Construcción de KB en chino:</b> Enciclopedias/documentos empresariales; extracción de información y enlace de entidades para generar tripletas; listas de entidades/atributos por dominio; incluir atributos conflictivos para pruebas.</li>
-<li><b>Codificadores chinos:</b> <b>bge‑large‑zh</b>, <b>sent‑bert‑zh</b>; inferencia con Ascend‑PyTorch; fine‑tuning cuando sea necesario.</li>
-<li><b>LLM y adaptadores chinos:</b> Modelos chinos open‑source (ChatGLM3, Yi‑34B); re‑entrenar adaptadores por diferencias de vocab/posicional; plantillas de instrucción en chino natural (p. ej., “请说明…的用途”, “无法在知识库中找到相关信息”).</li>
-<li><b>Razonamiento multi‑salto y explicaciones:</b> Incluir relaciones entre entidades; preguntas que requieran componer varios tokens y producir cadenas explicativas.</li>
-<li><b>Evaluación y seguridad:</b> Además de precisión, robustez ante ruido/conflictos; desensibilizar conocimiento sensible para evitar filtraciones.</li>
+<li><b>Construcción de KB en chino:</b> Enciclopedias/documentos empresariales; extracción de información y enlace de entidades para generar tripletas; listas de entidades/atributos por dominio; incluir atributos conflictivos para pruebas.
+</li>
+<li><b>Codificadores chinos:</b> <b>bge‑large‑zh</b>, <b>sent‑bert‑zh</b>; inferencia con Ascend‑PyTorch; fine‑tuning cuando sea necesario.
+</li>
+<li><b>LLM y adaptadores chinos:</b> Modelos chinos open‑source (ChatGLM3, Yi‑34B); re‑entrenar adaptadores por diferencias de vocab/posicional; plantillas de instrucción en chino natural (p. ej., “请说明…的用途”, “无法在知识库中找到相关信息”).
+</li>
+<li><b>Razonamiento multi‑salto y explicaciones:</b> Incluir relaciones entre entidades; preguntas que requieran componer varios tokens y producir cadenas explicativas.
+</li>
+<li><b>Evaluación y seguridad:</b> Además de precisión, robustez ante ruido/conflictos; desensibilizar conocimiento sensible para evitar filtraciones.
+</li>
 </ol>
 
 <h2 id="v-mejoras-y-lneas-futuras">V. Mejoras y líneas futuras</h2>
 
 <ol>
-<li><b>Recuperación jerárquica y mezclas:</b> Usar tokens de conocimiento como índice (coarse con FAISS/Annoy y reranking con atención rectangular) o una red de compuertas (estilo MoE) para activar solo bloques relevantes.</li>
-<li><b>Codificación que preserve estructura:</b> Más allá del pooling fijo, explorar codificadores secuencia‑grafo de longitud variable que conserven orden, números y relaciones, favoreciendo el razonamiento multi‑salto.</li>
-<li><b>Compresión y selección adaptativas:</b> Presupuestos de dimensión por token según frecuencia/confianza/relevancia; saltar inyecciones irrelevantes; muestreo tipo atención deformable para reducir cómputo.</li>
-<li><b>Ajuste instruccional rico y cadena de pensamiento:</b> De QA de un salto a multi‑salto, conflictos, contrafactuales y explicaciones, con entrenamiento por etapas y plantillas CoT.</li>
-<li><b>Herramientas externas y verificación:</b> Módulo de verificación factual (SPARQL/grafo); auto‑consistencia sobre tokens seleccionados; combinar con recuperación de documentos/web cuando convenga.</li>
-<li><b>Adaptación por dominio y modelos abiertos/cerrados:</b> KBs e instrucciones por dominio; LLMs enfocados (FinGPT/MedGPT) o APIs manteniendo la KB local.</li>
-<li><b>Expansión al chino y multilingüe:</b> Encoders multilingües (multi‑qa‑mpnet‑base‑dot‑v1, gtr‑xxl) para un espacio unificado; etiquetas de idioma en tokens y adaptadores condicionales por idioma.</li>
+<li><b>Recuperación jerárquica y mezclas:</b> Usar tokens de conocimiento como índice (coarse con FAISS/Annoy y reranking con atención rectangular) o una red de compuertas (estilo MoE) para activar solo bloques relevantes.
+</li>
+<li><b>Codificación que preserve estructura:</b> Más allá del pooling fijo, explorar codificadores secuencia‑grafo de longitud variable que conserven orden, números y relaciones, favoreciendo el razonamiento multi‑salto.
+</li>
+<li><b>Compresión y selección adaptativas:</b> Presupuestos de dimensión por token según frecuencia/confianza/relevancia; saltar inyecciones irrelevantes; muestreo tipo atención deformable para reducir cómputo.
+</li>
+<li><b>Ajuste instruccional rico y cadena de pensamiento:</b> De QA de un salto a multi‑salto, conflictos, contrafactuales y explicaciones, con entrenamiento por etapas y plantillas CoT.
+</li>
+<li><b>Herramientas externas y verificación:</b> Módulo de verificación factual (SPARQL/grafo); auto‑consistencia sobre tokens seleccionados; combinar con recuperación de documentos/web cuando convenga.
+</li>
+<li><b>Adaptación por dominio y modelos abiertos/cerrados:</b> KBs e instrucciones por dominio; LLMs enfocados (FinGPT/MedGPT) o APIs manteniendo la KB local.
+</li>
+<li><b>Expansión al chino y multilingüe:</b> Encoders multilingües (multi‑qa‑mpnet‑base‑dot‑v1, gtr‑xxl) para un espacio unificado; etiquetas de idioma en tokens y adaptadores condicionales por idioma.
+</li>
 </ol>
 
 <h2 id="conclusin">Conclusión</h2>
