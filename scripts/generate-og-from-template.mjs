@@ -54,18 +54,18 @@ async function renderPngFromText(title, subline, outPng){
   // Title: move to the previous top header position after removing it in template
   const titleY = 180; // occupy old "Fan Wan" line
   // Title: 56px, max 2 lines; we will also shrink in browser if still too wide
-  const titleWrap = wrapSvgText(title, { x: 80, y: titleY, maxWidth: 1000, lineHeight: 1.18, fontSize: 56, maxLines: 2 });
+  const titleWrap = wrapSvgText(title, { x: 96, y: titleY, maxWidth: 984, lineHeight: 1.18, fontSize: 56, maxLines: 2 });
   // Keywords/subline: move up to the old title baseline; add extraTop if title wrapped
   const extraTop = titleWrap.lineCount>1 ? Math.round((titleWrap.lineCount-1)*56*1.18) : 0;
   const descBase = 270;
   const descY = descBase + extraTop;
-  const descWrap = wrapSvgText(subline, { x: 80, y: descY, maxWidth: 960, lineHeight: 1.22, fontSize: 28, maxLines: 4 });
+  const descWrap = wrapSvgText(subline, { x: 96, y: descY, maxWidth: 944, lineHeight: 1.22, fontSize: 28, maxLines: 4 });
   // Replace entire text nodes to ensure tspans are inserted correctly
   let filled = svg
     .replace(/<text id="og-title"[\s\S]*?<\/text>/i,
-      `<text id="og-title" x="80" y="${titleY}" font-size="56" font-weight="700">${titleWrap.tspans}</text>`)
+      `<text id="og-title" x="96" y="${titleY}" font-size="56" font-weight="700">${titleWrap.tspans}</text>`)
     .replace(/<text id="og-desc"[\s\S]*?<\/text>/i,
-      `<text id="og-desc" x="80" y="${descY}" font-size="28" opacity="0.95">${descWrap.tspans}</text>`);
+      `<text id="og-desc" x="96" y="${descY}" font-size="28" opacity="0.95">${descWrap.tspans}</text>`);
   await fs.mkdir(path.dirname(outPng), { recursive: true });
   // Always write updated SVG next to PNG so SVG references stay fresh
   const outSvg = outPng.replace(/\.png$/i, '.svg');
@@ -81,7 +81,7 @@ async function renderPngFromText(title, subline, outPng){
     await page.evaluate(() => {
       const el = document.getElementById('og-title');
       if (!el) return;
-      const maxW = 1040;
+  const maxW = 1024;
       let size = parseFloat(el.getAttribute('font-size')||'56');
       const bbox = () => el.getBBox();
       while (bbox().width > maxW && size > 28) { size -= 2; el.setAttribute('font-size', String(size)); }

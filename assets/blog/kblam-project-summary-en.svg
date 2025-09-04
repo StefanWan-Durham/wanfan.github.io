@@ -19,14 +19,14 @@
   <rect x="40" y="40" width="1120" height="550" rx="28" fill="url(#g)" opacity="0.15"/>
   <g font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto" fill="#ffffff">
     <!-- Top author line removed; elevate title/keywords to occupy its space -->
-    <text id="og-title" x="80" y="180" font-size="56" font-weight="700"><tspan x="80" dy="0">KBLaM Project Summary and</tspan><tspan x="80" dy="66">Outlook…</tspan></text>
-    <text id="og-desc" x="80" y="336" font-size="28" opacity="0.95"><tspan x="80" dy="0">LLM • Knowledge Tokens • Rectangular Attention • KBLaM</tspan></text>
+  <text id="og-title" x="96" y="180" font-size="56" font-weight="700"><tspan x="96" dy="0">KBLaM Project Summary and</tspan><tspan x="96" dy="66">Outlook…</tspan></text>
+  <text id="og-desc" x="96" y="336" font-size="28" opacity="0.95"><tspan x="96" dy="0">LLM • Knowledge Tokens • Rectangular Attention • KBLaM</tspan></text>
     <g>
-      <rect x="80" y="380" width="220" height="220" rx="24" fill="#ffffff" opacity="0.18"/>
-      <image href="assets/avatar.svg" x="80" y="380" width="220" height="220" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="96" y="380" width="220" height="220" rx="24" fill="#ffffff" opacity="0.18"/>
+  <image href="assets/avatar.svg" x="96" y="380" width="220" height="220" preserveAspectRatio="xMidYMid slice"/>
     </g>
     <!-- Move handle and tagline downward to avoid overlapping with keywords/desc -->
-    <text x="320" y="520" font-size="24" opacity="0.9">@FanWAN</text>
-    <text x="320" y="560" font-size="20" opacity="0.8">Research • LLM • CV • Multimedia</text>
+  <text x="336" y="520" font-size="24" opacity="0.9">@FanWAN</text>
+  <text x="336" y="560" font-size="20" opacity="0.8">Research • LLM • CV • Multimedia</text>
   </g>
 </svg>
