@@ -339,7 +339,6 @@ ${bodyHtml}
         <hr style="margin: 24px 0">
         <nav class="post-nav" aria-label="Post navigation">
           <a class="btn outline" href="../blog.html">${lang==='en'?'← Back to Blog':(lang==='es'?'← Volver al blog':'← 返回博客')}</a>
-          <span class="muted" style="margin:0 .5rem">·</span>
           ${(() => {
             const prev = prevNext?.prev?.[lang] || prevNext?.prev?.zh || '';
             const next = prevNext?.next?.[lang] || prevNext?.next?.zh || '';
