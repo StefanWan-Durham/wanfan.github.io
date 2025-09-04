@@ -4,56 +4,42 @@
   <meta charset="utf-8">
   <title>RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="更大的上下文与更强的模型并没有让 RAG 过时；过时的是“天真向量检索”。本文结合 KBLaM 实战，总结 2025 年的 5 条升级路线与选型矩阵。">
+  <meta name="description" content="RAG 不会被淘汰，被淘汰的是“天真向量检索 + 生搬硬塞上下文”。本文给出 2025 年 RAG 五件套、评测维度、选型矩阵与 KBLaM 落地范式。">
   <meta name="author" content="Fan Wan">
-
   <link rel="canonical" href="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.html">
   <link rel="alternate" hreflang="zh" href="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.html">
   <link rel="alternate" hreflang="en" href="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.en.html">
   <link rel="alternate" hreflang="es" href="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.es.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图">
-  <meta property="og:description" content="结合 KBLaM 实战，总结 2025 年 RAG 的 5 条升级路线与选型矩阵。">
+  <meta property="og:description" content="RAG 不会被淘汰，被淘汰的是“天真向量检索 + 生搬硬塞上下文”。本文给出 2025 年 RAG 五件套、评测维度、选型矩阵与 KBLaM 落地范式。">
   <meta property="og:url" content="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.html">
-  <meta property="og:image" content="https://fanwan-ai.github.io/assets/logo.svg">
+  <meta property="og:image" content="https://fanwan-ai.github.io/assets/blog/rag-hero-zh.v5.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:secure_url" content="https://fanwan-ai.github.io/assets/blog/rag-hero-zh.v5.svg">
   <meta property="og:image:type" content="image/svg+xml">
-  <meta property="og:image:alt" content="Fan Wan logo">
-  <meta property="og:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <link rel="image_src" href="https://fanwan-ai.github.io/assets/logo.svg">
-  <meta itemprop="image" content="https://fanwan-ai.github.io/assets/logo.svg">
+  <link rel="image_src" href="https://fanwan-ai.github.io/assets/blog/rag-hero-zh.v5.svg">
+  <meta itemprop="image" content="https://fanwan-ai.github.io/assets/blog/rag-hero-zh.v5.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="RAG 会被淘汰吗？2025 路线图（含 KBLaM）">
-  <meta name="twitter:description" content="更大的上下文≠RAG 的终点。结构化检索 + 检索感知训练 + 代理式编排 +（必要时）参数更新。">
-  <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/logo.svg">
-  <meta name="twitter:image:alt" content="Fan Wan logo">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图",
-    "inLanguage": "zh-CN",
-    "author": {"@type":"Person","name":"Fan Wan"},
-    "datePublished": "2025-09-02",
-    "dateModified": "2025-09-02",
-  "mainEntityOfPage": {"@type":"WebPage","@id":"https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.html"},
-  "image": ["https://fanwan-ai.github.io/assets/placeholder.jpg"],
-    "publisher": {"@type":"Person","name":"Fan Wan"},
-    "description": "结合 KBLaM 实战，总结 2025 年 RAG 的 5 条升级路线与选型矩阵。"
-  }
-  </script>
-
+  <meta name="twitter:title" content="RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图">
+  <meta name="twitter:description" content="RAG 不会被淘汰，被淘汰的是“天真向量检索 + 生搬硬塞上下文”。本文给出 2025 年 RAG 五件套、评测维度、选型矩阵与 KBLaM 落地范式。">
+  <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/blog/rag-hero-zh.v5.svg">
   <meta name="theme-color" content="#0f172a">
-  <!-- Favicons for proper tab icon rendering on post pages -->
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="../assets/placeholder.jpg" sizes="32x32" type="image/jpeg">
-  <link rel="alternate icon" href="../assets/placeholder.jpg" sizes="192x192" type="image/jpeg">
   <link rel="stylesheet" href="../style.css">
-  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
+  <!-- Code highlight (Highlight.js) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Math (KaTeX) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script>try{var L='zh';localStorage.setItem('lang',L);document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
   <script defer src="../assets/vendor/qrcode.min.js"></script>
+  <script>window.__BLOG_ORDER__ = ["future-of-rag-2025-kblam.html","kblam-project-summary.html"];</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -64,7 +50,7 @@
         <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
       </a>
       <ul class="nav-links">
-  <li><a href="../index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="../index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
         <li><a href="../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
         <li><a href="../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
         <li><a href="../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
@@ -82,171 +68,188 @@
             <li role="option" data-lang="es">Español</li>
           </ul>
         </div>
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-          <!-- Bulb (light on) icon to indicate switching to light mode -->
-          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true">
-            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 18h6"/>
-              <path d="M10 22h4"/>
-              <path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/>
-              <path d="M12 2v2"/>
-              <path d="M4 10h2"/>
-              <path d="M18 10h2"/>
-              <path d="M5.5 5.5l1.4 1.4"/>
-              <path d="M18.5 5.5l-1.4 1.4"/>
-            </g>
-          </svg>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/><path d="M12 2v2"/><path d="M4 10h2"/><path d="M18 10h2"/><path d="M5.5 5.5l1.4 1.4"/><path d="M18.5 5.5l-1.4 1.4"/></g></svg>
           <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <svg class="icon icon-system" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><path d="M8 20h8M12 16v4"/></g></svg>
         </button>
-        <div class="hamburger" id="hamburger">
-          <span></span><span></span><span></span>
-        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
       </div>
     </nav>
   </header>
-
   <main id="main" class="blog-post">
-  <section class="page-hero section">
+    <section class="page-hero section">
       <div class="container">
-          <div class="i18n-block" data-lang="zh">
-            <h1 class="post-title">RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</h1>
-            <p class="muted post-meta">发表于 2025-09-02 · 预计阅读 9 分钟</p>
-          </div>
-          <div class="i18n-block" data-lang="en" hidden>
-            <h1 class="post-title">Is RAG obsolete? 2025 roadmap from “long context” to GraphRAG, Retrieval‑Aware Training and KBLaM</h1>
-            <p class="muted post-meta">Published on 2025-09-02 · Estimated read 9 min</p>
-          </div>
-          <div class="i18n-block" data-lang="es" hidden>
-            <h1 class="post-title">¿Quedará obsoleto RAG? Hoja de ruta 2025: del contexto largo a GraphRAG, entrenamiento sensible a la recuperación y KBLaM</h1>
-            <p class="muted post-meta">Publicado el 2025-09-02 · Lectura 9 min</p>
-          </div>
+        <div class="i18n-block" data-lang="zh">
+          <h1 class="post-title">RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</h1>
+          <p class="muted post-meta">发表于 2025-09-02 · 预计阅读 5 min</p>
         </div>
+      </div>
     </section>
-
     <section class="section">
       <div class="container prose">
-        <!-- Language-localized hero illustrations -->
-        <div class="post-hero-art" data-lang="zh">
-          <img src="../assets/blog/rag-hero-zh.v5.svg" alt="RAG 2025 路线图封面（中文）" loading="lazy" decoding="async"/>
-        </div>
-        <div class="post-hero-art" data-lang="en" hidden>
-          <img src="../assets/blog/rag-hero-en.v5.svg" alt="RAG 2025 Roadmap (English)" loading="lazy" decoding="async"/>
-        </div>
-        <div class="post-hero-art" data-lang="es" hidden>
-          <img src="../assets/blog/rag-hero-es.v5.svg" alt="Hoja de ruta RAG 2025 (Español)" loading="lazy" decoding="async"/>
-        </div>
-        
-        <nav class="toc card" aria-label="目录" style="padding:16px;margin:12px 0;">
-          <strong>目录</strong>
-          <ol></ol>
-        </nav>
-
-  <!-- Multilingual blocks: zh / en / es -->
+  <div class="post-hero-art" data-lang="zh"><img src="../assets/blog/rag-hero-zh.v5.svg" alt="Cover"/></div>
+        <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>目录</strong><ol></ol></nav>
         <article class="i18n-block" data-lang="zh">
-          <p>导读：过去一年，“长上下文模型会让 RAG 过时吗？”几乎成了走廊里最常见的讨论。本文不只给答案，还试着讲清楚来龙去脉：为什么很多团队觉得 RAG 不稳、为什么“更大的上下文”仍换不来可信答案，以及 2025 年一套从数据到工程都能落地的方案。</p>
-          <h2 id="tldr-zh">摘要（TL;DR）</h2>
-          <p>RAG 不会被淘汰，被淘汰的是<b>“天真向量检索 + 生搬硬塞上下文”</b>那一代玩法。2025 年可用的 RAG 栈呈现出“五件套”形态：<b>结构化检索（GraphRAG）＋ 检索感知训练（Self-RAG / RAFT / RA-DIT）＋ 代理式编排（Agentic RAG + MCP）＋ 新鲜度与流式索引 ＋（必要时）参数级知识更新（微调/模型编辑）</b>。本文给出工程化评估维度、选型矩阵与落地清单，并结合 <b>KBLaM</b> 框架说明如何在高合规/低联网/数据受限环境中做<b>可信、可控、可解释</b>的检索增强智能系统。</p>
 
-          <h2 id="why-not-end">1. 为什么“更大的上下文”不等于 RAG 终点</h2>
-          <p>一个形象的比喻：把所有资料都塞进提示词，就像给模型背了个更大的背包；而检索则像一张会自我更新、会指路的地图。背包再大，也不等于知道去哪、凭什么到达。</p>
-          <p>长上下文（million-token 级）确实<strong>降低</strong>了检索频率，但并不解决以下刚需：</p>
-          <ul>
-            <li><b>成本与可扩展性</b>：把大量材料塞进上下文，推理成本随 token 线性甚至超线性增长；海量文档下<b>检索→精挑证据</b>仍更经济。</li>
-            <li><b>时效性</b>：参数内知识很难做到<b>分钟级</b>更新；RAG 的外部知识库可以<b>实时索引/替换</b>。</li>
-            <li><b>可审计与合规</b>：RAG 的证据链（来源、版本、时间）可落库留痕，满足<b>强监管行业</b>（如核/水利/能源）的审计要求。</li>
-            <li><b>隐私与分域隔离</b>：在多域、多级密级的企业环境，<b>把敏感知识外化</b>到可控的检索与权限体系，比把一切写进参数安全得多。</li>
-            <li><b>稳健性</b>：检索—重排—抽取式生成的链路更容易做<b>单点替换和回归测试</b>；完全依赖长上下文的“直觉式”生成更难定位问题。</li>
-          </ul>
-          <blockquote><p><b>小结</b>：<b>更大的上下文 ≠ 不再需要检索</b>；真正被替代的是“把所有 PDF 切块向量化然后一股脑拼接”的老 RAG。</p>
-          <p>小剧场：某能源企业将 3 万页标准作业指导书直接塞入长上下文后，P95 成本飙升且答案不稳定；改为“检索→证据包→抽取式生成”后，时延与费用双降，且答案可复验。</p></blockquote>
+<p>导读：过去一年，“长上下文模型会让 RAG 过时吗？”几乎成了走廊里最常见的讨论。本文不只给答案，还试着讲清楚来龙去脉：为什么很多团队觉得 RAG 不稳、为什么“更大的上下文”仍换不来可信答案，以及 2025 年一套从数据到工程都能落地的方案。</p>
 
-          <h2 id="naive-fail">2. 天真 RAG 的典型失败模式（你应立刻避免）</h2>
-          <p>如果你觉得 RAG 难用，通常不是“检索错了”，而是“方法不对”。以下陷阱高度常见：</p>
-          <ol>
-            <li><b>只用向量相似度，忽略结构</b>：表格/代码/时序数据的语义在纯向量空间里常被冲淡。</li>
-            <li><b>粗暴 chunking</b>：句断/页断导致<b>证据跨块</b>；简单 k-NN 检索召回错误证段。</li>
-            <li><b>上下文堆砌</b>：把 20 段检索结果全塞给模型，<b>引入噪声</b>、干扰注意力。</li>
-            <li><b>缺少重排与类型化检索</b>：PDF、表格、图谱、代码、FAQ 应分别使用<b>专门检索器</b>与<b>交叉编码重排</b>。</li>
-            <li><b>无新鲜度策略</b>：法条、规程、行情、舆情类知识<b>快速过期</b>，需要<b>增量抓取 + TTL + 版本切换</b>。</li>
-            <li><b>不做可审计</b>：缺少“回答→证据片段→原始来源”的<b>可追溯链路</b>与离线复验。</li>
-          </ol>
+<h2 id="摘要tldr">摘要（TL;DR）</h2>
 
-          <h2 id="five-piece">3. 2025 RAG 五件套</h2>
-          <p>把 RAG 做稳，其实是把“找知识、打包证据、表达答案”几件事拆开做对。2025 年的成熟做法，基本收敛为这“五件套”。</p>
-          <h3 id="graphrag">3.1 结构化检索（GraphRAG）</h3>
-          <ul>
-            <li><b>核心思想</b>：文本库 + 知识图谱<b>联合索引</b>。面向实体/关系/事件/流程，把结构化“骨架”与非结构化“血肉”<b>联合检索</b>。</li>
-            <li><b>什么时候用</b>：法规条文、工艺流程、设备台账、复杂因果/依赖链；当你需要<b>跨文档多跳推理</b>时，GraphRAG 成本更低、答案更稳。</li>
-            <li><b>工程要点</b>：
-              <ul>
-                <li>多索引：BM25（强精确匹配）＋ Dense（召回覆盖）＋ Cross-Encoder（最终重排）。</li>
-                <li>融合策略：<b>先图后文</b>（按关系/路径找节点 → 拉取相关原文证据）或<b>先文后图</b>（从文档抽实体→在图中补边）。</li>
-                <li>证据打包：把<b>路径 + 片段</b>作为可读“证据包”喂给模型，避免生硬地拼 10 段文本。</li>
-              </ul>
-            </li>
-          </ul>
-          <p class="muted">例子：法规问答中，先在图谱里找到“条款→术语→适用范围”的路径，再拉取对应段落作为证据包，比直接拼接 10 段文本更稳更省。</p>
+<p>RAG 不会被淘汰，被淘汰的是<b>“天真向量检索 + 生搬硬塞上下文”</b>那一代玩法。2025 年可用的 RAG 栈呈现出“五件套”形态：<b>结构化检索（GraphRAG）＋ 检索感知训练（Self-RAG / RAFT / RA-DIT）＋ 代理式编排（Agentic RAG + MCP）＋ 新鲜度与流式索引 ＋（必要时）参数级知识更新（微调/模型编辑）</b>。本文给出工程化评估维度、选型矩阵与落地清单，并结合 <b>KBLaM</b> 框架说明如何在高合规/低联网/数据受限环境中做<b>可信、可控、可解释</b>的检索增强智能系统。</p>
 
-          <h3 id="retrieval-aware">3.2 检索感知训练（Self-RAG / RA-DIT / RAFT）</h3>
-          <ul>
-            <li><b>目标</b>：让模型“<b>知道何时检索、检什么</b>”，而非被动吃上下文。</li>
-            <li><b>实践</b>：
-              <ul>
-                <li>Self-RAG：生成中<b>自评与再检索</b>的循环策略。</li>
-                <li>RA-DIT / RAFT：在微调时引入<b>检索信号</b>与<b>对比/偏好损失</b>，把“用/不用检索”的决策学进参数。</li>
-              </ul>
-            </li>
-            <li><b>收益</b>：减少无意义检索与上下文污染，<b>提升一致性与可解释性</b>。</li>
-          </ul>
-          <p class="muted">类比：教模型“什么时候打开词典、该翻哪一页”，而不是永远把整本词典塞进包里。</p>
+<h2 id="1-为什么更大的上下文不等于-rag-终点">1. 为什么“更大的上下文”不等于 RAG 终点</h2>
 
-          <h3 id="agentic-mcp">3.3 Agentic RAG + MCP（工具编排）</h3>
-          <ul>
-            <li><b>为什么</b>：企业问答 ≠ 单轮检索。需要<b>多步计划（Plan-Execute）</b>、调用工具（SQL/搜索/代码/仿真）、回填证据。</li>
-            <li><b>怎么做</b>：
-              <ul>
-                <li>用 MCP 等统一协议把工具抽象成“<b>可声明能力</b>”，由 Agent 决策调用顺序。</li>
-                <li>加<b>停止条件/安全阈</b>（最多检索 N 次、最大费用、最大时延）与<b>缓存策略</b>（按意图/证据哈希）。</li>
-              </ul>
-            </li>
-          </ul>
-          <p class="muted">场景：根因分析需要“查日志→跑 SQL→比对工况→复核规程”，Agent 负责下发步骤与安全阈，RAG 负责提供证据与解释。</p>
+<p>一个形象的比喻：把所有资料都塞进提示词，就像给模型背了个更大的背包；而检索则像一张会自我更新、会指路的地图。背包再大，也不等于知道去哪、凭什么到达。</p>
 
-          <h3 id="freshness">3.4 新鲜度与流式索引</h3>
-          <ul>
-            <li><b>CDC/增量抓取</b>：对新文档与变更文档快速<b>切块、嵌入、入库</b>。</li>
-            <li><b>TTL 与就地替换</b>：法规/公告类内容设定 TTL，到期后优先召回<b>最新版本</b>。</li>
-            <li><b>流式评测</b>：对“近 7 天热点问题”做<b>滚动离线评测</b>。</li>
-          </ul>
+<p>长上下文（million-token 级）确实<b>降低</b>了检索频率，但并不解决以下刚需：</p>
 
-          <h3 id="param-updates">3.5 参数级知识更新（可选）</h3>
-          <ul>
-            <li><b>何时需要</b>：重复度极高、答案短、知识稳定（如术语消歧/规范模板）。</li>
-            <li><b>两条路</b>：
-              <ul>
-                <li><b>轻微调</b>（LoRA/适配器）：把领域语气/格式/步骤写进参数。</li>
-                <li><b>模型编辑</b>（ROME/MEMIT 等）：对个别事实做<b>外科手术式注入</b>。</li>
-              </ul>
-            </li>
-            <li><b>注意</b>：参数注入要配合<b>外部证据优先</b>原则与<b>版本溯源</b>，避免“过度自信”。</li>
-          </ul>
+<ul>
+<li><b>成本与可扩展性</b>：把大量材料塞进上下文，推理成本随 token 线性甚至超线性增长；海量文档下<b>检索→精挑证据</b>仍更经济。
+</li>
+<li><b>时效性</b>：参数内知识很难做到<b>分钟级</b>更新；RAG 的外部知识库可以<b>实时索引/替换</b>。
+</li>
+<li><b>可审计与合规</b>：RAG 的证据链（来源、版本、时间）可落库留痕，满足<b>强监管行业</b>（如核/水利/能源）的审计要求。
+</li>
+<li><b>隐私与分域隔离</b>：在多域、多级密级的企业环境，<b>把敏感知识外化</b>到可控的检索与权限体系，比把一切写进参数安全得多。
+</li>
+<li><b>稳健性</b>：检索—重排—抽取式生成的链路更容易做<b>单点替换和回归测试</b>；完全依赖长上下文的“直觉式”生成更难定位问题。
+</li>
+</ul>
 
-          <h2 id="kblam">4. KBLaM：在受限与高合规场景里的“可信 RAG”基线</h2>
-          <p>当网络受限、合规要求严格，“可追溯”和“可复验”比“更会说话”重要得多。<b>KBLaM</b> 提供了一套从知识建模到审计留痕的工程底座。</p>
-          <blockquote><p>关键词：<b>可信、可控、可解释</b>；知识是一等公民；证据链与离线可复验。</p></blockquote>
+<blockquote><p><b>小结</b>：<b>更大的上下文 ≠ 不再需要检索</b>；真正被替代的是“把所有 PDF 切块向量化然后一股脑拼接”的老 RAG。</p></blockquote>
+<blockquote><p></p></blockquote>
+<blockquote><p>小剧场：某能源企业将 3 万页标准作业指导书直接塞入长上下文后，P95 成本飙升且答案不稳定；改为“检索→证据包→抽取式生成”后，时延与费用双降，且答案可复验。</p></blockquote>
 
-          <h3 id="kblam-components">4.1 总体组件</h3>
-          <ol>
-            <li><b>统一知识层</b>：文本库（段落/表格/图像描述）＋ <b>知识图谱</b>（实体/关系/事件）＋ 元数据（时间、密级、版本）。</li>
-            <li><b>检索规划器</b>：规则 + 学习混合的<b>Query Planner</b>（意图识别→类型化检索器路由→多跳/融合策略）。</li>
-            <li><b>证据链构建器</b>：把<b>来源 URL/文档 ID/版本/时间戳/片段 offset/图谱路径</b>统一封装到 Evidence Pack。</li>
-            <li><b>生成与裁决</b>：抽取式生成为主，必要时调用结构化工具（SQL/规则引擎）进行<b>结果校验</b>。</li>
-            <li><b>离线评测与审计</b>：自动化构造<b>可重复测试集</b>（问题—证据—答案），持续监控<b>正确率/忠实度/证据覆盖</b>。</li>
-          </ol>
+<h2 id="2-天真-rag-的典型失败模式你应立刻避免">2. 天真 RAG 的典型失败模式（你应立刻避免）</h2>
 
-          <h3 id="kblam-flow">4.2 最小可用流程（伪代码）</h3>
-          <pre><code class="language-text">INPUT: question q
+<p>如果你觉得 RAG 难用，通常不是“检索错了”，而是“方法不对”。以下陷阱高度常见：</p>
+
+<ol>
+<li><b>只用向量相似度，忽略结构</b>：表格/代码/时序数据的语义在纯向量空间里常被冲淡。
+</li>
+<li><b>粗暴 chunking</b>：句断/页断导致<b>证据跨块</b>；简单 k-NN 检索召回错误证段。
+</li>
+<li><b>上下文堆砌</b>：把 20 段检索结果全塞给模型，<b>引入噪声</b>、干扰注意力。
+</li>
+<li><b>缺少重排与类型化检索</b>：PDF、表格、图谱、代码、FAQ 应分别使用<b>专门检索器</b>与<b>交叉编码重排</b>。
+</li>
+<li><b>无新鲜度策略</b>：法条、规程、行情、舆情类知识<b>快速过期</b>，需要<b>增量抓取 + TTL + 版本切换</b>。
+</li>
+<li><b>不做可审计</b>：缺少“回答→证据片段→原始来源”的<b>可追溯链路</b>与离线复验。
+</li>
+</ol>
+
+<h2 id="3-2025-rag-五件套">3. 2025 RAG 五件套</h2>
+
+<p>把 RAG 做稳，其实是把“找知识、打包证据、表达答案”几件事拆开做对。2025 年的成熟做法，基本收敛为这“五件套”。</p>
+
+<h3 id="31-结构化检索graphrag">3.1 结构化检索（GraphRAG）</h3>
+
+<ul>
+<li><b>核心思想</b>：文本库 + 知识图谱<b>联合索引</b>。面向实体/关系/事件/流程，把结构化“骨架”与非结构化“血肉”<b>联合检索</b>。
+</li>
+<li><b>什么时候用</b>：法规条文、工艺流程、设备台账、复杂因果/依赖链；当你需要<b>跨文档多跳推理</b>时，GraphRAG 成本更低、答案更稳。
+</li>
+<li><b>工程要点</b>：
+<ul>
+<li>多索引：BM25（强精确匹配）＋ Dense（召回覆盖）＋ Cross-Encoder（最终重排）。
+</li>
+<li>融合策略：<b>先图后文</b>（按关系/路径找节点 → 拉取相关原文证据）或<b>先文后图</b>（从文档抽实体→在图中补边）。
+</li>
+<li>证据打包：把<b>路径 + 片段</b>作为可读“证据包”喂给模型，避免生硬地拼 10 段文本。
+</li>
+</ul>
+</ul>
+
+<p>例子：法规问答中，先在图谱里找到“条款→术语→适用范围”的路径，再拉取对应段落作为证据包，比直接拼接 10 段文本更稳更省。</p>
+
+<h3 id="32-检索感知训练self-rag-ra-dit-raft">3.2 检索感知训练（Self-RAG / RA-DIT / RAFT）</h3>
+
+<ul>
+<li><b>目标</b>：让模型“<b>知道何时检索、检什么</b>”，而非被动吃上下文。
+</li>
+<li><b>实践</b>：
+<ul>
+<li>Self-RAG：生成中<b>自评与再检索</b>的循环策略。
+</li>
+<li>RA-DIT / RAFT：在微调时引入<b>检索信号</b>与<b>对比/偏好损失</b>，把“用/不用检索”的决策学进参数。
+</li>
+</ul>
+<li><b>收益</b>：减少无意义检索与上下文污染，<b>提升一致性与可解释性</b>。
+</li>
+</ul>
+
+<p>类比：教模型“什么时候打开词典、该翻哪一页”，而不是永远把整本词典塞进包里。</p>
+
+<h3 id="33-agentic-rag-mcp工具编排">3.3 Agentic RAG + MCP（工具编排）</h3>
+
+<ul>
+<li><b>为什么</b>：企业问答 ≠ 单轮检索。需要<b>多步计划（Plan-Execute）</b>、调用工具（SQL/搜索/代码/仿真）、回填证据。
+</li>
+<li><b>怎么做</b>：
+<ul>
+<li>用 MCP 等统一协议把工具抽象成“<b>可声明能力</b>”，由 Agent 决策调用顺序。
+</li>
+<li>加<b>停止条件/安全阈</b>（最多检索 N 次、最大费用、最大时延）与<b>缓存策略</b>（按意图/证据哈希）。
+</li>
+</ul>
+</ul>
+
+<p>场景：根因分析需要“查日志→跑 SQL→比对工况→复核规程”，Agent 负责下发步骤与安全阈，RAG 负责提供证据与解释。</p>
+
+<h3 id="34-新鲜度与流式索引">3.4 新鲜度与流式索引</h3>
+
+<ul>
+<li><b>CDC/增量抓取</b>：对新文档与变更文档快速<b>切块、嵌入、入库</b>。
+</li>
+<li><b>TTL 与就地替换</b>：法规/公告类内容设定 TTL，到期后优先召回<b>最新版本</b>。
+</li>
+<li><b>流式评测</b>：对“近 7 天热点问题”做<b>滚动离线评测</b>。
+</li>
+</ul>
+
+<h3 id="35-参数级知识更新可选">3.5 参数级知识更新（可选）</h3>
+
+<ul>
+<li><b>何时需要</b>：重复度极高、答案短、知识稳定（如术语消歧/规范模板）。
+</li>
+<li><b>两条路</b>：
+<ul>
+<li><b>轻微调</b>（LoRA/适配器）：把领域语气/格式/步骤写进参数。
+</li>
+<li><b>模型编辑</b>（ROME/MEMIT 等）：对个别事实做<b>外科手术式注入</b>。
+</li>
+</ul>
+<li><b>注意</b>：参数注入要配合<b>外部证据优先</b>原则与<b>版本溯源</b>，避免“过度自信”。
+</li>
+</ul>
+
+<h2 id="4-kblam在受限与高合规场景里的可信-rag基线">4. KBLaM：在受限与高合规场景里的“可信 RAG”基线</h2>
+
+<p>当网络受限、合规要求严格，“可追溯”和“可复验”比“更会说话”重要得多。<b>KBLaM</b> 提供了一套从知识建模到审计留痕的工程底座。</p>
+
+<blockquote><p>关键词：<b>可信、可控、可解释</b>；知识是一等公民；证据链与离线可复验。</p></blockquote>
+
+<h3 id="41-总体组件">4.1 总体组件</h3>
+
+<ol>
+<li><b>统一知识层</b>：文本库（段落/表格/图像描述）＋ <b>知识图谱</b>（实体/关系/事件）＋ 元数据（时间、密级、版本）。
+</li>
+<li><b>检索规划器</b>：规则 + 学习混合的<b>Query Planner</b>（意图识别→类型化检索器路由→多跳/融合策略）。
+</li>
+<li><b>证据链构建器</b>：把<b>来源 URL/文档 ID/版本/时间戳/片段 offset/图谱路径</b>统一封装到 Evidence Pack。
+</li>
+<li><b>生成与裁决</b>：抽取式生成为主，必要时调用结构化工具（SQL/规则引擎）进行<b>结果校验</b>。
+</li>
+<li><b>离线评测与审计</b>：自动化构造<b>可重复测试集</b>（问题—证据—答案），持续监控<b>正确率/忠实度/证据覆盖</b>。
+</li>
+</ol>
+
+<h3 id="42-最小可用流程伪代码">4.2 最小可用流程（伪代码）</h3>
+
+<pre><code class="language-text">
+INPUT: question q
 1. intent = classify(q)                      # 问题类型/时效性/敏感级
 2. plan = plan_query(intent)                 # 选择检索器：Text/Graph/Table/Code
 3. C = retrieve_multistage(q, plan)          # BM25 + Dense + Cross-Encoder 重排
@@ -260,400 +263,122 @@
    else:
        a = a0
 8. log(a, E, cost, latency, hashes)          # 审计/追溯/回放
-OUTPUT: a with evidence pack</code></pre>
+OUTPUT: a with evidence pack
+</code></pre>
 
-          <h3 id="kblam-practice">4.3 索引与检索实操建议</h3>
-          <ul>
-            <li><b>切块</b>：结构优先（标题/小节/表格单元），辅以语义滑窗（stride 1/3～1/2 chunk）。</li>
-            <li><b>多路召回</b>：BM25（强精确）、Dense（扩召回）、<b>专用检索器</b>（表格/代码/图谱）；最后用 Cross-Encoder 重排。</li>
-            <li><b>压缩提示</b>：把证据压成<b>要点清单</b>（带出处编号）再交给模型，减少冗余。</li>
-            <li><b>新鲜度</b>：增量嵌入 + TTL + 版本选择策略（“最新优先/最新且稳定/历史快照”可切换）。</li>
-          </ul>
+<h3 id="43-索引与检索实操建议">4.3 索引与检索实操建议</h3>
 
-          <h2 id="matrix">5. 选型矩阵（2025）</h2>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr><th>场景</th><th>时效</th><th>结构化</th><th>约束</th><th>推荐路线</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>政策法规/工艺流程问答</td><td>中</td><td>强</td><td>合规/可审计</td><td><b>GraphRAG + Self-RAG/RAFT</b>；证据包 + 抽取式生成</td></tr>
-                <tr><td>运维值守/告警处置</td><td>高</td><td>中</td><td>低联网</td><td><b>事件流 + 流式索引 + Agentic RAG</b>；缓存 &amp; 限流</td></tr>
-                <tr><td>标准作业指导书（SOP）</td><td>低</td><td>中</td><td>高一致性</td><td><b>轻微调 + 模板化抽取</b>；必要时模型编辑</td></tr>
-                <tr><td>舆情/行情/新闻监测</td><td>极高</td><td>弱</td><td>成本敏感</td><td><b>实时爬取 + BM25/Dense 混合 + 轻生成</b></td></tr>
-                <tr><td>复杂多跳推理</td><td>中</td><td>强</td><td>解释性</td><td><b>GraphRAG + 路径证据可视化 + ReAct/Plan-Execute</b></td></tr>
-              </tbody>
-            </table>
-          </div>
+<ul>
+<li><b>切块</b>：结构优先（标题/小节/表格单元），辅以语义滑窗（stride 1/3～1/2 chunk）。
+</li>
+<li><b>多路召回</b>：BM25（强精确）、Dense（扩召回）、<b>专用检索器</b>（表格/代码/图谱）；最后用 Cross-Encoder 重排。
+</li>
+<li><b>压缩提示</b>：把证据压成<b>要点清单</b>（带出处编号）再交给模型，减少冗余。
+</li>
+<li><b>新鲜度</b>：增量嵌入 + TTL + 版本选择策略（“最新优先/最新且稳定/历史快照”可切换）。
+</li>
+</ul>
 
-          <h2 id="eval-govern">6. 评测与治理（比“是否答对”更重要）</h2>
-          <ul>
-            <li><b>Faithfulness（忠实度）</b>：答案是否严格来自证据？</li>
-            <li><b>Evidence Coverage（证据覆盖）</b>：需要几段证据？路径是否完整？</li>
-            <li><b>Groundedness（落地度）</b>：有无越权猜测/幻觉？</li>
-            <li><b>Latency/Cost（P95/成本）</b>：控制最坏时延与单问成本，上线必查。</li>
-            <li><b>Change Resilience（变更稳健）</b>：文档替换/版本更新后，答案是否稳定可复现？</li>
-            <li><b>审计日志</b>：问题→计划→证据→答案→工具调用→版本号，全链路留痕。</li>
-          </ul>
+<h2 id="5-选型矩阵2025">5. 选型矩阵（2025）</h2>
 
-          <h2 id="implementation">7. 实施清单（落地即可用）</h2>
-          <ul>
-            <li><b>数据治理</b>：脱敏/分域/分级，证据包写入来源、版本与时间戳。</li>
-            <li><b>检索基线</b>：BM25 + Dense + Cross-Encoder，类型化检索器（表格/代码/图）。</li>
-            <li><b>模板化生成</b>：Claim-Evidence 模板，答案内联 [证据编号]。</li>
-            <li><b>Agent 安全阈</b>：最大工具调用次数、预算/时延上限、不可调用名单。</li>
-            <li><b>离线评测</b>：构建 1000+ 问题的稳定集；每次部署对比基线。</li>
-            <li><b>灰度与监控</b>：召回命中率、重排 NDCG、P95 延迟、失败样本回灌。</li>
-          </ul>
+<div class="table-wrap"><table><thead><tr><th>场景</th><th>时效</th><th>结构化</th><th>约束</th><th>推荐路线</th></tr></thead><tbody><tr><td>政策法规/工艺流程问答</td><td>中</td><td>强</td><td>合规/可审计</td><td><b>GraphRAG + Self-RAG/RAFT</b>；证据包 + 抽取式生成</td></tr><tr><td>运维值守/告警处置</td><td>高</td><td>中</td><td>低联网</td><td><b>事件流 + 流式索引 + Agentic RAG</b>；缓存 &amp; 限流</td></tr><tr><td>标准作业指导书（SOP）</td><td>低</td><td>中</td><td>高一致性</td><td><b>轻微调 + 模板化抽取</b>；必要时模型编辑</td></tr><tr><td>舆情/行情/新闻监测</td><td>极高</td><td>弱</td><td>成本敏感</td><td><b>实时爬取 + BM25/Dense 混合 + 轻生成</b></td></tr><tr><td>复杂多跳推理</td><td>中</td><td>强</td><td>解释性</td><td><b>GraphRAG + 路径证据可视化 + ReAct/Plan-Execute</b></td></tr></tbody></table></div>
 
-          <blockquote><p><b>结论</b>：RAG 并未过时；<b>可信、可控、可解释</b>的 RAG 正处于 2025 最佳实践的中心，KBLaM 给了在高合规/低联网环境下的“落地范式”。</p></blockquote>
-          <h2 id="refs-zh">参考与延伸阅读（官方来源）</h2>
-          <ul>
-            <li>Self-RAG：
-              <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> ·
-              <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> ·
-              <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li>RAFT（Retrieval-Augmented Fine-Tuning, 2024）：
-              <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
-            </li>
-            <li>RA-DIT（2023）：
-              <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> ·
-              <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
-            </li>
-            <li>GraphRAG：
-              <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> ·
-              <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li>MCP：
-              <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> ·
-              <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> ·
-              <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
-            </li>
-            <li>Google Gemini 1.5（长上下文）：
-              <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Official Blog</a>
-            </li>
-          </ul>
+<h2 id="6-评测与治理比是否答对更重要">6. 评测与治理（比“是否答对”更重要）</h2>
+
+<ul>
+<li><b>Faithfulness（忠实度）</b>：答案是否严格来自证据？
+</li>
+<li><b>Evidence Coverage（证据覆盖）</b>：需要几段证据？路径是否完整？
+</li>
+<li><b>Groundedness（落地度）</b>：有无越权猜测/幻觉？
+</li>
+<li><b>Latency/Cost（P95/成本）</b>：控制最坏时延与单问成本，上线必查。
+</li>
+<li><b>Change Resilience（变更稳健）</b>：文档替换/版本更新后，答案是否稳定可复现？
+</li>
+<li><b>审计日志</b>：问题→计划→证据→答案→工具调用→版本号，全链路留痕。
+</li>
+</ul>
+
+<h2 id="7-实施清单落地即可用">7. 实施清单（落地即可用）</h2>
+
+<ul>
+<li><b>数据治理</b>：脱敏/分域/分级，证据包写入来源、版本与时间戳。
+</li>
+<li><b>检索基线</b>：BM25 + Dense + Cross-Encoder，类型化检索器（表格/代码/图）。
+</li>
+<li><b>模板化生成</b>：Claim-Evidence 模板，答案内联 [证据编号]。
+</li>
+<li><b>Agent 安全阈</b>：最大工具调用次数、预算/时延上限、不可调用名单。
+</li>
+<li><b>离线评测</b>：构建 1000+ 问题的稳定集；每次部署对比基线。
+</li>
+<li><b>灰度与监控</b>：召回命中率、重排 NDCG、P95 延迟、失败样本回灌。
+</li>
+</ul>
+
+<blockquote><p><b>结论</b>：RAG 并未过时；<b>可信、可控、可解释</b>的 RAG 正处于 2025 最佳实践的中心，KBLaM 给了在高合规/低联网环境下的“落地范式”。</p></blockquote>
+
+<h2 id="参考与延伸阅读官方来源">参考与延伸阅读（官方来源）</h2>
+
+<ul>
+<li>Self-RAG：<a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> · <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> · <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
+</li>
+<li>RAFT（Retrieval-Augmented Fine-Tuning, 2024）：<a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
+</li>
+<li>RA-DIT（2023）：<a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> · <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
+</li>
+<li>GraphRAG：<a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> · <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
+</li>
+<li>MCP：<a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> · <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
+</li>
+<li>Google Gemini 1.5（长上下文）：<a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Official Blog</a>
+</li>
+</ul>
+
         </article>
-
-        <!-- Share toolbar -->
-        <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+  <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
           <strong class="share-title" data-i18n="share_label">分享</strong>
           <div class="spacer" style="flex:0 0 8px"></div>
           <button class="btn outline share-btn" data-share="wechat">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M7.5 3C4.46 3 2 5.08 2 7.65c0 1.52.84 2.88 2.15 3.8l-.53 1.93 2.06-1.24c.56.14 1.15.21 1.77.21 3.04 0 5.5-2.08 5.5-4.65S10.54 3 7.5 3zm-1.4 3.6a.9.9 0 110 1.8.9.9 0 010-1.8zm3.8 0a.9.9 0 110 1.8.9.9 0 010-1.8zM16.5 10c-2.86 0-5.17 1.86-5.17 4.15 0 1.27.7 2.4 1.78 3.17l-.44 1.6 1.72-1.03c.47.12.97.18 1.48.18 2.86 0 5.17-1.86 5.17-4.15S19.36 10 16.5 10zm-1.2 2.7a.9.9 0 110 1.8.9.9 0 010-1.8zm3.6 0a.9.9 0 110 1.8.9.9 0 010-1.8z" fill="currentColor" stroke="none"></path>
-            </svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 3C4.46 3 2 5.08 2 7.65c0 1.52.84 2.88 2.15 3.8l-.53 1.93 2.06-1.24c.56.14 1.15.21 1.77.21 3.04 0 5.5-2.08 5.5-4.65S10.54 3 7.5 3zm-1.4 3.6a.9.9 0 110 1.8.9.9 0 010-1.8zm3.8 0a.9.9 0 110 1.8.9.9 0 010-1.8zM16.5 10c-2.86 0-5.17 1.86-5.17 4.15 0 1.27.7 2.4 1.78 3.17l-.44 1.6 1.72-1.03c.47.12.97.18 1.48.18 2.86 0 5.17-1.86 5.17-4.15S19.36 10 16.5 10zm-1.2 2.7a.9.9 0 110 1.8.9.9 0 010-1.8zm3.6 0a.9.9 0 110 1.8.9.9 0 010-1.8z" fill="currentColor" stroke="none"></path></svg>
             <span data-i18n="share_wechat">微信</span>
           </button>
-          <a class="btn outline share-btn" data-share="whatsapp" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-14.32 4.906L4 21l4.2-1.11A8 8 0 1 1 20 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 9.5c.5 2 2.5 3.5 4 4l1.2-.8c.3-.2.7-.1.9.2l.7 1.1c.2.3.1.7-.2.9-1 .7-2.1 1.1-3.3 1.1-2.9 0-5.3-2.4-5.3-5.3 0-1.2.4-2.3 1.1-3.3.2-.3.6-.4.9-.2l1.1.7c.3.2.4.6.2.9l-.8 1.2z"/></svg>
-            <span data-i18n="share_whatsapp">WhatsApp</span>
-          </a>
-          <button class="btn outline share-btn" data-share="copy">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
-            <span data-i18n="share_copy">复制链接</span>
-          </button>
-
-          <button class="btn outline share-btn" data-share="native">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 16V3"/><path d="M8 7l4-4 4 4"/></svg>
-            <span data-i18n="share_share">系统分享</span>
-          </button>
+          <a class="btn outline share-btn" data-share="whatsapp" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-14.32 4.906L4 21l4.2-1.11A8 8 0 1 1 20 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 9.5c.5 2 2.5 3.5 4 4l1.2-.8c.3-.2.7-.1.9.2l.7 1.1c.2.3.1.7-.2.9-1 .7-2.1 1.1-3.3 1.1-2.9 0-5.3-2.4-5.3-5.3 0-1.2.4-2.3 1.1-3.3.2-.3.6-.4.9-.2l1.1.7c.3.2.4.6.2.9l-.8 1.2z"/></svg>
+            <span data-i18n="share_whatsapp">WhatsApp</span></a>
+          <button class="btn outline share-btn" data-share="copy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
+            <span data-i18n="share_copy">复制链接</span></button>
+          <button class="btn outline share-btn" data-share="native"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 16V3"/><path d="M8 7l4-4 4 4"/></svg>
+            <span data-i18n="share_share">分享…</span></button>
         </div>
-
-        <!-- Share modal (for WeChat QR) -->
         <div id="share-modal" class="modal" hidden>
           <div class="modal-content card" role="dialog" aria-modal="true" aria-labelledby="share-title">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
               <h3 id="share-title" data-i18n="share_wechat">微信</h3>
               <button class="btn outline" data-close><span data-i18n="share_close">关闭</span></button>
             </div>
-            <p class="muted" style="margin:8px 0" data-i18n="share_wechat_qr_tip">使用微信“扫一扫”分享本文</p>
+            <p class="muted" style="margin:8px 0" data-i18n="share_wechat_qr_tip">用微信扫描分享此文</p>
             <div id="qr" style="display:grid;place-items:center;padding:12px"></div>
           </div>
         </div>
-
-        <article class="i18n-block" data-lang="en" hidden>
-          <p>Reader’s note: Over the past year, one hallway question keeps coming back—“Will long‑context models make RAG obsolete?” Rather than just answer yes/no, this piece tells the story behind the trend: why many teams felt RAG was flaky, why more context alone doesn’t buy trustworthy answers, and what a 2025, end‑to‑end, engineering‑ready stack looks like.</p>
-          <h2 id="tldr-en">TL;DR</h2>
-          <p>RAG isn’t dying—<b>naïve vector-RAG with context dumping</b> is. In 2025, competitive stacks converge on five pillars: <b>Structured Retrieval (GraphRAG) + Retrieval-Aware Training (Self-RAG / RA-DIT / RAFT) + Agentic Orchestration (Agentic RAG + MCP) + Freshness/Streaming Indexing + (when needed) Parameter-level Knowledge Updates (fine-tuning / model editing)</b>. This article offers evaluation criteria, a selection matrix, and a deployment checklist, and shows how <b>KBLaM</b> builds <b>trustworthy, controllable, explainable</b> systems in high-compliance, low-connectivity settings.</p>
-
-          <h2 id="why-en">1. Why “longer context” ≠ the end of RAG</h2>
-          <p>An analogy: dumping everything into the prompt is like giving the model a bigger backpack; retrieval is a living map that updates and points the way. A bigger backpack doesn’t guarantee you know where to go—or why.</p>
-          <ul>
-            <li><b>Cost &amp; scalability</b>: Shoving massive corpora into the prompt drives inference cost up; <b>retrieve → curate</b> remains cheaper and more predictable.</li>
-            <li><b>Timeliness</b>: Parameters are hard to update at minute-scale; external stores can be <b>hot-swapped</b>.</li>
-            <li><b>Audit &amp; compliance</b>: RAG yields <b>traceable evidence chains</b> (source, version, time), essential in regulated domains.</li>
-            <li><b>Privacy &amp; domain isolation</b>: Externalized knowledge works better with <b>access control and compartmentalization</b>.</li>
-            <li><b>Robustness</b>: Retrieval→re-rank→extract pipelines are <b>modular</b> and regression-test-able; pure long-context prompting is harder to debug.</li>
-          </ul>
-          <blockquote><p>Bottom line: <b>Bigger context reduces retrieval frequency; it doesn’t remove the need for retrieval</b>.</p>
-          <p>Vignette: A utility firm stuffed 30k pages of SOPs into long‑context prompts. P95 cost spiked and answers wavered. Switching to “retrieve → evidence pack → extractive generation” cut cost and latency, and made answers auditable.</p></blockquote>
-
-          <h2 id="naive-fail-en">2. Naïve RAG failure modes (to avoid now)</h2>
-          <p>If RAG feels brittle, it’s often not because “retrieval is wrong” but because the <em>approach</em> is. These traps are common:</p>
-          <ol>
-            <li><b>Vector-only retrieval</b> ignores structure (tables/code/temporal relations).</li>
-            <li><b>Crude chunking</b> splits evidence; k-NN pulls partial or wrong spans.</li>
-            <li><b>Context stuffing</b> increases noise and distracts attention.</li>
-            <li><b>No type-specific retrievers</b> and <b>no cross-encoder re-rankers</b>.</li>
-            <li><b>No freshness policy</b> for volatile content (laws, procedures, markets).</li>
-            <li><b>No audit trail</b> from answer → evidence → original sources.</li>
-          </ol>
-
-          <h2 id="five-piece-en">3. The 2025 RAG “five-piece set”</h2>
-          <p>Getting RAG right means separating concerns: find knowledge, package evidence, and express answers. Mature 2025 stacks converge on these five pieces.</p>
-          <h3 id="graphrag-en">3.1 Structured Retrieval (GraphRAG)</h3>
-          <ul>
-            <li><b>Idea</b>: Jointly index text + knowledge graphs; use entities/relations/events as a <b>skeleton</b> and text as <b>flesh</b>.</li>
-            <li><b>When</b>: Regulations, procedures, asset registries, <b>multi-hop</b> reasoning.</li>
-            <li><b>Engineering</b>: Multi-index (BM25 + Dense + Cross-Encoder), “graph-then-text” or “text-then-graph” fusion, <b>evidence packaging</b> (paths + spans).</li>
-          </ul>
-          <p class="muted">Example: For regulations QA, first find the “article → term → applicability” path in the graph, then pull matching spans as an evidence pack—more stable and cheaper than dumping ten paragraphs.</p>
-
-          <h3 id="retrieval-aware-en">3.2 Retrieval-Aware Training (Self-RAG / RA-DIT / RAFT)</h3>
-          <ul>
-            <li><b>Goal</b>: Teach the model <b>when/what to retrieve</b>.</li>
-            <li><b>Practice</b>:
-              <ul>
-                <li>Self-RAG: generation with <b>self-evaluation + re-retrieve</b> loops.</li>
-                <li>RA-DIT/RAFT: inject retrieval signals/losses during fine-tuning.</li>
-              </ul>
-            </li>
-            <li><b>Benefit</b>: Less useless retrieval, <b>more faithful answers</b>.</li>
-          </ul>
-          <p class="muted">Analogy: Teach the model “when to open the dictionary and which page,” instead of carrying the whole dictionary everywhere.</p>
-
-          <h3 id="agentic-mcp-en">3.3 Agentic RAG + MCP</h3>
-          <ul>
-            <li><b>Why</b>: Real tasks are <b>multi-step</b> with tools (SQL/search/code/sim).</li>
-            <li><b>How</b>: Unify tools via MCP; add <b>stop conditions</b>, <b>budgets/latency caps</b>, and <b>cache policies</b>.</li>
-          </ul>
-          <p class="muted">Scenario: Root‑cause analysis may need “check logs → run SQL → compare telemetry → validate procedures.” Agents orchestrate guarded steps; RAG supplies evidence and explanations.</p>
-
-          <h3 id="freshness-en">3.4 Freshness &amp; streaming</h3>
-          <ul>
-            <li>Incremental ingestion, TTL, version selection; rolling evaluation on “last-7-days” questions.</li>
-          </ul>
-
-          <h3 id="param-updates-en">3.5 Parameter-level updates (optional)</h3>
-          <ul>
-            <li><b>When</b>: Highly repetitive, short, stable facts.</li>
-            <li><b>How</b>: Lightweight fine-tuning (LoRA) or <b>surgical editing</b> (ROME/MEMIT).</li>
-            <li><b>Caution</b>: Keep <b>evidence-first</b> principle and provenance logs.</li>
-          </ul>
-
-          <h2 id="kblam-en-2">4. KBLaM: a trustworthy baseline for constrained &amp; regulated environments</h2>
-          <p>When networks are constrained and compliance is strict, “traceable and reproducible” matters more than “more eloquent.” <b>KBLaM</b> offers an engineering base—from knowledge modeling to audit trails.</p>
-          <h3 id="kblam-components-en">4.1 Components</h3>
-          <ol>
-            <li><b>Unified Knowledge Layer</b>: text (para/table/image captions) + <b>KG</b> (entities/relations/events) + metadata (time, version, clearance).</li>
-            <li><b>Retrieval Planner</b>: rules + learned router (intent → retriever types → multi-hop strategy).</li>
-            <li><b>Evidence Chain Builder</b>: package source/ID/version/time/offsets/graph paths.</li>
-            <li><b>Generation &amp; Adjudication</b>: extraction-first; verify via SQL/rules if needed.</li>
-            <li><b>Offline Eval &amp; Audit</b>: reproducible test sets; monitor <b>faithfulness/coverage/cost/latency</b>.</li>
-          </ol>
-
-          <h3 id="kblam-flow-en">4.2 Minimal flow (pseudo)</h3>
-          <pre><code class="language-text">intent = classify(q)
-plan   = plan_query(intent)
-C      = retrieve_multistage(q, plan)           # BM25 + Dense + Cross-Encoder
-if plan.requires_graph: C = merge(C, graph_paths(q, entities(C)))
-E      = pack_evidence(C)
-a0     = generate_answer(q, E)
-a      = verify_and_refine(a0) if needs_verify(a0) else a0
-log(a, E, cost, latency, versions)</code></pre>
-
-          <h3 id="tips-en">4.3 Practical tips</h3>
-          <p>Chunk structurally → multi-retriever recall → cross-encoder re-rank → compress evidence into <b>bullet-point claims with citations</b> → stream updates with versioning.</p>
-
-          <h2 id="matrix-en-2">5. Selection matrix (2025)</h2>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr><th>Use case</th><th>Timeliness</th><th>Structure</th><th>Constraint</th><th>Recommended stack</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Regulations / procedures QA</td><td>Medium</td><td>High</td><td>Audit-heavy</td><td><b>GraphRAG + Self-RAG/RAFT</b>, evidence-first</td></tr>
-                <tr><td>Ops/alerts handling</td><td>High</td><td>Medium</td><td>Low-connectivity</td><td><b>Event stream + streaming index + Agentic RAG</b></td></tr>
-                <tr><td>SOP templating</td><td>Low</td><td>Medium</td><td>High consistency</td><td><b>Light FT + template extraction</b>, optional editing</td></tr>
-                <tr><td>News/market monitoring</td><td>Very high</td><td>Low</td><td>Cost-sensitive</td><td><b>Real-time crawl + BM25/Dense + light gen</b></td></tr>
-                <tr><td>Multi-hop reasoning</td><td>Medium</td><td>High</td><td>Explainability</td><td><b>GraphRAG + path visualization + ReAct/Plan-Exec</b></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2 id="eval-en">6. Evaluation &amp; governance</h2>
-          <ul>
-            <li>Track <b>faithfulness</b>, <b>evidence coverage</b>, <b>groundedness</b>, <b>P95 latency</b>, <b>cost/query</b>, <b>change resilience</b>, and <b>audit logs</b> (Q → plan → evidence → answer → tool calls → versions).</li>
-          </ul>
-
-          <h2 id="checklist-en">7. Implementation checklist</h2>
-          <p>Data governance (PII scrub, compartmentalization) · Retrieval baseline (BM25 + Dense + X-encoder, type-specific retrievers) · Claim-Evidence templates with inline citations · Agent caps (tools/$/latency) · Offline eval set (≥1k Qs) · Gray release + monitoring.</p>
-
-          <blockquote><p><b>Conclusion</b>: RAG isn’t obsolete. The <b>trustworthy, controllable, explainable</b> RAG stack is the center of 2025 practice; <b>KBLaM</b> is a strong blueprint for regulated, air-gapped environments.</p></blockquote>
-          <h2 id="refs-en">References (official sources)</h2>
-          <ul>
-            <li>Self-RAG:
-              <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> ·
-              <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> ·
-              <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li>RAFT (Retrieval-Augmented Fine-Tuning, 2024):
-              <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
-            </li>
-            <li>RA-DIT (2023):
-              <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> ·
-              <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
-            </li>
-            <li>GraphRAG:
-              <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> ·
-              <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li>MCP:
-              <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> ·
-              <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> ·
-              <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
-            </li>
-            <li>Google Gemini 1.5 (long context):
-              <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Official Blog</a>
-            </li>
-          </ul>
-        </article>
-
-        <article class="i18n-block" data-lang="es" hidden>
-          <p>Nota para el lector: En el último año se repite la pregunta de pasillo: “¿El contexto largo hará obsoleto a RAG?”. Más que responder sí/no, aquí contamos la historia: por qué muchos sintieron a RAG frágil, por qué más contexto no asegura respuestas confiables y cómo luce en 2025 una pila lista para ingeniería, de punta a punta.</p>
-          <h2 id="tldr-es">Resumen (TL;DR)</h2>
-          <p>RAG no muere: lo que muere es el <b>RAG ingenuo de vectores + pegar contexto</b>. En 2025, las pilas ganadoras convergen en cinco pilares: <b>Recuperación estructurada (GraphRAG) + Entrenamiento sensible a la recuperación (Self-RAG / RA-DIT / RAFT) + Orquestación con agentes (Agentic RAG + MCP) + Actualidad/índices en streaming + (cuando convenga) actualizaciones a nivel de parámetros (fine-tuning / edición del modelo)</b>. Presentamos criterios de evaluación, matriz de selección y lista de implantación, y mostramos cómo <b>KBLaM</b> construye sistemas <b>fiables, controlables y explicables</b> en entornos con alta regulación y baja conectividad.</p>
-
-          <h2 id="why-es">1. Por qué “más contexto” ≠ el fin de RAG</h2>
-          <p>Analogía: volcar todo en el prompt es darle a un modelo una mochila más grande; la recuperación es un mapa vivo que se actualiza y guía. Una mochila enorme no garantiza saber a dónde ir, ni por qué.</p>
-          <ul>
-            <li><b>Coste y escalado</b>: meter grandes corpus en el prompt dispara el coste; <b>recuperar → curar</b> sigue siendo más eficiente.</li>
-            <li><b>Actualidad</b>: el conocimiento en parámetros no se actualiza a escala de minutos; las fuentes externas sí.</li>
-            <li><b>Auditoría y cumplimiento</b>: RAG aporta <b>cadenas de evidencia trazables</b> (fuente, versión, fecha).</li>
-            <li><b>Privacidad y aislamientos</b>: el conocimiento externalizado juega mejor con <b>controles de acceso</b> y separación por dominios.</li>
-            <li><b>Robustez</b>: recuperar→reordenar→extraer es una tubería <b>modular</b>; el prompting puro de contexto largo es más difícil de depurar.</li>
-          </ul>
-          <blockquote><p>Conclusión: <b>Más contexto reduce la frecuencia de recuperación, no elimina la necesidad de recuperar</b>.</p>
-          <p>Viñeta: Una empresa de servicios volcó 30k páginas de SOP en prompts de contexto largo. El P95 de coste subió y las respuestas fluctuaron. Con “recuperar → paquete de evidencia → generación extractiva”, bajaron coste y latencia, y las respuestas quedaron auditables.</p></blockquote>
-
-          <h2 id="naive-fail-es">2. Modos de fallo del RAG ingenuo (evítalos)</h2>
-          <p>Si RAG te parece endeble, a menudo no es que “la recuperación esté mal”, sino que el <em>enfoque</em> lo está. Estas trampas son habituales:</p>
-          <ol>
-            <li><b>Solo vectores</b>, sin estructura (tablas/código/temporalidad).</li>
-            <li><b>Fragmentación burda</b> que rompe la evidencia.</li>
-            <li><b>Sobrecarga de contexto</b> que introduce ruido.</li>
-            <li><b>Sin recuperadores específicos</b> ni <b>reordenadores de cruce</b>.</li>
-            <li><b>Sin política de frescura</b> para contenidos volátiles.</li>
-            <li><b>Sin trazabilidad</b> respuesta → evidencia → fuente.</li>
-          </ol>
-
-          <h2 id="five-piece-es">3. El “juego de cinco piezas” en 2025</h2>
-          <p>Hacer bien RAG es separar preocupaciones: hallar conocimiento, empaquetar evidencia y expresar respuestas. En 2025, las pilas maduras convergen en estas cinco piezas.</p>
-          <h3 id="graphrag-es">3.1 Recuperación estructurada (GraphRAG)</h3>
-          <p>Índice conjunto texto + grafo; ideal para normativa, procesos, activos y <b>razonamiento multi‑salto</b>. Multi‑índice (BM25 + Denso + Cross‑Encoder), fusión grafo↔texto y <b>paquetes de evidencia</b>.</p>
-          <p class="muted">Ejemplo: En QA de normativa, primero halla la ruta “artículo → término → aplicabilidad” en el grafo, y luego extrae los fragmentos como paquete de evidencia: más estable y barato que verter diez párrafos.</p>
-
-          <h3 id="retrieval-aware-es">3.2 Entrenamiento sensible a la recuperación (Self‑RAG / RA‑DIT / RAFT)</h3>
-          <p>Enseña <b>cuándo y qué recuperar</b>; bucles de autoevaluación y señales de recuperación en el fine‑tuning → <b>respuestas más fieles y explicables</b>.</p>
-          <p class="muted">Analogía: Enseñar “cuándo abrir el diccionario y en qué página”, en vez de cargarlo entero siempre.</p>
-
-          <h3 id="agentic-mcp-es">3.3 Agentes + MCP</h3>
-          <p>Tareas reales = <b>pasos múltiples</b> con herramientas. Unifica herramientas vía MCP; añade <b>límites de parada, presupuesto y latencia</b>, y <b>cachés</b>.</p>
-          <p class="muted">Escenario: Un análisis de causas raíz puede requerir “revisar logs → ejecutar SQL → comparar telemetría → validar procedimientos”. Agentes orquestan pasos con resguardos; RAG aporta evidencia y explicación.</p>
-
-          <h3 id="freshness-es">3.4 Frescura y streaming</h3>
-          <p>Ingesta incremental, TTL, selección de versiones, evaluación rodante.</p>
-
-          <h3 id="param-updates-es">3.5 Actualizaciones en parámetros (opcional)</h3>
-          <p>Para hechos cortos, estables, repetitivos: <b>fine-tuning ligero</b> o <b>edición quirúrgica</b>. Mantén principio <b>evidencia-primero</b> y bitácoras de procedencia.</p>
-
-          <h2 id="kblam-es-2">4. KBLaM: línea base fiable para entornos restringidos y regulados</h2>
-          <p>Con redes limitadas y cumplimiento estricto, “trazable y reproducible” pesa más que “elocuente”. <b>KBLaM</b> ofrece una base de ingeniería: del modelado de conocimiento a la trazabilidad de auditoría.</p>
-          <h3 id="kblam-components-es">4.1 Componentes</h3>
-          <p>Capa de conocimiento unificado (texto + <b>KG</b> + metadatos) · Planificador de recuperación · Constructor de cadenas de evidencia · Generación preferentemente <b>extractiva</b> con verificación · Evaluación y auditoría offline.</p>
-
-          <h3 id="kblam-flow-es">4.2 Flujo mínimo (pseudo)</h3>
-          <pre><code class="language-text">intent = clasificar(q)
-plan   = planificar(q)
-C      = recuperar_multietapa(q)                     # BM25 + Denso + Cross-Encoder
-si necesita_grafo: C = fusionar(C, rutas_grafo(q))
-E      = empaquetar_evidencia(C)
-a0     = generar(q, E)
-a      = verificar_y_refinar(a0) si hace falta
-registrar(a, E, coste, latencia, versiones)</code></pre>
-
-          <h3 id="tips-es">4.3 Consejos prácticos</h3>
-          <p>Fragmenta con estructura → recuperadores por tipo → reordenamiento de cruce → comprime evidencia en <b>puntos con citas</b> → actualiza en streaming con versionado.</p>
-
-          <h2 id="matrix-es-2">5. Matriz de selección (2025)</h2>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr><th>Caso de uso</th><th>Actualidad</th><th>Estructura</th><th>Restricciones</th><th>Pila recomendada</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>QA de normativa/procesos</td><td>Media</td><td>Alta</td><td>Auditoría</td><td><b>GraphRAG + Self-RAG/RAFT</b>, evidencia-primero</td></tr>
-                <tr><td>Operación/alertas</td><td>Alta</td><td>Media</td><td>Baja conectividad</td><td><b>Eventos + índice en streaming + Agentes</b></td></tr>
-                <tr><td>Plantillas de SOP</td><td>Baja</td><td>Media</td><td>Alta consistencia</td><td><b>Fine-tuning ligero + extracción</b>, edición opcional</td></tr>
-                <tr><td>Noticias/mercado</td><td>Muy alta</td><td>Baja</td><td>Sensible a coste</td><td><b>Rastreo en tiempo real + BM25/Denso + generación ligera</b></td></tr>
-                <tr><td>Razonamiento multi-salto</td><td>Media</td><td>Alta</td><td>Explicabilidad</td><td><b>GraphRAG + rutas visibles + ReAct/Plan-Exec</b></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2 id="eval-es">6. Evaluación y gobernanza</h2>
-          <p>Mide <b>fidelidad</b>, <b>cobertura de evidencia</b>, <b>anclaje</b>, <b>latencia P95</b>, <b>coste/pregunta</b>, <b>resiliencia a cambios</b> y <b>bitácoras de auditoría</b>.</p>
-
-          <h2 id="checklist-es">7. Lista de implantación</h2>
-          <p>Gobernanza de datos · Recuperación base (BM25 + Denso + X-encoder) · Plantillas Claim-Evidence con citas en línea · Límites de agente (herramientas/$/latencia) · Conjunto offline (≥1k preguntas) · Despliegue gradual + monitorización.</p>
-
-          <blockquote><p><b>Conclusión</b>: RAG no está obsoleto. El RAG <b>fiable, controlable y explicable</b> es el centro de la práctica en 2025; <b>KBLaM</b> ofrece un plano sólido para entornos regulados y con conectividad limitada.</p></blockquote>
-          <h2 id="refs-es">Referencias (fuentes oficiales)</h2>
-          <ul>
-            <li>Self-RAG:
-              <a href="https://arxiv.org/abs/2310.11511" target="_blank" rel="noopener">arXiv</a> ·
-              <a href="https://openreview.net/forum?id=VplGxL2Y1c" target="_blank" rel="noopener">OpenReview</a> ·
-              <a href="https://github.com/AkariAsai/self-rag" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li>RAFT (Retrieval-Augmented Fine-Tuning, 2024):
-              <a href="https://arxiv.org/abs/2403.10131" target="_blank" rel="noopener">arXiv</a>
-            </li>
-            <li>RA-DIT (2023):
-              <a href="https://arxiv.org/abs/2310.01352" target="_blank" rel="noopener">arXiv</a> ·
-              <a href="https://openreview.net/forum?id=3p3oI6G7pK" target="_blank" rel="noopener">OpenReview</a>
-            </li>
-            <li>GraphRAG:
-              <a href="https://microsoft.github.io/graphrag/blog_posts/" target="_blank" rel="noopener">Microsoft Research Blog</a> ·
-              <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li>MCP:
-              <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic Announcement</a> ·
-              <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">GitHub</a> ·
-              <a href="https://www.theverge.com/2024/6/26/24185188/anthropic-model-context-protocol-mcp-ai-tool" target="_blank" rel="noopener">The Verge</a>
-            </li>
-            <li>Google Gemini 1.5 (contexto largo):
-              <a href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank" rel="noopener">Blog oficial</a>
-            </li>
-          </ul>
-        </article>
-
         <hr style="margin: 24px 0">
-        <nav class="post-nav" aria-label="文章导航">
+        <nav class="post-nav" aria-label="Post navigation">
           <a class="btn outline" href="../blog.html">← 返回博客</a>
-          <span class="muted" style="margin:0 .5rem">·</span>
-          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">上一篇</a>
-          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">下一篇</a>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">上一个</a>
+          <a class="btn outline" href="./kblam-project-summary.html">下一个</a>
         </nav>
       </div>
     </section>
   </main>
-
   <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Fan Wan</p>
-    </div>
+    <div class="container"><p>© <span id="year"></span> Fan Wan</p></div>
   </footer>
+  <script>
+    (function(){
+      if (window.hljs) { try { window.hljs.highlightAll(); } catch(e){} }
+      function render(){ try { if (window.renderMathInElement) window.renderMathInElement(document.body, { delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false}] }); } catch(e){} }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+    })();
+  </script>
 </body>
 </html>

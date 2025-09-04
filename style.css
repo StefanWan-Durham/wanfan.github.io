@@ -1049,7 +1049,7 @@ header {
 .post-card { display:grid; grid-template-columns:140px 1fr; gap:14px; padding:14px; align-items:center; }
 /* Visually nudge thumbnails right a bit so text inside OG covers doesn't hug the left edge */
 @media (min-width: 561px){
-  .post-card .post-thumb { transform: translateX(10px); }
+  .post-card .post-thumb { transform: translateX(2px); }
 }
 /* Distinct, attractive blog title color to improve affordance */
 .post-card-title a.post-card-title-link {
