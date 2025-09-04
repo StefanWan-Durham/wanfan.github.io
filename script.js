@@ -320,29 +320,28 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isDisabled(prev) && !isDisabled(next)) return; // already wired
       (async () => {
         try {
-          let order = (window.__BLOG_ORDER__ || []).map(s=>String(s));
-          // If empty, fetch blog.html and parse post order from cards (newest first)
-          if (!order.length) {
-            const resp = await fetch('../blog.html', { cache: 'no-store' }).catch(() => null);
-            if (resp && resp.ok) {
-              const html = await resp.text();
-              const doc = new DOMParser().parseFromString(html, 'text/html');
-              const anchors = Array.from(doc.querySelectorAll('.blog-posts .post-card a.post-link'));
-              order = anchors.map(a => {
-                const href = a.getAttribute('href') || '';
-                const file = href.split('/').pop() || '';
-                // normalize to zh filename
-                return file.replace(/\.(en|es)\.html$/, '.html');
-              }).filter(Boolean);
-            }
+          // Always prefer the order on blog.html (newest first). If it fails, fall back to embedded order (oldest first).
+          let orderNewToOld = [];
+          const resp = await fetch('../blog.html', { cache: 'no-store' }).catch(() => null);
+          if (resp && resp.ok) {
+            const html = await resp.text();
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const anchors = Array.from(doc.querySelectorAll('.blog-posts .post-card a.post-link'));
+            orderNewToOld = anchors.map(a => {
+              const href = a.getAttribute('href') || '';
+              const file = href.split('/').pop() || '';
+              return file.replace(/\.(en|es)\.html$/, '.html');
+            }).filter(Boolean);
           }
-          if (!order.length) return;
+          const orderOldToNew = (window.__BLOG_ORDER__ || []).map(s=>String(s));
+          const haveNewToOld = orderNewToOld.length > 0;
+          const haveOldToNew = orderOldToNew.length > 0;
+          if (!haveNewToOld && !haveOldToNew) return;
           let current = location.pathname.split('/').pop(); // e.g., foo.html or foo.en.html
           const lang = current.endsWith('.en.html') ? 'en' : current.endsWith('.es.html') ? 'es' : 'zh';
           const base = current.replace(/\.(en|es)\.html$/, '.html');
           const zhName = base;
-          let idx = order.findIndex(name => name === zhName);
-          if (idx === -1) return;
+          // Helper to apply href with language suffix
           const setHref = (a, targetZhName) => {
             if (!a) return;
             let target = targetZhName;
@@ -352,9 +351,26 @@ document.addEventListener('DOMContentLoaded', () => {
             a.removeAttribute('aria-disabled');
             a.removeAttribute('onclick');
           };
-          // blog.html is newest -> oldest; define Prev=older, Next=newer
-          if (isDisabled(prev) && idx < order.length - 1) setHref(prev, order[idx + 1]);
-          if (isDisabled(next) && idx > 0) setHref(next, order[idx - 1]);
+          if (haveNewToOld) {
+            const order = orderNewToOld;
+            const idx = order.findIndex(name => name === zhName);
+            if (idx !== -1) {
+              // blog.html is newest -> oldest; Prev = older, Next = newer
+              if (isDisabled(prev) && idx < order.length - 1) setHref(prev, order[idx + 1]);
+              if (isDisabled(next) && idx > 0) setHref(next, order[idx - 1]);
+              return;
+            }
+          }
+          // Fallback: embedded order is oldest -> newest
+          if (haveOldToNew) {
+            const order = orderOldToNew;
+            const idx = order.findIndex(name => name === zhName);
+            if (idx !== -1) {
+              // embedded: oldest -> newest; Prev = older (idx-1), Next = newer (idx+1)
+              if (isDisabled(prev) && idx > 0) setHref(prev, order[idx - 1]);
+              if (isDisabled(next) && idx < order.length - 1) setHref(next, order[idx + 1]);
+            }
+          }
         } catch {}
       })();
     })();
