@@ -203,7 +203,7 @@ function mdToHtml(md, { slug } = {}) {
   return out.join('\n');
 }
 
-function buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevNext}){
+function buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevNext, orderList}){
   const langLabel = lang==='en' ? 'English' : lang==='es' ? 'Español' : '中文';
   const titleForTwitter = lang==='en' ? `${title} (with KBLaM)` : title;
   const url = `${siteOrigin}blog/${slug}${lang==='zh'?'':'.'+lang}.html`;
@@ -252,6 +252,7 @@ function buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevN
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
   <script defer src="../assets/vendor/qrcode.min.js"></script>
+  <script>window.__BLOG_ORDER__ = ${JSON.stringify(orderList || [])};</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -305,7 +306,7 @@ function buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevN
         <article class="i18n-block" data-lang="${lang}">
 ${bodyHtml}
         </article>
-        <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+  <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
           <strong class="share-title" data-i18n="share_label">${lang==='en'?'Share':(lang==='es'?'Compartir':'分享')}</strong>
           <div class="spacer" style="flex:0 0 8px"></div>
           <button class="btn outline share-btn" data-share="wechat">
@@ -316,8 +317,6 @@ ${bodyHtml}
             <span data-i18n="share_whatsapp">WhatsApp</span></a>
           <button class="btn outline share-btn" data-share="copy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="10" height="10" rx="2"/><rect x="5" y="5" width="10" height="10" rx="2"/></svg>
             <span data-i18n="share_copy">${lang==='en'?'Copy link':(lang==='es'?'Copiar enlace':'复制链接')}</span></button>
-          <a class="btn outline share-btn" data-share="download" download><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10"/><path d="M8 9l4 4 4-4"/><path d="M5 21h14"/></svg>
-            <span data-i18n="share_download">${lang==='en'?'Download cover':(lang==='es'?'Descargar portada':'下载封面')}</span></a>
           <button class="btn outline share-btn" data-share="native"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 16V3"/><path d="M8 7l4-4 4 4"/></svg>
             <span data-i18n="share_share">${lang==='en'?'Share…':(lang==='es'?'Compartir…':'分享…')}</span></button>
         </div>
@@ -433,7 +432,9 @@ async function buildPost(dir){
       if (!chosenRel) { chosenRel = 'assets/placeholder.jpg'; }
       const cover = meta.cover && /^https?:\/\//i.test(meta.cover) ? meta.cover : `${siteOrigin}${chosenRel}`;
   const bodyHtml = mdToHtml(body, { slug });
-      const html = buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevNext});
+  // Prepare order list using the computed global index (zh filenames, newest/oldest depends on index order)
+  const orderList = (globalThis.__postIndex || []).map(it => `${it.slug}.html`);
+  const html = buildHtml({lang, slug, title, description, date, bodyHtml, cover, prevNext, orderList});
       const outPath = path.join(outDir, `${slug}${lang==='zh'?'':'.'+lang}.html`);
       await fs.writeFile(outPath, html, 'utf8');
       console.log('Wrote', path.relative(root, outPath));

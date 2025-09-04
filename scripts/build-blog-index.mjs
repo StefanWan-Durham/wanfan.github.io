@@ -88,8 +88,8 @@ async function cardHtml(slug, metas){
                  style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
           </a>
           <div>
-            <h3 style="margin:0 0 6px 0">
-              <a href="${hrefZh}" style="text-decoration:none;color:var(--text)">
+            <h3 class="post-card-title" style="margin:0 0 8px 0">
+              <a class="post-card-title-link" href="${hrefZh}">
                 <span class="i18n l-zh">${metas.zh?.title || metas.en?.title || ''}</span>
                 <span class="i18n l-en">${metas.en?.title || metas.zh?.title || ''}</span>
                 <span class="i18n l-es">${metas.es?.title || metas.en?.title || ''}</span>

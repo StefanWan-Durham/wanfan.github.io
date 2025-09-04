@@ -222,32 +222,15 @@ document.addEventListener('DOMContentLoaded', () => {
       syncPostHero();
     });
 
-    // Share feature: WeChat QR, WhatsApp, Copy link, Download cover, Native share
+  // Share feature: WeChat QR, WhatsApp, Copy link, Native share (Download cover removed)
     (function initShare(){
       const bar = document.querySelector('.share-toolbar');
       if (!bar) return;
       function activeLang(){ return localStorage.getItem('lang') || document.documentElement.lang || 'zh'; }
       function currentUrl(){ return location.href.split('#')[0]; }
-      function postCover(){
-        const lang = activeLang();
-        // Try to read current visible hero image src
-        const art = document.querySelector('.post-hero-art:not([hidden]) img');
-        if (art && art.getAttribute('src')) return art.getAttribute('src');
-        // fallback by convention
-        if (lang==='en') return '../assets/blog/rag-hero-en.v5.svg';
-        if (lang==='es') return '../assets/blog/rag-hero-es.v5.svg';
-        return '../assets/blog/rag-hero-zh.v5.svg';
-      }
       function whatsappHref(){
         const text = encodeURIComponent(document.title + ' ' + currentUrl());
         return 'https://wa.me/?text=' + text;
-      }
-      function setDownloadLink(a){
-        const src = postCover();
-        a.setAttribute('href', src);
-        // derive filename
-        const fn = src.split('/').pop() || 'cover.svg';
-        a.setAttribute('download', fn);
       }
       // Minimal QR generator for URL using a tiny SVG fallback (no external dep)
       async function renderQR(target, text){
@@ -290,13 +273,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const btnWeChat = bar.querySelector('[data-share="wechat"]');
       const btnWhats = bar.querySelector('[data-share="whatsapp"]');
       const btnCopy = bar.querySelector('[data-share="copy"]');
-      const btnDown = bar.querySelector('[data-share="download"]');
+  const btnDown = null; // removed
       const btnNative = bar.querySelector('[data-share="native"]');
       const modal = document.getElementById('share-modal');
       const modalClose = modal?.querySelector('[data-close]');
       const qr = document.getElementById('qr');
       if (btnWhats) btnWhats.setAttribute('href', whatsappHref());
-      if (btnDown) setDownloadLink(btnDown);
+  // download feature removed
       if (btnWeChat) btnWeChat.addEventListener('click', () => { openModal(); renderQR(qr, currentUrl()); });
       if (modalClose) modalClose.addEventListener('click', closeModal);
       if (modal) modal.addEventListener('click', (e)=>{ if (e.target===modal) closeModal(); });
@@ -320,8 +303,60 @@ document.addEventListener('DOMContentLoaded', () => {
       // Keep WhatsApp link and download cover in sync when language changes
       window.addEventListener('language-changed', () => {
         if (btnWhats) btnWhats.setAttribute('href', whatsappHref());
-        if (btnDown) setDownloadLink(btnDown);
       });
+    })();
+
+    // Robust prev/next wiring: if links are disabled but neighbors exist, compute URLs
+    (function fixPrevNext(){
+      const nav = document.querySelector('.post-nav');
+      if (!nav) return;
+      const links = Array.from(nav.querySelectorAll('a.btn.outline'));
+      if (links.length < 3) return; // expect: [Back], [Prev], [Next]
+      const back = links[0];
+      const prev = links[1];
+      const next = links[2];
+      // If prev/next are disabled (#), attempt to compute from blog index order
+      const isDisabled = (a)=> a.getAttribute('href') === '#' || a.hasAttribute('aria-disabled');
+      if (!isDisabled(prev) && !isDisabled(next)) return; // already wired
+      (async () => {
+        try {
+          let order = (window.__BLOG_ORDER__ || []).map(s=>String(s));
+          // If empty, fetch blog.html and parse post order from cards (newest first)
+          if (!order.length) {
+            const resp = await fetch('../blog.html', { cache: 'no-store' }).catch(() => null);
+            if (resp && resp.ok) {
+              const html = await resp.text();
+              const doc = new DOMParser().parseFromString(html, 'text/html');
+              const anchors = Array.from(doc.querySelectorAll('.blog-posts .post-card a.post-link'));
+              order = anchors.map(a => {
+                const href = a.getAttribute('href') || '';
+                const file = href.split('/').pop() || '';
+                // normalize to zh filename
+                return file.replace(/\.(en|es)\.html$/, '.html');
+              }).filter(Boolean);
+            }
+          }
+          if (!order.length) return;
+          let current = location.pathname.split('/').pop(); // e.g., foo.html or foo.en.html
+          const lang = current.endsWith('.en.html') ? 'en' : current.endsWith('.es.html') ? 'es' : 'zh';
+          const base = current.replace(/\.(en|es)\.html$/, '.html');
+          const zhName = base;
+          let idx = order.findIndex(name => name === zhName);
+          if (idx === -1) return;
+          const setHref = (a, targetZhName) => {
+            if (!a) return;
+            let target = targetZhName;
+            if (lang === 'en') target = target.replace(/\.html$/, '.en.html');
+            else if (lang === 'es') target = target.replace(/\.html$/, '.es.html');
+            a.setAttribute('href', `./${target}`);
+            a.removeAttribute('aria-disabled');
+            a.removeAttribute('onclick');
+          };
+          // blog.html is newest -> oldest; define Prev=older, Next=newer
+          if (isDisabled(prev) && idx < order.length - 1) setHref(prev, order[idx + 1]);
+          if (isDisabled(next) && idx > 0) setHref(next, order[idx - 1]);
+        } catch {}
+      })();
     })();
   })();
 
