@@ -341,13 +341,13 @@ ${bodyHtml}
             <p class="muted" style="margin:4px 0 0 0">${lang==='en'?'Get updates via RSS or Email. No spam.':(lang==='es'?'Recibe actualizaciones por RSS o Email. Sin spam.':'通过 RSS 或 Email 获取更新。')}</p>
           </div>
           <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-            <a class="btn rss outline" id="rss-button" href="../rss.xml">
+            <a class="btn rss outline" id="rss-button" href="../subscribe.html#rss">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:6px"><g fill="currentColor"><path d="M6 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/><path d="M2 6a16 16 0 0 1 16 16h-3A13 13 0 0 0 2 9V6Z"/><path d="M2 11a11 11 0 0 1 11 11h-3A8 8 0 0 0 2 14v-3Z"/></g></svg>
               <span class="i18n l-zh">RSS 订阅</span>
               <span class="i18n l-en">RSS Subscribe</span>
               <span class="i18n l-es">Suscribirse por RSS</span>
             </a>
-            <a class="btn rss outline" id="email-button" href="../subscribe.html">
+            <a class="btn rss outline" id="email-button" href="../subscribe.html#email">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:6px"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></svg>
               ${lang==='en'?'Email Subscribe':(lang==='es'?'Suscripción por email':'邮箱订阅')}
             </a>

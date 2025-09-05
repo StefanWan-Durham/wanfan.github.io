@@ -564,14 +564,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function activeLang(){ return localStorage.getItem('lang') || document.documentElement.lang || 'zh'; }
     function setHrefs(){
       const lang = activeLang();
-      const rss = document.getElementById('rss-button');
-      const email = document.getElementById('email-button');
+  const rss = document.getElementById('rss-button');
+  const email = document.getElementById('email-button');
+  const subscribeUnified = document.getElementById('subscribe-button');
       if (rss) {
-        let href = 'rss.xml';
-        if (location.pathname.includes('/blog/')) href = '../' + href; // adjust relative path on post pages
-        if (lang === 'en') href = href.replace('rss.xml', 'rss-en.xml');
-        else if (lang === 'es') href = href.replace('rss.xml', 'rss-es.xml');
-        rss.setAttribute('href', href);
+        // Route RSS button to subscribe hub with language + #rss
+        let href = 'subscribe.html';
+        if (location.pathname.includes('/blog/')) href = '../' + href; // adjust on post pages
+        const url = new URL(href, location.origin);
+        url.searchParams.set('lang', lang);
+        url.hash = 'rss';
+        rss.setAttribute('href', url.pathname + url.search + url.hash);
         const titles = { zh: 'RSS 订阅', en: 'RSS', es: 'RSS' };
         rss.setAttribute('title', titles[lang] || 'RSS');
         rss.setAttribute('aria-label', titles[lang] || 'RSS');
@@ -582,7 +585,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add language hint via query param for subscribe page routing
         const url = new URL(href, location.origin);
         url.searchParams.set('lang', lang);
-        email.setAttribute('href', url.pathname + url.search);
+        url.hash = 'email';
+        email.setAttribute('href', url.pathname + url.search + url.hash);
+      }
+      if (subscribeUnified) {
+        let href = 'subscribe.html';
+        if (location.pathname.includes('/blog/')) href = '../' + href;
+        const url = new URL(href, location.origin);
+        url.searchParams.set('lang', lang);
+        // Default focus to RSS tab on first landing; user can switch to email there
+        url.hash = 'rss';
+        subscribeUnified.setAttribute('href', url.pathname + url.search + url.hash);
+        const titles = { zh: '订阅', en: 'Subscribe', es: 'Suscribirse' };
+        subscribeUnified.setAttribute('title', titles[lang] || 'Subscribe');
+        subscribeUnified.setAttribute('aria-label', titles[lang] || 'Subscribe');
       }
     }
     // run on load

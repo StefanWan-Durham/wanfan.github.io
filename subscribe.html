@@ -137,7 +137,7 @@
     <div class="container"><p>© <span id="year"></span> Fan Wan</p></div>
   </footer>
   <script>
-    // Year
+  // Year
     document.getElementById('year').textContent = new Date().getFullYear();
     // Determine language from query (?lang=zh|en|es) or saved preference
     (function initLang(){
@@ -169,8 +169,12 @@
         if (!card || !row) return;
         // Clear previous help blocks on re-run
         card.querySelectorAll('[data-rss-help]')?.forEach(n => n.remove());
-        const feedHref = (document.getElementById('rss-button')||{}).getAttribute?.('href') || 'rss.xml';
-        const feedUrl = new URL(feedHref, location.origin).toString();
+  const feedHref = (document.getElementById('rss-button')||{}).getAttribute?.('href') || 'rss.xml';
+  // Ensure external readers receive a publicly reachable URL (not localhost)
+  const PROD_ORIGIN = 'https://fanwan-ai.github.io/';
+  const isLocal = location.protocol === 'file:' || /^(?:https?:\/\/)?(?:localhost|127\.0\.0\.1)(?::\d+)?$/i.test(location.origin);
+  const base = isLocal ? PROD_ORIGIN : location.origin + '/';
+  const feedUrl = new URL(feedHref, base).toString();
         const ua = navigator.userAgent || navigator.vendor || window.opera || '';
         const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
         const isSafari = /Safari/i.test(ua) && !/Chrome|CriOS|Android/i.test(ua);
@@ -299,6 +303,23 @@
           card.appendChild(container);
         }
       }
+      // If deep-linked (#rss or #email), focus-highlight the section
+      (function focusHash(){
+        const h = (location.hash || '').toLowerCase();
+        const map = { '#rss': 'rss-card', '#email': 'email-card' };
+        const id = map[h];
+        if (!id) return;
+        const card = document.getElementById(id);
+        if (card){
+          card.setAttribute('tabindex','-1');
+          card.style.outline = '2px solid var(--primary)';
+          card.style.outlineOffset = '2px';
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setTimeout(()=>{ card.focus(); }, 50);
+          setTimeout(()=>{ card.style.outline=''; card.style.outlineOffset=''; card.removeAttribute('tabindex'); }, 1600);
+        }
+      })();
+
       // Build help now that href is set
       buildRssHelp();
       // Respond to language change from the header menu
