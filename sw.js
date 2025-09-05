@@ -14,7 +14,8 @@ const ASSETS = [
   './assets/logo.svg',
   './assets/avatar.svg',
   // Keep only critical assets; large images should be fetched on demand
-  './portfolio.json'
+  './portfolio.json',
+  './assets/data/profile.json'
 ];
 self.addEventListener('install', (event) => {
   event.waitUntil(

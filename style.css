@@ -1256,7 +1256,7 @@ footer {
     font-size: 1rem;
   }
   /* On mobile, bypass fade-in to avoid rare IO timing issues: show sections immediately */
-  .blog-post .section { opacity: 1; transform: none; }
+  .section { opacity: 1; transform: none; }
 }
 
 /* Very small devices: further cap image height */

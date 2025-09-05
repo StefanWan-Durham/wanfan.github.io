@@ -129,7 +129,7 @@
 
   <main id="main">
   <!-- Hero Section -->
-  <section class="hero section" id="hero">
+  <section class="hero section visible" id="hero">
     <div class="bg-shapes">
       <span class="shape shape1"></span>
       <span class="shape shape2"></span>
@@ -144,11 +144,11 @@
   </section>
 
   <!-- About Section -->
-  <section class="about section" id="about">
+  <section class="about section visible" id="about">
     <div class="container about-grid">
       <div class="about-text">
-        <h2 data-i18n="about_title" data-profile="home.about_title">把 LLM 变成可交付的产品。</h2>
-        <p class="lead" data-profile="home.about_intro">……</p>
+  <h2 data-i18n="about_title" data-profile="home.about_title">把 LLM 变成可交付的产品。</h2>
+  <p class="lead" data-profile="home.about_intro">我专注企业级知识检索与问答、知识平台、多模态理解与生成，目标是让模型听懂企业知识、保护数据隐私、并输出可验证答案。曾任杜伦大学 HI-Lab 实验室主管，单年内带领团队发表 10 余篇学术论文。现在在一家中央企业做 AI 研发，面向真实业务交付稳定系统。</p>
         <div class="feature-columns" id="home-feature-columns">
           <section class="feature-group">
             <h3 id="home-deliver-title">我能为你带来什么</h3>
@@ -234,7 +234,7 @@
   (function(){
     async function hydrate(){
       try{
-        const res = await fetch('assets/data/profile.json', { cache: 'no-store' });
+  const res = await fetch('assets/data/profile.json');
         if(!res.ok) return;
         const profile = await res.json();
         const lang = (localStorage.getItem('lang') || document.documentElement.lang || 'zh').slice(0,2);
