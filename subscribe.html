@@ -161,10 +161,12 @@
         rss.setAttribute('aria-label', 'RSS');
       }
       // Build platform-specific tips, copy, and quick links for RSS
-      (function buildRssHelp(){
+      function buildRssHelp(){
         const card = document.getElementById('rss-card');
         const row = document.getElementById('rss-row');
         if (!card || !row) return;
+        // Clear previous help blocks on re-run
+        card.querySelectorAll('[data-rss-help]')?.forEach(n => n.remove());
         const feedHref = (document.getElementById('rss-button')||{}).getAttribute?.('href') || 'rss.xml';
         const feedUrl = new URL(feedHref, location.origin).toString();
         const ua = navigator.userAgent || navigator.vendor || window.opera || '';
@@ -201,15 +203,17 @@
         };
 
         const t = texts[lang] || texts.zh;
-        const tip = document.createElement('p');
+  const tip = document.createElement('p');
         tip.className = 'muted';
         tip.style.margin = '0';
         tip.textContent = isIOSSafari ? t.tipIOS : (isAndroid ? t.tipAndroid : t.tipOther);
-        card.appendChild(tip);
+  tip.setAttribute('data-rss-help','');
+  card.appendChild(tip);
 
         // Actions: copy + quick links
-        const actions = document.createElement('div');
+  const actions = document.createElement('div');
         actions.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:4px';
+  actions.setAttribute('data-rss-help','');
         const copyBtn = document.createElement('button');
         copyBtn.id = 'copy-rss';
         copyBtn.className = 'btn outline';
@@ -246,9 +250,9 @@
           actions.appendChild(link('reeder://x-callback-url/subscribe?feed=' + encodeURIComponent(feedUrl), 'Reeder'));
         }
         card.appendChild(actions);
-      })();
+      }
       // Adapt Buttondown popup to language (optional UX tweak)
-      const form = document.querySelector('form.embeddable-buttondown-form');
+  const form = document.querySelector('form.embeddable-buttondown-form');
       if (form) {
         // Route to language-specific handles if configured
         const handle = EMAIL_HANDLES[lang];
@@ -293,6 +297,28 @@
           card.appendChild(container);
         }
       }
+      // Build help now that href is set
+      buildRssHelp();
+      // Respond to language change from the header menu
+      window.addEventListener('language-changed', (e)=>{
+        const newLang = (e?.detail?.lang) || (localStorage.getItem('lang')||'zh');
+        document.querySelectorAll('.i18n').forEach(el => { el.style.display = 'none'; });
+        document.querySelectorAll('.i18n.l-' + newLang).forEach(el => { el.style.display = ''; });
+        // Update RSS target
+        const rss2 = document.getElementById('rss-button');
+        if (rss2) {
+          let href = 'rss.xml';
+          if (newLang === 'en') href = 'rss-en.xml';
+          else if (newLang === 'es') href = 'rss-es.xml';
+          rss2.setAttribute('href', href);
+        }
+        // Rebuild help and email handle
+        buildRssHelp();
+        const handle2 = EMAIL_HANDLES[newLang];
+        if (form && handle2 && !/YOUR_HANDLE/.test(handle2)) {
+          form.setAttribute('action', `https://buttondown.com/api/emails/embed-subscribe/${handle2}`);
+        }
+      });
     })();
   </script>
 </body>
