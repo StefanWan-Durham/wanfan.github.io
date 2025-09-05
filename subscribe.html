@@ -10,6 +10,8 @@
   <link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="rss.xml">
   <link rel="alternate" type="application/rss+xml" title="RSS (EN)" href="rss-en.xml">
   <link rel="alternate" type="application/rss+xml" title="RSS (ES)" href="rss-es.xml">
+  <script defer src="lang.js"></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -17,11 +19,56 @@
     <nav class="navbar container">
       <a href="index.html" class="brand" aria-label="Home">
         <img src="assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
-        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
+        <span class="logo">
+          <span class="i18n l-zh">首页</span>
+          <span class="i18n l-en">Home</span>
+          <span class="i18n l-es">Inicio</span>
+        </span>
       </a>
       <ul class="nav-links">
+        <li><a href="index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
         <li><a href="blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
       </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label"></span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+          <select id="lang-select" hidden>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+              <path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/>
+              <path d="M12 2v2"/>
+              <path d="M4 10h2"/>
+              <path d="M18 10h2"/>
+              <path d="M5.5 5.5l1.4 1.4"/>
+              <path d="M18.5 5.5l-1.4 1.4"/>
+            </g>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon icon-system" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><path d="M8 20h8M12 16v4"/></g></svg>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
     </nav>
   </header>
   <main id="main">
@@ -128,7 +175,7 @@
 
         const texts = {
           zh: {
-            tipIOS: '如果点开后看到一堆文字，说明 Safari 没有内置 RSS 阅读器。请先安装 Reeder 或 NetNewsWire，再使用上方按钮或下面的一键订阅。',
+            tipIOS: '如果点开后看到一堆文字，说明 你的浏览器没有内置 RSS 阅读器。请先安装 Reeder 或 NetNewsWire，再使用上方按钮或下面的一键订阅。',
             tipAndroid: '如果浏览器直接显示一堆文本，请使用 Feedly 或 Inoreader 订阅，或复制链接到你喜欢的阅读器。',
             tipOther: '你的浏览器可能不会自动订阅 RSS。可以使用下面的一键订阅按钮，或复制 RSS 链接到阅读器。',
             copy: '复制 RSS 链接',
@@ -136,7 +183,7 @@
             openIn: '一键订阅：'
           },
           en: {
-            tipIOS: 'If you just see plain text, Safari has no built‑in RSS reader. Install Reeder or NetNewsWire, then use the button above or quick links below.',
+            tipIOS: 'If you just see plain text, your browser has no built‑in RSS reader. Install Reeder or NetNewsWire, then use the button above or quick links below.',
             tipAndroid: 'If the browser shows raw text, use Feedly or Inoreader, or copy the feed URL to your reader.',
             tipOther: 'Your browser may not subscribe directly. Use the quick links below or copy the feed URL.',
             copy: 'Copy RSS link',
@@ -144,7 +191,7 @@
             openIn: 'Quick subscribe: '
           },
           es: {
-            tipIOS: 'Si ves solo texto, Safari no trae lector RSS integrado. Instala Reeder o NetNewsWire y usa el botón o los accesos rápidos abajo.',
+            tipIOS: 'Si ves solo texto, tu navegador no trae lector RSS integrado. Instala Reeder o NetNewsWire y usa el botón o los accesos rápidos abajo.',
             tipAndroid: 'Si el navegador muestra texto en crudo, usa Feedly o Inoreader, o copia el enlace del feed a tu lector.',
             tipOther: 'Puede que tu navegador no suscriba directamente. Usa los accesos rápidos o copia el enlace del feed.',
             copy: 'Copiar enlace RSS',

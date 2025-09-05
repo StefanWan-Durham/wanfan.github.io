@@ -181,6 +181,9 @@ html[lang="es"] .i18n.l-es { display: inline; }
 .btn.rss:hover { background: var(--primary-600); transform: translateY(-1px); box-shadow: var(--shadow-md); }
 .btn.rss.outline { background: transparent; color: var(--primary); border-color: color-mix(in oklab, var(--primary), var(--border) 45%); font-size: 0.92rem; padding: 0.6rem 1rem; }
 .btn.rss.outline:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+/* Center the standalone RSS icon perfectly */
+#rss-button.icon-only, a#rss-button.icon-only { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; }
+#rss-button.icon-only .icon { width: 18px; height: 18px; display: block; }
 
 /* Light theme: boost contrast for outline variant (dark text/border) */
 :root[data-theme="light"] .btn.rss.outline {
