@@ -37,7 +37,7 @@
     </section>
     <section class="section">
       <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;align-items:start">
-        <div class="card" style="padding:20px;display:grid;gap:12px">
+  <div class="card" id="rss-card" style="padding:20px;display:grid;gap:12px">
           <h3 style="display:flex;align-items:center;gap:8px;margin:0">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 8h16M8 4v16" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
             <span class="i18n l-zh">RSS</span>
@@ -47,14 +47,15 @@
           <p class="muted i18n l-zh" style="margin:0">使用你偏好的阅读器订阅：</p>
           <p class="muted i18n l-en" style="margin:0">Subscribe in your preferred reader:</p>
           <p class="muted i18n l-es" style="margin:0">Suscríbete en tu lector preferido:</p>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <div id="rss-row" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
             <a class="btn rss outline icon-only" id="rss-button" href="rss.xml" aria-label="RSS">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><path d="M6 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/><path d="M2 6a16 16 0 0 1 16 16h-3A13 13 0 0 0 2 9V6Z"/><path d="M2 11a11 11 0 0 1 11 11h-3A8 8 0 0 0 2 14v-3Z"/></g></svg>
             </a>
             <span class="muted" style="font-size:12px">Reeder · NetNewsWire · Inoreader · Feedly …</span>
           </div>
+          <!-- Helper area will be injected by JS: platform tips + copy + quick links -->
         </div>
-        <div class="card" style="padding:20px;display:grid;gap:12px">
+        <div class="card" id="email-card" style="padding:20px;display:grid;gap:12px">
           <h3 style="display:flex;align-items:center;gap:8px;margin:0">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 8l8 5 8-5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
             Email
@@ -63,7 +64,9 @@
           <p class="muted i18n l-en" style="margin:0">We’ll email you when I publish a new post. No spam; unsubscribe anytime.</p>
           <p class="muted i18n l-es" style="margin:0">Recibirás un email cuando publique un nuevo artículo. Sin spam; cancela cuando quieras.</p>
           <!-- Replace YOUR_HANDLE with your Buttondown handle if you create one -->
-          <form action="https://buttondown.email/api/emails/embed-subscribe/YOUR_HANDLE" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/YOUR_HANDLE', 'popupwindow')" class="embeddable-buttondown-form" style="display:grid;gap:10px;max-width:420px">
+          <!-- Hidden iframe to receive Buttondown POST, avoiding popup blockers/new tabs -->
+          <iframe name="bd-iframe" id="bd-iframe" style="display:none" aria-hidden="true"></iframe>
+          <form action="https://buttondown.com/api/emails/embed-subscribe/YOUR_HANDLE" method="post" target="bd-iframe" class="embeddable-buttondown-form" style="display:grid;gap:10px;max-width:420px">
             <label for="bd-email" class="muted i18n l-zh">邮箱</label>
             <label for="bd-email" class="muted i18n l-en">Email</label>
             <label for="bd-email" class="muted i18n l-es">Correo</label>
@@ -76,6 +79,7 @@
             <p class="muted i18n l-en" style="font-size:12px">Privacy-friendly. We only use your email to send updates.</p>
             <p class="muted i18n l-es" style="font-size:12px">Privacidad ante todo. Solo usamos tu correo para enviar actualizaciones.</p>
           </form>
+          <div id="bd-success" class="muted" style="display:none;font-size:12px;margin-top:4px"></div>
         </div>
       </div>
     </section>
@@ -88,12 +92,14 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     // Determine language from query (?lang=zh|en|es) or saved preference
     (function initLang(){
-  const EMAIL_HANDLES = { zh: 'YOUR_HANDLE_ZH', en: 'YOUR_HANDLE_EN', es: 'YOUR_HANDLE_ES' }; // TODO: set your provider handles
-      const qp = new URLSearchParams(location.search);
-      const ql = qp.get('lang');
-      const lang = (ql==='en'||ql==='es'||ql==='zh') ? ql : (localStorage.getItem('lang') || document.documentElement.lang || 'zh');
-      document.documentElement.setAttribute('lang', lang);
-      try { localStorage.setItem('lang', lang); } catch {}
+  const EMAIL_HANDLES = { zh: 'wan', en: 'wan', es: 'wan' }; // configured Buttondown handle
+  const qp = new URLSearchParams(location.search);
+  const ql = qp.get('lang');
+  const raw = ql || localStorage.getItem('lang') || document.documentElement.lang || 'zh';
+  const norm = (raw || '').toLowerCase().slice(0,2);
+  const lang = (norm==='en'||norm==='es'||norm==='zh') ? norm : 'zh';
+  document.documentElement.setAttribute('lang', lang);
+  try { localStorage.setItem('lang', lang); } catch {}
       // Toggle i18n visibility
       document.querySelectorAll('.i18n').forEach(el => { el.style.display = 'none'; });
       document.querySelectorAll('.i18n.l-' + lang).forEach(el => { el.style.display = ''; });
@@ -107,21 +113,137 @@
         rss.setAttribute('title', 'RSS');
         rss.setAttribute('aria-label', 'RSS');
       }
+      // Build platform-specific tips, copy, and quick links for RSS
+      (function buildRssHelp(){
+        const card = document.getElementById('rss-card');
+        const row = document.getElementById('rss-row');
+        if (!card || !row) return;
+        const feedHref = (document.getElementById('rss-button')||{}).getAttribute?.('href') || 'rss.xml';
+        const feedUrl = new URL(feedHref, location.origin).toString();
+        const ua = navigator.userAgent || navigator.vendor || window.opera || '';
+        const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        const isSafari = /Safari/i.test(ua) && !/Chrome|CriOS|Android/i.test(ua);
+        const isIOSSafari = isIOS && isSafari;
+        const isAndroid = /Android/i.test(ua);
+
+        const texts = {
+          zh: {
+            tipIOS: '如果点开后看到一堆文字，说明 Safari 没有内置 RSS 阅读器。请先安装 Reeder 或 NetNewsWire，再使用上方按钮或下面的一键订阅。',
+            tipAndroid: '如果浏览器直接显示一堆文本，请使用 Feedly 或 Inoreader 订阅，或复制链接到你喜欢的阅读器。',
+            tipOther: '你的浏览器可能不会自动订阅 RSS。可以使用下面的一键订阅按钮，或复制 RSS 链接到阅读器。',
+            copy: '复制 RSS 链接',
+            copied: '已复制',
+            openIn: '一键订阅：'
+          },
+          en: {
+            tipIOS: 'If you just see plain text, Safari has no built‑in RSS reader. Install Reeder or NetNewsWire, then use the button above or quick links below.',
+            tipAndroid: 'If the browser shows raw text, use Feedly or Inoreader, or copy the feed URL to your reader.',
+            tipOther: 'Your browser may not subscribe directly. Use the quick links below or copy the feed URL.',
+            copy: 'Copy RSS link',
+            copied: 'Copied',
+            openIn: 'Quick subscribe: '
+          },
+          es: {
+            tipIOS: 'Si ves solo texto, Safari no trae lector RSS integrado. Instala Reeder o NetNewsWire y usa el botón o los accesos rápidos abajo.',
+            tipAndroid: 'Si el navegador muestra texto en crudo, usa Feedly o Inoreader, o copia el enlace del feed a tu lector.',
+            tipOther: 'Puede que tu navegador no suscriba directamente. Usa los accesos rápidos o copia el enlace del feed.',
+            copy: 'Copiar enlace RSS',
+            copied: 'Copiado',
+            openIn: 'Suscribirse rápido: '
+          }
+        };
+
+        const t = texts[lang] || texts.zh;
+        const tip = document.createElement('p');
+        tip.className = 'muted';
+        tip.style.margin = '0';
+        tip.textContent = isIOSSafari ? t.tipIOS : (isAndroid ? t.tipAndroid : t.tipOther);
+        card.appendChild(tip);
+
+        // Actions: copy + quick links
+        const actions = document.createElement('div');
+        actions.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:4px';
+        const copyBtn = document.createElement('button');
+        copyBtn.id = 'copy-rss';
+        copyBtn.className = 'btn outline';
+        copyBtn.style.cssText = 'padding:6px 10px;font-size:12px';
+        copyBtn.textContent = t.copy;
+        copyBtn.addEventListener('click', async () => {
+          try {
+            if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(feedUrl);
+            else {
+              const ta = document.createElement('textarea');
+              ta.value = feedUrl; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+            }
+            copyBtn.textContent = t.copied; setTimeout(()=> copyBtn.textContent = t.copy, 1200);
+          } catch {}
+        });
+        actions.appendChild(copyBtn);
+
+        const label = document.createElement('span');
+        label.className = 'muted';
+        label.style.fontSize = '12px';
+        label.textContent = t.openIn;
+        actions.appendChild(label);
+
+        const link = (href, name) => {
+          const a = document.createElement('a');
+          a.className = 'btn outline';
+          a.style.cssText = 'padding:6px 10px;font-size:12px';
+          a.href = href; a.target = '_blank'; a.rel = 'noopener'; a.textContent = name; return a;
+        };
+        actions.appendChild(link('https://feedly.com/i/subscription/feed/' + encodeURIComponent(feedUrl), 'Feedly'));
+        actions.appendChild(link('https://www.inoreader.com/?add_feed=' + encodeURIComponent(feedUrl), 'Inoreader'));
+        if (isIOS) {
+          actions.appendChild(link('netnewswire://subscribe?url=' + encodeURIComponent(feedUrl), 'NetNewsWire'));
+          actions.appendChild(link('reeder://x-callback-url/subscribe?feed=' + encodeURIComponent(feedUrl), 'Reeder'));
+        }
+        card.appendChild(actions);
+      })();
       // Adapt Buttondown popup to language (optional UX tweak)
       const form = document.querySelector('form.embeddable-buttondown-form');
       if (form) {
         // Route to language-specific handles if configured
         const handle = EMAIL_HANDLES[lang];
-        if (handle && !/YOUR_HANDLE/.test(handle)) {
-          form.setAttribute('action', `https://buttondown.email/api/emails/embed-subscribe/${handle}`);
-          form.setAttribute('onsubmit', `window.open('https://buttondown.email/${handle}', 'popupwindow')`);
+         if (handle && !/YOUR_HANDLE/.test(handle)) {
+          form.setAttribute('action', `https://buttondown.com/api/emails/embed-subscribe/${handle}`);
+          // Submit to hidden iframe and show a friendly inline confirmation
+          const success = document.getElementById('bd-success');
+          form.addEventListener('submit', () => {
+            if (success){
+              const map = {
+                zh: '已提交，请查收确认邮件（可能在垃圾箱）。感谢订阅！',
+                en: 'Submitted! Please check your inbox for a confirmation email (may land in spam).',
+                es: '¡Enviado! Revisa tu correo para confirmar la suscripción (puede llegar a spam).'
+              };
+              success.textContent = map[lang] || map.zh;
+              success.style.display = 'block';
+            }
+          });
         } else {
-          // Show a helpful warning card if not configured
-          const warn = document.createElement('div');
-          warn.className = 'card';
-          warn.style.cssText = 'padding:12px;margin-top:8px;border:1px dashed var(--border)';
-          warn.innerHTML = '<p class="muted">Set your email provider handle for ' + lang + ' in subscribe.html (EMAIL_HANDLES). The form won\'t work until configured.</p>';
-          form.parentNode.insertBefore(warn, form);
+          // Hide the form and show a clearer notice with contact link
+          form.style.display = 'none';
+          const card = document.getElementById('email-card') || form.parentNode;
+          const p = document.createElement('p');
+          p.className = 'muted';
+          p.style.margin = '0';
+          const textMap = {
+            zh: '邮件订阅暂未配置，当前不可用。你可以使用 RSS 订阅，或前往“联系”页面与我取得联系。',
+            en: 'Email subscription is not configured yet. Please use RSS for now or reach me via the Contact page.',
+            es: 'La suscripción por correo aún no está configurada. Usa RSS por ahora o contáctame desde la página de Contacto.'
+          };
+          const link = document.createElement('a');
+          link.href = 'contact.html'; link.textContent = lang==='en' ? 'Contact' : (lang==='es' ? 'Contacto' : '联系');
+          link.style.marginLeft = '4px';
+          // Compose message with link
+          const container = document.createElement('div');
+          container.className = 'card';
+          container.style.cssText = 'padding:12px;margin-top:8px;border:1px dashed var(--border)';
+          const span = document.createElement('span');
+          span.textContent = (textMap[lang] || textMap.zh).replace('“联系”', '');
+          container.appendChild(p);
+          container.innerHTML = `<p class="muted" style="margin:0">${textMap[lang] || textMap.zh} <a href="contact.html">${link.textContent}</a></p>`;
+          card.appendChild(container);
         }
       }
     })();
