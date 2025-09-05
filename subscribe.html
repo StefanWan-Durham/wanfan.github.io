@@ -16,7 +16,11 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">
+    <span class="i18n l-zh">跳到主要内容</span>
+    <span class="i18n l-en">Skip to main content</span>
+    <span class="i18n l-es">Ir al contenido principal</span>
+  </a>
   <header>
     <nav class="navbar container">
       <a href="index.html" class="brand" aria-label="Home">
@@ -107,7 +111,9 @@
         <div class="card" id="email-card" style="padding:20px;display:grid;gap:12px">
           <h3 style="display:flex;align-items:center;gap:8px;margin:0">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 8l8 5 8-5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
-            Email
+            <span class="i18n l-zh">邮件</span>
+            <span class="i18n l-en">Email</span>
+            <span class="i18n l-es">Correo</span>
           </h3>
           <p class="muted i18n l-zh" style="margin:0">每次发新文章时向你发送一封邮件。无垃圾邮件，可随时退订。</p>
           <p class="muted i18n l-en" style="margin:0">We’ll email you when I publish a new post. No spam; unsubscribe anytime.</p>
@@ -149,6 +155,18 @@
   const lang = (norm==='en'||norm==='es'||norm==='zh') ? norm : 'zh';
   document.documentElement.setAttribute('lang', lang);
   try { localStorage.setItem('lang', lang); } catch {}
+      // Set page title and description per language
+      (function setHead(l){
+        const titles = { zh: '订阅 · Fan Wan', en: 'Subscribe · Fan Wan', es: 'Suscribirse · Fan Wan' };
+        const descs = {
+          zh: '订阅博客更新（Email/RSS）',
+          en: 'Subscribe to blog updates via Email or RSS.',
+          es: 'Suscríbete a las novedades del blog por Email o RSS.'
+        };
+        document.title = titles[l] || titles.zh;
+        const md = document.querySelector('meta[name="description"]');
+        if (md) md.setAttribute('content', descs[l] || descs.zh);
+      })(lang);
       // Toggle i18n visibility
       document.querySelectorAll('.i18n').forEach(el => { el.style.display = 'none'; });
       document.querySelectorAll('.i18n.l-' + lang).forEach(el => { el.style.display = ''; });
@@ -162,13 +180,14 @@
         rss.setAttribute('title', 'RSS');
         rss.setAttribute('aria-label', 'RSS');
       }
-      // Build platform-specific tips, copy, and quick links for RSS
-      function buildRssHelp(){
+    // Build platform-specific tips, copy, and quick links for RSS
+    function buildRssHelp(activeLang){
         const card = document.getElementById('rss-card');
         const row = document.getElementById('rss-row');
         if (!card || !row) return;
         // Clear previous help blocks on re-run
         card.querySelectorAll('[data-rss-help]')?.forEach(n => n.remove());
+  const curLang = (activeLang || document.documentElement.lang || 'zh').slice(0,2);
   const feedHref = (document.getElementById('rss-button')||{}).getAttribute?.('href') || 'rss.xml';
   // Ensure external readers receive a publicly reachable URL (not localhost)
   const PROD_ORIGIN = 'https://fanwan-ai.github.io/';
@@ -208,7 +227,7 @@
           }
         };
 
-        const t = texts[lang] || texts.zh;
+  const t = texts[curLang] || texts.zh;
   const tip = document.createElement('p');
         tip.className = 'muted';
         tip.style.margin = '0';
@@ -249,15 +268,41 @@
           a.style.cssText = 'padding:6px 10px;font-size:12px';
           a.href = href; a.target = '_blank'; a.rel = 'noopener'; a.textContent = name; return a;
         };
-        actions.appendChild(link('https://feedly.com/i/subscription/feed/' + encodeURIComponent(feedUrl), 'Feedly'));
+        // Use non-encoded path form to maximize compatibility with Feedly
+        actions.appendChild(link('https://feedly.com/i/subscription/feed/' + feedUrl, 'Feedly'));
         actions.appendChild(link('https://www.inoreader.com/?add_feed=' + encodeURIComponent(feedUrl), 'Inoreader'));
         if (isIOS) {
           actions.appendChild(link('netnewswire://subscribe?url=' + encodeURIComponent(feedUrl), 'NetNewsWire'));
           actions.appendChild(link('reeder://x-callback-url/subscribe?feed=' + encodeURIComponent(feedUrl), 'Reeder'));
         }
         card.appendChild(actions);
+
+        // Extra guidance: plugin suggestion and Feedly troubleshooting
+        const more = document.createElement('p');
+        more.className = 'muted';
+        more.style.cssText = 'margin:4px 0 0 0;font-size:12px';
+        const tips = {
+          zh: '如果希望在浏览器里直接预览 RSS，可安装扩展（如 Feedbro/Feeder）或使用桌面阅读器（Reeder、NetNewsWire 等）。',
+          en: 'To preview RSS inside the browser, install an extension (e.g., Feedbro/Feeder) or use a desktop reader (Reeder, NetNewsWire, etc.).',
+          es: 'Para ver RSS en el navegador, instala una extensión (p. ej., Feedbro/Feeder) o usa un lector de escritorio (Reeder, NetNewsWire, etc.).'
+        };
+        more.textContent = tips[curLang] || tips.zh;
+        more.setAttribute('data-rss-help','');
+        card.appendChild(more);
+
+        const feedlyNote = document.createElement('p');
+        feedlyNote.className = 'muted';
+        feedlyNote.style.cssText = 'margin:4px 0 0 0;font-size:12px';
+        const feedlyTips = {
+          zh: '若 Feedly 显示“Feed not found”，请复制上方 RSS 链接到 Feedly 手动添加或稍后重试（与是否安装浏览器插件无关）。',
+          en: 'If Feedly shows “Feed not found”, copy the RSS link above and add it in Feedly manually or try again later (not related to browser plugins).',
+          es: 'Si Feedly muestra “Feed not found”, copia el enlace RSS y añádelo manualmente en Feedly o inténtalo de nuevo más tarde (no depende de extensiones del navegador).'
+        };
+        feedlyNote.textContent = feedlyTips[curLang] || feedlyTips.zh;
+        feedlyNote.setAttribute('data-rss-help','');
+        card.appendChild(feedlyNote);
       }
-      // Adapt Buttondown popup to language (optional UX tweak)
+  // Adapt Buttondown popup to language (optional UX tweak)
   const form = document.querySelector('form.embeddable-buttondown-form');
       if (form) {
         // Route to language-specific handles if configured
@@ -273,7 +318,8 @@
                 en: 'Submitted! Please check your inbox for a confirmation email (may land in spam).',
                 es: '¡Enviado! Revisa tu correo para confirmar la suscripción (puede llegar a spam).'
               };
-              success.textContent = map[lang] || map.zh;
+      const cur = (document.documentElement.lang || 'zh').slice(0,2);
+      success.textContent = map[cur] || map.zh;
               success.style.display = 'block';
             }
           });
@@ -321,12 +367,24 @@
       })();
 
       // Build help now that href is set
-      buildRssHelp();
+      buildRssHelp(lang);
       // Respond to language change from the header menu
       window.addEventListener('language-changed', (e)=>{
         const newLang = (e?.detail?.lang) || (localStorage.getItem('lang')||'zh');
         document.querySelectorAll('.i18n').forEach(el => { el.style.display = 'none'; });
         document.querySelectorAll('.i18n.l-' + newLang).forEach(el => { el.style.display = ''; });
+        // Update head title/description
+        (function setHead(l){
+          const titles = { zh: '订阅 · Fan Wan', en: 'Subscribe · Fan Wan', es: 'Suscribirse · Fan Wan' };
+          const descs = {
+            zh: '订阅博客更新（Email/RSS）',
+            en: 'Subscribe to blog updates via Email or RSS.',
+            es: 'Suscríbete a las novedades del blog por Email o RSS.'
+          };
+          document.title = titles[l] || titles.zh;
+          const md = document.querySelector('meta[name="description"]');
+          if (md) md.setAttribute('content', descs[l] || descs.zh);
+        })(newLang);
         // Update RSS target
         const rss2 = document.getElementById('rss-button');
         if (rss2) {
@@ -336,7 +394,7 @@
           rss2.setAttribute('href', href);
         }
         // Rebuild help and email handle
-        buildRssHelp();
+        buildRssHelp(newLang);
         const handle2 = EMAIL_HANDLES[newLang];
         if (form && handle2 && !/YOUR_HANDLE/.test(handle2)) {
           form.setAttribute('action', `https://buttondown.com/api/emails/embed-subscribe/${handle2}`);
