@@ -52,14 +52,15 @@ def fetch_items(limit_per_feed=25):
 
 # ===== 选题与成文 =====
 SYS = "You are a senior AI editor. Write publishable blog posts. No chain-of-thought."
+# Use sentinel placeholders to avoid Python str.format conflicts with braces
 PROMPT = """
 Given today's AI updates (title|url|ts + brief), create a DAILY blog post in Chinese with structure:
 - title_zh: concise, 18-28 Chinese characters, no punctuation at end.
 - description_zh: 60-120 chars summary for SEO/OG.
 - tags: 3-5 short tags (e.g., LLM,RAG,Agent,CV,Infra).
 - toc: an ordered list of section titles (3-6 items).
-- sections: array of {heading, markdown} where `markdown` is 150-250 words for each section in Chinese.
-- refs: 6-12 items of {title,url} (must be real sources from the given entries).
+- sections: array of {"heading": string, "markdown": string} where `markdown` is ~150-250 words in Chinese for each section.
+- refs: 6-12 items of {"title": string, "url": string} (must be real sources from the given entries).
 - en_teaser: 1-2 sentences in English (for cross-post).
 - es_teaser: 1-2 oraciones en español.
 
@@ -67,17 +68,39 @@ Rules:
 - Prefer 3-5 key items across LLM/Agent/RAG/CV, focusing on significance and impact; avoid rumors.
 - Attribute facts to sources; include URLs in refs only (no footnotes inline).
 - Avoid direct quotes > 25 words. Summarize in your own words.
-- Keep total Chinese body within {max_words} characters roughly.
+- Keep total Chinese body within [[MAX_WORDS]] characters roughly.
 - Output JSON ONLY with the fields above.
 
 Entries:
-{entries}
+[[ENTRIES]]
 """
+
+def _extract_json_from_text(text: str):
+    t = (text or "").strip()
+    # Try fenced code block first
+    try:
+        import re
+        m = re.search(r"```(?:json)?\s*(.*?)```", t, re.DOTALL | re.IGNORECASE)
+        if m:
+            return json.loads(m.group(1).strip())
+    except Exception:
+        pass
+    # Then try raw JSON slice
+    try:
+        first = t.find('{')
+        last = t.rfind('}')
+        if first != -1 and last != -1 and last > first:
+            return json.loads(t[first:last+1])
+    except Exception:
+        pass
+    # Finally try direct
+    return json.loads(t)
 
 def pick_and_write(entries, max_words=1100):
     joined = "\n".join([f"- {it['title']} | {it['url']} | {it['ts']}\n  {it['summary']}" for it in entries])
-    out = chat_once(PROMPT.format(entries=joined, max_words=max_words), system=SYS, temperature=0.25)
-    j = json.loads(out.strip().strip("`").replace("json",""))
+    prompt = PROMPT.replace("[[ENTRIES]]", joined).replace("[[MAX_WORDS]]", str(max_words))
+    out = chat_once(prompt, system=SYS, temperature=0.25)
+    j = _extract_json_from_text(out)
     return j
 
 # ===== HTML 拼装 =====
