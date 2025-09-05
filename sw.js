@@ -33,6 +33,13 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
+  // Only handle same-origin requests; let the browser handle cross-origin (CDNs, APIs)
+  try {
+    const url = new URL(req.url);
+    if (url.origin !== self.location.origin) return;
+  } catch {
+    return;
+  }
   const dest = req.destination; // 'document' | 'style' | 'script' | 'image' | ...
 
   // Network-first for HTML, CSS and JS to avoid stale UI

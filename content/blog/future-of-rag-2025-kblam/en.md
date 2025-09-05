@@ -13,7 +13,7 @@ Over the last year, a recurring debate has been: “If LLMs can read a million t
 
 This article goes beyond a yes/no answer. We explain **why** long context cannot replace RAG, **how** to modernize RAG so it stays central in 2025 and beyond, and **what it takes** to make it work in real projects. It’s our synthesis after surveying the literature and tracking enterprise practice.
 
-We’ll cover:
+We'll cover:
 
 - **Real‑world constraints**: why long context can’t solve everything.
 - **Postmortems**: why naïve RAG fails in practice.
