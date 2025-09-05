@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Fan Wan</title>
-  <link>https://fanwan-ai.github.io/</link>
+    <title>Fan Wan · 博客</title>
+    <link>https://fanwan-ai.github.io/</link>
     <description>Research · LLM · CV · Multimedia</description>
     <language>zh</language>
+    <lastBuildDate>Fri, 05 Sep 2025 03:00:54 GMT</lastBuildDate>
+    <item>
+      <title>RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</title>
+      <link>https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.html</link>
+      <guid>https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.html</guid>
+      <pubDate>Thu, 04 Sep 2025 00:00:00 GMT</pubDate>
+      <description>RAG 不会被淘汰，被淘汰的是“天真向量检索 + 生搬硬塞上下文”。本文给出 2025 年 RAG 五件套、评测维度、选型矩阵与 KBLaM 落地范式。</description>
+    </item>
+    <item>
+      <title>KBLAM 项目总结与展望</title>
+      <link>https://fanwan-ai.github.io/blog/kblam-project-summary.html</link>
+      <guid>https://fanwan-ai.github.io/blog/kblam-project-summary.html</guid>
+      <pubDate>Wed, 03 Sep 2025 00:00:00 GMT</pubDate>
+      <description>回顾 KBLaM 理论与实验，总结国产服务器部署经验，制定未来训练计划，探讨中文化与改进方向。</description>
+    </item>
   </channel>
 </rss>

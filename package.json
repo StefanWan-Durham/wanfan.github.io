@@ -9,7 +9,8 @@
   "blog:build:one": "node scripts/generate-blog.mjs",
   "og:from-template": "node scripts/generate-og-from-template.mjs",
   "blog:index": "node scripts/build-blog-index.mjs",
-  "site:build": "npm run og:from-template && npm run og:render || true && npm run blog:build && npm run blog:index"
+  "rss": "node scripts/generate-rss.mjs",
+  "site:build": "npm run og:from-template && npm run og:render || true && npm run blog:build && npm run blog:index && npm run rss"
   },
   "devDependencies": {
     "puppeteer": "^22.15.0"

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>订阅 · Fan Wan</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <meta name="description" content="订阅博客更新（Email/RSS）">
+  <link rel="stylesheet" href="style.css">
+  <link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="rss.xml">
+  <link rel="alternate" type="application/rss+xml" title="RSS (EN)" href="rss-en.xml">
+  <link rel="alternate" type="application/rss+xml" title="RSS (ES)" href="rss-es.xml">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <nav class="navbar container">
+      <a href="index.html" class="brand" aria-label="Home">
+        <img src="assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+  <section class="page-hero section" style="padding-top:48px;padding-bottom:24px">
+      <div class="container">
+    <h1 class="i18n l-zh">订阅</h1>
+    <h1 class="i18n l-en">Subscribe</h1>
+    <h1 class="i18n l-es">Suscribirse</h1>
+    <p class="muted i18n l-zh">通过 RSS 或 Email 订阅最新文章，不错过重要内容。</p>
+    <p class="muted i18n l-en">Get updates via RSS or Email. No spam, unsubscribe anytime.</p>
+    <p class="muted i18n l-es">Recibe actualizaciones por RSS o Email. Sin spam, cancela cuando quieras.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;align-items:start">
+        <div class="card" style="padding:20px;display:grid;gap:12px">
+          <h3 style="display:flex;align-items:center;gap:8px;margin:0">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 8h16M8 4v16" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            <span class="i18n l-zh">RSS</span>
+            <span class="i18n l-en">RSS</span>
+            <span class="i18n l-es">RSS</span>
+          </h3>
+          <p class="muted i18n l-zh" style="margin:0">使用你偏好的阅读器订阅：</p>
+          <p class="muted i18n l-en" style="margin:0">Subscribe in your preferred reader:</p>
+          <p class="muted i18n l-es" style="margin:0">Suscríbete en tu lector preferido:</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <a class="btn rss outline icon-only" id="rss-button" href="rss.xml" aria-label="RSS">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><path d="M6 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/><path d="M2 6a16 16 0 0 1 16 16h-3A13 13 0 0 0 2 9V6Z"/><path d="M2 11a11 11 0 0 1 11 11h-3A8 8 0 0 0 2 14v-3Z"/></g></svg>
+            </a>
+            <span class="muted" style="font-size:12px">Reeder · NetNewsWire · Inoreader · Feedly …</span>
+          </div>
+        </div>
+        <div class="card" style="padding:20px;display:grid;gap:12px">
+          <h3 style="display:flex;align-items:center;gap:8px;margin:0">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 8l8 5 8-5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            Email
+          </h3>
+          <p class="muted i18n l-zh" style="margin:0">每次发新文章时向你发送一封邮件。无垃圾邮件，可随时退订。</p>
+          <p class="muted i18n l-en" style="margin:0">We’ll email you when I publish a new post. No spam; unsubscribe anytime.</p>
+          <p class="muted i18n l-es" style="margin:0">Recibirás un email cuando publique un nuevo artículo. Sin spam; cancela cuando quieras.</p>
+          <!-- Replace YOUR_HANDLE with your Buttondown handle if you create one -->
+          <form action="https://buttondown.email/api/emails/embed-subscribe/YOUR_HANDLE" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/YOUR_HANDLE', 'popupwindow')" class="embeddable-buttondown-form" style="display:grid;gap:10px;max-width:420px">
+            <label for="bd-email" class="muted i18n l-zh">邮箱</label>
+            <label for="bd-email" class="muted i18n l-en">Email</label>
+            <label for="bd-email" class="muted i18n l-es">Correo</label>
+            <input type="email" name="email" id="bd-email" placeholder="you@example.com" required data-i18n-placeholder="form_email_placeholder">
+            <input type="hidden" value="1" name="embed"/>
+            <button class="btn i18n l-zh" type="submit">订阅</button>
+            <button class="btn i18n l-en" type="submit">Subscribe</button>
+            <button class="btn i18n l-es" type="submit">Suscribirse</button>
+            <p class="muted i18n l-zh" style="font-size:12px">隐私友好，地址仅用于发送更新。</p>
+            <p class="muted i18n l-en" style="font-size:12px">Privacy-friendly. We only use your email to send updates.</p>
+            <p class="muted i18n l-es" style="font-size:12px">Privacidad ante todo. Solo usamos tu correo para enviar actualizaciones.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container"><p>© <span id="year"></span> Fan Wan</p></div>
+  </footer>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Determine language from query (?lang=zh|en|es) or saved preference
+    (function initLang(){
+  const EMAIL_HANDLES = { zh: 'YOUR_HANDLE_ZH', en: 'YOUR_HANDLE_EN', es: 'YOUR_HANDLE_ES' }; // TODO: set your provider handles
+      const qp = new URLSearchParams(location.search);
+      const ql = qp.get('lang');
+      const lang = (ql==='en'||ql==='es'||ql==='zh') ? ql : (localStorage.getItem('lang') || document.documentElement.lang || 'zh');
+      document.documentElement.setAttribute('lang', lang);
+      try { localStorage.setItem('lang', lang); } catch {}
+      // Toggle i18n visibility
+      document.querySelectorAll('.i18n').forEach(el => { el.style.display = 'none'; });
+      document.querySelectorAll('.i18n.l-' + lang).forEach(el => { el.style.display = ''; });
+      // Wire RSS button to language-specific feed
+      const rss = document.getElementById('rss-button');
+      if (rss) {
+        let href = 'rss.xml';
+        if (lang === 'en') href = 'rss-en.xml';
+        else if (lang === 'es') href = 'rss-es.xml';
+        rss.setAttribute('href', href);
+        rss.setAttribute('title', 'RSS');
+        rss.setAttribute('aria-label', 'RSS');
+      }
+      // Adapt Buttondown popup to language (optional UX tweak)
+      const form = document.querySelector('form.embeddable-buttondown-form');
+      if (form) {
+        // Route to language-specific handles if configured
+        const handle = EMAIL_HANDLES[lang];
+        if (handle && !/YOUR_HANDLE/.test(handle)) {
+          form.setAttribute('action', `https://buttondown.email/api/emails/embed-subscribe/${handle}`);
+          form.setAttribute('onsubmit', `window.open('https://buttondown.email/${handle}', 'popupwindow')`);
+        } else {
+          // Show a helpful warning card if not configured
+          const warn = document.createElement('div');
+          warn.className = 'card';
+          warn.style.cssText = 'padding:12px;margin-top:8px;border:1px dashed var(--border)';
+          warn.innerHTML = '<p class="muted">Set your email provider handle for ' + lang + ' in subscribe.html (EMAIL_HANDLES). The form won\'t work until configured.</p>';
+          form.parentNode.insertBefore(warn, form);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

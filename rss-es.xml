@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Fan Wan · Blog</title>
+    <link>https://fanwan-ai.github.io/</link>
+    <description>Research · LLM · CV · Multimedia</description>
+    <language>es</language>
+    <lastBuildDate>Fri, 05 Sep 2025 03:00:54 GMT</lastBuildDate>
+    <item>
+      <title>¿Está obsoleto RAG? Hoja de ruta 2025: del “contexto largo” a GraphRAG, Entrenamiento Consciente de Recuperación y KBLaM</title>
+      <link>https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.es.html</link>
+      <guid>https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.es.html</guid>
+      <pubDate>Thu, 04 Sep 2025 00:00:00 GMT</pubDate>
+      <description>RAG no muere—lo que muere es el RAG ingenuo de volcar todo al prompt. Esta guía 2025 explica por qué el contexto largo no reemplaza a RAG, cómo modernizarlo con GraphRAG y entrenamiento consciente de recuperación, y cómo aterrizarlo con KBLaM en sistemas reales.</description>
+    </item>
+    <item>
+      <title>Resumen y perspectivas del proyecto KBLaM</title>
+      <link>https://fanwan-ai.github.io/blog/kblam-project-summary.es.html</link>
+      <guid>https://fanwan-ai.github.io/blog/kblam-project-summary.es.html</guid>
+      <pubDate>Wed, 03 Sep 2025 00:00:00 GMT</pubDate>
+      <description>Revisión de la teoría y los experimentos de KBLaM, lecciones de un despliegue en servidores nacionales, un plan de entrenamiento concreto y una propuesta de localización al chino con mejoras futuras.</description>
+    </item>
+  </channel>
+</rss>

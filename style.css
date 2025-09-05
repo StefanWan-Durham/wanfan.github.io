@@ -173,6 +173,26 @@ html[lang="es"] .i18n.l-es { display: inline; }
   background: var(--text);
 }
 
+/* Icon button and RSS variant */
+.btn.icon-only { padding: 0.5rem; width: 38px; height: 38px; display: inline-grid; place-items: center; border-radius: 12px; }
+.btn.icon-only .icon { width: 1.05rem; height: 1.05rem; }
+/* RSS/Email buttons use brand primary for strong contrast in light theme */
+.btn.rss { background: var(--primary); color: #fff; font-size: 0.92rem; padding: 0.65rem 1.1rem; }
+.btn.rss:hover { background: var(--primary-600); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn.rss.outline { background: transparent; color: var(--primary); border-color: color-mix(in oklab, var(--primary), var(--border) 45%); font-size: 0.92rem; padding: 0.6rem 1rem; }
+.btn.rss.outline:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* Light theme: boost contrast for outline variant (dark text/border) */
+:root[data-theme="light"] .btn.rss.outline {
+  color: var(--text);
+  border-color: color-mix(in oklab, var(--text), var(--border) 20%);
+}
+:root[data-theme="light"] .btn.rss.outline:hover {
+  background: var(--text);
+  color: #fff;
+  border-color: var(--text);
+}
+
 /* Subtle glassmorphism variant for buttons (used when enabled) */
 .btn.glass {
   background: color-mix(in oklab, var(--surface) 20%, transparent);

@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Remove any leading numbering like "1.", "2)", "(3)", or full-width variants to avoid double numbering in the OL
   const raw = (h.textContent || '').replace(/\s+/g, ' ').trim();
   const cleaned = raw.replace(/^\s*(?:\d+[\.\) 、]|[\(（]\d+[\)）])\s*/, '');
-  a.textContent = cleaned || raw;
+        a.textContent = cleaned || raw;
         li.appendChild(a);
         toc.appendChild(li);
       });
@@ -543,6 +543,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Language-aware RSS/Email routing on blog pages and posts
+  (function wireSubscriptionButtons(){
+    function activeLang(){ return localStorage.getItem('lang') || document.documentElement.lang || 'zh'; }
+    function setHrefs(){
+      const lang = activeLang();
+      const rss = document.getElementById('rss-button');
+      const email = document.getElementById('email-button');
+      if (rss) {
+        let href = 'rss.xml';
+        if (location.pathname.includes('/blog/')) href = '../' + href; // adjust relative path on post pages
+        if (lang === 'en') href = href.replace('rss.xml', 'rss-en.xml');
+        else if (lang === 'es') href = href.replace('rss.xml', 'rss-es.xml');
+        rss.setAttribute('href', href);
+        const titles = { zh: 'RSS 订阅', en: 'RSS', es: 'RSS' };
+        rss.setAttribute('title', titles[lang] || 'RSS');
+        rss.setAttribute('aria-label', titles[lang] || 'RSS');
+      }
+      if (email) {
+        let href = 'subscribe.html';
+        if (location.pathname.includes('/blog/')) href = '../' + href;
+        // Add language hint via query param for subscribe page routing
+        const url = new URL(href, location.origin);
+        url.searchParams.set('lang', lang);
+        email.setAttribute('href', url.pathname + url.search);
+      }
+    }
+    // run on load
+    setHrefs();
+    // update on language change
+    window.addEventListener('language-changed', setHrefs);
+  })();
 
   // PWA: register service worker (avoid caching pitfalls in local/dev)
   if ('serviceWorker' in navigator) {
