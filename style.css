@@ -500,6 +500,11 @@ header {
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
+  /* ensure comfortable tap target */
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger span {
@@ -1246,6 +1251,8 @@ footer {
   .icon-btn { padding: .5rem; }
   .nav-actions { gap: .5rem; }
   .theme-toggle { width: 34px; height: 34px; }
+  /* ensure minimum tap size for buttons */
+  .btn { min-height: 42px; }
   .about-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem; /* slightly tighter gap on mobile */

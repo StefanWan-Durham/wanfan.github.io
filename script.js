@@ -27,6 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Close mobile nav on link tap to improve mobile UX
+  (function autoCloseMobileNav(){
+    const nav = document.querySelector('.nav-links');
+    if (!nav) return;
+    nav.addEventListener('click', (e) => {
+      const target = e.target.closest('a');
+      if (!target) return;
+      const hamburger = document.getElementById('hamburger');
+      if (nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        if (hamburger) hamburger.classList.remove('open');
+      }
+    });
+  })();
+
   // Trigger About portrait effect when clicking About link in nav
   (function wireAboutNavEffect(){
     const aboutLinks = Array.from(document.querySelectorAll('a[href$="about.html"], a[href="#about"], a[data-nav="about"]'));
