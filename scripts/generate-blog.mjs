@@ -51,6 +51,11 @@ function escapeHtml(s){
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
+// Normalize any Windows-style paths to URL-safe forward slashes
+function toUrlPath(p){
+  return String(p).replace(/\\/g, '/');
+}
+
 function mdToHtml(md, { slug } = {}) {
   const lines = md.replace(/\r\n?/g,'\n').split('\n');
   const out = [];
@@ -216,7 +221,8 @@ function buildHtml({lang, slug, title, description, date, bodyHtml, heroSrc, ogI
   const heroImg = heroSrc || '';
   const dateLabel = lang==='en' ? `Published on ${date}` : lang==='es' ? `Publicado el ${date}` : `发表于 ${date}`;
   const estRead = lang==='en' ? 'Estimated read' : lang==='es' ? 'Lectura' : '预计阅读';
-  const ogType = ogImage.endsWith('.png') ? 'image/png' : ogImage.endsWith('.jpg') || ogImage.endsWith('.jpeg') ? 'image/jpeg' : ogImage.endsWith('.svg') ? 'image/svg+xml' : 'image/png';
+  // Prefer PNG/JPEG for OG for better compatibility (some platforms ignore SVG)
+  const ogType = ogImage.endsWith('.png') ? 'image/png' : (ogImage.endsWith('.jpg') || ogImage.endsWith('.jpeg')) ? 'image/jpeg' : 'image/png';
   return `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -421,29 +427,39 @@ async function buildPost(dir){
       const description = meta.description || '';
       const date = meta.date || new Date().toISOString().slice(0,10);
       // Resolve a valid cover for hero/OG
-      // - For OG: use absolute URL at siteOrigin
-      // - For hero image in page: use relative path from blog/ ("../assets/..."), avoid hardcoding domains
+      // - For OG: use absolute URL at siteOrigin and prefer PNG/JPEG (many platforms ignore SVG)
+      // - For hero image in page: SVG is fine for crispness; use relative path from blog/ ("../assets/..."), no hardcoded domain
       const preferRel = (meta.cover && !/^https?:\/\//i.test(meta.cover)) ? meta.cover.replace(/^\/?/,'') : '';
-      const pngRel = path.join('assets','blog',`${slug}-${lang}.png`);
-      const svgRel = path.join('assets','blog',`${slug}-${lang}.svg`);
+      const pngRel = toUrlPath(path.posix.join('assets','blog',`${slug}-${lang}.png`));
+      const svgRel = toUrlPath(path.posix.join('assets','blog',`${slug}-${lang}.svg`));
       let chosenRel = '';
       if (preferRel) {
-        try { await fs.access(path.join(root, preferRel)); chosenRel = preferRel; } catch {}
+        try { await fs.access(path.join(root, preferRel)); chosenRel = toUrlPath(preferRel); } catch {}
       }
       if (!chosenRel) {
-        // Prefer SVG when available for crispness
+        // Prefer SVG when available for on-page hero
         try { await fs.access(path.join(root, svgRel)); chosenRel = svgRel; } catch {}
       }
       if (!chosenRel) {
         try { await fs.access(path.join(root, pngRel)); chosenRel = pngRel; } catch {}
       }
       if (!chosenRel) { chosenRel = 'assets/placeholder.jpg'; }
-      // Build OG absolute URL
-      const ogImage = meta.cover && /^https?:\/\//i.test(meta.cover) ? meta.cover : `${siteOrigin}${chosenRel}`;
+      // Build OG absolute URL, strongly prefer PNG/JPG; never use SVG here for compatibility
+      let ogRel = '';
+      if (meta.cover && /^https?:\/\//i.test(meta.cover)) {
+        ogRel = meta.cover; // external URL, assume valid
+      } else {
+        try { await fs.access(path.join(root, pngRel)); ogRel = pngRel; } catch {}
+        if (!ogRel && preferRel && /\.(?:png|jpe?g)$/i.test(preferRel)) {
+          try { await fs.access(path.join(root, preferRel)); ogRel = toUrlPath(preferRel); } catch {}
+        }
+        if (!ogRel) ogRel = 'assets/placeholder.jpg';
+      }
+      const ogImage = /^https?:\/\//i.test(ogRel) ? ogRel : `${siteOrigin}${ogRel}`;
       // Build hero image src relative to /blog/*.html
       const heroSrc = meta.cover && /^https?:\/\//i.test(meta.cover)
         ? meta.cover
-        : `../${chosenRel.replace(/^\/?/, '')}`;
+        : `../${toUrlPath(chosenRel).replace(/^\/?/, '')}`;
   const bodyHtml = mdToHtml(body, { slug });
   // Prepare order list using the computed global index (zh filenames, newest/oldest depends on index order)
   const orderList = (globalThis.__postIndex || []).map(it => `${it.slug}.html`);

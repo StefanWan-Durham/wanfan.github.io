@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - 'assets/blog/*.svg'
-      - 'scripts/svg-to-png.mjs'
+  - 'scripts/render-all-og.mjs'
       - 'package.json'
 
 jobs:
@@ -20,14 +20,15 @@ jobs:
           node-version: 20
       - run: npm ci || npm i
       - run: npm run og:render
+      - run: npm run blog:build && npm run blog:index
       - name: Commit PNGs
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add assets/blog/*.png || true
+          git add assets/blog/*.png blog/*.html blog.html || true
           if git diff --cached --quiet; then
             echo "No PNG changes to commit"
           else
-            git commit -m "chore(og): render PNG covers from SVG"
+            git commit -m "chore(og): render PNG covers from SVG and rebuild blog meta"
             git push
           fi
