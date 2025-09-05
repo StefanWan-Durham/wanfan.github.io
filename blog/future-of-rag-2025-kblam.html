@@ -14,17 +14,17 @@
   <meta property="og:title" content="RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图">
   <meta property="og:description" content="RAG 不会被淘汰，被淘汰的是“天真向量检索 + 生搬硬塞上下文”。本文给出 2025 年 RAG 五件套、评测维度、选型矩阵与 KBLaM 落地范式。">
   <meta property="og:url" content="https://fanwan-ai.github.io/blog/future-of-rag-2025-kblam.html">
-  <meta property="og:image" content="https://fanwan-ai.github.io/assets/blog/rag-hero-zh.v5.svg">
+  <meta property="og:image" content="https://fanwan-ai.github.io/assets/blog/future-of-rag-2025-kblam-zh.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:secure_url" content="https://fanwan-ai.github.io/assets/blog/rag-hero-zh.v5.svg">
+  <meta property="og:image:secure_url" content="https://fanwan-ai.github.io/assets/blog/future-of-rag-2025-kblam-zh.svg">
   <meta property="og:image:type" content="image/svg+xml">
-  <link rel="image_src" href="https://fanwan-ai.github.io/assets/blog/rag-hero-zh.v5.svg">
-  <meta itemprop="image" content="https://fanwan-ai.github.io/assets/blog/rag-hero-zh.v5.svg">
+  <link rel="image_src" href="https://fanwan-ai.github.io/assets/blog/future-of-rag-2025-kblam-zh.svg">
+  <meta itemprop="image" content="https://fanwan-ai.github.io/assets/blog/future-of-rag-2025-kblam-zh.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图">
   <meta name="twitter:description" content="RAG 不会被淘汰，被淘汰的是“天真向量检索 + 生搬硬塞上下文”。本文给出 2025 年 RAG 五件套、评测维度、选型矩阵与 KBLaM 落地范式。">
-  <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/blog/rag-hero-zh.v5.svg">
+  <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/blog/future-of-rag-2025-kblam-zh.svg">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../style.css">
@@ -39,7 +39,7 @@
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
   <script defer src="../assets/vendor/qrcode.min.js"></script>
-  <script>window.__BLOG_ORDER__ = ["future-of-rag-2025-kblam.html","kblam-project-summary.html"];</script>
+  <script>window.__BLOG_ORDER__ = ["kblam-project-summary.html","future-of-rag-2025-kblam.html"];</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -82,13 +82,13 @@
       <div class="container">
         <div class="i18n-block" data-lang="zh">
           <h1 class="post-title">RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</h1>
-          <p class="muted post-meta">发表于 2025-09-02 · 预计阅读 5 min</p>
+          <p class="muted post-meta">发表于 2025-09-04 · 预计阅读 5 min</p>
         </div>
       </div>
     </section>
     <section class="section">
       <div class="container prose">
-  <div class="post-hero-art" data-lang="zh"><img src="../assets/blog/rag-hero-zh.v5.svg" alt="Cover"/></div>
+  <div class="post-hero-art" data-lang="zh"><img src="../assets/blog/future-of-rag-2025-kblam-zh.svg" alt="Cover"/></div>
         <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>目录</strong><ol></ol></nav>
         <article class="i18n-block" data-lang="zh">
 
@@ -155,7 +155,7 @@
 
 <h3 id="23-案例-3上下文堆砌带来的噪声">2.3 案例 3：上下文堆砌带来的噪声</h3>
 
-<p>不少团队尝试“召回 10\~20 个段落一起喂模型”，以为“多给点材料总没错”。结果模型注意力被噪声拖走，越来越偏离问题本身。例如，在工业报警解析任务中，检索返回了太多“报警原理”与“报警历史”段落，真正的“处理步骤”被埋在第 15 段，模型最终生成了含糊的解释而没有给出操作建议。</p>
+<p>不少团队尝试“召回 10~20 个段落一起喂模型”，以为“多给点材料总没错”。结果模型注意力被噪声拖走，越来越偏离问题本身。例如，在工业报警解析任务中，检索返回了太多“报警原理”与“报警历史”段落，真正的“处理步骤”被埋在第 15 段，模型最终生成了含糊的解释而没有给出操作建议。</p>
 
 <h3 id="24-其它问题新鲜度重排与可审计">2.4 其它问题：新鲜度、重排与可审计</h3>
 
@@ -189,7 +189,7 @@
 
 <h3 id="41-图谱搭建从文本到骨架">4.1 图谱搭建：从文本到“骨架”</h3>
 
-<p><b>切块与抽取</b>：以标题、小节或自然段为切块单位，并添加滑动窗口，让跨段的信息能完整覆盖。接着使用命名实体识别（NER）和关系抽取（RE）模型，从文本中提取实体和它们的关系，并建立轻量级的图结构。这里建议把实体类型、关系类型设定在 2\~3 类关键关系，如“条款→术语→适用范围”或“设备→部件→故障模式”，以减少初期复杂度。</p>
+<p><b>切块与抽取</b>：以标题、小节或自然段为切块单位，并添加滑动窗口，让跨段的信息能完整覆盖。接着使用命名实体识别（NER）和关系抽取（RE）模型，从文本中提取实体和它们的关系，并建立轻量级的图结构。这里建议把实体类型、关系类型设定在 2~3 类关键关系，如“条款→术语→适用范围”或“设备→部件→故障模式”，以减少初期复杂度。</p>
 
 <p><b>消歧与归并</b>：同名不同义、不同名同义的情况很常见，例如“泵站 A”和“A 泵站”。我们需要通过指纹相似度（比如 Jaccard、Cosine）和规则（如行政区划、设备编号）做消歧与合并，以保证图结构整洁。低置信度的抽取结果则放入离线审核队列。</p>
 
@@ -414,7 +414,7 @@ def rag_answer(question: str) -&gt; Tuple[str, List[Evidence]]:
 
 <h3 id="101-输入-token-数量是关键">10.1 输入 token 数量是关键</h3>
 
-<p>假设要回答的问题需要用到一份 3 万字的 SOP 文档。如果采用“直塞上下文”方式，将整份文档和模板全部放入模型，输入 token 可能超过 30k；如果采用“检索+证据包”，通常只需要 1~~3 段关键段落，每段大约 500~~700 token，总共约 1.5k\~2.1k token。这意味着输入 token 减少了至少 <b>10 倍</b>，在同样的模型计费方式下，费用和延时也会近似线性下降。</p>
+<p>假设要回答的问题需要用到一份 3 万字的 SOP 文档。如果采用“直塞上下文”方式，将整份文档和模板全部放入模型，输入 token 可能超过 30k；如果采用“检索+证据包”，通常只需要 1~~3 段关键段落，每段大约 500~~700 token，总共约 1.5k~2.1k token。这意味着输入 token 减少了至少 <b>10 倍</b>，在同样的模型计费方式下，费用和延时也会近似线性下降。</p>
 
 <h3 id="102-多一步检索等于多一点成本但回报更高">10.2 多一步检索等于多一点成本，但回报更高</h3>
 
@@ -439,7 +439,7 @@ def rag_answer(question: str) -&gt; Tuple[str, List[Evidence]]:
 </li>
 <li><b>证据包标准</b>：包含 <code>source_id</code>、<code>url</code>、<code>version</code>、<code>timestamp</code>、<code>offset</code>、<code>path</code> 等字段，并生成唯一 <code>answer_id</code> 用于审计。
 </li>
-<li><b>生成模板</b>：以“依据 \[1] … \[2] …，得到结论 …”的形式输出，确保引用证据并用自然语言串联。
+<li><b>生成模板</b>：以“依据 [1] … [2] …，得到结论 …”的形式输出，确保引用证据并用自然语言串联。
 </li>
 <li><b>Agent 管理</b>：列出可调用工具和条件，设定步数/预算阈值；缓存常见查询结果。
 </li>
@@ -544,8 +544,8 @@ def rag_answer(question: str) -&gt; Tuple[str, List[Evidence]]:
         <hr style="margin: 24px 0">
         <nav class="post-nav" aria-label="Post navigation">
           <a class="btn outline" href="../blog.html">← 返回博客</a>
-          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">上一个</a>
-          <a class="btn outline" href="./kblam-project-summary.html">下一个</a>
+          <a class="btn outline" href="./kblam-project-summary.html">上一个</a>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">下一个</a>
         </nav>
       </div>
     </section>

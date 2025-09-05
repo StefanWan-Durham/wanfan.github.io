@@ -39,7 +39,7 @@
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
   <script defer src="../assets/vendor/qrcode.min.js"></script>
-  <script>window.__BLOG_ORDER__ = ["future-of-rag-2025-kblam.html","kblam-project-summary.html"];</script>
+  <script>window.__BLOG_ORDER__ = ["kblam-project-summary.html","future-of-rag-2025-kblam.html"];</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -103,7 +103,7 @@
 <p>La idea central es mapear las tripletas de la base de conocimiento $\langle \text{name},\,\text{property},\,\text{value} \rangle$ a vectores del tamaño de la caché clave‑valor del LLM, llamados <b>tokens de conocimiento</b>. El proceso es:</p>
 
 <ol>
-<li><b>Codificación del conocimiento.</b> Un codificador $f(\cdot)$ mapea “\&lt;name\&gt; y su \&lt;property\&gt;” y “\&lt;value\&gt;” a $k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)$ y $v_m = f(\text{value}_m)$. Adaptadores lineales los proyectan a los espacios de clave/valor de cada capa: $\tilde{k}_m = \tilde{W}_K k_m$, $\tilde{v}_m = \tilde{W}_V v_m$. Cada token de conocimiento contiene vectores para $L$ capas.
+<li><b>Codificación del conocimiento.</b> Un codificador $f(\cdot)$ mapea “name y su property” y “value” a $k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)$ y $v_m = f(\text{value}_m)$. Adaptadores lineales los proyectan a los espacios de clave/valor de cada capa: $\tilde{k}_m = \tilde{W}_K k_m$, $\tilde{v}_m = \tilde{W}_V v_m$. Cada token de conocimiento contiene vectores para $L$ capas.
 </li>
 <li><b>Atención rectangular.</b> En inferencia, el modelo alimenta $N$ tokens del prompt y $M$ tokens de conocimiento. Para evitar $O((N+M)^2)$, los tokens de conocimiento no se atienden entre sí; los tokens del prompt pueden atender a anteriores y a todos los de conocimiento, formando una matriz $(M+N)\!\times\!N$. La salida $\tilde{y}_n$ suma: (a) valores del conocimiento ponderados por la similitud entre consulta y claves del conocimiento, y (b) autoatención entre tokens del prompt. El costo crece linealmente con $M$, ventajoso cuando $M\gg N$.
 </li>
@@ -206,7 +206,7 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
 </li>
 <li><b>Codificadores chinos:</b> <b>bge‑large‑zh</b>, <b>sent‑bert‑zh</b>; inferencia con Ascend‑PyTorch; fine‑tuning cuando sea necesario.
 </li>
-<li><b>LLM y adaptadores chinos:</b> Modelos chinos open‑source (ChatGLM3, Yi‑34B); re‑entrenar adaptadores por diferencias de vocab/posicional; plantillas de instrucción en chino natural (p. ej., “请说明…的用途”, “无法在知识库中找到相关信息”).
+<li><b>LLM y adaptadores chinos:</b> Modelos chinos open‑source (ChatGLM3, Yi‑34B); re‑entrenar adaptadores por diferencias de vocab/posicional; plantillas de instrucción en chino natural (p. ej., &quot;Por favor explica el uso de...&quot;, &quot;No se puede encontrar información relevante en la base de conocimiento&quot;).
 </li>
 <li><b>Razonamiento multi‑salto y explicaciones:</b> Incluir relaciones entre entidades; preguntas que requieran componer varios tokens y producir cadenas explicativas.
 </li>
@@ -275,8 +275,8 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
         <hr style="margin: 24px 0">
         <nav class="post-nav" aria-label="Post navigation">
           <a class="btn outline" href="../blog.html">← Volver al blog</a>
-          <a class="btn outline" href="./future-of-rag-2025-kblam.es.html">Anterior</a>
-          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">Siguiente</a>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">Anterior</a>
+          <a class="btn outline" href="./future-of-rag-2025-kblam.es.html">Siguiente</a>
         </nav>
       </div>
     </section>

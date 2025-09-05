@@ -39,7 +39,7 @@
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
   <script defer src="../assets/vendor/qrcode.min.js"></script>
-  <script>window.__BLOG_ORDER__ = ["future-of-rag-2025-kblam.html","kblam-project-summary.html"];</script>
+  <script>window.__BLOG_ORDER__ = ["kblam-project-summary.html","future-of-rag-2025-kblam.html"];</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -103,7 +103,7 @@
 <p>The core idea is to map knowledge base triples $\langle \text{name},\,\text{property},\,\text{value} \rangle$ into vectors matching the LLM’s key–value cache size, called <b>knowledge tokens</b>. The process is:</p>
 
 <ol>
-<li><b>Knowledge encoding.</b> For each triple, a pretrained sentence encoder $f(\cdot)$ maps “\&lt;name\&gt;’s \&lt;property\&gt;” and “\&lt;value\&gt;” into base key vector $k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)$ and value vector $v_m = f(\text{value}_m)$. Linear adapters then project them to each layer’s key/value spaces: $\tilde{k}_m = \tilde{W}_K k_m$, $\tilde{v}_m = \tilde{W}_V v_m$. Each knowledge token carries key/value vectors for $L$ layers and can be consumed directly by attention at different depths.
+<li><b>Knowledge encoding.</b> For each triple, a pretrained sentence encoder $f(\cdot)$ maps “name's property” and “value” into base key vector $k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)$ and value vector $v_m = f(\text{value}_m)$. Linear adapters then project them to each layer’s key/value spaces: $\tilde{k}_m = \tilde{W}_K k_m$, $\tilde{v}_m = \tilde{W}_V v_m$. Each knowledge token carries key/value vectors for $L$ layers and can be consumed directly by attention at different depths.
 </li>
 <li><b>Rectangular attention.</b> At inference, the model feeds $N$ prompt tokens and $M$ knowledge tokens into attention. To avoid $O((N+M)^2)$ complexity, knowledge tokens do not attend to each other; prompt tokens may attend to prior prompts and to all knowledge tokens, yielding an $(M+N)\!\times\!N$ rectangular attention matrix. For layer $l$, each output vector $\tilde{y}_n$ sums two parts: a weighted sum over knowledge values (weights from similarity between the query and knowledge keys) and a standard self‑attention part among prompt tokens. This design makes compute and memory grow linearly with the number of triples, advantageous when $M\gg N$.
 </li>
@@ -285,8 +285,8 @@ def rectangular_attention(Q, K_kb, V_kb, K_text, V_text):
         <hr style="margin: 24px 0">
         <nav class="post-nav" aria-label="Post navigation">
           <a class="btn outline" href="../blog.html">← Back to Blog</a>
-          <a class="btn outline" href="./future-of-rag-2025-kblam.en.html">Previous</a>
-          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">Next</a>
+          <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">Previous</a>
+          <a class="btn outline" href="./future-of-rag-2025-kblam.en.html">Next</a>
         </nav>
       </div>
     </section>

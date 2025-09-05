@@ -18,7 +18,7 @@ En los últimos meses hemos desplegado, depurado y estudiado a fondo **KBLaM** (
 
 La idea central es mapear las tripletas de la base de conocimiento $\langle \text{name},\,\text{property},\,\text{value} \rangle$ a vectores del tamaño de la caché clave‑valor del LLM, llamados **tokens de conocimiento**. El proceso es:
 
-1. **Codificación del conocimiento.** Un codificador $f(\cdot)$ mapea “\<name\> y su \<property\>” y “\<value\>” a $k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)$ y $v_m = f(\text{value}_m)$. Adaptadores lineales los proyectan a los espacios de clave/valor de cada capa: $\tilde{k}_m = \tilde{W}_K k_m$, $\tilde{v}_m = \tilde{W}_V v_m$. Cada token de conocimiento contiene vectores para $L$ capas.
+1. **Codificación del conocimiento.** Un codificador $f(\cdot)$ mapea “name y su property” y “value” a $k_m = f(\text{property}_m\,\text{of}\,\text{name}_m)$ y $v_m = f(\text{value}_m)$. Adaptadores lineales los proyectan a los espacios de clave/valor de cada capa: $\tilde{k}_m = \tilde{W}_K k_m$, $\tilde{v}_m = \tilde{W}_V v_m$. Cada token de conocimiento contiene vectores para $L$ capas.
 2. **Atención rectangular.** En inferencia, el modelo alimenta $N$ tokens del prompt y $M$ tokens de conocimiento. Para evitar $O((N+M)^2)$, los tokens de conocimiento no se atienden entre sí; los tokens del prompt pueden atender a anteriores y a todos los de conocimiento, formando una matriz $(M+N)\!\times\!N$. La salida $\tilde{y}_n$ suma: (a) valores del conocimiento ponderados por la similitud entre consulta y claves del conocimiento, y (b) autoatención entre tokens del prompt. El costo crece linealmente con $M$, ventajoso cuando $M\gg N$.
 3. **Ajuste instruccional con KB.** Dado el desfase semántico entre codificador y LLM, el paper entrena solo los adaptadores lineales y una cabeza de consulta, maximizando $\log p_\theta(A\mid Q,KB)$ con una KB sintética (≈45k nombres, 135k tripletas) y sin tocar los pesos del LLM. Con AdamW durante 20k pasos en una A100, el modelo aprende a recuperar y a negarse cuando no hay evidencia.
 
@@ -95,7 +95,7 @@ Con lo anterior, reproducimos los principales experimentos en PC y estamos gener
 
 1. **Construcción de KB en chino:** Enciclopedias/documentos empresariales; extracción de información y enlace de entidades para generar tripletas; listas de entidades/atributos por dominio; incluir atributos conflictivos para pruebas.
 2. **Codificadores chinos:** **bge‑large‑zh**, **sent‑bert‑zh**; inferencia con Ascend‑PyTorch; fine‑tuning cuando sea necesario.
-3. **LLM y adaptadores chinos:** Modelos chinos open‑source (ChatGLM3, Yi‑34B); re‑entrenar adaptadores por diferencias de vocab/posicional; plantillas de instrucción en chino natural (p. ej., “请说明…的用途”, “无法在知识库中找到相关信息”).
+3. **LLM y adaptadores chinos:** Modelos chinos open‑source (ChatGLM3, Yi‑34B); re‑entrenar adaptadores por diferencias de vocab/posicional; plantillas de instrucción en chino natural (p. ej., "Por favor explica el uso de...", "No se puede encontrar información relevante en la base de conocimiento").
 4. **Razonamiento multi‑salto y explicaciones:** Incluir relaciones entre entidades; preguntas que requieran componer varios tokens y producir cadenas explicativas.
 5. **Evaluación y seguridad:** Además de precisión, robustez ante ruido/conflictos; desensibilizar conocimiento sensible para evitar filtraciones.
 

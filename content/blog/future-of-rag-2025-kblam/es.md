@@ -1,9 +1,10 @@
 ---
 title: ¿Está obsoleto RAG? Hoja de ruta 2025: del “contexto largo” a GraphRAG, Entrenamiento Consciente de Recuperación y KBLaM
 description: RAG no muere—lo que muere es el RAG ingenuo de volcar todo al prompt. Esta guía 2025 explica por qué el contexto largo no reemplaza a RAG, cómo modernizarlo con GraphRAG y entrenamiento consciente de recuperación, y cómo aterrizarlo con KBLaM en sistemas reales.
-date: 2025-09-02
+date: 2025-09-04
 draft: false
-cover: assets/blog/rag-hero-es.v5.svg
+# cover: assets/blog/rag-hero-es.v5.svg
+cover:
 ---
 
 Nota para el lector: En el último año se repite la pregunta de pasillo: “¿El contexto largo hará obsoleto a RAG?”. Más que responder sí/no, aquí contamos la historia: por qué muchos sintieron a RAG frágil, por qué más contexto no asegura respuestas confiables y cómo luce en 2025 una pila lista para ingeniería, de punta a punta.
