@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="ai_lab_title">AI Lab · Fan Wan</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="description" content="AI Lab · 自动资讯与报告 · 站内智能小应用">
+  <link rel="canonical" href="https://fanwan-ai.github.io/ai-lab.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Lab · Fan Wan">
+  <meta property="og:description" content="自动资讯与报告 · 站内智能小应用">
+  <meta property="og:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="AI Lab cover">
+  <meta property="og:url" content="https://fanwan-ai.github.io/ai-lab.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Lab · Fan Wan">
+  <meta name="twitter:description" content="自动资讯与报告 · 站内智能小应用">
+  <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
+  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="lang.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <nav class="navbar container">
+      <a href="index.html" class="brand" aria-label="Home">
+        <img src="assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="ai-lab.html"><span class="i18n l-zh">AI Lab</span><span class="i18n l-en">AI Lab</span><span class="i18n l-es">AI Lab</span></a></li>
+        <li><a href="contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label"></span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+          <select id="lang-select" hidden>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+              <path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/>
+              <path d="M12 2v2"/>
+              <path d="M4 10h2"/>
+              <path d="M18 10h2"/>
+              <path d="M5.5 5.5l1.4 1.4"/>
+              <path d="M18.5 5.5l-1.4 1.4"/>
+            </g>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon icon-system" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><path d="M8 20h8M12 16v4"/></g></svg>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Page Hero -->
+    <section class="page-hero section">
+      <div class="bg-shapes">
+        <span class="shape shape1"></span>
+        <span class="shape shape2"></span>
+        <span class="shape shape3"></span>
+        <span class="shape shape4"></span>
+      </div>
+      <div class="container">
+        <h1 data-i18n="ai_lab_title">AI Lab</h1>
+        <p class="subtitle" data-i18n="ai_lab_intro">自动资讯与报告 · 站内智能小应用</p>
+      </div>
+    </section>
+
+    <!-- 自动资讯 & 报告 -->
+    <section class="section" id="ai-news">
+      <div class="container">
+        <h2 data-i18n="ai_lab_news_title">自动资讯 & 报告</h2>
+        <p class="muted" data-i18n="ai_lab_news_desc">机器替你读每天：AI Daily、快讯雷达、论文一页纸、模型与工具追踪等。</p>
+        <div class="toolbar" style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0 1rem">
+          <a class="btn rss outline" id="rss-button" href="data/ai/blog/rss.xml" title="RSS">RSS</a>
+        </div>
+        <h3 style="margin:12px 0" data-i18n="ai_lab_daily_title">AI Daily · 每日一更</h3>
+        <div id="daily-list" class="blog-posts"></div>
+        <p id="daily-empty" class="muted" hidden data-i18n="ai_lab_empty">暂无数据，敬请期待。</p>
+      </div>
+    </section>
+
+    <!-- 站内智能小应用（占位） -->
+    <section class="section" id="ai-apps">
+      <div class="container">
+        <h2 data-i18n="ai_lab_apps_title">站内智能小应用</h2>
+        <p class="muted" data-i18n="ai_lab_apps_desc">AI Teacher、Ask My Site、Long-form to Slides/Audio 等交互 Demo。</p>
+        <div class="blog-posts">
+          <article class="card post-card">
+            <div>
+              <h3>AI Teacher</h3>
+              <p class="muted" data-i18n="coming_soon">功能开发中，敬请期待…</p>
+            </div>
+          </article>
+          <article class="card post-card">
+            <div>
+              <h3>Ask My Site</h3>
+              <p class="muted" data-i18n="coming_soon">功能开发中，敬请期待…</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Fan Wan</p>
+    </div>
+  </footer>
+
+  <script>
+    // Populate AI Daily list from data/ai/blog/index.json
+    (function(){
+      async function loadDaily(){
+        const list = document.getElementById('daily-list');
+        const empty = document.getElementById('daily-empty');
+        try{
+          const res = await fetch('data/ai/blog/index.json', { cache: 'no-store' });
+          if(!res.ok) throw new Error('fetch failed');
+          const items = await res.json();
+          if(!Array.isArray(items) || items.length === 0){ empty.hidden = false; return; }
+          list.innerHTML = items.slice(0, 12).map(it => {
+            const date = (it.published || '').slice(0,10);
+            const tags = (it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+            const img = it.og_image || 'assets/placeholder.jpg';
+            const href = it.url || (`/blog/${it.slug}.html`);
+            return `
+              <article class="card post-card">
+                <a class="post-link" href="${href}">
+                  <img class="post-thumb" src="${img}" alt="${(it.title||'').replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
+                </a>
+                <div>
+                  <h3 class="post-card-title" style="margin:0 0 8px 0">
+                    <a class="post-card-title-link" href="${href}">${it.title||''}</a>
+                  </h3>
+                  <p class="muted" style="margin:0 0 6px 0">${date}</p>
+                  <p class="muted" style="margin:0">${tags}</p>
+                </div>
+              </article>`;
+          }).join('');
+        }catch(e){ empty.hidden = false; }
+      }
+      loadDaily();
+    })();
+  </script>
+</body>
+</html>
