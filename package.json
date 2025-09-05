@@ -4,15 +4,17 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-  "og:render": "node scripts/render-all-og.mjs",
-  "blog:build": "node scripts/generate-blog.mjs",
-  "blog:build:one": "node scripts/generate-blog.mjs",
-  "og:from-template": "node scripts/generate-og-from-template.mjs",
-  "blog:index": "node scripts/build-blog-index.mjs",
-  "rss": "node scripts/generate-rss.mjs",
-  "site:build": "npm run og:from-template && npm run og:render || true && npm run blog:build && npm run blog:index && npm run rss"
+    "og:render": "node scripts/render-all-og.mjs",
+    "blog:build": "node scripts/generate-blog.mjs",
+    "blog:build:one": "node scripts/generate-blog.mjs",
+    "og:from-template": "node scripts/generate-og-from-template.mjs",
+    "og:rasterize": "node scripts/rasterize-og.mjs",
+    "blog:index": "node scripts/build-blog-index.mjs",
+    "rss": "node scripts/generate-rss.mjs",
+    "site:build": "npm run og:from-template && npm run og:rasterize || true && npm run og:render || true && npm run blog:build && npm run blog:index && npm run rss"
   },
   "devDependencies": {
-    "puppeteer": "^22.15.0"
+    "puppeteer": "^22.15.0",
+    "sharp": "^0.33.5"
   }
 }

@@ -457,12 +457,12 @@ async function buildPost(dir){
       if (preferRel) {
         try { await fs.access(path.join(root, preferRel)); chosenRel = toUrlPath(preferRel); } catch {}
       }
-      if (!chosenRel) {
-        // Prefer SVG when available for on-page hero
-        try { await fs.access(path.join(root, svgRel)); chosenRel = svgRel; } catch {}
-      }
+      // Prefer PNG for on-page hero to support platforms that ignore SVG (e.g., WeChat fallback)
       if (!chosenRel) {
         try { await fs.access(path.join(root, pngRel)); chosenRel = pngRel; } catch {}
+      }
+      if (!chosenRel) {
+        try { await fs.access(path.join(root, svgRel)); chosenRel = svgRel; } catch {}
       }
       if (!chosenRel) { chosenRel = 'assets/placeholder.jpg'; }
       // Build OG absolute URL, strongly prefer PNG/JPG; never use SVG here for compatibility
