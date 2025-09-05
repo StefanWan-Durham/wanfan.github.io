@@ -51,25 +51,40 @@ def fetch_items(limit_per_feed=25):
     return uniq
 
 # ===== 选题与成文 =====
-SYS = "You are a senior AI editor. Write publishable blog posts. No chain-of-thought."
-# Use sentinel placeholders to avoid Python str.format conflicts with braces
-PROMPT = """
-Given today's AI updates (title|url|ts + brief), create a DAILY blog post in Chinese with structure:
-- title_zh: concise, 18-28 Chinese characters, no punctuation at end.
-- description_zh: 60-120 chars summary for SEO/OG.
-- tags: 3-5 short tags (e.g., LLM,RAG,Agent,CV,Infra).
-- toc: an ordered list of section titles (3-6 items).
-- sections: array of {"heading": string, "markdown": string} where `markdown` is ~150-250 words in Chinese for each section.
-- refs: 6-12 items of {"title": string, "url": string} (must be real sources from the given entries).
-- en_teaser: 1-2 sentences in English (for cross-post).
-- es_teaser: 1-2 oraciones en español.
+SYS = (
+        "You are a senior AI editor. Write publishable, objective Chinese posts. "
+        "No chain-of-thought; avoid hype/marketing words; replace speculation with attributed phrasing."
+)
+# Two-step, stricter JSON output with plan + locked refs
+PROMPT = r"""
+You are an experienced AI news editor. Produce a DAILY Chinese blog post as STRICT JSON.
+Do the job in TWO STEPS **inside one JSON**:
+
+1) "plan": pick 3–5 key items ONLY from the given entries and define:
+     - plan.toc: 3–6 section titles (Chinese).
+     - plan.refs: an ordered list of {title,url} where every url MUST be from the entries.
+     - plan.claims: 6–10 one-sentence factual bullets, each mapping to one or more ref indexes.
+
+2) "draft": write the article body with these constraints:
+     - title_zh: 18–28 Chinese characters, no punctuation at the end.
+     - description_zh: 60–120 Chinese characters, objective and specific.
+     - tags: 3–5 short tags, e.g. ["LLM","RAG","Agent"].
+     - sections: array of {heading, markdown}, length = len(plan.toc).
+         * Each section 150–250 Chinese characters.
+         * End each section with bracketed reference indexes matching plan.refs, e.g. [1][3].
+         * Do NOT introduce facts that are not supported by plan.refs.
+     - en_teaser: 1–2 English sentences.
+     - es_teaser: 1–2 oraciones en español.
+     - Total Chinese body length ≈ [[MAX_WORDS]] characters (±15%).
 
 Rules:
-- Prefer 3-5 key items across LLM/Agent/RAG/CV, focusing on significance and impact; avoid rumors.
-- Attribute facts to sources; include URLs in refs only (no footnotes inline).
-- Avoid direct quotes > 25 words. Summarize in your own words.
-- Keep total Chinese body within [[MAX_WORDS]] characters roughly.
-- Output JSON ONLY with the fields above.
+- Cite **only** from plan.refs; no extra sources, no speculation, no marketing language.
+- Prefer cross-source corroborated items; avoid overlapping news.
+- Avoid direct quotes > 25 words; rewrite in your words.
+- Output JSON ONLY with keys: plan, title_zh, description_zh, tags, toc, sections, refs, en_teaser, es_teaser
+    where:
+    * toc == plan.toc
+    * refs == plan.refs
 
 Entries:
 [[ENTRIES]]
@@ -96,11 +111,78 @@ def _extract_json_from_text(text: str):
     # Finally try direct
     return json.loads(t)
 
+# ===== Output post-processing helpers =====
+def _urls_from_entries(entries):
+    return { (it.get("url") or "").strip() for it in entries if it.get("url") }
+
+def _sanitize_output(j, entries):
+    allowed = _urls_from_entries(entries)
+    plan = j.get("plan", {}) if isinstance(j, dict) else {}
+    # 1) refs whitelist from entries
+    raw_refs = plan.get("refs") or j.get("refs") or []
+    clean_refs = []
+    for r in raw_refs:
+        if not isinstance(r, dict):
+            continue
+        url = (r.get("url") or "").strip()
+        if url and url in allowed:
+            clean_refs.append({"title": (r.get("title") or "").strip(), "url": url})
+    if not clean_refs:
+        raise ValueError("No valid refs in output.")
+    j["refs"] = clean_refs
+
+    # 2) toc alignment
+    toc = plan.get("toc") or j.get("toc") or []
+    j["toc"] = toc[:6]
+
+    # 3) sections count matches toc
+    sec = j.get("sections") or []
+    j["sections"] = sec[:len(j["toc"])]
+    return j
+
+def _cn_len(s: str) -> int:
+    return sum(2 if '\u4e00' <= c <= '\u9fff' else 1 for c in (s or ""))
+
+def _trim_title(s: str) -> str:
+    t = (s or "").strip(" ，。！？?!.:；;\n\t")
+    # enforce ~18-28 CJK char length (rough)
+    L = _cn_len(t)
+    if L < 18 or L > 28:
+        # simple hard cut without re-asking model
+        t = t[:20]
+    return t
+
+def _compress_sections(j: dict, max_words: int):
+    secs = j.get("sections") or []
+    n = max(1, len(secs))
+    per = int(max_words / n) + 40
+    for s in secs:
+        txt = s.get("markdown", "")
+        while _cn_len(txt) > per and len(txt) > 10:
+            txt = txt[:-10]
+        s["markdown"] = txt
+
+def _cap_ref_indexes(sections, ref_count: int):
+    pat = re.compile(r"\[(\d+)\]")
+    for s in sections:
+        txt = s.get("markdown", "")
+        def repl(m):
+            idx = int(m.group(1))
+            idx = min(max(idx, 1), max(ref_count, 1))
+            return f"[{idx}]"
+        s["markdown"] = pat.sub(repl, txt)
+
 def pick_and_write(entries, max_words=1100):
     joined = "\n".join([f"- {it['title']} | {it['url']} | {it['ts']}\n  {it['summary']}" for it in entries])
     prompt = PROMPT.replace("[[ENTRIES]]", joined).replace("[[MAX_WORDS]]", str(max_words))
     out = chat_once(prompt, system=SYS, temperature=0.25)
     j = _extract_json_from_text(out)
+    # sanitize and align with plan
+    j = _sanitize_output(j, entries)
+    # hard trims for title/sections length & cap ref indexes
+    j["title_zh"] = _trim_title(j.get("title_zh", ""))
+    _compress_sections(j, max_words)
+    _cap_ref_indexes(j.get("sections", []), len(j.get("refs", [])))
     return j
 
 # ===== HTML 拼装 =====
@@ -120,13 +202,20 @@ def gen_toc_html(toc):
         items.append(f'<li><a href="#{aid}">{BS(t, "html.parser").text}</a></li>')
     return "\n".join(items)
 
-def sections_to_html(sections):
+def _link_ref_indexes(html: str, ref_count: int) -> str:
+    try:
+        return re.sub(r"\[(\d{1,2})\]", lambda m: f"<sup><a href=\"#ref-{min(max(int(m.group(1)),1), ref_count)}\">[{m.group(1)}]</a></sup>" if ref_count>0 else m.group(0), html)
+    except Exception:
+        return html
+
+def sections_to_html(sections, ref_count: int = 0):
     parts=[]
     for i, sec in enumerate(sections, 1):
         hid = f"sec-{i}"
         heading = BS(sec["heading"], "html.parser").text
         # markdown → HTML
         html = md2html(sec["markdown"], extras=["fenced-code-blocks","tables","strike"])
+        html = _link_ref_indexes(html, ref_count)
         parts.append(f'<h2 id="{hid}">{heading}</h2>\n{html}')
     return "\n".join(parts)
 
@@ -225,8 +314,8 @@ def main():
 
     # 4) 内容→HTML
     toc_html = gen_toc_html(j["toc"])
-    content_html = sections_to_html(j["sections"])
-    refs_html = "\n".join([f'<li><a href="{r["url"]}" target="_blank" rel="noopener">{BS(r["title"],"html.parser").text}</a></li>' for r in j["refs"]])
+    content_html = sections_to_html(j["sections"], ref_count=len(j["refs"]))
+    refs_html = "\n".join([f'<li id="ref-{i+1}"><a href="{r["url"]}" target="_blank" rel="noopener">{BS(r["title"],"html.parser").text}</a></li>' for i, r in enumerate(j["refs"])])
 
     # 5) OG 分享图
     og_png = os.path.join(OG_DIR, f"{slug}.png")

@@ -97,39 +97,79 @@
       </div>
     </section>
 
-    <!-- 自动资讯 & 报告 -->
+    <!-- Section: 自动资讯 & 报告 (with featured + feed) -->
     <section class="section" id="ai-news">
-      <div class="container">
-        <h2 data-i18n="ai_lab_news_title">自动资讯 & 报告</h2>
-        <p class="muted" data-i18n="ai_lab_news_desc">机器替你读每天：AI Daily、快讯雷达、论文一页纸、模型与工具追踪等。</p>
-        <div class="toolbar" style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0 1rem">
-          <a class="btn rss outline" id="rss-button" href="data/ai/blog/rss.xml" title="RSS">RSS</a>
-        </div>
-        <h3 style="margin:12px 0" data-i18n="ai_lab_daily_title">AI Daily · 每日一更</h3>
-        <div id="daily-list" class="blog-posts"></div>
-        <p id="daily-empty" class="muted" hidden data-i18n="ai_lab_empty">暂无数据，敬请期待。</p>
-      </div>
-    </section>
+      <div class="container" style="display:grid;grid-template-columns: 2fr 1fr;gap:24px;align-items:start">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px">
+            <div>
+              <h2 style="margin:0" data-i18n="ai_lab_news_title">自动资讯 & 报告</h2>
+              <p class="muted" style="margin:6px 0 0 0" data-i18n="ai_lab_news_desc">机器替你读每天：AI Daily、快讯雷达、论文一页纸、模型与工具追踪等。</p>
+            </div>
+            <div class="toolbar" style="display:flex;gap:.5rem;flex-wrap:wrap">
+              <a class="btn rss outline" id="rss-button" href="data/ai/blog/rss.xml" title="RSS">RSS</a>
+            </div>
+          </div>
 
-    <!-- 站内智能小应用（占位） -->
-    <section class="section" id="ai-apps">
-      <div class="container">
-        <h2 data-i18n="ai_lab_apps_title">站内智能小应用</h2>
-        <p class="muted" data-i18n="ai_lab_apps_desc">AI Teacher、Ask My Site、Long-form to Slides/Audio 等交互 Demo。</p>
-        <div class="blog-posts">
-          <article class="card post-card">
-            <div>
-              <h3>AI Teacher</h3>
-              <p class="muted" data-i18n="coming_soon">功能开发中，敬请期待…</p>
+          <!-- Featured latest -->
+          <article id="featured" class="card" style="padding:0;overflow:hidden;margin-bottom:16px" hidden>
+            <div style="display:grid;grid-template-columns: 1.5fr 1fr;gap:0">
+              <a id="featured-link" class="post-link" href="#" style="display:block">
+                <img id="featured-img" src="assets/placeholder.jpg" alt="featured" style="width:100%;height:100%;object-fit:cover;aspect-ratio:16/9"/>
+              </a>
+              <div style="padding:16px">
+                <h3 style="margin:0 0 6px 0"><a id="featured-title" href="#"></a></h3>
+                <p id="featured-date" class="muted" style="margin:0 0 8px 0"></p>
+                <p id="featured-desc" class="muted" style="margin:0 0 12px 0"></p>
+                <div id="featured-tags" class="muted"></div>
+              </div>
             </div>
           </article>
-          <article class="card post-card">
-            <div>
-              <h3>Ask My Site</h3>
-              <p class="muted" data-i18n="coming_soon">功能开发中，敬请期待…</p>
-            </div>
-          </article>
+
+          <!-- Filters -->
+          <div class="card" style="padding:8px 10px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <strong style="font-size:14px">筛选</strong>
+            <button class="btn outline small" data-tag="all">全部</button>
+            <button class="btn outline small" data-tag="LLM">LLM</button>
+            <button class="btn outline small" data-tag="RAG">RAG</button>
+            <button class="btn outline small" data-tag="Agent">Agent</button>
+            <button class="btn outline small" data-tag="CV">CV</button>
+            <button class="btn outline small" data-tag="Infra">Infra</button>
+          </div>
+
+          <div id="daily-list" class="blog-posts"></div>
+          <p id="daily-empty" class="muted" hidden data-i18n="ai_lab_empty">暂无数据，敬请期待。</p>
+          <div style="display:grid;place-items:center;margin-top:8px">
+            <button id="load-more" class="btn outline" hidden>加载更多</button>
+          </div>
         </div>
+
+        <!-- Right column: upcoming modules -->
+        <aside class="card" style="padding:16px;position:sticky;top:88px">
+          <h3 style="margin-top:0">Lab 模块规划</h3>
+          <ul class="muted" style="margin:8px 0 0 16px;line-height:1.8">
+            <li>快讯雷达（News Radar）</li>
+            <li>论文一页纸（Paper Digest）</li>
+            <li>模型与工具追踪（Release Tracker）</li>
+            <li>行业报告生成（Auto Reports）</li>
+          </ul>
+          <hr style="margin:12px 0">
+          <h4 style="margin:0 0 6px 0">站内智能小应用</h4>
+          <div class="blog-posts">
+            <article class="card post-card">
+              <div>
+                <h3 style="margin:0 0 6px 0">AI Teacher</h3>
+                <p class="muted" data-i18n="coming_soon">功能开发中，敬请期待…</p>
+              </div>
+            </article>
+            <article class="card post-card">
+              <div>
+                <h3 style="margin:0 0 6px 0">Ask My Site</h3>
+                <p class="muted" data-i18n="coming_soon">功能开发中，敬请期待…</p>
+              </div>
+            </article>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
@@ -141,38 +181,95 @@
   </footer>
 
   <script>
-    // Populate AI Daily list from data/ai/blog/index.json
+    // Populate AI Daily list with featured, filters, and load more
     (function(){
-      async function loadDaily(){
-        const list = document.getElementById('daily-list');
-        const empty = document.getElementById('daily-empty');
+      const listEl = document.getElementById('daily-list');
+      const emptyEl = document.getElementById('daily-empty');
+      const loadMoreBtn = document.getElementById('load-more');
+      const featured = {
+        root: document.getElementById('featured'),
+        link: document.getElementById('featured-link'),
+        img: document.getElementById('featured-img'),
+        title: document.getElementById('featured-title'),
+        date: document.getElementById('featured-date'),
+        desc: document.getElementById('featured-desc'),
+        tags: document.getElementById('featured-tags')
+      };
+      let all = [], filtered = [], page = 0, pageSize = 9, currentTag = 'all';
+
+      function card(it){
+        const date = (it.published||'').slice(0,10);
+        const tags = (it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+        const img = it.og_image || 'assets/placeholder.jpg';
+        const href = it.url || (`/blog/${it.slug}.html`);
+        return `
+        <article class="card post-card">
+          <a class="post-link" href="${href}">
+            <img class="post-thumb" src="${img}" alt="${(it.title||'').replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
+          </a>
+          <div>
+            <h3 class="post-card-title" style="margin:0 0 8px 0"><a class="post-card-title-link" href="${href}">${it.title||''}</a></h3>
+            <p class="muted" style="margin:0 0 6px 0">${date}</p>
+            <p class="muted" style="margin:0">${tags}</p>
+          </div>
+        </article>`;
+      }
+
+      function renderFeatured(item){
+        if(!item) { featured.root.hidden = true; return; }
+        const href = item.url || (`/blog/${item.slug}.html`);
+        const img = item.og_image || 'assets/placeholder.jpg';
+        featured.link.href = href;
+        featured.img.src = img;
+        featured.title.textContent = item.title||'';
+        featured.title.href = href;
+        featured.date.textContent = (item.published||'').slice(0,10);
+        featured.desc.textContent = item.description||'';
+        featured.tags.innerHTML = (item.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+        featured.root.hidden = false;
+      }
+
+      function applyFilter(tag){
+        currentTag = tag;
+        filtered = (tag==='all') ? all.slice(1) : all.filter((x,i)=> i>0 && Array.isArray(x.tags) && x.tags.includes(tag));
+        page = 0;
+        listEl.innerHTML = '';
+        if(filtered.length===0){ emptyEl.hidden = false; loadMoreBtn.hidden = true; return; }
+        emptyEl.hidden = true;
+        loadMoreBtn.hidden = filtered.length <= pageSize;
+        renderMore();
+      }
+
+      function renderMore(){
+        const slice = filtered.slice(page*pageSize, (page+1)*pageSize);
+        listEl.insertAdjacentHTML('beforeend', slice.map(card).join(''));
+        page++;
+        if(page*pageSize >= filtered.length) loadMoreBtn.hidden = true;
+      }
+
+      function bindFilters(){
+        document.querySelectorAll('[data-tag]').forEach(btn=>{
+          btn.addEventListener('click', ()=>{
+            document.querySelectorAll('[data-tag]').forEach(b=>b.classList.remove('primary'));
+            btn.classList.add('primary');
+            applyFilter(btn.getAttribute('data-tag'));
+          });
+        });
+      }
+
+      async function init(){
         try{
           const res = await fetch('data/ai/blog/index.json', { cache: 'no-store' });
           if(!res.ok) throw new Error('fetch failed');
-          const items = await res.json();
-          if(!Array.isArray(items) || items.length === 0){ empty.hidden = false; return; }
-          list.innerHTML = items.slice(0, 12).map(it => {
-            const date = (it.published || '').slice(0,10);
-            const tags = (it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
-            const img = it.og_image || 'assets/placeholder.jpg';
-            const href = it.url || (`/blog/${it.slug}.html`);
-            return `
-              <article class="card post-card">
-                <a class="post-link" href="${href}">
-                  <img class="post-thumb" src="${img}" alt="${(it.title||'').replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
-                </a>
-                <div>
-                  <h3 class="post-card-title" style="margin:0 0 8px 0">
-                    <a class="post-card-title-link" href="${href}">${it.title||''}</a>
-                  </h3>
-                  <p class="muted" style="margin:0 0 6px 0">${date}</p>
-                  <p class="muted" style="margin:0">${tags}</p>
-                </div>
-              </article>`;
-          }).join('');
-        }catch(e){ empty.hidden = false; }
+          all = await res.json();
+          if(!Array.isArray(all) || all.length === 0){ emptyEl.hidden = false; return; }
+          renderFeatured(all[0]);
+          bindFilters();
+          applyFilter('all');
+          loadMoreBtn.addEventListener('click', renderMore);
+        }catch(e){ emptyEl.hidden = false; }
       }
-      loadDaily();
+      init();
     })();
   </script>
 </body>
