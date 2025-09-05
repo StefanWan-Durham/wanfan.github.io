@@ -207,12 +207,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Initial sync
+    // Initial sync: do critical visibility first, then defer heavier work
     syncLangBlocks();
-    updateTocLabel();
-    buildToc();
-    updateReadingTime();
     syncPostHero();
+    const schedule = window.requestIdleCallback ? (cb) => requestIdleCallback(cb, { timeout: 1000 }) : (cb) => setTimeout(cb, 0);
+    schedule(() => {
+      updateTocLabel();
+      buildToc();
+      updateReadingTime();
+    });
     // Rebuild when language changes
     window.addEventListener('language-changed', () => {
       syncLangBlocks();
@@ -246,8 +249,19 @@ document.addEventListener('DOMContentLoaded', () => {
           } catch {}
           return false;
         }
-        // Try local vendor lib (preferred)
+        // Try local vendor lib (preferred). If not present, lazy-load it.
         if (drawWithLib()) return;
+        const localSrc = (location.pathname.includes('/blog/') ? '../' : '') + 'assets/vendor/qrcode.min.js';
+        try {
+          await new Promise((resolve, reject) => {
+            // Avoid duplicate loads
+            const existing = Array.from(document.scripts).find(s => s.src && s.src.endsWith('assets/vendor/qrcode.min.js'));
+            if (existing) { existing.addEventListener('load', resolve); existing.addEventListener('error', reject); return; }
+            const s = document.createElement('script');
+            s.src = localSrc; s.async = true; s.onload = resolve; s.onerror = reject; document.head.appendChild(s);
+          });
+          if (drawWithLib()) return;
+        } catch {}
         // Try to lazy-load from CDN as a resilience fallback when online
         try {
           await new Promise((resolve, reject) => {
@@ -318,61 +332,60 @@ document.addEventListener('DOMContentLoaded', () => {
       // If prev/next are disabled (#), attempt to compute from blog index order
       const isDisabled = (a)=> a.getAttribute('href') === '#' || a.hasAttribute('aria-disabled');
       if (!isDisabled(prev) && !isDisabled(next)) return; // already wired
-      (async () => {
-        try {
-          // Always prefer the order on blog.html (newest first). If it fails, fall back to embedded order (oldest first).
-          let orderNewToOld = [];
-          const resp = await fetch('../blog.html', { cache: 'no-store' }).catch(() => null);
-          if (resp && resp.ok) {
-            const html = await resp.text();
-            const doc = new DOMParser().parseFromString(html, 'text/html');
-            const anchors = Array.from(doc.querySelectorAll('.blog-posts .post-card a.post-link'));
-            orderNewToOld = anchors.map(a => {
-              const href = a.getAttribute('href') || '';
-              const file = href.split('/').pop() || '';
-              return file.replace(/\.(en|es)\.html$/, '.html');
-            }).filter(Boolean);
-          }
-          const orderOldToNew = (window.__BLOG_ORDER__ || []).map(s=>String(s));
-          const haveNewToOld = orderNewToOld.length > 0;
-          const haveOldToNew = orderOldToNew.length > 0;
-          if (!haveNewToOld && !haveOldToNew) return;
-          let current = location.pathname.split('/').pop(); // e.g., foo.html or foo.en.html
-          const lang = current.endsWith('.en.html') ? 'en' : current.endsWith('.es.html') ? 'es' : 'zh';
-          const base = current.replace(/\.(en|es)\.html$/, '.html');
-          const zhName = base;
-          // Helper to apply href with language suffix
-          const setHref = (a, targetZhName) => {
-            if (!a) return;
-            let target = targetZhName;
-            if (lang === 'en') target = target.replace(/\.html$/, '.en.html');
-            else if (lang === 'es') target = target.replace(/\.html$/, '.es.html');
-            a.setAttribute('href', `./${target}`);
-            a.removeAttribute('aria-disabled');
-            a.removeAttribute('onclick');
-          };
-          if (haveNewToOld) {
-            const order = orderNewToOld;
-            const idx = order.findIndex(name => name === zhName);
-            if (idx !== -1) {
-              // blog.html is newest -> oldest; Prev = older, Next = newer
-              if (isDisabled(prev) && idx < order.length - 1) setHref(prev, order[idx + 1]);
-              if (isDisabled(next) && idx > 0) setHref(next, order[idx - 1]);
-              return;
+      const schedulePN = window.requestIdleCallback ? (cb) => requestIdleCallback(cb, { timeout: 1200 }) : (cb) => setTimeout(cb, 250);
+      schedulePN(() => {
+        (async () => {
+          try {
+            // First try embedded order (oldest -> newest)
+            let updated = false;
+            const orderOldToNew = (window.__BLOG_ORDER__ || []).map(s=>String(s));
+            const haveOldToNew = orderOldToNew.length > 0;
+            let current = location.pathname.split('/').pop(); // e.g., foo.html or foo.en.html
+            const lang = current.endsWith('.en.html') ? 'en' : current.endsWith('.es.html') ? 'es' : 'zh';
+            const base = current.replace(/\.(en|es)\.html$/, '.html');
+            const zhName = base;
+            const setHref = (a, targetZhName) => {
+              if (!a) return;
+              let target = targetZhName;
+              if (lang === 'en') target = target.replace(/\.html$/, '.en.html');
+              else if (lang === 'es') target = target.replace(/\.html$/, '.es.html');
+              a.setAttribute('href', `./${target}`);
+              a.removeAttribute('aria-disabled');
+              a.removeAttribute('onclick');
+            };
+            if (haveOldToNew) {
+              const order = orderOldToNew;
+              const idx = order.findIndex(name => name === zhName);
+              if (idx !== -1) {
+                if (isDisabled(prev) && idx > 0) { setHref(prev, order[idx - 1]); updated = true; }
+                if (isDisabled(next) && idx < order.length - 1) { setHref(next, order[idx + 1]); updated = true; }
+              }
             }
-          }
-          // Fallback: embedded order is oldest -> newest
-          if (haveOldToNew) {
-            const order = orderOldToNew;
-            const idx = order.findIndex(name => name === zhName);
-            if (idx !== -1) {
-              // embedded: oldest -> newest; Prev = older (idx-1), Next = newer (idx+1)
-              if (isDisabled(prev) && idx > 0) setHref(prev, order[idx - 1]);
-              if (isDisabled(next) && idx < order.length - 1) setHref(next, order[idx + 1]);
+            if (updated && !isDisabled(prev) && !isDisabled(next)) return;
+            // If still missing, try blog.html (newest -> oldest) with cache-friendly mode
+            let orderNewToOld = [];
+            const resp = await fetch('../blog.html', { cache: 'force-cache' }).catch(() => null);
+            if (resp && resp.ok) {
+              const html = await resp.text();
+              const doc = new DOMParser().parseFromString(html, 'text/html');
+              const anchors = Array.from(doc.querySelectorAll('.blog-posts .post-card a.post-link'));
+              orderNewToOld = anchors.map(a => {
+                const href = a.getAttribute('href') || '';
+                const file = href.split('/').pop() || '';
+                return file.replace(/\.(en|es)\.html$/, '.html');
+              }).filter(Boolean);
             }
-          }
-        } catch {}
-      })();
+            if (orderNewToOld.length) {
+              const order = orderNewToOld;
+              const idx = order.findIndex(name => name === zhName);
+              if (idx !== -1) {
+                if (isDisabled(prev) && idx < order.length - 1) setHref(prev, order[idx + 1]);
+                if (isDisabled(next) && idx > 0) setHref(next, order[idx - 1]);
+              }
+            }
+          } catch {}
+        })();
+      });
     })();
   })();
 

@@ -257,7 +257,7 @@ function buildHtml({lang, slug, title, description, date, bodyHtml, heroSrc, ogI
   <script>try{var L='${lang}';localStorage.setItem('lang',L);document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
-  <script defer src="../assets/vendor/qrcode.min.js"></script>
+  <!-- QR library will be loaded on demand by script.js when user opens WeChat share -->
   <script>window.__BLOG_ORDER__ = ${JSON.stringify(orderList || [])};</script>
 </head>
 <body>
