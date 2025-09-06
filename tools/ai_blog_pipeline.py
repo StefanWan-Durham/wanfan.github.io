@@ -33,7 +33,7 @@ JSON schema:
     "items": [
         {
             "headline": "≤24字；格式：[类别] + 要点（中文）",
-            "one_liner": "≤160字；问题→方法→结果的单句",
+        "one_liner": "≤60字；问题→方法→结果的单句",
             "task": "LLM/RAG/Agent/CV/ASR/NLP/MM/IR/Robotics/Infra/Theory/Other",
             "type": "paper/code/dataset/benchmark/blog/policy",
             "novelty": "method/data/metric/compute/engineering",
@@ -45,10 +45,16 @@ JSON schema:
             "links": {"paper":"URL或N/A", "code":"URL或N/A", "project":"URL或N/A"},
             "tags": ["短标签×3-6，如 LLM,RAG,Agent,Eval"],
             "impact_score": 0-100,
-            "reproducibility_score": 0-100
+        "reproducibility_score": 0-100,
+        "quick_read": "120-180字中文摘要（可选）",
+        "who_should_try": "适用人群（可选）"
         }
     ],
-    "refs": [{"title":"", "url":""}]
+    "refs": [{"title":"", "url":""}],
+    "stats": {"by_task": {"LLM":0}, "with_code": 0, "new_benchmarks": 0},
+    "must_reads": [0,1,2,3,4],
+    "nice_to_read": [5,6,7,8,9,10,11,12],
+    "deep_dive": {"title":"可选主题", "summary":"三句话要点（可选）", "refs": [0,3,5]}
 }
 
 Rules:
@@ -466,8 +472,11 @@ def pick_and_write(entries, max_words=1100):
     if rules_extra:
         prompt = prompt.replace("Rules:", "Rules:\n- " + "\n- ".join(rules_extra))
     try:
-        out = chat_once(prompt, system=SYS, temperature=0.25)
-        j = _extract_json_from_text(out)
+        out = chat_once(prompt, system=SYS, temperature=0.25, max_tokens=2048)
+        try:
+            j = _extract_json_from_text(out)
+        except Exception:
+            j = _extract_json_relaxed(out)
         # sanitize and align with plan
         j = _sanitize_output(j, used)
         # hard trims for title/sections length & cap ref indexes
@@ -477,7 +486,7 @@ def pick_and_write(entries, max_words=1100):
         return j
     except Exception as e:
         print("LLM unavailable, using fallback draft:", e)
-        return _fallback_draft(used, max_words=max_words)
+    return _fallback_draft(used, max_words=max_words)
 
 # ===== ScholarPush generation & validation =====
 def _validate_scholarpush(j: dict):
@@ -494,6 +503,44 @@ def _validate_scholarpush(j: dict):
         for lk in ["paper","code","project"]:
             assert lk in links, f"links.{lk} required"
         assert isinstance(it.get("tags",[]), list)
+    # light checks for new fields
+    if "stats" in j:
+        assert isinstance(j["stats"], dict)
+    if "must_reads" in j:
+        assert isinstance(j["must_reads"], list)
+    if "nice_to_read" in j:
+        assert isinstance(j["nice_to_read"], list)
+
+def _arxiv_pdf(url: str) -> str:
+    try:
+        m = re.search(r"(\d{4}\.\d{4,5})(v\d+)?", url)
+        if m:
+            return f"https://arxiv.org/pdf/{m.group(1)}.pdf"
+    except Exception:
+        pass
+    return "N/A"
+
+def _build_stats(items: list) -> dict:
+    by_task = {}
+    with_code = 0
+    new_bench = 0
+    for it in items:
+        t = (it.get("task") or "Other")
+        by_task[t] = by_task.get(t,0)+1
+        links = it.get("links",{})
+        if links.get("code") and links.get("code") != "N/A":
+            with_code += 1
+        typ = (it.get("type") or "").lower()
+        tags = [str(x).lower() for x in (it.get("tags") or [])]
+        if "dataset" in typ or "benchmark" in typ or "benchmark" in tags:
+            new_bench += 1
+    return {"by_task": by_task, "with_code": with_code, "new_benchmarks": new_bench}
+
+def _split_picks(items: list, top_n=5, next_n=8):
+    items_sorted = sorted(items, key=lambda x: (int(x.get("impact_score",0)), int(x.get("reproducibility_score",0))), reverse=True)
+    must_idx = list(range(0, min(top_n, len(items_sorted))))
+    nice_idx = list(range(len(must_idx), min(len(must_idx)+next_n, len(items_sorted))))
+    return must_idx, nice_idx
 
 def _fallback_scholarpush(entries, n_items=8):
     import urllib.parse as U
@@ -515,9 +562,11 @@ def _fallback_scholarpush(entries, n_items=8):
         else:
             task="LLM"
         one = re.sub(r"\s+", " ", BS(it.get("summary",""), "html.parser").text).strip()
-        one = (one[:56] + "…") if len(one)>58 else one
+        # Preserve full text for UI clamping; keep a soft quick_read cap only
+        quick = (one[:170] + "…") if len(one)>172 else one
         items.append({
-            "headline": f"[{task}] {title[:20]}",
+            # Do not hard-truncate here; UI will clamp the display
+            "headline": f"[{task}] {title}",
             "one_liner": one or "基于公开摘要的自动概览",
             "task": task,
             "type": "paper" if "arxiv.org" in url else "blog",
@@ -525,13 +574,16 @@ def _fallback_scholarpush(entries, n_items=8):
             "key_numbers": [],
             "reusability": [],
             "limitations": [],
-            "links": {"paper": url if "arxiv.org" in url else "N/A","code":"N/A","project":"N/A"},
+            "links": {"paper": url if "arxiv.org" in url else "N/A","code":"N/A","project":"N/A","pdf": _arxiv_pdf(url)},
             "tags": [task, host],
             "impact_score": 50,
-            "reproducibility_score": 30
+            "reproducibility_score": 30,
+            "quick_read": quick,
         })
     refs = [{"title": BS(it.get("title",""),"html.parser").text.strip(), "url": it.get("url","" )} for it in picks]
-    return {"generated_at": datetime.now(timezone.utc).isoformat(), "items": items, "refs": refs}
+    stats = _build_stats(items)
+    must, nice = _split_picks(items)
+    return {"generated_at": datetime.now(timezone.utc).isoformat(), "items": items, "refs": refs, "stats": stats, "must_reads": must, "nice_to_read": nice}
 
 def make_scholarpush(entries, n_items=8):
     # Topic preference ordering before filtering
@@ -552,10 +604,27 @@ def make_scholarpush(entries, n_items=8):
               .replace("[[ENTRIES]]", joined))
     try:
         out = chat_once(prompt, system="You are an academic news editor. STRICT JSON.", temperature=0.2, max_tokens=1536)
+        # Parse model output with escalating strategies; if both fail, try a single repair round-trip
         try:
             j = _extract_json_from_text(out)
         except Exception:
-            j = _extract_json_relaxed(out)
+            try:
+                j = _extract_json_relaxed(out)
+            except Exception:
+                # One-shot repair attempt to coerce to valid JSON
+                try:
+                    repair_prompt = (
+                        "修复以下内容为严格合法 JSON（仅输出 JSON，不要解释）。\n"
+                        "要求字段：generated_at, items[], refs[], stats{by_task,with_code,new_benchmarks}, must_reads[], nice_to_read[].\n"
+                        "如果缺字段请补齐为空结构；items 中 links{paper,code,project,pdf} 必须存在。\n\n原始内容：\n" + out
+                    )
+                    out_fix = chat_once(repair_prompt, system="You are a strict JSON fixer.", temperature=0.0, max_tokens=1536)
+                    try:
+                        j = _extract_json_from_text(out_fix)
+                    except Exception:
+                        j = _extract_json_relaxed(out_fix)
+                except Exception:
+                    raise
 
         # refs 白名单过滤
         allowed = { (it.get("url") or "").strip() for it in entries }
@@ -568,18 +637,31 @@ def make_scholarpush(entries, n_items=8):
 
         cleaned=[]
         for it in (j.get("items") or [])[:n_items]:
-            h = (it.get("headline") or "").strip()[:24]
-            ol = (it.get("one_liner") or "").strip()[:160]
+            # Preserve full headline/one_liner; rely on UI clamp. Ensure they are strings.
+            h = (it.get("headline") or "").strip()
+            ol = (it.get("one_liner") or "").strip()
             it["headline"] = h
-            it["one_liner"] = ol
+            it["one_liner"] = ol or h or ""
             it.setdefault("links", {})
             it["links"].setdefault("paper","N/A")
             it["links"].setdefault("code","N/A")
             it["links"].setdefault("project","N/A")
+            it["links"].setdefault("pdf", _arxiv_pdf(it["links"].get("paper","")))
             it.setdefault("tags", [])
             it.setdefault("key_numbers", [])
+            # quick_read optional
+            qr = (it.get("quick_read") or it.get("one_liner") or "").strip()
+            it["quick_read"] = (qr[:178] + "…") if len(qr) > 180 else qr
             cleaned.append(it)
         j["items"] = cleaned
+
+        # derive stats/must_reads/nice_to_read if missing
+        if not j.get("stats"):
+            j["stats"] = _build_stats(j["items"]) if j.get("items") else {"by_task":{},"with_code":0,"new_benchmarks":0}
+        if not j.get("must_reads") or not j.get("nice_to_read"):
+            must, nice = _split_picks(j["items"])
+            j["must_reads"] = must
+            j["nice_to_read"] = nice
 
         _validate_scholarpush(j)
         if not j.get("items"):

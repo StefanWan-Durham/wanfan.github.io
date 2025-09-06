@@ -1,5 +1,186 @@
 [
   {
+    "id": "2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展#sec-5",
+    "date": "2025-09-06T14:26:32.775320+00:00",
+    "daily_slug": "2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展",
+    "daily_title": "多模态检测与语言模型优化今日研究进展",
+    "section_index": 5,
+    "heading": "AI代理心理增强框架",
+    "summary": "MBTI-in-Thoughts框架基于迈尔斯-布里格斯类型指标，为LLM代理注入心理人格特征以增强其有效性。人格条件化帮助代理模拟不同行为模式，提升在复杂任务中的表现。这一心理增强方法为AI代理开发提供了新方向。",
+    "url": "/blog/2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展.html#sec-5",
+    "tags": [
+      "多模态",
+      "LLM",
+      "检索",
+      "安全",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      5
+    ]
+  },
+  {
+    "id": "2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展#sec-4",
+    "date": "2025-09-06T14:26:32.775320+00:00",
+    "daily_slug": "2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展",
+    "daily_title": "多模态检测与语言模型优化今日研究进展",
+    "section_index": 4,
+    "heading": "语音搜索纠错技术突破",
+    "summary": "上下文化令牌判别方法改进语音搜索查询的拼写纠正，尤其针对自动语音识别系统在领域特定命名实体上的困难。该方法利用上下文信息增强纠错精度，适应语音搜索的流行趋势，提升用户意图表达的清晰度。",
+    "url": "/blog/2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展.html#sec-4",
+    "tags": [
+      "多模态",
+      "LLM",
+      "检索",
+      "安全",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      4
+    ]
+  },
+  {
+    "id": "2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展#sec-3",
+    "date": "2025-09-06T14:26:32.775320+00:00",
+    "daily_slug": "2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展",
+    "daily_title": "多模态检测与语言模型优化今日研究进展",
+    "section_index": 3,
+    "heading": "KV缓存优化提升推理效率",
+    "summary": "PagedEviction方法通过结构化块级修剪减少KV缓存的内存占用，解决长序列推理中的瓶颈问题。KV缓存虽加速token生成，但随序列增长成为主要内存负担。该方法在保持性能的同时显著提升效率，适用于大规模部署。",
+    "url": "/blog/2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展.html#sec-3",
+    "tags": [
+      "多模态",
+      "LLM",
+      "检索",
+      "安全",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      3
+    ]
+  },
+  {
+    "id": "2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展#sec-2",
+    "date": "2025-09-06T14:26:32.775320+00:00",
+    "daily_slug": "2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展",
+    "daily_title": "多模态检测与语言模型优化今日研究进展",
+    "section_index": 2,
+    "heading": "大语言模型微调与对齐研究",
+    "summary": "大语言模型后训练主要依赖在线生成数据和离线演示数据，分别用于强化学习和监督学习方法。这一统一视角有助于理解模型如何对齐人类偏好和社会价值。研究强调了数据来源对模型行为的影响，为后续优化提供理论基础。",
+    "url": "/blog/2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展.html#sec-2",
+    "tags": [
+      "多模态",
+      "LLM",
+      "检索",
+      "安全",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      2
+    ]
+  },
+  {
+    "id": "2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展#sec-1",
+    "date": "2025-09-06T14:26:32.775320+00:00",
+    "daily_slug": "2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展",
+    "daily_title": "多模态检测与语言模型优化今日研究进展",
+    "section_index": 1,
+    "heading": "多模态虚假信息检测新进展",
+    "summary": "TRUST-VL系统针对文本、视觉和跨模态扭曲的虚假信息提供可解释的检测方案。生成式AI的普及加剧了多模态虚假信息的社会威胁，现有方法通常专注于单一失真类型且泛化能力有限。该系统旨在解决这一挑战，提升对未见场景的适应性。",
+    "url": "/blog/2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展.html#sec-1",
+    "tags": [
+      "多模态",
+      "LLM",
+      "检索",
+      "安全",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      1
+    ]
+  },
+  {
+    "id": "2025-09-06-ai-daily-Virtual-Fitting-Room#sec-4",
+    "date": "2025-09-06T14:14:31.138872+00:00",
+    "daily_slug": "2025-09-06-ai-daily-Virtual-Fitting-Room",
+    "daily_title": "Virtual Fitting Room",
+    "section_index": 4,
+    "heading": "Plot'n Polish: Zero-shot Sto",
+    "summary": "Text-to-imagediffusionmodelshavedemonstratedsignificantcapabilitiestogeneratediverseanddetailedvisualsinvariousdomains,andstoryvisualizationisemergingasaparticularlypromisingapplication.However,astheiruseinreal-worldcreativedomainsincreases",
+    "url": "/blog/2025-09-06-ai-daily-Virtual-Fitting-Room.html#sec-4",
+    "tags": [
+      "LLM",
+      "RAG",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      4
+    ]
+  },
+  {
+    "id": "2025-09-06-ai-daily-Virtual-Fitting-Room#sec-3",
+    "date": "2025-09-06T14:14:31.138872+00:00",
+    "daily_slug": "2025-09-06-ai-daily-Virtual-Fitting-Room",
+    "daily_title": "Virtual Fitting Room",
+    "section_index": 3,
+    "heading": "TRUST-VL: An Explainable New",
+    "summary": "Multimodalmisinformation,encompassingtextual,visual,andcross-modaldistortions,posesanincreasingsocietalthreatthatisamplifiedbygenerativeAI.Existingmethodstypicallyfocusonasingletypeofdistortionandstruggletogeneralizetounseenscenarios.Inthis",
+    "url": "/blog/2025-09-06-ai-daily-Virtual-Fitting-Room.html#sec-3",
+    "tags": [
+      "LLM",
+      "RAG",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      3
+    ]
+  },
+  {
+    "id": "2025-09-06-ai-daily-Virtual-Fitting-Room#sec-2",
+    "date": "2025-09-06T14:14:31.138872+00:00",
+    "daily_slug": "2025-09-06-ai-daily-Virtual-Fitting-Room",
+    "daily_title": "Virtual Fitting Room",
+    "section_index": 2,
+    "heading": "ChronoGraph: A Real-World Gr",
+    "summary": "WepresentChronoGraph,agraph-structuredmultivariatetimeseriesforecastingdatasetbuiltfromreal-worldproductionmicroservices.Eachnodeisaservicethatemitsamultivariatestreamofsystem-levelperformancemetrics,capturingCPU,memory,andnetworkusagepatte",
+    "url": "/blog/2025-09-06-ai-daily-Virtual-Fitting-Room.html#sec-2",
+    "tags": [
+      "LLM",
+      "RAG",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      2
+    ]
+  },
+  {
+    "id": "2025-09-06-ai-daily-Virtual-Fitting-Room#sec-1",
+    "date": "2025-09-06T14:14:31.138872+00:00",
+    "daily_slug": "2025-09-06-ai-daily-Virtual-Fitting-Room",
+    "daily_title": "Virtual Fitting Room",
+    "section_index": 1,
+    "heading": "Virtual Fitting Room: Genera",
+    "summary": "WeintroducetheVirtualFittingRoom(VFR),anovelvideogenerativemodelthatproducesarbitrarilylongvirtualtry-onvideos.OurVFRmodelslongvideogenerationtasksasanauto-regressive,segment-by-segmentgenerationprocess,eliminatingtheneedforresource-intensi",
+    "url": "/blog/2025-09-06-ai-daily-Virtual-Fitting-Room.html#sec-1",
+    "tags": [
+      "LLM",
+      "RAG",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      1
+    ]
+  },
+  {
     "id": "2025-09-06-ai-daily-大语言模型优化与多模态安全研究进展#sec-5",
     "date": "2025-09-06T13:16:52.234060+00:00",
     "daily_slug": "2025-09-06-ai-daily-大语言模型优化与多模态安全研究进展",
@@ -755,82 +936,6 @@
       "半监督学习",
       "Wasserstein距离",
       "计算机视觉"
-    ],
-    "og_image": "/assets/placeholder.jpg",
-    "refs": [
-      1
-    ]
-  },
-  {
-    "id": "2025-09-06-ai-daily-Virtual-Fitting-Room#sec-4",
-    "date": "2025-09-06T11:23:01.993936+00:00",
-    "daily_slug": "2025-09-06-ai-daily-Virtual-Fitting-Room",
-    "daily_title": "Virtual Fitting Room",
-    "section_index": 4,
-    "heading": "Plot'n Polish: Zero-shot Sto",
-    "summary": "Text-to-imagediffusionmodelshavedemonstratedsignificantcapabilitiestogeneratediverseanddetailedvisualsinvariousdomains,andstoryvisualizationisemergingasaparticularlypromisingapplication.。",
-    "url": "/blog/2025-09-06-ai-daily-Virtual-Fitting-Room.html#sec-4",
-    "tags": [
-      "LLM",
-      "RAG",
-      "Agent"
-    ],
-    "og_image": "/assets/placeholder.jpg",
-    "refs": [
-      4
-    ]
-  },
-  {
-    "id": "2025-09-06-ai-daily-Virtual-Fitting-Room#sec-3",
-    "date": "2025-09-06T11:23:01.993936+00:00",
-    "daily_slug": "2025-09-06-ai-daily-Virtual-Fitting-Room",
-    "daily_title": "Virtual Fitting Room",
-    "section_index": 3,
-    "heading": "TRUST-VL: An Explainable New",
-    "summary": "Multimodalmisinformation,encompassingtextual,visual,andcross-modaldistortions,posesanincreasingsocietalthreatthatisamplifiedbygenerativeAI.Existingmethodstypicallyfocusonasingletypeofdistortionandstruggletogeneralizetounseenscenarios.。",
-    "url": "/blog/2025-09-06-ai-daily-Virtual-Fitting-Room.html#sec-3",
-    "tags": [
-      "LLM",
-      "RAG",
-      "Agent"
-    ],
-    "og_image": "/assets/placeholder.jpg",
-    "refs": [
-      3
-    ]
-  },
-  {
-    "id": "2025-09-06-ai-daily-Virtual-Fitting-Room#sec-2",
-    "date": "2025-09-06T11:23:01.993936+00:00",
-    "daily_slug": "2025-09-06-ai-daily-Virtual-Fitting-Room",
-    "daily_title": "Virtual Fitting Room",
-    "section_index": 2,
-    "heading": "ChronoGraph: A Real-World Gr",
-    "summary": "WepresentChronoGraph,agraph-structuredmultivariatetimeseriesforecastingdatasetbuiltfromreal-worldproductionmicroservices.。",
-    "url": "/blog/2025-09-06-ai-daily-Virtual-Fitting-Room.html#sec-2",
-    "tags": [
-      "LLM",
-      "RAG",
-      "Agent"
-    ],
-    "og_image": "/assets/placeholder.jpg",
-    "refs": [
-      2
-    ]
-  },
-  {
-    "id": "2025-09-06-ai-daily-Virtual-Fitting-Room#sec-1",
-    "date": "2025-09-06T11:23:01.993936+00:00",
-    "daily_slug": "2025-09-06-ai-daily-Virtual-Fitting-Room",
-    "daily_title": "Virtual Fitting Room",
-    "section_index": 1,
-    "heading": "Virtual Fitting Room: Genera",
-    "summary": "WeintroducetheVirtualFittingRoom(VFR),anovelvideogenerativemodelthatproducesarbitrarilylongvirtualtry-onvideos.。",
-    "url": "/blog/2025-09-06-ai-daily-Virtual-Fitting-Room.html#sec-1",
-    "tags": [
-      "LLM",
-      "RAG",
-      "Agent"
     ],
     "og_image": "/assets/placeholder.jpg",
     "refs": [

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-09-06T13:18:11.680338+00:00",
+  "generated_at": "2025-09-06T14:28:19.019826+00:00",
   "items": [
     {
       "headline": "[CV] Virtual Fitting Room",
@@ -13,14 +13,16 @@
       "links": {
         "paper": "http://arxiv.org/abs/2509.04450v1",
         "code": "N/A",
-        "project": "N/A"
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04450.pdf"
       },
       "tags": [
         "CV",
         "arxiv.org"
       ],
       "impact_score": 50,
-      "reproducibility_score": 30
+      "reproducibility_score": 30,
+      "quick_read": "We introduce the Virtual Fitting Room (VFR), a novel video generative model that produces arbitrarily long virtual try-on videos. Our VFR models long video generation tas…"
     },
     {
       "headline": "[LLM] ChronoGraph: A Real-",
@@ -34,14 +36,16 @@
       "links": {
         "paper": "http://arxiv.org/abs/2509.04449v1",
         "code": "N/A",
-        "project": "N/A"
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04449.pdf"
       },
       "tags": [
         "LLM",
         "arxiv.org"
       ],
       "impact_score": 50,
-      "reproducibility_score": 30
+      "reproducibility_score": 30,
+      "quick_read": "We present ChronoGraph, a graph-structured multivariate time series forecasting dataset built from real-world production microservices. Each node is a service that emits …"
     },
     {
       "headline": "[CV] TRUST-VL: An Explain",
@@ -55,14 +59,16 @@
       "links": {
         "paper": "http://arxiv.org/abs/2509.04448v1",
         "code": "N/A",
-        "project": "N/A"
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04448.pdf"
       },
       "tags": [
         "CV",
         "arxiv.org"
       ],
       "impact_score": 50,
-      "reproducibility_score": 30
+      "reproducibility_score": 30,
+      "quick_read": "Multimodal misinformation, encompassing textual, visual, and cross-modal distortions, poses an increasing societal threat that is amplified by generative AI. Existing met…"
     },
     {
       "headline": "[CV] Plot'n Polish: Zero-",
@@ -76,14 +82,16 @@
       "links": {
         "paper": "http://arxiv.org/abs/2509.04446v1",
         "code": "N/A",
-        "project": "N/A"
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04446.pdf"
       },
       "tags": [
         "CV",
         "arxiv.org"
       ],
       "impact_score": 50,
-      "reproducibility_score": 30
+      "reproducibility_score": 30,
+      "quick_read": "Text-to-image diffusion models have demonstrated significant capabilities to generate diverse and detailed visuals in various domains, and story visualization is emerging…"
     },
     {
       "headline": "[LLM] Towards Cognitively-",
@@ -97,14 +105,16 @@
       "links": {
         "paper": "http://arxiv.org/abs/2509.04445v1",
         "code": "N/A",
-        "project": "N/A"
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04445.pdf"
       },
       "tags": [
         "LLM",
         "arxiv.org"
       ],
       "impact_score": 50,
-      "reproducibility_score": 30
+      "reproducibility_score": 30,
+      "quick_read": "Recent AI work trends towards incorporating human-centric objectives, with the explicit goal of aligning AI models to personal preferences and societal values. Using stan…"
     },
     {
       "headline": "[CV] One Flight Over the ",
@@ -118,14 +128,16 @@
       "links": {
         "paper": "http://arxiv.org/abs/2509.04444v1",
         "code": "N/A",
-        "project": "N/A"
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04444.pdf"
       },
       "tags": [
         "CV",
         "arxiv.org"
       ],
       "impact_score": 50,
-      "reproducibility_score": 30
+      "reproducibility_score": 30,
+      "quick_read": "Driven by the demand for spatial intelligence and holistic scene perception, omnidirectional images (ODIs), which provide a complete 360\\textdegree{} field of view, are r…"
     },
     {
       "headline": "[LLM] Delta Activations: A",
@@ -139,14 +151,16 @@
       "links": {
         "paper": "http://arxiv.org/abs/2509.04442v1",
         "code": "N/A",
-        "project": "N/A"
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04442.pdf"
       },
       "tags": [
         "LLM",
         "arxiv.org"
       ],
       "impact_score": 50,
-      "reproducibility_score": 30
+      "reproducibility_score": 30,
+      "quick_read": "The success of powerful open source Large Language Models (LLMs) has enabled the community to create a vast collection of post-trained models adapted to specific tasks an…"
     },
     {
       "headline": "[LLM] DEXOP: A Device for ",
@@ -160,14 +174,16 @@
       "links": {
         "paper": "http://arxiv.org/abs/2509.04441v1",
         "code": "N/A",
-        "project": "N/A"
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04441.pdf"
       },
       "tags": [
         "LLM",
         "arxiv.org"
       ],
       "impact_score": 50,
-      "reproducibility_score": 30
+      "reproducibility_score": 30,
+      "quick_read": "We introduce perioperation, a paradigm for robotic data collection that sensorizes and records human manipulation while maximizing the transferability of the data to real…"
     }
   ],
   "refs": [
@@ -203,5 +219,25 @@
       "title": "DEXOP: A Device for Robotic Transfer of Dexterous Human Manipulation",
       "url": "http://arxiv.org/abs/2509.04441v1"
     }
+  ],
+  "stats": {
+    "by_task": {
+      "CV": 4,
+      "LLM": 4
+    },
+    "with_code": 0,
+    "new_benchmarks": 0
+  },
+  "must_reads": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "nice_to_read": [
+    5,
+    6,
+    7
   ]
 }

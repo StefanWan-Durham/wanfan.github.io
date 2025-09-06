@@ -26,16 +26,20 @@
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
   <style>
-    /* Two-column layout: left Daily, right Scholar cards; stacks on small screens */
-    .sp-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;align-items:start}
-    @media (max-width: 980px){ .sp-grid{grid-template-columns:1fr} }
-    .sp-sticky{position:sticky;top:72px}
-    .sp-card-list{display:flex;flex-direction:column;gap:10px}
-  .sp-meta{font-size:12px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
-  .sp-title{font-size:15px;line-height:1.35;margin:0 0 4px 0}
-  .sp-abstract{margin:0;color:var(--muted)}
-  .line-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .line-4{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+    /* Single-column ScholarPush page */
+    .sp-one{max-width:980px;margin:0 auto;padding:0 12px}
+    .sp-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .sp-chiprow{display:flex;gap:8px;flex-wrap:wrap}
+    .sp-section{margin:14px 0}
+    .sp-card{padding:12px 14px}
+    .sp-list{display:flex;flex-direction:column;gap:10px}
+    .sp-meta{font-size:12px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
+    .sp-title{font-size:16px;line-height:1.4;margin:0 0 6px 0}
+    .sp-abstract{margin:0;color:var(--muted)}
+  .line-2{display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .line-4{display:-webkit-box;-webkit-line-clamp:4;line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+    .stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    @media (max-width:700px){.stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
   </style>
 </head>
 <body class="blog">
@@ -108,62 +112,42 @@
       </div>
     </section>
 
-    <section class="section blog" id="ai-news">
-      <div class="container sp-grid">
-        <div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px">
-            <div>
-              <h2 style="margin:0" data-i18n="ai_lab_news_title">自动资讯 & 报告</h2>
-            </div>
-          </div>
-
-          <!-- Filters (enhanced: topic chips, search, date range) -->
-          <div class="card" style="padding:8px 10px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-            <strong style="font-size:14px" data-i18n="filter_label">筛选</strong>
-            <div id="topic-chips" class="chip-row" role="toolbar" aria-label="Topics"></div>
-            <span class="spacer" style="flex:1 1 auto"></span>
-            <input id="q" class="input" placeholder="搜索标题/摘要/来源…" data-i18n-placeholder="search_placeholder" aria-label="搜索" style="min-width:220px;height:36px;padding:6px 10px;line-height:24px">
-            <div class="seg" role="radiogroup" aria-label="Date range">
-              <button class="btn outline small" data-range="7" data-i18n="date_range_7">7天</button>
-              <button class="btn outline small primary" data-range="30" data-i18n="date_range_30">30天</button>
-              <button class="btn outline small" data-range="all" data-i18n="date_range_all">全部</button>
-            </div>
-          </div>
-
-          <!-- Featured latest -->
-          <article id="featured" class="card" style="padding:0;overflow:hidden;margin-bottom:16px" hidden>
-            <a id="featured-link" class="post-link" href="#" style="display:block">
-              <img id="featured-img" src="../assets/placeholder.jpg" alt="featured" style="width:100%;height:auto;object-fit:cover;aspect-ratio:16/8"/>
-            </a>
-            <div style="padding:14px 16px 16px 16px">
-              <h3 style="margin:0 0 6px 0"><a id="featured-title" href="#"></a></h3>
-              <p id="featured-date" class="muted" style="margin:0 0 8px 0"></p>
-              <p id="featured-desc" class="muted" style="margin:0 0 10px 0"></p>
-              <div id="featured-tags" class="muted"></div>
-            </div>
-          </article>
-
-          <div id="daily-list" class="blog-posts"></div>
-          <p id="daily-empty" class="muted" hidden data-i18n="ai_lab_empty">暂无数据，敬请期待。</p>
-          <div style="display:grid;place-items:center;margin-top:8px">
-            <button id="load-more" class="btn outline" hidden data-i18n="load_more">加载更多</button>
+    <section class="section" id="sp">
+      <div class="container sp-one">
+        <div class="sp-section">
+          <h2 style="margin:0 0 4px 0">学术快报</h2>
+          <p id="sp-sub" class="muted" style="margin:0 0 10px 0">—</p>
+          <div class="card sp-card sp-toolbar">
+            <select id="budget" class="input" style="height:36px">
+              <option value="15">15 分钟</option>
+              <option value="30" selected>30 分钟</option>
+              <option value="60">60 分钟</option>
+            </select>
+            <div id="topic-chips" class="sp-chiprow" role="toolbar" aria-label="Topics"></div>
+            <span style="flex:1 1 auto"></span>
+            <input id="q" class="input" placeholder="搜索标题/要点/标签…" style="min-width:220px;height:36px;padding:6px 10px">
           </div>
         </div>
 
-        <!-- Right column: ScholarPush card stream -->
-        <aside>
-          <div class="sp-sticky">
-            <div class="card" style="padding:10px 12px;margin-bottom:12px">
-              <h3 style="margin:0 0 6px 0">学术快报</h3>
-              <p class="muted" style="margin:0">每日论文速览 · 独立于左侧筛选</p>
-            </div>
-            <div id="sp-list" class="sp-card-list"></div>
-            <p id="sp-empty" class="muted" hidden>暂无快报</p>
-            <div style="display:grid;place-items:center;margin-top:8px">
-              <button id="sp-load-more" class="btn outline" hidden>加载更多</button>
-            </div>
-          </div>
-        </aside>
+        <div class="sp-section">
+          <h3 style="margin:0 0 8px 0">概览（5 分钟）</h3>
+          <div id="stats" class="stat-grid"></div>
+        </div>
+
+        <div class="sp-section">
+          <h3 style="margin:0 0 8px 0">必读（15 分钟）</h3>
+          <div id="must" class="sp-list"></div>
+        </div>
+
+        <div class="sp-section">
+          <h3 style="margin:0 0 8px 0">扩展阅读（10 分钟）</h3>
+          <div id="nice" class="sp-list"></div>
+        </div>
+
+        <div class="sp-section" id="deep" hidden>
+          <h3 style="margin:0 0 8px 0">主题深读</h3>
+          <div id="deep-card" class="card sp-card"></div>
+        </div>
       </div>
     </section>
   </main>
@@ -175,244 +159,107 @@
   </footer>
 
   <script>
-    // ScholarPush: dual-mode rendering (daily vs. section) with chips/search/date-range
-    (function(){
-      const listEl = document.getElementById('daily-list');
-      const emptyEl = document.getElementById('daily-empty');
-      const loadMoreBtn = document.getElementById('load-more');
-      const topicRow = document.getElementById('topic-chips');
-      const qInput = document.getElementById('q');
-    // ScholarPush elements
-    const spList = document.getElementById('sp-list');
-    const spEmpty = document.getElementById('sp-empty');
-    const spMore = document.getElementById('sp-load-more');
-      const featured = {
-        root: document.getElementById('featured'),
-        link: document.getElementById('featured-link'),
-        img: document.getElementById('featured-img'),
-        title: document.getElementById('featured-title'),
-        date: document.getElementById('featured-date'),
-        desc: document.getElementById('featured-desc'),
-        tags: document.getElementById('featured-tags')
-      };
-  let dailyIndex = [], sectionIndex = [];
-    let scholarItems = [];
-      let page = 0, pageSize = 12;
-    let spPage = 0, spSize = 8;
-      const state = { mode:'daily', activeTags:new Set(), query:'', range:30 };
+  (function(){
+    const qInput = document.getElementById('q');
+    const chipRow = document.getElementById('topic-chips');
+    const statsEl = document.getElementById('stats');
+    const mustEl = document.getElementById('must');
+    const niceEl = document.getElementById('nice');
+    const deepWrap = document.getElementById('deep');
+    const deepCard = document.getElementById('deep-card');
+    const subEl = document.getElementById('sp-sub');
+    const budgetSel = document.getElementById('budget');
 
-      function cnLen(s){ return (s||'').replace(/\s+/g,' ').length; }
-      
-      // Render a daily-post card (for regular daily mode list)
-      function dailyCard(d){
-        if(!d) return '';
-        const href = d.url || (d.slug ? `/blog/${d.slug}.html` : '#');
-        const img = d.og_image || '../assets/placeholder.jpg';
-        const date = (d.published||'').slice(0,10);
-        const tags = (d.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
-        const title = d.title || d.heading || '';
-        const desc = d.description || d.summary || '';
-        return `
-        <article class="card post-card">
-          <a class="post-link" href="${href}">
-            <img class="post-thumb" src="${img}" alt="${String(title).replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
-          </a>
-          <div>
-            <h3 class="post-card-title" style="margin:0 0 6px 0"><a class="post-card-title-link" href="${href}">${title}</a></h3>
-            <p class="muted" style="margin:0 0 6px 0">${date}</p>
-            <p class="muted" style="margin:0 0 6px 0">${desc}</p>
-            <p class="muted" style="margin:0">${tags}</p>
-          </div>
-        </article>`;
-      }
+    let data = null;
+    let items = [];
+    let activeTags = new Set();
+    let query = '';
 
-      // Render a section-level card (for filtered/section mode)
-      function sectionCard(s){
-        if(!s) return '';
-        const href = s.url || (s.slug ? `/blog/${s.slug}.html` : '#');
-        const img = s.og_image || '../assets/placeholder.jpg';
-        const date = (s.date||'').slice(0,10);
-        const tags = (s.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
-        const title = s.heading || s.title || '';
-        return `
-        <article class="card post-card">
-          <a class="post-link" href="${href}">
-            <img class="post-thumb" src="${img}" alt="${String(title).replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
-          </a>
-          <div>
-            <h3 class="post-card-title" style="margin:0 0 6px 0"><a class="post-card-title-link" href="${href}">${title}</a></h3>
-            <p class="muted" style="margin:0 0 6px 0">${date} · ${s.daily_title||''}</p>
-            <p class="muted" style="margin:0 0 6px 0">${s.summary||''}</p>
-            <p class="muted" style="margin:0">${tags}</p>
-          </div>
-        </article>`;
-      }
-      function renderFeatured(item){
-        if(!item || state.mode==='section') { featured.root.hidden = true; return; }
-        const href = item.url || (`/blog/${item.slug}.html`);
-        const img = item.og_image || '../assets/placeholder.jpg';
-        featured.link.href = href;
-        featured.img.src = img;
-        featured.title.textContent = item.title||'';
-        featured.title.href = href;
-        featured.date.textContent = (item.published||'').slice(0,10);
-        featured.desc.textContent = item.description||'';
-        featured.tags.innerHTML = (item.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
-        featured.root.hidden = false;
-      }
-      // ScholarPush card renderer (independent stream)
-      function scholarCard(it){
-        const tags = (it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
-        const links = it.links||{};
-        const linkBadges = [
-          links.paper && links.paper!=='N/A' ? `<a class="btn outline small" href="${links.paper}" target="_blank" rel="noopener">Paper</a>` : '',
-          links.code && links.code!=='N/A' ? `<a class="btn outline small" href="${links.code}" target="_blank" rel="noopener">Code</a>` : '',
-          links.project && links.project!=='N/A' ? `<a class="btn outline small" href="${links.project}" target="_blank" rel="noopener">Proj</a>` : ''
-        ].filter(Boolean).join(' ');
-        const meta = [it.task||'', it.type||''].filter(Boolean).join(' · ');
-        const id = Math.random().toString(36).slice(2);
-        return `
-        <article class="card" style="padding:10px 12px">
-          <h4 class="sp-title line-2">${it.headline||''}</h4>
-          <div class="sp-meta">${meta ? `<span>${meta}</span>`:''}${tags?`<span>·</span>`:''}${tags}</div>
-          <p id="abs-${id}" class="sp-abstract line-4">${it.one_liner||''}</p>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">${linkBadges}
-            ${links.paper&&links.paper!=='N/A'?`<a class="btn outline small" href="https://arxiv.org/pdf/${(links.paper.match(/\d{4}\.\d{4,5}/)||[''])[0]}.pdf" target="_blank" rel="noopener">PDF</a>`:''}
-            <button class="btn outline small" onclick="(function(){const p=document.getElementById('abs-${id}');p.classList.toggle('line-4');})();return false;">展开/收起</button>
-          </div>
-        </article>`;
-      }
-      function renderScholarInit(items){
-        scholarItems = Array.isArray(items)? items: [];
-        spList.innerHTML = '';
-        spPage = 0;
-        spEmpty.hidden = scholarItems.length>0;
-        spMore.hidden = scholarItems.length<=spSize;
-        renderScholarMore();
-      }
-      function renderScholarMore(){
-        const slice = scholarItems.slice(spPage*spSize, (spPage+1)*spSize);
-        spList.insertAdjacentHTML('beforeend', slice.map(scholarCard).join(''));
-        spPage++;
-        if(spPage*spSize>=scholarItems.length) spMore.hidden = true;
-      }
-      function inRange(iso){
-        if(state.range==='all') return true;
-        try { const d = new Date(iso); const now = new Date(); return ((now-d)/(1000*3600*24)) <= state.range; } catch { return true; }
-      }
-      function score(item, qs){
-        if(!qs) return 1;
-        const t = ((item.heading||'')+' '+(item.summary||'')+' '+(item.daily_title||'')).toLowerCase();
-        const toks = (qs||'').toLowerCase().trim().split(/\s+/).filter(Boolean);
-        let s = 0; toks.forEach(w=>{ if(t.includes(w)) s+=2; });
-        (item.tags||[]).forEach(tag=>{ if(toks.includes(String(tag).toLowerCase())) s+=1; });
-        return s;
-      }
-      function buildTagStats(){
-        const m = new Map();
-        sectionIndex.forEach(s=>{ if(!inRange(s.date)) return; (s.tags||[]).forEach(t=>m.set(t,(m.get(t)||0)+1)); });
-        return [...m.entries()].sort((a,b)=>b[1]-a[1]).slice(0,10);
-      }
-      function renderChips(){
-        topicRow.innerHTML='';
-        const stats = buildTagStats();
-        // All chip
-        const allBtn = document.createElement('button');
-        const isAll = state.activeTags.size===0;
-        allBtn.className = 'btn outline small'+(isAll?' primary':'');
-        allBtn.setAttribute('aria-pressed', isAll?'true':'false');
-        allBtn.textContent = (window.translations?.[(localStorage.getItem('lang')||'zh')]?.all_label)||'全部';
-        allBtn.onclick = ()=>{ state.activeTags.clear(); syncMode(); run(); };
-        topicRow.appendChild(allBtn);
-        stats.forEach(([tag, n])=>{
-          const b = document.createElement('button');
-          const active = state.activeTags.has(tag);
-          b.className = 'btn outline small'+(active?' primary':'');
-          b.setAttribute('aria-pressed', active?'true':'false');
-          b.textContent = `${tag} · ${n}`;
-          b.onclick = ()=>{ if(active) state.activeTags.delete(tag); else state.activeTags.add(tag); syncMode(); run(); };
-          topicRow.appendChild(b);
-        });
-      }
-      function syncMode(){
-        const hasFilter = state.activeTags.size>0 || (state.query||'').trim().length>0;
-        state.mode = hasFilter ? 'section' : 'daily';
-      }
-      function applySectionFilter(){
-        const arr = sectionIndex
-          .filter(s=>inRange(s.date))
-          .filter(s=> state.activeTags.size===0 ? true : (s.tags||[]).some(t=>state.activeTags.has(t)))
-          .map(s=>({ s, sc: score(s, state.query) }))
-          .filter(x=> state.query ? x.sc>0 : true)
-          .sort((a,b)=> (b.sc - a.sc) || ((b.s.date||'').localeCompare(a.s.date||'')) )
-          .map(x=>x.s);
-        return arr;
-      }
-    function render(){
-        listEl.innerHTML='';
-        page=0;
-        if(state.mode==='daily'){
-          renderFeatured(dailyIndex[0]);
-          const rest = dailyIndex.slice(1);
-      // Hide empty message if there is any daily entry (featured or list)
-      emptyEl.hidden = (dailyIndex && dailyIndex.length>0) || rest.length>0;
-          loadMoreBtn.hidden = rest.length<=pageSize;
-          renderMoreDaily(rest);
-        } else {
-          featured.root.hidden = true;
-          const arr = applySectionFilter();
-          window.__SECTION_BUF__ = arr;
-      emptyEl.hidden = arr.length>0;
-          loadMoreBtn.hidden = arr.length<=pageSize;
-          renderMoreSection();
-        }
-      }
-      function renderMoreDaily(rest){
-        const slice = rest.slice(page*pageSize, (page+1)*pageSize);
-        listEl.insertAdjacentHTML('beforeend', slice.map(dailyCard).join(''));
-        page++;
-        if(page*pageSize>=rest.length) loadMoreBtn.hidden = true;
-      }
-      function renderMoreSection(){
-        const buf = window.__SECTION_BUF__||[];
-        const slice = buf.slice(page*pageSize, (page+1)*pageSize);
-        listEl.insertAdjacentHTML('beforeend', slice.map(sectionCard).join(''));
-        page++;
-        if(page*pageSize>=buf.length) loadMoreBtn.hidden = true;
-      }
-      function run(){ renderChips(); render(); }
-      async function init(){
-        try{
-          const [d, s, sp] = await Promise.all([
-            fetch('../data/ai/blog/index.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>[]),
-            fetch('../data/ai/blog/sections.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>[]),
-            fetch('../data/ai/scholarpush/index.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>({items:[]}))
-          ]);
-          dailyIndex = Array.isArray(d)? d: [];
-          sectionIndex = Array.isArray(s)? s: [];
-          renderScholarInit((sp && sp.items) || []);
-          spMore.addEventListener('click', renderScholarMore);
-          // Bind date-range
-          document.querySelectorAll('[data-range]').forEach(btn=>{
-            btn.addEventListener('click', ()=>{
-              document.querySelectorAll('[data-range]').forEach(b=>b.classList.remove('primary'));
-              btn.classList.add('primary');
-              const v = btn.getAttribute('data-range');
-              state.range = (v==='all') ? 'all' : parseInt(v,10);
-              run();
-            });
-          });
-          // Search debounce
-          let tid=null; qInput.addEventListener('input', ()=>{ clearTimeout(tid); tid=setTimeout(()=>{ state.query=qInput.value||''; syncMode(); run(); }, 200); });
-          // Load more
-          loadMoreBtn.addEventListener('click', ()=>{ if(state.mode==='daily'){ const rest=dailyIndex.slice(1); renderMoreDaily(rest); } else { renderMoreSection(); } });
-          // First paint
-          syncMode();
-          run();
-        } catch(e){ console.error(e); emptyEl.hidden=false; }
-      }
-      init();
-    })();
+    function clampLines(id){ const p=document.getElementById(id); if(p) p.classList.toggle('line-4'); }
+    function btn(href,label){ return `<a class="btn outline small" target="_blank" rel="noopener" href="${href}">${label}</a>` }
+    function card(it){
+      const tags=(it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+      const links=it.links||{}; const id=Math.random().toString(36).slice(2);
+      const keynums=(it.key_numbers||[]).slice(0,2).map(k=>`${k.dataset||''} ${k.metric||''} ${k.ours||''}${k.impr_rel?(' · '+k.impr_rel):''}`).filter(Boolean).join('<br>');
+      const utils=(it.reusability||[]).slice(0,3).map(x=>`<li>${x}</li>`).join('');
+      const limits=(it.limitations||[]).slice(0,2).map(x=>`<li>${x}</li>`).join('');
+      const meta=[it.task||'',it.type||''].filter(Boolean).join(' · ');
+      return `<article class="card sp-card">
+        <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${it.headline||''}</h4>
+        <div class="sp-meta">${meta}${tags?` · ${tags}`:''}</div>
+        <p id="abs-${id}" class="sp-abstract line-4">${it.quick_read||it.one_liner||''}</p>
+        ${keynums?`<p class="muted" style="margin:6px 0 0 0">${keynums}</p>`:''}
+        ${(utils||limits)?`<div style="display:flex;gap:12px;margin-top:6px">${utils?`<ul class="muted" style="margin:0">${utils}</ul>`:''}${limits?`<ul class="muted" style="margin:0">${limits}</ul>`:''}</div>`:''}
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+          ${links.paper&&links.paper!=='N/A'?btn(links.paper,'Paper'):''}
+          ${links.code&&links.code!=='N/A'?btn(links.code,'Code'):''}
+          ${(links.pdf&&links.pdf!=='N/A')?btn(links.pdf,'PDF'):''}
+          ${links.project&&links.project!=='N/A'?btn(links.project,'Proj'):''}
+          <button class="btn outline small" data-toggle="abs-${id}">展开/收起</button>
+        </div>
+      </article>`;
+    }
+    function statCard(title,val){ return `<div class="card sp-card"><div class="muted">${title}</div><div style="font-weight:600;font-size:18px">${val}</div></div>` }
+    function renderStats(stats){
+      const byTask=stats.by_task||{}; const sum=Object.values(byTask).reduce((a,b)=>a+b,0);
+      const top=Object.entries(byTask).sort((a,b)=>b[1]-a[1]).slice(0,4);
+      statsEl.innerHTML = [
+        statCard('总条目', sum),
+        statCard('含代码', stats.with_code||0),
+        statCard('新基准/数据', stats.new_benchmarks||0),
+        statCard('Top 任务', top.map(([k,v])=>`${k}:${v}`).join(' · ')||'—')
+      ].join('');
+    }
+    function buildChips(){
+      chipRow.innerHTML='';
+      const byTask = (data?.stats?.by_task)||{};
+      const allBtn=document.createElement('button'); allBtn.className='btn outline small'+(activeTags.size===0?' primary':''); allBtn.textContent='全部'; allBtn.onclick=()=>{activeTags.clear(); renderAll();}; chipRow.appendChild(allBtn);
+      Object.entries(byTask).sort((a,b)=>b[1]-a[1]).forEach(([t,n])=>{
+        const b=document.createElement('button'); const act=activeTags.has(t);
+        b.className='btn outline small'+(act?' primary':''); b.textContent=`${t} · ${n}`; b.onclick=()=>{ act?activeTags.delete(t):activeTags.add(t); renderAll();}; chipRow.appendChild(b);
+      });
+    }
+    function filterItems(arr){
+      const qs=(query||'').trim().toLowerCase();
+      return arr.filter(it=>{
+        if(activeTags.size>0 && !(it.tags||[]).some(t=>activeTags.has(t))) return false;
+        if(!qs) return true;
+        const blob = `${it.headline||''} ${it.one_liner||''} ${(it.tags||[]).join(' ')}`.toLowerCase();
+        return qs.split(/\s+/).filter(Boolean).some(w=>blob.includes(w));
+      });
+    }
+    function renderAll(){
+      // subtitle
+      const dt=data?.generated_at||''; subEl.textContent = `今日 ${data?.items?.length||0} 条 · 生成时间 ${dt.slice(0,16).replace('T',' ')}`;
+      // chips + stats
+      buildChips(); renderStats(data?.stats||{by_task:{},with_code:0,new_benchmarks:0});
+      // lists
+      const src=items.slice();
+      const mustIdx=(data?.must_reads||[]).filter(i=>i<src.length);
+      const niceIdx=(data?.nice_to_read||[]).filter(i=>i<src.length);
+      const mustList = filterItems(mustIdx.map(i=>src[i]));
+      const niceList = filterItems(niceIdx.map(i=>src[i]));
+      mustEl.innerHTML = mustList.map(card).join('');
+      niceEl.innerHTML = niceList.map(card).join('');
+      // deep
+      const dd=data?.deep_dive; deepWrap.hidden = !dd; if(dd){ deepCard.innerHTML = `<h4 style="margin:0 0 6px 0">${dd.title||'主题深读'}</h4><p class="muted">${dd.summary||''}</p>`; }
+    }
+    async function init(){
+      const sp = await fetch('../data/ai/scholarpush/index.json', {cache:'no-store'}).then(r=>r.json()).catch(()=>null);
+      data = sp||{}; items = Array.isArray(sp?.items)? sp.items: [];
+      // normalize pdf links if missing
+      items.forEach(it=>{ if(!it.links) it.links={}; if(!it.links.pdf && it.links.paper){ const m=(it.links.paper||'').match(/\d{4}\.\d{4,5}/); if(m) it.links.pdf = `https://arxiv.org/pdf/${m[0]}.pdf`; }});
+      // delegate expand/collapse
+      document.addEventListener('click', (e)=>{
+        const t=e.target; if(t && t.matches('button[data-toggle]')){ const id=t.getAttribute('data-toggle'); const p=document.getElementById(id); if(p){ p.classList.toggle('line-4'); }}
+      });
+      // bind search
+      let tid=null; qInput.addEventListener('input', ()=>{ clearTimeout(tid); tid=setTimeout(()=>{ query=qInput.value||''; renderAll(); }, 200); });
+      budgetSel.addEventListener('change', ()=>{ /* 预留：可根据预算调整 must/nice 配比 */ renderAll(); });
+      renderAll();
+    }
+    init();
+  })();
   </script>
 </body>
 </html>
