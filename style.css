@@ -172,6 +172,12 @@ html[lang="es"] .i18n.l-es { display: inline; }
   color: #fff;
   background: var(--text);
 }
+/* Disabled button appearance */
+.btn[disabled], .btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.2);
+}
 
 /* Icon button and RSS variant */
 .btn.icon-only { padding: 0.5rem; width: 38px; height: 38px; display: inline-grid; place-items: center; border-radius: 12px; }
@@ -275,8 +281,8 @@ html[lang="es"] .i18n.l-es { display: inline; }
 }
 .skip-link:focus { top: 0; box-shadow: var(--ring); }
 
-/* Navbar */
-header {
+/* Navbar (scope to top-level page header only) */
+body > header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -1244,6 +1250,21 @@ footer {
   box-shadow: var(--shadow-sm);
 }
 .card:hover { box-shadow: var(--shadow-md); }
+
+/* AI Lab grid */
+.lab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; }
+.lab-card { display: flex; flex-direction: column; min-height: 180px; padding: 16px; border-radius: 12px; }
+.lab-card-header { margin-bottom: 8px; }
+.lab-title { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+.lab-sub { font-size: .95rem; color: var(--muted); margin-top: 4px; }
+.lab-body { margin-top: 8px; }
+.lab-actions { margin-top: auto; display: flex; gap: .6rem; flex-wrap: wrap; }
+.lab-card--active { border-color: color-mix(in oklab, var(--primary) 35%, var(--border)); box-shadow: 0 6px 18px rgba(99,102,241,0.12); }
+.lab-card--coming { background: color-mix(in oklab, var(--surface) 86%, var(--surface-2)); }
+:root[data-theme="dark"] .lab-card--coming { background: color-mix(in oklab, var(--surface), black 6%); }
+
+@media (max-width: 1024px) { .lab-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .lab-grid { grid-template-columns: 1fr; } }
 
 /* Responsive styles */
 @media (max-width: 768px) {

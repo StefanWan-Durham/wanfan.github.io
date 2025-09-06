@@ -11,10 +11,12 @@
     "og:rasterize": "node scripts/rasterize-og.mjs",
     "blog:index": "node scripts/build-blog-index.mjs",
     "rss": "node scripts/generate-rss.mjs",
-    "site:build": "npm run og:from-template && npm run og:rasterize || true && npm run og:render || true && npm run blog:build && npm run blog:index && npm run rss"
+  "site:build": "npm run og:from-template && npm run og:rasterize || true && npm run og:render || true && npm run blog:build && npm run blog:index && npm run rss",
+  "serve": "npx http-server -p 8080 -c-1 ."
   },
   "devDependencies": {
     "puppeteer": "^22.15.0",
-    "sharp": "^0.33.5"
+  "sharp": "^0.33.5",
+  "http-server": "^14.1.1"
   }
 }

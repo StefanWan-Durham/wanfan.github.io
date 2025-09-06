@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="ai_lab_title">AI Lab · Fan Wan</title>
+  <title data-i18n="ai_lab_title">AI Studio · Fan Wan</title>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0ea5e9">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
-  <meta name="description" content="AI Lab · 自动资讯与报告 · 站内智能小应用">
+  <meta name="description" content="AI Studio · 你的AI助手工作台：研究、教学、应用，一站式集成" data-i18n-content="ai_lab_intro">
   <link rel="canonical" href="https://fanwan-ai.github.io/ai-lab.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI Lab · Fan Wan">
-  <meta property="og:description" content="自动资讯与报告 · 站内智能小应用">
+  <meta property="og:title" content="AI Studio · Fan Wan" data-i18n-content="ai_lab_title">
+  <meta property="og:description" content="你的AI助手工作台：研究、教学、应用，一站式集成" data-i18n-content="ai_lab_intro">
   <meta property="og:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
   <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:alt" content="AI Lab cover">
+  <meta property="og:image:alt" content="AI Studio cover">
   <meta property="og:url" content="https://fanwan-ai.github.io/ai-lab.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Lab · Fan Wan">
-  <meta name="twitter:description" content="自动资讯与报告 · 站内智能小应用">
+  <meta name="twitter:title" content="AI Studio · Fan Wan" data-i18n-content="ai_lab_title">
+  <meta name="twitter:description" content="你的AI助手工作台：研究、教学、应用，一站式集成" data-i18n-content="ai_lab_intro">
   <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
   <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
   <link rel="stylesheet" href="style.css">
@@ -39,7 +39,7 @@
         <li><a href="about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
         <li><a href="publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
         <li><a href="blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
-        <li><a href="ai-lab.html"><span class="i18n l-zh">AI Lab</span><span class="i18n l-en">AI Lab</span><span class="i18n l-es">AI Lab</span></a></li>
+  <li><a href="ai-lab.html"><span class="i18n l-zh">AI Studio</span><span class="i18n l-en">AI Studio</span><span class="i18n l-es">Taller de IA</span></a></li>
         <li><a href="contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
       </ul>
       <div class="nav-actions">
@@ -92,84 +92,72 @@
         <span class="shape shape4"></span>
       </div>
       <div class="container">
-        <h1 data-i18n="ai_lab_title">AI Lab</h1>
-        <p class="subtitle" data-i18n="ai_lab_intro">自动资讯与报告 · 站内智能小应用</p>
+  <h1 data-i18n="ai_lab_title">AI Studio</h1>
+  <p class="subtitle" data-i18n="ai_lab_intro">你的AI助手工作台：研究、教学、应用，一站式集成</p>
       </div>
     </section>
-
-    <!-- Section: 自动资讯 & 报告 (with featured + feed) -->
-    <section class="section" id="ai-news">
-      <div class="container" style="display:grid;grid-template-columns: 2fr 1fr;gap:24px;align-items:start">
-        <div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px">
-            <div>
-              <h2 style="margin:0" data-i18n="ai_lab_news_title">自动资讯 & 报告</h2>
-              <p class="muted" style="margin:6px 0 0 0" data-i18n="ai_lab_news_desc">机器替你读每天：AI Daily、快讯雷达、论文一页纸、模型与工具追踪等。</p>
-            </div>
-            <div class="toolbar" style="display:flex;gap:.5rem;flex-wrap:wrap">
-              <a class="btn rss outline" id="rss-button" href="data/ai/blog/rss.xml" title="RSS">RSS</a>
-            </div>
-          </div>
-
-          <!-- Featured latest -->
-          <article id="featured" class="card" style="padding:0;overflow:hidden;margin-bottom:16px" hidden>
-            <div style="display:grid;grid-template-columns: 1.5fr 1fr;gap:0">
-              <a id="featured-link" class="post-link" href="#" style="display:block">
-                <img id="featured-img" src="assets/placeholder.jpg" alt="featured" style="width:100%;height:100%;object-fit:cover;aspect-ratio:16/9"/>
-              </a>
-              <div style="padding:16px">
-                <h3 style="margin:0 0 6px 0"><a id="featured-title" href="#"></a></h3>
-                <p id="featured-date" class="muted" style="margin:0 0 8px 0"></p>
-                <p id="featured-desc" class="muted" style="margin:0 0 12px 0"></p>
-                <div id="featured-tags" class="muted"></div>
-              </div>
+    
+    <!-- Section: Lab modules grid (8 cards) -->
+    <section class="section" id="lab-modules">
+      <div class="container">
+        <div class="lab-grid">
+          <!-- 1. ScholarPush (active) -->
+          <article class="lab-card card lab-card--active" id="module-scholarpush">
+            <header class="lab-card-header">
+              <div class="lab-title">🧠 <span data-i18n="module_scholarpush_title">学术快报</span></div>
+              <div class="lab-sub muted" data-i18n="module_scholarpush_desc">每日AI顶会/期刊论文精粹，一分钟掌握学术前沿。</div>
+            </header>
+            <div class="lab-actions">
+              <a class="btn primary" href="/lab/scholarpush.html" data-i18n="module_enter">进入模块</a>
             </div>
           </article>
 
-          <!-- Filters -->
-          <div class="card" style="padding:8px 10px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-            <strong style="font-size:14px">筛选</strong>
-            <button class="btn outline small" data-tag="all">全部</button>
-            <button class="btn outline small" data-tag="LLM">LLM</button>
-            <button class="btn outline small" data-tag="RAG">RAG</button>
-            <button class="btn outline small" data-tag="Agent">Agent</button>
-            <button class="btn outline small" data-tag="CV">CV</button>
-            <button class="btn outline small" data-tag="Infra">Infra</button>
-          </div>
+          <!-- 2. AI Trends (coming) -->
+          <article class="lab-card card lab-card--coming" id="module-ai-trends">
+            <header class="lab-card-header">
+              <div class="lab-title">🧭 <span data-i18n="module_ai_trends_title">AI 风向标</span></div>
+              <div class="lab-sub muted" data-i18n="module_ai_trends_desc">全球AI热点实时同步，洞察技术浪潮下的每一次脉动。</div>
+            </header>
+            <div class="lab-actions"><button class="btn outline" disabled aria-disabled="true" data-i18n="coming_soon">功能开发中，敬请期待…</button></div>
+          </article>
 
-          <div id="daily-list" class="blog-posts"></div>
-          <p id="daily-empty" class="muted" hidden data-i18n="ai_lab_empty">暂无数据，敬请期待。</p>
-          <div style="display:grid;place-items:center;margin-top:8px">
-            <button id="load-more" class="btn outline" hidden>加载更多</button>
-          </div>
+          <!-- 3. Paper Snapshot -->
+          <article class="lab-card card lab-card--coming" id="module-paper-snapshot">
+            <header class="lab-card-header">
+              <div class="lab-title">🧾 <span data-i18n="module_paper_snapshot_title">一页论文</span></div>
+              <div class="lab-sub muted" data-i18n="module_paper_snapshot_desc">复杂论文，一页终结。用最精炼的摘要和图示解读核心思想。</div>
+            </header>
+            <div class="lab-actions"><button class="btn outline" disabled aria-disabled="true" data-i18n="coming_soon">功能开发中，敬请期待…</button></div>
+          </article>
+
+          <!-- 4. Model Watch (coming) -->
+          <article class="lab-card card lab-card--coming" id="module-model-watch">
+            <header class="lab-card-header">
+              <div class="lab-title">🔭 <span data-i18n="module_model_watch_title">模型追踪器</span></div>
+              <div class="lab-sub muted" data-i18n="module_model_watch_desc">从开源仓库到生产环境，追踪最新模型与工具的迭代与应用。</div>
+            </header>
+            <div class="lab-actions"><button class="btn outline" disabled aria-disabled="true" data-i18n="coming_soon">功能开发中，敬请期待…</button></div>
+          </article>
+
+          <!-- 5. AI Teacher -->
+          <article class="lab-card card lab-card--coming" id="module-ai-teacher">
+            <header class="lab-card-header">
+              <div class="lab-title">🧑‍🏫 <span data-i18n="module_ai_teacher_title">AI 教师</span></div>
+              <div class="lab-sub muted" data-i18n="module_ai_teacher_desc">孩子的专属AI导师，适配个性化学习路径，答疑解惑无所不能。</div>
+            </header>
+            <div class="lab-actions"><button class="btn outline" disabled aria-disabled="true" data-i18n="coming_soon">功能开发中，敬请期待…</button></div>
+          </article>
+
+          <!-- 6. AI Career Coach -->
+          <article class="lab-card card lab-card--coming" id="module-ai-career">
+            <header class="lab-card-header">
+              <div class="lab-title">💼 <span data-i18n="module_ai_career_title">AI 求职助手</span></div>
+              <div class="lab-sub muted" data-i18n="module_ai_career_desc">智能匹配职缺，优化简历投递，让下一个机会主动来敲门。</div>
+            </header>
+            <div class="lab-actions"><button class="btn outline" disabled aria-disabled="true" data-i18n="coming_soon">功能开发中，敬请期待…</button></div>
+          </article>
+
         </div>
-
-        <!-- Right column: upcoming modules -->
-        <aside class="card" style="padding:16px;position:sticky;top:88px">
-          <h3 style="margin-top:0">Lab 模块规划</h3>
-          <ul class="muted" style="margin:8px 0 0 16px;line-height:1.8">
-            <li>快讯雷达（News Radar）</li>
-            <li>论文一页纸（Paper Digest）</li>
-            <li>模型与工具追踪（Release Tracker）</li>
-            <li>行业报告生成（Auto Reports）</li>
-          </ul>
-          <hr style="margin:12px 0">
-          <h4 style="margin:0 0 6px 0">站内智能小应用</h4>
-          <div class="blog-posts">
-            <article class="card post-card">
-              <div>
-                <h3 style="margin:0 0 6px 0">AI Teacher</h3>
-                <p class="muted" data-i18n="coming_soon">功能开发中，敬请期待…</p>
-              </div>
-            </article>
-            <article class="card post-card">
-              <div>
-                <h3 style="margin:0 0 6px 0">Ask My Site</h3>
-                <p class="muted" data-i18n="coming_soon">功能开发中，敬请期待…</p>
-              </div>
-            </article>
-          </div>
-        </aside>
       </div>
     </section>
   </main>
@@ -180,97 +168,5 @@
     </div>
   </footer>
 
-  <script>
-    // Populate AI Daily list with featured, filters, and load more
-    (function(){
-      const listEl = document.getElementById('daily-list');
-      const emptyEl = document.getElementById('daily-empty');
-      const loadMoreBtn = document.getElementById('load-more');
-      const featured = {
-        root: document.getElementById('featured'),
-        link: document.getElementById('featured-link'),
-        img: document.getElementById('featured-img'),
-        title: document.getElementById('featured-title'),
-        date: document.getElementById('featured-date'),
-        desc: document.getElementById('featured-desc'),
-        tags: document.getElementById('featured-tags')
-      };
-      let all = [], filtered = [], page = 0, pageSize = 9, currentTag = 'all';
-
-      function card(it){
-        const date = (it.published||'').slice(0,10);
-        const tags = (it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
-        const img = it.og_image || 'assets/placeholder.jpg';
-        const href = it.url || (`/blog/${it.slug}.html`);
-        return `
-        <article class="card post-card">
-          <a class="post-link" href="${href}">
-            <img class="post-thumb" src="${img}" alt="${(it.title||'').replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
-          </a>
-          <div>
-            <h3 class="post-card-title" style="margin:0 0 8px 0"><a class="post-card-title-link" href="${href}">${it.title||''}</a></h3>
-            <p class="muted" style="margin:0 0 6px 0">${date}</p>
-            <p class="muted" style="margin:0">${tags}</p>
-          </div>
-        </article>`;
-      }
-
-      function renderFeatured(item){
-        if(!item) { featured.root.hidden = true; return; }
-        const href = item.url || (`/blog/${item.slug}.html`);
-        const img = item.og_image || 'assets/placeholder.jpg';
-        featured.link.href = href;
-        featured.img.src = img;
-        featured.title.textContent = item.title||'';
-        featured.title.href = href;
-        featured.date.textContent = (item.published||'').slice(0,10);
-        featured.desc.textContent = item.description||'';
-        featured.tags.innerHTML = (item.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
-        featured.root.hidden = false;
-      }
-
-      function applyFilter(tag){
-        currentTag = tag;
-        filtered = (tag==='all') ? all.slice(1) : all.filter((x,i)=> i>0 && Array.isArray(x.tags) && x.tags.includes(tag));
-        page = 0;
-        listEl.innerHTML = '';
-        if(filtered.length===0){ emptyEl.hidden = false; loadMoreBtn.hidden = true; return; }
-        emptyEl.hidden = true;
-        loadMoreBtn.hidden = filtered.length <= pageSize;
-        renderMore();
-      }
-
-      function renderMore(){
-        const slice = filtered.slice(page*pageSize, (page+1)*pageSize);
-        listEl.insertAdjacentHTML('beforeend', slice.map(card).join(''));
-        page++;
-        if(page*pageSize >= filtered.length) loadMoreBtn.hidden = true;
-      }
-
-      function bindFilters(){
-        document.querySelectorAll('[data-tag]').forEach(btn=>{
-          btn.addEventListener('click', ()=>{
-            document.querySelectorAll('[data-tag]').forEach(b=>b.classList.remove('primary'));
-            btn.classList.add('primary');
-            applyFilter(btn.getAttribute('data-tag'));
-          });
-        });
-      }
-
-      async function init(){
-        try{
-          const res = await fetch('data/ai/blog/index.json', { cache: 'no-store' });
-          if(!res.ok) throw new Error('fetch failed');
-          all = await res.json();
-          if(!Array.isArray(all) || all.length === 0){ emptyEl.hidden = false; return; }
-          renderFeatured(all[0]);
-          bindFilters();
-          applyFilter('all');
-          loadMoreBtn.addEventListener('click', renderMore);
-        }catch(e){ emptyEl.hidden = false; }
-      }
-      init();
-    })();
-  </script>
 </body>
 </html>

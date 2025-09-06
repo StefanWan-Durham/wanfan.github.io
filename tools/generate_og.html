@@ -24,8 +24,8 @@
     const iframe=document.getElementById('preview');
     document.getElementById('update').addEventListener('click',()=>{
       fetch('../assets/og-template.svg').then(r=>r.text()).then(svg=>{
-        svg=svg.replace('id="og-title" x="80" y="270" font-size="56" font-weight="700">标题 Title','id="og-title" x="80" y="270" font-size="56" font-weight="700">'+document.getElementById('title').value)
-               .replace('id="og-desc" x="80" y="330" font-size="28" opacity="0.95">副标题/摘要 Subtitle','id="og-desc" x="80" y="330" font-size="28" opacity="0.95">'+document.getElementById('desc').value);
+        svg=svg.replace('id="og-title" x="80" y="270" font-size="56" font-weight="700">标题 Title','id="og-title" x="120" y="270" font-size="56" font-weight="700">'+document.getElementById('title').value)
+               .replace('id="og-desc" x="80" y="330" font-size="28" opacity="0.95">副标题/摘要 Subtitle','id="og-desc" x="120" y="330" font-size="28" opacity="0.95">'+document.getElementById('desc').value);
         const blob=new Blob([svg],{type:'image/svg+xml'});
         const url=URL.createObjectURL(blob);
         iframe.src=url;

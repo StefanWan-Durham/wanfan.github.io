@@ -184,13 +184,17 @@ def chat_once(prompt: str,
     pref = (_env("PREFERRED_PROVIDER", "") or "").strip().lower()
 
     def has_key(p: str) -> bool:
-        return (
-            (p == "openai" and _env("OPENAI_API_KEY")) or
-            (p == "openrouter" and _env("OPENROUTER_API_KEY")) or
-            (p == "together" and _env("TOGETHER_API_KEY")) or
-            (p == "deepseek" and _env("DEEPSEEK_API_KEY")) or
-            (p == "dashscope" and _env("DASHSCOPE_API_KEY"))
-        ) is not None
+        if p == "openai":
+            return bool(_env("OPENAI_API_KEY"))
+        if p == "openrouter":
+            return bool(_env("OPENROUTER_API_KEY"))
+        if p == "together":
+            return bool(_env("TOGETHER_API_KEY"))
+        if p == "deepseek":
+            return bool(_env("DEEPSEEK_API_KEY"))
+        if p == "dashscope":
+            return bool(_env("DASHSCOPE_API_KEY"))
+        return False
 
     if pref and pref in providers and has_key(pref):
         order.append(pref)

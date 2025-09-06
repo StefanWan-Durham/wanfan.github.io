@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
     // Robust prev/next wiring: if links are disabled but neighbors exist, compute URLs
-    (function fixPrevNext(){
+  (function fixPrevNext(){
       const nav = document.querySelector('.post-nav');
       if (!nav) return;
       const links = Array.from(nav.querySelectorAll('a.btn.outline'));
@@ -347,13 +347,15 @@ document.addEventListener('DOMContentLoaded', () => {
       // If prev/next are disabled (#), attempt to compute from blog index order
       const isDisabled = (a)=> a.getAttribute('href') === '#' || a.hasAttribute('aria-disabled');
       if (!isDisabled(prev) && !isDisabled(next)) return; // already wired
-      const schedulePN = window.requestIdleCallback ? (cb) => requestIdleCallback(cb, { timeout: 1200 }) : (cb) => setTimeout(cb, 250);
+  const schedulePN = window.requestIdleCallback ? (cb) => requestIdleCallback(cb, { timeout: 1200 }) : (cb) => setTimeout(cb, 250);
       schedulePN(() => {
         (async () => {
           try {
+            const file = location.pathname.split('/').pop() || '';
+            const isDaily = /ai-daily/i.test(file);
             // First try embedded order (oldest -> newest)
             let updated = false;
-            const orderOldToNew = (window.__BLOG_ORDER__ || []).map(s=>String(s));
+            const orderOldToNew = (!isDaily ? (window.__BLOG_ORDER__ || []).map(s=>String(s)) : []);
             const haveOldToNew = orderOldToNew.length > 0;
             let current = location.pathname.split('/').pop(); // e.g., foo.html or foo.en.html
             const lang = current.endsWith('.en.html') ? 'en' : current.endsWith('.es.html') ? 'es' : 'zh';
@@ -376,7 +378,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (isDisabled(next) && idx < order.length - 1) { setHref(next, order[idx + 1]); updated = true; }
               }
             }
-            if (updated && !isDisabled(prev) && !isDisabled(next)) return;
+            if (!isDaily && updated && !isDisabled(prev) && !isDisabled(next)) return;
+            // Prefer ScholarPush feed order when available
+            let aiDaily = [];
+            try {
+              const res = await fetch('../data/ai/blog/index.json', { cache: 'no-store' });
+              if (res.ok) aiDaily = await res.json();
+            } catch {}
+            if (Array.isArray(aiDaily) && aiDaily.length) {
+              const order = aiDaily.map(x => (x.url||'').split('/').pop().replace(/\.(en|es)\.html$/, '.html')).filter(Boolean);
+              const idx2 = order.findIndex(name => name === zhName);
+              const setHref2 = (a, targetZhName) => {
+                if (!a) return;
+                let target = targetZhName;
+                if (lang === 'en') target = target.replace(/\.html$/, '.en.html');
+                else if (lang === 'es') target = target.replace(/\.html$/, '.es.html');
+                a.setAttribute('href', `./${target}`);
+                a.removeAttribute('aria-disabled');
+                a.removeAttribute('onclick');
+              };
+              if (idx2 !== -1) {
+                if (isDisabled(prev) && idx2 < order.length - 1) setHref2(prev, order[idx2 + 1]); // feed is newest first
+                if (isDisabled(next) && idx2 > 0) setHref2(next, order[idx2 - 1]);
+                // Also route back button to ScholarPush when in feed
+                if (back && back.getAttribute('href') && /blog\.html$/.test(back.getAttribute('href'))) {
+                  const backLabel = lang==='en' ? '← Back to ScholarPush' : (lang==='es' ? '← Volver a ImpulsoAcadémico' : '← 返回学术快报');
+                  back.setAttribute('href', '../lab/scholarpush.html');
+                  back.textContent = backLabel;
+                }
+              }
+              if (!isDisabled(prev) && !isDisabled(next)) return;
+            }
             // If still missing, try blog.html (newest -> oldest) with cache-friendly mode
             let orderNewToOld = [];
             const resp = await fetch('../blog.html', { cache: 'force-cache' }).catch(() => null);

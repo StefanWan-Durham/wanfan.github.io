@@ -16,3 +16,16 @@ Thumbs.db
 dist/
 .out/
 .tmp/
+
+# Python local env & artifacts
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Local secrets/config
+.env
+.env.*
+!.env.example

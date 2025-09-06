@@ -214,7 +214,7 @@ function mdToHtml(md, { slug } = {}) {
   return out.join('\n');
 }
 
-function buildHtml({lang, slug, title, description, date, bodyHtml, heroSrc, ogImage, prevNext, orderList}){
+function buildHtml({lang, slug, title, description, date, bodyHtml, heroSrc, ogImage, prevNext, orderList, backHref}){
   const langLabel = lang==='en' ? 'English' : lang==='es' ? 'Español' : '中文';
   const titleForTwitter = lang==='en' ? `${title} (with KBLaM)` : title;
   const url = `${siteOrigin}blog/${slug}${lang==='zh'?'':'.'+lang}.html`;
@@ -281,6 +281,7 @@ function buildHtml({lang, slug, title, description, date, bodyHtml, heroSrc, ogI
         <li><a href="../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
         <li><a href="../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
         <li><a href="../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+  <li><a href="../ai-lab.html"><span class="i18n l-zh">AI Studio</span><span class="i18n l-en">AI Studio</span><span class="i18n l-es">Taller de IA</span></a></li>
         <li><a href="../contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
       </ul>
       <div class="nav-actions">
@@ -365,7 +366,7 @@ ${bodyHtml}
         </div>
         <hr style="margin: 24px 0">
         <nav class="post-nav" aria-label="Post navigation">
-          <a class="btn outline" href="../blog.html">${lang==='en'?'← Back to Blog':(lang==='es'?'← Volver al blog':'← 返回博客')}</a>
+          <a class="btn outline" href="${backHref || '../blog.html'}">${lang==='en'?'← Back':(lang==='es'?'← Volver':'← 返回')}</a>
           ${(() => {
             const prev = prevNext?.prev?.[lang] || prevNext?.prev?.zh || '';
             const next = prevNext?.next?.[lang] || prevNext?.next?.zh || '';
@@ -438,6 +439,39 @@ async function buildPost(dir){
     if (nextEntry.langs.includes('en')) prevNext.next.en = `./${nextEntry.slug}.en.html`;
     if (nextEntry.langs.includes('es')) prevNext.next.es = `./${nextEntry.slug}.es.html`;
   }
+  // If this is an AI-daily post, override prev/next using ScholarPush feed order and set back link to ScholarPush page
+  let backHref = '../blog.html';
+  let orderList = (globalThis.__postIndex || []).map(it => `${it.slug}.html`);
+  const isScholarPush = /ai-daily/i.test(slug);
+  if (isScholarPush) {
+    backHref = '../lab/scholarpush.html';
+    try {
+      const feedPath = path.join(root, 'data', 'ai', 'blog', 'index.json');
+      const raw = await fs.readFile(feedPath, 'utf8');
+      const arr = JSON.parse(raw);
+      if (Array.isArray(arr) && arr.length) {
+        const order = arr.map(x => (x.url||'').split('/').pop().replace(/\.(en|es)\.html$/, '.html')).filter(Boolean);
+        orderList = order.slice();
+        const idx = order.findIndex(name => name === `${slug}.html`);
+        if (idx !== -1) {
+          const older = order[idx + 1]; // feed is newest -> oldest
+          const newer = order[idx - 1];
+          const mk = (name, lang) => {
+            if (!name) return '';
+            if (lang === 'en') return `./${name.replace(/\.html$/, '.en.html')}`;
+            if (lang === 'es') return `./${name.replace(/\.html$/, '.es.html')}`;
+            return `./${name}`;
+          };
+          prevNext.prev.zh = mk(older, 'zh');
+          prevNext.prev.en = mk(older, 'en');
+          prevNext.prev.es = mk(older, 'es');
+          prevNext.next.zh = mk(newer, 'zh');
+          prevNext.next.en = mk(newer, 'en');
+          prevNext.next.es = mk(newer, 'es');
+        }
+      }
+    } catch {}
+  }
   for (const lang of langs){
     const file = path.join(dir, `${lang}.md`);
     try {
@@ -482,9 +516,7 @@ async function buildPost(dir){
         ? meta.cover
         : `../${toUrlPath(chosenRel).replace(/^\/?/, '')}`;
   const bodyHtml = mdToHtml(body, { slug });
-  // Prepare order list using the computed global index (zh filenames, newest/oldest depends on index order)
-  const orderList = (globalThis.__postIndex || []).map(it => `${it.slug}.html`);
-  const html = buildHtml({lang, slug, title, description, date, bodyHtml, heroSrc, ogImage, prevNext, orderList});
+  const html = buildHtml({lang, slug, title, description, date, bodyHtml, heroSrc, ogImage, prevNext, orderList, backHref});
       const outPath = path.join(outDir, `${slug}${lang==='zh'?'':'.'+lang}.html`);
       await fs.writeFile(outPath, html, 'utf8');
       console.log('Wrote', path.relative(root, outPath));

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="scholarpush_title">学术快报 - 每日精选论文推荐</title>
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="description" content="学术快报 - 每日精选论文推荐" data-i18n-content="scholarpush_title">
+  <link rel="canonical" href="https://fanwan-ai.github.io/lab/scholarpush.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="学术快报 - 每日精选论文推荐" data-i18n-content="scholarpush_title">
+  <meta property="og:description" content="每日AI顶会/期刊论文精粹，一分钟掌握学术前沿。" data-i18n-content="module_scholarpush_desc">
+  <meta property="og:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="ScholarPush cover">
+  <meta property="og:url" content="https://fanwan-ai.github.io/lab/scholarpush.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="学术快报 - 每日精选论文推荐" data-i18n-content="scholarpush_title">
+  <meta name="twitter:description" content="每日AI顶会/期刊论文精粹，一分钟掌握学术前沿。" data-i18n-content="module_scholarpush_desc">
+  <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
+  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
+  <link rel="stylesheet" href="../style.css">
+  <script defer src="../lang.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body class="blog">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <nav class="navbar container">
+      <a href="../index.html" class="brand" aria-label="Home">
+        <img src="../assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+  <li><a href="../ai-lab.html"><span class="i18n l-zh">AI Studio</span><span class="i18n l-en">AI Studio</span><span class="i18n l-es">Taller de IA</span></a></li>
+        <li><a href="../contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label"></span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+          <select id="lang-select" hidden>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+              <path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/>
+              <path d="M12 2v2"/>
+              <path d="M4 10h2"/>
+              <path d="M18 10h2"/>
+              <path d="M5.5 5.5l1.4 1.4"/>
+              <path d="M18.5 5.5l-1.4 1.4"/>
+            </g>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon icon-system" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><path d="M8 20h8M12 16v4"/></g></svg>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero section">
+      <div class="bg-shapes">
+        <span class="shape shape1"></span>
+        <span class="shape shape2"></span>
+        <span class="shape shape3"></span>
+        <span class="shape shape4"></span>
+      </div>
+      <div class="container">
+        <h1>🧠 <span data-i18n="scholarpush_title">学术快报 - 每日精选论文推荐</span></h1>
+        <p class="subtitle" data-i18n="scholarpush_subtitle">每日自动精选最新论文，服务于研究者、开发者与技术爱好者</p>
+      </div>
+    </section>
+
+    <section class="section blog" id="ai-news">
+      <div class="container">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px">
+            <div>
+              <h2 style="margin:0" data-i18n="ai_lab_news_title">自动资讯 & 报告</h2>
+            </div>
+          </div>
+
+          <!-- Filters (enhanced: topic chips, search, date range) -->
+          <div class="card" style="padding:8px 10px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <strong style="font-size:14px" data-i18n="filter_label">筛选</strong>
+            <div id="topic-chips" class="chip-row" role="toolbar" aria-label="Topics"></div>
+            <span class="spacer" style="flex:1 1 auto"></span>
+            <input id="q" class="input" placeholder="搜索标题/摘要/来源…" data-i18n-placeholder="search_placeholder" aria-label="搜索" style="min-width:220px;height:36px;padding:6px 10px;line-height:24px">
+            <div class="seg" role="radiogroup" aria-label="Date range">
+              <button class="btn outline small" data-range="7" data-i18n="date_range_7">7天</button>
+              <button class="btn outline small primary" data-range="30" data-i18n="date_range_30">30天</button>
+              <button class="btn outline small" data-range="all" data-i18n="date_range_all">全部</button>
+            </div>
+          </div>
+
+          <!-- Featured latest -->
+          <article id="featured" class="card" style="padding:0;overflow:hidden;margin-bottom:16px" hidden>
+            <a id="featured-link" class="post-link" href="#" style="display:block">
+              <img id="featured-img" src="../assets/placeholder.jpg" alt="featured" style="width:100%;height:auto;object-fit:cover;aspect-ratio:16/8"/>
+            </a>
+            <div style="padding:14px 16px 16px 16px">
+              <h3 style="margin:0 0 6px 0"><a id="featured-title" href="#"></a></h3>
+              <p id="featured-date" class="muted" style="margin:0 0 8px 0"></p>
+              <p id="featured-desc" class="muted" style="margin:0 0 10px 0"></p>
+              <div id="featured-tags" class="muted"></div>
+            </div>
+          </article>
+
+          <div id="daily-list" class="blog-posts"></div>
+          <p id="daily-empty" class="muted" hidden data-i18n="ai_lab_empty">暂无数据，敬请期待。</p>
+          <div style="display:grid;place-items:center;margin-top:8px">
+            <button id="load-more" class="btn outline" hidden data-i18n="load_more">加载更多</button>
+          </div>
+        </div>
+
+  <!-- Sidebar removed per new layout -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Fan Wan</p>
+    </div>
+  </footer>
+
+  <script>
+    // ScholarPush: dual-mode rendering (daily vs. section) with chips/search/date-range
+    (function(){
+      const listEl = document.getElementById('daily-list');
+      const emptyEl = document.getElementById('daily-empty');
+      const loadMoreBtn = document.getElementById('load-more');
+      const topicRow = document.getElementById('topic-chips');
+      const qInput = document.getElementById('q');
+      const featured = {
+        root: document.getElementById('featured'),
+        link: document.getElementById('featured-link'),
+        img: document.getElementById('featured-img'),
+        title: document.getElementById('featured-title'),
+        date: document.getElementById('featured-date'),
+        desc: document.getElementById('featured-desc'),
+        tags: document.getElementById('featured-tags')
+      };
+      let dailyIndex = [], sectionIndex = [];
+      let page = 0, pageSize = 12;
+      const state = { mode:'daily', activeTags:new Set(), query:'', range:30 };
+
+      function cnLen(s){ return (s||'').replace(/\s+/g,' ').length; }
+      function dailyCard(it){
+        const date = (it.published||'').slice(0,10);
+        const tags = (it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+        const img = it.og_image || '../assets/placeholder.jpg';
+        const href = it.url || (`/blog/${it.slug}.html`);
+        return `
+        <article class="card post-card">
+          <a class="post-link" href="${href}">
+            <img class="post-thumb" src="${img}" alt="${(it.title||'').replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
+          </a>
+          <div>
+            <h3 class="post-card-title" style="margin:0 0 8px 0"><a class="post-card-title-link" href="${href}">${it.title||''}</a></h3>
+            <p class="muted" style="margin:0 0 6px 0">${date}</p>
+            <p class="muted" style="margin:0">${tags}</p>
+          </div>
+        </article>`;
+      }
+      function sectionCard(s){
+        const date = (s.date||'').slice(0,10);
+        const tags = (s.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+        return `
+        <article class="card post-card">
+          <a class="post-link" href="${s.url}">
+            <img class="post-thumb" src="${s.og_image||'../assets/placeholder.jpg'}" alt="${(s.heading||'').replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
+          </a>
+          <div>
+            <h3 class="post-card-title" style="margin:0 0 6px 0"><a class="post-card-title-link" href="${s.url}">${s.heading||''}</a></h3>
+            <p class="muted" style="margin:0 0 6px 0">${date} · ${s.daily_title||''}</p>
+            <p class="muted" style="margin:0 0 6px 0">${s.summary||''}</p>
+            <p class="muted" style="margin:0">${tags}</p>
+          </div>
+        </article>`;
+      }
+      function renderFeatured(item){
+        if(!item || state.mode==='section') { featured.root.hidden = true; return; }
+        const href = item.url || (`/blog/${item.slug}.html`);
+        const img = item.og_image || '../assets/placeholder.jpg';
+        featured.link.href = href;
+        featured.img.src = img;
+        featured.title.textContent = item.title||'';
+        featured.title.href = href;
+        featured.date.textContent = (item.published||'').slice(0,10);
+        featured.desc.textContent = item.description||'';
+        featured.tags.innerHTML = (item.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+        featured.root.hidden = false;
+      }
+      function inRange(iso){
+        if(state.range==='all') return true;
+        try { const d = new Date(iso); const now = new Date(); return ((now-d)/(1000*3600*24)) <= state.range; } catch { return true; }
+      }
+      function score(item, qs){
+        if(!qs) return 1;
+        const t = ((item.heading||'')+' '+(item.summary||'')+' '+(item.daily_title||'')).toLowerCase();
+        const toks = (qs||'').toLowerCase().trim().split(/\s+/).filter(Boolean);
+        let s = 0; toks.forEach(w=>{ if(t.includes(w)) s+=2; });
+        (item.tags||[]).forEach(tag=>{ if(toks.includes(String(tag).toLowerCase())) s+=1; });
+        return s;
+      }
+      function buildTagStats(){
+        const m = new Map();
+        sectionIndex.forEach(s=>{ if(!inRange(s.date)) return; (s.tags||[]).forEach(t=>m.set(t,(m.get(t)||0)+1)); });
+        return [...m.entries()].sort((a,b)=>b[1]-a[1]).slice(0,10);
+      }
+      function renderChips(){
+        topicRow.innerHTML='';
+        const stats = buildTagStats();
+        // All chip
+        const allBtn = document.createElement('button');
+        const isAll = state.activeTags.size===0;
+        allBtn.className = 'btn outline small'+(isAll?' primary':'');
+        allBtn.setAttribute('aria-pressed', isAll?'true':'false');
+        allBtn.textContent = (window.translations?.[(localStorage.getItem('lang')||'zh')]?.all_label)||'全部';
+        allBtn.onclick = ()=>{ state.activeTags.clear(); syncMode(); run(); };
+        topicRow.appendChild(allBtn);
+        stats.forEach(([tag, n])=>{
+          const b = document.createElement('button');
+          const active = state.activeTags.has(tag);
+          b.className = 'btn outline small'+(active?' primary':'');
+          b.setAttribute('aria-pressed', active?'true':'false');
+          b.textContent = `${tag} · ${n}`;
+          b.onclick = ()=>{ if(active) state.activeTags.delete(tag); else state.activeTags.add(tag); syncMode(); run(); };
+          topicRow.appendChild(b);
+        });
+      }
+      function syncMode(){
+        const hasFilter = state.activeTags.size>0 || (state.query||'').trim().length>0;
+        state.mode = hasFilter ? 'section' : 'daily';
+      }
+      function applySectionFilter(){
+        const arr = sectionIndex
+          .filter(s=>inRange(s.date))
+          .filter(s=> state.activeTags.size===0 ? true : (s.tags||[]).some(t=>state.activeTags.has(t)))
+          .map(s=>({ s, sc: score(s, state.query) }))
+          .filter(x=> state.query ? x.sc>0 : true)
+          .sort((a,b)=> (b.sc - a.sc) || ((b.s.date||'').localeCompare(a.s.date||'')) )
+          .map(x=>x.s);
+        return arr;
+      }
+      function render(){
+        listEl.innerHTML='';
+        page=0;
+        if(state.mode==='daily'){
+          renderFeatured(dailyIndex[0]);
+          const rest = dailyIndex.slice(1);
+          emptyEl.hidden = rest.length>0;
+          loadMoreBtn.hidden = rest.length<=pageSize;
+          renderMoreDaily(rest);
+        } else {
+          featured.root.hidden = true;
+          const arr = applySectionFilter();
+          window.__SECTION_BUF__ = arr;
+          emptyEl.hidden = arr.length>0;
+          loadMoreBtn.hidden = arr.length<=pageSize;
+          renderMoreSection();
+        }
+      }
+      function renderMoreDaily(rest){
+        const slice = rest.slice(page*pageSize, (page+1)*pageSize);
+        listEl.insertAdjacentHTML('beforeend', slice.map(dailyCard).join(''));
+        page++;
+        if(page*pageSize>=rest.length) loadMoreBtn.hidden = true;
+      }
+      function renderMoreSection(){
+        const buf = window.__SECTION_BUF__||[];
+        const slice = buf.slice(page*pageSize, (page+1)*pageSize);
+        listEl.insertAdjacentHTML('beforeend', slice.map(sectionCard).join(''));
+        page++;
+        if(page*pageSize>=buf.length) loadMoreBtn.hidden = true;
+      }
+      function run(){ renderChips(); render(); }
+      async function init(){
+        try{
+          const [d, s] = await Promise.all([
+            fetch('../data/ai/blog/index.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>[]),
+            fetch('../data/ai/blog/sections.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>[])
+          ]);
+          dailyIndex = Array.isArray(d)? d: [];
+          sectionIndex = Array.isArray(s)? s: [];
+          // Bind date-range
+          document.querySelectorAll('[data-range]').forEach(btn=>{
+            btn.addEventListener('click', ()=>{
+              document.querySelectorAll('[data-range]').forEach(b=>b.classList.remove('primary'));
+              btn.classList.add('primary');
+              const v = btn.getAttribute('data-range');
+              state.range = (v==='all') ? 'all' : parseInt(v,10);
+              run();
+            });
+          });
+          // Search debounce
+          let tid=null; qInput.addEventListener('input', ()=>{ clearTimeout(tid); tid=setTimeout(()=>{ state.query=qInput.value||''; syncMode(); run(); }, 200); });
+          // Load more
+          loadMoreBtn.addEventListener('click', ()=>{ if(state.mode==='daily'){ const rest=dailyIndex.slice(1); renderMoreDaily(rest); } else { renderMoreSection(); } });
+          // First paint
+          syncMode();
+          run();
+        } catch(e){ console.error(e); emptyEl.hidden=false; }
+      }
+      init();
+    })();
+  </script>
+</body>
+</html>

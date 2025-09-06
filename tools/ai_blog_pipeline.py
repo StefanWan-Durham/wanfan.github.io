@@ -172,18 +172,78 @@ def _cap_ref_indexes(sections, ref_count: int):
             return f"[{idx}]"
         s["markdown"] = pat.sub(repl, txt)
 
+# ===== Local env loader (.env.local / .env) =====
+def _load_env_files(paths=(".env.local", ".env")):
+    for p in paths:
+        if not os.path.exists(p):
+            continue
+        try:
+            with open(p, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line or line.startswith("#"): 
+                        continue
+                    if "=" not in line:
+                        continue
+                    k, v = line.split("=", 1)
+                    k = k.strip()
+                    v = v.strip().strip('"').strip("'")
+                    if k:
+                        os.environ[k] = v
+        except Exception as e:
+            print("warn: failed loading", p, e)
+
+def _fallback_draft(entries, max_words=900):
+    # Simple stub draft if no LLM available: pick top 3–4 entries
+    picks = sorted(entries, key=lambda x: x.get("ts",""), reverse=True)[:4]
+    toc = []
+    sections = []
+    refs = []
+    for i, it in enumerate(picks, 1):
+        t = (it.get("title") or "").strip()
+        u = (it.get("url") or "").strip()
+        s = (it.get("summary") or "").strip()
+        refs.append({"title": t, "url": u})
+        heading = BS(t, "html.parser").text[:28]
+        toc.append(heading)
+        body = f"{BS(s, 'html.parser').text}\n\n来源：[{i}]"
+        sections.append({"heading": heading, "markdown": body})
+    title_zh = (picks[0].get("title") or "今日 AI 精选")[:20]
+    description_zh = "基于公开来源的自动汇总草稿，用于本地测试。"
+    tags = ["LLM","RAG","Agent"]
+    j = {
+        "plan": {"toc": toc, "refs": refs, "claims": []},
+        "title_zh": title_zh,
+        "description_zh": description_zh,
+        "tags": tags,
+        "toc": toc,
+        "sections": sections,
+        "refs": refs,
+        "en_teaser": "Auto-generated local test draft.",
+        "es_teaser": "Borrador de prueba local autogenerado.",
+    }
+    # keep lengths reasonable
+    _compress_sections(j, max_words)
+    _cap_ref_indexes(j["sections"], len(j["refs"]))
+    j["title_zh"] = _trim_title(j["title_zh"])
+    return j
+
 def pick_and_write(entries, max_words=1100):
     joined = "\n".join([f"- {it['title']} | {it['url']} | {it['ts']}\n  {it['summary']}" for it in entries])
     prompt = PROMPT.replace("[[ENTRIES]]", joined).replace("[[MAX_WORDS]]", str(max_words))
-    out = chat_once(prompt, system=SYS, temperature=0.25)
-    j = _extract_json_from_text(out)
-    # sanitize and align with plan
-    j = _sanitize_output(j, entries)
-    # hard trims for title/sections length & cap ref indexes
-    j["title_zh"] = _trim_title(j.get("title_zh", ""))
-    _compress_sections(j, max_words)
-    _cap_ref_indexes(j.get("sections", []), len(j.get("refs", [])))
-    return j
+    try:
+        out = chat_once(prompt, system=SYS, temperature=0.25)
+        j = _extract_json_from_text(out)
+        # sanitize and align with plan
+        j = _sanitize_output(j, entries)
+        # hard trims for title/sections length & cap ref indexes
+        j["title_zh"] = _trim_title(j.get("title_zh", ""))
+        _compress_sections(j, max_words)
+        _cap_ref_indexes(j.get("sections", []), len(j.get("refs", [])))
+        return j
+    except Exception as e:
+        print("LLM unavailable, using fallback draft:", e)
+        return _fallback_draft(entries, max_words=max_words)
 
 # ===== HTML 拼装 =====
 def load_tpl():
@@ -230,8 +290,12 @@ def make_og(title, date_str, outfile_png):
 </svg>"""
     tmp_svg = outfile_png.replace(".png",".svg")
     with open(tmp_svg,"w",encoding="utf-8") as f: f.write(svg)
-    # 需要 librsvg2-bin: rsvg-convert (provided in CI)
-    subprocess.run(["rsvg-convert","-w","1200","-h","630","-o",outfile_png,tmp_svg], check=True)
+    # 需要 librsvg2-bin: rsvg-convert (provided in CI). 在本地缺失时忽略错误。
+    try:
+        subprocess.run(["rsvg-convert","-w","1200","-h","630","-o",outfile_png,tmp_svg], check=True)
+    except Exception as e:
+        # 留下 SVG 即可，本地预览不会中断
+        raise RuntimeError(f"rsvg-convert not available: {e}")
 
 # ===== 索引 & RSS =====
 def update_index(meta):
@@ -268,6 +332,64 @@ def write_rss(index):
 </channel></rss>"""
     with open(os.path.join(DATA_DIR,"rss.xml"),"w",encoding="utf-8") as f: f.write(xml)
 
+# ===== Sections index (per-section searchable entries) =====
+def _plain_summary_from_markdown(md: str, limit: int = 240) -> str:
+    try:
+        html = md2html(md or "", extras=["fenced-code-blocks","tables","strike"])  # type: ignore
+        text = BS(html, "html.parser").get_text(" ", strip=True)
+        text = re.sub(r"\s+", " ", text)
+        text = re.sub(r"\[(\d{1,2})\]", "", text)  # drop [1] style refs
+        return (text[:limit]).strip()
+    except Exception:
+        return (md or "")[:limit].strip()
+
+def update_sections(meta: dict, j: dict):
+    """Update data/ai/blog/sections.json with per-section entries for this daily post."""
+    sec_path = os.path.join(DATA_DIR, "sections.json")
+    arr = []
+    if os.path.exists(sec_path):
+        try:
+            with open(sec_path, "r", encoding="utf-8") as f:
+                arr = json.load(f)
+        except Exception:
+            arr = []
+
+    slug = meta.get("slug")
+    title = meta.get("title")
+    pub_iso = meta.get("published")
+    tags = meta.get("tags") or []
+    og_image = meta.get("og_image")
+    # drop any old sections belonging to the same daily
+    arr = [x for x in arr if x.get("daily_slug") != slug]
+
+    sections = j.get("sections") or []
+    for i, sec in enumerate(sections, 1):
+        heading = (sec.get("heading") or "").strip()
+        md = sec.get("markdown") or ""
+        # extract ref indexes present in this section
+        ref_idx = sorted({ int(m.group(1)) for m in re.finditer(r"\[(\d{1,2})\]", md) })
+        summary = _plain_summary_from_markdown(md, limit=240)
+        url = f"{meta.get('url')}#sec-{i}"
+        entry = {
+            "id": f"{slug}#sec-{i}",
+            "date": pub_iso,
+            "daily_slug": slug,
+            "daily_title": title,
+            "section_index": i,
+            "heading": heading,
+            "summary": summary,
+            "url": url,
+            "tags": tags,
+            "og_image": og_image,
+            "refs": ref_idx,
+        }
+        arr.insert(0, entry)
+
+    # keep at most recent N sections
+    arr = arr[:600]
+    with open(sec_path, "w", encoding="utf-8") as f:
+        json.dump(arr, f, ensure_ascii=False, indent=2)
+
 # ===== Buttondown（选填，创建草稿）=====
 def push_buttondown(meta, html):
     api = os.getenv("BUTTONDOWN_API_KEY")
@@ -289,6 +411,8 @@ def push_buttondown(meta, html):
         print("Buttondown failed:", e)
 
 def main():
+    # 0) load local env for API keys (won't be committed if .gitignore ignores .env*)
+    _load_env_files()
     # 1) 抓取
     entries = fetch_items()
     min_items = int(os.getenv("MIN_ITEMS","6"))
@@ -317,18 +441,34 @@ def main():
     content_html = sections_to_html(j["sections"], ref_count=len(j["refs"]))
     refs_html = "\n".join([f'<li id="ref-{i+1}"><a href="{r["url"]}" target="_blank" rel="noopener">{BS(r["title"],"html.parser").text}</a></li>' for i, r in enumerate(j["refs"])])
 
-    # 5) OG 分享图
+    # 5) OG 分享图（本地无 rsvg-convert 时降级为占位图）
     og_png = os.path.join(OG_DIR, f"{slug}.png")
-    make_og(title, date_str, og_png)
-    og_url = f"{SITE_BASE}/{og_png}" if SITE_BASE else f"/{og_png}"
+    try:
+        make_og(title, date_str, og_png)
+        og_url = f"{SITE_BASE}/{og_png}" if SITE_BASE else f"/{og_png}"
+    except Exception:
+        placeholder = "assets/placeholder.jpg"
+        og_url = f"{SITE_BASE}/{placeholder}" if SITE_BASE else f"/{placeholder}"
 
     # 6) 渲染模板
     with open(TPL_PATH,"r",encoding="utf-8") as f: tpl = f.read()
+    # Use COVER_IMAGE for inline <img>, prefer relative path for local preview
+    cover_img = og_url
+    try:
+        # If og_url is site-relative like '/assets/og/..', convert to '../assets/...'
+        if og_url.startswith('/'):
+            # map '/assets/...'(root) to relative path from blog page: '../assets/...'
+            rel = '..' + og_url
+            cover_img = rel
+    except Exception:
+        pass
+
     html = (tpl
       .replace("{{TITLE}}", title)
       .replace("{{DESCRIPTION}}", desc)
       .replace("{{CANONICAL}}", url)
       .replace("{{OG_IMAGE}}", og_url)
+      .replace("{{COVER_IMAGE}}", cover_img)
       .replace("{{PUBLISHED}}", pub_iso)
       .replace("{{DATE_STR}}", date_str)
       .replace("{{READING_MIN}}", str(max(3, int(max_words/350))))
@@ -355,6 +495,12 @@ def main():
     }
     idx = update_index(meta)
     write_rss(idx)
+
+    # 8.5) 更新 sections.json（用于前端按段落筛选与搜索）
+    try:
+        update_sections(meta, j)
+    except Exception as e:
+        print("update_sections failed:", e)
 
     # 9)（可选）发 Buttondown 草稿
     push_buttondown(meta, html)
