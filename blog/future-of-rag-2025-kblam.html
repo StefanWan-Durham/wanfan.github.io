@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>RAG 会被淘汰吗？从“大上下文”到 GraphRAG、检索感知训练与 KBLaM 的 2025 路线图</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <meta name="description" content="RAG 不会被淘汰，被淘汰的是“天真向量检索 + 生搬硬塞上下文”。本文给出 2025 年 RAG 五件套、评测维度、选型矩阵与 KBLaM 落地范式。">
   <meta name="author" content="Fan Wan">
@@ -55,7 +55,8 @@
         <li><a href="../index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
         <li><a href="../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
         <li><a href="../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
-        <li><a href="../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+  <li><a href="../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+  <li><a href="../ai-lab.html"><span class="i18n l-zh">AI Studio</span><span class="i18n l-en">AI Studio</span><span class="i18n l-es">Taller de IA</span></a></li>
         <li><a href="../contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
       </ul>
       <div class="nav-actions">
@@ -564,7 +565,7 @@ def rag_answer(question: str) -&gt; Tuple[str, List[Evidence]]:
         </div>
         <hr style="margin: 24px 0">
         <nav class="post-nav" aria-label="Post navigation">
-          <a class="btn outline" href="../blog.html">← 返回博客</a>
+          <a class="btn outline" href="../lab/scholarpush.html">← 返回学术快报</a>
           <a class="btn outline" href="./kblam-project-summary.html">上一个</a>
           <a class="btn outline" href="#" aria-disabled="true" onclick="return false;">下一个</a>
         </nav>

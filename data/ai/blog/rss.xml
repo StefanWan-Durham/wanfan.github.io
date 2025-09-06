@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel>
-  <title>AI Daily · Fan Wan</title>
-  <link>/data/ai/blog/rss.xml</link>
-  <description>每日 AI 要闻与解读</description>
-  
-  <item>
-    <title>多模态大语言模型与智能代理的最新进展</title>
-    <link>/blog/2025-09-06-ai-daily-多模态大语言模型与智能代理的最新进展.html</link>
-    <description><![CDATA[本文探讨了PG-Agent的设计及其在图形用户界面中的应用，动态规划在LLM中的重要性，以及RAG技术的可解释性提升，最后分析了AI在供应链管理中的创新应用。]]></description>
-    <pubDate>Sat, 06 Sep 2025 00:35:19 +0000</pubDate>
-  </item>
-  <item>
-    <title>AI研究日报：多模态推理与智能体优化新突</title>
-    <link>/blog/2025-09-05-ai-daily-AI研究日报多模态推理与智能体优化新突.html</link>
-    <description><![CDATA[今日研究涵盖GUI智能体架构创新、扩散模型在空中交通的应用、LLM智能体计算分配优化、知识图谱可解释性增强及医疗基础模型进展，呈现多领域技术发展。]]></description>
-    <pubDate>Fri, 05 Sep 2025 17:01:36 +0000</pubDate>
-  </item>
-  <item>
-    <title>今日AI动态：从PG-Agent到医疗AI的进展</title>
-    <link>/blog/2025-09-05-ai-daily-今日AI动态从PG-Agent到医疗AI的进展.html</link>
-    <description><![CDATA[探索最新AI研究，包括PG-Agent、RAG技术及医疗AI的应用，推动行业创新与发展。]]></description>
-    <pubDate>Fri, 05 Sep 2025 15:42:03 +0000</pubDate>
-  </item>
-</channel></rss>
+<rss version="2.0">
+  <channel>
+    <title>AI Daily · Fan Wan</title>
+    <link>/data/ai/blog/rss.xml</link>
+    <description>每日 AI 要闻与解读</description>
+  </channel>
+</rss>
