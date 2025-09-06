@@ -16,6 +16,47 @@ os.makedirs(BLOG_DIR, exist_ok=True)
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(OG_DIR, exist_ok=True)
 
+# ScholarPush prompt for academic flash cards
+PROMPT_SCHOLAR = r"""
+You are an academic news editor. Output STRICT JSON only.
+Use ONLY the provided entries (title | url | ts | brief). No speculation, no marketing words, no chain-of-thought.
+Numbers must be extracted from the briefs/linked metadata; if absent, use "N/A".
+
+From today's entries, produce [[N]] academic flashes (papers preferred).
+Each item must be self-contained and quickly scannable.
+
+JSON schema:
+{
+    "generated_at": "ISO8601",
+    "items": [
+        {
+            "headline": "≤24字；格式：[类别] + 要点（中文）",
+            "one_liner": "≤60字；问题→方法→结果的单句",
+            "task": "LLM/RAG/Agent/CV/ASR/NLP/MM/IR/Robotics/Infra/Theory/Other",
+            "type": "paper/code/dataset/benchmark/blog/policy",
+            "novelty": "method/data/metric/compute/engineering",
+            "key_numbers": [
+                {"dataset":"", "metric":"", "ours":"", "baseline":"", "impr_abs":"", "impr_rel":"%或N/A"}
+            ],
+            "reusability": ["可复用做法×1-3（如数据增强/损失/检索/蒸馏/缓存/对齐技巧）"],
+            "limitations": ["边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"],
+            "links": {"paper":"URL或N/A", "code":"URL或N/A", "project":"URL或N/A"},
+            "tags": ["短标签×3-6，如 LLM,RAG,Agent,Eval"],
+            "impact_score": 0-100,
+            "reproducibility_score": 0-100
+        }
+    ],
+    "refs": [{"title":"", "url":""}]
+}
+
+Rules:
+- 优先 arXiv/论文/基准发布；同一主题重复只选信息密度更高的一条。
+- “headline”不要结尾标点；“one_liner”必须是完整一句话。
+- 数字缺失时 key_numbers 填 "N/A"；不要编造。
+- “links.paper”若能从条目中提取 arXiv/论文页就填，否则 N/A。
+- items 按 impact_score 降序。
+"""
+
 # ===== 数据源（先走RSS，稳）=====
 SOURCES = [
   "https://export.arxiv.org/rss/cs.AI",
@@ -39,7 +80,7 @@ def fetch_items(limit_per_feed=25):
                 published = e.get("published") or e.get("updated") or ""
                 ts = dtp.parse(published).astimezone(timezone.utc).isoformat() if published else datetime.now(timezone.utc).isoformat()
                 summary = (e.get("summary") or "")
-                summary = re.sub("<.*?>", "", summary)[:1200]  # 去HTML
+                summary = re.sub("<.*?>", "", summary)[:600]   # 去HTML & 降噪（更省tokens）
                 items.append({"title":title, "url":link, "ts":ts, "summary":summary})
         except Exception:
             pass
@@ -152,15 +193,35 @@ def _trim_title(s: str) -> str:
         t = t[:20]
     return t
 
+SENT_SPLIT = re.compile(r'(?<=[。！？!?；;])')
+
 def _compress_sections(j: dict, max_words: int):
+    """句子感知压缩：宁要完整句子，不要截半句"""
     secs = j.get("sections") or []
     n = max(1, len(secs))
-    per = int(max_words / n) + 40
+    per = max(200, min(340, int(max_words * 1.05 / n)))
+
     for s in secs:
-        txt = s.get("markdown", "")
-        while _cn_len(txt) > per and len(txt) > 10:
-            txt = txt[:-10]
-        s["markdown"] = txt
+        raw = (s.get("markdown") or "").strip()
+        # 保留末尾引用 [1][3] 不被切断
+        tail_match = re.search(r'(?:\s*(?:\[\d+\])+)?\s*$', raw)
+        refs_tail = tail_match.group(0) if tail_match else ""
+        core = raw[:-len(refs_tail)] if refs_tail else raw
+
+        core = re.sub(r'\s+', '', core)
+        parts = [p for p in SENT_SPLIT.split(core) if p]
+        acc = ''
+        for p in parts:
+            if _cn_len(acc + p) <= per:
+                acc += p
+            else:
+                break
+        if not acc and parts:
+            acc = parts[0]
+        if not acc.endswith(('。','！','？',';','；','!','?')):
+            tmp = re.sub(r'[^。！？!?；;]+$', '', acc)
+            acc = (tmp if tmp else acc) + '。'
+        s['markdown'] = acc + refs_tail
 
 def _cap_ref_indexes(sections, ref_count: int):
     pat = re.compile(r"\[(\d+)\]")
@@ -240,10 +301,100 @@ def pick_and_write(entries, max_words=1100):
         j["title_zh"] = _trim_title(j.get("title_zh", ""))
         _compress_sections(j, max_words)
         _cap_ref_indexes(j.get("sections", []), len(j.get("refs", [])))
+        # Ensure required fields exist; synthesize sensible defaults
+        if not j.get("sections"):
+            raise ValueError("sections missing")
+        if not j.get("description_zh"):
+            try:
+                j["description_zh"] = _plain_summary_from_markdown(j["sections"][0].get("markdown",""), limit=160) or "基于公开来源的自动汇总草稿。"
+            except Exception:
+                j["description_zh"] = "基于公开来源的自动汇总草稿。"
+        if not j.get("title_zh"):
+            j["title_zh"] = _trim_title((entries[0].get("title") if entries else "今日 AI 精选") or "今日 AI 精选")
+        if not j.get("tags"):
+            j["tags"] = ["AI"]
+        if not j.get("toc") or len(j.get("toc",[])) != len(j.get("sections",[])):
+            j["toc"] = [ (s.get("heading") or f"部分{i+1}") for i,s in enumerate(j.get("sections", [])) ]
         return j
     except Exception as e:
         print("LLM unavailable, using fallback draft:", e)
         return _fallback_draft(entries, max_words=max_words)
+
+# ===== ScholarPush generation & validation =====
+def _validate_scholarpush(j: dict):
+    assert isinstance(j, dict), "scholarpush root must be object"
+    assert "items" in j and isinstance(j["items"], list) and j["items"], "items required"
+    for it in j["items"]:
+        for k in ["headline","one_liner","task","type","novelty","links","tags","impact_score","reproducibility_score"]:
+            assert k in it, f"item missing {k}"
+        assert isinstance(it["headline"], str) and len(it["headline"])>0
+        assert isinstance(it["one_liner"], str) and len(it["one_liner"])>0
+        assert 0 <= int(it["impact_score"]) <= 100
+        assert 0 <= int(it["reproducibility_score"]) <= 100
+        links = it["links"]; assert isinstance(links, dict)
+        for lk in ["paper","code","project"]:
+            assert lk in links, f"links.{lk} required"
+        assert isinstance(it.get("tags",[]), list)
+
+def make_scholarpush(entries, n_items=8):
+    joined = "\n".join([f"- {it['title']} | {it['url']} | {it['ts']}\n  {it['summary']}" for it in entries])
+    prompt = PROMPT_SCHOLAR.replace("[[N]]", str(n_items)) + "\n\nEntries:\n" + joined
+    try:
+        out = chat_once(prompt, system="You are an academic news editor. STRICT JSON.", temperature=0.2)
+        j = _extract_json_from_text(out)
+    except Exception as e:
+        # Fallback: build minimal but valid schema locally from top entries
+        picks = sorted(entries, key=lambda x: x.get("ts",""), reverse=True)[:n_items]
+        def infer_type(u: str) -> str:
+            u = (u or '').lower()
+            if 'arxiv.org' in u: return 'paper'
+            if 'github.com' in u: return 'code'
+            if 'dataset' in u: return 'dataset'
+            return 'blog'
+        items=[]
+        for p in picks:
+            t = (p.get('title') or '').strip()
+            u = (p.get('url') or '').strip()
+            s = (p.get('summary') or '').strip()
+            item = {
+                'headline': t[:24],
+                'one_liner': (s or t)[:60],
+                'task': 'LLM',
+                'type': infer_type(u),
+                'novelty': 'method',
+                'key_numbers': [],
+                'reusability': [],
+                'limitations': [],
+                'links': {'paper': u if infer_type(u)=='paper' else 'N/A', 'code': 'N/A', 'project': 'N/A'},
+                'tags': ['AI'],
+                'impact_score': 50,
+                'reproducibility_score': 50,
+            }
+            items.append(item)
+        j = {'generated_at': datetime.now(timezone.utc).isoformat(), 'items': items, 'refs': [{'title': (p.get('title') or ''), 'url': (p.get('url') or '')} for p in picks]}
+
+    # refs 白名单过滤
+    allowed = { (it.get("url") or "").strip() for it in entries }
+    j["refs"] = [r for r in (j.get("refs") or []) if isinstance(r, dict) and (r.get("url") or "").strip() in allowed]
+
+    # items 规范化
+    cleaned=[]
+    for it in (j.get("items") or [])[:n_items]:
+        h = (it.get("headline") or "").strip()[:24]
+        ol = (it.get("one_liner") or "").strip()[:60]
+        it["headline"] = h
+        it["one_liner"] = ol
+        it.setdefault("links", {})
+        it["links"].setdefault("paper","N/A")
+        it["links"].setdefault("code","N/A")
+        it["links"].setdefault("project","N/A")
+        it.setdefault("tags", [])
+        it.setdefault("key_numbers", [])
+        cleaned.append(it)
+    j["items"] = cleaned
+
+    _validate_scholarpush(j)
+    return j
 
 # ===== HTML 拼装 =====
 def load_tpl():
@@ -501,6 +652,17 @@ def main():
         update_sections(meta, j)
     except Exception as e:
         print("update_sections failed:", e)
+
+    # —— 8.6) 生成 ScholarPush 快报 JSON —— 
+    try:
+        sp = make_scholarpush(entries, n_items=int(os.getenv("SCHOLARPUSH_ITEMS","8")))
+        sp_path = os.path.join("data/ai/scholarpush", "index.json")
+        os.makedirs(os.path.dirname(sp_path), exist_ok=True)
+        with open(sp_path, "w", encoding="utf-8") as f:
+            json.dump(sp, f, ensure_ascii=False, indent=2)
+        print("ScholarPush written:", sp_path)
+    except Exception as e:
+        print("ScholarPush failed:", e)
 
     # 9)（可选）发 Buttondown 草稿
     push_buttondown(meta, html)

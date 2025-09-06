@@ -118,6 +118,9 @@
             </div>
           </div>
 
+          <!-- ScholarPush cards (new) -->
+          <div id="scholar-grid" class="blog-posts" style="margin-bottom:12px"></div>
+
           <!-- Featured latest -->
           <article id="featured" class="card" style="padding:0;overflow:hidden;margin-bottom:16px" hidden>
             <a id="featured-link" class="post-link" href="#" style="display:block">
@@ -166,7 +169,7 @@
         desc: document.getElementById('featured-desc'),
         tags: document.getElementById('featured-tags')
       };
-      let dailyIndex = [], sectionIndex = [];
+  let dailyIndex = [], sectionIndex = [], scholarItems = [];
       let page = 0, pageSize = 12;
       const state = { mode:'daily', activeTags:new Set(), query:'', range:30 };
 
@@ -201,6 +204,26 @@
             <p class="muted" style="margin:0 0 6px 0">${date} · ${s.daily_title||''}</p>
             <p class="muted" style="margin:0 0 6px 0">${s.summary||''}</p>
             <p class="muted" style="margin:0">${tags}</p>
+          </div>
+        </article>`;
+      }
+      function scholarCard(it){
+        const tags = (it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+        const links = it.links||{};
+        const linkBadges = [
+          links.paper && links.paper!=='N/A' ? `<a class="btn outline small" href="${links.paper}" target="_blank" rel="noopener">Paper</a>` : '',
+          links.code && links.code!=='N/A' ? `<a class="btn outline small" href="${links.code}" target="_blank" rel="noopener">Code</a>` : '',
+          links.project && links.project!=='N/A' ? `<a class="btn outline small" href="${links.project}" target="_blank" rel="noopener">Proj</a>` : ''
+        ].filter(Boolean).join(' ');
+        const meta = `${it.task||''} · ${it.type||''} · 影响 ${it.impact_score??'-'}`;
+        return `
+        <article class="card post-card">
+          <div>
+            <h3 class="post-card-title" style="margin:0 0 6px 0">${it.headline||''}</h3>
+            <p class="muted" style="margin:0 0 6px 0">${meta}</p>
+            <p class="muted" style="margin:0 0 8px 0">${it.one_liner||''}</p>
+            <p class="muted" style="margin:0 0 8px 0">${tags}</p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">${linkBadges}</div>
           </div>
         </article>`;
       }
@@ -271,19 +294,23 @@
       }
       function render(){
         listEl.innerHTML='';
+        const scholarGrid = document.getElementById('scholar-grid');
+        if (scholarGrid){
+          scholarGrid.innerHTML = (scholarItems||[]).slice(0,12).map(scholarCard).join('');
+        }
         page=0;
         if(state.mode==='daily'){
           renderFeatured(dailyIndex[0]);
           const rest = dailyIndex.slice(1);
-          // Hide empty message if there's at least one daily entry (featured or rest)
-          emptyEl.hidden = (dailyIndex && dailyIndex.length>0) || rest.length>0;
+          // Hide empty message if there is any content: scholar items OR daily entries
+          emptyEl.hidden = (scholarItems && scholarItems.length>0) || (dailyIndex && dailyIndex.length>0) || rest.length>0;
           loadMoreBtn.hidden = rest.length<=pageSize;
           renderMoreDaily(rest);
         } else {
           featured.root.hidden = true;
           const arr = applySectionFilter();
           window.__SECTION_BUF__ = arr;
-          emptyEl.hidden = arr.length>0;
+          emptyEl.hidden = (scholarItems && scholarItems.length>0) || arr.length>0;
           loadMoreBtn.hidden = arr.length<=pageSize;
           renderMoreSection();
         }
@@ -304,12 +331,14 @@
       function run(){ renderChips(); render(); }
       async function init(){
         try{
-          const [d, s] = await Promise.all([
+          const [d, s, sp] = await Promise.all([
             fetch('../data/ai/blog/index.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>[]),
-            fetch('../data/ai/blog/sections.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>[])
+            fetch('../data/ai/blog/sections.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>[]),
+            fetch('../data/ai/scholarpush/index.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>null)
           ]);
           dailyIndex = Array.isArray(d)? d: [];
           sectionIndex = Array.isArray(s)? s: [];
+          scholarItems = sp && Array.isArray(sp.items) ? sp.items : [];
           // Bind date-range
           document.querySelectorAll('[data-range]').forEach(btn=>{
             btn.addEventListener('click', ()=>{
