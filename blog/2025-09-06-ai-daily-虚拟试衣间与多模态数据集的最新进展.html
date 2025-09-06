@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
-  <meta name="description" content="本文介绍了虚拟试衣间技术、ChronoGraph数据集及TRUST-VL多模态虚假信息检测的最新研究进展。">
+  <meta name="description" content="本文探讨了虚拟试衣间技术的创新、ChronoGraph数据集的构建及TRUST-VL在多模态虚假信息检测中的应用。">
   <link rel="canonical" href="/blog/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新进展.html">
 
   <!-- OpenGraph / Twitter -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="虚拟试衣间与多模态数据集的最新进展">
-  <meta property="og:description" content="本文介绍了虚拟试衣间技术、ChronoGraph数据集及TRUST-VL多模态虚假信息检测的最新研究进展。">
+  <meta property="og:description" content="本文探讨了虚拟试衣间技术的创新、ChronoGraph数据集的构建及TRUST-VL在多模态虚假信息检测中的应用。">
   <meta property="og:url" content="/blog/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新进展.html">
   <meta property="og:image" content="/assets/og/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新进展.png">
   <meta property="og:image:width" content="1200">
@@ -20,10 +20,10 @@
   <meta property="og:image:type" content="image/png">
   <link rel="image_src" href="/assets/og/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新进展.png">
   <meta itemprop="image" content="/assets/og/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新进展.png">
-  <meta property="article:published_time" content="2025-09-06T15:20:57.107897+00:00">
+  <meta property="article:published_time" content="2025-09-06T15:59:19.050243+00:00">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="虚拟试衣间与多模态数据集的最新进展">
-  <meta name="twitter:description" content="本文介绍了虚拟试衣间技术、ChronoGraph数据集及TRUST-VL多模态虚假信息检测的最新研究进展。">
+  <meta name="twitter:description" content="本文探讨了虚拟试衣间技术的创新、ChronoGraph数据集的构建及TRUST-VL在多模态虚假信息检测中的应用。">
   <meta name="twitter:image" content="/assets/og/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新进展.png">
   <meta name="theme-color" content="#0f172a">
 
@@ -85,36 +85,36 @@
       <div class="container">
         <div class="i18n-block" data-lang="zh">
           <h1 class="post-title">虚拟试衣间与多模态数据集的最新进展</h1>
-          <p class="muted post-meta">发表于 2025-09-06 · 预计阅读 3 min · 标签：虚拟试衣间, 多模态, 数据集, 视频生成, 虚假信息检测</p>
+          <p class="muted post-meta">发表于 2025-09-06 · 预计阅读 3 min · 标签：虚拟试衣间, 数据集, 多模态检测, 决策模型</p>
         </div>
       </div>
     </section>
     <section class="section">
       <div class="container prose">
   <div class="post-hero-art" data-lang="zh"><img src="../assets/og/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新进展.png" alt="Cover"/></div>
-        <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>目录</strong><ol><li><a href="#sec-1">虚拟试衣间技术预览</a></li>
-<li><a href="#sec-2">ChronoGraph数据集介绍</a></li>
-<li><a href="#sec-3">TRUST-VL多模态虚假信息检测</a></li>
-<li><a href="#sec-4">Plot'n Polish故事可视化</a></li></ol></nav>
+        <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>目录</strong><ol><li><a href="#sec-1">虚拟试衣间的创新</a></li>
+<li><a href="#sec-2">ChronoGraph数据集概述</a></li>
+<li><a href="#sec-3">TRUST-VL的多模态检测</a></li>
+<li><a href="#sec-4">决策模型的认知忠实性</a></li></ol></nav>
         <article class="i18n-block" data-lang="zh">
-          <h2 id="sec-1">虚拟试衣间技术预览</h2>
-<p>虚拟试衣间（VFR）是一种新型视频生成模型，能够从单一图像生成任意长度的虚拟试穿视频。该模型通过自回归的分段生成过程，简化了长视频生成任务，避免了资源密集型的传统方法。<sup><a href="#ref-1">[1]</a></sup></p>
+          <h2 id="sec-1">虚拟试衣间的创新</h2>
+<p>虚拟试衣间（VFR）是一种新型的视频生成模型，能够从单张图像生成任意长度的虚拟试衣视频。该模型通过自回归生成过程，简化了长视频生成任务的复杂性，减少了对资源的需求。这一技术的进步为在线购物和虚拟试衣体验提供了新的可能性。<sup><a href="#ref-1">[1]</a></sup></p>
 
-<h2 id="sec-2">ChronoGraph数据集介绍</h2>
-<p>ChronoGraph是一个基于图的多变量时间序列预测数据集，构建于真实生产微服务中。每个节点代表一个服务，能够捕获CPU、内存和网络使用模式的多变量流，为研究提供了丰富的数据基础。<sup><a href="#ref-2">[2]</a></sup></p>
+<h2 id="sec-2">ChronoGraph数据集概述</h2>
+<p>ChronoGraph是一个基于图的多变量时间序列预测数据集，专为真实生产环境中的微服务构建。每个节点代表一个服务，能够发出多变量的系统性能指标流，捕捉CPU、内存和网络使用模式。这种数据结构使得ChronoGraph在分析和预测方面具有重要的应用价值。<sup><a href="#ref-2">[2]</a></sup></p>
 
-<h2 id="sec-3">TRUST-VL多模态虚假信息检测</h2>
-<p>TRUST-VL旨在检测多模态虚假信息，结合文本、视觉和跨模态失真。该系统的设计考虑了现有方法在处理未见场景时的局限性，提供了一种更为全面的解决方案。<sup><a href="#ref-3">[3]</a></sup></p>
+<h2 id="sec-3">TRUST-VL的多模态检测</h2>
+<p>TRUST-VL是一个旨在检测多模态虚假信息的解释性新闻助手。该系统结合了文本和视觉信息，能够有效识别和分析多种形式的虚假信息，满足日益增长的社会需求。其多模态特性使其在处理复杂信息时表现出色。<sup><a href="#ref-3">[3]</a></sup></p>
 
-<h2 id="sec-4">Plot'n Polish故事可视化</h2>
-<p>Plot'nPolish利用文本到图像的扩散模型实现零样本故事可视化。该方法在创意领域的应用前景广阔，能够生成多样化和详细的视觉内容，推动故事可视化的发展。<sup><a href="#ref-4">[4]</a></sup></p>
+<h2 id="sec-4">决策模型的认知忠实性</h2>
+<p>当前的AI研究越来越注重将人类中心的目标融入决策模型，以提高其与个人偏好和社会价值的对齐。这种方法通过标准的偏好获取方法，帮助研究人员建立更符合人类决策和判断的模型，推动了AI的可解释性和可靠性。<sup><a href="#ref-4">[4]</a></sup></p>
 
           <h2 id="refs">参考与来源</h2>
           <ol>
             <li id="ref-1"><a href="http://arxiv.org/abs/2509.04450v1" target="_blank" rel="noopener">Virtual Fitting Room: Generating Arbitrarily Long Videos of Virtual Try-On from a Single Image</a></li>
 <li id="ref-2"><a href="http://arxiv.org/abs/2509.04449v1" target="_blank" rel="noopener">ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset</a></li>
 <li id="ref-3"><a href="http://arxiv.org/abs/2509.04448v1" target="_blank" rel="noopener">TRUST-VL: An Explainable News Assistant for General Multimodal Misinformation Detection</a></li>
-<li id="ref-4"><a href="http://arxiv.org/abs/2509.04446v1" target="_blank" rel="noopener">Plot'n Polish: Zero-shot Story Visualization and Disentangled Editing with Text-to-Image Diffusion Models</a></li>
+<li id="ref-4"><a href="http://arxiv.org/abs/2509.04445v1" target="_blank" rel="noopener">Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment</a></li>
           </ol>
         </article>
         <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
