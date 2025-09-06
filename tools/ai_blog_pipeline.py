@@ -614,7 +614,7 @@ def pick_and_write(entries, max_words=1100):
     if rules_extra:
         prompt = prompt.replace("Rules:", "Rules:\n- " + "\n- ".join(rules_extra))
     try:
-        out = chat_once(prompt, system=SYS, temperature=0.25, max_tokens=2048)
+        out = chat_once(prompt, system=SYS, temperature=0.25, max_tokens=4096)
         try:
             j = _extract_json_from_text(out)
         except Exception:
@@ -757,7 +757,7 @@ def make_scholarpush(entries, n_items=8):
               .replace("[[N]]", str(n_items))
               .replace("[[ENTRIES]]", joined))
     try:
-        out = chat_once(prompt, system="You are an academic news editor. STRICT JSON.", temperature=0.2, max_tokens=1536)
+        out = chat_once(prompt, system="You are an academic news editor. STRICT JSON.", temperature=0.2, max_tokens=4096)
         # Parse model output with escalating strategies; if both fail, try a single repair round-trip
         try:
             j = _extract_json_from_text(out)
@@ -772,7 +772,7 @@ def make_scholarpush(entries, n_items=8):
                         "要求字段：generated_at, items[], refs[], stats{by_task,with_code,new_benchmarks}, must_reads[], nice_to_read[].\n"
                         "如果缺字段请补齐为空结构；items 中 links{paper,code,project,pdf} 必须存在。\n\n原始内容：\n" + out
                     )
-                    out_fix = chat_once(repair_prompt, system="You are a strict JSON fixer.", temperature=0.0, max_tokens=1536)
+                    out_fix = chat_once(repair_prompt, system="You are a strict JSON fixer.", temperature=0.0, max_tokens=4096)
                     try:
                         j = _extract_json_from_text(out_fix)
                     except Exception:
@@ -826,19 +826,127 @@ def make_scholarpush(entries, n_items=8):
             raise ValueError("no items after cleaning")
         return j
     except Exception as e:
-        # —— 先尝试“逐条目抢救” —— #
+        # —— 尝试 1：用你已实现的逐对象括号法抢救 —— #
         try:
             txt_for_salvage = (locals().get('out_fix') or locals().get('out') or '')
             salvaged = _salvage_items_from_text(txt_for_salvage, n_items=n_items)
             if salvaged:
                 print(f"make_scholarpush salvaged_items: {len(salvaged)}")
-                # 组装最小可用结构，后续沿用同样的清洗/统计逻辑
-                j = {
-                    "generated_at": datetime.now(timezone.utc).isoformat(),
-                    "items": salvaged,
-                    "refs": [],
-                }
+                j = {"generated_at": datetime.now(timezone.utc).isoformat(), "items": salvaged, "refs": []}
+                cleaned = []
+                for it in (j.get("items") or [])[:n_items]:
+                    h  = (it.get("headline") or "").strip()
+                    ol = (it.get("one_liner") or "").strip()
+                    it["headline"]   = h
+                    it["one_liner"]  = ol or h or ""
+                    it.setdefault("links", {})
+                    it["links"].setdefault("paper",  "N/A")
+                    it["links"].setdefault("code",   "N/A")
+                    it["links"].setdefault("project","N/A")
+                    it["links"].setdefault("pdf", _arxiv_pdf(it["links"].get("paper","")))
+                    it.setdefault("tags", [])
+                    it.setdefault("key_numbers", [])
+                    qr = (it.get("quick_read") or it.get("one_liner") or "").strip()
+                    it["quick_read"] = (qr[:178] + "…") if len(qr) > 180 else qr
+                    it["impact_score"] = _coerce_score(it.get("impact_score", 50))
+                    it["reproducibility_score"] = _coerce_score(it.get("reproducibility_score", 50))
+                    cleaned.append(it)
+                j["items"] = cleaned
+                if not j.get("stats"):
+                    j["stats"] = _build_stats(j["items"]) if j.get("items") else {"by_task":{}, "with_code":0, "new_benchmarks":0}
+                if not j.get("must_reads") or not j.get("nice_to_read"):
+                    must, nice = _split_picks(j["items"])
+                    j["must_reads"] = must
+                    j["nice_to_read"] = nice
+                _validate_scholarpush(j)
+                return j
+        except Exception as salvage_error:
+            print("make_scholarpush salvage_failed:", salvage_error)
 
+        # —— 尝试 2：字段级正则硬抠（避免首条目坏掉导致括号不闭合） —— #
+        try:
+            def _regex_salvage(txt: str, limit: int = 8) -> list:
+                if not txt:
+                    return []
+                s = txt.replace('\u2026', '...').replace('\ufeff','').replace('\u00A0',' ')
+                # 以每个条目的起始 { "headline": 作为粗粒度分隔，容忍前面乱七八糟的逗号/换行
+                starts = [m.start() for m in re.finditer(r'\{\s*"headline"\s*:\s*"', s)]
+                items = []
+                for i, st in enumerate(starts):
+                    # 估计片段边界：到下一条 headline 起点或到 items 大括号/文末
+                    ed = starts[i+1] if i+1 < len(starts) else len(s)
+                    seg = s[st:ed]
+
+                    def grab_str(key):
+                        m = re.search(rf'"{key}"\s*:\s*"([^"\r\n]*)"', seg)
+                        return (m.group(1).strip() if m else "")
+
+                    def grab_num(key):
+                        m = re.search(rf'"{key}"\s*:\s*(-?\d+)', seg)
+                        return _coerce_score(m.group(1)) if m else None
+
+                    def grab_link(subkey):
+                        # 优先从 links{} 里抠；若没有，容忍平铺
+                        m = re.search(rf'"links"\s*:\s*\{{.*?"{subkey}"\s*:\s*"([^"]*)".*?\}}', seg, re.DOTALL)
+                        if not m:
+                            m = re.search(rf'"{subkey}"\s*:\s*"([^"]*)"', seg)
+                        return (m.group(1).strip() if m else "")
+
+                    def grab_tags():
+                        m = re.search(r'"tags"\s*:\s*\[(.*?)\]', seg, re.DOTALL)
+                        if not m:
+                            return []
+                        return [t.strip() for t in re.findall(r'"([^"]+)"', m.group(1))]
+
+                    head = grab_str("headline")
+                    one  = grab_str("one_liner") or head
+                    task = grab_str("task") or "LLM"
+                    typ  = grab_str("type") or "paper"
+                    nov  = grab_str("novelty") or "method"
+
+                    paper = grab_link("paper") or "N/A"
+                    code  = grab_link("code")  or "N/A"
+                    proj  = grab_link("project") or "N/A"
+                    tags  = grab_tags()
+
+                    imp = grab_num("impact_score");  imp = imp if imp is not None else 50
+                    rep = grab_num("reproducibility_score"); rep = rep if rep is not None else 50
+
+                    if not head:
+                        continue  # 没 headline 的就不当成合法条目
+
+                    item = {
+                        "headline": head,
+                        "one_liner": one,
+                        "task": task,
+                        "type": typ,
+                        "novelty": nov,
+                        "key_numbers": [],
+                        "reusability": [],
+                        "limitations": [],
+                        "links": {
+                            "paper": paper,
+                            "code": code,
+                            "project": proj,
+                            "pdf": _arxiv_pdf(paper),
+                        },
+                        "tags": tags,
+                        "impact_score": imp,
+                        "reproducibility_score": rep,
+                        "quick_read": (one[:178] + "…") if len(one) > 180 else one,
+                    }
+                    items.append(item)
+                    if len(items) >= limit:
+                        break
+                return items
+
+            txt2 = (locals().get('out_fix') or locals().get('out') or '')
+            salvaged2 = _regex_salvage(txt2, limit=n_items)
+            if salvaged2:
+                print(f"make_scholarpush salvaged_items_v2: {len(salvaged2)}")
+                j = {"generated_at": datetime.now(timezone.utc).isoformat(), "items": salvaged2, "refs": []}
+
+                # 复用同一套清洗/打分/统计逻辑
                 cleaned = []
                 for it in (j.get("items") or [])[:n_items]:
                     h  = (it.get("headline") or "").strip()
@@ -868,10 +976,10 @@ def make_scholarpush(entries, n_items=8):
 
                 _validate_scholarpush(j)
                 return j
-        except Exception as salvage_error:
-            print("make_scholarpush salvage_failed:", salvage_error)
+        except Exception as salvage2_error:
+            print("make_scholarpush salvage_v2_failed:", salvage2_error)
 
-        # —— 若抢救也失败，再打印排障片段并走老的 fallback —— #
+        # —— 两次抢救都失败：打印片段并回退 —— #
         try:
             raw = (locals().get('out') or '')
             if raw:
@@ -889,6 +997,7 @@ def make_scholarpush(entries, n_items=8):
 
         print("make_scholarpush failed, fallback:", e)
         return _fallback_scholarpush(entries, n_items=n_items)
+
 
 
 # ===== HTML 拼装 =====
