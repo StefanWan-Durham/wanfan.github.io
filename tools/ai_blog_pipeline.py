@@ -44,9 +44,7 @@ JSON schema:
             "limitations": ["边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"],
             "links": {"paper":"URL或N/A", "code":"URL或N/A", "project":"URL或N/A"},
             "tags": ["短标签×3-6，如 LLM,RAG,Agent,Eval"],
-            # "impact_score": 0-100,
             "impact_score": 0,
-        # "reproducibility_score": 0-100,
         "reproducibility_score": 0,
         "quick_read": "120-180字中文摘要（可选）",
         "who_should_try": "适用人群（可选）"
@@ -268,31 +266,37 @@ def _extract_json_from_text(text: str):
     return json.loads(t)
 
 def _extract_json_relaxed(text: str):
-    """Attempt to coerce almost-JSON (single quotes, trailing commas, code fences) into valid JSON."""
     t = (text or "").strip()
-    # Strip fences if present
     try:
         m = re.search(r"```(?:json)?\s*(.*?)```", t, re.DOTALL | re.IGNORECASE)
-        if m:
-            t = m.group(1)
+        if m: t = m.group(1)
     except Exception:
         pass
-    # Ensure we slice to outermost braces
     try:
         first = t.find('{'); last = t.rfind('}')
         if first != -1 and last != -1 and last > first:
             t = t[first:last+1]
     except Exception:
         pass
-    # Replace single-quoted strings with double quotes in common cases
+
+    # —— 新增：常见“几乎 JSON”修复 —— #
+    # 统一破折号
+    t = t.replace('–', '-').replace('—', '-')
+    # 冒号后的“数值范围” 12-34 → 12（避免 0-100 触发语法错误）
+    t = re.sub(r'(:\s*)(\d+)\s*-\s*(\d+)(\s*[,}\]])', r'\1\2\4', t)
+    # 冒号后的百分数字 12% → "12%"
+    t = re.sub(r'(:\s*)(-?\d+(?:\.\d+)?)\s*%(\s*[,}\]])', r'\1"\2%"\3', t)
+    # 冒号后的 N/A / NA → "N/A"
+    t = re.sub(r'(:\s*)(N/?A)(\s*[,}\]])', r'\1"\2"\3', t, flags=re.IGNORECASE)
+
+    # 你原有的修正
     t2 = re.sub(r"([:\[{,\s])'([^'\\]*)'", r'\1"\2"', t)
-    # Remove trailing commas before ] or }
     t2 = re.sub(r",\s*([}\]])", r"\1", t2)
-    # Normalize true/false/null if accidentally capitalized
     t2 = re.sub(r"\bTrue\b", "true", t2)
     t2 = re.sub(r"\bFalse\b", "false", t2)
     t2 = re.sub(r"\bNone\b", "null", t2)
     return json.loads(t2)
+
 
 # ===== Output post-processing helpers =====
 def _urls_from_entries(entries):
@@ -587,6 +591,18 @@ def _fallback_scholarpush(entries, n_items=8):
     must, nice = _split_picks(items)
     return {"generated_at": datetime.now(timezone.utc).isoformat(), "items": items, "refs": refs, "stats": stats, "must_reads": must, "nice_to_read": nice}
 
+def _coerce_score(v, default=50):
+    try:
+        if isinstance(v, (int, float)):
+            return max(0, min(100, int(round(float(v)))))
+        if isinstance(v, str):
+            m = re.search(r'(\d{1,3})', v)
+            if m:
+                return max(0, min(100, int(m.group(1))))
+    except Exception:
+        pass
+    return default
+
 def make_scholarpush(entries, n_items=8):
     # Topic preference ordering before filtering
     prefer = _get_topic_keywords()
@@ -665,13 +681,34 @@ def make_scholarpush(entries, n_items=8):
             j["must_reads"] = must
             j["nice_to_read"] = nice
 
+        for it in j.get("items", []):
+            it["impact_score"] = _coerce_score(it.get("impact_score", 50))
+            it["reproducibility_score"] = _coerce_score(it.get("reproducibility_score", 50))
+
         _validate_scholarpush(j)
         if not j.get("items"):
             raise ValueError("no items after cleaning")
         return j
     except Exception as e:
+        # ---- 追加：打印原始/修复后的输出片段（头尾各 ~280 字） ----
+        try:
+            raw = (locals().get('out') or '')
+            if raw:
+                head = raw[:280]; tail = raw[-280:] if len(raw) > 280 else ''
+                print("make_scholarpush raw_out_snippet:", head, " … ", tail)
+        except Exception:
+            pass
+        try:
+            raw_fix = (locals().get('out_fix') or '')
+            if raw_fix:
+                head = raw_fix[:280]; tail = raw_fix[-280:] if len(raw_fix) > 280 else ''
+                print("make_scholarpush out_fix_snippet:", head, " … ", tail)
+        except Exception:
+            pass
+        # ---------------------------------------------------------
         print("make_scholarpush failed, fallback:", e)
         return _fallback_scholarpush(entries, n_items=n_items)
+
 
 # ===== HTML 拼装 =====
 def load_tpl():
