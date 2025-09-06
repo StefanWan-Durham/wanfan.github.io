@@ -177,6 +177,20 @@
 
     function clampLines(id){ const p=document.getElementById(id); if(p) p.classList.toggle('line-4'); }
     function btn(href,label){ return `<a class="btn outline small" target="_blank" rel="noopener" href="${href}">${label}</a>` }
+    // Build a map of ref url -> title for client-side healing of truncated headlines
+    let refTitleByUrl = new Map();
+    function niceHeadline(it){
+      let h = String(it.headline||'').trim();
+      // If headline looks truncated (ends with '-') try to reconstruct from refs by URL
+      const looksCut = h.endsWith('-');
+      const url = (it.links&& (it.links.paper||it.links.project)) || '';
+      if(looksCut && url && refTitleByUrl.has(url)){
+        const task = it.task || '';
+        const prefix = task ? `[${task}] ` : '';
+        return prefix + refTitleByUrl.get(url);
+      }
+      return h;
+    }
     function card(it){
       const tags=(it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
       const links=it.links||{}; const id=Math.random().toString(36).slice(2);
@@ -185,7 +199,7 @@
       const limits=(it.limitations||[]).slice(0,2).map(x=>`<li>${x}</li>`).join('');
       const meta=[it.task||'',it.type||''].filter(Boolean).join(' · ');
       return `<article class="card sp-card">
-        <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${it.headline||''}</h4>
+        <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${niceHeadline(it)}</h4>
         <div class="sp-meta">${meta}${tags?` · ${tags}`:''}</div>
         <p id="abs-${id}" class="sp-abstract line-4">${it.quick_read||it.one_liner||''}</p>
         ${keynums?`<p class="muted" style="margin:6px 0 0 0">${keynums}</p>`:''}
@@ -249,9 +263,15 @@
       data = sp||{}; items = Array.isArray(sp?.items)? sp.items: [];
       // normalize pdf links if missing
       items.forEach(it=>{ if(!it.links) it.links={}; if(!it.links.pdf && it.links.paper){ const m=(it.links.paper||'').match(/\d{4}\.\d{4,5}/); if(m) it.links.pdf = `https://arxiv.org/pdf/${m[0]}.pdf`; }});
-      // delegate expand/collapse
+      // cache refs for headline healing
+      try { refTitleByUrl = new Map((sp?.refs||[]).map(r=>[r.url, r.title])); } catch(e) { refTitleByUrl = new Map(); }
+      // delegate expand/collapse (robust to nested clicks)
       document.addEventListener('click', (e)=>{
-        const t=e.target; if(t && t.matches('button[data-toggle]')){ const id=t.getAttribute('data-toggle'); const p=document.getElementById(id); if(p){ p.classList.toggle('line-4'); }}
+        const el = (e.target && e.target.closest) ? e.target.closest('button[data-toggle]') : null;
+        if(!el) return;
+        const id = el.getAttribute('data-toggle');
+        const p = id ? document.getElementById(id) : null;
+        if(p){ p.classList.toggle('line-4'); e.preventDefault(); }
       });
       // bind search
       let tid=null; qInput.addEventListener('input', ()=>{ clearTimeout(tid); tid=setTimeout(()=>{ query=qInput.value||''; renderAll(); }, 200); });
