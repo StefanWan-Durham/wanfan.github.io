@@ -264,14 +264,46 @@ def _extract_json_from_text(text: str):
         pass
     # Finally try direct
     return json.loads(t)
+def _escape_newlines_in_quoted_strings(s: str) -> str:
+    """将双引号括起来的字符串内部的裸换行/回车替换为 \\n，避免 JSONDecodeError。"""
+    out = []
+    in_str = False
+    esc = False
+    for ch in s:
+        if in_str:
+            if esc:
+                out.append(ch)
+                esc = False
+            else:
+                if ch == '\\':
+                    out.append(ch)
+                    esc = True
+                elif ch == '"':
+                    out.append(ch)
+                    in_str = False
+                elif ch == '\n' or ch == '\r':
+                    out.append('\\n')
+                else:
+                    out.append(ch)
+        else:
+            if ch == '"':
+                out.append(ch)
+                in_str = True
+            else:
+                out.append(ch)
+    return ''.join(out)
 
 def _extract_json_relaxed(text: str):
+    """Attempt to coerce almost-JSON (single quotes, trailing commas, code fences, ellipsis, naked newlines) into valid JSON."""
     t = (text or "").strip()
+    # 1) 去掉 ```json 代码围栏
     try:
         m = re.search(r"```(?:json)?\s*(.*?)```", t, re.DOTALL | re.IGNORECASE)
-        if m: t = m.group(1)
+        if m:
+            t = m.group(1)
     except Exception:
         pass
+    # 2) 截取最外层花括号
     try:
         first = t.find('{'); last = t.rfind('}')
         if first != -1 and last != -1 and last > first:
@@ -279,23 +311,32 @@ def _extract_json_relaxed(text: str):
     except Exception:
         pass
 
-    # —— 新增：常见“几乎 JSON”修复 —— #
+    # 3) “几乎 JSON”的常见修复（在你原有基础上补强）
     # 统一破折号
     t = t.replace('–', '-').replace('—', '-')
-    # 冒号后的“数值范围” 12-34 → 12（避免 0-100 触发语法错误）
+    # 冒号后的“数值范围” 12-34 → 12（避免 0-100 等被拆解）
     t = re.sub(r'(:\s*)(\d+)\s*-\s*(\d+)(\s*[,}\]])', r'\1\2\4', t)
-    # 冒号后的百分数字 12% → "12%"
+    # 冒号后的百分数 12% → "12%"
     t = re.sub(r'(:\s*)(-?\d+(?:\.\d+)?)\s*%(\s*[,}\]])', r'\1"\2%"\3', t)
     # 冒号后的 N/A / NA → "N/A"
     t = re.sub(r'(:\s*)(N/?A)(\s*[,}\]])', r'\1"\2"\3', t, flags=re.IGNORECASE)
 
-    # 你原有的修正
-    t2 = re.sub(r"([:\[{,\s])'([^'\\]*)'", r'\1"\2"', t)
-    t2 = re.sub(r",\s*([}\]])", r"\1", t2)
+    # 4) 你原有的修正
+    t2 = re.sub(r"([:\[{,\s])'([^'\\]*)'", r'\1"\2"', t)   # 单引号 → 双引号
+    t2 = re.sub(r",\s*([}\]])", r"\1", t2)                  # 去除 ] / } 前尾逗号
     t2 = re.sub(r"\bTrue\b", "true", t2)
     t2 = re.sub(r"\bFalse\b", "false", t2)
     t2 = re.sub(r"\bNone\b", "null", t2)
-    return json.loads(t2)
+
+    # 5) 新增：清理不可见字符与省略号；并转义“引号内的裸换行”
+    t2 = t2.replace('\ufeff', '')   # BOM
+    t2 = t2.replace('\u00A0', ' ')  # 不换行空格
+    t2 = t2.replace('\u2026', '')   # 省略号 …（直接去掉，避免插到结构位置）
+    t2 = _escape_newlines_in_quoted_strings(t2)
+
+    # 6) 宽松解析
+    return json.loads(t2, strict=False)
+
 
 
 # ===== Output post-processing helpers =====

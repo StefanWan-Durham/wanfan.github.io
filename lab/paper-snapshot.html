@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一页论文 · AI Daily 长文汇总</title>
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="description" content="AI Daily 长文聚合页：复杂论文，一页终结。">
+  <link rel="canonical" href="https://fanwan-ai.github.io/lab/paper-snapshot.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="一页论文 · AI Daily 长文汇总">
+  <meta property="og:description" content="复杂论文，一页终结。用最精炼的摘要和图示解读核心思想。">
+  <meta property="og:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Paper Snapshot cover">
+  <meta property="og:url" content="https://fanwan-ai.github.io/lab/paper-snapshot.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="一页论文 · AI Daily 长文汇总">
+  <meta name="twitter:description" content="复杂论文，一页终结。用最精炼的摘要和图示解读核心思想。">
+  <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
+  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
+  <link rel="stylesheet" href="../style.css">
+  <script defer src="../lang.js"></script>
+  <script defer src="../script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <nav class="navbar container">
+      <a href="../index.html" class="brand" aria-label="Home">
+        <img src="../assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="../ai-lab.html"><span class="i18n l-zh">AI Studio</span><span class="i18n l-en">AI Studio</span><span class="i18n l-es">Taller de IA</span></a></li>
+        <li><a href="../contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label"></span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+          <select id="lang-select" hidden>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+              <path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/>
+              <path d="M12 2v2"/>
+              <path d="M4 10h2"/>
+              <path d="M18 10h2"/>
+              <path d="M5.5 5.5l1.4 1.4"/>
+              <path d="M18.5 5.5l-1.4 1.4"/>
+            </g>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon icon-system" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><path d="M8 20h8M12 16v4"/></g></svg>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero section">
+      <div class="bg-shapes">
+        <span class="shape shape1"></span>
+        <span class="shape shape2"></span>
+        <span class="shape shape3"></span>
+        <span class="shape shape4"></span>
+      </div>
+      <div class="container">
+        <h1>🧾 一页论文</h1>
+        <p class="subtitle">AI Daily 长文汇总，一页看懂一篇论文</p>
+      </div>
+    </section>
+
+    <section class="blog section">
+      <div class="container">
+        <div class="card" style="padding:12px 14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <input id="q" class="input" placeholder="搜索标题/摘要…" style="min-width:220px;height:36px;padding:6px 10px"/>
+          <span id="count" class="muted" style="margin-left:auto"></span>
+        </div>
+        <div id="posts" class="blog-posts"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Fan Wan</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    const postsEl = document.getElementById('posts');
+    const qInput = document.getElementById('q');
+    const countEl = document.getElementById('count');
+    const PH = '../assets/placeholder.jpg';
+    function ymd(s){ try{ return (s||'').slice(0,10); }catch(e){ return ''; } }
+    function esc(s){ return String(s||'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;'); }
+    function card(it){
+      const href = it.url && it.url.startsWith('/')? ('..'+it.url): it.url;
+      const img = it.og_image || PH;
+      return `
+        <article class="card post-card">
+          <a class="post-link" href="${href}">
+            <img class="post-thumb" src="${img}" alt="${esc(it.title||'Daily')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
+          </a>
+          <div>
+            <h3 class="post-card-title" style="margin:0 0 8px 0"><a class="post-card-title-link" href="${href}">${esc(it.title||'Daily')}</a></h3>
+            <p class="muted" style="margin:0 0 6px 0">发表于 ${esc(ymd(it.published||''))}</p>
+            <p class="muted" style="margin:0">${esc(it.description||'AI Daily 长文')}</p>
+          </div>
+        </article>`;
+    }
+    let all=[]; let qs='';
+    function render(){
+      const filt = qs.trim().toLowerCase();
+      const arr = all.filter(it=>{
+        if(!filt) return true;
+        const blob = `${it.title||''} ${it.description||''}`.toLowerCase();
+        return filt.split(/\s+/).filter(Boolean).some(w=>blob.includes(w));
+      });
+      postsEl.innerHTML = arr.map(card).join('');
+      countEl.textContent = `共 ${arr.length} 篇`;
+    }
+    async function init(){
+      let data=null;
+      try{ data = await fetch('../data/ai/blog/index.json', {cache:'no-store'}).then(r=>r.json()); }catch(e){ data=null; }
+      const list = Array.isArray(data)? data: [];
+      // 仅保留 Daily：约定 slug 或 url 中含 ai-daily
+      all = list.filter(x=>/ai-daily/i.test(x.slug||x.url||''))
+                .sort((a,b)=>String(b.published||'').localeCompare(String(a.published||'')));
+      render();
+      let tid=null; qInput.addEventListener('input', ()=>{ clearTimeout(tid); tid=setTimeout(()=>{ qs=qInput.value||''; render(); }, 150); });
+    }
+    init();
+  })();
+  </script>
+</body>
+</html>
