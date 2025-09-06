@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
-  <channel>
-    <title>AI Daily · Fan Wan</title>
-    <link>/data/ai/blog/rss.xml</link>
-    <description>每日 AI 要闻与解读</description>
-  </channel>
-</rss>
+<rss version="2.0"><channel>
+  <title>AI Daily · Fan Wan</title>
+  <link>/data/ai/blog/rss.xml</link>
+  <description>每日 AI 要闻与解读</description>
+  
+  <item>
+    <title>探索语言模型的幻觉与安全性评估</title>
+    <link>/blog/2025-09-06-ai-daily-探索语言模型的幻觉与安全性评估.html</link>
+    <description><![CDATA[本文探讨了OpenAI在语言模型幻觉、GPT-5生物漏洞奖励计划、希腊的AI教育项目及经济机会扩展方面的最新动态。]]></description>
+    <pubDate>Sat, 06 Sep 2025 09:20:07 +0000</pubDate>
+  </item>
+</channel></rss>
