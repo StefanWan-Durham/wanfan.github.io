@@ -44,8 +44,10 @@ JSON schema:
             "limitations": ["边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"],
             "links": {"paper":"URL或N/A", "code":"URL或N/A", "project":"URL或N/A"},
             "tags": ["短标签×3-6，如 LLM,RAG,Agent,Eval"],
-            "impact_score": 0-100,
-        "reproducibility_score": 0-100,
+            # "impact_score": 0-100,
+            "impact_score": 0,
+        # "reproducibility_score": 0-100,
+        "reproducibility_score": 0,
         "quick_read": "120-180字中文摘要（可选）",
         "who_should_try": "适用人群（可选）"
         }

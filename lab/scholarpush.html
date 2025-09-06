@@ -179,15 +179,30 @@
     function btn(href,label){ return `<a class="btn outline small" target="_blank" rel="noopener" href="${href}">${label}</a>` }
     // Build a map of ref url -> title for client-side healing of truncated headlines
     let refTitleByUrl = new Map();
+    // basic HTML escaper for safe attribute/text injection
+    function esc(s){
+      return String(s||'')
+        .replace(/&/g,'&amp;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;');
+    }
     function niceHeadline(it){
       let h = String(it.headline||'').trim();
-      // If headline looks truncated (ends with '-') try to reconstruct from refs by URL
-      const looksCut = h.endsWith('-');
+      // Try to heal truncated headlines using refs by URL
       const url = (it.links&& (it.links.paper||it.links.project)) || '';
-      if(looksCut && url && refTitleByUrl.has(url)){
+      if(url && refTitleByUrl.has(url)){
+        const ref = String(refTitleByUrl.get(url)||'').trim();
         const task = it.task || '';
         const prefix = task ? `[${task}] ` : '';
-        return prefix + refTitleByUrl.get(url);
+        // strip task prefix from current headline for comparison
+        const base = h.replace(/^\[[^\]]+\]\s*/, '').trim();
+        const baseTrim = base.replace(/[\s\-–:]+$/, ''); // drop trailing cut markers
+        const looksCut = h.endsWith('-') || h.endsWith(':') || /\s$/.test(h);
+        // If ref clearly starts with our base (or we see cut markers), trust ref title
+        if(ref && (looksCut || (baseTrim.length>6 && ref.toLowerCase().startsWith(baseTrim.toLowerCase())))){
+          return prefix + ref;
+        }
       }
       return h;
     }
@@ -198,10 +213,12 @@
       const utils=(it.reusability||[]).slice(0,3).map(x=>`<li>${x}</li>`).join('');
       const limits=(it.limitations||[]).slice(0,2).map(x=>`<li>${x}</li>`).join('');
       const meta=[it.task||'',it.type||''].filter(Boolean).join(' · ');
+      const shortTxt = String(it.quick_read||it.one_liner||'');
+      const fullTxt = String(it.one_liner||it.quick_read||'');
       return `<article class="card sp-card">
         <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${niceHeadline(it)}</h4>
         <div class="sp-meta">${meta}${tags?` · ${tags}`:''}</div>
-        <p id="abs-${id}" class="sp-abstract line-4">${it.quick_read||it.one_liner||''}</p>
+        <p id="abs-${id}" class="sp-abstract line-4" data-show="short" data-short="${esc(shortTxt)}" data-full="${esc(fullTxt)}">${esc(shortTxt)}</p>
         ${keynums?`<p class="muted" style="margin:6px 0 0 0">${keynums}</p>`:''}
         ${(utils||limits)?`<div style="display:flex;gap:12px;margin-top:6px">${utils?`<ul class="muted" style="margin:0">${utils}</ul>`:''}${limits?`<ul class="muted" style="margin:0">${limits}</ul>`:''}</div>`:''}
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
@@ -271,7 +288,23 @@
         if(!el) return;
         const id = el.getAttribute('data-toggle');
         const p = id ? document.getElementById(id) : null;
-        if(p){ p.classList.toggle('line-4'); e.preventDefault(); }
+        if(p){
+          const show = p.getAttribute('data-show') || 'short';
+          if(show === 'short'){
+            // show full
+            const full = p.getAttribute('data-full') || '';
+            p.textContent = full;
+            p.classList.remove('line-4');
+            p.setAttribute('data-show','full');
+          } else {
+            // show short
+            const short = p.getAttribute('data-short') || '';
+            p.textContent = short;
+            p.classList.add('line-4');
+            p.setAttribute('data-show','short');
+          }
+          e.preventDefault();
+        }
       });
       // bind search
       let tid=null; qInput.addEventListener('input', ()=>{ clearTimeout(tid); tid=setTimeout(()=>{ query=qInput.value||''; renderAll(); }, 200); });
