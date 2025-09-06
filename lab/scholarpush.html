@@ -275,7 +275,8 @@
         if(state.mode==='daily'){
           renderFeatured(dailyIndex[0]);
           const rest = dailyIndex.slice(1);
-          emptyEl.hidden = rest.length>0;
+          // Hide empty message if there's at least one daily entry (featured or rest)
+          emptyEl.hidden = (dailyIndex && dailyIndex.length>0) || rest.length>0;
           loadMoreBtn.hidden = rest.length<=pageSize;
           renderMoreDaily(rest);
         } else {
