@@ -337,6 +337,101 @@ def _extract_json_relaxed(text: str):
     # 6) 宽松解析
     return json.loads(t2, strict=False)
 
+def _match_bracket_block(s: str, start_idx: int, open_ch: str, close_ch: str) -> int:
+    """从 start_idx（指向 open_ch）起，找到与之匹配的 close_ch 的索引；失败返回 -1。支持字符串/转义。"""
+    in_str = False
+    esc = False
+    depth = 0
+    for i in range(start_idx, len(s)):
+        ch = s[i]
+        if in_str:
+            if esc:
+                esc = False
+            else:
+                if ch == '\\':
+                    esc = True
+                elif ch == '"':
+                    in_str = False
+            continue
+        else:
+            if ch == '"':
+                in_str = True
+            elif ch == open_ch:
+                depth += 1
+            elif ch == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return i
+    return -1
+
+
+def _salvage_items_from_text(text: str, n_items: int = 8) -> list:
+    """
+    当整体 JSON 解析失败时，仅从文本中定位 items: [...]，
+    逐个提取 {...} 条目并用 _extract_json_relaxed 解析，返回成功解析的 item 列表。
+    """
+    if not text:
+        return []
+    s = text
+
+    # 1) 找到 "items" 及其后面的 '['
+    m = re.search(r'"items"\s*:\s*\[', s)
+    if not m:
+        return []
+    arr_lbrack = s.find('[', m.end() - 1)
+    if arr_lbrack == -1:
+        return []
+
+    # 2) 定位与该 '[' 匹配的 ']'
+    arr_rbrack = _match_bracket_block(s, arr_lbrack, '[', ']')
+    if arr_rbrack == -1:
+        return []
+
+    body = s[arr_lbrack + 1:arr_rbrack]  # items 数组内部内容
+
+    # 3) 在 body 里逐个提取 {...} 对象
+    items = []
+    i = 0
+    in_str = False
+    esc = False
+    depth = 0
+    obj_start = -1
+
+    while i < len(body):
+        ch = body[i]
+        if in_str:
+            if esc:
+                esc = False
+            else:
+                if ch == '\\':
+                    esc = True
+                elif ch == '"':
+                    in_str = False
+        else:
+            if ch == '"':
+                in_str = True
+            elif ch == '{':
+                if depth == 0:
+                    obj_start = i
+                depth += 1
+            elif ch == '}':
+                depth -= 1
+                if depth == 0 and obj_start != -1:
+                    obj_str = body[obj_start:i+1]
+                    # 用你现有的宽松解析来修条目内部的小毛病
+                    try:
+                        item = _extract_json_relaxed(obj_str)
+                        items.append(item)
+                        if len(items) >= n_items:
+                            break
+                    except Exception:
+                        # 单条坏掉就跳过，继续尝试下一条
+                        pass
+                    obj_start = -1
+        i += 1
+
+    return items
+
 
 
 # ===== Output post-processing helpers =====
@@ -731,7 +826,52 @@ def make_scholarpush(entries, n_items=8):
             raise ValueError("no items after cleaning")
         return j
     except Exception as e:
-        # ---- 追加：打印原始/修复后的输出片段（头尾各 ~280 字） ----
+        # —— 先尝试“逐条目抢救” —— #
+        try:
+            txt_for_salvage = (locals().get('out_fix') or locals().get('out') or '')
+            salvaged = _salvage_items_from_text(txt_for_salvage, n_items=n_items)
+            if salvaged:
+                print(f"make_scholarpush salvaged_items: {len(salvaged)}")
+                # 组装最小可用结构，后续沿用同样的清洗/统计逻辑
+                j = {
+                    "generated_at": datetime.now(timezone.utc).isoformat(),
+                    "items": salvaged,
+                    "refs": [],
+                }
+
+                cleaned = []
+                for it in (j.get("items") or [])[:n_items]:
+                    h  = (it.get("headline") or "").strip()
+                    ol = (it.get("one_liner") or "").strip()
+                    it["headline"]   = h
+                    it["one_liner"]  = ol or h or ""
+                    it.setdefault("links", {})
+                    it["links"].setdefault("paper",  "N/A")
+                    it["links"].setdefault("code",   "N/A")
+                    it["links"].setdefault("project","N/A")
+                    it["links"].setdefault("pdf", _arxiv_pdf(it["links"].get("paper","")))
+                    it.setdefault("tags", [])
+                    it.setdefault("key_numbers", [])
+                    qr = (it.get("quick_read") or it.get("one_liner") or "").strip()
+                    it["quick_read"] = (qr[:178] + "…") if len(qr) > 180 else qr
+                    it["impact_score"] = _coerce_score(it.get("impact_score", 50))
+                    it["reproducibility_score"] = _coerce_score(it.get("reproducibility_score", 50))
+                    cleaned.append(it)
+                j["items"] = cleaned
+
+                if not j.get("stats"):
+                    j["stats"] = _build_stats(j["items"]) if j.get("items") else {"by_task":{}, "with_code":0, "new_benchmarks":0}
+                if not j.get("must_reads") or not j.get("nice_to_read"):
+                    must, nice = _split_picks(j["items"])
+                    j["must_reads"] = must
+                    j["nice_to_read"] = nice
+
+                _validate_scholarpush(j)
+                return j
+        except Exception as salvage_error:
+            print("make_scholarpush salvage_failed:", salvage_error)
+
+        # —— 若抢救也失败，再打印排障片段并走老的 fallback —— #
         try:
             raw = (locals().get('out') or '')
             if raw:
@@ -746,7 +886,7 @@ def make_scholarpush(entries, n_items=8):
                 print("make_scholarpush out_fix_snippet:", head, " … ", tail)
         except Exception:
             pass
-        # ---------------------------------------------------------
+
         print("make_scholarpush failed, fallback:", e)
         return _fallback_scholarpush(entries, n_items=n_items)
 
