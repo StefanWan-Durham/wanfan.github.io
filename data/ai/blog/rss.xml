@@ -3,4 +3,92 @@
   <title>AI Daily · Fan Wan</title>
   <link>/data/ai/blog/rss.xml</link>
   <description>每日 AI 要闻与解读</description>
+<<<<<<< HEAD
+=======
+  
+  <item>
+    <title>虚拟试衣间与多模态数据集的最新进展</title>
+    <link>/blog/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新进展.html</link>
+    <description><![CDATA[本文探讨了虚拟试衣间技术的创新、ChronoGraph数据集的构建及TRUST-VL在多模态虚假信息检测中的应用。]]></description>
+    <pubDate>Sat, 06 Sep 2025 15:59:19 +0000</pubDate>
+  </item>
+  <item>
+    <title>虚拟试衣间与多模态数据集的最新研究</title>
+    <link>/blog/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究.html</link>
+    <description><![CDATA[本文探讨了虚拟试衣间技术、ChronoGraph数据集、TRUST-VL多模态误信息检测及AI决策模型的最新研究进展。]]></description>
+    <pubDate>Sat, 06 Sep 2025 14:58:13 +0000</pubDate>
+  </item>
+  <item>
+    <title>大语言模型优化与多模态安全研究进展</title>
+    <link>/blog/2025-09-06-ai-daily-大语言模型优化与多模态安全研究进展.html</link>
+    <description><![CDATA[本文涵盖Delta激活表示、KV缓存剪枝、多模态安全数据集构建、心理增强代理及后训练统一视角等AI领域最新研究。]]></description>
+    <pubDate>Sat, 06 Sep 2025 13:16:52 +0000</pubDate>
+  </item>
+  <item>
+    <title>AI每日进展：LLM优化与多模态检测新方</title>
+    <link>/blog/2025-09-06-ai-daily-AI每日进展LLM优化与多模态检测新方.html</link>
+    <description><![CDATA[本文涵盖大型语言模型微调表示、KV缓存效率提升、参数高效微调改进、多模态虚假信息检测和心理增强AI代理等最新研究。]]></description>
+    <pubDate>Sat, 06 Sep 2025 13:12:17 +0000</pubDate>
+  </item>
+  <item>
+    <title>LLM优化与多模态检测技术新进展</title>
+    <link>/blog/2025-09-06-ai-daily-LLM优化与多模态检测技术新进展.html</link>
+    <description><![CDATA[本文涵盖Delta激活表示、KV缓存修剪、PEFT改进、多模态虚假信息检测和AI代理个性增强等研究，基于arXiv最新论文。]]></description>
+    <pubDate>Sat, 06 Sep 2025 13:07:38 +0000</pubDate>
+  </item>
+  <item>
+    <title>AI日报：大模型微调多模态安全与高效推理</title>
+    <link>/blog/2025-09-06-ai-daily-AI日报大模型微调多模态安全与高效推理.html</link>
+    <description><![CDATA[今日arXiv研究聚焦大语言模型后训练统一框架、多模态错误信息检测、KV缓存优化技术，以及心理增强代理与偏见评估挑战。]]></description>
+    <pubDate>Sat, 06 Sep 2025 13:02:25 +0000</pubDate>
+  </item>
+  <item>
+    <title>双尺度体积先验结合Wasserstein</title>
+    <link>/blog/2025-09-06-ai-daily-双尺度体积先验结合Wasserstein.html</link>
+    <description><![CDATA[本研究提出半监督医学图像分割新方法，通过双尺度体积先验和Wasserstein一致性机制优化特征提取与数据利用。]]></description>
+    <pubDate>Sat, 06 Sep 2025 12:59:20 +0000</pubDate>
+  </item>
+  <item>
+    <title>基于Wasserstein一致性的双尺度</title>
+    <link>/blog/2025-09-06-ai-daily-基于Wasserstein一致性的双尺度.html</link>
+    <description><![CDATA[本研究提出结合双尺度体积先验和Wasserstein一致性机制的新方法，旨在解决半监督医学图像分割中特征提取指导不足的问题，提升分割准确性。]]></description>
+    <pubDate>Sat, 06 Sep 2025 12:47:42 +0000</pubDate>
+  </item>
+  <item>
+    <title>虚拟试衣间与多模态数据集的最新研究</title>
+    <link>/blog/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究.html</link>
+    <description><![CDATA[本文探讨了虚拟试衣间技术、ChronoGraph数据集、TRUST-VL虚假信息检测模型及停车预测研究，展示了AI在多个领域的应用。]]></description>
+    <pubDate>Sat, 06 Sep 2025 14:41:30 +0000</pubDate>
+  </item>
+  <item>
+    <title>多模态检测与语言模型优化今日研究进展</title>
+    <link>/blog/2025-09-06-ai-daily-多模态检测与语言模型优化今日研究进展.html</link>
+    <description><![CDATA[今日arXiv研究涵盖多模态虚假信息检测、大语言模型后训练统一框架、KV缓存高效修剪、语音搜索纠错及心理增强AI代理等技术方向。]]></description>
+    <pubDate>Sat, 06 Sep 2025 14:26:32 +0000</pubDate>
+  </item>
+  <item>
+    <title>Virtual Fitting Room</title>
+    <link>/blog/2025-09-06-ai-daily-Virtual-Fitting-Room.html</link>
+    <description><![CDATA[基于公开来源的自动汇总草稿，用于本地测试。]]></description>
+    <pubDate>Sat, 06 Sep 2025 14:14:31 +0000</pubDate>
+  </item>
+  <item>
+    <title>OpenAI教育合作与安全研究每日进展汇</title>
+    <link>/blog/2025-09-06-ai-daily-OpenAI教育合作与安全研究每日进展汇.html</link>
+    <description><![CDATA[OpenAI与希腊政府合作推进AI教育，发布语言模型幻觉研究报告，与Anthropic联合进行安全评估，并启动GPT-5生物安全漏洞悬赏计划。]]></description>
+    <pubDate>Sat, 06 Sep 2025 10:49:39 +0000</pubDate>
+  </item>
+  <item>
+    <title>Why language models</title>
+    <link>/blog/2025-09-06-ai-daily-Why-language-models.html</link>
+    <description><![CDATA[基于公开来源的自动汇总草稿，用于本地测试。]]></description>
+    <pubDate>Sat, 06 Sep 2025 10:45:09 +0000</pubDate>
+  </item>
+  <item>
+    <title>探索语言模型的幻觉与安全性评估</title>
+    <link>/blog/2025-09-06-ai-daily-探索语言模型的幻觉与安全性评估.html</link>
+    <description><![CDATA[本文探讨了OpenAI在语言模型幻觉、GPT-5生物漏洞奖励计划、希腊的AI教育项目及经济机会扩展方面的最新动态。]]></description>
+    <pubDate>Sat, 06 Sep 2025 09:20:07 +0000</pubDate>
+  </item>
+>>>>>>> a00477818f75ae2be86632d7381b01c3d561251f
 </channel></rss>
