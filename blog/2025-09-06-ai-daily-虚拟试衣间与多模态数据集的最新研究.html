@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
-  <meta name="description" content="本文探讨了虚拟试衣间技术、ChronoGraph数据集、TRUST-VL虚假信息检测模型及停车预测研究，展示了AI在多个领域的应用。">
+  <meta name="description" content="本文探讨了虚拟试衣间技术、ChronoGraph数据集、TRUST-VL多模态误信息检测及AI决策模型的最新研究进展。">
   <link rel="canonical" href="/blog/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究.html">
 
   <!-- OpenGraph / Twitter -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="虚拟试衣间与多模态数据集的最新研究">
-  <meta property="og:description" content="本文探讨了虚拟试衣间技术、ChronoGraph数据集、TRUST-VL虚假信息检测模型及停车预测研究，展示了AI在多个领域的应用。">
+  <meta property="og:description" content="本文探讨了虚拟试衣间技术、ChronoGraph数据集、TRUST-VL多模态误信息检测及AI决策模型的最新研究进展。">
   <meta property="og:url" content="/blog/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究.html">
   <meta property="og:image" content="/assets/og/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究.png">
   <meta property="og:image:width" content="1200">
@@ -20,10 +20,10 @@
   <meta property="og:image:type" content="image/png">
   <link rel="image_src" href="/assets/og/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究.png">
   <meta itemprop="image" content="/assets/og/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究.png">
-  <meta property="article:published_time" content="2025-09-06T14:41:30.320970+00:00">
+  <meta property="article:published_time" content="2025-09-06T14:58:13.806914+00:00">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="虚拟试衣间与多模态数据集的最新研究">
-  <meta name="twitter:description" content="本文探讨了虚拟试衣间技术、ChronoGraph数据集、TRUST-VL虚假信息检测模型及停车预测研究，展示了AI在多个领域的应用。">
+  <meta name="twitter:description" content="本文探讨了虚拟试衣间技术、ChronoGraph数据集、TRUST-VL多模态误信息检测及AI决策模型的最新研究进展。">
   <meta name="twitter:image" content="/assets/og/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究.png">
   <meta name="theme-color" content="#0f172a">
 
@@ -85,7 +85,7 @@
       <div class="container">
         <div class="i18n-block" data-lang="zh">
           <h1 class="post-title">虚拟试衣间与多模态数据集的最新研究</h1>
-          <p class="muted post-meta">发表于 2025-09-06 · 预计阅读 3 min · 标签：虚拟试衣, 时间序列, 虚假信息, AI对齐, 停车预测</p>
+          <p class="muted post-meta">发表于 2025-09-06 · 预计阅读 3 min · 标签：虚拟试衣间, 多模态数据集, 误信息检测, 故事可视化, AI决策</p>
         </div>
       </div>
     </section>
@@ -94,32 +94,32 @@
   <div class="post-hero-art" data-lang="zh"><img src="../assets/og/2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究.png" alt="Cover"/></div>
         <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>目录</strong><ol><li><a href="#sec-1">虚拟试衣间技术预览</a></li>
 <li><a href="#sec-2">ChronoGraph数据集介绍</a></li>
-<li><a href="#sec-3">TRUST-VL多模态虚假信息检测</a></li>
-<li><a href="#sec-4">决策模型与AI对齐</a></li>
-<li><a href="#sec-5">多源数据融合的停车预测</a></li></ol></nav>
+<li><a href="#sec-3">TRUST-VL多模态误信息检测</a></li>
+<li><a href="#sec-4">Plot'n Polish故事可视化</a></li>
+<li><a href="#sec-5">AI对决策模型的影响</a></li></ol></nav>
         <article class="i18n-block" data-lang="zh">
           <h2 id="sec-1">虚拟试衣间技术预览</h2>
-<p>虚拟试衣间（VFR）是一种新型的视频生成模型，能够从单一图像生成任意长度的虚拟试穿视频。该模型通过自回归的方式分段生成视频，减少了对资源的需求，展现了在时尚和零售领域的潜在应用。<sup><a href="#ref-1">[1]</a></sup></p>
+<p>虚拟试衣间（VFR）是一种新型的视频生成模型，能够从单一图像生成任意长度的虚拟试穿视频。这种模型通过自回归的方式逐段生成视频，避免了资源密集型的生成过程，为用户提供了更灵活的试穿体验。<sup><a href="#ref-1">[1]</a></sup></p>
 
 <h2 id="sec-2">ChronoGraph数据集介绍</h2>
 <p>ChronoGraph是一个基于图的多变量时间序列预测数据集，构建于真实的生产微服务之上。每个节点代表一个服务，能够发出多变量的系统性能指标流，捕捉CPU、内存和网络使用模式，为研究提供了丰富的数据支持。<sup><a href="#ref-2">[2]</a></sup></p>
 
-<h2 id="sec-3">TRUST-VL多模态虚假信息检测</h2>
-<p>TRUST-VL是一个解释性新闻助手，专注于多模态虚假信息的检测。该模型结合文本和视觉信息，旨在应对由生成性人工智能加剧的多模态虚假信息问题，提供更全面的检测能力。<sup><a href="#ref-3">[3]</a></sup></p>
+<h2 id="sec-3">TRUST-VL多模态误信息检测</h2>
+<p>TRUST-VL项目旨在开发一种可解释的新闻助手，专注于多模态误信息检测。该系统能够处理文本、视觉和跨模态的失真，解决了现有方法在多种失真类型上泛化能力不足的问题，具有重要的社会意义。<sup><a href="#ref-3">[3]</a></sup></p>
 
-<h2 id="sec-4">决策模型与AI对齐</h2>
-<p>当前的研究趋势是开发认知忠实的决策模型，以提高人工智能系统与人类偏好和社会价值观的对齐。这些模型通过标准的偏好引导方法构建，旨在更好地理解人类的决策过程。<sup><a href="#ref-4">[4]</a></sup></p>
+<h2 id="sec-4">Plot'n Polish故事可视化</h2>
+<p>Plot'nPolish利用文本到图像的扩散模型实现了零-shot故事可视化和解耦编辑。这一技术为创意领域的应用提供了新的可能性，能够根据文本描述生成相应的视觉内容，提升了故事讲述的表现力。<sup><a href="#ref-4">[4]</a></sup></p>
 
-<h2 id="sec-5">多源数据融合的停车预测</h2>
-<p>针对城市停车难题，研究者们提出了一种结合多源数据的停车可用性预测模型。该模型利用自监督学习增强的时空反转变换器，旨在提高停车管理的准确性和效率。<sup><a href="#ref-5">[5]</a></sup></p>
+<h2 id="sec-5">AI对决策模型的影响</h2>
+<p>AI模型的决策过程正逐渐向人类中心的目标靠拢，研究者们通过标准的偏好引导方法，构建了符合个人偏好和社会价值的决策模型。这一趋势有助于提高AI系统的可接受性和实用性。<sup><a href="#ref-5">[5]</a></sup></p>
 
           <h2 id="refs">参考与来源</h2>
           <ol>
             <li id="ref-1"><a href="http://arxiv.org/abs/2509.04450v1" target="_blank" rel="noopener">Virtual Fitting Room: Generating Arbitrarily Long Videos of Virtual Try-On from a Single Image</a></li>
 <li id="ref-2"><a href="http://arxiv.org/abs/2509.04449v1" target="_blank" rel="noopener">ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset</a></li>
 <li id="ref-3"><a href="http://arxiv.org/abs/2509.04448v1" target="_blank" rel="noopener">TRUST-VL: An Explainable News Assistant for General Multimodal Misinformation Detection</a></li>
-<li id="ref-4"><a href="http://arxiv.org/abs/2509.04445v1" target="_blank" rel="noopener">Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment</a></li>
-<li id="ref-5"><a href="http://arxiv.org/abs/2509.04362v1" target="_blank" rel="noopener">Parking Availability Prediction via Fusing Multi-Source Data with A Self-Supervised Learning Enhanced Spatio-Temporal Inverted Transformer</a></li>
+<li id="ref-4"><a href="http://arxiv.org/abs/2509.04446v1" target="_blank" rel="noopener">Plot'n Polish: Zero-shot Story Visualization and Disentangled Editing with Text-to-Image Diffusion Models</a></li>
+<li id="ref-5"><a href="http://arxiv.org/abs/2509.04445v1" target="_blank" rel="noopener">Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment</a></li>
           </ol>
         </article>
         <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
