@@ -25,6 +25,18 @@
   <link rel="stylesheet" href="../style.css">
   <script defer src="../lang.js"></script>
   <script defer src="../script.js"></script>
+  <style>
+    /* Two-column layout: left Daily, right Scholar cards; stacks on small screens */
+    .sp-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;align-items:start}
+    @media (max-width: 980px){ .sp-grid{grid-template-columns:1fr} }
+    .sp-sticky{position:sticky;top:72px}
+    .sp-card-list{display:flex;flex-direction:column;gap:10px}
+  .sp-meta{font-size:12px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
+  .sp-title{font-size:15px;line-height:1.35;margin:0 0 4px 0}
+  .sp-abstract{margin:0;color:var(--muted)}
+  .line-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .line-4{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+  </style>
 </head>
 <body class="blog">
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -97,7 +109,7 @@
     </section>
 
     <section class="section blog" id="ai-news">
-      <div class="container">
+      <div class="container sp-grid">
         <div>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px">
             <div>
@@ -117,9 +129,6 @@
               <button class="btn outline small" data-range="all" data-i18n="date_range_all">全部</button>
             </div>
           </div>
-
-          <!-- ScholarPush cards (new) -->
-          <div id="scholar-grid" class="blog-posts" style="margin-bottom:12px"></div>
 
           <!-- Featured latest -->
           <article id="featured" class="card" style="padding:0;overflow:hidden;margin-bottom:16px" hidden>
@@ -141,7 +150,20 @@
           </div>
         </div>
 
-  <!-- Sidebar removed per new layout -->
+        <!-- Right column: ScholarPush card stream -->
+        <aside>
+          <div class="sp-sticky">
+            <div class="card" style="padding:10px 12px;margin-bottom:12px">
+              <h3 style="margin:0 0 6px 0">学术快报</h3>
+              <p class="muted" style="margin:0">每日论文速览 · 独立于左侧筛选</p>
+            </div>
+            <div id="sp-list" class="sp-card-list"></div>
+            <p id="sp-empty" class="muted" hidden>暂无快报</p>
+            <div style="display:grid;place-items:center;margin-top:8px">
+              <button id="sp-load-more" class="btn outline" hidden>加载更多</button>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
@@ -160,6 +182,10 @@
       const loadMoreBtn = document.getElementById('load-more');
       const topicRow = document.getElementById('topic-chips');
       const qInput = document.getElementById('q');
+    // ScholarPush elements
+    const spList = document.getElementById('sp-list');
+    const spEmpty = document.getElementById('sp-empty');
+    const spMore = document.getElementById('sp-load-more');
       const featured = {
         root: document.getElementById('featured'),
         link: document.getElementById('featured-link'),
@@ -169,61 +195,55 @@
         desc: document.getElementById('featured-desc'),
         tags: document.getElementById('featured-tags')
       };
-  let dailyIndex = [], sectionIndex = [], scholarItems = [];
+  let dailyIndex = [], sectionIndex = [];
+    let scholarItems = [];
       let page = 0, pageSize = 12;
+    let spPage = 0, spSize = 8;
       const state = { mode:'daily', activeTags:new Set(), query:'', range:30 };
 
       function cnLen(s){ return (s||'').replace(/\s+/g,' ').length; }
-      function dailyCard(it){
-        const date = (it.published||'').slice(0,10);
-        const tags = (it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
-        const img = it.og_image || '../assets/placeholder.jpg';
-        const href = it.url || (`/blog/${it.slug}.html`);
+      
+      // Render a daily-post card (for regular daily mode list)
+      function dailyCard(d){
+        if(!d) return '';
+        const href = d.url || (d.slug ? `/blog/${d.slug}.html` : '#');
+        const img = d.og_image || '../assets/placeholder.jpg';
+        const date = (d.published||'').slice(0,10);
+        const tags = (d.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+        const title = d.title || d.heading || '';
+        const desc = d.description || d.summary || '';
         return `
         <article class="card post-card">
           <a class="post-link" href="${href}">
-            <img class="post-thumb" src="${img}" alt="${(it.title||'').replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
+            <img class="post-thumb" src="${img}" alt="${String(title).replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
           </a>
           <div>
-            <h3 class="post-card-title" style="margin:0 0 8px 0"><a class="post-card-title-link" href="${href}">${it.title||''}</a></h3>
+            <h3 class="post-card-title" style="margin:0 0 6px 0"><a class="post-card-title-link" href="${href}">${title}</a></h3>
             <p class="muted" style="margin:0 0 6px 0">${date}</p>
+            <p class="muted" style="margin:0 0 6px 0">${desc}</p>
             <p class="muted" style="margin:0">${tags}</p>
           </div>
         </article>`;
       }
+
+      // Render a section-level card (for filtered/section mode)
       function sectionCard(s){
+        if(!s) return '';
+        const href = s.url || (s.slug ? `/blog/${s.slug}.html` : '#');
+        const img = s.og_image || '../assets/placeholder.jpg';
         const date = (s.date||'').slice(0,10);
         const tags = (s.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+        const title = s.heading || s.title || '';
         return `
         <article class="card post-card">
-          <a class="post-link" href="${s.url}">
-            <img class="post-thumb" src="${s.og_image||'../assets/placeholder.jpg'}" alt="${(s.heading||'').replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
+          <a class="post-link" href="${href}">
+            <img class="post-thumb" src="${img}" alt="${String(title).replace(/"/g,'&quot;')}" width="140" height="90" style="border-radius:10px;border:1px solid var(--border);display:block;object-fit:cover;aspect-ratio:16/10"/>
           </a>
           <div>
-            <h3 class="post-card-title" style="margin:0 0 6px 0"><a class="post-card-title-link" href="${s.url}">${s.heading||''}</a></h3>
+            <h3 class="post-card-title" style="margin:0 0 6px 0"><a class="post-card-title-link" href="${href}">${title}</a></h3>
             <p class="muted" style="margin:0 0 6px 0">${date} · ${s.daily_title||''}</p>
             <p class="muted" style="margin:0 0 6px 0">${s.summary||''}</p>
             <p class="muted" style="margin:0">${tags}</p>
-          </div>
-        </article>`;
-      }
-      function scholarCard(it){
-        const tags = (it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
-        const links = it.links||{};
-        const linkBadges = [
-          links.paper && links.paper!=='N/A' ? `<a class="btn outline small" href="${links.paper}" target="_blank" rel="noopener">Paper</a>` : '',
-          links.code && links.code!=='N/A' ? `<a class="btn outline small" href="${links.code}" target="_blank" rel="noopener">Code</a>` : '',
-          links.project && links.project!=='N/A' ? `<a class="btn outline small" href="${links.project}" target="_blank" rel="noopener">Proj</a>` : ''
-        ].filter(Boolean).join(' ');
-        const meta = `${it.task||''} · ${it.type||''} · 影响 ${it.impact_score??'-'}`;
-        return `
-        <article class="card post-card">
-          <div>
-            <h3 class="post-card-title" style="margin:0 0 6px 0">${it.headline||''}</h3>
-            <p class="muted" style="margin:0 0 6px 0">${meta}</p>
-            <p class="muted" style="margin:0 0 8px 0">${it.one_liner||''}</p>
-            <p class="muted" style="margin:0 0 8px 0">${tags}</p>
-            <div style="display:flex;gap:6px;flex-wrap:wrap">${linkBadges}</div>
           </div>
         </article>`;
       }
@@ -239,6 +259,42 @@
         featured.desc.textContent = item.description||'';
         featured.tags.innerHTML = (item.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
         featured.root.hidden = false;
+      }
+      // ScholarPush card renderer (independent stream)
+      function scholarCard(it){
+        const tags = (it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+        const links = it.links||{};
+        const linkBadges = [
+          links.paper && links.paper!=='N/A' ? `<a class="btn outline small" href="${links.paper}" target="_blank" rel="noopener">Paper</a>` : '',
+          links.code && links.code!=='N/A' ? `<a class="btn outline small" href="${links.code}" target="_blank" rel="noopener">Code</a>` : '',
+          links.project && links.project!=='N/A' ? `<a class="btn outline small" href="${links.project}" target="_blank" rel="noopener">Proj</a>` : ''
+        ].filter(Boolean).join(' ');
+        const meta = [it.task||'', it.type||''].filter(Boolean).join(' · ');
+        const id = Math.random().toString(36).slice(2);
+        return `
+        <article class="card" style="padding:10px 12px">
+          <h4 class="sp-title line-2">${it.headline||''}</h4>
+          <div class="sp-meta">${meta ? `<span>${meta}</span>`:''}${tags?`<span>·</span>`:''}${tags}</div>
+          <p id="abs-${id}" class="sp-abstract line-4">${it.one_liner||''}</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">${linkBadges}
+            ${links.paper&&links.paper!=='N/A'?`<a class="btn outline small" href="https://arxiv.org/pdf/${(links.paper.match(/\d{4}\.\d{4,5}/)||[''])[0]}.pdf" target="_blank" rel="noopener">PDF</a>`:''}
+            <button class="btn outline small" onclick="(function(){const p=document.getElementById('abs-${id}');p.classList.toggle('line-4');})();return false;">展开/收起</button>
+          </div>
+        </article>`;
+      }
+      function renderScholarInit(items){
+        scholarItems = Array.isArray(items)? items: [];
+        spList.innerHTML = '';
+        spPage = 0;
+        spEmpty.hidden = scholarItems.length>0;
+        spMore.hidden = scholarItems.length<=spSize;
+        renderScholarMore();
+      }
+      function renderScholarMore(){
+        const slice = scholarItems.slice(spPage*spSize, (spPage+1)*spSize);
+        spList.insertAdjacentHTML('beforeend', slice.map(scholarCard).join(''));
+        spPage++;
+        if(spPage*spSize>=scholarItems.length) spMore.hidden = true;
       }
       function inRange(iso){
         if(state.range==='all') return true;
@@ -292,25 +348,21 @@
           .map(x=>x.s);
         return arr;
       }
-      function render(){
+    function render(){
         listEl.innerHTML='';
-        const scholarGrid = document.getElementById('scholar-grid');
-        if (scholarGrid){
-          scholarGrid.innerHTML = (scholarItems||[]).slice(0,12).map(scholarCard).join('');
-        }
         page=0;
         if(state.mode==='daily'){
           renderFeatured(dailyIndex[0]);
           const rest = dailyIndex.slice(1);
-          // Hide empty message if there is any content: scholar items OR daily entries
-          emptyEl.hidden = (scholarItems && scholarItems.length>0) || (dailyIndex && dailyIndex.length>0) || rest.length>0;
+      // Hide empty message if there is any daily entry (featured or list)
+      emptyEl.hidden = (dailyIndex && dailyIndex.length>0) || rest.length>0;
           loadMoreBtn.hidden = rest.length<=pageSize;
           renderMoreDaily(rest);
         } else {
           featured.root.hidden = true;
           const arr = applySectionFilter();
           window.__SECTION_BUF__ = arr;
-          emptyEl.hidden = (scholarItems && scholarItems.length>0) || arr.length>0;
+      emptyEl.hidden = arr.length>0;
           loadMoreBtn.hidden = arr.length<=pageSize;
           renderMoreSection();
         }
@@ -334,11 +386,12 @@
           const [d, s, sp] = await Promise.all([
             fetch('../data/ai/blog/index.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>[]),
             fetch('../data/ai/blog/sections.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>[]),
-            fetch('../data/ai/scholarpush/index.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>null)
+            fetch('../data/ai/scholarpush/index.json', { cache: 'no-store' }).then(r=>r.json()).catch(()=>({items:[]}))
           ]);
           dailyIndex = Array.isArray(d)? d: [];
           sectionIndex = Array.isArray(s)? s: [];
-          scholarItems = sp && Array.isArray(sp.items) ? sp.items : [];
+          renderScholarInit((sp && sp.items) || []);
+          spMore.addEventListener('click', renderScholarMore);
           // Bind date-range
           document.querySelectorAll('[data-range]').forEach(btn=>{
             btn.addEventListener('click', ()=>{

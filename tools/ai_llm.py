@@ -22,6 +22,8 @@ import time
 from typing import Dict, Any, List, Optional
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 
 class LLMError(Exception):
@@ -41,8 +43,28 @@ def _build_messages(prompt: str, system: Optional[str]) -> List[Dict[str, str]]:
     return msgs
 
 
-def _post_json(url: str, headers: Dict[str, str], payload: Dict[str, Any], timeout: int = 60) -> Dict[str, Any]:
-    r = requests.post(url, headers=headers, json=payload, timeout=timeout)
+# Configurable HTTP timeouts and retrying session
+CONNECT_TIMEOUT = int(os.getenv("LLM_CONN_TIMEOUT", "15"))
+READ_TIMEOUT = int(os.getenv("LLM_READ_TIMEOUT", "120"))
+_session = requests.Session()
+_retry = Retry(
+    total=2,
+    connect=2,
+    read=2,
+    backoff_factor=1.2,
+    status_forcelist=[429, 502, 503, 504],
+    allowed_methods=["POST"],
+)
+_session.mount("https://", HTTPAdapter(max_retries=_retry))
+
+
+def _post_json(url: str, headers: Dict[str, str], payload: Dict[str, Any]) -> Dict[str, Any]:
+    r = _session.post(
+        url,
+        headers=headers,
+        json=payload,
+        timeout=(CONNECT_TIMEOUT, READ_TIMEOUT),
+    )
     if r.status_code >= 400:
         raise LLMError(f"HTTP {r.status_code}: {r.text[:500]}")
     try:
@@ -76,6 +98,7 @@ def _call_openai(messages, temperature, max_tokens) -> str:
         "messages": messages,
         "temperature": float(temperature),
         "max_tokens": int(max_tokens),
+        "response_format": {"type": "json_object"},
     }
     resp = _post_json(url, headers, payload)
     return _extract_text(resp)
@@ -99,6 +122,7 @@ def _call_openrouter(messages, temperature, max_tokens) -> str:
         "messages": messages,
         "temperature": float(temperature),
         "max_tokens": int(max_tokens),
+        "response_format": {"type": "json_object"},
     }
     resp = _post_json(url, headers, payload)
     return _extract_text(resp)
@@ -117,6 +141,7 @@ def _call_together(messages, temperature, max_tokens) -> str:
         "messages": messages,
         "temperature": float(temperature),
         "max_tokens": int(max_tokens),
+        "response_format": {"type": "json_object"},
     }
     resp = _post_json(url, headers, payload)
     return _extract_text(resp)
@@ -133,8 +158,10 @@ def _call_deepseek(messages, temperature, max_tokens) -> str:
     payload = {
         "model": model,
         "messages": messages,
-        "temperature": float(temperature),
-        "max_tokens": int(max_tokens),
+    "temperature": float(temperature),
+    "max_tokens": int(_env("DEEPSEEK_MAX_TOKENS", str(max_tokens)) or max_tokens),
+    # ask for JSON to reduce parsing ambiguity and token waste
+    "response_format": {"type": "json_object"},
     }
     resp = _post_json(url, headers, payload)
     return _extract_text(resp)
@@ -154,6 +181,7 @@ def _call_dashscope(messages, temperature, max_tokens) -> str:
         "messages": messages,
         "temperature": float(temperature),
         "max_tokens": int(max_tokens),
+        "response_format": {"type": "json_object"},
     }
     resp = _post_json(url, headers, payload)
     return _extract_text(resp)

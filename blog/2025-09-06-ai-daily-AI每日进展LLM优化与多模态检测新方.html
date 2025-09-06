@@ -2,28 +2,28 @@
 <html lang="zh">
 <head>
   <meta charset="utf-8">
-  <title>Why language models</title>
+  <title>AI每日进展：LLM优化与多模态检测新方</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
-  <meta name="description" content="基于公开来源的自动汇总草稿，用于本地测试。">
-  <link rel="canonical" href="/blog/2025-09-06-ai-daily-Why-language-models.html">
+  <meta name="description" content="本文涵盖大型语言模型微调表示、KV缓存效率提升、参数高效微调改进、多模态虚假信息检测和心理增强AI代理等最新研究。">
+  <link rel="canonical" href="/blog/2025-09-06-ai-daily-AI每日进展LLM优化与多模态检测新方.html">
 
   <!-- OpenGraph / Twitter -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Why language models">
-  <meta property="og:description" content="基于公开来源的自动汇总草稿，用于本地测试。">
-  <meta property="og:url" content="/blog/2025-09-06-ai-daily-Why-language-models.html">
+  <meta property="og:title" content="AI每日进展：LLM优化与多模态检测新方">
+  <meta property="og:description" content="本文涵盖大型语言模型微调表示、KV缓存效率提升、参数高效微调改进、多模态虚假信息检测和心理增强AI代理等最新研究。">
+  <meta property="og:url" content="/blog/2025-09-06-ai-daily-AI每日进展LLM优化与多模态检测新方.html">
   <meta property="og:image" content="/assets/placeholder.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
   <link rel="image_src" href="/assets/placeholder.jpg">
   <meta itemprop="image" content="/assets/placeholder.jpg">
-  <meta property="article:published_time" content="2025-09-06T10:45:09.955697+00:00">
+  <meta property="article:published_time" content="2025-09-06T13:12:17.382881+00:00">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Why language models">
-  <meta name="twitter:description" content="基于公开来源的自动汇总草稿，用于本地测试。">
+  <meta name="twitter:title" content="AI每日进展：LLM优化与多模态检测新方">
+  <meta name="twitter:description" content="本文涵盖大型语言模型微调表示、KV缓存效率提升、参数高效微调改进、多模态虚假信息检测和心理增强AI代理等最新研究。">
   <meta name="twitter:image" content="/assets/placeholder.jpg">
   <meta name="theme-color" content="#0f172a">
 
@@ -84,37 +84,42 @@
     <section class="page-hero section">
       <div class="container">
         <div class="i18n-block" data-lang="zh">
-          <h1 class="post-title">Why language models</h1>
-          <p class="muted post-meta">发表于 2025-09-06 · 预计阅读 3 min · 标签：LLM, RAG, Agent</p>
+          <h1 class="post-title">AI每日进展：LLM优化与多模态检测新方</h1>
+          <p class="muted post-meta">发表于 2025-09-06 · 预计阅读 3 min · 标签：LLM, 微调, 多模态, 检测, 代理</p>
         </div>
       </div>
     </section>
     <section class="section">
       <div class="container prose">
   <div class="post-hero-art" data-lang="zh"><img src="../assets/placeholder.jpg" alt="Cover"/></div>
-        <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>目录</strong><ol><li><a href="#sec-1">Why language models hallucin</a></li>
-<li><a href="#sec-2">GPT-5 bio bug bounty call</a></li>
-<li><a href="#sec-3">OpenAI and Greek Government </a></li>
-<li><a href="#sec-4">Expanding economic opportuni</a></li></ol></nav>
+        <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>目录</strong><ol><li><a href="#sec-1">Delta激活表示优化LLM微调</a></li>
+<li><a href="#sec-2">PagedEviction提升KV缓存效率</a></li>
+<li><a href="#sec-3">IPA框架改进PEFT方法</a></li>
+<li><a href="#sec-4">TRUST-VL检测多模态虚假信息</a></li>
+<li><a href="#sec-5">MBTI框架增强AI代理个性</a></li></ol></nav>
         <article class="i18n-block" data-lang="zh">
-          <h2 id="sec-1">Why language models hallucin</h2>
-<p>OpenAI’snewresearchexplainswhylanguagemodelshallucinate.ThefindingsshowhowimprovedevaluationscanenhanceAIreliability,honesty,andsafety.来源：。<sup><a href="#ref-1">[1]</a></sup></p>
+          <h2 id="sec-1">Delta激活表示优化LLM微调</h2>
+<p>Delta激活表示法为微调后的大型语言模型提供了一种新表示方式，帮助社区更好地理解和导航这些模型。该方法解决了模型元数据不一致带来的挑战，提升了模型管理的效率。研究显示，这种方法有助于识别模型适应特定任务和领域时的变化。<sup><a href="#ref-1">[1]</a></sup></p>
 
-<h2 id="sec-2">GPT-5 bio bug bounty call</h2>
-<p>OpenAIinvitesresearcherstoitsBioBugBounty.TestGPT-5’ssafetywithauniversaljailbreakpromptandwinupto$25,000.来源：。<sup><a href="#ref-2">[2]</a></sup></p>
+<h2 id="sec-2">PagedEviction提升KV缓存效率</h2>
+<p>PagedEviction方法通过结构化块级键值缓存修剪，优化大型语言模型推理中的内存使用。随着序列长度增加，KV缓存成为主要内存瓶颈，该方法有效减少内存占用，同时保持推理速度。实验表明，这种方法在长序列处理中显著提升效率。<sup><a href="#ref-2">[2]</a></sup></p>
 
-<h2 id="sec-3">OpenAI and Greek Government </h2>
-<p>OpenAIandtheGreekGovernmenthavelaunched“OpenAIforGreece”tobringChatGPTEduintosecondaryschoolsandsupportresponsibleAIlearning.ThispartnershipaimstoboostAIliteracy,fuellocalstart-ups,anddrivenationaleconomicgrowth.来源：。<sup><a href="#ref-3">[3]</a></sup></p>
+<h2 id="sec-3">IPA框架改进PEFT方法</h2>
+<p>IPA框架提出信息保留输入投影方法，改进参数高效微调技术如LoRA。传统LoRA的下投影随机初始化且数据无关，可能丢弃有用信息，而IPA框架通过优化投影过程保留关键信息，提升微调效果。分析显示，该方法在基础模型适应中更有效。<sup><a href="#ref-3">[3]</a></sup></p>
 
-<h2 id="sec-4">Expanding economic opportuni</h2>
-<p>OpenAIislaunchingaJobsPlatformandnewCertificationstoconnectworkerswithjobs,training,andcertifications.Learnhowwe’reexpandingeconomicopportunityandmakingAIskillsmoreaccessible.来源：。<sup><a href="#ref-4">[4]</a></sup></p>
+<h2 id="sec-4">TRUST-VL检测多模态虚假信息</h2>
+<p>TRUST-VL系统是一个可解释的新闻助手，用于检测文本、视觉和跨模态虚假信息。多模态虚假信息因生成AI技术放大而构成日益严重的社会威胁，现有方法常专注于单一失真类型且泛化能力不足。该系统旨在解决这些限制，提供更全面的检测能力。<sup><a href="#ref-4">[4]</a></sup></p>
+
+<h2 id="sec-5">MBTI框架增强AI代理个性</h2>
+<p>MBTI-in-Thoughts框架基于迈尔斯-布里格斯类型指标，通过心理人格条件增强大型语言模型代理的有效性。该方法为代理注入不同人格原型，使其在多样化情境中表现更一致和可靠。研究指出，人格条件有助于提升代理在复杂任务中的适应性。<sup><a href="#ref-5">[5]</a></sup></p>
 
           <h2 id="refs">参考与来源</h2>
           <ol>
-            <li id="ref-1"><a href="https://openai.com/index/why-language-models-hallucinate" target="_blank" rel="noopener">Why language models hallucinate</a></li>
-<li id="ref-2"><a href="https://openai.com/gpt-5-bio-bug-bounty" target="_blank" rel="noopener">GPT-5 bio bug bounty call</a></li>
-<li id="ref-3"><a href="https://openai.com/global-affairs/openai-for-greece" target="_blank" rel="noopener">OpenAI and Greek Government launch ‘OpenAI for Greece’</a></li>
-<li id="ref-4"><a href="https://openai.com/index/expanding-economic-opportunity-with-ai" target="_blank" rel="noopener">Expanding economic opportunity with AI</a></li>
+            <li id="ref-1"><a href="http://arxiv.org/abs/2509.04442v1" target="_blank" rel="noopener">Delta Activations: A Representation for Finetuned Large Language Models</a></li>
+<li id="ref-2"><a href="http://arxiv.org/abs/2509.04377v1" target="_blank" rel="noopener">PagedEviction: Structured Block-wise KV Cache Pruning for Efficient Large Language Model Inference</a></li>
+<li id="ref-3"><a href="http://arxiv.org/abs/2509.04398v1" target="_blank" rel="noopener">IPA: An Information-Preserving Input Projection Framework for Efficient Foundation Model Adaptation</a></li>
+<li id="ref-4"><a href="http://arxiv.org/abs/2509.04448v1" target="_blank" rel="noopener">TRUST-VL: An Explainable News Assistant for General Multimodal Misinformation Detection</a></li>
+<li id="ref-5"><a href="http://arxiv.org/abs/2509.04343v1" target="_blank" rel="noopener">Psychologically Enhanced AI Agents</a></li>
           </ol>
         </article>
         <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">

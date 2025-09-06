@@ -2,28 +2,28 @@
 <html lang="zh">
 <head>
   <meta charset="utf-8">
-  <title>Why language models</title>
+  <title>双尺度体积先验与Wasserstein一</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
-  <meta name="description" content="基于公开来源的自动汇总草稿，用于本地测试。">
-  <link rel="canonical" href="/blog/2025-09-06-ai-daily-Why-language-models.html">
+  <meta name="description" content="研究提出结合双尺度体积先验和Wasserstein一致性的半监督医学图像分割方法，有效利用数据先验信息提升分割性能。">
+  <link rel="canonical" href="/blog/2025-09-06-ai-daily-双尺度体积先验与Wasserstein一.html">
 
   <!-- OpenGraph / Twitter -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Why language models">
-  <meta property="og:description" content="基于公开来源的自动汇总草稿，用于本地测试。">
-  <meta property="og:url" content="/blog/2025-09-06-ai-daily-Why-language-models.html">
+  <meta property="og:title" content="双尺度体积先验与Wasserstein一">
+  <meta property="og:description" content="研究提出结合双尺度体积先验和Wasserstein一致性的半监督医学图像分割方法，有效利用数据先验信息提升分割性能。">
+  <meta property="og:url" content="/blog/2025-09-06-ai-daily-双尺度体积先验与Wasserstein一.html">
   <meta property="og:image" content="/assets/placeholder.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
   <link rel="image_src" href="/assets/placeholder.jpg">
   <meta itemprop="image" content="/assets/placeholder.jpg">
-  <meta property="article:published_time" content="2025-09-06T10:45:09.955697+00:00">
+  <meta property="article:published_time" content="2025-09-06T12:30:56.363989+00:00">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Why language models">
-  <meta name="twitter:description" content="基于公开来源的自动汇总草稿，用于本地测试。">
+  <meta name="twitter:title" content="双尺度体积先验与Wasserstein一">
+  <meta name="twitter:description" content="研究提出结合双尺度体积先验和Wasserstein一致性的半监督医学图像分割方法，有效利用数据先验信息提升分割性能。">
   <meta name="twitter:image" content="/assets/placeholder.jpg">
   <meta name="theme-color" content="#0f172a">
 
@@ -84,37 +84,38 @@
     <section class="page-hero section">
       <div class="container">
         <div class="i18n-block" data-lang="zh">
-          <h1 class="post-title">Why language models</h1>
-          <p class="muted post-meta">发表于 2025-09-06 · 预计阅读 3 min · 标签：LLM, RAG, Agent</p>
+          <h1 class="post-title">双尺度体积先验与Wasserstein一</h1>
+          <p class="muted post-meta">发表于 2025-09-06 · 预计阅读 3 min · 标签：联邦学习, 医学影像, 半监督学习</p>
         </div>
       </div>
     </section>
     <section class="section">
       <div class="container prose">
   <div class="post-hero-art" data-lang="zh"><img src="../assets/placeholder.jpg" alt="Cover"/></div>
-        <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>目录</strong><ol><li><a href="#sec-1">Why language models hallucin</a></li>
-<li><a href="#sec-2">GPT-5 bio bug bounty call</a></li>
-<li><a href="#sec-3">OpenAI and Greek Government </a></li>
-<li><a href="#sec-4">Expanding economic opportuni</a></li></ol></nav>
+        <nav class="toc card" aria-label="Contents" style="padding:16px;margin:12px 0;"><strong>目录</strong><ol><li><a href="#sec-1">联邦学习在医疗影像中的应用</a></li>
+<li><a href="#sec-2">双尺度体积先验方法</a></li>
+<li><a href="#sec-3">Wasserstein一致性优化</a></li>
+<li><a href="#sec-4">半监督分割性能提升</a></li>
+<li><a href="#sec-5">未来研究方向展望</a></li></ol></nav>
         <article class="i18n-block" data-lang="zh">
-          <h2 id="sec-1">Why language models hallucin</h2>
-<p>OpenAI’snewresearchexplainswhylanguagemodelshallucinate.ThefindingsshowhowimprovedevaluationscanenhanceAIreliability,honesty,andsafety.来源：。<sup><a href="#ref-1">[1]</a></sup></p>
+          <h2 id="sec-1">联邦学习在医疗影像中的应用</h2>
+<p>联邦学习技术在医疗影像领域逐渐受到关注，特别是在数据隐私保护要求严格的场景下。该方法允许在分散数据上进行模型训练而不需要集中数据，为医学图像分析提供了新的可能性。医疗影像数据通常具有高维度特性，联邦学习能够有效处理这种复杂性。<sup><a href="#ref-1">[1]</a></sup></p>
 
-<h2 id="sec-2">GPT-5 bio bug bounty call</h2>
-<p>OpenAIinvitesresearcherstoitsBioBugBounty.TestGPT-5’ssafetywithauniversaljailbreakpromptandwinupto$25,000.来源：。<sup><a href="#ref-2">[2]</a></sup></p>
+<h2 id="sec-2">双尺度体积先验方法</h2>
+<p>双尺度体积先验方法通过捕捉医学图像中的多尺度特征来提升分割精度。该方法利用不同尺度下的体积信息，增强了网络对解剖结构的感知能力。实验表明，这种先验信息的引入显著改善了小样本情况下的分割效果。<sup><a href="#ref-1">[1]</a></sup></p>
 
-<h2 id="sec-3">OpenAI and Greek Government </h2>
-<p>OpenAIandtheGreekGovernmenthavelaunched“OpenAIforGreece”tobringChatGPTEduintosecondaryschoolsandsupportresponsibleAIlearning.ThispartnershipaimstoboostAIliteracy,fuellocalstart-ups,anddrivenationaleconomicgrowth.来源：。<sup><a href="#ref-3">[3]</a></sup></p>
+<h2 id="sec-3">Wasserstein一致性优化</h2>
+<p>基于Wasserstein距离的一致性约束确保了分割结果在不同数据分布下的稳定性。该优化方法减少了模型对标注数据的依赖，在半监督学习中表现出色。Wasserstein度量提供了更合理的分布距离计算方式。<sup><a href="#ref-1">[1]</a></sup></p>
 
-<h2 id="sec-4">Expanding economic opportuni</h2>
-<p>OpenAIislaunchingaJobsPlatformandnewCertificationstoconnectworkerswithjobs,training,andcertifications.Learnhowwe’reexpandingeconomicopportunityandmakingAIskillsmoreaccessible.来源：。<sup><a href="#ref-4">[4]</a></sup></p>
+<h2 id="sec-4">半监督分割性能提升</h2>
+<p>结合双尺度先验和Wasserstein一致性后，半监督医学图像分割性能得到显著提升。该方法在有限标注数据情况下仍能保持较高的分割准确度，降低了医学图像分析对大量标注数据的依赖。<sup><a href="#ref-1">[1]</a></sup></p>
+
+<h2 id="sec-5">未来研究方向展望</h2>
+<p>未来研究可探索该方法在其他医学影像模态上的适用性，如CT、MRI等。同时，如何进一步减少计算复杂度并提升实时性也是重要方向。跨机构联邦学习应用值得深入探讨。<sup><a href="#ref-1">[1]</a></sup></p>
 
           <h2 id="refs">参考与来源</h2>
           <ol>
-            <li id="ref-1"><a href="https://openai.com/index/why-language-models-hallucinate" target="_blank" rel="noopener">Why language models hallucinate</a></li>
-<li id="ref-2"><a href="https://openai.com/gpt-5-bio-bug-bounty" target="_blank" rel="noopener">GPT-5 bio bug bounty call</a></li>
-<li id="ref-3"><a href="https://openai.com/global-affairs/openai-for-greece" target="_blank" rel="noopener">OpenAI and Greek Government launch ‘OpenAI for Greece’</a></li>
-<li id="ref-4"><a href="https://openai.com/index/expanding-economic-opportunity-with-ai" target="_blank" rel="noopener">Expanding economic opportunity with AI</a></li>
+            <li id="ref-1"><a href="http://arxiv.org/abs/2509.04273v1" target="_blank" rel="noopener">Dual-Scale Volume Priors with Wasserstein-Based Consistency for Semi-Supervised Medical Image Segmentation</a></li>
           </ol>
         </article>
         <div class="share-toolbar card" style="margin-top:24px;padding:12px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import os, re, json, hashlib, subprocess, feedparser, requests
+from urllib.parse import urlparse
 from datetime import datetime, timezone
+from datetime import timedelta
 from dateutil import parser as dtp
 from markdown2 import markdown as md2html
 from bs4 import BeautifulSoup as BS
@@ -31,7 +33,7 @@ JSON schema:
     "items": [
         {
             "headline": "≤24字；格式：[类别] + 要点（中文）",
-            "one_liner": "≤60字；问题→方法→结果的单句",
+            "one_liner": "≤160字；问题→方法→结果的单句",
             "task": "LLM/RAG/Agent/CV/ASR/NLP/MM/IR/Robotics/Infra/Theory/Other",
             "type": "paper/code/dataset/benchmark/blog/policy",
             "novelty": "method/data/metric/compute/engineering",
@@ -55,26 +57,68 @@ Rules:
 - 数字缺失时 key_numbers 填 "N/A"；不要编造。
 - “links.paper”若能从条目中提取 arXiv/论文页就填，否则 N/A。
 - items 按 impact_score 降序。
+
+Entries:
+[[ENTRIES]]
 """
 
 # ===== 数据源（先走RSS，稳）=====
 SOURCES = [
-  "https://export.arxiv.org/rss/cs.AI",
-  "https://export.arxiv.org/rss/cs.CL",
-  "https://export.arxiv.org/rss/cs.LG",
-  "https://export.arxiv.org/rss/cs.CV",
-  "https://openai.com/blog/rss.xml",
-  "https://www.anthropic.com/news/rss.xml",
-  "https://ai.googleblog.com/atom.xml",
-  "https://huggingface.co/blog/feed.xml",
+    "https://rss.arxiv.org/rss/cs.AI",
+    "https://rss.arxiv.org/rss/cs.CL",
+    "https://rss.arxiv.org/rss/cs.LG",
+    "https://rss.arxiv.org/rss/cs.CV",
+    "https://www.anthropic.com/news/rss.xml",
+    "https://ai.googleblog.com/atom.xml",
+    "https://huggingface.co/blog/feed.xml",
 ]
+
+def fetch_arxiv_api(categories=("cs.AI","cs.CL","cs.LG","cs.CV"), per_cat=25, timeout=20):
+    """Fallback: use arXiv Atom API when RSS returns nothing."""
+    base = "http://export.arxiv.org/api/query"
+    ua = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) arxiv-fetcher/1.0",
+        "Accept": "application/atom+xml,application/xml;q=0.9,*/*;q=0.8",
+    }
+    items = []
+    for cat in categories:
+        params = {
+            "search_query": f"cat:{cat}",
+            "sortBy": "submittedDate",
+            "sortOrder": "descending",
+            "max_results": str(per_cat),
+        }
+        try:
+            r = requests.get(base, params=params, headers=ua, timeout=timeout)
+            r.raise_for_status()
+            feed = feedparser.parse(r.text)
+            for e in getattr(feed, 'entries', []) or []:
+                title = (e.get("title") or "").strip()
+                link = (e.get("id") or e.get("link") or "").strip()
+                published = e.get("published") or e.get("updated") or ""
+                ts = dtp.parse(published).astimezone(timezone.utc).isoformat() if published else datetime.now(timezone.utc).isoformat()
+                summary = (e.get("summary") or "")
+                summary = re.sub("<.*?>", "", summary)[:600]
+                items.append({"title":title, "url":link, "ts":ts, "summary":summary})
+        except Exception as ex:
+            print(f"arXiv API failed for {cat}: {ex}")
+            continue
+    # 去重
+    seen=set(); uniq=[]
+    for it in items:
+        h = hashlib.md5((it["title"]+it["url"]).encode("utf-8")).hexdigest()
+        if h not in seen: seen.add(h); uniq.append(it)
+    return uniq
 
 def fetch_items(limit_per_feed=25):
     items = []
+    per_feed_counts = []
     for url in SOURCES:
+        cnt = 0
         try:
             feed = feedparser.parse(url)
-            for e in feed.entries[:limit_per_feed]:
+            entries = getattr(feed, 'entries', []) or []
+            for e in entries[:limit_per_feed]:
                 title = (e.get("title") or "").strip()
                 link = e.get("link") or ""
                 published = e.get("published") or e.get("updated") or ""
@@ -82,14 +126,77 @@ def fetch_items(limit_per_feed=25):
                 summary = (e.get("summary") or "")
                 summary = re.sub("<.*?>", "", summary)[:600]   # 去HTML & 降噪（更省tokens）
                 items.append({"title":title, "url":link, "ts":ts, "summary":summary})
-        except Exception:
-            pass
+                cnt += 1
+        except Exception as e:
+            per_feed_counts.append((url, f"error: {e}"))
+            continue
+        per_feed_counts.append((url, cnt))
+    # 可见性：打印各源抓取条数，便于诊断为何偏向某源
+    try:
+        print("Feed counts:")
+        for u, c in per_feed_counts:
+            print(" -", u, c)
+    except Exception:
+        pass
+    # 如果没有任何 arXiv 项，尝试 API 回退
+    if not any("arxiv.org" in (it.get("url","")) for it in items):
+        api_items = fetch_arxiv_api(per_cat=limit_per_feed)
+        if api_items:
+            print(f"arXiv API fallback used: {len(api_items)} items")
+            items.extend(api_items)
     # 去重
     seen=set(); uniq=[]
     for it in items:
         h = hashlib.md5((it["title"]+it["url"]).encode("utf-8")).hexdigest()
         if h not in seen: seen.add(h); uniq.append(it)
     return uniq
+
+# ===== Topic preference (user-configurable via TOPIC_PREFER env) =====
+def _get_topic_keywords():
+    raw = os.getenv("TOPIC_PREFER", "")
+    kws = [w.strip().lower() for w in raw.split(',') if w.strip()]
+    return kws
+
+def _topic_score(entry, kws):
+    if not kws:
+        return 0
+    blob = ((entry.get("title") or '') + ' ' + (entry.get("summary") or '') + ' ' + (entry.get("url") or '')).lower()
+    s = 0
+    for k in kws:
+        if not k: continue
+        # simple contains; could be improved to word-boundary, but arXiv titles are English
+        if k in blob:
+            s += 3
+    return s
+
+def _filter_cap_entries(entries):
+    """Reduce prompt size: keep recent items only, dedupe, and shorten summaries."""
+    hours = int(os.getenv("RECENT_HOURS", "48"))
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
+
+    fresh = []
+    seen_sig = set()
+    for it in entries:
+        try:
+            ts = dtp.parse(it.get("ts") or "").astimezone(timezone.utc)
+        except Exception:
+            ts = datetime.now(timezone.utc)
+        if ts < cutoff:
+            continue
+        url = (it.get("url") or "").strip()
+        host = urlparse(url).hostname or ""
+        title_norm = re.sub(r"\s+", "", BS(it.get("title") or "", "html.parser").text.lower())
+        sig = f"{host}|{title_norm[:60]}"
+        if sig in seen_sig:
+            continue
+        seen_sig.add(sig)
+        it = dict(it)
+        it["summary"] = (re.sub(r"<.*?>", "", it.get("summary") or "")[:280]).strip()
+        fresh.append(it)
+
+    max_n = int(os.getenv("MAX_ENTRIES", "40"))
+    fresh = sorted(fresh, key=lambda x: x.get("ts", ""), reverse=True)[:max_n]
+    return fresh
 
 # ===== 选题与成文 =====
 SYS = (
@@ -152,6 +259,33 @@ def _extract_json_from_text(text: str):
     # Finally try direct
     return json.loads(t)
 
+def _extract_json_relaxed(text: str):
+    """Attempt to coerce almost-JSON (single quotes, trailing commas, code fences) into valid JSON."""
+    t = (text or "").strip()
+    # Strip fences if present
+    try:
+        m = re.search(r"```(?:json)?\s*(.*?)```", t, re.DOTALL | re.IGNORECASE)
+        if m:
+            t = m.group(1)
+    except Exception:
+        pass
+    # Ensure we slice to outermost braces
+    try:
+        first = t.find('{'); last = t.rfind('}')
+        if first != -1 and last != -1 and last > first:
+            t = t[first:last+1]
+    except Exception:
+        pass
+    # Replace single-quoted strings with double quotes in common cases
+    t2 = re.sub(r"([:\[{,\s])'([^'\\]*)'", r'\1"\2"', t)
+    # Remove trailing commas before ] or }
+    t2 = re.sub(r",\s*([}\]])", r"\1", t2)
+    # Normalize true/false/null if accidentally capitalized
+    t2 = re.sub(r"\bTrue\b", "true", t2)
+    t2 = re.sub(r"\bFalse\b", "false", t2)
+    t2 = re.sub(r"\bNone\b", "null", t2)
+    return json.loads(t2)
+
 # ===== Output post-processing helpers =====
 def _urls_from_entries(entries):
     return { (it.get("url") or "").strip() for it in entries if it.get("url") }
@@ -193,7 +327,7 @@ def _trim_title(s: str) -> str:
         t = t[:20]
     return t
 
-SENT_SPLIT = re.compile(r'(?<=[。！？!?；;])')
+SENT_SPLIT = re.compile(r'(?<=[。！？!?；;\.])')
 
 def _compress_sections(j: dict, max_words: int):
     """句子感知压缩：宁要完整句子，不要截半句"""
@@ -208,7 +342,9 @@ def _compress_sections(j: dict, max_words: int):
         refs_tail = tail_match.group(0) if tail_match else ""
         core = raw[:-len(refs_tail)] if refs_tail else raw
 
-        core = re.sub(r'\s+', '', core)
+        # Preserve spaces for English text; collapse for Chinese
+        has_cjk = re.search(r'[\u4e00-\u9fff]', core) is not None
+        core = re.sub(r'\s+', '' if has_cjk else ' ', core)
         parts = [p for p in SENT_SPLIT.split(core) if p]
         acc = ''
         for p in parts:
@@ -290,35 +426,58 @@ def _fallback_draft(entries, max_words=900):
     return j
 
 def pick_and_write(entries, max_words=1100):
-    joined = "\n".join([f"- {it['title']} | {it['url']} | {it['ts']}\n  {it['summary']}" for it in entries])
+    # 按需优先/限定 arXiv 源（默认不变）。ARXIV_MODE: all|prefer|only
+    mode = (os.getenv("ARXIV_MODE", "all") or "all").lower()
+    def is_arxiv(u: str) -> bool:
+        try:
+            host = urlparse(u or "").hostname or ""
+            return "arxiv.org" in host
+        except Exception:
+            return False
+    arxiv_entries = [e for e in entries if is_arxiv(e.get("url", ""))]
+    non_arxiv_entries = [e for e in entries if not is_arxiv(e.get("url", ""))]
+
+    if mode == "only" and arxiv_entries:
+        used = arxiv_entries
+        extra_rule = "Always select from arXiv entries only."
+    elif mode == "prefer" and arxiv_entries:
+        used = arxiv_entries + non_arxiv_entries
+        extra_rule = "Prefer arXiv/peer-reviewed papers over company blog posts unless the latter introduces new benchmarks or datasets."
+    else:
+        used = entries
+        extra_rule = ""
+
+    # Topic preference boost (RAG, LLM, Agent, FL, MCP, ICL, nuclear, etc.)
+    prefer = _get_topic_keywords()
+    if prefer:
+        used = sorted(used, key=lambda e: _topic_score(e, prefer), reverse=True)
+    used = _filter_cap_entries(used)
+    joined = "\n".join([f"- {it['title']} | {it['url']} | {it['ts']}\n  {it['summary']}" for it in used])
+    try:
+        print(f"[Daily] used entries: {len(used)}, prompt chars: {len(joined):,}")
+    except Exception:
+        pass
     prompt = PROMPT.replace("[[ENTRIES]]", joined).replace("[[MAX_WORDS]]", str(max_words))
+    rules_extra = []
+    if extra_rule:
+        rules_extra.append(extra_rule)
+    if prefer:
+        rules_extra.append("Prioritize entries matching these topics: " + ", ".join(prefer[:10]))
+    if rules_extra:
+        prompt = prompt.replace("Rules:", "Rules:\n- " + "\n- ".join(rules_extra))
     try:
         out = chat_once(prompt, system=SYS, temperature=0.25)
         j = _extract_json_from_text(out)
         # sanitize and align with plan
-        j = _sanitize_output(j, entries)
+        j = _sanitize_output(j, used)
         # hard trims for title/sections length & cap ref indexes
         j["title_zh"] = _trim_title(j.get("title_zh", ""))
         _compress_sections(j, max_words)
         _cap_ref_indexes(j.get("sections", []), len(j.get("refs", [])))
-        # Ensure required fields exist; synthesize sensible defaults
-        if not j.get("sections"):
-            raise ValueError("sections missing")
-        if not j.get("description_zh"):
-            try:
-                j["description_zh"] = _plain_summary_from_markdown(j["sections"][0].get("markdown",""), limit=160) or "基于公开来源的自动汇总草稿。"
-            except Exception:
-                j["description_zh"] = "基于公开来源的自动汇总草稿。"
-        if not j.get("title_zh"):
-            j["title_zh"] = _trim_title((entries[0].get("title") if entries else "今日 AI 精选") or "今日 AI 精选")
-        if not j.get("tags"):
-            j["tags"] = ["AI"]
-        if not j.get("toc") or len(j.get("toc",[])) != len(j.get("sections",[])):
-            j["toc"] = [ (s.get("heading") or f"部分{i+1}") for i,s in enumerate(j.get("sections", [])) ]
         return j
     except Exception as e:
         print("LLM unavailable, using fallback draft:", e)
-        return _fallback_draft(entries, max_words=max_words)
+        return _fallback_draft(used, max_words=max_words)
 
 # ===== ScholarPush generation & validation =====
 def _validate_scholarpush(j: dict):
@@ -336,65 +495,99 @@ def _validate_scholarpush(j: dict):
             assert lk in links, f"links.{lk} required"
         assert isinstance(it.get("tags",[]), list)
 
+def _fallback_scholarpush(entries, n_items=8):
+    import urllib.parse as U
+    items=[]
+    picks = sorted(entries, key=lambda x: x.get("ts",""), reverse=True)[:n_items]
+    for it in picks:
+        title = BS(it.get("title",""), "html.parser").text.strip()
+        url = (it.get("url") or "")
+        host = U.urlparse(url).netloc.split(":")[0]
+        t_low = title.lower()
+        if "rag" in t_low or "retriev" in t_low:
+            task="RAG"
+        elif any(k in t_low for k in ["agent","tool","planner"]):
+            task="Agent"
+        elif any(k in t_low for k in ["vision","image","cv.","segmentation","detection"]):
+            task="CV"
+        elif "speech" in t_low or "asr" in t_low:
+            task="ASR"
+        else:
+            task="LLM"
+        one = re.sub(r"\s+", " ", BS(it.get("summary",""), "html.parser").text).strip()
+        one = (one[:56] + "…") if len(one)>58 else one
+        items.append({
+            "headline": f"[{task}] {title[:20]}",
+            "one_liner": one or "基于公开摘要的自动概览",
+            "task": task,
+            "type": "paper" if "arxiv.org" in url else "blog",
+            "novelty": "method",
+            "key_numbers": [],
+            "reusability": [],
+            "limitations": [],
+            "links": {"paper": url if "arxiv.org" in url else "N/A","code":"N/A","project":"N/A"},
+            "tags": [task, host],
+            "impact_score": 50,
+            "reproducibility_score": 30
+        })
+    refs = [{"title": BS(it.get("title",""),"html.parser").text.strip(), "url": it.get("url","" )} for it in picks]
+    return {"generated_at": datetime.now(timezone.utc).isoformat(), "items": items, "refs": refs}
+
 def make_scholarpush(entries, n_items=8):
+    # Topic preference ordering before filtering
+    prefer = _get_topic_keywords()
+    if prefer:
+        entries = sorted(entries, key=lambda e: _topic_score(e, prefer), reverse=True)
+    entries = _filter_cap_entries(entries)
+    # Reduce prompt size to improve JSON reliability
+    sp_ctx = int(os.getenv("SCHOLARPUSH_CTX", "28"))
+    entries = entries[:max(8, sp_ctx)]
     joined = "\n".join([f"- {it['title']} | {it['url']} | {it['ts']}\n  {it['summary']}" for it in entries])
-    prompt = PROMPT_SCHOLAR.replace("[[N]]", str(n_items)) + "\n\nEntries:\n" + joined
     try:
-        out = chat_once(prompt, system="You are an academic news editor. STRICT JSON.", temperature=0.2)
-        j = _extract_json_from_text(out)
+        print(f"[ScholarPush] entries: {len(entries)}, prompt chars: {len(joined):,}")
+    except Exception:
+        pass
+    prompt = (PROMPT_SCHOLAR
+              .replace("[[N]]", str(n_items))
+              .replace("[[ENTRIES]]", joined))
+    try:
+        out = chat_once(prompt, system="You are an academic news editor. STRICT JSON.", temperature=0.2, max_tokens=1536)
+        try:
+            j = _extract_json_from_text(out)
+        except Exception:
+            j = _extract_json_relaxed(out)
+
+        # refs 白名单过滤
+        allowed = { (it.get("url") or "").strip() for it in entries }
+        j["refs"] = [r for r in (j.get("refs") or []) if isinstance(r, dict) and (r.get("url") or "").strip() in allowed]
+
+        # items 规范化
+        # Ensure generated_at exists
+        if not j.get("generated_at"):
+            j["generated_at"] = datetime.now(timezone.utc).isoformat()
+
+        cleaned=[]
+        for it in (j.get("items") or [])[:n_items]:
+            h = (it.get("headline") or "").strip()[:24]
+            ol = (it.get("one_liner") or "").strip()[:160]
+            it["headline"] = h
+            it["one_liner"] = ol
+            it.setdefault("links", {})
+            it["links"].setdefault("paper","N/A")
+            it["links"].setdefault("code","N/A")
+            it["links"].setdefault("project","N/A")
+            it.setdefault("tags", [])
+            it.setdefault("key_numbers", [])
+            cleaned.append(it)
+        j["items"] = cleaned
+
+        _validate_scholarpush(j)
+        if not j.get("items"):
+            raise ValueError("no items after cleaning")
+        return j
     except Exception as e:
-        # Fallback: build minimal but valid schema locally from top entries
-        picks = sorted(entries, key=lambda x: x.get("ts",""), reverse=True)[:n_items]
-        def infer_type(u: str) -> str:
-            u = (u or '').lower()
-            if 'arxiv.org' in u: return 'paper'
-            if 'github.com' in u: return 'code'
-            if 'dataset' in u: return 'dataset'
-            return 'blog'
-        items=[]
-        for p in picks:
-            t = (p.get('title') or '').strip()
-            u = (p.get('url') or '').strip()
-            s = (p.get('summary') or '').strip()
-            item = {
-                'headline': t[:24],
-                'one_liner': (s or t)[:60],
-                'task': 'LLM',
-                'type': infer_type(u),
-                'novelty': 'method',
-                'key_numbers': [],
-                'reusability': [],
-                'limitations': [],
-                'links': {'paper': u if infer_type(u)=='paper' else 'N/A', 'code': 'N/A', 'project': 'N/A'},
-                'tags': ['AI'],
-                'impact_score': 50,
-                'reproducibility_score': 50,
-            }
-            items.append(item)
-        j = {'generated_at': datetime.now(timezone.utc).isoformat(), 'items': items, 'refs': [{'title': (p.get('title') or ''), 'url': (p.get('url') or '')} for p in picks]}
-
-    # refs 白名单过滤
-    allowed = { (it.get("url") or "").strip() for it in entries }
-    j["refs"] = [r for r in (j.get("refs") or []) if isinstance(r, dict) and (r.get("url") or "").strip() in allowed]
-
-    # items 规范化
-    cleaned=[]
-    for it in (j.get("items") or [])[:n_items]:
-        h = (it.get("headline") or "").strip()[:24]
-        ol = (it.get("one_liner") or "").strip()[:60]
-        it["headline"] = h
-        it["one_liner"] = ol
-        it.setdefault("links", {})
-        it["links"].setdefault("paper","N/A")
-        it["links"].setdefault("code","N/A")
-        it["links"].setdefault("project","N/A")
-        it.setdefault("tags", [])
-        it.setdefault("key_numbers", [])
-        cleaned.append(it)
-    j["items"] = cleaned
-
-    _validate_scholarpush(j)
-    return j
+        print("make_scholarpush failed, fallback:", e)
+        return _fallback_scholarpush(entries, n_items=n_items)
 
 # ===== HTML 拼装 =====
 def load_tpl():

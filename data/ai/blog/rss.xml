@@ -5,28 +5,76 @@
   <description>每日 AI 要闻与解读</description>
   
   <item>
-    <title>OpenAI最新动态：语言模型与经济机会</title>
-    <link>/blog/2025-09-06-ai-daily-OpenAI最新动态语言模型与经济机会.html</link>
-    <description><![CDATA[OpenAI近期发布了关于语言模型幻觉的研究，并启动了GPT-5生物漏洞奖励计划。同时，希腊政府与OpenAI合作推出新计划以提升AI素养。]]></description>
-    <pubDate>Sat, 06 Sep 2025 10:22:29 +0000</pubDate>
+    <title>大语言模型优化与多模态安全研究进展</title>
+    <link>/blog/2025-09-06-ai-daily-大语言模型优化与多模态安全研究进展.html</link>
+    <description><![CDATA[本文涵盖Delta激活表示、KV缓存剪枝、多模态安全数据集构建、心理增强代理及后训练统一视角等AI领域最新研究。]]></description>
+    <pubDate>Sat, 06 Sep 2025 13:16:52 +0000</pubDate>
   </item>
   <item>
-    <title>OpenAI教育合作与安全研究最新进展</title>
-    <link>/blog/2025-09-06-ai-daily-OpenAI教育合作与安全研究最新进展.html</link>
-    <description><![CDATA[OpenAI与希腊政府合作推进AI教育，发布语言模型幻觉研究成果，与Anthropic联合进行安全评估，并启动GPT-5生物安全漏洞悬赏计划。]]></description>
-    <pubDate>Sat, 06 Sep 2025 10:16:23 +0000</pubDate>
+    <title>AI每日进展：LLM优化与多模态检测新方</title>
+    <link>/blog/2025-09-06-ai-daily-AI每日进展LLM优化与多模态检测新方.html</link>
+    <description><![CDATA[本文涵盖大型语言模型微调表示、KV缓存效率提升、参数高效微调改进、多模态虚假信息检测和心理增强AI代理等最新研究。]]></description>
+    <pubDate>Sat, 06 Sep 2025 13:12:17 +0000</pubDate>
+  </item>
+  <item>
+    <title>LLM优化与多模态检测技术新进展</title>
+    <link>/blog/2025-09-06-ai-daily-LLM优化与多模态检测技术新进展.html</link>
+    <description><![CDATA[本文涵盖Delta激活表示、KV缓存修剪、PEFT改进、多模态虚假信息检测和AI代理个性增强等研究，基于arXiv最新论文。]]></description>
+    <pubDate>Sat, 06 Sep 2025 13:07:38 +0000</pubDate>
+  </item>
+  <item>
+    <title>AI日报：大模型微调多模态安全与高效推理</title>
+    <link>/blog/2025-09-06-ai-daily-AI日报大模型微调多模态安全与高效推理.html</link>
+    <description><![CDATA[今日arXiv研究聚焦大语言模型后训练统一框架、多模态错误信息检测、KV缓存优化技术，以及心理增强代理与偏见评估挑战。]]></description>
+    <pubDate>Sat, 06 Sep 2025 13:02:25 +0000</pubDate>
+  </item>
+  <item>
+    <title>双尺度体积先验结合Wasserstein</title>
+    <link>/blog/2025-09-06-ai-daily-双尺度体积先验结合Wasserstein.html</link>
+    <description><![CDATA[本研究提出半监督医学图像分割新方法，通过双尺度体积先验和Wasserstein一致性机制优化特征提取与数据利用。]]></description>
+    <pubDate>Sat, 06 Sep 2025 12:59:20 +0000</pubDate>
+  </item>
+  <item>
+    <title>基于Wasserstein一致性的双尺度</title>
+    <link>/blog/2025-09-06-ai-daily-基于Wasserstein一致性的双尺度.html</link>
+    <description><![CDATA[本研究提出结合双尺度体积先验和Wasserstein一致性机制的新方法，旨在解决半监督医学图像分割中特征提取指导不足的问题，提升分割准确性。]]></description>
+    <pubDate>Sat, 06 Sep 2025 12:47:42 +0000</pubDate>
+  </item>
+  <item>
+    <title>双尺度体积先验与Wasserstein一</title>
+    <link>/blog/2025-09-06-ai-daily-双尺度体积先验与Wasserstein一.html</link>
+    <description><![CDATA[研究提出结合双尺度体积先验和Wasserstein一致性的半监督医学图像分割方法，有效利用数据先验信息提升分割性能。]]></description>
+    <pubDate>Sat, 06 Sep 2025 12:30:56 +0000</pubDate>
+  </item>
+  <item>
+    <title>半监督医学图像分割新方法结合双尺度先验与</title>
+    <link>/blog/2025-09-06-ai-daily-半监督医学图像分割新方法结合双尺度先验与.html</link>
+    <description><![CDATA[研究提出结合双尺度体积先验和Wasserstein一致性的半监督医学图像分割方法，旨在解决特征提取和先验信息利用不足的问题。]]></description>
+    <pubDate>Sat, 06 Sep 2025 12:20:21 +0000</pubDate>
+  </item>
+  <item>
+    <title>Virtual Fitting Room</title>
+    <link>/blog/2025-09-06-ai-daily-Virtual-Fitting-Room.html</link>
+    <description><![CDATA[基于公开来源的自动汇总草稿，用于本地测试。]]></description>
+    <pubDate>Sat, 06 Sep 2025 11:23:01 +0000</pubDate>
+  </item>
+  <item>
+    <title>AI研究日报：图结构时间序列与高效模型适</title>
+    <link>/blog/2025-09-06-ai-daily-AI研究日报图结构时间序列与高效模型适.html</link>
+    <description><![CDATA[今日聚焦图结构时间序列数据集ChronoGraph、微调模型表示方法Delta Activations、机器人操作数据收集设备DEXOP、长期记忆框架ArcMemo及高效适配框架IPA等五项重要研究。]]></description>
+    <pubDate>Sat, 06 Sep 2025 10:54:29 +0000</pubDate>
+  </item>
+  <item>
+    <title>OpenAI教育合作与安全研究每日进展汇</title>
+    <link>/blog/2025-09-06-ai-daily-OpenAI教育合作与安全研究每日进展汇.html</link>
+    <description><![CDATA[OpenAI与希腊政府合作推进AI教育，发布语言模型幻觉研究报告，与Anthropic联合进行安全评估，并启动GPT-5生物安全漏洞悬赏计划。]]></description>
+    <pubDate>Sat, 06 Sep 2025 10:49:39 +0000</pubDate>
   </item>
   <item>
     <title>Why language models</title>
     <link>/blog/2025-09-06-ai-daily-Why-language-models.html</link>
     <description><![CDATA[基于公开来源的自动汇总草稿，用于本地测试。]]></description>
-    <pubDate>Sat, 06 Sep 2025 10:12:21 +0000</pubDate>
-  </item>
-  <item>
-    <title>OpenAI多领域推进AI安全与教育合作</title>
-    <link>/blog/2025-09-06-ai-daily-OpenAI多领域推进AI安全与教育合作.html</link>
-    <description><![CDATA[OpenAI近日与希腊政府达成教育合作，推出生物安全漏洞赏金计划，并与Anthropic发布联合安全评估报告，同时公布5000万美元AI基金支持非营利组织。]]></description>
-    <pubDate>Sat, 06 Sep 2025 10:04:40 +0000</pubDate>
+    <pubDate>Sat, 06 Sep 2025 10:45:09 +0000</pubDate>
   </item>
   <item>
     <title>探索语言模型的幻觉与安全性评估</title>
