@@ -1,9 +1,9 @@
 {
-  "generated_at": "2025-09-06T14:28:19.019826+00:00",
+  "generated_at": "2025-09-07T04:16:15.103943+00:00",
   "items": [
     {
-      "headline": "[CV] Virtual Fitting Room",
-      "one_liner": "We introduce the Virtual Fitting Room (VFR), a novel vid…",
+      "headline": "CV 单图生任意长虚拟试穿视频",
+      "one_liner": "针对虚拟试穿视频生成长度受限问题，提出自回归分段生成方法，实现任意长度视频生成并保持时空一致性",
       "task": "CV",
       "type": "paper",
       "novelty": "method",
@@ -18,18 +18,32 @@
       },
       "tags": [
         "CV",
-        "arxiv.org"
+        "Video Generation",
+        "Virtual Try-On",
+        "Autoregressive"
       ],
-      "impact_score": 50,
-      "reproducibility_score": 30,
-      "quick_read": "We introduce the Virtual Fitting Room (VFR), a novel video generative model that produces arbitrarily long virtual try-on videos. Our VFR models long video generation tas…"
+      "impact_score": 85,
+      "reproducibility_score": 70,
+      "quick_read": "针对虚拟试穿视频生成长度受限问题，提出自回归分段生成方法，实现任意长度视频生成并保持时空一致性",
+      "title_i18n": {
+        "zh": "CV 单图生任意长虚拟试穿视频",
+        "en": "Virtual Fitting Room: Generating Arbitrarily Long Videos of Virtual\n  Try-On from a Single Image -- Technical Preview"
+      },
+      "summary_i18n": {
+        "zh": "VirtualFittingRoom模型提出分段自回归生成方法，仅需单张输入图像即可生成任意长度虚拟试衣视频。",
+        "en": "We introduce the Virtual Fitting Room (VFR), a novel video generative model\nthat produces arbitrarily long virtual try-on videos. Our VFR models long video\ngeneration tasks as an auto-regressive, segment-by-segment generation process,\neliminating the need for resource-intensive generation and lengthy video data,\nwhile providing the flexibility to generate videos of arbitrary length. The key\nchallenges of this task are twofold: ensuring local smoothness between adjacent\nsegments and maintaining global temporal consistency across different segments.\nTo address these challenges, we propose our VF"
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-04T17:59:55+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
     },
     {
-      "headline": "[LLM] ChronoGraph: A Real-",
-      "one_liner": "We present ChronoGraph, a graph-structured multivariate …",
-      "task": "LLM",
-      "type": "paper",
-      "novelty": "method",
+      "headline": "IR 图结构多变量时序数据集发布",
+      "one_liner": "基于真实微服务系统构建图结构多变量时序数据集ChronoGraph，包含性能指标和异常标注，支持预测与异常检测任务",
+      "task": "IR",
+      "type": "dataset",
+      "novelty": "data",
       "key_numbers": [],
       "reusability": [],
       "limitations": [],
@@ -40,17 +54,32 @@
         "pdf": "https://arxiv.org/pdf/2509.04449.pdf"
       },
       "tags": [
-        "LLM",
-        "arxiv.org"
+        "IR",
+        "Time Series",
+        "Graph Data",
+        "Anomaly Detection",
+        "Microservices"
       ],
-      "impact_score": 50,
-      "reproducibility_score": 30,
-      "quick_read": "We present ChronoGraph, a graph-structured multivariate time series forecasting dataset built from real-world production microservices. Each node is a service that emits …"
+      "impact_score": 80,
+      "reproducibility_score": 90,
+      "quick_read": "基于真实微服务系统构建图结构多变量时序数据集ChronoGraph，包含性能指标和异常标注，支持预测与异常检测任务",
+      "title_i18n": {
+        "zh": "IR 图结构多变量时序数据集发布",
+        "en": "ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset"
+      },
+      "summary_i18n": {
+        "zh": "基于真实微服务系统构建图结构多变量时序数据集ChronoGraph，包含性能指标和异常标注，支持预测与异常检测任务",
+        "en": "We present ChronoGraph, a graph-structured multivariate time series\nforecasting dataset built from real-world production microservices. Each node\nis a service that emits a multivariate stream of system-level performance\nmetrics, capturing CPU, memory, and network usage patterns, while directed\nedges encode dependencies between services. The primary task is forecasting\nfuture values of these signals at the service level. In addition, ChronoGraph\nprovides expert-annotated incident windows as anomaly labels, enabling\nevaluation of anomaly detection methods and assessment of forecast robustness\ndu"
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-04T17:59:52+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
     },
     {
-      "headline": "[CV] TRUST-VL: An Explain",
-      "one_liner": "Multimodal misinformation, encompassing textual, visual,…",
-      "task": "CV",
+      "headline": "MM 多模态虚假信息检测统一框架",
+      "one_liner": "针对多模态虚假信息检测泛化能力不足问题，提出TRUST-VL框架通过联合训练共享推理能力，提升跨场景检测效果",
+      "task": "MM",
       "type": "paper",
       "novelty": "method",
       "key_numbers": [],
@@ -63,16 +92,30 @@
         "pdf": "https://arxiv.org/pdf/2509.04448.pdf"
       },
       "tags": [
-        "CV",
-        "arxiv.org"
+        "MM",
+        "Misinformation Detection",
+        "Multimodal",
+        "Explainable AI"
       ],
-      "impact_score": 50,
-      "reproducibility_score": 30,
-      "quick_read": "Multimodal misinformation, encompassing textual, visual, and cross-modal distortions, poses an increasing societal threat that is amplified by generative AI. Existing met…"
+      "impact_score": 78,
+      "reproducibility_score": 75,
+      "quick_read": "针对多模态虚假信息检测泛化能力不足问题，提出TRUST-VL框架通过联合训练共享推理能力，提升跨场景检测效果",
+      "title_i18n": {
+        "zh": "MM 多模态虚假信息检测统一框架",
+        "en": "TRUST-VL: An Explainable News Assistant for General Multimodal\n  Misinformation Detection"
+      },
+      "summary_i18n": {
+        "zh": "TRUST-VL框架针对文本、视觉及跨模态扭曲的多模态虚假信息检测，采用联合训练策略促进知识共享。该可解释新闻助手通过统一架构增强模型对未见场景的泛化能力，应对生成式AI放大的社会威胁。",
+        "en": "Multimodal misinformation, encompassing textual, visual, and cross-modal\ndistortions, poses an increasing societal threat that is amplified by\ngenerative AI. Existing methods typically focus on a single type of distortion\nand struggle to generalize to unseen scenarios. In this work, we observe that\ndifferent distortion types share common reasoning capabilities while also\nrequiring task-specific skills. We hypothesize that joint training across\ndistortion types facilitates knowledge sharing and enhances the model's ability\nto generalize. To this end, we introduce TRUST-VL, a unified and explain"
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-04T17:59:43+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
     },
     {
-      "headline": "[CV] Plot'n Polish: Zero-",
-      "one_liner": "Text-to-image diffusion models have demonstrated signifi…",
+      "headline": "CV 零样本故事可视化与解耦编辑",
+      "one_liner": "基于扩散模型实现零样本故事可视化，支持粗细粒度编辑同时保持多帧视觉叙事一致性，解决现有方法灵活性不足问题",
       "task": "CV",
       "type": "paper",
       "novelty": "method",
@@ -87,15 +130,29 @@
       },
       "tags": [
         "CV",
-        "arxiv.org"
+        "Text-to-Image",
+        "Story Visualization",
+        "Diffusion Models"
       ],
-      "impact_score": 50,
-      "reproducibility_score": 30,
-      "quick_read": "Text-to-image diffusion models have demonstrated significant capabilities to generate diverse and detailed visuals in various domains, and story visualization is emerging…"
+      "impact_score": 76,
+      "reproducibility_score": 72,
+      "quick_read": "基于扩散模型实现零样本故事可视化，支持粗细粒度编辑同时保持多帧视觉叙事一致性，解决现有方法灵活性不足问题",
+      "title_i18n": {
+        "zh": "CV 零样本故事可视化与解耦编辑",
+        "en": "Plot'n Polish: Zero-shot Story Visualization and Disentangled Editing\n  with Text-to-Image Diffusion Models"
+      },
+      "summary_i18n": {
+        "zh": "基于扩散模型实现零样本故事可视化，支持粗细粒度编辑同时保持多帧视觉叙事一致性，解决现有方法灵活性不足问题",
+        "en": "Text-to-image diffusion models have demonstrated significant capabilities to\ngenerate diverse and detailed visuals in various domains, and story\nvisualization is emerging as a particularly promising application. However, as\ntheir use in real-world creative domains increases, the need for providing\nenhanced control, refinement, and the ability to modify images post-generation\nin a consistent manner becomes an important challenge. Existing methods often\nlack the flexibility to apply fine or coarse edits while maintaining visual and\nnarrative consistency across multiple frames, preventing creator"
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-04T17:59:34+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
     },
     {
-      "headline": "[LLM] Towards Cognitively-",
-      "one_liner": "Recent AI work trends towards incorporating human-centri…",
+      "headline": "LLM 认知忠实决策模型改进对齐",
+      "one_liner": "针对现有人类决策建模忽略认知过程问题，提出认知忠实决策模型更好地捕捉启发式等真实认知机制，提升AI对齐效果",
       "task": "LLM",
       "type": "paper",
       "novelty": "method",
@@ -110,15 +167,29 @@
       },
       "tags": [
         "LLM",
-        "arxiv.org"
+        "AI Alignment",
+        "Decision Making",
+        "Cognitive Modeling"
       ],
-      "impact_score": 50,
-      "reproducibility_score": 30,
-      "quick_read": "Recent AI work trends towards incorporating human-centric objectives, with the explicit goal of aligning AI models to personal preferences and societal values. Using stan…"
+      "impact_score": 75,
+      "reproducibility_score": 68,
+      "quick_read": "针对现有人类决策建模忽略认知过程问题，提出认知忠实决策模型更好地捕捉启发式等真实认知机制，提升AI对齐效果",
+      "title_i18n": {
+        "zh": "LLM 认知忠实决策模型改进对齐",
+        "en": "Towards Cognitively-Faithful Decision-Making Models to Improve AI\n  Alignment"
+      },
+      "summary_i18n": {
+        "zh": "针对现有人类决策建模忽略认知过程问题，提出认知忠实决策模型更好地捕捉启发式等真实认知机制，提升AI对齐效果",
+        "en": "Recent AI work trends towards incorporating human-centric objectives, with\nthe explicit goal of aligning AI models to personal preferences and societal\nvalues. Using standard preference elicitation methods, researchers and\npractitioners build models of human decisions and judgments, which are then\nused to align AI behavior with that of humans. However, models commonly used in\nsuch elicitation processes often do not capture the true cognitive processes of\nhuman decision making, such as when people use heuristics to simplify\ninformation associated with a decision problem. As a result, models lea"
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-04T17:59:29+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
     },
     {
-      "headline": "[CV] One Flight Over the ",
-      "one_liner": "Driven by the demand for spatial intelligence and holist…",
+      "headline": "CV 全景视觉技术综述",
+      "one_liner": "系统综述全景视觉技术进展，分析全方位图像与透视图像在几何投影等方面的本质差异，总结领域挑战与发展方向",
       "task": "CV",
       "type": "paper",
       "novelty": "method",
@@ -133,100 +204,37 @@
       },
       "tags": [
         "CV",
-        "arxiv.org"
+        "Panoramic Vision",
+        "Survey",
+        "360 Imaging"
       ],
       "impact_score": 50,
-      "reproducibility_score": 30,
-      "quick_read": "Driven by the demand for spatial intelligence and holistic scene perception, omnidirectional images (ODIs), which provide a complete 360\\textdegree{} field of view, are r…"
-    },
-    {
-      "headline": "[LLM] Delta Activations: A",
-      "one_liner": "The success of powerful open source Large Language Model…",
-      "task": "LLM",
-      "type": "paper",
-      "novelty": "method",
-      "key_numbers": [],
-      "reusability": [],
-      "limitations": [],
-      "links": {
-        "paper": "http://arxiv.org/abs/2509.04442v1",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.04442.pdf"
+      "reproducibility_score": 50,
+      "quick_read": "系统综述全景视觉技术进展，分析全方位图像与透视图像在几何投影等方面的本质差异，总结领域挑战与发展方向",
+      "title_i18n": {
+        "zh": "CV 全景视觉技术综述",
+        "en": "One Flight Over the Gap: A Survey from Perspective to Panoramic Vision"
       },
-      "tags": [
-        "LLM",
-        "arxiv.org"
-      ],
-      "impact_score": 50,
-      "reproducibility_score": 30,
-      "quick_read": "The success of powerful open source Large Language Models (LLMs) has enabled the community to create a vast collection of post-trained models adapted to specific tasks an…"
-    },
-    {
-      "headline": "[LLM] DEXOP: A Device for ",
-      "one_liner": "We introduce perioperation, a paradigm for robotic data …",
-      "task": "LLM",
-      "type": "paper",
-      "novelty": "method",
-      "key_numbers": [],
-      "reusability": [],
-      "limitations": [],
-      "links": {
-        "paper": "http://arxiv.org/abs/2509.04441v1",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.04441.pdf"
+      "summary_i18n": {
+        "zh": "系统综述全景视觉技术进展，分析全方位图像与透视图像在几何投影等方面的本质差异，总结领域挑战与发展方向",
+        "en": "Driven by the demand for spatial intelligence and holistic scene perception,\nomnidirectional images (ODIs), which provide a complete 360\\textdegree{} field\nof view, are receiving growing attention across diverse applications such as\nvirtual reality, autonomous driving, and embodied robotics. Despite their\nunique characteristics, ODIs exhibit remarkable differences from perspective\nimages in geometric projection, spatial distribution, and boundary continuity,\nmaking it challenging for direct domain adaption from perspective methods. This\nsurvey reviews recent panoramic vision techniques with a"
       },
-      "tags": [
-        "LLM",
-        "arxiv.org"
-      ],
-      "impact_score": 50,
-      "reproducibility_score": 30,
-      "quick_read": "We introduce perioperation, a paradigm for robotic data collection that sensorizes and records human manipulation while maximizing the transferability of the data to real…"
+      "host": "arxiv.org",
+      "ts": "2025-09-04T17:59:10+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
     }
   ],
-  "refs": [
-    {
-      "title": "Virtual Fitting Room: Generating Arbitrarily Long Videos of Virtual\n  Try-On from a Single Image -- Technical Preview",
-      "url": "http://arxiv.org/abs/2509.04450v1"
-    },
-    {
-      "title": "ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset",
-      "url": "http://arxiv.org/abs/2509.04449v1"
-    },
-    {
-      "title": "TRUST-VL: An Explainable News Assistant for General Multimodal\n  Misinformation Detection",
-      "url": "http://arxiv.org/abs/2509.04448v1"
-    },
-    {
-      "title": "Plot'n Polish: Zero-shot Story Visualization and Disentangled Editing\n  with Text-to-Image Diffusion Models",
-      "url": "http://arxiv.org/abs/2509.04446v1"
-    },
-    {
-      "title": "Towards Cognitively-Faithful Decision-Making Models to Improve AI\n  Alignment",
-      "url": "http://arxiv.org/abs/2509.04445v1"
-    },
-    {
-      "title": "One Flight Over the Gap: A Survey from Perspective to Panoramic Vision",
-      "url": "http://arxiv.org/abs/2509.04444v1"
-    },
-    {
-      "title": "Delta Activations: A Representation for Finetuned Large Language Models",
-      "url": "http://arxiv.org/abs/2509.04442v1"
-    },
-    {
-      "title": "DEXOP: A Device for Robotic Transfer of Dexterous Human Manipulation",
-      "url": "http://arxiv.org/abs/2509.04441v1"
-    }
-  ],
+  "refs": [],
   "stats": {
     "by_task": {
-      "CV": 4,
-      "LLM": 4
+      "CV": 3,
+      "IR": 1,
+      "MM": 1,
+      "LLM": 1
     },
     "with_code": 0,
-    "new_benchmarks": 0
+    "new_benchmarks": 1
   },
   "must_reads": [
     0,
@@ -236,8 +244,6 @@
     4
   ],
   "nice_to_read": [
-    5,
-    6,
-    7
+    5
   ]
 }

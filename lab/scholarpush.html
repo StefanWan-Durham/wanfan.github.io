@@ -35,9 +35,7 @@
     .sp-list{display:flex;flex-direction:column;gap:10px}
     .sp-meta{font-size:12px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
     .sp-title{font-size:16px;line-height:1.4;margin:0 0 6px 0}
-    .sp-abstract{margin:0;color:var(--muted)}
-  .line-2{display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .line-4{display:-webkit-box;-webkit-line-clamp:4;line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+  .sp-abstract{margin:0;color:var(--muted)}
     .stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
     @media (max-width:700px){.stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
   </style>
@@ -118,11 +116,7 @@
           <h2 style="margin:0 0 4px 0">学术快报</h2>
           <p id="sp-sub" class="muted" style="margin:0 0 10px 0">—</p>
           <div class="card sp-card sp-toolbar">
-            <select id="budget" class="input" style="height:36px">
-              <option value="15">15 分钟</option>
-              <option value="30" selected>30 分钟</option>
-              <option value="60">60 分钟</option>
-            </select>
+            <!-- removed budget selector -->
             <div id="topic-chips" class="sp-chiprow" role="toolbar" aria-label="Topics"></div>
             <span style="flex:1 1 auto"></span>
             <input id="q" class="input" placeholder="搜索标题/要点/标签…" style="min-width:220px;height:36px;padding:6px 10px">
@@ -168,14 +162,13 @@
     const deepWrap = document.getElementById('deep');
     const deepCard = document.getElementById('deep-card');
     const subEl = document.getElementById('sp-sub');
-    const budgetSel = document.getElementById('budget');
+  // budget selector removed
 
     let data = null;
     let items = [];
     let activeTags = new Set();
     let query = '';
 
-    function clampLines(id){ const p=document.getElementById(id); if(p) p.classList.toggle('line-4'); }
     function btn(href,label){ return `<a class="btn outline small" target="_blank" rel="noopener" href="${href}">${label}</a>` }
     // Build a map of ref url -> title for client-side healing of truncated headlines
     let refTitleByUrl = new Map();
@@ -206,27 +199,52 @@
       }
       return h;
     }
+    function displayTitle(it){
+      const lang = document.documentElement.lang || 'zh';
+      const zh = (it.title_i18n && it.title_i18n.zh) ? it.title_i18n.zh : (it.headline||'');
+      const en = (it.title_i18n && it.title_i18n.en) ? it.title_i18n.en : (it.headline||'');
+      let t = (lang==='zh') ? (zh||niceHeadline(it)) : (en||niceHeadline(it));
+      if(lang!=='zh' && it.task && !/^\[[^\]]+\]/.test(t)){
+        t = `[${it.task}] ` + t;
+      }
+      return t;
+    }
+    function relTime(iso){
+      try{
+        if(!iso) return '';
+        const d = new Date(iso);
+        const s = Math.max(0, (Date.now()-d.getTime())/1000);
+        if(s<60) return 'just now';
+        if(s<3600) return Math.floor(s/60)+'m ago';
+        if(s<86400) return Math.floor(s/3600)+'h ago';
+        return Math.floor(s/86400)+'d ago';
+      }catch(e){return ''}
+    }
     function card(it){
       const tags=(it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
-      const links=it.links||{}; const id=Math.random().toString(36).slice(2);
-      const keynums=(it.key_numbers||[]).slice(0,2).map(k=>`${k.dataset||''} ${k.metric||''} ${k.ours||''}${k.impr_rel?(' · '+k.impr_rel):''}`).filter(Boolean).join('<br>');
+  const links=it.links||{}; const id=Math.random().toString(36).slice(2);
+      const keynumsCompact=(it.key_numbers_compact||[]).slice(0,3).map(s=>`<span class="tag small">${esc(s)}</span>`).join(' ');
+      const codeBadge = it.has_code ? `<span class="tag small" title="has code">code</span>` : '';
       const utils=(it.reusability||[]).slice(0,3).map(x=>`<li>${x}</li>`).join('');
       const limits=(it.limitations||[]).slice(0,2).map(x=>`<li>${x}</li>`).join('');
-      const meta=[it.task||'',it.type||''].filter(Boolean).join(' · ');
-      const shortTxt = String(it.quick_read||it.one_liner||'');
-      const fullTxt = String(it.one_liner||it.quick_read||'');
+      const host = it.host||'';
+      const tsRel = relTime(it.ts||'');
+      const meta=[it.task||'',it.type||'',host,tsRel].filter(Boolean).join(' · ');
+  const isZH = (document.documentElement.lang||'zh')==='zh';
+  const fullTxt  = isZH ? String(it.summary_i18n?.zh || it.one_liner || it.quick_read || '')
+            : String(it.summary_i18n?.en || it.one_liner || it.quick_read || '');
+  // no short/expand; always render full text
+      const titleHtml = esc(displayTitle(it));
       return `<article class="card sp-card">
-        <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${niceHeadline(it)}</h4>
-        <div class="sp-meta">${meta}${tags?` · ${tags}`:''}</div>
-        <p id="abs-${id}" class="sp-abstract line-4" data-show="short" data-short="${esc(shortTxt)}" data-full="${esc(fullTxt)}">${esc(shortTxt)}</p>
-        ${keynums?`<p class="muted" style="margin:6px 0 0 0">${keynums}</p>`:''}
+        <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${titleHtml}</h4>
+        <div class="sp-meta">${meta}${tags?` · ${tags}`:''} ${keynumsCompact?` · ${keynumsCompact}`:''} ${codeBadge}</div>
+    <p id="abs-${id}" class="sp-abstract">${esc(fullTxt)}</p>
         ${(utils||limits)?`<div style="display:flex;gap:12px;margin-top:6px">${utils?`<ul class="muted" style="margin:0">${utils}</ul>`:''}${limits?`<ul class="muted" style="margin:0">${limits}</ul>`:''}</div>`:''}
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
           ${links.paper&&links.paper!=='N/A'?btn(links.paper,'Paper'):''}
           ${links.code&&links.code!=='N/A'?btn(links.code,'Code'):''}
           ${(links.pdf&&links.pdf!=='N/A')?btn(links.pdf,'PDF'):''}
           ${links.project&&links.project!=='N/A'?btn(links.project,'Proj'):''}
-          <button class="btn outline small" data-toggle="abs-${id}">展开/收起</button>
         </div>
       </article>`;
     }
@@ -250,12 +268,12 @@
         b.className='btn outline small'+(act?' primary':''); b.textContent=`${t} · ${n}`; b.onclick=()=>{ act?activeTags.delete(t):activeTags.add(t); renderAll();}; chipRow.appendChild(b);
       });
     }
-    function filterItems(arr){
+  function filterItems(arr){
       const qs=(query||'').trim().toLowerCase();
       return arr.filter(it=>{
         if(activeTags.size>0 && !(it.tags||[]).some(t=>activeTags.has(t))) return false;
         if(!qs) return true;
-        const blob = `${it.headline||''} ${it.one_liner||''} ${(it.tags||[]).join(' ')}`.toLowerCase();
+    const blob = `${it.headline||''} ${it.one_liner||''} ${it.title_i18n?.zh||''} ${it.title_i18n?.en||''} ${it.summary_i18n?.zh||''} ${it.summary_i18n?.en||''} ${it.host||''} ${(it.tags||[]).join(' ')}`.toLowerCase();
         return qs.split(/\s+/).filter(Boolean).some(w=>blob.includes(w));
       });
     }
@@ -282,33 +300,10 @@
       items.forEach(it=>{ if(!it.links) it.links={}; if(!it.links.pdf && it.links.paper){ const m=(it.links.paper||'').match(/\d{4}\.\d{4,5}/); if(m) it.links.pdf = `https://arxiv.org/pdf/${m[0]}.pdf`; }});
       // cache refs for headline healing
       try { refTitleByUrl = new Map((sp?.refs||[]).map(r=>[r.url, r.title])); } catch(e) { refTitleByUrl = new Map(); }
-      // delegate expand/collapse (robust to nested clicks)
-      document.addEventListener('click', (e)=>{
-        const el = (e.target && e.target.closest) ? e.target.closest('button[data-toggle]') : null;
-        if(!el) return;
-        const id = el.getAttribute('data-toggle');
-        const p = id ? document.getElementById(id) : null;
-        if(p){
-          const show = p.getAttribute('data-show') || 'short';
-          if(show === 'short'){
-            // show full
-            const full = p.getAttribute('data-full') || '';
-            p.textContent = full;
-            p.classList.remove('line-4');
-            p.setAttribute('data-show','full');
-          } else {
-            // show short
-            const short = p.getAttribute('data-short') || '';
-            p.textContent = short;
-            p.classList.add('line-4');
-            p.setAttribute('data-show','short');
-          }
-          e.preventDefault();
-        }
-      });
+  // no expand/collapse; abstracts are fully shown
       // bind search
       let tid=null; qInput.addEventListener('input', ()=>{ clearTimeout(tid); tid=setTimeout(()=>{ query=qInput.value||''; renderAll(); }, 200); });
-      budgetSel.addEventListener('change', ()=>{ /* 预留：可根据预算调整 must/nice 配比 */ renderAll(); });
+  // budget selector removed
       renderAll();
     }
     init();

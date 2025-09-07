@@ -1,5 +1,320 @@
 [
   {
+    "id": "2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破#sec-5",
+    "date": "2025-09-07T03:32:29.882987+00:00",
+    "daily_slug": "2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破",
+    "daily_title": "AI日报：多模态安全与模型优化新突破",
+    "section_index": 5,
+    "heading": "3D生成模型加速方法",
+    "summary": "MDT-dist框架通过边际数据传输蒸馏，将预训练模型蒸馏为少步3D流生成模型。该方法学习速度场积分，避免传统多步采样，提升生成效率，适用于复杂3D任务。",
+    "url": "/blog/2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破.html#sec-5",
+    "tags": [
+      "多模态",
+      "LLM",
+      "优化",
+      "安全",
+      "生成模型"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      5
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破#sec-4",
+    "date": "2025-09-07T03:32:29.882987+00:00",
+    "daily_slug": "2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破",
+    "daily_title": "AI日报：多模态安全与模型优化新突破",
+    "section_index": 4,
+    "heading": "语音搜索纠错技术",
+    "summary": "上下文化令牌判别方法利用BERT生成令牌级上下文表示，增强语音搜索查询的语义信息。通过组合层聚合令牌，实现自动语音识别系统中的有效纠错，提升查询意图表达清晰度。",
+    "url": "/blog/2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破.html#sec-4",
+    "tags": [
+      "多模态",
+      "LLM",
+      "优化",
+      "安全",
+      "生成模型"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      4
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破#sec-3",
+    "date": "2025-09-07T03:32:29.882987+00:00",
+    "daily_slug": "2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破",
+    "daily_title": "AI日报：多模态安全与模型优化新突破",
+    "section_index": 3,
+    "heading": "高效KV缓存修剪策略",
+    "summary": "PagedEviction方法针对大语言模型推理中的KV缓存内存瓶颈，引入结构化块级修剪策略。该方法在vLLM的分页注意力基础上优化，通过细粒度修剪提升内存效率，避免跨页令牌驱逐问题。",
+    "url": "/blog/2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破.html#sec-3",
+    "tags": [
+      "多模态",
+      "LLM",
+      "优化",
+      "安全",
+      "生成模型"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      3
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破#sec-2",
+    "date": "2025-09-07T03:32:29.882987+00:00",
+    "daily_slug": "2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破",
+    "daily_title": "AI日报：多模态安全与模型优化新突破",
+    "section_index": 2,
+    "heading": "大语言模型后训练统一视角",
+    "summary": "研究揭示强化学习与监督微调并非对立，而是同一优化过程的实例。提出统一策略梯度估计器，将在线模型生成数据与离线人类演示数据整合，为后训练提供共同目标框架，简化模型适应流程。",
+    "url": "/blog/2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破.html#sec-2",
+    "tags": [
+      "多模态",
+      "LLM",
+      "优化",
+      "安全",
+      "生成模型"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      2
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破#sec-1",
+    "date": "2025-09-07T03:32:29.882987+00:00",
+    "daily_slug": "2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破",
+    "daily_title": "AI日报：多模态安全与模型优化新突破",
+    "section_index": 1,
+    "heading": "多模态安全检测新进展",
+    "summary": "TRUST-VL模型针对多模态虚假信息检测提出统一框架，通过联合训练处理文本、视觉及跨模态扭曲，增强模型泛化能力。该方法利用共同推理能力与任务特定技能，应对生成AI放大的社会威胁，提升检测解释性。",
+    "url": "/blog/2025-09-07-ai-daily-AI日报多模态安全与模型优化新突破.html#sec-1",
+    "tags": [
+      "多模态",
+      "LLM",
+      "优化",
+      "安全",
+      "生成模型"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      1
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破#sec-5",
+    "date": "2025-09-07T03:24:15.196687+00:00",
+    "daily_slug": "2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破",
+    "daily_title": "AI日报：多模态安全与语言模型优化新突破",
+    "section_index": 5,
+    "heading": "3D生成模型加速技术",
+    "summary": "MDT-dist框架通过边缘数据传输蒸馏实现少步3D流生成，减少采样步骤需求。该方法基于预训练模型学习目标传输，避免速度场积分，提升复杂3D生成任务的效率，适用于低步数推理场景。",
+    "url": "/blog/2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破.html#sec-5",
+    "tags": [
+      "多模态",
+      "LLM",
+      "安全",
+      "优化",
+      "生成"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      5
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破#sec-4",
+    "date": "2025-09-07T03:24:15.196687+00:00",
+    "daily_slug": "2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破",
+    "daily_title": "AI日报：多模态安全与语言模型优化新突破",
+    "section_index": 4,
+    "heading": "语音搜索查询纠错方法",
+    "summary": "上下文化令牌判别（CTD）方法利用BERT生成令牌级上下文表示，增强语音搜索查询的语义信息。通过组合层聚合令牌，纠正自动语音识别系统中的同音词错误，改善查询表达清晰度，适用于语音搜索场景。",
+    "url": "/blog/2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破.html#sec-4",
+    "tags": [
+      "多模态",
+      "LLM",
+      "安全",
+      "优化",
+      "生成"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      4
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破#sec-3",
+    "date": "2025-09-07T03:24:15.196687+00:00",
+    "daily_slug": "2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破",
+    "daily_title": "AI日报：多模态安全与语言模型优化新突破",
+    "section_index": 3,
+    "heading": "KV缓存高效修剪策略",
+    "summary": "PagedEviction方法针对vLLM的PagedAttention设计结构化块级KV缓存修剪。不同于基于注意力的令牌重要性评估，该方法在vLLM页面内执行细粒度修剪，缓解长序列下的内存瓶颈问题，提升大语言模型推理效率。",
+    "url": "/blog/2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破.html#sec-3",
+    "tags": [
+      "多模态",
+      "LLM",
+      "安全",
+      "优化",
+      "生成"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      3
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破#sec-2",
+    "date": "2025-09-07T03:24:15.196687+00:00",
+    "daily_slug": "2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破",
+    "daily_title": "AI日报：多模态安全与语言模型优化新突破",
+    "section_index": 2,
+    "heading": "大语言模型微调统一视角",
+    "summary": "研究揭示强化学习与监督微调并非对立，而是同一优化过程的实例。通过统一策略梯度估计器，将在线模型生成数据与离线人类演示数据纳入共同目标函数计算。该框架为后训练方法提供理论统一，减少数据源使用的矛盾性。",
+    "url": "/blog/2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破.html#sec-2",
+    "tags": [
+      "多模态",
+      "LLM",
+      "安全",
+      "优化",
+      "生成"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      2
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破#sec-1",
+    "date": "2025-09-07T03:24:15.196687+00:00",
+    "daily_slug": "2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破",
+    "daily_title": "AI日报：多模态安全与语言模型优化新突破",
+    "section_index": 1,
+    "heading": "多模态安全检测新进展",
+    "summary": "TRUST-VL模型针对多模态虚假信息检测提出统一框架，通过联合训练处理文本、视觉及跨模态失真类型。该方法利用共同推理能力与任务特定技能，增强模型对未见场景的泛化性能，解决生成AI放大社会威胁的挑战。研究强调不同失真类型间的知识共享可提升检测效果。",
+    "url": "/blog/2025-09-07-ai-daily-AI日报多模态安全与语言模型优化新突破.html#sec-1",
+    "tags": [
+      "多模态",
+      "LLM",
+      "安全",
+      "优化",
+      "生成"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      1
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A#sec-5",
+    "date": "2025-09-07T03:14:13.953757+00:00",
+    "daily_slug": "2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A",
+    "daily_title": "谷歌EmbeddingGemma发布与A",
+    "section_index": 5,
+    "heading": "MCP在科研工具中的应用",
+    "summary": "模型控制协议（MCP）被用于连接AI模型与科研工具，简化了数据分析和实验流程。该协议支持自动化任务，如数据检索和处理，提升了科研效率。MCP的应用展示了AI在学术研究中的实用价值。",
+    "url": "/blog/2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A.html#sec-5",
+    "tags": [
+      "LLM",
+      "Embedding",
+      "Multimodal",
+      "GPU",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      5
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A#sec-4",
+    "date": "2025-09-07T03:14:13.953757+00:00",
+    "daily_slug": "2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A",
+    "daily_title": "谷歌EmbeddingGemma发布与A",
+    "section_index": 4,
+    "heading": "多GPU训练加速技术指南",
+    "summary": "AccelerateND-Parallel指南详细介绍了高效多GPU训练的方法，包括并行策略和资源优化技巧。该指南帮助开发者减少训练时间，提高模型scalability，适用于大规模深度学习项目。通过实践建议，用户可更好地利用硬件资源。",
+    "url": "/blog/2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A.html#sec-4",
+    "tags": [
+      "LLM",
+      "Embedding",
+      "Multimodal",
+      "GPU",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      4
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A#sec-3",
+    "date": "2025-09-07T03:14:13.953757+00:00",
+    "daily_slug": "2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A",
+    "daily_title": "谷歌EmbeddingGemma发布与A",
+    "section_index": 3,
+    "heading": "Claude与Hugging Face图像生成集成",
+    "summary": "Claude模型与HuggingFace平台集成，新增了图像生成功能。这一集成基于模型控制协议（MCP），允许用户通过文本提示生成高质量图像。该功能扩展了Claude的多模态能力，为创意和设计应用提供了更多可能性。",
+    "url": "/blog/2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A.html#sec-3",
+    "tags": [
+      "LLM",
+      "Embedding",
+      "Multimodal",
+      "GPU",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      3
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A#sec-2",
+    "date": "2025-09-07T03:14:13.953757+00:00",
+    "daily_slug": "2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A",
+    "daily_title": "谷歌EmbeddingGemma发布与A",
+    "section_index": 2,
+    "heading": "零GPU空间与PyTorch预编译优化",
+    "summary": "PyTorch预编译技术被应用于零GPU空间，通过提前编译代码来优化性能。这种方法减少了运行时延迟，提高了处理吞吐量，使得在资源受限环境中也能实现高效计算。预编译有助于提升AI模型的部署效率，特别是在边缘计算场景。",
+    "url": "/blog/2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A.html#sec-2",
+    "tags": [
+      "LLM",
+      "Embedding",
+      "Multimodal",
+      "GPU",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      2
+    ]
+  },
+  {
+    "id": "2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A#sec-1",
+    "date": "2025-09-07T03:14:13.953757+00:00",
+    "daily_slug": "2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A",
+    "daily_title": "谷歌EmbeddingGemma发布与A",
+    "section_index": 1,
+    "heading": "EmbeddingGemma：谷歌高效嵌入模型发布",
+    "summary": "谷歌近日发布了EmbeddingGemma，这是一种新型高效嵌入模型，旨在提升自然语言处理任务中的嵌入效率。该模型通过优化架构设计，减少了计算资源需求，同时保持高准确性，适用于多种AI应用场景。其发布标志着嵌入技术领域的进一步创新。",
+    "url": "/blog/2025-09-07-ai-daily-谷歌EmbeddingGemma发布与A.html#sec-1",
+    "tags": [
+      "LLM",
+      "Embedding",
+      "Multimodal",
+      "GPU",
+      "Agent"
+    ],
+    "og_image": "/assets/placeholder.jpg",
+    "refs": [
+      1
+    ]
+  },
+  {
     "id": "2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究#sec-5",
     "date": "2025-09-06T17:02:04.408812+00:00",
     "daily_slug": "2025-09-06-ai-daily-虚拟试衣间与多模态数据集的最新研究",

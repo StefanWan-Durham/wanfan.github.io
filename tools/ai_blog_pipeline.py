@@ -463,6 +463,25 @@ def _sanitize_output(j, entries):
     j["sections"] = sec[:len(j["toc"])]
     return j
 
+    # —— 若按时间窗筛完为空，则回退到“去重后的最近 N 条（不看时间）” —— #
+    if not fresh:
+        dedup = []
+        seen_sig = set()
+        for it in sorted(entries, key=lambda x: x.get("ts",""), reverse=True):
+            url = (it.get("url") or "").strip()
+            host = urlparse(url).hostname or ""
+            title_norm = re.sub(r"\s+", "", BS(it.get("title") or "", "html.parser").text.lower())
+            sig = f"{host}|{title_norm[:60]}"
+            if sig in seen_sig:
+                continue
+            seen_sig.add(sig)
+            it = dict(it)
+            it["summary"] = (re.sub(r"<.*?>", "", it.get("summary") or "")[:280]).strip()
+            dedup.append(it)
+            if len(dedup) >= max_n:
+                break
+        return dedup
+
 def _cn_len(s: str) -> int:
     return sum(2 if '\u4e00' <= c <= '\u9fff' else 1 for c in (s or ""))
 
@@ -517,6 +536,89 @@ def _cap_ref_indexes(sections, ref_count: int):
             return f"[{idx}]"
         s["markdown"] = pat.sub(repl, txt)
 
+# ===== Unified field helpers (Daily ↔ ScholarPush) =====
+def _normalize_url(u: str) -> str:
+    """归一化 URL：arXiv 变成 https://arxiv.org/abs/<id>；去掉 UTM；去掉尾斜杠。"""
+    try:
+        if not u:
+            return ""
+        u = u.strip()
+        m = re.search(r"arxiv\.org/(?:abs|pdf|format|html)/(\d{4}\.\d{4,5})(?:v\d+)?", u, re.I)
+        if m:
+            return f"https://arxiv.org/abs/{m.group(1)}"
+        from urllib.parse import urlparse as _urlparse, urlunparse, parse_qsl, urlencode
+        p = _urlparse(u)
+        q = [(k, v) for (k, v) in parse_qsl(p.query, keep_blank_values=True) if not k.lower().startswith("utm_")]
+        return urlunparse((p.scheme, p.netloc, p.path.rstrip('/'), "", urlencode(q), ""))
+    except Exception:
+        return u
+
+def _hostname(u: str) -> str:
+    try:
+        return urlparse(u or "").hostname or ""
+    except Exception:
+        return ""
+
+def _make_entries_map(entries: list) -> dict:
+    """url_norm -> {title_en, summary_en, ts, host}（来自抓取的 entries）"""
+    m = {}
+    for it in entries:
+        u = _normalize_url(it.get("url", ""))
+        if not u:
+            continue
+        m[u] = {
+            "title_en": BS(it.get("title", ""), "html.parser").text.strip(),
+            "summary_en": BS(it.get("summary", ""), "html.parser").text.strip(),
+            "ts": it.get("ts", ""),
+            "host": _hostname(u),
+        }
+    return m
+
+def _make_daily_summary_map(j: dict) -> dict:
+    """把 Daily 里各段的中文摘要映射到引用的 url：url_norm -> zh_summary"""
+    if not j:
+        return {}
+    refs = j.get("refs") or []
+    idx2url = {}
+    for i, r in enumerate(refs, 1):
+        u = _normalize_url(r.get("url", ""))
+        if u:
+            idx2url[i] = u
+    m = {}
+    for sec in (j.get("sections") or []):
+        md = sec.get("markdown") or ""
+        zh = _plain_summary_from_markdown(md, limit=200)
+        for idx in sorted({int(x) for x in re.findall(r"\[(\d{1,2})\]", md)}):
+            u = idx2url.get(idx)
+            if not u:
+                continue
+            if (u not in m) or (len(zh) > len(m[u])):  # 取信息量更大的
+                m[u] = zh
+    return m
+
+def _compact_key_numbers(kn_list: list) -> list:
+    """把 key_numbers[] 压成 1~3 个徽章文本，如 'FID -0.8', 'UCF101 +2.1'。"""
+    out = []
+    for kn in (kn_list or []):
+        metric = (kn.get("metric") or "").strip()
+        ds = (kn.get("dataset") or "").strip()
+        impr_r = (kn.get("impr_rel") or "").strip()
+        impr_a = (kn.get("impr_abs") or "").strip()  # noqa: F841 (may be unused depending on data)
+        ours = (kn.get("ours") or "").strip()
+        base = (kn.get("baseline") or "").strip()
+        cand = ""
+        if metric and impr_r and impr_r != "N/A":
+            cand = f"{metric} {impr_r}"
+        elif ds and metric and ours:
+            cand = f"{ds} {metric} {ours}"
+        elif ds and ours and base:
+            cand = f"{ds} {ours} vs {base}"
+        if cand:
+            out.append(cand)
+        if len(out) >= 3:
+            break
+    return out
+
 # ===== Local env loader (.env.local / .env) =====
 def _load_env_files(paths=(".env.local", ".env")):
     for p in paths:
@@ -540,7 +642,28 @@ def _load_env_files(paths=(".env.local", ".env")):
 
 def _fallback_draft(entries, max_words=900):
     # Simple stub draft if no LLM available: pick top 3–4 entries
-    picks = sorted(entries, key=lambda x: x.get("ts",""), reverse=True)[:4]
+    picks = sorted(entries or [], key=lambda x: x.get("ts",""), reverse=True)[:4]
+    if not picks:
+        # Minimal placeholder to avoid crashes when no entries available
+        title_zh = "今日 AI 精选"
+        description_zh = "近 48 小时抓取源暂无可用新条目，已自动降级为占位草稿。"
+        j = {
+            "plan": {"toc": ["快速浏览"], "refs": [], "claims": []},
+            "title_zh": title_zh,
+            "description_zh": description_zh,
+            "tags": ["LLM","RAG","Agent"],
+            "toc": ["快速浏览"],
+            "sections": [
+                {"heading": "快速浏览", "markdown": "近 48 小时内抓取源没有合规新条目或被网络限制；已自动扩大时间窗口并继续尝试。"}
+            ],
+            "refs": [],
+            "en_teaser": "No fresh entries within the default window; generated a placeholder draft.",
+            "es_teaser": "No hay entradas recientes; borrador de marcador generado.",
+        }
+        _compress_sections(j, max_words)
+        _cap_ref_indexes(j["sections"], 0)
+        j["title_zh"] = _trim_title(j["title_zh"])
+        return j
     toc = []
     sections = []
     refs = []
@@ -600,6 +723,12 @@ def pick_and_write(entries, max_words=1100):
     if prefer:
         used = sorted(used, key=lambda e: _topic_score(e, prefer), reverse=True)
     used = _filter_cap_entries(used)
+    if not used:
+        print("[Daily] no entries after recency filter; widening window.")
+        used = sorted(entries, key=lambda x: x.get("ts",""), reverse=True)[:max(8, int(os.getenv("MAX_ENTRIES","40")))]
+    if not used:
+        # Relax filter if too strict; fallback to original entries
+        used = _filter_cap_entries(entries) or (entries[:8] if entries else [])
     joined = "\n".join([f"- {it['title']} | {it['url']} | {it['ts']}\n  {it['summary']}" for it in used])
     try:
         print(f"[Daily] used entries: {len(used)}, prompt chars: {len(joined):,}")
@@ -739,12 +868,16 @@ def _coerce_score(v, default=50):
         pass
     return default
 
-def make_scholarpush(entries, n_items=8):
+def make_scholarpush(entries, n_items=8, daily=None):
     # Topic preference ordering before filtering
     prefer = _get_topic_keywords()
+    base_entries = list(entries or [])
     if prefer:
-        entries = sorted(entries, key=lambda e: _topic_score(e, prefer), reverse=True)
-    entries = _filter_cap_entries(entries)
+        base_entries = sorted(base_entries, key=lambda e: _topic_score(e, prefer), reverse=True)
+    entries = _filter_cap_entries(base_entries)
+    if not entries and base_entries:
+        # Widen window: take recent by ts ignoring time cutoff
+        entries = sorted(base_entries, key=lambda x: x.get("ts",""), reverse=True)[:max(8, int(os.getenv("MAX_ENTRIES","40")))]
     # Reduce prompt size to improve JSON reliability
     sp_ctx = int(os.getenv("SCHOLARPUSH_CTX", "28"))
     entries = entries[:max(8, sp_ctx)]
@@ -821,6 +954,40 @@ def make_scholarpush(entries, n_items=8):
             it["impact_score"] = _coerce_score(it.get("impact_score", 50))
             it["reproducibility_score"] = _coerce_score(it.get("reproducibility_score", 50))
 
+        # === 统一字段注入：把 entries/Daily 的信息折到卡片 ===
+        try:
+            entries_map = _make_entries_map(entries)
+        except Exception:
+            entries_map = {}
+        try:
+            daily_map = _make_daily_summary_map(daily) if daily else {}
+        except Exception:
+            daily_map = {}
+
+        for it in j.get("items", []):
+            paper = it.get("links", {}).get("paper", "") or ""
+            u_norm = _normalize_url(paper)
+
+            # 标题 i18n：中文来自 headline；英文来自 entries
+            zh_title = (it.get("headline") or "").strip()
+            en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
+            it["title_i18n"] = {"zh": zh_title, "en": en_title}
+
+            # 摘要 i18n：中文优先 Daily 段落摘要，其次 quick_read/one_liner；英文来自 entries.summary
+            zh_abs = (daily_map.get(u_norm) or (it.get("quick_read") or it.get("one_liner") or "")).strip()
+            en_abs = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+            it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
+
+            # host/ts/pdf/has_code/key_numbers_compact
+            host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
+            it["host"] = host
+            if not it["links"].get("pdf") or it["links"]["pdf"] == "N/A":
+                it["links"]["pdf"] = _arxiv_pdf(paper)
+            it["ts"] = entries_map.get(u_norm, {}).get("ts") or j["generated_at"]
+            it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
+            if "key_numbers_compact" not in it:
+                it["key_numbers_compact"] = _compact_key_numbers(it.get("key_numbers"))
+
         _validate_scholarpush(j)
         if not j.get("items"):
             raise ValueError("no items after cleaning")
@@ -858,6 +1025,32 @@ def make_scholarpush(entries, n_items=8):
                     must, nice = _split_picks(j["items"])
                     j["must_reads"] = must
                     j["nice_to_read"] = nice
+                # 统一字段注入（抢救路径也注入）
+                try:
+                    entries_map = _make_entries_map(entries)
+                except Exception:
+                    entries_map = {}
+                try:
+                    daily_map = _make_daily_summary_map(daily) if daily else {}
+                except Exception:
+                    daily_map = {}
+                for it in j.get("items", []):
+                    paper = it.get("links", {}).get("paper", "") or ""
+                    u_norm = _normalize_url(paper)
+                    zh_title = (it.get("headline") or "").strip()
+                    en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
+                    it["title_i18n"] = {"zh": zh_title, "en": en_title}
+                    zh_abs = (daily_map.get(u_norm) or (it.get("quick_read") or it.get("one_liner") or "")).strip()
+                    en_abs = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+                    it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
+                    host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
+                    it["host"] = host
+                    if not it["links"].get("pdf") or it["links"]["pdf"] == "N/A":
+                        it["links"]["pdf"] = _arxiv_pdf(paper)
+                    it["ts"] = entries_map.get(u_norm, {}).get("ts") or j["generated_at"]
+                    it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
+                    if "key_numbers_compact" not in it:
+                        it["key_numbers_compact"] = _compact_key_numbers(it.get("key_numbers"))
                 _validate_scholarpush(j)
                 return j
         except Exception as salvage_error:
@@ -974,6 +1167,32 @@ def make_scholarpush(entries, n_items=8):
                     j["must_reads"] = must
                     j["nice_to_read"] = nice
 
+                # 统一字段注入（正则抢救路径也注入）
+                try:
+                    entries_map = _make_entries_map(entries)
+                except Exception:
+                    entries_map = {}
+                try:
+                    daily_map = _make_daily_summary_map(daily) if daily else {}
+                except Exception:
+                    daily_map = {}
+                for it in j.get("items", []):
+                    paper = it.get("links", {}).get("paper", "") or ""
+                    u_norm = _normalize_url(paper)
+                    zh_title = (it.get("headline") or "").strip()
+                    en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
+                    it["title_i18n"] = {"zh": zh_title, "en": en_title}
+                    zh_abs = (daily_map.get(u_norm) or (it.get("quick_read") or it.get("one_liner") or "")).strip()
+                    en_abs = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+                    it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
+                    host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
+                    it["host"] = host
+                    if not it["links"].get("pdf") or it["links"]["pdf"] == "N/A":
+                        it["links"]["pdf"] = _arxiv_pdf(paper)
+                    it["ts"] = entries_map.get(u_norm, {}).get("ts") or j["generated_at"]
+                    it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
+                    if "key_numbers_compact" not in it:
+                        it["key_numbers_compact"] = _compact_key_numbers(it.get("key_numbers"))
                 _validate_scholarpush(j)
                 return j
         except Exception as salvage2_error:
@@ -996,7 +1215,37 @@ def make_scholarpush(entries, n_items=8):
             pass
 
         print("make_scholarpush failed, fallback:", e)
-        return _fallback_scholarpush(entries, n_items=n_items)
+        # Ensure we have some entries to fallback on
+        fb_entries = entries if entries else (base_entries[:max(8, int(os.getenv("MAX_ENTRIES","40")))] if base_entries else [])
+        j = _fallback_scholarpush(fb_entries, n_items=n_items)
+
+        # 注入统一字段（与上面主路径一致）
+        try:
+            entries_map = _make_entries_map(base_entries)
+        except Exception:
+            entries_map = {}
+        try:
+            daily_map = _make_daily_summary_map(daily) if daily else {}
+        except Exception:
+            daily_map = {}
+        for it in j.get("items", []):
+            paper = it.get("links", {}).get("paper", "") or ""
+            u_norm = _normalize_url(paper)
+            zh_title = (it.get("headline") or "").strip()
+            en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
+            it["title_i18n"] = {"zh": zh_title, "en": en_title}
+            zh_abs = (daily_map.get(u_norm) or (it.get("quick_read") or it.get("one_liner") or "")).strip()
+            en_abs = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+            it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
+            host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
+            it["host"] = host
+            if not it["links"].get("pdf") or it["links"]["pdf"] == "N/A":
+                it["links"]["pdf"] = _arxiv_pdf(paper)
+            it["ts"] = entries_map.get(u_norm, {}).get("ts") or j.get("generated_at")
+            it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
+            if "key_numbers_compact" not in it:
+                it["key_numbers_compact"] = _compact_key_numbers(it.get("key_numbers"))
+        return j
 
 
 
@@ -1168,6 +1417,8 @@ def push_buttondown(meta, html):
 def main():
     # 0) load local env for API keys (won't be committed if .gitignore ignores .env*)
     _load_env_files()
+    # Daily permanently disabled: we will not write blog HTML/RSS/sections or emails.
+    daily_enable = False
     # 1) 抓取
     entries = fetch_items()
     min_items = int(os.getenv("MIN_ITEMS","6"))
@@ -1175,91 +1426,19 @@ def main():
         print("Not enough entries today; skip.")
         return
 
-    # 2) 选题 & 成文
+    # 2) 选题 & 成文（仍生成 Daily JSON 仅用于 ScholarPush 的中文摘要，不落盘）
     max_words = int(os.getenv("MAX_WORDS","1100"))
     j = pick_and_write(entries, max_words=max_words)
+    # Skipping HTML/RSS/sections/Buttondown regardless of env
+    print("Daily outputs disabled; only generating ScholarPush JSON.")
 
-    # 3) 组织元数据
-    now = datetime.now(timezone.utc)
-    ymd = now.strftime("%Y-%m-%d")
-    title = j["title_zh"]
-    slug = f"{ymd}-ai-daily-{to_slug(title)}"
-    url = f"{SITE_BASE}/blog/{slug}.html" if SITE_BASE else f"/blog/{slug}.html"
-    desc = j["description_zh"][:180]
-    tags = ", ".join(j.get("tags",[]))
-    date_str = now.astimezone().strftime("%Y-%m-%d")
-    pub_iso = now.isoformat()
-    pub_rfc = now.strftime("%a, %d %b %Y %H:%M:%S %z")
-
-    # 4) 内容→HTML
-    toc_html = gen_toc_html(j["toc"])
-    content_html = sections_to_html(j["sections"], ref_count=len(j["refs"]))
-    refs_html = "\n".join([f'<li id="ref-{i+1}"><a href="{r["url"]}" target="_blank" rel="noopener">{BS(r["title"],"html.parser").text}</a></li>' for i, r in enumerate(j["refs"])])
-
-    # 5) OG 分享图（本地无 rsvg-convert 时降级为占位图）
-    og_png = os.path.join(OG_DIR, f"{slug}.png")
+    # —— 生成 ScholarPush 快报 JSON —— 
     try:
-        make_og(title, date_str, og_png)
-        og_url = f"{SITE_BASE}/{og_png}" if SITE_BASE else f"/{og_png}"
-    except Exception:
-        placeholder = "assets/placeholder.jpg"
-        og_url = f"{SITE_BASE}/{placeholder}" if SITE_BASE else f"/{placeholder}"
-
-    # 6) 渲染模板
-    with open(TPL_PATH,"r",encoding="utf-8") as f: tpl = f.read()
-    # Use COVER_IMAGE for inline <img>, prefer relative path for local preview
-    cover_img = og_url
-    try:
-        # If og_url is site-relative like '/assets/og/..', convert to '../assets/...'
-        if og_url.startswith('/'):
-            # map '/assets/...'(root) to relative path from blog page: '../assets/...'
-            rel = '..' + og_url
-            cover_img = rel
-    except Exception:
-        pass
-
-    html = (tpl
-      .replace("{{TITLE}}", title)
-      .replace("{{DESCRIPTION}}", desc)
-      .replace("{{CANONICAL}}", url)
-      .replace("{{OG_IMAGE}}", og_url)
-      .replace("{{COVER_IMAGE}}", cover_img)
-      .replace("{{PUBLISHED}}", pub_iso)
-      .replace("{{DATE_STR}}", date_str)
-      .replace("{{READING_MIN}}", str(max(3, int(max_words/350))))
-      .replace("{{TAGS}}", tags)
-      .replace("{{TOC}}", toc_html)
-      .replace("{{CONTENT_HTML}}", content_html)
-      .replace("{{REFS}}", refs_html)
-    )
-
-    # 7) 写入文件
-    out_path = os.path.join(BLOG_DIR, f"{slug}.html")
-    with open(out_path,"w",encoding="utf-8") as f: f.write(html)
-
-    # 8) 更新索引 & RSS
-    meta = {
-      "title": title,
-      "slug": slug,
-      "url": url,
-      "description": desc,
-      "og_image": og_url,
-      "published": pub_iso,
-      "published_rfc2822": pub_rfc,
-      "tags": j.get("tags",[])
-    }
-    idx = update_index(meta)
-    write_rss(idx)
-
-    # 8.5) 更新 sections.json（用于前端按段落筛选与搜索）
-    try:
-        update_sections(meta, j)
-    except Exception as e:
-        print("update_sections failed:", e)
-
-    # —— 8.6) 生成 ScholarPush 快报 JSON —— 
-    try:
-        sp = make_scholarpush(entries, n_items=int(os.getenv("SCHOLARPUSH_ITEMS","8")))
+        sp = make_scholarpush(
+            entries,
+            n_items=int(os.getenv("SCHOLARPUSH_ITEMS","8")),
+            daily=j,
+        )
         sp_path = os.path.join("data/ai/scholarpush", "index.json")
         os.makedirs(os.path.dirname(sp_path), exist_ok=True)
         with open(sp_path, "w", encoding="utf-8") as f:
@@ -1267,11 +1446,8 @@ def main():
         print("ScholarPush written:", sp_path)
     except Exception as e:
         print("ScholarPush failed:", e)
-
-    # 9)（可选）发 Buttondown 草稿
-    push_buttondown(meta, html)
-
-    print("Done:", out_path)
+    
+    # No Buttondown/email or blog HTML writes
 
 if __name__ == "__main__":
     main()
