@@ -348,8 +348,8 @@
         .map(s=>`<span class="tag small">${esc(s)}</span>`)
         .join(' ');
       const codeBadge = it.has_code ? `<span class="tag small" title="has code">code</span>` : '';
-  const utils=(it.reusability||[]).filter(x=>x && x!=='N/A').slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('');
-  const limits=(it.limitations||[]).filter(x=>x && x!=='N/A').slice(0,2).map(x=>`<li>${esc(x)}</li>`).join('');
+  const reuArr=(it.reusability||[]).filter(x=>x && x!=='N/A').slice(0,3);
+  const limArr=(it.limitations||[]).filter(x=>x && x!=='N/A').slice(0,2);
   const labelReu = t('sp_reusability', (document.documentElement.lang||'zh')==='zh'?'可复用':'Reusability');
   const labelLim = t('sp_limitations', (document.documentElement.lang||'zh')==='zh'?'局限':'Limitations');
       const host = it.host||'';
@@ -357,9 +357,12 @@
       const meta=[it.task||'',it.type||'',host,tsRel].filter(Boolean).join(' · ');
   const isZH = (document.documentElement.lang||'zh')==='zh';
   // Prefer full English abstract for EN; avoid truncation here
-  const fullTxt  = isZH
-      ? String(it.summary_i18n?.zh || it.one_liner || it.quick_read || '')
-      : String(it.summary_i18n?.en || it.one_liner || it.quick_read || '');
+  const langNow = (document.documentElement.lang||'zh');
+  let fullTxt = '';
+  if (langNow==='zh') fullTxt = String(it.summary_i18n?.zh || it.one_liner || it.quick_read || '');
+  else if (langNow==='en') fullTxt = String(it.summary_i18n?.en || it.one_liner || it.quick_read || '');
+  else if (langNow==='es') fullTxt = String(it.summary_i18n?.es || it.one_liner || it.quick_read || '');
+  else fullTxt = String(it.summary_i18n?.zh || it.one_liner || it.quick_read || '');
   // no short/expand; always render full text
       const titleHtml = esc(displayTitle(it));
   // Resolve a primary source link with refs fallback
@@ -370,12 +373,12 @@
         <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${titleHtml}</h4>
         <div class="sp-meta">${meta}${tags?` · ${tags}`:''} ${keynumsCompact?` · ${keynumsCompact}`:''} ${codeBadge}</div>
     <p id="abs-${id}" class="sp-abstract">${esc(fullTxt)}</p>
-  ${(utils||limits)?
-    `<div style="display:flex;gap:12px;margin-top:6px">
-      ${utils?`<div><div class="muted" style="font-size:12px;margin-bottom:2px">${labelReu}</div><ul class="muted" style="margin:0;list-style:none;padding-left:0">${utils}</ul></div>`:''}
-      ${limits?`<div><div class="muted" style="font-size:12px;margin-bottom:2px">${labelLim}</div><ul class="muted" style="margin:0;list-style:none;padding-left:0">${limits}</ul></div>`:''}
-    </div>`
-  :''}
+  ${(reuArr.length||limArr.length)?
+    `<div class="muted" style="margin-top:6px">
+      ${reuArr.length?`${labelReu}: ${esc(reuArr.join('、'))}`:''}
+      ${reuArr.length && limArr.length ? ' · ' : ''}
+      ${limArr.length?`${labelLim}: ${esc(limArr.join('、'))}`:''}
+    </div>` : ''}
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
           ${sourceHref?btn(sourceHref,'Source Link'):''}
           ${links.code&&links.code!=='N/A'?btn(links.code,'Code'):''}

@@ -726,6 +726,24 @@ def _translate_en_to_zh(text: str) -> str:
     except Exception:
         return src
 
+def _translate_zh_to_es(text: str) -> str:
+    """Translate Chinese to fluent Spanish; fall back gracefully on failure."""
+    src = (text or "").strip()
+    if not src:
+        return ""
+    try:
+        prompt = (
+            "Traduce el siguiente párrafo chino al español de forma fluida y natural.\n"
+            "- Conserva todos los hechos, números y unidades.\n"
+            "- No añadas ni elimines información.\n"
+            "- Devuelve solo la traducción, sin explicaciones.\n\n"
+            f"Chino:\n{src}"
+        )
+        out = chat_once(prompt, system="Eres un traductor preciso.", temperature=0.0, max_tokens=1200)
+        return (out or "").strip()
+    except Exception:
+        return src
+
 def _compact_key_numbers(kn_list: list) -> list:
     """把 key_numbers[] 压成 1~3 个徽章文本，如 'FID -0.8', 'UCF101 +2.1'。"""
     out = []
@@ -1261,10 +1279,14 @@ def make_scholarpush(entries, n_items=8, daily=None):
             j["nice_to_read"] = nice
         # drop empty/useless deep_dive
         try:
-            dd = j.get("deep_dive") or {}
+            dd = (j.get("deep_dive") or {}) if isinstance(j.get("deep_dive"), dict) else {}
             t = str(dd.get("title") or '').strip()
             s = str(dd.get("summary") or '').strip()
-            refs = [i for i in (dd.get("refs") or []) if isinstance(i,int) and i>=0 and i < len(entries)]
+            refs = [i for i in (dd.get("refs") or []) if isinstance(i,int) and i>=0 and i < len(j.get("items",[]))]
+            # If no refs provided, auto-fill from must_reads (top 1–3) so Deep Dive shows actionable links
+            if not refs:
+                mr = [i for i in (j.get("must_reads") or []) if isinstance(i,int) and i>=0 and i < len(j.get("items",[]))]
+                refs = mr[:3]
             if (not t or t.upper()=="N/A") and (not s or s.upper()=="N/A") and not refs:
                 j.pop("deep_dive", None)
             else:
@@ -1312,7 +1334,8 @@ def make_scholarpush(entries, n_items=8, daily=None):
                 en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
                 zh_abs = _translate_en_to_zh(en_src)
             en_abs = _translate_zh_to_en(zh_abs)
-            it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
+            es_abs = _translate_zh_to_es(zh_abs)
+            it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
 
             # host/ts/pdf/has_code/key_numbers_compact
             host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
@@ -1419,7 +1442,8 @@ def make_scholarpush(entries, n_items=8, daily=None):
                         en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
                         zh_abs = _translate_en_to_zh(en_src)
                     en_abs = _translate_zh_to_en(zh_abs)
-                    it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
+                    es_abs = _translate_zh_to_es(zh_abs)
+                    it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
                     host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
                     it["host"] = host
                     if not it["links"].get("pdf") or it["links"]["pdf"] == "N/A":
@@ -1589,7 +1613,8 @@ def make_scholarpush(entries, n_items=8, daily=None):
                         en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
                         zh_abs = _translate_en_to_zh(en_src)
                     en_abs = _translate_zh_to_en(zh_abs)
-                    it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
+                    es_abs = _translate_zh_to_es(zh_abs)
+                    it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
                     host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
                     it["host"] = host
                     if not it["links"].get("pdf") or it["links"]["pdf"] == "N/A":
