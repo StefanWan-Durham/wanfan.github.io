@@ -2,13 +2,28 @@
   { "name": "arXiv AI (cs.AI)", "url": "https://export.arxiv.org/rss/cs.AI" },
   { "name": "arXiv ML (cs.LG)", "url": "https://export.arxiv.org/rss/cs.LG" },
   { "name": "arXiv CV (cs.CV)", "url": "https://export.arxiv.org/rss/cs.CV" },
+  { "name": "Papers with Code Trending", "url": "https://paperswithcode.com/feeds/latest" },
+
   { "name": "DeepMind Blog", "url": "https://deepmind.google/discover/blog/feed.xml" },
   { "name": "OpenAI Blog", "url": "https://openai.com/blog/rss" },
   { "name": "Anthropic Blog", "url": "https://www.anthropic.com/news.xml" },
   { "name": "Meta AI", "url": "https://ai.meta.com/blog/rss" },
-  { "name": "Google AI", "url": "https://ai.googleblog.com/atom.xml" },
+  { "name": "Google AI Blog", "url": "https://ai.googleblog.com/atom.xml" },
+  { "name": "Google Research Blog", "url": "https://research.google/blog/rss/" },
   { "name": "Microsoft Research", "url": "https://www.microsoft.com/en-us/research/feed/" },
+  { "name": "NVIDIA AI Blog", "url": "https://blogs.nvidia.com/blog/category/ai/feed/" },
   { "name": "Hugging Face Blog", "url": "https://huggingface.co/blog/feed.xml" },
-  { "name": "Papers with Code Trending", "url": "https://paperswithcode.com/feeds/latest" },
+
+  { "name": "FastAI Blog", "url": "https://www.fast.ai/feeds/all.atom.xml" },
+  { "name": "Andrej Karpathy", "url": "https://karpathy.github.io/feed.xml" },
+  { "name": "Ahead of AI (Sebastian Raschka)", "url": "https://magazine.sebastianraschka.com/feed" },
+
+  { "name": "Machine Learning Mastery", "url": "https://machinelearningmastery.com/feed/" },
+  { "name": "MarkTechPost", "url": "https://www.marktechpost.com/feed/" },
+  { "name": "MIT Technology Review – AI", "url": "https://www.technologyreview.com/feed/" },
+  { "name": "MIT News – Artificial Intelligence", "url": "https://news.mit.edu/rss/topic/artificial-intelligence" },
+  { "name": "AI Trends", "url": "https://aitrends.com/feed/" },
+  { "name": "Science Daily – Artificial Intelligence", "url": "https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml" },
+
   { "name": "ML Papers Daily (unofficial)", "url": "https://www.reddit.com/r/MachineLearning/.rss" }
 ]

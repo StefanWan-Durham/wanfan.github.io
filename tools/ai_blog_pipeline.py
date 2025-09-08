@@ -1013,6 +1013,26 @@ def make_scholarpush(entries, n_items=8, daily=None):
             it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
             if "key_numbers_compact" not in it:
                 it["key_numbers_compact"] = _compact_key_numbers(it.get("key_numbers"))
+            # Drop N/A badges; keep at most 3
+            try:
+                knc = [ (s or "").strip() for s in (it.get("key_numbers_compact") or []) if s and (s or "").strip().upper() != "N/A" ]
+                it["key_numbers_compact"] = knc[:3]
+            except Exception:
+                it["key_numbers_compact"] = it.get("key_numbers_compact") or []
+            # Clean noisy arrays: drop 'N/A'/empty, cap lengths for UI
+            def _clean_list(arr, limit=None):
+                out = []
+                for x in (arr or []):
+                    s = (x or "").strip()
+                    if not s or s.upper() == "N/A":
+                        continue
+                    out.append(s)
+                    if limit and len(out) >= limit:
+                        break
+                return out
+            it["reusability"] = _clean_list(it.get("reusability"), limit=3)
+            it["limitations"] = _clean_list(it.get("limitations"), limit=2)
+            it["tags"] = _clean_list(it.get("tags"))
 
         _validate_scholarpush(j)
         if not j.get("items"):
@@ -1077,6 +1097,25 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
                     if "key_numbers_compact" not in it:
                         it["key_numbers_compact"] = _compact_key_numbers(it.get("key_numbers"))
+                    try:
+                        knc = [ (s or "").strip() for s in (it.get("key_numbers_compact") or []) if s and (s or "").strip().upper() != "N/A" ]
+                        it["key_numbers_compact"] = knc[:3]
+                    except Exception:
+                        it["key_numbers_compact"] = it.get("key_numbers_compact") or []
+                    # Clean lists in salvage path
+                    def _clean_list(arr, limit=None):
+                        out = []
+                        for x in (arr or []):
+                            s = (x or "").strip()
+                            if not s or s.upper() == "N/A":
+                                continue
+                            out.append(s)
+                            if limit and len(out) >= limit:
+                                break
+                        return out
+                    it["reusability"] = _clean_list(it.get("reusability"), limit=3)
+                    it["limitations"] = _clean_list(it.get("limitations"), limit=2)
+                    it["tags"] = _clean_list(it.get("tags"))
                 _validate_scholarpush(j)
                 return j
         except Exception as salvage_error:
@@ -1219,6 +1258,25 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
                     if "key_numbers_compact" not in it:
                         it["key_numbers_compact"] = _compact_key_numbers(it.get("key_numbers"))
+                    try:
+                        knc = [ (s or "").strip() for s in (it.get("key_numbers_compact") or []) if s and (s or "").strip().upper() != "N/A" ]
+                        it["key_numbers_compact"] = knc[:3]
+                    except Exception:
+                        it["key_numbers_compact"] = it.get("key_numbers_compact") or []
+                    # Clean lists in regex-salvage path
+                    def _clean_list(arr, limit=None):
+                        out = []
+                        for x in (arr or []):
+                            s = (x or "").strip()
+                            if not s or s.upper() == "N/A":
+                                continue
+                            out.append(s)
+                            if limit and len(out) >= limit:
+                                break
+                        return out
+                    it["reusability"] = _clean_list(it.get("reusability"), limit=3)
+                    it["limitations"] = _clean_list(it.get("limitations"), limit=2)
+                    it["tags"] = _clean_list(it.get("tags"))
                 _validate_scholarpush(j)
                 return j
         except Exception as salvage2_error:
@@ -1271,6 +1329,25 @@ def make_scholarpush(entries, n_items=8, daily=None):
             it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
             if "key_numbers_compact" not in it:
                 it["key_numbers_compact"] = _compact_key_numbers(it.get("key_numbers"))
+            try:
+                knc = [ (s or "").strip() for s in (it.get("key_numbers_compact") or []) if s and (s or "").strip().upper() != "N/A" ]
+                it["key_numbers_compact"] = knc[:3]
+            except Exception:
+                it["key_numbers_compact"] = it.get("key_numbers_compact") or []
+            # Clean lists in fallback
+            def _clean_list(arr, limit=None):
+                out = []
+                for x in (arr or []):
+                    s = (x or "").strip()
+                    if not s or s.upper() == "N/A":
+                        continue
+                    out.append(s)
+                    if limit and len(out) >= limit:
+                        break
+                return out
+            it["reusability"] = _clean_list(it.get("reusability"), limit=3)
+            it["limitations"] = _clean_list(it.get("limitations"), limit=2)
+            it["tags"] = _clean_list(it.get("tags"))
         return j
 
 
@@ -1465,11 +1542,37 @@ def main():
             n_items=int(os.getenv("SCHOLARPUSH_ITEMS","8")),
             daily=j,
         )
-        sp_path = os.path.join("data/ai/scholarpush", "index.json")
-        os.makedirs(os.path.dirname(sp_path), exist_ok=True)
+        base_dir = os.path.join("data/ai/scholarpush")
+        os.makedirs(base_dir, exist_ok=True)
+        # write latest
+        sp_path = os.path.join(base_dir, "index.json")
         with open(sp_path, "w", encoding="utf-8") as f:
             json.dump(sp, f, ensure_ascii=False, indent=2)
-        print("ScholarPush written:", sp_path)
+        # archive by date (UTC)
+        try:
+            dt = sp.get("generated_at") or datetime.now(timezone.utc).isoformat()
+            d = datetime.fromisoformat(dt.replace('Z','+00:00')).date()
+            day_fname = f"{d.isoformat()}.json"
+            day_path = os.path.join(base_dir, day_fname)
+            with open(day_path, "w", encoding="utf-8") as f:
+                json.dump(sp, f, ensure_ascii=False, indent=2)
+            # update dates index
+            dates_path = os.path.join(base_dir, "dates.json")
+            try:
+                with open(dates_path, "r", encoding="utf-8") as df:
+                    dates = json.load(df)
+                    if not isinstance(dates, list):
+                        dates = []
+            except Exception:
+                dates = []
+            if d.isoformat() not in dates:
+                dates.append(d.isoformat())
+                dates.sort(reverse=True)
+            with open(dates_path, "w", encoding="utf-8") as df:
+                json.dump(dates, df, ensure_ascii=False, indent=2)
+            print("ScholarPush written:", sp_path, "and archived:", day_path)
+        except Exception as arch_e:
+            print("ScholarPush archive failed:", arch_e)
     except Exception as e:
         print("ScholarPush failed:", e)
     

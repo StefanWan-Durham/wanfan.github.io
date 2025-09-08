@@ -120,6 +120,12 @@
             <div id="topic-chips" class="sp-chiprow" role="toolbar" aria-label="Topics"></div>
             <span style="flex:1 1 auto"></span>
             <input id="q" class="input" data-i18n-placeholder="search_placeholder" placeholder="搜索标题/要点/标签…" style="min-width:220px;height:36px;padding:6px 10px">
+            <div style="display:flex;gap:6px;align-items:center">
+              <button id="prev-day" class="btn outline small" title="Prev day" aria-label="Previous day">◀</button>
+              <input id="date-picker" type="date" class="input" style="height:36px" />
+              <select id="date-select" class="input" style="height:36px"></select>
+              <button id="next-day" class="btn outline small" title="Next day" aria-label="Next day">▶</button>
+            </div>
           </div>
         </div>
 
@@ -164,10 +170,12 @@
     const subEl = document.getElementById('sp-sub');
   // budget selector removed
 
-    let data = null;
-    let items = [];
+  let data = null;
+  let items = [];
     let activeTags = new Set();
     let query = '';
+  let searchTid = null;
+  let searchBound = false;
 
     function btn(href,label){ return `<a class="btn outline small" target="_blank" rel="noopener" href="${href}">${label}</a>` }
     // Build a map of ref url -> title for client-side healing of truncated headlines
@@ -221,12 +229,12 @@
       }catch(e){return ''}
     }
     function card(it){
-      const tags=(it.tags||[]).map(t=>`<span class="tag">${t}</span>`).join(' ');
+  const tags=(it.tags||[]).filter(t=>t && t!=='N/A').map(t=>`<span class="tag">${t}</span>`).join(' ');
   const links=it.links||{}; const id=Math.random().toString(36).slice(2);
-      const keynumsCompact=(it.key_numbers_compact||[]).slice(0,3).map(s=>`<span class="tag small">${esc(s)}</span>`).join(' ');
+  const keynumsCompact=(it.key_numbers_compact||[]).filter(s=>s && s.toUpperCase()!=='N/A').slice(0,3).map(s=>`<span class="tag small">${esc(s)}</span>`).join(' ');
       const codeBadge = it.has_code ? `<span class="tag small" title="has code">code</span>` : '';
-      const utils=(it.reusability||[]).slice(0,3).map(x=>`<li>${x}</li>`).join('');
-      const limits=(it.limitations||[]).slice(0,2).map(x=>`<li>${x}</li>`).join('');
+  const utils=(it.reusability||[]).filter(x=>x && x!=='N/A').slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('');
+  const limits=(it.limitations||[]).filter(x=>x && x!=='N/A').slice(0,2).map(x=>`<li>${esc(x)}</li>`).join('');
       const host = it.host||'';
       const tsRel = relTime(it.ts||'');
       const meta=[it.task||'',it.type||'',host,tsRel].filter(Boolean).join(' · ');
@@ -239,12 +247,12 @@
         <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${titleHtml}</h4>
         <div class="sp-meta">${meta}${tags?` · ${tags}`:''} ${keynumsCompact?` · ${keynumsCompact}`:''} ${codeBadge}</div>
     <p id="abs-${id}" class="sp-abstract">${esc(fullTxt)}</p>
-        ${(utils||limits)?`<div style="display:flex;gap:12px;margin-top:6px">${utils?`<ul class="muted" style="margin:0">${utils}</ul>`:''}${limits?`<ul class="muted" style="margin:0">${limits}</ul>`:''}</div>`:''}
+  ${(utils||limits)?`<div style="display:flex;gap:12px;margin-top:6px">${utils?`<ul class="muted" style="margin:0;list-style:none;padding-left:0">${utils}</ul>`:''}${limits?`<ul class="muted" style="margin:0;list-style:none;padding-left:0">${limits}</ul>`:''}</div>`:''}
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
-          ${links.paper&&links.paper!=='N/A'?btn(links.paper,'Paper'):''}
+          ${links.paper&&links.paper!=='N/A'?btn(links.paper,'Source Link'):''}
           ${links.code&&links.code!=='N/A'?btn(links.code,'Code'):''}
           ${(links.pdf&&links.pdf!=='N/A')?btn(links.pdf,'PDF'):''}
-          ${links.project&&links.project!=='N/A'?btn(links.project,'Proj'):''}
+          ${links.project&&links.project!=='N/A'?btn(links.project,'Project'):''}
         </div>
       </article>`;
     }
@@ -297,20 +305,68 @@
       // deep
       const dd=data?.deep_dive; deepWrap.hidden = !dd; if(dd){ deepCard.innerHTML = `<h4 style="margin:0 0 6px 0">${dd.title||'主题深读'}</h4><p class="muted">${dd.summary||''}</p>`; }
     }
-  async function init(){
-      const sp = await fetch('../data/ai/scholarpush/index.json', {cache:'no-store'}).then(r=>r.json()).catch(()=>null);
+  async function loadByDate(dateStr){
+      let path = '../data/ai/scholarpush/index.json';
+      if(dateStr) path = `../data/ai/scholarpush/${dateStr}.json`;
+      const sp = await fetch(path, {cache:'no-store'}).then(r=>r.json()).catch(()=>null);
       data = sp||{}; items = Array.isArray(sp?.items)? sp.items: [];
       // normalize pdf links if missing
       items.forEach(it=>{ if(!it.links) it.links={}; if(!it.links.pdf && it.links.paper){ const m=(it.links.paper||'').match(/\d{4}\.\d{4,5}/); if(m) it.links.pdf = `https://arxiv.org/pdf/${m[0]}.pdf`; }});
       // cache refs for headline healing
       try { refTitleByUrl = new Map((sp?.refs||[]).map(r=>[r.url, r.title])); } catch(e) { refTitleByUrl = new Map(); }
   // no expand/collapse; abstracts are fully shown
-      // bind search
-      let tid=null; qInput.addEventListener('input', ()=>{ clearTimeout(tid); tid=setTimeout(()=>{ query=qInput.value||''; renderAll(); }, 200); });
-  // budget selector removed
   renderAll();
-  // Re-render content on language change
-  window.addEventListener('language-changed', () => { renderAll(); });
+  }
+  async function init(){
+      // bind search once
+      if(!searchBound){
+        qInput.addEventListener('input', ()=>{ clearTimeout(searchTid); searchTid=setTimeout(()=>{ query=qInput.value||''; renderAll(); }, 200); });
+        searchBound = true;
+      }
+      // load available dates
+      let dates=[]; try{ dates = await fetch('../data/ai/scholarpush/dates.json', {cache:'no-store'}).then(r=>r.json()); }catch(e){ dates=[]; }
+      const sel = document.getElementById('date-select');
+      const dp = document.getElementById('date-picker');
+      sel.innerHTML='';
+      if(dates.length===0){
+        const opt=document.createElement('option'); opt.value=''; opt.textContent='latest'; sel.appendChild(opt);
+      }else{
+        dates.forEach(d=>{ const o=document.createElement('option'); o.value=d; o.textContent=d; sel.appendChild(o); });
+      }
+      // set date picker bounds
+      if(dates.length>0){ dp.min = dates[dates.length-1]; dp.max = dates[0]; }
+      // default to first option (most recent)
+      sel.selectedIndex = 0;
+      if(dates.length>0){ dp.value = dates[0]; }
+      await loadByDate(sel.value||'');
+      // hook prev/next
+      const prevBtn=document.getElementById('prev-day');
+      const nextBtn=document.getElementById('next-day');
+      function updateNav(){
+        const idx = sel.selectedIndex;
+        prevBtn.disabled = (idx>=dates.length-1);
+        nextBtn.disabled = (idx<=0);
+        if(dates.length>0){ dp.value = dates[idx]; }
+      }
+      updateNav();
+      sel.onchange = async ()=>{ await loadByDate(sel.value||''); updateNav(); };
+      dp.onchange = async ()=>{
+        const chosen = dp.value;
+        if(!chosen){ return; }
+        // pick exact match or nearest earlier date
+        let idx = dates.indexOf(chosen);
+        if(idx === -1){
+          idx = dates.findIndex(d=>d <= chosen);
+          if(idx === -1) idx = dates.length-1;
+        }
+        sel.selectedIndex = idx;
+        await loadByDate(dates[idx]);
+        updateNav();
+      };
+      prevBtn.onclick = async ()=>{ const i=sel.selectedIndex; if(i<dates.length-1){ sel.selectedIndex=i+1; await loadByDate(sel.value); updateNav(); } };
+      nextBtn.onclick = async ()=>{ const i=sel.selectedIndex; if(i>0){ sel.selectedIndex=i-1; await loadByDate(sel.value); updateNav(); } };
+      // Re-render content on language change
+      window.addEventListener('language-changed', () => { renderAll(); });
     }
     init();
   })();
