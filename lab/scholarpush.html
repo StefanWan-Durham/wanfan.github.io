@@ -355,8 +355,10 @@
       const tsRel = relTime(it.ts||'');
       const meta=[it.task||'',it.type||'',host,tsRel].filter(Boolean).join(' · ');
   const isZH = (document.documentElement.lang||'zh')==='zh';
-  const fullTxt  = isZH ? String(it.summary_i18n?.zh || it.one_liner || it.quick_read || '')
-            : String(it.summary_i18n?.en || it.one_liner || it.quick_read || '');
+  // Prefer full English abstract for EN; avoid truncation here
+  const fullTxt  = isZH
+      ? String(it.summary_i18n?.zh || it.one_liner || it.quick_read || '')
+      : String(it.summary_i18n?.en || it.one_liner || it.quick_read || '');
   // no short/expand; always render full text
       const titleHtml = esc(displayTitle(it));
   // Resolve a primary source link with refs fallback
@@ -455,10 +457,15 @@
       mustEl.innerHTML = mustList.map(card).join('');
       niceEl.innerHTML = niceList.map(card).join('');
       // deep
-      const dd=data?.deep_dive; deepWrap.hidden = !dd; if(dd){
-        let html = `<h4 style="margin:0 0 6px 0">${esc(dd.title||'主题深读')}</h4>`;
-        html += `<p class="muted" style="margin:0 0 8px 0">${esc(dd.summary||'')}</p>`;
-        const refIdx = Array.isArray(dd.refs)? dd.refs.filter(i=>Number.isInteger(i)&&i>=0&&i<items.length) : [];
+      const dd=data?.deep_dive; 
+      const ddTitle = (dd&&dd.title&&String(dd.title).trim().toUpperCase()!=='N/A') ? String(dd.title).trim() : '';
+      const ddSummary = (dd&&dd.summary&&String(dd.summary).trim().toUpperCase()!=='N/A') ? String(dd.summary).trim() : '';
+      const refIdx = Array.isArray(dd?.refs)? dd.refs.filter(i=>Number.isInteger(i)&&i>=0&&i<items.length) : [];
+      deepWrap.hidden = !(dd && (ddTitle || ddSummary || refIdx.length));
+      if(!deepWrap.hidden){
+        let html = '';
+        if(ddTitle) html += `<h4 style="margin:0 0 6px 0">${esc(ddTitle)}</h4>`;
+        if(ddSummary) html += `<p class="muted" style="margin:0 0 8px 0">${esc(ddSummary)}</p>`;
         if(refIdx.length){
           const related = refIdx.map(i=>{
             const it = items[i]||{}; const links = it.links||{};

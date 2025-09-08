@@ -264,7 +264,9 @@ Do the job in TWO STEPS **inside one JSON**:
      - description_zh: 60–120 Chinese characters, objective and specific.
      - tags: 3–5 short tags, e.g. ["LLM","RAG","Agent"].
      - sections: array of {heading, markdown}, length = len(plan.toc).
-         * Each section 150–250 Chinese characters.
+         * Each section 200–320 Chinese characters, high information density, fluent Chinese.
+         * Preferred structure per section: 问题 → 方法 → 结果/意义（3–4 句，避免空话和口号）。
+         * Preserve concrete numbers/units and evaluation settings when present.
          * End each section with bracketed reference indexes matching plan.refs, e.g. [1][3].
          * Do NOT introduce facts that are not supported by plan.refs.
      - en_teaser: 1–2 English sentences.
@@ -275,6 +277,8 @@ Rules:
 - Cite **only** from plan.refs; no extra sources, no speculation, no marketing language.
 - Prefer cross-source corroborated items; avoid overlapping news.
 - Avoid direct quotes > 25 words; rewrite in your words.
+- Chinese prose must be clear and natural; avoid clichés and filler; do not output "N/A" strings.
+- Retain key numbers (datasets, metrics, scale, improvements) with units; when numbers are missing, omit instead of fabricating.
 - Output JSON ONLY with keys: plan, title_zh, description_zh, tags, toc, sections, refs, en_teaser, es_teaser
     where:
     * toc == plan.toc
@@ -535,6 +539,15 @@ def _trim_title(s: str) -> str:
     return t
 
 SENT_SPLIT = re.compile(r'(?<=[。！？!?；;\.])')
+def _clean_arxiv_announce_prefix(text: str) -> str:
+    """Remove arXiv RSS boilerplate like 'arXiv:2509.04505v1 Announce Type: new Abstract:' from the start of abstracts."""
+    try:
+        s = str(text or '').strip()
+        s = re.sub(r"^arXiv:\d{4}\.\d{4,5}v\d+\s+Announce\s+Type:\s*[^\n]*?Abstract:\s*",
+                   "", s, flags=re.IGNORECASE | re.DOTALL)
+        return s.strip()
+    except Exception:
+        return text or ""
 
 def _compress_sections(j: dict, max_words: int):
     """句子感知压缩：宁要完整句子，不要截半句"""
@@ -608,7 +621,7 @@ def _make_entries_map(entries: list) -> dict:
             continue
         m[u] = {
             "title_en": BS(it.get("title", ""), "html.parser").text.strip(),
-            "summary_en": BS(it.get("summary", ""), "html.parser").text.strip(),
+            "summary_en": _clean_arxiv_announce_prefix(BS(it.get("summary", ""), "html.parser").text.strip()),
             "ts": it.get("ts", ""),
             "host": _hostname(u),
         }
@@ -625,9 +638,14 @@ def _make_daily_summary_map(j: dict) -> dict:
         if u:
             idx2url[i] = u
     m = {}
+    # Allow longer injected zh summaries via env
+    try:
+        zh_cap = int(os.getenv("SCHOLARPUSH_ZH_SUMMARY_CHARS", "300"))
+    except Exception:
+        zh_cap = 300
     for sec in (j.get("sections") or []):
         md = sec.get("markdown") or ""
-        zh = _plain_summary_from_markdown(md, limit=200)
+        zh = _plain_summary_from_markdown(md, limit=zh_cap)
         for idx in sorted({int(x) for x in re.findall(r"\[(\d{1,2})\]", md)}):
             u = idx2url.get(idx)
             if not u:
@@ -1170,6 +1188,18 @@ def make_scholarpush(entries, n_items=8, daily=None):
             must, nice = _split_picks(j["items"])
             j["must_reads"] = must
             j["nice_to_read"] = nice
+        # drop empty/useless deep_dive
+        try:
+            dd = j.get("deep_dive") or {}
+            t = str(dd.get("title") or '').strip()
+            s = str(dd.get("summary") or '').strip()
+            refs = [i for i in (dd.get("refs") or []) if isinstance(i,int) and i>=0 and i < len(entries)]
+            if (not t or t.upper()=="N/A") and (not s or s.upper()=="N/A") and not refs:
+                j.pop("deep_dive", None)
+            else:
+                j["deep_dive"] = {"title": t, "summary": s, "refs": refs}
+        except Exception:
+            j.pop("deep_dive", None)
 
         # Build title map for link fallback
         title_map = _build_entry_title_map(entries)
