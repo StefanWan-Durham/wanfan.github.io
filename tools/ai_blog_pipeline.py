@@ -68,16 +68,39 @@ Entries:
 [[ENTRIES]]
 """
 
-# ===== 数据源（先走RSS，稳）=====
-SOURCES = [
-    "https://rss.arxiv.org/rss/cs.AI",
-    "https://rss.arxiv.org/rss/cs.CL",
-    "https://rss.arxiv.org/rss/cs.LG",
-    "https://rss.arxiv.org/rss/cs.CV",
-    "https://www.anthropic.com/news/rss.xml",
-    "https://ai.googleblog.com/atom.xml",
-    "https://huggingface.co/blog/feed.xml",
-]
+# ===== 数据源（只读外部配置）=====
+"""
+强制只读 tools/sources.ai.json（或由 env SOURCES_JSON 指定的路径），不再使用内置默认列表。
+如果该文件不存在或为空，将打印提示并返回空数据（不生成新的内容）。
+"""
+
+def _load_sources_json():
+    path = os.getenv("SOURCES_JSON", "tools/sources.ai.json")
+    try:
+        if not os.path.exists(path):
+            return None
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        urls = []
+        for item in (data or []):
+            if isinstance(item, dict):
+                url = (item.get("url") or "").strip()
+            else:
+                url = str(item).strip()
+            if url and url not in urls:
+                urls.append(url)
+        return urls or None
+    except Exception as ex:
+        print(f"sources.ai.json load failed: {ex}")
+        return None
+
+SOURCES = []
+_urls = _load_sources_json()
+if _urls:
+    print(f"Loaded {len(_urls)} sources from tools/sources.ai.json")
+    SOURCES = _urls
+else:
+    print("No sources loaded (tools/sources.ai.json missing or empty)")
 
 def fetch_arxiv_api(categories=("cs.AI","cs.CL","cs.LG","cs.CV"), per_cat=25, timeout=20):
     """Fallback: use arXiv Atom API when RSS returns nothing."""
@@ -144,12 +167,13 @@ def fetch_items(limit_per_feed=25):
             print(" -", u, c)
     except Exception:
         pass
-    # 如果没有任何 arXiv 项，尝试 API 回退
-    if not any("arxiv.org" in (it.get("url","")) for it in items):
-        api_items = fetch_arxiv_api(per_cat=limit_per_feed)
-        if api_items:
-            print(f"arXiv API fallback used: {len(api_items)} items")
-            items.extend(api_items)
+    # 可选的 arXiv API 回退：仅当显式开启 ARXIV_FALLBACK=1 且当前抓不到任何 arXiv 项
+    if os.getenv("ARXIV_FALLBACK", "0") in ("1", "true", "yes"):
+        if not any("arxiv.org" in (it.get("url","")) for it in items):
+            api_items = fetch_arxiv_api(per_cat=limit_per_feed)
+            if api_items:
+                print(f"arXiv API fallback used: {len(api_items)} items")
+                items.extend(api_items)
     # 去重
     seen=set(); uniq=[]
     for it in items:
@@ -771,7 +795,8 @@ def _validate_scholarpush(j: dict):
         assert 0 <= int(it["impact_score"]) <= 100
         assert 0 <= int(it["reproducibility_score"]) <= 100
         links = it["links"]; assert isinstance(links, dict)
-        for lk in ["paper","code","project"]:
+        # 对 blog/news 统一放宽：保证键存在即可，值可以是 "N/A"
+        for lk in ["paper","code","project","pdf"]:
             assert lk in links, f"links.{lk} required"
         assert isinstance(it.get("tags",[]), list)
     # light checks for new fields
@@ -930,6 +955,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
             it["headline"] = h
             it["one_liner"] = ol or h or ""
             it.setdefault("links", {})
+            # 统一提供四个键，blog/news 默认为 N/A
             it["links"].setdefault("paper","N/A")
             it["links"].setdefault("code","N/A")
             it["links"].setdefault("project","N/A")

@@ -25,6 +25,9 @@ jobs:
 
       - name: Generate AI Daily Blog
         env:
+          SOURCES_JSON:        tools/sources.ai.json
+          ARXIV_MODE:          ${{ vars.ARXIV_MODE }}
+          ARXIV_FALLBACK:      ${{ vars.ARXIV_FALLBACK }}
           PREFERRED_PROVIDER:  ${{ vars.PREFERRED_PROVIDER }}
 
           OPENAI_API_KEY:      ${{ secrets.OPENAI_API_KEY }}
@@ -61,6 +64,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add blog/*.html data/ai/blog/* assets/og/* || true
+          git add blog/*.html data/ai/blog/* data/ai/scholarpush/* assets/og/* || true
           git commit -m "chore(ai): daily blog $(date -u +'%Y-%m-%d')" || echo "No changes"
           git push
