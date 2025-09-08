@@ -2,9 +2,9 @@
   "generated_at": "2025-09-08T04:00:00+00:00",
   "items": [
     {
-      "headline": "AI在建筑项目管理中的伦理评估",
-      "one_liner": "本研究评估了大型语言模型在建筑项目管理中的决策支持能力，揭示了其伦理影响。",
-      "task": "Other",
+      "headline": "伦理指南：评估大型语言模型在建筑项目管理中的决策支持",
+      "one_liner": "本研究评估了大型语言模型在建筑项目管理中的决策支持能力，探讨其伦理影响。",
+      "task": "NLP",
       "type": "paper",
       "novelty": "method",
       "key_numbers": [
@@ -30,20 +30,20 @@
         "pdf": "https://arxiv.org/pdf/2509.04505.pdf"
       },
       "tags": [
-        "LLM",
-        "Ethics",
-        "Construction"
+        "NLP",
+        "决策支持",
+        "伦理"
       ],
       "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "本研究探讨了大型语言模型在建筑项目管理中的应用，分析其在决策支持中的伦理考量。",
-      "who_should_try": "建筑管理者、AI伦理研究者",
+      "quick_read": "本研究探讨了大型语言模型在建筑项目管理中的应用，评估其作为决策支持工具的伦理影响。",
+      "who_should_try": "建筑项目管理者、AI伦理研究者",
       "title_i18n": {
-        "zh": "AI在建筑项目管理中的伦理评估",
+        "zh": "伦理指南：评估大型语言模型在建筑项目管理中的决策支持",
         "en": "The Ethical Compass of the Machine: Evaluating Large Language Models for Decision Support in Construction Project Management"
       },
       "summary_i18n": {
-        "zh": "随着人工智能技术的快速发展，大型语言模型（LLMs）在建筑项目管理中被广泛应用。这些模型能够提供决策支持，帮助项目经理在复杂的环境中做出更有效的决策。研究表明，LLMs的集成正在加速建筑管理的数字化转型，提升了项目的效率和准确性。",
+        "zh": "人工智能的引入正在改变建筑项目管理的决策支持方式。研究指出，大型语言模型（LLMs）作为一种可访问的决策支持工具，正在加速这一进程。这些模型能够处理复杂的信息并提供实时的建议，从而提高项目管理的效率和准确性。",
         "en": "arXiv:2509.04505v1 Announce Type: new \nAbstract: The integration of Artificial Intelligence (AI) into construction project management (CPM) is accelerating, with Large Language Models (LLMs) emerging as accessible decision-support tools. This study aims to critically evaluate the"
       },
       "host": "arxiv.org",
@@ -52,8 +52,8 @@
       "key_numbers_compact": []
     },
     {
-      "headline": "联合图与配置优化以提高AI代理可靠性",
-      "one_liner": "本研究提出了一种联合图和配置优化的方法，以提高大型语言模型代理的可靠性。",
+      "headline": "Maestro：可靠AI代理的联合图与配置优化",
+      "one_liner": "该研究提出了一种优化方法，旨在提高大型语言模型代理的可靠性。",
       "task": "Agent",
       "type": "paper",
       "novelty": "method",
@@ -81,19 +81,19 @@
       },
       "tags": [
         "Agent",
-        "Optimization",
-        "AI"
+        "优化",
+        "可靠性"
       ],
       "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "本研究通过优化图结构和节点配置，提升了AI代理的决策能力和可靠性。",
-      "who_should_try": "AI开发者、系统架构师",
+      "quick_read": "本研究提出了一种新的优化框架，旨在提升大型语言模型代理的决策能力和可靠性。",
+      "who_should_try": "AI代理开发者",
       "title_i18n": {
-        "zh": "联合图与配置优化以提高AI代理可靠性",
+        "zh": "Maestro：可靠AI代理的联合图与配置优化",
         "en": "Maestro: Joint Graph & Config Optimization for Reliable AI Agents"
       },
       "summary_i18n": {
-        "zh": "本研究通过优化图结构和节点配置，提升了AI代理的决策能力和可靠性。",
+        "zh": "为了构建可靠的AI代理，必须在图结构和每个节点的配置上进行优化。研究表明，现有的优化器主要集中在调整配置参数，而忽视了图的整体结构，这可能会影响代理的性能和可靠性。",
         "en": "arXiv:2509.04642v1 Announce Type: new \nAbstract: Building reliable LLM agents requires decisions at two levels: the graph (which modules exist and how information flows) and the configuration of each node (models, prompts, tools, control knobs). Most existing optimizers tune conf"
       },
       "host": "arxiv.org",
@@ -102,8 +102,8 @@
       "key_numbers_compact": []
     },
     {
-      "headline": "健康模拟的个性化解释框架",
-      "one_liner": "本研究提出了一种混合方法框架，以实现健康模拟中的利益相关者中心总结。",
+      "headline": "个性化健康模拟的解释框架：以利益相关者为中心的总结方法",
+      "one_liner": "本研究提出了一种混合方法框架，以支持健康领域的个性化决策。",
       "task": "NLP",
       "type": "paper",
       "novelty": "method",
@@ -131,19 +131,19 @@
       },
       "tags": [
         "NLP",
-        "Health",
-        "Simulation"
+        "健康",
+        "个性化"
       ],
       "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "本研究通过利益相关者中心的方法，提升了健康模拟的个性化解释能力。",
-      "who_should_try": "健康研究人员、模拟专家",
+      "quick_read": "本研究提出了一种新的框架，旨在通过个性化的方式支持健康决策过程。",
+      "who_should_try": "健康决策者、研究人员",
       "title_i18n": {
-        "zh": "健康模拟的个性化解释框架",
+        "zh": "个性化健康模拟的解释框架：以利益相关者为中心的总结方法",
         "en": "Towards Personalized Explanations for Health Simulations: A Mixed-Methods Framework for Stakeholder-Centric Summarization"
       },
       "summary_i18n": {
-        "zh": "健康模拟领域正在探索如何为不同利益相关者提供个性化的解释。这种方法结合了定量和定性的方法，旨在提高模拟结果的可理解性和可用性。研究者们认为，这将有助于更好地支持公共健康决策和政策制定。",
+        "zh": "在健康模拟领域，个性化的解释对于利益相关者的决策至关重要。研究提出了一种混合方法框架，旨在为不同的利益相关者提供定制化的总结和解释，从而支持更有效的决策过程。",
         "en": "arXiv:2509.04646v1 Announce Type: new \nAbstract: Modeling & Simulation (M&S) approaches such as agent-based models hold significant potential to support decision-making activities in health, with recent examples including the adoption of vaccines, and a vast literature on hea"
       },
       "host": "arxiv.org",
@@ -153,7 +153,7 @@
     },
     {
       "headline": "基于人类标准的AI模型评估方法",
-      "one_liner": "本研究提出了一种新颖的方法，将AI模型评估与人类标准相结合，以提高评估的有效性。",
+      "one_liner": "本研究提出了一种新方法，将人类标准应用于AI模型的评估。",
       "task": "Theory",
       "type": "paper",
       "novelty": "method",
@@ -171,7 +171,7 @@
         "评估标准"
       ],
       "limitations": [
-        "数据泄漏"
+        "评测偏差"
       ],
       "links": {
         "paper": "https://arxiv.org/abs/2509.04676",
@@ -180,20 +180,20 @@
         "pdf": "https://arxiv.org/pdf/2509.04676.pdf"
       },
       "tags": [
+        "评估",
         "AI",
-        "Evaluation",
-        "Theory"
+        "标准"
       ],
       "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "本研究探讨了如何将人类标准融入AI模型的评估中，以更好地反映模型的实际能力。",
-      "who_should_try": "AI研究者、评估专家",
+      "quick_read": "本研究探讨了如何将人类标准融入AI模型的评估，以更好地捕捉模型的能力。",
+      "who_should_try": "AI研究人员、评估专家",
       "title_i18n": {
         "zh": "基于人类标准的AI模型评估方法",
         "en": "An Approach to Grounding AI Model Evaluations in Human-derived Criteria"
       },
       "summary_i18n": {
-        "zh": "传统的AI模型评估方法往往无法全面捕捉模型的复杂性。新的研究提出了一种基于人类标准的评估方法，旨在更准确地反映模型在实际应用中的表现。这一方法的提出为AI模型的评估提供了新的视角和工具。",
+        "zh": "本研究探讨了如何将人类标准融入AI模型的评估，以更好地捕捉模型的能力。",
         "en": "arXiv:2509.04676v1 Announce Type: new \nAbstract: In the rapidly evolving field of artificial intelligence (AI), traditional benchmarks can fall short in attempting to capture the nuanced capabilities of AI models. We focus on the case of physical world modeling and propose a nove"
       },
       "host": "arxiv.org",
@@ -202,8 +202,8 @@
       "key_numbers_compact": []
     },
     {
-      "headline": "多代理学习中的语言驱动任务结构",
-      "one_liner": "本研究提出了语言驱动的层次任务结构，作为多代理学习的显式世界模型。",
+      "headline": "语言驱动的层次任务结构作为多智能体学习的显式世界模型",
+      "one_liner": "本研究探讨了语言模型与多智能体学习的结合，提出了一种新的世界模型。",
       "task": "Agent",
       "type": "paper",
       "novelty": "method",
@@ -218,7 +218,7 @@
         }
       ],
       "reusability": [
-        "任务分解"
+        "任务结构设计"
       ],
       "limitations": [
         "算力门槛"
@@ -231,19 +231,19 @@
       },
       "tags": [
         "Agent",
-        "Learning",
-        "Language"
+        "学习",
+        "模型"
       ],
       "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "本研究通过引入语言驱动的任务结构，提升了多代理学习的效率和效果。",
-      "who_should_try": "AI研究者、代理开发者",
+      "quick_read": "本研究提出了一种新的层次任务结构，旨在提升多智能体学习的效率和效果。",
+      "who_should_try": "多智能体系统研究者",
       "title_i18n": {
-        "zh": "多代理学习中的语言驱动任务结构",
+        "zh": "语言驱动的层次任务结构作为多智能体学习的显式世界模型",
         "en": "Language-Driven Hierarchical Task Structures as Explicit World Models for Multi-Agent Learning"
       },
       "summary_i18n": {
-        "zh": "本研究通过引入语言驱动的任务结构，提升了多代理学习的效率和效果。",
+        "zh": "本研究提出了一种新的层次任务结构，旨在提升多智能体学习的效率和效果。",
         "en": "arXiv:2509.04731v1 Announce Type: new \nAbstract: The convergence of Language models, Agent models, and World models represents a critical frontier for artificial intelligence. While recent progress has focused on scaling Language and Agent models, the development of sophisticated"
       },
       "host": "arxiv.org",
@@ -252,8 +252,8 @@
       "key_numbers_compact": []
     },
     {
-      "headline": "大型语言模型的假设分析",
-      "one_liner": "本研究探讨了大型语言模型在系统性探索假设未来方面的局限性，并提出改进方法。",
+      "headline": "大型语言模型的假设分析：使用前瞻性思维探索游戏世界",
+      "one_liner": "本研究探讨了大型语言模型在假设分析中的应用，提升其探索能力。",
       "task": "NLP",
       "type": "paper",
       "novelty": "method",
@@ -268,7 +268,7 @@
         }
       ],
       "reusability": [
-        "假设生成"
+        "假设分析"
       ],
       "limitations": [
         "评测偏差"
@@ -281,19 +281,19 @@
       },
       "tags": [
         "NLP",
-        "Analysis",
-        "LLM"
+        "假设分析",
+        "探索"
       ],
       "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "本研究分析了大型语言模型在假设分析中的不足，并提出了改进建议。",
-      "who_should_try": "NLP研究者、模型开发者",
+      "quick_read": "本研究提出了一种方法，利用大型语言模型进行假设分析，探索游戏世界中的可能性。",
+      "who_should_try": "游戏开发者、AI研究人员",
       "title_i18n": {
-        "zh": "大型语言模型的假设分析",
+        "zh": "大型语言模型的假设分析：使用前瞻性思维探索游戏世界",
         "en": "What-If Analysis of Large Language Models: Explore the Game World Using Proactive Thinking"
       },
       "summary_i18n": {
-        "zh": "本研究分析了大型语言模型在假设分析中的不足，并提出了改进建议。",
+        "zh": "本研究提出了一种方法，利用大型语言模型进行假设分析，探索游戏世界中的可能性。",
         "en": "arXiv:2509.04791v1 Announce Type: new \nAbstract: Large language models (LLMs) excel at processing information reactively but lack the ability to systemically explore hypothetical futures. They cannot ask, \"what if we take this action? how will it affect the final outcome\" and for"
       },
       "host": "arxiv.org",
@@ -302,8 +302,8 @@
       "key_numbers_compact": []
     },
     {
-      "headline": "人本解释的强化学习代理",
-      "one_liner": "本研究提出了TalkToAgent，一个以人类为中心的解释框架，提升了强化学习代理的透明度。",
+      "headline": "TalkToAgent：以人为本的强化学习代理解释",
+      "one_liner": "本研究提出了一种新的方法，旨在提高强化学习代理的可解释性。",
       "task": "Agent",
       "type": "paper",
       "novelty": "method",
@@ -318,10 +318,10 @@
         }
       ],
       "reusability": [
-        "解释生成"
+        "可解释性方法"
       ],
       "limitations": [
-        "复杂性"
+        "评测偏差"
       ],
       "links": {
         "paper": "https://arxiv.org/abs/2509.04809",
@@ -331,20 +331,70 @@
       },
       "tags": [
         "Agent",
-        "Reinforcement Learning",
-        "Explainability"
+        "可解释性",
+        "强化学习"
       ],
       "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "本研究通过人本解释框架，提升了强化学习代理的透明度和可解释性。",
+      "quick_read": "本研究探讨了如何通过大型语言模型提高强化学习代理的可解释性，缩小专家与模型之间的差距。",
       "who_should_try": "强化学习研究者、AI伦理专家",
       "title_i18n": {
-        "zh": "人本解释的强化学习代理",
+        "zh": "TalkToAgent：以人为本的强化学习代理解释",
         "en": "TalkToAgent: A Human-centric Explanation of Reinforcement Learning Agents with Large Language Models"
       },
       "summary_i18n": {
-        "zh": "本研究通过人本解释框架，提升了强化学习代理的透明度和可解释性。",
+        "zh": "本研究探讨了如何通过大型语言模型提高强化学习代理的可解释性，缩小专家与模型之间的差距。",
         "en": "arXiv:2509.04809v1 Announce Type: new \nAbstract: Explainable Reinforcement Learning (XRL) has emerged as a promising approach in improving the transparency of Reinforcement Learning (RL) agents. However, there remains a gap between complex RL policies and domain experts, due to t"
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "人类与语言模型之间的合作与冲突：博弈论视角",
+      "one_liner": "本研究探讨了人类与语言模型在多方环境中的互动行为。",
+      "task": "NLP",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "博弈论应用"
+      ],
+      "limitations": [
+        "评测偏差"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04847",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04847.pdf"
+      },
+      "tags": [
+        "NLP",
+        "博弈论",
+        "互动"
+      ],
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "本研究通过博弈论分析人类与语言模型之间的合作与冲突，揭示其在多方环境中的行为模式。",
+      "who_should_try": "AI研究人员、社会科学家",
+      "title_i18n": {
+        "zh": "人类与语言模型之间的合作与冲突：博弈论视角",
+        "en": "Collaboration and Conflict between Humans and Language Models through the Lens of Game Theory"
+      },
+      "summary_i18n": {
+        "zh": "人类与语言模型之间的互动日益频繁，这引发了对其合作与竞争行为的研究。通过博弈论的视角，研究者们分析了这种互动的动态，揭示了在多方环境中可能出现的合作与冲突。",
+        "en": "arXiv:2509.04847v1 Announce Type: new \nAbstract: Language models are increasingly deployed in interactive online environments, from personal chat assistants to domain-specific agents, raising questions about their cooperative and competitive behavior in multi-party settings. Whil"
       },
       "host": "arxiv.org",
       "ts": "2025-09-08T04:00:00+00:00",
@@ -370,11 +420,12 @@
   "nice_to_read": [
     5,
     6,
-    7
+    7,
+    8
   ],
   "deep_dive": {
-    "title": "AI与伦理",
-    "summary": "探讨AI在不同领域的应用及其伦理影响，强调透明度与可解释性的重要性。",
+    "title": "N/A",
+    "summary": "N/A",
     "refs": []
   }
 }
