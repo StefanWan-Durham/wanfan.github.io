@@ -188,6 +188,39 @@
         .replace(/>/g,'&gt;')
         .replace(/"/g,'&quot;');
     }
+    function arxivPdfFrom(u){
+      try{ const m = String(u||'').match(/arxiv\.org\/(?:abs|pdf|html)\/(\d{4}\.\d{4,5})(?:v\d+)?/i); return m?`https://arxiv.org/pdf/${m[1]}.pdf`:''; }catch{ return ''; }
+    }
+    function bestSourceHref(it){
+      const links = it.links||{};
+      if(links.paper && links.paper!=='N/A') return links.paper;
+      if(links.project && links.project!=='N/A') return links.project;
+      if(links.code && links.code!=='N/A') return links.code;
+      // try to infer from refs by title containment or token overlap
+      const title = (displayTitle(it)||'').toLowerCase();
+      const one = String(it.one_liner||'').toLowerCase();
+      const quick = String(it.quick_read||'').toLowerCase();
+      const candText = [title, one, quick].filter(Boolean);
+      let best = {score:0, url:''};
+      try{
+        for(const [url, refTitle] of refTitleByUrl.entries()){
+          const rt = String(refTitle||'').toLowerCase();
+          let score = 0;
+          if(rt && title && (rt.includes(title) || title.includes(rt))) score = 3;
+          else{
+            const blob = `${rt}`;
+            for(const t of candText){
+              if(!t) continue;
+              const tokens = t.split(/[^\w\u4e00-\u9fff]+/).filter(w=>w.length>=3);
+              let hits = 0; for(const w of tokens){ if(blob.includes(w)) hits++; }
+              score = Math.max(score, hits);
+            }
+          }
+          if(score>best.score) best = {score, url};
+        }
+      }catch{}
+      return best.score>=2 ? best.url : '';
+    }
     function niceHeadline(it){
       let h = String(it.headline||'').trim();
       // Try to heal truncated headlines using refs by URL
@@ -231,7 +264,13 @@
     function card(it){
   const tags=(it.tags||[]).filter(t=>t && t!=='N/A').map(t=>`<span class="tag">${t}</span>`).join(' ');
   const links=it.links||{}; const id=Math.random().toString(36).slice(2);
-  const keynumsCompact=(it.key_numbers_compact||[]).filter(s=>s && s.toUpperCase()!=='N/A').slice(0,3).map(s=>`<span class="tag small">${esc(s)}</span>`).join(' ');
+      const keynumsCompact=(it.key_numbers_compact||[])
+        .map(s=>String(s||''))
+        .map(s=>s.split(/\s+/).filter(x=>x && x.toUpperCase()!=='N/A').join(' '))
+        .filter(s=>s && s.toUpperCase()!=='N/A')
+        .slice(0,3)
+        .map(s=>`<span class="tag small">${esc(s)}</span>`)
+        .join(' ');
       const codeBadge = it.has_code ? `<span class="tag small" title="has code">code</span>` : '';
   const utils=(it.reusability||[]).filter(x=>x && x!=='N/A').slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('');
   const limits=(it.limitations||[]).filter(x=>x && x!=='N/A').slice(0,2).map(x=>`<li>${esc(x)}</li>`).join('');
@@ -243,15 +282,19 @@
             : String(it.summary_i18n?.en || it.one_liner || it.quick_read || '');
   // no short/expand; always render full text
       const titleHtml = esc(displayTitle(it));
-      return `<article class="card sp-card">
+  // Resolve a primary source link with refs fallback
+  let sourceHref = bestSourceHref(it);
+  // Derive a PDF if none and arXiv
+  let pdfHref = (links.pdf && links.pdf!=='N/A') ? links.pdf : arxivPdfFrom(sourceHref);
+    return `<article class="card sp-card">
         <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${titleHtml}</h4>
         <div class="sp-meta">${meta}${tags?` · ${tags}`:''} ${keynumsCompact?` · ${keynumsCompact}`:''} ${codeBadge}</div>
     <p id="abs-${id}" class="sp-abstract">${esc(fullTxt)}</p>
   ${(utils||limits)?`<div style="display:flex;gap:12px;margin-top:6px">${utils?`<ul class="muted" style="margin:0;list-style:none;padding-left:0">${utils}</ul>`:''}${limits?`<ul class="muted" style="margin:0;list-style:none;padding-left:0">${limits}</ul>`:''}</div>`:''}
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
-          ${links.paper&&links.paper!=='N/A'?btn(links.paper,'Source Link'):''}
+          ${sourceHref?btn(sourceHref,'Source Link'):''}
           ${links.code&&links.code!=='N/A'?btn(links.code,'Code'):''}
-          ${(links.pdf&&links.pdf!=='N/A')?btn(links.pdf,'PDF'):''}
+          ${pdfHref?btn(pdfHref,'PDF'):''}
           ${links.project&&links.project!=='N/A'?btn(links.project,'Project'):''}
         </div>
       </article>`;
@@ -303,7 +346,37 @@
       mustEl.innerHTML = mustList.map(card).join('');
       niceEl.innerHTML = niceList.map(card).join('');
       // deep
-      const dd=data?.deep_dive; deepWrap.hidden = !dd; if(dd){ deepCard.innerHTML = `<h4 style="margin:0 0 6px 0">${dd.title||'主题深读'}</h4><p class="muted">${dd.summary||''}</p>`; }
+      const dd=data?.deep_dive; deepWrap.hidden = !dd; if(dd){
+        let html = `<h4 style="margin:0 0 6px 0">${esc(dd.title||'主题深读')}</h4>`;
+        html += `<p class="muted" style="margin:0 0 8px 0">${esc(dd.summary||'')}</p>`;
+        const refIdx = Array.isArray(dd.refs)? dd.refs.filter(i=>Number.isInteger(i)&&i>=0&&i<items.length) : [];
+        if(refIdx.length){
+          const related = refIdx.map(i=>{
+            const it = items[i]||{}; const links = it.links||{};
+            const title = esc(displayTitle(it));
+            const isZH = (document.documentElement.lang||'zh')==='zh';
+            const summary = isZH ? String(it.summary_i18n?.zh || it.one_liner || it.quick_read || '')
+                                 : String(it.summary_i18n?.en || it.one_liner || it.quick_read || '');
+            const tags = (it.tags||[]).filter(t=>t && t!=='N/A').slice(0,4).map(t=>`<span class="tag small">${esc(t)}</span>`).join(' ');
+            const sourceHref = bestSourceHref(it);
+            const pdfHref = (links.pdf && links.pdf!=='N/A') ? links.pdf : arxivPdfFrom(sourceHref);
+            const btnsArr = [
+              sourceHref?btn(sourceHref,'Source Link'):'',
+              (links.code&&links.code!=='N/A')?btn(links.code,'Code'):'',
+              (pdfHref)?btn(pdfHref,'PDF'):'',
+            ].filter(Boolean);
+            const btns = btnsArr.join(' ');
+            return `<div class="card sp-card" style="padding:8px 10px">
+              <div style="font-weight:600;margin-bottom:4px">${title}</div>
+              ${tags?`<div class="muted" style="margin:0 0 6px 0;display:flex;gap:6px;flex-wrap:wrap">${tags}</div>`:''}
+              ${summary?`<p class="muted" style="margin:0 0 6px 0">${esc(summary)}</p>`:''}
+              ${btns?`<div style="display:flex;gap:6px;flex-wrap:wrap">${btns}</div>`:''}
+            </div>`;
+          }).join('');
+          html += `<div style="display:flex;flex-direction:column;gap:8px">${related}</div>`;
+        }
+        deepCard.innerHTML = html;
+      }
     }
   async function loadByDate(dateStr){
       let path = '../data/ai/scholarpush/index.json';

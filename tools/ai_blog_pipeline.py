@@ -643,6 +643,180 @@ def _compact_key_numbers(kn_list: list) -> list:
             break
     return out
 
+def _clean_badge_text(s: str) -> str:
+    """Remove inline 'N/A' tokens and extra spaces from a badge text.
+    Example: 'N/A N/A 16×' -> '16×'.
+    """
+    try:
+        if not s:
+            return ""
+        parts = [p for p in re.split(r"\s+", str(s)) if p and p.upper() != "N/A"]
+        return " ".join(parts).strip()
+    except Exception:
+        return s or ""
+
+def _build_entry_title_map(entries: list) -> dict:
+    """Map normalized plain titles (lowercased) to source URLs for fallback linking."""
+    m = {}
+    for e in (entries or []):
+        t = BS(e.get("title", ""), "html.parser").text.strip().lower()
+        u = (e.get("url") or "").strip()
+        if t and u:
+            m[t] = u
+    return m
+
+def _find_source_url_by_text(candidates: list, entries: list) -> str:
+    """Find a plausible source URL by matching candidate texts to entries' titles or summaries.
+    Returns first high-confidence match or empty string.
+    """
+    try:
+        scored = []
+        for e in (entries or []):
+            title = BS(e.get("title", ""), "html.parser").text.strip().lower()
+            summ  = BS(e.get("summary", ""), "html.parser").text.strip().lower()
+            blob = f"{title} \n {summ}"
+            url = (e.get("url") or "").strip()
+            if not url:
+                continue
+            best = 0
+            for ct in candidates:
+                if not ct or len(ct) < 6:
+                    continue
+                if ct in blob or title in ct:
+                    best = max(best, 3)
+                else:
+                    # simple token overlap on words/zh chunks
+                    tokens = [w for w in re.split(r"[^\w\u4e00-\u9fff]+", ct) if len(w) >= 3]
+                    hit = sum(1 for w in tokens if w in blob)
+                    best = max(best, hit)
+            if best >= 3:
+                return url
+            scored.append((best, url))
+        # fall back to the highest overlap if decent
+        scored.sort(reverse=True)
+        if scored and scored[0][0] >= 2:
+            return scored[0][1]
+        return ""
+    except Exception:
+        return ""
+
+def _openreview_pdf(u: str) -> str:
+    """Best-effort PDF URL for OpenReview forum links."""
+    try:
+        if not u:
+            return "N/A"
+        if "openreview.net" not in u:
+            return "N/A"
+        # normalize to pdf?id=*
+        m = re.search(r"id=([A-Za-z0-9_-]+)", u)
+        if m:
+            return f"https://openreview.net/pdf?id={m.group(1)}"
+        return "N/A"
+    except Exception:
+        return "N/A"
+
+def _classify_and_attach_link(links: dict, url: str):
+    """Attach the given url into the most appropriate slot without overwriting non-N/A values."""
+    if not url:
+        return
+    try:
+        host = (_hostname(url) or "").lower()
+        # arXiv
+        if "arxiv.org" in host:
+            if not links.get("paper") or links.get("paper") == "N/A":
+                links["paper"] = url
+            if not links.get("pdf") or links.get("pdf") == "N/A":
+                links["pdf"] = _arxiv_pdf(url)
+            return
+        # OpenReview
+        if "openreview.net" in host:
+            if not links.get("paper") or links.get("paper") == "N/A":
+                links["paper"] = url
+            if not links.get("pdf") or links.get("pdf") == "N/A":
+                pr = _openreview_pdf(url)
+                if pr != "N/A":
+                    links["pdf"] = pr
+            return
+        # GitHub
+        if host == "github.com" or host.endswith(".github.io"):
+            if not links.get("code") or links.get("code") == "N/A":
+                links["code"] = url
+            # also keep as project if project missing
+            if not links.get("project") or links.get("project") == "N/A":
+                links["project"] = url
+            return
+        # Hugging Face (treat as project/code landing)
+        if host.endswith("huggingface.co"):
+            if not links.get("project") or links.get("project") == "N/A":
+                links["project"] = url
+            if not links.get("code") or links.get("code") == "N/A":
+                links["code"] = url
+            return
+        # Papers with Code — useful landing
+        if host == "paperswithcode.com":
+            if not links.get("project") or links.get("project") == "N/A":
+                links["project"] = url
+            return
+        # Generic fallback -> project
+        if not links.get("project") or links.get("project") == "N/A":
+            links["project"] = url
+    except Exception:
+        return
+
+def _maybe_attach_source_link(it: dict, title_map: dict, entries: list):
+    """If no usable link is present, attach links by matching titles to entries; fill paper/code/project/pdf when possible."""
+    try:
+        links = it.setdefault("links", {})
+        # If already has at least one usable link, still try to enrich missing ones
+        # candidates: English/Chinese titles, headline, and brief text
+        cand_titles = [
+            (it.get("title_i18n") or {}).get("en") or "",
+            (it.get("title_i18n") or {}).get("zh") or "",
+            it.get("headline") or "",
+        ]
+        cand_titles = [BS(x, "html.parser").text.strip().lower() for x in cand_titles if x]
+
+        # 1) Fast path: title containment against title_map (may yield one URL)
+        candidate_urls = []
+        for ct in cand_titles:
+            for et, url in title_map.items():
+                if ct and ((ct in et) or (et in ct)):
+                    candidate_urls.append(url)
+        # 2) Slow path: scan entries titles/summaries for overlap; try to get 1-2 best
+        try:
+            blob_hints = [ (it.get("one_liner") or "").lower(), (it.get("quick_read") or "").lower() ]
+            url_guess = _find_source_url_by_text(cand_titles + blob_hints, entries)
+            if url_guess:
+                candidate_urls.append(url_guess)
+        except Exception:
+            pass
+        # 3) Also, any direct GitHub/HF/arXiv links present in entries for same title
+        try:
+            for e in (entries or []):
+                t = BS(e.get("title", ""), "html.parser").text.strip().lower()
+                if any(ct and ((ct in t) or (t in ct)) for ct in cand_titles):
+                    u = (e.get("url") or "").strip()
+                    if u:
+                        candidate_urls.append(u)
+        except Exception:
+            pass
+        # Deduplicate while preserving order
+        seen = set(); urls = []
+        for u in candidate_urls:
+            if not u:
+                continue
+            if u in seen:
+                continue
+            seen.add(u); urls.append(u)
+
+        # Attach into appropriate slots; stop early if all four filled
+        for u in urls:
+            _classify_and_attach_link(links, u)
+            if all(links.get(k) and links.get(k) != "N/A" for k in ("paper","pdf","code","project")):
+                break
+    except Exception:
+        return
+
 # ===== Local env loader (.env.local / .env) =====
 def _load_env_files(paths=(".env.local", ".env")):
     for p in paths:
@@ -976,6 +1150,9 @@ def make_scholarpush(entries, n_items=8, daily=None):
             j["must_reads"] = must
             j["nice_to_read"] = nice
 
+        # Build title map for link fallback
+        title_map = _build_entry_title_map(entries)
+        # Normalize scores
         for it in j.get("items", []):
             it["impact_score"] = _coerce_score(it.get("impact_score", 50))
             it["reproducibility_score"] = _coerce_score(it.get("reproducibility_score", 50))
@@ -1019,6 +1196,11 @@ def make_scholarpush(entries, n_items=8, daily=None):
                 it["key_numbers_compact"] = knc[:3]
             except Exception:
                 it["key_numbers_compact"] = it.get("key_numbers_compact") or []
+            # Also strip inline N/A tokens from badges like "N/A N/A 16x"
+            try:
+                it["key_numbers_compact"] = [ _clean_badge_text(s) for s in it.get("key_numbers_compact", []) if _clean_badge_text(s) ]
+            except Exception:
+                pass
             # Clean noisy arrays: drop 'N/A'/empty, cap lengths for UI
             def _clean_list(arr, limit=None):
                 out = []
@@ -1033,6 +1215,8 @@ def make_scholarpush(entries, n_items=8, daily=None):
             it["reusability"] = _clean_list(it.get("reusability"), limit=3)
             it["limitations"] = _clean_list(it.get("limitations"), limit=2)
             it["tags"] = _clean_list(it.get("tags"))
+            # Attach/enrich source links using entries
+            _maybe_attach_source_link(it, title_map, entries)
 
         _validate_scholarpush(j)
         if not j.get("items"):
@@ -1080,6 +1264,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     daily_map = _make_daily_summary_map(daily) if daily else {}
                 except Exception:
                     daily_map = {}
+                title_map = _build_entry_title_map(entries)
                 for it in j.get("items", []):
                     paper = it.get("links", {}).get("paper", "") or ""
                     u_norm = _normalize_url(paper)
@@ -1102,6 +1287,10 @@ def make_scholarpush(entries, n_items=8, daily=None):
                         it["key_numbers_compact"] = knc[:3]
                     except Exception:
                         it["key_numbers_compact"] = it.get("key_numbers_compact") or []
+                    try:
+                        it["key_numbers_compact"] = [ _clean_badge_text(s) for s in it.get("key_numbers_compact", []) if _clean_badge_text(s) ]
+                    except Exception:
+                        pass
                     # Clean lists in salvage path
                     def _clean_list(arr, limit=None):
                         out = []
@@ -1116,6 +1305,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     it["reusability"] = _clean_list(it.get("reusability"), limit=3)
                     it["limitations"] = _clean_list(it.get("limitations"), limit=2)
                     it["tags"] = _clean_list(it.get("tags"))
+                    _maybe_attach_source_link(it, title_map, entries)
                 _validate_scholarpush(j)
                 return j
         except Exception as salvage_error:
@@ -1241,6 +1431,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     daily_map = _make_daily_summary_map(daily) if daily else {}
                 except Exception:
                     daily_map = {}
+                title_map = _build_entry_title_map(entries)
                 for it in j.get("items", []):
                     paper = it.get("links", {}).get("paper", "") or ""
                     u_norm = _normalize_url(paper)
@@ -1263,6 +1454,10 @@ def make_scholarpush(entries, n_items=8, daily=None):
                         it["key_numbers_compact"] = knc[:3]
                     except Exception:
                         it["key_numbers_compact"] = it.get("key_numbers_compact") or []
+                    try:
+                        it["key_numbers_compact"] = [ _clean_badge_text(s) for s in it.get("key_numbers_compact", []) if _clean_badge_text(s) ]
+                    except Exception:
+                        pass
                     # Clean lists in regex-salvage path
                     def _clean_list(arr, limit=None):
                         out = []
@@ -1277,6 +1472,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     it["reusability"] = _clean_list(it.get("reusability"), limit=3)
                     it["limitations"] = _clean_list(it.get("limitations"), limit=2)
                     it["tags"] = _clean_list(it.get("tags"))
+                    _maybe_attach_source_link(it, title_map, entries)
                 _validate_scholarpush(j)
                 return j
         except Exception as salvage2_error:
@@ -1312,6 +1508,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
             daily_map = _make_daily_summary_map(daily) if daily else {}
         except Exception:
             daily_map = {}
+        title_map = _build_entry_title_map(base_entries)
         for it in j.get("items", []):
             paper = it.get("links", {}).get("paper", "") or ""
             u_norm = _normalize_url(paper)
@@ -1334,6 +1531,10 @@ def make_scholarpush(entries, n_items=8, daily=None):
                 it["key_numbers_compact"] = knc[:3]
             except Exception:
                 it["key_numbers_compact"] = it.get("key_numbers_compact") or []
+            try:
+                it["key_numbers_compact"] = [ _clean_badge_text(s) for s in it.get("key_numbers_compact", []) if _clean_badge_text(s) ]
+            except Exception:
+                pass
             # Clean lists in fallback
             def _clean_list(arr, limit=None):
                 out = []
@@ -1348,6 +1549,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
             it["reusability"] = _clean_list(it.get("reusability"), limit=3)
             it["limitations"] = _clean_list(it.get("limitations"), limit=2)
             it["tags"] = _clean_list(it.get("tags"))
+            _maybe_attach_source_link(it, title_map, base_entries)
         return j
 
 
