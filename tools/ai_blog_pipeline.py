@@ -127,7 +127,8 @@ def fetch_arxiv_api(categories=("cs.AI","cs.CL","cs.LG","cs.CV"), per_cat=25, ti
                 published = e.get("published") or e.get("updated") or ""
                 ts = dtp.parse(published).astimezone(timezone.utc).isoformat() if published else datetime.now(timezone.utc).isoformat()
                 summary = (e.get("summary") or "")
-                summary = re.sub("<.*?>", "", summary)[:600]
+                _sum_cap = int(os.getenv("FETCH_SUMMARY_CHARS", "600"))
+                summary = re.sub("<.*?>", "", summary)[:_sum_cap]
                 items.append({"title":title, "url":link, "ts":ts, "summary":summary})
         except Exception as ex:
             print(f"arXiv API failed for {cat}: {ex}")
@@ -147,13 +148,17 @@ def fetch_items(limit_per_feed=25):
         try:
             feed = feedparser.parse(url)
             entries = getattr(feed, 'entries', []) or []
-            for e in entries[:limit_per_feed]:
+            # env override for per-feed limit
+            _limit = int(os.getenv("PER_FEED_LIMIT", str(limit_per_feed)))
+            _sum_cap = int(os.getenv("FETCH_SUMMARY_CHARS", "600"))
+            for e in entries[:_limit]:
                 title = (e.get("title") or "").strip()
                 link = e.get("link") or ""
                 published = e.get("published") or e.get("updated") or ""
                 ts = dtp.parse(published).astimezone(timezone.utc).isoformat() if published else datetime.now(timezone.utc).isoformat()
                 summary = (e.get("summary") or "")
-                summary = re.sub("<.*?>", "", summary)[:600]   # 去HTML & 降噪（更省tokens）
+                # 去HTML & 降噪（更省tokens）
+                summary = re.sub("<.*?>", "", summary)[:_sum_cap]
                 items.append({"title":title, "url":link, "ts":ts, "summary":summary})
                 cnt += 1
         except Exception as e:
@@ -221,7 +226,18 @@ def _filter_cap_entries(entries):
             continue
         seen_sig.add(sig)
         it = dict(it)
-        it["summary"] = (re.sub(r"<.*?>", "", it.get("summary") or "")[:280]).strip()
+        # Per-entry prompt summary length: PROMPT_SUMMARY_CHARS > fallback from DEEPSEEK_MAX_INPUT (approx chars) > 280
+        _prom_cap_env = os.getenv("PROMPT_SUMMARY_CHARS")
+        if _prom_cap_env and _prom_cap_env.isdigit():
+            _prom_cap = int(_prom_cap_env)
+        else:
+            _in_tok = os.getenv("DEEPSEEK_MAX_INPUT") or os.getenv("LLM_MAX_INPUT") or ""
+            try:
+                # rough char estimate from tokens (conservative)
+                _prom_cap = max(200, min(800, int(int(_in_tok) / 4))) if _in_tok else 280
+            except Exception:
+                _prom_cap = 280
+        it["summary"] = (re.sub(r"<.*?>", "", it.get("summary") or "")[:_prom_cap]).strip()
         fresh.append(it)
 
     max_n = int(os.getenv("MAX_ENTRIES", "40"))
@@ -941,7 +957,9 @@ def pick_and_write(entries, max_words=1100):
     if rules_extra:
         prompt = prompt.replace("Rules:", "Rules:\n- " + "\n- ".join(rules_extra))
     try:
-        out = chat_once(prompt, system=SYS, temperature=0.25, max_tokens=4096)
+        # LLM output cap from env: DEEPSEEK_MAX_OUTPUT > LLM_MAX_TOKENS > 4096
+        _max_out = int(os.getenv("DEEPSEEK_MAX_OUTPUT", os.getenv("LLM_MAX_TOKENS", "4096")))
+        out = chat_once(prompt, system=SYS, temperature=0.25, max_tokens=_max_out)
         try:
             j = _extract_json_from_text(out)
         except Exception:
@@ -1089,7 +1107,9 @@ def make_scholarpush(entries, n_items=8, daily=None):
               .replace("[[N]]", str(n_items))
               .replace("[[ENTRIES]]", joined))
     try:
-        out = chat_once(prompt, system="You are an academic news editor. STRICT JSON.", temperature=0.2, max_tokens=4096)
+        # LLM output cap from env: DEEPSEEK_MAX_OUTPUT > LLM_MAX_TOKENS > 4096
+        _max_out = int(os.getenv("DEEPSEEK_MAX_OUTPUT", os.getenv("LLM_MAX_TOKENS", "4096")))
+        out = chat_once(prompt, system="You are an academic news editor. STRICT JSON.", temperature=0.2, max_tokens=_max_out)
         # Parse model output with escalating strategies; if both fail, try a single repair round-trip
         try:
             j = _extract_json_from_text(out)
@@ -1104,7 +1124,8 @@ def make_scholarpush(entries, n_items=8, daily=None):
                         "要求字段：generated_at, items[], refs[], stats{by_task,with_code,new_benchmarks}, must_reads[], nice_to_read[].\n"
                         "如果缺字段请补齐为空结构；items 中 links{paper,code,project,pdf} 必须存在。\n\n原始内容：\n" + out
                     )
-                    out_fix = chat_once(repair_prompt, system="You are a strict JSON fixer.", temperature=0.0, max_tokens=4096)
+                    _max_out_fix = int(os.getenv("DEEPSEEK_MAX_OUTPUT", os.getenv("LLM_MAX_TOKENS", "4096")))
+                    out_fix = chat_once(repair_prompt, system="You are a strict JSON fixer.", temperature=0.0, max_tokens=_max_out_fix)
                     try:
                         j = _extract_json_from_text(out_fix)
                     except Exception:
@@ -1725,7 +1746,7 @@ def main():
     # Daily permanently disabled: we will not write blog HTML/RSS/sections or emails.
     daily_enable = False
     # 1) 抓取
-    entries = fetch_items()
+    entries = fetch_items(limit_per_feed=int(os.getenv("PER_FEED_LIMIT", "25")))
     min_items = int(os.getenv("MIN_ITEMS","6"))
     if len(entries) < min_items:
         print("Not enough entries today; skip.")
