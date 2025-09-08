@@ -1,240 +1,378 @@
 {
-  "generated_at": "2025-09-07T04:16:15.103943+00:00",
+  "generated_at": "2025-09-08T00:00:00+00:00",
   "items": [
     {
-      "headline": "CV 单图生任意长虚拟试穿视频",
-      "one_liner": "针对虚拟试穿视频生成长度受限问题，提出自回归分段生成方法，实现任意长度视频生成并保持时空一致性",
-      "task": "CV",
+      "headline": "知识蒸馏在文本到SQL中的应用",
+      "one_liner": "本研究结合知识蒸馏与文本到SQL问题，展示了如何使用Qwen2-7B作为教师训练GPT-2。",
+      "task": "NLP",
       "type": "paper",
       "novelty": "method",
-      "key_numbers": [],
-      "reusability": [],
-      "limitations": [],
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "知识蒸馏"
+      ],
+      "limitations": [
+        "N/A"
+      ],
       "links": {
-        "paper": "http://arxiv.org/abs/2509.04450v1",
+        "paper": "https://www.reddit.com/r/MachineLearning/comments/1n9ufsf/p_knowledge_distillation_for_texttosql_training/",
         "code": "N/A",
         "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.04450.pdf"
+        "pdf": "N/A"
       },
       "tags": [
-        "CV",
-        "Video Generation",
-        "Virtual Try-On",
-        "Autoregressive"
+        "NLP",
+        "知识蒸馏",
+        "文本到SQL"
       ],
-      "impact_score": 85,
-      "reproducibility_score": 70,
-      "quick_read": "针对虚拟试穿视频生成长度受限问题，提出自回归分段生成方法，实现任意长度视频生成并保持时空一致性",
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "本研究探讨了如何通过知识蒸馏技术提高文本到SQL转换的效果，利用Qwen2-7B模型作为教师，训练GPT-2模型以增强其性能。",
+      "who_should_try": "研究人员和开发者",
       "title_i18n": {
-        "zh": "CV 单图生任意长虚拟试穿视频",
-        "en": "Virtual Fitting Room: Generating Arbitrarily Long Videos of Virtual\n  Try-On from a Single Image -- Technical Preview"
+        "zh": "知识蒸馏在文本到SQL中的应用",
+        "en": "[P] Knowledge Distillation for Text-to-SQL — Training GPT-2 with Qwen2-7B as Teacher"
       },
       "summary_i18n": {
-        "zh": "VirtualFittingRoom模型提出分段自回归生成方法，仅需单张输入图像即可生成任意长度虚拟试衣视频。",
-        "en": "We introduce the Virtual Fitting Room (VFR), a novel video generative model\nthat produces arbitrarily long virtual try-on videos. Our VFR models long video\ngeneration tasks as an auto-regressive, segment-by-segment generation process,\neliminating the need for resource-intensive generation and lengthy video data,\nwhile providing the flexibility to generate videos of arbitrary length. The key\nchallenges of this task are twofold: ensuring local smoothness between adjacent\nsegments and maintaining global temporal consistency across different segments.\nTo address these challenges, we propose our VF"
+        "zh": "本研究探讨了如何通过知识蒸馏技术提高文本到SQL转换的效果，利用Qwen2-7B模型作为教师，训练GPT-2模型以增强其性能。",
+        "en": "Hey folks, I’ve been working on an experiment that combines Knowledge Distillation (KD) with the Text-to-SQL problem, and I wanted to share the results + repo with the community. 🎯 Motivation  Natural language → SQL is a powerful way for non-technical users to query databases wit"
       },
-      "host": "arxiv.org",
-      "ts": "2025-09-04T17:59:55+00:00",
+      "host": "www.reddit.com",
+      "ts": "2025-09-06T08:36:00+00:00",
       "has_code": false,
-      "key_numbers_compact": []
+      "key_numbers_compact": [
+        "N/A N/A N/A"
+      ]
     },
     {
-      "headline": "IR 图结构多变量时序数据集发布",
-      "one_liner": "基于真实微服务系统构建图结构多变量时序数据集ChronoGraph，包含性能指标和异常标注，支持预测与异常检测任务",
-      "task": "IR",
-      "type": "dataset",
+      "headline": "开放源代码的语音到语音翻译管道",
+      "one_liner": "该项目提供了一个端到端的管道，旨在为低资源语言进行视频配音，初步目标为泰卢固语。",
+      "task": "ASR",
+      "type": "project",
       "novelty": "data",
-      "key_numbers": [],
-      "reusability": [],
-      "limitations": [],
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "视频配音"
+      ],
+      "limitations": [
+        "N/A"
+      ],
       "links": {
-        "paper": "http://arxiv.org/abs/2509.04449v1",
+        "paper": "N/A",
+        "code": "N/A",
+        "project": "https://www.reddit.com/r/MachineLearning/comments/1n9wnel/p_an_opensource_pipeline_for_speechtospeech/",
+        "pdf": "N/A"
+      },
+      "tags": [
+        "ASR",
+        "多模态",
+        "翻译"
+      ],
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "该项目展示了一个用于低资源语言的视频配音的开放源代码管道，旨在解决语音到语音翻译中的挑战。",
+      "who_should_try": "多模态系统研究者",
+      "title_i18n": {
+        "zh": "开放源代码的语音到语音翻译管道",
+        "en": "开放源代码的语音到语音翻译管道"
+      },
+      "summary_i18n": {
+        "zh": "该项目展示了一个用于低资源语言的视频配音的开放源代码管道，旨在解决语音到语音翻译中的挑战。",
+        "en": "该项目提供了一个端到端的管道，旨在为低资源语言进行视频配音，初步目标为泰卢固语。"
+      },
+      "host": "",
+      "ts": "2025-09-08T00:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": [
+        "N/A N/A N/A"
+      ]
+    },
+    {
+      "headline": "在线层次聚类新闻事件的稳定性问题",
+      "one_liner": "本研究探讨了如何在流媒体管道中保持事件ID在合并/拆分时的稳定性。",
+      "task": "IR",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "事件聚类"
+      ],
+      "limitations": [
+        "N/A"
+      ],
+      "links": {
+        "paper": "https://www.reddit.com/r/MachineLearning/comments/1n9xg20/d_online_hierarchical_clustering_for_news_how_to/",
         "code": "N/A",
         "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.04449.pdf"
+        "pdf": "N/A"
       },
       "tags": [
         "IR",
-        "Time Series",
-        "Graph Data",
-        "Anomaly Detection",
-        "Microservices"
+        "聚类",
+        "新闻"
       ],
-      "impact_score": 80,
-      "reproducibility_score": 90,
-      "quick_read": "基于真实微服务系统构建图结构多变量时序数据集ChronoGraph，包含性能指标和异常标注，支持预测与异常检测任务",
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "本研究提出了一种在线层次聚类方法，旨在提高新闻事件在流媒体处理中的稳定性，确保事件ID在合并和拆分时保持一致。",
+      "who_should_try": "数据科学家和新闻分析师",
       "title_i18n": {
-        "zh": "IR 图结构多变量时序数据集发布",
-        "en": "ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset"
+        "zh": "在线层次聚类新闻事件的稳定性问题",
+        "en": "[D] Online hierarchical clustering for news: how to keep event IDs stable under merges/splits in a streaming pipeline?"
       },
       "summary_i18n": {
-        "zh": "基于真实微服务系统构建图结构多变量时序数据集ChronoGraph，包含性能指标和异常标注，支持预测与异常检测任务",
-        "en": "We present ChronoGraph, a graph-structured multivariate time series\nforecasting dataset built from real-world production microservices. Each node\nis a service that emits a multivariate stream of system-level performance\nmetrics, capturing CPU, memory, and network usage patterns, while directed\nedges encode dependencies between services. The primary task is forecasting\nfuture values of these signals at the service level. In addition, ChronoGraph\nprovides expert-annotated incident windows as anomaly labels, enabling\nevaluation of anomaly detection methods and assessment of forecast robustness\ndu"
+        "zh": "本研究提出了一种在线层次聚类方法，旨在提高新闻事件在流媒体处理中的稳定性，确保事件ID在合并和拆分时保持一致。",
+        "en": "I’m building a news ingestion system (currently Poland-focused; designed to scale) that clusters incoming articles into “events” powering maps and graph views. Pipeline: embeddings → cosine HAC with a fixed threshold → periodic (5min) recluster. Granularity, time decay, and summa"
       },
-      "host": "arxiv.org",
-      "ts": "2025-09-04T17:59:52+00:00",
+      "host": "www.reddit.com",
+      "ts": "2025-09-06T11:43:06+00:00",
       "has_code": false,
-      "key_numbers_compact": []
+      "key_numbers_compact": [
+        "N/A N/A N/A"
+      ]
     },
     {
-      "headline": "MM 多模态虚假信息检测统一框架",
-      "one_liner": "针对多模态虚假信息检测泛化能力不足问题，提出TRUST-VL框架通过联合训练共享推理能力，提升跨场景检测效果",
-      "task": "MM",
+      "headline": "快速机器学习在嵌入式DSP中的应用",
+      "one_liner": "本研究展示了如何使用领域启发的模型来提升嵌入式数字信号处理的性能。",
+      "task": "DSP",
       "type": "paper",
       "novelty": "method",
-      "key_numbers": [],
-      "reusability": [],
-      "limitations": [],
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "领域启发模型"
+      ],
+      "limitations": [
+        "N/A"
+      ],
       "links": {
-        "paper": "http://arxiv.org/abs/2509.04448v1",
+        "paper": "https://www.reddit.com/r/MachineLearning/comments/1nauq2g/p_fast_ml_for_funky_fx_using_domain_inspired/",
         "code": "N/A",
         "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.04448.pdf"
+        "pdf": "N/A"
       },
       "tags": [
-        "MM",
-        "Misinformation Detection",
-        "Multimodal",
-        "Explainable AI"
+        "DSP",
+        "快速ML",
+        "模型"
       ],
-      "impact_score": 78,
-      "reproducibility_score": 75,
-      "quick_read": "针对多模态虚假信息检测泛化能力不足问题，提出TRUST-VL框架通过联合训练共享推理能力，提升跨场景检测效果",
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "本研究探讨了如何通过领域启发的模型来优化嵌入式数字信号处理的性能，展示了快速机器学习的潜力。",
+      "who_should_try": "嵌入式系统开发者",
       "title_i18n": {
-        "zh": "MM 多模态虚假信息检测统一框架",
-        "en": "TRUST-VL: An Explainable News Assistant for General Multimodal\n  Misinformation Detection"
+        "zh": "快速机器学习在嵌入式DSP中的应用",
+        "en": "[P] Fast ML for Funky FX: Using domain inspired models for embedded DSP"
       },
       "summary_i18n": {
-        "zh": "TRUST-VL框架针对文本、视觉及跨模态扭曲的多模态虚假信息检测，采用联合训练策略促进知识共享。该可解释新闻助手通过统一架构增强模型对未见场景的泛化能力，应对生成式AI放大的社会威胁。",
-        "en": "Multimodal misinformation, encompassing textual, visual, and cross-modal\ndistortions, poses an increasing societal threat that is amplified by\ngenerative AI. Existing methods typically focus on a single type of distortion\nand struggle to generalize to unseen scenarios. In this work, we observe that\ndifferent distortion types share common reasoning capabilities while also\nrequiring task-specific skills. We hypothesize that joint training across\ndistortion types facilitates knowledge sharing and enhances the model's ability\nto generalize. To this end, we introduce TRUST-VL, a unified and explain"
+        "zh": "本研究探讨了如何通过领域启发的模型来优化嵌入式数字信号处理的性能，展示了快速机器学习的潜力。",
+        "en": "submitted by    /u/boscillator   [link]   [comments]"
       },
-      "host": "arxiv.org",
-      "ts": "2025-09-04T17:59:43+00:00",
+      "host": "www.reddit.com",
+      "ts": "2025-09-07T14:32:26+00:00",
       "has_code": false,
-      "key_numbers_compact": []
+      "key_numbers_compact": [
+        "N/A N/A N/A"
+      ]
     },
     {
-      "headline": "CV 零样本故事可视化与解耦编辑",
-      "one_liner": "基于扩散模型实现零样本故事可视化，支持粗细粒度编辑同时保持多帧视觉叙事一致性，解决现有方法灵活性不足问题",
-      "task": "CV",
-      "type": "paper",
+      "headline": "AI在Donkey Kong Country中的应用",
+      "one_liner": "该项目展示了如何训练AI在Donkey Kong Country游戏中进行特定任务。",
+      "task": "Agent",
+      "type": "project",
       "novelty": "method",
-      "key_numbers": [],
-      "reusability": [],
-      "limitations": [],
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "游戏AI训练"
+      ],
+      "limitations": [
+        "N/A"
+      ],
       "links": {
-        "paper": "http://arxiv.org/abs/2509.04446v1",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.04446.pdf"
+        "paper": "N/A",
+        "code": "https://github.com/pa",
+        "project": "https://www.reddit.com/r/MachineLearning/comments/1nb5j8f/p_i_trained_an_ai_to_play_donkey_kong_country/",
+        "pdf": "N/A"
       },
       "tags": [
-        "CV",
-        "Text-to-Image",
-        "Story Visualization",
-        "Diffusion Models"
+        "Agent",
+        "游戏",
+        "AI训练"
       ],
-      "impact_score": 76,
-      "reproducibility_score": 72,
-      "quick_read": "基于扩散模型实现零样本故事可视化，支持粗细粒度编辑同时保持多帧视觉叙事一致性，解决现有方法灵活性不足问题",
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "该项目展示了如何训练一个AI代理在Donkey Kong Country游戏中执行特定任务，提供了相关的代码和训练环境。",
+      "who_should_try": "游戏开发者和AI研究者",
       "title_i18n": {
-        "zh": "CV 零样本故事可视化与解耦编辑",
-        "en": "Plot'n Polish: Zero-shot Story Visualization and Disentangled Editing\n  with Text-to-Image Diffusion Models"
+        "zh": "AI在Donkey Kong Country中的应用",
+        "en": "AI在Donkey Kong Country中的应用"
       },
       "summary_i18n": {
-        "zh": "基于扩散模型实现零样本故事可视化，支持粗细粒度编辑同时保持多帧视觉叙事一致性，解决现有方法灵活性不足问题",
-        "en": "Text-to-image diffusion models have demonstrated significant capabilities to\ngenerate diverse and detailed visuals in various domains, and story\nvisualization is emerging as a particularly promising application. However, as\ntheir use in real-world creative domains increases, the need for providing\nenhanced control, refinement, and the ability to modify images post-generation\nin a consistent manner becomes an important challenge. Existing methods often\nlack the flexibility to apply fine or coarse edits while maintaining visual and\nnarrative consistency across multiple frames, preventing creator"
+        "zh": "该项目展示了如何训练一个AI代理在Donkey Kong Country游戏中执行特定任务，提供了相关的代码和训练环境。",
+        "en": "该项目展示了如何训练AI在Donkey Kong Country游戏中进行特定任务。"
       },
-      "host": "arxiv.org",
-      "ts": "2025-09-04T17:59:34+00:00",
-      "has_code": false,
-      "key_numbers_compact": []
+      "host": "",
+      "ts": "2025-09-08T00:00:00+00:00",
+      "has_code": true,
+      "key_numbers_compact": [
+        "N/A N/A N/A"
+      ]
     },
     {
-      "headline": "LLM 认知忠实决策模型改进对齐",
-      "one_liner": "针对现有人类决策建模忽略认知过程问题，提出认知忠实决策模型更好地捕捉启发式等真实认知机制，提升AI对齐效果",
-      "task": "LLM",
-      "type": "paper",
+      "headline": "AI编码助手的领域知识应用",
+      "one_liner": "该项目展示了如何构建一个AI编码助手，使其能够理解团队的领域知识和架构决策。",
+      "task": "Agent",
+      "type": "project",
       "novelty": "method",
-      "key_numbers": [],
-      "reusability": [],
-      "limitations": [],
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "领域知识整合"
+      ],
+      "limitations": [
+        "N/A"
+      ],
       "links": {
-        "paper": "http://arxiv.org/abs/2509.04445v1",
+        "paper": "https://www.reddit.com/r/MachineLearning/comments/1nanw9i/p_terra_code_cli_an_ai_coding_assistant_with/",
         "code": "N/A",
         "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.04445.pdf"
+        "pdf": "N/A"
       },
       "tags": [
-        "LLM",
-        "AI Alignment",
-        "Decision Making",
-        "Cognitive Modeling"
+        "Agent",
+        "编码助手",
+        "领域知识"
       ],
-      "impact_score": 75,
-      "reproducibility_score": 68,
-      "quick_read": "针对现有人类决策建模忽略认知过程问题，提出认知忠实决策模型更好地捕捉启发式等真实认知机制，提升AI对齐效果",
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "该项目探讨了如何构建一个AI编码助手，使其能够理解团队的领域知识和架构决策，提升编码效率。",
+      "who_should_try": "软件开发者",
       "title_i18n": {
-        "zh": "LLM 认知忠实决策模型改进对齐",
-        "en": "Towards Cognitively-Faithful Decision-Making Models to Improve AI\n  Alignment"
+        "zh": "AI编码助手的领域知识应用",
+        "en": "[P] Terra Code CLI – An AI coding assistant with domain knowledge and semantic code search"
       },
       "summary_i18n": {
-        "zh": "针对现有人类决策建模忽略认知过程问题，提出认知忠实决策模型更好地捕捉启发式等真实认知机制，提升AI对齐效果",
-        "en": "Recent AI work trends towards incorporating human-centric objectives, with\nthe explicit goal of aligning AI models to personal preferences and societal\nvalues. Using standard preference elicitation methods, researchers and\npractitioners build models of human decisions and judgments, which are then\nused to align AI behavior with that of humans. However, models commonly used in\nsuch elicitation processes often do not capture the true cognitive processes of\nhuman decision making, such as when people use heuristics to simplify\ninformation associated with a decision problem. As a result, models lea"
+        "zh": "该项目探讨了如何构建一个AI编码助手，使其能够理解团队的领域知识和架构决策，提升编码效率。",
+        "en": "One limitation I’ve noticed with most AI coding assistants is that they don’t really understand a team’s domain knowledge or architectural decisions. To explore this, we built a small CLI project: Terra Code CLI. The idea was to see if an assistant could feel more like a senior d"
       },
-      "host": "arxiv.org",
-      "ts": "2025-09-04T17:59:29+00:00",
+      "host": "www.reddit.com",
+      "ts": "2025-09-07T08:26:54+00:00",
       "has_code": false,
-      "key_numbers_compact": []
+      "key_numbers_compact": [
+        "N/A N/A N/A"
+      ]
     },
     {
-      "headline": "CV 全景视觉技术综述",
-      "one_liner": "系统综述全景视觉技术进展，分析全方位图像与透视图像在几何投影等方面的本质差异，总结领域挑战与发展方向",
-      "task": "CV",
-      "type": "paper",
-      "novelty": "method",
-      "key_numbers": [],
-      "reusability": [],
-      "limitations": [],
+      "headline": "语言模型的幻觉现象探讨",
+      "one_liner": "该讨论探讨了语言模型幻觉现象的原因及其影响。",
+      "task": "NLP",
+      "type": "discussion",
+      "novelty": "N/A",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "N/A"
+      ],
+      "limitations": [
+        "N/A"
+      ],
       "links": {
-        "paper": "http://arxiv.org/abs/2509.04444v1",
+        "paper": "https://www.reddit.com/r/MachineLearning/comments/1namvsk/why_language_models_hallucinate_openai_pseudo/",
         "code": "N/A",
         "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.04444.pdf"
+        "pdf": "N/A"
       },
       "tags": [
-        "CV",
-        "Panoramic Vision",
-        "Survey",
-        "360 Imaging"
+        "NLP",
+        "幻觉",
+        "模型"
       ],
-      "impact_score": 50,
-      "reproducibility_score": 50,
-      "quick_read": "系统综述全景视觉技术进展，分析全方位图像与透视图像在几何投影等方面的本质差异，总结领域挑战与发展方向",
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "该讨论探讨了语言模型幻觉现象的原因，分析了其对AI系统可靠性的影响。",
+      "who_should_try": "AI研究者",
       "title_i18n": {
-        "zh": "CV 全景视觉技术综述",
-        "en": "One Flight Over the Gap: A Survey from Perspective to Panoramic Vision"
+        "zh": "语言模型的幻觉现象探讨",
+        "en": "Why Language Models Hallucinate - OpenAi pseudo paper - [D]"
       },
       "summary_i18n": {
-        "zh": "系统综述全景视觉技术进展，分析全方位图像与透视图像在几何投影等方面的本质差异，总结领域挑战与发展方向",
-        "en": "Driven by the demand for spatial intelligence and holistic scene perception,\nomnidirectional images (ODIs), which provide a complete 360\\textdegree{} field\nof view, are receiving growing attention across diverse applications such as\nvirtual reality, autonomous driving, and embodied robotics. Despite their\nunique characteristics, ODIs exhibit remarkable differences from perspective\nimages in geometric projection, spatial distribution, and boundary continuity,\nmaking it challenging for direct domain adaption from perspective methods. This\nsurvey reviews recent panoramic vision techniques with a"
+        "zh": "该讨论探讨了语言模型幻觉现象的原因，分析了其对AI系统可靠性的影响。",
+        "en": "Hey Anybody read this ? It seems rather obvious and low quality, or am I missing something ?  https://openai.com/index/why-language-models-hallucinate/ “At OpenAI, we’re working hard to make AI systems more useful and reliable. Even as language models become more capable, one cha"
       },
-      "host": "arxiv.org",
-      "ts": "2025-09-04T17:59:10+00:00",
+      "host": "www.reddit.com",
+      "ts": "2025-09-07T07:21:15+00:00",
       "has_code": false,
-      "key_numbers_compact": []
+      "key_numbers_compact": [
+        "N/A N/A N/A"
+      ]
     }
   ],
   "refs": [],
   "stats": {
     "by_task": {
-      "CV": 3,
-      "IR": 1,
-      "MM": 1,
-      "LLM": 1
+      "LLM": 0
     },
     "with_code": 0,
-    "new_benchmarks": 1
+    "new_benchmarks": 0
   },
   "must_reads": [
     0,
@@ -244,6 +382,14 @@
     4
   ],
   "nice_to_read": [
-    5
-  ]
+    5,
+    6,
+    7,
+    8
+  ],
+  "deep_dive": {
+    "title": "可选主题",
+    "summary": "三句话要点（可选）",
+    "refs": []
+  }
 }
