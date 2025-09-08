@@ -105,41 +105,41 @@
         <span class="shape shape4"></span>
       </div>
       <div class="container">
-        <h1>🧠 <span data-i18n="scholarpush_title">学术快报 - 每日精选论文推荐</span></h1>
-        <p class="subtitle" data-i18n="scholarpush_subtitle">每日自动精选最新论文，服务于研究者、开发者与技术爱好者</p>
+  <h1><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></g></svg></span> <span data-i18n="scholarpush_title">学术快报 - 每日精选论文推荐</span></h1>
+  <p class="subtitle" data-i18n="scholarpush_subtitle">每日自动精选最新论文，服务于研究者、开发者与技术爱好者</p>
       </div>
     </section>
 
     <section class="section" id="sp">
       <div class="container sp-one">
         <div class="sp-section">
-          <h2 style="margin:0 0 4px 0">学术快报</h2>
+          <h2 style="margin:0 0 4px 0" data-i18n="module_scholarpush_title">学术快报</h2>
           <p id="sp-sub" class="muted" style="margin:0 0 10px 0">—</p>
           <div class="card sp-card sp-toolbar">
             <!-- removed budget selector -->
             <div id="topic-chips" class="sp-chiprow" role="toolbar" aria-label="Topics"></div>
             <span style="flex:1 1 auto"></span>
-            <input id="q" class="input" placeholder="搜索标题/要点/标签…" style="min-width:220px;height:36px;padding:6px 10px">
+            <input id="q" class="input" data-i18n-placeholder="search_placeholder" placeholder="搜索标题/要点/标签…" style="min-width:220px;height:36px;padding:6px 10px">
           </div>
         </div>
 
         <div class="sp-section">
-          <h3 style="margin:0 0 8px 0">概览（5 分钟）</h3>
+          <h3 style="margin:0 0 8px 0" data-i18n="sp_overview">概览（5 分钟）</h3>
           <div id="stats" class="stat-grid"></div>
         </div>
 
         <div class="sp-section">
-          <h3 style="margin:0 0 8px 0">必读（15 分钟）</h3>
+          <h3 style="margin:0 0 8px 0" data-i18n="sp_must_read">必读（15 分钟）</h3>
           <div id="must" class="sp-list"></div>
         </div>
 
         <div class="sp-section">
-          <h3 style="margin:0 0 8px 0">扩展阅读（10 分钟）</h3>
+          <h3 style="margin:0 0 8px 0" data-i18n="sp_nice_read">扩展阅读（10 分钟）</h3>
           <div id="nice" class="sp-list"></div>
         </div>
 
         <div class="sp-section" id="deep" hidden>
-          <h3 style="margin:0 0 8px 0">主题深读</h3>
+          <h3 style="margin:0 0 8px 0" data-i18n="sp_deep_dive">主题深读</h3>
           <div id="deep-card" class="card sp-card"></div>
         </div>
       </div>
@@ -248,21 +248,22 @@
         </div>
       </article>`;
     }
-    function statCard(title,val){ return `<div class="card sp-card"><div class="muted">${title}</div><div style="font-weight:600;font-size:18px">${val}</div></div>` }
+  function t(key, fallback){ try { const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh'; const tx=(window.translations?.[lang]?.[key]); return tx||fallback||key; } catch { return fallback||key; } }
+  function statCard(title,val){ return `<div class="card sp-card"><div class="muted">${title}</div><div style="font-weight:600;font-size:18px">${val}</div></div>` }
     function renderStats(stats){
       const byTask=stats.by_task||{}; const sum=Object.values(byTask).reduce((a,b)=>a+b,0);
       const top=Object.entries(byTask).sort((a,b)=>b[1]-a[1]).slice(0,4);
       statsEl.innerHTML = [
-        statCard('总条目', sum),
-        statCard('含代码', stats.with_code||0),
-        statCard('新基准/数据', stats.new_benchmarks||0),
-        statCard('Top 任务', top.map(([k,v])=>`${k}:${v}`).join(' · ')||'—')
+        statCard(t('sp_stat_total','总条目'), sum),
+        statCard(t('sp_stat_code','含代码'), stats.with_code||0),
+        statCard(t('sp_stat_bench','新基准/数据'), stats.new_benchmarks||0),
+        statCard(t('sp_stat_top_tasks','Top 任务'), top.map(([k,v])=>`${k}:${v}`).join(' · ')||'—')
       ].join('');
     }
     function buildChips(){
       chipRow.innerHTML='';
       const byTask = (data?.stats?.by_task)||{};
-      const allBtn=document.createElement('button'); allBtn.className='btn outline small'+(activeTags.size===0?' primary':''); allBtn.textContent='全部'; allBtn.onclick=()=>{activeTags.clear(); renderAll();}; chipRow.appendChild(allBtn);
+      const allBtn=document.createElement('button'); allBtn.className='btn outline small'+(activeTags.size===0?' primary':''); allBtn.textContent=t('all_label','全部'); allBtn.onclick=()=>{activeTags.clear(); renderAll();}; chipRow.appendChild(allBtn);
       Object.entries(byTask).sort((a,b)=>b[1]-a[1]).forEach(([t,n])=>{
         const b=document.createElement('button'); const act=activeTags.has(t);
         b.className='btn outline small'+(act?' primary':''); b.textContent=`${t} · ${n}`; b.onclick=()=>{ act?activeTags.delete(t):activeTags.add(t); renderAll();}; chipRow.appendChild(b);
@@ -279,7 +280,10 @@
     }
     function renderAll(){
       // subtitle
-      const dt=data?.generated_at||''; subEl.textContent = `今日 ${data?.items?.length||0} 条 · 生成时间 ${dt.slice(0,16).replace('T',' ')}`;
+  const dt=data?.generated_at||''; const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh';
+  if (lang==='en') subEl.textContent = `Today ${data?.items?.length||0} · Generated at ${dt.slice(0,16).replace('T',' ')}`;
+  else if (lang==='es') subEl.textContent = `Hoy ${data?.items?.length||0} · Generado a las ${dt.slice(0,16).replace('T',' ')}`;
+  else subEl.textContent = `今日 ${data?.items?.length||0} 条 · 生成时间 ${dt.slice(0,16).replace('T',' ')}`;
       // chips + stats
       buildChips(); renderStats(data?.stats||{by_task:{},with_code:0,new_benchmarks:0});
       // lists
@@ -293,7 +297,7 @@
       // deep
       const dd=data?.deep_dive; deepWrap.hidden = !dd; if(dd){ deepCard.innerHTML = `<h4 style="margin:0 0 6px 0">${dd.title||'主题深读'}</h4><p class="muted">${dd.summary||''}</p>`; }
     }
-    async function init(){
+  async function init(){
       const sp = await fetch('../data/ai/scholarpush/index.json', {cache:'no-store'}).then(r=>r.json()).catch(()=>null);
       data = sp||{}; items = Array.isArray(sp?.items)? sp.items: [];
       // normalize pdf links if missing
@@ -304,7 +308,9 @@
       // bind search
       let tid=null; qInput.addEventListener('input', ()=>{ clearTimeout(tid); tid=setTimeout(()=>{ query=qInput.value||''; renderAll(); }, 200); });
   // budget selector removed
-      renderAll();
+  renderAll();
+  // Re-render content on language change
+  window.addEventListener('language-changed', () => { renderAll(); });
     }
     init();
   })();

@@ -4,6 +4,7 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
+  "blog:translate": "node scripts/translate-markdown.mjs",
     "og:render": "node scripts/render-all-og.mjs",
     "blog:build": "node scripts/generate-blog.mjs",
     "blog:build:one": "node scripts/generate-blog.mjs",
@@ -11,8 +12,9 @@
     "og:rasterize": "node scripts/rasterize-og.mjs",
     "blog:index": "node scripts/build-blog-index.mjs",
     "rss": "node scripts/generate-rss.mjs",
-  "site:build": "npm run og:from-template && npm run og:rasterize || true && npm run og:render || true && npm run blog:build && npm run blog:index && npm run rss",
-  "serve": "npx http-server -p 8080 -c-1 ."
+  "site:build": "npm run og:from-template && npm run og:rasterize || true && npm run og:render || true && npm run blog:translate && npm run blog:build && npm run blog:index && npm run rss",
+  "serve": "npx http-server -p 8080 -c-1 .",
+  "i18n:fill": "node tools/translate.mjs"
   },
   "devDependencies": {
     "puppeteer": "^22.15.0",

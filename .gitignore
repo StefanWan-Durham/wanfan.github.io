@@ -1,4 +1,8 @@
-# Node & local artifacts
+.env
+*.local
+node_modules/
+dist/
+coverage/# Node & local artifacts
 node_modules/
 npm-debug.log*
 yarn-error.log*

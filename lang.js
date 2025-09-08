@@ -63,6 +63,15 @@ const translations = {
   ai_lab_apps_desc: 'AI Teacher、Ask My Site、Long-form to Slides/Audio 等交互 Demo。',
   coming_soon: '功能开发中，敬请期待…',
   module_enter: '进入模块',
+  // ScholarPush (local labels)
+  sp_overview: '概览（5 分钟）',
+  sp_must_read: '必读（15 分钟）',
+  sp_nice_read: '扩展阅读（10 分钟）',
+  sp_deep_dive: '主题深读',
+  sp_stat_total: '总条目',
+  sp_stat_code: '含代码',
+  sp_stat_bench: '新基准/数据',
+  sp_stat_top_tasks: 'Top 任务',
   // ScholarPush filters & UI
   filter_label: '筛选',
   all_label: '全部',
@@ -214,6 +223,15 @@ const translations = {
   ai_lab_apps_desc: 'AI Teacher, Ask My Site, and Long-form to Slides/Audio demos.',
   coming_soon: 'Coming soon…',
   module_enter: 'Enter module',
+  // ScholarPush (local labels)
+  sp_overview: 'Overview (5 min)',
+  sp_must_read: 'Must Read (15 min)',
+  sp_nice_read: 'Nice to Read (10 min)',
+  sp_deep_dive: 'Deep Dive',
+  sp_stat_total: 'Total items',
+  sp_stat_code: 'With code',
+  sp_stat_bench: 'New benchmarks/data',
+  sp_stat_top_tasks: 'Top tasks',
   // ScholarPush filters & UI
   filter_label: 'Filter',
   all_label: 'All',
@@ -356,6 +374,15 @@ const translations = {
   ai_lab_apps_desc: 'AI Teacher, Ask My Site y demo de convertir a diapositivas/audio.',
   coming_soon: 'Próximamente…',
   module_enter: 'Entrar al módulo',
+  // ScholarPush (local labels)
+  sp_overview: 'Resumen (5 min)',
+  sp_must_read: 'Lectura obligatoria (15 min)',
+  sp_nice_read: 'Lectura ampliada (10 min)',
+  sp_deep_dive: 'Análisis en profundidad',
+  sp_stat_total: 'Total',
+  sp_stat_code: 'Con código',
+  sp_stat_bench: 'Nuevos benchmarks/datos',
+  sp_stat_top_tasks: 'Tareas destacadas',
   // ScholarPush filters & UI
   filter_label: 'Filtrar',
   all_label: 'Todo',
