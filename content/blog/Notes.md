@@ -98,12 +98,10 @@ draft: false
     e^{i\pi} + 1 = 0
     $$
     ```
+- 图片：`![alt](path-or-url)` 支持相对路径（相对于 `content/blog/<slug>/`，发布后自动改为页面可访问路径）与绝对 URL。
+- 表格：GitHub 风格表格（表头+`|---|` 分隔+数据行）自动渲染为 `<table>`。
 
-当前未支持（会按普通文本处理）：
-- Markdown 图片语法：`![](…)`（正文插图尚未解析）
-- Markdown 表格、原生 HTML 块
-
-如需正文插图/表格等能力，可后续扩展解析器（告知需求优先级即可）。
+注：原生 HTML 片段不建议直接内嵌，以免破坏页面结构；如确有需要，先在本地预览验证。
 
 ---
 
@@ -177,3 +175,104 @@ npm run site:build
 ---
 
 如需“正文内插图/表格/脚注/目录自动生成”等扩展，请告知你的优先级，我会在不破坏现有流程的前提下增强解析与样式。
+
+---
+
+## 十二、自动翻译（zh → en / es）
+
+你可以只写中文 `zh.md`，系统会自动生成英文 `en.md` 与西语 `es.md`：
+
+- 位置：`content/blog/<slug>/zh.md` → 输出同目录下 `en.md`、`es.md`
+- 触发方式：
+  - 本地：`npm run blog:translate`（或 `node scripts/translate-markdown.mjs <slug>`）
+  - 线上 CI：`npm run site:build` 会自动先跑翻译再生成 HTML
+- 覆盖策略（安全）：
+  - 如果检测到 `en.md` / `es.md` 是手工维护（Front Matter 无 `auto_translated: true`），永不覆盖。
+  - 如果是自动生成且 `source_hash` 与当前中文不一致，会自动更新。
+  - 可用 `--force` 强制重写：`node scripts/translate-markdown.mjs <slug> --force`
+
+翻译引擎（按优先级）：
+1) DeepSeek（默认）
+   - 环境变量：`DEEPSEEK_API_KEY`，`DEEPSEEK_BASE_URL`（默认 `https://api.deepseek.com/v1`），`DEEPSEEK_MODEL`（默认 `deepseek-chat`）
+2) OpenAI（若配置了 `OPENAI_API_KEY` 则作为备选）
+3) 本地占位：若未配置任何 key，则“复制中文到英文/西语”，便于你后续人工校对
+
+Front Matter 处理：
+- 会翻译 `title`、`description`；保留 `date`、`cover`。
+- 自动写入 `auto_translated: true` 与 `source_hash` 以追踪是否需要更新。
+
+本地配置（只对你本机有效，已 gitignore）：
+- 仓库根目录有 `.env` 文件，可填：
+  - `DEEPSEEK_API_KEY=...`
+  - `DEEPSEEK_BASE_URL=https://api.deepseek.com/v1`
+  - `DEEPSEEK_MODEL=deepseek-chat`
+  不填也可构建，只是本地翻译会退化为“复制中文”。
+
+CI 配置（已接好）：
+- GitHub → Settings → Secrets and variables：
+  - Secrets: `DEEPSEEK_API_KEY`
+  - Variables: `DEEPSEEK_BASE_URL`，`DEEPSEEK_MODEL`
+- 工作流 `.github/workflows/build-blog.yml` 已把上述变量注入 `npm run site:build`。
+
+---
+
+## 十三、三语切换机制（前端）
+
+- 站点的语言偏好存储在 `localStorage.lang`，默认 `zh`，你也可以用户级通过右上角语言切换器更改。
+- 页面中使用 `i18n` 块按语言展示/隐藏文案；博客页面也会输出 hreflang 与 alternate 链接：
+  - 中文：`blog/<slug>.html`
+  - 英文：`blog/<slug>.en.html`
+  - 西语：`blog/<slug>.es.html`
+- 博客列表 `blog.html` 的卡片，点击链接与缩略图会根据当前语言跳转；缺失语言会回退到已有语言。
+
+---
+
+## 十四、ScholarPush（学术快报）是什么、如何翻译
+
+概念：
+- ScholarPush 是“AI Studio”的一个模块（`lab/scholarpush.html`），面向研究者/开发者的“每日精选论文与要点”页面。
+- 页面数据来自 JSON feed（`data/ai/scholarpush/index.json`），前端按这个 feed 渲染卡片与统计。
+
+内容来源与生成：
+- 抓取/聚合：可通过 RSS/Atom 源获取当天内容（详见下节 `sources.ai.json`）。
+- 结构化摘要：仓库提供了 `tools/ai_blog_pipeline.py`，其内置 `PROMPT_SCHOLAR` 会把当日条目整理成结构化 JSON（含 headline、one_liner、tags、links、stats 等）。
+- 语言：
+  - 你可以先用中文生成 feed，再使用 `tools/translate.mjs` 对 JSON 中的中文字段（对象含 `zh` 时）进行 en/es 预填充（该工具基于词典/回退策略，以便你后期校对）。
+  - 或者在生成时就让你的管道同时产出多语言字段。
+
+博客页与学术快报联动：
+- 若博客 slug 符合 `*-ai-daily-*`，生成器会优先采用 ScholarPush 的顺序与“返回学术快报”的导航（见 `scripts/generate-blog.mjs` 中对 `ai-daily` 的特殊处理）。
+
+---
+
+## 十五、sources.ai.json（数据源清单）如何使用与维护
+
+文件：`tools/sources.ai.json`
+
+用途：
+- 以 JSON 方式集中管理“学术/AI 新闻/论文”的抓取来源（RSS/Atom 等），便于增删、审计与共享。
+
+维护规范：
+- 纯数组，每一项：`{ "name": "可读名称", "url": "订阅地址" }`
+- 可以随时增删；提交到 main 后，CI 不会直接使用它生成页面，但它是你的抓取脚本的权威输入清单（建议你的采集脚本读取此文件）。
+
+接入建议：
+- 如你使用 `tools/ai_blog_pipeline.py`，可把其中的内置 `SOURCES` 替换为读取 `tools/sources.ai.json`（简例）：
+  - Python 伪代码：
+    1) `with open('tools/sources.ai.json','r',encoding='utf-8') as f: sources = [x['url'] for x in json.load(f)]`
+    2) 迭代 `sources` 去抓取，每源设置合理的超时与去重
+- 这样做的好处：数据源与代码解耦，维护成本更低。
+
+---
+
+## 十六、端到端流程总览（只写中文也能三语发布）
+
+1) 你在 `content/blog/<slug>/zh.md` 编写中文文章并提交到 main。
+2) CI 触发，运行：
+   - 翻译：生成/更新 `en.md`、`es.md`（DeepSeek→OpenAI→复制中文的回退链）。
+   - 生成 HTML：`blog/<slug>.html(.en/.es)`。
+   - 生成/回退封面图：PNG→SVG→占位图。
+   - 更新博客索引 `blog.html` 与 RSS。
+3) 访问站点，右上角语言切换器可在中文/英文/西语间切换；缺失语言自动回退。
+
+本地只要 `npm run site:build` 即可模拟上述流程；若未配置 API key，翻译会退化为复制中文，页面仍可用。
