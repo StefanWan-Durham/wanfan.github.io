@@ -177,6 +177,83 @@
   let searchTid = null;
   let searchBound = false;
 
+    // Canonical categories to surface first in the chips bar
+    const CANONICAL = [
+      'LLM','RAG','Agent','NLP','CV','ASR','MM','IR','Robotics','Theory','Infra',
+      'Dataset','Benchmark','Blog','Policy','Code'
+    ];
+    // Simple synonym map for category matching
+    const SYN = {
+      llm:['llm','large language model','foundation model','language model'],
+      rag:['rag','retrieval','retrieval-augmented','retrieval augmented'],
+      agent:['agent','tool','planner'],
+      nlp:['nlp','language'],
+      cv:['cv','vision','image'],
+      asr:['asr','speech'],
+      mm:['mm','multimodal','multi-modal'],
+      ir:['ir','retrieval','information retrieval','search'],
+      robotics:['robotics','robot','manipulation'],
+      theory:['theory','theoretical'],
+      infra:['infra','infrastructure','system','systems','engineering'],
+      dataset:['dataset','data'],
+      benchmark:['benchmark','evaluation','eval'],
+      blog:['blog','news','announcement'],
+      policy:['policy','ethics','governance'],
+      code:['code','implementation','repo','github']
+    };
+    function norm(s){ return String(s||'').trim().toLowerCase(); }
+    function hasAny(hay, arr){ const H = norm(hay); return arr.some(x=>H.includes(x)); }
+    function itemMatchesCategory(it, cat){
+      const k = norm(cat);
+      const tTask = norm(it.task);
+      const tType = norm(it.type);
+      const tagsL = (it.tags||[]).map(norm);
+      const syn = SYN[k]||[k];
+      // Task match
+      if (syn.includes(tTask)) return true;
+      // Type-based categories
+      if ((k==='dataset'&&tType==='dataset') || (k==='benchmark'&&tType==='benchmark') || (k==='blog'&&tType==='blog') || (k==='policy'&&tType==='policy') || (k==='code'&&tType==='code')) return true;
+      // Tag synonyms
+      if (tagsL.some(tag => syn.includes(tag) || hasAny(tag, syn))) return true;
+      return false;
+    }
+    function itemMatchesTag(it, tag){
+      const k = norm(tag);
+      // Canonical category?
+      if (CANONICAL.map(norm).includes(k)) return itemMatchesCategory(it, tag);
+      // Otherwise, treat as literal tag or type or task
+      const tagsL = (it.tags||[]).map(norm);
+      if (tagsL.includes(k)) return true;
+      if (norm(it.task)===k) return true;
+      if (norm(it.type)===k) return true;
+      return false;
+    }
+    function aggregateCounts(arr){
+      const counts = new Map();
+      const seenCanon = new Set();
+      // Count canonical first
+      for(const cat of CANONICAL){
+        let c=0; for(const it of arr){ if(itemMatchesCategory(it, cat)) c++; }
+        if (c>0){ counts.set(cat, c); seenCanon.add(norm(cat)); }
+      }
+      // Dynamic tags from items.tags
+      const tagCounts = new Map();
+      for(const it of arr){
+        for(const t of (it.tags||[])){
+          const key = String(t||'').trim(); if(!key || key.toUpperCase()==='N/A') continue;
+          const kNorm = norm(key);
+          // skip tags that are synonyms of canonical to avoid duplicates
+          const isCanon = CANONICAL.some(c=>{ const cn=norm(c); return kNorm===cn || (SYN[cn]&&SYN[cn].includes(kNorm)); });
+          if (isCanon) continue;
+          tagCounts.set(key, (tagCounts.get(key)||0) + 1);
+        }
+      }
+      // Pick top-N dynamic tags by frequency
+      const extras = [...tagCounts.entries()].sort((a,b)=>b[1]-a[1]).slice(0, 10);
+      for(const [k,v] of extras){ counts.set(k, v); }
+      return counts;
+    }
+
     function btn(href,label){ return `<a class="btn outline small" target="_blank" rel="noopener" href="${href}">${label}</a>` }
     // Build a map of ref url -> title for client-side healing of truncated headlines
     let refTitleByUrl = new Map();
@@ -302,7 +379,14 @@
   function t(key, fallback){ try { const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh'; const tx=(window.translations?.[lang]?.[key]); return tx||fallback||key; } catch { return fallback||key; } }
   function statCard(title,val){ return `<div class="card sp-card"><div class="muted">${title}</div><div style="font-weight:600;font-size:18px">${val}</div></div>` }
     function renderStats(stats){
-      const byTask=stats.by_task||{}; const sum=Object.values(byTask).reduce((a,b)=>a+b,0);
+      let byTask=stats.by_task||{};
+      let sum=Object.values(byTask).reduce((a,b)=>a+b,0);
+      // Fallback: build from items when feed stats are empty
+      if (!sum && Array.isArray(items) && items.length){
+        const tmp = {};
+        for(const it of items){ const k = it.task||'Other'; tmp[k] = (tmp[k]||0)+1; }
+        byTask = tmp; sum = items.length;
+      }
       const top=Object.entries(byTask).sort((a,b)=>b[1]-a[1]).slice(0,4);
       statsEl.innerHTML = [
         statCard(t('sp_stat_total','总条目'), sum),
@@ -313,17 +397,42 @@
     }
     function buildChips(){
       chipRow.innerHTML='';
-      const byTask = (data?.stats?.by_task)||{};
-      const allBtn=document.createElement('button'); allBtn.className='btn outline small'+(activeTags.size===0?' primary':''); allBtn.textContent=t('all_label','全部'); allBtn.onclick=()=>{activeTags.clear(); renderAll();}; chipRow.appendChild(allBtn);
-      Object.entries(byTask).sort((a,b)=>b[1]-a[1]).forEach(([t,n])=>{
-        const b=document.createElement('button'); const act=activeTags.has(t);
-        b.className='btn outline small'+(act?' primary':''); b.textContent=`${t} · ${n}`; b.onclick=()=>{ act?activeTags.delete(t):activeTags.add(t); renderAll();}; chipRow.appendChild(b);
-      });
+      const counts = aggregateCounts(items||[]);
+      // ALL button
+      const allBtn=document.createElement('button');
+      allBtn.className='btn outline small'+(activeTags.size===0?' primary':'');
+      allBtn.textContent=t('all_label','全部');
+      allBtn.onclick=()=>{activeTags.clear(); renderAll();};
+      chipRow.appendChild(allBtn);
+      // Canonical first (only those with counts)
+      for(const cat of CANONICAL){
+        if(!counts.has(cat)) continue;
+        const n = counts.get(cat)||0; const act = activeTags.has(cat);
+        const b=document.createElement('button');
+        b.className='btn outline small'+(act?' primary':'');
+        b.textContent=`${cat} · ${n}`;
+        b.onclick=()=>{ act?activeTags.delete(cat):activeTags.add(cat); renderAll(); };
+        chipRow.appendChild(b);
+      }
+      // Dynamic extras (top-N from counts that are not canonical)
+      const canonSet = new Set(CANONICAL.map(norm));
+      const extras = [...counts.entries()].filter(([k])=>!canonSet.has(norm(k))).sort((a,b)=>b[1]-a[1]).slice(0, 10);
+      for(const [tag, n] of extras){
+        const act = activeTags.has(tag);
+        const b=document.createElement('button');
+        b.className='btn outline small'+(act?' primary':'');
+        b.textContent=`${tag} · ${n}`;
+        b.onclick=()=>{ act?activeTags.delete(tag):activeTags.add(tag); renderAll(); };
+        chipRow.appendChild(b);
+      }
     }
   function filterItems(arr){
       const qs=(query||'').trim().toLowerCase();
       return arr.filter(it=>{
-        if(activeTags.size>0 && !(it.tags||[]).some(t=>activeTags.has(t))) return false;
+        if(activeTags.size>0){
+          let ok=false; for(const tag of activeTags){ if(itemMatchesTag(it, tag)) { ok=true; break; } }
+          if(!ok) return false;
+        }
         if(!qs) return true;
     const blob = `${it.headline||''} ${it.one_liner||''} ${it.title_i18n?.zh||''} ${it.title_i18n?.en||''} ${it.summary_i18n?.zh||''} ${it.summary_i18n?.en||''} ${it.host||''} ${(it.tags||[]).join(' ')}`.toLowerCase();
         return qs.split(/\s+/).filter(Boolean).some(w=>blob.includes(w));
