@@ -1,167 +1,61 @@
 {
-  "generated_at": "2025-09-08T01:36:33+00:00",
+  "generated_at": "2025-09-08T04:00:00+00:00",
   "items": [
     {
-      "headline": "Meta推出REFRAG：提升RAG效率",
-      "one_liner": "Meta Superintelligence Labs提出REFRAG框架，通过扩展上下文窗口和加速解码提升RAG效率。",
-      "task": "RAG",
+      "headline": "AI在建筑项目管理中的伦理评估",
+      "one_liner": "本研究评估了大型语言模型在建筑项目管理中的决策支持能力，揭示了其伦理影响。",
+      "task": "Other",
       "type": "paper",
       "novelty": "method",
       "key_numbers": [
         {
           "dataset": "N/A",
           "metric": "N/A",
-          "ours": "16×",
+          "ours": "N/A",
           "baseline": "N/A",
           "impr_abs": "N/A",
           "impr_rel": "N/A"
         }
       ],
       "reusability": [
-        "可复用做法×1-3（如模型优化）"
+        "数据增强"
       ],
       "limitations": [
-        "边界/风险×0"
+        "评测偏差"
       ],
       "links": {
-        "paper": "N/A",
+        "paper": "https://arxiv.org/abs/2509.04505",
         "code": "N/A",
         "project": "N/A",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "RAG",
-        "Meta",
-        "效率"
-      ],
-      "impact_score": 5,
-      "reproducibility_score": 0,
-      "quick_read": "Meta Superintelligence Labs推出REFRAG框架，旨在提升RAG的解码效率，扩展上下文窗口至16倍，显著加快处理速度。",
-      "who_should_try": "研究人员和开发者",
-      "title_i18n": {
-        "zh": "Meta推出REFRAG：提升RAG效率",
-        "en": "Meta推出REFRAG：提升RAG效率"
-      },
-      "summary_i18n": {
-        "zh": "Meta Superintelligence Labs推出REFRAG框架，旨在提升RAG的解码效率，扩展上下文窗口至16倍，显著加快处理速度。",
-        "en": "Meta Superintelligence Labs提出REFRAG框架，通过扩展上下文窗口和加速解码提升RAG效率。"
-      },
-      "host": "",
-      "ts": "2025-09-08T01:36:33+00:00",
-      "has_code": false,
-      "key_numbers_compact": [
-        "N/A N/A 16×"
-      ]
-    },
-    {
-      "headline": "Hugging Face发布FineVision数据集",
-      "one_liner": "Hugging Face推出FineVision数据集，包含2400万样本，旨在提升视觉语言模型的训练效果。",
-      "task": "VLM",
-      "type": "dataset",
-      "novelty": "data",
-      "key_numbers": [
-        {
-          "dataset": "FineVision",
-          "metric": "样本数",
-          "ours": "24000000",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "可复用做法×1-3（如数据增强）"
-      ],
-      "limitations": [
-        "边界/风险×0"
-      ],
-      "links": {
-        "paper": "N/A",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "VLM",
-        "数据集",
-        "Hugging Face"
-      ],
-      "impact_score": 4,
-      "reproducibility_score": 0,
-      "quick_read": "Hugging Face发布FineVision数据集，包含2400万样本，旨在为视觉语言模型的训练提供高质量数据，推动相关研究进展。",
-      "who_should_try": "研究人员和开发者",
-      "title_i18n": {
-        "zh": "Hugging Face发布FineVision数据集",
-        "en": "Hugging Face发布FineVision数据集"
-      },
-      "summary_i18n": {
-        "zh": "Hugging Face发布FineVision数据集，包含2400万样本，旨在为视觉语言模型的训练提供高质量数据，推动相关研究进展。",
-        "en": "Hugging Face推出FineVision数据集，包含2400万样本，旨在提升视觉语言模型的训练效果。"
-      },
-      "host": "",
-      "ts": "2025-09-08T01:36:33+00:00",
-      "has_code": false,
-      "key_numbers_compact": [
-        "FineVision 样本数 24000000"
-      ]
-    },
-    {
-      "headline": "Tilde发布TildeOpen LLM",
-      "one_liner": "Tilde推出TildeOpen LLM，支持超过300亿参数，专注于欧洲语言的开源大语言模型。",
-      "task": "LLM",
-      "type": "dataset",
-      "novelty": "method",
-      "key_numbers": [
-        {
-          "dataset": "TildeOpen LLM",
-          "metric": "参数数量",
-          "ours": "30000000000",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "可复用做法×1-3（如多语言处理）"
-      ],
-      "limitations": [
-        "边界/风险×0"
-      ],
-      "links": {
-        "paper": "N/A",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "N/A"
+        "pdf": "https://arxiv.org/pdf/2509.04505.pdf"
       },
       "tags": [
         "LLM",
-        "开源",
-        "多语言"
+        "Ethics",
+        "Construction"
       ],
-      "impact_score": 3,
+      "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "Tilde发布TildeOpen LLM，旨在为欧洲语言提供支持，推动小语种的技术发展与应用。",
-      "who_should_try": "语言学家和开发者",
+      "quick_read": "本研究探讨了大型语言模型在建筑项目管理中的应用，分析其在决策支持中的伦理考量。",
+      "who_should_try": "建筑管理者、AI伦理研究者",
       "title_i18n": {
-        "zh": "Tilde发布TildeOpen LLM",
-        "en": "Tilde发布TildeOpen LLM"
+        "zh": "AI在建筑项目管理中的伦理评估",
+        "en": "The Ethical Compass of the Machine: Evaluating Large Language Models for Decision Support in Construction Project Management"
       },
       "summary_i18n": {
-        "zh": "Tilde发布TildeOpen LLM，旨在为欧洲语言提供支持，推动小语种的技术发展与应用。",
-        "en": "Tilde推出TildeOpen LLM，支持超过300亿参数，专注于欧洲语言的开源大语言模型。"
+        "zh": "随着人工智能技术的快速发展，大型语言模型（LLMs）在建筑项目管理中被广泛应用。这些模型能够提供决策支持，帮助项目经理在复杂的环境中做出更有效的决策。研究表明，LLMs的集成正在加速建筑管理的数字化转型，提升了项目的效率和准确性。",
+        "en": "arXiv:2509.04505v1 Announce Type: new \nAbstract: The integration of Artificial Intelligence (AI) into construction project management (CPM) is accelerating, with Large Language Models (LLMs) emerging as accessible decision-support tools. This study aims to critically evaluate the"
       },
-      "host": "",
-      "ts": "2025-09-08T01:36:33+00:00",
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
       "has_code": false,
-      "key_numbers_compact": [
-        "TildeOpen LLM 参数数量 30000000000"
-      ]
+      "key_numbers_compact": []
     },
     {
-      "headline": "DeepSpeed实现可扩展Transformer训练",
-      "one_liner": "DeepSpeed教程展示如何通过梯度检查点和并行化技术高效训练大型语言模型。",
-      "task": "Infra",
-      "type": "code",
+      "headline": "联合图与配置优化以提高AI代理可靠性",
+      "one_liner": "本研究提出了一种联合图和配置优化的方法，以提高大型语言模型代理的可靠性。",
+      "task": "Agent",
+      "type": "paper",
       "novelty": "method",
       "key_numbers": [
         {
@@ -174,44 +68,42 @@
         }
       ],
       "reusability": [
-        "可复用做法×1-3（如梯度累积）"
+        "模型配置"
       ],
       "limitations": [
-        "边界/风险×0"
+        "算力门槛"
       ],
       "links": {
-        "paper": "N/A",
+        "paper": "https://arxiv.org/abs/2509.04642",
         "code": "N/A",
         "project": "N/A",
-        "pdf": "N/A"
+        "pdf": "https://arxiv.org/pdf/2509.04642.pdf"
       },
       "tags": [
-        "DeepSpeed",
-        "训练",
-        "Transformer"
+        "Agent",
+        "Optimization",
+        "AI"
       ],
-      "impact_score": 3,
+      "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "DeepSpeed提供了一套先进的优化技术，帮助研究人员高效训练大型语言模型，提升训练效率和性能。",
-      "who_should_try": "研究人员和开发者",
+      "quick_read": "本研究通过优化图结构和节点配置，提升了AI代理的决策能力和可靠性。",
+      "who_should_try": "AI开发者、系统架构师",
       "title_i18n": {
-        "zh": "DeepSpeed实现可扩展Transformer训练",
-        "en": "DeepSpeed实现可扩展Transformer训练"
+        "zh": "联合图与配置优化以提高AI代理可靠性",
+        "en": "Maestro: Joint Graph & Config Optimization for Reliable AI Agents"
       },
       "summary_i18n": {
-        "zh": "DeepSpeed提供了一套先进的优化技术，帮助研究人员高效训练大型语言模型，提升训练效率和性能。",
-        "en": "DeepSpeed教程展示如何通过梯度检查点和并行化技术高效训练大型语言模型。"
+        "zh": "本研究通过优化图结构和节点配置，提升了AI代理的决策能力和可靠性。",
+        "en": "arXiv:2509.04642v1 Announce Type: new \nAbstract: Building reliable LLM agents requires decisions at two levels: the graph (which modules exist and how information flows) and the configuration of each node (models, prompts, tools, control knobs). Most existing optimizers tune conf"
       },
-      "host": "",
-      "ts": "2025-09-08T01:36:33+00:00",
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
       "has_code": false,
-      "key_numbers_compact": [
-        "N/A N/A N/A"
-      ]
+      "key_numbers_compact": []
     },
     {
-      "headline": "OpenAI研究语言模型幻觉",
-      "one_liner": "OpenAI研究表明，语言模型生成的幻觉现象依然普遍，尽管训练方法有所改进。",
+      "headline": "健康模拟的个性化解释框架",
+      "one_liner": "本研究提出了一种混合方法框架，以实现健康模拟中的利益相关者中心总结。",
       "task": "NLP",
       "type": "paper",
       "novelty": "method",
@@ -226,45 +118,43 @@
         }
       ],
       "reusability": [
-        "可复用做法×1-3（如评估方法）"
+        "数据增强"
       ],
       "limitations": [
-        "边界/风险×0"
+        "评测偏差"
       ],
       "links": {
-        "paper": "https://www.marktechpost.com/2025/09/06/from-pretraining-to-post-training-why-language-models-hallucinate-and-how-evaluation-methods-reinforce-the-problem/",
+        "paper": "https://arxiv.org/abs/2509.04646",
         "code": "N/A",
         "project": "N/A",
-        "pdf": "N/A"
+        "pdf": "https://arxiv.org/pdf/2509.04646.pdf"
       },
       "tags": [
         "NLP",
-        "幻觉",
-        "OpenAI"
+        "Health",
+        "Simulation"
       ],
-      "impact_score": 2,
+      "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "OpenAI的研究揭示了语言模型生成幻觉的根本原因，并探讨了评估方法如何加剧这一问题，提供了新的视角。",
-      "who_should_try": "研究人员和开发者",
+      "quick_read": "本研究通过利益相关者中心的方法，提升了健康模拟的个性化解释能力。",
+      "who_should_try": "健康研究人员、模拟专家",
       "title_i18n": {
-        "zh": "OpenAI研究语言模型幻觉",
-        "en": "From Pretraining to Post-Training: Why Language Models Hallucinate and How Evaluation Methods Reinforce the Problem"
+        "zh": "健康模拟的个性化解释框架",
+        "en": "Towards Personalized Explanations for Health Simulations: A Mixed-Methods Framework for Stakeholder-Centric Summarization"
       },
       "summary_i18n": {
-        "zh": "语言模型的幻觉现象是指这些模型生成的输出虽然看似合理，但实际上却是错误的。最新的研究表明，尽管训练方法和架构有所改进，这种幻觉现象依然存在。这一问题的深入分析有助于理解模型的局限性，并为未来的改进提供方向。",
-        "en": "Large language models (LLMs) very often generate “hallucinations”—confident yet incorrect outputs that appear plausible. Despite improvements in training methods and architectures, hallucinations persist. A new research from OpenAI provides a rigorous explanation: hallucinations"
+        "zh": "健康模拟领域正在探索如何为不同利益相关者提供个性化的解释。这种方法结合了定量和定性的方法，旨在提高模拟结果的可理解性和可用性。研究者们认为，这将有助于更好地支持公共健康决策和政策制定。",
+        "en": "arXiv:2509.04646v1 Announce Type: new \nAbstract: Modeling & Simulation (M&S) approaches such as agent-based models hold significant potential to support decision-making activities in health, with recent examples including the adoption of vaccines, and a vast literature on hea"
       },
-      "host": "www.marktechpost.com",
-      "ts": "2025-09-07T04:56:28+00:00",
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
       "has_code": false,
-      "key_numbers_compact": [
-        "N/A N/A N/A"
-      ]
+      "key_numbers_compact": []
     },
     {
-      "headline": "知识蒸馏用于Text-to-SQL",
-      "one_liner": "研究结合知识蒸馏与Text-to-SQL问题，使用GPT-2作为教师模型进行训练。",
-      "task": "NLP",
+      "headline": "基于人类标准的AI模型评估方法",
+      "one_liner": "本研究提出了一种新颖的方法，将AI模型评估与人类标准相结合，以提高评估的有效性。",
+      "task": "Theory",
       "type": "paper",
       "novelty": "method",
       "key_numbers": [
@@ -278,103 +168,194 @@
         }
       ],
       "reusability": [
-        "可复用做法×1-3（如知识蒸馏）"
+        "评估标准"
       ],
       "limitations": [
-        "边界/风险×0"
+        "数据泄漏"
       ],
       "links": {
-        "paper": "N/A",
+        "paper": "https://arxiv.org/abs/2509.04676",
         "code": "N/A",
         "project": "N/A",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "NLP",
-        "知识蒸馏",
-        "Text-to-SQL"
-      ],
-      "impact_score": 2,
-      "reproducibility_score": 0,
-      "quick_read": "本研究探讨了如何将知识蒸馏应用于Text-to-SQL任务，利用GPT-2提升模型性能，简化数据库查询。",
-      "who_should_try": "研究人员和开发者",
-      "title_i18n": {
-        "zh": "知识蒸馏用于Text-to-SQL",
-        "en": "知识蒸馏用于Text-to-SQL"
-      },
-      "summary_i18n": {
-        "zh": "本研究探讨了如何将知识蒸馏应用于Text-to-SQL任务，利用GPT-2提升模型性能，简化数据库查询。",
-        "en": "研究结合知识蒸馏与Text-to-SQL问题，使用GPT-2作为教师模型进行训练。"
-      },
-      "host": "",
-      "ts": "2025-09-08T01:36:33+00:00",
-      "has_code": false,
-      "key_numbers_compact": [
-        "N/A N/A N/A"
-      ]
-    },
-    {
-      "headline": "AI对法律与伦理的影响",
-      "one_liner": "研究表明，人工智能的快速发展对法律、伦理和社会构成威胁，现有监管无法保护基本权利。",
-      "task": "Other",
-      "type": "blog",
-      "novelty": "method",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
-          "ours": "N/A",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "可复用做法×1-3（如政策建议）"
-      ],
-      "limitations": [
-        "边界/风险×1（如隐私风险）"
-      ],
-      "links": {
-        "paper": "N/A",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "N/A"
+        "pdf": "https://arxiv.org/pdf/2509.04676.pdf"
       },
       "tags": [
         "AI",
-        "法律",
-        "伦理"
+        "Evaluation",
+        "Theory"
       ],
-      "impact_score": 1,
+      "impact_score": 0,
       "reproducibility_score": 0,
-      "quick_read": "研究指出，人工智能的迅速发展对法律和伦理构成威胁，现有的监管措施未能有效保护个人权利，亟需改进。",
-      "who_should_try": "政策制定者和研究人员",
+      "quick_read": "本研究探讨了如何将人类标准融入AI模型的评估中，以更好地反映模型的实际能力。",
+      "who_should_try": "AI研究者、评估专家",
       "title_i18n": {
-        "zh": "AI对法律与伦理的影响",
-        "en": "AI对法律与伦理的影响"
+        "zh": "基于人类标准的AI模型评估方法",
+        "en": "An Approach to Grounding AI Model Evaluations in Human-derived Criteria"
       },
       "summary_i18n": {
-        "zh": "研究指出，人工智能的迅速发展对法律和伦理构成威胁，现有的监管措施未能有效保护个人权利，亟需改进。",
-        "en": "研究表明，人工智能的快速发展对法律、伦理和社会构成威胁，现有监管无法保护基本权利。"
+        "zh": "传统的AI模型评估方法往往无法全面捕捉模型的复杂性。新的研究提出了一种基于人类标准的评估方法，旨在更准确地反映模型在实际应用中的表现。这一方法的提出为AI模型的评估提供了新的视角和工具。",
+        "en": "arXiv:2509.04676v1 Announce Type: new \nAbstract: In the rapidly evolving field of artificial intelligence (AI), traditional benchmarks can fall short in attempting to capture the nuanced capabilities of AI models. We focus on the case of physical world modeling and propose a nove"
       },
-      "host": "",
-      "ts": "2025-09-08T01:36:33+00:00",
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
       "has_code": false,
-      "key_numbers_compact": [
-        "N/A N/A N/A"
-      ]
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "多代理学习中的语言驱动任务结构",
+      "one_liner": "本研究提出了语言驱动的层次任务结构，作为多代理学习的显式世界模型。",
+      "task": "Agent",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "任务分解"
+      ],
+      "limitations": [
+        "算力门槛"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04731",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04731.pdf"
+      },
+      "tags": [
+        "Agent",
+        "Learning",
+        "Language"
+      ],
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "本研究通过引入语言驱动的任务结构，提升了多代理学习的效率和效果。",
+      "who_should_try": "AI研究者、代理开发者",
+      "title_i18n": {
+        "zh": "多代理学习中的语言驱动任务结构",
+        "en": "Language-Driven Hierarchical Task Structures as Explicit World Models for Multi-Agent Learning"
+      },
+      "summary_i18n": {
+        "zh": "本研究通过引入语言驱动的任务结构，提升了多代理学习的效率和效果。",
+        "en": "arXiv:2509.04731v1 Announce Type: new \nAbstract: The convergence of Language models, Agent models, and World models represents a critical frontier for artificial intelligence. While recent progress has focused on scaling Language and Agent models, the development of sophisticated"
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "大型语言模型的假设分析",
+      "one_liner": "本研究探讨了大型语言模型在系统性探索假设未来方面的局限性，并提出改进方法。",
+      "task": "NLP",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "假设生成"
+      ],
+      "limitations": [
+        "评测偏差"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04791",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04791.pdf"
+      },
+      "tags": [
+        "NLP",
+        "Analysis",
+        "LLM"
+      ],
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "本研究分析了大型语言模型在假设分析中的不足，并提出了改进建议。",
+      "who_should_try": "NLP研究者、模型开发者",
+      "title_i18n": {
+        "zh": "大型语言模型的假设分析",
+        "en": "What-If Analysis of Large Language Models: Explore the Game World Using Proactive Thinking"
+      },
+      "summary_i18n": {
+        "zh": "本研究分析了大型语言模型在假设分析中的不足，并提出了改进建议。",
+        "en": "arXiv:2509.04791v1 Announce Type: new \nAbstract: Large language models (LLMs) excel at processing information reactively but lack the ability to systemically explore hypothetical futures. They cannot ask, \"what if we take this action? how will it affect the final outcome\" and for"
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "人本解释的强化学习代理",
+      "one_liner": "本研究提出了TalkToAgent，一个以人类为中心的解释框架，提升了强化学习代理的透明度。",
+      "task": "Agent",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "解释生成"
+      ],
+      "limitations": [
+        "复杂性"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04809",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04809.pdf"
+      },
+      "tags": [
+        "Agent",
+        "Reinforcement Learning",
+        "Explainability"
+      ],
+      "impact_score": 0,
+      "reproducibility_score": 0,
+      "quick_read": "本研究通过人本解释框架，提升了强化学习代理的透明度和可解释性。",
+      "who_should_try": "强化学习研究者、AI伦理专家",
+      "title_i18n": {
+        "zh": "人本解释的强化学习代理",
+        "en": "TalkToAgent: A Human-centric Explanation of Reinforcement Learning Agents with Large Language Models"
+      },
+      "summary_i18n": {
+        "zh": "本研究通过人本解释框架，提升了强化学习代理的透明度和可解释性。",
+        "en": "arXiv:2509.04809v1 Announce Type: new \nAbstract: Explainable Reinforcement Learning (XRL) has emerged as a promising approach in improving the transparency of Reinforcement Learning (RL) agents. However, there remains a gap between complex RL policies and domain experts, due to t"
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
     }
   ],
   "refs": [],
   "stats": {
     "by_task": {
-      "LLM": 1,
-      "RAG": 1,
-      "NLP": 2,
-      "VLM": 1,
-      "Infra": 1,
-      "Other": 1
+      "LLM": 0
     },
     "with_code": 0,
     "new_benchmarks": 0
@@ -389,16 +370,11 @@
   "nice_to_read": [
     5,
     6,
-    7,
-    8
+    7
   ],
   "deep_dive": {
-    "title": "AI与法律伦理",
-    "summary": "人工智能的快速发展对法律和伦理构成威胁，现有监管措施未能有效保护个人权利，亟需改进。",
-    "refs": [
-      0,
-      3,
-      4
-    ]
+    "title": "AI与伦理",
+    "summary": "探讨AI在不同领域的应用及其伦理影响，强调透明度与可解释性的重要性。",
+    "refs": []
   }
 }
