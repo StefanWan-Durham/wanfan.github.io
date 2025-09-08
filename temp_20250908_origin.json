@@ -1,0 +1,443 @@
+﻿{
+  "generated_at": "2025-09-08T00:00:00+00:00",
+  "items": [
+    {
+      "headline": "璇勪及寤虹瓚椤圭洰绠＄悊涓殑澶у瀷璇█妯″瀷",
+      "one_liner": "鏈爺绌惰瘎浼颁簡澶у瀷璇█妯″瀷鍦ㄥ缓绛戦」鐩鐞嗕腑鐨勫喅绛栨敮鎸佽兘鍔涳紝鎻ず鍏舵綔鍦ㄥ簲鐢ㄣ€?,
+      "task": "NLP",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "鏁版嵁澧炲己"
+      ],
+      "limitations": [
+        "璇勬祴鍋忓樊"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04505",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04505.pdf"
+      },
+      "tags": [
+        "NLP",
+        "鍐崇瓥鏀寔",
+        "寤虹瓚绠＄悊"
+      ],
+      "impact_score": 5,
+      "reproducibility_score": 4,
+      "quick_read": "鏈爺绌舵帰璁ㄤ簡澶у瀷璇█妯″瀷鍦ㄥ缓绛戦」鐩鐞嗕腑鐨勫簲鐢紝璇勪及鍏朵綔涓哄喅绛栨敮鎸佸伐鍏风殑鏈夋晥鎬с€?,
+      "who_should_try": "寤虹瓚椤圭洰绠＄悊鑰呫€丄I鐮旂┒浜哄憳",
+      "title_i18n": {
+        "zh": "璇勪及寤虹瓚椤圭洰绠＄悊涓殑澶у瀷璇█妯″瀷",
+        "en": "The Ethical Compass of the Machine: Evaluating Large Language Models for Decision Support in Construction Project Management"
+      },
+      "summary_i18n": {
+        "zh": "澶у瀷璇█妯″瀷锛圠LM锛夊湪寤虹瓚椤圭洰绠＄悊涓€愭笎琚涓洪噸瑕佺殑鍐崇瓥鏀寔宸ュ叿銆傞€氳繃鍒嗘瀽椤圭洰鏁版嵁鍜屾彁渚涘疄鏃跺缓璁紝LLM鑳藉甯姪椤圭洰缁忕悊鍋氬嚭鏇翠负绮惧噯鐨勫喅绛栥€傝繖涓€搴旂敤涓嶄粎鎻愰珮浜嗛」鐩鐞嗙殑鏁堢巼锛屼篃涓哄缓绛戣涓氱殑鏁板瓧鍖栬浆鍨嬫彁渚涗簡鏀寔銆?,
+        "en": "arXiv:2509.04505v1 Announce Type: new \nAbstract: The integration of Artificial Intelligence (AI) into construction project management (CPM) is accelerating, with Large Language Models (LLMs) emerging as accessible decision-support tools. This study aims to critically evaluate the ethical viability and reliability of LLMs when applied to the ethically sensitive, high-risk decision-making contexts inherent in CPM. A mixed-methods research design was employed, involving the quantitative performance testing of two leading LLMs against twelve real-world ethical scenarios using a novel Ethical Decis",
+        "es": ""
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "鑱斿悎鍥句笌閰嶇疆浼樺寲浠ユ彁鍗嘇I浠ｇ悊鍙潬鎬?,
+      "one_liner": "璇ョ爺绌舵彁鍑轰簡涓€绉嶈仈鍚堝浘鍜岄厤缃紭鍖栫殑鏂规硶锛屼互鎻愰珮AI浠ｇ悊鐨勫彲闈犳€с€?,
+      "task": "Robotics",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "妯″瀷浼樺寲"
+      ],
+      "limitations": [
+        "绠楀姏闂ㄦ"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04642",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04642.pdf"
+      },
+      "tags": [
+        "Robotics",
+        "浼樺寲",
+        "AI浠ｇ悊"
+      ],
+      "impact_score": 4,
+      "reproducibility_score": 3,
+      "quick_read": "鏈爺绌舵彁鍑轰簡涓€绉嶆柊鏂规硶锛岄€氳繃鑱斿悎鍥惧拰閰嶇疆浼樺寲鏉ユ彁鍗嘇I浠ｇ悊鐨勫彲闈犳€э紝閫傜敤浜庡绉嶅簲鐢ㄥ満鏅€?,
+      "who_should_try": "AI寮€鍙戣€呫€佹満鍣ㄤ汉鐮旂┒浜哄憳",
+      "title_i18n": {
+        "zh": "鑱斿悎鍥句笌閰嶇疆浼樺寲浠ユ彁鍗嘇I浠ｇ悊鍙潬鎬?,
+        "en": "Maestro: Joint Graph & Config Optimization for Reliable AI Agents"
+      },
+      "summary_i18n": {
+        "zh": "璇ョ爺绌舵彁鍑轰簡涓€绉嶈仈鍚堝浘鍜岄厤缃紭鍖栫殑鏂规硶锛屼互鎻愰珮AI浠ｇ悊鐨勫彲闈犳€с€?,
+        "en": "arXiv:2509.04642v1 Announce Type: new \nAbstract: Building reliable LLM agents requires decisions at two levels: the graph (which modules exist and how information flows) and the configuration of each node (models, prompts, tools, control knobs). Most existing optimizers tune configurations while holding the graph fixed, leaving structural failure modes unaddressed. We introduce Maestro, a framework-agnostic holistic optimizer for LLM agents that jointly searches over graphs and configurations to maximize agent quality, subject to explicit rollout/token budgets. Beyond numeric metrics, Maestro",
+        "es": ""
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "涓€у寲鍋ュ悍妯℃嫙鐨勮В閲婃鏋?,
+      "one_liner": "鐮旂┒鎻愬嚭浜嗕竴绉嶆贩鍚堟柟娉曟鏋讹紝鐢ㄤ簬鍋ュ悍妯℃嫙涓殑鍒╃泭鐩稿叧鑰呬腑蹇冨寲鎬荤粨銆?,
+      "task": "NLP",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "鏁版嵁澧炲己"
+      ],
+      "limitations": [
+        "璇勬祴鍋忓樊"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04646",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04646.pdf"
+      },
+      "tags": [
+        "NLP",
+        "鍋ュ悍妯℃嫙",
+        "涓€у寲"
+      ],
+      "impact_score": 4,
+      "reproducibility_score": 3,
+      "quick_read": "鏈爺绌舵彁鍑轰簡涓€绉嶆柊鐨勬鏋讹紝鏃ㄥ湪閫氳繃鍒╃泭鐩稿叧鑰呯殑瑙嗚鏉ヤ釜鎬у寲鍋ュ悍妯℃嫙鐨勮В閲婏紝澧炲己鍐崇瓥鏀寔銆?,
+      "who_should_try": "鍋ュ悍鐮旂┒浜哄憳銆丄I寮€鍙戣€?,
+      "title_i18n": {
+        "zh": "涓€у寲鍋ュ悍妯℃嫙鐨勮В閲婃鏋?,
+        "en": "Towards Personalized Explanations for Health Simulations: A Mixed-Methods Framework for Stakeholder-Centric Summarization"
+      },
+      "summary_i18n": {
+        "zh": "鐮旂┒鎻愬嚭浜嗕竴绉嶆贩鍚堟柟娉曟鏋讹紝鐢ㄤ簬鍋ュ悍妯℃嫙涓殑鍒╃泭鐩稿叧鑰呬腑蹇冨寲鎬荤粨銆?,
+        "en": "arXiv:2509.04646v1 Announce Type: new \nAbstract: Modeling & Simulation (M&S) approaches such as agent-based models hold significant potential to support decision-making activities in health, with recent examples including the adoption of vaccines, and a vast literature on healthy eating behaviors and physical activity behaviors. These models are potentially usable by different stakeholder groups, as they support policy-makers to estimate the consequences of potential interventions and they can guide individuals in making healthy choices in complex environments. However, this potential may",
+        "es": ""
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "鍩轰簬浜虹被鏍囧噯鐨凙I妯″瀷璇勪及鏂规硶",
+      "one_liner": "鎻愬嚭浜嗕竴绉嶆柊鐨勬柟娉曪紝灏咥I妯″瀷璇勪及涓庝汉绫绘爣鍑嗙浉缁撳悎锛屼互鎻愰珮璇勪及鐨勬湁鏁堟€с€?,
+      "task": "Theory",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "璇勪及鏍囧噯"
+      ],
+      "limitations": [
+        "璇勬祴鍋忓樊"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04676",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04676.pdf"
+      },
+      "tags": [
+        "Theory",
+        "AI璇勪及",
+        "浜虹被鏍囧噯"
+      ],
+      "impact_score": 3,
+      "reproducibility_score": 3,
+      "quick_read": "鏈爺绌舵彁鍑轰簡涓€绉嶆柊鏂规硶锛岄€氳繃灏咥I妯″瀷璇勪及涓庝汉绫绘爣鍑嗙浉缁撳悎锛屾棬鍦ㄦ彁楂樿瘎浼扮殑鏈夋晥鎬у拰鍙潬鎬с€?,
+      "who_should_try": "AI鐮旂┒浜哄憳銆佽瘎浼颁笓瀹?,
+      "title_i18n": {
+        "zh": "鍩轰簬浜虹被鏍囧噯鐨凙I妯″瀷璇勪及鏂规硶",
+        "en": "An Approach to Grounding AI Model Evaluations in Human-derived Criteria"
+      },
+      "summary_i18n": {
+        "zh": "鎻愬嚭浜嗕竴绉嶆柊鐨勬柟娉曪紝灏咥I妯″瀷璇勪及涓庝汉绫绘爣鍑嗙浉缁撳悎锛屼互鎻愰珮璇勪及鐨勬湁鏁堟€с€?,
+        "en": "arXiv:2509.04676v1 Announce Type: new \nAbstract: In the rapidly evolving field of artificial intelligence (AI), traditional benchmarks can fall short in attempting to capture the nuanced capabilities of AI models. We focus on the case of physical world modeling and propose a novel approach to augment existing benchmarks with human-derived evaluation criteria, aiming to enhance the interpretability and applicability of model behaviors. Grounding our study in the Perception Test and OpenEQA benchmarks, we conducted in-depth interviews and large-scale surveys to identify key cognitive skills, suc",
+        "es": ""
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "璇█椹卞姩鐨勫眰娆′换鍔＄粨鏋勭敤浜庡鏅鸿兘浣撳涔?,
+      "one_liner": "鐮旂┒鎻愬嚭浜嗕竴绉嶆柊鐨勫眰娆′换鍔＄粨鏋勶紝鏃ㄥ湪淇冭繘澶氭櫤鑳戒綋瀛︿範涓殑鍗忎綔銆?,
+      "task": "Agent",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "浠诲姟缁撴瀯璁捐"
+      ],
+      "limitations": [
+        "绠楀姏闂ㄦ"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04731",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04731.pdf"
+      },
+      "tags": [
+        "Agent",
+        "澶氭櫤鑳戒綋",
+        "瀛︿範"
+      ],
+      "impact_score": 3,
+      "reproducibility_score": 2,
+      "quick_read": "鏈爺绌舵彁鍑轰簡涓€绉嶈瑷€椹卞姩鐨勫眰娆′换鍔＄粨鏋勶紝鏃ㄥ湪淇冭繘澶氭櫤鑳戒綋瀛︿範涓殑鍗忎綔涓庢晥鐜囨彁鍗囥€?,
+      "who_should_try": "澶氭櫤鑳戒綋鐮旂┒浜哄憳銆丄I寮€鍙戣€?,
+      "title_i18n": {
+        "zh": "璇█椹卞姩鐨勫眰娆′换鍔＄粨鏋勭敤浜庡鏅鸿兘浣撳涔?,
+        "en": "Language-Driven Hierarchical Task Structures as Explicit World Models for Multi-Agent Learning"
+      },
+      "summary_i18n": {
+        "zh": "鐮旂┒鎻愬嚭浜嗕竴绉嶆柊鐨勫眰娆′换鍔＄粨鏋勶紝鏃ㄥ湪淇冭繘澶氭櫤鑳戒綋瀛︿範涓殑鍗忎綔銆?,
+        "en": "arXiv:2509.04731v1 Announce Type: new \nAbstract: The convergence of Language models, Agent models, and World models represents a critical frontier for artificial intelligence. While recent progress has focused on scaling Language and Agent models, the development of sophisticated, explicit World Models remains a key bottleneck, particularly for complex, long-horizon multi-agent tasks. In domains such as robotic soccer, agents trained via standard reinforcement learning in high-fidelity but structurally-flat simulators often fail due to intractable exploration spaces and sparse rewards. This po",
+        "es": ""
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "澶у瀷璇█妯″瀷鐨勫亣璁惧垎鏋?,
+      "one_liner": "鏈爺绌舵帰璁ㄤ簡澶у瀷璇█妯″瀷鍦ㄥ亣璁惧垎鏋愪腑鐨勫簲鐢紝鎻ず鍏跺眬闄愭€с€?,
+      "task": "NLP",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "妯″瀷鍒嗘瀽"
+      ],
+      "limitations": [
+        "璇勬祴鍋忓樊"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04791",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04791.pdf"
+      },
+      "tags": [
+        "NLP",
+        "鍋囪鍒嗘瀽",
+        "妯″瀷灞€闄愭€?
+      ],
+      "impact_score": 2,
+      "reproducibility_score": 2,
+      "quick_read": "鏈爺绌舵帰璁ㄤ簡澶у瀷璇█妯″瀷鍦ㄥ亣璁惧垎鏋愪腑鐨勫簲鐢紝鎻ず浜嗗叾鍦ㄥ鐞嗗鏉傚亣璁炬椂鐨勫眬闄愭€с€?,
+      "who_should_try": "NLP鐮旂┒浜哄憳銆佹ā鍨嬪垎鏋愬笀",
+      "title_i18n": {
+        "zh": "澶у瀷璇█妯″瀷鐨勫亣璁惧垎鏋?,
+        "en": "What-If Analysis of Large Language Models: Explore the Game World Using Proactive Thinking"
+      },
+      "summary_i18n": {
+        "zh": "鏈爺绌舵帰璁ㄤ簡澶у瀷璇█妯″瀷鍦ㄥ亣璁惧垎鏋愪腑鐨勫簲鐢紝鎻ず鍏跺眬闄愭€с€?,
+        "en": "arXiv:2509.04791v1 Announce Type: new \nAbstract: Large language models (LLMs) excel at processing information reactively but lack the ability to systemically explore hypothetical futures. They cannot ask, \"what if we take this action? how will it affect the final outcome\" and forecast its potential consequences before acting. This critical gap limits their utility in dynamic, high-stakes scenarios like strategic planning, risk assessment, and real-time decision making. To bridge this gap, we propose WiA-LLM, a new paradigm that equips LLMs with proactive thinking capabilities. Our approach int",
+        "es": ""
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "閫氳繃娓告垙鐞嗚璇勪及浜虹被涓庤瑷€妯″瀷鐨勪簰鍔?,
+      "one_liner": "鐮旂┒鎺㈣浜嗕汉绫讳笌璇█妯″瀷涔嬮棿鐨勫悎浣滀笌绔炰簤琛屼负锛岄噰鐢ㄦ父鎴忕悊璁鸿繘琛屽垎鏋愩€?,
+      "task": "Theory",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "琛屼负鍒嗘瀽"
+      ],
+      "limitations": [
+        "璇勬祴鍋忓樊"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04847",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04847.pdf"
+      },
+      "tags": [
+        "Theory",
+        "娓告垙鐞嗚",
+        "浜烘満浜掑姩"
+      ],
+      "impact_score": 2,
+      "reproducibility_score": 1,
+      "quick_read": "鏈爺绌堕€氳繃娓告垙鐞嗚鍒嗘瀽浜虹被涓庤瑷€妯″瀷涔嬮棿鐨勪簰鍔紝鎺㈣鍏跺悎浣滀笌绔炰簤琛屼负鐨勫姩鎬併€?,
+      "who_should_try": "AI鐮旂┒浜哄憳銆佽涓虹瀛﹀",
+      "title_i18n": {
+        "zh": "閫氳繃娓告垙鐞嗚璇勪及浜虹被涓庤瑷€妯″瀷鐨勪簰鍔?,
+        "en": "Collaboration and Conflict between Humans and Language Models through the Lens of Game Theory"
+      },
+      "summary_i18n": {
+        "zh": "鐮旂┒鎺㈣浜嗕汉绫讳笌璇█妯″瀷涔嬮棿鐨勫悎浣滀笌绔炰簤琛屼负锛岄噰鐢ㄦ父鎴忕悊璁鸿繘琛屽垎鏋愩€?,
+        "en": "arXiv:2509.04847v1 Announce Type: new \nAbstract: Language models are increasingly deployed in interactive online environments, from personal chat assistants to domain-specific agents, raising questions about their cooperative and competitive behavior in multi-party settings. While prior work has examined language model decision-making in isolated or short-term game-theoretic contexts, these studies often neglect long-horizon interactions, human-model collaboration, and the evolution of behavioral patterns over time. In this paper, we investigate the dynamics of language model behavior in the i",
+        "es": ""
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "浠庨€氳瘽褰曢煶鏁版嵁涓厠闅嗗璇濊闊矨I浠ｇ悊",
+      "one_liner": "鐮旂┒鎻愬嚭浜嗕竴绉嶆柊鏂规硶锛岄€氳繃閫氳瘽褰曢煶鏁版嵁鍏嬮殕瀵硅瘽璇煶AI浠ｇ悊銆?,
+      "task": "ASR",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "璇煶鍏嬮殕"
+      ],
+      "limitations": [
+        "鏁版嵁闅愮"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.04871",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.04871.pdf"
+      },
+      "tags": [
+        "ASR",
+        "璇煶鍏嬮殕",
+        "瀵硅瘽绯荤粺"
+      ],
+      "impact_score": 1,
+      "reproducibility_score": 1,
+      "quick_read": "鏈爺绌舵彁鍑轰簡涓€绉嶆柊鏂规硶锛岄€氳繃閫氳瘽褰曢煶鏁版嵁鍏嬮殕瀵硅瘽璇煶AI浠ｇ悊锛屾帹鍔ㄨ闊充氦浜掓妧鏈殑鍙戝睍銆?,
+      "who_should_try": "璇煶鎶€鏈紑鍙戣€呫€丄I鐮旂┒浜哄憳",
+      "title_i18n": {
+        "zh": "浠庨€氳瘽褰曢煶鏁版嵁涓厠闅嗗璇濊闊矨I浠ｇ悊",
+        "en": "Cloning a Conversational Voice AI Agent from Call\\,Recording Datasets for Telesales"
+      },
+      "summary_i18n": {
+        "zh": "鐮旂┒鎻愬嚭浜嗕竴绉嶆柊鏂规硶锛岄€氳繃閫氳瘽褰曢煶鏁版嵁鍏嬮殕瀵硅瘽璇煶AI浠ｇ悊銆?,
+        "en": "arXiv:2509.04871v1 Announce Type: new \nAbstract: Recent advances in language and speech modelling have made it possible to build autonomous voice assistants that understand and generate human dialogue in real time. These systems are increasingly being deployed in domains such as customer service and healthcare care, where they can automate repetitive tasks, reduce operational costs, and provide constant support around the clock. In this paper, we present a general methodology for cloning a conversational voice AI agent from a corpus of call recordings. Although the case study described in this",
+        "es": ""
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-08T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    }
+  ],
+  "refs": [],
+  "stats": {
+    "by_task": {
+      "LLM": 0
+    },
+    "with_code": 0,
+    "new_benchmarks": 0
+  },
+  "must_reads": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "nice_to_read": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "deep_dive": {
+    "title": "AI涓庝汉绫讳簰鍔ㄧ爺绌?,
+    "summary": "鐮旂┒AI涓庝汉绫荤殑浜掑姩琛屼负锛屾帰璁ㄥ悎浣滀笌绔炰簤鐨勫姩鎬併€?,
+    "refs": [
+      0,
+      1,
+      2
+    ]
+  }
+}

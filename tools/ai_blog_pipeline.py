@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import os, re, json, hashlib, subprocess, feedparser, requests
+import os, re, json, hashlib, subprocess, feedparser, requests, time
 from urllib.parse import urlparse
 from datetime import datetime, timezone
 from datetime import timedelta
@@ -129,7 +129,8 @@ def fetch_arxiv_api(categories=("cs.AI","cs.CL","cs.LG","cs.CV"), per_cat=25, ti
                 published = e.get("published") or e.get("updated") or ""
                 ts = _parse_ts_utc_iso(published)
                 summary = (e.get("summary") or "")
-                _sum_cap = int(os.getenv("FETCH_SUMMARY_CHARS", "600"))
+                # Keep a larger raw cap to avoid mid-sentence truncation; prompt will be capped later.
+                _sum_cap = int(os.getenv("FETCH_SUMMARY_CHARS", "1800"))
                 summary = _clean_arxiv_announce_prefix(re.sub("<.*?>", "", summary))[:_sum_cap]
                 items.append({"title":title, "url":link, "ts":ts, "summary":summary})
         except Exception as ex:
@@ -152,7 +153,8 @@ def fetch_items(limit_per_feed=25):
             entries = getattr(feed, 'entries', []) or []
             # env override for per-feed limit
             _limit = int(os.getenv("PER_FEED_LIMIT", str(limit_per_feed)))
-            _sum_cap = int(os.getenv("FETCH_SUMMARY_CHARS", "600"))
+            # Keep a larger raw cap to avoid mid-sentence truncation; prompt will be capped later.
+            _sum_cap = int(os.getenv("FETCH_SUMMARY_CHARS", "1800"))
             for e in entries[:_limit]:
                 title = (e.get("title") or "").strip()
                 link = e.get("link") or ""
@@ -589,11 +591,23 @@ def _log(msg: str):
 
 SENT_SPLIT = re.compile(r'(?<=[。！？!?；;\.])')
 def _clean_arxiv_announce_prefix(text: str) -> str:
-    """Remove arXiv RSS boilerplate like 'arXiv:2509.04505v1 Announce Type: new Abstract:' from the start of abstracts."""
+    """Remove arXiv and announcement boilerplate from abstracts in any language.
+    Examples to strip at the beginning:
+    - "arXiv:2509.04505v1 Announce Type: new Abstract:"
+    - "arXiv:2509.04505v1 Announcement Type: New Results Abstract:"
+    - "arXiv:2509.04505v1 公告类型：新论文 摘要："
+    - Leading "Abstract:" or "摘要：" alone
+    """
     try:
         s = str(text or '').strip()
-        s = re.sub(r"^arXiv:\d{4}\.\d{4,5}v\d+\s+Announce\s+Type:\s*[^\n]*?Abstract:\s*",
+        # arXiv id + (Announce|Announcement|公告类型) ... (Abstract:|摘要：)
+        s = re.sub(r"^arXiv:\d{4}\.\d{4,5}v\d+\s+(?:Announce(?:ment)?\s+Type:\s*[^\n]*?|公告类型：[^\n]*?)\s*(?:Abstract:|摘要：)\s*",
                    "", s, flags=re.IGNORECASE | re.DOTALL)
+        # If still starts with arXiv:ID and then Abstract/摘要
+        s = re.sub(r"^arXiv:\d{4}\.\d{4,5}v\d+\s*(?:Abstract:|摘要：)\s*",
+                   "", s, flags=re.IGNORECASE)
+        # Leading plain Abstract/摘要 markers
+        s = re.sub(r"^(?:Abstract:|摘要：)\s*", "", s, flags=re.IGNORECASE)
         return s.strip()
     except Exception:
         return text or ""
@@ -705,28 +719,85 @@ def _make_daily_summary_map(j: dict) -> dict:
                 m[u] = zh
     return m
 
+def _best_zh_summary(u_norm: str, it: dict, entries_map: dict, daily_map: dict) -> str:
+    """Pick a richer Chinese summary, preferring EN->ZH of source abstract when available.
+    - Start with Daily zh (if mapped) else item's one_liner/quick_read.
+    - If source English summary exists, translate to zh and pick the longer one.
+    - Soft-cap the length using SCHOLARPUSH_ZH_SUMMARY_CHARS (default 520).
+    """
+    try:
+        base = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
+    except Exception:
+        base = (it.get("one_liner") or it.get("quick_read") or "").strip()
+    en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
+    zh_from_en = ""
+    if en_src:
+        try:
+            zh_from_en = _translate_en_to_zh(en_src) or ""
+        except Exception:
+            zh_from_en = ""
+    cand = zh_from_en if len(zh_from_en) > len(base) else base
+    # Strip any leftover arXiv/公告/摘要前缀
+    cand = _clean_arxiv_announce_prefix(cand)
+    # Soft cap length with sentence awareness to avoid mid-sentence truncation
+    try:
+        cap = int(os.getenv("SCHOLARPUSH_ZH_SUMMARY_CHARS", "520") or "520")
+    except Exception:
+        cap = 520
+    if cand and len(cand) > cap + 40:
+        # sentence-aware clamp: accumulate sentences until close to cap
+        parts = [p for p in SENT_SPLIT.split(cand) if p]
+        acc = ''
+        for p in parts:
+            nxt = acc + p
+            if _cn_len(nxt) <= cap:
+                acc = nxt
+            else:
+                break
+        if not acc:
+            # fallback: cut at last punctuation within window
+            window = cand[:cap+40]
+            m = re.search(r'[。！？!?；;。]\s*[^。！？!?；;。]*$', window)
+            if m:
+                acc = window[:m.end()].strip()
+            else:
+                acc = cand[:cap].rstrip()
+        # ensure it ends with a sentence terminator
+        if not acc.endswith(('。','！','？','!','?','；',';')):
+            acc = acc.rstrip('，,、 ')
+            acc = acc + '。'
+        cand = acc
+    return cand
+
 def _translate_zh_to_en(text: str) -> str:
     """Translate Chinese to fluent English using the configured LLM. On failure, return empty string (never source)."""
     src = (text or "").strip()
     if not src:
         return ""
-    try:
-        prompt = (
-            "Translate the following Chinese paragraph into fluent, natural English.\n"
-            "- Preserve all factual content, numbers, and units.\n"
-            "- Do not add or remove information.\n"
-            "- Output only the translation, no explanations.\n\n"
-            f"Chinese:\n{src}"
-        )
-        out = chat_once(prompt, system="You are a precise translator.", temperature=0.0, max_tokens=1200)
-        out = (out or "").strip()
-        if not out or _looks_cjk(out):
-            _log("[translate] zh->en failed or CJK detected; returning empty")
+    prompt = (
+        "Translate the following Chinese paragraph into fluent, natural English.\n"
+        "- Preserve all factual content, numbers, and units.\n"
+        "- Do not add or remove information.\n"
+        "- Output only the translation, no explanations.\n\n"
+        f"Chinese:\n{src}"
+    )
+    for attempt in (1, 2):
+        try:
+            out = chat_once(prompt, system="You are a precise translator.", temperature=0.0, max_tokens=1200)
+            out = (out or "").strip()
+            if out and not _looks_cjk(out):
+                return out
+            if attempt == 1:
+                _log("[translate] zh->en empty or CJK; retrying once")
+                time.sleep(0.8)
+                continue
             return ""
-        return out
-    except Exception as e:
-        _log(f"[translate] zh->en exception: {e}")
-        return ""
+        except Exception as e:
+            _log(f"[translate] zh->en exception: {e}")
+            if attempt == 1:
+                time.sleep(0.8)
+                continue
+            return ""
 
 def _translate_en_to_zh(text: str) -> str:
     """Translate English to concise Chinese. On failure, return empty string (not source)."""
@@ -750,23 +821,30 @@ def _translate_zh_to_es(text: str) -> str:
     src = (text or "").strip()
     if not src:
         return ""
-    try:
-        prompt = (
-            "Traduce el siguiente párrafo chino al español de forma fluida y natural.\n"
-            "- Conserva todos los hechos, números y unidades.\n"
-            "- No añadas ni elimines información.\n"
-            "- Devuelve solo la traducción, sin explicaciones.\n\n"
-            f"Chino:\n{src}"
-        )
-        out = chat_once(prompt, system="Eres un traductor preciso.", temperature=0.0, max_tokens=1200)
-        out = (out or "").strip()
-        if not out or _looks_cjk(out):
-            _log("[translate] zh->es failed or CJK detected; returning empty")
+    prompt = (
+        "Traduce el siguiente párrafo chino al español de forma fluida y natural.\n"
+        "- Conserva todos los hechos, números y unidades.\n"
+        "- No añadas ni elimines información.\n"
+        "- Devuelve solo la traducción, sin explicaciones.\n\n"
+        f"Chino:\n{src}"
+    )
+    for attempt in (1, 2):
+        try:
+            out = chat_once(prompt, system="Eres un traductor preciso.", temperature=0.0, max_tokens=1200)
+            out = (out or "").strip()
+            if out and not _looks_cjk(out):
+                return out
+            if attempt == 1:
+                _log("[translate] zh->es empty or CJK; retrying once")
+                time.sleep(0.8)
+                continue
             return ""
-        return out
-    except Exception as e:
-        _log(f"[translate] zh->es exception: {e}")
-        return ""
+        except Exception as e:
+            _log(f"[translate] zh->es exception: {e}")
+            if attempt == 1:
+                time.sleep(0.8)
+                continue
+            return ""
 
 def _translate_en_to_es(text: str) -> str:
     """Translate English to fluent Spanish; returns empty string on failure."""
@@ -984,25 +1062,55 @@ def _maybe_attach_source_link(it: dict, title_map: dict, entries: list):
         return
 
 # ===== Local env loader (.env.local / .env) =====
-def _load_env_files(paths=(".env.local", ".env")):
+def _load_env_files(paths=(".env.local", ".env", os.path.join("content","blog",".env"), os.path.join("content",".env"))):
+    def parse_line(raw: str):
+        # drop BOM and whitespace
+        s = raw.lstrip("\ufeff").strip()
+        if not s or s.startswith("#"):
+            return None, None
+        # strip inline comments (simple heuristic)
+        if "#" in s:
+            parts = s.split("#", 1)
+            if parts[0].strip():
+                s = parts[0].strip()
+        # support leading 'export '
+        if s.lower().startswith("export "):
+            s = s[7:].strip()
+        # support KEY=VAL or KEY: VAL
+        if "=" in s:
+            k, v = s.split("=", 1)
+        elif ":" in s:
+            k, v = s.split(":", 1)
+        else:
+            return None, None
+        k = (k or "").strip()
+        v = (v or "").strip().strip('"').strip("'")
+        return (k, v) if k else (None, None)
+
     for p in paths:
         if not os.path.exists(p):
             continue
         try:
             with open(p, "r", encoding="utf-8") as f:
                 for line in f:
-                    line = line.strip()
-                    if not line or line.startswith("#"): 
-                        continue
-                    if "=" not in line:
-                        continue
-                    k, v = line.split("=", 1)
-                    k = k.strip()
-                    v = v.strip().strip('"').strip("'")
+                    k, v = parse_line(line)
                     if k:
                         os.environ[k] = v
         except Exception as e:
             print("warn: failed loading", p, e)
+
+def _debug_provider_keys_present():
+    try:
+        present = {
+            "OPENAI": bool(os.getenv("OPENAI_API_KEY")),
+            "OPENROUTER": bool(os.getenv("OPENROUTER_API_KEY")),
+            "TOGETHER": bool(os.getenv("TOGETHER_API_KEY")),
+            "DEEPSEEK": bool(os.getenv("DEEPSEEK_API_KEY")),
+            "DASHSCOPE": bool(os.getenv("DASHSCOPE_API_KEY")),
+        }
+        print("Provider keys present:", ", ".join([k for k,v in present.items() if v]) or "none")
+    except Exception:
+        pass
 
 def _fallback_draft(entries, max_words=900):
     # Simple stub draft if no LLM available: pick top 3–4 entries
@@ -1109,7 +1217,7 @@ def pick_and_write(entries, max_words=1100):
     try:
         # LLM output cap from env: DEEPSEEK_MAX_OUTPUT > LLM_MAX_TOKENS > 4096
         _max_out = int(os.getenv("DEEPSEEK_MAX_OUTPUT", os.getenv("LLM_MAX_TOKENS", "4096")))
-        out = chat_once(prompt, system=SYS, temperature=0.25, max_tokens=_max_out)
+        out = chat_once(prompt, system=SYS, temperature=0.25, max_tokens=_max_out, want_json=True)
         try:
             j = _extract_json_from_text(out)
         except Exception:
@@ -1257,9 +1365,9 @@ def make_scholarpush(entries, n_items=8, daily=None):
               .replace("[[N]]", str(n_items))
               .replace("[[ENTRIES]]", joined))
     try:
-        # LLM output cap from env: DEEPSEEK_MAX_OUTPUT > LLM_MAX_TOKENS > 4096
-        _max_out = int(os.getenv("DEEPSEEK_MAX_OUTPUT", os.getenv("LLM_MAX_TOKENS", "4096")))
-        out = chat_once(prompt, system="You are an academic news editor. STRICT JSON.", temperature=0.2, max_tokens=_max_out)
+        # LLM output cap from env: DEEPSEEK_MAX_OUTPUT > LLM_MAX_TOKENS (default 6144)
+        _max_out = int(os.getenv("DEEPSEEK_MAX_OUTPUT", os.getenv("LLM_MAX_TOKENS", "6144")))
+        out = chat_once(prompt, system="You are an academic news editor. STRICT JSON.", temperature=0.2, max_tokens=_max_out, want_json=True)
         # Parse model output with escalating strategies; if both fail, try a single repair round-trip
         try:
             j = _extract_json_from_text(out)
@@ -1267,21 +1375,54 @@ def make_scholarpush(entries, n_items=8, daily=None):
             try:
                 j = _extract_json_relaxed(out)
             except Exception:
-                # One-shot repair attempt to coerce to valid JSON
+                # Strict re-generation attempt (ask model to re-generate valid JSON directly)
                 try:
-                    repair_prompt = (
-                        "修复以下内容为严格合法 JSON（仅输出 JSON，不要解释）。\n"
-                        "要求字段：generated_at, items[], refs[], stats{by_task,with_code,new_benchmarks}, must_reads[], nice_to_read[].\n"
-                        "如果缺字段请补齐为空结构；items 中 links{paper,code,project,pdf} 必须存在。\n\n原始内容：\n" + out
+                    strict_rules = (
+                        "\n\nReturn rules (STRICT):\n"
+                        "- Output ONLY a syntactically valid JSON object; no code fences, no comments, no explanations.\n"
+                        "- All required keys must exist: generated_at, items (length [[N]]), refs, stats{by_task,with_code,new_benchmarks}, must_reads, nice_to_read.\n"
+                        "- Each item must include links{paper,code,project,pdf} (use \"N/A\" if unknown).\n"
+                        "- Do not include ellipses … or trailing commas; escape newlines in strings as \\n.\n"
                     )
-                    _max_out_fix = int(os.getenv("DEEPSEEK_MAX_OUTPUT", os.getenv("LLM_MAX_TOKENS", "4096")))
-                    out_fix = chat_once(repair_prompt, system="You are a strict JSON fixer.", temperature=0.0, max_tokens=_max_out_fix)
+                    prompt_strict = (PROMPT_SCHOLAR + strict_rules).replace("[[N]]", str(n_items)).replace("[[ENTRIES]]", joined)
+                    out_strict = chat_once(prompt_strict, system="You are an academic news editor. Return only valid JSON.", temperature=0.0, max_tokens=_max_out, want_json=True)
                     try:
-                        j = _extract_json_from_text(out_fix)
+                        j = _extract_json_from_text(out_strict)
                     except Exception:
-                        j = _extract_json_relaxed(out_fix)
+                        try:
+                            j = _extract_json_relaxed(out_strict)
+                        except Exception:
+                            # One-shot repair attempt to coerce to valid JSON
+                            try:
+                                repair_prompt = (
+                                    "修复以下内容为严格合法 JSON（仅输出 JSON，不要解释）。\n"
+                                    "要求字段：generated_at, items[], refs[], stats{by_task,with_code,new_benchmarks}, must_reads[], nice_to_read[].\n"
+                                    "如果缺字段请补齐为空结构；items 中 links{paper,code,project,pdf} 必须存在。\n\n原始内容：\n" + (out_strict or out)
+                                )
+                                _max_out_fix = int(os.getenv("DEEPSEEK_MAX_OUTPUT", os.getenv("LLM_MAX_TOKENS", "6144")))
+                                out_fix = chat_once(repair_prompt, system="You are a strict JSON fixer.", temperature=0.0, max_tokens=_max_out_fix, want_json=True)
+                                try:
+                                    j = _extract_json_from_text(out_fix)
+                                except Exception:
+                                    j = _extract_json_relaxed(out_fix)
+                            except Exception:
+                                raise
                 except Exception:
-                    raise
+                    # If strict re-gen fails earlier (e.g., provider error), fall back to repair flow
+                    try:
+                        repair_prompt = (
+                            "修复以下内容为严格合法 JSON（仅输出 JSON，不要解释）。\n"
+                            "要求字段：generated_at, items[], refs[], stats{by_task,with_code,new_benchmarks}, must_reads[], nice_to_read[].\n"
+                            "如果缺字段请补齐为空结构；items 中 links{paper,code,project,pdf} 必须存在。\n\n原始内容：\n" + out
+                        )
+                        _max_out_fix = int(os.getenv("DEEPSEEK_MAX_OUTPUT", os.getenv("LLM_MAX_TOKENS", "6144")))
+                        out_fix = chat_once(repair_prompt, system="You are a strict JSON fixer.", temperature=0.0, max_tokens=_max_out_fix, want_json=True)
+                        try:
+                            j = _extract_json_from_text(out_fix)
+                        except Exception:
+                            j = _extract_json_relaxed(out_fix)
+                    except Exception:
+                        raise
 
         # refs 白名单过滤
         allowed = { (it.get("url") or "").strip() for it in entries }
@@ -1369,17 +1510,14 @@ def make_scholarpush(entries, n_items=8, daily=None):
             en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
             it["title_i18n"] = {"zh": zh_title, "en": en_title}
 
-            # 摘要 i18n：中文优先 Daily 段落摘要（较长上限），其次 quick_read/one_liner
-            zh_abs = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
-            if not zh_abs:
-                # 兜底：用 entries 的英文摘要翻成中文；翻译失败则临时用英文串（极少见）
-                en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
-                zh_abs = _translate_en_to_zh(en_src) or en_src
+            # 摘要 i18n（中文）：统一使用 _best_zh_summary 以获得更长且信息更全的提要
+            zh_abs = _best_zh_summary(u_norm, it, entries_map, daily_map)
 
             # 英文：先中->英；失败或含 CJK → 直接用源英文摘要
             en_try = _translate_zh_to_en(zh_abs)
             en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
             en_abs = en_try if (en_try and not _looks_cjk(en_try)) else en_src
+            en_abs = _clean_arxiv_announce_prefix(en_abs)
 
             # 西语：先中->西；失败或含 CJK → 英->西；再失败 → 空
             es_try = _translate_zh_to_es(zh_abs)
@@ -1438,7 +1576,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
     except Exception as e:
         # —— 尝试 1：用你已实现的逐对象括号法抢救 —— #
         try:
-            txt_for_salvage = (locals().get('out_fix') or locals().get('out') or '')
+            txt_for_salvage = (locals().get('out_strict') or locals().get('out_fix') or locals().get('out') or '')
             salvaged = _salvage_items_from_text(txt_for_salvage, n_items=n_items)
             if salvaged:
                 print(f"make_scholarpush salvaged_items: {len(salvaged)}")
@@ -1490,13 +1628,11 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     zh_title = (it.get("headline") or "").strip()
                     en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
                     it["title_i18n"] = {"zh": zh_title, "en": en_title}
-                    zh_abs = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
-                    if not zh_abs:
-                        en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
-                        zh_abs = _translate_en_to_zh(en_src) or en_src
+                    zh_abs = _best_zh_summary(u_norm, it, entries_map, daily_map)
                     en_try = _translate_zh_to_en(zh_abs)
                     en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
                     en_abs = en_try if (en_try and not _looks_cjk(en_try)) else en_src
+                    en_abs = _clean_arxiv_announce_prefix(en_abs)
                     es_try = _translate_zh_to_es(zh_abs)
                     if (not es_try) or _looks_cjk(es_try):
                         es_from_en = _translate_en_to_es(en_abs)
@@ -1668,13 +1804,11 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     zh_title = (it.get("headline") or "").strip()
                     en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
                     it["title_i18n"] = {"zh": zh_title, "en": en_title}
-                    zh_abs = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
-                    if not zh_abs:
-                        en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
-                        zh_abs = _translate_en_to_zh(en_src) or en_src
+                    zh_abs = _best_zh_summary(u_norm, it, entries_map, daily_map)
                     en_try = _translate_zh_to_en(zh_abs)
                     en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
                     en_abs = en_try if (en_try and not _looks_cjk(en_try)) else en_src
+                    en_abs = _clean_arxiv_announce_prefix(en_abs)
                     es_try = _translate_zh_to_es(zh_abs)
                     if (not es_try) or _looks_cjk(es_try):
                         es_from_en = _translate_en_to_es(en_abs)
@@ -1756,11 +1890,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
             zh_title = (it.get("headline") or "").strip()
             en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
             it["title_i18n"] = {"zh": zh_title, "en": en_title}
-            zh_abs = (daily_map.get(u_norm) or (it.get("quick_read") or it.get("one_liner") or "")).strip()
-            if not zh_abs:
-                # extreme fallback: try EN->ZH; on failure, use EN raw
-                en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
-                zh_abs = _translate_en_to_zh(en_src) or en_src
+            zh_abs = _best_zh_summary(u_norm, it, entries_map, daily_map)
             # English from zh; if fails or looks CJK, use source EN
             en_try = _translate_zh_to_en(zh_abs)
             en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
@@ -1977,6 +2107,7 @@ def push_buttondown(meta, html):
 def main():
     # 0) load local env for API keys (won't be committed if .gitignore ignores .env*)
     _load_env_files()
+    _debug_provider_keys_present()
     # Daily permanently disabled: we will not write blog HTML/RSS/sections or emails.
     daily_enable = False
     # 1) 抓取
@@ -1994,6 +2125,15 @@ def main():
 
     # —— 生成 ScholarPush 快报 JSON —— 
     try:
+        # Cleanup previous Daily push artifacts to start fresh (requested)
+        try:
+            blog_dir = os.path.join("data","ai","blog")
+            for fname in ("index.json","rss.xml","sections.json"):
+                p = os.path.join(blog_dir, fname)
+                if os.path.exists(p):
+                    os.remove(p)
+        except Exception:
+            pass
         sp = make_scholarpush(
             entries,
             n_items=int(os.getenv("SCHOLARPUSH_ITEMS","8")),
@@ -2005,9 +2145,11 @@ def main():
         sp_path = os.path.join(base_dir, "index.json")
         with open(sp_path, "w", encoding="utf-8") as f:
             json.dump(sp, f, ensure_ascii=False, indent=2)
-        # archive by date (CN day based on generated_at)
+        # archive by date (CN day based on generated_at; ensure 08:00 CN)
         try:
-            dt = sp.get("generated_at") or _today_cn_08_utc_iso()
+            # Force generated_at aligned to CN 08:00 for consistency
+            sp["generated_at"] = _today_cn_08_utc_iso()
+            dt = sp.get("generated_at")
             # parse ISO robustly, then convert to Asia/Shanghai to get date
             dt_parsed = dtp.parse(dt)
             try:

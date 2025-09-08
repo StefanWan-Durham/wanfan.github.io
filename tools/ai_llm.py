@@ -44,8 +44,8 @@ def _build_messages(prompt: str, system: Optional[str]) -> List[Dict[str, str]]:
 
 
 # Configurable HTTP timeouts and retrying session
-CONNECT_TIMEOUT = int(os.getenv("LLM_CONN_TIMEOUT", "15"))
-READ_TIMEOUT = int(os.getenv("LLM_READ_TIMEOUT", "120"))
+CONNECT_TIMEOUT = int(os.getenv("LLM_CONN_TIMEOUT", "20"))
+READ_TIMEOUT = int(os.getenv("LLM_READ_TIMEOUT", "180"))
 _session = requests.Session()
 _retry = Retry(
     total=2,
@@ -85,7 +85,7 @@ def _extract_text(resp: Dict[str, Any]) -> str:
             raise LLMError("No text content in response")
 
 
-def _call_openai(messages, temperature, max_tokens) -> str:
+def _call_openai(messages, temperature, max_tokens, want_json: bool = False) -> str:
     key = _env("OPENAI_API_KEY")
     if not key:
         raise LLMError("OPENAI_API_KEY missing")
@@ -99,13 +99,14 @@ def _call_openai(messages, temperature, max_tokens) -> str:
         "messages": messages,
         "temperature": float(temperature),
         "max_tokens": int(max_tokens),
-        "response_format": {"type": "json_object"},
     }
+    if want_json:
+        payload["response_format"] = {"type": "json_object"}
     resp = _post_json(url, headers, payload)
     return _extract_text(resp)
 
 
-def _call_openrouter(messages, temperature, max_tokens) -> str:
+def _call_openrouter(messages, temperature, max_tokens, want_json: bool = False) -> str:
     key = _env("OPENROUTER_API_KEY")
     if not key:
         raise LLMError("OPENROUTER_API_KEY missing")
@@ -124,13 +125,14 @@ def _call_openrouter(messages, temperature, max_tokens) -> str:
         "messages": messages,
         "temperature": float(temperature),
         "max_tokens": int(max_tokens),
-        "response_format": {"type": "json_object"},
     }
+    if want_json:
+        payload["response_format"] = {"type": "json_object"}
     resp = _post_json(url, headers, payload)
     return _extract_text(resp)
 
 
-def _call_together(messages, temperature, max_tokens) -> str:
+def _call_together(messages, temperature, max_tokens, want_json: bool = False) -> str:
     key = _env("TOGETHER_API_KEY")
     if not key:
         raise LLMError("TOGETHER_API_KEY missing")
@@ -144,13 +146,14 @@ def _call_together(messages, temperature, max_tokens) -> str:
         "messages": messages,
         "temperature": float(temperature),
         "max_tokens": int(max_tokens),
-        "response_format": {"type": "json_object"},
     }
+    if want_json:
+        payload["response_format"] = {"type": "json_object"}
     resp = _post_json(url, headers, payload)
     return _extract_text(resp)
 
 
-def _call_deepseek(messages, temperature, max_tokens) -> str:
+def _call_deepseek(messages, temperature, max_tokens, want_json: bool = False) -> str:
     key = _env("DEEPSEEK_API_KEY")
     if not key:
         raise LLMError("DEEPSEEK_API_KEY missing")
@@ -168,14 +171,14 @@ def _call_deepseek(messages, temperature, max_tokens) -> str:
         "messages": messages,
     "temperature": float(temperature),
     "max_tokens": int(_env("DEEPSEEK_MAX_TOKENS", str(max_tokens)) or max_tokens),
-    # ask for JSON to reduce parsing ambiguity and token waste
-    "response_format": {"type": "json_object"},
     }
+    if want_json:
+        payload["response_format"] = {"type": "json_object"}
     resp = _post_json(url, headers, payload)
     return _extract_text(resp)
 
 
-def _call_dashscope(messages, temperature, max_tokens) -> str:
+def _call_dashscope(messages, temperature, max_tokens, want_json: bool = False) -> str:
     key = _env("DASHSCOPE_API_KEY")
     if not key:
         raise LLMError("DASHSCOPE_API_KEY missing")
@@ -190,8 +193,9 @@ def _call_dashscope(messages, temperature, max_tokens) -> str:
         "messages": messages,
         "temperature": float(temperature),
         "max_tokens": int(max_tokens),
-        "response_format": {"type": "json_object"},
     }
+    if want_json:
+        payload["response_format"] = {"type": "json_object"}
     resp = _post_json(url, headers, payload)
     return _extract_text(resp)
 
@@ -199,7 +203,8 @@ def _call_dashscope(messages, temperature, max_tokens) -> str:
 def chat_once(prompt: str,
               system: Optional[str] = None,
               temperature: float = 0.3,
-              max_tokens: int = 2048) -> str:
+              max_tokens: int = 2048,
+              want_json: bool = False) -> str:
     """Send one chat prompt and return text, with provider failover.
 
     Resolution order:
@@ -247,7 +252,7 @@ def chat_once(prompt: str,
     for p in order:
         try:
             fn = providers[p]
-            return fn(messages, temperature, max_tokens)
+            return fn(messages, temperature, max_tokens, want_json)
         except Exception as e:
             last_err = e
             # brief backoff and try next
