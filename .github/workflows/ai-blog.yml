@@ -1,7 +1,7 @@
 name: AI Daily Blog
 'on':
   schedule:
-    - cron: "5 0 * * *"        # UTC 00:05，每天一次
+    - cron: "0 0 * * *"        # UTC 00:00 = 北京时间 08:00，每天一次
   workflow_dispatch:
 
 jobs:

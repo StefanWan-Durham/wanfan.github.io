@@ -4,6 +4,8 @@ from urllib.parse import urlparse
 from datetime import datetime, timezone
 from datetime import timedelta
 from dateutil import parser as dtp
+from dateutil import tz as dttz
+from zoneinfo import ZoneInfo
 from markdown2 import markdown as md2html
 from bs4 import BeautifulSoup as BS
 from ai_llm import chat_once
@@ -125,10 +127,10 @@ def fetch_arxiv_api(categories=("cs.AI","cs.CL","cs.LG","cs.CV"), per_cat=25, ti
                 title = (e.get("title") or "").strip()
                 link = (e.get("id") or e.get("link") or "").strip()
                 published = e.get("published") or e.get("updated") or ""
-                ts = dtp.parse(published).astimezone(timezone.utc).isoformat() if published else datetime.now(timezone.utc).isoformat()
+                ts = _parse_ts_utc_iso(published)
                 summary = (e.get("summary") or "")
                 _sum_cap = int(os.getenv("FETCH_SUMMARY_CHARS", "600"))
-                summary = re.sub("<.*?>", "", summary)[:_sum_cap]
+                summary = _clean_arxiv_announce_prefix(re.sub("<.*?>", "", summary))[:_sum_cap]
                 items.append({"title":title, "url":link, "ts":ts, "summary":summary})
         except Exception as ex:
             print(f"arXiv API failed for {cat}: {ex}")
@@ -155,10 +157,10 @@ def fetch_items(limit_per_feed=25):
                 title = (e.get("title") or "").strip()
                 link = e.get("link") or ""
                 published = e.get("published") or e.get("updated") or ""
-                ts = dtp.parse(published).astimezone(timezone.utc).isoformat() if published else datetime.now(timezone.utc).isoformat()
+                ts = _parse_ts_utc_iso(published)
                 summary = (e.get("summary") or "")
-                # 去HTML & 降噪（更省tokens）
-                summary = re.sub("<.*?>", "", summary)[:_sum_cap]
+                # 去HTML & 降噪（更省tokens）+ 去 arXiv 前缀噪音
+                summary = _clean_arxiv_announce_prefix(re.sub("<.*?>", "", summary))[:_sum_cap]
                 items.append({"title":title, "url":link, "ts":ts, "summary":summary})
                 cnt += 1
         except Exception as e:
@@ -308,6 +310,44 @@ def _extract_json_from_text(text: str):
         pass
     # Finally try direct
     return json.loads(t)
+
+# ===== Time helpers =====
+_TZINFOS = {
+    # Common US abbreviations observed in feeds
+    'EST': dttz.tzoffset('EST', -5 * 3600),
+    'EDT': dttz.tzoffset('EDT', -4 * 3600),
+    'CST': dttz.tzoffset('CST', -6 * 3600),
+    'CDT': dttz.tzoffset('CDT', -5 * 3600),
+    'PST': dttz.tzoffset('PST', -8 * 3600),
+    'PDT': dttz.tzoffset('PDT', -7 * 3600),
+    'UTC': dttz.tzutc(),
+    'GMT': dttz.tzutc(),
+}
+
+def _parse_ts_utc_iso(s: str) -> str:
+    try:
+        if not s:
+            return datetime.now(timezone.utc).isoformat()
+        dt = dtp.parse(str(s), tzinfos=_TZINFOS)
+        if not dt.tzinfo:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc).isoformat()
+    except Exception:
+        return datetime.now(timezone.utc).isoformat()
+
+def _today_cn_08_utc_iso(now_utc: datetime | None = None) -> str:
+    """Return today's 08:00 at Asia/Shanghai converted to UTC ISO string.
+    If current UTC time is before today's CN 08:00, still use today's 08:00 (no backdating)."""
+    try:
+        cn = ZoneInfo("Asia/Shanghai")
+    except Exception:
+        # Fallback: fixed offset +08:00
+        cn = dttz.gettz("Asia/Shanghai")
+    n_utc = now_utc or datetime.now(timezone.utc)
+    n_cn = n_utc.astimezone(cn)
+    eight_cn = n_cn.replace(hour=8, minute=0, second=0, microsecond=0)
+    # Ensure we always output the 08:00 time of the same CN day as now
+    return eight_cn.astimezone(timezone.utc).isoformat()
 def _escape_newlines_in_quoted_strings(s: str) -> str:
     """将双引号括起来的字符串内部的裸换行/回车替换为 \\n，避免 JSONDecodeError。"""
     out = []
@@ -613,7 +653,9 @@ def _hostname(u: str) -> str:
         return ""
 
 def _make_entries_map(entries: list) -> dict:
-    """url_norm -> {title_en, summary_en, ts, host}（来自抓取的 entries）"""
+    """url_norm -> {title_en, summary_en, ts, host}（来自抓取的 entries）
+    Note: summary_en uses the raw fetched summary with arXiv boilerplate removed, not the prompt-capped version.
+    """
     m = {}
     for it in entries:
         u = _normalize_url(it.get("url", ""))
@@ -1156,9 +1198,8 @@ def make_scholarpush(entries, n_items=8, daily=None):
         j["refs"] = [r for r in (j.get("refs") or []) if isinstance(r, dict) and (r.get("url") or "").strip() in allowed]
 
         # items 规范化
-        # Ensure generated_at exists
-        if not j.get("generated_at"):
-            j["generated_at"] = datetime.now(timezone.utc).isoformat()
+        # Always stamp at 08:00 China time for the day
+        j["generated_at"] = _today_cn_08_utc_iso()
 
         cleaned=[]
         for it in (j.get("items") or [])[:n_items]:
@@ -1210,7 +1251,8 @@ def make_scholarpush(entries, n_items=8, daily=None):
 
         # === 统一字段注入：把 entries/Daily 的信息折到卡片 ===
         try:
-            entries_map = _make_entries_map(entries)
+            # Use full base_entries to avoid prompt-capped summaries in EN
+            entries_map = _make_entries_map(base_entries)
         except Exception:
             entries_map = {}
         try:
@@ -1219,6 +1261,12 @@ def make_scholarpush(entries, n_items=8, daily=None):
             daily_map = {}
 
         for it in j.get("items", []):
+            # First, enrich/attach source links (paper/pdf/code/project)
+            try:
+                title_map = _build_entry_title_map(base_entries)
+                _maybe_attach_source_link(it, title_map, base_entries)
+            except Exception:
+                pass
             paper = it.get("links", {}).get("paper", "") or ""
             u_norm = _normalize_url(paper)
 
@@ -1266,8 +1314,12 @@ def make_scholarpush(entries, n_items=8, daily=None):
             it["reusability"] = _clean_list(it.get("reusability"), limit=3)
             it["limitations"] = _clean_list(it.get("limitations"), limit=2)
             it["tags"] = _clean_list(it.get("tags"))
-            # Attach/enrich source links using entries
-            _maybe_attach_source_link(it, title_map, entries)
+            # links were enriched before; ensure pdf present for arXiv/OpenReview
+            try:
+                if (not it["links"].get("pdf")) or it["links"]["pdf"] == "N/A":
+                    it["links"]["pdf"] = _arxiv_pdf(it["links"].get("paper",""))
+            except Exception:
+                pass
 
         _validate_scholarpush(j)
         if not j.get("items"):
@@ -1280,7 +1332,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
             salvaged = _salvage_items_from_text(txt_for_salvage, n_items=n_items)
             if salvaged:
                 print(f"make_scholarpush salvaged_items: {len(salvaged)}")
-                j = {"generated_at": datetime.now(timezone.utc).isoformat(), "items": salvaged, "refs": []}
+                j = {"generated_at": _today_cn_08_utc_iso(), "items": salvaged, "refs": []}
                 cleaned = []
                 for it in (j.get("items") or [])[:n_items]:
                     h  = (it.get("headline") or "").strip()
@@ -1308,7 +1360,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     j["nice_to_read"] = nice
                 # 统一字段注入（抢救路径也注入）
                 try:
-                    entries_map = _make_entries_map(entries)
+                    entries_map = _make_entries_map(base_entries)
                 except Exception:
                     entries_map = {}
                 try:
@@ -1317,6 +1369,12 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     daily_map = {}
                 title_map = _build_entry_title_map(entries)
                 for it in j.get("items", []):
+                    # Enrich first
+                    try:
+                        title_map = _build_entry_title_map(base_entries)
+                        _maybe_attach_source_link(it, title_map, base_entries)
+                    except Exception:
+                        pass
                     paper = it.get("links", {}).get("paper", "") or ""
                     u_norm = _normalize_url(paper)
                     zh_title = (it.get("headline") or "").strip()
@@ -1356,7 +1414,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     it["reusability"] = _clean_list(it.get("reusability"), limit=3)
                     it["limitations"] = _clean_list(it.get("limitations"), limit=2)
                     it["tags"] = _clean_list(it.get("tags"))
-                    _maybe_attach_source_link(it, title_map, entries)
+                    # already enriched
                 _validate_scholarpush(j)
                 return j
         except Exception as salvage_error:
@@ -1443,7 +1501,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
             salvaged2 = _regex_salvage(txt2, limit=n_items)
             if salvaged2:
                 print(f"make_scholarpush salvaged_items_v2: {len(salvaged2)}")
-                j = {"generated_at": datetime.now(timezone.utc).isoformat(), "items": salvaged2, "refs": []}
+                j = {"generated_at": _today_cn_08_utc_iso(), "items": salvaged2, "refs": []}
 
                 # 复用同一套清洗/打分/统计逻辑
                 cleaned = []
@@ -1475,14 +1533,14 @@ def make_scholarpush(entries, n_items=8, daily=None):
 
                 # 统一字段注入（正则抢救路径也注入）
                 try:
-                    entries_map = _make_entries_map(entries)
+                    entries_map = _make_entries_map(base_entries)
                 except Exception:
                     entries_map = {}
                 try:
                     daily_map = _make_daily_summary_map(daily) if daily else {}
                 except Exception:
                     daily_map = {}
-                title_map = _build_entry_title_map(entries)
+                title_map = _build_entry_title_map(base_entries)
                 for it in j.get("items", []):
                     paper = it.get("links", {}).get("paper", "") or ""
                     u_norm = _normalize_url(paper)
@@ -1801,10 +1859,16 @@ def main():
         sp_path = os.path.join(base_dir, "index.json")
         with open(sp_path, "w", encoding="utf-8") as f:
             json.dump(sp, f, ensure_ascii=False, indent=2)
-        # archive by date (UTC)
+        # archive by date (CN day based on generated_at)
         try:
-            dt = sp.get("generated_at") or datetime.now(timezone.utc).isoformat()
-            d = datetime.fromisoformat(dt.replace('Z','+00:00')).date()
+            dt = sp.get("generated_at") or _today_cn_08_utc_iso()
+            # parse ISO robustly, then convert to Asia/Shanghai to get date
+            dt_parsed = dtp.parse(dt)
+            try:
+                cn = ZoneInfo("Asia/Shanghai")
+            except Exception:
+                cn = dttz.gettz("Asia/Shanghai")
+            d = dt_parsed.astimezone(cn).date()
             day_fname = f"{d.isoformat()}.json"
             day_path = os.path.join(base_dir, day_fname)
             with open(day_path, "w", encoding="utf-8") as f:

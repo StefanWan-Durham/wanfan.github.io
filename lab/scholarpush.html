@@ -123,7 +123,6 @@
             <div style="display:flex;gap:6px;align-items:center">
               <button id="prev-day" class="btn outline small" title="Prev day" aria-label="Previous day">◀</button>
               <input id="date-picker" type="date" class="input" style="height:36px" />
-              <select id="date-select" class="input" style="height:36px"></select>
               <button id="next-day" class="btn outline small" title="Next day" aria-label="Next day">▶</button>
             </div>
           </div>
@@ -514,31 +513,21 @@
       }
       // load available dates
       let dates=[]; try{ dates = await fetch('../data/ai/scholarpush/dates.json', {cache:'no-store'}).then(r=>r.json()); }catch(e){ dates=[]; }
-      const sel = document.getElementById('date-select');
       const dp = document.getElementById('date-picker');
-      sel.innerHTML='';
-      if(dates.length===0){
-        const opt=document.createElement('option'); opt.value=''; opt.textContent='latest'; sel.appendChild(opt);
-      }else{
-        dates.forEach(d=>{ const o=document.createElement('option'); o.value=d; o.textContent=d; sel.appendChild(o); });
-      }
       // set date picker bounds
       if(dates.length>0){ dp.min = dates[dates.length-1]; dp.max = dates[0]; }
       // default to first option (most recent)
-      sel.selectedIndex = 0;
       if(dates.length>0){ dp.value = dates[0]; }
-      await loadByDate(sel.value||'');
+      await loadByDate(dp.value||'');
       // hook prev/next
       const prevBtn=document.getElementById('prev-day');
       const nextBtn=document.getElementById('next-day');
       function updateNav(){
-        const idx = sel.selectedIndex;
-        prevBtn.disabled = (idx>=dates.length-1);
-        nextBtn.disabled = (idx<=0);
-        if(dates.length>0){ dp.value = dates[idx]; }
+        const idx = dates.indexOf(dp.value||'');
+        prevBtn.disabled = (idx===-1) || (idx>=dates.length-1);
+        nextBtn.disabled = (idx===-1) || (idx<=0);
       }
       updateNav();
-      sel.onchange = async ()=>{ await loadByDate(sel.value||''); updateNav(); };
       dp.onchange = async ()=>{
         const chosen = dp.value;
         if(!chosen){ return; }
@@ -548,12 +537,12 @@
           idx = dates.findIndex(d=>d <= chosen);
           if(idx === -1) idx = dates.length-1;
         }
-        sel.selectedIndex = idx;
-        await loadByDate(dates[idx]);
+        dp.value = dates[idx];
+        await loadByDate(dp.value);
         updateNav();
       };
-      prevBtn.onclick = async ()=>{ const i=sel.selectedIndex; if(i<dates.length-1){ sel.selectedIndex=i+1; await loadByDate(sel.value); updateNav(); } };
-      nextBtn.onclick = async ()=>{ const i=sel.selectedIndex; if(i>0){ sel.selectedIndex=i-1; await loadByDate(sel.value); updateNav(); } };
+      prevBtn.onclick = async ()=>{ const i=dates.indexOf(dp.value||''); if(i<dates.length-1 && i>=0){ dp.value=dates[i+1]; await loadByDate(dp.value); updateNav(); } };
+      nextBtn.onclick = async ()=>{ const i=dates.indexOf(dp.value||''); if(i>0){ dp.value=dates[i-1]; await loadByDate(dp.value); updateNav(); } };
       // Re-render content on language change
       window.addEventListener('language-changed', () => { renderAll(); });
     }
