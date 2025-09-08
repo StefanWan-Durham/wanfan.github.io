@@ -363,6 +363,21 @@
   else if (langNow==='en') fullTxt = String(it.summary_i18n?.en || it.one_liner || it.quick_read || '');
   else if (langNow==='es') fullTxt = String(it.summary_i18n?.es || it.one_liner || it.quick_read || '');
   else fullTxt = String(it.summary_i18n?.zh || it.one_liner || it.quick_read || '');
+  // UI safeguard: avoid showing Chinese when language is EN/ES
+  try {
+    const RE_CJK = /[\u3400-\u9fff]/;
+    if ((langNow==='en' || langNow==='es') && RE_CJK.test(fullTxt)){
+      if (langNow==='es'){
+        // Prefer Spanish, else English, else hide
+        const esTry = String(it.summary_i18n?.es || '');
+        const enTry = String(it.summary_i18n?.en || '');
+        fullTxt = RE_CJK.test(esTry) ? (RE_CJK.test(enTry) ? '' : enTry) : esTry;
+      } else if (langNow==='en'){
+        const enTry = String(it.summary_i18n?.en || '');
+        fullTxt = RE_CJK.test(enTry) ? '' : enTry;
+      }
+    }
+  } catch {}
   // no short/expand; always render full text
       const titleHtml = esc(displayTitle(it));
   // Resolve a primary source link with refs fallback

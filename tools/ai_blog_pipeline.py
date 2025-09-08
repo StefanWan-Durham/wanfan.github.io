@@ -575,6 +575,18 @@ def _trim_title(s: str) -> str:
         t = t[:20]
     return t
 
+# === CJK detection and lightweight logger ===
+_CJK_RE = re.compile(r'[\u3400-\u9fff]')
+
+def _looks_cjk(s: str) -> bool:
+    return bool(_CJK_RE.search(s or ""))
+
+def _log(msg: str):
+    try:
+        print(msg)
+    except Exception:
+        pass
+
 SENT_SPLIT = re.compile(r'(?<=[。！？!?；;\.])')
 def _clean_arxiv_announce_prefix(text: str) -> str:
     """Remove arXiv RSS boilerplate like 'arXiv:2509.04505v1 Announce Type: new Abstract:' from the start of abstracts."""
@@ -694,7 +706,7 @@ def _make_daily_summary_map(j: dict) -> dict:
     return m
 
 def _translate_zh_to_en(text: str) -> str:
-    """Translate Chinese to fluent English using the configured LLM; fall back to source if unavailable."""
+    """Translate Chinese to fluent English using the configured LLM. On failure, return empty string (never source)."""
     src = (text or "").strip()
     if not src:
         return ""
@@ -707,12 +719,17 @@ def _translate_zh_to_en(text: str) -> str:
             f"Chinese:\n{src}"
         )
         out = chat_once(prompt, system="You are a precise translator.", temperature=0.0, max_tokens=1200)
-        return (out or "").strip()
-    except Exception:
-        return src  # graceful fallback
+        out = (out or "").strip()
+        if not out or _looks_cjk(out):
+            _log("[translate] zh->en failed or CJK detected; returning empty")
+            return ""
+        return out
+    except Exception as e:
+        _log(f"[translate] zh->en exception: {e}")
+        return ""
 
 def _translate_en_to_zh(text: str) -> str:
-    """Translate English to concise Chinese. Used only as a fallback when no zh summary is available."""
+    """Translate English to concise Chinese. On failure, return empty string (not source)."""
     src = (text or "").strip()
     if not src:
         return ""
@@ -722,12 +739,14 @@ def _translate_en_to_zh(text: str) -> str:
             f"English:\n{src}"
         )
         out = chat_once(prompt, system="You are a precise translator.", temperature=0.0, max_tokens=1200)
-        return (out or "").strip()
-    except Exception:
-        return src
+        out = (out or "").strip()
+        return out or ""
+    except Exception as e:
+        _log(f"[translate] en->zh exception: {e}")
+        return ""
 
 def _translate_zh_to_es(text: str) -> str:
-    """Translate Chinese to fluent Spanish; fall back gracefully on failure."""
+    """Translate Chinese to fluent Spanish. On failure, return empty string (never source)."""
     src = (text or "").strip()
     if not src:
         return ""
@@ -740,9 +759,32 @@ def _translate_zh_to_es(text: str) -> str:
             f"Chino:\n{src}"
         )
         out = chat_once(prompt, system="Eres un traductor preciso.", temperature=0.0, max_tokens=1200)
-        return (out or "").strip()
-    except Exception:
-        return src
+        out = (out or "").strip()
+        if not out or _looks_cjk(out):
+            _log("[translate] zh->es failed or CJK detected; returning empty")
+            return ""
+        return out
+    except Exception as e:
+        _log(f"[translate] zh->es exception: {e}")
+        return ""
+
+def _translate_en_to_es(text: str) -> str:
+    """Translate English to fluent Spanish; returns empty string on failure."""
+    src = (text or "").strip()
+    if not src:
+        return ""
+    try:
+        prompt = (
+            "Translate the following English paragraph into fluent Spanish. \n"
+            "Preserve facts, numbers, and units. Output only the translation.\n\n"
+            f"English:\n{src}"
+        )
+        out = chat_once(prompt, system="You are a precise translator.", temperature=0.0, max_tokens=1200)
+        out = (out or "").strip()
+        return "" if _looks_cjk(out) else out
+    except Exception as e:
+        _log(f"[translate] en->es exception: {e}")
+        return ""
 
 def _compact_key_numbers(kn_list: list) -> list:
     """把 key_numbers[] 压成 1~3 个徽章文本，如 'FID -0.8', 'UCF101 +2.1'。"""
@@ -1327,14 +1369,25 @@ def make_scholarpush(entries, n_items=8, daily=None):
             en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
             it["title_i18n"] = {"zh": zh_title, "en": en_title}
 
-            # 摘要 i18n：中文优先 Daily 段落摘要（较长上限），其次 quick_read/one_liner；英文直接对中文进行精准翻译
+            # 摘要 i18n：中文优先 Daily 段落摘要（较长上限），其次 quick_read/one_liner
             zh_abs = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
             if not zh_abs:
-                # 极端兜底：用 entries 的英文摘要翻成中文
+                # 兜底：用 entries 的英文摘要翻成中文；翻译失败则临时用英文串（极少见）
                 en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
-                zh_abs = _translate_en_to_zh(en_src)
-            en_abs = _translate_zh_to_en(zh_abs)
-            es_abs = _translate_zh_to_es(zh_abs)
+                zh_abs = _translate_en_to_zh(en_src) or en_src
+
+            # 英文：先中->英；失败或含 CJK → 直接用源英文摘要
+            en_try = _translate_zh_to_en(zh_abs)
+            en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
+            en_abs = en_try if (en_try and not _looks_cjk(en_try)) else en_src
+
+            # 西语：先中->西；失败或含 CJK → 英->西；再失败 → 空
+            es_try = _translate_zh_to_es(zh_abs)
+            if (not es_try) or _looks_cjk(es_try):
+                es_from_en = _translate_en_to_es(en_abs)
+                es_abs = es_from_en if (es_from_en and not _looks_cjk(es_from_en)) else ""
+            else:
+                es_abs = es_try
             it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
 
             # host/ts/pdf/has_code/key_numbers_compact
@@ -1440,9 +1493,16 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     zh_abs = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
                     if not zh_abs:
                         en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
-                        zh_abs = _translate_en_to_zh(en_src)
-                    en_abs = _translate_zh_to_en(zh_abs)
-                    es_abs = _translate_zh_to_es(zh_abs)
+                        zh_abs = _translate_en_to_zh(en_src) or en_src
+                    en_try = _translate_zh_to_en(zh_abs)
+                    en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
+                    en_abs = en_try if (en_try and not _looks_cjk(en_try)) else en_src
+                    es_try = _translate_zh_to_es(zh_abs)
+                    if (not es_try) or _looks_cjk(es_try):
+                        es_from_en = _translate_en_to_es(en_abs)
+                        es_abs = es_from_en if (es_from_en and not _looks_cjk(es_from_en)) else ""
+                    else:
+                        es_abs = es_try
                     it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
                     host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
                     it["host"] = host
@@ -1611,9 +1671,16 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     zh_abs = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
                     if not zh_abs:
                         en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
-                        zh_abs = _translate_en_to_zh(en_src)
-                    en_abs = _translate_zh_to_en(zh_abs)
-                    es_abs = _translate_zh_to_es(zh_abs)
+                        zh_abs = _translate_en_to_zh(en_src) or en_src
+                    en_try = _translate_zh_to_en(zh_abs)
+                    en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
+                    en_abs = en_try if (en_try and not _looks_cjk(en_try)) else en_src
+                    es_try = _translate_zh_to_es(zh_abs)
+                    if (not es_try) or _looks_cjk(es_try):
+                        es_from_en = _translate_en_to_es(en_abs)
+                        es_abs = es_from_en if (es_from_en and not _looks_cjk(es_from_en)) else ""
+                    else:
+                        es_abs = es_try
                     it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
                     host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
                     it["host"] = host
@@ -1691,12 +1758,20 @@ def make_scholarpush(entries, n_items=8, daily=None):
             it["title_i18n"] = {"zh": zh_title, "en": en_title}
             zh_abs = (daily_map.get(u_norm) or (it.get("quick_read") or it.get("one_liner") or "")).strip()
             if not zh_abs:
-                # as an extreme fallback, translate fetched English into zh
+                # extreme fallback: try EN->ZH; on failure, use EN raw
                 en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
-                zh_abs = _translate_en_to_zh(en_src)
-            # always produce en/es by translating from zh to keep consistency across languages
-            en_abs = _translate_zh_to_en(zh_abs)
-            es_abs = _translate_zh_to_es(zh_abs)
+                zh_abs = _translate_en_to_zh(en_src) or en_src
+            # English from zh; if fails or looks CJK, use source EN
+            en_try = _translate_zh_to_en(zh_abs)
+            en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
+            en_abs = en_try if (en_try and not _looks_cjk(en_try)) else en_src
+            # Spanish from zh; if fails/CJK, try EN->ES; else empty
+            es_try = _translate_zh_to_es(zh_abs)
+            if (not es_try) or _looks_cjk(es_try):
+                es_from_en = _translate_en_to_es(en_abs)
+                es_abs = es_from_en if (es_from_en and not _looks_cjk(es_from_en)) else ""
+            else:
+                es_abs = es_try
             it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
             host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
             it["host"] = host
