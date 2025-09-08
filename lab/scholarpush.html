@@ -350,6 +350,8 @@
       const codeBadge = it.has_code ? `<span class="tag small" title="has code">code</span>` : '';
   const utils=(it.reusability||[]).filter(x=>x && x!=='N/A').slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('');
   const limits=(it.limitations||[]).filter(x=>x && x!=='N/A').slice(0,2).map(x=>`<li>${esc(x)}</li>`).join('');
+  const labelReu = t('sp_reusability', (document.documentElement.lang||'zh')==='zh'?'可复用':'Reusability');
+  const labelLim = t('sp_limitations', (document.documentElement.lang||'zh')==='zh'?'局限':'Limitations');
       const host = it.host||'';
       const tsRel = relTime(it.ts||'');
       const meta=[it.task||'',it.type||'',host,tsRel].filter(Boolean).join(' · ');
@@ -368,7 +370,12 @@
         <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${titleHtml}</h4>
         <div class="sp-meta">${meta}${tags?` · ${tags}`:''} ${keynumsCompact?` · ${keynumsCompact}`:''} ${codeBadge}</div>
     <p id="abs-${id}" class="sp-abstract">${esc(fullTxt)}</p>
-  ${(utils||limits)?`<div style="display:flex;gap:12px;margin-top:6px">${utils?`<ul class="muted" style="margin:0;list-style:none;padding-left:0">${utils}</ul>`:''}${limits?`<ul class="muted" style="margin:0;list-style:none;padding-left:0">${limits}</ul>`:''}</div>`:''}
+  ${(utils||limits)?
+    `<div style="display:flex;gap:12px;margin-top:6px">
+      ${utils?`<div><div class="muted" style="font-size:12px;margin-bottom:2px">${labelReu}</div><ul class="muted" style="margin:0;list-style:none;padding-left:0">${utils}</ul></div>`:''}
+      ${limits?`<div><div class="muted" style="font-size:12px;margin-bottom:2px">${labelLim}</div><ul class="muted" style="margin:0;list-style:none;padding-left:0">${limits}</ul></div>`:''}
+    </div>`
+  :''}
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
           ${sourceHref?btn(sourceHref,'Source Link'):''}
           ${links.code&&links.code!=='N/A'?btn(links.code,'Code'):''}

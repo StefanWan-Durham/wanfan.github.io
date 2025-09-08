@@ -251,40 +251,37 @@ SYS = (
         "You are a senior AI editor. Write publishable, objective Chinese posts. "
         "No chain-of-thought; avoid hype/marketing words; replace speculation with attributed phrasing."
 )
-# Two-step, stricter JSON output with plan + locked refs
+# Two-step, stricter JSON output with plan + locked refs (user-provided prompt)
 PROMPT = r"""
-You are an experienced AI news editor. Produce a DAILY Chinese blog post as STRICT JSON.
-Do the job in TWO STEPS **inside one JSON**:
+You are a professional, detail-oriented AI news editor specializing in tech/AI领域 (可根据实际内容替换为具体领域，如"生物医药""前沿科技") daily updates. Your core task is to produce a concise, fact-driven DAILY Chinese blog post in STRICT JSON format—ensure all content is accurate, information-dense, and aligns with the given entries.
 
-1) "plan": pick 3–5 key items ONLY from the given entries and define:
-     - plan.toc: 3–6 section titles (Chinese).
-     - plan.refs: an ordered list of {title,url} where every url MUST be from the entries.
-     - plan.claims: 6–10 one-sentence factual bullets, each mapping to one or more ref indexes.
+Complete the task in TWO STEPS **within one JSON object**:
 
-2) "draft": write the article body with these constraints:
-     - title_zh: 18–28 Chinese characters, no punctuation at the end.
-     - description_zh: 60–120 Chinese characters, objective and specific.
-     - tags: 3–5 short tags, e.g. ["LLM","RAG","Agent"].
-     - sections: array of {heading, markdown}, length = len(plan.toc).
-         * Each section 200–320 Chinese characters, high information density, fluent Chinese.
-         * Preferred structure per section: 问题 → 方法 → 结果/意义（3–4 句，避免空话和口号）。
-         * Preserve concrete numbers/units and evaluation settings when present.
-         * End each section with bracketed reference indexes matching plan.refs, e.g. [1][3].
-         * Do NOT introduce facts that are not supported by plan.refs.
-     - en_teaser: 1–2 English sentences.
-     - es_teaser: 1–2 oraciones en español.
-     - Total Chinese body length ≈ [[MAX_WORDS]] characters (±15%).
+1) "plan": First, screen and select 3–5 HIGH-VALUE key items from the given entries (prioritize items with clear data, novel insights, or industry relevance; avoid trivial/overlapping content). Based on these items, define three sub-fields:
+    - "toc": A list of 3–6 Chinese section titles (each 8–15 characters; titles must directly reflect the core of the section, avoid vague expressions like "Industry Updates").
+    - "refs": An ordered list of { "title": (full, accurate title of the entry), "url": (exact URL from the entry) }—EVERY URL must be sourced from the given entries, no missing or fabricated links.
+    - "claims": A list of 6–10 factual, one-sentence bullets (each 20–40 Chinese characters). Each bullet must map to 1–2 ref indexes (e.g., "[1]", "[2][4]") to indicate its source; avoid ambiguous statements, ensure each claim is verifiable from the entries.
 
-Rules:
-- Cite **only** from plan.refs; no extra sources, no speculation, no marketing language.
-- Prefer cross-source corroborated items; avoid overlapping news.
-- Avoid direct quotes > 25 words; rewrite in your words.
-- Chinese prose must be clear and natural; avoid clichés and filler; do not output "N/A" strings.
-- Retain key numbers (datasets, metrics, scale, improvements) with units; when numbers are missing, omit instead of fabricating.
-- Output JSON ONLY with keys: plan, title_zh, description_zh, tags, toc, sections, refs, en_teaser, es_teaser
-    where:
-    * toc == plan.toc
-    * refs == plan.refs
+2) "draft": Write the full article body strictly following these constraints:
+    - "title_zh": 18–28 Chinese characters (must summarize the blog’s core focus, e.g., "2024.05 AI领域3大突破：多模态效率提升40%+")；no punctuation (periods, commas, colons) at the end.
+    - "description_zh": 60–120 Chinese characters (objectively summarize the blog’s key content: include 2–3 core items, 1–2 key data points; avoid empty generalizations like "this article covers latest trends").
+    - "tags": 3–5 short, precise tags (each 2–8 Chinese/English characters; use English for technical terms like "LLM"/"RAG", Chinese for domains like "多模态"; avoid overly broad tags like "科技").
+    - "sections": An array of { "heading": (exact match with plan.toc), "markdown": (section content) }—length must equal len(plan.toc). Each section must meet:
+        * Word count: 200–320 Chinese characters (count only content, exclude heading; use concise expressions, no redundant filler).
+        * Structure: Follow "问题（现有痛点/行业需求）→ 方法（entry中提出的解决方案/技术路径）→ 结果/意义（具体数据/实际价值）" (3–4 logical sentences, avoid disjointed content).
+        * Data retention: Preserve all concrete numbers, units, and evaluation settings (e.g., "在CIFAR-10数据集上准确率达92.3%", "推理速度提升2.1倍")—do not omit or paraphrase data.
+        * Citation: End each section with bracketed ref indexes (e.g., "[1][3]")—indexes must come from plan.refs, and ensure all content in the section is supported by the cited refs.
+        * No extra information: Do NOT introduce facts, opinions, or examples not supported by plan.refs; do NOT use direct quotes longer than 25 Chinese characters (rewrite long quotes in your own words while retaining original meaning).
+    - "en_teaser": 1–2 natural English sentences (summarize the blog’s key value, include 1 key data point; avoid literal translation of title_zh).
+    - "es_teaser": 1–2 oraciones en español (mismo requisito que en_teaser: resuma el valor clave del blog, incluya 1 dato importante; evite traducción literal de title_zh).
+    - Total Chinese body length: Approximately [[MAX_WORDS]] characters (allow ±15% deviation; calculate as sum of all sections’ markdown word counts).
+
+Mandatory Rules (violations will make the output invalid):
+1. Source restriction: Cite ONLY from plan.refs—no external sources, no speculation, no marketing-style language (e.g., "revolutionary", "best-in-class").
+2. Accuracy first: If entries lack certain information (e.g., no evaluation data for a method), omit it instead of fabricating; if data is conflicting, prioritize the entry with clearer context.
+3. Chinese prose quality: Use clear, natural, and formal Chinese (avoid colloquialisms, clichés like "与时俱进", or overly complex sentences); ensure logical coherence between sentences in each section.
+4. JSON format: Output ONLY a valid JSON object (no extra text, comments, or line breaks outside JSON); ensure all keys are present and match the required names: plan, title_zh, description_zh, tags, toc, sections, refs, en_teaser, es_teaser.
+5. Consistency check: Ensure "toc" exactly matches plan.toc, "refs" exactly matches plan.refs, and all section headings exactly match plan.toc.
 
 Entries:
 [[ENTRIES]]
@@ -682,9 +679,9 @@ def _make_daily_summary_map(j: dict) -> dict:
     m = {}
     # Allow longer injected zh summaries via env
     try:
-        zh_cap = int(os.getenv("SCHOLARPUSH_ZH_SUMMARY_CHARS", "300"))
+        zh_cap = int(os.getenv("SCHOLARPUSH_ZH_SUMMARY_CHARS", "520"))
     except Exception:
-        zh_cap = 300
+        zh_cap = 520
     for sec in (j.get("sections") or []):
         md = sec.get("markdown") or ""
         zh = _plain_summary_from_markdown(md, limit=zh_cap)
@@ -695,6 +692,39 @@ def _make_daily_summary_map(j: dict) -> dict:
             if (u not in m) or (len(zh) > len(m[u])):  # 取信息量更大的
                 m[u] = zh
     return m
+
+def _translate_zh_to_en(text: str) -> str:
+    """Translate Chinese to fluent English using the configured LLM; fall back to source if unavailable."""
+    src = (text or "").strip()
+    if not src:
+        return ""
+    try:
+        prompt = (
+            "Translate the following Chinese paragraph into fluent, natural English.\n"
+            "- Preserve all factual content, numbers, and units.\n"
+            "- Do not add or remove information.\n"
+            "- Output only the translation, no explanations.\n\n"
+            f"Chinese:\n{src}"
+        )
+        out = chat_once(prompt, system="You are a precise translator.", temperature=0.0, max_tokens=1200)
+        return (out or "").strip()
+    except Exception:
+        return src  # graceful fallback
+
+def _translate_en_to_zh(text: str) -> str:
+    """Translate English to concise Chinese. Used only as a fallback when no zh summary is available."""
+    src = (text or "").strip()
+    if not src:
+        return ""
+    try:
+        prompt = (
+            "将以下英文段落译为流畅、客观的中文，保留关键事实、数字与单位；不要增删信息；只输出译文：\n\n"
+            f"English:\n{src}"
+        )
+        out = chat_once(prompt, system="You are a precise translator.", temperature=0.0, max_tokens=1200)
+        return (out or "").strip()
+    except Exception:
+        return src
 
 def _compact_key_numbers(kn_list: list) -> list:
     """把 key_numbers[] 压成 1~3 个徽章文本，如 'FID -0.8', 'UCF101 +2.1'。"""
@@ -1218,7 +1248,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
             it.setdefault("key_numbers", [])
             # quick_read optional
             qr = (it.get("quick_read") or it.get("one_liner") or "").strip()
-            it["quick_read"] = (qr[:178] + "…") if len(qr) > 180 else qr
+            it["quick_read"] = (qr[:298] + "…") if len(qr) > 300 else qr
             cleaned.append(it)
         j["items"] = cleaned
 
@@ -1275,9 +1305,13 @@ def make_scholarpush(entries, n_items=8, daily=None):
             en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
             it["title_i18n"] = {"zh": zh_title, "en": en_title}
 
-            # 摘要 i18n：中文优先 Daily 段落摘要，其次 quick_read/one_liner；英文来自 entries.summary
-            zh_abs = (daily_map.get(u_norm) or (it.get("quick_read") or it.get("one_liner") or "")).strip()
-            en_abs = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+            # 摘要 i18n：中文优先 Daily 段落摘要（较长上限），其次 quick_read/one_liner；英文直接对中文进行精准翻译
+            zh_abs = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
+            if not zh_abs:
+                # 极端兜底：用 entries 的英文摘要翻成中文
+                en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+                zh_abs = _translate_en_to_zh(en_src)
+            en_abs = _translate_zh_to_en(zh_abs)
             it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
 
             # host/ts/pdf/has_code/key_numbers_compact
@@ -1347,7 +1381,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     it.setdefault("tags", [])
                     it.setdefault("key_numbers", [])
                     qr = (it.get("quick_read") or it.get("one_liner") or "").strip()
-                    it["quick_read"] = (qr[:178] + "…") if len(qr) > 180 else qr
+                    it["quick_read"] = (qr[:298] + "…") if len(qr) > 300 else qr
                     it["impact_score"] = _coerce_score(it.get("impact_score", 50))
                     it["reproducibility_score"] = _coerce_score(it.get("reproducibility_score", 50))
                     cleaned.append(it)
@@ -1380,8 +1414,11 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     zh_title = (it.get("headline") or "").strip()
                     en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
                     it["title_i18n"] = {"zh": zh_title, "en": en_title}
-                    zh_abs = (daily_map.get(u_norm) or (it.get("quick_read") or it.get("one_liner") or "")).strip()
-                    en_abs = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+                    zh_abs = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
+                    if not zh_abs:
+                        en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+                        zh_abs = _translate_en_to_zh(en_src)
+                    en_abs = _translate_zh_to_en(zh_abs)
                     it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
                     host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
                     it["host"] = host
@@ -1518,7 +1555,7 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     it.setdefault("tags", [])
                     it.setdefault("key_numbers", [])
                     qr = (it.get("quick_read") or it.get("one_liner") or "").strip()
-                    it["quick_read"] = (qr[:178] + "…") if len(qr) > 180 else qr
+                    it["quick_read"] = (qr[:298] + "…") if len(qr) > 300 else qr
                     it["impact_score"] = _coerce_score(it.get("impact_score", 50))
                     it["reproducibility_score"] = _coerce_score(it.get("reproducibility_score", 50))
                     cleaned.append(it)
@@ -1547,8 +1584,11 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     zh_title = (it.get("headline") or "").strip()
                     en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
                     it["title_i18n"] = {"zh": zh_title, "en": en_title}
-                    zh_abs = (daily_map.get(u_norm) or (it.get("quick_read") or it.get("one_liner") or "")).strip()
-                    en_abs = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+                    zh_abs = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
+                    if not zh_abs:
+                        en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+                        zh_abs = _translate_en_to_zh(en_src)
+                    en_abs = _translate_zh_to_en(zh_abs)
                     it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
                     host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
                     it["host"] = host

@@ -72,6 +72,8 @@ const translations = {
   sp_stat_code: '含代码',
   sp_stat_bench: '新基准/数据',
   sp_stat_top_tasks: 'Top 任务',
+  sp_reusability: '可复用',
+  sp_limitations: '局限',
   // ScholarPush filters & UI
   filter_label: '筛选',
   all_label: '全部',
@@ -232,6 +234,8 @@ const translations = {
   sp_stat_code: 'With code',
   sp_stat_bench: 'New benchmarks/data',
   sp_stat_top_tasks: 'Top tasks',
+  sp_reusability: 'Reusability',
+  sp_limitations: 'Limitations',
   // ScholarPush filters & UI
   filter_label: 'Filter',
   all_label: 'All',
@@ -383,6 +387,8 @@ const translations = {
   sp_stat_code: 'Con código',
   sp_stat_bench: 'Nuevos benchmarks/datos',
   sp_stat_top_tasks: 'Tareas destacadas',
+  sp_reusability: 'Reutilizable',
+  sp_limitations: 'Limitaciones',
   // ScholarPush filters & UI
   filter_label: 'Filtrar',
   all_label: 'Todo',
