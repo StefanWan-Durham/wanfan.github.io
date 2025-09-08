@@ -1690,8 +1690,14 @@ def make_scholarpush(entries, n_items=8, daily=None):
             en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
             it["title_i18n"] = {"zh": zh_title, "en": en_title}
             zh_abs = (daily_map.get(u_norm) or (it.get("quick_read") or it.get("one_liner") or "")).strip()
-            en_abs = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
-            it["summary_i18n"] = {"zh": zh_abs, "en": en_abs}
+            if not zh_abs:
+                # as an extreme fallback, translate fetched English into zh
+                en_src = (entries_map.get(u_norm, {}).get("summary_en") or (it.get("one_liner") or "")).strip()
+                zh_abs = _translate_en_to_zh(en_src)
+            # always produce en/es by translating from zh to keep consistency across languages
+            en_abs = _translate_zh_to_en(zh_abs)
+            es_abs = _translate_zh_to_es(zh_abs)
+            it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
             host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
             it["host"] = host
             if not it["links"].get("pdf") or it["links"]["pdf"] == "N/A":

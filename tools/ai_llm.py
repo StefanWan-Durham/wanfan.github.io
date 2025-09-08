@@ -91,7 +91,8 @@ def _call_openai(messages, temperature, max_tokens) -> str:
         raise LLMError("OPENAI_API_KEY missing")
     model = _env("OPENAI_MODEL", "gpt-4o-mini")
     base = _env("OPENAI_BASE_URL", "https://api.openai.com/v1")
-    url = f"{base.rstrip('/')}/chat/completions"
+    base_s = str(base)
+    url = f"{base_s.rstrip('/')}/chat/completions"
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
     payload = {
         "model": model,
@@ -110,7 +111,8 @@ def _call_openrouter(messages, temperature, max_tokens) -> str:
         raise LLMError("OPENROUTER_API_KEY missing")
     model = _env("OPENROUTER_MODEL", "openai/gpt-4o-mini")
     base = _env("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
-    url = f"{base.rstrip('/')}/chat/completions"
+    base_s = str(base)
+    url = f"{base_s.rstrip('/')}/chat/completions"
     headers = {
         "Authorization": f"Bearer {key}",
         "Content-Type": "application/json",
@@ -134,7 +136,8 @@ def _call_together(messages, temperature, max_tokens) -> str:
         raise LLMError("TOGETHER_API_KEY missing")
     model = _env("TOGETHER_MODEL", "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo")
     base = _env("TOGETHER_BASE_URL", "https://api.together.xyz/v1")
-    url = f"{base.rstrip('/')}/chat/completions"
+    base_s = str(base)
+    url = f"{base_s.rstrip('/')}/chat/completions"
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
     payload = {
         "model": model,
@@ -152,8 +155,13 @@ def _call_deepseek(messages, temperature, max_tokens) -> str:
     if not key:
         raise LLMError("DEEPSEEK_API_KEY missing")
     model = _env("DEEPSEEK_MODEL", "deepseek-chat")
-    base = _env("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
-    url = f"{base.rstrip('/')}/chat/completions"
+    # DeepSeek requires the "/v1" prefix for the OpenAI-compatible endpoint.
+    # Default to the correct base and append "/v1" if the provided env var misses it.
+    base = _env("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1") or "https://api.deepseek.com/v1"
+    base_s = str(base)
+    if "/v1" not in base_s:
+        base_s = base_s.rstrip("/") + "/v1"
+    url = f"{base_s.rstrip('/')}/chat/completions"
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
     payload = {
         "model": model,
@@ -174,7 +182,8 @@ def _call_dashscope(messages, temperature, max_tokens) -> str:
     model = _env("DASHSCOPE_MODEL", "qwen2.5-72b-instruct")
     # Use OpenAI-compatible endpoint for DashScope
     base = _env("DASHSCOPE_BASE_URL", "https://dashscope.aliyuncs.com/compatible-mode/v1")
-    url = f"{base.rstrip('/')}/chat/completions"
+    base_s = str(base)
+    url = f"{base_s.rstrip('/')}/chat/completions"
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
     payload = {
         "model": model,
