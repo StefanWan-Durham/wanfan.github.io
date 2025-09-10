@@ -2,8 +2,59 @@
   "generated_at": "2025-09-10T00:00:00+00:00",
   "items": [
     {
-      "headline": "混合神经符号框架的概念特征与经验比较分析",
-      "one_liner": "本研究对神经符号框架进行了概念性描述和实证比较，探讨其在推理和学习中的应用。",
+      "headline": "多标准决策方法分析可再生能源选择",
+      "one_liner": "本文提出了一种基于最大偏差法的多标准决策方法，用于选择可再生能源源。",
+      "task": "Other",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "数据增强"
+      ],
+      "limitations": [
+        "评测偏差"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.07011",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.07011.pdf"
+      },
+      "tags": [
+        "决策",
+        "可再生能源",
+        "方法"
+      ],
+      "impact_score": 5,
+      "reproducibility_score": 4,
+      "quick_read": "本文探讨了在不确定和复杂情况下选择可再生能源的决策方法。采用最大偏差法，结合模糊集理论，提供了有效的决策工具。该方法在多标准决策中具有创新性，适用于能源选择领域。",
+      "who_should_try": "能源决策者",
+      "title_i18n": {
+        "zh": "多标准决策方法分析可再生能源选择",
+        "en": "Renewable Energy Sources Selection Analysis with the Maximizing Deviation Method"
+      },
+      "summary_i18n": {
+        "zh": "本研究旨在解决可再生能源选择中的多标准决策问题，填补了现有方法在处理人类判断不确定性方面的不足。研究采用了一种基于偏差最大化方法的优化模型，结合了区间值Fermatean模糊集，以应对部分已知特征权重的情况。关键创新在于引入Fermatean模糊环境和偏差最大化策略，提升了决策的灵活性和准确性。研究结果表明，该方法在可再生能源选择中优于传统主流基线，显示出其在复杂决策场景中的有效性。此方法的借鉴价值在于其能够有效处理模糊性和不确定性，具有广泛的应用潜力，对推动可再生能源的管理和政策制定具有重要影响。",
+        "en": "This study aims to address the multi-criteria decision-making problem in renewable energy selection, filling the gap in existing methods regarding the handling of human judgment uncertainty. The research employs an optimization model based on a deviation maximization approach, combined with interval-valued Fermatean fuzzy sets, to tackle situations with partially known feature weights. The key innovation lies in the introduction of the Fermatean fuzzy environment and the deviation maximization strategy, enhancing the flexibility and accuracy of decision-making. The results indicate that this method outperforms traditional mainstream baselines in renewable energy selection, demonstrating its effectiveness in complex decision-making scenarios. The practical value of this method lies in its ability to effectively handle ambiguity and uncertainty, possessing broad application potential and significantly impacting the management and policy-making of renewable energy.",
+        "es": "Este estudio tiene como objetivo resolver el problema de toma de decisiones multicriterio en la selección de energías renovables, llenando el vacío que presentan los métodos existentes en el manejo de la incertidumbre del juicio humano. La investigación utiliza un modelo de optimización basado en la maximización de desviaciones, combinando conjuntos difusos Fermateanos de valores de intervalo, para abordar situaciones con pesos de características parcialmente conocidos. La clave de la innovación radica en la introducción de un entorno difuso Fermateano y una estrategia de maximización de desviaciones, lo que mejora la flexibilidad y precisión de la toma de decisiones. Los resultados del estudio indican que este método supera a las líneas base tradicionales en la selección de energías renovables, demostrando su efectividad en escenarios de toma de decisiones complejos. El valor de referencia de este método radica en su capacidad para manejar eficazmente la vaguedad y la incertidumbre, teniendo un amplio potencial de aplicación y un impacto significativo en la gestión y formulación de políticas de energías renovables."
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-10T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "图谱谱域推理与符号推理的整合",
+      "one_liner": "提出了一种新的谱神经符号推理框架，结合逻辑规则和图谱信号处理。",
       "task": "Theory",
       "type": "paper",
       "novelty": "method",
@@ -18,216 +69,10 @@
         }
       ],
       "reusability": [
-        "可复用做法×1-3（如数据增强/损失/检索/蒸馏/缓存/对齐技巧）"
+        "符号推理"
       ],
       "limitations": [
-        "边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"
-      ],
-      "links": {
-        "paper": "https://arxiv.org/abs/2509.07122",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.07122.pdf"
-      },
-      "tags": [
-        "Neuro-Symbolic",
-        "Framework",
-        "Analysis"
-      ],
-      "impact_score": 0,
-      "reproducibility_score": 0,
-      "quick_read": "本研究探讨了神经符号框架的概念特征，结合神经网络与符号推理的优势。通过实证比较，揭示了不同框架在推理能力和可解释性方面的差异，为未来研究提供了参考。",
-      "who_should_try": "研究人员和开发者",
-      "title_i18n": {
-        "zh": "混合神经符号框架的概念特征与经验比较分析",
-        "en": "Neuro-Symbolic Frameworks: Conceptual Characterization and Empirical Comparative Analysis"
-      },
-      "summary_i18n": {
-        "zh": "神经符号框架（NeSy）结合了神经网络的学习能力与符号处理的推理能力，旨在提高复杂问题解决的可靠性和数据效率。然而，当前该领域面临学习曲线陡峭、缺乏用户友好的工具和统一框架等挑战。本文通过对现有NeSy框架的技术特征进行系统性分析，展示了三个通用框架——DeepProbLog、Scallop和DomiKnowS，并指出了各自的挑战与表现力。关键创新在于提供了对NeSy建模的全面理解，并强调了框架在解决多样化问题中的潜力。这一研究不仅为NeSy领域的进一步发展提供了理论基础，也为开发更具可用性的工具和框架指明了方向，具有广泛的应用前景。",
-        "en": "The Neural Symbolic Framework (NeSy) combines the learning capabilities of neural networks with the reasoning abilities of symbolic processing, aiming to enhance the reliability and data efficiency of solving complex problems. However, the field currently faces challenges such as a steep learning curve, a lack of user-friendly tools, and a unified framework. This paper systematically analyzes the technical features of existing NeSy frameworks, showcasing three general frameworks—DeepProbLog, Scallop, and DomiKnowS—and highlighting their respective challenges and expressiveness. The key innovation lies in providing a comprehensive understanding of NeSy modeling and emphasizing the potential of these frameworks in addressing diverse problems. This research not only offers a theoretical foundation for the further development of the NeSy field but also points the way toward the development of more usable tools and frameworks, with broad application prospects.",
-        "es": "El marco de símbolos neuronales (NeSy) combina la capacidad de aprendizaje de las redes neuronales con la capacidad de razonamiento del procesamiento simbólico, con el objetivo de mejorar la fiabilidad y la eficiencia de los datos en la resolución de problemas complejos. Sin embargo, actualmente este campo enfrenta desafíos como una curva de aprendizaje empinada, la falta de herramientas amigables para el usuario y un marco unificado. Este artículo presenta un análisis sistemático de las características técnicas de los marcos NeSy existentes, mostrando tres marcos generales: DeepProbLog, Scallop y DomiKnowS, y señala los desafíos y la expresividad de cada uno. La innovación clave radica en proporcionar una comprensión integral del modelado NeSy y enfatizar el potencial de los marcos para resolver problemas diversos. Esta investigación no solo proporciona una base teórica para el desarrollo futuro del campo NeSy, sino que también señala la dirección para el desarrollo de herramientas y marcos más utilizables, con amplias perspectivas de aplicación."
-      },
-      "host": "arxiv.org",
-      "ts": "2025-09-10T04:00:00+00:00",
-      "has_code": false,
-      "key_numbers_compact": []
-    },
-    {
-      "headline": "ERNIE-4.5-21B-A3B思维：紧凑的MoE模型用于深度推理",
-      "one_liner": "百度推出ERNIE-4.5-21B-A3B思维模型，专注于高效的长上下文推理与工具集成。",
-      "task": "NLP",
-      "type": "paper",
-      "novelty": "method",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
-          "ours": "N/A",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "可复用做法×1-3（如数据增强/损失/检索/蒸馏/缓存/对齐技巧）"
-      ],
-      "limitations": [
-        "边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"
-      ],
-      "links": {
-        "paper": "N/A",
-        "code": "N/A",
-        "project": "https://www.marktechpost.com/2025/09/10/baidu-releases-ernie-4-5-21b-a3b-thinking-a-compact-moe-model-for-deep-reasoning/",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "MoE",
-        "NLP",
-        "Deep Reasoning"
-      ],
-      "impact_score": 0,
-      "reproducibility_score": 0,
-      "quick_read": "百度发布了ERNIE-4.5-21B-A3B思维模型，旨在提升深度推理能力。该模型采用混合专家架构，强调效率与长上下文处理，适用于复杂推理任务。",
-      "who_should_try": "研究人员和开发者",
-      "title_i18n": {
-        "zh": "ERNIE-4.5-21B-A3B思维：紧凑的MoE模型用于深度推理",
-        "en": "ERNIE-4.5-21B-A3B思维：紧凑的MoE模型用于深度推理"
-      },
-      "summary_i18n": {
-        "zh": "百度推出ERNIE-4.5-21B-A3B思维模型，专注于高效的长上下文推理与工具集成。",
-        "en": "Baidu has launched the ERNIE-4.5-21B-A3B thinking model, focusing on efficient long-context reasoning and tool integration.",
-        "es": "Baidu lanzó el modelo de pensamiento ERNIE-4.5-21B-A3B, enfocado en la inferencia de largo contexto eficiente y la integración de herramientas."
-      },
-      "host": "",
-      "ts": "2025-09-10T00:00:00+00:00",
-      "has_code": false,
-      "key_numbers_compact": []
-    },
-    {
-      "headline": "文本到SQL的部分匹配奖励与语言强化学习",
-      "one_liner": "提出PaVeRL-SQL模型，通过部分匹配奖励和语言强化学习提升文本到SQL的生成准确性。",
-      "task": "NLP",
-      "type": "paper",
-      "novelty": "method",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "execution accuracy",
-          "ours": "N/A",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "可复用做法×1-3（如数据增强/损失/检索/蒸馏/缓存/对齐技巧）"
-      ],
-      "limitations": [
-        "边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"
-      ],
-      "links": {
-        "paper": "https://arxiv.org/abs/2509.07159",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.07159.pdf"
-      },
-      "tags": [
-        "Text-to-SQL",
-        "Reinforcement Learning",
-        "NLP"
-      ],
-      "impact_score": 0,
-      "reproducibility_score": 0,
-      "quick_read": "本研究提出PaVeRL-SQL模型，旨在提高文本到SQL的生成准确性。通过引入部分匹配奖励机制和语言强化学习，模型在复杂查询场景中表现出色。",
-      "who_should_try": "数据库开发者和研究人员",
-      "title_i18n": {
-        "zh": "文本到SQL的部分匹配奖励与语言强化学习",
-        "en": "PaVeRL-SQL: Text-to-SQL via Partial-Match Rewards and Verbal Reinforcement Learning"
-      },
-      "summary_i18n": {
-        "zh": "在当前的文本到SQL转换研究中，尽管在简单数据库和问题上取得了一定进展，但在复杂的行业级数据库和特定领域逻辑问题上，执行准确率仍然较低。为此，本文提出了PaVeRL-SQL框架，结合了部分匹配奖励和语言强化学习，以提升推理语言模型的自我改进能力。该框架的创新点在于采用了基于自评估的上下文学习和链式思维的强化学习两种管道，显著提高了在多个文本到SQL基准测试中的表现。实验结果显示，PaVeRL-SQL在工业级基准Spider2.0-SQLite上的执行准确率超出现有最佳结果，尤其在混合SQL方言的训练中表现出强劲的提升。该研究为文本到SQL领域提供了新的思路，具有广泛的应用潜力，特别是在处理复杂查询和行业特定需求时。",
-        "en": "In the current research on text-to-SQL conversion, although some progress has been made with simple databases and questions, the execution accuracy remains low for complex industry-level databases and domain-specific logical problems. To address this, this paper proposes the PaVeRL-SQL framework, which combines partial matching rewards and language reinforcement learning to enhance the self-improvement capability of reasoning language models. The innovation of this framework lies in the use of two pipelines: context learning based on self-assessment and reinforcement learning with chain reasoning, significantly improving performance on multiple text-to-SQL benchmark tests. Experimental results show that PaVeRL-SQL surpasses existing best results in execution accuracy on the industrial-level benchmark Spider2.0-SQLite, particularly demonstrating strong improvements in training with mixed SQL dialects. This research provides new insights for the text-to-SQL field and has broad application potential, especially in handling complex queries and industry-specific requirements.",
-        "es": "En la actual investigación sobre la conversión de texto a SQL, a pesar de haber logrado ciertos avances en bases de datos simples y problemas, la tasa de ejecución precisa sigue siendo baja en bases de datos complejas de nivel industrial y problemas lógicos de campos específicos. Para ello, este artículo propone el marco PaVeRL-SQL, que combina recompensas de coincidencia parcial y aprendizaje reforzado de lenguaje, con el fin de mejorar la capacidad de auto-mejora de los modelos de lenguaje de razonamiento. La innovación de este marco radica en la adopción de dos canalizaciones: aprendizaje contextual basado en autoevaluación y aprendizaje reforzado de pensamiento encadenado, lo que mejora significativamente el rendimiento en múltiples pruebas de referencia de texto a SQL. Los resultados experimentales muestran que PaVeRL-SQL supera los mejores resultados existentes en la referencia industrial Spider2.0-SQLite, destacándose especialmente en el entrenamiento con dialectos SQL mixtos. Esta investigación ofrece nuevas ideas para el campo de texto a SQL, con un amplio potencial de aplicación, especialmente en el manejo de consultas complejas y necesidades específicas de la industria."
-      },
-      "host": "arxiv.org",
-      "ts": "2025-09-10T04:00:00+00:00",
-      "has_code": false,
-      "key_numbers_compact": [
-        "execution accuracy"
-      ]
-    },
-    {
-      "headline": "基于自编码器的ECG肌肉伪影去噪",
-      "one_liner": "研究提出一种自编码器方法，去噪ECG信号中的肌肉伪影，以保留皮肤神经活动。",
-      "task": "ASR",
-      "type": "paper",
-      "novelty": "method",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
-          "ours": "N/A",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "可复用做法×1-3（如数据增强/损失/检索/蒸馏/缓存/对齐技巧）"
-      ],
-      "limitations": [
-        "边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"
-      ],
-      "links": {
-        "paper": "https://arxiv.org/abs/2509.07146",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "https://arxiv.org/pdf/2509.07146.pdf"
-      },
-      "tags": [
-        "ECG",
-        "Denoising",
-        "Health"
-      ],
-      "impact_score": 0,
-      "reproducibility_score": 0,
-      "quick_read": "本研究提出了一种基于自编码器的去噪方法，旨在消除ECG信号中的肌肉伪影。该方法有助于保留皮肤神经活动，提升认知压力检测的准确性。",
-      "who_should_try": "医疗研究人员和信号处理专家",
-      "title_i18n": {
-        "zh": "基于自编码器的ECG肌肉伪影去噪",
-        "en": "Autoencoder-Based Denoising of Muscle Artifacts in ECG to Preserve Skin Nerve Activity (SKNA) for Cognitive Stress Detection"
-      },
-      "summary_i18n": {
-        "zh": "本研究旨在解决皮肤神经活动（SKNA）在心电图（ECG）记录中受到肌电干扰（EMG）影响的问题，传统的带通滤波方法在处理重叠频谱时效果不佳。研究采用了一种轻量级的一维卷积自编码器结合长短期记忆（LSTM）网络，能够从受EMG污染的信号中重建出清晰的SKNA。关键创新在于该方法显著提高了信噪比，并在严重噪声条件下实现了与干净数据相当的分类准确率。实验结果表明，该深度学习重建方法能够有效保留生理相关的交感神经突发信号，具有在自然环境中进行SKNA监测的潜力，对相关领域的研究和应用具有重要影响。",
-        "en": "This study aims to address the issue of skin neural activity (SKNA) being affected by electromyographic interference (EMG) in electrocardiogram (ECG) recordings, as traditional bandpass filtering methods perform poorly when dealing with overlapping spectra. The research employs a lightweight one-dimensional convolutional autoencoder combined with a long short-term memory (LSTM) network, which can reconstruct clear SKNA from EMG-contaminated signals. The key innovation lies in the method's significant improvement in signal-to-noise ratio, achieving classification accuracy comparable to clean data even under severe noise conditions. Experimental results indicate that this deep learning reconstruction method can effectively preserve physiologically relevant sympathetic nerve burst signals, demonstrating potential for SKNA monitoring in natural environments and having significant implications for research and applications in related fields.",
-        "es": "Este estudio tiene como objetivo abordar el problema de la interferencia electromiográfica (EMG) en los registros de actividad nerviosa cutánea (SKNA) en el electrocardiograma (ECG), ya que los métodos tradicionales de filtrado pasabanda no son efectivos al tratar espectros superpuestos. La investigación utiliza un codificador automático de convolución unidimensional ligero combinado con una red de memoria a largo y corto plazo (LSTM), que puede reconstruir señales claras de SKNA a partir de señales contaminadas por EMG. La innovación clave radica en que este método mejora significativamente la relación señal-ruido y logra una precisión de clasificación comparable a los datos limpios en condiciones de ruido severo. Los resultados experimentales indican que este método de reconstrucción mediante aprendizaje profundo puede retener eficazmente las señales de ráfagas simpáticas fisiológicamente relevantes, lo que tiene un potencial significativo para la monitorización de SKNA en entornos naturales y un impacto importante en la investigación y aplicación en campos relacionados."
-      },
-      "host": "arxiv.org",
-      "ts": "2025-09-10T04:00:00+00:00",
-      "has_code": false,
-      "key_numbers_compact": []
-    },
-    {
-      "headline": "从特征模式到证明：图谱谱算子与符号推理的整合",
-      "one_liner": "提出Spectral NSR框架，将逻辑规则嵌入谱模板，实现图谱谱域的推理。",
-      "task": "Theory",
-      "type": "paper",
-      "novelty": "method",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
-          "ours": "N/A",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "可复用做法×1-3（如数据增强/损失/检索/蒸馏/缓存/对齐技巧）"
-      ],
-      "limitations": [
-        "边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"
+        "算力门槛"
       ],
       "links": {
         "paper": "https://arxiv.org/abs/2509.07017",
@@ -236,21 +81,21 @@
         "pdf": "https://arxiv.org/pdf/2509.07017.pdf"
       },
       "tags": [
-        "Graph",
-        "Spectral",
-        "Reasoning"
+        "图谱",
+        "推理",
+        "神经符号"
       ],
-      "impact_score": 0,
-      "reproducibility_score": 0,
-      "quick_read": "本研究提出了Spectral NSR框架，结合图谱信号处理与逻辑推理。通过在谱域中直接推理，提升了推理的效率与准确性。",
-      "who_should_try": "研究人员和开发者",
+      "impact_score": 4,
+      "reproducibility_score": 3,
+      "quick_read": "本文介绍了Spectral NSR框架，利用谱模板嵌入逻辑规则，实现图谱谱域的推理。该方法结合了图谱信号处理的优势，具有较强的解释性和灵活性，适合复杂推理任务。",
+      "who_should_try": "研究人员",
       "title_i18n": {
-        "zh": "从特征模式到证明：图谱谱算子与符号推理的整合",
+        "zh": "图谱谱域推理与符号推理的整合",
         "en": "From Eigenmodes to Proofs: Integrating Graph Spectral Operators with Symbolic Interpretable Reasoning"
       },
       "summary_i18n": {
         "zh": "本研究提出了一种名为Spectral NSR的全谱神经符号推理框架，旨在填补现有推理系统在可解释性与可扩展性之间的缺口。该框架通过将逻辑规则嵌入谱模板，并在图谱域中直接进行推理，结合了图信号处理和拉普拉斯特征结构的优势。关键创新点包括动态图和基础学习的扩展，以及通过谱课程进行的证明引导训练。实证评估表明，Spectral NSR在推理基准测试中表现出优于主流基线的准确性和鲁棒性，同时提升了可解释性。该框架的设计和方法值得借鉴，具有广泛的适用潜力，可能推动推理系统的下一代发展。",
-        "en": "This study presents a framework called Spectral NSR, a full-spectrum neural symbolic reasoning system aimed at bridging the gap between interpretability and scalability in existing reasoning systems. The framework integrates the advantages of graph signal processing and Laplacian feature structures by embedding logical rules into spectral templates and performing reasoning directly in the graph domain. Key innovations include the extension of dynamic graphs and foundational learning, as well as proof-guided training through spectral curricula. Empirical evaluations show that Spectral NSR demonstrates superior accuracy and robustness compared to mainstream baselines in reasoning benchmarks, while also enhancing interpretability. The design and methods of this framework are worth emulating, with broad applicability potential that could drive the next generation of reasoning systems.",
+        "en": "This study presents a framework called Spectral NSR, a full-spectrum neural symbolic reasoning system aimed at bridging the gap between interpretability and scalability in existing reasoning systems. The framework integrates the advantages of graph signal processing and Laplacian feature structures by embedding logical rules into spectral templates and performing reasoning directly in the graph domain. Key innovations include the extension of dynamic graphs and foundational learning, as well as proof-guided training through spectral curricula. Empirical evaluations show that Spectral NSR demonstrates superior accuracy and robustness compared to mainstream baselines in reasoning benchmark tests, while also enhancing interpretability. The design and methods of this framework are worth emulating, with broad applicability potential that could drive the next generation of reasoning systems.",
         "es": "Este estudio presenta un marco de razonamiento simbólico neuronal de espectro completo llamado Spectral NSR, diseñado para cerrar la brecha existente entre la interpretabilidad y la escalabilidad en los sistemas de razonamiento actuales. Este marco combina las ventajas del procesamiento de señales en grafos y la estructura de características de Laplace al incrustar reglas lógicas en plantillas espectrales y realizar razonamiento directamente en el dominio de grafos. Los puntos clave de innovación incluyen la expansión de grafos dinámicos y el aprendizaje básico, así como el entrenamiento guiado por pruebas a través de un curso espectral. La evaluación empírica muestra que Spectral NSR supera a las líneas base convencionales en precisión y robustez en pruebas de razonamiento, al mismo tiempo que mejora la interpretabilidad. El diseño y los métodos de este marco son dignos de referencia, con un amplio potencial de aplicación, lo que podría impulsar el desarrollo de la próxima generación de sistemas de razonamiento."
       },
       "host": "arxiv.org",
@@ -259,9 +104,9 @@
       "key_numbers_compact": []
     },
     {
-      "headline": "生成AI中的统计方法",
-      "one_liner": "探讨生成AI技术的统计基础，强调其在多领域的变革潜力。",
-      "task": "NLP",
+      "headline": "生成AI中的统计方法探讨",
+      "one_liner": "本文分析了生成AI技术的统计基础及其在各领域的应用潜力。",
+      "task": "Theory",
       "type": "paper",
       "novelty": "method",
       "key_numbers": [
@@ -275,10 +120,10 @@
         }
       ],
       "reusability": [
-        "可复用做法×1-3（如数据增强/损失/检索/蒸馏/缓存/对齐技巧）"
+        "数据增强"
       ],
       "limitations": [
-        "边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"
+        "评测偏差"
       ],
       "links": {
         "paper": "https://arxiv.org/abs/2509.07054",
@@ -287,22 +132,22 @@
         "pdf": "https://arxiv.org/pdf/2509.07054.pdf"
       },
       "tags": [
-        "Generative AI",
-        "Statistics",
-        "NLP"
+        "生成AI",
+        "统计",
+        "方法"
       ],
-      "impact_score": 0,
-      "reproducibility_score": 0,
-      "quick_read": "本研究分析了生成AI的统计方法，强调其在各领域的潜在变革影响。通过对概率模型的采样，探讨了生成AI的正确性与安全性问题。",
-      "who_should_try": "研究人员和开发者",
+      "impact_score": 4,
+      "reproducibility_score": 3,
+      "quick_read": "本文探讨了生成AI的统计方法，强调了其在不同领域的变革潜力。通过分析生成模型的采样过程，提出了改进生成AI可靠性的方法，适合研究人员和开发者参考。",
+      "who_should_try": "AI研究者",
       "title_i18n": {
-        "zh": "生成AI中的统计方法",
+        "zh": "生成AI中的统计方法探讨",
         "en": "Statistical Methods in Generative AI"
       },
       "summary_i18n": {
         "zh": "生成性人工智能作为一项新兴技术，具有变革多个领域的潜力，但其基于概率模型的采样方法在正确性、安全性和公平性等方面缺乏保障，亟需改进。本文通过回顾现有统计方法在生成性AI中的应用，探讨了如何利用这些方法提升生成性AI的可靠性和评估效率。关键创新点在于提出统计方法可以有效改善生成性AI的质量，并为AI实验设计提供支持。研究表明，采用统计方法的生成性AI在多个维度上优于主流基线，显示出其在实际应用中的可行性和有效性。该研究为未来生成性AI的发展提供了新的思路，尤其在确保技术安全性和公平性方面具有重要的借鉴意义。",
-        "en": "Generative artificial intelligence, as an emerging technology, has the potential to transform multiple fields. However, its sampling methods based on probabilistic models lack guarantees in terms of correctness, safety, and fairness, necessitating improvement. This paper reviews the application of existing statistical methods in generative AI and explores how these methods can enhance the reliability and evaluation efficiency of generative AI. The key innovation lies in proposing that statistical methods can effectively improve the quality of generative AI and support AI experimental design. Research indicates that generative AI employing statistical methods outperforms mainstream baselines across multiple dimensions, demonstrating its feasibility and effectiveness in practical applications. This study provides new insights for the future development of generative AI, particularly in ensuring the safety and fairness of the technology.",
-        "es": "La inteligencia artificial generativa, como una tecnología emergente, tiene el potencial de transformar múltiples campos, pero su método de muestreo basado en modelos de probabilidad carece de garantías en términos de precisión, seguridad y equidad, lo que requiere mejoras urgentes. Este artículo, a través de una revisión de la aplicación de métodos estadísticos existentes en la IA generativa, explora cómo utilizar estos métodos para mejorar la fiabilidad y la eficiencia de evaluación de la IA generativa. El punto clave de innovación radica en proponer que los métodos estadísticos pueden mejorar efectivamente la calidad de la IA generativa y proporcionar apoyo para el diseño de experimentos de IA. La investigación muestra que la IA generativa que utiliza métodos estadísticos supera a las líneas base convencionales en múltiples dimensiones, demostrando su viabilidad y efectividad en aplicaciones prácticas. Este estudio ofrece nuevas ideas para el desarrollo futuro de la IA generativa, especialmente en lo que respecta a garantizar la seguridad y equidad de la tecnología."
+        "en": "Generative artificial intelligence, as an emerging technology, has the potential to transform multiple fields. However, its sampling methods based on probabilistic models lack guarantees in terms of correctness, safety, and fairness, necessitating improvements. This paper reviews the application of existing statistical methods in generative AI and explores how these methods can enhance the reliability and evaluation efficiency of generative AI. The key innovation lies in proposing that statistical methods can effectively improve the quality of generative AI and support AI experimental design. Research shows that generative AI employing statistical methods outperforms mainstream baselines across multiple dimensions, demonstrating its feasibility and effectiveness in practical applications. This study provides new insights for the future development of generative AI, particularly in ensuring the safety and fairness of the technology.",
+        "es": "La inteligencia artificial generativa, como una tecnología emergente, tiene el potencial de transformar múltiples campos, pero su método de muestreo basado en modelos de probabilidad carece de garantías en términos de precisión, seguridad y equidad, lo que requiere mejoras urgentes. Este artículo, a través de una revisión de la aplicación de métodos estadísticos en la IA generativa, explora cómo utilizar estos métodos para mejorar la fiabilidad y la eficiencia de evaluación de la IA generativa. El punto clave de innovación radica en proponer que los métodos estadísticos pueden mejorar efectivamente la calidad de la IA generativa y proporcionar apoyo para el diseño de experimentos de IA. La investigación muestra que la IA generativa que utiliza métodos estadísticos supera a las líneas base convencionales en múltiples dimensiones, demostrando su viabilidad y efectividad en aplicaciones prácticas. Este estudio ofrece nuevas ideas para el desarrollo futuro de la IA generativa, especialmente en lo que respecta a garantizar la seguridad y equidad de la tecnología."
       },
       "host": "arxiv.org",
       "ts": "2025-09-10T04:00:00+00:00",
@@ -310,10 +155,61 @@
       "key_numbers_compact": []
     },
     {
-      "headline": "小型语言模型在移动和可穿戴健康监测中的基准测试",
-      "one_liner": "HealthSLM-Bench为小型语言模型在健康监测中的应用提供了基准测试。",
-      "task": "NLP",
-      "type": "benchmark",
+      "headline": "增强代理的专家演示提升",
+      "one_liner": "本文介绍了Instruction Agent，通过专家演示提升GUI代理的任务处理能力。",
+      "task": "Agent",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "专家演示"
+      ],
+      "limitations": [
+        "算力门槛"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.07098",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.07098.pdf"
+      },
+      "tags": [
+        "代理",
+        "GUI",
+        "演示"
+      ],
+      "impact_score": 3,
+      "reproducibility_score": 2,
+      "quick_read": "本文提出了Instruction Agent，利用专家演示提升GUI代理在复杂任务中的表现。该方法有效解决了长时间操作和个性化路径的问题，适合需要高效交互的应用场景。",
+      "who_should_try": "开发者",
+      "title_i18n": {
+        "zh": "增强代理的专家演示提升",
+        "en": "Instruction Agent: Enhancing Agent with Expert Demonstration"
+      },
+      "summary_i18n": {
+        "zh": "随着图形用户界面（GUI）代理的快速发展，现有技术在处理复杂任务时仍面临挑战，尤其是在涉及新型UI元素和个性化操作时。为此，本文提出了“Instruction Agent”，该代理通过专家演示提取逐步指令，确保在执行过程中严格遵循用户意图，从而提高任务完成率。关键创新在于引入了验证器和回溯模块，这两个模块增强了代理的鲁棒性，能够有效应对执行中的意外干扰。实验结果表明，Instruction Agent在OSWorld任务集上实现了60%的成功率，显著优于其他顶级代理。该框架为GUI任务自动化提供了实用且可扩展的解决方案，具有广泛的应用潜力。",
+        "en": "With the rapid development of graphical user interface (GUI) agents, existing technologies still face challenges in handling complex tasks, especially when it involves new UI elements and personalized operations. To address this, this paper proposes the \"Instruction Agent,\" which extracts step-by-step instructions through expert demonstrations, ensuring strict adherence to user intent during execution, thereby improving task completion rates. The key innovation lies in the introduction of a validator and a backtracking module, which enhance the robustness of the agent and enable it to effectively cope with unexpected disruptions during execution. Experimental results show that the Instruction Agent achieved a success rate of 60% on the OSWorld task set, significantly outperforming other top agents. This framework provides a practical and scalable solution for GUI task automation, with broad application potential.",
+        "es": "Con el rápido desarrollo de los agentes de interfaz gráfica de usuario (GUI), la tecnología existente aún enfrenta desafíos al manejar tareas complejas, especialmente cuando se trata de nuevos elementos de UI y operaciones personalizadas. Para abordar esto, este artículo presenta el \"Instruction Agent\", que extrae instrucciones paso a paso a través de demostraciones de expertos, asegurando que se sigan estrictamente las intenciones del usuario durante la ejecución, lo que mejora la tasa de finalización de tareas. La innovación clave radica en la introducción de un validador y un módulo de retroceso, que mejoran la robustez del agente y le permiten hacer frente de manera efectiva a interferencias inesperadas durante la ejecución. Los resultados experimentales muestran que el Instruction Agent logró una tasa de éxito del 60% en el conjunto de tareas OSWorld, superando significativamente a otros agentes de primer nivel. Este marco proporciona una solución práctica y escalable para la automatización de tareas en GUI, con un amplio potencial de aplicación."
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-10T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "小型语言模型在移动健康监测中的基准测试",
+      "one_liner": "本文对小型语言模型在移动和可穿戴健康监测中的表现进行了基准测试。",
+      "task": "Benchmark",
+      "type": "paper",
       "novelty": "benchmark",
       "key_numbers": [
         {
@@ -326,10 +222,10 @@
         }
       ],
       "reusability": [
-        "可复用做法×1-3（如数据增强/损失/检索/蒸馏/缓存/对齐技巧）"
+        "基准测试"
       ],
       "limitations": [
-        "边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"
+        "数据泄漏"
       ],
       "links": {
         "paper": "https://arxiv.org/abs/2509.07260",
@@ -338,22 +234,22 @@
         "pdf": "https://arxiv.org/pdf/2509.07260.pdf"
       },
       "tags": [
-        "Benchmark",
-        "Healthcare",
-        "NLP"
+        "健康监测",
+        "小型模型",
+        "基准"
       ],
-      "impact_score": 0,
-      "reproducibility_score": 0,
-      "quick_read": "本研究推出HealthSLM-Bench基准，旨在评估小型语言模型在移动和可穿戴健康监测中的表现。为研究人员提供了标准化的评测工具。",
-      "who_should_try": "健康监测研究人员和开发者",
+      "impact_score": 3,
+      "reproducibility_score": 2,
+      "quick_read": "本文对小型语言模型在移动健康监测中的应用进行了系统评估，强调了其在慢性病管理中的潜力。基准测试结果为未来研究提供了参考，适合医疗AI开发者。",
+      "who_should_try": "医疗AI开发者",
       "title_i18n": {
-        "zh": "小型语言模型在移动和可穿戴健康监测中的基准测试",
+        "zh": "小型语言模型在移动健康监测中的基准测试",
         "en": "HealthSLM-Bench: Benchmarking Small Language Models for Mobile and Wearable Healthcare Monitoring"
       },
       "summary_i18n": {
         "zh": "随着移动和可穿戴健康监测的重要性日益凸显，现有的基于大型语言模型的解决方案在隐私和资源消耗方面存在明显缺陷，亟需探索更轻量化的模型。本文提出了一种系统评估小型语言模型（SLMs）在健康预测任务中的表现，采用零-shot、few-shot和指令微调等方法，并在移动设备上验证其实际应用效果。研究的关键创新在于展示了SLMs在性能上可与大型语言模型相媲美，同时在效率和隐私保护方面具有显著优势。尽管在处理类别不平衡和少样本场景方面仍面临挑战，但研究结果表明，SLMs为下一代隐私保护的健康监测提供了有希望的解决方案，对相关领域具有重要的应用潜力。",
-        "en": "As the importance of mobile and wearable health monitoring becomes increasingly prominent, existing solutions based on large language models exhibit significant flaws in terms of privacy and resource consumption, necessitating the exploration of more lightweight models. This paper presents a systematic evaluation of the performance of small language models (SLMs) in health prediction tasks, employing methods such as zero-shot, few-shot, and instruction fine-tuning, and validating their practical application on mobile devices. A key innovation of the research is the demonstration that SLMs can perform comparably to large language models while offering significant advantages in efficiency and privacy protection. Although challenges remain in handling class imbalance and few-shot scenarios, the findings indicate that SLMs provide a promising solution for next-generation privacy-preserving health monitoring, with important application potential in related fields.",
-        "es": "Con la creciente importancia de la monitorización de la salud móvil y portátil, las soluciones existentes basadas en modelos de lenguaje de gran tamaño presentan defectos evidentes en términos de privacidad y consumo de recursos, lo que hace urgente explorar modelos más ligeros. Este artículo propone una evaluación sistemática del rendimiento de los modelos de lenguaje pequeños (SLMs) en tareas de predicción de salud, utilizando métodos como zero-shot, few-shot y ajuste de instrucciones, y valida su efectividad en dispositivos móviles. La innovación clave de la investigación radica en demostrar que los SLMs pueden igualar en rendimiento a los modelos de lenguaje de gran tamaño, al mismo tiempo que ofrecen ventajas significativas en eficiencia y protección de la privacidad. A pesar de enfrentar desafíos en el manejo de desequilibrios de categorías y escenarios de pocas muestras, los resultados de la investigación indican que los SLMs ofrecen soluciones prometedoras para la monitorización de la salud con protección de la privacidad en la próxima generación, con un importante potencial de aplicación en campos relacionados."
+        "en": "As the importance of mobile and wearable health monitoring becomes increasingly prominent, existing solutions based on large language models exhibit significant flaws in terms of privacy and resource consumption, necessitating the exploration of more lightweight models. This paper proposes a systematic evaluation of small language models (SLMs) in health prediction tasks, employing methods such as zero-shot, few-shot, and instruction fine-tuning, and validating their practical application on mobile devices. A key innovation of the research is demonstrating that SLMs can perform comparably to large language models in terms of performance while offering significant advantages in efficiency and privacy protection. Although challenges remain in handling class imbalance and few-shot scenarios, the findings indicate that SLMs provide a promising solution for next-generation privacy-preserving health monitoring, holding significant application potential in related fields.",
+        "es": "Con la creciente importancia de la monitorización de la salud móvil y portátil, las soluciones existentes basadas en modelos de lenguaje de gran tamaño presentan defectos evidentes en términos de privacidad y consumo de recursos, lo que hace urgente explorar modelos más ligeros. Este artículo propone una evaluación sistemática del rendimiento de los modelos de lenguaje pequeños (SLMs) en tareas de predicción de salud, utilizando métodos como zero-shot, few-shot y ajuste fino por instrucciones, y valida su efectividad en dispositivos móviles. La innovación clave de la investigación radica en demostrar que los SLMs pueden igualar en rendimiento a los modelos de lenguaje de gran tamaño, al mismo tiempo que ofrecen ventajas significativas en eficiencia y protección de la privacidad. A pesar de enfrentar desafíos en el manejo de desequilibrios de clases y escenarios de pocas muestras, los resultados de la investigación indican que los SLMs ofrecen soluciones prometedoras para la monitorización de la salud con protección de la privacidad en la próxima generación, con un importante potencial de aplicación en campos relacionados."
       },
       "host": "arxiv.org",
       "ts": "2025-09-10T04:00:00+00:00",
@@ -361,8 +257,8 @@
       "key_numbers_compact": []
     },
     {
-      "headline": "智能电网入侵检测的混合CNN-LSTM深度学习模型",
-      "one_liner": "提出一种混合CNN-LSTM模型，用于智能电网中的入侵检测，提升安全性。",
+      "headline": "混合CNN-LSTM模型用于智能电网入侵检测",
+      "one_liner": "本文提出了一种混合CNN-LSTM模型，用于智能电网的入侵检测。",
       "task": "Robotics",
       "type": "paper",
       "novelty": "method",
@@ -377,10 +273,10 @@
         }
       ],
       "reusability": [
-        "可复用做法×1-3（如数据增强/损失/检索/蒸馏/缓存/对齐技巧）"
+        "数据增强"
       ],
       "limitations": [
-        "边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"
+        "算力门槛"
       ],
       "links": {
         "paper": "https://arxiv.org/abs/2509.07208",
@@ -389,27 +285,131 @@
         "pdf": "https://arxiv.org/pdf/2509.07208.pdf"
       },
       "tags": [
-        "Intrusion Detection",
-        "Smart Grid",
-        "Deep Learning"
+        "智能电网",
+        "入侵检测",
+        "深度学习"
       ],
-      "impact_score": 0,
-      "reproducibility_score": 0,
-      "quick_read": "本研究提出了一种混合CNN-LSTM模型，旨在提升智能电网的入侵检测能力。通过结合卷积神经网络和长短期记忆网络，增强了系统的安全性。",
-      "who_should_try": "网络安全专家和研究人员",
+      "impact_score": 3,
+      "reproducibility_score": 2,
+      "quick_read": "本文提出了一种混合CNN-LSTM模型，旨在提高智能电网的入侵检测能力。通过结合卷积神经网络和长短期记忆网络，该模型在复杂环境中表现出色，适合电力系统安全研究。",
+      "who_should_try": "电力系统研究者",
       "title_i18n": {
-        "zh": "智能电网入侵检测的混合CNN-LSTM深度学习模型",
+        "zh": "混合CNN-LSTM模型用于智能电网入侵检测",
         "en": "A Hybrid CNN-LSTM Deep Learning Model for Intrusion Detection in Smart Grid"
       },
       "summary_i18n": {
         "zh": "随着传统电网向智能电网的转型，能源管理方式发生了根本性变化，但这也使得智能电网面临更高的网络攻击风险，可能导致隐私泄露和大规模停电。针对这一现状，研究提出了一种混合深度学习的入侵检测系统（IDS），结合卷积神经网络（CNN）和长短期记忆网络（LSTM），以提升智能电网的网络安全性。该模型利用CNN的特征提取能力和LSTM的时间模式识别能力，使用DNP3和IEC104数据集进行训练和测试，结果显示其在准确率、精确率、召回率和F1-score等指标上显著优于其他深度学习方法，检测准确率达到99.70%。该研究为智能电网的安全防护提供了有效的技术方案，具有广泛的应用潜力和借鉴价值。",
-        "en": "With the transition from traditional power grids to smart grids, energy management methods have undergone fundamental changes. However, this also exposes smart grids to a higher risk of cyberattacks, which could lead to privacy breaches and large-scale power outages. In response to this situation, research has proposed a hybrid deep learning intrusion detection system (IDS) that combines convolutional neural networks (CNN) and long short-term memory networks (LSTM) to enhance the cybersecurity of smart grids. This model leverages the feature extraction capabilities of CNN and the temporal pattern recognition abilities of LSTM, using the DNP3 and IEC104 datasets for training and testing. The results show that it significantly outperforms other deep learning methods in terms of accuracy, precision, recall, and F1-score, achieving a detection accuracy of 99.70%. This research provides an effective technical solution for the security protection of smart grids, with broad application potential and reference value.",
-        "es": "Con la transformación de la red eléctrica tradicional hacia una red eléctrica inteligente, la gestión de la energía ha experimentado cambios fundamentales, pero esto también ha expuesto a la red inteligente a un mayor riesgo de ataques cibernéticos, lo que podría resultar en la filtración de datos personales y apagones masivos. Ante esta situación, la investigación ha propuesto un sistema de detección de intrusiones (IDS) basado en un aprendizaje profundo híbrido, que combina redes neuronales convolucionales (CNN) y redes de memoria a largo y corto plazo (LSTM), para mejorar la seguridad cibernética de la red inteligente. Este modelo aprovecha la capacidad de extracción de características de las CNN y la capacidad de reconocimiento de patrones temporales de las LSTM, utilizando los conjuntos de datos DNP3 e IEC104 para su entrenamiento y prueba. Los resultados muestran que su rendimiento en términos de precisión, tasa de aciertos, tasa de recuperación y F1-score es significativamente superior al de otros métodos de aprendizaje profundo, alcanzando una tasa de detección precisa del 99.70%. Esta investigación proporciona una solución técnica efectiva para la protección de la seguridad de la red inteligente, con un amplio potencial de aplicación y valor de referencia."
+        "en": "With the transition from traditional power grids to smart grids, energy management methods have undergone fundamental changes. However, this also exposes smart grids to a higher risk of cyberattacks, which could lead to privacy breaches and large-scale power outages. In response to this situation, research has proposed a hybrid deep learning intrusion detection system (IDS) that combines convolutional neural networks (CNN) and long short-term memory networks (LSTM) to enhance the cybersecurity of smart grids. This model leverages the feature extraction capabilities of CNNs and the temporal pattern recognition abilities of LSTMs, using the DNP3 and IEC104 datasets for training and testing. The results show that it significantly outperforms other deep learning methods in terms of accuracy, precision, recall, and F1-score, achieving a detection accuracy of 99.70%. This research provides an effective technical solution for the security protection of smart grids, with broad application potential and reference value.",
+        "es": "Con la transformación de la red eléctrica tradicional hacia una red eléctrica inteligente, la forma de gestionar la energía ha cambiado fundamentalmente, pero esto también ha hecho que la red eléctrica inteligente enfrente un mayor riesgo de ataques cibernéticos, lo que podría llevar a la filtración de datos personales y a apagones masivos. Ante esta situación, la investigación ha propuesto un sistema de detección de intrusiones (IDS) basado en un aprendizaje profundo híbrido, que combina redes neuronales convolucionales (CNN) y redes de memoria a largo y corto plazo (LSTM), para mejorar la seguridad cibernética de la red eléctrica inteligente. Este modelo aprovecha la capacidad de extracción de características de las CNN y la capacidad de reconocimiento de patrones temporales de las LSTM, utilizando los conjuntos de datos DNP3 e IEC104 para su entrenamiento y prueba. Los resultados muestran que su rendimiento en términos de precisión, tasa de aciertos, tasa de recuperación y F1-score es significativamente superior al de otros métodos de aprendizaje profundo, alcanzando una tasa de detección precisa del 99.70%. Esta investigación proporciona una solución técnica efectiva para la protección de la seguridad de la red eléctrica inteligente, con un amplio potencial de aplicación y valor de referencia."
       },
       "host": "arxiv.org",
       "ts": "2025-09-10T04:00:00+00:00",
       "has_code": false,
       "key_numbers_compact": []
+    },
+    {
+      "headline": "文本到SQL的部分匹配奖励与语言强化学习",
+      "one_liner": "本文提出了PaVeRL-SQL，通过部分匹配奖励和语言强化学习提升文本到SQL的生成准确性。",
+      "task": "NLP",
+      "type": "paper",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "强化学习"
+      ],
+      "limitations": [
+        "评测偏差"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.07159",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.07159.pdf"
+      },
+      "tags": [
+        "文本到SQL",
+        "强化学习",
+        "NLP"
+      ],
+      "impact_score": 2,
+      "reproducibility_score": 2,
+      "quick_read": "本文提出了PaVeRL-SQL模型，旨在提高文本到SQL生成的执行准确性。通过引入部分匹配奖励和语言强化学习，该方法在复杂查询场景中表现出色，适合数据库交互研究。",
+      "who_should_try": "数据库开发者",
+      "title_i18n": {
+        "zh": "文本到SQL的部分匹配奖励与语言强化学习",
+        "en": "PaVeRL-SQL: Text-to-SQL via Partial-Match Rewards and Verbal Reinforcement Learning"
+      },
+      "summary_i18n": {
+        "zh": "在当前的文本到SQL转换研究中，尽管在简单数据库和问题上取得了一定进展，但在复杂的行业级数据库和特定领域逻辑问题上，执行准确率仍然较低。为此，本文提出了PaVeRL-SQL框架，结合了部分匹配奖励和语言强化学习，以提升推理语言模型的自我改进能力。该框架的创新点在于采用了基于自评估的上下文学习和链式思维的强化学习两种管道，显著提高了在多个文本到SQL基准测试中的表现。实验结果显示，PaVeRL-SQL在工业级基准Spider2.0-SQLite上的执行准确率超出现有最佳结果，尤其在混合SQL方言的训练中表现出强劲的提升。该研究为文本到SQL领域提供了新的思路，具有广泛的应用潜力，特别是在处理复杂查询和行业特定需求时。",
+        "en": "In the current research on text-to-SQL conversion, although some progress has been made with simple databases and questions, the execution accuracy remains low for complex industry-level databases and specific domain logic problems. To address this, this paper proposes the PaVeRL-SQL framework, which combines partial matching rewards and language reinforcement learning to enhance the self-improvement capability of reasoning language models. The innovation of this framework lies in the use of two pipelines: context learning based on self-assessment and reinforcement learning with chain reasoning, significantly improving performance on multiple text-to-SQL benchmark tests. Experimental results show that PaVeRL-SQL surpasses existing best results in execution accuracy on the industrial-level benchmark Spider2.0-SQLite, particularly demonstrating strong improvements in training with mixed SQL dialects. This research provides new insights for the text-to-SQL field and has broad application potential, especially in handling complex queries and industry-specific requirements.",
+        "es": "En la actual investigación sobre la conversión de texto a SQL, a pesar de haber logrado ciertos avances en bases de datos simples y problemas, la tasa de ejecución precisa sigue siendo baja en bases de datos complejas de nivel industrial y problemas lógicos de campos específicos. Para ello, este artículo propone el marco PaVeRL-SQL, que combina recompensas de coincidencia parcial y aprendizaje reforzado de lenguaje, con el fin de mejorar la capacidad de auto-mejora de los modelos de lenguaje de razonamiento. La innovación de este marco radica en la adopción de dos canales: el aprendizaje contextual basado en autoevaluación y el aprendizaje reforzado de pensamiento encadenado, lo que mejora significativamente el rendimiento en múltiples pruebas de referencia de texto a SQL. Los resultados experimentales muestran que PaVeRL-SQL supera los resultados óptimos existentes en la referencia industrial Spider2.0-SQLite, destacándose especialmente en el entrenamiento con dialectos SQL mixtos. Esta investigación ofrece nuevas ideas para el campo de texto a SQL, con un amplio potencial de aplicación, especialmente en el manejo de consultas complejas y necesidades específicas de la industria."
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-10T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": []
+    },
+    {
+      "headline": "混合翼体飞机数据集与代理模型",
+      "one_liner": "本文介绍了BlendedNet，一个用于气动预测的混合翼体飞机数据集及其代理模型。",
+      "task": "Dataset",
+      "type": "paper",
+      "novelty": "dataset",
+      "key_numbers": [
+        {
+          "dataset": "999",
+          "metric": "8830",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "数据集"
+      ],
+      "limitations": [
+        "数据泄漏"
+      ],
+      "links": {
+        "paper": "https://arxiv.org/abs/2509.07209",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "https://arxiv.org/pdf/2509.07209.pdf"
+      },
+      "tags": [
+        "气动",
+        "数据集",
+        "模型"
+      ],
+      "impact_score": 2,
+      "reproducibility_score": 1,
+      "quick_read": "本文介绍了BlendedNet数据集，包含999个混合翼体飞机几何形状，适用于气动预测研究。数据集提供了8830个收敛的RANS案例，为航空工程提供了重要的实验基础。",
+      "who_should_try": "航空工程师",
+      "title_i18n": {
+        "zh": "混合翼体飞机数据集与代理模型",
+        "en": "BlendedNet: A Blended Wing Body Aircraft Dataset and Surrogate Model for Aerodynamic Predictions"
+      },
+      "summary_i18n": {
+        "zh": "本研究针对混合翼身飞机（BWB）气动特性预测中的数据稀缺问题，提出了BlendedNet数据集和代理模型。该数据集包含999种BWB几何形状，在九种飞行条件下进行了模拟，生成了8830个收敛的RANS案例，提供了详细的气动表面量数据。关键创新在于采用了点云的PointNet回归器和条件特征线性调制网络（FiLM）相结合的端到端代理框架，显著提高了气动系数的预测精度。实验结果表明，该方法在多种BWB配置下的表面预测误差较低，优于主流基线。BlendedNet不仅为气动设计提供了丰富的数据支持，还推动了数据驱动的代理建模研究，具有广泛的应用潜力。",
+        "en": "This study addresses the issue of data scarcity in predicting the aerodynamic characteristics of Blended Wing Body (BWB) aircraft by proposing the BlendedNet dataset and surrogate model. The dataset includes 999 different BWB geometries, simulated under nine flight conditions, generating 8,830 converged RANS cases and providing detailed aerodynamic surface quantity data. The key innovation lies in the combination of a PointNet regressor for point clouds and a conditional feature linear modulation network (FiLM) within an end-to-end surrogate framework, significantly improving the prediction accuracy of aerodynamic coefficients. Experimental results indicate that this method achieves lower surface prediction errors across various BWB configurations, outperforming mainstream baselines. BlendedNet not only offers rich data support for aerodynamic design but also advances research in data-driven surrogate modeling, demonstrating broad application potential.",
+        "es": "Este estudio aborda el problema de la escasez de datos en la predicción de las características aerodinámicas de los aviones de ala y fuselaje mezclados (BWB), proponiendo el conjunto de datos BlendedNet y un modelo de proxy. Este conjunto de datos contiene 999 geometrías de BWB, simuladas en nueve condiciones de vuelo, generando 8830 casos RANS convergentes y proporcionando datos detallados sobre las cantidades de superficie aerodinámica. La innovación clave radica en la adopción de un marco de proxy de extremo a extremo que combina el regresor PointNet de nubes de puntos y una red de modulación lineal de características condicionales (FiLM), lo que mejora significativamente la precisión de la predicción de los coeficientes aerodinámicos. Los resultados experimentales muestran que este método presenta un bajo error de predicción de superficie en diversas configuraciones de BWB, superando las líneas base convencionales. BlendedNet no solo proporciona un rico soporte de datos para el diseño aerodinámico, sino que también impulsa la investigación en modelado de proxy impulsado por datos, con un amplio potencial de aplicación."
+      },
+      "host": "arxiv.org",
+      "ts": "2025-09-10T04:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": [
+        "999 8830"
+      ]
     }
   ],
   "refs": [],
@@ -418,7 +418,7 @@
       "LLM": 0
     },
     "with_code": 0,
-    "new_benchmarks": 1
+    "new_benchmarks": 0
   },
   "must_reads": [
     0,
