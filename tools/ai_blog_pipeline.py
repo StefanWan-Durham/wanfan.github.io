@@ -1785,7 +1785,17 @@ def make_scholarpush(entries, n_items=8, daily=None):
                 "en": (i18n_bul.get("en", {}) or {}).get("limitations", []),
                 "es": (i18n_bul.get("es", {}) or {}).get("limitations", []),
             }
-            it["tags"] = _clean_list(it.get("tags"))
+            # Clean tags locally (drop empties/N/A)
+            try:
+                tags = []
+                for x in (it.get("tags") or []):
+                    s = (x or "").strip()
+                    if not s or s.upper() == "N/A":
+                        continue
+                    tags.append(s)
+                it["tags"] = tags
+            except Exception:
+                it["tags"] = it.get("tags") or []
             # links were enriched before; ensure pdf present for arXiv/OpenReview
             try:
                 if (not it["links"].get("pdf")) or it["links"]["pdf"] == "N/A":
@@ -1883,19 +1893,13 @@ def make_scholarpush(entries, n_items=8, daily=None):
                         it["key_numbers_compact"] = [ _clean_badge_text(s) for s in it.get("key_numbers_compact", []) if _clean_badge_text(s) ]
                     except Exception:
                         pass
-                    # Clean lists in salvage path
-                    def _clean_list(arr, limit=None):
-                        out = []
-                        for x in (arr or []):
-                            s = (x or "").strip()
-                            if not s or s.upper() == "N/A":
-                                continue
-                            out.append(s)
-                            if limit and len(out) >= limit:
-                                break
-                        return out
-                    zh_reu = _clean_list(it.get("reusability"), limit=3)
-                    zh_lim = _clean_list(it.get("limitations"), limit=2)
+                    # Clean bullets and infer if placeholders/empty (salvage)
+                    zh_reu = _clean_bullet_list(it.get("reusability"), limit=3)
+                    zh_lim = _clean_bullet_list(it.get("limitations"), limit=2)
+                    if not zh_reu and not zh_lim:
+                        infer = _infer_bullets_from_summary_zh(zh_abs, it.get("one_liner",""))
+                        zh_reu = _clean_bullet_list(infer.get("reusability"), limit=3)
+                        zh_lim = _clean_bullet_list(infer.get("limitations"), limit=2)
                     it["reusability"] = zh_reu
                     it["limitations"] = zh_lim
                     try:
@@ -1912,7 +1916,16 @@ def make_scholarpush(entries, n_items=8, daily=None):
                         "en": (i18n_bul.get("en", {}) or {}).get("limitations", []),
                         "es": (i18n_bul.get("es", {}) or {}).get("limitations", []),
                     }
-                    it["tags"] = _clean_list(it.get("tags"))
+                    try:
+                        tags = []
+                        for x in (it.get("tags") or []):
+                            s = (x or "").strip()
+                            if not s or s.upper() == "N/A":
+                                continue
+                            tags.append(s)
+                        it["tags"] = tags
+                    except Exception:
+                        it["tags"] = it.get("tags") or []
                     # already enriched
                 _validate_scholarpush(j)
                 return j
@@ -2077,19 +2090,13 @@ def make_scholarpush(entries, n_items=8, daily=None):
                         it["key_numbers_compact"] = [ _clean_badge_text(s) for s in it.get("key_numbers_compact", []) if _clean_badge_text(s) ]
                     except Exception:
                         pass
-                    # Clean lists in regex-salvage path
-                    def _clean_list(arr, limit=None):
-                        out = []
-                        for x in (arr or []):
-                            s = (x or "").strip()
-                            if not s or s.upper() == "N/A":
-                                continue
-                            out.append(s)
-                            if limit and len(out) >= limit:
-                                break
-                        return out
-                    zh_reu = _clean_list(it.get("reusability"), limit=3)
-                    zh_lim = _clean_list(it.get("limitations"), limit=2)
+                    # Clean bullets and infer if placeholders/empty (regex-salvage)
+                    zh_reu = _clean_bullet_list(it.get("reusability"), limit=3)
+                    zh_lim = _clean_bullet_list(it.get("limitations"), limit=2)
+                    if not zh_reu and not zh_lim:
+                        infer = _infer_bullets_from_summary_zh(zh_abs, it.get("one_liner",""))
+                        zh_reu = _clean_bullet_list(infer.get("reusability"), limit=3)
+                        zh_lim = _clean_bullet_list(infer.get("limitations"), limit=2)
                     it["reusability"] = zh_reu
                     it["limitations"] = zh_lim
                     try:
@@ -2106,7 +2113,16 @@ def make_scholarpush(entries, n_items=8, daily=None):
                         "en": (i18n_bul.get("en", {}) or {}).get("limitations", []),
                         "es": (i18n_bul.get("es", {}) or {}).get("limitations", []),
                     }
-                    it["tags"] = _clean_list(it.get("tags"))
+                    try:
+                        tags = []
+                        for x in (it.get("tags") or []):
+                            s = (x or "").strip()
+                            if not s or s.upper() == "N/A":
+                                continue
+                            tags.append(s)
+                        it["tags"] = tags
+                    except Exception:
+                        it["tags"] = it.get("tags") or []
                     _maybe_attach_source_link(it, title_map, entries)
                 _validate_scholarpush(j)
                 return j
@@ -2175,19 +2191,13 @@ def make_scholarpush(entries, n_items=8, daily=None):
             it["key_numbers_compact"] = [ _clean_badge_text(s) for s in it.get("key_numbers_compact", []) if _clean_badge_text(s) ]
         except Exception:
             pass
-        # Clean lists in fallback
-        def _clean_list(arr, limit=None):
-            out = []
-            for x in (arr or []):
-                s = (x or "").strip()
-                if not s or s.upper() == "N/A":
-                    continue
-                out.append(s)
-                if limit and len(out) >= limit:
-                    break
-            return out
-        zh_reu = _clean_list(it.get("reusability"), limit=3)
-        zh_lim = _clean_list(it.get("limitations"), limit=2)
+        # Clean bullets and infer if placeholders/empty (fallback)
+        zh_reu = _clean_bullet_list(it.get("reusability"), limit=3)
+        zh_lim = _clean_bullet_list(it.get("limitations"), limit=2)
+        if not zh_reu and not zh_lim:
+            infer = _infer_bullets_from_summary_zh(zh_abs, it.get("one_liner",""))
+            zh_reu = _clean_bullet_list(infer.get("reusability"), limit=3)
+            zh_lim = _clean_bullet_list(infer.get("limitations"), limit=2)
         it["reusability"] = zh_reu
         it["limitations"] = zh_lim
         try:
@@ -2204,7 +2214,16 @@ def make_scholarpush(entries, n_items=8, daily=None):
             "en": (i18n_bul.get("en", {}) or {}).get("limitations", []),
             "es": (i18n_bul.get("es", {}) or {}).get("limitations", []),
         }
-        it["tags"] = _clean_list(it.get("tags"))
+        try:
+            tags = []
+            for x in (it.get("tags") or []):
+                s = (x or "").strip()
+                if not s or s.upper() == "N/A":
+                    continue
+                tags.append(s)
+            it["tags"] = tags
+        except Exception:
+            it["tags"] = it.get("tags") or []
         _maybe_attach_source_link(it, title_map, base_entries)
     return j
 
