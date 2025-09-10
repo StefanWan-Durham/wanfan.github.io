@@ -336,6 +336,8 @@
     function card(it){
   const tags=(it.tags||[]).filter(t=>t && t!=='N/A').map(t=>`<span class="tag">${t}</span>`).join(' ');
   const links=it.links||{}; const id=Math.random().toString(36).slice(2);
+    // Current UI language used across card rendering
+    const langNow = (document.documentElement.lang||'zh');
       const keynumsCompact=(it.key_numbers_compact||[])
         .map(s=>String(s||''))
         .map(s=>s.split(/\s+/).filter(x=>x && x.toUpperCase()!=='N/A').join(' '))
@@ -366,7 +368,6 @@
       const meta=[it.task||'',it.type||'',host,tsRel].filter(Boolean).join(' · ');
   const isZH = (document.documentElement.lang||'zh')==='zh';
   // Prefer full English abstract for EN; avoid truncation here
-  const langNow = (document.documentElement.lang||'zh');
   let fullTxt = '';
   if (langNow==='zh') fullTxt = String(it.summary_i18n?.zh || it.one_liner || it.quick_read || '');
   else if (langNow==='en') fullTxt = String(it.summary_i18n?.en || it.one_liner || it.quick_read || '');
