@@ -387,6 +387,11 @@
         fullTxt = RE_CJK.test(enTry) ? '' : enTry;
       }
     }
+    // Guarded renderer to avoid breaking the whole list on a single bad item
+    function safeCard(it){
+      try { return card(it); }
+      catch(e){ console.error('ScholarPush card render failed:', e, it); return ''; }
+    }
   } catch {}
   // no short/expand; always render full text
   // Localize Reusability / Limitations values when language is EN/ES and items look Chinese (legacy fallback)
@@ -513,10 +518,10 @@
       const src=items.slice();
       const mustIdx=(data?.must_reads||[]).filter(i=>i<src.length);
       const niceIdx=(data?.nice_to_read||[]).filter(i=>i<src.length);
-      const mustList = filterItems(mustIdx.map(i=>src[i]));
-      const niceList = filterItems(niceIdx.map(i=>src[i]));
-      mustEl.innerHTML = mustList.map(card).join('');
-  niceEl.innerHTML = niceList.map(card).join('');
+    const mustList = filterItems(mustIdx.map(i=>src[i]));
+    const niceList = filterItems(niceIdx.map(i=>src[i]));
+    mustEl.innerHTML = mustList.map(safeCard).join('');
+  niceEl.innerHTML = niceList.map(safeCard).join('');
     }
   async function loadByDate(dateStr){
       let path = '../data/ai/scholarpush/index.json';
