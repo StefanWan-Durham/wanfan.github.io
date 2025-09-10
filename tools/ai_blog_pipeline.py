@@ -20,6 +20,10 @@ os.makedirs(BLOG_DIR, exist_ok=True)
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(OG_DIR, exist_ok=True)
 
+# —— 超轻量摘要缓存（用于 4–6 句中文 digest，降低重复成本）——
+_SUM_CACHE_DIR = os.path.join(DATA_DIR, "cache", "digest")
+os.makedirs(_SUM_CACHE_DIR, exist_ok=True)
+
 # ScholarPush prompt for academic flash cards
 PROMPT_SCHOLAR = r"""
 You are an academic news editor. Output STRICT JSON only.
@@ -48,7 +52,7 @@ JSON schema:
             "tags": ["短标签×3-6，如 LLM,RAG,Agent,Eval"],
             "impact_score": 0,
         "reproducibility_score": 0,
-        "quick_read": "120-180字中文摘要（可选）",
+    "quick_read": "用中文写4–6句：背景/方法/创新/证据/可借鉴/影响（若无具体数字可相对表述）",
         "who_should_try": "适用人群（可选）"
         }
     ],
@@ -720,32 +724,38 @@ def _make_daily_summary_map(j: dict) -> dict:
     return m
 
 def _best_zh_summary(u_norm: str, it: dict, entries_map: dict, daily_map: dict) -> str:
-    """Pick a richer Chinese summary, preferring EN->ZH of source abstract when available.
-    - Start with Daily zh (if mapped) else item's one_liner/quick_read.
-    - If source English summary exists, translate to zh and pick the longer one.
-    - Soft-cap the length using SCHOLARPUSH_ZH_SUMMARY_CHARS (default 520).
+    """Prefer a 4–6 sentence Chinese digest synthesized from the English abstract.
+    Fallback to Daily zh or one_liner/quick_read. Keep sentence-aware clamping.
     """
+    # 1) 基线中文（Daily/one_liner/quick_read）
     try:
         base = (daily_map.get(u_norm) or (it.get("one_liner") or it.get("quick_read") or "")).strip()
     except Exception:
         base = (it.get("one_liner") or it.get("quick_read") or "").strip()
+
+    # 2) 英文摘要 → 中文 4–6 句 digest（带缓存）
     en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
-    zh_from_en = ""
+    title_en = (entries_map.get(u_norm, {}).get("title_en") or "").strip()
+    zh_digest = ""
     if en_src:
-        try:
-            zh_from_en = _translate_en_to_zh(en_src) or ""
-        except Exception:
-            zh_from_en = ""
-    cand = zh_from_en if len(zh_from_en) > len(base) else base
-    # Strip any leftover arXiv/公告/摘要前缀
+        cached = _digest_cache_get(title_en, en_src)
+        if cached:
+            zh_digest = cached
+        else:
+            zh_digest = _synthesize_digest_zh(title_en, en_src) or ""
+            if zh_digest:
+                _digest_cache_put(title_en, en_src, zh_digest)
+
+    # 3) 选择信息量更高者
+    cand = zh_digest if len(zh_digest) > len(base) else base
     cand = _clean_arxiv_announce_prefix(cand)
-    # Soft cap length with sentence awareness to avoid mid-sentence truncation
+
+    # 4) 句子感知截断，避免截半句
     try:
         cap = int(os.getenv("SCHOLARPUSH_ZH_SUMMARY_CHARS", "520") or "520")
     except Exception:
         cap = 520
     if cand and len(cand) > cap + 40:
-        # sentence-aware clamp: accumulate sentences until close to cap
         parts = [p for p in SENT_SPLIT.split(cand) if p]
         acc = ''
         for p in parts:
@@ -755,17 +765,14 @@ def _best_zh_summary(u_norm: str, it: dict, entries_map: dict, daily_map: dict) 
             else:
                 break
         if not acc:
-            # fallback: cut at last punctuation within window
             window = cand[:cap+40]
             m = re.search(r'[。！？!?；;。]\s*[^。！？!?；;。]*$', window)
             if m:
                 acc = window[:m.end()].strip()
             else:
                 acc = cand[:cap].rstrip()
-        # ensure it ends with a sentence terminator
         if not acc.endswith(('。','！','？','!','?','；',';')):
-            acc = acc.rstrip('，,、 ')
-            acc = acc + '。'
+            acc = acc.rstrip('，,、 ') + '。'
         cand = acc
     return cand
 
@@ -850,6 +857,59 @@ def _translate_en_to_es(text: str) -> str:
     """Translate English to fluent Spanish; returns empty string on failure."""
     src = (text or "").strip()
     if not src:
+        return ""
+
+# ===== 论文摘要 → 中文 4–6 句“研究脉络”综合 =====
+def _digest_cache_get(title: str, abstract_en: str) -> str | None:
+    try:
+        raw = (title or "") + "\n" + (abstract_en or "")
+        key = hashlib.md5(raw.encode("utf-8")).hexdigest()[:16]
+        path = os.path.join(_SUM_CACHE_DIR, key + ".txt")
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                txt = f.read().strip()
+                return txt or None
+    except Exception:
+        return None
+    return None
+
+def _digest_cache_put(title: str, abstract_en: str, text_zh: str):
+    try:
+        raw = (title or "") + "\n" + (abstract_en or "")
+        key = hashlib.md5(raw.encode("utf-8")).hexdigest()[:16]
+        path = os.path.join(_SUM_CACHE_DIR, key + ".txt")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(text_zh or "")
+    except Exception:
+        pass
+
+def _synthesize_digest_zh(title: str, abstract_en: str, max_sents: tuple=(4,6)) -> str:
+    """
+    用中文写 4–6 句“研究脉络总结”：背景→方法→创新→证据/结果→可借鉴→影响/边界。
+    输入只需题目与英文摘要；若摘要为空，返回空串。
+    """
+    title = (title or "").strip()
+    abs_en = (abstract_en or "").strip()
+    if not abs_en:
+        return ""
+    prompt = (
+        "阅读以下论文题目与摘要，请用中文写一段 4–6 句的研究脉络总结，覆盖："
+        "1) 背景/动机与现有缺口；2) 方法或数据/系统；3) 关键创新点（最多两条）；"
+        "4) 主要证据或结果（若无具体数字可用相对表述，如‘优于主流基线’）；"
+        "5) 值得借鉴的做法；6) 对领域的潜在影响或适用边界。"
+        "要求：不逐句翻译，不套用论文原句；客观、信息密度高；禁止列表/小标题；"
+        f"句子数限制在 {max_sents[0]}–{max_sents[1]} 句。\n\n"
+        f"题目：{title}\n摘要（英文）：\n{abs_en}\n"
+    )
+    try:
+        out = chat_once(
+            prompt,
+            system="You are a senior AI editor. Focus on accurate, compact Chinese synthesis.",
+            temperature=0.2,
+            max_tokens=520,
+        )
+        return (out or "").strip()
+    except Exception:
         return ""
     try:
         prompt = (
@@ -2161,20 +2221,27 @@ def main():
             day_path = os.path.join(base_dir, day_fname)
             with open(day_path, "w", encoding="utf-8") as f:
                 json.dump(sp, f, ensure_ascii=False, indent=2)
-            # update dates index
+            # update dates index by scanning existing archives (robust against prior overwrite)
             dates_path = os.path.join(base_dir, "dates.json")
             try:
-                with open(dates_path, "r", encoding="utf-8") as df:
-                    dates = json.load(df)
-                    if not isinstance(dates, list):
-                        dates = []
+                all_files = os.listdir(base_dir)
             except Exception:
-                dates = []
-            if d.isoformat() not in dates:
-                dates.append(d.isoformat())
-                dates.sort(reverse=True)
+                all_files = []
+            # collect YYYY-MM-DD.json files
+            date_list = []
+            for fn in all_files:
+                try:
+                    if re.match(r"\d{4}-\d{2}-\d{2}\.json$", fn):
+                        date_list.append(fn[:-5])
+                except Exception:
+                    continue
+            # ensure today's date present
+            iso_day = d.isoformat()
+            if iso_day not in date_list:
+                date_list.append(iso_day)
+            date_list = sorted(set(date_list), reverse=True)
             with open(dates_path, "w", encoding="utf-8") as df:
-                json.dump(dates, df, ensure_ascii=False, indent=2)
+                json.dump(date_list, df, ensure_ascii=False, indent=2)
             print("ScholarPush written:", sp_path, "and archived:", day_path)
         except Exception as arch_e:
             print("ScholarPush archive failed:", arch_e)

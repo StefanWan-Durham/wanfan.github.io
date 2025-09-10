@@ -387,7 +387,7 @@
     return `<article class="card sp-card">
         <h4 class="sp-title" style="display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${titleHtml}</h4>
         <div class="sp-meta">${meta}${tags?` · ${tags}`:''} ${keynumsCompact?` · ${keynumsCompact}`:''} ${codeBadge}</div>
-    <p id="abs-${id}" class="sp-abstract">${esc(fullTxt)}</p>
+  <p id="abs-${id}" class="sp-abstract">${esc(fullTxt).replace(/\n+/g,'<br/>')}</p>
   ${(reuArr.length||limArr.length)?
     `<div class="muted" style="margin-top:6px">
       ${reuArr.length?`${labelReu}: ${esc(reuArr.join('、'))}`:''}
