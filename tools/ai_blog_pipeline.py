@@ -48,8 +48,8 @@ JSON schema:
             "key_numbers": [
                 {"dataset":"", "metric":"", "ours":"", "baseline":"", "impr_abs":"", "impr_rel":"%或N/A"}
             ],
-            "reusability": ["可复用做法×1-3（如数据增强/损失/检索/蒸馏/缓存/对齐技巧）"],
-            "limitations": ["边界/风险×0-2（如数据泄漏/评测偏差/算力门槛）"],
+            "reusability": [],
+            "limitations": [],
             "links": {"paper":"URL或N/A", "code":"URL或N/A", "project":"URL或N/A"},
             "tags": ["短标签×3-6，如 LLM,RAG,Agent,Eval"],
             "impact_score": 0,
@@ -69,6 +69,8 @@ Rules:
 - 数字缺失时 key_numbers 填 "N/A"；不要编造。
 - “links.paper”若能从条目中提取 arXiv/论文页就填，否则 N/A。
 - items 按 impact_score 降序。
+- 严禁把上面 JSON schema 中的示例占位文本（如“可复用做法×1-3…/边界/风险×0-2…”）原样抄入输出；若无法确定，请将 reusability/limitations 返回为空数组 []。
+- reusability/limitations 必须是“该条目特有、可落地”的要点（1–3 / 0–2 条），避免空泛的通用话术。
 
 Entries:
 [[ENTRIES]]
@@ -996,6 +998,99 @@ def _translate_bullets_zh_to_en_es(reusability: list[str] | list, limitations: l
         _log(f"[translate] bullets zh->en/es exception: {e}")
         return {}
 
+# ==== Bullet helpers: placeholder detection, cleaning, and inference from summary (ZH) ====
+_REU_PLACEHOLDER_TOKENS = (
+    "可复用做法×1-3", "可复用做法x1-3",
+)
+_LIM_PLACEHOLDER_TOKENS = (
+    "边界/风险×0-2", "邊界/風險×0-2",
+)
+
+def _is_placeholder_bullet(s: str) -> bool:
+    try:
+        t = (s or "").strip()
+        if not t:
+            return True
+        if t.upper() == "N/A":
+            return True
+        for k in _REU_PLACEHOLDER_TOKENS:
+            if k in t:
+                return True
+        for k in _LIM_PLACEHOLDER_TOKENS:
+            if k in t:
+                return True
+        # Overly generic catch-alls we choose to drop
+        if re.fullmatch(r"[\u4e00-\u9fffA-Za-z0-9，,·\s（）()\-/]+", t) and ("如" in t or "例如" in t) and ("数据" in t and "损失" in t and "检索" in t):
+            return True
+        return False
+    except Exception:
+        return False
+
+def _clean_bullet_list(arr, limit=None):
+    out = []
+    try:
+        for x in (arr or []):
+            s = (x or "").strip()
+            if not s:
+                continue
+            if _is_placeholder_bullet(s):
+                continue
+            out.append(s)
+            if limit and len(out) >= limit:
+                break
+    except Exception:
+        pass
+    return out
+
+def _infer_bullets_from_summary_zh(zh_abs: str, one_liner: str = "") -> dict:
+    """Infer per-item Chinese bullets from the zh summary; returns {reusability:[], limitations:[]}.
+    Uses caching to avoid repeated calls. Returns empty arrays on failure.
+    """
+    zh_src = (zh_abs or one_liner or "").strip()
+    if not zh_src:
+        return {"reusability": [], "limitations": []}
+    try:
+        key_raw = zh_src
+        key = hashlib.md5(key_raw.encode("utf-8")).hexdigest()[:16]
+        cache_path = os.path.join(_BUL_CACHE_DIR, f"infer_{key}.json")
+        if os.path.exists(cache_path):
+            try:
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    cached = json.load(f)
+                    if isinstance(cached, dict):
+                        return {
+                            "reusability": list(cached.get("reusability", []) or []),
+                            "limitations": list(cached.get("limitations", []) or []),
+                        }
+            except Exception:
+                pass
+        prompt = (
+            "根据以下中文摘要，为该研究提炼两类中文要点：\n"
+            "- reusability（可复用做法 1–3 条）：例如可复用的数据增强、优化/损失、检索/缓存、蒸馏/对齐、评估/标注流程、工程/系统设计要点等；要求具体、可落地，不要空泛口号。\n"
+            "- limitations（局限/边界 0–2 条）：例如数据泄漏/评测偏差、算力/数据规模限制、泛化/鲁棒性不足、安全/隐私/合规等；没有就空数组。\n"
+            "严格返回 JSON（仅 JSON）：{\"reusability\":[], \"limitations\":[]}，每条≤28字；禁止抄写示例占位语。\n\n"
+            f"摘要：\n{zh_src}\n"
+        )
+        out = chat_once(prompt, system="你是严谨的技术编辑。只返回有效 JSON。", temperature=0.1, max_tokens=400, want_json=True)
+        try:
+            j = _extract_json_from_text(out)
+        except Exception:
+            j = _extract_json_relaxed(out)
+        if not isinstance(j, dict):
+            return {"reusability": [], "limitations": []}
+        reu = _clean_bullet_list(j.get("reusability"), limit=3)
+        lim = _clean_bullet_list(j.get("limitations"), limit=2)
+        res = {"reusability": reu, "limitations": lim}
+        try:
+            with open(cache_path, "w", encoding="utf-8") as f:
+                json.dump(res, f, ensure_ascii=False)
+        except Exception:
+            pass
+        return res
+    except Exception as e:
+        _log(f"[infer] bullets from zh failed: {e}")
+        return {"reusability": [], "limitations": []}
+
 def _compact_key_numbers(kn_list: list) -> list:
     """把 key_numbers[] 压成 1~3 个徽章文本，如 'FID -0.8', 'UCF101 +2.1'。"""
     out = []
@@ -1666,20 +1761,13 @@ def make_scholarpush(entries, n_items=8, daily=None):
                 it["key_numbers_compact"] = [ _clean_badge_text(s) for s in it.get("key_numbers_compact", []) if _clean_badge_text(s) ]
             except Exception:
                 pass
-            # Clean noisy arrays: drop 'N/A'/empty, cap lengths for UI
-            def _clean_list(arr, limit=None):
-                out = []
-                for x in (arr or []):
-                    s = (x or "").strip()
-                    if not s or s.upper() == "N/A":
-                        continue
-                    out.append(s)
-                    if limit and len(out) >= limit:
-                        break
-                return out
-            # Clean and keep Chinese originals
-            zh_reu = _clean_list(it.get("reusability"), limit=3)
-            zh_lim = _clean_list(it.get("limitations"), limit=2)
+            # Clean bullets and infer if placeholders/empty
+            zh_reu = _clean_bullet_list(it.get("reusability"), limit=3)
+            zh_lim = _clean_bullet_list(it.get("limitations"), limit=2)
+            if not zh_reu and not zh_lim:
+                infer = _infer_bullets_from_summary_zh(zh_abs, it.get("one_liner",""))
+                zh_reu = _clean_bullet_list(infer.get("reusability"), limit=3)
+                zh_lim = _clean_bullet_list(infer.get("limitations"), limit=2)
             it["reusability"] = zh_reu
             it["limitations"] = zh_lim
             # Build i18n translations for reusability/limitations
