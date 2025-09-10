@@ -64,6 +64,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add blog/*.html data/ai/blog/* data/ai/scholarpush/* assets/og/* || true
+          # Stage ScholarPush changes first (always present when pipeline runs)
+          git add -A data/ai/scholarpush || true
+          # Stage blog HTML if generated (Daily may be disabled some days)
+          if [ -d "blog" ]; then git add -A blog || true; fi
+          # Stage blog data folder if present
+          if [ -d "data/ai/blog" ]; then git add -A data/ai/blog || true; fi
+          # Stage OG assets if present
+          if [ -d "assets/og" ]; then git add -A assets/og || true; fi
           git commit -m "chore(ai): daily blog $(date -u +'%Y-%m-%d')" || echo "No changes"
           git push
