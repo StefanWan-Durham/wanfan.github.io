@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const start = parseInt(el.textContent || '0', 10) || 0;
           const end = Math.max(0, parseInt(String(to), 10) || 0);
           if (start === end) return;
-          const dur = 900;
+          const dur = 650; // slightly faster to feel snappier
           const t0 = performance.now();
           function easeOutCubic(x){ return 1 - Math.pow(1 - x, 3); }
           function step(now){
@@ -56,21 +56,27 @@ document.addEventListener('DOMContentLoaded', () => {
       const KEY_UV = 'site_uv';
       const hasTagged = (()=>{ try { return !!localStorage.getItem('site_uv_tag'); } catch { return false; } })();
       const tagVisitor = ()=>{ try { localStorage.setItem('site_uv_tag', '1'); } catch {} };
+      // Basic fetch with timeout
+      async function fetchJson(url, timeoutMs = 1400){
+        const ctl = new AbortController();
+        const t = setTimeout(()=>ctl.abort(), timeoutMs);
+        try {
+          const r = await fetch(url, { mode: 'cors', signal: ctl.signal });
+          if (!r.ok) throw new Error('net');
+          return await r.json();
+        } finally { clearTimeout(t); }
+      }
       async function countapi(method, key){
         const base = 'https://api.countapi.xyz';
         const url = method === 'hit' ? `${base}/hit/${encodeURIComponent(NS)}/${encodeURIComponent(key)}`
                                      : `${base}/get/${encodeURIComponent(NS)}/${encodeURIComponent(key)}`;
-        const r = await fetch(url, { mode: 'cors' });
-        if (!r.ok) throw new Error('countapi failed');
-        return r.json();
+        return fetchJson(url, 1400);
       }
       async function counterapi(method, key){
         const base = 'https://counterapi.dev/api';
         const url = method === 'hit' ? `${base}/${encodeURIComponent(NS)}/${encodeURIComponent(key)}/increment`
                                      : `${base}/${encodeURIComponent(NS)}/${encodeURIComponent(key)}`;
-        const r = await fetch(url, { mode: 'cors' });
-        if (!r.ok) throw new Error('counterapi failed');
-        return r.json();
+        return fetchJson(url, 1400);
       }
 
       // Fallback: Busuanzi (popular in CN). Load mini script and read site UV.
@@ -104,22 +110,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      async function getUV(){
-        let uv = 0;
-        if (!hasTagged) {
-          try {
-            const a = await countapi('hit', KEY_UV); uv = a?.value ?? a?.count ?? a?.views ?? uv; tagVisitor();
-          } catch {
-            try { const b = await counterapi('hit', KEY_UV); uv = b?.value ?? b?.count ?? b?.views ?? uv; tagVisitor(); } catch {}
+      // Show cached value immediately to avoid initial 0
+      (function showCached(){
+        try {
+          const raw = localStorage.getItem('site_uv_cache');
+          if (!raw) return;
+          const obj = JSON.parse(raw);
+          const v = parseInt(obj?.v, 10);
+          if (Number.isFinite(v) && v > 0) {
+            const lang = getLang();
+            wrap.innerHTML = `<span class="counter-item">${line(v, lang)}</span>`;
           }
-        } else {
+        } catch {}
+      })();
+
+      async function getUV(){
+        // 1) Fast path: race GET from both providers
+        async function fastGet(){
+          const pick = async (p) => {
+            try { const j = await p; const v = j?.value ?? j?.count ?? j?.views; return Number.isFinite(v) ? v : 0; } catch { return 0; }
+          };
+          const p1 = pick(countapi('get', KEY_UV));
+          const p2 = pick(counterapi('get', KEY_UV));
+          return await Promise.race([p1, p2]);
+        }
+        // 2) If first visit on this browser, perform HIT in background to increment
+        let shown = 0;
+        try { shown = await fastGet(); } catch { shown = 0; }
+        // Update UI quickly if we got something
+        if (shown > 0) {
           try {
-            const a = await countapi('get', KEY_UV); uv = a?.value ?? a?.count ?? a?.views ?? uv;
-          } catch {
-            try { const b = await counterapi('get', KEY_UV); uv = b?.value ?? b?.count ?? b?.views ?? uv; } catch {}
+            const numEl = wrap.querySelector('[data-counter="uv"]');
+            if (numEl) countUp(numEl, shown); else {
+              const lang = getLang(); wrap.innerHTML = `<span class="counter-item">${line(shown, lang)}</span>`;
+            }
+            localStorage.setItem('site_uv_cache', JSON.stringify({ v: shown, t: Date.now() }));
+          } catch {}
+        }
+        // 3) Increment once per visitor
+        if (!hasTagged) {
+          let inc = 0;
+          try { const a = await countapi('hit', KEY_UV); inc = a?.value ?? a?.count ?? a?.views ?? 0; }
+          catch { try { const b = await counterapi('hit', KEY_UV); inc = b?.value ?? b?.count ?? b?.views ?? 0; } catch {}
+          }
+          if (inc > 0) {
+            // Prefer incremented value if higher than shown
+            const final = Math.max(shown || 0, inc);
+            try {
+              const numEl = wrap.querySelector('[data-counter="uv"]');
+              if (numEl) countUp(numEl, final); else {
+                const lang = getLang(); wrap.innerHTML = `<span class="counter-item">${line(final, lang)}</span>`;
+              }
+              localStorage.setItem('site_uv_cache', JSON.stringify({ v: final, t: Date.now() }));
+            } catch {}
+            tagVisitor();
+            return final;
           }
         }
-        // Last-resort fallback for regions where the above services are blocked
+        // 4) If nothing yet, try full GET again (both) then Busuanzi as last resort
+        let uv = shown;
+        if (!uv || uv <= 0) {
+          try { uv = await fastGet(); } catch { uv = 0; }
+        }
         if (!uv || uv <= 0) {
           try {
             const bz = await busuanziUV();
@@ -129,11 +181,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           } catch {}
         }
-        return uv;
+        return uv || 0;
       }
 
       // Fetch & render
-      (async () => {
+  (async () => {
         try {
           const uv = await getUV();
           // Rebuild line in current language, then animate the number
