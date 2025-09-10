@@ -1199,6 +1199,18 @@ footer {
   color: #eef2ff;
 }
 
+/* Pretty number counters (PV/UV) */
+.site-footer-center { display: grid; justify-content: center; text-align: center; }
+.counter {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.98rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 0.25rem;
+}
+.counter .counter-item { white-space: normal; }
+.counter .counter-number { font-variant-numeric: tabular-nums; font-weight: 600; letter-spacing: .3px; color: #0ea5e9; }
+
 /* Subscribe page: improve email input ergonomics */
 .embeddable-buttondown-form { display: grid; gap: 10px; }
 .embeddable-buttondown-form #bd-email {

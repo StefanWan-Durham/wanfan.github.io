@@ -11,6 +11,109 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Footer traveler line: only UV, tri-lingual sentence; centered with ©
+  (function setupTravelerLine(){
+    try {
+      const footerBox = document.querySelector('footer .container');
+      if (!footerBox) return;
+      if (document.getElementById('site-counter')) return;
+      const getLang = () => (localStorage.getItem('lang') || document.documentElement.lang || 'zh').slice(0,2);
+      const wrap = document.createElement('div');
+      wrap.id = 'site-counter';
+      wrap.className = 'counter';
+      wrap.setAttribute('aria-live','polite');
+      // Initial template with 0; will update after fetch
+      function line(n, lang){
+        const num = String(n || 0);
+        if (lang === 'en') return `Traveler <span class="counter-number" data-counter="uv">${num}</span>: your mark has been etched into this story, forever part of its journey. Thank you.`;
+        if (lang === 'es') return `Viajero <span class="counter-number" data-counter="uv">${num}</span>: tu huella ha quedado grabada en esta historia, parte eterna de su camino. Gracias.`;
+        return `旅行者 <span class="counter-number" data-counter="uv">${num}</span>：你的印记，已镌刻在此间的故事里。致谢。`;
+      }
+      wrap.innerHTML = `<span class="counter-item">${line(0, getLang())}</span>`;
+      footerBox.appendChild(wrap);
+
+      // Minimal count-up animation for the number only
+      function countUp(el, to){
+        try {
+          const start = parseInt(el.textContent || '0', 10) || 0;
+          const end = Math.max(0, parseInt(String(to), 10) || 0);
+          if (start === end) return;
+          const dur = 900;
+          const t0 = performance.now();
+          function easeOutCubic(x){ return 1 - Math.pow(1 - x, 3); }
+          function step(now){
+            const p = Math.min(1, (now - t0) / dur);
+            const val = Math.round(start + (end - start) * easeOutCubic(p));
+            el.textContent = String(val);
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        } catch { el.textContent = String(to||0); }
+      }
+
+      // CountAPI/CounterAPI helpers
+      const NS = 'fanwan-ai.github.io';
+      const KEY_UV = 'site_uv';
+      const hasTagged = (()=>{ try { return !!localStorage.getItem('site_uv_tag'); } catch { return false; } })();
+      const tagVisitor = ()=>{ try { localStorage.setItem('site_uv_tag', '1'); } catch {} };
+      async function countapi(method, key){
+        const base = 'https://api.countapi.xyz';
+        const url = method === 'hit' ? `${base}/hit/${encodeURIComponent(NS)}/${encodeURIComponent(key)}`
+                                     : `${base}/get/${encodeURIComponent(NS)}/${encodeURIComponent(key)}`;
+        const r = await fetch(url, { mode: 'cors' });
+        if (!r.ok) throw new Error('countapi failed');
+        return r.json();
+      }
+      async function counterapi(method, key){
+        const base = 'https://counterapi.dev/api';
+        const url = method === 'hit' ? `${base}/${encodeURIComponent(NS)}/${encodeURIComponent(key)}/increment`
+                                     : `${base}/${encodeURIComponent(NS)}/${encodeURIComponent(key)}`;
+        const r = await fetch(url, { mode: 'cors' });
+        if (!r.ok) throw new Error('counterapi failed');
+        return r.json();
+      }
+
+      async function getUV(){
+        let uv = 0;
+        if (!hasTagged) {
+          try {
+            const a = await countapi('hit', KEY_UV); uv = a?.value ?? a?.count ?? a?.views ?? uv; tagVisitor();
+          } catch {
+            try { const b = await counterapi('hit', KEY_UV); uv = b?.value ?? b?.count ?? b?.views ?? uv; tagVisitor(); } catch {}
+          }
+        } else {
+          try {
+            const a = await countapi('get', KEY_UV); uv = a?.value ?? a?.count ?? a?.views ?? uv;
+          } catch {
+            try { const b = await counterapi('get', KEY_UV); uv = b?.value ?? b?.count ?? b?.views ?? uv; } catch {}
+          }
+        }
+        return uv;
+      }
+
+      // Fetch & render
+      (async () => {
+        try {
+          const uv = await getUV();
+          // Rebuild line in current language, then animate the number
+          const lang = getLang();
+          wrap.innerHTML = `<span class="counter-item">${line(uv, lang)}</span>`;
+          const numEl = wrap.querySelector('[data-counter="uv"]');
+          if (numEl) countUp(numEl, uv);
+        } catch {
+          wrap.style.display = 'none';
+        }
+      })();
+
+      // Update on language change (re-render sentence, preserve value displayed)
+      window.addEventListener('language-changed', () => {
+        try {
+          const num = parseInt((wrap.querySelector('[data-counter="uv"]')?.textContent)||'0',10)||0;
+          wrap.innerHTML = `<span class="counter-item">${line(num, getLang())}</span>`;
+        } catch {}
+      });
+    } catch { /* ignore */ }
+  })();
   // Set current year in footer
   const yearSpan = document.getElementById('year');
   if (yearSpan) {

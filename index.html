@@ -6,7 +6,7 @@
   <title data-i18n="site_title">Fan Wan · 万凡 · AI Research · LLM · Knowledge Retrieval</title>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0ea5e9">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'self'; form-action 'self' https://formsubmit.co https://buttondown.com; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self' https://api.countapi.xyz https://counterapi.dev; base-uri 'self'; form-action 'self' https://formsubmit.co https://buttondown.com; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <!-- SEO / Open Graph -->
   <meta name="description" content="Fan Wan (万凡) · AI R&D · LLM · Knowledge Retrieval (RAG/GraphRAG) · Enterprise QA · Multimodal · Personal website of Fan Wan.">
@@ -86,6 +86,9 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="lang.js"></script>
   <script defer src="script.js"></script>
+  <!-- Optional: pretty number odometer (also loaded dynamically in script.js) -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" crossorigin="anonymous">
+  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js" crossorigin="anonymous">
   <link rel="manifest" href="manifest.webmanifest">
   <!-- Search engine verification (uncomment and replace content when verifying) -->
    <meta name="google-site-verification" content="SorF6vVwlClLMeOu13Hp6LEO3In3hYdg_LphA-36uMI" />
@@ -252,7 +255,7 @@
   <!-- Blog and Contact summary sections removed per request -->
   </main>
   <footer>
-    <div class="container">
+    <div class="container site-footer-center">
       <p>© <span id="year"></span> Fan Wan</p>
     </div>
   </footer>

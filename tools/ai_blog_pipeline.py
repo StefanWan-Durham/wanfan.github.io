@@ -23,6 +23,8 @@ os.makedirs(OG_DIR, exist_ok=True)
 # —— 超轻量摘要缓存（用于 4–6 句中文 digest，降低重复成本）——
 _SUM_CACHE_DIR = os.path.join(DATA_DIR, "cache", "digest")
 os.makedirs(_SUM_CACHE_DIR, exist_ok=True)
+_BUL_CACHE_DIR = os.path.join(DATA_DIR, "cache", "bullets")
+os.makedirs(_BUL_CACHE_DIR, exist_ok=True)
 
 # ScholarPush prompt for academic flash cards
 PROMPT_SCHOLAR = r"""
@@ -51,7 +53,6 @@ JSON schema:
             "links": {"paper":"URL或N/A", "code":"URL或N/A", "project":"URL或N/A"},
             "tags": ["短标签×3-6，如 LLM,RAG,Agent,Eval"],
             "impact_score": 0,
-        "reproducibility_score": 0,
     "quick_read": "用中文写4–6句：背景/方法/创新/证据/可借鉴/影响（若无具体数字可相对表述）",
         "who_should_try": "适用人群（可选）"
         }
@@ -59,8 +60,7 @@ JSON schema:
     "refs": [{"title":"", "url":""}],
     "stats": {"by_task": {"LLM":0}, "with_code": 0, "new_benchmarks": 0},
     "must_reads": [0,1,2,3,4],
-    "nice_to_read": [5,6,7,8,9,10,11,12],
-    "deep_dive": {"title":"可选主题", "summary":"三句话要点（可选）", "refs": [0,3,5]}
+    "nice_to_read": [5,6,7,8,9,10,11,12]
 }
 
 Rules:
@@ -858,6 +858,18 @@ def _translate_en_to_es(text: str) -> str:
     src = (text or "").strip()
     if not src:
         return ""
+    try:
+        prompt = (
+            "Translate the following English paragraph into fluent Spanish. \n"
+            "Preserve facts, numbers, and units. Output only the translation.\n\n"
+            f"English:\n{src}"
+        )
+        out = chat_once(prompt, system="You are a precise translator.", temperature=0.0, max_tokens=1200)
+        out = (out or "").strip()
+        return "" if _looks_cjk(out) else out
+    except Exception as e:
+        _log(f"[translate] en->es exception: {e}")
+        return ""
 
 # ===== 论文摘要 → 中文 4–6 句“研究脉络”综合 =====
 def _digest_cache_get(title: str, abstract_en: str) -> str | None:
@@ -911,18 +923,78 @@ def _synthesize_digest_zh(title: str, abstract_en: str, max_sents: tuple=(4,6)) 
         return (out or "").strip()
     except Exception:
         return ""
+
+def _translate_bullets_zh_to_en_es(reusability: list[str] | list, limitations: list[str] | list) -> dict:
+    """
+    Translate Chinese bullet lists to English and Spanish with one JSON return.
+    Returns {"en": {"reusability":[], "limitations":[]}, "es": {...}}. On failure, returns empty dict.
+    """
     try:
+        reu = [str(x).strip() for x in (reusability or []) if str(x).strip()]
+        lim = [str(x).strip() for x in (limitations or []) if str(x).strip()]
+        # cache key by content
+        raw = json.dumps({"reusability": reu, "limitations": lim}, ensure_ascii=False, sort_keys=True)
+        key = hashlib.md5(raw.encode("utf-8")).hexdigest()[:16]
+        cache_path = os.path.join(_BUL_CACHE_DIR, key + ".json")
+        try:
+            if os.path.exists(cache_path):
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    cached = json.load(f)
+                    if isinstance(cached, dict):
+                        return cached
+        except Exception:
+            pass
+        payload = {
+            "reusability": reu,
+            "limitations": lim,
+        }
         prompt = (
-            "Translate the following English paragraph into fluent Spanish. \n"
-            "Preserve facts, numbers, and units. Output only the translation.\n\n"
-            f"English:\n{src}"
+            "You will be given two arrays of Chinese bullet points describing 'reusability' and 'limitations' for a paper.\n"
+            "Translate each bullet faithfully into fluent English and Spanish, preserving facts, numbers, and technical terms.\n"
+            "Do not add or remove information.\n"
+            "Return ONLY a valid JSON object with this exact schema and same ordering as input arrays:\n"
+            "{\n  \"en\": { \"reusability\": [..], \"limitations\": [..] },\n  \"es\": { \"reusability\": [..], \"limitations\": [..] }\n}\n"
+            "Input JSON (Chinese):\n" + json.dumps(payload, ensure_ascii=False)
         )
-        out = chat_once(prompt, system="You are a precise translator.", temperature=0.0, max_tokens=1200)
-        out = (out or "").strip()
-        return "" if _looks_cjk(out) else out
+        out = chat_once(prompt, system="You are a precise translator. Return only valid JSON.", temperature=0.0, max_tokens=800, want_json=True)
+        try:
+            j = _extract_json_from_text(out)
+        except Exception:
+            j = _extract_json_relaxed(out)
+    # Basic validation
+        if not isinstance(j, dict):
+            return {}
+        for lang in ("en","es"):
+            if lang not in j or not isinstance(j[lang], dict):
+                return {}
+            for key in ("reusability","limitations"):
+                if key not in j[lang] or not isinstance(j[lang][key], list):
+                    j[lang][key] = []
+        # Strip CJK in en/es; drop lines that look untranslated
+        def _strip_cjk_list(arr: list[str]):
+            out = []
+            for s in arr:
+                t = (s or "").strip()
+                if not t:
+                    continue
+                if _looks_cjk(t):
+                    continue
+                out.append(t)
+            return out
+        j["en"]["reusability"] = _strip_cjk_list(j["en"].get("reusability", []))
+        j["en"]["limitations"] = _strip_cjk_list(j["en"].get("limitations", []))
+        j["es"]["reusability"] = _strip_cjk_list(j["es"].get("reusability", []))
+        j["es"]["limitations"] = _strip_cjk_list(j["es"].get("limitations", []))
+        # write cache
+        try:
+            with open(cache_path, "w", encoding="utf-8") as f:
+                json.dump(j, f, ensure_ascii=False)
+        except Exception:
+            pass
+        return j
     except Exception as e:
-        _log(f"[translate] en->es exception: {e}")
-        return ""
+        _log(f"[translate] bullets zh->en/es exception: {e}")
+        return {}
 
 def _compact_key_numbers(kn_list: list) -> list:
     """把 key_numbers[] 压成 1~3 个徽章文本，如 'FID -0.8', 'UCF101 +2.1'。"""
@@ -1520,22 +1592,8 @@ def make_scholarpush(entries, n_items=8, daily=None):
             must, nice = _split_picks(j["items"])
             j["must_reads"] = must
             j["nice_to_read"] = nice
-        # drop empty/useless deep_dive
-        try:
-            dd = (j.get("deep_dive") or {}) if isinstance(j.get("deep_dive"), dict) else {}
-            t = str(dd.get("title") or '').strip()
-            s = str(dd.get("summary") or '').strip()
-            refs = [i for i in (dd.get("refs") or []) if isinstance(i,int) and i>=0 and i < len(j.get("items",[]))]
-            # If no refs provided, auto-fill from must_reads (top 1–3) so Deep Dive shows actionable links
-            if not refs:
-                mr = [i for i in (j.get("must_reads") or []) if isinstance(i,int) and i>=0 and i < len(j.get("items",[]))]
-                refs = mr[:3]
-            if (not t or t.upper()=="N/A") and (not s or s.upper()=="N/A") and not refs:
-                j.pop("deep_dive", None)
-            else:
-                j["deep_dive"] = {"title": t, "summary": s, "refs": refs}
-        except Exception:
-            j.pop("deep_dive", None)
+        # Remove deep_dive entirely (feature dropped on frontend)
+        j.pop("deep_dive", None)
 
         # Build title map for link fallback
         title_map = _build_entry_title_map(entries)
@@ -1619,8 +1677,26 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     if limit and len(out) >= limit:
                         break
                 return out
-            it["reusability"] = _clean_list(it.get("reusability"), limit=3)
-            it["limitations"] = _clean_list(it.get("limitations"), limit=2)
+            # Clean and keep Chinese originals
+            zh_reu = _clean_list(it.get("reusability"), limit=3)
+            zh_lim = _clean_list(it.get("limitations"), limit=2)
+            it["reusability"] = zh_reu
+            it["limitations"] = zh_lim
+            # Build i18n translations for reusability/limitations
+            try:
+                i18n_bul = _translate_bullets_zh_to_en_es(zh_reu, zh_lim) if (zh_reu or zh_lim) else {}
+            except Exception:
+                i18n_bul = {}
+            it["reusability_i18n"] = {
+                "zh": zh_reu,
+                "en": (i18n_bul.get("en", {}) or {}).get("reusability", []),
+                "es": (i18n_bul.get("es", {}) or {}).get("reusability", []),
+            }
+            it["limitations_i18n"] = {
+                "zh": zh_lim,
+                "en": (i18n_bul.get("en", {}) or {}).get("limitations", []),
+                "es": (i18n_bul.get("es", {}) or {}).get("limitations", []),
+            }
             it["tags"] = _clean_list(it.get("tags"))
             # links were enriched before; ensure pdf present for arXiv/OpenReview
             try:
@@ -1666,6 +1742,8 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     must, nice = _split_picks(j["items"])
                     j["must_reads"] = must
                     j["nice_to_read"] = nice
+                # Remove deep_dive in salvage
+                j.pop("deep_dive", None)
                 # 统一字段注入（抢救路径也注入）
                 try:
                     entries_map = _make_entries_map(base_entries)
@@ -1728,8 +1806,24 @@ def make_scholarpush(entries, n_items=8, daily=None):
                             if limit and len(out) >= limit:
                                 break
                         return out
-                    it["reusability"] = _clean_list(it.get("reusability"), limit=3)
-                    it["limitations"] = _clean_list(it.get("limitations"), limit=2)
+                    zh_reu = _clean_list(it.get("reusability"), limit=3)
+                    zh_lim = _clean_list(it.get("limitations"), limit=2)
+                    it["reusability"] = zh_reu
+                    it["limitations"] = zh_lim
+                    try:
+                        i18n_bul = _translate_bullets_zh_to_en_es(zh_reu, zh_lim) if (zh_reu or zh_lim) else {}
+                    except Exception:
+                        i18n_bul = {}
+                    it["reusability_i18n"] = {
+                        "zh": zh_reu,
+                        "en": (i18n_bul.get("en", {}) or {}).get("reusability", []),
+                        "es": (i18n_bul.get("es", {}) or {}).get("reusability", []),
+                    }
+                    it["limitations_i18n"] = {
+                        "zh": zh_lim,
+                        "en": (i18n_bul.get("en", {}) or {}).get("limitations", []),
+                        "es": (i18n_bul.get("es", {}) or {}).get("limitations", []),
+                    }
                     it["tags"] = _clean_list(it.get("tags"))
                     # already enriched
                 _validate_scholarpush(j)
@@ -1847,6 +1941,8 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     must, nice = _split_picks(j["items"])
                     j["must_reads"] = must
                     j["nice_to_read"] = nice
+                # Remove deep_dive in regex-salvage
+                j.pop("deep_dive", None)
 
                 # 统一字段注入（正则抢救路径也注入）
                 try:
@@ -1904,8 +2000,24 @@ def make_scholarpush(entries, n_items=8, daily=None):
                             if limit and len(out) >= limit:
                                 break
                         return out
-                    it["reusability"] = _clean_list(it.get("reusability"), limit=3)
-                    it["limitations"] = _clean_list(it.get("limitations"), limit=2)
+                    zh_reu = _clean_list(it.get("reusability"), limit=3)
+                    zh_lim = _clean_list(it.get("limitations"), limit=2)
+                    it["reusability"] = zh_reu
+                    it["limitations"] = zh_lim
+                    try:
+                        i18n_bul = _translate_bullets_zh_to_en_es(zh_reu, zh_lim) if (zh_reu or zh_lim) else {}
+                    except Exception:
+                        i18n_bul = {}
+                    it["reusability_i18n"] = {
+                        "zh": zh_reu,
+                        "en": (i18n_bul.get("en", {}) or {}).get("reusability", []),
+                        "es": (i18n_bul.get("es", {}) or {}).get("reusability", []),
+                    }
+                    it["limitations_i18n"] = {
+                        "zh": zh_lim,
+                        "en": (i18n_bul.get("en", {}) or {}).get("limitations", []),
+                        "es": (i18n_bul.get("es", {}) or {}).get("limitations", []),
+                    }
                     it["tags"] = _clean_list(it.get("tags"))
                     _maybe_attach_source_link(it, title_map, entries)
                 _validate_scholarpush(j)
@@ -1929,73 +2041,84 @@ def make_scholarpush(entries, n_items=8, daily=None):
         except Exception:
             pass
 
-        print("make_scholarpush failed, fallback:", e)
-        # Ensure we have some entries to fallback on
-        fb_entries = entries if entries else (base_entries[:max(8, int(os.getenv("MAX_ENTRIES","40")))] if base_entries else [])
-        j = _fallback_scholarpush(fb_entries, n_items=n_items)
+    print("make_scholarpush failed, fallback:", e)
+    # Ensure we have some entries to fallback on
+    fb_entries = entries if entries else (base_entries[:max(8, int(os.getenv("MAX_ENTRIES","40")))] if base_entries else [])
+    j = _fallback_scholarpush(fb_entries, n_items=n_items)
+    j.pop("deep_dive", None)
 
-        # 注入统一字段（与上面主路径一致）
+    # 注入统一字段（与上面主路径一致）
+    entries_map = _make_entries_map(base_entries)
+    daily_map = _make_daily_summary_map(daily) if daily else {}
+    title_map = _build_entry_title_map(base_entries)
+    for it in j.get("items", []):
+        paper = it.get("links", {}).get("paper", "") or ""
+        u_norm = _normalize_url(paper)
+        zh_title = (it.get("headline") or "").strip()
+        en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
+        it["title_i18n"] = {"zh": zh_title, "en": en_title}
+        zh_abs = _best_zh_summary(u_norm, it, entries_map, daily_map)
+        # English from zh; if fails or looks CJK, use source EN
+        en_try = _translate_zh_to_en(zh_abs)
+        en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
+        en_abs = en_try if (en_try and not _looks_cjk(en_try)) else en_src
+        # Spanish from zh; if fails/CJK, try EN->ES; else empty
+        es_try = _translate_zh_to_es(zh_abs)
+        if (not es_try) or _looks_cjk(es_try):
+            es_from_en = _translate_en_to_es(en_abs)
+            es_abs = es_from_en if (es_from_en and not _looks_cjk(es_from_en)) else ""
+        else:
+            es_abs = es_try
+        it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
+        host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
+        it["host"] = host
+        if not it["links"].get("pdf") or it["links"]["pdf"] == "N/A":
+            it["links"]["pdf"] = _arxiv_pdf(paper)
+        it["ts"] = entries_map.get(u_norm, {}).get("ts") or j.get("generated_at")
+        it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
+        if "key_numbers_compact" not in it:
+            it["key_numbers_compact"] = _compact_key_numbers(it.get("key_numbers"))
         try:
-            entries_map = _make_entries_map(base_entries)
+            knc = [ (s or "").strip() for s in (it.get("key_numbers_compact") or []) if s and (s or "").strip().upper() != "N/A" ]
+            it["key_numbers_compact"] = knc[:3]
         except Exception:
-            entries_map = {}
+            it["key_numbers_compact"] = it.get("key_numbers_compact") or []
         try:
-            daily_map = _make_daily_summary_map(daily) if daily else {}
+            it["key_numbers_compact"] = [ _clean_badge_text(s) for s in it.get("key_numbers_compact", []) if _clean_badge_text(s) ]
         except Exception:
-            daily_map = {}
-        title_map = _build_entry_title_map(base_entries)
-        for it in j.get("items", []):
-            paper = it.get("links", {}).get("paper", "") or ""
-            u_norm = _normalize_url(paper)
-            zh_title = (it.get("headline") or "").strip()
-            en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
-            it["title_i18n"] = {"zh": zh_title, "en": en_title}
-            zh_abs = _best_zh_summary(u_norm, it, entries_map, daily_map)
-            # English from zh; if fails or looks CJK, use source EN
-            en_try = _translate_zh_to_en(zh_abs)
-            en_src = (entries_map.get(u_norm, {}).get("summary_en") or "").strip()
-            en_abs = en_try if (en_try and not _looks_cjk(en_try)) else en_src
-            # Spanish from zh; if fails/CJK, try EN->ES; else empty
-            es_try = _translate_zh_to_es(zh_abs)
-            if (not es_try) or _looks_cjk(es_try):
-                es_from_en = _translate_en_to_es(en_abs)
-                es_abs = es_from_en if (es_from_en and not _looks_cjk(es_from_en)) else ""
-            else:
-                es_abs = es_try
-            it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
-            host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
-            it["host"] = host
-            if not it["links"].get("pdf") or it["links"]["pdf"] == "N/A":
-                it["links"]["pdf"] = _arxiv_pdf(paper)
-            it["ts"] = entries_map.get(u_norm, {}).get("ts") or j.get("generated_at")
-            it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
-            if "key_numbers_compact" not in it:
-                it["key_numbers_compact"] = _compact_key_numbers(it.get("key_numbers"))
-            try:
-                knc = [ (s or "").strip() for s in (it.get("key_numbers_compact") or []) if s and (s or "").strip().upper() != "N/A" ]
-                it["key_numbers_compact"] = knc[:3]
-            except Exception:
-                it["key_numbers_compact"] = it.get("key_numbers_compact") or []
-            try:
-                it["key_numbers_compact"] = [ _clean_badge_text(s) for s in it.get("key_numbers_compact", []) if _clean_badge_text(s) ]
-            except Exception:
-                pass
-            # Clean lists in fallback
-            def _clean_list(arr, limit=None):
-                out = []
-                for x in (arr or []):
-                    s = (x or "").strip()
-                    if not s or s.upper() == "N/A":
-                        continue
-                    out.append(s)
-                    if limit and len(out) >= limit:
-                        break
-                return out
-            it["reusability"] = _clean_list(it.get("reusability"), limit=3)
-            it["limitations"] = _clean_list(it.get("limitations"), limit=2)
-            it["tags"] = _clean_list(it.get("tags"))
-            _maybe_attach_source_link(it, title_map, base_entries)
-        return j
+            pass
+        # Clean lists in fallback
+        def _clean_list(arr, limit=None):
+            out = []
+            for x in (arr or []):
+                s = (x or "").strip()
+                if not s or s.upper() == "N/A":
+                    continue
+                out.append(s)
+                if limit and len(out) >= limit:
+                    break
+            return out
+        zh_reu = _clean_list(it.get("reusability"), limit=3)
+        zh_lim = _clean_list(it.get("limitations"), limit=2)
+        it["reusability"] = zh_reu
+        it["limitations"] = zh_lim
+        try:
+            i18n_bul = _translate_bullets_zh_to_en_es(zh_reu, zh_lim) if (zh_reu or zh_lim) else {}
+        except Exception:
+            i18n_bul = {}
+        it["reusability_i18n"] = {
+            "zh": zh_reu,
+            "en": (i18n_bul.get("en", {}) or {}).get("reusability", []),
+            "es": (i18n_bul.get("es", {}) or {}).get("reusability", []),
+        }
+        it["limitations_i18n"] = {
+            "zh": zh_lim,
+            "en": (i18n_bul.get("en", {}) or {}).get("limitations", []),
+            "es": (i18n_bul.get("es", {}) or {}).get("limitations", []),
+        }
+        it["tags"] = _clean_list(it.get("tags"))
+        _maybe_attach_source_link(it, title_map, base_entries)
+    return j
 
 
 

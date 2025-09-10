@@ -116,6 +116,9 @@ const translations = {
   // Footer CTA
   footer_cta_title: '一起合作？',
   footer_cta_desc: '我可提供 LLM 应用、计算机视觉与多媒体分析相关的咨询与合作。',
+  // Counters
+  uv_label: '访客数 (UV)',
+  pv_label: '浏览量 (PV)',
     // Biography page
     bio_title: '个人简介',
     bio_p1: '我是一名专注于大语言模型产业化的研究者，获英国纽卡斯尔大学硕士、杜伦大学计算机科学博士（2025），曾任杜伦大学 HI-Lab 实验室主管。我的目标是把研究做成可运行的系统：让模型理解企业知识、保护隐私，并给出可验证答案。',
@@ -273,6 +276,9 @@ const translations = {
   // Footer CTA
   footer_cta_title: 'Collaborate?',
   footer_cta_desc: 'I can help with LLM applications, computer vision and multimedia analysis.',
+  // Counters
+  uv_label: 'Visitors (UV)',
+  pv_label: 'Views (PV)',
     bio_title: 'Biography',
     bio_p1: "I obtained my Master’s degree in Computer Science from Newcastle University in 2018 (with distinction) and completed my Ph.D. in Computer Science at Durham University in January 2025. During my doctoral studies, I focused on computer vision and multimodal algorithms and actively explored large language models and their applications to real-world problems.",
     bio_p2: 'Currently, I work as a researcher at Tongfang Knowledge Network Digital Technology Co., Ltd., part of China National Nuclear Corporation, dedicated to applying large language models to nuclear industry scenarios. I am passionate about machine learning, federated learning, computer vision, multimedia analysis and AIGC technologies, and participate in various interdisciplinary collaborations.',
@@ -426,6 +432,9 @@ const translations = {
   // Footer CTA
   footer_cta_title: '¿Colaboramos?',
   footer_cta_desc: 'Puedo ayudar con aplicaciones LLM, visión por computadora y análisis multimedia.',
+  // Counters
+  uv_label: 'Visitantes (UV)',
+  pv_label: 'Vistas (PV)',
     bio_title: 'Biografía',
     bio_p1: 'Obtuve mi maestría en Ciencias de la Computación en la Universidad de Newcastle en 2018 (con distinción) y completé mi doctorado en Ciencias de la Computación en la Universidad de Durham en enero de 2025. Durante mis estudios de doctorado me enfoqué en visión por computadora y algoritmos multimodales y exploré activamente modelos de lenguaje grandes y sus aplicaciones a problemas reales.',
     bio_p2: 'Actualmente trabajo como investigador en Tongfang Knowledge Network Digital Technology Co., Ltd., parte de la Corporación Nacional Nuclear de China, dedicado a aplicar modelos de lenguaje grandes a los escenarios de la industria nuclear. Me apasionan el aprendizaje automático, el aprendizaje federado, la visión por computadora, el análisis multimedia y las tecnologías AIGC, y participo en diversas colaboraciones interdisciplinarias.',
