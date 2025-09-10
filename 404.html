@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://busuanzi.ibruce.info 'unsafe-inline'; connect-src 'self' https://api.countapi.xyz https://counterapi.dev https://busuanzi.ibruce.info; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://busuanzi.ibruce.info 'unsafe-inline'; connect-src 'self' https://api.countapi.xyz https://counterapi.dev https://busuanzi.ibruce.info; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <title>Page Not Found · Fan Wan</title>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
@@ -12,6 +12,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- Performance: preconnect to analytics/counter providers -->
+  <link rel="dns-prefetch" href="//api.countapi.xyz">
+  <link rel="preconnect" href="https://api.countapi.xyz" crossorigin>
+  <link rel="dns-prefetch" href="//counterapi.dev">
+  <link rel="preconnect" href="https://counterapi.dev" crossorigin>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>

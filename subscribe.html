@@ -6,7 +6,7 @@
   <title>订阅 · Fan Wan</title>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <meta name="description" content="订阅博客更新（Email/RSS）">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://busuanzi.ibruce.info 'unsafe-inline'; connect-src 'self' https://api.countapi.xyz https://counterapi.dev https://busuanzi.ibruce.info; frame-src 'self' https://buttondown.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://buttondown.com; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://busuanzi.ibruce.info 'unsafe-inline'; connect-src 'self' https://api.countapi.xyz https://counterapi.dev https://busuanzi.ibruce.info; frame-src 'self' https://buttondown.com; base-uri 'self'; form-action 'self' https://buttondown.com; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <link rel="stylesheet" href="style.css">
   <link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="rss.xml">
@@ -14,6 +14,11 @@
   <link rel="alternate" type="application/rss+xml" title="RSS (ES)" href="rss-es.xml">
   <script defer src="lang.js"></script>
   <script defer src="script.js"></script>
+  <!-- Performance: preconnect to analytics/counter providers -->
+  <link rel="dns-prefetch" href="//api.countapi.xyz">
+  <link rel="preconnect" href="https://api.countapi.xyz" crossorigin>
+  <link rel="dns-prefetch" href="//counterapi.dev">
+  <link rel="preconnect" href="https://counterapi.dev" crossorigin>
 </head>
 <body>
   <a class="skip-link" href="#main">

@@ -24,12 +24,25 @@ document.addEventListener('DOMContentLoaded', () => {
       wrap.setAttribute('aria-live','polite');
       // Initial template with 0; will update after fetch
       function line(n, lang){
-        const num = String(n || 0);
+        const num = (n === '—') ? '—' : String(n || 0);
         if (lang === 'en') return `Traveler <span class="counter-number" data-counter="uv">${num}</span>: your mark has been etched into this story, forever part of its journey. Thank you.`;
         if (lang === 'es') return `Viajero <span class="counter-number" data-counter="uv">${num}</span>: tu huella ha quedado grabada en esta historia, parte eterna de su camino. Gracias.`;
         return `旅行者 <span class="counter-number" data-counter="uv">${num}</span>：你的印记，已镌刻在此间的故事里。致谢。`;
       }
-      wrap.innerHTML = `<span class="counter-item">${line(0, getLang())}</span>`;
+      // Decide initial display: if offline and no cache, show a dash instead of 0
+      function getCachedUV(){
+        try {
+          const raw = localStorage.getItem('site_uv_cache');
+          if (!raw) return 0;
+          const obj = JSON.parse(raw);
+          const v = parseInt(obj?.v, 10);
+          return (Number.isFinite(v) && v > 0) ? v : 0;
+        } catch { return 0; }
+      }
+      const hasCacheAtBoot = getCachedUV() > 0;
+      const isOfflineAtBoot = (navigator && 'onLine' in navigator) ? !navigator.onLine : false;
+      const initialVal = (isOfflineAtBoot && !hasCacheAtBoot) ? '—' : 0;
+      wrap.innerHTML = `<span class="counter-item">${line(initialVal, getLang())}</span>`;
       footerBox.appendChild(wrap);
 
       // Minimal count-up animation for the number only
@@ -81,6 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Fallback: Busuanzi (popular in CN). Load mini script and read site UV.
       async function busuanziUV(timeoutMs = 1800){
+        // Only attempt on HTTPS pages to avoid mixed-content/CSP noise in local file previews
+        if (location.protocol !== 'https:') {
+          throw new Error('skip-busuanzi-non-https');
+        }
         const src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
         // Ensure a target span exists for the script to populate
         let span = document.getElementById('busuanzi_value_site_uv');
@@ -110,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      // Show cached value immediately to avoid initial 0
+  // Show cached value immediately to avoid initial 0
       (function showCached(){
         try {
           const raw = localStorage.getItem('site_uv_cache');
@@ -184,25 +201,29 @@ document.addEventListener('DOMContentLoaded', () => {
         return uv || 0;
       }
 
-      // Fetch & render
+    // Fetch & render
   (async () => {
         try {
           const uv = await getUV();
           // Rebuild line in current language, then animate the number
-          const lang = getLang();
-          wrap.innerHTML = `<span class="counter-item">${line(uv, lang)}</span>`;
-          const numEl = wrap.querySelector('[data-counter="uv"]');
-          if (numEl) countUp(numEl, uv);
+      const lang = getLang();
+      const hasCacheNow = getCachedUV() > 0;
+      const offlineNow = (navigator && 'onLine' in navigator) ? !navigator.onLine : false;
+      const shouldDash = offlineNow && !hasCacheNow && (!Number.isFinite(uv) || uv <= 0);
+      wrap.innerHTML = `<span class="counter-item">${line(shouldDash ? '—' : uv, lang)}</span>`;
+      const numEl = wrap.querySelector('[data-counter="uv"]');
+      if (numEl && !shouldDash) countUp(numEl, uv);
         } catch {
           wrap.style.display = 'none';
         }
       })();
 
-      // Update on language change (re-render sentence, preserve value displayed)
+    // Update on language change (re-render sentence, preserve value displayed, keep dash if present)
       window.addEventListener('language-changed', () => {
         try {
-          const num = parseInt((wrap.querySelector('[data-counter="uv"]')?.textContent)||'0',10)||0;
-          wrap.innerHTML = `<span class="counter-item">${line(num, getLang())}</span>`;
+      const txt = (wrap.querySelector('[data-counter="uv"]')?.textContent)||'0';
+      const keep = /^\d+$/.test(txt) ? parseInt(txt, 10) : '—';
+      wrap.innerHTML = `<span class="counter-item">${line(keep, getLang())}</span>`;
         } catch {}
       });
     } catch { /* ignore */ }

@@ -86,10 +86,12 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="lang.js"></script>
   <script defer src="script.js"></script>
-  <!-- Optional: pretty number odometer (also loaded dynamically in script.js) -->
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" crossorigin="anonymous">
-  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js" crossorigin="anonymous">
   <link rel="manifest" href="manifest.webmanifest">
+  <!-- Performance: preconnect to analytics/counter providers -->
+  <link rel="dns-prefetch" href="//api.countapi.xyz">
+  <link rel="preconnect" href="https://api.countapi.xyz" crossorigin>
+  <link rel="dns-prefetch" href="//counterapi.dev">
+  <link rel="preconnect" href="https://counterapi.dev" crossorigin>
   <!-- Search engine verification (uncomment and replace content when verifying) -->
    <meta name="google-site-verification" content="SorF6vVwlClLMeOu13Hp6LEO3In3hYdg_LphA-36uMI" />
   <!-- <meta name="google-site-verification" content="<meta name="google-site-verification" content="SorF6vVwlClLMeOu13Hp6LEO3In3hYdg_LphA-36uMI" />" /> -->

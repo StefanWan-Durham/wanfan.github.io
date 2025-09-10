@@ -6,7 +6,7 @@
   <title data-i18n="about_title">关于我 · Fan Wan</title>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0ea5e9">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://busuanzi.ibruce.info 'unsafe-inline'; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self' https://api.countapi.xyz https://counterapi.dev https://busuanzi.ibruce.info; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://busuanzi.ibruce.info 'unsafe-inline'; font-src 'self' data: https://cdn.jsdelivr.net; connect-src 'self' https://api.countapi.xyz https://counterapi.dev https://busuanzi.ibruce.info; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <meta name="description" content="About Fan Wan · Biography, Education, Research Interests">
    <meta name="keywords" content="Fan Wan, 万凡, Fan WAN, Fan Wan AI, RAG, GraphRAG, LLM, AI Research, Durham">
@@ -35,6 +35,11 @@
   <link rel="me" href="https://github.com/FanWan-AI">
   <script defer src="lang.js"></script>
   <script defer src="script.js"></script>
+  <!-- Performance: preconnect to analytics/counter providers -->
+  <link rel="dns-prefetch" href="//api.countapi.xyz">
+  <link rel="preconnect" href="https://api.countapi.xyz" crossorigin>
+  <link rel="dns-prefetch" href="//counterapi.dev">
+  <link rel="preconnect" href="https://counterapi.dev" crossorigin>
   <link rel="manifest" href="manifest.webmanifest">
  </head>
 <body>
