@@ -387,11 +387,6 @@
         fullTxt = RE_CJK.test(enTry) ? '' : enTry;
       }
     }
-    // Guarded renderer to avoid breaking the whole list on a single bad item
-    function safeCard(it){
-      try { return card(it); }
-      catch(e){ console.error('ScholarPush card render failed:', e, it); return ''; }
-    }
   } catch {}
   // no short/expand; always render full text
   // Localize Reusability / Limitations values when language is EN/ES and items look Chinese (legacy fallback)
@@ -444,6 +439,11 @@
         </div>
       </article>`;
     }
+  // Guarded renderer to avoid breaking the whole list on a single bad item (global scope)
+  function safeCard(it){
+    try { return card(it); }
+    catch(e){ console.error('ScholarPush card render failed:', e, it); return ''; }
+  }
   function t(key, fallback){ try { const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh'; const tx=(window.translations?.[lang]?.[key]); return tx||fallback||key; } catch { return fallback||key; } }
   function statCard(title,val){ return `<div class="card sp-card"><div class="muted">${title}</div><div style="font-weight:600;font-size:18px">${val}</div></div>` }
     function renderStats(stats){
