@@ -73,6 +73,37 @@ document.addEventListener('DOMContentLoaded', () => {
         return r.json();
       }
 
+      // Fallback: Busuanzi (popular in CN). Load mini script and read site UV.
+      async function busuanziUV(timeoutMs = 1800){
+        const src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+        // Ensure a target span exists for the script to populate
+        let span = document.getElementById('busuanzi_value_site_uv');
+        if (!span) {
+          span = document.createElement('span');
+          span.id = 'busuanzi_value_site_uv';
+          span.style.cssText = 'position:absolute;left:-9999px;top:-9999px;pointer-events:none;opacity:0;';
+          document.body.appendChild(span);
+        }
+        // Load script once
+        const already = Array.from(document.scripts).some(s => (s.src||'').includes('busuanzi/2.3/busuanzi.pure.mini.js'));
+        if (!already) {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = src; s.async = true; s.onload = resolve; s.onerror = reject; document.head.appendChild(s);
+          });
+        }
+        // Poll for value
+        return await new Promise((resolve, reject) => {
+          const t0 = Date.now();
+          const timer = setInterval(() => {
+            const txt = (span.textContent || '').trim();
+            const n = parseInt(txt, 10);
+            if (Number.isFinite(n) && n > 0) { clearInterval(timer); resolve(n); }
+            else if (Date.now() - t0 > timeoutMs) { clearInterval(timer); reject(new Error('busuanzi timeout')); }
+          }, 120);
+        });
+      }
+
       async function getUV(){
         let uv = 0;
         if (!hasTagged) {
@@ -87,6 +118,16 @@ document.addEventListener('DOMContentLoaded', () => {
           } catch {
             try { const b = await counterapi('get', KEY_UV); uv = b?.value ?? b?.count ?? b?.views ?? uv; } catch {}
           }
+        }
+        // Last-resort fallback for regions where the above services are blocked
+        if (!uv || uv <= 0) {
+          try {
+            const bz = await busuanziUV();
+            if (Number.isFinite(bz) && bz > 0) {
+              uv = bz;
+              if (!hasTagged) tagVisitor();
+            }
+          } catch {}
         }
         return uv;
       }
