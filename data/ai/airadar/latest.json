@@ -1,0 +1,967 @@
+{
+  "generated_at": "2025-09-13T14:49:53.135535Z",
+  "window_hours": 48,
+  "count": 80,
+  "items": [
+    {
+      "id": "ecee7f52b7e7d150",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-13-5",
+      "title": "Arm拥抱AI：五倍性能，三倍能效",
+      "raw_excerpt": "",
+      "published_at": "2025-09-13T20:31:00+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "8b6911d054ef3fdd",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-13-4",
+      "title": "Meta开源MobileLLM-R1模型，不到1B参数，用1/10的训练就超越了Qwen3",
+      "raw_excerpt": "",
+      "published_at": "2025-09-13T18:23:46+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "ccdcf08162591eda",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-13-3",
+      "title": "清华、上海AI Lab等顶级团队发布推理模型RL超全综述，探索通往超级智能之路",
+      "raw_excerpt": "",
+      "published_at": "2025-09-13T18:20:50+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "eec2634bff4da4af",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-13-2",
+      "title": "快手可灵团队提出MIDAS：压缩比64倍、延迟低于500ms，多模态互动数字人框架实现交互生成新突破",
+      "raw_excerpt": "",
+      "published_at": "2025-09-13T18:17:57+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "e0adaa151d70ded2",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-13",
+      "title": "数据与AI双引擎驱动智能未来，2025外滩大会论数据进化之道",
+      "raw_excerpt": "",
+      "published_at": "2025-09-13T16:55:32+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "27dab165a533e1f2",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://paulkedrosky.com/chatgpt-as-the-original-ai-error/",
+      "title": "ChatGPT as the Original AI Error",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://paulkedrosky.com/chatgpt-as-the-original-ai-error/\">https://paulkedrosky.com/chatgpt-as-the-original-ai-error/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45232352\">https://news.ycombinator.com/item?id=45232352</a></p>\n<p>Points: 1</p>\n<p># Comments: 1</p>",
+      "published_at": "2025-09-13T14:29:30+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "a872f0a143427a7b",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://restofworld.org/2025/chinese-us-tech-foreign-ai-dependence/",
+      "title": "The myth of sovereign AI: Countries rely on U.S. and Chinese tech",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://restofworld.org/2025/chinese-us-tech-foreign-ai-dependence/\">https://restofworld.org/2025/chinese-us-tech-foreign-ai-dependence/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45232347\">https://news.ycombinator.com/item?id=45232347</a></p>\n<p>Points: 1</p>\n<p># Comments: 0</p>",
+      "published_at": "2025-09-13T14:28:51+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "b7cab656ed424f34",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://clavier36.com/p/LtZDdcRP3haTWHErgvdM",
+      "title": "Show HN: CLAVIER-36 (programming environment for generative music)",
+      "raw_excerpt": "<p>CLAVIER-36 is a programming environment for generative music. Programs are laid out in a two-dimensional grid, and evolve over time according to a fixed set of rules. The system is much like a cellular automaton, in that most of the rules governing the evolution of the system are local.<p>C36 programs describe sequences of discrete events in time. The environment includes a primitive sampler, as a self-contained means of interpreting these events as sound. For full expressivity, though, the system is best used as a generator of data for interpretation by an external musical instrument, such as a synthesizer.<p>The project was very directly inspired by Orca (<a href=\"https://100r.co/site/orca.html\" rel=\"nofollow\">https://100r.co/site/orca.html</a>). It began as my own from-scratch implem",
+      "published_at": "2025-09-13T14:22:59+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "62f5fa136dfb75de",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://lovemoney-game.xyz",
+      "title": "I made an online version of the love money game",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://lovemoney-game.xyz\">https://lovemoney-game.xyz</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45232289\">https://news.ycombinator.com/item?id=45232289</a></p>\n<p>Points: 3</p>\n<p># Comments: 1</p>",
+      "published_at": "2025-09-13T14:21:26+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "3ea13c48bfdd35bd",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://github.com/carthage-software/mago",
+      "title": "Mago: A fast PHP toolchain written in Rust",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://github.com/carthage-software/mago\">https://github.com/carthage-software/mago</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45232275\">https://news.ycombinator.com/item?id=45232275</a></p>\n<p>Points: 4</p>\n<p># Comments: 0</p>",
+      "published_at": "2025-09-13T14:20:01+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "80654b6c6092a9b9",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://bananaai.live",
+      "title": "Banana AI – Edit Images with Nano Banana",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://bananaai.live\">https://bananaai.live</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45232215\">https://news.ycombinator.com/item?id=45232215</a></p>\n<p>Points: 1</p>\n<p># Comments: 1</p>",
+      "published_at": "2025-09-13T14:10:39+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "0a832890469a13aa",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/331022.html",
+      "title": "2025北京文化论坛AI沙龙重磅举办！海淀率先破「百模」规模，105款大模型占全国五分之一",
+      "raw_excerpt": "聚焦“AI重塑数字内容生产”",
+      "published_at": "2025-09-13T13:56:59+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "33898a90e76486a7",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://www.bbc.com/news/articles/cd07nljlyv0o",
+      "title": "Japan sets record of nearly 100k people aged over 100",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://www.bbc.com/news/articles/cd07nljlyv0o\">https://www.bbc.com/news/articles/cd07nljlyv0o</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45232052\">https://news.ycombinator.com/item?id=45232052</a></p>\n<p>Points: 40</p>\n<p># Comments: 11</p>",
+      "published_at": "2025-09-13T13:47:38+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "98ac28094c3455c1",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://hbr.org/2025/09/what-happened-when-researchers-co-founded-a-startup-with-ai",
+      "title": "Researchers Co-Founded a Startup with AI",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://hbr.org/2025/09/what-happened-when-researchers-co-founded-a-startup-with-ai\">https://hbr.org/2025/09/what-happened-when-researchers-co-founded-a-startup-with-ai</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45232016\">https://news.ycombinator.com/item?id=45232016</a></p>\n<p>Points: 1</p>\n<p># Comments: 0</p>",
+      "published_at": "2025-09-13T13:41:56+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "a291ff92a85772a1",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://hntrbrk.com/homebuilders/",
+      "title": "America's Largest Homebuilders Shift the Cost of Shoddy Construction to Buyers",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://hntrbrk.com/homebuilders/\">https://hntrbrk.com/homebuilders/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231994\">https://news.ycombinator.com/item?id=45231994</a></p>\n<p>Points: 30</p>\n<p># Comments: 15</p>",
+      "published_at": "2025-09-13T13:37:22+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "4a6a64d3edd28867",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://childsafe.media",
+      "title": "Show HN: ChildSafe Media – AI parental guidance for movies, shows, and games",
+      "raw_excerpt": "<p>I’m a parent who got tired of searching “is [movie] okay for kids?” and finding outdated or paywalled sites.<p>I built ChildSafe Media, a free site that pulls in data from TMDB, IGDB, and Google Books, and uses AI to provide clear parental guidance.<p>No account necessary, no paywall, just search and see what parents need to know (violence, language, themes, etc.).<p>Would love feedback — especially on accuracy and what would make this most useful.</p>\n<hr />\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231870\">https://news.ycombinator.com/item?id=45231870</a></p>\n<p>Points: 1</p>\n<p># Comments: 0</p>",
+      "published_at": "2025-09-13T13:17:28+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "3389d9d352ce9315",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://mtlynch.io/notes/gleam-first-impressions/",
+      "title": "My First Impressions of Gleam",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://mtlynch.io/notes/gleam-first-impressions/\">https://mtlynch.io/notes/gleam-first-impressions/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231852\">https://news.ycombinator.com/item?id=45231852</a></p>\n<p>Points: 30</p>\n<p># Comments: 10</p>",
+      "published_at": "2025-09-13T13:15:26+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "cb9164588edd29a0",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45231682",
+      "title": "Ask HN: Is it worth going to Germany to do my bachelors in CS/AI?",
+      "raw_excerpt": "<p>I live in India and done with my first year of uni(pretty decent uni) but I don't like it here as its in the same city i live and I wanna venture out. USA is pretty expensive and more importantly I wont get a good uni there because of my marks but I indeed plan to move to or at least want to move to silicon valley, what I am thinking is to do bachelors in CS/AI in Germany then work there for a few years to earn enough and then go to the US for masters. Is it a good idea and more importantly is it feasible?</p>\n<hr />\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231682\">https://news.ycombinator.com/item?id=45231682</a></p>\n<p>Points: 2</p>\n<p># Comments: 2</p>",
+      "published_at": "2025-09-13T12:52:49+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "7257d367b6bbcf1d",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.youtube.com/watch?v=siLksTW5DBA",
+      "title": "The Future Belongs To People Who Do Things: The 9 month recap on AI in industry [video]",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://www.youtube.com/watch?v=siLksTW5DBA\">https://www.youtube.com/watch?v=siLksTW5DBA</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231643\">https://news.ycombinator.com/item?id=45231643</a></p>\n<p>Points: 2</p>\n<p># Comments: 1</p>",
+      "published_at": "2025-09-13T12:47:17+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "c9ab16aa56d9bd6e",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.nature.com/articles/d41586-025-02936-6",
+      "title": "AI tool detects LLM-generated text in research papers and peer reviews",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://www.nature.com/articles/d41586-025-02936-6\">https://www.nature.com/articles/d41586-025-02936-6</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231500\">https://news.ycombinator.com/item?id=45231500</a></p>\n<p>Points: 3</p>\n<p># Comments: 1</p>",
+      "published_at": "2025-09-13T12:28:18+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "b620a10254b52456",
+      "source": {
+        "site": "https://www.infoq.com",
+        "feed": "https://www.infoq.com/feed/"
+      },
+      "url": "https://www.infoq.com/news/2025/09/cloudflare-automated-scoring/",
+      "title": "Cloudflare Introduces Automated Scoring for Shadow AI Risk Assessment",
+      "raw_excerpt": "<img src=\"https://res.infoq.com/news/2025/09/cloudflare-automated-scoring/en/headerimage/generatedHeaderImage-1757110665701.jpg\" /><p>During AI Week 2025, Cloudflare announced Application Confidence Scores, an automated assessment system that is designed to help organizations evaluate the safety and security of third-party AI applications at scale.</p> <i>By Renato Losio</i>",
+      "published_at": "2025-09-13T12:11:00+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "c43ca0f58667cf9d",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.reuters.com/lifestyle/it-feels-like-almost-hes-here-how-ai-is-changing-way-we-grieve-2025-09-13/",
+      "title": "'It feels like, almost, he's here': How AI is changing the way we grieve",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://www.reuters.com/lifestyle/it-feels-like-almost-hes-here-how-ai-is-changing-way-we-grieve-2025-09-13/\">https://www.reuters.com/lifestyle/it-feels-like-almost-hes-here-how-ai-is-changing-way-we-grieve-2025-09-13/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231408\">https://news.ycombinator.com/item?id=45231408</a></p>\n<p>Points: 1</p>\n<p># Comments: 0</p>",
+      "published_at": "2025-09-13T12:09:03+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "ae8c14db8ad74e8a",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.getfluxyai.com/",
+      "title": "Show HN: We Built AI Sales Chatbot for SaaS Websites",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://www.getfluxyai.com/\">https://www.getfluxyai.com/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231382\">https://news.ycombinator.com/item?id=45231382</a></p>\n<p>Points: 1</p>\n<p># Comments: 0</p>",
+      "published_at": "2025-09-13T12:02:43+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "c1eae6cb8900c15f",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://anycrap.shop/",
+      "title": "A store that generates products from anything you type in search",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://anycrap.shop/\">https://anycrap.shop/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231378\">https://news.ycombinator.com/item?id=45231378</a></p>\n<p>Points: 155</p>\n<p># Comments: 51</p>",
+      "published_at": "2025-09-13T12:02:11+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "294c4e9320f6eae0",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.ft.com/content/a47b71a5-dca1-439d-8a0c-e18d6b0d1df3",
+      "title": "UK Gov AI 'hit squad' set up to drive efficiency struggles to hire top talent",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://www.ft.com/content/a47b71a5-dca1-439d-8a0c-e18d6b0d1df3\">https://www.ft.com/content/a47b71a5-dca1-439d-8a0c-e18d6b0d1df3</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231363\">https://news.ycombinator.com/item?id=45231363</a></p>\n<p>Points: 2</p>\n<p># Comments: 1</p>",
+      "published_at": "2025-09-13T11:58:42+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "c02d878e1d9ad717",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://medium.com/@romanzadyrako/is-user-onboarding-better-now-that-we-have-ai-796d2e9be72b",
+      "title": "Is user onboarding better now that we have AI?",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://medium.com/@romanzadyrako/is-user-onboarding-better-now-that-we-have-ai-796d2e9be72b\">https://medium.com/@romanzadyrako/is-user-onboarding-better-now-that-we-have-ai-796d2e9be72b</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231358\">https://news.ycombinator.com/item?id=45231358</a></p>\n<p>Points: 1</p>\n<p># Comments: 0</p>",
+      "published_at": "2025-09-13T11:56:45+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "653cb71e5661a64c",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://zenodo.org/records/17112616",
+      "title": "From Snapshots to Standards: Measuring AI Visibility",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://zenodo.org/records/17112616\">https://zenodo.org/records/17112616</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231288\">https://news.ycombinator.com/item?id=45231288</a></p>\n<p>Points: 1</p>\n<p># Comments: 1</p>",
+      "published_at": "2025-09-13T11:40:58+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "efd3b4c6369fab25",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://www.theguardian.com/technology/2025/sep/11/google-gemini-ai-training-humans",
+      "title": "How 'overworked, underpaid' humans train Google's AI to seem smart",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://www.theguardian.com/technology/2025/sep/11/google-gemini-ai-training-humans\">https://www.theguardian.com/technology/2025/sep/11/google-gemini-ai-training-humans</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231239\">https://news.ycombinator.com/item?id=45231239</a></p>\n<p>Points: 109</p>\n<p># Comments: 72</p>",
+      "published_at": "2025-09-13T11:30:50+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "e6931069879f06b8",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://ai-roast.jamatrix.io/",
+      "title": "Show HN: AI Roast – Fun AI-generated roasts of websites",
+      "raw_excerpt": "<p>Hey HN,<p>I built AI Roast\n – a simple web app that takes your website and gives you a funny AI-powered roast.<p>Features:<p>Instant roasts in a lighthearted tone<p>\"Pro Roast Report\" (downloadable) if you want to take it further<p>Share button to drop your roast on Twitter/X easily<p>Live stats: total roasts, reports sold, and shares<p>Why:\nI wanted something playful to explore AI beyond productivity apps. Instead of “AI that helps you work,” this is “AI that dunks on you.”<p>Would love feedback on:<p>Roast quality (do they land?)<p>UX — what would make this more fun/shareable?<p>Any crazy ideas for distribution<p>Try it here  ai-roast.jamatrix.io</p>\n<hr />\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45231175\">https://news.ycombinator.com/item?id=45231175</a></p>\n<p",
+      "published_at": "2025-09-13T11:17:06+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "d2cc28fbde27a180",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://blog.kilocode.ai/p/choosing-the-right-ai-coding-model",
+      "title": "We compared 6 AI models for coding (unscientific, but fun)",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://blog.kilocode.ai/p/choosing-the-right-ai-coding-model\">https://blog.kilocode.ai/p/choosing-the-right-ai-coding-model</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45230985\">https://news.ycombinator.com/item?id=45230985</a></p>\n<p>Points: 2</p>\n<p># Comments: 0</p>",
+      "published_at": "2025-09-13T10:40:39+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "64c8f152495e8740",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://seedream-4.app/",
+      "title": "Seedream 4.0 – Professional AI Image Generator and Editor",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://seedream-4.app/\">https://seedream-4.app/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45230887\">https://news.ycombinator.com/item?id=45230887</a></p>\n<p>Points: 1</p>\n<p># Comments: 0</p>",
+      "published_at": "2025-09-13T10:21:40+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "7965bd95ab8517b2",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45230777",
+      "title": "Reddit's API wasn't officially available so I built AI browser agent to automate",
+      "raw_excerpt": "<p>If you want to take a look, it’s here: https://www.thewhisperninja.com/\nStill very much in builder mode, so any feedback from this community would mean a lot! Thanks :)</p>\n<hr />\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45230777\">https://news.ycombinator.com/item?id=45230777</a></p>\n<p>Points: 2</p>\n<p># Comments: 1</p>",
+      "published_at": "2025-09-13T09:48:09+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "ac36d25c4d0149e0",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://geohot.github.io//blog/jekyll/update/2025/09/12/ai-coding.html",
+      "title": "AI Coding",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://geohot.github.io//blog/jekyll/update/2025/09/12/ai-coding.html\">https://geohot.github.io//blog/jekyll/update/2025/09/12/ai-coding.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45230677\">https://news.ycombinator.com/item?id=45230677</a></p>\n<p>Points: 229</p>\n<p># Comments: 164</p>",
+      "published_at": "2025-09-13T09:28:30+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "15f51e5e6576f993",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/331008.html",
+      "title": "攻克强化学习「最慢一环」！交大字节联手，RL训练速度飙升2.6倍",
+      "raw_excerpt": "精度无损",
+      "published_at": "2025-09-13T08:45:23+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "26e86da05b10e949",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/330989.html",
+      "title": "他同时参与创办OpenAI/DeepMind，还写了哈利波特同人小说",
+      "raw_excerpt": "奥特曼：他值得诺贝尔和平奖",
+      "published_at": "2025-09-13T08:43:06+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "4ef2efcc9b11ded2",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.circuitbot.io/",
+      "title": "Show HN: Circuit Bot – The AI powered co‑engineer for embedded systems",
+      "raw_excerpt": "<p>Circuit Bot lets you ask natural questions about semiconductor devices like:\n“How do I configure ADC1 for continuous conversion?”\n“How many I2C channels are available?”\n\"How to put device into low power mode\"<p>Device documents such as datasheets, technical reference and user manuals are dense. We’ve all spent hours digging through registers and peripheral descriptions.<p>Circuit Bot cuts that time down by:\nReducing time to prototype\nHelping you understand devices faster\nGenerating code snippets based on datasheets, technical references, and sample code<p>Current status\n MVP is live\n New devices are added regularly.<p>We need your feedback\nWould this help in your day-to-day embedded work?\nWhich chips or peripherals should we support next?\nWould you prefer Circuit Bot as a standalone too",
+      "published_at": "2025-09-13T08:40:50+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "14e07ac702299150",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://mostlynerdless.de/blog/2025/06/11/java-25s-new-cpu-time-profiler-1/",
+      "title": "Java 25's new CPU-Time Profiler (1)",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://mostlynerdless.de/blog/2025/06/11/java-25s-new-cpu-time-profiler-1/\">https://mostlynerdless.de/blog/2025/06/11/java-25s-new-cpu-time-profiler-1/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45230265\">https://news.ycombinator.com/item?id=45230265</a></p>\n<p>Points: 90</p>\n<p># Comments: 25</p>",
+      "published_at": "2025-09-13T08:11:27+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "e7d5899601bdabd6",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://zenodo.org/records/17103133",
+      "title": "I unified convolution and attention into a single framework",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://zenodo.org/records/17103133\">https://zenodo.org/records/17103133</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45229960\">https://news.ycombinator.com/item?id=45229960</a></p>\n<p>Points: 37</p>\n<p># Comments: 13</p>",
+      "published_at": "2025-09-13T07:02:27+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "1e620c785fe90d55",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://www.noemamag.com/the-last-days-of-social-media/",
+      "title": "Social media promised connection, but it has delivered exhaustion",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://www.noemamag.com/the-last-days-of-social-media/\">https://www.noemamag.com/the-last-days-of-social-media/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45229799\">https://news.ycombinator.com/item?id=45229799</a></p>\n<p>Points: 221</p>\n<p># Comments: 152</p>",
+      "published_at": "2025-09-13T06:27:19+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "2cc4000c4a7f965a",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/330971.html",
+      "title": "谷歌DeepMind用AI探测引力波，登上Science了",
+      "raw_excerpt": "将引力波探测低频噪声降至原来的1/30",
+      "published_at": "2025-09-13T06:24:45+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "fbf70eebe3b06c94",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/330951.html",
+      "title": "前谷歌X团队靠AI电影锁定戛纳！创立AI原生版皮克斯，公司预售已超1亿美元",
+      "raw_excerpt": "打通好莱坞的内容与生态链",
+      "published_at": "2025-09-13T06:20:17+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "533094287b23c8b4",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/330923.html",
+      "title": "AI水论文还得AI治：西湖大学首次模拟人类专家思考链，AI审稿分钟级给出全面反馈",
+      "raw_excerpt": "AI生成的学术成果的开放舞台",
+      "published_at": "2025-09-13T06:10:27+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "9bbfebf3bea2eb28",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://skiftos.org",
+      "title": "SkiftOS: A hobby OS built from scratch using C/C++ for ARM, x86, and RISC-V",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://skiftos.org\">https://skiftos.org</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45229414\">https://news.ycombinator.com/item?id=45229414</a></p>\n<p>Points: 294</p>\n<p># Comments: 61</p>",
+      "published_at": "2025-09-13T04:55:14+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "05700a767f21acb9",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/330905.html",
+      "title": "小而美的生活秘书！美团Agent落地生活服务",
+      "raw_excerpt": "只要动动嘴就能点外卖",
+      "published_at": "2025-09-13T04:39:20+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "8709c6eb70518351",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://www.gearnews.com/raspberry-pi-synthesizers-how-the-pi-is-transforming-synths/",
+      "title": "Raspberry Pi Synthesizers – How the Pi is transforming synths",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://www.gearnews.com/raspberry-pi-synthesizers-how-the-pi-is-transforming-synths/\">https://www.gearnews.com/raspberry-pi-synthesizers-how-the-pi-is-transforming-synths/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45229227\">https://news.ycombinator.com/item?id=45229227</a></p>\n<p>Points: 84</p>\n<p># Comments: 59</p>",
+      "published_at": "2025-09-13T04:08:57+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "22c23e261af3fa82",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://oci.dag.dev/",
+      "title": "OCI Registry Explorer",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://oci.dag.dev/\">https://oci.dag.dev/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45228891\">https://news.ycombinator.com/item?id=45228891</a></p>\n<p>Points: 79</p>\n<p># Comments: 7</p>",
+      "published_at": "2025-09-13T02:41:57+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "08166fa505f0d686",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://acoup.blog/2025/09/12/collections-life-work-death-and-the-peasant-part-ivc-rent-and-extraction/",
+      "title": "Life, work, death and the peasant: Rent and extraction",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://acoup.blog/2025/09/12/collections-life-work-death-and-the-peasant-part-ivc-rent-and-extraction/\">https://acoup.blog/2025/09/12/collections-life-work-death-and-the-peasant-part-ivc-rent-and-extraction/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45228472\">https://news.ycombinator.com/item?id=45228472</a></p>\n<p>Points: 249</p>\n<p># Comments: 113</p>",
+      "published_at": "2025-09-13T01:15:37+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "94251e6ef5e07af7",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://github.com/meow-edit/meow",
+      "title": "Meow: Yet another modal editing on Emacs",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://github.com/meow-edit/meow\">https://github.com/meow-edit/meow</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45228396\">https://news.ycombinator.com/item?id=45228396</a></p>\n<p>Points: 109</p>\n<p># Comments: 19</p>",
+      "published_at": "2025-09-13T01:00:22+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "1f883dddc2e3ccb7",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://sporks.space/2025/08/28/tips-for-installing-windows-98-in-qemu-utm/",
+      "title": "Tips for installing Windows 98 in QEMU/UTM",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://sporks.space/2025/08/28/tips-for-installing-windows-98-in-qemu-utm/\">https://sporks.space/2025/08/28/tips-for-installing-windows-98-in-qemu-utm/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45227749\">https://news.ycombinator.com/item?id=45227749</a></p>\n<p>Points: 109</p>\n<p># Comments: 22</p>",
+      "published_at": "2025-09-12T23:04:08+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "a5172941cc9ad62f",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://ffglitch.org/gallery/",
+      "title": "FFglitch, FFmpeg fork for glitch art",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://ffglitch.org/gallery/\">https://ffglitch.org/gallery/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45227212\">https://news.ycombinator.com/item?id=45227212</a></p>\n<p>Points: 240</p>\n<p># Comments: 33</p>",
+      "published_at": "2025-09-12T21:54:34+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "2e95530cab1a1cba",
+      "source": {
+        "site": "https://arstechnica.com",
+        "feed": "https://arstechnica.com/information-technology/feed/"
+      },
+      "url": "https://arstechnica.com/gaming/2025/09/animal-crossing-mod-uses-ai-to-orchestrate-anti-tom-nook-villager-revolt/",
+      "title": "Modder injects AI dialogue into 2002’s Animal Crossing using memory hack",
+      "raw_excerpt": "Unofficial mod lets classic Nintendo GameCube title use AI chatbots with amusing results.",
+      "published_at": "2025-09-12T21:36:48+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "fc3c96413a769ef3",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-12-15",
+      "title": "扩散语言模型也有MoE版本了！蚂蚁&人大从头训练LLaDA-MoE，即将完全开源",
+      "raw_excerpt": "",
+      "published_at": "2025-09-12T21:34:45+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "057a66e96bdb8cc8",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/g7-rapid-response-mechanism-rrm-statement-on-iranian-transnational-repression-and-other-malign-activities",
+      "title": "G7 Rapid Response Mechanism (RRM) Statement on Iranian Transnational Repression and Other Malign Activities",
+      "raw_excerpt": "G7 Rapid Response Mechanism (RRM) Statement on Iranian Transnational Repression and Other Malign Activities",
+      "published_at": "2025-09-12T21:31:38+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "5841dee84acac287",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-12-14",
+      "title": "如何为LLM智能体编写工具？Anthropic官方教程来了",
+      "raw_excerpt": "",
+      "published_at": "2025-09-12T21:26:56+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "77b015da44eb3ba4",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-12-13",
+      "title": "腾讯优图重磅开源Youtu-GraphRAG，实现图检索增强技术新突破",
+      "raw_excerpt": "",
+      "published_at": "2025-09-12T21:21:16+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "b533380cedd6e764",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/speeches/russias-violation-of-polish-airspace-only-strengthens-the-unity-between-nato-nations-and-our-determination-to-stand-with-ukraine-uk-statement-at-th",
+      "title": "Russia’s violation of Polish airspace only strengthens the unity between NATO nations, and our determination to stand with Ukraine: UK statement at the UN Security Council",
+      "raw_excerpt": "Statement by Ambassador Barbara Woodward, UK Permanent Representative to the UN, at the UN Security Council meeting on Poland.",
+      "published_at": "2025-09-12T21:06:25+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "ebedc7dbc3118282",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://edoput.it/2025/04/16/emacs-paradigm-shift.html",
+      "title": "I used standard Emacs extension-points to extend org-mode",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://edoput.it/2025/04/16/emacs-paradigm-shift.html\">https://edoput.it/2025/04/16/emacs-paradigm-shift.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45226639\">https://news.ycombinator.com/item?id=45226639</a></p>\n<p>Points: 172</p>\n<p># Comments: 23</p>",
+      "published_at": "2025-09-12T20:53:33+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "ac90e765b7f05c36",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/speeches/australias-naval-nuclear-propulsion-aukus-update-to-iaea-board-of-governors-september-2025",
+      "title": "Australia's naval nuclear propulsion: AUKUS update to IAEA Board of Governors, September 2025",
+      "raw_excerpt": "Update by Australia, the UK and the USA (AUKUS) to the International Atomic Energy Agency (IAEA) Board of Governors on Australia's naval nuclear propulsion programme",
+      "published_at": "2025-09-12T18:53:29+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "8bca23ad28b51793",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/speeches/this-is-a-window-of-opportunity-to-end-the-threat-of-chemical-weapons-in-syria-uk-statement-at-the-un-security-council",
+      "title": "This is a window of opportunity to end the threat of chemical weapons in Syria: UK Statement at the UN Security Council",
+      "raw_excerpt": "Statement by Caroline Quinn, UK Deputy Political Coordinator, at the UN Security Council Meeting on Syrian Chemical Weapons",
+      "published_at": "2025-09-12T18:38:11+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "4732ced4192b1703",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://iamvishnu.com/posts/utf8-is-brilliant-design",
+      "title": "UTF-8 is a brilliant design",
+      "raw_excerpt": "<p>Article URL: <a href=\"https://iamvishnu.com/posts/utf8-is-brilliant-design\">https://iamvishnu.com/posts/utf8-is-brilliant-design</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=45225098\">https://news.ycombinator.com/item?id=45225098</a></p>\n<p>Points: 671</p>\n<p># Comments: 267</p>",
+      "published_at": "2025-09-12T18:30:15+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "ebf89179722cddca",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-12-12",
+      "title": "Science Advances | AI for Earth：聆听海洋的「脉搏」，新一代AI大模型精准预测十年气候脉动",
+      "raw_excerpt": "",
+      "published_at": "2025-09-12T17:57:36+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "58069f289d2f976b",
+      "source": {
+        "site": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      "url": "https://aws.amazon.com/blogs/machine-learning/automate-advanced-agentic-rag-pipeline-with-amazon-sagemaker-ai/",
+      "title": "Automate advanced agentic RAG pipeline with Amazon SageMaker AI",
+      "raw_excerpt": "In this post, we walk through how to streamline your RAG development lifecycle from experimentation to automation, helping you operationalize your RAG solution for production deployments with Amazon SageMaker AI, helping your team experiment efficiently, collaborate effectively, and drive continuous improvement.",
+      "published_at": "2025-09-12T17:36:19+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "ff3dac9a59ed7191",
+      "source": {
+        "site": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      "url": "https://aws.amazon.com/blogs/machine-learning/unlock-model-insights-with-log-probability-support-for-amazon-bedrock-custom-model-import/",
+      "title": "Unlock model insights with log probability support for Amazon Bedrock Custom Model Import",
+      "raw_excerpt": "In this post, we explore how log probabilities work with imported models in Amazon Bedrock. You will learn what log probabilities are, how to enable them in your API calls, and how to interpret the returned data. We also highlight practical applications—from detecting potential hallucinations to optimizing RAG systems and evaluating fine-tuned models—that demonstrate how these insights can improve your AI applications, helping you build more trustworthy solutions with your custom models.",
+      "published_at": "2025-09-12T17:34:16+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "c9035754b529a65f",
+      "source": {
+        "site": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      "url": "https://aws.amazon.com/blogs/machine-learning/migrate-from-anthropics-claude-3-5-sonnet-to-claude-4-sonnet-on-amazon-bedrock/",
+      "title": "Migrate from Anthropic’s Claude 3.5 Sonnet to Claude 4 Sonnet on Amazon Bedrock",
+      "raw_excerpt": "This post provides a systematic approach to migrating from Anthropic’s Claude 3.5 Sonnet to Claude 4 Sonnet on Amazon Bedrock. We examine the key model differences, highlight essential migration considerations, and deliver proven best practices to transform this necessary transition into a strategic advantage that drives measurable value for your organization.",
+      "published_at": "2025-09-12T17:31:19+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "d94ac7fc36935ed9",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-12-10",
+      "title": "外滩大会嘉宾锐评AGI即将“撞墙”，正在向数字与物理世界进化",
+      "raw_excerpt": "",
+      "published_at": "2025-09-12T17:17:00+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "027501fc1c26896a",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/bluetongue-latest-situation",
+      "title": "Bluetongue: latest situation",
+      "raw_excerpt": "Overview of current bluetongue cases, risk level, vaccinations and restrictions.",
+      "published_at": "2025-09-12T17:15:19+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "dc488af4d783ddd7",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-12-9",
+      "title": "港科大 X MiniMax：高质量数据、小模型挑战复杂网络搜索难题",
+      "raw_excerpt": "",
+      "published_at": "2025-09-12T16:54:19+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "64b32b08f48e1114",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/sellafield-ltd-and-tepco-extend-decommissioning-partnership",
+      "title": "Sellafield Ltd and TEPCO extend decommissioning partnership",
+      "raw_excerpt": "Companies will continue working together to support progress in the UK and Japan",
+      "published_at": "2025-09-12T16:26:06+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "3aa714fbffa2b658",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/pm-call-with-president-nawrocki-of-poland-12-september-2025",
+      "title": "PM call with President Nawrocki of Poland: 12 September 2025",
+      "raw_excerpt": "The Prime Minister spoke to Polish President Karol Nawrocki this morning.",
+      "published_at": "2025-09-12T16:24:04+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "cc492f4d76c34c35",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/pm-meeting-with-the-taoiseach-micheal-martin-of-ireland-12-september-2025",
+      "title": "PM meeting with the Taoiseach Micheál Martin of Ireland: 12 September 2025",
+      "raw_excerpt": "The Prime Minister hosted the Taoiseach Micheál Martin this morning at Chequers.",
+      "published_at": "2025-09-12T16:23:16+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "783894df5f33c810",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/applications-and-complaints",
+      "title": "How to submit applications and complaints to the CAC",
+      "raw_excerpt": "The submission of applications and complaints to the CAC.",
+      "published_at": "2025-09-12T16:14:22+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "b9f48373fabccb88",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/speeches/speech-at-dsei-by-deputy-chief-of-the-general-staff",
+      "title": "Speech at DSEI by Deputy Chief of the General Staff",
+      "raw_excerpt": "Speech at DSEI by Deputy Chief of the General Staff, Lieutenant General David Eastman MBE, about the British Army’s place in an increasingly dangerous world.",
+      "published_at": "2025-09-12T15:58:58+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "c13a44516f0c0cf2",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/bird-flu-avian-influenza-latest-situation-in-england",
+      "title": "Bird flu (avian influenza): latest situation in England",
+      "raw_excerpt": "Find out about the latest bird flu situation in England and guidance for bird keepers and the public.",
+      "published_at": "2025-09-12T15:47:48+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "8257ad8bf615e866",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/honduras-independence-day-2025",
+      "title": "Honduras’ Independence Day 2025",
+      "raw_excerpt": "Message from His Majesty King Charles III to the people of Honduras on the occasion of Independence Day.",
+      "published_at": "2025-09-12T15:33:04+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "ac9849ca20026af9",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/guatemalas-independence-day-2025",
+      "title": "Guatemala’s Independence Day 2025",
+      "raw_excerpt": "Message from His Majesty King Charles III to the people of Guatemala on the occasion of Independence Day.",
+      "published_at": "2025-09-12T15:28:54+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "043c4b9a6459c20b",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/regional-student-competition-20252026-finalists-announcement",
+      "title": "Regional Student Competition 2025/2026 finalists' announcement",
+      "raw_excerpt": "The Falklands Regional Student Competition offers a one-week trip for students in Argentina, Paraguay and Uruguay to visit the Falkland Islands.",
+      "published_at": "2025-09-12T15:18:31+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "8341e4e07c83a576",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/un-human-rights-council-60-uk-statement-on-contemporary-forms-of-slavery",
+      "title": "UN Human Rights Council 60: UK Statement on contemporary forms of Slavery",
+      "raw_excerpt": "UK Statement for the Interactive Dialogue with the Special Rapporteur on contemporary forms of Slavery. Delivered at the 60th HRC in Geneva.",
+      "published_at": "2025-09-12T15:18:18+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "8a340bec2475f20b",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/complex-arrangements-cause-problems",
+      "title": "Complex arrangements cause problems",
+      "raw_excerpt": "The Traffic Commissioner for the East of England, Richard Turfitt, has granted operating licences to Littlechild Aggregates Ltd and Ace Aggregates Ltd following a detailed public inquiry into their management structures, dri…",
+      "published_at": "2025-09-12T15:06:15+01:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "b62314826e124741",
+      "source": {
+        "site": "https://www.wired.com",
+        "feed": "https://www.wired.com/feed/category/business/latest/rss"
+      },
+      "url": "https://www.wired.com/story/anthropic-settlement-books-copyright/",
+      "title": "I Wasn’t Sure I Wanted Anthropic to Pay Me for My Books—I Do Now",
+      "raw_excerpt": "Anthropic agreed to a $1.5 billion settlement for authors whose books were used to train its AI model. As an author who fits that description, I’ve come around to the idea.",
+      "published_at": "2025-09-12T15:00:00+00:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    },
+    {
+      "id": "41546d6ae5aa81a4",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-12-8",
+      "title": "蚂蚁集团数字蚂力首批专家级“AI数字员工团队”亮相外滩大会",
+      "raw_excerpt": "",
+      "published_at": "2025-09-12T14:43:32+08:00Z",
+      "fetched_at": "2025-09-13T14:49:11.699078Z"
+    }
+  ]
+}
