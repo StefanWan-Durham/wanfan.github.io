@@ -33,6 +33,9 @@
   .rad-section{margin:14px 0}
   .rad-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
   .rad-toolbar .spacer{flex:1 1 auto}
+  /* Ensure the filter toolbar card doesn't lift on hover (which could visually hide the top border) */
+  .rad-toolbar.card{cursor: default}
+  .rad-toolbar.card:hover{transform:none !important; border-color: var(--border) !important; box-shadow: var(--shadow-md)}
   .rad-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
   @media (max-width:880px){.rad-list{grid-template-columns:1fr}}
   .rad-card{padding:12px 14px;box-sizing:border-box;max-width:100%;min-width:0;overflow:hidden}
@@ -129,9 +132,9 @@
           <h2 style="margin:0 0 6px 0" data-i18n="module_ai_trends_title">AI 风向标</h2>
           <p class="muted" id="rad-sub" style="margin:0 0 10px 0">—</p>
           <div class="card rad-card rad-toolbar">
-            <input id="rad-q" class="input" placeholder="搜索标题/摘要…" style="min-width:220px;height:36px;padding:6px 10px" />
+            <input id="rad-q" class="input" data-i18n-placeholder="radar_search_placeholder" placeholder="全局搜索…" style="min-width:220px;height:36px;padding:6px 10px" />
             <select id="rad-source" class="input" style="height:36px;padding:6px 10px">
-              <option value="">全部来源</option>
+              <option value="" data-i18n="radar_filter_source_all">全部来源</option>
               <option value="openai.com">OpenAI</option>
               <option value="ai.googleblog.com">Google AI</option>
               <option value="huggingface.co">Hugging Face</option>
@@ -139,12 +142,12 @@
               <option value="techcrunch.com">TechCrunch</option>
             </select>
             <select id="rad-tag" class="input" style="height:36px;padding:6px 10px">
-              <option value="">全部标签</option>
-              <option value="Research">Research</option>
-              <option value="Policy">Policy</option>
-              <option value="Funding">Funding</option>
-              <option value="Tools">Tools</option>
-              <option value="Industry">Industry</option>
+              <option value="" data-i18n="radar_filter_tag_all">全部标签</option>
+              <option value="Industry" data-i18n="radar_filter_tag_industry">行业</option>
+              <option value="Policy" data-i18n="radar_filter_tag_policy">政策</option>
+              <option value="Research" data-i18n="radar_filter_tag_research">研究</option>
+              <option value="Tools" data-i18n="radar_filter_tag_tools">工具</option>
+              <option value="Funding" data-i18n="radar_filter_tag_funding">融资</option>
             </select>
             <!-- removed window filter: daily archives are per 24h by Beijing date -->
             <span class="spacer"></span>
