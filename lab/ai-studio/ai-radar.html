@@ -1,17 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI 风向标 - 全球AI热点实时同步</title>
-  <meta name="description" content="AI 风向标：全球AI热点实时同步，洞察技术浪潮下的每一次脉动。">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="module_ai_trends_title">AI 风向标 - 全球AI热点实时同步</title>
+  <link rel="icon" href="../../assets/logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://busuanzi.ibruce.info; font-src 'self' data:; connect-src 'self' https://api.countapi.xyz https://counterapi.dev https://busuanzi.ibruce.info; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="description" content="全球AI热点实时同步，洞察技术浪潮下的每一次脉动。" data-i18n-content="module_ai_trends_desc">
+  <link rel="canonical" href="https://fanwan-ai.github.io/lab/ai-studio/ai-radar.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI 风向标 - 全球AI热点实时同步" data-i18n-content="module_ai_trends_title">
+  <meta property="og:description" content="全球AI热点实时同步，洞察技术浪潮下的每一次脉动。" data-i18n-content="module_ai_trends_desc">
+  <meta property="og:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="AI Radar cover">
+  <meta property="og:url" content="https://fanwan-ai.github.io/lab/ai-studio/ai-radar.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 风向标 - 全球AI热点实时同步" data-i18n-content="module_ai_trends_title">
+  <meta name="twitter:description" content="全球AI热点实时同步，洞察技术浪潮下的每一次脉动。" data-i18n-content="module_ai_trends_desc">
+  <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
+  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
+  <link rel="stylesheet" href="../../style.css">
+  <script defer src="../../lang.js"></script>
+  <script defer src="../../script.js"></script>
+  <!-- Performance: prefetch data -->
   <link rel="preload" href="/data/ai/airadar/latest.json" as="fetch" crossorigin="anonymous">
+  <style>
+    /* Single-column AI Radar page */
+    .rad-one{max-width:980px;margin:0 auto;padding:0 12px}
+    .rad-section{margin:14px 0}
+    .rad-list{display:flex;flex-direction:column;gap:10px}
+    .rad-card{padding:12px 14px}
+    .rad-title{font-size:16px;line-height:1.4;margin:0 0 6px 0}
+    .rad-meta{font-size:12px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
+    .rad-excerpt{margin:6px 0 0 0;color:var(--muted)}
+  </style>
+  <!-- Performance: preconnect to analytics/counter providers (if used globally) -->
+  <link rel="dns-prefetch" href="//api.countapi.xyz">
+  <link rel="preconnect" href="https://api.countapi.xyz" crossorigin>
+  <link rel="dns-prefetch" href="//counterapi.dev">
+  <link rel="preconnect" href="https://counterapi.dev" crossorigin>
+  
 </head>
-<body>
-  <main class="container">
-    <h1>AI 风向标</h1>
-    <div id="ai-radar">加载中…</div>
+<body class="blog">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <nav class="navbar container">
+      <a href="../../index.html" class="brand" aria-label="Home">
+        <img src="../../assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="../../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="../../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="../../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="../../ai-lab.html"><span class="i18n l-zh">AI Studio</span><span class="i18n l-en">AI Studio</span><span class="i18n l-es">Taller de IA</span></a></li>
+        <li><a href="../../contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label"></span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+          <select id="lang-select" hidden>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+              <path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/>
+              <path d="M12 2v2"/>
+              <path d="M4 10h2"/>
+              <path d="M18 10h2"/>
+              <path d="M5.5 5.5l1.4 1.4"/>
+              <path d="M18.5 5.5l-1.4 1.4"/>
+            </g>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon icon-system" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><path d="M8 20h8"/><path d="M12 16v4"/></g></svg>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero section">
+      <div class="bg-shapes">
+        <span class="shape shape1"></span>
+        <span class="shape shape2"></span>
+        <span class="shape shape3"></span>
+        <span class="shape shape4"></span>
+      </div>
+      <div class="container">
+        <h1><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-4 8-4-4 8-4z"/></g></svg></span> <span data-i18n="module_ai_trends_title">AI 风向标</span></h1>
+        <p class="subtitle" data-i18n="module_ai_trends_desc">全球AI热点实时同步，洞察技术浪潮下的每一次脉动。</p>
+      </div>
+    </section>
+
+    <section class="section" id="rad">
+      <div class="container rad-one">
+        <div class="rad-section">
+          <h2 style="margin:0 0 6px 0" data-i18n="module_ai_trends_title">AI 风向标</h2>
+          <p class="muted" id="rad-sub" style="margin:0 0 10px 0">—</p>
+        </div>
+        <div class="rad-section">
+          <div id="ai-radar" class="rad-list">
+            <article class="card rad-card"><div class="rad-meta">加载中…</div></article>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="container site-footer-center">
+      <p>© <span id="year"></span> Fan Wan</p>
+    </div>
+  </footer>
+
   <script src="/assets/js/ai-studio/ai-radar.js"></script>
 </body>
 </html>
