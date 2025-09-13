@@ -14,6 +14,20 @@ function relTime(iso){
   }catch{ return ''; }
 }
 
+// Simple i18n for UI strings in this module
+function i18nStr(key, lang){
+  const map = {
+    allSources: { zh: '全部来源', en: 'All sources', es: 'Todas las fuentes' },
+    allTags: { zh: '全部标签', en: 'All tags', es: 'Todas las etiquetas' },
+    searchPH: { zh: '全局搜索…', en: 'Global search…', es: 'Búsqueda global…' },
+    today: { zh: '今天', en: 'Today', es: 'Hoy' },
+    archive: { zh: '归档', en: 'Archive', es: 'Archivo' },
+    updated: { zh: '更新', en: 'Updated', es: 'Actualizado' },
+    items: { zh: '条', en: 'items', es: 'entradas' },
+  };
+  return (map[key]?.[lang]) || (map[key]?.zh) || '';
+}
+
 function guessBadges(it){
   const t = `${it.title||''} ${it.raw_excerpt||''}`.toLowerCase();
   const b=[];
@@ -37,7 +51,11 @@ function extractHost(u){ try{ return new URL(u).host.replace(/^www\./,''); }catc
 // --- i18n helpers & excerpt cleanup ---
 function pickLangText(bundle, lang, fallback){
   if (!bundle) return fallback || '';
-  return bundle[lang] || bundle.zh || bundle.en || fallback || '';
+  // Prefer requested language; for zh/es, fallback to en; for en, do NOT fallback to zh
+  if (lang === 'en') return bundle.en || fallback || '';
+  if (lang === 'zh') return bundle.zh || bundle.en || fallback || '';
+  if (lang === 'es') return bundle.es || bundle.en || fallback || '';
+  return bundle[lang] || bundle.en || fallback || '';
 }
 function getTitle(item, lang){
   return pickLangText(item.title_i18n, lang, item.title || '');
@@ -71,6 +89,10 @@ const SOURCE_MAP = {
   'www.jiqizhixin.com': '机器之心',
   'qbitai.com': '量子位',
   'www.qbitai.com': '量子位',
+  'infoq.cn': 'InfoQ (中文)',
+  'www.infoq.cn': 'InfoQ (中文)',
+  'leiphone.com': '雷峰网',
+  'www.leiphone.com': '雷峰网',
   'arstechnica.com': 'Ars Technica',
   'ai.googleblog.com': 'Google AI Blog',
   'openai.com': 'OpenAI',
@@ -89,13 +111,16 @@ async function renderAIRadar(containerId = 'ai-radar') {
   const subEl = document.getElementById('rad-sub');
   const qEl = document.getElementById('rad-q');
   const srcEl = document.getElementById('rad-source');
-  const winEl = document.getElementById('rad-window');
+  const tagEl = document.getElementById('rad-tag');
   const dateEl = document.getElementById('rad-date');
   const prevEl = document.getElementById('rad-prev');
   const nextEl = document.getElementById('rad-next');
   const topEl = document.getElementById('rad-top');
 
   let dates=[]; let payload=null; let items=[];
+  const allCache = new Map(); // date -> items
+  let globalIndex = null; // optional global search index
+  let topKeys = new Set();
 
   function currentLang(){
     return (localStorage.getItem('lang')||document.documentElement.lang||'zh').toLowerCase();
@@ -114,23 +139,28 @@ async function renderAIRadar(containerId = 'ai-radar') {
     if (picked) url = `/data/ai/airadar/${picked}.json`;
     payload = await fetch(url, {cache:'no-store'}).then(r=>r.json()).catch(()=>({items:[]}));
     items = Array.isArray(payload.items)? payload.items: [];
-    // Hide/disable time window in archive view
-    const isArchive = Boolean(dateEl.value);
-    if (winEl){
-  // default to 72h on latest view
-  if (!isArchive) { try { winEl.value = '72'; } catch {}
-  }
-  winEl.disabled = isArchive;
-      winEl.title = isArchive ? '归档视图中禁用时间窗口' : '';
-      // Optional hide visually
-      winEl.style.opacity = isArchive ? '0.5' : '';
-    }
+    // Localize select placeholders each load
+    try{
+      const lang = currentLang();
+      if (qEl) qEl.placeholder = i18nStr('searchPH', lang);
+    }catch{}
     // populate dynamic sources
     try{
+      const lang = currentLang();
       const hosts = Array.from(new Set(items.map(it=> extractHost(it.url||it.source?.site||it.source?.feed||'')).filter(Boolean))).sort();
       const current = srcEl.value;
-      srcEl.innerHTML = '<option value="">全部来源</option>' + hosts.map(h=>`<option value="${h}">${h}</option>`).join('');
+      srcEl.innerHTML = `<option value="">${i18nStr('allSources', lang)}</option>` + hosts.map(h=>`<option value="${h}">${h}</option>`).join('');
       if (hosts.includes(current)) srcEl.value=current; else srcEl.value='';
+    }catch{}
+    // populate dynamic tags
+    try{
+      const lang = currentLang();
+      const tagSet = new Set();
+      items.forEach(it=> (it.tags||[]).forEach(t=> tagSet.add(String(t))));
+      const tags = Array.from(tagSet).sort();
+      const cur = tagEl.value;
+      tagEl.innerHTML = `<option value="">${i18nStr('allTags', lang)}</option>` + tags.map(t=>`<option>${t}</option>`).join('');
+      if (tags.includes(cur)) tagEl.value = cur; else tagEl.value = '';
     }catch{}
   // no pagination; render all in view
   }
@@ -138,37 +168,77 @@ async function renderAIRadar(containerId = 'ai-radar') {
   function applySubtitle(){
     const lang=currentLang();
     const gen = new Date(payload.generated_at||Date.now());
-  const ts = gen.toLocaleString(); const count = items.length; const win = (!dateEl.value && winEl) ? parseInt(winEl.value||payload.window_hours||48,10) : (payload.window_hours||48);
+  const ts = gen.toLocaleString(); const count = items.length;
     if(!subEl) return;
     const isArchive = Boolean(dateEl.value);
     if (isArchive){
-      if (lang==='en') subEl.textContent = `Archive · ${dateEl.value} · ${count} items · Built ${ts}`;
-      else if (lang==='es') subEl.textContent = `Archivo · ${dateEl.value} · ${count} entradas · Generado ${ts}`;
-      else subEl.textContent = `归档 · ${dateEl.value} · 共 ${count} 条 · 生成：${ts}`;
+      if (lang==='en') subEl.textContent = `${i18nStr('archive',lang)} · ${dateEl.value} · ${count} ${i18nStr('items',lang)} · ${i18nStr('updated',lang)} ${ts}`;
+      else if (lang==='es') subEl.textContent = `${i18nStr('archive',lang)} · ${dateEl.value} · ${count} ${i18nStr('items',lang)} · ${i18nStr('updated',lang)} ${ts}`;
+      else subEl.textContent = `${i18nStr('archive',lang)} · ${dateEl.value} · 共 ${count} 条 · 生成：${ts}`;
     } else {
-      if (lang==='en') subEl.textContent = `Last ${win}h · ${count} items · Updated ${ts}`;
-      else if (lang==='es') subEl.textContent = `Últimas ${win}h · ${count} entradas · Actualizado ${ts}`;
-      else subEl.textContent = `最近 ${win} 小时 · ${count} 条 · 更新：${ts}`;
+      if (lang==='en') subEl.textContent = `${i18nStr('today',lang)} · ${count} ${i18nStr('items',lang)} · ${i18nStr('updated',lang)} ${ts}`;
+      else if (lang==='es') subEl.textContent = `${i18nStr('today',lang)} · ${count} ${i18nStr('items',lang)} · ${i18nStr('updated',lang)} ${ts}`;
+      else subEl.textContent = `${i18nStr('today',lang)} · 共 ${count} 条 · 更新：${ts}`;
     }
   }
 
-  function filterItems(){
+  async function ensureGlobalIndex(){
+    if (globalIndex !== null) return;
+    try{
+      const data = await fetch('/data/ai/airadar/index.json', {cache:'no-store'}).then(r=>r.json());
+      if (data && Array.isArray(data.items)) globalIndex = data.items;
+      else globalIndex = [];
+    }catch{ globalIndex = []; }
+  }
+  async function getAllItems(){
+    // Prefer prebuilt global index if available; else merge daily files
+    await ensureGlobalIndex();
+    if (Array.isArray(globalIndex) && globalIndex.length){
+      // adapt to card renderer fields by mapping back to expected keys
+      return globalIndex.map(it => ({
+        id: it.id,
+        url: it.url,
+        published_at: it.ts,
+        title_i18n: it.title_i18n || {},
+        excerpt_i18n: it.excerpt_i18n || {},
+        raw_excerpt: '',
+        source: { site: it.source_host, feed: '' },
+        tags: [],
+      }));
+    }
+    const want = dates.slice();
+    const toFetch = want.filter(d => !allCache.has(d));
+    await Promise.all(toFetch.map(async d => {
+      try{
+        const data = await fetch(`/data/ai/airadar/${d}.json`, {cache:'no-store'}).then(r=>r.json());
+        allCache.set(d, Array.isArray(data.items)? data.items: []);
+      }catch{ allCache.set(d, []); }
+    }));
+    const merged = [];
+    for (const d of want){ merged.push(...(allCache.get(d) || [])); }
+    merged.sort((a,b)=> String(b.published_at||'').localeCompare(String(a.published_at||'')));
+    return merged;
+  }
+
+  async function filterItems(){
     const q=(qEl?.value||'').trim().toLowerCase();
     const src=(srcEl?.value||'').trim().toLowerCase();
-    const win=parseInt(winEl?.value||'48',10);
-    const now = Date.now();
-    return items.filter(it=>{
-      // window filter (from generated_at backwards)
-      if (!dateEl.value){
-        const t = Date.parse(it.published_at);
-        if (Number.isFinite(t)){
-          const diff = now - t;
-          if (diff < 0 || diff > win*3600*1000) return false;
-        }
-      }
+  const tag=(tagEl?.value||'').trim().toLowerCase();
+    // Choose source: global when searching, else current date payload
+    let pool = items;
+    if (q) { pool = await getAllItems(); }
+    return pool.filter(it=>{
       if (src){ const host = extractHost(it.url||''); if(host && !host.includes(src)) return false; }
+  if (tag){ const tags=(it.tags||[]).map(x=>String(x).toLowerCase()); if(!tags.includes(tag)) return false; }
       if (!q) return true;
-      const blob = `${it.title||''} ${it.raw_excerpt||''} ${(it.source?.site||'')} ${(it.source?.feed||'')}`.toLowerCase();
+      const ti = it.title_i18n || {};
+      const ei = it.excerpt_i18n || {};
+      const blob = [
+        it.title||'', it.raw_excerpt||'',
+        ti.zh||'', ti.en||'', ti.es||'',
+        ei.zh||'', ei.en||'', ei.es||'',
+        (it.source?.site||''), (it.source?.feed||'')
+      ].join(' ').toLowerCase();
       return q.split(/\s+/).filter(Boolean).some(w=>blob.includes(w));
     });
   }
@@ -179,7 +249,12 @@ async function renderAIRadar(containerId = 'ai-radar') {
     const title = titleRaw && titleRaw.trim() ? titleRaw.trim() : '(无标题)';
     const hostDisp = sourceDisplay(it) || '未知来源';
     const time = relTime(it.published_at);
-  const badges = guessBadges(it).map(b=>`<span class="badge ${badgeClass(b)}">${b}</span>`).join(' ');
+    const catBadges = (it.tags||[]).map(lbl=>{
+      const b = String(lbl);
+      const cls = badgeClass(b) || '';
+      return `<span class="badge ${cls}">${b}</span>`;
+    }).join(' ');
+    const badges = catBadges || guessBadges(it).map(b=>`<span class="badge ${badgeClass(b)}">${b}</span>`).join(' ');
   const excerptClean = cleanExcerpt(getExcerpt(it, lang));
     const needsI18nBadge = !(it.title_i18n && (it.title_i18n[lang]||it.title_i18n.zh||it.title_i18n.en));
     const topClass = isTop ? ' card--top' : '';
@@ -202,11 +277,27 @@ async function renderAIRadar(containerId = 'ai-radar') {
     `;
   }
 
-  function renderList(){
+  async function renderList(){
     if(!listEl) return;
-    const arr = filterItems();
-    listEl.innerHTML = arr.map(it => cardHTML(it)).join('');
-  setupCardInteractivity();
+    const arr = await filterItems();
+    // Simple pagination
+    const PAGE = 40;
+    let page = 1;
+    function draw(){
+      // Exclude Top items from main list
+      const hasQuery = (qEl?.value||'').trim().length>0;
+      const deduped = hasQuery ? arr.slice() : arr.filter(it=>{
+        const key = it.id || it.url || it.title;
+        return !topKeys.has(key);
+      });
+      const slice = deduped.slice(0, PAGE*page);
+  const needsMore = slice.length < deduped.length;
+  listEl.innerHTML = slice.map(it => cardHTML(it)).join('') + (needsMore ? `<div style="grid-column:1 / -1;display:flex;justify-content:center;margin:8px 0"><button id="rad-more" class="btn outline" aria-label="加载更多">加载更多</button></div>` : '');
+      setupCardInteractivity();
+      const more = document.getElementById('rad-more');
+      more?.addEventListener('click', ()=>{ page++; draw(); });
+    }
+    draw();
   }
 
   function setupCardInteractivity(){
@@ -241,9 +332,14 @@ async function renderAIRadar(containerId = 'ai-radar') {
     return res.slice(0,N);
   }
   function renderTop(){
-    if(!topEl) return;
-    const arr = filterItems();
+  if(!topEl) return;
+  // Hide Top when searching
+  const hasQuery = (document.getElementById('rad-q')?.value||'').trim().length>0;
+  if (hasQuery){ topEl.innerHTML=''; return; }
+    // Use current date payload for Top 8 (not global)
+    const arr = items.slice();
     const top = getTopItems(arr);
+    topKeys = new Set(top.map(it => it.id || it.url || it.title));
     // Build a separated Top 5 container
     const wrap = document.createElement('div');
     wrap.className = 'top5-wrap';
@@ -263,38 +359,41 @@ async function renderAIRadar(containerId = 'ai-radar') {
   // Load flow
   await loadDates();
   setDateBounds();
+  // If no date selected, default to the latest (today in Beijing TZ)
+  if (dateEl && !dateEl.value && Array.isArray(dates) && dates.length > 0) {
+    try { dateEl.value = dates[0]; } catch {}
+  }
   await loadData();
   applySubtitle();
-  renderList();
-  updateNav();
   renderTop();
+  await renderList();
+  updateNav();
 
-  // Bind events
-  qEl?.addEventListener('input', ()=>{ renderList(); });
-  srcEl?.addEventListener('change', ()=>{ renderList(); });
-  winEl?.addEventListener('change', ()=>{ renderList(); });
-  dateEl?.addEventListener('change', async ()=>{ await loadData(); applySubtitle(); renderList(); updateNav(); });
-  prevEl?.addEventListener('click', async ()=>{ const idx=dates.indexOf(dateEl.value||''); if(idx>=0 && idx<dates.length-1){ dateEl.value=dates[idx+1]; await loadData(); applySubtitle(); renderList(); updateNav(); }});
-  nextEl?.addEventListener('click', async ()=>{ const idx=dates.indexOf(dateEl.value||''); if(idx>0){ dateEl.value=dates[idx-1]; await loadData(); applySubtitle(); renderList(); updateNav(); }});
-  qEl?.addEventListener('input', ()=>{ renderList(); renderTop(); });
-  srcEl?.addEventListener('change', ()=>{ renderList(); renderTop(); });
-  winEl?.addEventListener('change', ()=>{ renderList(); renderTop(); });
-  dateEl?.addEventListener('change', async ()=>{ await loadData(); applySubtitle(); renderList(); renderTop(); updateNav(); });
-  prevEl?.addEventListener('click', async ()=>{ 
-    let idx=dates.indexOf(dateEl.value||'');
-    if(idx===-1 && dates.length>0){ dateEl.value = dates[0]; idx = 0; }
-    if(idx>=0 && idx<dates.length-1){ dateEl.value=dates[idx+1]; }
-    else return;
-    await loadData(); applySubtitle(); renderList(); renderTop(); updateNav();
+  // Bind events (single set)
+  qEl?.addEventListener('input', ()=>{ renderTop(); renderList(); });
+  srcEl?.addEventListener('change', ()=>{ renderTop(); renderList(); });
+  tagEl?.addEventListener('change', ()=>{ renderTop(); renderList(); });
+  dateEl?.addEventListener('change', async ()=>{ await loadData(); applySubtitle(); renderTop(); await renderList(); updateNav(); });
+  prevEl?.addEventListener('click', async ()=>{
+    // Move to older date (index +1). If none selected, start from latest (index 0)
+    let idx = dates.indexOf(dateEl.value||'');
+    if (idx === -1) idx = 0;
+    if (idx < dates.length - 1) {
+      dateEl.value = dates[idx + 1];
+    await loadData(); applySubtitle(); renderTop(); await renderList(); updateNav();
+    }
   });
-  nextEl?.addEventListener('click', async ()=>{ 
-    const val = dateEl.value||''; let idx=dates.indexOf(val);
-    if(idx>0){ dateEl.value=dates[idx-1]; }
-    else return;
-    await loadData(); applySubtitle(); renderList(); renderTop(); updateNav();
+  nextEl?.addEventListener('click', async ()=>{
+    // Move to newer date (index -1)
+    let idx = dates.indexOf(dateEl.value||'');
+    if (idx === -1) idx = 0; // if empty, treat as latest
+    if (idx > 0) {
+      dateEl.value = dates[idx - 1];
+    await loadData(); applySubtitle(); renderTop(); await renderList(); updateNav();
+    }
   });
 
   // Re-render on language change
-  window.addEventListener('language-changed', ()=>{ applySubtitle(); renderList(); renderTop(); });
+  window.addEventListener('language-changed', ()=>{ applySubtitle(); renderTop(); renderList(); });
 }
 window.addEventListener('DOMContentLoaded', () => renderAIRadar('ai-radar'));

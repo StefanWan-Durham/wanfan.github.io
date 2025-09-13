@@ -1,12 +1,24 @@
 name: ai-radar-pipeline
 "on":
   schedule:
-    - cron: '0 0 * * *'   # 每天 00:00 UTC == 北京时间 08:00
+  - cron: '10 23 * * *'   # 每天 23:10 UTC == 北京时间 07:10
   workflow_dispatch: {}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # LLM provider & translation knobs
+      PREFERRED_PROVIDER: deepseek
+      RADAR_DO_TRANSLATE: '1'
+      RADAR_TRANSLATE_ALL: '1'
+      RADAR_TRANSLATE_TOP: all
+      RADAR_TRANSLATE_MAX_TOKENS: '900'
+      RADAR_TRANSLATE_TIMEOUT: '40'
+      # DeepSeek secrets (set these in GitHub → Repository → Settings → Secrets and variables)
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL }}
+      DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,12 +34,14 @@ jobs:
         run: python tools/ai_studio/ai_radar/fetch_feeds.py
       - name: Aggregate reports
         run: python tools/ai_studio/ai_radar/aggregate_reports.py
+      - name: Build global search index
+        run: python tools/ai_studio/ai_radar/build_index.py
       - name: Commit and push artifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ai/airadar/latest.json data/ai/airadar/_events_tmp.json || true
+          git add data/ai/airadar/latest.json data/ai/airadar/dates.json data/ai/airadar/index.json data/ai/airadar/_events_tmp.json data/ai/airadar/*.json || true
           git commit -m "chore(ai-radar): daily update latest.json" || echo "no changes"
           git push

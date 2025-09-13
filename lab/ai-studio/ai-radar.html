@@ -137,11 +137,15 @@
               <option value="news.ycombinator.com">Hacker News</option>
               <option value="techcrunch.com">TechCrunch</option>
             </select>
-            <select id="rad-window" class="input" style="height:36px;padding:6px 10px">
-              <option value="24">24h</option>
-              <option value="48" selected>48h</option>
-              <option value="72">72h</option>
+            <select id="rad-tag" class="input" style="height:36px;padding:6px 10px">
+              <option value="">全部标签</option>
+              <option value="Research">Research</option>
+              <option value="Policy">Policy</option>
+              <option value="Funding">Funding</option>
+              <option value="Tools">Tools</option>
+              <option value="Industry">Industry</option>
             </select>
+            <!-- removed window filter: daily archives are per 24h by Beijing date -->
             <span class="spacer"></span>
             <div style="display:flex;gap:6px;align-items:center">
               <button id="rad-prev" class="btn outline small" title="Prev day" aria-label="Previous day">◀</button>
