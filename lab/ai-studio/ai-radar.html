@@ -29,13 +29,21 @@
   <link rel="preload" href="/data/ai/airadar/latest.json" as="fetch" crossorigin="anonymous">
   <style>
     /* Single-column AI Radar page */
-    .rad-one{max-width:980px;margin:0 auto;padding:0 12px}
-    .rad-section{margin:14px 0}
-    .rad-list{display:flex;flex-direction:column;gap:10px}
-    .rad-card{padding:12px 14px}
-    .rad-title{font-size:16px;line-height:1.4;margin:0 0 6px 0}
-    .rad-meta{font-size:12px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
-    .rad-excerpt{margin:6px 0 0 0;color:var(--muted)}
+  .rad-one{max-width:1100px;margin:0 auto;padding:0 12px}
+  .rad-section{margin:14px 0}
+  .rad-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .rad-toolbar .spacer{flex:1 1 auto}
+  .rad-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  @media (max-width:880px){.rad-list{display:flex;flex-direction:column}}
+  .rad-card{padding:12px 14px}
+  .rad-title{font-size:17px;line-height:1.35;margin:0 0 6px 0;font-weight:700}
+  .rad-title a{color:var(--primary);text-decoration:none}
+  .rad-title a:hover{text-decoration:underline}
+  .rad-meta{font-size:12px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
+  .rad-excerpt{margin:6px 0 0 0;color:var(--muted)}
+  .badge{display:inline-block;font-size:11px;padding:2px 6px;border-radius:10px;background:var(--pill-bg,#eef2ff);color:var(--pill-fg,#3b82f6);border:1px solid rgba(59,130,246,.2)}
+  .tag{display:inline-block;font-size:11px;padding:2px 6px;border-radius:8px;background:var(--chip-bg,#f3f4f6);color:var(--chip-fg,#6b7280)}
+  .rad-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
   </style>
   <!-- Performance: preconnect to analytics/counter providers (if used globally) -->
   <link rel="dns-prefetch" href="//api.countapi.xyz">
@@ -119,6 +127,32 @@
         <div class="rad-section">
           <h2 style="margin:0 0 6px 0" data-i18n="module_ai_trends_title">AI 风向标</h2>
           <p class="muted" id="rad-sub" style="margin:0 0 10px 0">—</p>
+          <div class="card rad-card rad-toolbar">
+            <input id="rad-q" class="input" placeholder="搜索标题/摘要…" style="min-width:220px;height:36px;padding:6px 10px" />
+            <select id="rad-source" class="input" style="height:36px;padding:6px 10px">
+              <option value="">全部来源</option>
+              <option value="openai.com">OpenAI</option>
+              <option value="ai.googleblog.com">Google AI</option>
+              <option value="huggingface.co">Hugging Face</option>
+              <option value="news.ycombinator.com">Hacker News</option>
+              <option value="techcrunch.com">TechCrunch</option>
+            </select>
+            <select id="rad-window" class="input" style="height:36px;padding:6px 10px">
+              <option value="24">24h</option>
+              <option value="48" selected>48h</option>
+              <option value="72">72h</option>
+            </select>
+            <span class="spacer"></span>
+            <div style="display:flex;gap:6px;align-items:center">
+              <button id="rad-prev" class="btn outline small" title="Prev day" aria-label="Previous day">◀</button>
+              <input type="date" id="rad-date" class="input" style="height:36px;padding:6px 8px" />
+              <button id="rad-next" class="btn outline small" title="Next day" aria-label="Next day">▶</button>
+            </div>
+          </div>
+        </div>
+        <div class="rad-section">
+          <h3 style="margin:0 0 8px 0">Top 5</h3>
+          <div id="rad-top" class="rad-list"></div>
         </div>
         <div class="rad-section">
           <div id="ai-radar" class="rad-list">

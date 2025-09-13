@@ -1,5 +1,5 @@
 import feedparser, hashlib, json, os
-from datetime import datetime
+from datetime import datetime, timezone
 from dateutil import parser as dtp
 from utils import canonical_url
 
@@ -21,7 +21,7 @@ for fp in FEED_FILES:
             feeds.append(line)
 
 items = []
-now_iso = datetime.utcnow().isoformat() + 'Z'
+now_iso = datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
 
 for url in feeds:
     try:
@@ -36,7 +36,12 @@ for url in feeds:
         try:
             ts = dtp.parse(published)
         except Exception:
-            ts = datetime.utcnow()
+            ts = datetime.now(timezone.utc)
+        # normalize to UTC ISO8601 Z
+        if ts.tzinfo is None:
+            ts = ts.replace(tzinfo=timezone.utc)
+        ts_utc = ts.astimezone(timezone.utc)
+        ts_iso = ts_utc.isoformat().replace('+00:00','Z')
         pid = hashlib.sha256(f"{link}|{title}|{ts.isoformat()}".encode('utf-8')).hexdigest()[:16]
         items.append({
             'id': pid,
@@ -44,7 +49,7 @@ for url in feeds:
             'url': link,
             'title': title,
             'raw_excerpt': (getattr(e, 'summary', '') or '')[:800],
-            'published_at': ts.isoformat() + 'Z',
+            'published_at': ts_iso,
             'fetched_at': now_iso,
         })
 
