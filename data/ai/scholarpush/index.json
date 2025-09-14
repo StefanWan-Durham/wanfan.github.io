@@ -2,9 +2,9 @@
   "generated_at": "2025-09-14T00:00:00+00:00",
   "items": [
     {
-      "headline": "多智能体系统：AI驱动网络安全的新前沿",
-      "one_liner": "随着网络威胁的日益复杂，采用多智能体系统进行防御成为一种新方法。",
-      "task": "Other",
+      "headline": "ROC AUC与精确率-召回率的比较",
+      "one_liner": "在处理不平衡数据时，ROC AUC和精确率-召回率的选择对模型性能评估至关重要。",
+      "task": "NLP",
       "type": "blog",
       "novelty": "method",
       "key_numbers": [
@@ -18,54 +18,50 @@
         }
       ],
       "reusability": [
-        "多智能体系统的协同防御策略",
-        "动态调整防御机制的算法设计",
-        "信息共享与协作的框架"
+        "可复用的评估指标选择流程",
+        "数据不平衡处理方法的优化"
       ],
       "limitations": [],
       "links": {
         "paper": "N/A",
         "code": "N/A",
-        "project": "N/A",
+        "project": "https://machinelearningmastery.com/roc-auc-vs-precision-recall-for-imbalanced-data/",
         "pdf": "N/A"
       },
       "tags": [
-        "AI",
-        "Cybersecurity",
-        "Multi-Agent"
+        "NLP",
+        "评估",
+        "不平衡数据"
       ],
       "impact_score": 0,
-      "quick_read": "网络安全面临越来越复杂的威胁，传统防御方法已不再有效。多智能体系统提供了一种新颖的防御策略，通过协同工作来增强安全性。这种方法能够更好地应对动态变化的攻击模式，提升整体防御能力。",
-      "who_should_try": "网络安全研究人员和从业者",
+      "quick_read": "在构建机器学习模型时，评估不平衡数据的性能是一个挑战。本文探讨了ROC AUC和精确率-召回率的优缺点，帮助研究者选择合适的评估指标。通过对比分析，提供了实用的指导，适用于多种应用场景。",
+      "who_should_try": "机器学习研究人员和数据科学家",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "多智能体系统：AI驱动网络安全的新前沿",
-        "en": "多智能体系统：AI驱动网络安全的新前沿"
+        "zh": "ROC AUC与精确率-召回率的比较",
+        "en": "ROC AUC与精确率-召回率的比较"
       },
       "summary_i18n": {
-        "zh": "随着网络威胁的日益复杂，采用多智能体系统进行防御成为一种新方法。",
-        "en": "As network threats become increasingly complex, adopting multi-agent systems for defense has emerged as a new approach.",
-        "es": "Con el aumento de la complejidad de las amenazas en línea, el uso de sistemas multiagente para la defensa se ha convertido en un nuevo enfoque."
+        "zh": "在处理不平衡数据时，ROC AUC和精确率-召回率的选择对模型性能评估至关重要。",
+        "en": "When dealing with imbalanced data, the choice between ROC AUC and precision-recall is crucial for evaluating model performance.",
+        "es": "Al tratar con datos desbalanceados, la elección de ROC AUC y la precisión-recall es crucial para la evaluación del rendimiento del modelo."
       },
-      "host": "",
+      "host": "machinelearningmastery.com",
       "ts": "2025-09-14T00:00:00+00:00",
       "has_code": false,
       "key_numbers_compact": [],
       "reusability_i18n": {
         "zh": [
-          "多智能体系统的协同防御策略",
-          "动态调整防御机制的算法设计",
-          "信息共享与协作的框架"
+          "可复用的评估指标选择流程",
+          "数据不平衡处理方法的优化"
         ],
         "en": [
-          "Collaborative defense strategies for multi-agent systems",
-          "Algorithm design for dynamically adjusting defense mechanisms",
-          "Framework for information sharing and collaboration"
+          "Reusable evaluation metric selection process",
+          "Optimization of data imbalance handling methods"
         ],
         "es": [
-          "Estrategias de defensa colaborativa para sistemas multiagente",
-          "Diseño de algoritmos para ajustar dinámicamente los mecanismos de defensa",
-          "Marco para el intercambio de información y la colaboración"
+          "Proceso de selección de métricas de evaluación reutilizables",
+          "Optimización de métodos para el manejo de desequilibrios de datos"
         ]
       },
       "limitations_i18n": {
@@ -75,78 +71,9 @@
       }
     },
     {
-      "headline": "ROC AUC与精确-召回在不平衡数据中的比较",
-      "one_liner": "在不平衡数据分类中，ROC AUC和精确-召回曲线的选择对模型评估至关重要。",
-      "task": "IR",
-      "type": "blog",
-      "novelty": "metric",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
-          "ours": "N/A",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "可复用ROC AUC评估流程",
-        "可复用精确-召回曲线计算方法"
-      ],
-      "limitations": [],
-      "links": {
-        "paper": "N/A",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "Evaluation",
-        "Imbalanced Data",
-        "Metrics"
-      ],
-      "impact_score": 0,
-      "quick_read": "在处理不平衡数据时，选择合适的评估指标至关重要。ROC AUC和精确-召回曲线各有优缺点，理解它们的适用场景可以帮助研究人员更好地评估模型性能。这一比较为模型选择提供了实用指导。",
-      "who_should_try": "数据科学家和机器学习工程师",
-      "reproducibility_score": 50,
-      "title_i18n": {
-        "zh": "ROC AUC与精确-召回在不平衡数据中的比较",
-        "en": "ROC AUC与精确-召回在不平衡数据中的比较"
-      },
-      "summary_i18n": {
-        "zh": "在不平衡数据分类中，ROC AUC和精确-召回曲线的选择对模型评估至关重要。",
-        "en": "In imbalanced data classification, the choice of ROC AUC and precision-recall curves is crucial for model evaluation.",
-        "es": "En la clasificación de datos desbalanceados, la elección de ROC AUC y la curva de precisión-recall es crucial para la evaluación del modelo."
-      },
-      "host": "",
-      "ts": "2025-09-14T00:00:00+00:00",
-      "has_code": false,
-      "key_numbers_compact": [],
-      "reusability_i18n": {
-        "zh": [
-          "可复用ROC AUC评估流程",
-          "可复用精确-召回曲线计算方法"
-        ],
-        "en": [
-          "Reusable ROC AUC evaluation process",
-          "Reusable precision-recall curve calculation method"
-        ],
-        "es": [
-          "Proceso de evaluación ROC AUC reutilizable",
-          "Método de cálculo de la curva de precisión-recall reutilizable"
-        ]
-      },
-      "limitations_i18n": {
-        "zh": [],
-        "en": [],
-        "es": []
-      }
-    },
-    {
-      "headline": "7个Scikit-learn优化交叉验证技巧",
-      "one_liner": "通过优化交叉验证，提升机器学习模型在未见数据上的表现。",
-      "task": "ML",
+      "headline": "优化交叉验证的7个Scikit-learn技巧",
+      "one_liner": "通过有效的交叉验证策略，提升机器学习模型在未见数据上的表现。",
+      "task": "NLP",
       "type": "blog",
       "novelty": "method",
       "key_numbers": [
@@ -160,50 +87,50 @@
         }
       ],
       "reusability": [
-        "优化交叉验证流程以提升模型泛化能力",
-        "可复用的模型评估标准和指标"
+        "可复用的交叉验证策略",
+        "模型评估流程的标准化"
       ],
       "limitations": [],
       "links": {
         "paper": "N/A",
-        "code": "N/A",
-        "project": "N/A",
+        "code": "http://karpathy.github.io/2016/09/07/phd/",
+        "project": "http://karpathy.github.io/2016/09/07/phd/",
         "pdf": "N/A"
       },
       "tags": [
-        "Scikit-learn",
-        "Cross-Validation",
-        "Optimization"
+        "NLP",
+        "交叉验证",
+        "模型评估"
       ],
       "impact_score": 0,
-      "quick_read": "交叉验证是评估机器学习模型性能的重要手段。通过7个技巧，可以有效优化Scikit-learn中的交叉验证过程，从而提高模型在未见数据上的表现。这些技巧适用于各种机器学习任务。",
-      "who_should_try": "机器学习研究人员和开发者",
+      "quick_read": "本文介绍了7个Scikit-learn的技巧，以优化交叉验证过程，确保模型在未见数据上的稳健性和无偏估计。通过这些技巧，研究者可以更有效地评估模型性能，提升整体结果的可靠性。",
+      "who_should_try": "机器学习工程师和数据分析师",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "7个Scikit-learn优化交叉验证技巧",
-        "en": "7个Scikit-learn优化交叉验证技巧"
+        "zh": "优化交叉验证的7个Scikit-learn技巧",
+        "en": "优化交叉验证的7个Scikit-learn技巧"
       },
       "summary_i18n": {
-        "zh": "通过优化交叉验证，提升机器学习模型在未见数据上的表现。",
-        "en": "By optimizing cross-validation, the performance of machine learning models on unseen data is improved.",
-        "es": "A través de la optimización de la validación cruzada, se mejora el rendimiento de los modelos de aprendizaje automático en datos no vistos."
+        "zh": "通过有效的交叉验证策略，提升机器学习模型在未见数据上的表现。",
+        "en": "By implementing effective cross-validation strategies, the performance of machine learning models on unseen data can be improved.",
+        "es": "A través de una estrategia de validación cruzada efectiva, se mejora el rendimiento de los modelos de aprendizaje automático en datos no vistos."
       },
-      "host": "",
+      "host": "karpathy.github.io",
       "ts": "2025-09-14T00:00:00+00:00",
-      "has_code": false,
+      "has_code": true,
       "key_numbers_compact": [],
       "reusability_i18n": {
         "zh": [
-          "优化交叉验证流程以提升模型泛化能力",
-          "可复用的模型评估标准和指标"
+          "可复用的交叉验证策略",
+          "模型评估流程的标准化"
         ],
         "en": [
-          "Optimize the cross-validation process to enhance the model's generalization ability",
-          "Reusable model evaluation standards and metrics"
+          "Reusable cross-validation strategy",
+          "Standardization of the model evaluation process"
         ],
         "es": [
-          "Optimizar el proceso de validación cruzada para mejorar la capacidad de generalización del modelo",
-          "Estándares y métricas de evaluación de modelos reutilizables"
+          "Estrategia de validación cruzada reutilizable",
+          "Estandarización del proceso de evaluación del modelo"
         ]
       },
       "limitations_i18n": {
@@ -213,8 +140,8 @@
       }
     },
     {
-      "headline": "理解和实现Qwen3的基础",
-      "one_liner": "深入了解Qwen3这一领先的开源大语言模型的实现细节。",
+      "headline": "从头理解和实现Qwen3",
+      "one_liner": "深入探讨开源LLM Qwen3的实现细节，助力开发者掌握其核心机制。",
       "task": "NLP",
       "type": "blog",
       "novelty": "method",
@@ -232,31 +159,31 @@
       "limitations": [],
       "links": {
         "paper": "N/A",
-        "code": "N/A",
-        "project": "N/A",
+        "code": "http://karpathy.github.io/2021/06/21/blockchain/",
+        "project": "http://karpathy.github.io/2021/06/21/blockchain/",
         "pdf": "N/A"
       },
       "tags": [
-        "LLM",
-        "Qwen3",
-        "Implementation"
+        "NLP",
+        "开源",
+        "模型实现"
       ],
       "impact_score": 0,
-      "quick_read": "Qwen3是一个重要的开源大语言模型，理解其实现过程对于研究人员和开发者至关重要。本文详细介绍了Qwen3的架构和实现细节，帮助读者掌握其工作原理和应用场景。",
-      "who_should_try": "NLP研究人员和开发者",
+      "quick_read": "本文详细介绍了Qwen3这一开源大语言模型的实现过程，涵盖了从基础架构到具体代码的各个方面。通过对其核心机制的深入分析，开发者能够更好地理解和应用这一模型，推动相关研究和开发。",
+      "who_should_try": "AI开发者和研究人员",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "理解和实现Qwen3的基础",
-        "en": "理解和实现Qwen3的基础"
+        "zh": "从头理解和实现Qwen3",
+        "en": "从头理解和实现Qwen3"
       },
       "summary_i18n": {
-        "zh": "深入了解Qwen3这一领先的开源大语言模型的实现细节。",
-        "en": "Gain an in-depth understanding of the implementation details of Qwen3, a leading open-source large language model.",
-        "es": "Profundiza en los detalles de implementación de Qwen3, este modelo de lenguaje de código abierto líder."
+        "zh": "深入探讨开源LLM Qwen3的实现细节，助力开发者掌握其核心机制。",
+        "en": "A deep dive into the implementation details of the open-source LLM Qwen3 will help developers grasp its core mechanisms.",
+        "es": "Una exploración profunda de los detalles de implementación del LLM de código abierto Qwen3, que ayuda a los desarrolladores a dominar su mecanismo central."
       },
-      "host": "",
+      "host": "karpathy.github.io",
       "ts": "2025-09-14T00:00:00+00:00",
-      "has_code": false,
+      "has_code": true,
       "key_numbers_compact": [],
       "reusability_i18n": {
         "zh": [],
@@ -271,7 +198,64 @@
     },
     {
       "headline": "小型语言模型是代理AI的未来",
-      "one_liner": "小型语言模型在代理AI领域展现出巨大的潜力和应用前景。",
+      "one_liner": "探讨小型语言模型在代理AI中的潜力及其应用前景。",
+      "task": "NLP",
+      "type": "blog",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [],
+      "limitations": [],
+      "links": {
+        "paper": "N/A",
+        "code": "http://karpathy.github.io/2021/03/27/forward-pass/",
+        "project": "http://karpathy.github.io/2021/03/27/forward-pass/",
+        "pdf": "N/A"
+      },
+      "tags": [
+        "NLP",
+        "小型模型",
+        "代理AI"
+      ],
+      "impact_score": 0,
+      "quick_read": "本文总结了小型语言模型在代理AI领域的应用和发展趋势，强调其在资源受限环境中的优势。通过对比分析，展示了小型模型如何在实际应用中提供高效的解决方案，推动AI技术的普及。",
+      "who_should_try": "AI研究人员和开发者",
+      "reproducibility_score": 50,
+      "title_i18n": {
+        "zh": "小型语言模型是代理AI的未来",
+        "en": "小型语言模型是代理AI的未来"
+      },
+      "summary_i18n": {
+        "zh": "探讨小型语言模型在代理AI中的潜力及其应用前景。",
+        "en": "Exploring the potential of small language models in agent AI and their application prospects.",
+        "es": "Explorar el potencial de los modelos de lenguaje pequeños en la inteligencia artificial de agentes y sus perspectivas de aplicación."
+      },
+      "host": "karpathy.github.io",
+      "ts": "2025-09-14T00:00:00+00:00",
+      "has_code": true,
+      "key_numbers_compact": [],
+      "reusability_i18n": {
+        "zh": [],
+        "en": [],
+        "es": []
+      },
+      "limitations_i18n": {
+        "zh": [],
+        "en": [],
+        "es": []
+      }
+    },
+    {
+      "headline": "10个Python一行代码技巧",
+      "one_liner": "介绍10个Python一行代码技巧，提升机器学习实践者的开发效率。",
       "task": "NLP",
       "type": "blog",
       "novelty": "method",
@@ -286,109 +270,24 @@
         }
       ],
       "reusability": [
-        "小型语言模型的架构设计可用于其他AI应用",
-        "数据增强方法可提升模型性能",
-        "评估流程可适用于不同任务"
-      ],
-      "limitations": [
-        "模型泛化能力不足",
-        "算力需求较高"
-      ],
-      "links": {
-        "paper": "N/A",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "LLM",
-        "Small Models",
-        "Agentic AI"
-      ],
-      "impact_score": 0,
-      "quick_read": "小型语言模型在代理AI的应用中展现出独特优势，能够在资源受限的环境中高效运行。本文探讨了小型模型的潜力及其在实际应用中的表现，提供了对未来发展的见解。",
-      "who_should_try": "AI研究人员和开发者",
-      "reproducibility_score": 50,
-      "title_i18n": {
-        "zh": "小型语言模型是代理AI的未来",
-        "en": "小型语言模型是代理AI的未来"
-      },
-      "summary_i18n": {
-        "zh": "小型语言模型在代理AI领域展现出巨大的潜力和应用前景。",
-        "en": "Small language models demonstrate great potential and application prospects in the field of agent AI.",
-        "es": "Los modelos de lenguaje pequeños muestran un gran potencial y perspectivas de aplicación en el campo de la inteligencia artificial de agentes."
-      },
-      "host": "",
-      "ts": "2025-09-14T00:00:00+00:00",
-      "has_code": false,
-      "key_numbers_compact": [],
-      "reusability_i18n": {
-        "zh": [
-          "小型语言模型的架构设计可用于其他AI应用",
-          "数据增强方法可提升模型性能",
-          "评估流程可适用于不同任务"
-        ],
-        "en": [
-          "The architecture design of small language models can be used for other AI applications.",
-          "Data augmentation methods can enhance model performance.",
-          "The evaluation process can be applied to different tasks."
-        ],
-        "es": [
-          "El diseño de la arquitectura de modelos de lenguaje pequeños se puede utilizar para otras aplicaciones de IA.",
-          "Los métodos de aumento de datos pueden mejorar el rendimiento del modelo.",
-          "El proceso de evaluación se puede aplicar a diferentes tareas."
-        ]
-      },
-      "limitations_i18n": {
-        "zh": [
-          "模型泛化能力不足",
-          "算力需求较高"
-        ],
-        "en": [
-          "The model's generalization ability is insufficient.",
-          "The computational power requirements are relatively high."
-        ],
-        "es": [
-          "La capacidad de generalización del modelo es insuficiente.",
-          "Los requisitos de potencia de cálculo son relativamente altos."
-        ]
-      }
-    },
-    {
-      "headline": "10个Python一行代码技巧",
-      "one_liner": "掌握10个Python一行代码技巧，提升机器学习实践者的工作效率。",
-      "task": "Other",
-      "type": "blog",
-      "novelty": "method",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
-          "ours": "N/A",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
         "使用一行代码实现数据预处理",
-        "简化模型训练过程的代码结构",
-        "优化超参数调优的代码实现"
+        "简化模型训练过程的代码",
+        "快速生成可视化图表的代码"
       ],
       "limitations": [],
       "links": {
         "paper": "N/A",
         "code": "N/A",
-        "project": "N/A",
+        "project": "https://machinelearningmastery.com/10-python-one-liners-every-machine-learning-practitioner-should-know/",
         "pdf": "N/A"
       },
       "tags": [
+        "NLP",
         "Python",
-        "Tips",
-        "Machine Learning"
+        "开发技巧"
       ],
       "impact_score": 0,
-      "quick_read": "在机器学习开发中，掌握高效的Python编程技巧至关重要。本文介绍了10个实用的一行代码技巧，帮助实践者提升工作效率，简化代码编写过程，适用于各种机器学习任务。",
+      "quick_read": "本文列出了10个Python一行代码技巧，旨在帮助机器学习实践者提高开发效率。通过这些简洁的代码示例，读者可以快速实现常见功能，优化工作流程，提升编程体验。",
       "who_should_try": "机器学习从业者和Python开发者",
       "reproducibility_score": 50,
       "title_i18n": {
@@ -396,29 +295,29 @@
         "en": "10个Python一行代码技巧"
       },
       "summary_i18n": {
-        "zh": "掌握10个Python一行代码技巧，提升机器学习实践者的工作效率。",
-        "en": "Master 10 one-liner Python tricks to enhance the work efficiency of machine learning practitioners.",
-        "es": "Domina 10 trucos de una línea de código en Python para mejorar la eficiencia de los practicantes de aprendizaje automático."
+        "zh": "介绍10个Python一行代码技巧，提升机器学习实践者的开发效率。",
+        "en": "Introducing 10 one-liner Python tips to enhance the development efficiency of machine learning practitioners.",
+        "es": "Presentamos 10 trucos de una línea de código en Python que mejoran la eficiencia de desarrollo de los practicantes de aprendizaje automático."
       },
-      "host": "",
+      "host": "machinelearningmastery.com",
       "ts": "2025-09-14T00:00:00+00:00",
       "has_code": false,
       "key_numbers_compact": [],
       "reusability_i18n": {
         "zh": [
           "使用一行代码实现数据预处理",
-          "简化模型训练过程的代码结构",
-          "优化超参数调优的代码实现"
+          "简化模型训练过程的代码",
+          "快速生成可视化图表的代码"
         ],
         "en": [
-          "Data preprocessing is implemented with a single line of code",
-          "The code structure simplifies the model training process",
-          "The code implementation optimizes hyperparameter tuning"
+          "Data preprocessing implemented with a single line of code",
+          "Code that simplifies the model training process",
+          "Code for quickly generating visual charts"
         ],
         "es": [
-          "El preprocesamiento de datos se implementa con una sola línea de código",
-          "La estructura del código simplifica el proceso de entrenamiento del modelo",
-          "La implementación del código optimiza la sintonización de hiperparámetros"
+          "Preprocesamiento de datos implementado con una sola línea de código",
+          "Código que simplifica el proceso de entrenamiento del modelo",
+          "Código para generar rápidamente gráficos visuales"
         ]
       },
       "limitations_i18n": {
@@ -428,9 +327,9 @@
       }
     },
     {
-      "headline": "极限梯度提升模型的加速与改进",
-      "one_liner": "探索加速和改进XGBoost模型的三种方法。",
-      "task": "ML",
+      "headline": "加速和改善XGBoost模型的3种方法",
+      "one_liner": "提供3种有效策略以提升XGBoost模型的性能和训练速度。",
+      "task": "NLP",
       "type": "blog",
       "novelty": "method",
       "key_numbers": [
@@ -451,31 +350,31 @@
       "limitations": [],
       "links": {
         "paper": "N/A",
-        "code": "N/A",
-        "project": "N/A",
+        "code": "http://karpathy.github.io/2021/03/27/forward-pass/",
+        "project": "http://karpathy.github.io/2021/03/27/forward-pass/",
         "pdf": "N/A"
       },
       "tags": [
+        "NLP",
         "XGBoost",
-        "Optimization",
-        "Machine Learning"
+        "模型优化"
       ],
       "impact_score": 0,
-      "quick_read": "XGBoost是广泛应用的机器学习技术，本文探讨了三种加速和改进XGBoost模型的方法。这些方法旨在提高模型的训练效率和预测性能，适用于各种数据集和任务。",
-      "who_should_try": "机器学习工程师和数据科学家",
+      "quick_read": "本文介绍了3种加速和改善XGBoost模型的方法，帮助研究人员在实际应用中提升模型的训练效率和预测准确性。通过具体案例，展示了这些策略的有效性，适用于多种机器学习任务。",
+      "who_should_try": "数据科学家和机器学习工程师",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "极限梯度提升模型的加速与改进",
-        "en": "极限梯度提升模型的加速与改进"
+        "zh": "加速和改善XGBoost模型的3种方法",
+        "en": "加速和改善XGBoost模型的3种方法"
       },
       "summary_i18n": {
-        "zh": "探索加速和改进XGBoost模型的三种方法。",
-        "en": "Three methods to accelerate and improve the XGBoost model.",
-        "es": "Explorar tres métodos para acelerar y mejorar el modelo XGBoost."
+        "zh": "提供3种有效策略以提升XGBoost模型的性能和训练速度。",
+        "en": "Provide three effective strategies to enhance the performance and training speed of the XGBoost model.",
+        "es": "Se ofrecen 3 estrategias efectivas para mejorar el rendimiento y la velocidad de entrenamiento del modelo XGBoost."
       },
-      "host": "",
+      "host": "karpathy.github.io",
       "ts": "2025-09-14T00:00:00+00:00",
-      "has_code": false,
+      "has_code": true,
       "key_numbers_compact": [],
       "reusability_i18n": {
         "zh": [
@@ -501,8 +400,8 @@
       }
     },
     {
-      "headline": "理解批量归一化的基础",
-      "one_liner": "深入理解批量归一化在深度学习中的重要性及其实现。",
+      "headline": "LLM工作流的5个关键提升点",
+      "one_liner": "探讨5种方法以提升LLM在机器学习工作流中的应用效果。",
       "task": "NLP",
       "type": "blog",
       "novelty": "method",
@@ -517,54 +416,54 @@
         }
       ],
       "reusability": [
-        "可复用的批量归一化实现代码",
-        "优化深度学习模型训练流程",
-        "评估批量归一化对模型性能的影响"
+        "数据增强方法可用于多种任务",
+        "优化算法可适用于不同模型",
+        "评估流程可标准化以提高效率"
       ],
       "limitations": [],
       "links": {
         "paper": "N/A",
         "code": "N/A",
-        "project": "N/A",
+        "project": "https://machinelearningmastery.com/5-key-ways-llms-can-supercharge-your-machine-learning-workflow/",
         "pdf": "N/A"
       },
       "tags": [
-        "Deep Learning",
-        "Batch Normalization",
-        "NLP"
+        "NLP",
+        "LLM",
+        "工作流"
       ],
       "impact_score": 0,
-      "quick_read": "批量归一化是深度学习中常用的技术，能够有效提高模型训练的稳定性和速度。本文详细介绍了批量归一化的原理、实现方法及其在不同模型中的应用，帮助读者更好地理解这一重要概念。",
-      "who_should_try": "深度学习研究人员和开发者",
+      "quick_read": "本文总结了5种方法，帮助研究人员和开发者在机器学习工作流中更有效地利用大语言模型（LLM）。通过优化实验、微调和扩展等策略，提升整体工作效率和模型性能。",
+      "who_should_try": "机器学习研究人员和开发者",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "理解批量归一化的基础",
-        "en": "理解批量归一化的基础"
+        "zh": "LLM工作流的5个关键提升点",
+        "en": "LLM工作流的5个关键提升点"
       },
       "summary_i18n": {
-        "zh": "深入理解批量归一化在深度学习中的重要性及其实现。",
-        "en": "A deep understanding of the importance of batch normalization in deep learning and its implementation.",
-        "es": "Comprender en profundidad la importancia de la normalización por lotes en el aprendizaje profundo y su implementación."
+        "zh": "探讨5种方法以提升LLM在机器学习工作流中的应用效果。",
+        "en": "Explore five methods to enhance the effectiveness of LLM in machine learning workflows.",
+        "es": "Explorar 5 métodos para mejorar la efectividad de LLM en el flujo de trabajo de aprendizaje automático."
       },
-      "host": "",
+      "host": "machinelearningmastery.com",
       "ts": "2025-09-14T00:00:00+00:00",
       "has_code": false,
       "key_numbers_compact": [],
       "reusability_i18n": {
         "zh": [
-          "可复用的批量归一化实现代码",
-          "优化深度学习模型训练流程",
-          "评估批量归一化对模型性能的影响"
+          "数据增强方法可用于多种任务",
+          "优化算法可适用于不同模型",
+          "评估流程可标准化以提高效率"
         ],
         "en": [
-          "Reusable batch normalization implementation code",
-          "Optimized deep learning model training process",
-          "Evaluation of the impact of batch normalization on model performance"
+          "Data augmentation methods can be used for various tasks",
+          "Optimization algorithms can be applied to different models",
+          "Evaluation processes can be standardized to improve efficiency"
         ],
         "es": [
-          "Código de implementación de normalización por lotes reutilizable",
-          "Proceso de entrenamiento de modelos de aprendizaje profundo optimizado",
-          "Evaluación del impacto de la normalización por lotes en el rendimiento del modelo"
+          "Los métodos de aumento de datos se pueden utilizar para diversas tareas",
+          "Los algoritmos de optimización se pueden aplicar a diferentes modelos",
+          "Los procesos de evaluación se pueden estandarizar para mejorar la eficiencia"
         ]
       },
       "limitations_i18n": {
@@ -574,7 +473,32 @@
       }
     }
   ],
-  "refs": [],
+  "refs": [
+    {
+      "title": "ROC AUC vs Precision-Recall for Imbalanced Data",
+      "url": "https://machinelearningmastery.com/roc-auc-vs-precision-recall-for-imbalanced-data/"
+    },
+    {
+      "title": "A Survival Guide to a PhD",
+      "url": "http://karpathy.github.io/2016/09/07/phd/"
+    },
+    {
+      "title": "A from-scratch tour of Bitcoin in Python",
+      "url": "http://karpathy.github.io/2021/06/21/blockchain/"
+    },
+    {
+      "title": "Short Story on AI: Forward Pass",
+      "url": "http://karpathy.github.io/2021/03/27/forward-pass/"
+    },
+    {
+      "title": "10 Python One-Liners Every Machine Learning Practitioner Should Know",
+      "url": "https://machinelearningmastery.com/10-python-one-liners-every-machine-learning-practitioner-should-know/"
+    },
+    {
+      "title": "5 Key Ways LLMs Can Supercharge Your Machine Learning Workflow",
+      "url": "https://machinelearningmastery.com/5-key-ways-llms-can-supercharge-your-machine-learning-workflow/"
+    }
+  ],
   "stats": {
     "by_task": {
       "LLM": 0
