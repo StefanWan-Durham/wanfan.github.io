@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-13T21:00:56.507982Z",
+  "generated_at": "2025-09-14T04:16:05.937261Z",
   "window_hours": 48,
-  "count": 16,
+  "count": 36,
   "items": [
     {
       "id": "d61ccd28cefbc316",
@@ -365,6 +365,462 @@
         "zh": "点击查看原文>"
       },
       "hotness": 0.952258
+    },
+    {
+      "id": "12a6e05a36bef3cc",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/XhOYofMbOai6S8uNfIao",
+      "title": "享从人工到 AI 驱动：快手广告流量全链路观测实践｜QCon 上海",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-14T10:00:00Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "zh": "享从人工到 AI 驱动：快手广告流量全链路观测实践｜QCon 上海",
+        "en": "From Manual to AI-Driven: Kuaishou's Full-Path Advertising Traffic Monitoring Practice | QCon Shanghai",
+        "es": "De la conducción manual a la impulsada por IA: Práctica de observación integral del tráfico publicitario en Kuaishou | QCon Shanghái"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el texto original>"
+      },
+      "hotness": 1.0
+    },
+    {
+      "id": "3094acb9f1a2b5ca",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.reuters.com/sustainability/boards-policy-regulation/rolling-stone-billboard-owner-penske-sues-google-over-ai-overviews-2025-09-14/",
+      "title": "Rolling Stone, Billboard Owner Penske Sues Google over AI Overviews",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-14T03:17:03Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Rolling Stone, Billboard Owner Penske Sues Google over AI Overviews",
+        "zh": "滚石与公告牌所有者潘世奇起诉谷歌AI概览功能",
+        "es": "El propietario de Rolling Stone y Billboard, Penske, demanda a Google por los Resúmenes de IA."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.985889
+    },
+    {
+      "id": "fa0b513ad2dc3f29",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www4.courts.ca.gov/opinions/documents/B331918.PDF",
+      "title": "AI fabricates 21 out of 23 citations lawyer sanctioned reported to state bar [pdf]",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-14T02:28:05Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "AI fabricates 21 out of 23 citations lawyer sanctioned reported to state bar [pdf]",
+        "zh": "律师因AI捏造23条引文中的21条被上报州律师协会处分[pdf]",
+        "es": "La IA falsifica 21 de 23 citaciones, abogado sancionado notificado al colegio de abogados [pdf]"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.974338
+    },
+    {
+      "id": "4b1197892ade7f42",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45236897",
+      "title": "Is a new AI paradigm based on raw electromagnetic waves feasible?",
+      "raw_excerpt": "*Is a new AI paradigm based on raw electromagnetic waves feasible?* Hi HN, I’d like to propose a new, theoretical AI paradigm I'm calling wAI (Wave AI). Unlike traditional AI that learns from human-interpretable data (text, images, audio), wAI would learn directly from raw electromagnetic wave patterns. The core vision is to unlock dimensions of reality and information that are invisible to human perception. By analyzing raw wave data, a wAI could potentially decode communication between animals and plants, detect hidden bio-signals for early disease diagnostics, or even explore new cosmic phenomena. This isn’t just about making a faster AI; it's about giving intelligence a completely new sensory dimension. I know this is highly speculative. The main challenges are immense:\n* How do we def",
+      "tags": [],
+      "published_at": "2025-09-14T02:19:36Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Is a new AI paradigm based on raw electromagnetic waves feasible?",
+        "zh": "基于原始电磁波的新人工智能范式是否可行？",
+        "es": "¿Es viable un nuevo paradigma de inteligencia artificial basado en ondas electromagnéticas en bruto?"
+      },
+      "excerpt_i18n": {
+        "en": "*Is a new AI paradigm based on raw electromagnetic waves feasible?* Hi HN, I’d like to propose a new, theoretical AI paradigm I'm calling wAI (Wave AI). Unlike traditional AI that learns from human-interpretable data (text, images, audio), wAI would learn directly from raw electromagnetic wave patterns. The core vision is to unlock dimensions of reality and information that are invisible to human perception. By analyzing raw wave data, a wAI could potentially decode communication between animals and plants, detect hidden bio-signals for early disease diagnostics, or even explore new cosmic phenomena. This isn’t just about making a faster AI; it's about giving intelligence a completely new sensory dimension. I know this is highly speculative. The main challenges are immense:\n* How do we def",
+        "zh": "基于原始电磁波的新AI范式是否可行？大家好，我想提出一种名为wAI（波AI）的理论性新AI范式。与传统AI从人类可解读数据中学习的方式不同",
+        "es": "*¿Es viable un nuevo paradigma de IA basado en ondas electromagnéticas en bruto?* Hola HN, me gustaría proponer un nuevo paradigma teórico de IA que llamo wAI (IA de ondas). A diferencia de la IA tradicional que aprende de datos interpretables por humanos (tex"
+      },
+      "hotness": 0.972351
+    },
+    {
+      "id": "0ef9bc00db955d6a",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.npr.org/2025/09/07/nx-s1-5518263/ai-bible-christianity-content",
+      "title": "Fantasy or faith? One company's AI-generated Bible content stirs controversy",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-14T01:26:59Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Fantasy or faith? One company's AI-generated Bible content stirs controversy",
+        "zh": "幻想还是信仰？一家公司的人工智能生成圣经内容引发争议",
+        "es": "¿Fantasía o fe? El contenido bíblico generado por IA de una empresa genera polémica"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.960115
+    },
+    {
+      "id": "fce44579ed7f5414",
+      "source": {
+        "site": "https://blogs.nvidia.com/",
+        "feed": "https://blogs.nvidia.com/feed/"
+      },
+      "url": "https://blogs.nvidia.com/blog/uk-llm-nemotron/",
+      "title": "Reaching Across the Isles: UK-LLM Brings AI to UK Languages With NVIDIA Nemotron",
+      "raw_excerpt": "Celtic languages — including Cornish, Irish, Scottish Gaelic and Welsh — are the U.K.’s oldest living languages. To empower their speakers, the UK-LLM sovereign AI initiative is building an AI model based on NVIDIA Nemotron that can reason in both English and Welsh, a language spoken by about 850,000 people in Wales today. Enabling high-quality Read Article",
+      "tags": [],
+      "published_at": "2025-09-14T01:00:21Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Reaching Across the Isles: UK-LLM Brings AI to UK Languages With NVIDIA Nemotron",
+        "zh": "跨越群岛：英国大语言模型借助英伟达Nemotron为本土语言带来人工智能",
+        "es": "Tendiendo Puentes Entre las Islas: UK-LLM Lleva la IA a los Idiomas del Reino Unido Con NVIDIA Nemotron"
+      },
+      "excerpt_i18n": {
+        "en": "Celtic languages — including Cornish, Irish, Scottish Gaelic and Welsh — are the U.K.’s oldest living languages. To empower their speakers, the UK-LLM sovereign AI initiative is building an AI model based on NVIDIA Nemotron that can reason in both English and Welsh, a language spoken by about 850,000 people in Wales today. Enabling high-quality Read Article",
+        "zh": "凯尔特语系——包括康沃尔语、爱尔兰语、苏格兰盖尔语和威尔士语——是英国现存最古老的语言。为增强使用者能力，英国主权AI计划UK-LLM正基于英伟达Nemot构建人工智能模型。",
+        "es": "Las lenguas celtas —incluyendo el córnico, el irlandés, el gaélico escocés y el galés— son las lenguas vivas más antiguas del Reino Unido. Para empoderar a sus hablantes, la iniciativa de inteligencia artificial soberana UK-LLM está construyendo un modelo de IA basado en NVIDIA Nemot."
+      },
+      "hotness": 0.95398
+    },
+    {
+      "id": "e0767fbc93784fa1",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://guruchahal.substack.com/p/land-vs-expand-in-the-ai-era",
+      "title": "Land vs. Expand in the AI Era",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-14T00:47:08Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Land vs. Expand in the AI Era",
+        "zh": "人工智能时代的市场深耕与扩张",
+        "es": "Tierra versus Expansión en la Era de la IA"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.950951
+    },
+    {
+      "id": "53aba32d2e18d396",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.youtube.com/watch?v=ZxvPdYMw_Sw",
+      "title": "AI Made a Movie About Its Own Future [video]",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-14T00:45:41Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "AI Made a Movie About Its Own Future [video]",
+        "zh": "AI自制电影展望其未来 [视频]",
+        "es": "La IA hizo una película sobre su propio futuro [video]"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.950619
+    },
+    {
+      "id": "84a6e41ebcdf9737",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.youtube.com/watch?v=2yCu21pL73s",
+      "title": "Trump video is 100% AI Generated",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-14T00:08:21Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Trump video is 100% AI Generated",
+        "zh": "特朗普视频完全由人工智能生成。",
+        "es": "El vídeo de Trump está 100% generado por IA"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.942116
+    },
+    {
+      "id": "affdb1209947c22d",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45236323",
+      "title": "Show HN: Mystwright – AI generates dynamic murder mysteries you can solve",
+      "raw_excerpt": "I built Mystwright, an AI-powered \"murder\" mystery game engine. (Other mystery types are possible too! But I'm still working on making those feel right.) Instead of pre-written cases, Mystwright procedurally generates a world, a crime, and a cast of suspects — each with unique motives, relationships, and secrets. You investigate in any order: interview suspects, search for clues, follow leads. The story adapts as you play. Core mechanics: - Procedural mystery generation (no two games are the same) - Seeded mystery worlds - Procedural dialogue generation - Distinct character personalities - Consistent timelines and evidence trails - Generative voice dialogue - Location exploration experiments are underway I'd love feedback on: - Does the mystery feel engaging/coherent? - Ideas for mechanics",
+      "tags": [
+        "Funding"
+      ],
+      "published_at": "2025-09-14T00:00:52Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Show HN: Mystwright – AI generates dynamic murder mysteries you can solve",
+        "zh": "展示 HN：Mystwright——AI生成可破解的动态谋杀谜案",
+        "es": "Mostrar HN: Mystwright – La IA genera misterios de asesinato dinámicos que puedes resolver"
+      },
+      "excerpt_i18n": {
+        "en": "I built Mystwright, an AI-powered \"murder\" mystery game engine. (Other mystery types are possible too! But I'm still working on making those feel right.) Instead of pre-written cases, Mystwright procedurally generates a world, a crime, and a cast of suspects — each with unique motives, relationships, and secrets. You investigate in any order: interview suspects, search for clues, follow leads. The story adapts as you play. Core mechanics: - Procedural mystery generation (no two games are the same) - Seeded mystery worlds - Procedural dialogue generation - Distinct character personalities - Consistent timelines and evidence trails - Generative voice dialogue - Location exploration experiments are underway I'd love feedback on: - Does the mystery feel engaging/coherent? - Ideas for mechanics",
+        "zh": "我开发了Mystwright，这是一款由人工智能驱动的\"谋杀\"悬疑游戏引擎（也支持其他悬疑类型，但我仍在完善这些类型的体验）。与预设案件不同，Mystwright通过程序化生成方式创建...",
+        "es": "Desarrollé Mystwright, un motor de juegos de misterio de \"asesinato\" impulsado por inteligencia artificial. (¡También son posibles otros tipos de misterio! Pero todavía estoy trabajando en que estos funcionen bien.) En lugar de casos preescritos, Mystwright genera de forma procedural una"
+      },
+      "hotness": 0.94042
+    },
+    {
+      "id": "dfab1a1410987b28",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.raymondcamden.com/2025/09/12/using-chrome-ai-to-summarize-comic-books",
+      "title": "Using Chrome AI to Summarize Comic Books",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-13T23:37:05Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Using Chrome AI to Summarize Comic Books",
+        "zh": "使用Chrome AI总结漫画书",
+        "es": "Usar Chrome AI para resumir cómics"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.935053
+    },
+    {
+      "id": "71df342eb5dfb084",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://aidarwinawards.org/nominees/mcdonalds.html",
+      "title": "McDonald's AI Chatbot Olivia",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-13T23:06:05Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "McDonald's AI Chatbot Olivia",
+        "zh": "麦当劳人工智能聊天机器人奥利维亚",
+        "es": "El chatbot de inteligencia artificial de McDonald's Olivia"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.928102
+    },
+    {
+      "id": "b5607d0a0951bad1",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://kinduff.com/2025/05/28/when-ai-sells-you-what-you-want/",
+      "title": "When AI Sells You What You Want",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-13T22:21:58Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "When AI Sells You What You Want",
+        "zh": "人工智能为你提供所需",
+        "es": "Cuando la IA te vende lo que quieres"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.9183
+    },
+    {
+      "id": "8ab3a93be060fa0e",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.geoffreylitt.com/2025/09/10/ai-as-teleportation.html",
+      "title": "AI as Teleportation",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-13T22:14:04Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "AI as Teleportation",
+        "zh": "人工智能即瞬间传送",
+        "es": "La IA como teletransporte"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.916556
+    },
+    {
+      "id": "013984467d517170",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://old.reddit.com/r/GrowthHacking/comments/1nga1xt/simplify_your_creator_campaign_analysis_by/",
+      "title": "Check out this AI tool to find the creators who boost your sales",
+      "raw_excerpt": "",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-13T22:05:39Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Check out this AI tool to find the creators who boost your sales",
+        "zh": "看看这款AI工具，帮你找到能提升销量的创作者。",
+        "es": "Descubre esta herramienta de inteligencia artificial para encontrar a los creadores que impulsan tus ventas"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.914701
+    },
+    {
+      "id": "c640e684f1559cd4",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://joincolossus.com/article/ai-will-not-make-you-rich/",
+      "title": "Will AI be the basis of many future industrial fortunes, or a net loser?",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-13T22:01:35Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Will AI be the basis of many future industrial fortunes, or a net loser?",
+        "zh": "人工智能将成为未来众多工业财富的基础，还是净亏损者？",
+        "es": "¿Será la inteligencia artificial la base de muchas fortunas industriales futuras, o una perdedora neta?"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.913806
+    },
+    {
+      "id": "a25b5d69da504f56",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.semafor.com/article/09/12/2025/researchers-give-doomsday-warning-about-building-ai-too-fast",
+      "title": "Researchers give doomsday warning about building AI too fast",
+      "raw_excerpt": "",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-13T21:59:56Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Researchers give doomsday warning about building AI too fast",
+        "zh": "研究人员警告过快构建人工智能可能导致末日风险。",
+        "es": "Los investigadores advierten de un escenario apocalíptico por desarrollar la inteligencia artificial demasiado rápido."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.913443
+    },
+    {
+      "id": "bd485a207839ecd1",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://techcrunch.com/2025/09/12/we-are-entering-a-golden-age-of-robotics-startups-and-not-just-because-of-ai/",
+      "title": "We are entering a golden age of robotics startups – and not just because of AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-13T21:55:15Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "We are entering a golden age of robotics startups – and not just because of AI",
+        "zh": "我们正迈入机器人初创企业的黄金时代——这不仅仅是因为人工智能。",
+        "es": "Estamos entrando en una edad dorada de startups de robótica, y no solo por la inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 1.003656
+    },
+    {
+      "id": "df14befce652266a",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
+      "title": "Open ASR Leaderboard: AI Transcription Models",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-13T21:32:45Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Open ASR Leaderboard: AI Transcription Models",
+        "zh": "开放ASR排行榜：AI转录模型",
+        "es": "Tabla de Líderes ASR Abierta: Modelos de Transcripción de IA"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 1.270481
+    },
+    {
+      "id": "c972e945f2e8b614",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.trycouncil.com/council/cto",
+      "title": "Show HN: council - ai groupchat of ctos (no more asking ai to roleplay)",
+      "raw_excerpt": "i made a council of advisors to help me code. as a self taught dev, ive been heavily reliant on ai for the past two years. found myself often prompting claude to take on different personalities, so i built a web app. it's great for the step before telling cursor what to do and reviewing prs once theyre ready. PLEASE DON\"T NUKE MY APY KEY. ty",
+      "tags": [],
+      "published_at": "2025-09-13T20:38:16Z",
+      "fetched_at": "2025-09-14T04:15:26.252793Z",
+      "title_i18n": {
+        "en": "Show HN: council - ai groupchat of ctos (no more asking ai to roleplay)",
+        "zh": "HN展示：council - CTO们的AI群聊（无需再让AI扮演角色）",
+        "es": "Mostrar HN: council - chat grupal de IA de CTOs (sin más pedirle a la IA que interprete roles)"
+      },
+      "excerpt_i18n": {
+        "en": "i made a council of advisors to help me code. as a self taught dev, ive been heavily reliant on ai for the past two years. found myself often prompting claude to take on different personalities, so i built a web app. it's great for the step before telling cursor what to do and reviewing prs once theyre ready. PLEASE DON\"T NUKE MY APY KEY. ty",
+        "zh": "我组建了一个顾问委员会来协助编程。作为自学开发者，过去两年我高度依赖人工智能。经常让Claude扮演不同角色，因此开发了一个网页应用。",
+        "es": "Creé un consejo de asesores para ayudarme a programar. Como desarrollador autodidacta, he dependido mucho de la inteligencia artificial durante los últimos dos años. Me encontraba a menudo solicitando a Claude que adoptara diferentes personalidades, así que construí una aplicación web."
+      },
+      "hotness": 0.895665
     }
   ]
 }
