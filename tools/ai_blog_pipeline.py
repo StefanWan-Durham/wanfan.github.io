@@ -1285,6 +1285,23 @@ def _maybe_attach_source_link(it: dict, title_map: dict, entries: list):
             _classify_and_attach_link(links, u)
             if all(links.get(k) and links.get(k) != "N/A" for k in ("paper","pdf","code","project")):
                 break
+
+        # Fallback: if we still have no usable link, try translating the Chinese headline/one_liner to EN and match by overlap
+        if not any(links.get(k) and links.get(k) != "N/A" for k in ("paper","code","project")):
+            try:
+                zh_text = (it.get("headline") or it.get("one_liner") or "").strip()
+                if zh_text:
+                    # lazy import of translator within this module
+                    en_guess = _translate_zh_to_en(zh_text)
+                    if en_guess:
+                        url_guess = _find_source_url_by_text([en_guess.lower()], entries)
+                        if url_guess:
+                            _classify_and_attach_link(links, url_guess)
+                            # If arXiv, ensure pdf as well
+                            if (not links.get("pdf") or links.get("pdf") == "N/A"):
+                                links["pdf"] = _arxiv_pdf(links.get("paper",""))
+            except Exception:
+                pass
     except Exception:
         return
 
@@ -1715,10 +1732,14 @@ def make_scholarpush(entries, n_items=8, daily=None):
                 _maybe_attach_source_link(it, title_map, base_entries)
             except Exception:
                 pass
+            # Prefer any available source-like URL to anchor metadata
             paper = it.get("links", {}).get("paper", "") or ""
-            u_norm = _normalize_url(paper)
+            project = it.get("links", {}).get("project", "") or ""
+            code = it.get("links", {}).get("code", "") or ""
+            primary_url = paper or project or code
+            u_norm = _normalize_url(primary_url)
 
-            # 标题 i18n：中文来自 headline；英文来自 entries
+            # 标题 i18n：中文来自 headline；英文优先 entries 映射，否则回退中文
             zh_title = (it.get("headline") or "").strip()
             en_title = (entries_map.get(u_norm, {}).get("title_en") or zh_title)
             it["title_i18n"] = {"zh": zh_title, "en": en_title}
@@ -1742,10 +1763,18 @@ def make_scholarpush(entries, n_items=8, daily=None):
             it["summary_i18n"] = {"zh": zh_abs, "en": en_abs, "es": es_abs}
 
             # host/ts/pdf/has_code/key_numbers_compact
-            host = entries_map.get(u_norm, {}).get("host") or _hostname(paper)
+            # host 优先来自 entries_map；否则从任一可用链接派生
+            host = (
+                entries_map.get(u_norm, {}).get("host")
+                or _hostname(paper)
+                or _hostname(project)
+                or _hostname(code)
+            )
             it["host"] = host
+            # 补齐 PDF（若 primary 是 arXiv 也能得到）
             if not it["links"].get("pdf") or it["links"]["pdf"] == "N/A":
-                it["links"]["pdf"] = _arxiv_pdf(paper)
+                it["links"]["pdf"] = _arxiv_pdf(primary_url)
+            # 统一时间戳：来自 entries_map 对应 URL；否则退回到当天 08:00
             it["ts"] = entries_map.get(u_norm, {}).get("ts") or j["generated_at"]
             it["has_code"] = bool(it["links"].get("code") and it["links"]["code"] != "N/A")
             if "key_numbers_compact" not in it:
@@ -1802,6 +1831,24 @@ def make_scholarpush(entries, n_items=8, daily=None):
                     it["links"]["pdf"] = _arxiv_pdf(it["links"].get("paper",""))
             except Exception:
                 pass
+
+        # Populate refs from attached links to aid client-side healing and provenance
+        try:
+            seen_urls = set()
+            refs = []
+            for it in j.get("items", []):
+                l = it.get("links", {})
+                for k in ("paper","project","code"):
+                    u = (l.get(k) or "").strip()
+                    if (not u) or u == "N/A" or u in seen_urls:
+                        continue
+                    n = _normalize_url(u)
+                    title = entries_map.get(n, {}).get("title_en") or BS((it.get("headline") or ""), "html.parser").text.strip()
+                    refs.append({"title": title, "url": u})
+                    seen_urls.add(u)
+            j["refs"] = refs
+        except Exception:
+            pass
 
         _validate_scholarpush(j)
         if not j.get("items"):

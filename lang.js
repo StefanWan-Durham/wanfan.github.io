@@ -39,6 +39,9 @@ const translations = {
   module_ai_career_desc: '智能匹配职缺，优化简历投递，让下一个机会主动来敲门。',
   module_ai_career_title: 'AI 求职助手',
   module_ai_career_name: '💼 AI 求职助手 · AI Career Coach · Coach de Carrera IA',
+  // Finance mentor
+  module_ai_finance_title: 'AI 理财助手',
+  module_ai_finance_desc: '让AI为您的财富增值',
   // New modules
   module_ai_trends_title: 'AI 风向标',
   module_ai_trends_desc: '全球AI热点实时同步，洞察技术浪潮下的每一次脉动。',
@@ -214,6 +217,9 @@ const translations = {
   module_ai_career_desc: 'Match roles smartly, refine applications, and let the next opportunity find you.',
   module_ai_career_title: 'AI Career Coach',
   module_ai_career_name: '💼 AI 求职助手 · AI Career Coach · Coach de Carrera IA',
+  // Finance mentor
+  module_ai_finance_title: 'AI Finance Mentor',
+  module_ai_finance_desc: 'Empower Your Wealth with AI.',
   // New modules
   module_ai_trends_title: 'AI Trends',
   module_ai_trends_desc: 'Real‑time global AI hotspots—track the pulse of every wave of innovation.',
@@ -379,6 +385,9 @@ const translations = {
   module_ai_career_desc: 'Encuentra el puesto ideal, mejora tu candidatura y deja que la próxima oportunidad te encuentre.',
   module_ai_career_title: 'Coach de Carrera IA',
   module_ai_career_name: '💼 AI 求职助手 · AI Career Coach · Coach de Carrera IA',
+  // Finance mentor
+  module_ai_finance_title: 'Asesor Financiero con IA',
+  module_ai_finance_desc: 'Potencie Su Patrimonio con IA.',
   // New modules
   module_ai_trends_title: 'Tendencias IA',
   module_ai_trends_desc: 'Calor global de la IA en tiempo real: toma el pulso a cada ola de innovación.',
