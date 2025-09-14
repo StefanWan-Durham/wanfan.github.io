@@ -2,8 +2,8 @@
   { "name": "arXiv AI (cs.AI)", "url": "https://export.arxiv.org/rss/cs.AI" },
   { "name": "arXiv ML (cs.LG)", "url": "https://export.arxiv.org/rss/cs.LG" },
   { "name": "arXiv CV (cs.CV)", "url": "https://export.arxiv.org/rss/cs.CV" },
-  { "name": "arXiv NLP (cs.CL)", "url": "https://export.arxiv.org/rss/cs.CL" },   // 建议新增
-  { "name": "ACL Anthology Latest", "url": "https://aclanthology.org/feeds/" },   // 建议新增
+  { "name": "arXiv NLP (cs.CL)", "url": "https://export.arxiv.org/rss/cs.CL" },   
+  { "name": "ACL Anthology Latest", "url": "https://aclanthology.org/feeds/" },   
   { "name": "Papers with Code Trending", "url": "https://paperswithcode.com/feeds/latest" },
 
   { "name": "FastAI Blog", "url": "https://www.fast.ai/feeds/all.atom.xml" },
