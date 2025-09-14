@@ -6,6 +6,8 @@ name: ai-radar-pipeline
 
 jobs:
   build:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     env:
       # LLM provider & translation knobs
@@ -14,7 +16,7 @@ jobs:
       RADAR_TRANSLATE_ALL: '1'
       RADAR_TRANSLATE_TOP: all
       RADAR_TRANSLATE_MAX_TOKENS: '900'
-      RADAR_TRANSLATE_TIMEOUT: '40'
+      RADAR_TRANSLATE_TIMEOUT: '240'
       # DeepSeek secrets (set these in GitHub → Repository → Settings → Secrets and variables)
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
       DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL }}
@@ -23,6 +25,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -44,4 +47,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/ai/airadar/latest.json data/ai/airadar/dates.json data/ai/airadar/index.json data/ai/airadar/_events_tmp.json data/ai/airadar/*.json || true
           git commit -m "chore(ai-radar): daily update latest.json" || echo "no changes"
-          git push
+          git push origin HEAD:main
