@@ -2,90 +2,15 @@
   "generated_at": "2025-09-14T00:00:00+00:00",
   "items": [
     {
-      "headline": "Google AI发布VaultGemma：最大的差分隐私开源模型",
-      "one_liner": "Google AI Research推出VaultGemma 1B，这是一个完全基于差分隐私训练的开源大语言模型。",
-      "task": "NLP",
-      "type": "paper",
+      "headline": "多智能体系统：AI驱动网络安全的新前沿",
+      "one_liner": "随着网络威胁的日益复杂，采用多智能体系统进行防御成为一种新方法。",
+      "task": "Other",
+      "type": "blog",
       "novelty": "method",
       "key_numbers": [
         {
           "dataset": "N/A",
           "metric": "N/A",
-          "ours": "1B",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "结合隐私保护机制与生成算法的训练方法",
-        "高效的训练框架设计",
-        "适用于高隐私保护场景的模型架构"
-      ],
-      "limitations": [],
-      "links": {
-        "paper": "https://research.google/blog/vaultgemma-the-worlds-most-capable-differentially-private-llm/",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "NLP",
-        "Privacy",
-        "Model"
-      ],
-      "impact_score": 1,
-      "quick_read": "VaultGemma 1B是一个重要的开源大语言模型，专注于差分隐私，旨在提高AI模型的隐私保护能力。该模型的发布标志着AI技术在隐私与性能之间的平衡取得了重大进展。",
-      "who_should_try": "研究人员和开发者",
-      "reproducibility_score": 50,
-      "title_i18n": {
-        "zh": "Google AI发布VaultGemma：最大的差分隐私开源模型",
-        "en": "VaultGemma: The world's most capable differentially private LLM"
-      },
-      "summary_i18n": {
-        "zh": "本研究针对现有差分隐私大型语言模型（LLM）在保护用户数据隐私与生成能力之间的权衡问题，提出了VaultGemma模型，以填补这一领域的技术空白。研究采用了一种新颖的训练方法，结合了先进的隐私保护机制和生成算法，显著提升了模型的生成质量和隐私保障。关键创新在于其独特的隐私保护策略和高效的训练框架，使得VaultGemma在生成任务中表现优于主流基线。实验结果表明，该模型在多个生成任务上均展现出卓越的性能，尤其在隐私保护方面表现突出。该研究为差分隐私技术在生成AI领域的应用提供了新的思路，具有广泛的适用潜力，尤其适合需要高隐私保护的场景。",
-        "en": "This study addresses the trade-off between user data privacy and generative capabilities in existing differentially private large language models (LLMs) by proposing the VaultGemma model, filling a technical gap in this field. The research employs a novel training method that combines advanced privacy protection mechanisms with generative algorithms, significantly enhancing the model's generation quality and privacy assurance. The key innovation lies in its unique privacy protection strategy and efficient training framework, allowing VaultGemma to outperform mainstream baselines in generative tasks. Experimental results demonstrate that the model exhibits outstanding performance across multiple generative tasks, particularly excelling in privacy protection. This research provides new insights into the application of differential privacy technology in the generative AI field, with broad applicability, especially in scenarios requiring high privacy protection.",
-        "es": "Este estudio aborda el problema de la compensación entre la protección de la privacidad de los datos de los usuarios y la capacidad de generación en los modelos de lenguaje de gran tamaño (LLM) con privacidad diferencial existentes, proponiendo el modelo VaultGemma para llenar este vacío técnico en el campo. La investigación emplea un método de entrenamiento novedoso que combina mecanismos avanzados de protección de la privacidad y algoritmos de generación, mejorando significativamente la calidad de generación del modelo y la protección de la privacidad. La clave de la innovación radica en su estrategia única de protección de la privacidad y su marco de entrenamiento eficiente, lo que permite que VaultGemma supere a las líneas base principales en tareas de generación. Los resultados experimentales muestran que este modelo exhibe un rendimiento excepcional en múltiples tareas de generación, destacándose especialmente en la protección de la privacidad. Este estudio ofrece nuevas ideas para la aplicación de la tecnología de privacidad diferencial en el campo de la IA generativa, con un amplio potencial de aplicación, especialmente en escenarios que requieren una alta protección de la privacidad."
-      },
-      "host": "research.google",
-      "ts": "2025-09-12T08:14:00+00:00",
-      "has_code": false,
-      "key_numbers_compact": [
-        "1B"
-      ],
-      "reusability_i18n": {
-        "zh": [
-          "结合隐私保护机制与生成算法的训练方法",
-          "高效的训练框架设计",
-          "适用于高隐私保护场景的模型架构"
-        ],
-        "en": [
-          "Training methods that combine privacy protection mechanisms with generative algorithms",
-          "Efficient training framework design",
-          "Model architecture suitable for high privacy protection scenarios"
-        ],
-        "es": [
-          "Métodos de entrenamiento que combinan mecanismos de protección de la privacidad con algoritmos generativos",
-          "Diseño de un marco de entrenamiento eficiente",
-          "Arquitectura de modelo adecuada para escenarios de alta protección de la privacidad"
-        ]
-      },
-      "limitations_i18n": {
-        "zh": [],
-        "en": [],
-        "es": []
-      }
-    },
-    {
-      "headline": "IBM发布基于ModernBERT的两个英语嵌入模型",
-      "one_liner": "IBM推出两个新嵌入模型，旨在增强英语文本的表示能力。",
-      "task": "NLP",
-      "type": "dataset",
-      "novelty": "data",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
           "ours": "N/A",
           "baseline": "N/A",
           "impr_abs": "N/A",
@@ -93,54 +18,54 @@
         }
       ],
       "reusability": [
-        "采用ModernBERT架构提升嵌入效率",
-        "基于Apache 2.0许可证便于应用",
-        "优化检索性能可借鉴于其他模型"
+        "多智能体系统的协同防御策略",
+        "动态调整防御机制的算法设计",
+        "信息共享与协作的框架"
       ],
       "limitations": [],
       "links": {
-        "paper": "https://www.marktechpost.com/2025/09/12/ibm-ai-research-releases-two-english-granite-embedding-models-both-based-on-the-modernbert-architecture/",
+        "paper": "N/A",
         "code": "N/A",
         "project": "N/A",
         "pdf": "N/A"
       },
       "tags": [
-        "NLP",
-        "Embedding",
-        "Model"
+        "AI",
+        "Cybersecurity",
+        "Multi-Agent"
       ],
       "impact_score": 0,
-      "quick_read": "IBM推出的两个英语嵌入模型基于ModernBERT架构，旨在提升文本处理任务的效果。这些模型为研究人员提供了新的工具，增强了开源AI生态系统的多样性。",
-      "who_should_try": "NLP研究人员",
+      "quick_read": "网络安全面临越来越复杂的威胁，传统防御方法已不再有效。多智能体系统提供了一种新颖的防御策略，通过协同工作来增强安全性。这种方法能够更好地应对动态变化的攻击模式，提升整体防御能力。",
+      "who_should_try": "网络安全研究人员和从业者",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "IBM发布基于ModernBERT的两个英语嵌入模型",
-        "en": "IBM AI Research Releases Two English Granite Embedding Models, Both Based on the ModernBERT Architecture"
+        "zh": "多智能体系统：AI驱动网络安全的新前沿",
+        "en": "多智能体系统：AI驱动网络安全的新前沿"
       },
       "summary_i18n": {
-        "zh": "IBM在开源AI生态系统中逐渐崭露头角，推出的两款基于ModernBERT架构的嵌入模型，旨在填补高性能检索和增强生成系统的需求空白。新模型granite-embedding-english-r2和granite-embedding-small-english-r2具备紧凑高效的特点，并采用Apache 2.0许可证，便于广泛应用。其关键创新在于优化了嵌入效率和检索性能，表现优于主流基线。该研究为AI模型的开发提供了值得借鉴的实践，尤其在高效检索领域具有潜在的广泛影响。",
-        "en": "IBM is gradually emerging in the open-source AI ecosystem, launching two embedding models based on the ModernBERT architecture, aimed at filling the gap in the demand for high-performance retrieval and enhanced generation systems. The new models granite-embedding-english-r2 and granite-embedding-small-english-r2 are characterized by their compact and efficient design, and are licensed under Apache 2.0 for widespread application. Their key innovation lies in optimizing embedding efficiency and retrieval performance, outperforming mainstream baselines. This research provides valuable practices for the development of AI models, particularly with potential widespread impact in the field of efficient retrieval.",
-        "es": "IBM está emergiendo gradualmente en el ecosistema de IA de código abierto, lanzando dos modelos de incrustación basados en la arquitectura ModernBERT, destinados a llenar el vacío en la demanda de sistemas de recuperación de alto rendimiento y generación mejorada. Los nuevos modelos granite-embedding-english-r2 y granite-embedding-small-english-r2 cuentan con características compactas y eficientes, y utilizan la licencia Apache 2.0, lo que facilita su aplicación generalizada. Su innovación clave radica en la optimización de la eficiencia de incrustación y el rendimiento de recuperación, superando a las líneas base convencionales. Esta investigación proporciona prácticas valiosas para el desarrollo de modelos de IA, especialmente con un potencial impacto amplio en el campo de la recuperación eficiente."
+        "zh": "随着网络威胁的日益复杂，采用多智能体系统进行防御成为一种新方法。",
+        "en": "As network threats become increasingly complex, adopting multi-agent systems for defense has emerged as a new approach.",
+        "es": "Con el aumento de la complejidad de las amenazas en línea, el uso de sistemas multiagente para la defensa se ha convertido en un nuevo enfoque."
       },
-      "host": "www.marktechpost.com",
-      "ts": "2025-09-13T03:50:18+00:00",
+      "host": "",
+      "ts": "2025-09-14T00:00:00+00:00",
       "has_code": false,
       "key_numbers_compact": [],
       "reusability_i18n": {
         "zh": [
-          "采用ModernBERT架构提升嵌入效率",
-          "基于Apache 2.0许可证便于应用",
-          "优化检索性能可借鉴于其他模型"
+          "多智能体系统的协同防御策略",
+          "动态调整防御机制的算法设计",
+          "信息共享与协作的框架"
         ],
         "en": [
-          "Adopts the ModernBERT architecture to enhance embedding efficiency",
-          "Based on the Apache 2.0 license for ease of application",
-          "Optimized retrieval performance can be referenced from other models"
+          "Collaborative defense strategies for multi-agent systems",
+          "Algorithm design for dynamically adjusting defense mechanisms",
+          "Framework for information sharing and collaboration"
         ],
         "es": [
-          "Adopta la arquitectura ModernBERT para mejorar la eficiencia de incrustación",
-          "Basado en la licencia Apache 2.0 para facilitar la aplicación",
-          "El rendimiento de recuperación optimizado se puede referenciar de otros modelos"
+          "Estrategias de defensa colaborativa para sistemas multiagente",
+          "Diseño de algoritmos para ajustar dinámicamente los mecanismos de defensa",
+          "Marco para el intercambio de información y la colaboración"
         ]
       },
       "limitations_i18n": {
@@ -150,11 +75,11 @@
       }
     },
     {
-      "headline": "BentoML发布llm-optimizer：开源LLM优化工具",
-      "one_liner": "BentoML推出llm-optimizer，旨在优化自托管大语言模型的性能。",
-      "task": "Infra",
-      "type": "tool",
-      "novelty": "engineering",
+      "headline": "ROC AUC与精确-召回在不平衡数据中的比较",
+      "one_liner": "在不平衡数据分类中，ROC AUC和精确-召回曲线的选择对模型评估至关重要。",
+      "task": "IR",
+      "type": "blog",
+      "novelty": "metric",
       "key_numbers": [
         {
           "dataset": "N/A",
@@ -166,54 +91,407 @@
         }
       ],
       "reusability": [
-        "自动化配置优化流程",
-        "系统化评估和调整方法",
-        "性能调优效率提升策略"
+        "可复用ROC AUC评估流程",
+        "可复用精确-召回曲线计算方法"
       ],
       "limitations": [],
       "links": {
-        "paper": "https://www.marktechpost.com/2025/09/12/bentoml-released-llm-optimizer-an-open-source-ai-tool-for-benchmarking-and-optimizing-llm-inference/",
+        "paper": "N/A",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "N/A"
+      },
+      "tags": [
+        "Evaluation",
+        "Imbalanced Data",
+        "Metrics"
+      ],
+      "impact_score": 0,
+      "quick_read": "在处理不平衡数据时，选择合适的评估指标至关重要。ROC AUC和精确-召回曲线各有优缺点，理解它们的适用场景可以帮助研究人员更好地评估模型性能。这一比较为模型选择提供了实用指导。",
+      "who_should_try": "数据科学家和机器学习工程师",
+      "reproducibility_score": 50,
+      "title_i18n": {
+        "zh": "ROC AUC与精确-召回在不平衡数据中的比较",
+        "en": "ROC AUC与精确-召回在不平衡数据中的比较"
+      },
+      "summary_i18n": {
+        "zh": "在不平衡数据分类中，ROC AUC和精确-召回曲线的选择对模型评估至关重要。",
+        "en": "In imbalanced data classification, the choice of ROC AUC and precision-recall curves is crucial for model evaluation.",
+        "es": "En la clasificación de datos desbalanceados, la elección de ROC AUC y la curva de precisión-recall es crucial para la evaluación del modelo."
+      },
+      "host": "",
+      "ts": "2025-09-14T00:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": [],
+      "reusability_i18n": {
+        "zh": [
+          "可复用ROC AUC评估流程",
+          "可复用精确-召回曲线计算方法"
+        ],
+        "en": [
+          "Reusable ROC AUC evaluation process",
+          "Reusable precision-recall curve calculation method"
+        ],
+        "es": [
+          "Proceso de evaluación ROC AUC reutilizable",
+          "Método de cálculo de la curva de precisión-recall reutilizable"
+        ]
+      },
+      "limitations_i18n": {
+        "zh": [],
+        "en": [],
+        "es": []
+      }
+    },
+    {
+      "headline": "7个Scikit-learn优化交叉验证技巧",
+      "one_liner": "通过优化交叉验证，提升机器学习模型在未见数据上的表现。",
+      "task": "ML",
+      "type": "blog",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "优化交叉验证流程以提升模型泛化能力",
+        "可复用的模型评估标准和指标"
+      ],
+      "limitations": [],
+      "links": {
+        "paper": "N/A",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "N/A"
+      },
+      "tags": [
+        "Scikit-learn",
+        "Cross-Validation",
+        "Optimization"
+      ],
+      "impact_score": 0,
+      "quick_read": "交叉验证是评估机器学习模型性能的重要手段。通过7个技巧，可以有效优化Scikit-learn中的交叉验证过程，从而提高模型在未见数据上的表现。这些技巧适用于各种机器学习任务。",
+      "who_should_try": "机器学习研究人员和开发者",
+      "reproducibility_score": 50,
+      "title_i18n": {
+        "zh": "7个Scikit-learn优化交叉验证技巧",
+        "en": "7个Scikit-learn优化交叉验证技巧"
+      },
+      "summary_i18n": {
+        "zh": "通过优化交叉验证，提升机器学习模型在未见数据上的表现。",
+        "en": "By optimizing cross-validation, the performance of machine learning models on unseen data is improved.",
+        "es": "A través de la optimización de la validación cruzada, se mejora el rendimiento de los modelos de aprendizaje automático en datos no vistos."
+      },
+      "host": "",
+      "ts": "2025-09-14T00:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": [],
+      "reusability_i18n": {
+        "zh": [
+          "优化交叉验证流程以提升模型泛化能力",
+          "可复用的模型评估标准和指标"
+        ],
+        "en": [
+          "Optimize the cross-validation process to enhance the model's generalization ability",
+          "Reusable model evaluation standards and metrics"
+        ],
+        "es": [
+          "Optimizar el proceso de validación cruzada para mejorar la capacidad de generalización del modelo",
+          "Estándares y métricas de evaluación de modelos reutilizables"
+        ]
+      },
+      "limitations_i18n": {
+        "zh": [],
+        "en": [],
+        "es": []
+      }
+    },
+    {
+      "headline": "理解和实现Qwen3的基础",
+      "one_liner": "深入了解Qwen3这一领先的开源大语言模型的实现细节。",
+      "task": "NLP",
+      "type": "blog",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [],
+      "limitations": [],
+      "links": {
+        "paper": "N/A",
         "code": "N/A",
         "project": "N/A",
         "pdf": "N/A"
       },
       "tags": [
         "LLM",
+        "Qwen3",
+        "Implementation"
+      ],
+      "impact_score": 0,
+      "quick_read": "Qwen3是一个重要的开源大语言模型，理解其实现过程对于研究人员和开发者至关重要。本文详细介绍了Qwen3的架构和实现细节，帮助读者掌握其工作原理和应用场景。",
+      "who_should_try": "NLP研究人员和开发者",
+      "reproducibility_score": 50,
+      "title_i18n": {
+        "zh": "理解和实现Qwen3的基础",
+        "en": "理解和实现Qwen3的基础"
+      },
+      "summary_i18n": {
+        "zh": "深入了解Qwen3这一领先的开源大语言模型的实现细节。",
+        "en": "Gain an in-depth understanding of the implementation details of Qwen3, a leading open-source large language model.",
+        "es": "Profundiza en los detalles de implementación de Qwen3, este modelo de lenguaje de código abierto líder."
+      },
+      "host": "",
+      "ts": "2025-09-14T00:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": [],
+      "reusability_i18n": {
+        "zh": [],
+        "en": [],
+        "es": []
+      },
+      "limitations_i18n": {
+        "zh": [],
+        "en": [],
+        "es": []
+      }
+    },
+    {
+      "headline": "小型语言模型是代理AI的未来",
+      "one_liner": "小型语言模型在代理AI领域展现出巨大的潜力和应用前景。",
+      "task": "NLP",
+      "type": "blog",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "小型语言模型的架构设计可用于其他AI应用",
+        "数据增强方法可提升模型性能",
+        "评估流程可适用于不同任务"
+      ],
+      "limitations": [
+        "模型泛化能力不足",
+        "算力需求较高"
+      ],
+      "links": {
+        "paper": "N/A",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "N/A"
+      },
+      "tags": [
+        "LLM",
+        "Small Models",
+        "Agentic AI"
+      ],
+      "impact_score": 0,
+      "quick_read": "小型语言模型在代理AI的应用中展现出独特优势，能够在资源受限的环境中高效运行。本文探讨了小型模型的潜力及其在实际应用中的表现，提供了对未来发展的见解。",
+      "who_should_try": "AI研究人员和开发者",
+      "reproducibility_score": 50,
+      "title_i18n": {
+        "zh": "小型语言模型是代理AI的未来",
+        "en": "小型语言模型是代理AI的未来"
+      },
+      "summary_i18n": {
+        "zh": "小型语言模型在代理AI领域展现出巨大的潜力和应用前景。",
+        "en": "Small language models demonstrate great potential and application prospects in the field of agent AI.",
+        "es": "Los modelos de lenguaje pequeños muestran un gran potencial y perspectivas de aplicación en el campo de la inteligencia artificial de agentes."
+      },
+      "host": "",
+      "ts": "2025-09-14T00:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": [],
+      "reusability_i18n": {
+        "zh": [
+          "小型语言模型的架构设计可用于其他AI应用",
+          "数据增强方法可提升模型性能",
+          "评估流程可适用于不同任务"
+        ],
+        "en": [
+          "The architecture design of small language models can be used for other AI applications.",
+          "Data augmentation methods can enhance model performance.",
+          "The evaluation process can be applied to different tasks."
+        ],
+        "es": [
+          "El diseño de la arquitectura de modelos de lenguaje pequeños se puede utilizar para otras aplicaciones de IA.",
+          "Los métodos de aumento de datos pueden mejorar el rendimiento del modelo.",
+          "El proceso de evaluación se puede aplicar a diferentes tareas."
+        ]
+      },
+      "limitations_i18n": {
+        "zh": [
+          "模型泛化能力不足",
+          "算力需求较高"
+        ],
+        "en": [
+          "The model's generalization ability is insufficient.",
+          "The computational power requirements are relatively high."
+        ],
+        "es": [
+          "La capacidad de generalización del modelo es insuficiente.",
+          "Los requisitos de potencia de cálculo son relativamente altos."
+        ]
+      }
+    },
+    {
+      "headline": "10个Python一行代码技巧",
+      "one_liner": "掌握10个Python一行代码技巧，提升机器学习实践者的工作效率。",
+      "task": "Other",
+      "type": "blog",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "使用一行代码实现数据预处理",
+        "简化模型训练过程的代码结构",
+        "优化超参数调优的代码实现"
+      ],
+      "limitations": [],
+      "links": {
+        "paper": "N/A",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "N/A"
+      },
+      "tags": [
+        "Python",
+        "Tips",
+        "Machine Learning"
+      ],
+      "impact_score": 0,
+      "quick_read": "在机器学习开发中，掌握高效的Python编程技巧至关重要。本文介绍了10个实用的一行代码技巧，帮助实践者提升工作效率，简化代码编写过程，适用于各种机器学习任务。",
+      "who_should_try": "机器学习从业者和Python开发者",
+      "reproducibility_score": 50,
+      "title_i18n": {
+        "zh": "10个Python一行代码技巧",
+        "en": "10个Python一行代码技巧"
+      },
+      "summary_i18n": {
+        "zh": "掌握10个Python一行代码技巧，提升机器学习实践者的工作效率。",
+        "en": "Master 10 one-liner Python tricks to enhance the work efficiency of machine learning practitioners.",
+        "es": "Domina 10 trucos de una línea de código en Python para mejorar la eficiencia de los practicantes de aprendizaje automático."
+      },
+      "host": "",
+      "ts": "2025-09-14T00:00:00+00:00",
+      "has_code": false,
+      "key_numbers_compact": [],
+      "reusability_i18n": {
+        "zh": [
+          "使用一行代码实现数据预处理",
+          "简化模型训练过程的代码结构",
+          "优化超参数调优的代码实现"
+        ],
+        "en": [
+          "Data preprocessing is implemented with a single line of code",
+          "The code structure simplifies the model training process",
+          "The code implementation optimizes hyperparameter tuning"
+        ],
+        "es": [
+          "El preprocesamiento de datos se implementa con una sola línea de código",
+          "La estructura del código simplifica el proceso de entrenamiento del modelo",
+          "La implementación del código optimiza la sintonización de hiperparámetros"
+        ]
+      },
+      "limitations_i18n": {
+        "zh": [],
+        "en": [],
+        "es": []
+      }
+    },
+    {
+      "headline": "极限梯度提升模型的加速与改进",
+      "one_liner": "探索加速和改进XGBoost模型的三种方法。",
+      "task": "ML",
+      "type": "blog",
+      "novelty": "method",
+      "key_numbers": [
+        {
+          "dataset": "N/A",
+          "metric": "N/A",
+          "ours": "N/A",
+          "baseline": "N/A",
+          "impr_abs": "N/A",
+          "impr_rel": "N/A"
+        }
+      ],
+      "reusability": [
+        "数据增强方法可用于其他模型",
+        "优化算法可应用于不同任务",
+        "评估流程可借鉴于其他机器学习项目"
+      ],
+      "limitations": [],
+      "links": {
+        "paper": "N/A",
+        "code": "N/A",
+        "project": "N/A",
+        "pdf": "N/A"
+      },
+      "tags": [
+        "XGBoost",
         "Optimization",
-        "Tool"
+        "Machine Learning"
       ],
       "impact_score": 0,
-      "quick_read": "llm-optimizer是一个开源框架，旨在简化自托管大语言模型的基准测试和性能调优。该工具解决了LLM部署中的常见挑战，帮助用户找到最佳配置。",
-      "who_should_try": "AI开发者",
+      "quick_read": "XGBoost是广泛应用的机器学习技术，本文探讨了三种加速和改进XGBoost模型的方法。这些方法旨在提高模型的训练效率和预测性能，适用于各种数据集和任务。",
+      "who_should_try": "机器学习工程师和数据科学家",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "BentoML发布llm-optimizer：开源LLM优化工具",
-        "en": "BentoML Released llm-optimizer: An Open-Source AI Tool for Benchmarking and Optimizing LLM Inference"
+        "zh": "极限梯度提升模型的加速与改进",
+        "en": "极限梯度提升模型的加速与改进"
       },
       "summary_i18n": {
-        "zh": "BentoML近期推出的llm-optimizer是一个开源框架，旨在简化自托管大型语言模型（LLM）的基准测试和性能调优，填补了在LLM部署中寻找最佳延迟、吞吐量和成本配置的空白。该工具通过自动化配置优化，解决了手动试错带来的挑战。其关键创新在于提供了一种系统化的方法来评估和调整LLM性能，显著提高了调优效率。研究表明，llm-optimizer在性能优化方面优于主流基线，展现了其在实际应用中的潜力。该工具的开发为LLM的广泛应用提供了借鉴，可能推动相关领域的进一步发展。",
-        "en": "BentoML recently launched llm-optimizer, an open-source framework designed to simplify the benchmarking and performance tuning of self-hosted large language models (LLMs), filling the gap in finding the optimal latency, throughput, and cost configurations in LLM deployment. This tool addresses the challenges of manual trial and error through automated configuration optimization. Its key innovation lies in providing a systematic approach to evaluate and adjust LLM performance, significantly improving tuning efficiency. Research shows that llm-optimizer outperforms mainstream baselines in performance optimization, demonstrating its potential in practical applications. The development of this tool offers insights for the widespread use of LLMs and may drive further advancements in related fields.",
-        "es": "BentoML ha lanzado recientemente llm-optimizer, un marco de código abierto diseñado para simplificar la evaluación y optimización del rendimiento de modelos de lenguaje de gran tamaño (LLM) autohospedados, llenando el vacío en la búsqueda de la mejor configuración de latencia, rendimiento y costo en el despliegue de LLM. Esta herramienta aborda los desafíos del ensayo y error manual mediante la automatización de la optimización de configuraciones. Su innovación clave radica en ofrecer un enfoque sistemático para evaluar y ajustar el rendimiento de LLM, lo que mejora significativamente la eficiencia de la optimización. Los estudios muestran que llm-optimizer supera a las líneas base convencionales en la optimización del rendimiento, demostrando su potencial en aplicaciones prácticas. El desarrollo de esta herramienta proporciona un referente para la amplia aplicación de LLM, lo que podría impulsar el desarrollo adicional en campos relacionados."
+        "zh": "探索加速和改进XGBoost模型的三种方法。",
+        "en": "Three methods to accelerate and improve the XGBoost model.",
+        "es": "Explorar tres métodos para acelerar y mejorar el modelo XGBoost."
       },
-      "host": "www.marktechpost.com",
-      "ts": "2025-09-12T07:23:40+00:00",
+      "host": "",
+      "ts": "2025-09-14T00:00:00+00:00",
       "has_code": false,
       "key_numbers_compact": [],
       "reusability_i18n": {
         "zh": [
-          "自动化配置优化流程",
-          "系统化评估和调整方法",
-          "性能调优效率提升策略"
+          "数据增强方法可用于其他模型",
+          "优化算法可应用于不同任务",
+          "评估流程可借鉴于其他机器学习项目"
         ],
         "en": [
-          "Automated configuration optimization process",
-          "Systematic evaluation and adjustment methods",
-          "Performance tuning efficiency improvement strategies"
+          "Data augmentation methods can be used for other models",
+          "Optimization algorithms can be applied to different tasks",
+          "The evaluation process can be referenced for other machine learning projects"
         ],
         "es": [
-          "Proceso de optimización de configuración automatizado",
-          "Métodos de evaluación y ajuste sistemáticos",
-          "Estrategias de mejora de la eficiencia de ajuste de rendimiento"
+          "Los métodos de aumento de datos se pueden utilizar para otros modelos",
+          "Los algoritmos de optimización se pueden aplicar a diferentes tareas",
+          "El proceso de evaluación se puede referenciar para otros proyectos de aprendizaje automático"
         ]
       },
       "limitations_i18n": {
@@ -223,232 +501,11 @@
       }
     },
     {
-      "headline": "Deepdub推出Lightning 2.5：实时AI语音模型",
-      "one_liner": "Deepdub发布Lightning 2.5，提供2.8倍的吞吐量提升，适用于可扩展AI应用。",
-      "task": "ASR",
-      "type": "model",
-      "novelty": "method",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
-          "ours": "2.8x",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "优化算法可用于其他实时语音模型",
-        "高吞吐量设计适用于多种互动系统",
-        "可扩展性提升可借鉴于其他AI应用"
-      ],
-      "limitations": [],
-      "links": {
-        "paper": "https://www.marktechpost.com/2025/09/11/deepdub-introduces-lightning-2-5-a-real-time-ai-voice-model-with-2-8x-throughput-gains-for-scalable-ai-agents-and-enterprise-ai/",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "ASR",
-        "Voice",
-        "Model"
-      ],
-      "impact_score": 0,
-      "quick_read": "Lightning 2.5是一个实时AI语音模型，旨在支持可扩展的企业级语音应用。其显著的性能提升使其在实时处理场景中更具竞争力。",
-      "who_should_try": "企业AI开发者",
-      "reproducibility_score": 50,
-      "title_i18n": {
-        "zh": "Deepdub推出Lightning 2.5：实时AI语音模型",
-        "en": "Deepdub Introduces Lightning 2.5: A Real-Time AI Voice Model With 2.8x Throughput Gains for Scalable AI Agents and Enterprise AI"
-      },
-      "summary_i18n": {
-        "zh": "Deepdub推出的Lightning 2.5是一个实时语音模型，旨在填补现有语音应用在性能和效率上的不足，特别是在需要高吞吐量的场景中。该模型通过优化算法实现了2.8倍的吞吐量提升，适用于呼叫中心、AI代理和实时配音等互动系统。其关键创新在于显著提高了处理速度和应用的可扩展性。初步结果表明，Lightning 2.5在实际应用中表现优于主流基线，展示了其在企业AI和大规模语音应用中的潜力。该技术的成功实施为语音AI领域提供了新的参考，可能推动实时语音交互的广泛应用。",
-        "en": "Deepdub's Lightning 2.5 is a real-time voice model designed to address the performance and efficiency shortcomings of existing voice applications, particularly in scenarios that require high throughput. The model achieves a 2.8 times increase in throughput through optimized algorithms, making it suitable for interactive systems such as call centers, AI agents, and real-time dubbing. Its key innovation lies in significantly enhancing processing speed and application scalability. Preliminary results indicate that Lightning 2.5 outperforms mainstream baselines in practical applications, showcasing its potential in enterprise AI and large-scale voice applications. The successful implementation of this technology provides a new reference for the field of voice AI and may drive the widespread adoption of real-time voice interaction.",
-        "es": "Lightning 2.5, lanzado por Deepdub, es un modelo de voz en tiempo real diseñado para cubrir las deficiencias de rendimiento y eficiencia de las aplicaciones de voz existentes, especialmente en escenarios que requieren un alto rendimiento. Este modelo logra un aumento del 2.8 veces en la capacidad de procesamiento a través de algoritmos optimizados, siendo adecuado para sistemas interactivos como centros de llamadas, agentes de IA y doblaje en tiempo real. Su innovación clave radica en la mejora significativa de la velocidad de procesamiento y la escalabilidad de las aplicaciones. Los resultados preliminares indican que Lightning 2.5 supera a las líneas base convencionales en aplicaciones prácticas, demostrando su potencial en la IA empresarial y en aplicaciones de voz a gran escala. La exitosa implementación de esta tecnología ofrece una nueva referencia en el campo de la IA de voz, lo que podría impulsar la amplia adopción de la interacción de voz en tiempo real."
-      },
-      "host": "www.marktechpost.com",
-      "ts": "2025-09-12T03:37:25+00:00",
-      "has_code": false,
-      "key_numbers_compact": [
-        "2.8x"
-      ],
-      "reusability_i18n": {
-        "zh": [
-          "优化算法可用于其他实时语音模型",
-          "高吞吐量设计适用于多种互动系统",
-          "可扩展性提升可借鉴于其他AI应用"
-        ],
-        "en": [
-          "The optimization algorithm can be used for other real-time speech models.",
-          "The high throughput design is suitable for various interactive systems.",
-          "The scalability improvements can be referenced in other AI applications."
-        ],
-        "es": [
-          "El algoritmo de optimización se puede utilizar para otros modelos de voz en tiempo real.",
-          "El diseño de alta capacidad es adecuado para varios sistemas interactivos.",
-          "Las mejoras en escalabilidad se pueden referenciar en otras aplicaciones de IA."
-        ]
-      },
-      "limitations_i18n": {
-        "zh": [],
-        "en": [],
-        "es": []
-      }
-    },
-    {
-      "headline": "如何构建多语言OCR AI代理",
-      "one_liner": "本教程展示了如何使用EasyOCR和OpenCV构建多语言OCR AI代理。",
-      "task": "CV",
-      "type": "tutorial",
-      "novelty": "method",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
-          "ours": "N/A",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "使用EasyOCR和OpenCV构建OCR系统",
-        "结合对比度增强和去噪技术",
-        "实现结果过滤机制提升可靠性"
-      ],
-      "limitations": [],
-      "links": {
-        "paper": "https://www.marktechpost.com/2025/09/12/how-to-build-a-multilingual-ocr-ai-agent-in-python-with-easyocr-and-opencv/",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "OCR",
-        "CV",
-        "Tutorial"
-      ],
-      "impact_score": 0,
-      "quick_read": "本教程详细介绍了如何在Google Colab中构建一个多语言OCR AI代理，使用EasyOCR和OpenCV实现离线处理。该代理包含图像预处理管道，提升了OCR的准确性。",
-      "who_should_try": "计算机视觉研究人员",
-      "reproducibility_score": 50,
-      "title_i18n": {
-        "zh": "如何构建多语言OCR AI代理",
-        "en": "How to Build a Multilingual OCR AI Agent in Python with EasyOCR and OpenCV"
-      },
-      "summary_i18n": {
-        "zh": "本研究旨在填补现有多语言光学字符识别（OCR）系统在准确性和效率上的不足，提出了一种基于EasyOCR和OpenCV的高级OCR AI代理。通过在Google Colab中构建，研究采用了GPU加速和离线运行的方式，结合了对比度增强、去噪、锐化和自适应阈值等预处理技术，以提升识别效果。关键创新在于结果过滤机制和文本统计生成，显著提高了识别的可靠性。实验结果表明，该系统在识别准确性上优于主流基线，具有较强的实用性和可扩展性。该方法为多语言OCR的应用提供了新的思路，对相关领域的研究和实践具有重要的推动作用。",
-        "en": "This study aims to address the shortcomings in accuracy and efficiency of existing multilingual optical character recognition (OCR) systems by proposing an advanced OCR AI agent based on EasyOCR and OpenCV. Built in Google Colab, the research utilizes GPU acceleration and offline operation, incorporating preprocessing techniques such as contrast enhancement, denoising, sharpening, and adaptive thresholding to improve recognition performance. A key innovation lies in the result filtering mechanism and text statistics generation, which significantly enhance the reliability of recognition. Experimental results indicate that this system outperforms mainstream baselines in recognition accuracy, demonstrating strong practicality and scalability. This method provides new insights for the application of multilingual OCR and has significant implications for research and practice in related fields.",
-        "es": "Este estudio tiene como objetivo llenar las deficiencias en precisión y eficiencia de los sistemas de reconocimiento óptico de caracteres (OCR) multilingües existentes, proponiendo un agente de OCR AI avanzado basado en EasyOCR y OpenCV. Al construirse en Google Colab, la investigación utilizó aceleración por GPU y un modo de funcionamiento offline, combinando técnicas de preprocesamiento como mejora de contraste, eliminación de ruido, enfoque y umbralización adaptativa para mejorar los resultados de reconocimiento. La innovación clave radica en el mecanismo de filtrado de resultados y la generación de estadísticas de texto, lo que aumenta significativamente la fiabilidad del reconocimiento. Los resultados experimentales muestran que este sistema supera a las líneas base más comunes en precisión de reconocimiento, presentando una fuerte practicidad y escalabilidad. Este método ofrece nuevas ideas para la aplicación de OCR multilingüe y tiene un impacto importante en la investigación y práctica de campos relacionados."
-      },
-      "host": "www.marktechpost.com",
-      "ts": "2025-09-12T18:06:14+00:00",
-      "has_code": false,
-      "key_numbers_compact": [],
-      "reusability_i18n": {
-        "zh": [
-          "使用EasyOCR和OpenCV构建OCR系统",
-          "结合对比度增强和去噪技术",
-          "实现结果过滤机制提升可靠性"
-        ],
-        "en": [
-          "Build an OCR system using EasyOCR and OpenCV",
-          "Combine contrast enhancement and denoising techniques",
-          "Implement a result filtering mechanism to improve reliability"
-        ],
-        "es": [
-          "Construir un sistema OCR utilizando EasyOCR y OpenCV",
-          "Combinar técnicas de mejora de contraste y eliminación de ruido",
-          "Implementar un mecanismo de filtrado de resultados para mejorar la fiabilidad"
-        ]
-      },
-      "limitations_i18n": {
-        "zh": [],
-        "en": [],
-        "es": []
-      }
-    },
-    {
-      "headline": "如何构建稳健的高级神经AI代理",
-      "one_liner": "本教程探讨了构建一个结合经典神经网络技术与现代稳定性改进的高级神经代理。",
-      "task": "NLP",
-      "type": "tutorial",
-      "novelty": "method",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
-          "ours": "N/A",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "使用Xavier初始化改善梯度流动",
-        "采用稳定激活函数避免溢出问题",
-        "引入自适应学习策略提升鲁棒性"
-      ],
-      "limitations": [],
-      "links": {
-        "paper": "https://www.marktechpost.com/2025/09/13/how-to-build-a-robust-advanced-neural-ai-agent-with-stable-training-adaptive-learning-and-intelligent-decision-making/",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "NLP",
-        "Agent",
-        "Tutorial"
-      ],
-      "impact_score": 0,
-      "quick_read": "本教程介绍了如何设计和实现一个稳健的高级神经AI代理，结合了经典神经网络技术与现代稳定性改进，适用于智能决策任务。",
-      "who_should_try": "AI研究人员",
-      "reproducibility_score": 50,
-      "title_i18n": {
-        "zh": "如何构建稳健的高级神经AI代理",
-        "en": "How to Build a Robust Advanced Neural AI Agent with Stable Training, Adaptive Learning, and Intelligent Decision-Making?"
-      },
-      "summary_i18n": {
-        "zh": "本研究旨在解决现有神经网络在训练稳定性和智能决策方面的不足，提出了一种结合经典技术与现代稳定性改进的高级神经代理模型。通过使用Xavier初始化和稳定激活函数（如泄漏ReLU、sigmoid和tanh），有效改善了梯度流动并避免了溢出问题。关键创新在于引入了稳定的训练机制和自适应学习策略，使得模型在复杂环境中表现出更强的鲁棒性。实验结果表明，该模型在多个基准测试中优于主流方法，展示了其在智能决策任务中的潜力。该研究为构建更可靠的人工智能代理提供了有价值的实践经验，可能对相关领域的应用和发展产生深远影响。",
-        "en": "This study aims to address the shortcomings of existing neural networks in training stability and intelligent decision-making by proposing an advanced neural agent model that combines classical techniques with modern stability improvements. By utilizing Xavier initialization and stable activation functions (such as Leaky ReLU, sigmoid, and tanh), it effectively enhances gradient flow and avoids overflow issues. The key innovation lies in the introduction of a stable training mechanism and adaptive learning strategies, enabling the model to exhibit greater robustness in complex environments. Experimental results indicate that this model outperforms mainstream methods across multiple benchmark tests, demonstrating its potential in intelligent decision-making tasks. This research provides valuable practical experience for building more reliable artificial intelligence agents and may have a profound impact on applications and developments in related fields.",
-        "es": "Este estudio tiene como objetivo abordar las deficiencias de las redes neuronales existentes en términos de estabilidad de entrenamiento y toma de decisiones inteligentes, proponiendo un modelo avanzado de agente neuronal que combina técnicas clásicas con mejoras modernas en estabilidad. Al utilizar la inicialización de Xavier y funciones de activación estables (como ReLU con fuga, sigmoide y tanh), se mejora eficazmente el flujo de gradientes y se evitan problemas de desbordamiento. La innovación clave radica en la introducción de un mecanismo de entrenamiento estable y una estrategia de aprendizaje adaptativa, lo que permite que el modelo muestre una mayor robustez en entornos complejos. Los resultados experimentales indican que este modelo supera a los métodos convencionales en múltiples pruebas de referencia, demostrando su potencial en tareas de toma de decisiones inteligentes. Este estudio proporciona valiosas experiencias prácticas para la construcción de agentes de inteligencia artificial más confiables, lo que podría tener un impacto profundo en las aplicaciones y el desarrollo de campos relacionados."
-      },
-      "host": "www.marktechpost.com",
-      "ts": "2025-09-13T19:43:45+00:00",
-      "has_code": false,
-      "key_numbers_compact": [],
-      "reusability_i18n": {
-        "zh": [
-          "使用Xavier初始化改善梯度流动",
-          "采用稳定激活函数避免溢出问题",
-          "引入自适应学习策略提升鲁棒性"
-        ],
-        "en": [
-          "Using Xavier initialization improves gradient flow",
-          "Adopting stable activation functions avoids overflow issues",
-          "Introducing adaptive learning strategies enhances robustness"
-        ],
-        "es": [
-          "El uso de la inicialización de Xavier mejora el flujo de gradientes",
-          "La adopción de funciones de activación estables evita problemas de desbordamiento",
-          "La introducción de estrategias de aprendizaje adaptativas mejora la robustez"
-        ]
-      },
-      "limitations_i18n": {
-        "zh": [],
-        "en": [],
-        "es": []
-      }
-    },
-    {
-      "headline": "美国枪支危机与AI视频模型的工作原理",
-      "one_liner": "本期《下载》探讨了美国的枪支危机及AI视频模型的工作机制。",
+      "headline": "理解批量归一化的基础",
+      "one_liner": "深入理解批量归一化在深度学习中的重要性及其实现。",
       "task": "NLP",
       "type": "blog",
-      "novelty": "N/A",
+      "novelty": "method",
       "key_numbers": [
         {
           "dataset": "N/A",
@@ -460,127 +517,54 @@
         }
       ],
       "reusability": [
-        "AI模型识别枪支风险的流程",
-        "技术与公共健康结合的框架",
-        "政策制定者的借鉴方法"
+        "可复用的批量归一化实现代码",
+        "优化深度学习模型训练流程",
+        "评估批量归一化对模型性能的影响"
       ],
       "limitations": [],
       "links": {
-        "paper": "https://www.technologyreview.com/2025/09/12/1123577/the-download-americas-gun-crisis-and-how-ai-video-models-work/",
+        "paper": "N/A",
         "code": "N/A",
         "project": "N/A",
         "pdf": "N/A"
       },
       "tags": [
-        "AI",
-        "Video",
-        "Crisis"
+        "Deep Learning",
+        "Batch Normalization",
+        "NLP"
       ],
       "impact_score": 0,
-      "quick_read": "本期内容聚焦美国的枪支危机，探讨了如何利用AI视频模型来应对这一社会问题。文章提供了对技术与社会问题交集的深入分析。",
-      "who_should_try": "社会科学研究者",
+      "quick_read": "批量归一化是深度学习中常用的技术，能够有效提高模型训练的稳定性和速度。本文详细介绍了批量归一化的原理、实现方法及其在不同模型中的应用，帮助读者更好地理解这一重要概念。",
+      "who_should_try": "深度学习研究人员和开发者",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "美国枪支危机与AI视频模型的工作原理",
-        "en": "The Download: America’s gun crisis, and how AI video models work"
+        "zh": "理解批量归一化的基础",
+        "en": "理解批量归一化的基础"
       },
       "summary_i18n": {
-        "zh": "本研究探讨了美国的枪支危机及其对儿童健康的影响，指出现有政策未能有效解决这一问题。通过分析AI视频模型的应用，研究展示了技术在应对社会问题中的潜力。关键创新在于将AI技术与公共健康议题结合，提供新的视角和解决方案。研究结果表明，利用AI模型可以更好地识别和应对与枪支相关的风险，优于传统方法。该研究为政策制定者提供了借鉴，强调技术在改善儿童健康方面的重要性，具有广泛的社会影响力和应用前景。",
-        "en": "This study explores the gun crisis in the United States and its impact on children's health, pointing out that existing policies have failed to effectively address this issue. By analyzing the application of AI video models, the research demonstrates the potential of technology in tackling social problems. The key innovation lies in combining AI technology with public health issues, providing new perspectives and solutions. The findings indicate that using AI models can better identify and respond to gun-related risks, outperforming traditional methods. This research offers insights for policymakers, emphasizing the importance of technology in improving children's health, with broad social impact and application prospects.",
-        "es": "Este estudio explora la crisis de armas en Estados Unidos y su impacto en la salud infantil, señalando que las políticas actuales no han logrado abordar este problema de manera efectiva. A través del análisis de la aplicación de modelos de video de IA, la investigación muestra el potencial de la tecnología para enfrentar problemas sociales. La innovación clave radica en combinar la tecnología de IA con temas de salud pública, ofreciendo nuevas perspectivas y soluciones. Los resultados del estudio indican que el uso de modelos de IA puede identificar y abordar mejor los riesgos relacionados con las armas, superando a los métodos tradicionales. Esta investigación proporciona una referencia para los formuladores de políticas, enfatizando la importancia de la tecnología en la mejora de la salud infantil, con un amplio impacto social y perspectivas de aplicación."
+        "zh": "深入理解批量归一化在深度学习中的重要性及其实现。",
+        "en": "A deep understanding of the importance of batch normalization in deep learning and its implementation.",
+        "es": "Comprender en profundidad la importancia de la normalización por lotes en el aprendizaje profundo y su implementación."
       },
-      "host": "www.technologyreview.com",
-      "ts": "2025-09-12T12:10:00+00:00",
+      "host": "",
+      "ts": "2025-09-14T00:00:00+00:00",
       "has_code": false,
       "key_numbers_compact": [],
       "reusability_i18n": {
         "zh": [
-          "AI模型识别枪支风险的流程",
-          "技术与公共健康结合的框架",
-          "政策制定者的借鉴方法"
+          "可复用的批量归一化实现代码",
+          "优化深度学习模型训练流程",
+          "评估批量归一化对模型性能的影响"
         ],
         "en": [
-          "The process of AI models identifying gun risk",
-          "A framework combining technology and public health",
-          "A reference method for policymakers"
+          "Reusable batch normalization implementation code",
+          "Optimized deep learning model training process",
+          "Evaluation of the impact of batch normalization on model performance"
         ],
         "es": [
-          "El proceso de modelos de IA identificando el riesgo de armas",
-          "Un marco que combina tecnología y salud pública",
-          "Un método de referencia para los formuladores de políticas"
-        ]
-      },
-      "limitations_i18n": {
-        "zh": [],
-        "en": [],
-        "es": []
-      }
-    },
-    {
-      "headline": "AI模型如何生成视频",
-      "one_liner": "MIT科技评论解释了AI模型生成视频的复杂机制。",
-      "task": "NLP",
-      "type": "blog",
-      "novelty": "N/A",
-      "key_numbers": [
-        {
-          "dataset": "N/A",
-          "metric": "N/A",
-          "ours": "N/A",
-          "baseline": "N/A",
-          "impr_abs": "N/A",
-          "impr_rel": "N/A"
-        }
-      ],
-      "reusability": [
-        "可复用的模型比较分析方法",
-        "跨领域合作的工程设计要点",
-        "生成质量评估流程的标准化"
-      ],
-      "limitations": [],
-      "links": {
-        "paper": "https://www.technologyreview.com/2025/09/12/1123562/how-do-ai-models-generate-videos/",
-        "code": "N/A",
-        "project": "N/A",
-        "pdf": "N/A"
-      },
-      "tags": [
-        "AI",
-        "Video",
-        "Generation"
-      ],
-      "impact_score": 0,
-      "quick_read": "本文深入探讨了AI模型生成视频的机制，分析了近年来在视频生成领域的重大进展，帮助读者理解技术的未来发展方向。",
-      "who_should_try": "技术爱好者",
-      "reproducibility_score": 50,
-      "title_i18n": {
-        "zh": "AI模型如何生成视频",
-        "en": "How do AI models generate videos?"
-      },
-      "summary_i18n": {
-        "zh": "随着视频生成技术的快速发展，现有研究在理解AI模型生成视频的机制上存在一定的空白。本文通过分析多个前沿AI视频生成系统，如OpenAI的Sora和Google DeepMind的Veo 3，探讨其工作原理和应用场景。关键创新点在于对不同模型生成视频的比较分析，以及对其潜在应用的深入探讨。研究表明，这些模型在生成质量上优于主流基线，展现出较强的实用性和灵活性。值得借鉴的是，作者强调了跨领域合作在推动技术进步中的重要性。该研究为视频生成领域提供了新的视角，可能影响未来AI在创意产业中的应用边界。",
-        "en": "With the rapid development of video generation technology, there are certain gaps in existing research regarding the understanding of the mechanisms by which AI models generate videos. This paper analyzes several cutting-edge AI video generation systems, such as OpenAI's Sora and Google DeepMind's Veo 3, exploring their working principles and application scenarios. The key innovations lie in the comparative analysis of video generation across different models and a thorough discussion of their potential applications. The research indicates that these models outperform mainstream baselines in terms of generation quality, demonstrating strong practicality and flexibility. Notably, the authors emphasize the importance of cross-domain collaboration in driving technological advancement. This study provides a new perspective for the field of video generation and may influence the future application boundaries of AI in the creative industry.",
-        "es": "Con el rápido desarrollo de la tecnología de generación de videos, existe un cierto vacío en la comprensión de los mecanismos mediante los cuales los modelos de IA generan videos. Este artículo explora el funcionamiento y los escenarios de aplicación de varios sistemas de generación de videos de IA de vanguardia, como Sora de OpenAI y Veo 3 de Google DeepMind, a través del análisis. El punto clave de innovación radica en el análisis comparativo de la generación de videos por diferentes modelos, así como en la profunda discusión sobre sus aplicaciones potenciales. La investigación muestra que estos modelos superan a las líneas base convencionales en calidad de generación, demostrando una fuerte practicidad y flexibilidad. Es notable que los autores enfatizan la importancia de la colaboración interdisciplinaria en el impulso del progreso tecnológico. Este estudio ofrece una nueva perspectiva en el campo de la generación de videos, lo que podría influir en los límites de aplicación de la IA en la industria creativa en el futuro."
-      },
-      "host": "www.technologyreview.com",
-      "ts": "2025-09-12T10:01:44+00:00",
-      "has_code": false,
-      "key_numbers_compact": [],
-      "reusability_i18n": {
-        "zh": [
-          "可复用的模型比较分析方法",
-          "跨领域合作的工程设计要点",
-          "生成质量评估流程的标准化"
-        ],
-        "en": [
-          "Comparative analysis method for reusable models",
-          "Key points for engineering design in cross-domain collaboration",
-          "Standardization of the generative quality assessment process"
-        ],
-        "es": [
-          "Método de análisis comparativo para modelos reutilizables",
-          "Puntos clave para el diseño de ingeniería en colaboración interdominio",
-          "Estandarización del proceso de evaluación de calidad generativa"
+          "Código de implementación de normalización por lotes reutilizable",
+          "Proceso de entrenamiento de modelos de aprendizaje profundo optimizado",
+          "Evaluación del impacto de la normalización por lotes en el rendimiento del modelo"
         ]
       },
       "limitations_i18n": {
@@ -593,11 +577,7 @@
   "refs": [],
   "stats": {
     "by_task": {
-      "LLM": 1,
-      "NLP": 3,
-      "CV": 1,
-      "ASR": 1,
-      "Infra": 1
+      "LLM": 0
     },
     "with_code": 0,
     "new_benchmarks": 0
