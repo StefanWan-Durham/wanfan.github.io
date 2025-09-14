@@ -1,7 +1,7 @@
 {
   "generated_at": "2025-09-14T23:19:39.935465Z",
   "window_hours": 48,
-  "count": 27,
+  "count": 22,
   "items": [
     {
       "id": "9149ec36c142adc3",
@@ -141,6 +141,28 @@
         "en": ""
       },
       "hotness": 0.957519
+    },
+    {
+      "id": "3fbf0fb880ac838e",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.geoffreylitt.com/2025/09/10/ai-as-teleportation.html",
+      "title": "AI as Teleportation",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-14T20:17:45Z",
+      "fetched_at": "2025-09-14T23:14:31.582721Z",
+      "title_i18n": {
+        "en": "AI as Teleportation",
+        "zh": "人工智能即瞬间传送",
+        "es": "La IA como teletransporte"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.957162
     },
     {
       "id": "4d93a238ba706681",
@@ -484,146 +506,6 @@
         "es": "Divulgación: Penske Media Corporation es inversor en Vox Media, la empresa matriz de The Verge. Penske Media Corporation, la editora de Rolling Stone y The Hollywood Reporter, se ha convertido en el primer gran medio estadounidense"
       },
       "hotness": 0.95592
-    },
-    {
-      "id": "344f5ea4e5259558",
-      "source": {
-        "site": "https://www.qbitai.com",
-        "feed": "https://www.qbitai.com/feed"
-      },
-      "url": "https://www.qbitai.com/2025/09/331291.html",
-      "title": "OpenAI新幻觉论文惹争议！GPT-5拉胯是测试基准有问题？？",
-      "raw_excerpt": "《语言模型为何会产生幻觉？》这篇论文火了",
-      "tags": [],
-      "published_at": "2025-09-14T06:26:12Z",
-      "fetched_at": "2025-09-14T23:14:31.582721Z",
-      "title_i18n": {
-        "zh": "OpenAI新幻觉论文惹争议！GPT-5拉胯是测试基准有问题？？",
-        "en": "OpenAI's new hallucination paper sparks controversy! Is GPT-5's underperformance due to flawed testing benchmarks??",
-        "es": "El nuevo artículo sobre alucinaciones de OpenAI genera controversia. ¿El bajo rendimiento de GPT-5 se debe a problemas en los puntos de referencia de prueba?"
-      },
-      "excerpt_i18n": {
-        "zh": "《语言模型为何会产生幻觉？》这篇论文火了",
-        "en": "The paper \"Why Do Language Models Hallucinate?\" has gone viral.",
-        "es": "¿Por qué los modelos de lenguaje generan alucinaciones? Este artículo de investigación se ha vuelto viral."
-      },
-      "hotness": 0.940263
-    },
-    {
-      "id": "a4cab795f6de94f6",
-      "source": {
-        "site": "https://www.jiqizhixin.com/",
-        "feed": "https://www.jiqizhixin.com/rss"
-      },
-      "url": "https://www.jiqizhixin.com/articles/2025-09-14-6",
-      "title": "抢先实测美团首个AI Agent，让我体验一把「懒人点餐」的快乐",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-14T05:52:50Z",
-      "fetched_at": "2025-09-14T23:14:31.582721Z",
-      "title_i18n": {
-        "zh": "抢先实测美团首个AI Agent，让我体验一把「懒人点餐」的快乐",
-        "en": "First-hand testing of Meituan's inaugural AI Agent gave me a taste of the joy of \"lazy ordering.\"",
-        "es": "Prueba prioritaria del primer agente de IA de Meituan, me permite experimentar la alegría de \"pedir comida como un perezoso\"."
-      },
-      "excerpt_i18n": {
-        "zh": ""
-      },
-      "hotness": 0.971607
-    },
-    {
-      "id": "3fbf0fb880ac838e",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://www.geoffreylitt.com/2025/09/10/ai-as-teleportation.html",
-      "title": "AI as Teleportation",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-14T20:17:45Z",
-      "fetched_at": "2025-09-14T23:14:31.582721Z",
-      "title_i18n": {
-        "en": "AI as Teleportation",
-        "zh": "人工智能即瞬间传送",
-        "es": "La IA como teletransporte"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.957162
-    },
-    {
-      "id": "a234af1216050560",
-      "source": {
-        "site": "https://www.infoq.cn",
-        "feed": "https://www.infoq.cn/feed"
-      },
-      "url": "https://www.infoq.cn/article/XhOYofMbOai6S8uNfIao",
-      "title": "从人工到 AI 驱动：快手广告流量全链路观测实践｜QCon 上海",
-      "raw_excerpt": "点击查看原文>",
-      "tags": [],
-      "published_at": "2025-09-14T10:00:00Z",
-      "fetched_at": "2025-09-14T23:14:31.582721Z",
-      "title_i18n": {
-        "zh": "从人工到 AI 驱动：快手广告流量全链路观测实践｜QCon 上海",
-        "en": "From Manual to AI-Driven: Kuaishou's Full-Path Advertising Traffic Monitoring Practice | QCon Shanghai",
-        "es": "De manual a impulsado por IA: Práctica de observación integral del tráfico publicitario en Kuaishou | QCon Shanghái"
-      },
-      "excerpt_i18n": {
-        "zh": "点击查看原文>",
-        "en": "Click to view the original text >",
-        "es": "Haga clic para ver el texto original>"
-      },
-      "hotness": 0.824927
-    },
-    {
-      "id": "fce44579ed7f5414",
-      "source": {
-        "site": "https://blogs.nvidia.com/",
-        "feed": "https://blogs.nvidia.com/feed/"
-      },
-      "url": "https://blogs.nvidia.com/blog/uk-llm-nemotron/",
-      "title": "Reaching Across the Isles: UK-LLM Brings AI to UK Languages With NVIDIA Nemotron",
-      "raw_excerpt": "Celtic languages — including Cornish, Irish, Scottish Gaelic and Welsh — are the U.K.’s oldest living languages. To empower their speakers, the UK-LLM sovereign AI initiative is building an AI model based on NVIDIA Nemotron that can reason in both English and Welsh, a language spoken by about 850,000 people in Wales today. Enabling high-quality Read Article",
-      "tags": [],
-      "published_at": "2025-09-14T01:00:21Z",
-      "fetched_at": "2025-09-14T23:14:31.582721Z",
-      "title_i18n": {
-        "en": "Reaching Across the Isles: UK-LLM Brings AI to UK Languages With NVIDIA Nemotron",
-        "zh": "跨越群岛：英国大语言模型借助英伟达Nemotron为本土语言带来人工智能",
-        "es": "Tendiendo Puentes Entre las Islas: UK-LLM Lleva la IA a los Idiomas del Reino Unido Con NVIDIA Nemotron"
-      },
-      "excerpt_i18n": {
-        "en": "Celtic languages — including Cornish, Irish, Scottish Gaelic and Welsh — are the U.K.’s oldest living languages. To empower their speakers, the UK-LLM sovereign AI initiative is building an AI model based on NVIDIA Nemotron that can reason in both English and Welsh, a language spoken by about 850,000 people in Wales today. Enabling high-quality Read Article",
-        "zh": "凯尔特语系——包括康沃尔语、爱尔兰语、苏格兰盖尔语和威尔士语——是英国现存最古老的语言。为增强使用者能力，英国主权AI计划UK-LLM正基于英伟达Nemot构建人工智能模型。",
-        "es": "Las lenguas celtas —incluyendo el córnico, el irlandés, el gaélico escocés y el galés— son las lenguas vivas más antiguas del Reino Unido. Para empoderar a sus hablantes, la iniciativa de IA soberana UK-LLM está construyendo un modelo de IA basado en NVIDIA Nemot."
-      },
-      "hotness": 0.724451
-    },
-    {
-      "id": "94f6bf7edb30b906",
-      "source": {
-        "site": "https://www.infoq.cn",
-        "feed": "https://www.infoq.cn/feed"
-      },
-      "url": "https://www.infoq.cn/article/Jc2FMrHXXqpgk4g2BgPm",
-      "title": "AI 本地跑？Google 新开源模型上线，本地量化后占用不到 200MB 内存，支持百余语言",
-      "raw_excerpt": "点击查看原文>",
-      "tags": [],
-      "published_at": "2025-09-13T17:37:40Z",
-      "fetched_at": "2025-09-14T23:14:31.582721Z",
-      "title_i18n": {
-        "zh": "AI 本地跑？Google 新开源模型上线，本地量化后占用不到 200MB 内存，支持百余语言",
-        "en": "Running AI locally? Google's newly open-sourced model is now available, occupying less than 200MB of memory after local quantization and supporting over a hundred languages.",
-        "es": "¿Ejecutar IA localmente? El nuevo modelo de código abierto de Google ya está disponible, ocupando menos de 200 MB de memoria tras la cuantización local, compatible con más de cien idiomas."
-      },
-      "excerpt_i18n": {
-        "zh": "点击查看原文>",
-        "en": "Click to view the original text>",
-        "es": "Haga clic para ver el original>"
-      },
-      "hotness": 0.651235
     }
   ]
 }

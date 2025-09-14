@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-14T04:16:05.937261Z",
+  "generated_at": "2025-09-14T23:19:39.935465Z",
   "window_hours": 48,
-  "count": 36,
+  "count": 38,
   "items": [
     {
       "id": "d61ccd28cefbc316",
@@ -821,6 +821,52 @@
         "es": "Creé un consejo de asesores para ayudarme a programar. Como desarrollador autodidacta, he dependido mucho de la inteligencia artificial durante los últimos dos años. Me encontraba a menudo solicitando a Claude que adoptara diferentes personalidades, así que construí una aplicación web."
       },
       "hotness": 0.895665
+    },
+    {
+      "id": "344f5ea4e5259558",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/331291.html",
+      "title": "OpenAI新幻觉论文惹争议！GPT-5拉胯是测试基准有问题？？",
+      "raw_excerpt": "《语言模型为何会产生幻觉？》这篇论文火了",
+      "tags": [],
+      "published_at": "2025-09-14T06:26:12Z",
+      "fetched_at": "2025-09-14T23:14:31.582721Z",
+      "title_i18n": {
+        "zh": "OpenAI新幻觉论文惹争议！GPT-5拉胯是测试基准有问题？？",
+        "en": "OpenAI's new hallucination paper sparks controversy! Is GPT-5's underperformance due to flawed testing benchmarks??",
+        "es": "El nuevo artículo sobre alucinaciones de OpenAI genera controversia. ¿El bajo rendimiento de GPT-5 se debe a problemas en los puntos de referencia de prueba?"
+      },
+      "excerpt_i18n": {
+        "zh": "《语言模型为何会产生幻觉？》这篇论文火了",
+        "en": "The paper \"Why Do Language Models Hallucinate?\" has gone viral.",
+        "es": "¿Por qué los modelos de lenguaje generan alucinaciones? Este artículo de investigación se ha vuelto viral."
+      },
+      "hotness": 0.940263
+    },
+    {
+      "id": "a4cab795f6de94f6",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-14-6",
+      "title": "抢先实测美团首个AI Agent，让我体验一把「懒人点餐」的快乐",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-14T05:52:50Z",
+      "fetched_at": "2025-09-14T23:14:31.582721Z",
+      "title_i18n": {
+        "zh": "抢先实测美团首个AI Agent，让我体验一把「懒人点餐」的快乐",
+        "en": "First-hand testing of Meituan's inaugural AI Agent gave me a taste of the joy of \"lazy ordering.\"",
+        "es": "Prueba prioritaria del primer agente de IA de Meituan, me permite experimentar la alegría de \"pedir comida como un perezoso\"."
+      },
+      "excerpt_i18n": {
+        "zh": ""
+      },
+      "hotness": 0.971607
     }
   ]
 }
