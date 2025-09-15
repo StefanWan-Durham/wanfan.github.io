@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-14T23:19:39.935465Z",
+  "generated_at": "2025-09-15T23:14:48.801380Z",
   "window_hours": 48,
-  "count": 38,
+  "count": 39,
   "items": [
     {
       "id": "d61ccd28cefbc316",
@@ -867,6 +867,30 @@
         "zh": ""
       },
       "hotness": 0.971607
+    },
+    {
+      "id": "d3959d507f9cd63d",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/8hIUZJGBm4ok7F4X.html",
+      "title": "蚂蚁开源在外滩大会发布2025全球大模型开源生态全景图，揭示AI开发三大趋势",
+      "raw_excerpt": "9 月 13 日，在 2025 Inclusion·外滩大会AI开源见解论坛上，蚂蚁开源联合Inclusion AI 发布了全新的《全球大模型开源开发生态全景与趋势告》。 这是报告5月首次发布后的2.0版本，不仅全面揭示了人工智能开源领域的发展现状和未来趋势，还纳入了百余天内开源社区的新动向，为行业发展提供重要参考。 （蚂蚁开源技术委员会副主席王旭介绍全球大模型开源开发生态全景与趋势告） 蚂蚁开源技术委员会副主席王旭表示：“我们通过数据驱动的方式，客观呈现全球 AI 开源生态的真实状况。这既为行业提供参考，也展现出中国在 AI 开源领域的重要地位。” 数据揭示大模型开源开发生态新特征 报告最初起源于蚂蚁集团内部的技术趋势洞察，其中的数据全部来源于开源社区，通过对 GitHub 全平台项目的分析，使用 OpenRank 算法对项目进行筛选和排名。本次发布的大模型开源开发生态全景图共收录了分布在 22 个技术领域的 114 个最受关注的开源项目，分为 AI Agent 和 AI Infra 两大技术方向。 （大模型开源全景图2.0） 和全景图一同发布的还有一份详尽的洞察报告《从社区数据出发，再看大模型开源开发生态全景与趋势》。该报告指出，62% 的大模型生态下的开源项目诞生于 2022 年 10 月“GPT 时刻”之后，平均“年龄”仅 30 个月，这反映出 AI 开源生态的高速迭代特性。 “开放共享”或“闭源主导”的路线分化 报告显示，在参与全景图项目开发的约 36 万全球开发者中，统计到美国开发者占比 24%，中国开发者占比 18%，其次是印度（8%）、德国（6%）和英国（5%）。中美两国合计贡献超四成核心力量。更值得关注的是，在大模型开源策略上，中国厂商更倾向于开放权重的开源模型路线，而美国头部厂商则多采用闭源模式。 王旭指出：“这些项目可以想象成数字积木，开发者可以自由组",
+      "tags": [],
+      "published_at": "2025-09-14T06:53:00Z",
+      "fetched_at": "2025-09-15T23:14:29.482962Z",
+      "title_i18n": {
+        "zh": "蚂蚁开源在外滩大会发布2025全球大模型开源生态全景图，揭示AI开发三大趋势",
+        "en": "Ant Open Source unveiled the 2025 Global Large Model Open Source Ecosystem Panorama at the Bund Conference, revealing three major trends in AI development.",
+        "es": "Ant Group Open Source presentó en la Conferencia Bund el Panorama Global de Ecosistemas de Código Abierto de Modelos de Gran Escala 2025, revelando tres grandes tendencias en el desarrollo de IA."
+      },
+      "excerpt_i18n": {
+        "zh": "9 月 13 日，在 2025 Inclusion·外滩大会AI开源见解论坛上，蚂蚁开源联合Inclusion AI 发布了全新的《全球大模型开源开发生态全景与趋势告》。 这是报告5月首次发布后的2.0版本，不仅全面揭示了人工智能开源领域的发展现状和未来趋势，还纳入了百余天内开源社区的新动向，为行业发展提供重要参考。 （蚂蚁开源技术委员会副主席王旭介绍全球大模型开源开发生态全景与趋势告） 蚂蚁开源技术委员会副主席王旭表示：“我们通过数据驱动的方式，客观呈现全球 AI 开源生态的真实状况。这既为行业提供参考，也展现出中国在 AI 开源领域的重要地位。” 数据揭示大模型开源开发生态新特征 报告最初起源于蚂蚁集团内部的技术趋势洞察，其中的数据全部来源于开源社区，通过对 GitHub 全平台项目的分析，使用 OpenRank 算法对项目进行筛选和排名。本次发布的大模型开源开发生态全景图共收录了分布在 22 个技术领域的 114 个最受关注的开源项目，分为 AI Agent 和 AI Infra 两大技术方向。 （大模型开源全景图2.0） 和全景图一同发布的还有一份详尽的洞察报告《从社区数据出发，再看大模型开源开发生态全景与趋势》。该报告指出，62% 的大模型生态下的开源项目诞生于 2022 年 10 月“GPT 时刻”之后，平均“年龄”仅 30 个月，这反映出 AI 开源生态的高速迭代特性。 “开放共享”或“闭源主导”的路线分化 报告显示，在参与全景图项目开发的约 36 万全球开发者中，统计到美国开发者占比 24%，中国开发者占比 18%，其次是印度（8%）、德国（6%）和英国（5%）。中美两国合计贡献超四成核心力量。更值得关注的是，在大模型开源策略上，中国厂商更倾向于开放权重的开源模型路线，而美国头部厂商则多采用闭源模式。 王旭指出：“这些项目可以想象成数字积木，开发者可以自由组",
+        "en": "On September 13, at the 2025 Inclusion·Bund Conference AI Open Source Insights Forum, Ant Open Source and Inclusion AI jointly released the new \"Global Large Model Open Source Development Ecosystem Panorama and Trends Report.\" This 2.0 version, following its initial release in May, not only comprehensively reveals the current state and future trends of the AI open source field but also incorporates new developments from the open source community over the past hundred-plus days, providing important reference for industry development. (Wang Xu, Vice Chairman of the Ant Open Source Technical Committee, introduced the Global Large Model Open Source Development Ecosystem Panorama and Trends Report.) Wang Xu, Vice Chairman of the Ant Open Source Technical Committee, stated: \"Through a data-driven approach, we objectively present the true state of the global AI open source ecosystem. This serves as a reference for the industry and also highlights China's significant role in the AI open source field.\" Data reveals new characteristics of the large model open source development ecosystem. The report originated from Ant Group's internal technical trend insights, with all data sourced from the open source community. It analyzes projects across the entire GitHub platform, using the OpenRank algorithm for screening and ranking. The released large model open source development ecosystem panorama includes 114 highly regarded open source projects across 22 technical fields, categorized into two main directions: AI Agent and AI Infra. (Large Model Open Source Panorama 2.0) Along with the panorama, a detailed insight report titled \"Starting from Community Data\" was also released.",
+        "es": "El 13 de septiembre, en el Foro de Perspectivas de Código Abierto de IA de la Conferencia Inclusion·Bund 2025, Ant Open Source, junto con Inclusion AI, presentó el nuevo \"Panorama y Tendencias del Ecosistema Global de Desarrollo de Código Abierto de Modelos Grandes\". Esta es la versión 2.0 del informe, lanzado por primera vez en mayo, que no solo revela exhaustivamente el estado actual y las tendencias futuras del campo de código abierto de inteligencia artificial, sino que también incorpora los nuevos desarrollos de la comunidad de código abierto en los últimos cien días, proporcionando una referencia importante para el desarrollo de la industria. (Wang Xu, vicepresidente del Comité Técnico de Código Abierto de Ant, presenta el Panorama y Tendencias del Ecosistema Global de Desarrollo de Código Abierto de Modelos Grandes) Wang Xu, vicepresidente del Comité Técnico de Código Abierto de Ant, declaró: \"A través de los datos"
+      },
+      "hotness": 0.558292
     }
   ]
 }
