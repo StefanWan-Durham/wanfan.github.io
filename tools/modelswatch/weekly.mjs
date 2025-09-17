@@ -130,7 +130,7 @@ async function main(){
           dsSummarizeChinese(prompt),
           dsSummarizeSpanish(prompt)
         ]);
-        const neutral = en || it.summary || it.description || zh || es || '';
+        const neutral = zh || en || es || it.summary || it.description || '';
         const patch = { summary: neutral };
         if(en) patch.summary_en = en;
         if(zh) patch.summary_zh = zh;

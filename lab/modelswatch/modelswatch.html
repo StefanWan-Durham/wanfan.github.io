@@ -525,6 +525,9 @@
         score: it.score||0,
         timeline: it.timeline||{t:[],stars:[],downloads:[]},
         summary: it.summary||'',
+        summary_en: it.summary_en||'',
+        summary_zh: it.summary_zh||'',
+        summary_es: it.summary_es||'',
         updated_at: it.updated_at||new Date().toISOString()
       };
       if ((!base.categories.capabilities?.length) && (!base.categories.scenes?.length) && (!base.categories.lifecycle?.length)){

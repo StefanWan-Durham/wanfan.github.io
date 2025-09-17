@@ -373,13 +373,13 @@ async function main(){
   // Summarize with DeepSeek when available; limit concurrency to 3
   const gsum = await mapLimit(gTop, 3, async (it)=> {
     const { zh, en, es } = await smartSummarizeMulti(it);
-    // Prefer English summary for neutral field if available
-    const neutral = en || it.summary || it.description || zh || '';
+    // Neutral prefers Chinese, then English, then Spanish, then existing/desc
+    const neutral = zh || en || es || it.summary || it.description || '';
     return { ...it, summary: neutral, summary_en: en, summary_zh: zh, summary_es: es };
   });
   const hsum = await mapLimit(hTop, 3, async (it)=> {
     const { zh, en, es } = await smartSummarizeMulti(it);
-    const neutral = en || it.summary || it.description || zh || '';
+    const neutral = zh || en || es || it.summary || it.description || '';
     return { ...it, summary: neutral, summary_en: en, summary_zh: zh, summary_es: es };
   });
   writeJSON(path.join(dir,'daily_github.json'), { updated_at: now, items: gsum });
