@@ -1,189 +1,20 @@
 {
   "date": "2025-09-18",
-  "updated_at": "2025-09-17T18:42:44.950Z",
+  "updated_at": "2025-09-17T22:06:36.168Z",
   "items": [
     {
-      "id": "twbs/bootstrap",
+      "id": "sindresorhus/awesome",
       "source": "github",
-      "name": "bootstrap",
-      "url": "https://github.com/twbs/bootstrap",
-      "license": "MIT",
-      "lang": "MDX",
-      "tags": [
-        "bootstrap",
-        "css",
-        "css-framework",
-        "html",
-        "javascript",
-        "sass",
-        "scss"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 173434,
-        "forks": 79156,
-        "issues": 575
-      },
-      "score": 189365.05255952934,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Bootstrap 是一个开源的前端框架，用于快速构建响应式、移动优先的网站和 Web 应用。它提供了一套丰富的 CSS 和 JavaScript 组件，包括网格系统、按钮、表单和导航等，帮助开发者高效实现一致的用户界面。其核心亮点在于强大的响应式设计能力，能够自动适配不同设备屏幕尺寸。适用于各类 Web 项目开发，尤其适合需要快速原型设计或团队协作的场景。",
-      "updated_at": "2025-09-17T16:49:33Z",
-      "summary_en": "Bootstrap is a leading open-source front-end framework for building responsive, mobile-first websites and web applications. It provides a comprehensive set of CSS and JavaScript components, such as grids, forms, and navigation bars, enabling rapid and consistent UI development. Its extensive documentation and large community support make it accessible for developers of all skill levels. Widely used for prototyping and production projects, it streamlines cross-device compatibility and design consistency.",
-      "summary_zh": "Bootstrap 是一个开源的前端框架，用于快速构建响应式、移动优先的网站和 Web 应用。它提供了一套丰富的 CSS 和 JavaScript 组件，包括网格系统、按钮、表单和导航等，帮助开发者高效实现一致的用户界面。其核心亮点在于强大的响应式设计能力，能够自动适配不同设备屏幕尺寸。适用于各类 Web 项目开发，尤其适合需要快速原型设计或团队协作的场景。",
-      "summary_es": "Bootstrap es un framework front-end para crear sitios web responsivos y mobile-first. Incluye componentes predefinidos y un sistema de grid flexible. Es ideal para prototipado rápido y desarrollo consistente. Ampliamente usado en aplicaciones empresariales y proyectos que priorizan la compatibilidad multiplataforma."
-    },
-    {
-      "id": "avelino/awesome-go",
-      "source": "github",
-      "name": "awesome-go",
-      "url": "https://github.com/avelino/awesome-go",
-      "license": "MIT",
-      "lang": "Go",
-      "tags": [
-        "awesome",
-        "awesome-list",
-        "go",
-        "golang",
-        "golang-library",
-        "hacktoberfest"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 152540,
-        "forks": 12568,
-        "issues": 157
-      },
-      "score": 155153.57667218364,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "这是一个精选的Go语言资源集合，收录了大量高质量的框架、库和软件项目。内容涵盖网络编程、数据库、工具链等多个领域，适合Go开发者快速查找和使用成熟的开源组件。该项目由社区共同维护，遵循MIT开源协议，具有极高的活跃度和可靠性。无论是初学者还是资深工程师，都可以从中找到提升开发效率的实用工具。",
-      "updated_at": "2025-09-17T17:43:10Z",
-      "summary_en": "A curated collection of high-quality Go frameworks, libraries, and software, maintained by the community. Ideal for developers seeking reliable tools for building scalable applications, microservices, and system utilities. Covers a wide range of domains, from web development to networking and DevOps. An essential resource for Go programmers to discover and evaluate production-ready solutions.",
-      "summary_zh": "这是一个精选的Go语言资源集合，收录了大量高质量的框架、库和软件项目。内容涵盖网络编程、数据库、工具链等多个领域，适合Go开发者快速查找和使用成熟的开源组件。该项目由社区共同维护，遵循MIT开源协议，具有极高的活跃度和可靠性。无论是初学者还是资深工程师，都可以从中找到提升开发效率的实用工具。",
-      "summary_es": "Lista curada de marcos, bibliotecas y software destacados en Go. Facilita el descubrimiento de herramientas de calidad para desarrollo backend, sistemas distribuidos y CLI. Ideal para desarrolladores que buscan referencias confiables y soluciones probadas en el ecosistema Go."
-    },
-    {
-      "id": "trimstray/the-book-of-secret-knowledge",
-      "source": "github",
-      "name": "the-book-of-secret-knowledge",
-      "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
-      "license": "MIT",
-      "lang": "N/A",
-      "tags": [
-        "awesome",
-        "awesome-list",
-        "bsd",
-        "cheatsheets",
-        "devops",
-        "guidelines",
-        "hacking",
-        "hacks",
-        "howtos",
-        "linux",
-        "lists",
-        "manuals",
-        "one-liners",
-        "pentesters",
-        "resources",
-        "search-engines",
-        "security",
-        "security-researchers",
-        "sysops"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 186475,
-        "forks": 11535,
-        "issues": 100
-      },
-      "score": 188881.96745150464,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "《秘密知识之书》是一个开源的知识集合项目，收录了大量实用资源，包括清单、手册、速查表、博客、技巧、命令行和网页工具等。内容涵盖系统管理、DevOps、安全、Linux等多个技术领域，适合开发者和运维人员快速查找和参考。项目结构清晰，资源分类详细，便于高效检索和使用。无论是日常开发、问题排查还是技能提升，都能从中找到有价值的参考资料。",
-      "updated_at": "2025-09-17T17:39:11Z",
-      "summary_en": "The Book of Secret Knowledge is a comprehensive, curated collection of resources for developers, sysadmins, and security professionals. It includes cheatsheets, guides, tools, and practical tips covering Linux, DevOps, and cybersecurity. Its strength lies in its extensive, well-organized content, making it a valuable reference for both learning and daily use. Ideal for quick lookups, skill enhancement, and troubleshooting in technical environments.",
-      "summary_zh": "《秘密知识之书》是一个开源的知识集合项目，收录了大量实用资源，包括清单、手册、速查表、博客、技巧、命令行和网页工具等。内容涵盖系统管理、DevOps、安全、Linux等多个技术领域，适合开发者和运维人员快速查找和参考。项目结构清晰，资源分类详细，便于高效检索和使用。无论是日常开发、问题排查还是技能提升，都能从中找到有价值的参考资料。",
-      "summary_es": "Este proyecto es una extensa colección de recursos técnicos, incluyendo listas, manuales, hojas de referencia y herramientas CLI/web. Destaca por su enfoque en DevOps, hacking y administración de sistemas Linux. Es ideal para profesionales que buscan referencias rápidas, mejores prácticas y soluciones técnicas. Su estructura organizada y contenido práctico lo convierten en una valiosa fuente de conocimiento para desarrolladores y administradores."
-    },
-    {
-      "id": "ohmyzsh/ohmyzsh",
-      "source": "github",
-      "name": "ohmyzsh",
-      "url": "https://github.com/ohmyzsh/ohmyzsh",
-      "license": "MIT",
-      "lang": "Shell",
-      "tags": [
-        "cli",
-        "cli-app",
-        "hacktoberfest",
-        "oh-my-zsh",
-        "oh-my-zsh-plugin",
-        "oh-my-zsh-theme",
-        "ohmyzsh",
-        "plugin-framework",
-        "plugins",
-        "productivity",
-        "shell",
-        "terminal",
-        "theme",
-        "themes",
-        "zsh",
-        "zsh-configuration"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 181464,
-        "forks": 26215,
-        "issues": 502
-      },
-      "score": 186806.79700397377,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Ohmyzsh 是一个社区驱动的 Zsh 配置管理框架，拥有超过 2400 名贡献者。它提供了 300 多个可选插件，支持多种开发环境和工具，如 Git、Docker、Python 等，并包含 140 多种主题，可高度自定义终端外观。内置的自动更新工具方便用户及时获取社区最新功能。适用于希望提升终端使用效率和美观度的开发者和高级用户。",
-      "updated_at": "2025-09-17T16:25:33Z",
-      "summary_en": "Oh My Zsh is a community-driven framework for managing ZSH shell configurations. It offers over 300 plugins for tools like Git, Docker, and Python, enhancing productivity and workflow automation. With 140+ themes, it allows extensive customization of the terminal interface. Its auto-update feature ensures users stay current with community contributions, making it ideal for developers and power users.",
-      "summary_zh": "Ohmyzsh 是一个社区驱动的 Zsh 配置管理框架，拥有超过 2400 名贡献者。它提供了 300 多个可选插件，支持多种开发环境和工具，如 Git、Docker、Python 等，并包含 140 多种主题，可高度自定义终端外观。内置的自动更新工具方便用户及时获取社区最新功能。适用于希望提升终端使用效率和美观度的开发者和高级用户。",
-      "summary_es": "Ohmyzsh es un marco de configuración para la terminal zsh, impulsado por la comunidad. Ofrece más de 300 plugins y 140 temas para mejorar la productividad en línea de comandos. Su principal fortaleza es la personalización y automatización de tareas comunes. Es ideal para desarrolladores y administradores de sistemas."
-    },
-    {
-      "id": "github/gitignore",
-      "source": "github",
-      "name": "gitignore",
-      "url": "https://github.com/github/gitignore",
+      "name": "awesome",
+      "url": "https://github.com/sindresorhus/awesome",
       "license": "CC0-1.0",
       "lang": "N/A",
       "tags": [
-        "git",
-        "gitignore"
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
       ],
       "categories": {
         "capabilities": [],
@@ -191,187 +22,90 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 169421,
-        "forks": 83002,
-        "issues": 319
+        "stars": 400550,
+        "forks": 31598,
+        "issues": 63
       },
-      "score": 186121.2881690972,
+      "score": 406969.5912940972,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个由 GitHub 官方维护的 `.gitignore` 模板集合，适用于各种编程语言、框架和开发环境。它可以帮助开发者快速生成适合项目的 `.gitignore` 文件，避免将不必要的文件（如编译产物、日志、依赖目录等）提交到 Git 仓库中。该项目采用 CC0-1.0 协议，允许自由使用和分发。无论是个人项目还是团队协作，都可以通过这个模板库提升代码管理的效率和整洁性。",
-      "updated_at": "2025-09-17T17:04:56Z",
-      "summary_en": "Project: gitignore  \nA comprehensive collection of .gitignore templates for various programming languages, frameworks, and tools. It helps developers exclude unnecessary files from version control, reducing repository clutter and improving performance. Widely applicable for any Git-based project, it is maintained by GitHub and community contributions. Simplifies setup and ensures best practices for ignoring files across different environments.",
-      "summary_zh": "这是一个由 GitHub 官方维护的 `.gitignore` 模板集合，适用于各种编程语言、框架和开发环境。它可以帮助开发者快速生成适合项目的 `.gitignore` 文件，避免将不必要的文件（如编译产物、日志、依赖目录等）提交到 Git 仓库中。该项目采用 CC0-1.0 协议，允许自由使用和分发。无论是个人项目还是团队协作，都可以通过这个模板库提升代码管理的效率和整洁性。",
-      "summary_es": "Colección de plantillas .gitignore para proyectos de software. Simplifica la exclusión de archivos innecesarios en repositorios Git. Incluye configuraciones para lenguajes, entornos y herramientas específicas. Ideal para mantener repositorios limpios y optimizados."
+      "summary": "这是一个由社区驱动的精选资源集合项目，收录了大量高质量的技术、工具和学习资料列表。项目采用CC0开源协议，允许自由使用和分发。每个列表都经过社区维护和筛选，覆盖编程语言、框架、设计、学术研究等多个领域。适合开发者、研究人员和技术爱好者快速获取可靠的学习参考资料，避免信息过载。目前已在GitHub上获得超过40万星标，成为技术圈内最具影响力的资源索引项目之一。",
+      "updated_at": "2025-09-17T17:49:29Z",
+      "summary_en": "A curated collection of high-quality lists covering a wide range of topics in technology, science, and beyond. It serves as a centralized resource for developers, researchers, and enthusiasts seeking organized, community-vetted references. Its strength lies in its extensive coverage and community contributions, making it applicable for discovering tools, frameworks, and learning materials efficiently. Ideal for quick access to reliable, categorized information across diverse domains.",
+      "summary_zh": "这是一个由社区驱动的精选资源集合项目，收录了大量高质量的技术、工具和学习资料列表。项目采用CC0开源协议，允许自由使用和分发。每个列表都经过社区维护和筛选，覆盖编程语言、框架、设计、学术研究等多个领域。适合开发者、研究人员和技术爱好者快速获取可靠的学习参考资料，避免信息过载。目前已在GitHub上获得超过40万星标，成为技术圈内最具影响力的资源索引项目之一。",
+      "summary_es": "Proyecto que recopila listas curadas de recursos de alta calidad en diversos temas tecnológicos y educativos. Destaca por su organización colaborativa y mantenimiento comunitario. Ideal para desarrolladores, investigadores y estudiantes que buscan referencias confiables. Su licencia abierta permite uso y modificación sin restricciones."
     },
     {
-      "id": "flutter/flutter",
+      "id": "public-apis/public-apis",
       "source": "github",
-      "name": "flutter",
-      "url": "https://github.com/flutter/flutter",
+      "name": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source",
+        "public",
+        "public-api",
+        "public-apis",
+        "resources",
+        "software"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 365276,
+        "forks": 38350,
+        "issues": 585
+      },
+      "score": 373045.98654872685,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由社区维护的免费 API 集合项目，收录了涵盖多个领域的公共 API 资源。项目按照类别整理，包括新闻、金融、娱乐、工具等，每个 API 均附带简要说明和使用链接。开发者可以快速查找和调用各类开放接口，适用于原型开发、学习测试或集成第三方服务。该项目开源且持续更新，已成为许多开发者寻找 API 资源的首选工具之一。",
+      "updated_at": "2025-09-17T17:47:26Z",
+      "summary_en": "Public-APIs is a comprehensive, curated collection of free and open APIs for developers. It serves as a valuable resource for discovering and integrating diverse data sources and services into applications. The project is well-maintained, community-driven, and covers a wide range of categories, including business, entertainment, and tools. It is particularly useful for prototyping, learning, and building projects without licensing barriers.",
+      "summary_zh": "这是一个由社区维护的免费 API 集合项目，收录了涵盖多个领域的公共 API 资源。项目按照类别整理，包括新闻、金融、娱乐、工具等，每个 API 均附带简要说明和使用链接。开发者可以快速查找和调用各类开放接口，适用于原型开发、学习测试或集成第三方服务。该项目开源且持续更新，已成为许多开发者寻找 API 资源的首选工具之一。",
+      "summary_es": "Lista colaborativa de APIs públicas gratuitas, organizadas por categorías. Facilita el descubrimiento de servicios web para desarrollo, pruebas y prototipado. Incluye filtros por autenticación, tipo y soporte HTTPS. Ideal para desarrolladores que buscan integrar funcionalidades externas sin coste."
+    },
+    {
+      "id": "freeCodeCamp/freeCodeCamp",
+      "source": "github",
+      "name": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
       "license": "BSD-3-Clause",
-      "lang": "Dart",
+      "lang": "TypeScript",
       "tags": [
-        "android",
-        "app-framework",
-        "cross-platform",
-        "dart",
-        "dart-platform",
-        "desktop",
-        "flutter",
-        "flutter-package",
-        "fuchsia",
-        "ios",
-        "linux-desktop",
-        "macos",
-        "material-design",
-        "mobile",
-        "mobile-development",
-        "skia",
-        "web",
-        "web-framework",
-        "windows"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 172478,
-        "forks": 29213,
-        "issues": 12251
-      },
-      "score": 178420.59939594907,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Flutter 是由 Google 开发的开源 UI 框架，使用 Dart 语言构建高性能、跨平台的应用程序。它支持移动端（iOS 和 Android）、桌面端（Windows、macOS、Linux）以及 Web 端开发，通过单一代码库实现多平台部署。Flutter 的核心亮点包括其丰富的组件库、高度自定义的 UI 设计能力，以及热重载功能，显著提升开发效率。适用于需要快速迭代、追求一致用户体验的跨平台应用开发场景。",
-      "updated_at": "2025-09-17T17:52:59Z",
-      "summary_en": "Flutter is an open-source UI framework for building natively compiled applications for mobile, web, and desktop from a single codebase. It uses the Dart programming language and provides a rich set of pre-designed widgets, enabling fast development with a consistent look and feel across platforms. Its hot reload feature allows for real-time updates during development, improving productivity. Flutter is ideal for developers aiming to create high-performance, visually appealing apps efficiently.",
-      "summary_zh": "Flutter 是由 Google 开发的开源 UI 框架，使用 Dart 语言构建高性能、跨平台的应用程序。它支持移动端（iOS 和 Android）、桌面端（Windows、macOS、Linux）以及 Web 端开发，通过单一代码库实现多平台部署。Flutter 的核心亮点包括其丰富的组件库、高度自定义的 UI 设计能力，以及热重载功能，显著提升开发效率。适用于需要快速迭代、追求一致用户体验的跨平台应用开发场景。",
-      "summary_es": "Flutter es un framework de código abierto para crear aplicaciones nativas compiladas para móvil, web y escritorio desde una única base de código. Utiliza el lenguaje Dart y ofrece alto rendimiento con renderizado propio. Ideal para desarrollo cross-platform con interfaces fluidas y personalizables. Ampliamente adoptado en aplicaciones de producción."
-    },
-    {
-      "id": "AUTOMATIC1111/stable-diffusion-webui",
-      "source": "github",
-      "name": "stable-diffusion-webui",
-      "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-      "license": "AGPL-3.0",
-      "lang": "Python",
-      "tags": [
-        "ai",
-        "ai-art",
-        "deep-learning",
-        "diffusion",
-        "gradio",
-        "image-generation",
-        "image2image",
-        "img2img",
-        "pytorch",
-        "stable-diffusion",
-        "text2image",
-        "torch",
-        "txt2img",
-        "unstable",
-        "upscaling",
-        "web"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 156485,
-        "forks": 29043,
-        "issues": 2426
-      },
-      "score": 162393.59025243056,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Stable Diffusion web UI 是一个基于 Gradio 构建的 Web 界面，用于运行 Stable Diffusion 图像生成模型。它支持文本到图像、图像到图像等多种生成模式，并提供了丰富的自定义选项，如模型选择、参数调整和插件扩展。该项目适用于 AI 艺术创作、设计辅助和实验研究等场景，用户无需编写代码即可使用强大的图像生成功能。其开源特性允许开发者自由修改和扩展功能，推动了 AI 生成内容的普及和创新。",
-      "updated_at": "2025-09-17T17:49:02Z",
-      "summary_en": "Stable Diffusion web UI is a popular open-source interface for running and customizing Stable Diffusion models. It enables users to generate, edit, and manipulate images via text prompts and image inputs. The tool supports various workflows, including text-to-image, image-to-image, and inpainting, making it versatile for creative and experimental use. Built with Gradio and PyTorch, it is widely adopted by artists, researchers, and hobbyists for accessible AI-driven image generation.",
-      "summary_zh": "Stable Diffusion web UI 是一个基于 Gradio 构建的 Web 界面，用于运行 Stable Diffusion 图像生成模型。它支持文本到图像、图像到图像等多种生成模式，并提供了丰富的自定义选项，如模型选择、参数调整和插件扩展。该项目适用于 AI 艺术创作、设计辅助和实验研究等场景，用户无需编写代码即可使用强大的图像生成功能。其开源特性允许开发者自由修改和扩展功能，推动了 AI 生成内容的普及和创新。",
-      "summary_es": "Interfaz web para Stable Diffusion que permite generar y transformar imágenes mediante IA. Ofrece amplias opciones de personalización, soporta múltiples modelos y extensiones. Ideal para artistas digitales, investigadores y entusiastas de la inteligencia artificial que buscan una herramienta versátil y accesible para creación visual."
-    },
-    {
-      "id": "Snailclimb/JavaGuide",
-      "source": "github",
-      "name": "JavaGuide",
-      "url": "https://github.com/Snailclimb/JavaGuide",
-      "license": "Apache-2.0",
-      "lang": "Java",
-      "tags": [
-        "algorithms",
-        "interview",
-        "java",
-        "jvm",
-        "mysql",
-        "redis",
-        "spring",
-        "system",
-        "system-design",
-        "zookeeper"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 151773,
-        "forks": 45985,
-        "issues": 73
-      },
-      "score": 161069.93299934414,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "《JavaGuide》是一份面向 Java 开发者的综合性学习与面试指南，内容涵盖 Java 核心知识、JVM、常用框架（如 Spring）、数据库（MySQL、Redis）、分布式系统设计及常用中间件（如 ZooKeeper）。该项目结构清晰、内容实用，不仅适合系统学习 Java 技术栈，也为求职面试提供了高质量的资料支持。无论是初学者入门，还是开发者进阶和面试准备，都能从中获得帮助。",
-      "updated_at": "2025-09-17T17:24:18Z",
-      "summary_en": "JavaGuide is a comprehensive open-source resource for Java developers, covering core knowledge areas like algorithms, JVM, databases, and frameworks. It serves as a study and interview preparation guide, offering practical insights and examples. Its strengths include broad topic coverage, clear explanations, and relevance to real-world development and hiring processes. Ideal for learners and professionals aiming to deepen their Java expertise or prepare for technical interviews.",
-      "summary_zh": "《JavaGuide》是一份面向 Java 开发者的综合性学习与面试指南，内容涵盖 Java 核心知识、JVM、常用框架（如 Spring）、数据库（MySQL、Redis）、分布式系统设计及常用中间件（如 ZooKeeper）。该项目结构清晰、内容实用，不仅适合系统学习 Java 技术栈，也为求职面试提供了高质量的资料支持。无论是初学者入门，还是开发者进阶和面试准备，都能从中获得帮助。",
-      "summary_es": "JavaGuide es una guía integral para desarrolladores Java, enfocada en aprendizaje y preparación para entrevistas. Cubre conocimientos esenciales como algoritmos, JVM, bases de datos y frameworks como Spring. Su enfoque práctico y contenido actualizado lo hacen ideal para estudiantes y profesionales que buscan reforzar habilidades técnicas o prepararse para procesos de selección."
-    },
-    {
-      "id": "huggingface/transformers",
-      "source": "github",
-      "name": "transformers",
-      "url": "https://github.com/huggingface/transformers",
-      "license": "Apache-2.0",
-      "lang": "Python",
-      "tags": [
-        "audio",
-        "deep-learning",
-        "deepseek",
-        "gemma",
-        "glm",
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
         "hacktoberfest",
-        "llm",
-        "machine-learning",
-        "model-hub",
-        "natural-language-processing",
-        "nlp",
-        "pretrained-models",
-        "python",
-        "pytorch",
-        "pytorch-transformers",
-        "qwen",
-        "speech-recognition",
-        "transformer",
-        "vlm"
+        "javascript",
+        "learn-to-code",
+        "math",
+        "nodejs",
+        "nonprofits",
+        "programming",
+        "react",
+        "teachers"
       ],
       "categories": {
         "capabilities": [],
@@ -379,35 +113,78 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 149912,
-        "forks": 30436,
-        "issues": 1990
+        "stars": 427799,
+        "forks": 41570,
+        "issues": 322
       },
-      "score": 156099.1655996528,
+      "score": 436212.99885582563,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "🤗 Transformers 是一个开源机器学习框架，专注于提供最先进的文本、视觉、音频和多模态模型的实现。它支持推理和训练，适用于自然语言处理、计算机视觉和音频处理等多种任务。该框架集成了大量预训练模型，如 BERT、GPT 和 T5，并支持快速部署和微调。适用于研究人员、工程师和开发者，用于构建和实验先进的 AI 应用。",
-      "updated_at": "2025-09-17T17:38:23Z",
-      "summary_en": "🤗 Transformers is a versatile open-source library for state-of-the-art machine learning models across text, vision, audio, and multimodal tasks. It supports both training and inference, offering a unified framework for models like BERT, GPT, and Whisper. Its strengths include extensive pre-trained models, ease of fine-tuning, and broad applicability in NLP, computer vision, and speech processing. Ideal for researchers and developers building scalable AI applications.",
-      "summary_zh": "🤗 Transformers 是一个开源机器学习框架，专注于提供最先进的文本、视觉、音频和多模态模型的实现。它支持推理和训练，适用于自然语言处理、计算机视觉和音频处理等多种任务。该框架集成了大量预训练模型，如 BERT、GPT 和 T5，并支持快速部署和微调。适用于研究人员、工程师和开发者，用于构建和实验先进的 AI 应用。",
-      "summary_es": "Transformers es una biblioteca de código abierto para modelos de aprendizaje profundo en texto, visión, audio y multimodal. Ofrece implementaciones de última generación para inferencia y entrenamiento, con soporte para múltiples arquitecturas. Sus puntos fuertes incluyen integración con el Hub de modelos y facilidad de uso. Es ampliamente utilizado en procesamiento de lenguaje natural y tareas multimodales."
+      "summary": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程，内容涵盖数学、JavaScript 和 D3 等核心技术。其课程结构清晰，适合初学者和进阶开发者自学使用。平台提供认证路径，帮助学习者系统掌握技能并积累项目经验。freeCodeCamp 以社区驱动和完全免费为特色，适合任何希望进入技术行业或提升编程能力的人。",
+      "updated_at": "2025-09-17T17:52:45Z",
+      "summary_en": "freeCodeCamp is an open-source educational platform offering a comprehensive curriculum for learning programming, math, and computer science. It provides hands-on coding challenges, projects, and certifications to help users build practical skills. The platform is community-driven and supports multiple programming languages, with a focus on JavaScript and web development. It is ideal for self-learners and career changers seeking free, structured learning resources.",
+      "summary_zh": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程，内容涵盖数学、JavaScript 和 D3 等核心技术。其课程结构清晰，适合初学者和进阶开发者自学使用。平台提供认证路径，帮助学习者系统掌握技能并积累项目经验。freeCodeCamp 以社区驱动和完全免费为特色，适合任何希望进入技术行业或提升编程能力的人。",
+      "summary_es": "freeCodeCamp es una plataforma educativa de código abierto que ofrece un plan de estudios completo para aprender programación, matemáticas y ciencias de la computación de forma gratuita. Su enfoque práctico incluye proyectos reales y certificaciones validadas por la comunidad. Es ideal para principiantes y personas que buscan cambiar de carrera, gracias a su estructura modular y soporte colaborativo."
     },
     {
-      "id": "omni-research/Tarsier2-Recap-7b",
-      "source": "hf",
-      "name": "Tarsier2-Recap-7b",
-      "url": "https://huggingface.co/omni-research/Tarsier2-Recap-7b",
-      "license": "N/A",
+      "id": "EbookFoundation/free-programming-books",
+      "source": "github",
+      "name": "free-programming-books",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "license": "CC-BY-4.0",
+      "lang": "Python",
+      "tags": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 368348,
+        "forks": 64167,
+        "issues": 25
+      },
+      "score": 381281.38481261575,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。内容涵盖多种编程语言、框架和计算机科学主题，适合不同水平的学习者和开发者。所有资源均经过社区筛选，遵循开放许可协议，便于自由使用和分享。该项目适用于自学、教学参考或技术知识扩展，是编程教育领域的实用宝库。",
+      "updated_at": "2025-09-17T17:46:41Z",
+      "summary_en": "A comprehensive, community-curated collection of freely available programming books and resources. Ideal for self-learners, students, and educators seeking accessible educational materials. Covers a wide range of languages, tools, and topics, with contributions in multiple languages. Highly valuable for building foundational knowledge and advancing technical skills without cost barriers.",
+      "summary_zh": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。内容涵盖多种编程语言、框架和计算机科学主题，适合不同水平的学习者和开发者。所有资源均经过社区筛选，遵循开放许可协议，便于自由使用和分享。该项目适用于自学、教学参考或技术知识扩展，是编程教育领域的实用宝库。",
+      "summary_es": "Repositorio colaborativo que recopila libros gratuitos sobre programación y desarrollo de software. Incluye recursos educativos en múltiples idiomas y formatos, organizados por temáticas y tecnologías. Destaca por su amplia cobertura, mantenimiento comunitario y licencia abierta. Ideal para estudiantes, autodidactas y educadores."
+    },
+    {
+      "id": "jwasham/coding-interview-university",
+      "source": "github",
+      "name": "coding-interview-university",
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "license": "CC-BY-SA-4.0",
       "lang": "N/A",
       "tags": [
-        "safetensors",
-        "video LLM",
-        "arxiv:2501.07888",
-        "license:apache-2.0",
-        "region:us"
+        "algorithm",
+        "algorithms",
+        "coding-interview",
+        "coding-interviews",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-prep",
+        "interview-preparation",
+        "programming-interviews",
+        "software-engineering",
+        "study-plan"
       ],
       "categories": {
         "capabilities": [],
@@ -415,26 +192,204 @@
         "lifecycle": []
       },
       "stats": {
-        "hf_downloads_7d": 8263301,
-        "hf_likes": 17
+        "stars": 328132,
+        "forks": 80454,
+        "issues": 82
       },
-      "score": 16535.102,
+      "score": 344322.7987015046,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "Tarsier2-Recap-7b 是一个基于 Transformer 架构的视频语言模型，专注于视频内容理解与摘要生成。该模型能够处理视频输入并生成结构化的文本摘要，适用于视频内容分析、自动字幕生成和多媒体信息检索等场景。其亮点在于结合了视觉与语言模态，支持对视频时序信息的建模，提升了长视频内容的理解能力。该模型适用于视频平台、智能监控和多媒体数据分析等领域，为自动化视频处理提供了高效工具。",
-      "updated_at": "2025-09-17T17:53:14.779Z",
-      "summary_en": "Tarsier2-Recap-7b is a 7-billion-parameter video language model designed for summarizing and analyzing video content. It excels at generating concise recaps and extracting key information from videos, making it suitable for applications in media analysis, content indexing, and accessibility. Its Apache 2.0 license and strong performance metrics indicate broad usability for research and practical deployment. The model is particularly effective for tasks requiring efficient video understanding without extensive computational resources.",
-      "summary_zh": "Tarsier2-Recap-7b 是一个基于 Transformer 架构的视频语言模型，专注于视频内容理解与摘要生成。该模型能够处理视频输入并生成结构化的文本摘要，适用于视频内容分析、自动字幕生成和多媒体信息检索等场景。其亮点在于结合了视觉与语言模态，支持对视频时序信息的建模，提升了长视频内容的理解能力。该模型适用于视频平台、智能监控和多媒体数据分析等领域，为自动化视频处理提供了高效工具。",
-      "summary_es": "Tarsier2-Recap-7b es un modelo de lenguaje multimodal especializado en el análisis y resumen de contenido de video. Basado en la arquitectura Llama-3.2-7B, destaca por su capacidad para procesar marcos de video y generar descripciones textuales precisas. Sus principales aplicaciones incluyen la creación automática de resúmenes de vídeos, extracción de información clave y generación de metadatos descriptivos. El modelo utiliza el formato de tensores seguros (safetensors) y está disponible bajo licencia Apache 2.0."
+      "summary": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了系统化的学习路线，涵盖数据结构、算法、系统设计等核心计算机科学主题。内容全面且结构化，适合准备技术面试的开发者按计划自学。该项目在GitHub上拥有极高的关注度，被广泛认可为技术面试准备的优质资源。",
+      "updated_at": "2025-09-17T17:52:41Z",
+      "summary_en": "Coding Interview University is a comprehensive, open-source study plan for software engineering interviews. It covers essential computer science topics, including algorithms and data structures, through structured learning paths. The resource is widely used for interview preparation, offering practical exercises and real-world problem-solving techniques. Its clear organization and community-driven content make it valuable for both beginners and experienced developers aiming to strengthen their technical skills.",
+      "summary_zh": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了系统化的学习路线，涵盖数据结构、算法、系统设计等核心计算机科学主题。内容全面且结构化，适合准备技术面试的开发者按计划自学。该项目在GitHub上拥有极高的关注度，被广泛认可为技术面试准备的优质资源。",
+      "summary_es": "Un plan de estudios completo para preparar entrevistas técnicas de desarrollo de software. Incluye algoritmos, estructuras de datos y conceptos fundamentales de ciencias de la computación. Destaca por su enfoque estructurado y contenido detallado. Ideal para aspirantes a ingenieros de software que buscan reforzar conocimientos técnicos."
     },
     {
-      "id": "meta-llama/Llama-3.1-8B-Instruct",
+      "id": "facebook/react",
+      "source": "github",
+      "name": "react",
+      "url": "https://github.com/facebook/react",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 238958,
+        "forks": 49347,
+        "issues": 1036
+      },
+      "score": 248927.3957308256,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "React 是一个由 Facebook 开发的开源 JavaScript 库，专注于构建用户界面。它采用声明式编程范式，使开发者能够高效地创建可复用的 UI 组件。React 支持 Web 和原生应用开发，通过虚拟 DOM 技术优化渲染性能，提升用户体验。适用于构建单页应用、动态网站以及跨平台移动应用，是前端开发领域的核心工具之一。",
+      "updated_at": "2025-09-17T17:51:24Z",
+      "summary_en": "React is a declarative JavaScript library for building user interfaces across web and native platforms. It excels at creating reusable UI components with efficient rendering through its virtual DOM. Its component-based architecture simplifies complex UI development and state management. Widely adopted for single-page applications, it is a foundational tool in modern frontend development.",
+      "summary_zh": "React 是一个由 Facebook 开发的开源 JavaScript 库，专注于构建用户界面。它采用声明式编程范式，使开发者能够高效地创建可复用的 UI 组件。React 支持 Web 和原生应用开发，通过虚拟 DOM 技术优化渲染性能，提升用户体验。适用于构建单页应用、动态网站以及跨平台移动应用，是前端开发领域的核心工具之一。",
+      "summary_es": "React es una biblioteca JavaScript declarativa para construir interfaces de usuario web y nativas. Su principal fortaleza es el uso de componentes reutilizables y un DOM virtual para un rendimiento eficiente. Ideal para aplicaciones dinámicas y de una sola página (SPA). Ampliamente adoptada en desarrollo frontend moderno."
+    },
+    {
+      "id": "ollama/ollama",
+      "source": "github",
+      "name": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "license": "MIT",
+      "lang": "Go",
+      "tags": [
+        "deepseek",
+        "gemma",
+        "gemma3",
+        "gemma3n",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llama2",
+        "llama3",
+        "llava",
+        "llm",
+        "llms",
+        "mistral",
+        "ollama",
+        "phi4",
+        "qwen"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 152492,
+        "forks": 13156,
+        "issues": 2149
+      },
+      "score": 155223.14862434415,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Ollama是一个开源工具，用于在本地环境中快速部署和运行大型语言模型。它支持多种主流模型，包括OpenAI的GPT系列、DeepSeek-R1、Gemma 3以及Llama系列等。通过简洁的命令行界面，用户可以轻松下载、配置和调用模型，无需复杂的云端依赖。适用于开发者、研究人员以及任何希望低成本、高效率进行本地模型实验和应用的场景。",
+      "updated_at": "2025-09-17T17:31:03Z",
+      "summary_en": "Ollama is a Go-based tool for running large language models locally, including OpenAI's GPT-OSS, DeepSeek-R1, and Gemma 3. It simplifies setup and deployment, enabling offline inference and experimentation. Ideal for developers and researchers seeking privacy, cost efficiency, and control over model usage. Supports popular open-source models like Llama and Gemma variants.",
+      "summary_zh": "Ollama是一个开源工具，用于在本地环境中快速部署和运行大型语言模型。它支持多种主流模型，包括OpenAI的GPT系列、DeepSeek-R1、Gemma 3以及Llama系列等。通过简洁的命令行界面，用户可以轻松下载、配置和调用模型，无需复杂的云端依赖。适用于开发者、研究人员以及任何希望低成本、高效率进行本地模型实验和应用的场景。",
+      "summary_es": "Ollama es una herramienta de código abierto escrita en Go que permite ejecutar modelos de lenguaje grandes localmente, como OpenAI GPT-OSS, DeepSeek-R1 y Gemma 3. Destaca por su facilidad de uso, eficiencia en despliegue y soporte para múltiples arquitecturas. Es ideal para desarrolladores que buscan experimentar con IA sin dependencia de la nube o para entornos con restricciones de privacidad."
+    },
+    {
+      "id": "airbnb/javascript",
+      "source": "github",
+      "name": "javascript",
+      "url": "https://github.com/airbnb/javascript",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "arrow-functions",
+        "es2015",
+        "es2016",
+        "es2017",
+        "es2018",
+        "es6",
+        "eslint",
+        "javascript",
+        "linting",
+        "naming-conventions",
+        "style-guide",
+        "style-linter",
+        "styleguide",
+        "tc39"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 147411,
+        "forks": 26785,
+        "issues": 179
+      },
+      "score": 152867.93342372685,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Airbnb JavaScript 风格指南是一套针对 JavaScript 代码的编码规范，基于 ES6+ 语法特性，旨在提高代码质量和可维护性。它详细定义了变量命名、箭头函数、模块导入等最佳实践，并支持 ESLint 配置，便于团队统一代码风格。适用于前端开发、Node.js 项目及任何需要标准化 JavaScript 代码的场景，尤其适合大型协作项目。",
+      "updated_at": "2025-09-17T17:24:29Z",
+      "summary_en": "A comprehensive style guide for writing clean, consistent JavaScript code. It provides best practices for modern JavaScript (ES6+), including syntax, naming conventions, and linting rules. Widely adopted by teams to enforce code quality and maintainability across projects. Ideal for developers and organizations aiming to standardize their JavaScript codebase.",
+      "summary_zh": "Airbnb JavaScript 风格指南是一套针对 JavaScript 代码的编码规范，基于 ES6+ 语法特性，旨在提高代码质量和可维护性。它详细定义了变量命名、箭头函数、模块导入等最佳实践，并支持 ESLint 配置，便于团队统一代码风格。适用于前端开发、Node.js 项目及任何需要标准化 JavaScript 代码的场景，尤其适合大型协作项目。",
+      "summary_es": "Guía de estilo de JavaScript de Airbnb. Proporciona convenciones de codificación para escribir código más claro y consistente. Incluye reglas para ES6+, funciones flecha y linting con ESLint. Ideal para equipos que buscan estandarizar su código base."
+    },
+    {
+      "id": "massgravel/Microsoft-Activation-Scripts",
+      "source": "github",
+      "name": "Microsoft-Activation-Scripts",
+      "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+      "license": "GPL-3.0",
+      "lang": "Batchfile",
+      "tags": [
+        "activator",
+        "hwid",
+        "kms",
+        "kms38",
+        "massgrave",
+        "massgravel",
+        "microsoft",
+        "microsoft365",
+        "office",
+        "office365",
+        "ohook",
+        "powershell",
+        "tsforge",
+        "windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 148679,
+        "forks": 14434,
+        "issues": 1
+      },
+      "score": 151665.7995888503,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Microsoft-Activation-Scripts 是一个开源工具，提供多种 Windows 和 Office 激活方式，包括 HWID、KMS38 和在线 KMS 等。该项目支持多种激活方法，并具备高级故障排除功能，适用于需要临时或长期激活 Microsoft 产品的用户。其代码透明，遵循 GPL-3.0 协议，适合技术用户进行研究和自定义使用。该工具主要面向开发者、系统管理员以及对激活机制感兴趣的技术爱好者。",
+      "updated_at": "2025-09-17T17:53:04Z",
+      "summary_en": "Microsoft-Activation-Scripts is an open-source tool for activating Windows and Microsoft Office products using methods like HWID, KMS, and Ohook. It supports troubleshooting and offers multiple activation pathways, making it useful for testing, educational, or legacy system scenarios. The project is community-maintained and adheres to GPL-3.0 licensing. It is not intended for commercial or unauthorized use.",
+      "summary_zh": "Microsoft-Activation-Scripts 是一个开源工具，提供多种 Windows 和 Office 激活方式，包括 HWID、KMS38 和在线 KMS 等。该项目支持多种激活方法，并具备高级故障排除功能，适用于需要临时或长期激活 Microsoft 产品的用户。其代码透明，遵循 GPL-3.0 协议，适合技术用户进行研究和自定义使用。该工具主要面向开发者、系统管理员以及对激活机制感兴趣的技术爱好者。",
+      "summary_es": "Scripts de activación de código abierto para Windows y Office. Ofrece múltiples métodos como HWID, KMS y Ohook, con herramientas avanzadas de resolución de problemas. Útil para activaciones legítimas en entornos de prueba o legacy. Proyecto comunitario sin fines comerciales."
+    },
+    {
+      "id": "context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16",
       "source": "hf",
-      "name": "Llama-3.1-8B-Instruct",
-      "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+      "name": "meta-llama-Llama-3.2-3B-Instruct-FP16",
+      "url": "https://huggingface.co/context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
@@ -456,9 +411,8 @@
         "es",
         "th",
         "arxiv:2204.05149",
-        "base_model:meta-llama/Llama-3.1-8B",
-        "base_model:finetune:meta-llama/Llama-3.1-8B",
-        "license:llama3.1",
+        "arxiv:2405.16406",
+        "license:llama3.2",
         "autotrain_compatible",
         "text-generation-inference",
         "endpoints_compatible",
@@ -470,33 +424,331 @@
         "lifecycle": []
       },
       "stats": {
-        "hf_downloads_7d": 7230352,
-        "hf_likes": 4626
+        "hf_downloads_7d": 11732858,
+        "hf_likes": 6
       },
-      "score": 16773.703999999998,
+      "score": 23468.716,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "Llama-3.1-8B-Instruct 是 Meta 推出的开源对话优化语言模型，基于 Llama-3 架构，参数量为 80 亿。该模型专为指令遵循和对话交互设计，适用于文本生成、问答、代码辅助等多种任务。其亮点在于高效的推理性能与较强的上下文理解能力，尤其适合资源受限环境下的部署。模型支持 Transformers 和 PyTorch 框架，主要面向英语场景，可用于聊天机器人、内容创作或自动化任务处理等应用。",
-      "updated_at": "2025-09-17T17:53:14.779Z",
-      "summary_en": "Llama-3.1-8B-Instruct is an 8-billion-parameter language model optimized for instruction-following tasks. It excels in conversational applications, text generation, and structured reasoning. Built on the robust Llama-3 architecture, it offers strong performance in English while maintaining efficiency for deployment. Ideal for chatbots, content creation, and research prototyping.",
-      "summary_zh": "Llama-3.1-8B-Instruct 是 Meta 推出的开源对话优化语言模型，基于 Llama-3 架构，参数量为 80 亿。该模型专为指令遵循和对话交互设计，适用于文本生成、问答、代码辅助等多种任务。其亮点在于高效的推理性能与较强的上下文理解能力，尤其适合资源受限环境下的部署。模型支持 Transformers 和 PyTorch 框架，主要面向英语场景，可用于聊天机器人、内容创作或自动化任务处理等应用。",
-      "summary_es": "Llama-3.1-8B-Instruct es un modelo de lenguaje de 8 mil millones de parámetros optimizado para tareas de instrucción y diálogo. Basado en la arquitectura Transformer, destaca por su eficiencia computacional y capacidad para generar respuestas coherentes en inglés. Es ideal para chatbots, asistentes virtuales y aplicaciones de procesamiento de lenguaje natural. Su licencia permite uso comercial e investigación."
+      "summary": "这是一个基于Meta Llama 3.2架构的30亿参数指令微调模型，采用FP16精度优化。模型专门针对对话和指令跟随任务设计，适用于文本生成、问答和对话系统等场景。其轻量化设计使其能够在消费级硬件上高效运行，同时保持较强的语言理解和生成能力。该模型支持Transformers框架，适合开发者和研究人员用于构建智能对话应用或进行自然语言处理实验。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_en": "Meta's Llama-3.2-3B-Instruct-FP16 is a 3-billion-parameter instruction-tuned language model optimized for efficient inference. It excels in conversational tasks, text generation, and following user prompts with high accuracy. Its FP16 precision balances performance and resource usage, making it suitable for deployment on consumer-grade hardware. Ideal for chatbots, content creation, and educational tools, it supports applications requiring responsive and coherent dialogue.",
+      "summary_zh": "这是一个基于Meta Llama 3.2架构的30亿参数指令微调模型，采用FP16精度优化。模型专门针对对话和指令跟随任务设计，适用于文本生成、问答和对话系统等场景。其轻量化设计使其能够在消费级硬件上高效运行，同时保持较强的语言理解和生成能力。该模型支持Transformers框架，适合开发者和研究人员用于构建智能对话应用或进行自然语言处理实验。",
+      "summary_es": "Modelo de instrucción de 3B parámetros optimizado en FP16. Diseñado para generación de texto conversacional y tareas de instrucción. Eficiente en recursos manteniendo capacidades de razonamiento. Ideal para aplicaciones de chat, asistencia y procesamiento de lenguaje natural en dispositivos con limitaciones computacionales."
     },
     {
-      "id": "amazon/chronos-t5-small",
+      "id": "Qwen/Qwen2.5-7B-Instruct",
       "source": "hf",
-      "name": "chronos-t5-small",
-      "url": "https://huggingface.co/amazon/chronos-t5-small",
+      "name": "Qwen2.5-7B-Instruct",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
         "transformers",
         "safetensors",
+        "qwen2",
+        "text-generation",
+        "chat",
+        "conversational",
+        "en",
+        "arxiv:2309.00071",
+        "arxiv:2407.10671",
+        "base_model:Qwen/Qwen2.5-7B",
+        "base_model:finetune:Qwen/Qwen2.5-7B",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 7794184,
+        "hf_likes": 791
+      },
+      "score": 15983.868,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Qwen2.5-7B-Instruct 是阿里云通义千问团队推出的开源对话模型，基于 Qwen2.5-7B 微调优化，专为指令遵循和对话交互设计。该模型具备 70 亿参数，支持多轮对话、文本生成等任务，适用于聊天助手、内容创作和代码生成等场景。其训练数据涵盖多语言，在多项基准测试中表现出较强的推理和语言理解能力。模型以 Apache 2.0 协议开源，可通过 Transformers 框架直接调用，适合开发者和研究者用于构建对话系统或进行自然语言处理实验。",
+      "updated_at": "2025-09-17T17:53:14.779Z",
+      "summary_en": "Qwen2.5-7B-Instruct is a 7-billion-parameter instruction-tuned language model optimized for conversational and text-generation tasks. It excels in multilingual contexts, particularly English and Arabic, and is well-suited for applications like chatbots, content creation, and question answering. Built on the Qwen2.5 architecture, it balances performance and efficiency, making it practical for deployment in resource-constrained environments. The model is available under open licenses and supports integration via Hugging Face Transformers and Safetensors.",
+      "summary_zh": "Qwen2.5-7B-Instruct 是阿里云通义千问团队推出的开源对话模型，基于 Qwen2.5-7B 微调优化，专为指令遵循和对话交互设计。该模型具备 70 亿参数，支持多轮对话、文本生成等任务，适用于聊天助手、内容创作和代码生成等场景。其训练数据涵盖多语言，在多项基准测试中表现出较强的推理和语言理解能力。模型以 Apache 2.0 协议开源，可通过 Transformers 框架直接调用，适合开发者和研究者用于构建对话系统或进行自然语言处理实验。",
+      "summary_es": "Qwen2.5-7B-Instruct es un modelo de lenguaje de 7 mil millones de parámetros optimizado para tareas conversacionales y generación de texto. Basado en la arquitectura Transformer, destaca por su capacidad multilingüe y eficiencia en diálogos interactivos. Es ideal para aplicaciones como chatbots, asistentes virtuales y procesamiento de lenguaje natural. Su diseño equilibrado permite un buen rendimiento incluso en hardware limitado."
+    },
+    {
+      "id": "tech4humans/yolov8s-signature-detector",
+      "source": "hf",
+      "name": "yolov8s-signature-detector",
+      "url": "https://huggingface.co/tech4humans/yolov8s-signature-detector",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "ultralytics",
+        "tensorboard",
+        "onnx",
+        "object-detection",
+        "signature-detection",
+        "yolo",
+        "yolov8",
+        "pytorch",
+        "dataset:tech4humans/signature-detection",
+        "base_model:Ultralytics/YOLOv8",
+        "base_model:quantized:Ultralytics/YOLOv8",
+        "license:agpl-3.0",
+        "model-index",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 39952181,
+        "hf_likes": 37
+      },
+      "score": 79922.86200000001,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "yolov8s-signature-detector 是一个基于 YOLOv8s 的签名检测模型，专门用于识别和定位文档中的签名区域。该模型基于 Ultralytics/YOLOv8 架构，使用 tech4humans/signature-detection 数据集训练，具备较高的检测精度和推理速度。支持 ONNX 格式导出，便于部署到不同平台，同时兼容 TensorBoard 进行训练可视化。适用于文档处理、自动化办公和身份验证等场景，能够有效提升签名识别的效率。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_en": "A YOLOv8-based object detection model fine-tuned for signature detection. It excels at identifying and localizing signatures in documents, forms, and images with high accuracy and speed. Built on PyTorch and compatible with ONNX, it is suitable for automated document processing, fraud detection, and archival digitization. Its lightweight design makes it deployable in resource-constrained environments.",
+      "summary_zh": "yolov8s-signature-detector 是一个基于 YOLOv8s 的签名检测模型，专门用于识别和定位文档中的签名区域。该模型基于 Ultralytics/YOLOv8 架构，使用 tech4humans/signature-detection 数据集训练，具备较高的检测精度和推理速度。支持 ONNX 格式导出，便于部署到不同平台，同时兼容 TensorBoard 进行训练可视化。适用于文档处理、自动化办公和身份验证等场景，能够有效提升签名识别的效率。",
+      "summary_es": "Modelo YOLOv8 especializado en detección de firmas manuscritas. Optimizado para procesamiento rápido con alto rendimiento en documentos escaneados. Ideal para automatización de validación en sectores financieros y legales. Soporta integración mediante ONNX y ofrece métricas detalladas con TensorBoard."
+    },
+    {
+      "id": "pyannote/segmentation-3.0",
+      "source": "hf",
+      "name": "segmentation-3.0",
+      "url": "https://huggingface.co/pyannote/segmentation-3.0",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "pyannote-audio",
+        "pytorch",
+        "pyannote",
+        "pyannote-audio-model",
+        "audio",
+        "voice",
+        "speech",
+        "speaker",
+        "speaker-diarization",
+        "speaker-change-detection",
+        "speaker-segmentation",
+        "voice-activity-detection",
+        "overlapped-speech-detection",
+        "resegmentation",
+        "license:mit",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 18867889,
+        "hf_likes": 586
+      },
+      "score": 38028.778,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "segmentation-3.0 是一个基于 PyTorch 的音频分割模型，专注于语音信号中的说话人分割与变化检测。该模型能够自动识别音频中不同说话人的切换点，适用于说话人日志生成、会议记录分析等场景。其核心亮点在于结合了端到端的深度学习架构，能够高效处理长时音频并保持较高的分割精度。该模型适用于语音处理、智能会议系统及多媒体内容分析等任务。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_en": "segmentation-3.0 is a PyTorch-based model for speaker diarization and change detection in audio. It excels at identifying and segmenting speech from different speakers in recordings. The model is particularly useful for transcription services, meeting analysis, and content indexing. Its high download count reflects strong performance and broad applicability in audio processing workflows.",
+      "summary_zh": "segmentation-3.0 是一个基于 PyTorch 的音频分割模型，专注于语音信号中的说话人分割与变化检测。该模型能够自动识别音频中不同说话人的切换点，适用于说话人日志生成、会议记录分析等场景。其核心亮点在于结合了端到端的深度学习架构，能够高效处理长时音频并保持较高的分割精度。该模型适用于语音处理、智能会议系统及多媒体内容分析等任务。",
+      "summary_es": "Modelo de segmentación de audio basado en PyTorch para detección de cambios de hablante y diarización. Especializado en procesamiento de voz, identifica segmentos de habla y transiciones entre locutores. Alta precisión en análisis de audio con soporte para integración en pipelines de pyannote. Usos típicos incluyen transcripción automática, análisis de reuniones y sistemas de monitorización de contenido."
+    },
+    {
+      "id": "Bingsu/adetailer",
+      "source": "hf",
+      "name": "adetailer",
+      "url": "https://huggingface.co/Bingsu/adetailer",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "ultralytics",
+        "pytorch",
+        "dataset:wider_face",
+        "dataset:skytnt/anime-segmentation",
+        "doi:10.57967/hf/3633",
+        "license:apache-2.0",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 15547106,
+        "hf_likes": 615
+      },
+      "score": 31401.712,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "adetailer是一个基于Ultralytics和PyTorch的开源图像修复模型，专注于自动检测和修复图像中的人脸区域。它结合了WiderFace数据集和动漫分割数据集，能够有效处理真实照片和动漫风格图像。该模型支持批量处理，适用于图像编辑、内容修复以及自动化后处理等场景。通过Apache 2.0协议开源，适合开发者和研究人员用于图像处理相关的项目。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_en": "ADetailer is an open-source face detection and segmentation model built on Ultralytics and PyTorch. It is trained on datasets like WIDER FACE and anime-specific segmentation data, making it suitable for both real-world and anime-style image processing. Its strengths include high accuracy in detecting and segmenting faces across diverse visual styles. It is applicable for tasks such as content moderation, image editing, and anime art generation.",
+      "summary_zh": "adetailer是一个基于Ultralytics和PyTorch的开源图像修复模型，专注于自动检测和修复图像中的人脸区域。它结合了WiderFace数据集和动漫分割数据集，能够有效处理真实照片和动漫风格图像。该模型支持批量处理，适用于图像编辑、内容修复以及自动化后处理等场景。通过Apache 2.0协议开源，适合开发者和研究人员用于图像处理相关的项目。",
+      "summary_es": "Adetailer es un modelo de detección y segmentación de rostros basado en PyTorch. Optimiza la precisión en imágenes con múltiples caras o fondos complejos. Es útil para procesamiento de imágenes, edición automática y análisis facial. Incluye soporte para datos de anime y caras reales."
+    },
+    {
+      "id": "openai/clip-vit-base-patch32",
+      "source": "hf",
+      "name": "clip-vit-base-patch32",
+      "url": "https://huggingface.co/openai/clip-vit-base-patch32",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "clip",
+        "zero-shot-image-classification",
+        "vision",
+        "arxiv:2103.00020",
+        "arxiv:1908.04913",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 15401311,
+        "hf_likes": 763
+      },
+      "score": 31184.122,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "CLIP-ViT-Base-Patch32 是一个基于 Transformer 架构的多模态模型，由 OpenAI 开发。它能够同时处理图像和文本，实现跨模态的语义理解与匹配。该模型在零样本图像分类任务上表现优异，无需针对特定任务进行微调即可泛化到多种视觉识别场景。适用于内容检索、图像标注、多模态搜索等应用，尤其适合需要快速原型验证或资源受限的环境。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_en": "CLIP-ViT-Base-Patch32 is a multimodal model that aligns images and text in a shared embedding space. It excels at zero-shot image classification, enabling tasks like content moderation and visual search without task-specific training. The model is versatile, supporting frameworks like PyTorch, TensorFlow, and JAX, and is widely used for research and applications requiring robust vision-language understanding. Its strong performance and flexibility make it suitable for both academic and industrial use cases.",
+      "summary_zh": "CLIP-ViT-Base-Patch32 是一个基于 Transformer 架构的多模态模型，由 OpenAI 开发。它能够同时处理图像和文本，实现跨模态的语义理解与匹配。该模型在零样本图像分类任务上表现优异，无需针对特定任务进行微调即可泛化到多种视觉识别场景。适用于内容检索、图像标注、多模态搜索等应用，尤其适合需要快速原型验证或资源受限的环境。",
+      "summary_es": "Modelo multimodal CLIP que combina visión y lenguaje. Permite clasificación de imágenes zero-shot y búsqueda cross-modal. Basado en ViT-B/32 con embeddings de 512 dimensiones. Ideal para aplicaciones de matching texto-imagen sin entrenamiento específico."
+    },
+    {
+      "id": "facebook/opt-125m",
+      "source": "hf",
+      "name": "opt-125m",
+      "url": "https://huggingface.co/facebook/opt-125m",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "opt",
+        "text-generation",
+        "en",
+        "arxiv:2205.01068",
+        "arxiv:2005.14165",
+        "license:other",
+        "autotrain_compatible",
+        "text-generation-inference",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 10632772,
+        "hf_likes": 215
+      },
+      "score": 21373.044,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "OPT-125M是Meta开源的1.25亿参数语言模型，属于Open Pre-trained Transformer（OPT）系列的基础版本。该模型基于Transformer架构，支持文本生成、对话补全等自然语言处理任务。其设计注重高效推理和轻量化部署，适用于资源受限环境或需要快速原型验证的场景。模型支持多种深度学习框架（PyTorch、TensorFlow、JAX），并提供多语言支持（以英语为主）。作为研究友好型模型，它可用于探索小规模语言模型的能力边界与优化策略。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_en": "OPT-125M is a small-scale, open-source language model from Meta, designed for efficient text generation and understanding. It is suitable for lightweight applications such as prototyping, educational use, and constrained environments where computational resources are limited. The model supports multiple frameworks (PyTorch, TensorFlow, JAX) and is trained primarily on English text. While not state-of-the-art in performance, it offers a practical balance of accessibility and functionality for basic NLP tasks.",
+      "summary_zh": "OPT-125M是Meta开源的1.25亿参数语言模型，属于Open Pre-trained Transformer（OPT）系列的基础版本。该模型基于Transformer架构，支持文本生成、对话补全等自然语言处理任务。其设计注重高效推理和轻量化部署，适用于资源受限环境或需要快速原型验证的场景。模型支持多种深度学习框架（PyTorch、TensorFlow、JAX），并提供多语言支持（以英语为主）。作为研究友好型模型，它可用于探索小规模语言模型的能力边界与优化策略。",
+      "summary_es": "OPT-125M es un modelo de lenguaje pequeño de 125 millones de parámetros desarrollado por Meta. Basado en arquitectura Transformer, está optimizado para generación de texto en inglés. Su diseño eficiente lo hace útil para aplicaciones de procesamiento de lenguaje natural con recursos limitados, como chatbots simples o experimentación académica. Incluye soporte para múltiples frameworks como PyTorch, TensorFlow y JAX."
+    },
+    {
+      "id": "nlpaueb/legal-bert-base-uncased",
+      "source": "hf",
+      "name": "legal-bert-base-uncased",
+      "url": "https://huggingface.co/nlpaueb/legal-bert-base-uncased",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "bert",
+        "pretraining",
+        "legal",
+        "fill-mask",
+        "en",
+        "license:cc-by-sa-4.0",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 5611915,
+        "hf_likes": 271
+      },
+      "score": 11359.33,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "legal-bert-base-uncased 是一个基于 BERT 架构的预训练语言模型，专门针对法律文本进行了优化。该模型在大量法律文档上进行了预训练，能够更好地理解和处理法律术语、条款和结构。其核心功能包括文本分类、信息抽取和语义相似度计算，适用于法律文档分析、合同审查和法规检索等场景。该模型支持 PyTorch、TensorFlow 和 JAX 框架，为法律科技领域的自然语言处理任务提供了可靠的基础工具。",
+      "updated_at": "2025-09-17T17:53:14.779Z",
+      "summary_en": "Legal-BERT-Base-Uncased is a BERT model pretrained on English legal text. It excels at tasks like legal document classification, named entity recognition, and information extraction. Its domain-specific training makes it highly effective for legal NLP applications. The model supports frameworks like PyTorch, TensorFlow, and JAX.",
+      "summary_zh": "legal-bert-base-uncased 是一个基于 BERT 架构的预训练语言模型，专门针对法律文本进行了优化。该模型在大量法律文档上进行了预训练，能够更好地理解和处理法律术语、条款和结构。其核心功能包括文本分类、信息抽取和语义相似度计算，适用于法律文档分析、合同审查和法规检索等场景。该模型支持 PyTorch、TensorFlow 和 JAX 框架，为法律科技领域的自然语言处理任务提供了可靠的基础工具。",
+      "summary_es": "Legal-BERT es un modelo de lenguaje preentrenado especializado en textos jurídicos en inglés. Basado en BERT, destaca en tareas como clasificación de documentos legales, extracción de cláusulas y análisis de sentencias. Su principal fortaleza es la comprensión contextual de terminología legal compleja. Ideal para automatizar revisiones contractuales, investigación jurídica y procesamiento de documentos legales."
+    },
+    {
+      "id": "autogluon/chronos-bolt-base",
+      "source": "hf",
+      "name": "chronos-bolt-base",
+      "url": "https://huggingface.co/autogluon/chronos-bolt-base",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "safetensors",
         "t5",
-        "text2text-generation",
         "time series",
         "forecasting",
         "pretrained models",
@@ -504,11 +756,9 @@
         "time series foundation models",
         "time-series",
         "time-series-forecasting",
-        "arxiv:2403.07815",
         "arxiv:1910.10683",
+        "arxiv:2403.07815",
         "license:apache-2.0",
-        "text-generation-inference",
-        "endpoints_compatible",
         "region:us"
       ],
       "categories": {
@@ -517,292 +767,20 @@
         "lifecycle": []
       },
       "stats": {
-        "hf_downloads_7d": 13199198,
-        "hf_likes": 131
+        "hf_downloads_7d": 5561576,
+        "hf_likes": 26
       },
-      "score": 26463.896,
+      "score": 11136.152,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "Chronos-T5-small是亚马逊基于T5架构开发的时间序列预测基础模型。该模型采用文本到文本的生成范式，将数值时间序列转换为标记序列进行训练和推理。其核心优势在于通过大规模预训练捕捉通用时间模式，无需领域特异性训练即可完成多种预测任务。模型适用于商业指标预测、传感器数据分析等场景，为时间序列分析提供了零样本和少样本的解决方案。开源版本为small规模，平衡了性能与计算效率。",
-      "updated_at": "2025-09-17T17:53:14.778Z",
-      "summary_en": "Chronos-T5-small is a compact, pretrained time series forecasting model based on T5 architecture. It excels at converting time series data into text-like sequences for accurate predictions across various domains like finance, energy, and IoT. Its strengths include efficient handling of univariate series, zero-shot generalization, and integration with Hugging Face Transformers. Ideal for researchers and practitioners needing lightweight, scalable forecasting without extensive retraining.",
-      "summary_zh": "Chronos-T5-small是亚马逊基于T5架构开发的时间序列预测基础模型。该模型采用文本到文本的生成范式，将数值时间序列转换为标记序列进行训练和推理。其核心优势在于通过大规模预训练捕捉通用时间模式，无需领域特异性训练即可完成多种预测任务。模型适用于商业指标预测、传感器数据分析等场景，为时间序列分析提供了零样本和少样本的解决方案。开源版本为small规模，平衡了性能与计算效率。",
-      "summary_es": "Chronos-T5-small es un modelo de series temporales basado en T5, preentrenado para predecir secuencias numéricas. Destaca por su capacidad de generalización en múltiples dominios sin ajuste específico. Usa tokenización numérica y genera pronósticos en formato de texto. Ideal para aplicaciones de forecasting en finanzas, energía o demanda."
-    },
-    {
-      "id": "distilbert/distilbert-base-uncased",
-      "source": "hf",
-      "name": "distilbert-base-uncased",
-      "url": "https://huggingface.co/distilbert/distilbert-base-uncased",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "rust",
-        "safetensors",
-        "distilbert",
-        "fill-mask",
-        "exbert",
-        "en",
-        "dataset:bookcorpus",
-        "dataset:wikipedia",
-        "arxiv:1910.01108",
-        "license:apache-2.0",
-        "autotrain_compatible",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 12227309,
-        "hf_likes": 755
-      },
-      "score": 24832.118000000002,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "DistilBERT-base-uncased 是一个轻量化的 BERT 模型，通过知识蒸馏技术将 BERT 参数量压缩 40%，同时保留 97% 的语言理解能力。它适用于掩码语言建模任务，支持多种框架，包括 PyTorch、TensorFlow 和 JAX。该模型在英文文本处理中表现高效，特别适合资源受限或需要快速推理的场景，如搜索、分类和实体识别。",
-      "updated_at": "2025-09-17T17:53:14.778Z",
-      "summary_en": "DistilBERT is a distilled version of BERT, designed for efficient natural language understanding tasks. It retains 97% of BERT's performance while being 40% smaller and 60% faster, making it ideal for resource-constrained environments. Common use cases include text classification, named entity recognition, and masked language modeling. It supports multiple frameworks and is widely used in production for its balance of speed and accuracy.",
-      "summary_zh": "DistilBERT-base-uncased 是一个轻量化的 BERT 模型，通过知识蒸馏技术将 BERT 参数量压缩 40%，同时保留 97% 的语言理解能力。它适用于掩码语言建模任务，支持多种框架，包括 PyTorch、TensorFlow 和 JAX。该模型在英文文本处理中表现高效，特别适合资源受限或需要快速推理的场景，如搜索、分类和实体识别。",
-      "summary_es": "DistilBERT es un modelo de lenguaje basado en BERT, optimizado para eficiencia y velocidad. Conserva el 97% del rendimiento de BERT original con un 40% menos de parámetros. Ideal para tareas de procesamiento de lenguaje natural como clasificación de texto, análisis de sentimiento y relleno de máscaras. Ampliamente utilizado en entornos con recursos limitados."
-    },
-    {
-      "id": "FacebookAI/roberta-large",
-      "source": "hf",
-      "name": "roberta-large",
-      "url": "https://huggingface.co/FacebookAI/roberta-large",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "onnx",
-        "safetensors",
-        "roberta",
-        "fill-mask",
-        "exbert",
-        "en",
-        "dataset:bookcorpus",
-        "dataset:wikipedia",
-        "arxiv:1907.11692",
-        "arxiv:1806.02847",
-        "license:mit",
-        "autotrain_compatible",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 12085823,
-        "hf_likes": 245
-      },
-      "score": 24294.146,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "RoBERTa-large是基于Transformer架构的大规模预训练语言模型，由Facebook AI开发。它在BERT的基础上通过优化训练策略（如移除下一句预测任务、使用更大批次和更长的序列）提升了性能。该模型适用于多种自然语言处理任务，包括文本分类、命名实体识别和掩码语言建模。主要面向研究人员和开发者，用于构建高效的NLP应用或作为下游任务的基准模型。支持多种深度学习框架，包括PyTorch、TensorFlow和JAX。",
-      "updated_at": "2025-09-17T17:53:14.778Z",
-      "summary_en": "RoBERTa-large is a robust transformer-based language model optimized for masked language modeling. It excels in a wide range of natural language understanding tasks, including text classification, named entity recognition, and sentiment analysis. With strong performance across benchmarks, it is well-suited for research and production applications requiring high accuracy. Its compatibility with multiple frameworks (PyTorch, TensorFlow, JAX, ONNX) ensures flexibility in deployment.",
-      "summary_zh": "RoBERTa-large是基于Transformer架构的大规模预训练语言模型，由Facebook AI开发。它在BERT的基础上通过优化训练策略（如移除下一句预测任务、使用更大批次和更长的序列）提升了性能。该模型适用于多种自然语言处理任务，包括文本分类、命名实体识别和掩码语言建模。主要面向研究人员和开发者，用于构建高效的NLP应用或作为下游任务的基准模型。支持多种深度学习框架，包括PyTorch、TensorFlow和JAX。",
-      "summary_es": "RoBERTa-large es un modelo de lenguaje basado en transformers optimizado para tareas de comprensión y generación de texto. Destaca por su entrenamiento robusto sin tareas de siguiente frase, mejorando rendimiento en clasificación, entidad nombrada y relleno de máscaras. Usos comunes incluyen análisis de sentimientos, preguntas-respuestas y procesamiento de lenguaje natural en inglés."
-    },
-    {
-      "id": "google/electra-base-discriminator",
-      "source": "hf",
-      "name": "electra-base-discriminator",
-      "url": "https://huggingface.co/google/electra-base-discriminator",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "rust",
-        "electra",
-        "pretraining",
-        "en",
-        "arxiv:1406.2661",
-        "license:apache-2.0",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 11547887,
-        "hf_likes": 64
-      },
-      "score": 23127.774,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "ELECTRA-base-discriminator是由Google开发的一种基于ELECTRA架构的预训练语言模型判别器。该模型通过替换token检测任务进行预训练，相比传统MLM方法具有更高的训练效率。模型支持多种深度学习框架，包括PyTorch、TensorFlow和JAX。适用于文本分类、情感分析等下游NLP任务，特别适合需要高效文本表征的场景。模型在英文语料上训练，采用Apache 2.0开源协议。",
-      "updated_at": "2025-09-17T17:53:14.778Z",
-      "summary_en": "ELECTRA-base-discriminator is a pretrained transformer model designed for efficient discriminative tasks. It excels in natural language understanding, including text classification, named entity recognition, and sentiment analysis. Its key strength lies in its pretraining efficiency, outperforming many models of similar size. It is widely applicable in research and production environments for English-language NLP tasks.",
-      "summary_zh": "ELECTRA-base-discriminator是由Google开发的一种基于ELECTRA架构的预训练语言模型判别器。该模型通过替换token检测任务进行预训练，相比传统MLM方法具有更高的训练效率。模型支持多种深度学习框架，包括PyTorch、TensorFlow和JAX。适用于文本分类、情感分析等下游NLP任务，特别适合需要高效文本表征的场景。模型在英文语料上训练，采用Apache 2.0开源协议。",
-      "summary_es": "ELECTRA-base-discriminator es un modelo de lenguaje preentrenado que utiliza un enfoque de discriminación para el aprendizaje de representaciones. Destaca por su eficiencia computacional y rendimiento en tareas de comprensión del lenguaje natural. Es ideal para clasificación de texto, análisis de sentimientos y extracción de información. Soporta múltiples frameworks como PyTorch, TensorFlow y JAX."
-    },
-    {
-      "id": "prajjwal1/bert-tiny",
-      "source": "hf",
-      "name": "bert-tiny",
-      "url": "https://huggingface.co/prajjwal1/bert-tiny",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "BERT",
-        "MNLI",
-        "NLI",
-        "transformer",
-        "pre-training",
-        "en",
-        "arxiv:1908.08962",
-        "arxiv:2110.01518",
-        "license:mit",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 10176180,
-        "hf_likes": 127
-      },
-      "score": 20415.86,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "bert-tiny是一个轻量级BERT模型，专为资源受限环境设计。它基于BERT架构，但显著减少了参数量，在保持合理性能的同时大幅提升推理速度。该模型适用于文本分类、自然语言推理等任务，特别适合移动设备或边缘计算场景。支持PyTorch框架，预训练权重可直接用于下游任务的微调。",
-      "updated_at": "2025-09-17T17:53:14.778Z",
-      "summary_en": "BERT-Tiny is a compact, efficient variant of the BERT model, designed for resource-constrained environments. It is pre-trained on English text and fine-tuned for natural language inference tasks like MNLI. Ideal for applications requiring fast inference and low memory usage, such as mobile or edge devices. Its small size makes it suitable for prototyping and lightweight NLP pipelines.",
-      "summary_zh": "bert-tiny是一个轻量级BERT模型，专为资源受限环境设计。它基于BERT架构，但显著减少了参数量，在保持合理性能的同时大幅提升推理速度。该模型适用于文本分类、自然语言推理等任务，特别适合移动设备或边缘计算场景。支持PyTorch框架，预训练权重可直接用于下游任务的微调。",
-      "summary_es": "BERT-Tiny es una versión ultrapequeña del modelo BERT, optimizada para eficiencia computacional. Ideal para dispositivos con recursos limitados, mantiene capacidades sólidas en tareas de comprensión del lenguaje natural como inferencia (NLI/MNLI). Su diseño compacto permite despliegues rápidos en entornos restringidos, manteniendo un buen rendimiento en clasificación de texto y otras aplicaciones de NLP ligero."
-    },
-    {
-      "id": "trpakov/vit-face-expression",
-      "source": "hf",
-      "name": "vit-face-expression",
-      "url": "https://huggingface.co/trpakov/vit-face-expression",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "onnx",
-        "safetensors",
-        "vit",
-        "image-classification",
-        "doi:10.57967/hf/2289",
-        "license:apache-2.0",
-        "autotrain_compatible",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 8025363,
-        "hf_likes": 78
-      },
-      "score": 16089.726,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "vit-face-expression是基于Vision Transformer架构的面部表情分类模型，能够识别图像中的七种基本表情（如高兴、悲伤、愤怒等）。该模型使用PyTorch和ONNX格式提供，支持快速推理和部署，适用于实时表情分析场景。其亮点在于结合了ViT的全局建模能力与轻量化设计，在保证精度的同时具备较高的计算效率。适用于人机交互、情感计算或心理学研究等需要自动化表情识别的领域。",
+      "summary": "Chronos-Bolt-Base 是一个基于 T5 架构的时间序列预测基础模型，适用于单变量时间序列的预测任务。该模型通过预训练和微调的方式，能够高效处理多种时间序列数据，无需复杂的特征工程。其亮点在于利用 Transformer 架构的强大表示能力，在多个基准数据集上表现出优异的预测性能。适用于金融、气象、能源等领域的短期和长期时间序列预测需求。",
       "updated_at": "2025-09-17T17:53:14.779Z",
-      "summary_en": "A Vision Transformer (ViT) model fine-tuned for facial expression classification. It supports PyTorch, ONNX, and SafeTensors formats, enabling efficient deployment across platforms. Ideal for emotion recognition in images, with applications in human-computer interaction and behavioral analysis. High download count reflects its reliability and broad usability.",
-      "summary_zh": "vit-face-expression是基于Vision Transformer架构的面部表情分类模型，能够识别图像中的七种基本表情（如高兴、悲伤、愤怒等）。该模型使用PyTorch和ONNX格式提供，支持快速推理和部署，适用于实时表情分析场景。其亮点在于结合了ViT的全局建模能力与轻量化设计，在保证精度的同时具备较高的计算效率。适用于人机交互、情感计算或心理学研究等需要自动化表情识别的领域。",
-      "summary_es": "Modelo de clasificación de expresiones faciales basado en Vision Transformer (ViT). Detecta emociones como alegría, tristeza o enfado en imágenes. Destaca por su precisión y eficiencia usando arquitecturas transformer. Útil para análisis de comportamiento humano o interacciones persona-computadora."
-    },
-    {
-      "id": "BAAI/bge-base-en-v1.5",
-      "source": "hf",
-      "name": "bge-base-en-v1.5",
-      "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "sentence-transformers",
-        "pytorch",
-        "onnx",
-        "safetensors",
-        "bert",
-        "feature-extraction",
-        "sentence-similarity",
-        "transformers",
-        "mteb",
-        "en",
-        "arxiv:2401.03462",
-        "arxiv:2312.15503",
-        "arxiv:2311.13534",
-        "arxiv:2310.07554",
-        "arxiv:2309.07597",
-        "license:mit",
-        "model-index",
-        "autotrain_compatible",
-        "text-embeddings-inference",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 7340919,
-        "hf_likes": 346
-      },
-      "score": 14854.838,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "bge-base-en-v1.5 是一个基于 BERT 架构的英文文本嵌入模型，由北京智源人工智能研究院（BAAI）开发。该模型主要用于生成高质量的句子或段落级向量表示，适用于语义相似度计算、信息检索和文本聚类等任务。其亮点在于通过大规模对比学习优化，在多项基准测试（如 MTEB）中表现优异，尤其擅长处理英文文本的语义理解。适用于需要高效且精准的文本表示嵌入的场景，如搜索引擎、推荐系统或自然语言处理应用。",
-      "updated_at": "2025-09-17T17:53:14.779Z",
-      "summary_en": "BGE-base-en-v1.5 is a BERT-based English sentence embedding model optimized for semantic similarity and retrieval tasks. It excels in generating dense vector representations for text, making it suitable for applications like search, clustering, and recommendation systems. With strong performance on benchmarks like MTEB, it is widely used in both research and production environments. The model supports multiple deployment formats, including PyTorch, ONNX, and SafeTensors, ensuring flexibility and ease of integration.",
-      "summary_zh": "bge-base-en-v1.5 是一个基于 BERT 架构的英文文本嵌入模型，由北京智源人工智能研究院（BAAI）开发。该模型主要用于生成高质量的句子或段落级向量表示，适用于语义相似度计算、信息检索和文本聚类等任务。其亮点在于通过大规模对比学习优化，在多项基准测试（如 MTEB）中表现优异，尤其擅长处理英文文本的语义理解。适用于需要高效且精准的文本表示嵌入的场景，如搜索引擎、推荐系统或自然语言处理应用。",
-      "summary_es": "Modelo de incrustación de texto BGE base en inglés, versión 1.5. Basado en BERT, genera representaciones vectoriales densas para textos. Destaca en similitud semántica y recuperación de información. Usos: búsqueda, clustering y aplicaciones de NLP que requieran comparación de similitudes entre oraciones."
+      "summary_en": "Chronos-Bolt-Base is a pretrained T5-based foundation model for time series forecasting. It excels at generating probabilistic forecasts across diverse domains without task-specific training. The model is particularly useful for applications in finance, retail, and IoT, where scalable and accurate predictions are needed. Its strength lies in leveraging transfer learning to handle various time series patterns efficiently.",
+      "summary_zh": "Chronos-Bolt-Base 是一个基于 T5 架构的时间序列预测基础模型，适用于单变量时间序列的预测任务。该模型通过预训练和微调的方式，能够高效处理多种时间序列数据，无需复杂的特征工程。其亮点在于利用 Transformer 架构的强大表示能力，在多个基准数据集上表现出优异的预测性能。适用于金融、气象、能源等领域的短期和长期时间序列预测需求。",
+      "summary_es": "Chronos-Bolt-Base es un modelo de base para pronóstico de series temporales, basado en T5 y preentrenado con datos sintéticos. Su principal fortaleza es la capacidad de adaptarse a múltiples dominios sin necesidad de ajuste específico. Es ideal para predicciones univariantes en aplicaciones como finanzas, energía o logística. Emplea tokens discretizados para representar valores temporales, facilitando su integración en pipelines existentes."
     }
   ]
 }
