@@ -1,24 +1,34 @@
 {
   "categories": {
-    "capabilities": ["chat","multimodal","retrieval","code","speech","video","vision","planning","safety","compression","distillation"],
-    "scenes": ["devex","education","research","search","content","productization","robotics"],
-    "lifecycle": ["data","training","evaluation","deployment","inference","monitoring"]
+    "capabilities": [
+      "llm", "finetune", "retrieval", "multimodal", "agent", "speech", "asr", "tts", "vision", "image", "video", "code_llm",
+      "recommender", "time_series", "graph_learning", "safety", "alignment", "redteaming", "moderation", "compression", "distillation"
+    ],
+    "scenes": [
+      "devex", "education", "research", "search", "content", "productization", "robotics", "finance_quant"
+    ],
+    "lifecycle": [
+      "data", "training", "evaluation", "judge", "deployment", "inference", "monitoring", "ecosystem", "tooling"
+    ]
   },
   "labels": {
     "zh": {
-      "chat":"对话","multimodal":"多模态","retrieval":"检索","code":"代码","speech":"语音","video":"视频","vision":"视觉","planning":"规划","safety":"安全","compression":"压缩","distillation":"蒸馏",
-      "devex":"DevEx","education":"教育","research":"科研","search":"搜索","content":"内容生成","productization":"产品化","robotics":"机器人",
-      "data":"数据","training":"训练","evaluation":"评测","deployment":"部署","inference":"推理","monitoring":"监控"
+      "llm":"LLM","finetune":"微调","retrieval":"RAG","multimodal":"多模态","agent":"对话/Agent","speech":"语音","asr":"ASR 语音识别","tts":"TTS 语音合成","vision":"视觉","image":"图像","video":"视频","code_llm":"代码生成",
+      "recommender":"推荐","time_series":"时序","graph_learning":"图学习","safety":"安全","alignment":"对齐","redteaming":"红队","moderation":"审查","compression":"压缩","distillation":"蒸馏",
+      "devex":"DevEx","education":"教育","research":"科研","search":"搜索","content":"内容生成","productization":"产品化","robotics":"机器人","finance_quant":"金融/量化",
+      "data":"数据","training":"训练","evaluation":"评测","judge":"裁判模型","deployment":"部署","inference":"推理","monitoring":"监控","ecosystem":"生态","tooling":"工具链"
     },
     "en": {
-      "chat":"Chat","multimodal":"Multimodal","retrieval":"Retrieval","code":"Code","speech":"Speech","video":"Video","vision":"Vision","planning":"Planning","safety":"Safety","compression":"Compression","distillation":"Distillation",
-      "devex":"DevEx","education":"Education","research":"Research","search":"Search","content":"Content Gen","productization":"Productization","robotics":"Robotics",
-      "data":"Data","training":"Training","evaluation":"Evaluation","deployment":"Deployment","inference":"Inference","monitoring":"Monitoring"
+      "llm":"LLM","finetune":"Finetune","retrieval":"RAG","multimodal":"Multimodal","agent":"Agent","speech":"Speech","asr":"ASR","tts":"TTS","vision":"Vision","image":"Image","video":"Video","code_llm":"Code LLM",
+      "recommender":"Recommender","time_series":"Time series","graph_learning":"Graph learning","safety":"Safety","alignment":"Alignment","redteaming":"Red-teaming","moderation":"Moderation","compression":"Compression","distillation":"Distillation",
+      "devex":"DevEx","education":"Education","research":"Research","search":"Search","content":"Content Gen","productization":"Productization","robotics":"Robotics","finance_quant":"Finance/Quant",
+      "data":"Data","training":"Training","evaluation":"Evaluation","judge":"Judge model","deployment":"Deployment","inference":"Inference","monitoring":"Monitoring","ecosystem":"Ecosystem","tooling":"Tooling"
     },
     "es": {
-      "chat":"Conversación","multimodal":"Multimodal","retrieval":"Recuperación","code":"Código","speech":"Voz","video":"Vídeo","vision":"Visión","planning":"Planificación","safety":"Seguridad","compression":"Compresión","distillation":"Destilación",
-      "devex":"DevEx","education":"Educación","research":"Investigación","search":"Búsqueda","content":"Generación de contenido","productization":"Productización","robotics":"Robótica",
-      "data":"Datos","training":"Entrenamiento","evaluation":"Evaluación","deployment":"Despliegue","inference":"Inferencia","monitoring":"Monitorización"
+      "llm":"LLM","finetune":"Ajuste fino","retrieval":"RAG","multimodal":"Multimodal","agent":"Agente","speech":"Voz","asr":"ASR","tts":"TTS","vision":"Visión","image":"Imagen","video":"Vídeo","code_llm":"Code LLM",
+      "recommender":"Recomendador","time_series":"Series temporales","graph_learning":"Aprendizaje de grafos","safety":"Seguridad","alignment":"Alineación","redteaming":"Red team","moderation":"Moderación","compression":"Compresión","distillation":"Destilación",
+      "devex":"DevEx","education":"Educación","research":"Investigación","search":"Búsqueda","content":"Generación de contenido","productization":"Productización","robotics":"Robótica","finance_quant":"Finanzas/Cuant",
+      "data":"Datos","training":"Entrenamiento","evaluation":"Evaluación","judge":"Modelo juez","deployment":"Despliegue","inference":"Inferencia","monitoring":"Monitorización","ecosystem":"Ecosistema","tooling":"Cadena de herramientas"
     }
   }
 }

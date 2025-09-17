@@ -49,6 +49,8 @@
     @media (max-width:700px){.mw-grid{grid-template-columns:1fr;}}
     .mw-card{padding:12px}
     .mw-title{font-size:1.05rem;margin:0 0 4px 0;line-height:1.35}
+  .mw-title a{color:var(--primary);text-decoration:none}
+  .mw-title a:hover{text-decoration:underline}
     .mw-meta{font-size:.85rem;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
   .mw-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
     .mw-spark{width:100%;height:54px}
@@ -61,10 +63,10 @@
     .mw-leader a:hover{text-decoration:underline}
     .mw-chiprow{display:flex;gap:6px;flex-wrap:wrap}
   /* Filter chips – active/inactive styles (distinct from mode buttons) */
-  .mw-chiprow .btn{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 10px;line-height:1;border-radius:999px;font-size:.86rem;font-weight:600;border:1px solid color-mix(in oklab, var(--border), var(--primary) 10%);background:color-mix(in oklab, var(--surface-2), white 6%);color:color-mix(in oklab, var(--text), var(--muted) 25%);box-shadow:var(--shadow-sm)}
-  .mw-chiprow .btn:hover{background:color-mix(in oklab, var(--surface-2), var(--primary) 6%);color:var(--text)}
-  .mw-chiprow .btn.primary{background:color-mix(in oklab, var(--primary) 16%, transparent);color:color-mix(in oklab, var(--primary), black 10%);border-color:color-mix(in oklab, var(--border), var(--primary) 35%)}
-  .mw-chiprow .btn.primary:hover{background:color-mix(in oklab, var(--primary) 22%, transparent)}
+  .mw-chiprow .btn{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 10px;line-height:1;border-radius:999px;font-size:.86rem;font-weight:600;border:1px solid color-mix(in oklab, var(--border), var(--primary) 16%);background:color-mix(in oklab, var(--surface-2), white 3%);color:color-mix(in oklab, var(--text), var(--muted) 15%);box-shadow:var(--shadow-sm);transition:background .15s ease, color .15s ease, border-color .15s ease}
+  .mw-chiprow .btn:hover{background:color-mix(in oklab, var(--surface-2), var(--primary) 10%);color:var(--text)}
+  .mw-chiprow .btn.primary{background:linear-gradient(135deg, rgba(59,130,246,0.15), rgba(59,130,246,0.28));color:color-mix(in oklab, var(--primary), black 10%);border-color:color-mix(in oklab, var(--primary), var(--border) 50%)}
+  .mw-chiprow .btn.primary:hover{background:linear-gradient(135deg, rgba(59,130,246,0.22), rgba(59,130,246,0.35))}
   :root[data-theme="dark"] .mw-chiprow .btn{background:color-mix(in oklab, var(--surface), black 6%);color:#e5e7eb;border-color:color-mix(in oklab, var(--border), var(--primary) 18%)}
   :root[data-theme="dark"] .mw-chiprow .btn:hover{background:color-mix(in oklab, var(--surface), var(--primary) 10%);color:#fff}
   :root[data-theme="dark"] .mw-chiprow .btn.primary{background:rgba(59,130,246,0.18);color:#c7d2fe;border-color:rgba(59,130,246,0.38)}
@@ -75,6 +77,9 @@
     .mw-dialog{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow-md);width:min(96vw,1100px);height:min(92vh,760px);display:flex;flex-direction:column;overflow:hidden}
     .mw-dialog .head{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;border-bottom:1px solid var(--border);background:var(--surface-2)}
     .mw-dialog .body{flex:1;overflow:auto;padding:10px}
+    /* Daily sections */
+    .mw-sec-title{margin:10px 0 8px;color:var(--secondary);font-weight:600}
+    .mw-sec-sep{margin:16px 0;border:none;border-top:1px dashed var(--border)}
   </style>
 </head>
 <body>
@@ -254,14 +259,19 @@
 
     function buildFilters(){
       filtersEl.innerHTML='';
-      const allBtn = document.createElement('button'); allBtn.className='btn outline small'+(activeTags.size===0?' primary':''); allBtn.textContent=t('all_label','全部'); allBtn.onclick=()=>{activeTags.clear(); render();}; filtersEl.appendChild(allBtn);
+      const allBtn = document.createElement('button'); allBtn.className='btn outline small'+(activeTags.size===0?' primary':''); allBtn.textContent=t('all_label','全部'); allBtn.onclick=()=>{activeTags.clear(); buildFilters(); render();}; filtersEl.appendChild(allBtn);
       for(const [group, keys] of Object.entries(CANON)){
         keys.forEach(key=>{
-          const act = activeTags.has(key);
           const b = document.createElement('button');
-          b.className='btn outline small'+(act?' primary':'');
+          b.dataset.key = key;
+          b.className='btn outline small'+(activeTags.has(key)?' primary':'');
           b.textContent = tagLabel(key);
-          b.onclick = ()=>{ act?activeTags.delete(key):activeTags.add(key); render(); };
+          b.onclick = ()=>{
+            if(activeTags.has(key)) activeTags.delete(key); else activeTags.add(key);
+            // re-render chips to reflect active state; do not toggle back immediately
+            buildFilters();
+            render();
+          };
           filtersEl.appendChild(b);
         });
       }
@@ -340,6 +350,14 @@
       };
     }
 
+    function pickSummary(it){
+      const lang = getLang();
+      if(lang==='zh') return it.summary_zh || it.summary || it.description || '';
+      if(lang==='es') return it.summary_es || it.summary || it.description || '';
+      // default en
+      return it.summary_en || it.summary || it.description || '';
+    }
+
     function card(it){
       const src = it.source==='github'?'GitHub':'HF';
       const tags = (it.tags||[]).slice(0,6).map(x=>`<span class="tag">${esc(x)}</span>`).join(' ');
@@ -356,17 +374,25 @@
       const dlSeries = it.timeline?.downloads || [];
       const series = (src==='GitHub') ? starSeries : dlSeries;
       const sgv = sparkline(tms, series, color);
+      const url = it.url || (src==='GitHub'?`https://github.com/${esc(it.id)}`:`https://huggingface.co/${esc(it.id)}`);
+      const sum = pickSummary(it);
       return `<article class="card mw-card" data-id="${esc(it.id)}">
-        <h4 class="mw-title">${esc(it.name||it.id)}</h4>
+        <h4 class="mw-title"><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(it.name||it.id)}</a></h4>
         <div class="mw-meta">${src} · ${metrics}${last}</div>
         <div class="mw-tags">${tags}</div>
         <div>${sgv}</div>
-        ${it.summary?`<p class="muted" style="margin:.5rem 0 0 0; line-height:1.4">${esc(it.summary)}</p>`:''}
+        ${sum?`<p class=\"muted\" style=\"margin:.5rem 0 0 0; line-height:1.4\">${esc(sum)}</p>`:''}
       </article>`;
     }
 
     function filterSort(arr){
-      let out = arr.slice();
+      // 1) Defensive de-duplication (source + id/url/name as stable key)
+      const seen = new Set();
+      let out = [];
+      for(const it of arr){
+        const key = `${it.source||''}::${it.id||it.url||it.name||''}`;
+        if(seen.has(key)) continue; seen.add(key); out.push(it);
+      }
       // filter
       if(activeTags.size>0){
         out = out.filter(it => {
@@ -387,7 +413,11 @@
       // sort
       const key = sortEl.value||'score';
       out.sort((a,b)=>{
-        if(key==='delta7') return (b.stats?.stars_7d||0) - (a.stats?.stars_7d||0);
+        if(key==='delta7'){
+          const av = (a.stats?.stars_7d ?? a.stats?.hf_downloads_7d ?? 0);
+          const bv = (b.stats?.stars_7d ?? b.stats?.hf_downloads_7d ?? 0);
+          return bv - av;
+        }
         if(key==='stars') return (b.stats?.stars||0) - (a.stats?.stars||0);
         if(key==='downloads') return (b.stats?.hf_downloads_7d||0) - (a.stats?.hf_downloads_7d||0);
         return (b.score||0) - (a.score||0);
@@ -397,8 +427,7 @@
 
     function render(){
       const arr = filterSort(items);
-      gridEl.innerHTML = arr.map(card).join('');
-      const dt = window.__mw_updated_at || '';
+  const dt = window.__mw_updated_at || '';
       const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh';
       const dtStr = dt? dt.slice(0,16).replace('T',' ') : '';
       let modeLabel = MODE==='daily'? (window.translations?.[lang]?.mw_mode_daily || 'Daily Picks') : MODE==='gh'? (window.translations?.[lang]?.mw_mode_gh_top || 'GitHub Top') : (window.translations?.[lang]?.mw_mode_hf_top || 'HF Top');
@@ -411,6 +440,24 @@
         if(opt.value==='stars') opt.disabled = (MODE==='hf');
         else if(opt.value==='downloads') opt.disabled = (MODE==='gh');
         else opt.disabled = false;
+      }
+
+      // Render content
+      if (MODE==='daily'){
+        // Render two full-width sections: GitHub first, then a divider, then HF
+        gridEl.classList.remove('mw-grid');
+        const gh = arr.filter(x=>x.source==='github');
+        const hf = arr.filter(x=>x.source!=='github');
+        const ghTitle = t('mw_section_gh', 'GitHub 开源项目');
+        const hfTitle = t('mw_section_hf', 'Hugging Face 开源模型');
+        const ghHtml = gh.length? `<div class="mw-sec-title">${esc(ghTitle)} · ${gh.length}</div><div class="mw-grid">${gh.map(card).join('')}</div>` : '';
+        const sep = (gh.length && hf.length)? `<hr class="mw-sec-sep"/>` : '';
+        const hfHtml = hf.length? `<div class="mw-sec-title">${esc(hfTitle)} · ${hf.length}</div><div class="mw-grid">${hf.map(card).join('')}</div>` : '';
+        gridEl.innerHTML = ghHtml + sep + hfHtml;
+      }else{
+        // Normal grid for Top views
+        gridEl.classList.add('mw-grid');
+        gridEl.innerHTML = arr.map(card).join('');
       }
     }
 
@@ -438,7 +485,10 @@
           ]);
           const gi = (g?.items||[]).map(shallowNormalize);
           const hi = (h?.items||[]).map(shallowNormalize);
-          items = [...gi, ...hi];
+          // merge + dedupe
+          const seen = new Set(); const merged=[];
+          for(const it of [...gi, ...hi]){ const k = `${it.source||''}::${it.id||it.url||it.name||''}`; if(seen.has(k)) continue; seen.add(k); merged.push(it); }
+          items = merged;
           window.__mw_updated_at = g?.updated_at || h?.updated_at || '';
         }
       }catch{ items=[]; window.__mw_updated_at=''; }

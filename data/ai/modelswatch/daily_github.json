@@ -1,6 +1,82 @@
 {
-  "updated_at": "2025-09-17T15:45:27.701Z",
+  "updated_at": "2025-09-17T17:12:19.931Z",
   "items": [
+    {
+      "id": "sindresorhus/awesome",
+      "source": "github",
+      "name": "awesome",
+      "url": "https://github.com/sindresorhus/awesome",
+      "license": "CC0-1.0",
+      "lang": "N/A",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 400527,
+        "forks": 31598,
+        "issues": 62
+      },
+      "score": 406946.59802133485,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质内容列表。项目采用CC0开源协议，允许自由使用和分发。覆盖范围从编程语言、开发工具到设计资源和学术主题，内容经过社区筛选和维护。适合开发者、研究人员快速查找特定领域的可靠学习资料和工具。目前已成为GitHub上最受欢迎的资源索引项目之一。",
+      "updated_at": "2025-09-17T15:37:29Z",
+      "summary_zh": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质内容列表。项目采用CC0开源协议，允许自由使用和分发。覆盖范围从编程语言、开发工具到设计资源和学术主题，内容经过社区筛选和维护。适合开发者、研究人员快速查找特定领域的可靠学习资料和工具。目前已成为GitHub上最受欢迎的资源索引项目之一。"
+    },
+    {
+      "id": "public-apis/public-apis",
+      "source": "github",
+      "name": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source",
+        "public",
+        "public-api",
+        "public-apis",
+        "resources",
+        "software"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 365270,
+        "forks": 38352,
+        "issues": 586
+      },
+      "score": 373040.37332997686,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个开源的免费API集合项目，收录了各类公开可用的API接口。项目按照功能领域分类，涵盖新闻、金融、娱乐、开发工具等多个类别，每个API都附带简要说明和访问链接。开发者可以快速查找所需接口，用于原型开发、学习测试或集成第三方服务。所有API均经过筛选，确保可用性和免费访问，适合初学者和专业人士参考使用。",
+      "updated_at": "2025-09-17T15:26:49Z",
+      "summary_zh": "这是一个开源的免费API集合项目，收录了各类公开可用的API接口。项目按照功能领域分类，涵盖新闻、金融、娱乐、开发工具等多个类别，每个API都附带简要说明和访问链接。开发者可以快速查找所需接口，用于原型开发、学习测试或集成第三方服务。所有API均经过筛选，确保可用性和免费访问，适合初学者和专业人士参考使用。"
+    },
     {
       "id": "freeCodeCamp/freeCodeCamp",
       "source": "github",
@@ -42,41 +118,9 @@
         "stars": [],
         "downloads": []
       },
-      "summary": "freeCodeCamp 是一个开源编程学习平台，提供完整的计算机科学和编程课程，涵盖从基础数学到前端开发、数据可视化等多个领域。其课程以项目驱动，结合实践练习与认证体系，帮助学习者系统掌握编程技能。平台内容完全免费，适合自学编程的初学者及希望巩固知识的中级开发者。社区活跃，支持多语言，并鼓励通过开源协作持续完善课程内容。",
-      "updated_at": "2025-09-17T15:22:05Z"
-    },
-    {
-      "id": "sindresorhus/awesome",
-      "source": "github",
-      "name": "awesome",
-      "url": "https://github.com/sindresorhus/awesome",
-      "license": "CC0-1.0",
-      "lang": "N/A",
-      "tags": [
-        "awesome",
-        "awesome-list",
-        "lists",
-        "resources",
-        "unicorns"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 400527,
-        "forks": 31598,
-        "issues": 62
-      },
-      "score": 406946.59802133485,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质资源列表。项目采用CC0协议，内容完全开放共享，覆盖编程语言、工具、框架等多个方向。每个列表都经过严格筛选和维护，为开发者提供可靠的学习与参考指南。适合需要快速获取某一领域高质量资源的开发者和技术爱好者使用。",
-      "updated_at": "2025-09-17T15:37:29Z"
+      "summary": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程。其课程内容涵盖数学、JavaScript、D3 等核心技术，并支持通过实际项目进行实践学习。用户可以通过完成课程获得认证，提升职业能力。该平台适合编程初学者和希望系统学习计算机科学的人群，所有资源完全免费且由社区驱动。",
+      "updated_at": "2025-09-17T15:22:05Z",
+      "summary_zh": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程。其课程内容涵盖数学、JavaScript、D3 等核心技术，并支持通过实际项目进行实践学习。用户可以通过完成课程获得认证，提升职业能力。该平台适合编程初学者和希望系统学习计算机科学的人群，所有资源完全免费且由社区驱动。"
     },
     {
       "id": "EbookFoundation/free-programming-books",
@@ -108,49 +152,9 @@
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、技术栈和计算机科学主题，所有内容均遵循开放许可协议。资源以多语言形式组织，并按技术领域分类，便于开发者快速查找所需资料。该项目适合自学编程者、计算机专业学生以及需要技术参考的工程师使用。",
-      "updated_at": "2025-09-17T15:30:12Z"
-    },
-    {
-      "id": "public-apis/public-apis",
-      "source": "github",
-      "name": "public-apis",
-      "url": "https://github.com/public-apis/public-apis",
-      "license": "MIT",
-      "lang": "Python",
-      "tags": [
-        "api",
-        "apis",
-        "dataset",
-        "development",
-        "free",
-        "list",
-        "lists",
-        "open-source",
-        "public",
-        "public-api",
-        "public-apis",
-        "resources",
-        "software"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 365270,
-        "forks": 38352,
-        "issues": 586
-      },
-      "score": 373040.37332997686,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "这是一个开源的免费API集合项目，收录了各类公开可用的API接口，涵盖新闻、天气、金融、娱乐等多个领域。项目按类别整理，每个API都附带简要说明和访问链接，方便开发者快速查找和使用。所有API均经过筛选，确保可用性和免费访问权限。该项目适合开发者、学生或任何需要调用外部数据服务的人群，能有效提升开发效率并降低集成成本。",
-      "updated_at": "2025-09-17T15:26:49Z"
+      "summary": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、框架和计算机科学主题，所有内容均遵循开放许可协议。资源按语言和主题分类，便于开发者快速查找所需资料。适合自学编程者、学生和需要技术参考的工程师使用。项目持续更新，并接受社区贡献。",
+      "updated_at": "2025-09-17T15:30:12Z",
+      "summary_zh": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、框架和计算机科学主题，所有内容均遵循开放许可协议。资源按语言和主题分类，便于开发者快速查找所需资料。适合自学编程者、学生和需要技术参考的工程师使用。项目持续更新，并接受社区贡献。"
     },
     {
       "id": "jwasham/coding-interview-university",
@@ -189,8 +193,9 @@
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心计算机科学主题的详细学习路线和资源清单。内容涵盖编程面试常见题型和解题技巧，适合准备技术面试的开发者系统性地复习和提升。该项目以开源方式维护，社区贡献了大量实战经验和学习材料，被广泛认可为技术面试准备的经典参考资料。",
-      "updated_at": "2025-09-17T15:37:55Z"
+      "summary": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心主题的详细学习路线和资源清单。内容涵盖编程面试常见题型与解题技巧，适合准备技术面试的开发者系统化复习。该项目以实践为导向，帮助学习者构建扎实的计算机科学基础并提升问题解决能力。",
+      "updated_at": "2025-09-17T15:37:55Z",
+      "summary_zh": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心主题的详细学习路线和资源清单。内容涵盖编程面试常见题型与解题技巧，适合准备技术面试的开发者系统化复习。该项目以实践为导向，帮助学习者构建扎实的计算机科学基础并提升问题解决能力。"
     },
     {
       "id": "facebook/react",
@@ -223,8 +228,9 @@
         "stars": [],
         "downloads": []
       },
-      "summary": "React 是一个由 Facebook 开发的声明式 JavaScript 库，专注于构建高效、灵活的用户界面。它采用组件化架构，使开发者能够以模块化的方式构建复杂的 Web 和原生应用界面。其虚拟 DOM 机制优化了渲染性能，提升了应用响应速度。React 适用于构建单页应用、动态网站以及跨平台移动应用，是前端开发中最受欢迎的技术之一。",
-      "updated_at": "2025-09-17T15:17:39Z"
+      "summary": "React 是一个由 Facebook 开发的声明式 JavaScript 库，专注于构建高效、灵活的用户界面。它采用组件化架构，使开发者能够以可复用和可组合的方式构建复杂的 Web 和原生应用。其虚拟 DOM 机制优化了渲染性能，提升了应用响应速度。React 适用于构建单页应用、动态界面以及跨平台移动应用，是现代前端开发的核心工具之一。",
+      "updated_at": "2025-09-17T15:17:39Z",
+      "summary_zh": "React 是一个由 Facebook 开发的声明式 JavaScript 库，专注于构建高效、灵活的用户界面。它采用组件化架构，使开发者能够以可复用和可组合的方式构建复杂的 Web 和原生应用。其虚拟 DOM 机制优化了渲染性能，提升了应用响应速度。React 适用于构建单页应用、动态界面以及跨平台移动应用，是现代前端开发的核心工具之一。"
     }
   ]
 }

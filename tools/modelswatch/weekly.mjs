@@ -15,6 +15,7 @@ async function main(){
   const now = new Date().toISOString();
   const gh = await fetchGithubTop();
   const hf = await fetchHFTop();
+  // Weekly job updates only the weekly top files and corpus; it does NOT write daily_* files.
   writeJSON(path.join(outDir, 'top_github.json'), { updated_at: now, items: gh });
   writeJSON(path.join(outDir, 'top_hf.json'), { updated_at: now, items: hf });
   // Also refresh corpus files for daily picks

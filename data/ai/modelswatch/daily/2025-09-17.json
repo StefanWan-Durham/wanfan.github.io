@@ -1,7 +1,83 @@
 {
   "date": "2025-09-17",
-  "updated_at": "2025-09-17T15:45:27.701Z",
+  "updated_at": "2025-09-17T17:12:19.931Z",
   "items": [
+    {
+      "id": "sindresorhus/awesome",
+      "source": "github",
+      "name": "awesome",
+      "url": "https://github.com/sindresorhus/awesome",
+      "license": "CC0-1.0",
+      "lang": "N/A",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 400527,
+        "forks": 31598,
+        "issues": 62
+      },
+      "score": 406946.59802133485,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质内容列表。项目采用CC0开源协议，允许自由使用和分发。覆盖范围从编程语言、开发工具到设计资源和学术主题，内容经过社区筛选和维护。适合开发者、研究人员快速查找特定领域的可靠学习资料和工具。目前已成为GitHub上最受欢迎的资源索引项目之一。",
+      "updated_at": "2025-09-17T15:37:29Z",
+      "summary_zh": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质内容列表。项目采用CC0开源协议，允许自由使用和分发。覆盖范围从编程语言、开发工具到设计资源和学术主题，内容经过社区筛选和维护。适合开发者、研究人员快速查找特定领域的可靠学习资料和工具。目前已成为GitHub上最受欢迎的资源索引项目之一。"
+    },
+    {
+      "id": "public-apis/public-apis",
+      "source": "github",
+      "name": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source",
+        "public",
+        "public-api",
+        "public-apis",
+        "resources",
+        "software"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 365270,
+        "forks": 38352,
+        "issues": 586
+      },
+      "score": 373040.37332997686,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个开源的免费API集合项目，收录了各类公开可用的API接口。项目按照功能领域分类，涵盖新闻、金融、娱乐、开发工具等多个类别，每个API都附带简要说明和访问链接。开发者可以快速查找所需接口，用于原型开发、学习测试或集成第三方服务。所有API均经过筛选，确保可用性和免费访问，适合初学者和专业人士参考使用。",
+      "updated_at": "2025-09-17T15:26:49Z",
+      "summary_zh": "这是一个开源的免费API集合项目，收录了各类公开可用的API接口。项目按照功能领域分类，涵盖新闻、金融、娱乐、开发工具等多个类别，每个API都附带简要说明和访问链接。开发者可以快速查找所需接口，用于原型开发、学习测试或集成第三方服务。所有API均经过筛选，确保可用性和免费访问，适合初学者和专业人士参考使用。"
+    },
     {
       "id": "freeCodeCamp/freeCodeCamp",
       "source": "github",
@@ -43,41 +119,9 @@
         "stars": [],
         "downloads": []
       },
-      "summary": "freeCodeCamp 是一个开源编程学习平台，提供完整的计算机科学和编程课程，涵盖从基础数学到前端开发、数据可视化等多个领域。其课程以项目驱动，结合实践练习与认证体系，帮助学习者系统掌握编程技能。平台内容完全免费，适合自学编程的初学者及希望巩固知识的中级开发者。社区活跃，支持多语言，并鼓励通过开源协作持续完善课程内容。",
-      "updated_at": "2025-09-17T15:22:05Z"
-    },
-    {
-      "id": "sindresorhus/awesome",
-      "source": "github",
-      "name": "awesome",
-      "url": "https://github.com/sindresorhus/awesome",
-      "license": "CC0-1.0",
-      "lang": "N/A",
-      "tags": [
-        "awesome",
-        "awesome-list",
-        "lists",
-        "resources",
-        "unicorns"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 400527,
-        "forks": 31598,
-        "issues": 62
-      },
-      "score": 406946.59802133485,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质资源列表。项目采用CC0协议，内容完全开放共享，覆盖编程语言、工具、框架等多个方向。每个列表都经过严格筛选和维护，为开发者提供可靠的学习与参考指南。适合需要快速获取某一领域高质量资源的开发者和技术爱好者使用。",
-      "updated_at": "2025-09-17T15:37:29Z"
+      "summary": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程。其课程内容涵盖数学、JavaScript、D3 等核心技术，并支持通过实际项目进行实践学习。用户可以通过完成课程获得认证，提升职业能力。该平台适合编程初学者和希望系统学习计算机科学的人群，所有资源完全免费且由社区驱动。",
+      "updated_at": "2025-09-17T15:22:05Z",
+      "summary_zh": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程。其课程内容涵盖数学、JavaScript、D3 等核心技术，并支持通过实际项目进行实践学习。用户可以通过完成课程获得认证，提升职业能力。该平台适合编程初学者和希望系统学习计算机科学的人群，所有资源完全免费且由社区驱动。"
     },
     {
       "id": "EbookFoundation/free-programming-books",
@@ -109,49 +153,9 @@
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、技术栈和计算机科学主题，所有内容均遵循开放许可协议。资源以多语言形式组织，并按技术领域分类，便于开发者快速查找所需资料。该项目适合自学编程者、计算机专业学生以及需要技术参考的工程师使用。",
-      "updated_at": "2025-09-17T15:30:12Z"
-    },
-    {
-      "id": "public-apis/public-apis",
-      "source": "github",
-      "name": "public-apis",
-      "url": "https://github.com/public-apis/public-apis",
-      "license": "MIT",
-      "lang": "Python",
-      "tags": [
-        "api",
-        "apis",
-        "dataset",
-        "development",
-        "free",
-        "list",
-        "lists",
-        "open-source",
-        "public",
-        "public-api",
-        "public-apis",
-        "resources",
-        "software"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 365270,
-        "forks": 38352,
-        "issues": 586
-      },
-      "score": 373040.37332997686,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "这是一个开源的免费API集合项目，收录了各类公开可用的API接口，涵盖新闻、天气、金融、娱乐等多个领域。项目按类别整理，每个API都附带简要说明和访问链接，方便开发者快速查找和使用。所有API均经过筛选，确保可用性和免费访问权限。该项目适合开发者、学生或任何需要调用外部数据服务的人群，能有效提升开发效率并降低集成成本。",
-      "updated_at": "2025-09-17T15:26:49Z"
+      "summary": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、框架和计算机科学主题，所有内容均遵循开放许可协议。资源按语言和主题分类，便于开发者快速查找所需资料。适合自学编程者、学生和需要技术参考的工程师使用。项目持续更新，并接受社区贡献。",
+      "updated_at": "2025-09-17T15:30:12Z",
+      "summary_zh": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、框架和计算机科学主题，所有内容均遵循开放许可协议。资源按语言和主题分类，便于开发者快速查找所需资料。适合自学编程者、学生和需要技术参考的工程师使用。项目持续更新，并接受社区贡献。"
     },
     {
       "id": "jwasham/coding-interview-university",
@@ -190,8 +194,9 @@
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心计算机科学主题的详细学习路线和资源清单。内容涵盖编程面试常见题型和解题技巧，适合准备技术面试的开发者系统性地复习和提升。该项目以开源方式维护，社区贡献了大量实战经验和学习材料，被广泛认可为技术面试准备的经典参考资料。",
-      "updated_at": "2025-09-17T15:37:55Z"
+      "summary": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心主题的详细学习路线和资源清单。内容涵盖编程面试常见题型与解题技巧，适合准备技术面试的开发者系统化复习。该项目以实践为导向，帮助学习者构建扎实的计算机科学基础并提升问题解决能力。",
+      "updated_at": "2025-09-17T15:37:55Z",
+      "summary_zh": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心主题的详细学习路线和资源清单。内容涵盖编程面试常见题型与解题技巧，适合准备技术面试的开发者系统化复习。该项目以实践为导向，帮助学习者构建扎实的计算机科学基础并提升问题解决能力。"
     },
     {
       "id": "facebook/react",
@@ -224,278 +229,9 @@
         "stars": [],
         "downloads": []
       },
-      "summary": "React 是一个由 Facebook 开发的声明式 JavaScript 库，专注于构建高效、灵活的用户界面。它采用组件化架构，使开发者能够以模块化的方式构建复杂的 Web 和原生应用界面。其虚拟 DOM 机制优化了渲染性能，提升了应用响应速度。React 适用于构建单页应用、动态网站以及跨平台移动应用，是前端开发中最受欢迎的技术之一。",
-      "updated_at": "2025-09-17T15:17:39Z"
-    },
-    {
-      "id": "timm/mobilenetv3_small_100.lamb_in1k",
-      "source": "hf",
-      "name": "mobilenetv3_small_100.lamb_in1k",
-      "url": "https://huggingface.co/timm/mobilenetv3_small_100.lamb_in1k",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "timm",
-        "pytorch",
-        "safetensors",
-        "image-classification",
-        "transformers",
-        "dataset:imagenet-1k",
-        "arxiv:2110.00476",
-        "arxiv:1905.02244",
-        "license:apache-2.0",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 123679149,
-        "hf_likes": 36
-      },
-      "score": 247376.298,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "MobileNetV3-Small-100 是一个轻量级卷积神经网络，专为移动端和边缘设备上的图像分类任务设计。该模型基于 MobileNetV3 架构，通过优化网络结构和引入 Squeeze-and-Excitation 模块，在保持较低计算复杂度的同时提升了特征表达能力。它使用 ImageNet-1K 数据集进行训练，适用于资源受限环境下的实时图像识别任务，如移动应用或嵌入式视觉系统。该模型在性能和效率之间取得了良好平衡，适合部署在计算能力有限的设备上。",
-      "updated_at": "2025-09-17T15:45:28.184Z"
-    },
-    {
-      "id": "Falconsai/nsfw_image_detection",
-      "source": "hf",
-      "name": "nsfw_image_detection",
-      "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "safetensors",
-        "vit",
-        "image-classification",
-        "arxiv:2010.11929",
-        "license:apache-2.0",
-        "autotrain_compatible",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 96090269,
-        "hf_likes": 818
-      },
-      "score": 192589.538,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "这是一个基于Vision Transformer架构的NSFW（不适宜工作场所）图像检测模型。该模型能够自动识别并分类图像中的敏感或不适宜内容，适用于内容审核、社交媒体过滤等场景。模型基于Apache 2.0开源协议发布，支持Transformers和PyTorch框架，并兼容Safetensors格式。其训练数据参考了arXiv:2010.11929的研究成果，适合需要自动化内容审核的开发者或企业使用。",
-      "updated_at": "2025-09-17T15:45:28.184Z"
-    },
-    {
-      "id": "sentence-transformers/all-MiniLM-L6-v2",
-      "source": "hf",
-      "name": "all-MiniLM-L6-v2",
-      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "sentence-transformers",
-        "pytorch",
-        "tf",
-        "rust",
-        "onnx",
-        "safetensors",
-        "openvino",
-        "bert",
-        "feature-extraction",
-        "sentence-similarity",
-        "transformers",
-        "en",
-        "dataset:s2orc",
-        "dataset:flax-sentence-embeddings/stackexchange_xml",
-        "dataset:ms_marco",
-        "dataset:gooaq",
-        "dataset:yahoo_answers_topics",
-        "dataset:code_search_net",
-        "dataset:search_qa",
-        "dataset:eli5",
-        "dataset:snli",
-        "dataset:multi_nli",
-        "dataset:wikihow",
-        "dataset:natural_questions",
-        "dataset:trivia_qa",
-        "dataset:embedding-data/sentence-compression",
-        "dataset:embedding-data/flickr30k-captions",
-        "dataset:embedding-data/altlex",
-        "dataset:embedding-data/simple-wiki",
-        "dataset:embedding-data/QQP",
-        "dataset:embedding-data/SPECTER",
-        "dataset:embedding-data/PAQ_pairs",
-        "dataset:embedding-data/WikiAnswers",
-        "arxiv:1904.06472",
-        "arxiv:2102.07033",
-        "arxiv:2104.08727",
-        "arxiv:1704.05179",
-        "arxiv:1810.09305",
-        "license:apache-2.0",
-        "autotrain_compatible",
-        "text-embeddings-inference",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 89404308,
-        "hf_likes": 3894
-      },
-      "score": 180755.616,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "all-MiniLM-L6-v2 是一个基于 BERT 架构的轻量级句子嵌入模型，由 Sentence Transformers 团队开发。该模型通过知识蒸馏技术压缩至仅 6 层结构，在保持较高语义理解能力的同时显著提升了推理速度。它能够将文本转换为高维向量表示，适用于句子相似度计算、语义搜索和文本聚类等任务。由于其体积小且性能优秀，特别适合部署在计算资源受限的环境中，如边缘设备或实时应用场景。",
-      "updated_at": "2025-09-17T15:45:28.184Z"
-    },
-    {
-      "id": "dima806/fairface_age_image_detection",
-      "source": "hf",
-      "name": "fairface_age_image_detection",
-      "url": "https://huggingface.co/dima806/fairface_age_image_detection",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "safetensors",
-        "vit",
-        "image-classification",
-        "dataset:nateraw/fairface",
-        "base_model:google/vit-base-patch16-224-in21k",
-        "base_model:finetune:google/vit-base-patch16-224-in21k",
-        "license:apache-2.0",
-        "autotrain_compatible",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 57794544,
-        "hf_likes": 40
-      },
-      "score": 115609.088,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "这是一个基于Vision Transformer（ViT）架构的图像分类模型，专门用于从人脸图像中预测年龄。该模型在FairFace数据集上进行了微调，能够识别多种年龄段的分类标签。其核心优势在于结合了ViT-base-patch16-224-in21k预训练模型的能力，并通过微调提升了在年龄识别任务上的准确性。适用于需要自动化年龄分析的应用场景，如用户画像分析或内容推荐系统。模型采用Apache 2.0开源协议，支持通过Transformers库直接调用。",
-      "updated_at": "2025-09-17T15:45:28.184Z"
-    },
-    {
-      "id": "google-bert/bert-base-uncased",
-      "source": "hf",
-      "name": "bert-base-uncased",
-      "url": "https://huggingface.co/google-bert/bert-base-uncased",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "rust",
-        "coreml",
-        "onnx",
-        "safetensors",
-        "bert",
-        "fill-mask",
-        "exbert",
-        "en",
-        "dataset:bookcorpus",
-        "dataset:wikipedia",
-        "arxiv:1810.04805",
-        "license:apache-2.0",
-        "autotrain_compatible",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 55955383,
-        "hf_likes": 2405
-      },
-      "score": 113113.266,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "BERT-base-uncased 是谷歌开发的基础规模双向编码器表示模型，采用无大小写区分（uncased）的文本处理方式。该模型基于Transformer架构，通过掩码语言建模和下一句预测任务进行预训练，能够有效捕捉上下文语义信息。其主要用途包括文本分类、命名实体识别、问答系统及掩码词汇预测等自然语言处理任务。作为开源预训练模型，它支持多种深度学习框架，适用于研究人员和开发者快速构建下游NLP应用。",
-      "updated_at": "2025-09-17T15:45:28.184Z"
-    },
-    {
-      "id": "tech4humans/yolov8s-signature-detector",
-      "source": "hf",
-      "name": "yolov8s-signature-detector",
-      "url": "https://huggingface.co/tech4humans/yolov8s-signature-detector",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "ultralytics",
-        "tensorboard",
-        "onnx",
-        "object-detection",
-        "signature-detection",
-        "yolo",
-        "yolov8",
-        "pytorch",
-        "dataset:tech4humans/signature-detection",
-        "base_model:Ultralytics/YOLOv8",
-        "base_model:quantized:Ultralytics/YOLOv8",
-        "license:agpl-3.0",
-        "model-index",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 39952181,
-        "hf_likes": 37
-      },
-      "score": 79922.86200000001,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "yolov8s-signature-detector 是一个基于 YOLOv8s 架构优化的签名检测模型，专门用于识别图像或文档中的签名区域。该模型在 tech4humans/signature-detection 数据集上训练，具备较高的检测精度和较快的推理速度。其亮点包括支持多种部署格式（如 ONNX 和 PyTorch），并集成了 TensorBoard 进行训练可视化。适用于文档处理、自动化审核和身份验证等场景，能够有效提升签名检测任务的效率。",
-      "updated_at": "2025-09-17T15:45:28.184Z"
+      "summary": "React 是一个由 Facebook 开发的声明式 JavaScript 库，专注于构建高效、灵活的用户界面。它采用组件化架构，使开发者能够以可复用和可组合的方式构建复杂的 Web 和原生应用。其虚拟 DOM 机制优化了渲染性能，提升了应用响应速度。React 适用于构建单页应用、动态界面以及跨平台移动应用，是现代前端开发的核心工具之一。",
+      "updated_at": "2025-09-17T15:17:39Z",
+      "summary_zh": "React 是一个由 Facebook 开发的声明式 JavaScript 库，专注于构建高效、灵活的用户界面。它采用组件化架构，使开发者能够以可复用和可组合的方式构建复杂的 Web 和原生应用。其虚拟 DOM 机制优化了渲染性能，提升了应用响应速度。React 适用于构建单页应用、动态界面以及跨平台移动应用，是现代前端开发的核心工具之一。"
     }
   ]
 }
