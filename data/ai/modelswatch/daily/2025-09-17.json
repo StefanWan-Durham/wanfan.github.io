@@ -1,62 +1,29 @@
 {
   "date": "2025-09-17",
-  "updated_at": "2025-09-17T17:12:19.931Z",
+  "updated_at": "2025-09-17T17:33:47.244Z",
   "items": [
     {
-      "id": "sindresorhus/awesome",
+      "id": "TheAlgorithms/Python",
       "source": "github",
-      "name": "awesome",
-      "url": "https://github.com/sindresorhus/awesome",
-      "license": "CC0-1.0",
-      "lang": "N/A",
-      "tags": [
-        "awesome",
-        "awesome-list",
-        "lists",
-        "resources",
-        "unicorns"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 400527,
-        "forks": 31598,
-        "issues": 62
-      },
-      "score": 406946.59802133485,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质内容列表。项目采用CC0开源协议，允许自由使用和分发。覆盖范围从编程语言、开发工具到设计资源和学术主题，内容经过社区筛选和维护。适合开发者、研究人员快速查找特定领域的可靠学习资料和工具。目前已成为GitHub上最受欢迎的资源索引项目之一。",
-      "updated_at": "2025-09-17T15:37:29Z",
-      "summary_zh": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质内容列表。项目采用CC0开源协议，允许自由使用和分发。覆盖范围从编程语言、开发工具到设计资源和学术主题，内容经过社区筛选和维护。适合开发者、研究人员快速查找特定领域的可靠学习资料和工具。目前已成为GitHub上最受欢迎的资源索引项目之一。"
-    },
-    {
-      "id": "public-apis/public-apis",
-      "source": "github",
-      "name": "public-apis",
-      "url": "https://github.com/public-apis/public-apis",
+      "name": "Python",
+      "url": "https://github.com/TheAlgorithms/Python",
       "license": "MIT",
       "lang": "Python",
       "tags": [
-        "api",
-        "apis",
-        "dataset",
-        "development",
-        "free",
-        "list",
-        "lists",
-        "open-source",
-        "public",
-        "public-api",
-        "public-apis",
-        "resources",
-        "software"
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven",
+        "education",
+        "hacktoberfest",
+        "interview",
+        "learn",
+        "practice",
+        "python",
+        "searches",
+        "sorting-algorithms",
+        "sorts"
       ],
       "categories": {
         "capabilities": [],
@@ -64,44 +31,66 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 365270,
-        "forks": 38352,
-        "issues": 586
+        "stars": 207408,
+        "forks": 47818,
+        "issues": 401
       },
-      "score": 373040.37332997686,
+      "score": 217071.57998479938,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个开源的免费API集合项目，收录了各类公开可用的API接口。项目按照功能领域分类，涵盖新闻、金融、娱乐、开发工具等多个类别，每个API都附带简要说明和访问链接。开发者可以快速查找所需接口，用于原型开发、学习测试或集成第三方服务。所有API均经过筛选，确保可用性和免费访问，适合初学者和专业人士参考使用。",
-      "updated_at": "2025-09-17T15:26:49Z",
-      "summary_zh": "这是一个开源的免费API集合项目，收录了各类公开可用的API接口。项目按照功能领域分类，涵盖新闻、金融、娱乐、开发工具等多个类别，每个API都附带简要说明和访问链接。开发者可以快速查找所需接口，用于原型开发、学习测试或集成第三方服务。所有API均经过筛选，确保可用性和免费访问，适合初学者和专业人士参考使用。"
+      "summary": "这是一个用Python实现各类算法的开源项目，覆盖了从基础数据结构到复杂算法的广泛内容。项目由社区驱动，代码结构清晰，注释详细，适合用于学习、面试准备和算法竞赛训练。无论是初学者还是经验丰富的开发者，都可以通过阅读和运行代码来加深对算法原理和Python编程的理解。该项目支持Hacktoberfest活动，鼓励开发者参与贡献。",
+      "updated_at": "2025-09-17T17:22:24Z",
+      "summary_zh": "这是一个用Python实现各类算法的开源项目，覆盖了从基础数据结构到复杂算法的广泛内容。项目由社区驱动，代码结构清晰，注释详细，适合用于学习、面试准备和算法竞赛训练。无论是初学者还是经验丰富的开发者，都可以通过阅读和运行代码来加深对算法原理和Python编程的理解。该项目支持Hacktoberfest活动，鼓励开发者参与贡献。"
     },
     {
-      "id": "freeCodeCamp/freeCodeCamp",
+      "id": "microsoft/vscode",
       "source": "github",
-      "name": "freeCodeCamp",
-      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
-      "license": "BSD-3-Clause",
+      "name": "vscode",
+      "url": "https://github.com/microsoft/vscode",
+      "license": "MIT",
       "lang": "TypeScript",
       "tags": [
-        "careers",
-        "certification",
-        "community",
-        "curriculum",
-        "d3",
-        "education",
-        "freecodecamp",
-        "hacktoberfest",
+        "editor",
+        "electron",
+        "microsoft",
+        "typescript",
+        "visual-studio-code"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 176787,
+        "forks": 35067,
+        "issues": 13497
+      },
+      "score": 183900.3482718364,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Visual Studio Code（VS Code）是一款由微软开发的免费开源代码编辑器，基于 Electron 框架构建，支持跨平台使用。它内置了对多种编程语言的支持，通过丰富的扩展生态系统，用户可以高度自定义编辑环境。VS Code 集成了调试、Git 版本控制、智能代码补全等功能，适用于前端、后端及全栈开发。其轻量级设计和强大的性能使其成为开发者日常编码和项目管理的首选工具。",
+      "updated_at": "2025-09-17T17:08:42Z",
+      "summary_zh": "Visual Studio Code（VS Code）是一款由微软开发的免费开源代码编辑器，基于 Electron 框架构建，支持跨平台使用。它内置了对多种编程语言的支持，通过丰富的扩展生态系统，用户可以高度自定义编辑环境。VS Code 集成了调试、Git 版本控制、智能代码补全等功能，适用于前端、后端及全栈开发。其轻量级设计和强大的性能使其成为开发者日常编码和项目管理的首选工具。"
+    },
+    {
+      "id": "vuejs/vue",
+      "source": "github",
+      "name": "vue",
+      "url": "https://github.com/vuejs/vue",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "framework",
+        "frontend",
         "javascript",
-        "learn-to-code",
-        "math",
-        "nodejs",
-        "nonprofits",
-        "programming",
-        "react",
-        "teachers"
+        "vue"
       ],
       "categories": {
         "capabilities": [],
@@ -109,33 +98,36 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 427801,
-        "forks": 41571,
-        "issues": 319
+        "stars": 209425,
+        "forks": 33767,
+        "issues": 608
       },
-      "score": 436215.16237318673,
+      "score": 216278.29896628085,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程。其课程内容涵盖数学、JavaScript、D3 等核心技术，并支持通过实际项目进行实践学习。用户可以通过完成课程获得认证，提升职业能力。该平台适合编程初学者和希望系统学习计算机科学的人群，所有资源完全免费且由社区驱动。",
-      "updated_at": "2025-09-17T15:22:05Z",
-      "summary_zh": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程。其课程内容涵盖数学、JavaScript、D3 等核心技术，并支持通过实际项目进行实践学习。用户可以通过完成课程获得认证，提升职业能力。该平台适合编程初学者和希望系统学习计算机科学的人群，所有资源完全免费且由社区驱动。"
+      "summary": "Vue 是一个渐进式 JavaScript 框架，专注于构建用户界面。它采用组件化开发模式，提供响应式数据绑定和虚拟 DOM 渲染机制，使开发者能够高效构建交互式 Web 应用。Vue 的核心设计注重灵活性和易用性，既适用于轻量级项目，也能支撑复杂单页应用（SPA）。其生态系统包含 Vuex 状态管理和 Vue Router 路由等官方库，适合前端开发及全栈项目。",
+      "updated_at": "2025-09-17T16:47:24Z",
+      "summary_zh": "Vue 是一个渐进式 JavaScript 框架，专注于构建用户界面。它采用组件化开发模式，提供响应式数据绑定和虚拟 DOM 渲染机制，使开发者能够高效构建交互式 Web 应用。Vue 的核心设计注重灵活性和易用性，既适用于轻量级项目，也能支撑复杂单页应用（SPA）。其生态系统包含 Vuex 状态管理和 Vue Router 路由等官方库，适合前端开发及全栈项目。"
     },
     {
-      "id": "EbookFoundation/free-programming-books",
+      "id": "tensorflow/tensorflow",
       "source": "github",
-      "name": "free-programming-books",
-      "url": "https://github.com/EbookFoundation/free-programming-books",
-      "license": "CC-BY-4.0",
-      "lang": "Python",
+      "name": "tensorflow",
+      "url": "https://github.com/tensorflow/tensorflow",
+      "license": "Apache-2.0",
+      "lang": "C++",
       "tags": [
-        "books",
-        "education",
-        "hacktoberfest",
-        "list",
-        "resource"
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "ml",
+        "neural-network",
+        "python",
+        "tensorflow"
       ],
       "categories": {
         "capabilities": [],
@@ -143,75 +135,36 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 368342,
-        "forks": 64166,
-        "issues": 25
+        "stars": 191672,
+        "forks": 74840,
+        "issues": 1625
       },
-      "score": 381275.181161767,
+      "score": 206739.9990048611,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、框架和计算机科学主题，所有内容均遵循开放许可协议。资源按语言和主题分类，便于开发者快速查找所需资料。适合自学编程者、学生和需要技术参考的工程师使用。项目持续更新，并接受社区贡献。",
-      "updated_at": "2025-09-17T15:30:12Z",
-      "summary_zh": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、框架和计算机科学主题，所有内容均遵循开放许可协议。资源按语言和主题分类，便于开发者快速查找所需资料。适合自学编程者、学生和需要技术参考的工程师使用。项目持续更新，并接受社区贡献。"
+      "summary": "TensorFlow 是一个开源的机器学习框架，由 Google 开发并维护，旨在为开发者和研究人员提供灵活且高效的深度学习工具。它支持多种编程语言，其中 Python 是最主要的接口，同时提供分布式计算能力，适用于大规模数据处理和模型训练。该框架内置丰富的预构建模型和工具库，能够简化神经网络的设计与部署流程。TensorFlow 广泛应用于学术研究、工业项目及产品开发，适用于图像识别、自然语言处理、推荐系统等多种机器学习任务。",
+      "updated_at": "2025-09-17T17:30:37Z",
+      "summary_zh": "TensorFlow 是一个开源的机器学习框架，由 Google 开发并维护，旨在为开发者和研究人员提供灵活且高效的深度学习工具。它支持多种编程语言，其中 Python 是最主要的接口，同时提供分布式计算能力，适用于大规模数据处理和模型训练。该框架内置丰富的预构建模型和工具库，能够简化神经网络的设计与部署流程。TensorFlow 广泛应用于学术研究、工业项目及产品开发，适用于图像识别、自然语言处理、推荐系统等多种机器学习任务。"
     },
     {
-      "id": "jwasham/coding-interview-university",
+      "id": "trekhleb/javascript-algorithms",
       "source": "github",
-      "name": "coding-interview-university",
-      "url": "https://github.com/jwasham/coding-interview-university",
-      "license": "CC-BY-SA-4.0",
-      "lang": "N/A",
-      "tags": [
-        "algorithm",
-        "algorithms",
-        "coding-interview",
-        "coding-interviews",
-        "computer-science",
-        "data-structures",
-        "interview",
-        "interview-prep",
-        "interview-preparation",
-        "programming-interviews",
-        "software-engineering",
-        "study-plan"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 328051,
-        "forks": 80447,
-        "issues": 82
-      },
-      "score": 344240.3990244213,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心主题的详细学习路线和资源清单。内容涵盖编程面试常见题型与解题技巧，适合准备技术面试的开发者系统化复习。该项目以实践为导向，帮助学习者构建扎实的计算机科学基础并提升问题解决能力。",
-      "updated_at": "2025-09-17T15:37:55Z",
-      "summary_zh": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心主题的详细学习路线和资源清单。内容涵盖编程面试常见题型与解题技巧，适合准备技术面试的开发者系统化复习。该项目以实践为导向，帮助学习者构建扎实的计算机科学基础并提升问题解决能力。"
-    },
-    {
-      "id": "facebook/react",
-      "source": "github",
-      "name": "react",
-      "url": "https://github.com/facebook/react",
+      "name": "javascript-algorithms",
+      "url": "https://github.com/trekhleb/javascript-algorithms",
       "license": "MIT",
       "lang": "JavaScript",
       "tags": [
-        "declarative",
-        "frontend",
+        "algorithm",
+        "algorithms",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-preparation",
         "javascript",
-        "library",
-        "react",
-        "ui"
+        "javascript-algorithms"
       ],
       "categories": {
         "capabilities": [],
@@ -219,19 +172,331 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 238956,
-        "forks": 49348,
-        "issues": 1038
+        "stars": 193293,
+        "forks": 30878,
+        "issues": 372
       },
-      "score": 248925.55211084106,
+      "score": 199568.584923071,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "React 是一个由 Facebook 开发的声明式 JavaScript 库，专注于构建高效、灵活的用户界面。它采用组件化架构，使开发者能够以可复用和可组合的方式构建复杂的 Web 和原生应用。其虚拟 DOM 机制优化了渲染性能，提升了应用响应速度。React 适用于构建单页应用、动态界面以及跨平台移动应用，是现代前端开发的核心工具之一。",
-      "updated_at": "2025-09-17T15:17:39Z",
-      "summary_zh": "React 是一个由 Facebook 开发的声明式 JavaScript 库，专注于构建高效、灵活的用户界面。它采用组件化架构，使开发者能够以可复用和可组合的方式构建复杂的 Web 和原生应用。其虚拟 DOM 机制优化了渲染性能，提升了应用响应速度。React 适用于构建单页应用、动态界面以及跨平台移动应用，是现代前端开发的核心工具之一。"
+      "summary": "这是一个基于JavaScript实现的算法与数据结构开源库。项目覆盖了从基础到高级的各类经典算法和数据结构，每种实现均配有详细解释和进一步学习的参考资料链接。代码遵循MIT协议，适合开发者学习算法原理、准备技术面试或在实际项目中参考使用。该项目在GitHub上拥有极高的关注度，是JavaScript开发者深入理解计算机科学基础的实用资源。",
+      "updated_at": "2025-09-17T17:24:32Z",
+      "summary_zh": "这是一个基于JavaScript实现的算法与数据结构开源库。项目覆盖了从基础到高级的各类经典算法和数据结构，每种实现均配有详细解释和进一步学习的参考资料链接。代码遵循MIT协议，适合开发者学习算法原理、准备技术面试或在实际项目中参考使用。该项目在GitHub上拥有极高的关注度，是JavaScript开发者深入理解计算机科学基础的实用资源。"
+    },
+    {
+      "id": "ossu/computer-science",
+      "source": "github",
+      "name": "computer-science",
+      "url": "https://github.com/ossu/computer-science",
+      "license": "MIT",
+      "lang": "HTML",
+      "tags": [
+        "awesome-list",
+        "computer-science",
+        "courses",
+        "curriculum"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 193047,
+        "forks": 24105,
+        "issues": 16
+      },
+      "score": 197967.98793233026,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个基于MIT协议的开源计算机科学自学课程路径项目。项目提供了一套完整的计算机科学课程体系，涵盖从基础到进阶的各类主题，适合希望系统学习计算机科学的自学者。课程内容精选自全球顶尖高校的开放课程资源，并按照合理的学习顺序组织。该项目特别适合编程初学者、转行人士或希望补充计算机科学理论基础的在职开发者。所有课程资源均可免费获取，学习者可以按照自己的节奏完成学习计划。",
+      "updated_at": "2025-09-17T17:25:50Z",
+      "summary_zh": "这是一个基于MIT协议的开源计算机科学自学课程路径项目。项目提供了一套完整的计算机科学课程体系，涵盖从基础到进阶的各类主题，适合希望系统学习计算机科学的自学者。课程内容精选自全球顶尖高校的开放课程资源，并按照合理的学习顺序组织。该项目特别适合编程初学者、转行人士或希望补充计算机科学理论基础的在职开发者。所有课程资源均可免费获取，学习者可以按照自己的节奏完成学习计划。"
+    },
+    {
+      "id": "openai-community/gpt2",
+      "source": "hf",
+      "name": "gpt2",
+      "url": "https://huggingface.co/openai-community/gpt2",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "tflite",
+        "rust",
+        "onnx",
+        "safetensors",
+        "gpt2",
+        "text-generation",
+        "exbert",
+        "en",
+        "doi:10.57967/hf/0039",
+        "license:mit",
+        "autotrain_compatible",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 12119004,
+        "hf_likes": 2947
+      },
+      "score": 25711.508,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "GPT-2是OpenAI开发的开源文本生成模型，基于Transformer架构，采用自回归机制生成连贯文本。该模型支持多种框架，包括PyTorch、TensorFlow、JAX和ONNX，适用于文本补全、对话生成和内容创作等任务。其轻量级设计和广泛兼容性使其成为研究和开发中的常用工具，尤其适合自然语言处理实验和应用原型开发。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "GPT-2是OpenAI开发的开源文本生成模型，基于Transformer架构，采用自回归机制生成连贯文本。该模型支持多种框架，包括PyTorch、TensorFlow、JAX和ONNX，适用于文本补全、对话生成和内容创作等任务。其轻量级设计和广泛兼容性使其成为研究和开发中的常用工具，尤其适合自然语言处理实验和应用原型开发。"
+    },
+    {
+      "id": "dima806/fairface_age_image_detection",
+      "source": "hf",
+      "name": "fairface_age_image_detection",
+      "url": "https://huggingface.co/dima806/fairface_age_image_detection",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "vit",
+        "image-classification",
+        "dataset:nateraw/fairface",
+        "base_model:google/vit-base-patch16-224-in21k",
+        "base_model:finetune:google/vit-base-patch16-224-in21k",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 57794544,
+        "hf_likes": 40
+      },
+      "score": 115609.088,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个基于Vision Transformer（ViT）架构的图像分类模型，专门用于从人脸图像中预测年龄。该模型在FairFace数据集上进行了微调，能够识别不同年龄段的人脸特征。其核心优势在于利用预训练的ViT-base-patch16-224-in21k模型，结合公平性数据集训练，提升了年龄预测的准确性和泛化能力。适用于人脸分析、年龄验证、用户画像构建等场景，尤其适合需要自动化年龄识别的应用。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "这是一个基于Vision Transformer（ViT）架构的图像分类模型，专门用于从人脸图像中预测年龄。该模型在FairFace数据集上进行了微调，能够识别不同年龄段的人脸特征。其核心优势在于利用预训练的ViT-base-patch16-224-in21k模型，结合公平性数据集训练，提升了年龄预测的准确性和泛化能力。适用于人脸分析、年龄验证、用户画像构建等场景，尤其适合需要自动化年龄识别的应用。"
+    },
+    {
+      "id": "timm/mobilenetv3_small_100.lamb_in1k",
+      "source": "hf",
+      "name": "mobilenetv3_small_100.lamb_in1k",
+      "url": "https://huggingface.co/timm/mobilenetv3_small_100.lamb_in1k",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "timm",
+        "pytorch",
+        "safetensors",
+        "image-classification",
+        "transformers",
+        "dataset:imagenet-1k",
+        "arxiv:2110.00476",
+        "arxiv:1905.02244",
+        "license:apache-2.0",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 123679149,
+        "hf_likes": 36
+      },
+      "score": 247376.298,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "MobileNetV3-Small-100 是一个轻量级卷积神经网络，专为移动端和边缘设备上的图像分类任务设计。该模型基于 MobileNetV3 架构，通过引入 Squeeze-and-Excitation 模块和 h-swish 激活函数，在保持低计算量的同时显著提升性能。它在 ImageNet-1K 数据集上使用 LAMB 优化器训练，适用于资源受限环境中的高效推理，如移动应用或嵌入式视觉系统。该模型由 timm 库提供，支持 PyTorch 和 SafeTensors 格式。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "MobileNetV3-Small-100 是一个轻量级卷积神经网络，专为移动端和边缘设备上的图像分类任务设计。该模型基于 MobileNetV3 架构，通过引入 Squeeze-and-Excitation 模块和 h-swish 激活函数，在保持低计算量的同时显著提升性能。它在 ImageNet-1K 数据集上使用 LAMB 优化器训练，适用于资源受限环境中的高效推理，如移动应用或嵌入式视觉系统。该模型由 timm 库提供，支持 PyTorch 和 SafeTensors 格式。"
+    },
+    {
+      "id": "Falconsai/nsfw_image_detection",
+      "source": "hf",
+      "name": "nsfw_image_detection",
+      "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "safetensors",
+        "vit",
+        "image-classification",
+        "arxiv:2010.11929",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 96090269,
+        "hf_likes": 818
+      },
+      "score": 192589.538,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个基于Vision Transformer的图像分类模型，专门用于检测图像中的NSFW（不适宜工作场所）内容。该模型基于Google的ViT架构，能够高效识别包含成人或敏感内容的图片。适用于内容审核、社交媒体过滤、以及企业环境的安全防护等场景。模型支持Transformers和PyTorch框架，提供高精度的分类结果，帮助开发者自动化处理图像内容安全。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "这是一个基于Vision Transformer的图像分类模型，专门用于检测图像中的NSFW（不适宜工作场所）内容。该模型基于Google的ViT架构，能够高效识别包含成人或敏感内容的图片。适用于内容审核、社交媒体过滤、以及企业环境的安全防护等场景。模型支持Transformers和PyTorch框架，提供高精度的分类结果，帮助开发者自动化处理图像内容安全。"
+    },
+    {
+      "id": "sentence-transformers/all-MiniLM-L6-v2",
+      "source": "hf",
+      "name": "all-MiniLM-L6-v2",
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "sentence-transformers",
+        "pytorch",
+        "tf",
+        "rust",
+        "onnx",
+        "safetensors",
+        "openvino",
+        "bert",
+        "feature-extraction",
+        "sentence-similarity",
+        "transformers",
+        "en",
+        "dataset:s2orc",
+        "dataset:flax-sentence-embeddings/stackexchange_xml",
+        "dataset:ms_marco",
+        "dataset:gooaq",
+        "dataset:yahoo_answers_topics",
+        "dataset:code_search_net",
+        "dataset:search_qa",
+        "dataset:eli5",
+        "dataset:snli",
+        "dataset:multi_nli",
+        "dataset:wikihow",
+        "dataset:natural_questions",
+        "dataset:trivia_qa",
+        "dataset:embedding-data/sentence-compression",
+        "dataset:embedding-data/flickr30k-captions",
+        "dataset:embedding-data/altlex",
+        "dataset:embedding-data/simple-wiki",
+        "dataset:embedding-data/QQP",
+        "dataset:embedding-data/SPECTER",
+        "dataset:embedding-data/PAQ_pairs",
+        "dataset:embedding-data/WikiAnswers",
+        "arxiv:1904.06472",
+        "arxiv:2102.07033",
+        "arxiv:2104.08727",
+        "arxiv:1704.05179",
+        "arxiv:1810.09305",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "text-embeddings-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 89404308,
+        "hf_likes": 3894
+      },
+      "score": 180755.616,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "all-MiniLM-L6-v2 是一个基于 BERT 架构的轻量级句子嵌入模型，由 Sentence Transformers 团队开发。该模型通过知识蒸馏技术压缩至仅 6 层结构，在保持较高语义理解能力的同时显著提升了推理速度。它能够将文本转换为高维向量表示，适用于句子相似度计算、语义搜索和文本聚类等任务。模型支持多种框架部署（包括 PyTorch、TensorFlow 和 ONNX），适合对性能和效率有平衡需求的场景，如检索增强生成（RAG）或实时语义匹配应用。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "all-MiniLM-L6-v2 是一个基于 BERT 架构的轻量级句子嵌入模型，由 Sentence Transformers 团队开发。该模型通过知识蒸馏技术压缩至仅 6 层结构，在保持较高语义理解能力的同时显著提升了推理速度。它能够将文本转换为高维向量表示，适用于句子相似度计算、语义搜索和文本聚类等任务。模型支持多种框架部署（包括 PyTorch、TensorFlow 和 ONNX），适合对性能和效率有平衡需求的场景，如检索增强生成（RAG）或实时语义匹配应用。"
+    },
+    {
+      "id": "google-bert/bert-base-uncased",
+      "source": "hf",
+      "name": "bert-base-uncased",
+      "url": "https://huggingface.co/google-bert/bert-base-uncased",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "rust",
+        "coreml",
+        "onnx",
+        "safetensors",
+        "bert",
+        "fill-mask",
+        "exbert",
+        "en",
+        "dataset:bookcorpus",
+        "dataset:wikipedia",
+        "arxiv:1810.04805",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 55955383,
+        "hf_likes": 2406
+      },
+      "score": 113113.766,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "BERT-base-uncased 是一个基于 Transformer 架构的预训练语言模型，由 Google 开发。该模型采用无大小写区分（uncased）的文本处理方式，适用于多种自然语言处理任务，如文本分类、命名实体识别和问答系统。其核心优势在于双向编码机制，能够同时利用上下文信息提升语义理解能力。该模型支持多种框架，包括 PyTorch、TensorFlow 和 JAX，适用于研究和生产环境中的掩码语言建模任务。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "BERT-base-uncased 是一个基于 Transformer 架构的预训练语言模型，由 Google 开发。该模型采用无大小写区分（uncased）的文本处理方式，适用于多种自然语言处理任务，如文本分类、命名实体识别和问答系统。其核心优势在于双向编码机制，能够同时利用上下文信息提升语义理解能力。该模型支持多种框架，包括 PyTorch、TensorFlow 和 JAX，适用于研究和生产环境中的掩码语言建模任务。"
     }
   ]
 }

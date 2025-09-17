@@ -1,4 +1,284 @@
 {
-  "updated_at": "2025-09-17T17:12:19.931Z",
-  "items": []
+  "updated_at": "2025-09-17T17:33:47.244Z",
+  "items": [
+    {
+      "id": "openai-community/gpt2",
+      "source": "hf",
+      "name": "gpt2",
+      "url": "https://huggingface.co/openai-community/gpt2",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "tflite",
+        "rust",
+        "onnx",
+        "safetensors",
+        "gpt2",
+        "text-generation",
+        "exbert",
+        "en",
+        "doi:10.57967/hf/0039",
+        "license:mit",
+        "autotrain_compatible",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 12119004,
+        "hf_likes": 2947
+      },
+      "score": 25711.508,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "GPT-2是OpenAI开发的开源文本生成模型，基于Transformer架构，采用自回归机制生成连贯文本。该模型支持多种框架，包括PyTorch、TensorFlow、JAX和ONNX，适用于文本补全、对话生成和内容创作等任务。其轻量级设计和广泛兼容性使其成为研究和开发中的常用工具，尤其适合自然语言处理实验和应用原型开发。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "GPT-2是OpenAI开发的开源文本生成模型，基于Transformer架构，采用自回归机制生成连贯文本。该模型支持多种框架，包括PyTorch、TensorFlow、JAX和ONNX，适用于文本补全、对话生成和内容创作等任务。其轻量级设计和广泛兼容性使其成为研究和开发中的常用工具，尤其适合自然语言处理实验和应用原型开发。"
+    },
+    {
+      "id": "dima806/fairface_age_image_detection",
+      "source": "hf",
+      "name": "fairface_age_image_detection",
+      "url": "https://huggingface.co/dima806/fairface_age_image_detection",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "vit",
+        "image-classification",
+        "dataset:nateraw/fairface",
+        "base_model:google/vit-base-patch16-224-in21k",
+        "base_model:finetune:google/vit-base-patch16-224-in21k",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 57794544,
+        "hf_likes": 40
+      },
+      "score": 115609.088,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个基于Vision Transformer（ViT）架构的图像分类模型，专门用于从人脸图像中预测年龄。该模型在FairFace数据集上进行了微调，能够识别不同年龄段的人脸特征。其核心优势在于利用预训练的ViT-base-patch16-224-in21k模型，结合公平性数据集训练，提升了年龄预测的准确性和泛化能力。适用于人脸分析、年龄验证、用户画像构建等场景，尤其适合需要自动化年龄识别的应用。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "这是一个基于Vision Transformer（ViT）架构的图像分类模型，专门用于从人脸图像中预测年龄。该模型在FairFace数据集上进行了微调，能够识别不同年龄段的人脸特征。其核心优势在于利用预训练的ViT-base-patch16-224-in21k模型，结合公平性数据集训练，提升了年龄预测的准确性和泛化能力。适用于人脸分析、年龄验证、用户画像构建等场景，尤其适合需要自动化年龄识别的应用。"
+    },
+    {
+      "id": "timm/mobilenetv3_small_100.lamb_in1k",
+      "source": "hf",
+      "name": "mobilenetv3_small_100.lamb_in1k",
+      "url": "https://huggingface.co/timm/mobilenetv3_small_100.lamb_in1k",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "timm",
+        "pytorch",
+        "safetensors",
+        "image-classification",
+        "transformers",
+        "dataset:imagenet-1k",
+        "arxiv:2110.00476",
+        "arxiv:1905.02244",
+        "license:apache-2.0",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 123679149,
+        "hf_likes": 36
+      },
+      "score": 247376.298,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "MobileNetV3-Small-100 是一个轻量级卷积神经网络，专为移动端和边缘设备上的图像分类任务设计。该模型基于 MobileNetV3 架构，通过引入 Squeeze-and-Excitation 模块和 h-swish 激活函数，在保持低计算量的同时显著提升性能。它在 ImageNet-1K 数据集上使用 LAMB 优化器训练，适用于资源受限环境中的高效推理，如移动应用或嵌入式视觉系统。该模型由 timm 库提供，支持 PyTorch 和 SafeTensors 格式。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "MobileNetV3-Small-100 是一个轻量级卷积神经网络，专为移动端和边缘设备上的图像分类任务设计。该模型基于 MobileNetV3 架构，通过引入 Squeeze-and-Excitation 模块和 h-swish 激活函数，在保持低计算量的同时显著提升性能。它在 ImageNet-1K 数据集上使用 LAMB 优化器训练，适用于资源受限环境中的高效推理，如移动应用或嵌入式视觉系统。该模型由 timm 库提供，支持 PyTorch 和 SafeTensors 格式。"
+    },
+    {
+      "id": "Falconsai/nsfw_image_detection",
+      "source": "hf",
+      "name": "nsfw_image_detection",
+      "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "safetensors",
+        "vit",
+        "image-classification",
+        "arxiv:2010.11929",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 96090269,
+        "hf_likes": 818
+      },
+      "score": 192589.538,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个基于Vision Transformer的图像分类模型，专门用于检测图像中的NSFW（不适宜工作场所）内容。该模型基于Google的ViT架构，能够高效识别包含成人或敏感内容的图片。适用于内容审核、社交媒体过滤、以及企业环境的安全防护等场景。模型支持Transformers和PyTorch框架，提供高精度的分类结果，帮助开发者自动化处理图像内容安全。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "这是一个基于Vision Transformer的图像分类模型，专门用于检测图像中的NSFW（不适宜工作场所）内容。该模型基于Google的ViT架构，能够高效识别包含成人或敏感内容的图片。适用于内容审核、社交媒体过滤、以及企业环境的安全防护等场景。模型支持Transformers和PyTorch框架，提供高精度的分类结果，帮助开发者自动化处理图像内容安全。"
+    },
+    {
+      "id": "sentence-transformers/all-MiniLM-L6-v2",
+      "source": "hf",
+      "name": "all-MiniLM-L6-v2",
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "sentence-transformers",
+        "pytorch",
+        "tf",
+        "rust",
+        "onnx",
+        "safetensors",
+        "openvino",
+        "bert",
+        "feature-extraction",
+        "sentence-similarity",
+        "transformers",
+        "en",
+        "dataset:s2orc",
+        "dataset:flax-sentence-embeddings/stackexchange_xml",
+        "dataset:ms_marco",
+        "dataset:gooaq",
+        "dataset:yahoo_answers_topics",
+        "dataset:code_search_net",
+        "dataset:search_qa",
+        "dataset:eli5",
+        "dataset:snli",
+        "dataset:multi_nli",
+        "dataset:wikihow",
+        "dataset:natural_questions",
+        "dataset:trivia_qa",
+        "dataset:embedding-data/sentence-compression",
+        "dataset:embedding-data/flickr30k-captions",
+        "dataset:embedding-data/altlex",
+        "dataset:embedding-data/simple-wiki",
+        "dataset:embedding-data/QQP",
+        "dataset:embedding-data/SPECTER",
+        "dataset:embedding-data/PAQ_pairs",
+        "dataset:embedding-data/WikiAnswers",
+        "arxiv:1904.06472",
+        "arxiv:2102.07033",
+        "arxiv:2104.08727",
+        "arxiv:1704.05179",
+        "arxiv:1810.09305",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "text-embeddings-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 89404308,
+        "hf_likes": 3894
+      },
+      "score": 180755.616,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "all-MiniLM-L6-v2 是一个基于 BERT 架构的轻量级句子嵌入模型，由 Sentence Transformers 团队开发。该模型通过知识蒸馏技术压缩至仅 6 层结构，在保持较高语义理解能力的同时显著提升了推理速度。它能够将文本转换为高维向量表示，适用于句子相似度计算、语义搜索和文本聚类等任务。模型支持多种框架部署（包括 PyTorch、TensorFlow 和 ONNX），适合对性能和效率有平衡需求的场景，如检索增强生成（RAG）或实时语义匹配应用。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "all-MiniLM-L6-v2 是一个基于 BERT 架构的轻量级句子嵌入模型，由 Sentence Transformers 团队开发。该模型通过知识蒸馏技术压缩至仅 6 层结构，在保持较高语义理解能力的同时显著提升了推理速度。它能够将文本转换为高维向量表示，适用于句子相似度计算、语义搜索和文本聚类等任务。模型支持多种框架部署（包括 PyTorch、TensorFlow 和 ONNX），适合对性能和效率有平衡需求的场景，如检索增强生成（RAG）或实时语义匹配应用。"
+    },
+    {
+      "id": "google-bert/bert-base-uncased",
+      "source": "hf",
+      "name": "bert-base-uncased",
+      "url": "https://huggingface.co/google-bert/bert-base-uncased",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "rust",
+        "coreml",
+        "onnx",
+        "safetensors",
+        "bert",
+        "fill-mask",
+        "exbert",
+        "en",
+        "dataset:bookcorpus",
+        "dataset:wikipedia",
+        "arxiv:1810.04805",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 55955383,
+        "hf_likes": 2406
+      },
+      "score": 113113.766,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "BERT-base-uncased 是一个基于 Transformer 架构的预训练语言模型，由 Google 开发。该模型采用无大小写区分（uncased）的文本处理方式，适用于多种自然语言处理任务，如文本分类、命名实体识别和问答系统。其核心优势在于双向编码机制，能够同时利用上下文信息提升语义理解能力。该模型支持多种框架，包括 PyTorch、TensorFlow 和 JAX，适用于研究和生产环境中的掩码语言建模任务。",
+      "updated_at": "2025-09-17T17:31:02.898Z",
+      "summary_zh": "BERT-base-uncased 是一个基于 Transformer 架构的预训练语言模型，由 Google 开发。该模型采用无大小写区分（uncased）的文本处理方式，适用于多种自然语言处理任务，如文本分类、命名实体识别和问答系统。其核心优势在于双向编码机制，能够同时利用上下文信息提升语义理解能力。该模型支持多种框架，包括 PyTorch、TensorFlow 和 JAX，适用于研究和生产环境中的掩码语言建模任务。"
+    }
+  ]
 }
