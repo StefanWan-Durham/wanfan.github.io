@@ -3,7 +3,7 @@
   "items": [
     {
       "headline": "交通排放与气象条件的系统模型",
-      "one_liner": "本研究分析了城市空气污染与交通排放及气象条件的关系，提出了一种系统性的方法。",
+      "one_liner": "本研究分析了城市空气污染与交通排放及气象条件之间的关系，提出了一种系统性的方法。",
       "task": "Other",
       "type": "paper",
       "novelty": "method",
@@ -31,11 +31,11 @@
       },
       "tags": [
         "交通",
-        "排放",
-        "气象"
+        "气象",
+        "污染"
       ],
-      "impact_score": 0,
-      "quick_read": "城市空气污染是当今社会面临的重要问题之一。本文提出了一种系统模型，分析交通排放与气象条件之间的关系，旨在为减排提供科学依据。该方法具有较强的实用性和可借鉴性。",
+      "impact_score": 5,
+      "quick_read": "本研究探讨了城市交通排放与气象条件的相互作用，强调了减少空气污染的必要性。通过系统模型，分析了不同气象条件下的排放变化，为政策制定提供了依据。",
       "who_should_try": "环境科学研究者",
       "reproducibility_score": 50,
       "title_i18n": {
@@ -44,8 +44,8 @@
       },
       "summary_i18n": {
         "zh": "本研究针对城市空气污染及其减排的迫切需求，探讨了交通排放与气象条件之间的系统性关系，填补了现有研究在这一领域的不足。通过模糊推理系统（FIS），构建了一个基于捷克布拉格的交通、气象及排放数据的预测模型。关键创新在于将气象因素纳入交通排放分析，以及为城市规划者和政策制定者提供了有效的管理工具。研究结果表明，该模型在预测排放变化方面优于主流基线，能够为城市交通管理提供实用的环境保护视角。该方法的成功应用为其他城市的空气质量管理提供了借鉴，具有广泛的适用潜力。",
-        "en": "This study addresses the urgent need for urban air pollution reduction and explores the systematic relationship between traffic emissions and meteorological conditions, filling the gaps in existing research in this field. A predictive model based on traffic, meteorological, and emission data from Prague, Czech Republic, was constructed using a Fuzzy Inference System (FIS). The key innovation lies in incorporating meteorological factors into traffic emission analysis and providing effective management tools for urban planners and policymakers. The results indicate that the model outperforms mainstream baselines in predicting emission changes and can offer practical environmental protection perspectives for urban traffic management. The successful application of this method provides a reference for air quality management in other cities and has broad applicability potential.",
-        "es": "Este estudio aborda la urgente necesidad de reducir la contaminación del aire en las ciudades y explora la relación sistemática entre las emisiones del tráfico y las condiciones meteorológicas, llenando los vacíos existentes en la investigación en este campo. A través de un sistema de inferencia difusa (FIS), se ha construido un modelo predictivo basado en datos de tráfico, meteorología y emisiones de Praga, República Checa. La clave de la innovación radica en la inclusión de factores meteorológicos en el análisis de las emisiones del tráfico, así como en proporcionar a los planificadores urbanos y a los responsables de políticas una herramienta de gestión efectiva. Los resultados del estudio indican que el modelo supera a la línea base convencional en la predicción de cambios en las emisiones, lo que puede ofrecer una perspectiva práctica de protección ambiental para la gestión del tráfico urbano. La exitosa aplicación de este método proporciona un referente para la gestión de la calidad del aire en otras ciudades, con un amplio potencial de aplicación."
+        "en": "This study addresses the urgent need for urban air pollution reduction and explores the systematic relationship between traffic emissions and meteorological conditions, filling the gaps in existing research in this field. A predictive model based on traffic, meteorological, and emission data from Prague, Czech Republic, was constructed using a Fuzzy Inference System (FIS). The key innovation lies in incorporating meteorological factors into traffic emission analysis and providing effective management tools for urban planners and policymakers. The results indicate that the model outperforms mainstream baselines in predicting emission changes, offering a practical environmental protection perspective for urban traffic management. The successful application of this method provides a reference for air quality management in other cities and has broad applicability potential.",
+        "es": "Este estudio aborda la urgente necesidad de reducir la contaminación del aire en las ciudades y explora la relación sistemática entre las emisiones del tráfico y las condiciones meteorológicas, llenando los vacíos existentes en la investigación en este campo. A través de un sistema de inferencia difusa (FIS), se construyó un modelo de predicción basado en datos de tráfico, meteorología y emisiones de Praga, República Checa. La clave de la innovación radica en la inclusión de factores meteorológicos en el análisis de las emisiones del tráfico, así como en proporcionar a los planificadores urbanos y a los responsables de políticas una herramienta de gestión efectiva. Los resultados del estudio indican que el modelo supera a la línea base convencional en la predicción de cambios en las emisiones, lo que puede ofrecer una perspectiva práctica de protección ambiental para la gestión del tráfico urbano. La exitosa aplicación de este método proporciona un referente para la gestión de la calidad del aire en otras ciudades, con un amplio potencial de aplicación."
       },
       "host": "arxiv.org",
       "ts": "2025-09-16T04:00:00+00:00",
@@ -75,8 +75,8 @@
       }
     },
     {
-      "headline": "ZapGPT: 自由形式语言提示的细胞控制",
-      "one_liner": "本研究提出ZapGPT，通过自由形式的语言提示实现对复杂细胞系统的控制。",
+      "headline": "ZapGPT: 自然语言控制的模拟细胞系统",
+      "one_liner": "本论文提出了ZapGPT，通过自然语言实现对复杂分散系统的控制，提升了系统的响应能力。",
       "task": "NLP",
       "type": "paper",
       "novelty": "method",
@@ -104,21 +104,21 @@
       },
       "tags": [
         "NLP",
-        "细胞控制",
-        "提示"
+        "控制",
+        "系统"
       ],
-      "impact_score": 0,
-      "quick_read": "人类语言是表达意图的重要工具，但许多系统缺乏有效的理解机制。本文提出ZapGPT，利用自由形式的语言提示实现对细胞系统的自然控制，具有广泛的应用潜力。",
+      "impact_score": 4,
+      "quick_read": "ZapGPT通过自然语言处理技术，增强了对细胞控制的能力，解决了传统系统对语言理解的不足。该方法为未来的生物系统控制提供了新的思路。",
       "who_should_try": "生物信息学研究者",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "ZapGPT: 自由形式语言提示的细胞控制",
+        "zh": "ZapGPT: 自然语言控制的模拟细胞系统",
         "en": "ZapGPT: Free-form Language Prompting for Simulated Cellular Control"
       },
       "summary_i18n": {
         "zh": "本研究旨在填补人工或生物系统在理解和响应自然语言方面的缺口，以实现对复杂系统的更自然控制。通过构建一个双模型系统，研究者首次展示了简单代理的集体行为可以通过自由形式的语言提示进行引导，其中一个模型将指令转化为干预措施，另一个模型则评估该指令与细胞动态的匹配程度。该方法的关键创新在于不依赖于工程化的适应性函数或特定领域的提示设计，且系统能够在未见提示上实现良好的泛化。研究结果表明，该系统能够有效地将自然语言作为控制层，推动未来计算、机器人或生物系统的行为指引。此项工作为AI与生物学的合作奠定了基础，展现了语言在复杂系统控制中的潜力。",
-        "en": "This study aims to bridge the gap between artificial or biological systems in understanding and responding to natural language, enabling more natural control over complex systems. By constructing a dual-model system, the researchers demonstrate for the first time that the collective behavior of simple agents can be guided by free-form language prompts, where one model translates instructions into interventions, and the other model assesses the degree of alignment between the instruction and cellular dynamics. The key innovation of this approach lies in its independence from engineered adaptive functions or domain-specific prompt designs, allowing the system to generalize well to unseen prompts. The findings indicate that this system can effectively use natural language as a control layer, paving the way for future guidance of behavior in computing, robotics, or biological systems. This work lays the foundation for collaboration between AI and biology, showcasing the potential of language in controlling complex systems.",
-        "es": "Este estudio tiene como objetivo llenar el vacío entre los sistemas artificiales o biológicos en la comprensión y respuesta al lenguaje natural, para lograr un control más natural sobre sistemas complejos. A través de la construcción de un sistema de doble modelo, los investigadores demostraron por primera vez que el comportamiento colectivo de agentes simples puede ser guiado mediante indicaciones en lenguaje libre, donde un modelo convierte las instrucciones en intervenciones, y el otro modelo evalúa el grado de coincidencia de esas instrucciones con la dinámica celular. La innovación clave de este método radica en no depender de funciones de adaptabilidad ingenierizadas o de un diseño de indicaciones específico, y el sistema puede lograr una buena generalización en indicaciones no vistas. Los resultados de la investigación indican que este sistema puede utilizar eficazmente el lenguaje natural como capa de control, impulsando la orientación del comportamiento en futuros sistemas computacionales, robóticos o biológicos. Este trabajo sienta las bases para la colaboración entre la IA y la biología, mostrando el potencial del lenguaje en el control de sistemas complejos."
+        "en": "This study aims to bridge the gap in understanding and responding to natural language in artificial or biological systems, enabling more natural control over complex systems. By constructing a dual-model system, the researchers demonstrate for the first time that the collective behavior of simple agents can be guided by free-form language prompts, where one model translates instructions into interventions, and the other model assesses the degree of alignment between the instruction and cellular dynamics. The key innovation of this approach lies in its independence from engineered adaptive functions or domain-specific prompt designs, allowing the system to generalize well to unseen prompts. The results indicate that this system can effectively use natural language as a control layer, paving the way for future guidance of behavior in computing, robotics, or biological systems. This work lays the foundation for collaboration between AI and biology, showcasing the potential of language in controlling complex systems.",
+        "es": "Este estudio tiene como objetivo llenar el vacío en la comprensión y respuesta de sistemas artificiales o biológicos al lenguaje natural, para lograr un control más natural sobre sistemas complejos. A través de la construcción de un sistema de doble modelo, los investigadores demostraron por primera vez que el comportamiento colectivo de agentes simples puede ser guiado mediante indicaciones en lenguaje libre, donde un modelo convierte las instrucciones en intervenciones y el otro modelo evalúa el grado de coincidencia entre la instrucción y la dinámica celular. La innovación clave de este método radica en no depender de funciones de adaptabilidad ingenierizadas o de un diseño de indicaciones específico, y el sistema puede lograr una buena generalización en indicaciones no vistas. Los resultados de la investigación indican que este sistema puede utilizar eficazmente el lenguaje natural como capa de control, impulsando la orientación del comportamiento en futuros sistemas computacionales, robóticos o biológicos. Este trabajo sienta las bases para la colaboración entre la IA y la biología, mostrando el potencial del lenguaje en el control de sistemas complejos."
       },
       "host": "arxiv.org",
       "ts": "2025-09-16T04:00:00+00:00",
@@ -149,8 +149,8 @@
     },
     {
       "headline": "Maestro: 自我改进的文本到图像生成",
-      "one_liner": "Maestro通过代理协调实现文本到图像生成的自我改进，减少人工干预。",
-      "task": "MM",
+      "one_liner": "Maestro通过代理协调实现了文本到图像生成的自我改进，降低了人工干预的需求。",
+      "task": "NLP",
       "type": "paper",
       "novelty": "method",
       "key_numbers": [
@@ -180,8 +180,8 @@
         "图像生成",
         "代理"
       ],
-      "impact_score": 0,
-      "quick_read": "文本到图像生成模型面临较大的人工干预需求。本文提出Maestro，通过代理协调实现自我改进，显著提高生成效率，降低用户负担。",
+      "impact_score": 4,
+      "quick_read": "Maestro提出了一种新的文本到图像生成方法，减少了对人工干预的依赖。通过代理的自我改进机制，提升了生成质量和用户体验。",
       "who_should_try": "计算机视觉研究者",
       "reproducibility_score": 50,
       "title_i18n": {
@@ -190,8 +190,8 @@
       },
       "summary_i18n": {
         "zh": "在文本到图像生成（T2I）领域，现有模型往往需要大量人工干预，导致可用性挑战和迭代提示工程的复杂性。为此，本文提出了Maestro，一个自我进化的图像生成系统，能够通过初始提示自动改进生成图像。该系统的关键创新在于引入了自我批评机制和自我进化过程，前者通过多模态大语言模型（MLLM）代理识别生成图像的不足并提供可解释的编辑信号，后者则通过对比生成图像来优化创意提示。实验结果表明，Maestro在复杂的T2I任务中显著提升了图像质量，优于主流的自动化方法，展示了其在自我改进生成方面的有效性和可解释性。这项研究为T2I领域提供了一条新的发展路径，具有广泛的应用潜力。",
-        "en": "In the field of text-to-image generation (T2I), existing models often require significant manual intervention, leading to challenges in usability and the complexity of iterative prompt engineering. To address this, this paper presents Maestro, a self-evolving image generation system capable of automatically improving generated images through initial prompts. The key innovation of this system lies in the introduction of a self-critique mechanism and a self-evolution process, where the former uses a multimodal large language model (MLLM) agent to identify deficiencies in the generated images and provide interpretable editing signals, while the latter optimizes creative prompts by comparing generated images. Experimental results show that Maestro significantly enhances image quality in complex T2I tasks, outperforming mainstream automated methods, demonstrating its effectiveness and interpretability in self-improvement generation. This research offers a new development pathway for the T2I field, with broad application potential.",
-        "es": "En el campo de la generación de imágenes a partir de texto (T2I), los modelos existentes a menudo requieren una gran cantidad de intervención manual, lo que provoca desafíos de usabilidad y complejidad en la ingeniería de indicaciones iterativas. Para abordar esto, este artículo presenta a Maestro, un sistema de generación de imágenes autoevolutivo que puede mejorar automáticamente las imágenes generadas a partir de una indicación inicial. La clave de la innovación de este sistema radica en la introducción de un mecanismo de autocrítica y un proceso de autoevolución; el primero identifica las deficiencias de las imágenes generadas y proporciona señales de edición interpretables a través de un modelo de lenguaje multimodal grande (MLLM), mientras que el segundo optimiza las indicaciones creativas mediante la comparación de las imágenes generadas. Los resultados experimentales muestran que Maestro mejora significativamente la calidad de las imágenes en tareas complejas de T2I, superando a los métodos automatizados convencionales, y demuestra su efectividad y capacidad de interpretación en la auto-mejora de la generación. Esta investigación ofrece una nueva vía de desarrollo en el campo de T2I, con un amplio potencial de aplicación."
+        "en": "In the field of text-to-image generation (T2I), existing models often require significant manual intervention, leading to challenges in usability and the complexity of iterative prompt engineering. To address this, this paper presents Maestro, a self-evolving image generation system capable of automatically improving generated images through initial prompts. The key innovation of this system lies in the introduction of a self-critique mechanism and a self-evolution process, where the former uses a multimodal large language model (MLLM) agent to identify deficiencies in the generated images and provide interpretable editing signals, while the latter optimizes creative prompts by comparing generated images. Experimental results show that Maestro significantly enhances image quality in complex T2I tasks, outperforming mainstream automated methods, demonstrating its effectiveness and interpretability in self-improvement generation. This research offers a new development path for the T2I field, with broad application potential.",
+        "es": "En el campo de la generación de imágenes a partir de texto (T2I), los modelos existentes a menudo requieren una gran intervención manual, lo que provoca desafíos de usabilidad y complejidad en la ingeniería de indicaciones iterativas. Para ello, este artículo presenta a Maestro, un sistema de generación de imágenes autoevolutivo que puede mejorar automáticamente las imágenes generadas a partir de indicaciones iniciales. La clave de la innovación de este sistema radica en la introducción de un mecanismo de autocrítica y un proceso de autoevolución; el primero identifica las deficiencias de las imágenes generadas y proporciona señales de edición interpretables a través de un modelo de lenguaje multimodal grande (MLLM), mientras que el segundo optimiza las indicaciones creativas mediante la comparación de las imágenes generadas. Los resultados experimentales muestran que Maestro mejora significativamente la calidad de las imágenes en tareas complejas de T2I, superando a los métodos automatizados convencionales, y demuestra su efectividad y capacidad de interpretación en la auto-mejora de la generación. Esta investigación ofrece una nueva vía de desarrollo para el campo de T2I, con un amplio potencial de aplicación."
       },
       "host": "arxiv.org",
       "ts": "2025-09-16T04:00:00+00:00",
@@ -221,8 +221,8 @@
       }
     },
     {
-      "headline": "AI评估模式：不同GPT模型的视觉语言描述评估",
-      "one_liner": "本研究分析了不同GPT模型对视觉语言描述的评估模式，揭示了潜在的偏见。",
+      "headline": "AI评估模式：不同GPT模型的比较",
+      "one_liner": "本研究分析了不同GPT模型在评估视觉语言描述时的行为模式，揭示了潜在的偏见。",
       "task": "NLP",
       "type": "paper",
       "novelty": "metric",
@@ -249,22 +249,22 @@
         "pdf": "https://arxiv.org/pdf/2509.10707.pdf"
       },
       "tags": [
-        "NLP",
         "评估",
-        "偏见"
+        "偏见",
+        "模型"
       ],
-      "impact_score": 0,
-      "quick_read": "随着AI系统对其他AI输出的评估增多，理解其评估行为变得至关重要。本文分析了不同GPT模型对视觉语言描述的评估，揭示了潜在的偏见问题，为未来研究提供了重要参考。",
-      "who_should_try": "AI伦理研究者",
+      "impact_score": 3,
+      "quick_read": "本研究探讨了不同GPT模型在视觉语言描述评估中的表现，强调了理解其评估行为的重要性，以防止偏见的传播。研究结果为AI系统的改进提供了依据。",
+      "who_should_try": "AI研究人员",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "AI评估模式：不同GPT模型的视觉语言描述评估",
+        "zh": "AI评估模式：不同GPT模型的比较",
         "en": "Understanding AI Evaluation Patterns: How Different GPT Models Assess Vision-Language Descriptions"
       },
       "summary_i18n": {
         "zh": "随着AI系统在评估其他AI输出中的应用日益增加，理解其评估行为变得至关重要，以防止偏见的蔓延。本文通过分析NVIDIA的Describe Anything Model生成的视觉-语言描述，并由三种GPT变体（GPT-4o、GPT-4o-mini、GPT-5）进行评估，揭示了各模型的独特评估特征及其潜在偏见。研究发现，GPT-4o-mini在一致性上表现优异，GPT-4o在错误检测方面突出，而GPT-5则表现出高度保守和变异性。通过使用Gemini 2.5 Pro作为独立问题生成器的实验验证了这些评估特征是模型固有属性，而非外部因素。结果表明，评估能力并不随着模型的普遍能力提升而增强，强调了在AI评估中引入多样化架构视角的重要性，对未来AI系统的设计与评估方法具有重要启示。",
-        "en": "As the application of AI systems in evaluating the outputs of other AIs increases, understanding their evaluation behaviors becomes crucial to prevent the spread of bias. This paper reveals the unique evaluation characteristics and potential biases of various models by analyzing visual-language descriptions generated by NVIDIA's Describe Anything Model and evaluated by three variants of GPT (GPT-4o, GPT-4o-mini, GPT-5). The study found that GPT-4o-mini excelled in consistency, GPT-4o stood out in error detection, while GPT-5 exhibited high conservativeness and variability. Experiments using Gemini 2.5 Pro as an independent question generator validated that these evaluation characteristics are inherent properties of the models, rather than external factors. The results indicate that evaluation capabilities do not necessarily improve with the general capabilities of the models, highlighting the importance of introducing diverse architectural perspectives in AI evaluations, which has significant implications for the design and evaluation methods of future AI systems.",
-        "es": "A medida que la aplicación de sistemas de IA en la evaluación de las salidas de otras IA aumenta, entender su comportamiento de evaluación se vuelve crucial para prevenir la propagación de sesgos. Este artículo, a través del análisis de descripciones visuales-lingüísticas generadas por el Modelo Describe Anything de NVIDIA y evaluadas por tres variantes de GPT (GPT-4o, GPT-4o-mini, GPT-5), revela las características de evaluación únicas de cada modelo y sus sesgos potenciales. La investigación encontró que GPT-4o-mini se destaca en consistencia, GPT-4o en la detección de errores, mientras que GPT-5 muestra una alta conservaduría y variabilidad. La experimentación utilizando Gemini 2.5 Pro como generador de problemas independiente validó que estas características de evaluación son atributos inherentes al modelo, y no factores externos. Los resultados indican que la capacidad de evaluación no mejora con el aumento de la capacidad general del modelo, lo que subraya la importancia de introducir perspectivas arquitectónicas diversificadas en la evaluación de IA, ofreciendo importantes implicaciones para el diseño y los métodos de evaluación de futuros sistemas de IA."
+        "en": "As the application of AI systems in evaluating the outputs of other AIs increases, understanding their evaluation behaviors becomes crucial to prevent the spread of bias. This paper reveals the unique evaluation characteristics and potential biases of various models by analyzing visual-language descriptions generated by NVIDIA's Describe Anything Model and evaluated by three variants of GPT (GPT-4o, GPT-4o-mini, GPT-5). The study found that GPT-4o-mini excelled in consistency, GPT-4o stood out in error detection, while GPT-5 exhibited high conservativeness and variability. Experiments using Gemini 2.5 Pro as an independent question generator validated that these evaluation characteristics are inherent properties of the models rather than external factors. The results indicate that evaluation capabilities do not necessarily improve with the general capabilities of the models, highlighting the importance of introducing diverse architectural perspectives in AI evaluation, which has significant implications for the design and evaluation methods of future AI systems.",
+        "es": "A medida que la aplicación de sistemas de IA en la evaluación de las salidas de otras IA aumenta, entender su comportamiento de evaluación se vuelve crucial para prevenir la propagación de sesgos. Este artículo, a través del análisis de descripciones visuales-lingüísticas generadas por el Modelo Describe Anything de NVIDIA y evaluadas por tres variantes de GPT (GPT-4o, GPT-4o-mini, GPT-5), revela las características de evaluación únicas de cada modelo y sus sesgos potenciales. La investigación encontró que GPT-4o-mini se destaca en consistencia, GPT-4o en la detección de errores, mientras que GPT-5 muestra una alta conservaduría y variabilidad. La experimentación utilizando Gemini 2.5 Pro como generador de problemas independiente validó que estas características de evaluación son propiedades inherentes al modelo, y no factores externos. Los resultados indican que la capacidad de evaluación no mejora con el aumento de la capacidad general del modelo, lo que subraya la importancia de introducir perspectivas arquitectónicas diversificadas en la evaluación de IA, ofreciendo importantes implicaciones para el diseño y los métodos de evaluación de futuros sistemas de IA."
       },
       "host": "arxiv.org",
       "ts": "2025-09-16T04:00:00+00:00",
@@ -294,8 +294,8 @@
       }
     },
     {
-      "headline": "GEO16框架下AI回答引擎的引用行为分析",
-      "one_liner": "本研究提出GEO-16框架，分析AI回答引擎的引用行为及其对知识获取的影响。",
+      "headline": "GEO16框架下的AI回答引擎引用行为分析",
+      "one_liner": "本研究提出了GEO16框架，分析AI回答引擎在生成响应时的引用行为。",
       "task": "Other",
       "type": "paper",
       "novelty": "method",
@@ -324,20 +324,20 @@
       "tags": [
         "AI",
         "引用",
-        "知识获取"
+        "分析"
       ],
-      "impact_score": 0,
-      "quick_read": "AI回答引擎在知识获取中扮演着重要角色。本文提出GEO-16框架，分析其引用行为，揭示了页面质量信号与知识获取之间的关系，为改进AI系统提供了新思路。",
+      "impact_score": 3,
+      "quick_read": "GEO16框架为AI回答引擎的引用行为提供了新的分析视角，揭示了其在生成响应时的质量信号。该框架有助于提升AI系统的透明度和可靠性。",
       "who_should_try": "信息科学研究者",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "GEO16框架下AI回答引擎的引用行为分析",
+        "zh": "GEO16框架下的AI回答引擎引用行为分析",
         "en": "AI Answer Engine Citation Behavior An Empirical Analysis of the GEO16 Framework"
       },
       "summary_i18n": {
         "zh": "随着AI问答引擎在知识获取中的重要性日益增加，现有研究对其引用行为的系统分析仍显不足。本文提出了GEO-16框架，通过将页面质量信号转化为分级评分，评估了三种引擎（Brave Summary、Google AI Overviews和Perplexity）在引用网页时的表现。关键创新在于建立了一个量化的质量评分体系，并发现页面质量与引用率之间存在显著关联。研究结果表明，整体页面质量是引用的强预测因子，且特定的质量阈值显著提高了引用率。该研究为出版商提供了实用的操作指南，具有较强的行业应用潜力，尤其在B2B SaaS领域。",
         "en": "As the importance of AI question-answering engines in knowledge acquisition continues to grow, existing research still lacks a systematic analysis of their citation behavior. This paper proposes the GEO-16 framework, which evaluates the performance of three engines (Brave Summary, Google AI Overviews, and Perplexity) in citing web pages by converting page quality signals into graded scores. The key innovation lies in establishing a quantitative quality scoring system and discovering a significant correlation between page quality and citation rates. The findings indicate that overall page quality is a strong predictor of citations, and specific quality thresholds significantly enhance citation rates. This research provides practical operational guidelines for publishers and has strong industry application potential, especially in the B2B SaaS sector.",
-        "es": "A medida que la importancia de los motores de respuesta de IA en la adquisición de conocimiento sigue aumentando, el análisis sistemático del comportamiento de citación en la investigación existente sigue siendo insuficiente. Este artículo propone el marco GEO-16, que evalúa el rendimiento de tres motores (Brave Summary, Google AI Overviews y Perplexity) al citar páginas web, transformando las señales de calidad de la página en puntuaciones escalonadas. La innovación clave radica en establecer un sistema de puntuación de calidad cuantitativa y en descubrir una asociación significativa entre la calidad de la página y la tasa de citación. Los resultados de la investigación indican que la calidad general de la página es un fuerte predictor de la citación, y que umbrales de calidad específicos aumentan significativamente la tasa de citación. Este estudio proporciona a los editores una guía práctica de operación, con un fuerte potencial de aplicación en la industria, especialmente en el ámbito del B2B SaaS."
+        "es": "A medida que la importancia de los motores de respuesta de IA en la adquisición de conocimiento sigue aumentando, el análisis sistemático del comportamiento de citación en la investigación existente sigue siendo insuficiente. Este artículo propone el marco GEO-16, que evalúa el rendimiento de tres motores (Brave Summary, Google AI Overviews y Perplexity) al citar páginas web, transformando las señales de calidad de la página en puntuaciones escalonadas. La innovación clave radica en establecer un sistema de puntuación de calidad cuantitativa y en descubrir una asociación significativa entre la calidad de la página y la tasa de citación. Los resultados de la investigación indican que la calidad general de la página es un fuerte predictor de la citación, y que ciertos umbrales de calidad aumentan significativamente la tasa de citación. Este estudio proporciona a los editores una guía práctica de operación, con un fuerte potencial de aplicación en la industria, especialmente en el ámbito del B2B SaaS."
       },
       "host": "arxiv.org",
       "ts": "2025-09-16T04:00:00+00:00",
@@ -367,9 +367,9 @@
       }
     },
     {
-      "headline": "AgentArch: 企业中代理架构的综合基准",
-      "one_liner": "本研究提供了一个综合基准，以评估企业中不同代理架构的性能。",
-      "task": "Infra",
+      "headline": "AgentArch: 企业中代理架构的基准评估",
+      "one_liner": "AgentArch提供了一个全面的基准，用于评估企业中的代理架构，填补了现有研究的空白。",
+      "task": "Other",
       "type": "paper",
       "novelty": "benchmark",
       "key_numbers": [
@@ -399,20 +399,20 @@
       },
       "tags": [
         "代理",
-        "基准",
-        "企业"
+        "企业",
+        "评估"
       ],
-      "impact_score": 0,
-      "quick_read": "尽管代理架构的各个组成部分已被单独研究，但对其在复杂多代理系统中的交互理解仍然有限。本文提供了一个综合基准，旨在填补这一空白，推动代理架构的研究。",
-      "who_should_try": "系统架构师",
+      "impact_score": 3,
+      "quick_read": "AgentArch为企业中的代理架构提供了全面的评估基准，帮助研究人员理解不同设计维度的相互作用。该基准有助于推动代理系统的研究与应用。",
+      "who_should_try": "企业系统研究者",
       "reproducibility_score": 50,
       "title_i18n": {
-        "zh": "AgentArch: 企业中代理架构的综合基准",
+        "zh": "AgentArch: 企业中代理架构的基准评估",
         "en": "AgentArch: A Comprehensive Benchmark to Evaluate Agent Architectures in Enterprise"
       },
       "summary_i18n": {
         "zh": "本研究旨在填补当前多智能体系统设计维度相互作用理解不足的空白，特别是在企业环境中的应用。通过建立一个针对18种不同智能体配置的综合基准，研究分析了四个关键系统维度，包括协调策略、提示实现、记忆架构和思维工具集成。关键创新在于揭示了模型特定的架构偏好，挑战了普遍适用的设计理念，同时指出了在企业任务中智能体性能的显著不足。研究结果表明，最佳模型在复杂任务中的成功率仅为35.3%，而在简单任务中为70.8%。这些发现为未来智能体系统的设计提供了实证支持，推动更科学的架构组件和模型选择决策，具有重要的应用潜力。",
-        "en": "This study aims to fill the gap in understanding the interactions among the dimensions of multi-agent system design, particularly in applications within corporate environments. By establishing a comprehensive benchmark for 18 different agent configurations, the research analyzes four key system dimensions: coordination strategies, prompt implementation, memory architecture, and cognitive tool integration. A key innovation is the revelation of model-specific architectural preferences, challenging universally applicable design concepts, while also highlighting significant deficiencies in agent performance for corporate tasks. The findings indicate that the success rate of the best model in complex tasks is only 35.3%, compared to 70.8% in simple tasks. These findings provide empirical support for the design of future agent systems, promoting more scientific decisions regarding architectural components and model selection, with significant application potential.",
+        "en": "This study aims to fill the gap in understanding the interactions among the dimensions of multi-agent system design, particularly in applications within corporate environments. By establishing a comprehensive benchmark for 18 different agent configurations, the research analyzes four key system dimensions: coordination strategies, prompt implementation, memory architecture, and cognitive tool integration. A key innovation is the revelation of model-specific architectural preferences, challenging universally applicable design concepts, while also highlighting significant deficiencies in agent performance for corporate tasks. The results indicate that the success rate of the best model in complex tasks is only 35.3%, compared to 70.8% in simple tasks. These findings provide empirical support for the design of future agent systems, promoting more scientific decisions regarding architectural components and model selection, with significant application potential.",
         "es": "Este estudio tiene como objetivo llenar el vacío en la comprensión de las interacciones entre las dimensiones del diseño de sistemas multiagente, especialmente en su aplicación en entornos empresariales. A través del establecimiento de un marco integral para 18 configuraciones diferentes de agentes, se analizaron cuatro dimensiones clave del sistema, incluyendo estrategias de coordinación, implementación de sugerencias, arquitecturas de memoria e integración de herramientas de pensamiento. La innovación clave radica en revelar las preferencias arquitectónicas específicas del modelo, desafiando las ideas de diseño de aplicación universal, al mismo tiempo que señala las significativas deficiencias en el rendimiento de los agentes en tareas empresariales. Los resultados del estudio indican que la tasa de éxito del mejor modelo en tareas complejas es solo del 35.3%, mientras que en tareas simples es del 70.8%. Estos hallazgos proporcionan apoyo empírico para el diseño futuro de sistemas de agentes, promoviendo decisiones más científicas sobre componentes arquitectónicos y selección de modelos, con un importante potencial de aplicación."
       },
       "host": "arxiv.org",
@@ -453,7 +453,7 @@
     },
     {
       "headline": "LLM增强：减少幻觉的因果提示工程",
-      "one_liner": "本研究通过因果提示工程增强LLM，旨在减少其生成幻觉的现象。",
+      "one_liner": "本研究提出了一种因果提示工程方法，旨在减少大型语言模型的幻觉现象。",
       "task": "LLM",
       "type": "paper",
       "novelty": "method",
@@ -484,9 +484,9 @@
         "提示工程",
         "幻觉"
       ],
-      "impact_score": 0,
-      "quick_read": "在决策支持中，LLM的幻觉现象仍然是一个挑战。本文提出了一种因果提示工程的方法，旨在通过增强领域专家的心理模型来减少幻觉，提高LLM的决策能力。",
-      "who_should_try": "决策支持系统开发者",
+      "impact_score": 2,
+      "quick_read": "本研究通过因果提示工程方法，探讨了如何减少大型语言模型在决策支持中的幻觉现象。该方法为提升LLM的可靠性提供了新的思路。",
+      "who_should_try": "决策支持系统研究者",
       "reproducibility_score": 50,
       "title_i18n": {
         "zh": "LLM增强：减少幻觉的因果提示工程",
@@ -495,7 +495,7 @@
       "summary_i18n": {
         "zh": "本研究旨在解决大型语言模型（LLMs）在决策支持中面临的幻觉问题，尤其是在缺乏关键信息时的表现不足。通过引入优化的人机对话技术和专家心理模型（EMM），研究提出了一种新的提示工程方法，旨在更有效地捕捉领域专家的复杂思维模式。关键创新在于通过四个步骤构建个性化的专家心理模型，从而提升LLMs的决策效率。实验结果表明，该方法在减少幻觉和提高准确性方面优于主流基线，展示了其在处理复杂决策问题中的潜力。此研究为决策支持系统的设计提供了新的思路，可能在多个领域中得到广泛应用。",
         "en": "This study aims to address the hallucination problem faced by large language models (LLMs) in decision support, particularly their underperformance when lacking key information. By introducing optimized human-machine dialogue techniques and expert mental models (EMM), the research proposes a new prompt engineering method designed to more effectively capture the complex thought patterns of domain experts. The key innovation lies in constructing a personalized expert mental model through four steps, thereby enhancing the decision-making efficiency of LLMs. Experimental results indicate that this method outperforms mainstream baselines in reducing hallucinations and improving accuracy, demonstrating its potential in handling complex decision-making problems. This research provides new insights for the design of decision support systems and may find widespread application across multiple fields.",
-        "es": "Este estudio tiene como objetivo abordar el problema de las ilusiones que enfrentan los modelos de lenguaje de gran tamaño (LLMs) en el apoyo a la toma de decisiones, especialmente su rendimiento insuficiente en ausencia de información clave. Al introducir técnicas optimizadas de diálogo humano-máquina y modelos psicológicos de expertos (EMM), la investigación propone un nuevo método de ingeniería de indicaciones, diseñado para capturar de manera más efectiva los complejos patrones de pensamiento de los expertos en el campo. La innovación clave radica en la construcción de un modelo psicológico de experto personalizado a través de cuatro pasos, lo que mejora la eficiencia de decisión de los LLMs. Los resultados experimentales indican que este método supera a las líneas base convencionales en la reducción de ilusiones y en la mejora de la precisión, demostrando su potencial en el manejo de problemas de decisión complejos. Este estudio ofrece nuevas ideas para el diseño de sistemas de apoyo a la toma de decisiones, con la posibilidad de ser ampliamente aplicado en múltiples campos."
+        "es": "Este estudio tiene como objetivo abordar el problema de las ilusiones que enfrentan los modelos de lenguaje de gran tamaño (LLMs) en el apoyo a la toma de decisiones, especialmente su rendimiento insuficiente en ausencia de información clave. Al introducir técnicas optimizadas de diálogo humano-máquina y modelos psicológicos de expertos (EMM), la investigación propone un nuevo método de ingeniería de indicaciones, diseñado para capturar de manera más efectiva los complejos patrones de pensamiento de los expertos en el campo. La innovación clave radica en la construcción de un modelo psicológico de experto personalizado a través de cuatro pasos, lo que mejora la eficiencia de decisión de los LLMs. Los resultados experimentales indican que este método supera a las líneas base convencionales en la reducción de ilusiones y en la mejora de la precisión, demostrando su potencial en el manejo de problemas complejos de toma de decisiones. Este estudio ofrece nuevas ideas para el diseño de sistemas de apoyo a la decisión, que podrían ser ampliamente aplicadas en múltiples campos."
       },
       "host": "arxiv.org",
       "ts": "2025-09-16T04:00:00+00:00",
@@ -526,7 +526,7 @@
     },
     {
       "headline": "从基础到Skolem化：复杂查询回答的逻辑约束向量符号架构",
-      "one_liner": "本研究提出了一种逻辑约束的向量符号架构，用于处理不完整知识图上的复杂查询回答。",
+      "one_liner": "本研究提出了一种新的逻辑约束向量符号架构，用于在不完整知识图上进行复杂查询回答。",
       "task": "Theory",
       "type": "paper",
       "novelty": "method",
@@ -557,8 +557,8 @@
         "查询",
         "知识图"
       ],
-      "impact_score": 0,
-      "quick_read": "复杂查询回答在处理不完整知识图时面临逻辑严谨性与计算效率之间的权衡。本文提出了一种新的逻辑约束向量符号架构，旨在提升查询回答的效率与准确性。",
+      "impact_score": 2,
+      "quick_read": "本研究针对复杂查询回答提出了一种新的逻辑约束向量符号架构，旨在解决在不完整知识图上进行推理的挑战。该方法在逻辑严谨性与计算效率之间取得了平衡。",
       "who_should_try": "知识图研究者",
       "reproducibility_score": 50,
       "title_i18n": {
@@ -634,12 +634,7 @@
   ],
   "stats": {
     "by_task": {
-      "LLM": 1,
-      "NLP": 2,
-      "MM": 1,
-      "Other": 2,
-      "Infra": 1,
-      "Theory": 1
+      "LLM": 1
     },
     "with_code": 0,
     "new_benchmarks": 1
