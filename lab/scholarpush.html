@@ -35,6 +35,15 @@
     .sp-one{max-width:980px;margin:0 auto;padding:0 12px}
     .sp-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
     .sp-chiprow{display:flex;gap:8px;flex-wrap:wrap}
+    /* Topic chips – active/inactive visual treatment */
+    .sp-chiprow .btn{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 10px;line-height:1;border-radius:999px;font-size:.86rem;font-weight:600;border:1px solid color-mix(in oklab, var(--border), var(--secondary) 10%);background:color-mix(in oklab, var(--surface-2), white 6%);color:color-mix(in oklab, var(--text), var(--muted) 25%);box-shadow:var(--shadow-sm)}
+    .sp-chiprow .btn:hover{background:color-mix(in oklab, var(--surface-2), var(--secondary) 6%);color:var(--text)}
+    .sp-chiprow .btn.primary{background:color-mix(in oklab, var(--secondary) 18%, transparent);color:color-mix(in oklab, var(--secondary), black 10%);border-color:color-mix(in oklab, var(--border), var(--secondary) 35%)}
+    .sp-chiprow .btn.primary:hover{background:color-mix(in oklab, var(--secondary) 24%, transparent)}
+    :root[data-theme="dark"] .sp-chiprow .btn{background:color-mix(in oklab, var(--surface), black 6%);color:#e5e7eb;border-color:color-mix(in oklab, var(--border), var(--secondary) 18%)}
+    :root[data-theme="dark"] .sp-chiprow .btn:hover{background:color-mix(in oklab, var(--surface), var(--secondary) 10%);color:#fff}
+    :root[data-theme="dark"] .sp-chiprow .btn.primary{background:rgba(14,165,233,0.18);color:#bae6fd;border-color:rgba(14,165,233,0.38)}
+    :root[data-theme="dark"] .sp-chiprow .btn.primary:hover{background:rgba(14,165,233,0.24)}
     .sp-section{margin:14px 0}
     .sp-card{padding:12px 14px}
     .sp-list{display:flex;flex-direction:column;gap:10px}
@@ -175,12 +184,6 @@
     let query = '';
   let searchTid = null;
   let searchBound = false;
-  // Global search caches/index
-  let allDates = [];
-  const allCache = new Map(); // date -> items
-  let globalIndex = null; // compact index if prebuilt
-
-  function currentLang(){ return (localStorage.getItem('lang')||document.documentElement.lang||'zh').toLowerCase(); }
 
     // Canonical categories to surface first in the chips bar
     const CANONICAL = [
@@ -505,7 +508,7 @@
         chipRow.appendChild(b);
       }
     }
-    function filterItems(arr){
+  function filterItems(arr){
       const qs=(query||'').trim().toLowerCase();
       return arr.filter(it=>{
         if(activeTags.size>0){
@@ -513,102 +516,26 @@
           if(!ok) return false;
         }
         if(!qs) return true;
-    const blob = `${it.headline||''} ${it.one_liner||''}
-      ${it.title_i18n?.zh||''} ${it.title_i18n?.en||''} ${it.title_i18n?.es||''}
-      ${it.summary_i18n?.zh||''} ${it.summary_i18n?.en||''} ${it.summary_i18n?.es||''}
-      ${it.host||''} ${(it.tags||[]).join(' ')}`.toLowerCase();
+    const blob = `${it.headline||''} ${it.one_liner||''} ${it.title_i18n?.zh||''} ${it.title_i18n?.en||''} ${it.summary_i18n?.zh||''} ${it.summary_i18n?.en||''} ${it.host||''} ${(it.tags||[]).join(' ')}`.toLowerCase();
         return qs.split(/\s+/).filter(Boolean).some(w=>blob.includes(w));
       });
     }
-    async function ensureGlobalIndex(){
-      if (globalIndex !== null) return;
-      try {
-        const data = await fetch('../data/ai/scholarpush/index.json', {cache:'no-store'}).then(r=>r.json());
-        if (data && Array.isArray(data.items)) globalIndex = data.items;
-        else globalIndex = [];
-      } catch { globalIndex = []; }
-    }
-    async function getAllItems(){
-      // Prefer a prebuilt compact global index, else merge daily archives
-      await ensureGlobalIndex();
-      if (Array.isArray(globalIndex) && globalIndex.length){
-        // The compact index should already resemble the full schema; if not, adapt minimal fields
-        return globalIndex.map(it=>({
-          // Preserve existing rich fields if present; minimal fallback
-          headline: it.headline || it.title || '',
-          title_i18n: it.title_i18n || {},
-          summary_i18n: it.summary_i18n || {},
-          one_liner: it.one_liner || '',
-          quick_read: it.quick_read || '',
-          task: it.task || '',
-          type: it.type || '',
-          tags: it.tags || [],
-          links: it.links || {},
-          host: it.host || '',
-          ts: it.ts || it.published_at || ''
-        }));
-      }
-      const want = allDates.slice();
-      const toFetch = want.filter(d => !allCache.has(d));
-      await Promise.all(toFetch.map(async d => {
-        try{
-          const data = await fetch(`../data/ai/scholarpush/${d}.json`, {cache:'no-store'}).then(r=>r.json());
-          const arr = Array.isArray(data.items)? data.items: [];
-          allCache.set(d, arr);
-        }catch{ allCache.set(d, []); }
-      }));
-      const merged = [];
-      for (const d of want){ merged.push(...(allCache.get(d)||[])); }
-      // Newest first
-      merged.sort((a,b)=> String(b.ts||'').localeCompare(String(a.ts||'')));
-      return merged;
-    }
-    async function renderAll(){
+    function renderAll(){
       // subtitle
-  const dt=data?.generated_at||''; const lang = currentLang();
-  const hasQuery = (query||'').trim().length>0;
-  if (hasQuery){
-    // Hide subtitle when searching globally
-    subEl.textContent = '';
-    try{ subEl.style.visibility='hidden'; }catch{}
-  } else {
-    try{ subEl.style.visibility='visible'; }catch{}
-    if (lang==='en') subEl.textContent = `Today ${data?.items?.length||0} · Generated at ${dt.slice(0,16).replace('T',' ')}`;
-    else if (lang==='es') subEl.textContent = `Hoy ${data?.items?.length||0} · Generado a las ${dt.slice(0,16).replace('T',' ')}`;
-    else subEl.textContent = `今日 ${data?.items?.length||0} 条 · 生成时间 ${dt.slice(0,16).replace('T',' ')}`;
-  }
+  const dt=data?.generated_at||''; const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh';
+  if (lang==='en') subEl.textContent = `Today ${data?.items?.length||0} · Generated at ${dt.slice(0,16).replace('T',' ')}`;
+  else if (lang==='es') subEl.textContent = `Hoy ${data?.items?.length||0} · Generado a las ${dt.slice(0,16).replace('T',' ')}`;
+  else subEl.textContent = `今日 ${data?.items?.length||0} 条 · 生成时间 ${dt.slice(0,16).replace('T',' ')}`;
       // chips + stats
-      const statsSection = statsEl?.closest('.sp-section');
-      const mustSection = mustEl?.closest('.sp-section');
-      const niceSection = niceEl?.closest('.sp-section');
-      if (hasQuery){
-        // Hide chips and all section headings/blocks when searching globally
-        try{ chipRow.style.display='none'; }catch{}
-        try{ if (statsSection) statsSection.style.display='none'; }catch{}
-        try{ if (mustSection) mustSection.querySelector('h3')?.classList.add('sr-only'); }catch{}
-        try{ if (niceSection) niceSection.querySelector('h3')?.classList.add('sr-only'); }catch{}
-      } else {
-        try{ chipRow.style.display='flex'; }catch{}
-        try{ if (statsSection) statsSection.style.display=''; }catch{}
-        try{ if (mustSection) mustSection.querySelector('h3')?.classList.remove('sr-only'); }catch{}
-        try{ if (niceSection) niceSection.querySelector('h3')?.classList.remove('sr-only'); }catch{}
-        buildChips(); renderStats(data?.stats||{by_task:{},with_code:0,new_benchmarks:0});
-      }
+      buildChips(); renderStats(data?.stats||{by_task:{},with_code:0,new_benchmarks:0});
       // lists
-      if (hasQuery){
-        const pool = await getAllItems();
-        const list = filterItems(pool);
-        mustEl.innerHTML = list.map(safeCard).join('');
-        niceEl.innerHTML = '';
-      } else {
-        const src=items.slice();
-        const mustIdx=(data?.must_reads||[]).filter(i=>i<src.length);
-        const niceIdx=(data?.nice_to_read||[]).filter(i=>i<src.length);
-        const mustList = filterItems(mustIdx.map(i=>src[i]));
-        const niceList = filterItems(niceIdx.map(i=>src[i]));
-        mustEl.innerHTML = mustList.map(safeCard).join('');
-        niceEl.innerHTML = niceList.map(safeCard).join('');
-      }
+      const src=items.slice();
+      const mustIdx=(data?.must_reads||[]).filter(i=>i<src.length);
+      const niceIdx=(data?.nice_to_read||[]).filter(i=>i<src.length);
+    const mustList = filterItems(mustIdx.map(i=>src[i]));
+    const niceList = filterItems(niceIdx.map(i=>src[i]));
+    mustEl.innerHTML = mustList.map(safeCard).join('');
+  niceEl.innerHTML = niceList.map(safeCard).join('');
     }
   async function loadByDate(dateStr){
       let path = '../data/ai/scholarpush/index.json';
@@ -630,7 +557,6 @@
       }
   // load available dates
   let dates=[]; try{ dates = await fetch('../data/ai/scholarpush/dates.json', {cache:'no-store'}).then(r=>r.json()); }catch(e){ dates=[]; }
-  allDates = Array.isArray(dates) ? dates.slice() : [];
   const dp = document.getElementById('date-picker');
   // set bounds for native calendar
   if(dates.length>0){ dp.min = dates[dates.length-1]; dp.max = dates[0]; }

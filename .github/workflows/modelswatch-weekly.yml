@@ -1,0 +1,36 @@
+name: Model Watch weekly
+
+on:
+  schedule:
+    # Sunday 20:00 Beijing = Sunday 12:00 UTC
+    - cron: '0 12 * * 0'
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Weekly top updates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          node -v
+          node tools/modelswatch/weekly.mjs
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add data/ai/modelswatch/top_*.json data/ai/modelswatch/corpus.*.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(modelswatch): weekly top updates"
+            git push
+          fi

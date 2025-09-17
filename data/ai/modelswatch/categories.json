@@ -1,0 +1,24 @@
+{
+  "categories": {
+    "capabilities": ["chat","multimodal","retrieval","code","speech","video","vision","planning","safety","compression","distillation"],
+    "scenes": ["devex","education","research","search","content","productization","robotics"],
+    "lifecycle": ["data","training","evaluation","deployment","inference","monitoring"]
+  },
+  "labels": {
+    "zh": {
+      "chat":"对话","multimodal":"多模态","retrieval":"检索","code":"代码","speech":"语音","video":"视频","vision":"视觉","planning":"规划","safety":"安全","compression":"压缩","distillation":"蒸馏",
+      "devex":"DevEx","education":"教育","research":"科研","search":"搜索","content":"内容生成","productization":"产品化","robotics":"机器人",
+      "data":"数据","training":"训练","evaluation":"评测","deployment":"部署","inference":"推理","monitoring":"监控"
+    },
+    "en": {
+      "chat":"Chat","multimodal":"Multimodal","retrieval":"Retrieval","code":"Code","speech":"Speech","video":"Video","vision":"Vision","planning":"Planning","safety":"Safety","compression":"Compression","distillation":"Distillation",
+      "devex":"DevEx","education":"Education","research":"Research","search":"Search","content":"Content Gen","productization":"Productization","robotics":"Robotics",
+      "data":"Data","training":"Training","evaluation":"Evaluation","deployment":"Deployment","inference":"Inference","monitoring":"Monitoring"
+    },
+    "es": {
+      "chat":"Conversación","multimodal":"Multimodal","retrieval":"Recuperación","code":"Código","speech":"Voz","video":"Vídeo","vision":"Visión","planning":"Planificación","safety":"Seguridad","compression":"Compresión","distillation":"Destilación",
+      "devex":"DevEx","education":"Educación","research":"Investigación","search":"Búsqueda","content":"Generación de contenido","productization":"Productización","robotics":"Robótica",
+      "data":"Datos","training":"Entrenamiento","evaluation":"Evaluación","deployment":"Despliegue","inference":"Inferencia","monitoring":"Monitorización"
+    }
+  }
+}

@@ -1,0 +1,1574 @@
+{
+  "updated_at": "2025-09-17T15:38:18.058Z",
+  "items": [
+    {
+      "id": "freeCodeCamp/freeCodeCamp",
+      "source": "github",
+      "name": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "license": "BSD-3-Clause",
+      "lang": "TypeScript",
+      "tags": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "hacktoberfest",
+        "javascript",
+        "learn-to-code",
+        "math",
+        "nodejs",
+        "nonprofits",
+        "programming",
+        "react",
+        "teachers"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 427801,
+        "forks": 41571,
+        "issues": 319
+      },
+      "score": 436215.16237318673,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "updated_at": "2025-09-17T15:22:05Z"
+    },
+    {
+      "id": "sindresorhus/awesome",
+      "source": "github",
+      "name": "awesome",
+      "url": "https://github.com/sindresorhus/awesome",
+      "license": "CC0-1.0",
+      "lang": "N/A",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 400527,
+        "forks": 31598,
+        "issues": 62
+      },
+      "score": 406946.59802133485,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "😎 Awesome lists about all kinds of interesting topics",
+      "updated_at": "2025-09-17T15:37:29Z"
+    },
+    {
+      "id": "EbookFoundation/free-programming-books",
+      "source": "github",
+      "name": "free-programming-books",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "license": "CC-BY-4.0",
+      "lang": "Python",
+      "tags": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 368342,
+        "forks": 64166,
+        "issues": 25
+      },
+      "score": 381275.181161767,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": ":books: Freely available programming books",
+      "updated_at": "2025-09-17T15:30:12Z"
+    },
+    {
+      "id": "public-apis/public-apis",
+      "source": "github",
+      "name": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source",
+        "public",
+        "public-api",
+        "public-apis",
+        "resources",
+        "software"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 365270,
+        "forks": 38352,
+        "issues": 586
+      },
+      "score": 373040.37332997686,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "A collective list of free APIs",
+      "updated_at": "2025-09-17T15:26:49Z"
+    },
+    {
+      "id": "jwasham/coding-interview-university",
+      "source": "github",
+      "name": "coding-interview-university",
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "license": "CC-BY-SA-4.0",
+      "lang": "N/A",
+      "tags": [
+        "algorithm",
+        "algorithms",
+        "coding-interview",
+        "coding-interviews",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-prep",
+        "interview-preparation",
+        "programming-interviews",
+        "software-engineering",
+        "study-plan"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 328051,
+        "forks": 80447,
+        "issues": 82
+      },
+      "score": 344240.3990244213,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "A complete computer science study plan to become a software engineer.",
+      "updated_at": "2025-09-17T15:37:55Z"
+    },
+    {
+      "id": "facebook/react",
+      "source": "github",
+      "name": "react",
+      "url": "https://github.com/facebook/react",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 238956,
+        "forks": 49348,
+        "issues": 1038
+      },
+      "score": 248925.55211084106,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "The library for web and native user interfaces.",
+      "updated_at": "2025-09-17T15:17:39Z"
+    },
+    {
+      "id": "vuejs/vue",
+      "source": "github",
+      "name": "vue",
+      "url": "https://github.com/vuejs/vue",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "framework",
+        "frontend",
+        "javascript",
+        "vue"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 209424,
+        "forks": 33768,
+        "issues": 608
+      },
+      "score": 216277.4627589892,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
+      "updated_at": "2025-09-17T14:39:03Z"
+    },
+    {
+      "id": "TheAlgorithms/Python",
+      "source": "github",
+      "name": "Python",
+      "url": "https://github.com/TheAlgorithms/Python",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven",
+        "education",
+        "hacktoberfest",
+        "interview",
+        "learn",
+        "practice",
+        "python",
+        "searches",
+        "sorting-algorithms",
+        "sorts"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 207405,
+        "forks": 47818,
+        "issues": 401
+      },
+      "score": 217068.5867559028,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "All Algorithms implemented in Python",
+      "updated_at": "2025-09-17T15:32:37Z"
+    },
+    {
+      "id": "trekhleb/javascript-algorithms",
+      "source": "github",
+      "name": "javascript-algorithms",
+      "url": "https://github.com/trekhleb/javascript-algorithms",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "algorithm",
+        "algorithms",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-preparation",
+        "javascript",
+        "javascript-algorithms"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 193290,
+        "forks": 30877,
+        "issues": 372
+      },
+      "score": 199565.36356917437,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+      "updated_at": "2025-09-17T15:22:36Z"
+    },
+    {
+      "id": "ossu/computer-science",
+      "source": "github",
+      "name": "computer-science",
+      "url": "https://github.com/ossu/computer-science",
+      "license": "MIT",
+      "lang": "HTML",
+      "tags": [
+        "awesome-list",
+        "computer-science",
+        "courses",
+        "curriculum"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 193037,
+        "forks": 24106,
+        "issues": 16
+      },
+      "score": 197958.16009695217,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "🎓 Path to a free self-taught education in Computer Science!",
+      "updated_at": "2025-09-17T15:21:06Z"
+    },
+    {
+      "id": "tensorflow/tensorflow",
+      "source": "github",
+      "name": "tensorflow",
+      "url": "https://github.com/tensorflow/tensorflow",
+      "license": "Apache-2.0",
+      "lang": "C++",
+      "tags": [
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "ml",
+        "neural-network",
+        "python",
+        "tensorflow"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 191672,
+        "forks": 74839,
+        "issues": 1627
+      },
+      "score": 206739.7190089892,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "An Open Source Machine Learning Framework for Everyone",
+      "updated_at": "2025-09-17T15:03:21Z"
+    },
+    {
+      "id": "trimstray/the-book-of-secret-knowledge",
+      "source": "github",
+      "name": "the-book-of-secret-knowledge",
+      "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+      "license": "MIT",
+      "lang": "N/A",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "bsd",
+        "cheatsheets",
+        "devops",
+        "guidelines",
+        "hacking",
+        "hacks",
+        "howtos",
+        "linux",
+        "lists",
+        "manuals",
+        "one-liners",
+        "pentesters",
+        "resources",
+        "search-engines",
+        "security",
+        "security-researchers",
+        "sysops"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 186462,
+        "forks": 11534,
+        "issues": 100
+      },
+      "score": 188868.7918099151,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+      "updated_at": "2025-09-17T15:34:48Z"
+    },
+    {
+      "id": "ohmyzsh/ohmyzsh",
+      "source": "github",
+      "name": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "license": "MIT",
+      "lang": "Shell",
+      "tags": [
+        "cli",
+        "cli-app",
+        "hacktoberfest",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins",
+        "productivity",
+        "shell",
+        "terminal",
+        "theme",
+        "themes",
+        "zsh",
+        "zsh-configuration"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 181461,
+        "forks": 26214,
+        "issues": 502
+      },
+      "score": 186803.68181763115,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "🙃   A delightful community-driven (with 2,400+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
+      "updated_at": "2025-09-17T14:47:17Z"
+    },
+    {
+      "id": "microsoft/vscode",
+      "source": "github",
+      "name": "vscode",
+      "url": "https://github.com/microsoft/vscode",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "editor",
+        "electron",
+        "microsoft",
+        "typescript",
+        "visual-studio-code"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 176785,
+        "forks": 35066,
+        "issues": 13491
+      },
+      "score": 183898.16495806328,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Visual Studio Code",
+      "updated_at": "2025-09-17T15:23:12Z"
+    },
+    {
+      "id": "twbs/bootstrap",
+      "source": "github",
+      "name": "bootstrap",
+      "url": "https://github.com/twbs/bootstrap",
+      "license": "MIT",
+      "lang": "MDX",
+      "tags": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 173433,
+        "forks": 79157,
+        "issues": 576
+      },
+      "score": 189364.22383152007,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "updated_at": "2025-09-17T14:22:14Z"
+    },
+    {
+      "id": "flutter/flutter",
+      "source": "github",
+      "name": "flutter",
+      "url": "https://github.com/flutter/flutter",
+      "license": "BSD-3-Clause",
+      "lang": "Dart",
+      "tags": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "dart",
+        "dart-platform",
+        "desktop",
+        "flutter",
+        "flutter-package",
+        "fuchsia",
+        "ios",
+        "linux-desktop",
+        "macos",
+        "material-design",
+        "mobile",
+        "mobile-development",
+        "skia",
+        "web",
+        "web-framework",
+        "windows"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 172462,
+        "forks": 29213,
+        "issues": 12250
+      },
+      "score": 178404.5926201003,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "updated_at": "2025-09-17T15:35:09Z"
+    },
+    {
+      "id": "github/gitignore",
+      "source": "github",
+      "name": "gitignore",
+      "url": "https://github.com/github/gitignore",
+      "license": "CC0-1.0",
+      "lang": "N/A",
+      "tags": [
+        "git",
+        "gitignore"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 169420,
+        "forks": 83002,
+        "issues": 319
+      },
+      "score": 186120.37684077932,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "A collection of useful .gitignore templates",
+      "updated_at": "2025-09-17T15:28:20Z"
+    },
+    {
+      "id": "AUTOMATIC1111/stable-diffusion-webui",
+      "source": "github",
+      "name": "stable-diffusion-webui",
+      "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+      "license": "AGPL-3.0",
+      "lang": "Python",
+      "tags": [
+        "ai",
+        "ai-art",
+        "deep-learning",
+        "diffusion",
+        "gradio",
+        "image-generation",
+        "image2image",
+        "img2img",
+        "pytorch",
+        "stable-diffusion",
+        "text2image",
+        "torch",
+        "txt2img",
+        "unstable",
+        "upscaling",
+        "web"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 156482,
+        "forks": 29044,
+        "issues": 2427
+      },
+      "score": 162390.76009695214,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Stable Diffusion web UI",
+      "updated_at": "2025-09-17T15:21:06Z"
+    },
+    {
+      "id": "avelino/awesome-go",
+      "source": "github",
+      "name": "awesome-go",
+      "url": "https://github.com/avelino/awesome-go",
+      "license": "MIT",
+      "lang": "Go",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 152529,
+        "forks": 12568,
+        "issues": 157
+      },
+      "score": 155142.5921957176,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "A curated list of awesome Go frameworks, libraries and software",
+      "updated_at": "2025-09-17T15:34:58Z"
+    },
+    {
+      "id": "ollama/ollama",
+      "source": "github",
+      "name": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "license": "MIT",
+      "lang": "Go",
+      "tags": [
+        "deepseek",
+        "gemma",
+        "gemma3",
+        "gemma3n",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llama2",
+        "llama3",
+        "llava",
+        "llm",
+        "llms",
+        "mistral",
+        "ollama",
+        "phi4",
+        "qwen"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 152482,
+        "forks": 13155,
+        "issues": 2150
+      },
+      "score": 155212.98691022376,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models.",
+      "updated_at": "2025-09-17T15:32:41Z"
+    },
+    {
+      "id": "Snailclimb/JavaGuide",
+      "source": "github",
+      "name": "JavaGuide",
+      "url": "https://github.com/Snailclimb/JavaGuide",
+      "license": "Apache-2.0",
+      "lang": "Java",
+      "tags": [
+        "algorithms",
+        "interview",
+        "java",
+        "jvm",
+        "mysql",
+        "redis",
+        "spring",
+        "system",
+        "system-design",
+        "zookeeper"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 151770,
+        "forks": 45986,
+        "issues": 73
+      },
+      "score": 161067.16700281636,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！",
+      "updated_at": "2025-09-17T15:24:05Z"
+    },
+    {
+      "id": "huggingface/transformers",
+      "source": "github",
+      "name": "transformers",
+      "url": "https://github.com/huggingface/transformers",
+      "license": "Apache-2.0",
+      "lang": "Python",
+      "tags": [
+        "audio",
+        "deep-learning",
+        "deepseek",
+        "gemma",
+        "glm",
+        "hacktoberfest",
+        "llm",
+        "machine-learning",
+        "model-hub",
+        "natural-language-processing",
+        "nlp",
+        "pretrained-models",
+        "python",
+        "pytorch",
+        "pytorch-transformers",
+        "qwen",
+        "speech-recognition",
+        "transformer",
+        "vlm"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 149904,
+        "forks": 30436,
+        "issues": 1991
+      },
+      "score": 156091.19944880402,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+      "updated_at": "2025-09-17T15:38:06Z"
+    },
+    {
+      "id": "massgravel/Microsoft-Activation-Scripts",
+      "source": "github",
+      "name": "Microsoft-Activation-Scripts",
+      "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+      "license": "GPL-3.0",
+      "lang": "Batchfile",
+      "tags": [
+        "activator",
+        "hwid",
+        "kms",
+        "kms38",
+        "massgrave",
+        "massgravel",
+        "microsoft",
+        "microsoft365",
+        "office",
+        "office365",
+        "ohook",
+        "powershell",
+        "tsforge",
+        "windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 148671,
+        "forks": 14432,
+        "issues": 1
+      },
+      "score": 151657.39520497684,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
+      "updated_at": "2025-09-17T15:36:16Z"
+    },
+    {
+      "id": "airbnb/javascript",
+      "source": "github",
+      "name": "javascript",
+      "url": "https://github.com/airbnb/javascript",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "arrow-functions",
+        "es2015",
+        "es2016",
+        "es2017",
+        "es2018",
+        "es6",
+        "eslint",
+        "javascript",
+        "linting",
+        "naming-conventions",
+        "style-guide",
+        "style-linter",
+        "styleguide",
+        "tc39"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 147410,
+        "forks": 26786,
+        "issues": 178
+      },
+      "score": 152867.084132446,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "JavaScript Style Guide",
+      "updated_at": "2025-09-17T14:48:17Z"
+    },
+    {
+      "id": "ytdl-org/youtube-dl",
+      "source": "github",
+      "name": "youtube-dl",
+      "url": "https://github.com/ytdl-org/youtube-dl",
+      "license": "Unlicense",
+      "lang": "Python",
+      "tags": [],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 137290,
+        "forks": 10460,
+        "issues": 4138
+      },
+      "score": 139481.97630065586,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Command-line program to download videos from YouTube.com and other video sites",
+      "updated_at": "2025-09-17T15:28:06Z"
+    },
+    {
+      "id": "vercel/next.js",
+      "source": "github",
+      "name": "next.js",
+      "url": "https://github.com/vercel/next.js",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "blog",
+        "browser",
+        "compiler",
+        "components",
+        "hybrid",
+        "nextjs",
+        "node",
+        "react",
+        "server-rendering",
+        "ssg",
+        "static",
+        "static-site-generator",
+        "universal",
+        "vercel"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 134503,
+        "forks": 29332,
+        "issues": 3340
+      },
+      "score": 140469.33853059413,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "The React Framework",
+      "updated_at": "2025-09-17T15:11:47Z"
+    },
+    {
+      "id": "f/awesome-chatgpt-prompts",
+      "source": "github",
+      "name": "awesome-chatgpt-prompts",
+      "url": "https://github.com/f/awesome-chatgpt-prompts",
+      "license": "CC0-1.0",
+      "lang": "JavaScript",
+      "tags": [
+        "bots",
+        "chatbot",
+        "chatgpt",
+        "chatgpt-api",
+        "language"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 134141,
+        "forks": 17827,
+        "issues": 283
+      },
+      "score": 137806.39721114968,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "This repo includes ChatGPT prompt curation to use ChatGPT and other LLM tools better.",
+      "updated_at": "2025-09-17T15:37:08Z"
+    },
+    {
+      "id": "golang/go",
+      "source": "github",
+      "name": "go",
+      "url": "https://github.com/golang/go",
+      "license": "BSD-3-Clause",
+      "lang": "Go",
+      "tags": [
+        "go",
+        "golang",
+        "language",
+        "programming-language"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 129903,
+        "forks": 18398,
+        "issues": 9566
+      },
+      "score": 133682.4758376929,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "The Go programming language",
+      "updated_at": "2025-09-17T14:44:42Z"
+    },
+    {
+      "id": "yangshun/tech-interview-handbook",
+      "source": "github",
+      "name": "tech-interview-handbook",
+      "url": "https://github.com/yangshun/tech-interview-handbook",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "algorithm",
+        "algorithm-interview",
+        "algorithm-interview-questions",
+        "algorithms",
+        "behavioral-interviews",
+        "coding-interviews",
+        "interview-practice",
+        "interview-preparation",
+        "interview-questions",
+        "system-design"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 129711,
+        "forks": 15777,
+        "issues": 54
+      },
+      "score": 132966.36978059413,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "💯 Curated coding interview preparation materials for busy software engineers",
+      "updated_at": "2025-09-17T15:25:17Z"
+    },
+    {
+      "id": "Genymobile/scrcpy",
+      "source": "github",
+      "name": "scrcpy",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "license": "Apache-2.0",
+      "lang": "C",
+      "tags": [
+        "android",
+        "c",
+        "ffmpeg",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen",
+        "sdl2"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 128211,
+        "forks": 12026,
+        "issues": 2538
+      },
+      "score": 130716.18984232252,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Display and control your Android device",
+      "updated_at": "2025-09-17T15:33:57Z"
+    },
+    {
+      "id": "yt-dlp/yt-dlp",
+      "source": "github",
+      "name": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "license": "Unlicense",
+      "lang": "Python",
+      "tags": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 126628,
+        "forks": 10151,
+        "issues": 2051
+      },
+      "score": 128758.18633152006,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "A feature-rich command-line audio/video downloader",
+      "updated_at": "2025-09-17T15:32:26Z"
+    },
+    {
+      "id": "Chalarangelo/30-seconds-of-code",
+      "source": "github",
+      "name": "30-seconds-of-code",
+      "url": "https://github.com/Chalarangelo/30-seconds-of-code",
+      "license": "CC-BY-4.0",
+      "lang": "JavaScript",
+      "tags": [
+        "astro",
+        "awesome-list",
+        "css",
+        "education",
+        "es6-javascript",
+        "git",
+        "html",
+        "javascript",
+        "learn-to-code",
+        "learning-resources",
+        "nodejs",
+        "programming",
+        "snippets"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 125291,
+        "forks": 12317,
+        "issues": 0
+      },
+      "score": 127854.38467256945,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Coding articles to level up your development skills",
+      "updated_at": "2025-09-17T15:31:43Z"
+    },
+    {
+      "id": "facebook/react-native",
+      "source": "github",
+      "name": "react-native",
+      "url": "https://github.com/facebook/react-native",
+      "license": "MIT",
+      "lang": "C++",
+      "tags": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "ios",
+        "mobile",
+        "mobile-development",
+        "react",
+        "react-native"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 123819,
+        "forks": 24851,
+        "issues": 1038
+      },
+      "score": 128888.987103125,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "A framework for building native applications using React",
+      "updated_at": "2025-09-17T14:06:22Z"
+    },
+    {
+      "id": "microsoft/PowerToys",
+      "source": "github",
+      "name": "PowerToys",
+      "url": "https://github.com/microsoft/PowerToys",
+      "license": "MIT",
+      "lang": "C#",
+      "tags": [
+        "color-picker",
+        "desktop",
+        "fancyzones",
+        "keyboard-manager",
+        "microsoft-powertoys",
+        "powerrename",
+        "powertoys",
+        "windows"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 123648,
+        "forks": 7356,
+        "issues": 7232
+      },
+      "score": 125219.16437935957,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Windows system utilities to maximize productivity",
+      "updated_at": "2025-09-17T15:22:57Z"
+    },
+    {
+      "id": "langflow-ai/langflow",
+      "source": "github",
+      "name": "langflow",
+      "url": "https://github.com/langflow-ai/langflow",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "agents",
+        "chatgpt",
+        "generative-ai",
+        "large-language-models",
+        "multiagent",
+        "react-flow"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 119093,
+        "forks": 7609,
+        "issues": 879
+      },
+      "score": 120714.7734457176,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+      "updated_at": "2025-09-17T15:26:52Z"
+    },
+    {
+      "id": "electron/electron",
+      "source": "github",
+      "name": "electron",
+      "url": "https://github.com/electron/electron",
+      "license": "MIT",
+      "lang": "C++",
+      "tags": [
+        "c-plus-plus",
+        "chrome",
+        "css",
+        "electron",
+        "html",
+        "javascript",
+        "nodejs",
+        "v8",
+        "works-with-codespaces"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 118328,
+        "forks": 16412,
+        "issues": 901
+      },
+      "score": 121710.34211855709,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": ":electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS",
+      "updated_at": "2025-09-17T15:13:20Z"
+    },
+    {
+      "id": "kubernetes/kubernetes",
+      "source": "github",
+      "name": "kubernetes",
+      "url": "https://github.com/kubernetes/kubernetes",
+      "license": "Apache-2.0",
+      "lang": "Go",
+      "tags": [
+        "cncf",
+        "containers",
+        "go",
+        "kubernetes"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 117508,
+        "forks": 41376,
+        "issues": 2503
+      },
+      "score": 125883.13995806327,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Production-Grade Container Scheduling and Management",
+      "updated_at": "2025-09-17T15:12:24Z"
+    },
+    {
+      "id": "langchain-ai/langchain",
+      "source": "github",
+      "name": "langchain",
+      "url": "https://github.com/langchain-ai/langchain",
+      "license": "MIT",
+      "lang": "Jupyter Notebook",
+      "tags": [
+        "ai",
+        "anthropic",
+        "gemini",
+        "langchain",
+        "llm",
+        "openai",
+        "python"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 115631,
+        "forks": 19002,
+        "issues": 208
+      },
+      "score": 119531.3639935571,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "🦜🔗 Build context-aware reasoning applications",
+      "updated_at": "2025-09-17T15:22:47Z"
+    },
+    {
+      "id": "d3/d3",
+      "source": "github",
+      "name": "d3",
+      "url": "https://github.com/d3/d3",
+      "license": "ISC",
+      "lang": "Shell",
+      "tags": [
+        "chart",
+        "charts",
+        "d3",
+        "data-visualization",
+        "svg",
+        "visualization"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 111477,
+        "forks": 22835,
+        "issues": 22
+      },
+      "score": 116143.70531300154,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
+      "updated_at": "2025-09-17T13:31:02Z"
+    },
+    {
+      "id": "mrdoob/three.js",
+      "source": "github",
+      "name": "three.js",
+      "url": "https://github.com/mrdoob/three.js",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "3d",
+        "augmented-reality",
+        "canvas",
+        "html5",
+        "javascript",
+        "svg",
+        "virtual-reality",
+        "webaudio",
+        "webgl",
+        "webgl2",
+        "webgpu",
+        "webxr"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 108600,
+        "forks": 36009,
+        "issues": 595
+      },
+      "score": 115901.72996577932,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "JavaScript 3D Library.",
+      "updated_at": "2025-09-17T15:08:05Z"
+    },
+    {
+      "id": "axios/axios",
+      "source": "github",
+      "name": "axios",
+      "url": "https://github.com/axios/axios",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "hacktoberfest",
+        "http-client",
+        "javascript",
+        "nodejs",
+        "promise"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 107632,
+        "forks": 11200,
+        "issues": 278
+      },
+      "score": 109971.84998892747,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Promise based HTTP client for the browser and node.js",
+      "updated_at": "2025-09-17T14:33:32Z"
+    },
+    {
+      "id": "excalidraw/excalidraw",
+      "source": "github",
+      "name": "excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "canvas",
+        "collaboration",
+        "diagrams",
+        "drawing",
+        "hacktoberfest",
+        "productivity",
+        "whiteboard"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 107127,
+        "forks": 10830,
+        "issues": 2371
+      },
+      "score": 109392.98918645833,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "updated_at": "2025-09-17T15:33:40Z"
+    }
+  ]
+}

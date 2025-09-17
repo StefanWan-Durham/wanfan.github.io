@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="modelwatch_title">模型追踪器</title>
+  <link rel="icon" href="../../assets/logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://busuanzi.ibruce.info; font-src 'self' data:; connect-src 'self' https://api.countapi.xyz https://counterapi.dev https://busuanzi.ibruce.info; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="description" content="模型追踪器：跟踪 GitHub 与 Hugging Face 热门模型/项目的热度趋势、榜单与详情" data-i18n-content="modelwatch_desc">
+  <link rel="canonical" href="https://fanwan-ai.github.io/lab/modelswatch/modelswatch.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="模型追踪器" data-i18n-content="modelwatch_title">
+  <meta property="og:description" content="跟踪 GitHub 与 Hugging Face 热门模型/项目的热度趋势、榜单与详情" data-i18n-content="modelwatch_desc">
+  <meta property="og:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Model Watch cover">
+  <meta property="og:url" content="https://fanwan-ai.github.io/lab/modelswatch/modelswatch.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="模型追踪器" data-i18n-content="modelwatch_title">
+  <meta name="twitter:description" content="跟踪 GitHub 与 Hugging Face 热门模型/项目的热度趋势、榜单与详情" data-i18n-content="modelwatch_desc">
+  <meta name="twitter:image" content="https://fanwan-ai.github.io/assets/placeholder.jpg">
+  <script>try{var L=localStorage.getItem('lang')||document.documentElement.lang||'zh';document.documentElement.setAttribute('lang',L);}catch(e){}</script>
+  <link rel="stylesheet" href="../../style.css">
+  <script defer src="../../lang.js"></script>
+  <script defer src="../../script.js"></script>
+  <style>
+    .mw-wrap{max-width:1200px;margin:0 auto;padding:0 12px}
+    /* Toolbar layout */
+    .mw-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:12px}
+    /* Put the three mode buttons on their own full-width row and center them */
+    .mw-modes{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%;margin-bottom:6px}
+    /* Distinct, polished style for the three mode buttons (different from tag chips) */
+    .mw-modes .btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;line-height:1;text-align:center;border-radius:999px;margin-right:0;font-weight:700;letter-spacing:.2px;min-width:180px;box-shadow:var(--shadow-sm);border:1px solid color-mix(in oklab, var(--border), var(--primary) 14%)}
+    /* Active state: brand gradient pill */
+    .mw-modes .btn.primary{background:linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);color:#fff;border-color:color-mix(in oklab, var(--primary-600), white 10%);box-shadow:0 8px 18px rgba(37,99,235,0.18)}
+    .mw-modes .btn.primary:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(37,99,235,0.24)}
+    /* Inactive state: soft glass-like pill */
+    .mw-modes .btn.outline{background:color-mix(in oklab, var(--surface), white 6%);color:color-mix(in oklab, var(--text), var(--muted) 12%);border-color:color-mix(in oklab, var(--border), var(--primary) 22%)}
+    .mw-modes .btn.outline:hover{background:color-mix(in oklab, var(--surface), var(--primary) 8%);color:var(--text)}
+    /* Dark theme tuning */
+    :root[data-theme="dark"] .mw-modes .btn.primary{box-shadow:0 10px 24px rgba(59,130,246,0.25)}
+    :root[data-theme="dark"] .mw-modes .btn.outline{background:color-mix(in oklab, var(--surface), black 6%);color:#e5e7eb;border-color:color-mix(in oklab, var(--border), var(--primary) 25%)}
+    @media (max-width:560px){.mw-modes .btn{min-width:auto;flex:1 1 auto;padding:0 14px;height:42px}}
+    .mw-toolbar .input{height:36px;padding:6px 10px}
+    .mw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    @media (max-width:1100px){.mw-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    @media (max-width:700px){.mw-grid{grid-template-columns:1fr;}}
+    .mw-card{padding:12px}
+    .mw-title{font-size:1.05rem;margin:0 0 4px 0;line-height:1.35}
+    .mw-meta{font-size:.85rem;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
+  .mw-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+    .mw-spark{width:100%;height:54px}
+    .mw-aside{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    @media (max-width:900px){.mw-aside{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    .mw-leader{padding:12px}
+    .mw-leader h3{margin:0 0 6px 0;font-size:1rem;color:var(--secondary)}
+    .mw-leader ol{margin:0;padding-left:1.1rem;display:grid;gap:.35rem}
+    .mw-leader a{color:var(--link);text-decoration:none}
+    .mw-leader a:hover{text-decoration:underline}
+    .mw-chiprow{display:flex;gap:6px;flex-wrap:wrap}
+  /* Filter chips – active/inactive styles (distinct from mode buttons) */
+  .mw-chiprow .btn{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 10px;line-height:1;border-radius:999px;font-size:.86rem;font-weight:600;border:1px solid color-mix(in oklab, var(--border), var(--primary) 10%);background:color-mix(in oklab, var(--surface-2), white 6%);color:color-mix(in oklab, var(--text), var(--muted) 25%);box-shadow:var(--shadow-sm)}
+  .mw-chiprow .btn:hover{background:color-mix(in oklab, var(--surface-2), var(--primary) 6%);color:var(--text)}
+  .mw-chiprow .btn.primary{background:color-mix(in oklab, var(--primary) 16%, transparent);color:color-mix(in oklab, var(--primary), black 10%);border-color:color-mix(in oklab, var(--border), var(--primary) 35%)}
+  .mw-chiprow .btn.primary:hover{background:color-mix(in oklab, var(--primary) 22%, transparent)}
+  :root[data-theme="dark"] .mw-chiprow .btn{background:color-mix(in oklab, var(--surface), black 6%);color:#e5e7eb;border-color:color-mix(in oklab, var(--border), var(--primary) 18%)}
+  :root[data-theme="dark"] .mw-chiprow .btn:hover{background:color-mix(in oklab, var(--surface), var(--primary) 10%);color:#fff}
+  :root[data-theme="dark"] .mw-chiprow .btn.primary{background:rgba(59,130,246,0.18);color:#c7d2fe;border-color:rgba(59,130,246,0.38)}
+  :root[data-theme="dark"] .mw-chiprow .btn.primary:hover{background:rgba(59,130,246,0.24)}
+    .mw-modal[hidden]{display:none!important}
+    .mw-modal{position:fixed;inset:0;display:grid;place-items:center;z-index:2000}
+    .mw-modal .backdrop{position:absolute;inset:0;background:rgba(2,6,23,.55)}
+    .mw-dialog{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow-md);width:min(96vw,1100px);height:min(92vh,760px);display:flex;flex-direction:column;overflow:hidden}
+    .mw-dialog .head{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;border-bottom:1px solid var(--border);background:var(--surface-2)}
+    .mw-dialog .body{flex:1;overflow:auto;padding:10px}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <nav class="navbar container">
+      <a href="../../index.html" class="brand" aria-label="Home">
+        <img src="../../assets/logo.svg" alt="Fan Wan logo" class="brand-logo" width="28" height="28" />
+        <span class="logo"><span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg></span> <span class="i18n l-zh">首页</span><span class="i18n l-en">Home</span><span class="i18n l-es">Inicio</span></a></li>
+        <li><a href="../../about.html"><span class="i18n l-zh">关于我</span><span class="i18n l-en">About</span><span class="i18n l-es">Acerca de</span></a></li>
+        <li><a href="../../publications.html"><span class="i18n l-zh">学术出版物</span><span class="i18n l-en">Research</span><span class="i18n l-es">Investigación</span></a></li>
+        <li><a href="../../blog.html"><span class="i18n l-zh">博客</span><span class="i18n l-en">Blog</span><span class="i18n l-es">Blog</span></a></li>
+        <li><a href="../../ai-lab.html"><span class="i18n l-zh">AI Studio</span><span class="i18n l-en">AI Studio</span><span class="i18n l-es">Taller de IA</span></a></li>
+        <li><a href="../../contact.html"><span class="i18n l-zh">联系</span><span class="i18n l-en">Contact</span><span class="i18n l-es">Contacto</span></a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button id="lang-button" class="btn outline icon-btn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="icon icon-globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg>
+            <span class="label"></span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language" hidden>
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="zh">中文</li>
+            <li role="option" data-lang="es">Español</li>
+          </ul>
+          <select id="lang-select" hidden>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-bulb" viewBox="0 0 24 24" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+              <path d="M8.5 15.5c-.9-1-1.5-2.3-1.5-3.8a5 5 0 1 1 10 0c0 1.5-.6 2.8-1.5 3.8-.6.7-1.1 1.4-1.3 2.2H9.8c-.2-.8-.7-1.5-1.3-2.2z"/>
+              <path d="M12 2v2"/>
+              <path d="M4 10h2"/>
+              <path d="M18 10h2"/>
+              <path d="M5.5 5.5l1.4 1.4"/>
+              <path d="M18.5 5.5l-1.4 1.4"/>
+            </g>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon icon-system" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" ry="2"/><path d="M8 20h8M12 16v4"/></g></svg>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero section">
+      <div class="bg-shapes">
+        <span class="shape shape1"></span>
+        <span class="shape shape2"></span>
+        <span class="shape shape3"></span>
+        <span class="shape shape4"></span>
+      </div>
+      <div class="container">
+        <h1 data-i18n="modelwatch_title">模型追踪器</h1>
+        <p class="subtitle" data-i18n="modelwatch_desc">跟踪 GitHub 与 Hugging Face 热门模型/项目的热度趋势、榜单与详情</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container mw-wrap">
+        <div class="card mw-card mw-toolbar" role="toolbar" aria-label="Filters">
+          <div class="mw-modes" id="mw-modes">
+            <button class="btn primary" data-mode="daily" data-i18n="mw_mode_daily">每日推荐</button>
+            <button class="btn outline" data-mode="gh" data-i18n="mw_mode_gh_top">开源项目热门榜</button>
+            <button class="btn outline" data-mode="hf" data-i18n="mw_mode_hf_top">开源模型热门榜</button>
+          </div>
+          <div class="mw-chiprow" id="mw-filters" style="margin-left:4px"></div>
+          <span style="flex:1 1 auto"></span>
+          <div id="mw-datewrap" style="display:flex;gap:6px;align-items:center" hidden>
+            <button id="mw-prev" class="btn outline small" title="Prev day" aria-label="Previous day">◀</button>
+            <input type="date" id="mw-date" class="input" style="height:36px;padding:6px 8px" />
+            <button id="mw-next" class="btn outline small" title="Next day" aria-label="Next day">▶</button>
+          </div>
+          <select id="mw-sort" class="input">
+            <option value="score" data-i18n="mw_sort_score">综合分</option>
+            <option value="delta7" data-i18n="mw_sort_delta7">7日增量</option>
+            <option value="stars" data-i18n="mw_sort_stars">Stars</option>
+            <option value="downloads" data-i18n="mw_sort_downloads">Downloads</option>
+          </select>
+          <input id="mw-q" class="input" placeholder="搜索名称/标签…" data-i18n-placeholder="search_placeholder" />
+        </div>
+
+        <div style="margin:12px 0 6px 0" class="muted" id="mw-sub">—</div>
+
+        <div class="mw-grid" id="mw-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container site-footer-center">
+      <p>© <span id="year"></span> Fan Wan</p>
+    </div>
+  </footer>
+
+  <div class="mw-modal" id="mw-modal" hidden>
+    <div class="backdrop" onclick="document.getElementById('mw-modal').hidden=true"></div>
+    <div class="mw-dialog">
+      <div class="head">
+        <strong id="mw-modal-title">—</strong>
+        <button class="modal-close" onclick="document.getElementById('mw-modal').hidden=true">✕</button>
+      </div>
+      <div class="body" id="mw-modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const filtersEl = document.getElementById('mw-filters');
+    const modesEl = document.getElementById('mw-modes');
+    const sortEl = document.getElementById('mw-sort');
+    const qEl = document.getElementById('mw-q');
+    const gridEl = document.getElementById('mw-grid');
+    const subEl = document.getElementById('mw-sub');
+  const dateWrap = document.getElementById('mw-datewrap');
+  const dateInput = document.getElementById('mw-date');
+  const prevBtn = document.getElementById('mw-prev');
+  const nextBtn = document.getElementById('mw-next');
+    const $ = (id)=>document.getElementById(id);
+
+    let MODE = 'daily';
+    let items = [];
+    let catsLoaded = false;
+    let activeTags = new Set();
+    let query = '';
+  let availableDates = [];
+  let selectedDate = '';
+
+    // Fallback canonical categories and labels (used if categories.json not found)
+    let CANON = {
+      capabilities: ['chat','multimodal','retrieval','code','speech','video','vision','planning','safety','compression','distillation'],
+      scenes: ['devex','education','research','search','content','productization','robotics'],
+      lifecycle: ['data','training','evaluation','deployment','inference','monitoring']
+    };
+    let TAG_LABELS = {
+      zh: { chat:'对话', multimodal:'多模态', retrieval:'检索', code:'代码', speech:'语音', video:'视频', vision:'视觉', planning:'规划', safety:'安全', compression:'压缩', distillation:'蒸馏', devex:'DevEx', education:'教育', research:'科研', search:'搜索', content:'内容生成', productization:'产品化', robotics:'机器人', data:'数据', training:'训练', evaluation:'评测', deployment:'部署', inference:'推理', monitoring:'监控' },
+      en: { chat:'Chat', multimodal:'Multimodal', retrieval:'Retrieval', code:'Code', speech:'Speech', video:'Video', vision:'Vision', planning:'Planning', safety:'Safety', compression:'Compression', distillation:'Distillation', devex:'DevEx', education:'Education', research:'Research', search:'Search', content:'Content Gen', productization:'Productization', robotics:'Robotics', data:'Data', training:'Training', evaluation:'Evaluation', deployment:'Deployment', inference:'Inference', monitoring:'Monitoring' },
+      es: { chat:'Conversación', multimodal:'Multimodal', retrieval:'Recuperación', code:'Código', speech:'Voz', video:'Vídeo', vision:'Visión', planning:'Planificación', safety:'Seguridad', compression:'Compresión', distillation:'Destilación', devex:'DevEx', education:'Educación', research:'Investigación', search:'Búsqueda', content:'Generación de contenido', productization:'Productización', robotics:'Robótica', data:'Datos', training:'Entrenamiento', evaluation:'Evaluación', deployment:'Despliegue', inference:'Inferencia', monitoring:'Monitorización' }
+    };
+
+    // Build reverse map from any label to canonical key
+    let LABEL_TO_KEY = {};
+    function rebuildLabelIndex(){
+      const m = {};
+      for(const lang of Object.keys(TAG_LABELS)){
+        const dict = TAG_LABELS[lang]||{};
+        for(const k of Object.keys(dict)) m[dict[k]] = k;
+      }
+      for(const group of Object.values(CANON)) for(const k of group) m[k] = k;
+      LABEL_TO_KEY = m;
+    }
+    rebuildLabelIndex();
+
+    const getLang = ()=> (localStorage.getItem('lang')||document.documentElement.lang||'zh');
+    const tagLabel = (key)=> TAG_LABELS[getLang()]?.[key] || key;
+    const toKey = (s)=> LABEL_TO_KEY[String(s||'').trim()] || null;
+  function string(s){ return String(s); }
+
+    function t(key, fallback){ try { const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh'; const tx=(window.translations?.[lang]?.[key]); return tx||fallback||key; } catch { return fallback||key; } }
+
+    function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');}
+    function rel(iso){ try{ const d=new Date(iso); const s=(Date.now()-d)/1000; if(s<60) return 'just now'; if(s<3600) return Math.floor(s/60)+'m'; if(s<86400) return Math.floor(s/3600)+'h'; return Math.floor(s/86400)+'d'; }catch{return ''} }
+
+    function buildFilters(){
+      filtersEl.innerHTML='';
+      const allBtn = document.createElement('button'); allBtn.className='btn outline small'+(activeTags.size===0?' primary':''); allBtn.textContent=t('all_label','全部'); allBtn.onclick=()=>{activeTags.clear(); render();}; filtersEl.appendChild(allBtn);
+      for(const [group, keys] of Object.entries(CANON)){
+        keys.forEach(key=>{
+          const act = activeTags.has(key);
+          const b = document.createElement('button');
+          b.className='btn outline small'+(act?' primary':'');
+          b.textContent = tagLabel(key);
+          b.onclick = ()=>{ act?activeTags.delete(key):activeTags.add(key); render(); };
+          filtersEl.appendChild(b);
+        });
+      }
+    }
+
+    function sparkline(ts=[], vals=[], color){
+      // Lightweight inline SVG sparkline (last 30 pts or fewer)
+      const N = Math.min(vals.length, 30);
+      const sliceVals = vals.slice(-N);
+      const sliceTs = ts.slice(-N);
+      if (!sliceVals.length) return '';
+      const W=280, H=54, L=0, R=0, T=6, B=12; const iw=W-L-R, ih=H-T-B;
+      const minX = sliceTs[0], maxX = sliceTs[sliceTs.length-1];
+      const minY = Math.min(...sliceVals, 0), maxY = Math.max(...sliceVals);
+      const xPos = (t)=> L + ( (t-minX)/Math.max(1,(maxX-minX)) )*iw;
+      const yPos = (v)=> T + ih - ( (v-minY)/Math.max(1,(maxY-minY)) )*ih;
+      let d='';
+      for(let i=0;i<sliceVals.length;i++){
+        const x=xPos(sliceTs[i]); const y=yPos(sliceVals[i]); d+= (i?` L ${x},${y}`:`M ${x},${y}`);
+      }
+      const stroke=color||'#0ea5e9';
+      return `<svg class="mw-spark" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="${stroke}"/>
+            <stop offset="100%" stop-color="${stroke}" stop-opacity="0.25"/>
+          </linearGradient>
+        </defs>
+        <path d="${d}" fill="none" stroke="url(#sg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`;
+    }
+
+    // Simple keyword mapping to canonical categories (multilingual hints)
+    const KEYWORDS = {
+      chat: [/\bchat\b/i, /对话/, /assistant/i],
+      multimodal: [/multimodal/i, /多模态/],
+      retrieval: [/retriev/i, /RAG/i, /检索/],
+      code: [/\bcode\b/i, /编程/, /coder/i],
+      speech: [/speech/i, /audio/i, /语音/],
+      video: [/video/i, /视频/],
+      vision: [/vision/i, /图像/, /视觉/],
+      planning: [/plan/i, /规划/],
+      safety: [/safety/i, /安全/],
+      compression: [/compress/i, /压缩/],
+      distillation: [/distill/i, /蒸馏/],
+      devex: [/devex/i, /developer/i],
+      education: [/educat/i, /教育/],
+      research: [/research/i, /科研/],
+      search: [/search/i, /搜索/],
+      content: [/content/i, /生成/],
+      productization: [/product/i, /产品化/],
+      robotics: [/robot/i, /机器人/],
+      data: [/data/i, /数据/],
+      training: [/train/i, /训练/],
+      evaluation: [/eval/i, /评测/],
+      deployment: [/deploy/i, /部署/],
+      inference: [/infer/i, /推理/],
+      monitoring: [/monitor/i, /监控/]
+    };
+
+    function deriveCategories(it){
+      const text = `${it.name||''} ${(it.summary||'')} ${(it.tags||[]).join(' ')}`;
+      const cats = { capabilities: new Set(), scenes: new Set(), lifecycle: new Set() };
+      const push = (k)=>{
+        if (CANON.capabilities.includes(k)) cats.capabilities.add(k);
+        else if (CANON.scenes.includes(k)) cats.scenes.add(k);
+        else if (CANON.lifecycle.includes(k)) cats.lifecycle.add(k);
+      };
+      for(const [k, regs] of Object.entries(KEYWORDS)){
+        if (regs.some(r=> r.test(text))) push(k);
+      }
+      return {
+        capabilities: [...cats.capabilities],
+        scenes: [...cats.scenes],
+        lifecycle: [...cats.lifecycle]
+      };
+    }
+
+    function card(it){
+      const src = it.source==='github'?'GitHub':'HF';
+      const tags = (it.tags||[]).slice(0,6).map(x=>`<span class="tag">${esc(x)}</span>`).join(' ');
+      const metrics = [
+        it.source==='github'?(`★ ${it.stats?.stars||0}`):(`⬇︎ ${it.stats?.hf_downloads_7d||0}`),
+        it.stats?.forks?(`⑂ ${it.stats.forks}`):'',
+        it.stats?.hf_likes?(`❤ ${it.stats.hf_likes}`):'',
+        it.stats?.stars_7d?(`+7d ${it.stats.stars_7d}`):''
+      ].filter(Boolean).join(' · ');
+      const last = it.updated_at?` · ${rel(it.updated_at)}`:'';
+      const color = getComputedStyle(document.documentElement).getPropertyValue('--secondary')||'#0ea5e9';
+      const tms = (it.timeline?.t||[]).map(x=>Date.parse(x));
+      const starSeries = it.timeline?.stars || [];
+      const dlSeries = it.timeline?.downloads || [];
+      const series = (src==='GitHub') ? starSeries : dlSeries;
+      const sgv = sparkline(tms, series, color);
+      return `<article class="card mw-card" data-id="${esc(it.id)}">
+        <h4 class="mw-title">${esc(it.name||it.id)}</h4>
+        <div class="mw-meta">${src} · ${metrics}${last}</div>
+        <div class="mw-tags">${tags}</div>
+        <div>${sgv}</div>
+        ${it.summary?`<p class="muted" style="margin:.5rem 0 0 0; line-height:1.4">${esc(it.summary)}</p>`:''}
+      </article>`;
+    }
+
+    function filterSort(arr){
+      let out = arr.slice();
+      // filter
+      if(activeTags.size>0){
+        out = out.filter(it => {
+          const catsRaw = [
+            ...(it.categories?.capabilities||[]),
+            ...(it.categories?.scenes||[]),
+            ...(it.categories?.lifecycle||[]),
+            ...(it.tags||[]),
+          ];
+          const cats = new Set();
+          for(const v of catsRaw){ const k = toKey(v); if(k) cats.add(k); }
+          return [...activeTags].every(x => cats.has(x));
+        });
+      }
+      // search
+      const qs = (query||'').trim().toLowerCase();
+      if(qs){ out = out.filter(it => `${it.id} ${it.name} ${(it.tags||[]).join(' ')}`.toLowerCase().includes(qs)); }
+      // sort
+      const key = sortEl.value||'score';
+      out.sort((a,b)=>{
+        if(key==='delta7') return (b.stats?.stars_7d||0) - (a.stats?.stars_7d||0);
+        if(key==='stars') return (b.stats?.stars||0) - (a.stats?.stars||0);
+        if(key==='downloads') return (b.stats?.hf_downloads_7d||0) - (a.stats?.hf_downloads_7d||0);
+        return (b.score||0) - (a.score||0);
+      });
+      return out;
+    }
+
+    function render(){
+      const arr = filterSort(items);
+      gridEl.innerHTML = arr.map(card).join('');
+      const dt = window.__mw_updated_at || '';
+      const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh';
+      const dtStr = dt? dt.slice(0,16).replace('T',' ') : '';
+      let modeLabel = MODE==='daily'? (window.translations?.[lang]?.mw_mode_daily || 'Daily Picks') : MODE==='gh'? (window.translations?.[lang]?.mw_mode_gh_top || 'GitHub Top') : (window.translations?.[lang]?.mw_mode_hf_top || 'HF Top');
+      if (lang==='en') subEl.textContent = `${modeLabel} · Items ${arr.length}${dtStr?` · Updated ${dtStr}`:''}`;
+      else if (lang==='es') subEl.textContent = `${modeLabel} · Elementos ${arr.length}${dtStr?` · Actualizado ${dtStr}`:''}`;
+      else subEl.textContent = `${modeLabel} · 共 ${arr.length} 项${dtStr?` · 更新于 ${dtStr}`:''}`;
+
+      // Disable irrelevant sort options per mode
+      for(const opt of sortEl.options){
+        if(opt.value==='stars') opt.disabled = (MODE==='hf');
+        else if(opt.value==='downloads') opt.disabled = (MODE==='gh');
+        else opt.disabled = false;
+      }
+    }
+
+    async function loadCategories(){
+      try{
+        const cj = await fetch('../../data/ai/modelswatch/categories.json',{cache:'no-store'}).then(r=>r.json());
+        if(cj?.categories) CANON = cj.categories;
+        if(cj?.labels) TAG_LABELS = cj.labels;
+        rebuildLabelIndex();
+        catsLoaded = true;
+      }catch{ catsLoaded = false; }
+    }
+
+    async function loadDaily(dateStr){
+      try{
+        if(dateStr){
+          // load combined archive for the specified date
+          const d = await fetch(`../../data/ai/modelswatch/daily/${dateStr}.json`,{cache:'no-store'}).then(r=>r.json());
+          items = (d?.items||[]).map(shallowNormalize);
+          window.__mw_updated_at = d?.updated_at || `${dateStr}T00:00:00Z`;
+        }else{
+          const [g,h] = await Promise.all([
+            fetch('../../data/ai/modelswatch/daily_github.json',{cache:'no-store'}).then(r=>r.json()),
+            fetch('../../data/ai/modelswatch/daily_hf.json',{cache:'no-store'}).then(r=>r.json()),
+          ]);
+          const gi = (g?.items||[]).map(shallowNormalize);
+          const hi = (h?.items||[]).map(shallowNormalize);
+          items = [...gi, ...hi];
+          window.__mw_updated_at = g?.updated_at || h?.updated_at || '';
+        }
+      }catch{ items=[]; window.__mw_updated_at=''; }
+    }
+
+    async function loadTopGH(){
+      try{
+        const g = await fetch('../../data/ai/modelswatch/top_github.json',{cache:'no-store'}).then(r=>r.json());
+        items = (g?.items||[]).map(shallowNormalize);
+        window.__mw_updated_at = g?.updated_at || '';
+      }catch{ items=[]; window.__mw_updated_at=''; }
+    }
+
+    async function loadTopHF(){
+      try{
+        const h = await fetch('../../data/ai/modelswatch/top_hf.json',{cache:'no-store'}).then(r=>r.json());
+        items = (h?.items||[]).map(shallowNormalize);
+        window.__mw_updated_at = h?.updated_at || '';
+      }catch{ items=[]; window.__mw_updated_at=''; }
+    }
+
+    function shallowNormalize(it){
+      const id = it.id || it.repo_id || it.url || it.name;
+      const source = it.source || (id&&id.includes('huggingface.co')?'hf':'github');
+      const name = it.name || (id||'').split('/').pop();
+      const base = {
+        id, source, name,
+        url: it.url || it.homepage || it.card_url,
+        license: it.license || 'N/A',
+        lang: it.lang || it.language || 'N/A',
+        tags: (it.tags||[]).map(x=> tagLabel(toKey(x)||x)),
+        categories: it.categories||{capabilities:[],scenes:[],lifecycle:[]},
+        stats: it.stats||{},
+        score: it.score||0,
+        timeline: it.timeline||{t:[],stars:[],downloads:[]},
+        summary: it.summary||'',
+        updated_at: it.updated_at||new Date().toISOString()
+      };
+      if ((!base.categories.capabilities?.length) && (!base.categories.scenes?.length) && (!base.categories.lifecycle?.length)){
+        base.categories = deriveCategories(base);
+      }
+      return base;
+    }
+
+    async function init(){
+      await loadCategories();
+      buildFilters();
+      // Load date list for daily archives
+      try{ availableDates = await fetch('../../data/ai/modelswatch/daily/dates.json', {cache:'no-store'}).then(r=>r.json()); if(!Array.isArray(availableDates)) availableDates = []; }catch{ availableDates = []; }
+      // set bounds for native calendar (if we have dates)
+      if(availableDates.length>0){
+        dateInput.min = availableDates[availableDates.length-1];
+        dateInput.max = availableDates[0];
+        dateInput.value = availableDates[0];
+        selectedDate = '';
+      }
+      // show date controls in Daily mode only
+      dateWrap.hidden = (MODE !== 'daily');
+      await loadDaily(selectedDate);
+      render();
+      sortEl.onchange = render;
+      qEl.addEventListener('input', ()=>{ query=qEl.value||''; render(); });
+      window.addEventListener('language-changed', ()=>{ buildFilters(); render(); });
+      // Mode switching
+      modesEl.addEventListener('click', async (e)=>{
+        const btn = e.target.closest('button[data-mode]');
+        if(!btn) return;
+        const mode = btn.getAttribute('data-mode');
+        if(!mode || mode===MODE) return;
+        MODE = mode;
+        [...modesEl.querySelectorAll('button')].forEach(b=>{
+          b.classList.toggle('primary', b===btn);
+          b.classList.toggle('outline', b!==btn);
+        });
+        // reset sort for clarity but keep selection; reload dataset
+        if(MODE==='daily'){
+          dateWrap.hidden = false;
+          await loadDaily(selectedDate);
+        }
+        else if(MODE==='gh') await loadTopGH();
+        else await loadTopHF();
+        if(MODE!=='daily') dateWrap.hidden = true;
+        render();
+      });
+
+      // date interactions
+      dateInput.addEventListener('change', async ()=>{
+        const v = dateInput.value;
+        selectedDate = (v && availableDates.includes(v)) ? v : '';
+        await loadDaily(selectedDate);
+        render();
+      });
+      prevBtn.addEventListener('click', async ()=>{
+        if(availableDates.length===0) return;
+        let cur = dateInput.value || availableDates[0];
+        let idx = availableDates.indexOf(cur);
+        if(idx<0) idx = 0;
+        if(idx+1 < availableDates.length){
+          dateInput.value = availableDates[idx+1];
+          selectedDate = dateInput.value;
+          await loadDaily(selectedDate);
+          render();
+        }
+      });
+      nextBtn.addEventListener('click', async ()=>{
+        if(availableDates.length===0) return;
+        let cur = dateInput.value || availableDates[0];
+        let idx = availableDates.indexOf(cur);
+        if(idx>0){
+          dateInput.value = availableDates[idx-1];
+          selectedDate = dateInput.value;
+          await loadDaily(selectedDate);
+          render();
+        }
+      });
+    }
+
+    init();
+  })();
+  </script>
+</body>
+</html>
