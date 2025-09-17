@@ -1,11 +1,44 @@
 {
-  "updated_at": "2025-09-17T17:50:02.382Z",
+  "updated_at": "2025-09-17T18:01:14.505Z",
   "items": [
     {
-      "id": "context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16",
+      "id": "omni-research/Tarsier2-Recap-7b",
       "source": "hf",
-      "name": "meta-llama-Llama-3.2-3B-Instruct-FP16",
-      "url": "https://huggingface.co/context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16",
+      "name": "Tarsier2-Recap-7b",
+      "url": "https://huggingface.co/omni-research/Tarsier2-Recap-7b",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "safetensors",
+        "video LLM",
+        "arxiv:2501.07888",
+        "license:apache-2.0",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 8263301,
+        "hf_likes": 17
+      },
+      "score": 16535.102,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Tarsier2-Recap-7b 是一个基于 Transformer 架构的视频语言模型，专注于视频内容理解与摘要生成。该模型能够高效解析视频内容，并生成结构化的文本摘要，适用于视频内容检索、自动字幕生成和智能剪辑等场景。其亮点在于结合了多模态输入处理能力，支持对长视频进行关键信息提取，同时保持较高的生成质量与语义连贯性。该模型基于 Apache 2.0 开源协议发布，适用于视频分析、媒体生产及人机交互等领域的研究与应用。",
+      "updated_at": "2025-09-17T17:53:14.779Z",
+      "summary_zh": "Tarsier2-Recap-7b 是一个基于 Transformer 架构的视频语言模型，专注于视频内容理解与摘要生成。该模型能够高效解析视频内容，并生成结构化的文本摘要，适用于视频内容检索、自动字幕生成和智能剪辑等场景。其亮点在于结合了多模态输入处理能力，支持对长视频进行关键信息提取，同时保持较高的生成质量与语义连贯性。该模型基于 Apache 2.0 开源协议发布，适用于视频分析、媒体生产及人机交互等领域的研究与应用。"
+    },
+    {
+      "id": "meta-llama/Llama-3.1-8B-Instruct",
+      "source": "hf",
+      "name": "Llama-3.1-8B-Instruct",
+      "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
@@ -27,8 +60,9 @@
         "es",
         "th",
         "arxiv:2204.05149",
-        "arxiv:2405.16406",
-        "license:llama3.2",
+        "base_model:meta-llama/Llama-3.1-8B",
+        "base_model:finetune:meta-llama/Llama-3.1-8B",
+        "license:llama3.1",
         "autotrain_compatible",
         "text-generation-inference",
         "endpoints_compatible",
@@ -40,40 +74,41 @@
         "lifecycle": []
       },
       "stats": {
-        "hf_downloads_7d": 11732858,
-        "hf_likes": 6
+        "hf_downloads_7d": 7230352,
+        "hf_likes": 4626
       },
-      "score": 23468.716,
+      "score": 16773.703999999998,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个基于Meta Llama 3.2架构的30亿参数指令微调模型，采用FP16精度优化。该模型专门针对对话和指令跟随任务设计，能够生成连贯且符合上下文的文本回复。其轻量化设计使其适用于资源受限环境，如边缘设备或本地部署场景。模型支持Transformers框架，适用于聊天机器人、内容生成和自动化问答等应用场景。",
-      "updated_at": "2025-09-17T17:31:02.898Z",
-      "summary_zh": "这是一个基于Meta Llama 3.2架构的30亿参数指令微调模型，采用FP16精度优化。该模型专门针对对话和指令跟随任务设计，能够生成连贯且符合上下文的文本回复。其轻量化设计使其适用于资源受限环境，如边缘设备或本地部署场景。模型支持Transformers框架，适用于聊天机器人、内容生成和自动化问答等应用场景。"
+      "summary": "Llama-3.1-8B-Instruct 是 Meta 推出的开源指令微调语言模型，基于 Transformer 架构，参数量为 80 亿。该模型专为对话和指令跟随任务设计，支持流畅的文本生成与多轮交互。其亮点在于高效的推理性能和较强的上下文理解能力，适用于聊天机器人、内容创作和任务自动化等场景。模型以 PyTorch 和 SafeTensors 格式提供，主要面向英语用户，适合研究和轻量级应用部署。",
+      "updated_at": "2025-09-17T17:53:14.779Z",
+      "summary_zh": "Llama-3.1-8B-Instruct 是 Meta 推出的开源指令微调语言模型，基于 Transformer 架构，参数量为 80 亿。该模型专为对话和指令跟随任务设计，支持流畅的文本生成与多轮交互。其亮点在于高效的推理性能和较强的上下文理解能力，适用于聊天机器人、内容创作和任务自动化等场景。模型以 PyTorch 和 SafeTensors 格式提供，主要面向英语用户，适合研究和轻量级应用部署。"
     },
     {
-      "id": "Qwen/Qwen2.5-7B-Instruct",
+      "id": "amazon/chronos-t5-small",
       "source": "hf",
-      "name": "Qwen2.5-7B-Instruct",
-      "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+      "name": "chronos-t5-small",
+      "url": "https://huggingface.co/amazon/chronos-t5-small",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
         "transformers",
         "safetensors",
-        "qwen2",
-        "text-generation",
-        "chat",
-        "conversational",
-        "en",
-        "arxiv:2309.00071",
-        "arxiv:2407.10671",
-        "base_model:Qwen/Qwen2.5-7B",
-        "base_model:finetune:Qwen/Qwen2.5-7B",
+        "t5",
+        "text2text-generation",
+        "time series",
+        "forecasting",
+        "pretrained models",
+        "foundation models",
+        "time series foundation models",
+        "time-series",
+        "time-series-forecasting",
+        "arxiv:2403.07815",
+        "arxiv:1910.10683",
         "license:apache-2.0",
-        "autotrain_compatible",
         "text-generation-inference",
         "endpoints_compatible",
         "region:us"
@@ -84,146 +119,24 @@
         "lifecycle": []
       },
       "stats": {
-        "hf_downloads_7d": 7794184,
-        "hf_likes": 791
+        "hf_downloads_7d": 13199198,
+        "hf_likes": 131
       },
-      "score": 15983.868,
+      "score": 26463.896,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "Qwen2.5-7B-Instruct 是阿里云通义千问团队推出的开源对话模型，基于 Qwen2.5-7B 微调优化，专注于指令遵循和对话任务。该模型具备 70 亿参数，支持多轮对话和流畅的文本生成，适用于聊天机器人、智能助手等交互式场景。其训练数据涵盖多语言内容，在多项基准测试中表现出较强的推理和语言理解能力。开发者可通过 Transformers 库快速集成，适用于需要高效、轻量级对话 AI 的应用环境。",
-      "updated_at": "2025-09-17T17:31:02.898Z",
-      "summary_zh": "Qwen2.5-7B-Instruct 是阿里云通义千问团队推出的开源对话模型，基于 Qwen2.5-7B 微调优化，专注于指令遵循和对话任务。该模型具备 70 亿参数，支持多轮对话和流畅的文本生成，适用于聊天机器人、智能助手等交互式场景。其训练数据涵盖多语言内容，在多项基准测试中表现出较强的推理和语言理解能力。开发者可通过 Transformers 库快速集成，适用于需要高效、轻量级对话 AI 的应用环境。"
+      "summary": "Chronos-T5-small是亚马逊基于T5架构开发的时间序列预测基础模型。该模型通过将数值序列转换为标记化文本进行训练，能够直接生成未来时间点的预测值。其核心优势在于统一的文本到文本生成框架，无需针对不同数据集重新设计特征工程。模型适用于商业销售预测、能源需求预估、设备监控等标准化时间序列分析场景，为中小规模预测任务提供了开箱即用的解决方案。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_zh": "Chronos-T5-small是亚马逊基于T5架构开发的时间序列预测基础模型。该模型通过将数值序列转换为标记化文本进行训练，能够直接生成未来时间点的预测值。其核心优势在于统一的文本到文本生成框架，无需针对不同数据集重新设计特征工程。模型适用于商业销售预测、能源需求预估、设备监控等标准化时间序列分析场景，为中小规模预测任务提供了开箱即用的解决方案。"
     },
     {
-      "id": "tech4humans/yolov8s-signature-detector",
+      "id": "distilbert/distilbert-base-uncased",
       "source": "hf",
-      "name": "yolov8s-signature-detector",
-      "url": "https://huggingface.co/tech4humans/yolov8s-signature-detector",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "ultralytics",
-        "tensorboard",
-        "onnx",
-        "object-detection",
-        "signature-detection",
-        "yolo",
-        "yolov8",
-        "pytorch",
-        "dataset:tech4humans/signature-detection",
-        "base_model:Ultralytics/YOLOv8",
-        "base_model:quantized:Ultralytics/YOLOv8",
-        "license:agpl-3.0",
-        "model-index",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 39952181,
-        "hf_likes": 37
-      },
-      "score": 79922.86200000001,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "yolov8s-signature-detector 是一个基于 YOLOv8s 架构的签名检测模型，专门用于识别图像中的签名区域。该模型在 tech4humans/signature-detection 数据集上训练，具备较高的检测精度和鲁棒性。其亮点包括支持 ONNX 格式导出，便于部署到多种推理环境，同时集成了 TensorBoard 进行训练可视化。适用于文档处理、合同自动化、身份验证等需要签名定位的场景。",
-      "updated_at": "2025-09-17T17:31:02.898Z",
-      "summary_zh": "yolov8s-signature-detector 是一个基于 YOLOv8s 架构的签名检测模型，专门用于识别图像中的签名区域。该模型在 tech4humans/signature-detection 数据集上训练，具备较高的检测精度和鲁棒性。其亮点包括支持 ONNX 格式导出，便于部署到多种推理环境，同时集成了 TensorBoard 进行训练可视化。适用于文档处理、合同自动化、身份验证等需要签名定位的场景。"
-    },
-    {
-      "id": "pyannote/segmentation-3.0",
-      "source": "hf",
-      "name": "segmentation-3.0",
-      "url": "https://huggingface.co/pyannote/segmentation-3.0",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "pyannote-audio",
-        "pytorch",
-        "pyannote",
-        "pyannote-audio-model",
-        "audio",
-        "voice",
-        "speech",
-        "speaker",
-        "speaker-diarization",
-        "speaker-change-detection",
-        "speaker-segmentation",
-        "voice-activity-detection",
-        "overlapped-speech-detection",
-        "resegmentation",
-        "license:mit",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 18867889,
-        "hf_likes": 586
-      },
-      "score": 38028.778,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "segmentation-3.0 是一个基于 PyTorch 的音频分割模型，专注于语音信号中的说话人分割与变化检测。该模型能够自动识别音频中的说话人切换点，并划分不同说话人的语音段落。其核心优势在于结合了高效的端到端架构与大规模数据训练，在说话人日志化任务中表现出较高的准确性和鲁棒性。适用于会议记录、播客分析、语音转写预处理等需要区分多说话人的场景，尤其适合处理包含重叠语音或多人对话的音频内容。",
-      "updated_at": "2025-09-17T17:31:02.898Z",
-      "summary_zh": "segmentation-3.0 是一个基于 PyTorch 的音频分割模型，专注于语音信号中的说话人分割与变化检测。该模型能够自动识别音频中的说话人切换点，并划分不同说话人的语音段落。其核心优势在于结合了高效的端到端架构与大规模数据训练，在说话人日志化任务中表现出较高的准确性和鲁棒性。适用于会议记录、播客分析、语音转写预处理等需要区分多说话人的场景，尤其适合处理包含重叠语音或多人对话的音频内容。"
-    },
-    {
-      "id": "Bingsu/adetailer",
-      "source": "hf",
-      "name": "adetailer",
-      "url": "https://huggingface.co/Bingsu/adetailer",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "ultralytics",
-        "pytorch",
-        "dataset:wider_face",
-        "dataset:skytnt/anime-segmentation",
-        "doi:10.57967/hf/3633",
-        "license:apache-2.0",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 15547106,
-        "hf_likes": 615
-      },
-      "score": 31401.712,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "adetailer是一个基于Ultralytics和PyTorch的开源图像修复工具，专注于自动检测和修复图像中的人脸及身体部位缺陷。该模型整合了WiderFace和人像分割数据集，能够有效处理真实人像与动漫风格的图像。其核心功能包括智能识别遮挡、模糊或缺失区域，并进行高精度补全，适用于图像编辑、内容修复及数字艺术创作等场景。通过Apache 2.0协议开源，支持开发者灵活集成与二次开发。",
-      "updated_at": "2025-09-17T17:31:02.898Z",
-      "summary_zh": "adetailer是一个基于Ultralytics和PyTorch的开源图像修复工具，专注于自动检测和修复图像中的人脸及身体部位缺陷。该模型整合了WiderFace和人像分割数据集，能够有效处理真实人像与动漫风格的图像。其核心功能包括智能识别遮挡、模糊或缺失区域，并进行高精度补全，适用于图像编辑、内容修复及数字艺术创作等场景。通过Apache 2.0协议开源，支持开发者灵活集成与二次开发。"
-    },
-    {
-      "id": "openai/clip-vit-base-patch32",
-      "source": "hf",
-      "name": "clip-vit-base-patch32",
-      "url": "https://huggingface.co/openai/clip-vit-base-patch32",
+      "name": "distilbert-base-uncased",
+      "url": "https://huggingface.co/distilbert/distilbert-base-uncased",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
@@ -231,11 +144,17 @@
         "pytorch",
         "tf",
         "jax",
-        "clip",
-        "zero-shot-image-classification",
-        "vision",
-        "arxiv:2103.00020",
-        "arxiv:1908.04913",
+        "rust",
+        "safetensors",
+        "distilbert",
+        "fill-mask",
+        "exbert",
+        "en",
+        "dataset:bookcorpus",
+        "dataset:wikipedia",
+        "arxiv:1910.01108",
+        "license:apache-2.0",
+        "autotrain_compatible",
         "endpoints_compatible",
         "region:us"
       ],
@@ -245,18 +164,233 @@
         "lifecycle": []
       },
       "stats": {
-        "hf_downloads_7d": 15401311,
-        "hf_likes": 763
+        "hf_downloads_7d": 12227309,
+        "hf_likes": 755
       },
-      "score": 31184.122,
+      "score": 24832.118000000002,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "CLIP-ViT-Base-Patch32 是一个基于 Transformer 架构的多模态视觉-语言模型，由 OpenAI 开发。它能够同时理解图像和文本，适用于零样本图像分类、跨模态检索和图文匹配等任务。该模型采用 Vision Transformer（ViT）结构，以 32x32 像素的图像块作为输入，具备较强的泛化能力。适用于内容理解、智能搜索和自动化标注等场景，无需针对特定任务进行微调即可直接应用。",
-      "updated_at": "2025-09-17T17:31:02.898Z",
-      "summary_zh": "CLIP-ViT-Base-Patch32 是一个基于 Transformer 架构的多模态视觉-语言模型，由 OpenAI 开发。它能够同时理解图像和文本，适用于零样本图像分类、跨模态检索和图文匹配等任务。该模型采用 Vision Transformer（ViT）结构，以 32x32 像素的图像块作为输入，具备较强的泛化能力。适用于内容理解、智能搜索和自动化标注等场景，无需针对特定任务进行微调即可直接应用。"
+      "summary": "DistilBERT-base-uncased 是一个轻量化的 BERT 变体，通过知识蒸馏技术将 BERT 模型压缩至约 40% 的规模，同时保留了 97% 的语言理解能力。该模型适用于掩码语言建模任务，支持多种框架（PyTorch、TensorFlow、JAX、Rust），并针对英文文本优化。其核心优势在于显著降低计算和存储需求，适合资源受限环境或需要快速推理的应用场景，如文本分类、实体识别和信息检索。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_zh": "DistilBERT-base-uncased 是一个轻量化的 BERT 变体，通过知识蒸馏技术将 BERT 模型压缩至约 40% 的规模，同时保留了 97% 的语言理解能力。该模型适用于掩码语言建模任务，支持多种框架（PyTorch、TensorFlow、JAX、Rust），并针对英文文本优化。其核心优势在于显著降低计算和存储需求，适合资源受限环境或需要快速推理的应用场景，如文本分类、实体识别和信息检索。"
+    },
+    {
+      "id": "FacebookAI/roberta-large",
+      "source": "hf",
+      "name": "roberta-large",
+      "url": "https://huggingface.co/FacebookAI/roberta-large",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "onnx",
+        "safetensors",
+        "roberta",
+        "fill-mask",
+        "exbert",
+        "en",
+        "dataset:bookcorpus",
+        "dataset:wikipedia",
+        "arxiv:1907.11692",
+        "arxiv:1806.02847",
+        "license:mit",
+        "autotrain_compatible",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 12085823,
+        "hf_likes": 245
+      },
+      "score": 24294.146,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "RoBERTa-large是基于Transformer架构的大规模预训练语言模型，由Facebook AI开发。它在BERT的基础上通过优化训练策略（如移除下一句预测任务）提升了性能，适用于多种自然语言处理任务。该模型支持掩码语言建模，可用于文本分类、命名实体识别和语义理解等场景。支持PyTorch、TensorFlow、JAX等多种框架，适合研究人员和开发者进行高效实验与应用部署。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_zh": "RoBERTa-large是基于Transformer架构的大规模预训练语言模型，由Facebook AI开发。它在BERT的基础上通过优化训练策略（如移除下一句预测任务）提升了性能，适用于多种自然语言处理任务。该模型支持掩码语言建模，可用于文本分类、命名实体识别和语义理解等场景。支持PyTorch、TensorFlow、JAX等多种框架，适合研究人员和开发者进行高效实验与应用部署。"
+    },
+    {
+      "id": "google/electra-base-discriminator",
+      "source": "hf",
+      "name": "electra-base-discriminator",
+      "url": "https://huggingface.co/google/electra-base-discriminator",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "rust",
+        "electra",
+        "pretraining",
+        "en",
+        "arxiv:1406.2661",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 11547887,
+        "hf_likes": 64
+      },
+      "score": 23127.774,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "ELECTRA-base-discriminator是由Google开发的预训练语言模型，采用判别式预训练方法，通过区分真实输入与生成输入来提升语言理解能力。该模型基于ELECTRA架构，适用于多种自然语言处理任务，如文本分类、命名实体识别和情感分析。支持多种框架（PyTorch、TensorFlow、JAX、Rust），具备较强的跨平台兼容性。适用于需要高效文本理解与生成的场景，如搜索引擎、对话系统和内容分析工具。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_zh": "ELECTRA-base-discriminator是由Google开发的预训练语言模型，采用判别式预训练方法，通过区分真实输入与生成输入来提升语言理解能力。该模型基于ELECTRA架构，适用于多种自然语言处理任务，如文本分类、命名实体识别和情感分析。支持多种框架（PyTorch、TensorFlow、JAX、Rust），具备较强的跨平台兼容性。适用于需要高效文本理解与生成的场景，如搜索引擎、对话系统和内容分析工具。"
+    },
+    {
+      "id": "prajjwal1/bert-tiny",
+      "source": "hf",
+      "name": "bert-tiny",
+      "url": "https://huggingface.co/prajjwal1/bert-tiny",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "BERT",
+        "MNLI",
+        "NLI",
+        "transformer",
+        "pre-training",
+        "en",
+        "arxiv:1908.08962",
+        "arxiv:2110.01518",
+        "license:mit",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 10176180,
+        "hf_likes": 127
+      },
+      "score": 20415.86,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "bert-tiny是一个轻量级BERT模型，专为资源受限环境设计。它基于BERT架构，但显著减少了参数规模，适用于移动设备和边缘计算场景。该模型支持自然语言推理（NLI）任务，并在MNLI数据集上进行了微调。其核心优势在于保持较高推理效率的同时，大幅降低计算和存储需求，适合部署在实时或低延迟应用中。",
+      "updated_at": "2025-09-17T17:53:14.778Z",
+      "summary_zh": "bert-tiny是一个轻量级BERT模型，专为资源受限环境设计。它基于BERT架构，但显著减少了参数规模，适用于移动设备和边缘计算场景。该模型支持自然语言推理（NLI）任务，并在MNLI数据集上进行了微调。其核心优势在于保持较高推理效率的同时，大幅降低计算和存储需求，适合部署在实时或低延迟应用中。"
+    },
+    {
+      "id": "trpakov/vit-face-expression",
+      "source": "hf",
+      "name": "vit-face-expression",
+      "url": "https://huggingface.co/trpakov/vit-face-expression",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "onnx",
+        "safetensors",
+        "vit",
+        "image-classification",
+        "doi:10.57967/hf/2289",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 8025363,
+        "hf_likes": 78
+      },
+      "score": 16089.726,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "vit-face-expression是基于Vision Transformer架构的面部表情分类模型，适用于图像分类任务。该模型能够识别输入人脸图像中的七种基本表情，包括愤怒、厌恶、恐惧、快乐、悲伤、惊讶和中性。其亮点在于结合了ViT的全局建模能力和高效推理性能，支持ONNX和Safetensors格式，便于部署。适用于情感分析、人机交互及心理学研究等场景，尤其适合需要高精度表情识别的应用。",
+      "updated_at": "2025-09-17T17:53:14.779Z",
+      "summary_zh": "vit-face-expression是基于Vision Transformer架构的面部表情分类模型，适用于图像分类任务。该模型能够识别输入人脸图像中的七种基本表情，包括愤怒、厌恶、恐惧、快乐、悲伤、惊讶和中性。其亮点在于结合了ViT的全局建模能力和高效推理性能，支持ONNX和Safetensors格式，便于部署。适用于情感分析、人机交互及心理学研究等场景，尤其适合需要高精度表情识别的应用。"
+    },
+    {
+      "id": "BAAI/bge-base-en-v1.5",
+      "source": "hf",
+      "name": "bge-base-en-v1.5",
+      "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "sentence-transformers",
+        "pytorch",
+        "onnx",
+        "safetensors",
+        "bert",
+        "feature-extraction",
+        "sentence-similarity",
+        "transformers",
+        "mteb",
+        "en",
+        "arxiv:2401.03462",
+        "arxiv:2312.15503",
+        "arxiv:2311.13534",
+        "arxiv:2310.07554",
+        "arxiv:2309.07597",
+        "license:mit",
+        "model-index",
+        "autotrain_compatible",
+        "text-embeddings-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "hf_downloads_7d": 7340919,
+        "hf_likes": 346
+      },
+      "score": 14854.838,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "bge-base-en-v1.5 是一个基于 BERT 架构的英文文本嵌入模型，由北京智源人工智能研究院（BAAI）开发。该模型专门用于生成高质量的句子级向量表示，适用于文本相似度计算、语义搜索和信息检索等任务。其亮点在于通过大规模对比学习优化，在多项基准测试（如 MTEB）中表现出色，尤其擅长处理英文短文本的语义理解。适用于需要高效且精准的语义匹配场景，如搜索引擎、推荐系统和问答系统。",
+      "updated_at": "2025-09-17T17:53:14.779Z",
+      "summary_zh": "bge-base-en-v1.5 是一个基于 BERT 架构的英文文本嵌入模型，由北京智源人工智能研究院（BAAI）开发。该模型专门用于生成高质量的句子级向量表示，适用于文本相似度计算、语义搜索和信息检索等任务。其亮点在于通过大规模对比学习优化，在多项基准测试（如 MTEB）中表现出色，尤其擅长处理英文短文本的语义理解。适用于需要高效且精准的语义匹配场景，如搜索引擎、推荐系统和问答系统。"
     }
   ]
 }
