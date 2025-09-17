@@ -1526,7 +1526,7 @@ def _build_stats(items: list) -> dict:
             new_bench += 1
     return {"by_task": by_task, "with_code": with_code, "new_benchmarks": new_bench}
 
-def _split_picks(items: list, top_n=5, next_n=8):
+def _split_picks(items: list, top_n=10, next_n=12):
     items_sorted = sorted(items, key=lambda x: (int(x.get("impact_score",0)), int(x.get("reproducibility_score",0))), reverse=True)
     must_idx = list(range(0, min(top_n, len(items_sorted))))
     nice_idx = list(range(len(must_idx), min(len(must_idx)+next_n, len(items_sorted))))
