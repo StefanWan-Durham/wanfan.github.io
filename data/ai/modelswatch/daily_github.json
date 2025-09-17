@@ -1,28 +1,140 @@
 {
-  "updated_at": "2025-09-17T17:33:47.244Z",
+  "updated_at": "2025-09-17T17:50:02.382Z",
   "items": [
     {
-      "id": "TheAlgorithms/Python",
+      "id": "sindresorhus/awesome",
       "source": "github",
-      "name": "Python",
-      "url": "https://github.com/TheAlgorithms/Python",
+      "name": "awesome",
+      "url": "https://github.com/sindresorhus/awesome",
+      "license": "CC0-1.0",
+      "lang": "N/A",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 400547,
+        "forks": 31598,
+        "issues": 63
+      },
+      "score": 406966.59182893514,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质资源列表。项目采用CC0开源协议，允许自由使用和分发。覆盖范围从编程语言、开发工具到设计资源和学术研究，内容经过社区筛选和维护。适合开发者、技术爱好者和学习者快速获取高质量的学习材料和工具推荐。目前已在GitHub上获得极高关注度，成为技术资源检索的重要入口。",
+      "updated_at": "2025-09-17T17:27:31Z",
+      "summary_zh": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质资源列表。项目采用CC0开源协议，允许自由使用和分发。覆盖范围从编程语言、开发工具到设计资源和学术研究，内容经过社区筛选和维护。适合开发者、技术爱好者和学习者快速获取高质量的学习材料和工具推荐。目前已在GitHub上获得极高关注度，成为技术资源检索的重要入口。"
+    },
+    {
+      "id": "public-apis/public-apis",
+      "source": "github",
+      "name": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
       "license": "MIT",
       "lang": "Python",
       "tags": [
-        "algorithm",
-        "algorithm-competitions",
-        "algorithms-implemented",
-        "algos",
-        "community-driven",
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source",
+        "public",
+        "public-api",
+        "public-apis",
+        "resources",
+        "software"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 365275,
+        "forks": 38350,
+        "issues": 585
+      },
+      "score": 373044.8994292438,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由社区维护的免费 API 集合项目，收录了涵盖多个领域的公共接口，包括新闻、天气、金融、娱乐等。所有 API 均经过筛选，确保可用性和开放性，适合开发者快速集成到各类应用中。项目结构清晰，分类明确，支持按功能或标签检索，极大地方便了开发过程中的接口查找与测试。无论是学习、原型开发还是生产环境，这都是一个极具价值的资源库。",
+      "updated_at": "2025-09-17T16:47:36Z",
+      "summary_zh": "这是一个由社区维护的免费 API 集合项目，收录了涵盖多个领域的公共接口，包括新闻、天气、金融、娱乐等。所有 API 均经过筛选，确保可用性和开放性，适合开发者快速集成到各类应用中。项目结构清晰，分类明确，支持按功能或标签检索，极大地方便了开发过程中的接口查找与测试。无论是学习、原型开发还是生产环境，这都是一个极具价值的资源库。"
+    },
+    {
+      "id": "freeCodeCamp/freeCodeCamp",
+      "source": "github",
+      "name": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "license": "BSD-3-Clause",
+      "lang": "TypeScript",
+      "tags": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "hacktoberfest",
+        "javascript",
+        "learn-to-code",
+        "math",
+        "nodejs",
+        "nonprofits",
+        "programming",
+        "react",
+        "teachers"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 427798,
+        "forks": 41570,
+        "issues": 322
+      },
+      "score": 436211.9652085648,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程。其课程内容涵盖数学、JavaScript、D3.js 等核心技术，适合零基础到进阶的学习者。平台采用项目驱动的学习方式，完成课程后可获得认证，帮助学习者积累实际开发经验。freeCodeCamp 强调社区协作，适合自学编程、准备技术面试或寻求职业转型的用户。",
+      "updated_at": "2025-09-17T17:16:01Z",
+      "summary_zh": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程。其课程内容涵盖数学、JavaScript、D3.js 等核心技术，适合零基础到进阶的学习者。平台采用项目驱动的学习方式，完成课程后可获得认证，帮助学习者积累实际开发经验。freeCodeCamp 强调社区协作，适合自学编程、准备技术面试或寻求职业转型的用户。"
+    },
+    {
+      "id": "EbookFoundation/free-programming-books",
+      "source": "github",
+      "name": "free-programming-books",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "license": "CC-BY-4.0",
+      "lang": "Python",
+      "tags": [
+        "books",
         "education",
         "hacktoberfest",
-        "interview",
-        "learn",
-        "practice",
-        "python",
-        "searches",
-        "sorting-algorithms",
-        "sorts"
+        "list",
+        "resource"
       ],
       "categories": {
         "capabilities": [],
@@ -30,140 +142,40 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 207408,
-        "forks": 47818,
-        "issues": 401
+        "stars": 368347,
+        "forks": 64167,
+        "issues": 25
       },
-      "score": 217071.57998479938,
+      "score": 381280.31289375003,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个用Python实现各类算法的开源项目，覆盖了从基础数据结构到复杂算法的广泛内容。项目由社区驱动，代码结构清晰，注释详细，适合用于学习、面试准备和算法竞赛训练。无论是初学者还是经验丰富的开发者，都可以通过阅读和运行代码来加深对算法原理和Python编程的理解。该项目支持Hacktoberfest活动，鼓励开发者参与贡献。",
-      "updated_at": "2025-09-17T17:22:24Z",
-      "summary_zh": "这是一个用Python实现各类算法的开源项目，覆盖了从基础数据结构到复杂算法的广泛内容。项目由社区驱动，代码结构清晰，注释详细，适合用于学习、面试准备和算法竞赛训练。无论是初学者还是经验丰富的开发者，都可以通过阅读和运行代码来加深对算法原理和Python编程的理解。该项目支持Hacktoberfest活动，鼓励开发者参与贡献。"
+      "summary": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、框架和计算机科学主题，所有内容均遵循开放许可协议。资源按语言和主题分类，便于开发者快速查找所需资料。该项目适合自学编程者、学生以及需要技术参考的工程师，是高质量且持续更新的学习宝库。",
+      "updated_at": "2025-09-17T16:53:25Z",
+      "summary_zh": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、框架和计算机科学主题，所有内容均遵循开放许可协议。资源按语言和主题分类，便于开发者快速查找所需资料。该项目适合自学编程者、学生以及需要技术参考的工程师，是高质量且持续更新的学习宝库。"
     },
     {
-      "id": "microsoft/vscode",
+      "id": "jwasham/coding-interview-university",
       "source": "github",
-      "name": "vscode",
-      "url": "https://github.com/microsoft/vscode",
-      "license": "MIT",
-      "lang": "TypeScript",
-      "tags": [
-        "editor",
-        "electron",
-        "microsoft",
-        "typescript",
-        "visual-studio-code"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 176787,
-        "forks": 35067,
-        "issues": 13497
-      },
-      "score": 183900.3482718364,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Visual Studio Code（VS Code）是一款由微软开发的免费开源代码编辑器，基于 Electron 框架构建，支持跨平台使用。它内置了对多种编程语言的支持，通过丰富的扩展生态系统，用户可以高度自定义编辑环境。VS Code 集成了调试、Git 版本控制、智能代码补全等功能，适用于前端、后端及全栈开发。其轻量级设计和强大的性能使其成为开发者日常编码和项目管理的首选工具。",
-      "updated_at": "2025-09-17T17:08:42Z",
-      "summary_zh": "Visual Studio Code（VS Code）是一款由微软开发的免费开源代码编辑器，基于 Electron 框架构建，支持跨平台使用。它内置了对多种编程语言的支持，通过丰富的扩展生态系统，用户可以高度自定义编辑环境。VS Code 集成了调试、Git 版本控制、智能代码补全等功能，适用于前端、后端及全栈开发。其轻量级设计和强大的性能使其成为开发者日常编码和项目管理的首选工具。"
-    },
-    {
-      "id": "vuejs/vue",
-      "source": "github",
-      "name": "vue",
-      "url": "https://github.com/vuejs/vue",
-      "license": "MIT",
-      "lang": "TypeScript",
-      "tags": [
-        "framework",
-        "frontend",
-        "javascript",
-        "vue"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 209425,
-        "forks": 33767,
-        "issues": 608
-      },
-      "score": 216278.29896628085,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Vue 是一个渐进式 JavaScript 框架，专注于构建用户界面。它采用组件化开发模式，提供响应式数据绑定和虚拟 DOM 渲染机制，使开发者能够高效构建交互式 Web 应用。Vue 的核心设计注重灵活性和易用性，既适用于轻量级项目，也能支撑复杂单页应用（SPA）。其生态系统包含 Vuex 状态管理和 Vue Router 路由等官方库，适合前端开发及全栈项目。",
-      "updated_at": "2025-09-17T16:47:24Z",
-      "summary_zh": "Vue 是一个渐进式 JavaScript 框架，专注于构建用户界面。它采用组件化开发模式，提供响应式数据绑定和虚拟 DOM 渲染机制，使开发者能够高效构建交互式 Web 应用。Vue 的核心设计注重灵活性和易用性，既适用于轻量级项目，也能支撑复杂单页应用（SPA）。其生态系统包含 Vuex 状态管理和 Vue Router 路由等官方库，适合前端开发及全栈项目。"
-    },
-    {
-      "id": "tensorflow/tensorflow",
-      "source": "github",
-      "name": "tensorflow",
-      "url": "https://github.com/tensorflow/tensorflow",
-      "license": "Apache-2.0",
-      "lang": "C++",
-      "tags": [
-        "deep-learning",
-        "deep-neural-networks",
-        "distributed",
-        "machine-learning",
-        "ml",
-        "neural-network",
-        "python",
-        "tensorflow"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 191672,
-        "forks": 74840,
-        "issues": 1625
-      },
-      "score": 206739.9990048611,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "TensorFlow 是一个开源的机器学习框架，由 Google 开发并维护，旨在为开发者和研究人员提供灵活且高效的深度学习工具。它支持多种编程语言，其中 Python 是最主要的接口，同时提供分布式计算能力，适用于大规模数据处理和模型训练。该框架内置丰富的预构建模型和工具库，能够简化神经网络的设计与部署流程。TensorFlow 广泛应用于学术研究、工业项目及产品开发，适用于图像识别、自然语言处理、推荐系统等多种机器学习任务。",
-      "updated_at": "2025-09-17T17:30:37Z",
-      "summary_zh": "TensorFlow 是一个开源的机器学习框架，由 Google 开发并维护，旨在为开发者和研究人员提供灵活且高效的深度学习工具。它支持多种编程语言，其中 Python 是最主要的接口，同时提供分布式计算能力，适用于大规模数据处理和模型训练。该框架内置丰富的预构建模型和工具库，能够简化神经网络的设计与部署流程。TensorFlow 广泛应用于学术研究、工业项目及产品开发，适用于图像识别、自然语言处理、推荐系统等多种机器学习任务。"
-    },
-    {
-      "id": "trekhleb/javascript-algorithms",
-      "source": "github",
-      "name": "javascript-algorithms",
-      "url": "https://github.com/trekhleb/javascript-algorithms",
-      "license": "MIT",
-      "lang": "JavaScript",
+      "name": "coding-interview-university",
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "license": "CC-BY-SA-4.0",
+      "lang": "N/A",
       "tags": [
         "algorithm",
         "algorithms",
+        "coding-interview",
+        "coding-interviews",
         "computer-science",
         "data-structures",
         "interview",
+        "interview-prep",
         "interview-preparation",
-        "javascript",
-        "javascript-algorithms"
+        "programming-interviews",
+        "software-engineering",
+        "study-plan"
       ],
       "categories": {
         "capabilities": [],
@@ -171,32 +183,34 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 193293,
-        "forks": 30878,
-        "issues": 372
+        "stars": 328124,
+        "forks": 80454,
+        "issues": 82
       },
-      "score": 199568.584923071,
+      "score": 344314.79483819444,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个基于JavaScript实现的算法与数据结构开源库。项目覆盖了从基础到高级的各类经典算法和数据结构，每种实现均配有详细解释和进一步学习的参考资料链接。代码遵循MIT协议，适合开发者学习算法原理、准备技术面试或在实际项目中参考使用。该项目在GitHub上拥有极高的关注度，是JavaScript开发者深入理解计算机科学基础的实用资源。",
-      "updated_at": "2025-09-17T17:24:32Z",
-      "summary_zh": "这是一个基于JavaScript实现的算法与数据结构开源库。项目覆盖了从基础到高级的各类经典算法和数据结构，每种实现均配有详细解释和进一步学习的参考资料链接。代码遵循MIT协议，适合开发者学习算法原理、准备技术面试或在实际项目中参考使用。该项目在GitHub上拥有极高的关注度，是JavaScript开发者深入理解计算机科学基础的实用资源。"
+      "summary": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心主题的详细学习路线和资源清单。内容涵盖编程面试常见题型与解题技巧，并包含大量练习题和实战建议。适合准备技术面试的开发者或希望系统巩固计算机科学基础的学习者。该项目在GitHub上获得超过32万星标，被广泛认可为面试准备的权威资源。",
+      "updated_at": "2025-09-17T17:28:49Z",
+      "summary_zh": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心主题的详细学习路线和资源清单。内容涵盖编程面试常见题型与解题技巧，并包含大量练习题和实战建议。适合准备技术面试的开发者或希望系统巩固计算机科学基础的学习者。该项目在GitHub上获得超过32万星标，被广泛认可为面试准备的权威资源。"
     },
     {
-      "id": "ossu/computer-science",
+      "id": "facebook/react",
       "source": "github",
-      "name": "computer-science",
-      "url": "https://github.com/ossu/computer-science",
+      "name": "react",
+      "url": "https://github.com/facebook/react",
       "license": "MIT",
-      "lang": "HTML",
+      "lang": "JavaScript",
       "tags": [
-        "awesome-list",
-        "computer-science",
-        "courses",
-        "curriculum"
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
       ],
       "categories": {
         "capabilities": [],
@@ -204,19 +218,19 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 193047,
-        "forks": 24105,
-        "issues": 16
+        "stars": 238957,
+        "forks": 49347,
+        "issues": 1036
       },
-      "score": 197967.98793233026,
+      "score": 248926.3458798611,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个基于MIT协议的开源计算机科学自学课程路径项目。项目提供了一套完整的计算机科学课程体系，涵盖从基础到进阶的各类主题，适合希望系统学习计算机科学的自学者。课程内容精选自全球顶尖高校的开放课程资源，并按照合理的学习顺序组织。该项目特别适合编程初学者、转行人士或希望补充计算机科学理论基础的在职开发者。所有课程资源均可免费获取，学习者可以按照自己的节奏完成学习计划。",
-      "updated_at": "2025-09-17T17:25:50Z",
-      "summary_zh": "这是一个基于MIT协议的开源计算机科学自学课程路径项目。项目提供了一套完整的计算机科学课程体系，涵盖从基础到进阶的各类主题，适合希望系统学习计算机科学的自学者。课程内容精选自全球顶尖高校的开放课程资源，并按照合理的学习顺序组织。该项目特别适合编程初学者、转行人士或希望补充计算机科学理论基础的在职开发者。所有课程资源均可免费获取，学习者可以按照自己的节奏完成学习计划。"
+      "summary": "React 是由 Facebook 开发并开源的 JavaScript 库，专注于构建用户界面。它采用声明式编程范式，使开发者能够以组件化的方式高效构建复杂的 Web 和原生应用界面。其核心亮点包括虚拟 DOM 机制，提升了渲染性能，以及单向数据流设计，增强了代码的可维护性和可预测性。React 适用于开发动态、高交互性的前端应用，是构建现代单页应用（SPA）和跨平台移动应用的主流选择之一。",
+      "updated_at": "2025-09-17T17:07:40Z",
+      "summary_zh": "React 是由 Facebook 开发并开源的 JavaScript 库，专注于构建用户界面。它采用声明式编程范式，使开发者能够以组件化的方式高效构建复杂的 Web 和原生应用界面。其核心亮点包括虚拟 DOM 机制，提升了渲染性能，以及单向数据流设计，增强了代码的可维护性和可预测性。React 适用于开发动态、高交互性的前端应用，是构建现代单页应用（SPA）和跨平台移动应用的主流选择之一。"
     }
   ]
 }

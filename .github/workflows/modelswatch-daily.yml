@@ -23,6 +23,11 @@ jobs:
           DEEPSEEK_MODEL: ${{ secrets.DEEPSEEK_MODEL }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          MODELSWATCH_DAILY_GH_N: ${{ vars.MODELSWATCH_DAILY_GH_N }}
+          MODELSWATCH_DAILY_HF_N: ${{ vars.MODELSWATCH_DAILY_HF_N }}
+          MODELSWATCH_DAILY_COOLDOWN_DAYS: ${{ vars.MODELSWATCH_DAILY_COOLDOWN_DAYS }}
+          MODELSWATCH_DAILY_HISTORY_WINDOW: ${{ vars.MODELSWATCH_DAILY_HISTORY_WINDOW }}
+          MODELSWATCH_DAILY_ALPHA: ${{ vars.MODELSWATCH_DAILY_ALPHA }}
         run: |
           node -v
           node tools/modelswatch/daily.mjs

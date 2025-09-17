@@ -1,6 +1,238 @@
 {
+  "date": "2025-09-18",
   "updated_at": "2025-09-17T17:50:02.382Z",
   "items": [
+    {
+      "id": "sindresorhus/awesome",
+      "source": "github",
+      "name": "awesome",
+      "url": "https://github.com/sindresorhus/awesome",
+      "license": "CC0-1.0",
+      "lang": "N/A",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 400547,
+        "forks": 31598,
+        "issues": 63
+      },
+      "score": 406966.59182893514,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质资源列表。项目采用CC0开源协议，允许自由使用和分发。覆盖范围从编程语言、开发工具到设计资源和学术研究，内容经过社区筛选和维护。适合开发者、技术爱好者和学习者快速获取高质量的学习材料和工具推荐。目前已在GitHub上获得极高关注度，成为技术资源检索的重要入口。",
+      "updated_at": "2025-09-17T17:27:31Z",
+      "summary_zh": "这是一个由社区驱动的精选资源集合项目，收录了各类技术领域的优质资源列表。项目采用CC0开源协议，允许自由使用和分发。覆盖范围从编程语言、开发工具到设计资源和学术研究，内容经过社区筛选和维护。适合开发者、技术爱好者和学习者快速获取高质量的学习材料和工具推荐。目前已在GitHub上获得极高关注度，成为技术资源检索的重要入口。"
+    },
+    {
+      "id": "public-apis/public-apis",
+      "source": "github",
+      "name": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source",
+        "public",
+        "public-api",
+        "public-apis",
+        "resources",
+        "software"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 365275,
+        "forks": 38350,
+        "issues": 585
+      },
+      "score": 373044.8994292438,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由社区维护的免费 API 集合项目，收录了涵盖多个领域的公共接口，包括新闻、天气、金融、娱乐等。所有 API 均经过筛选，确保可用性和开放性，适合开发者快速集成到各类应用中。项目结构清晰，分类明确，支持按功能或标签检索，极大地方便了开发过程中的接口查找与测试。无论是学习、原型开发还是生产环境，这都是一个极具价值的资源库。",
+      "updated_at": "2025-09-17T16:47:36Z",
+      "summary_zh": "这是一个由社区维护的免费 API 集合项目，收录了涵盖多个领域的公共接口，包括新闻、天气、金融、娱乐等。所有 API 均经过筛选，确保可用性和开放性，适合开发者快速集成到各类应用中。项目结构清晰，分类明确，支持按功能或标签检索，极大地方便了开发过程中的接口查找与测试。无论是学习、原型开发还是生产环境，这都是一个极具价值的资源库。"
+    },
+    {
+      "id": "freeCodeCamp/freeCodeCamp",
+      "source": "github",
+      "name": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "license": "BSD-3-Clause",
+      "lang": "TypeScript",
+      "tags": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "hacktoberfest",
+        "javascript",
+        "learn-to-code",
+        "math",
+        "nodejs",
+        "nonprofits",
+        "programming",
+        "react",
+        "teachers"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 427798,
+        "forks": 41570,
+        "issues": 322
+      },
+      "score": 436211.9652085648,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程。其课程内容涵盖数学、JavaScript、D3.js 等核心技术，适合零基础到进阶的学习者。平台采用项目驱动的学习方式，完成课程后可获得认证，帮助学习者积累实际开发经验。freeCodeCamp 强调社区协作，适合自学编程、准备技术面试或寻求职业转型的用户。",
+      "updated_at": "2025-09-17T17:16:01Z",
+      "summary_zh": "freeCodeCamp 是一个开源的编程学习平台，提供完整的计算机科学和编程课程。其课程内容涵盖数学、JavaScript、D3.js 等核心技术，适合零基础到进阶的学习者。平台采用项目驱动的学习方式，完成课程后可获得认证，帮助学习者积累实际开发经验。freeCodeCamp 强调社区协作，适合自学编程、准备技术面试或寻求职业转型的用户。"
+    },
+    {
+      "id": "EbookFoundation/free-programming-books",
+      "source": "github",
+      "name": "free-programming-books",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "license": "CC-BY-4.0",
+      "lang": "Python",
+      "tags": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 368347,
+        "forks": 64167,
+        "issues": 25
+      },
+      "score": 381280.31289375003,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、框架和计算机科学主题，所有内容均遵循开放许可协议。资源按语言和主题分类，便于开发者快速查找所需资料。该项目适合自学编程者、学生以及需要技术参考的工程师，是高质量且持续更新的学习宝库。",
+      "updated_at": "2025-09-17T16:53:25Z",
+      "summary_zh": "这是一个由EbookFoundation维护的开源项目，收集了大量免费编程书籍资源。项目涵盖多种编程语言、框架和计算机科学主题，所有内容均遵循开放许可协议。资源按语言和主题分类，便于开发者快速查找所需资料。该项目适合自学编程者、学生以及需要技术参考的工程师，是高质量且持续更新的学习宝库。"
+    },
+    {
+      "id": "jwasham/coding-interview-university",
+      "source": "github",
+      "name": "coding-interview-university",
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "license": "CC-BY-SA-4.0",
+      "lang": "N/A",
+      "tags": [
+        "algorithm",
+        "algorithms",
+        "coding-interview",
+        "coding-interviews",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-prep",
+        "interview-preparation",
+        "programming-interviews",
+        "software-engineering",
+        "study-plan"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 328124,
+        "forks": 80454,
+        "issues": 82
+      },
+      "score": 344314.79483819444,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心主题的详细学习路线和资源清单。内容涵盖编程面试常见题型与解题技巧，并包含大量练习题和实战建议。适合准备技术面试的开发者或希望系统巩固计算机科学基础的学习者。该项目在GitHub上获得超过32万星标，被广泛认可为面试准备的权威资源。",
+      "updated_at": "2025-09-17T17:28:49Z",
+      "summary_zh": "这是一个面向软件工程师求职面试的完整计算机科学学习计划。项目提供了从数据结构、算法到系统设计等核心主题的详细学习路线和资源清单。内容涵盖编程面试常见题型与解题技巧，并包含大量练习题和实战建议。适合准备技术面试的开发者或希望系统巩固计算机科学基础的学习者。该项目在GitHub上获得超过32万星标，被广泛认可为面试准备的权威资源。"
+    },
+    {
+      "id": "facebook/react",
+      "source": "github",
+      "name": "react",
+      "url": "https://github.com/facebook/react",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 238957,
+        "forks": 49347,
+        "issues": 1036
+      },
+      "score": 248926.3458798611,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "React 是由 Facebook 开发并开源的 JavaScript 库，专注于构建用户界面。它采用声明式编程范式，使开发者能够以组件化的方式高效构建复杂的 Web 和原生应用界面。其核心亮点包括虚拟 DOM 机制，提升了渲染性能，以及单向数据流设计，增强了代码的可维护性和可预测性。React 适用于开发动态、高交互性的前端应用，是构建现代单页应用（SPA）和跨平台移动应用的主流选择之一。",
+      "updated_at": "2025-09-17T17:07:40Z",
+      "summary_zh": "React 是由 Facebook 开发并开源的 JavaScript 库，专注于构建用户界面。它采用声明式编程范式，使开发者能够以组件化的方式高效构建复杂的 Web 和原生应用界面。其核心亮点包括虚拟 DOM 机制，提升了渲染性能，以及单向数据流设计，增强了代码的可维护性和可预测性。React 适用于开发动态、高交互性的前端应用，是构建现代单页应用（SPA）和跨平台移动应用的主流选择之一。"
+    },
     {
       "id": "context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16",
       "source": "hf",

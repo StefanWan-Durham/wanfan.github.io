@@ -291,8 +291,10 @@ function selectDiverse(allItems, N, opts){
 }
 
 async function main(){
-  const now = new Date().toISOString();
-  const yyyyMmDd = now.slice(0,10);
+  const nowDate = new Date();
+  const now = nowDate.toISOString();
+  // Use Beijing date (Asia/Shanghai, UTC+8) for archive/day keys
+  const yyyyMmDd = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year:'numeric', month:'2-digit', day:'2-digit' }).format(nowDate);
   let cg = readJSON(path.join(dir,'corpus.github.json')).items||[];
   let ch = readJSON(path.join(dir,'corpus.hf.json')).items||[];
   // Robustness: if corpus is missing/too small, fetch fresh tops directly
