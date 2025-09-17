@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-16T23:14:36.190976Z",
+  "generated_at": "2025-09-17T23:14:58.886275Z",
   "window_hours": 48,
-  "count": 52,
+  "count": 53,
   "items": [
     {
       "id": "409839f36ec0f73a",
@@ -1254,6 +1254,30 @@
         "es": "Descubre cómo OpenAI está desarrollando la predicción de edad y controles parentales en ChatGPT para crear experiencias más seguras y apropiadas para la edad de los adolescentes, al tiempo que brinda apoyo a las familias con nuevas herramientas."
       },
       "hotness": 1.247323
+    },
+    {
+      "id": "1e4682242c70c26a",
+      "source": {
+        "site": "https://arstechnica.com",
+        "feed": "https://arstechnica.com/information-technology/feed/"
+      },
+      "url": "https://arstechnica.com/ai/2025/09/millions-turn-to-ai-chatbots-for-spiritual-guidance-and-confession/",
+      "title": "Millions turn to AI chatbots for spiritual guidance and confession",
+      "raw_excerpt": "Bible Chat hits 30 million downloads as users seek algorithmic absolution.",
+      "tags": [],
+      "published_at": "2025-09-16T11:15:32Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "en": "Millions turn to AI chatbots for spiritual guidance and confession",
+        "zh": "数百万人向AI聊天机器人寻求精神指导和忏悔。",
+        "es": "Millones de personas recurren a chatbots de inteligencia artificial para recibir orientación espiritual y confesarse."
+      },
+      "excerpt_i18n": {
+        "en": "Bible Chat hits 30 million downloads as users seek algorithmic absolution.",
+        "zh": "圣经聊天应用下载量突破3000万，用户寻求算法救赎。",
+        "es": "Bible Chat alcanza los 30 millones de descargas mientras los usuarios buscan la absolución algorítmica."
+      },
+      "hotness": 0.594683
     }
   ]
 }

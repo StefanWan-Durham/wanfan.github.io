@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-16T23:14:36.190976Z",
+  "generated_at": "2025-09-17T23:14:58.886275Z",
   "window_hours": 48,
-  "count": 32,
+  "count": 50,
   "items": [
     {
       "id": "4756a268827eab94",
@@ -749,6 +749,443 @@
         "es": "En esta publicación, exploramos cómo el Centro de Innovación de IA Generativa de AWS y Quora colaboraron para construir un marco de API unificado que acelera drásticamente el despliegue de los modelos fundacionales de Amazon Bedrock en el sistema Poe de Quora."
       },
       "hotness": 0.909439
+    },
+    {
+      "id": "6790e2bb556c4cee",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/17/1123801/ai-virus-bacteriophage-life/",
+      "title": "AI-designed viruses are here and already killing bacteria",
+      "raw_excerpt": "Artificial intelligence can draw cat pictures and write emails. Now the same technology can compose a working genome. A research team in California says it used AI to propose new genetic codes for viruses—and managed to get several of these viruses to replicate and kill bacteria. The scientists, based at Stanford University and the nonprofit&#8230;",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-17T15:14:29Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "en": "AI-designed viruses are here and already killing bacteria",
+        "zh": "人工智能设计的病毒已问世，并正在杀死细菌。",
+        "es": "Los virus diseñados por inteligencia artificial ya están aquí y ya están matando bacterias."
+      },
+      "excerpt_i18n": {
+        "en": "Artificial intelligence can draw cat pictures and write emails. Now the same technology can compose a working genome. A research team in California says it used AI to propose new genetic codes for viruses—and managed to get several of these viruses to replicate and kill bacteria. The scientists, based at Stanford University and the nonprofit&#8230;",
+        "zh": "人工智能能画猫图和写邮件。如今这项技术还能编写可运作的基因组。加利福尼亚的研究团队称，他们利用人工智能为病毒提出了新的遗传密码，并成功实现了——",
+        "es": "La inteligencia artificial puede dibujar imágenes de gatos y escribir correos electrónicos. Ahora la misma tecnología puede componer un genoma funcional. Un equipo de investigación en California afirma haber utilizado la inteligencia artificial para proponer nuevos códigos genéticos para virus, y logró"
+      },
+      "hotness": 1.06895
+    },
+    {
+      "id": "c17ec6d20ad0bbb5",
+      "source": {
+        "site": "https://www.wired.com",
+        "feed": "https://www.wired.com/feed/category/business/latest/rss"
+      },
+      "url": "https://www.wired.com/story/jensen-huang-has-gone-nano-bananas/",
+      "title": "Nvidia CEO Jensen Huang Is Bananas for Google Gemini’s AI Image Generator",
+      "raw_excerpt": "The Nvidia CEO reveals his consuming love for Google’s image generator, the artsy side of Grok, and what exactly he uses Perplexity, Gemini, and ChatGPT for right now.",
+      "tags": [],
+      "published_at": "2025-09-17T13:53:12Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "en": "Nvidia CEO Jensen Huang Is Bananas for Google Gemini’s AI Image Generator",
+        "zh": "英伟达CEO黄仁勋对谷歌Gemini的AI图像生成器赞不绝口。",
+        "es": "El director ejecutivo de Nvidia, Jensen Huang, está loco por el generador de imágenes con IA de Google Gemini."
+      },
+      "excerpt_i18n": {
+        "en": "The Nvidia CEO reveals his consuming love for Google’s image generator, the artsy side of Grok, and what exactly he uses Perplexity, Gemini, and ChatGPT for right now.",
+        "zh": "英伟达CEO透露了他对谷歌图像生成器的痴迷、Grok的艺术特质，以及他目前使用Perplexity、Gemini和ChatGPT的具体用途。",
+        "es": "El CEO de Nvidia revela su devoradora pasión por el generador de imágenes de Google, la faceta artística de Grok y para qué utiliza exactamente Perplexity, Gemini y ChatGPT en estos momentos."
+      },
+      "hotness": 0.873535
+    },
+    {
+      "id": "2dec75aa59b1a41c",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/17/1123795/the-download-measuring-returns-on-rd-and-ais-creative-potential/",
+      "title": "The Download: measuring returns on R&D, and AI’s creative potential",
+      "raw_excerpt": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. How to measure the returns on R&#38;D spending Given the draconian cuts to US federal funding for science, it’s worth asking some hard-nosed money questions: How much should we be spending on R&#38;D?&#8230;",
+      "tags": [
+        "Funding"
+      ],
+      "published_at": "2025-09-17T12:10:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "en": "The Download: measuring returns on R&D, and AI’s creative potential",
+        "zh": "下载：衡量研发回报与人工智能的创意潜力",
+        "es": "La Descarga: medir el retorno de la I+D, y el potencial creativo de la IA"
+      },
+      "excerpt_i18n": {
+        "en": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. How to measure the returns on R&#38;D spending Given the draconian cuts to US federal funding for science, it’s worth asking some hard-nosed money questions: How much should we be spending on R&#38;D?&#8230;",
+        "zh": "这是今日版《下载》，我们的工作日通讯，每日为您带来科技界动态。如何衡量研发支出的回报 鉴于严苛削减",
+        "es": "Esta es la edición de hoy de The Download, nuestro boletín diario que ofrece una dosis cotidiana de lo que ocurre en el mundo de la tecnología. Cómo medir el retorno de la inversión en I+D Dados los drásticos recortes"
+      },
+      "hotness": 1.022526
+    },
+    {
+      "id": "da6c08fb160d446f",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/CIbzkseeah3fqygPcb0q",
+      "title": "Hugging Face 发布 FinePDFs：基于 PDF 文档构建的 3 万亿 Token 数据集",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-17T11:30:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "Hugging Face 发布 FinePDFs：基于 PDF 文档构建的 3 万亿 Token 数据集",
+        "en": "Hugging Face releases FinePDFs: a 3 trillion token dataset built from PDF documents.",
+        "es": "Hugging Face lanza FinePDFs: un conjunto de datos de 3 billones de tokens basado en documentos PDF."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el texto original>"
+      },
+      "hotness": 0.843941
+    },
+    {
+      "id": "b0bc4728967afd1a",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/video/jc3Ax5ANGiG3AfpiJd8I",
+      "title": "【AI技术周-第六期】AI DevOps工具如何破解企业研发效能瓶颈？",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-17T10:51:21Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "【AI技术周-第六期】AI DevOps工具如何破解企业研发效能瓶颈？",
+        "en": "AI Technology Week - Issue 6: How Can AI DevOps Tools Break Through Enterprise R&D Efficiency Bottlenecks?",
+        "es": "Semana de la Tecnología de IA - Sexta Edición: ¿Cómo pueden las herramientas de IA DevOps resolver los cuellos de botella en la eficiencia del desarrollo empresarial?"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el texto original>"
+      },
+      "hotness": 0.836127
+    },
+    {
+      "id": "a823438a9e3f1e91",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/video/gGkadJ9O0fZd97DA9Bkm",
+      "title": "2025腾讯全球数字生态大会开启！与行业大咖「智者见智」共话 AI 增益新机",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-17T10:26:49Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "2025腾讯全球数字生态大会开启！与行业大咖「智者见智」共话 AI 增益新机",
+        "en": "The 2025 Tencent Global Digital Ecosystem Conference begins! Join industry leaders to \"see wisdom with the wise\" and explore new opportunities enhanced by AI.",
+        "es": "La Cumbre Mundial de Ecosistema Digital de Tencent 2025 comienza. Intercambia perspectivas sobre nuevas oportunidades impulsadas por la IA junto a destacados expertos de la industria."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el texto original>"
+      },
+      "hotness": 0.831205
+    },
+    {
+      "id": "f2add6404983e66b",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/uERz9aJsfTTTua9tseVO",
+      "title": "从 Copilot 到 Autopilot：Multi-Agent 系统的思考与实践｜QCon 上海",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-17T10:00:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "从 Copilot 到 Autopilot：Multi-Agent 系统的思考与实践｜QCon 上海",
+        "en": "From Copilot to Autopilot: Reflections and Practices on Multi-Agent Systems | QCon Shanghai",
+        "es": "De Copilot a Autopilot: Reflexión y práctica de sistemas multiagente | QCon Shanghái"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el original>"
+      },
+      "hotness": 0.825858
+    },
+    {
+      "id": "34e98941447483a4",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/mLGSDaD4BZszGk2M.html",
+      "title": "腾讯云智算三大核心升级 推动AI Infra从“支撑”向“引擎”跨越",
+      "raw_excerpt": "9月17日，腾讯全球数字生态大会Agent + Infra专场聚焦“智能体驱动云基础设施跃进升级”这一主题，汇聚众多行业领军者，共同探索AI时代基础设施的技术突破与产业实践。腾讯云智算各产品负责人及行业客户深入解读AI原生云架构、主动服务型基础设施、全链路安全体系等核心议题，同时发布多项重磅成果，为智能体规模化落地筑牢技术底座。 在论坛中，腾讯云副总裁李力正式宣布，腾讯云智算面向“更贴近Agent的AI Infra”重磅升级。腾讯云建立包括Agent Infra解决方案+Cloud Mate云专家服务智能体与全链路安全能力为一体的完整解决方案，帮助 Agentic AI 从“实验室”走向“生产级”。 李力表示，未来两年，部署Agent的企业将翻倍，GenAI相关的IaaS支出增速将达到192%。随着Agent数量爆发式增长，企业对云计算基础设施的需求，将会快速从“资源供给”升级为“业务价值”，AI Infra基础设施必须具备更快的推理效率、更灵活的工具集成、更可靠的系统保障和更自动化的服务能力。腾讯云智算体系核心优势在于“同源同构”，无需打造AI专属存储等设施，依托过往打磨的云原生能力，即可承接智算需求，实现云与智算能力的深度协同。目前，腾讯云智算已实现“一云多芯”软硬协同，支持公有云、专有云、边缘环境的同源同构部署，为交通、制造、具身智能等行业提供从模型训练到推理落地的全链路支撑。 图：腾讯云智算能力升级，成为更贴近Agent的AI原生云 在AI Infra底座层面，腾讯云智算基于在云计算、分布式存储、高性能网络等基础设施方面的深厚积累和场景优化，大幅提升云上资源的性能和利用率，最终实现降本增效。模型启动提速17倍，大规模服务扩容时间从10分钟缩短至34秒；多模态推理加速4倍，自研推理引擎覆盖生文、生图、生视频等模型；通过内存优化与通讯协议升级等创新，显著降低计算开销，推",
+      "tags": [],
+      "published_at": "2025-09-17T09:10:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "腾讯云智算三大核心升级 推动AI Infra从“支撑”向“引擎”跨越",
+        "en": "Tencent Cloud's Three Core Upgrades in Intelligent Computing Propel AI Infrastructure from \"Support\" to \"Engine\".",
+        "es": "Las tres principales actualizaciones de la computación inteligente de Tencent Cloud impulsan la transición de la infraestructura de IA de \"soporte\" a \"motor\"."
+      },
+      "excerpt_i18n": {
+        "zh": "9月17日，腾讯全球数字生态大会Agent + Infra专场聚焦“智能体驱动云基础设施跃进升级”这一主题，汇聚众多行业领军者，共同探索AI时代基础设施的技术突破与产业实践。腾讯云智算各产品负责人及行业客户深入解读AI原生云架构、主动服务型基础设施、全链路安全体系等核心议题，同时发布多项重磅成果，为智能体规模化落地筑牢技术底座。 在论坛中，腾讯云副总裁李力正式宣布，腾讯云智算面向“更贴近Agent的AI Infra”重磅升级。腾讯云建立包括Agent Infra解决方案+Cloud Mate云专家服务智能体与全链路安全能力为一体的完整解决方案，帮助 Agentic AI 从“实验室”走向“生产级”。 李力表示，未来两年，部署Agent的企业将翻倍，GenAI相关的IaaS支出增速将达到192%。随着Agent数量爆发式增长，企业对云计算基础设施的需求，将会快速从“资源供给”升级为“业务价值”，AI Infra基础设施必须具备更快的推理效率、更灵活的工具集成、更可靠的系统保障和更自动化的服务能力。腾讯云智算体系核心优势在于“同源同构”，无需打造AI专属存储等设施，依托过往打磨的云原生能力，即可承接智算需求，实现云与智算能力的深度协同。目前，腾讯云智算已实现“一云多芯”软硬协同，支持公有云、专有云、边缘环境的同源同构部署，为交通、制造、具身智能等行业提供从模型训练到推理落地的全链路支撑。 图：腾讯云智算能力升级，成为更贴近Agent的AI原生云 在AI Infra底座层面，腾讯云智算基于在云计算、分布式存储、高性能网络等基础设施方面的深厚积累和场景优化，大幅提升云上资源的性能和利用率，最终实现降本增效。模型启动提速17倍，大规模服务扩容时间从10分钟缩短至34秒；多模态推理加速4倍，自研推理引擎覆盖生文、生图、生视频等模型；通过内存优化与通讯协议升级等创新，显著降低计算开销，推",
+        "en": "On September 17, the Agent + Infra session of Tencent's Global Digital Ecosystem Summit focused on the theme \"Intelligent Agents Driving Leapfrog Upgrades in Cloud Infrastructure,\" bringing together numerous industry leaders to explore technological breakthroughs and industrial practices of infrastructure in the AI era. Tencent Cloud's intelligent computing product leaders and industry clients provided in-depth interpretations of core topics such as AI-native cloud architecture, proactive service-oriented infrastructure, and full-chain security systems, while also announcing multiple significant achievements to strengthen the technical foundation for the large-scale deployment of intelligent agents.  \n\nDuring the forum, Li Li, Vice President of Tencent Cloud, officially announced a major upgrade of Tencent Cloud Intelligent Computing toward \"AI Infra Closer to Agents.\" Tencent Cloud has established a comprehensive solution integrating Agent Infra solutions, Cloud Mate cloud expert service agents, and full-chain security capabilities to help Agentic AI transition from the \"lab\" to \"production-grade.\"  \n\nLi Li stated that over the next two years, the number of enterprises deploying agents will double, and the growth rate of GenAI-related IaaS spending will reach 192%. With the explosive growth in the number of agents, enterprises' demand for cloud computing infrastructure will rapidly shift from \"resource supply\" to \"business value.\" AI Infra must possess faster inference efficiency, more flexible tool integration, more reliable system guarantees, and more automated service capabilities. The core advantage of Tencent Cloud's intelligent computing system lies in its \"same-source, same-structure\" approach, eliminating the need to build AI-specific storage and other facilities by leveraging its well-honed cloud-native capabilities.",
+        "es": "El 17 de septiembre, la sesión especializada Agent + Infra de la Cumbre Global de Ecosistema Digital de Tencent se centró en el tema \"Los agentes inteligentes impulsan el avance y la mejora de la infraestructura en la nube\", reuniendo a numerosos líderes de la industria para explorar conjuntamente los avances tecnológicos y las prácticas industriales de la infraestructura en la era de la IA. Los responsables de los productos de computación inteligente de Tencent Cloud y los clientes del sector analizaron en profundidad temas clave como la arquitectura nativa de IA en la nube, la infraestructura de servicios proactivos y el sistema de seguridad de cadena completa, al mismo tiempo que presentaron múltiples logros importantes, sentando una base tecnológica sólida para la implementación a gran escala de agentes inteligentes. Durante el foro, Li Li, vicepresidente de Tencent Cloud, anunció oficialmente una importante actualización de la computación inteligente de Tencent Cloud hacia una \"IA Infra más cercana a los Agent\". Tencent Cloud ha establecido"
+      },
+      "hotness": 0.815979
+    },
+    {
+      "id": "58e9f1553aef33df",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/CxncxuI0rHMK7Ttt.html",
+      "title": "智能体落地进程加速！腾讯云面向全球发布智能体开发平台3.0",
+      "raw_excerpt": "智能体落地进程持续加速。9月17日，在2025腾讯全球数字生态大会上，腾讯云宣布智能体开发平台3.0（ADP3.0）面向全球上线，腾讯优图实验室关键智能体技术将持续开源。 腾讯云副总裁、腾讯云智能负责人、腾讯优图实验室负责人吴运声 腾讯云副总裁、腾讯云智能负责人、腾讯优图实验室负责人吴运声表示：“面向行业旺盛的智能体开发需求，腾讯云智能体开发平台近3个月持续攻坚，完成近600个功能上线，ADP3.0新版本在RAG能力、Workflow、Multi-Agent、应用评测和插件生态等方面全面升级。同时，腾讯将持续开源优图实验室积累多年的AI能力、技术储备以及配套组件，与全球的开发者、企业和研究机构一起共建共创，推动智能体生态持续繁荣。” 同时，腾讯云智能体开发平台结合企业的需求和腾讯自身的优势能力，针对性推出了智能质检、媒体内容处理、营销增长、智能巡检等Agent，帮助企业在具体场景落地智能体；结合腾讯云智能数智人的产品能力，平台还推出了IP Agent，进一步盘活知识资产、提升用户交互体验。 &nbsp; ADP核心能力升级，打造面向企业实战的智能体 腾讯云智能体开发平台3.0在RAG、Multi-Agent、WorkFlow和应用构建工具链等四个方面全面升级。 在RAG上，平台支持更完善的知识库管理与运维能力，如文档冲突对比、自定义切分片段等，并扩展主流数据库接入，显著提升表格问答准确率。同时，技术从传统RAG升级至Agentic RAG，知识问答效果明显增强，准确率进一步提升。 Multi-Agent方面，平台支持多方式配置Agent协同，支持自由转交、工作流编排、P&amp;E协同模版等，企业可低门槛搭建复杂应用。目前平台已全面支持MCP，插件生态扩展至140+。 WorkFlow方面，智能体开发平台在业界率先支持全局Agent视野，支持节点智能回退。新版本在工作流中新",
+      "tags": [],
+      "published_at": "2025-09-17T08:31:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "智能体落地进程加速！腾讯云面向全球发布智能体开发平台3.0",
+        "en": "The deployment of intelligent agents is accelerating! Tencent Cloud has globally launched its Intelligent Agent Development Platform 3.0.",
+        "es": "El proceso de implementación de agentes inteligentes se acelera. Tencent Cloud lanza globalmente la plataforma de desarrollo de agentes inteligentes 3.0."
+      },
+      "excerpt_i18n": {
+        "zh": "智能体落地进程持续加速。9月17日，在2025腾讯全球数字生态大会上，腾讯云宣布智能体开发平台3.0（ADP3.0）面向全球上线，腾讯优图实验室关键智能体技术将持续开源。 腾讯云副总裁、腾讯云智能负责人、腾讯优图实验室负责人吴运声 腾讯云副总裁、腾讯云智能负责人、腾讯优图实验室负责人吴运声表示：“面向行业旺盛的智能体开发需求，腾讯云智能体开发平台近3个月持续攻坚，完成近600个功能上线，ADP3.0新版本在RAG能力、Workflow、Multi-Agent、应用评测和插件生态等方面全面升级。同时，腾讯将持续开源优图实验室积累多年的AI能力、技术储备以及配套组件，与全球的开发者、企业和研究机构一起共建共创，推动智能体生态持续繁荣。” 同时，腾讯云智能体开发平台结合企业的需求和腾讯自身的优势能力，针对性推出了智能质检、媒体内容处理、营销增长、智能巡检等Agent，帮助企业在具体场景落地智能体；结合腾讯云智能数智人的产品能力，平台还推出了IP Agent，进一步盘活知识资产、提升用户交互体验。 &nbsp; ADP核心能力升级，打造面向企业实战的智能体 腾讯云智能体开发平台3.0在RAG、Multi-Agent、WorkFlow和应用构建工具链等四个方面全面升级。 在RAG上，平台支持更完善的知识库管理与运维能力，如文档冲突对比、自定义切分片段等，并扩展主流数据库接入，显著提升表格问答准确率。同时，技术从传统RAG升级至Agentic RAG，知识问答效果明显增强，准确率进一步提升。 Multi-Agent方面，平台支持多方式配置Agent协同，支持自由转交、工作流编排、P&amp;E协同模版等，企业可低门槛搭建复杂应用。目前平台已全面支持MCP，插件生态扩展至140+。 WorkFlow方面，智能体开发平台在业界率先支持全局Agent视野，支持节点智能回退。新版本在工作流中新",
+        "en": "The deployment of intelligent agents continues to accelerate. On September 17, at the 2025 Tencent Global Digital Ecosystem Conference, Tencent Cloud announced the global launch of its Intelligent Agent Development Platform 3.0 (ADP 3.0), with key agent technologies from the Tencent YouTu Lab to be continuously open-sourced. Wu Yunsheng, Vice President of Tencent Cloud, Head of Tencent Cloud Intelligence, and Head of the Tencent YouTu Lab, stated that in response to strong industry demand for agent development, Tencent Cloud's Intelligent Agent Development Platform has completed nearly 600 feature updates over the past three months. The new ADP 3.0 version is comprehensively upgraded in RAG capabilities, Workflow, Multi-Agent, application evaluation, and plugin ecosystem. Meanwhile, Tencent will continue to open-source the AI capabilities, technical reserves, and supporting components accumulated by the YouTu Lab over the years, collaborating with global developers, enterprises, and research institutions to jointly build and promote the continuous prosperity of the intelligent agent ecosystem. Additionally, leveraging enterprise needs and Tencent's core strengths, the Tencent Cloud Intelligent Agent Development Platform has launched targeted agents for intelligent quality inspection, media content processing, marketing growth, and intelligent inspection to help enterprises deploy agents in specific scenarios. Combined with the capabilities of Tencent Cloud's Intelligent Digital Human product, the platform has also introduced IP Agent to further activate knowledge assets and enhance user interaction experience. ADP core capabilities have been upgraded to create enterprise-ready intelligent agents. Tencent Cloud Intelligent Agent Development Platform 3.0 has made significant advancements in RAG,",
+        "es": "El proceso de implementación de agentes inteligentes continúa acelerándose. El 17 de septiembre, en la Conferencia Global de Ecosistema Digital Tencent 2025, Tencent Cloud anunció el lanzamiento global de la plataforma de desarrollo de agentes inteligentes 3.0 (ADP3.0), y las tecnologías clave de agentes inteligentes del laboratorio Tencent YouTu seguirán siendo de código abierto. Wu Yunsheng, vicepresidente de Tencent Cloud, responsable de Tencent Cloud Intelligence y del laboratorio Tencent YouTu, declaró: \"Ante la fuerte demanda de desarrollo de agentes inteligentes en la industria, la plataforma de desarrollo de agentes inteligentes de Tencent Cloud ha completado casi 600 funciones en los últimos 3 meses. La nueva versión ADP3.0 mejora las capacidades de RAG, Workflow,"
+      },
+      "hotness": 0.808356
+    },
+    {
+      "id": "3f5c177fde963377",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/PMK086PTBcq2YkMX.html",
+      "title": "生命科学大模型加速新药研发 腾讯全面推动AI+医疗健康普惠",
+      "raw_excerpt": "&nbsp; &nbsp;2025腾讯全球数字生态大会9月16日-17日举行，腾讯宣布全面开放AI落地能力及优势场景，助力“好用的AI”在千行百业中加速落地。腾讯健康总裁、腾讯生命科学实验室负责人、腾讯健康普惠实验室负责人吴文达医生，在智慧医疗专场宣布三个涵盖大模型、生命科学、用户主动健康管理的全面加速计划，并提出了“AI+医疗健康”未来发展路径的七个关键路标。 吴文达医生认为人工智能正从根本上改变人们管理和维护健康的方式 腾讯一直致力于以AI技术助力医疗服务创新，一方面帮助患者提升就诊体验，另一方面助力临床医护提升服务效率和质量。截至目前，大模型驱动的AI导辅诊服务，在全国34个省、直辖市、自治区的近10000家各级医疗机构应用。腾讯觅影的医疗影像AI在全国各地超500家医疗机构普及，累计辅助医护为近1000万人次患者进行了各类医学检查。各类“开箱即用”的医疗AI解决方案服务超过1300家机构，涵盖医院、药械企业、科研院校、医疗科技企业。 吴文达医生指出：“在人工智能+医疗健康这条路上面，我们拼的其实是两个——一是耐力，二是定力，两个都是长跑。”人工智能正从根本上改变人们管理和维护健康的方式，它使得健康管理变得更具个性化、预测性和参与性。AI的核心能力在于整合多源、动态、连续的个体数据，并通过算法挖掘数据背后的隐含关联，将“数据碎片”转化为“健康画像”，进而推动健康服务从“标准化”向“个性化”转型。 &nbsp;&nbsp;&nbsp; 在助力医疗健康行业全面拥抱人工智能方面，腾讯通过“知识-模型-应用”的全栈模式，加速医疗健康行业AI大模型的开发与应用。帮助医疗机构通过腾讯云智能体开发平台、医疗知识图谱等工具，构建和管理专业RAG知识体系，为AI大模型提供高质量的训练数据和知识基础，将复杂的医学概念、关系和实体结构化，形成一张庞大的知识网络，从而帮助医疗机构快速开发出符",
+      "tags": [],
+      "published_at": "2025-09-17T07:22:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "生命科学大模型加速新药研发 腾讯全面推动AI+医疗健康普惠",
+        "en": "Life Science Large Models Accelerate New Drug Development, Tencent Comprehensively Promotes AI + Healthcare for Universal Benefit.",
+        "es": "Los grandes modelos de ciencias de la vida aceleran el desarrollo de nuevos medicamentos. Tencent impulsa integralmente la IA+atención médica universal."
+      },
+      "excerpt_i18n": {
+        "zh": "&nbsp; &nbsp;2025腾讯全球数字生态大会9月16日-17日举行，腾讯宣布全面开放AI落地能力及优势场景，助力“好用的AI”在千行百业中加速落地。腾讯健康总裁、腾讯生命科学实验室负责人、腾讯健康普惠实验室负责人吴文达医生，在智慧医疗专场宣布三个涵盖大模型、生命科学、用户主动健康管理的全面加速计划，并提出了“AI+医疗健康”未来发展路径的七个关键路标。 吴文达医生认为人工智能正从根本上改变人们管理和维护健康的方式 腾讯一直致力于以AI技术助力医疗服务创新，一方面帮助患者提升就诊体验，另一方面助力临床医护提升服务效率和质量。截至目前，大模型驱动的AI导辅诊服务，在全国34个省、直辖市、自治区的近10000家各级医疗机构应用。腾讯觅影的医疗影像AI在全国各地超500家医疗机构普及，累计辅助医护为近1000万人次患者进行了各类医学检查。各类“开箱即用”的医疗AI解决方案服务超过1300家机构，涵盖医院、药械企业、科研院校、医疗科技企业。 吴文达医生指出：“在人工智能+医疗健康这条路上面，我们拼的其实是两个——一是耐力，二是定力，两个都是长跑。”人工智能正从根本上改变人们管理和维护健康的方式，它使得健康管理变得更具个性化、预测性和参与性。AI的核心能力在于整合多源、动态、连续的个体数据，并通过算法挖掘数据背后的隐含关联，将“数据碎片”转化为“健康画像”，进而推动健康服务从“标准化”向“个性化”转型。 &nbsp;&nbsp;&nbsp; 在助力医疗健康行业全面拥抱人工智能方面，腾讯通过“知识-模型-应用”的全栈模式，加速医疗健康行业AI大模型的开发与应用。帮助医疗机构通过腾讯云智能体开发平台、医疗知识图谱等工具，构建和管理专业RAG知识体系，为AI大模型提供高质量的训练数据和知识基础，将复杂的医学概念、关系和实体结构化，形成一张庞大的知识网络，从而帮助医疗机构快速开发出符",
+        "en": "The 2025 Tencent Global Digital Ecosystem Summit was held on September 16-17. Tencent announced the full opening of its AI implementation capabilities and advantageous scenarios to accelerate the adoption of \"user-friendly AI\" across various industries. Dr. Wu Wenda, President of Tencent Health, Head of Tencent Life Sciences Laboratory, and Head of Tencent Health Equity Laboratory, announced three comprehensive acceleration plans covering large models, life sciences, and proactive user health management at the Smart Healthcare session. He also proposed seven key milestones for the future development of \"AI + healthcare.\"\n\nDr. Wu believes artificial intelligence is fundamentally transforming how people manage and maintain their health. Tencent has been committed to driving healthcare innovation with AI technology, aiming to improve patient experience and enhance the efficiency and quality of clinical care. To date, AI-powered consultation guidance services, driven by large models, have been implemented in nearly 10,000 medical institutions across 34 provinces, municipalities, and autonomous regions. Tencent's medical imaging AI, Miying, is used in over 500 medical institutions nationwide, assisting healthcare professionals in conducting various medical examinations for nearly 10 million patients. Ready-to-use medical AI solutions serve more than 1,300 organizations, including hospitals, pharmaceutical and medical device companies, research institutions, and medtech firms.\n\nDr. Wu emphasized, \"In the field of AI + healthcare, what we rely on are two things—endurance and determination, both of which are long-term endeavors.\" Artificial intelligence is fundamentally changing how people manage and maintain their health.",
+        "es": "La Cumbre Global de Ecosistema Digital de Tencent 2025 se celebrará los días 16 y 17 de septiembre. Tencent anunció la apertura integral de sus capacidades de implementación de IA y escenarios ventajosos para acelerar la aplicación de \"IA útil\" en todas las industrias. El doctor Wu Wenda, presidente de Tencent Health, director del Laboratorio de Ciencias de la Vida de Tencent y director del Laboratorio de Salud Inclusiva de Tencent, anunció en la sesión especial de atención médica inteligente tres planes de aceleración integral que abarcan modelos grandes, ciencias de la vida y gestión de salud proactiva del usuario, y propuso siete hitos clave para la futura trayectoria de desarrollo de \"IA + atención médica\". El doctor Wu Wenda considera que la inteligencia artificial está cambiando fundamentalmente la forma en que las personas gestionan y mantienen su salud. Tencent siempre se ha comprometido a"
+      },
+      "hotness": 0.795042
+    },
+    {
+      "id": "78201e934425d779",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/sE5oAeKNDcwhMctK.html",
+      "title": "腾讯企点营销云发布Magic Agent，营销工具全面AI化",
+      "raw_excerpt": "面对“增量”转向“存量”的新常态，企业正普遍陷入“增长焦虑”。9月17日，在2025腾讯全球数字生态大会上，腾讯企点营销云全面升级，推出以“Magic Agent”为核心的全链路营销智能体，旨在通过AI技术为企业提供一套全新的增长解决方案，以解决从高层战略到一线执行的营销增长困境。 腾讯云副总裁、腾讯企点负责人李学朝表示：在存量时代，腾讯企点营销云通过三大升级，助力企业提供增长。通过营销云基础产品智能化让操作化繁为简，大幅提升效率。营销决策引擎Customer AI以模型驱动实现精准营销，让每次决策有数可依。全链路智能体Magic Agent将营销人员从繁琐劳动中解放，助力企业快速打造“一专多能”的AI营销团队。 腾讯云副总裁、腾讯企点负责人 李学朝 营销云基础产品全面AI升级 让业务化繁为简 在过去，营销工具往往界面复杂、专业性强、使用门槛高，导致业务人员难以充分利用其功能，针对一线业务人员面临的“执行焦虑”，此次升级将AI能力深度融入了客户数据平台（CDP）、营销自动化（MA）、社交客户关系管理（SCRM）和融合分析（FA）等基础产品中，将复杂的“技术操作”变为简单的“业务对话”。 &nbsp; 在腾讯企点营销云四大核心产品中嵌入了多项AI能力，旨在直接解决业务痛点。例如，在CDP中，新增的“智能分群”功能可以帮助运营人员从海量用户中快速圈选出目标人群；在MA中，“辅助画布生成”则能显著简化复杂营销旅程的创建过程；而FA的“画像报告解读”和“智能归因”功能，则能自动生成并解读营销效果报告，为团队提供清晰的洞察 。这些智能辅助功能，让业务人员能够更快捷、更轻松地使用专业营销工具，从根本上提升了营销的人效。 推出营销决策引擎Customer AI 实现模型驱动的精准营销 为解决企业面临的“增长焦虑”与“本领焦虑”，腾讯企点推出了“营销决策引擎（Customer AI）”作为",
+      "tags": [],
+      "published_at": "2025-09-17T06:28:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "腾讯企点营销云发布Magic Agent，营销工具全面AI化",
+        "en": "Tencent Qidian Marketing Cloud launches Magic Agent, fully integrating AI into marketing tools.",
+        "es": "Tencent Qidian Marketing Cloud lanza Magic Agent, las herramientas de marketing se vuelven completamente de inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "zh": "面对“增量”转向“存量”的新常态，企业正普遍陷入“增长焦虑”。9月17日，在2025腾讯全球数字生态大会上，腾讯企点营销云全面升级，推出以“Magic Agent”为核心的全链路营销智能体，旨在通过AI技术为企业提供一套全新的增长解决方案，以解决从高层战略到一线执行的营销增长困境。 腾讯云副总裁、腾讯企点负责人李学朝表示：在存量时代，腾讯企点营销云通过三大升级，助力企业提供增长。通过营销云基础产品智能化让操作化繁为简，大幅提升效率。营销决策引擎Customer AI以模型驱动实现精准营销，让每次决策有数可依。全链路智能体Magic Agent将营销人员从繁琐劳动中解放，助力企业快速打造“一专多能”的AI营销团队。 腾讯云副总裁、腾讯企点负责人 李学朝 营销云基础产品全面AI升级 让业务化繁为简 在过去，营销工具往往界面复杂、专业性强、使用门槛高，导致业务人员难以充分利用其功能，针对一线业务人员面临的“执行焦虑”，此次升级将AI能力深度融入了客户数据平台（CDP）、营销自动化（MA）、社交客户关系管理（SCRM）和融合分析（FA）等基础产品中，将复杂的“技术操作”变为简单的“业务对话”。 &nbsp; 在腾讯企点营销云四大核心产品中嵌入了多项AI能力，旨在直接解决业务痛点。例如，在CDP中，新增的“智能分群”功能可以帮助运营人员从海量用户中快速圈选出目标人群；在MA中，“辅助画布生成”则能显著简化复杂营销旅程的创建过程；而FA的“画像报告解读”和“智能归因”功能，则能自动生成并解读营销效果报告，为团队提供清晰的洞察 。这些智能辅助功能，让业务人员能够更快捷、更轻松地使用专业营销工具，从根本上提升了营销的人效。 推出营销决策引擎Customer AI 实现模型驱动的精准营销 为解决企业面临的“增长焦虑”与“本领焦虑”，腾讯企点推出了“营销决策引擎（Customer AI）”作为",
+        "en": "Amid the new normal of shifting from \"incremental\" to \"stock-based\" growth, companies are widely experiencing \"growth anxiety.\" On September 17, at the 2025 Tencent Global Digital Ecosystem Conference, Tencent Qidian Marketing Cloud underwent a comprehensive upgrade, launching the full-link marketing intelligent agent \"Magic Agent\" as its core. This aims to provide businesses with a new growth solution through AI technology, addressing marketing growth challenges from high-level strategy to frontline execution.\n\nLi Xuechao, Vice President of Tencent Cloud and Head of Tencent Qidian, stated that in the stock era, Tencent Qidian Marketing Cloud drives growth for businesses through three major upgrades. The intelligent enhancement of Marketing Cloud's core products simplifies operations and significantly boosts efficiency. The marketing decision engine, Customer AI, enables precision marketing through model-driven approaches, ensuring data-backed decisions. The full-link intelligent agent, Magic Agent, frees marketing personnel from tedious tasks, helping companies quickly build versatile AI marketing teams.\n\nMarketing Cloud's core products have undergone a comprehensive AI upgrade to streamline business operations. In the past, marketing tools often featured complex interfaces, high specialization, and steep learning curves, making it difficult for business staff to fully utilize their functions. Addressing the \"execution anxiety\" faced by frontline personnel, this upgrade deeply integrates AI capabilities into foundational products such as Customer Data Platform (CDP), Marketing Automation (MA), Social Customer Relationship Management (SCRM), and Fusion Analysis (FA), transforming complex \"technical operations\" into simple \"business dialogues.\"",
+        "es": "Ante la nueva normalidad de pasar del \"incremento\" al \"stock\", las empresas están cayendo comúnmente en la \"ansiedad por el crecimiento\". El 17 de septiembre, en la Conferencia Global de Ecosistema Digital de Tencent 2025, Tencent Qidian Marketing Cloud se actualizó por completo, lanzando un agente de marketing de cadena completa centrado en \"Magic Agent\", con el objetivo de proporcionar a las empresas un nuevo conjunto de soluciones de crecimiento mediante tecnología de IA, para resolver los dilemas de crecimiento en marketing desde la estrategia de alto nivel hasta la ejecución de primera línea. Li Xuechao, vicepresidente de Tencent Cloud y responsable de Tencent Qidian, declaró: En la era del stock, Tencent Qidian Marketing Cloud ayuda a las empresas a proporcionar crecimiento mediante tres actualizaciones. La inteligencia de los productos básicos de Marketing Cloud simplifica las operaciones y mejora significativamente la eficiencia."
+      },
+      "hotness": 0.784776
+    },
+    {
+      "id": "eede57ff29623dee",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/QpVO8WAnRLMd1kYz.html",
+      "title": "2025腾讯全球数字生态大会：腾讯教育智能体平台正式发布，AI+人才培养体系升级",
+      "raw_excerpt": "9月16日，2025腾讯全球数字生态大会智慧教育专场上，腾讯教育聚焦AIGC与Agent方向的创新应用与探索成果，发布“腾讯教育智能体平台”，并展示了AI基础设施升级、AI Agent平台工具与教育场景化应用、AI+教育生态体系创新等重要进展。同时，面向高等教育领域，腾讯“AI百校行”正式启动；面向青少年人工智能教育的AIGC创作工坊也将加速落地至全国各地中小学校园。 腾讯云副总裁、腾讯教育负责人石梅表示，腾讯教育聚焦AI+教育，以“AI in All”为战略思路，围绕人工智能教育（AI Education）、智慧教育（AI for Education）、科研计算（AI for Science）三大方面持续耕耘，助力AI人才培养及科研创新。 &nbsp; 腾讯云副总裁、腾讯教育负责人石梅 &nbsp; &nbsp; AI基础设施升级，支撑教育行业大模型应用创新 腾讯教育正以AI为核心驱动力，整合基础架构、工具与产品能力，从技术支撑、场景落地到生态共建等多维度发力，推动AI技术与教育深度融合。腾讯云副总裁、腾讯教育解决方案负责人杨晖指出，教育行业服务广泛C端用户，需要满足高并发、低延迟、高稳定运行需求，随着大模型能力升级与应用场景爆发，行业对AI基础设施的弹性扩容与性能优化需求普遍提升。 &nbsp; 腾讯云副总裁、腾讯教育解决方案负责人杨晖 &nbsp; 腾讯云依托在云计算、分布式存储、高性能网络领域的积累及多行业场景优化经验，推进AI基础设施升级，加速教育行业大模型应用，推动技术服务教学实践。例如，腾讯云智算团队发布的Agent Infra工程套件，将助力Agentic AI从实验室原型走向教育场景生产级落地，打通技术应用“最后一公里”。 核心技术支撑方面，腾讯云通过重点优化token训练加速、RDMA星脉网络、高性能文件存储、GPU调度等组件，助力教育企业实现降本增效。",
+      "tags": [],
+      "published_at": "2025-09-17T06:24:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "2025腾讯全球数字生态大会：腾讯教育智能体平台正式发布，AI+人才培养体系升级",
+        "en": "Tencent Global Digital Ecosystem Conference 2025: Tencent Education Intelligent Agent Platform officially launched, AI + talent cultivation system upgraded.",
+        "es": "2025 Cumbre Global de Ecosistema Digital de Tencent: Se lanza oficialmente la plataforma de agentes inteligentes educativos de Tencent y se actualiza el sistema de formación de talentos con IA."
+      },
+      "excerpt_i18n": {
+        "zh": "9月16日，2025腾讯全球数字生态大会智慧教育专场上，腾讯教育聚焦AIGC与Agent方向的创新应用与探索成果，发布“腾讯教育智能体平台”，并展示了AI基础设施升级、AI Agent平台工具与教育场景化应用、AI+教育生态体系创新等重要进展。同时，面向高等教育领域，腾讯“AI百校行”正式启动；面向青少年人工智能教育的AIGC创作工坊也将加速落地至全国各地中小学校园。 腾讯云副总裁、腾讯教育负责人石梅表示，腾讯教育聚焦AI+教育，以“AI in All”为战略思路，围绕人工智能教育（AI Education）、智慧教育（AI for Education）、科研计算（AI for Science）三大方面持续耕耘，助力AI人才培养及科研创新。 &nbsp; 腾讯云副总裁、腾讯教育负责人石梅 &nbsp; &nbsp; AI基础设施升级，支撑教育行业大模型应用创新 腾讯教育正以AI为核心驱动力，整合基础架构、工具与产品能力，从技术支撑、场景落地到生态共建等多维度发力，推动AI技术与教育深度融合。腾讯云副总裁、腾讯教育解决方案负责人杨晖指出，教育行业服务广泛C端用户，需要满足高并发、低延迟、高稳定运行需求，随着大模型能力升级与应用场景爆发，行业对AI基础设施的弹性扩容与性能优化需求普遍提升。 &nbsp; 腾讯云副总裁、腾讯教育解决方案负责人杨晖 &nbsp; 腾讯云依托在云计算、分布式存储、高性能网络领域的积累及多行业场景优化经验，推进AI基础设施升级，加速教育行业大模型应用，推动技术服务教学实践。例如，腾讯云智算团队发布的Agent Infra工程套件，将助力Agentic AI从实验室原型走向教育场景生产级落地，打通技术应用“最后一公里”。 核心技术支撑方面，腾讯云通过重点优化token训练加速、RDMA星脉网络、高性能文件存储、GPU调度等组件，助力教育企业实现降本增效。",
+        "en": "On September 16, at the 2025 Tencent Global Digital Ecosystem Conference's Smart Education Session, Tencent Education focused on innovative applications and explorations in AIGC and Agent, launching the \"Tencent Education Agent Platform\" and showcasing key advancements in AI infrastructure upgrades, AI Agent platform tools and educational scenario applications, and AI+education ecosystem innovation. Simultaneously, for the higher education sector, Tencent's \"AI 100 Universities Initiative\" officially commenced; the AIGC Creation Workshop for youth AI education will also accelerate its rollout to primary and secondary schools nationwide. Shi Mei, Vice President of Tencent Cloud and Head of Tencent Education, stated that Tencent Education focuses on AI+education with the strategic approach of \"AI in All,\" continuously working on three major areas: AI Education, AI for Education, and AI for Science, to support AI talent cultivation and scientific research innovation. \n\nAI infrastructure upgrades support innovation in large model applications for the education industry. Tencent Education is driving the deep integration of AI technology and education with AI as the core driver, integrating infrastructure, tools, and product capabilities across multiple dimensions from technical support and scenario implementation to ecosystem collaboration. Yang Hui, Vice President of Tencent Cloud and Head of Tencent Education Solutions, pointed out that the education industry serves a broad range of end-users and must meet demands for high concurrency and low latency.",
+        "es": "El 16 de septiembre de 2025, en la sesión especial de educación inteligente de la Cumbre Global de Ecosistema Digital de Tencent, Tencent Education se centró en las aplicaciones innovadoras y los resultados de exploración en AIGC y Agent, lanzó la Plataforma de Agentes Inteligentes Educativos de Tencent y mostró avances importantes como la actualización de la infraestructura de IA, las herramientas de la plataforma de Agent de IA y las aplicaciones educativas contextuales, y la innovación del ecosistema de IA+educación. Al mismo tiempo, para la educación superior, se lanzó oficialmente la iniciativa Cien Universidades de IA de Tencent; el taller de creación AIGC para la educación en inteligencia artificial de jóvenes también se acelerará para implementarse en escuelas primarias y secundarias de todo el país. Shi Mei, vicepresidente de Tencent Cloud y responsable de Tencent Education, declaró que Tencent Education se centra en IA+educación, utilizando A."
+      },
+      "hotness": 0.784021
+    },
+    {
+      "id": "758f43b4ee15cf56",
+      "source": {
+        "site": "https://www.jiqizhixin.com/",
+        "feed": "https://www.jiqizhixin.com/rss"
+      },
+      "url": "https://www.jiqizhixin.com/articles/2025-09-17-4",
+      "title": "LLM开源2.0大洗牌：60个出局，39个上桌，AI Coding疯魔，TensorFlow已死",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-17T05:09:04Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "LLM开源2.0大洗牌：60个出局，39个上桌，AI Coding疯魔，TensorFlow已死",
+        "en": "Open Source LLM 2.0 Reshuffle: 60 Out, 39 In, AI Coding Frenzy, TensorFlow Is Dead.",
+        "es": "Reorganización masiva de código abierto LLM 2.0: 60 eliminados, 39 incorporados, la codificación con IA enloquece, TensorFlow ha muerto."
+      },
+      "excerpt_i18n": {
+        "zh": ""
+      },
+      "hotness": 0.962511
+    },
+    {
+      "id": "6858baeebdbfe97b",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/9AVelkZf0qT6rglc.html",
+      "title": "腾讯云数智运营商行业解决方案图谱升级发布，聚焦智能化国际化助力产业跃迁",
+      "raw_excerpt": "9月16日，2025腾讯全球数字生态大会在深圳举办。本次数智运营商专场以“新质生产力的崛起：AI+时代的产业革新”为主题，汇聚行业领袖、技术专家及生态合作伙伴，共同探讨如何通过数智化技术助力运营商业务模式革新与生态协同发展。 腾讯云副总裁曹磊表示，“运营商作为整个数字化基建的主力军，尤其是在智算时代的主力军，腾讯作为科技平台公司，和运营商进行场景共创、能力互补和生态共赢，这一定是推动着产业加速发展的不二之选。” 聚焦“AI+”升级发布运营商行业解决方案图谱 当前，全球AI格局正在从技术研发的“单点突破期”迈入产业应用的“深度渗透期”，“人工智能+”正深入各行各业。运营商作为数字基建的核心参与者，迎来了业务增长的新空间，也面临技术与场景如何深度衔接、能力与价值如何高效协同等问题。 腾讯云运营商行业总经理张晋表示，AI正从“智能工具”演化成“共生伙伴”，并持续重塑产业格局。面对趋势，腾讯云将携手运营商和生态伙伴加速AI与数据融合、AI与场景融合、AI与流程融合，通过智能体平台、数据空间等构建差异化竞争力，推动产业升级和范式革新。 大会现场，腾讯云运营商行业解决方案总监秦若毅升级发布了《运营商行业解决方案图谱（2025）》，围绕云网融合、自主创新、人工智能、安全服务、数据服务、中资出海六大方向，分享腾讯云对运营商行业数智化发展趋势的观察，并贴合行业需求场景阐述解决方案，旨在助力运营商应对网络智能化升级、技术自主可控、人工智能创新、全球化拓展等机遇与挑战，同时为千行百业提供“连接+算力+能力”的一体化服务支撑。 联合信通院发布《智能体驱动的大模型系统工程与产业实践》 会上，腾讯云携手中国信息通信研究院云计算与大数据研究所，联合发布《智能体驱动的大模型系统工程与产业实践——电信运营商与云服务商的合作探索》白皮书。该报告系统梳理了全球AI大模型及智能体技术的最新发展趋势，首次提出以“智",
+      "tags": [],
+      "published_at": "2025-09-17T03:58:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "腾讯云数智运营商行业解决方案图谱升级发布，聚焦智能化国际化助力产业跃迁",
+        "en": "Tencent Cloud's Digital Intelligence Operator Industry Solution Blueprint has been upgraded and released, focusing on intelligent internationalization to facilitate industrial leapfrogging.",
+        "es": "El mapa de soluciones de operadores digitales inteligentes de Tencent Cloud se actualiza y lanza, centrándose en la inteligencia artificial y la internacionalización para impulsar la transición industrial."
+      },
+      "excerpt_i18n": {
+        "zh": "9月16日，2025腾讯全球数字生态大会在深圳举办。本次数智运营商专场以“新质生产力的崛起：AI+时代的产业革新”为主题，汇聚行业领袖、技术专家及生态合作伙伴，共同探讨如何通过数智化技术助力运营商业务模式革新与生态协同发展。 腾讯云副总裁曹磊表示，“运营商作为整个数字化基建的主力军，尤其是在智算时代的主力军，腾讯作为科技平台公司，和运营商进行场景共创、能力互补和生态共赢，这一定是推动着产业加速发展的不二之选。” 聚焦“AI+”升级发布运营商行业解决方案图谱 当前，全球AI格局正在从技术研发的“单点突破期”迈入产业应用的“深度渗透期”，“人工智能+”正深入各行各业。运营商作为数字基建的核心参与者，迎来了业务增长的新空间，也面临技术与场景如何深度衔接、能力与价值如何高效协同等问题。 腾讯云运营商行业总经理张晋表示，AI正从“智能工具”演化成“共生伙伴”，并持续重塑产业格局。面对趋势，腾讯云将携手运营商和生态伙伴加速AI与数据融合、AI与场景融合、AI与流程融合，通过智能体平台、数据空间等构建差异化竞争力，推动产业升级和范式革新。 大会现场，腾讯云运营商行业解决方案总监秦若毅升级发布了《运营商行业解决方案图谱（2025）》，围绕云网融合、自主创新、人工智能、安全服务、数据服务、中资出海六大方向，分享腾讯云对运营商行业数智化发展趋势的观察，并贴合行业需求场景阐述解决方案，旨在助力运营商应对网络智能化升级、技术自主可控、人工智能创新、全球化拓展等机遇与挑战，同时为千行百业提供“连接+算力+能力”的一体化服务支撑。 联合信通院发布《智能体驱动的大模型系统工程与产业实践》 会上，腾讯云携手中国信息通信研究院云计算与大数据研究所，联合发布《智能体驱动的大模型系统工程与产业实践——电信运营商与云服务商的合作探索》白皮书。该报告系统梳理了全球AI大模型及智能体技术的最新发展趋势，首次提出以“智",
+        "en": "On September 16, 2025, the Tencent Global Digital Ecosystem Conference was held in Shenzhen. The digital intelligence operator session, themed \"The Rise of New Quality Productive Forces: Industrial Innovation in the AI+ Era,\" brought together industry leaders, technical experts, and ecosystem partners to explore how digital intelligence technologies can help operators innovate business models and achieve synergistic ecosystem development. \n\nCao Lei, Vice President of Tencent Cloud, stated that operators, as the main force in digital infrastructure, especially in the intelligent computing era, and Tencent, as a technology platform company, can collaborate on scenarios, complement capabilities, and achieve mutual ecosystem benefits, making this partnership the optimal choice to accelerate industrial development.\n\nFocusing on \"AI+,\" an upgraded operator industry solution map was released. Currently, the global AI landscape is transitioning from a \"single-point breakthrough period\" in technology R&D to a \"deep penetration period\" in industrial applications, with \"AI+\" deeply integrating into various sectors. As core participants in digital infrastructure, operators are facing new growth opportunities but also challenges such as how to deeply connect technology with scenarios and efficiently synergize capabilities with value.\n\nZhang Jin, General Manager of Tencent Cloud's Operator Industry, noted that AI is evolving from an \"intelligent tool\" to a \"symbiotic partner\" and continues to reshape the industrial landscape. In response to this trend, Tencent Cloud will collaborate with operators and ecosystem partners to accelerate the integration of AI with data, scenarios, and processes, building differentiated competitiveness through intelligent agent platforms and data spaces to drive industrial upgrading and paradigm innovation.\n\nAt the conference, Qin Ruoyi, Director of Tencent Cloud's Operator Industry Solutions, unveiled the upgraded Operator Industry Solution Map.",
+        "es": "El 16 de septiembre de 2025, se celebró en Shenzhen la Conferencia Global de Ecosistema Digital de Tencent. La sesión especial para operadores digitales inteligentes, bajo el tema \"El surgimiento de las nuevas fuerzas productivas: innovación industrial en la era de la IA+\", reunió a líderes de la industria, expertos técnicos y socios del ecosistema para debatir cómo la tecnología digital inteligente puede impulsar la renovación de los modelos de negocio de los operadores y el desarrollo coordinado del ecosistema. Cao Lei, vicepresidente de Tencent Cloud, declaró que los operadores, como fuerza principal de la infraestructura digital, especialmente en la era de la computación inteligente, y Tencent, como empresa de plataforma tecnológica, colaboran en la creación de escenarios, complementación de capacidades y beneficio mutuo del ecosistema, lo que sin duda es la opción ideal para acelerar el desarrollo industrial. Se centró en la actualización \"IA+\" para operadores."
+      },
+      "hotness": 0.75695
+    },
+    {
+      "id": "14eb848367bc11c2",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/pypm4pKXTnlrfyZG.html",
+      "title": "Tencent Announces Global Rollout of Scenario-Based, AI Capabilities to Accelerate Industrial Efficiency",
+      "raw_excerpt": "Launch of AI Agent Development Platform 3.0, available internationally via Tencent Cloud, at the 2025 Global Digital Ecosystem Summit Tencent Cloud’s overseas client base doubled since last year; achieved high double-digit year-over-year growth over the past three years Dowson Tong, Senior Executive Vice President of Tencent and CEO of the Cloud and Smart Industries Group, delivering a keynote speech at the 2025 Global Digital Ecosystem Summit Shenzhen, 16 September 2025 - Tencent today announced the global roll-out of new scenario-based AI capabilities, empowering enterprises across diverse industries to accelerate industry efficiency and advance international growth. Announced at the 2025 Tencent Global Digital Ecosystem Summit, held at the Shenzhen World Exhibition &amp; Convention Cent",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-17T03:33:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "en": "Tencent Announces Global Rollout of Scenario-Based, AI Capabilities to Accelerate Industrial Efficiency",
+        "zh": "腾讯宣布全球推出场景化AI能力，加速工业效率提升。",
+        "es": "Tencent anuncia el despliegue global de capacidades de IA basadas en escenarios para acelerar la eficiencia industrial."
+      },
+      "excerpt_i18n": {
+        "en": "Launch of AI Agent Development Platform 3.0, available internationally via Tencent Cloud, at the 2025 Global Digital Ecosystem Summit Tencent Cloud’s overseas client base doubled since last year; achieved high double-digit year-over-year growth over the past three years Dowson Tong, Senior Executive Vice President of Tencent and CEO of the Cloud and Smart Industries Group, delivering a keynote speech at the 2025 Global Digital Ecosystem Summit Shenzhen, 16 September 2025 - Tencent today announced the global roll-out of new scenario-based AI capabilities, empowering enterprises across diverse industries to accelerate industry efficiency and advance international growth. Announced at the 2025 Tencent Global Digital Ecosystem Summit, held at the Shenzhen World Exhibition &amp; Convention Cent",
+        "zh": "2025全球数字生态大会上，腾讯云推出AI智能体开发平台3.0，该平台通过腾讯云向全球开放。腾讯云海外客户数量较去年翻倍，实现高双位数增长。",
+        "es": "Lanzamiento de la Plataforma de Desarrollo de Agentes de IA 3.0, disponible internacionalmente a través de Tencent Cloud, en la Cumbre Global del Ecosistema Digital 2025. La base de clientes en el extranjero de Tencent Cloud se duplicó desde el año pasado; logró un crecimiento de doble dígito alto."
+      },
+      "hotness": 0.752409
+    },
+    {
+      "id": "5853cab0ac0d5661",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/inXyDrh2MhaQmoJo.html",
+      "title": "2025腾讯云国际出海峰会：国际业务高双位数增长，海外客户规模同比增长翻倍",
+      "raw_excerpt": "9月16日，2025腾讯全球数字生态大会国际出海峰会在深圳国际会展中心召开。来自全球多个国家和地区的企业代表、行业专家聚焦全球数字化进程，共同探讨国际市场机遇与数字化转型实践，分享一线实战经验，探讨把握智能技术机遇实现效率升级的新可能。 腾讯集团高级执行副总裁、云与智慧产业事业群CEO汤道生在致辞中提到，“向智能化要产业效率，向全球化要收入规模”，已经成为企业增长的两大核心动力。腾讯将打造“智能化”与“全球化”两大效率引擎，助力企业稳健和可持续增长。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 腾讯云也在峰会期间公布了国际化业务的最新进展：产品全面拥抱国际化，完成多项产品和功能升级，全面适配全球技术生态。过去3年，腾讯云国际业务持续高双位数增长，90%以上的互联网企业、95%以上的头部游戏公司出海都选择了腾讯云。 全球产业力量齐聚，共议AI+云新机遇 在国际出海峰会上，GoTo 集团、TrueIDC、阿联酋电信集团、Converge ICT、Indosat Ooredoo Hutchison (IOH)等海外企业代表共同探讨了企业该如何用云服务和领先的 AI 技术推动下阶段增长等议题、分享了和腾讯云合作过程中的实践和感受。 面向国际市场，腾讯云以创新应用链接全球，打造了诸多“尖刀”产品，正不断将技术实力转化为客户价值。例如腾讯云智能体开发平台（ADP）面向全球发布3.0版，在3个月内完成了近600项需求的开发，持续迭代LLM+RAG、Workflow、Multi-Agent等多种智能体开发框架，帮助企",
+      "tags": [],
+      "published_at": "2025-09-17T03:23:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "2025腾讯云国际出海峰会：国际业务高双位数增长，海外客户规模同比增长翻倍",
+        "en": "Tencent Cloud International Expansion Summit 2025: International business achieves high double-digit growth, overseas customer base doubles year-on-year.",
+        "es": "Cumbre Internacional de Tencent Cloud 2025: Crecimiento de doble dígito en negocios internacionales, clientes en el extranjero duplicados interanual."
+      },
+      "excerpt_i18n": {
+        "zh": "9月16日，2025腾讯全球数字生态大会国际出海峰会在深圳国际会展中心召开。来自全球多个国家和地区的企业代表、行业专家聚焦全球数字化进程，共同探讨国际市场机遇与数字化转型实践，分享一线实战经验，探讨把握智能技术机遇实现效率升级的新可能。 腾讯集团高级执行副总裁、云与智慧产业事业群CEO汤道生在致辞中提到，“向智能化要产业效率，向全球化要收入规模”，已经成为企业增长的两大核心动力。腾讯将打造“智能化”与“全球化”两大效率引擎，助力企业稳健和可持续增长。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 腾讯云也在峰会期间公布了国际化业务的最新进展：产品全面拥抱国际化，完成多项产品和功能升级，全面适配全球技术生态。过去3年，腾讯云国际业务持续高双位数增长，90%以上的互联网企业、95%以上的头部游戏公司出海都选择了腾讯云。 全球产业力量齐聚，共议AI+云新机遇 在国际出海峰会上，GoTo 集团、TrueIDC、阿联酋电信集团、Converge ICT、Indosat Ooredoo Hutchison (IOH)等海外企业代表共同探讨了企业该如何用云服务和领先的 AI 技术推动下阶段增长等议题、分享了和腾讯云合作过程中的实践和感受。 面向国际市场，腾讯云以创新应用链接全球，打造了诸多“尖刀”产品，正不断将技术实力转化为客户价值。例如腾讯云智能体开发平台（ADP）面向全球发布3.0版，在3个月内完成了近600项需求的开发，持续迭代LLM+RAG、Workflow、Multi-Agent等多种智能体开发框架，帮助企",
+        "en": "On September 16, 2025, the Tencent Global Digital Ecosystem Conference International Expansion Summit was held at the Shenzhen World Exhibition & Convention Center. Enterprise representatives and industry experts from multiple countries and regions worldwide focused on the global digitalization process, jointly exploring international market opportunities and digital transformation practices, sharing frontline practical experience, and discussing new possibilities for leveraging intelligent technology to achieve efficiency upgrades. In his opening remarks, Dowson Tong, Senior Executive Vice President of Tencent and CEO of the Cloud and Smart Industries Group, stated that \"seeking industrial efficiency through intelligentization and revenue scale through globalization\" have become two core drivers of enterprise growth. Tencent will build two efficiency engines—\"intelligentization\" and \"globalization\"—to support enterprises in achieving stable and sustainable growth. During the summit, Tencent Cloud also announced the latest progress in its international business: its products have fully embraced internationalization, completed multiple product and feature upgrades, and are fully adapted to the global technology ecosystem. Over the past three years, Tencent Cloud's international business has maintained high double-digit growth, with over 90% of internet companies and over 95% of leading gaming companies choosing Tencent Cloud for their overseas expansion.",
+        "es": "El 16 de septiembre, se celebró en el Centro Internacional de Exposiciones de Shenzhen la Cumbre Internacional de Expansión Global de la Conferencia Mundial sobre Ecosistema Digital de Tencent 2025. Representantes empresariales y expertos de la industria de múltiples países y regiones se centraron en el proceso de digitalización global, debatieron conjuntamente las oportunidades del mercado internacional y las prácticas de transformación digital, compartieron experiencias prácticas de primera línea y exploraron nuevas posibilidades para aprovechar las oportunidades de la tecnología inteligente y lograr una mejora de la eficiencia. Tang Daosheng, Vicepresidente Ejecutivo Senior del Grupo Tencent y CEO de la Unidad de Negocio de Nube e Industria Inteligente, mencionó en su discurso que \"buscar la eficiencia industrial en la inteligencia y la escala de ingresos en la globalización\" se ha convertido en los dos motores centrales del crecimiento empresarial. Tencent construirá estos dos motores de eficiencia, \"inteligencia\" y \"globalización\", para ayudar a las empresas a crecer de manera sólida."
+      },
+      "hotness": 0.750601
+    },
+    {
+      "id": "5076ea3be83dd93a",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/iGlQbPgHRWuJwtjN.html",
+      "title": "腾讯云以“云+AI”助力金融数智化升级   已打造100+AI应用场景最佳实践",
+      "raw_excerpt": "“人工智能已成为金融机构提升效率和生产力的「战略杠杆」，正加速重构金融场景并深度创造价值。” 9月16日，腾讯云高级副总裁徐翊鸣在2025腾讯全球数字生态大会·数智金融专场上表示，“目前，腾讯云已经围绕银行、保险、大资管、互金及金融行业通用场景，积累了100多个AI应用场景的最佳实践，支持金融机构创新和提效。” 随着AI大模型从技术探索全面进入产业落地阶段，“数据质量”成为了企业发展 AI的核心瓶颈。为了助力金融机构打造系统性数据工程能力，腾讯云发布了“TBDS多模态智能数据湖金融解决方案”。据腾讯云大数据TBDS中心总经理徐晓敏介绍，面向AI时代，多模态数据湖致力于帮助金融机构融合大数据和AI一体化存储和计算底座，快速实现AI-Ready，激发数据价值。 &nbsp; 以云+AI，助力金融机构数智化升级 “当前，金融业面临行业发展转变、客户需求升级、风险管理复杂、运营效率待提升等挑战，数智化转型成为金融业应对挑战和长远发展的必然选择。”中国信通院云大所副所长兼金融科技研究部主任何阳在演讲中表示。 在AI大模型领域，腾讯一直践行“AI In ALL”的战略，将内部900多个应用接入了混元大模型，让广告、支付、社交等业务场景与AI深度融合，通过场景的打磨来迭代产品和模型。面向金融行业，腾讯云将领先的技术封装成行业方案，依托金融行业完善的数字化基础设施、结构化数据和丰富的应用场景，助力银行、保险、证券等金融业态加速重塑。 腾讯金融云副总经理曹骏表示，腾讯云打造的金融行业解决方案覆盖B端和C端，以“云+AI”助力金融机构数智化升级。在B端，腾讯云提供数据库TDSQL、大数据TBDS、专有云TCE腾讯云TI平台及智能体应用开发平台ADP，以及丰富的应用能力，支持金融机构AI创新。 目前，腾讯专有云TCE已为人民银行、建设银行、招商银行、中信建投等各类金融机构打造了上百朵自主创新的云",
+      "tags": [],
+      "published_at": "2025-09-17T03:11:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "zh": "腾讯云以“云+AI”助力金融数智化升级   已打造100+AI应用场景最佳实践",
+        "en": "Tencent Cloud drives financial digital and intelligent transformation with \"Cloud + AI\", having established over 100 best-practice AI application scenarios."
+      },
+      "excerpt_i18n": {
+        "zh": "“人工智能已成为金融机构提升效率和生产力的「战略杠杆」，正加速重构金融场景并深度创造价值。” 9月16日，腾讯云高级副总裁徐翊鸣在2025腾讯全球数字生态大会·数智金融专场上表示，“目前，腾讯云已经围绕银行、保险、大资管、互金及金融行业通用场景，积累了100多个AI应用场景的最佳实践，支持金融机构创新和提效。” 随着AI大模型从技术探索全面进入产业落地阶段，“数据质量”成为了企业发展 AI的核心瓶颈。为了助力金融机构打造系统性数据工程能力，腾讯云发布了“TBDS多模态智能数据湖金融解决方案”。据腾讯云大数据TBDS中心总经理徐晓敏介绍，面向AI时代，多模态数据湖致力于帮助金融机构融合大数据和AI一体化存储和计算底座，快速实现AI-Ready，激发数据价值。 &nbsp; 以云+AI，助力金融机构数智化升级 “当前，金融业面临行业发展转变、客户需求升级、风险管理复杂、运营效率待提升等挑战，数智化转型成为金融业应对挑战和长远发展的必然选择。”中国信通院云大所副所长兼金融科技研究部主任何阳在演讲中表示。 在AI大模型领域，腾讯一直践行“AI In ALL”的战略，将内部900多个应用接入了混元大模型，让广告、支付、社交等业务场景与AI深度融合，通过场景的打磨来迭代产品和模型。面向金融行业，腾讯云将领先的技术封装成行业方案，依托金融行业完善的数字化基础设施、结构化数据和丰富的应用场景，助力银行、保险、证券等金融业态加速重塑。 腾讯金融云副总经理曹骏表示，腾讯云打造的金融行业解决方案覆盖B端和C端，以“云+AI”助力金融机构数智化升级。在B端，腾讯云提供数据库TDSQL、大数据TBDS、专有云TCE腾讯云TI平台及智能体应用开发平台ADP，以及丰富的应用能力，支持金融机构AI创新。 目前，腾讯专有云TCE已为人民银行、建设银行、招商银行、中信建投等各类金融机构打造了上百朵自主创新的云",
+        "en": "Artificial intelligence has become a \"strategic lever\" for financial institutions to enhance efficiency and productivity, accelerating the reconstruction of financial scenarios and deeply creating value. On September 16, Xu Yiming, Senior Vice President of Tencent Cloud, stated at the 2025 Tencent Global Digital Ecosystem Conference · Digital Intelligence Finance Session, \"Currently, Tencent Cloud has accumulated over 100 best practices for AI application scenarios across banking, insurance, asset management, internet finance, and general financial industry scenarios, supporting innovation and efficiency improvement in financial institutions.\" As large AI models transition fully from technological exploration to industrial implementation, \"data quality\" has become the core bottleneck for enterprises developing AI. To help financial institutions build systemic data engineering capabilities, Tencent Cloud launched the \"TBDS Multi-Modal Intelligent Data Lake Financial Solution.\" According to Xu Xiaomin, General Manager of Tencent Cloud Big Data TBDS Center, the multi-modal data lake aims to help financial institutions integrate big data and AI for unified storage and computing infrastructure, quickly achieve AI readiness, and unleash data value in the AI era. &nbsp; Using cloud + AI to assist financial institutions in digital and intelligent upgrading. \"Currently, the financial industry faces challenges such as industry transformation, evolving customer demands, complex risk management, and the need to improve operational efficiency. Digital and intelligent transformation has become an inevitable choice for the financial industry to address these challenges and achieve long-term development,\" said He Yang, Deputy Director of the Cloud and Big Data Research Institute and Head of the Fintech Research Department at the China Academy of Information and Communications Technology, in his speech. In the field of large AI models, Tencent has been implementing the \"AI In All\" strategy, integrating over 900 internal applications with hybrid...",
+        "es": "La inteligencia artificial se ha convertido en una \"palanca estratégica\" para que las instituciones financieras mejoren la eficiencia y la productividad, acelerando la reestructuración de los escenarios financieros y creando valor en profundidad. El 16 de septiembre, Xu Yiming, vicepresidente senior de Tencent Cloud, declaró en la Conferencia Global de Ecosistema Digital de Tencent 2025 - Sesión Especial de Finanzas Inteligentes: \"Actualmente, Tencent Cloud ha acumulado más de 100 mejores prácticas de aplicaciones de IA en escenarios relacionados con la banca, seguros, gestión de grandes activos, finanzas en línea y situaciones comunes de la industria financiera, apoyando la innovación y mejora de eficiencia de las instituciones financieras\". A medida que los grandes modelos de IA pasan completamente de la exploración técnica a la fase de implementación industrial, la \"calidad de los datos\" se ha convertido en el cuello de botella central para el desarrollo de la IA en las empresas. Para ayudar a las instituciones financieras a construir capacidades de ingeniería de datos sistemáticas."
+      },
+      "hotness": 0.748436
+    },
+    {
+      "id": "0e51545f9c36c037",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models",
+      "title": "Detecting and reducing scheming in AI models",
+      "raw_excerpt": "Apollo Research and OpenAI developed evaluations for hidden misalignment (“scheming”) and found behaviors consistent with scheming in controlled tests across frontier models. The team shared concrete examples and stress tests of an early method to reduce scheming.",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-17T00:00:00Z",
+      "fetched_at": "2025-09-17T23:14:38.705054Z",
+      "title_i18n": {
+        "en": "Detecting and reducing scheming in AI models",
+        "zh": "检测并减少人工智能模型中的阴谋行为",
+        "es": "Detección y reducción de maquinaciones en modelos de IA"
+      },
+      "excerpt_i18n": {
+        "en": "Apollo Research and OpenAI developed evaluations for hidden misalignment (“scheming”) and found behaviors consistent with scheming in controlled tests across frontier models. The team shared concrete examples and stress tests of an early method to reduce scheming.",
+        "zh": "阿波罗研究与OpenAI开发了对隐藏错位（\"策划\"）的评估，并在前沿模型的受控测试中发现了与策划一致的行为。团队分享了具体案例并强调",
+        "es": "Apollo Research y OpenAI desarrollaron evaluaciones para la desalineación oculta (\"maquinación\") y encontraron comportamientos consistentes con la maquinación en pruebas controladas con modelos de vanguardia. El equipo compartió ejemplos concretos y enfatiza"
+      },
+      "hotness": 1.143696
     }
   ]
 }
