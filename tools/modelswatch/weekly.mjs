@@ -16,6 +16,14 @@ const DS_KEY = process.env.DEEPSEEK_API_KEY || '';
 const DS_BASE = (process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com/v1').replace(/\/$/, '');
 const DS_MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-chat';
 const DS_MAX_TOKENS = Number(process.env.DEEPSEEK_MAX_TOKENS||'768');
+const LLM_CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT||'30');
+const LLM_READ_TIMEOUT = Number(process.env.LLM_READ_TIMEOUT||'240');
+
+function withTimeout(ms){
+  const controller = new AbortController();
+  const timer = setTimeout(()=>controller.abort(new Error('timeout')), ms);
+  return { signal: controller.signal, clear: ()=>clearTimeout(timer) };
+}
 
 async function dsSummarizeChinese(prompt){
   if(!DS_KEY) return '';
@@ -29,9 +37,11 @@ async function dsSummarizeChinese(prompt){
     max_tokens: DS_MAX_TOKENS,
     temperature: 0.3
   };
+  const { signal, clear } = withTimeout(LLM_READ_TIMEOUT*1000);
   const res = await fetch(url, {
     method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${DS_KEY}` }, body: JSON.stringify(body)
-  });
+  , signal});
+  clear();
   if(!res.ok) return '';
   const data = await res.json();
   return data?.choices?.[0]?.message?.content?.trim() || '';
@@ -52,6 +62,26 @@ async function dsSummarizeSpanish(prompt){
   const res = await fetch(url, {
     method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${DS_KEY}` }, body: JSON.stringify(body)
   });
+  if(!res.ok) return '';
+  const data = await res.json();
+  return data?.choices?.[0]?.message?.content?.trim() || '';
+}
+
+async function dsSummarizeEnglish(prompt){
+  if(!DS_KEY) return '';
+  const url = `${DS_BASE}/chat/completions`;
+  const body = {
+    model: DS_MODEL,
+    messages: [
+      { role: 'system', content: 'You are a senior AI editor. Write a concise English summary (4-6 sentences, max ~280 chars) for the given open-source project or model, highlighting use cases, strengths, and applicability. No marketing fluff.' },
+      { role: 'user', content: prompt }
+    ],
+    max_tokens: DS_MAX_TOKENS,
+    temperature: 0.3
+  };
+  const { signal, clear } = withTimeout(LLM_READ_TIMEOUT*1000);
+  const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${DS_KEY}` }, body: JSON.stringify(body), signal });
+  clear();
   if(!res.ok) return '';
   const data = await res.json();
   return data?.choices?.[0]?.message?.content?.trim() || '';
@@ -95,15 +125,17 @@ async function main(){
     const enrich = async (items)=>{
       return await mapLimit(items, 3, async (it)=>{
         const prompt = composePrompt(it);
-        const [zh, es] = await Promise.all([
+        const [en, zh, es] = await Promise.all([
+          dsSummarizeEnglish(prompt),
           dsSummarizeChinese(prompt),
           dsSummarizeSpanish(prompt)
         ]);
-        const patch = {};
+        const neutral = en || it.summary || it.description || zh || es || '';
+        const patch = { summary: neutral };
+        if(en) patch.summary_en = en;
         if(zh) patch.summary_zh = zh;
         if(es) patch.summary_es = es;
-        if(!it.summary && (zh||es)) patch.summary = zh || es;
-        return Object.keys(patch).length ? { ...it, ...patch } : it;
+        return { ...it, ...patch };
       });
     };
     const gh2 = await enrich(gh);

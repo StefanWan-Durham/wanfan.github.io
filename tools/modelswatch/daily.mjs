@@ -40,27 +40,43 @@ const DS_KEY = process.env.DEEPSEEK_API_KEY || '';
 const DS_BASE = (process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com/v1').replace(/\/$/, '');
 const DS_MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-chat';
 const DS_MAX_TOKENS = Number(process.env.DEEPSEEK_MAX_TOKENS||'768');
+const LLM_CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT||'30'); // seconds
+const LLM_READ_TIMEOUT = Number(process.env.LLM_READ_TIMEOUT||'240'); // seconds
 
-async function dsSummarizeChinese(prompt){
+function withTimeout(ms){
+  const controller = new AbortController();
+  const timer = setTimeout(()=>controller.abort(new Error('timeout')), ms);
+  return { signal: controller.signal, clear: ()=>clearTimeout(timer) };
+}
+
+async function dsSummarizeLang(prompt, lang){
   if(!DS_KEY) throw new Error('DeepSeek API key missing');
   const url = `${DS_BASE}/chat/completions`;
+  let system = '';
+  if(lang==='zh') system = '你是资深AI编辑。请用中文为给定开源项目或模型撰写一段4-6句的精炼摘要，面向泛技术读者，避免营销语，突出用途、亮点与适用场景。限制在280字以内。';
+  else if(lang==='en') system = 'You are a senior AI editor. Write a concise English summary (4-6 sentences, max ~280 chars) for the given open-source project or model, highlighting use cases, strengths, and applicability. No marketing fluff.';
+  else if(lang==='es') system = 'Eres un editor técnico experto. Escribe un resumen breve en español (4-6 oraciones, máx ~280 caracteres) del proyecto o modelo de código abierto dado. Destaca usos, puntos fuertes y casos de uso. Evita marketing.';
+  else system = 'You are a helpful editor. Write a concise summary.';
   const body = {
     model: DS_MODEL,
     messages: [
-      { role: 'system', content: '你是资深AI编辑。请用中文为给定开源项目或模型撰写一段4-6句的精炼摘要，面向泛技术读者，避免营销语，突出用途、亮点与适用场景。限制在280字以内。' },
+      { role: 'system', content: system },
       { role: 'user', content: prompt }
     ],
     max_tokens: DS_MAX_TOKENS,
     temperature: 0.3
   };
+  const { signal, clear } = withTimeout(LLM_READ_TIMEOUT*1000);
   const res = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${DS_KEY}`
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
+    signal
   });
+  clear();
   if(!res.ok){ throw new Error('DeepSeek failed: '+res.status); }
   const data = await res.json();
   const txt = data?.choices?.[0]?.message?.content?.trim() || '';
@@ -73,7 +89,7 @@ function truncateSummary(text){
   return t.length>300 ? t.slice(0,297)+'…' : t;
 }
 
-async function smartSummarize(it){
+async function smartSummarizeMulti(it){
   // Compose an LLM prompt with safe context
   const src = it.source||'github';
   const lines = [];
@@ -94,10 +110,15 @@ async function smartSummarize(it){
 
   // Try DeepSeek; fallback to truncate if unavailable/failed
   try{
-    const s = await dsSummarizeChinese(prompt);
-    return s;
+    const [zh, en, es] = await Promise.all([
+      dsSummarizeLang(prompt, 'zh'),
+      dsSummarizeLang(prompt, 'en'),
+      dsSummarizeLang(prompt, 'es'),
+    ]);
+    return { zh, en, es };
   }catch{
-    return truncateSummary(desc);
+    const base = truncateSummary(desc);
+    return { zh: base, en: base, es: '' };
   }
 }
 
@@ -350,8 +371,17 @@ async function main(){
   const hTop = selectDiverse(ch, NHF, { ...recent, quota:{...quotaHF}, alpha: ALPHA, cooldownDays: COOLDOWN, knownCaps });
   console.log(`[daily] github candidates=${cg.length}, pick=${gTop.length}; hf candidates=${ch.length}, pick=${hTop.length}`);
   // Summarize with DeepSeek when available; limit concurrency to 3
-  const gsum = await mapLimit(gTop, 3, async (it)=> { const s = await smartSummarize(it); return {...it, summary: s, summary_zh: s}; });
-  const hsum = await mapLimit(hTop, 3, async (it)=> { const s = await smartSummarize(it); return {...it, summary: s, summary_zh: s}; });
+  const gsum = await mapLimit(gTop, 3, async (it)=> {
+    const { zh, en, es } = await smartSummarizeMulti(it);
+    // Prefer English summary for neutral field if available
+    const neutral = en || it.summary || it.description || zh || '';
+    return { ...it, summary: neutral, summary_en: en, summary_zh: zh, summary_es: es };
+  });
+  const hsum = await mapLimit(hTop, 3, async (it)=> {
+    const { zh, en, es } = await smartSummarizeMulti(it);
+    const neutral = en || it.summary || it.description || zh || '';
+    return { ...it, summary: neutral, summary_en: en, summary_zh: zh, summary_es: es };
+  });
   writeJSON(path.join(dir,'daily_github.json'), { updated_at: now, items: gsum });
   writeJSON(path.join(dir,'daily_hf.json'), { updated_at: now, items: hsum });
   console.log(`[daily] wrote daily_github.json=${gsum.length}, daily_hf.json=${hsum.length}`);
