@@ -1,0 +1,125 @@
+{
+  "slug": "image-classification",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "lenet-1998",
+      "title": "Gradient-Based Learning Applied to Document Recognition (LeNet-5)",
+      "year": 1998,
+      "venue": "Proceedings of the IEEE",
+      "paper_url": "https://ieeexplore.ieee.org/document/726791",
+      "code": ["http://yann.lecun.com/exdb/lenet/"],
+      "summary_zh": "在20世纪90年代末，手写数字识别领域缺乏能够自动学习层级特征的有效方法，传统模型难以处理文档识别的复杂性。LeNet‑5 的目标是构建一种卷积神经网络来从原始像素中学习特征并准确识别手写字符。作者提出包含卷积和下采样的多层神经网络，通过反向传播在数字数据集上端到端训练。实验显示该模型在 MNIST 等基准上取得了出色的准确率，并证明卷积层可以自动学习平移不变特征，超越了传统方法。作为早期的卷积网络，LeNet‑5 奠定了计算机视觉深度学习的基础，被广泛应用于票据识别并启发了后续网络设计。",
+      "summary_en": "In the late 1990s there were no effective methods that could automatically learn hierarchical features for handwritten digit recognition, and conventional models struggled with the complexity of document recognition. LeNet‑5 set out to construct a convolutional neural network that could learn features from raw pixels and accurately recognize handwritten characters. The authors proposed a multi-layer network with convolution and subsampling layers, trained end‑to‑end via back‑propagation on digit datasets. Experiments showed that the model achieved excellent accuracy on benchmarks such as MNIST and demonstrated that convolutional layers can automatically learn translation‑invariant features, surpassing traditional approaches. As an early CNN, LeNet‑5 laid the foundation for deep learning in computer vision, was widely adopted for cheque recognition and inspired subsequent network designs.",
+      "summary_es": "A finales de la década de 1990 no existían métodos eficaces capaces de aprender automáticamente características jerárquicas para el reconocimiento de dígitos manuscritos, y los modelos convencionales tenían dificultades para afrontar la complejidad del reconocimiento de documentos. LeNet‑5 se propuso construir una red neuronal convolucional que pudiera aprender características a partir de píxeles en bruto y reconocer con precisión los caracteres manuscritos. Los autores propusieron una red multicapa con capas de convolución y muestreo, entrenada de extremo a extremo mediante retropropagación en conjuntos de dígitos. Los experimentos demostraron que el modelo alcanzaba una excelente precisión en bancos como MNIST y que las capas convolucionales podían aprender de forma automática características invariantes a la traslación, superando a los enfoques tradicionales. Como una de las primeras CNN, LeNet‑5 sentó las bases del aprendizaje profundo en visión por ordenador, se adoptó ampliamente para el reconocimiento de cheques y sirvió de inspiración para diseños posteriores."
+    },
+    "milestone": [
+      {
+        "id": "resnet-2016",
+        "title": "Deep Residual Learning for Image Recognition (ResNet)",
+        "year": 2016,
+        "venue": "CVPR",
+        "paper_url": "https://arxiv.org/abs/1512.03385",
+        "code": ["https://github.com/pytorch/vision/tree/main/references/classification"],
+        "summary_zh": "随着卷积网络不断加深，研究人员发现简单地堆叠更多层会导致退化问题，深层网络的训练误差和测试误差反而增加。ResNet 的目标是通过残差学习机制解决深层网络难以优化的问题，从而让网络深度得到扩展。论文提出了带恒等映射的残差块，通过引入跳连结构让梯度在网络中顺畅传播，并利用这些模块堆叠出 50 层及以上的模型。实验表明残差网络在 ImageNet 等数据集上显著优于同层数的普通网络，并使极深模型实现了更高的准确率。残差学习范式成为现代深度网络的基石，广泛应用于视觉、语音和自然语言等领域的网络设计。",
+        "summary_en": "As convolutional networks grew deeper, researchers observed that simply stacking more layers led to a degradation problem in which deeper networks exhibit higher training and test errors. ResNet aimed to address the optimization difficulties of very deep networks through a residual learning mechanism so that depth could be increased. The paper introduced residual blocks with identity skip connections that let gradients flow smoothly and stacked these modules to build models with 50 layers and beyond. Experiments showed that residual networks significantly outperformed plain counterparts on ImageNet and other datasets and enabled extremely deep models to achieve higher accuracy. The residual learning paradigm became a fundamental building block of modern deep networks and has been widely adopted in vision, speech and natural language processing.",
+        "summary_es": "A medida que las redes convolucionales se hacían más profundas, los investigadores observaron que simplemente apilar más capas conducía a un problema de degradación en el que las redes más profundas presentan mayores errores de entrenamiento y prueba. ResNet pretendía solucionar las dificultades de optimización de las redes muy profundas mediante un mecanismo de aprendizaje residual que permitiera aumentar la profundidad. El artículo introdujo bloques residuales con conexiones de salto de identidad que permiten que los gradientes fluyan sin problemas y apiló estos módulos para construir modelos de 50 capas y más. Los experimentos demostraron que las redes residuales superaban significativamente a las redes simples en ImageNet y otros conjuntos de datos y permitieron que modelos extremadamente profundos alcanzaran mayor precisión. El paradigma del aprendizaje residual se convirtió en un bloque fundamental de las redes profundas modernas y se ha utilizado ampliamente en visión, voz y procesamiento del lenguaje natural."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "vit-2021",
+        "title": "An Image is Worth 16x16 Words: Vision Transformers",
+        "year": 2021,
+        "venue": "ICLR",
+        "paper_url": "https://arxiv.org/abs/2010.11929",
+        "code": ["https://github.com/google-research/vision_transformer"],
+        "summary_zh": "传统的卷积神经网络在视觉任务中占主导，但其局部感受野和归纳偏置限制了对全局依赖的建模。ViT 的目标是探索纯 Transformer 架构在图像分类任务中的可行性，解决 CNN 难以捕捉长距离关系的问题。论文将图像划分为固定大小的补丁，并通过线性投影和可学习的位置嵌入，将这些补丁作为输入序列送入标准 Transformer，利用自注意力机制建模全局关系。在大型数据集上训练时，ViT 在 ImageNet 等基准上取得与甚至超越 CNN 的性能，并展现出良好的计算效率。该工作开辟了在视觉领域使用纯 Transformer 的新范式，激发了跨模态和多任务的大模型研究。",
+        "summary_en": "Traditional convolutional networks dominate vision tasks but their local receptive fields and inductive biases limit their ability to model global dependencies. ViT set out to explore whether a pure Transformer architecture could handle image classification and address the challenge of capturing long-range relationships. The paper divides images into fixed-size patches, projects them linearly, adds learnable position embeddings, and feeds the resulting sequence to a standard Transformer, using self-attention to model global relationships. When trained on large datasets, ViT achieved performance on benchmarks such as ImageNet comparable to or exceeding CNNs and demonstrated favorable compute efficiency. This work opened a new paradigm of applying pure Transformers to vision and inspired research into multimodal and large-scale models.",
+        "summary_es": "Las redes convolucionales tradicionales dominan las tareas de visión, pero su campo receptivo local y sesgos inductivos limitan su capacidad para modelar dependencias globales. ViT se propuso explorar si una arquitectura Transformer pura podía abordar la clasificación de imágenes y resolver el reto de captar relaciones de largo alcance. El artículo divide las imágenes en parches de tamaño fijo, los proyecta linealmente, añade incrustaciones de posición aprendibles y alimenta la secuencia resultante a un Transformer estándar, utilizando la autoatención para modelar relaciones globales. Al entrenarse en grandes conjuntos de datos, ViT alcanzó en bancos como ImageNet un rendimiento comparable o superior al de los CNN y mostró una buena eficiencia de cómputo. Este trabajo abrió un nuevo paradigma de aplicar Transformers puros a la visión e inspiró la investigación en modelos multimodales y de gran escala."
+      },
+      {
+        "id": "vit22b-2023",
+        "title": "Scaling Vision Transformers to 22 Billion Parameters (ViT-22B)",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2302.05442",
+        "code": [],
+        "summary_zh": "在 ViT 被广泛接受后，人们对超大规模视觉 Transformer 的潜力仍缺乏探索，传统模型规模不足以揭示其极限。ViT‑22B 的目标是将模型规模扩展到 220 亿参数，并研究视觉 Transformer 的缩放规律。研究团队采用分布式训练和高效的并行策略，在大规模图像数据上训练了这一庞大模型。实验结果表明，超大规模 ViT 在各种分类基准上达到新的最优性能，并展示了新的泛化能力。该工作强调了扩大模型规模在视觉领域的潜在收益，为后续的超大模型研究提供了经验和指南。",
+        "summary_en": "After ViT gained widespread adoption, the potential of ultra‑large vision transformers remained underexplored, as conventional models were not large enough to reveal their limits. ViT‑22B aimed to scale the model to 22 billion parameters and study scaling laws for vision transformers. The research team employed distributed training and efficient parallelization to train this enormous model on large image datasets. Experimental results showed that the ultra‑large ViT achieved new state‑of‑the‑art performance across various classification benchmarks and exhibited new generalization capabilities. This work highlighted the benefits of scaling model size in vision and provided insights and guidelines for subsequent research on giant models.",
+        "summary_es": "Tras la adopción generalizada de ViT, el potencial de los transformers de visión ultragrandes seguía poco explorado, ya que los modelos convencionales no eran lo bastante grandes para revelar sus límites. ViT‑22B se propuso escalar el modelo hasta 22.000 millones de parámetros y estudiar las leyes de escalado de los transformers de visión. El equipo de investigación empleó entrenamiento distribuido y paralelización eficiente para entrenar este enorme modelo en grandes conjuntos de imágenes. Los resultados experimentales mostraron que el ViT ultragrande alcanzó nuevas cotas de rendimiento en diversos bancos de clasificación y exhibió nuevas capacidades de generalización. Este trabajo pone de relieve los beneficios de aumentar el tamaño del modelo en visión y proporciona ideas y directrices para futuras investigaciones sobre modelos gigantes."
+      }
+    ],
+    "survey": [
+      {
+        "id": "vision-transformer-survey-2021",
+        "title": "Transformers in Vision: A Survey",
+        "year": 2021,
+        "venue": "ACM Computing Surveys",
+        "paper_url": "https://arxiv.org/abs/2101.01169",
+        "code": [],
+        "summary_zh": "在 NLP 领域 Transformer 的成功引起视觉社区的关注，但关于其在视觉任务中的应用缺乏系统梳理。该综述的目标是全面总结 Transformer 在计算机视觉中的基本概念和应用进展，为研究者提供参考。文章介绍了自注意力、大规模预训练、双向编码等关键原理，并系统归纳了 Transformer 在分类、检测、分割、生成、多模态等任务上的模型和技术。作者分析了各种架构的优缺点和实验结果，并比较了不同方法的性能。最后，综述提出了开放研究问题和未来方向，是理解视觉 Transformer 生态的重要资料。",
+        "summary_en": "The success of Transformers in NLP attracted the attention of the vision community, yet there was a lack of systematic review of their applications in vision tasks. This survey aims to comprehensively summarize the fundamental concepts and recent progress of Transformers in computer vision and provide a reference for researchers. It introduces key principles such as self‑attention, large‑scale pre‑training and bidirectional encoding, and systematically reviews transformer‑based models and techniques for classification, detection, segmentation, generative modeling and multimodal tasks. The authors analyze the advantages and limitations of various architectures and experimental results and compare the performance of different methods. Finally, the survey outlines open research questions and future directions and serves as an important resource for understanding the vision Transformer ecosystem.",
+        "summary_es": "El éxito de los Transformers en el PLN atrajo la atención de la comunidad de visión, pero faltaba una revisión sistemática de sus aplicaciones en tareas de visión. Esta encuesta pretende resumir de forma exhaustiva los conceptos fundamentales y los avances recientes de los Transformers en visión por ordenador y ofrecer una referencia a los investigadores. Introduce principios clave como la autoatención, el preentrenamiento a gran escala y la codificación bidireccional, y revisa sistemáticamente los modelos y técnicas basados en Transformers para clasificación, detección, segmentación, modelado generativo y tareas multimodales. Los autores analizan las ventajas y limitaciones de las distintas arquitecturas y resultados experimentales, y comparan el rendimiento de los diferentes métodos. Por último, la encuesta expone cuestiones de investigación abiertas y futuras direcciones y constituye un recurso importante para comprender el ecosistema de Transformers en visión."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "vgg-2014",
+      "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition (VGG)",
+      "year": 2014,
+      "venue": "ICLR",
+      "paper_url": "https://arxiv.org/abs/1409.1556",
+      "code": ["https://github.com/pytorch/vision"],
+      "why_transition": "深入探索网络深度对性能的影响，并为后续网络提供统一的卷积架构。",
+      "summary_zh": "早期卷积网络通常层数有限，难以系统评估深度对性能的影响。VGG 的目标是通过构建统一结构的深层卷积网络研究网络深度对图像分类的作用。研究采用连续的 3×3 卷积和最大池化堆叠了 16 或 19 层，并在 ImageNet 数据集上进行训练和测试。实验结果表明较深的 VGG 模型显著提高了分类准确率，并在 2014 年 ILSVRC 比赛中取得优异成绩。VGG 简洁的结构成为后续模型的基线，其预训练特征被广泛用于迁移学习。",
+      "summary_en": "Early convolutional networks typically had a limited number of layers and it was difficult to systematically assess the impact of depth on performance. VGG set out to investigate the role of depth in image classification by constructing deep convolutional networks with a uniform architecture. The authors stacked 16 or 19 layers of consecutive 3×3 convolutions and max pooling and trained them on the ImageNet dataset. Results showed that deeper VGG models significantly improved classification accuracy and achieved outstanding performance in the 2014 ILSVRC competition. The simple architecture of VGG became a baseline for subsequent models and its pre‑trained features have been widely used for transfer learning.",
+      "summary_es": "Las primeras redes convolucionales solían tener un número limitado de capas, por lo que era difícil evaluar sistemáticamente el impacto de la profundidad en el rendimiento. VGG se propuso investigar el papel de la profundidad en la clasificación de imágenes mediante la construcción de redes convolucionales profundas con una arquitectura uniforme. Los autores apilaron 16 o 19 capas de convoluciones de 3×3 y max‑pooling consecutivos y las entrenaron en el conjunto de datos ImageNet. Los resultados mostraron que los modelos VGG más profundos mejoraban significativamente la precisión de clasificación y obtenían un rendimiento sobresaliente en la competición ILSVRC de 2014. La arquitectura sencilla de VGG se convirtió en una referencia para los modelos posteriores y sus características preentrenadas se han utilizado ampliamente en aprendizaje por transferencia."
+    },
+    {
+      "id": "googlenet-2015",
+      "title": "Going Deeper with Convolutions (GoogLeNet/Inception)",
+      "year": 2015,
+      "venue": "CVPR",
+      "paper_url": "https://arxiv.org/abs/1409.4842",
+      "code": ["https://github.com/tensorflow/models"],
+      "why_transition": "引入 Inception 模块在保持效率的同时捕获多尺度特征，推动深层网络走向实用。",
+      "summary_zh": "随着网络深度和宽度的增加，传统卷积网络的计算量和参数量迅速膨胀。GoogLeNet 的目标是通过创新结构提高效率而不牺牲准确率。论文提出了 Inception 模块，在单个层内并行使用不同尺寸的卷积和 1×1 降维卷积，以捕获多尺度特征并控制参数量。通过在 ImageNet 上训练一个 22 层的网络，GoogLeNet 在 2014 年 ILSVRC 中获得最佳成绩，同时参数量远少于前代模型。该结构展示了如何构建高效的深层网络，对后续网络设计产生了深远影响。",
+      "summary_en": "As networks became deeper and wider, conventional convolutional networks saw their computational cost and parameter count grow rapidly. GoogLeNet aimed to improve efficiency without sacrificing accuracy through an innovative architecture. The paper introduced the Inception module, which applies convolutions of different sizes in parallel along with 1×1 convolutions for dimensionality reduction to capture multi-scale features while controlling the number of parameters. By training a 22-layer network on ImageNet, GoogLeNet achieved the best performance in the 2014 ILSVRC while using far fewer parameters than previous models. This structure demonstrated how to build efficient deep networks and has had a profound impact on subsequent network design.",
+      "summary_es": "A medida que las redes se hacían más profundas y anchas, el coste computacional y el número de parámetros de las redes convolucionales convencionales crecían rápidamente. GoogLeNet se propuso mejorar la eficiencia sin sacrificar la precisión mediante una arquitectura innovadora. El artículo introdujo el módulo Inception, que aplica convoluciones de distintos tamaños en paralelo junto con convoluciones de 1×1 para reducir la dimensionalidad y captar características de varias escalas a la vez que controla el número de parámetros. Al entrenar una red de 22 capas en ImageNet, GoogLeNet logró el mejor rendimiento en la ILSVRC de 2014 utilizando muchos menos parámetros que los modelos anteriores. Esta estructura demostró cómo construir redes profundas eficientes y ha tenido un profundo impacto en el diseño posterior de redes."
+    },
+    {
+      "id": "densenet-2017",
+      "title": "Densely Connected Convolutional Networks (DenseNet)",
+      "year": 2017,
+      "venue": "CVPR",
+      "paper_url": "https://arxiv.org/abs/1608.06993",
+      "code": ["https://github.com/pytorch/vision"],
+      "why_transition": "通过密集连接提高特征复用和梯度流动，进一步改进网络效率。",
+      "summary_zh": "残差网络在缓解退化问题方面取得成功，但特征复用仍不充分并存在冗余。DenseNet 的目标是通过密集连接改善信息流和参数效率。论文提出了一种连接策略，使每一层都接收所有前面层的输出作为输入，从而鼓励特征复用并缓解梯度消失。在 CIFAR 和 ImageNet 等数据集上的实验显示，DenseNet 在参数更少的情况下取得与甚至超越 ResNet 的性能。密集连接的思想证明了有效的特征重用的重要性，对后续网络结构设计产生了影响。",
+      "summary_en": "Residual networks alleviated the degradation problem but still suffered from insufficient feature reuse and redundancy. DenseNet aimed to improve information flow and parameter efficiency through dense connectivity. The paper proposed a connection strategy where each layer receives the outputs of all preceding layers as input, encouraging feature reuse and alleviating vanishing gradients. Experiments on datasets such as CIFAR and ImageNet showed that DenseNet achieved performance comparable to or exceeding ResNet while using fewer parameters. The idea of dense connectivity demonstrated the importance of effective feature reuse and influenced subsequent network architecture design.",
+      "summary_es": "Las redes residuales mitigaron el problema de la degradación, pero seguían adoleciendo de una reutilización insuficiente de características y redundancia. DenseNet pretendía mejorar el flujo de información y la eficiencia de los parámetros mediante una conectividad densa. El artículo propuso una estrategia de conexión en la que cada capa recibe como entrada las salidas de todas las capas anteriores, fomentando la reutilización de características y aliviando los gradientes desvanecidos. Los experimentos en conjuntos de datos como CIFAR e ImageNet demostraron que DenseNet lograba un rendimiento comparable o superior al de ResNet utilizando menos parámetros. La idea de la conectividad densa demostró la importancia de reutilizar eficazmente las características e influyó en el diseño de las arquitecturas posteriores."
+    },
+    {
+      "id": "convnext-2022",
+      "title": "A ConvNet for the 2020s (ConvNeXt)",
+      "year": 2022,
+      "venue": "CVPR",
+      "paper_url": "https://arxiv.org/abs/2201.03545",
+      "code": ["https://github.com/facebookresearch/ConvNeXt"],
+      "why_transition": "现代化卷积网络设计，将 Transformer 中的设计原则引入 CNN，展示 CNN 的潜力。",
+      "summary_zh": "Transformer 视觉模型的兴起促使人们重新审视卷积网络的设计，传统 CNN 在一些方面仍有改进空间。ConvNeXt 的目标是将现代视图下的网络设计原则应用于卷积网络，以提升性能。作者系统性地修改 ResNet 结构，引入深度可分离卷积、大 kernel、倒置瓶颈以及新的归一化和训练策略，使其与 Vision Transformer 的设计趋同。实验表明，ConvNeXt 在 ImageNet 上的准确率与 Swin Transformer 等竞争对手相当甚至更优，同时保持了 CNN 的高效性。该工作证明了现代化的卷积网络仍具竞争力，为后续网络改进提供了新的基线。",
+      "summary_en": "The rise of vision transformers prompted a re-examination of convolutional network design, and traditional CNNs still had room for improvement. ConvNeXt aimed to apply modern design principles to convolutional networks to enhance their performance. The authors systematically modified the ResNet architecture, introducing depth‑wise separable convolutions, larger kernels, inverted bottlenecks, and new normalization and training strategies to make it more similar to a Vision Transformer. Experiments showed that ConvNeXt achieved accuracy on ImageNet comparable to or better than competitors such as the Swin Transformer while retaining the efficiency of CNNs. This work demonstrated that modernized convolutional networks remain competitive and provided a new baseline for future improvements.",
+      "summary_es": "El auge de los transformers de visión motivó un nuevo examen del diseño de las redes convolucionales, y las CNN tradicionales aún tenían margen de mejora. ConvNeXt se propuso aplicar principios de diseño modernos a las redes convolucionales para mejorar su rendimiento. Los autores modificaron sistemáticamente la arquitectura ResNet, introduciendo convoluciones separables en profundidad, kernels más grandes, cuellos de botella invertidos y nuevas estrategias de normalización y entrenamiento para asemejarla más a un Transformer de visión. Los experimentos mostraron que ConvNeXt alcanzaba una precisión en ImageNet comparable o superior a la de competidores como Swin Transformer y mantenía la eficiencia de las CNN. Este trabajo demostró que las redes convolucionales modernizadas siguen siendo competitivas y proporcionó una nueva referencia para futuras mejoras."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【734157706618169†L134-L144】",
+      "milestone": "【705447823196712†L36-L39】",
+      "frontier": "【188273368952756†L262-L284】",
+      "survey": "【822520545898557†L49-L67】"
+    }
+  }
+}

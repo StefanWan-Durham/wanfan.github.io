@@ -1,0 +1,136 @@
+{
+  "slug": "code-generation",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "codex-2021",
+      "title": "Evaluating Large Language Models Trained on Code (Codex)",
+      "year": 2021,
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/abs/2107.03374",
+      "code": [],
+      "summary_zh": "早期语言模型在代码生成任务表现有限，无法可靠编写程序。Codex 的目标是通过在大规模公开代码数据上微调 GPT 模型，使其具备有效生成和理解代码的能力。作者在包含 GitHub 代码的语料上训练模型，并提出 HumanEval 基准评测代码生成质量。实验结果显示，Codex 能正确解决约 30% 的编程任务，利用多次采样可达到 70% 的成功率，但也存在生成有漏洞代码的风险。该工作验证了在代码领域使用大模型的可行性，引发了后续大量研究与应用。",
+      "summary_en": "Early language models performed poorly on code generation tasks and could not reliably write programs. Codex aimed to endow a GPT model with effective code generation and understanding abilities by fine‑tuning on large‑scale public code data. The authors trained the model on a corpus of GitHub code and introduced the HumanEval benchmark to evaluate code generation quality. Experiments showed that Codex correctly solved about 30% of programming tasks and achieved a 70% success rate with multiple samples, though it sometimes generated insecure code. This work validated the feasibility of using large models in the code domain and sparked extensive subsequent research and applications.",
+      "summary_es": "Los primeros modelos lingüísticos obtenían resultados limitados en tareas de generación de código y no podían escribir programas de forma fiable. Codex se propuso dotar a un modelo GPT de capacidades efectivas de generación y comprensión de código mediante el afinamiento en grandes conjuntos de código público. Los autores entrenaron el modelo en un corpus de código de GitHub y presentaron el banco de pruebas HumanEval para evaluar la calidad de la generación de código. Los experimentos mostraron que Codex resolvía correctamente alrededor del 30% de las tareas de programación y alcanzaba una tasa de éxito del 70% con múltiples muestras, aunque a veces generaba código inseguro. Este trabajo validó la viabilidad de utilizar grandes modelos en el ámbito del código y desencadenó una gran cantidad de investigaciones y aplicaciones posteriores."
+    },
+    "milestone": [
+      {
+        "id": "codet5-2021",
+        "title": "CodeT5: Identifier-Aware Unified Pre‑Training for Code Understanding and Generation",
+        "year": 2021,
+        "venue": "EMNLP",
+        "paper_url": "https://arxiv.org/abs/2109.00859",
+        "code": ["https://github.com/salesforce/CodeT5"],
+        "summary_zh": "代码语言具有结构化特性，纯文本模型难以捕捉标识符语义。CodeT5 的目标是设计面向代码的统一预训练框架，同时提升代码理解和生成。作者提出标识符感知的编码器‑解码器架构，在预训练任务中加入预测空标识符和代码翻译任务，使模型学习语法和语义信息。实验表明，CodeT5 在代码补全、摘要生成等任务上领先于 BART 等通用模型。该工作强调针对代码结构设计预训练任务的重要性，推动了代码大模型的发展。",
+        "summary_en": "Programming languages have structural characteristics and pure text models struggle to capture the semantics of identifiers. CodeT5 aimed to design a code‑oriented unified pre‑training framework to improve code understanding and generation. The authors proposed an identifier‑aware encoder–decoder architecture and included tasks such as masked identifier prediction and code translation in pre‑training so that the model learns syntax and semantic information. Experiments showed that CodeT5 outperformed general models like BART on tasks such as code completion and summarization. This work underscored the importance of designing pre‑training tasks that respect code structure and advanced the development of code large models.",
+        "summary_es": "Los lenguajes de programación presentan características estructurales y los modelos de texto puro tienen dificultades para captar la semántica de los identificadores. CodeT5 se propuso diseñar un marco de preentrenamiento unificado orientado al código para mejorar la comprensión y generación de código. Los autores propusieron una arquitectura codificador‑decodificador sensible a los identificadores e incluyeron tareas como la predicción de identificadores enmascarados y la traducción de código en el preentrenamiento para que el modelo aprendiera información sintáctica y semántica. Los experimentos demostraron que CodeT5 superaba a modelos generales como BART en tareas como completado y resumen de código. Este trabajo subrayó la importancia de diseñar tareas de preentrenamiento que respeten la estructura del código y avanzó en el desarrollo de grandes modelos de código."
+      },
+      {
+        "id": "alphacode-2022",
+        "title": "Competition‑Level Code Generation with AlphaCode",
+        "year": 2022,
+        "venue": "Science",
+        "paper_url": "https://arxiv.org/abs/2203.07814",
+        "code": [],
+        "summary_zh": "解决编程竞赛题需要复杂的算法设计和创造性思维，超出一般代码生成模型能力。AlphaCode 的目标是训练可以在编程竞赛中与人类选手媲美的代码生成系统。DeepMind 使用大规模未标注代码进行预训练，并使用自回归采样生成大量候选程序，通过语义过滤和聚类选择最优答案。AlphaCode 在 Codeforces 比赛模拟中击败了约半数参赛者，展示了大模型在高难度编程任务上的潜力。该成果表明代码生成模型能够学到复杂算法，为通用程序员助手奠定了基础。",
+        "summary_en": "Solving programming contest problems requires complex algorithm design and creative thinking beyond the capabilities of typical code generation models. AlphaCode aimed to train a code generation system that could compete with human participants in programming contests. DeepMind pre‑trained a model on large amounts of unlabeled code and used autoregressive sampling to generate many candidate programs, selecting the best answer through semantic filtering and clustering. In Codeforces competition simulations, AlphaCode surpassed about half of human competitors, demonstrating the potential of large models in difficult programming tasks. This result shows that code generation models can learn complex algorithms and lays the groundwork for general programmer assistants.",
+        "summary_es": "Resolver problemas de concursos de programación requiere un diseño algorítmico complejo y un pensamiento creativo que supera las capacidades de los modelos típicos de generación de código. AlphaCode se propuso entrenar un sistema de generación de código que pudiera competir con participantes humanos en concursos de programación. DeepMind preentrenó un modelo con grandes cantidades de código no etiquetado y utilizó muestreo autoregresivo para generar numerosos programas candidatos, seleccionando la mejor respuesta mediante filtrado semántico y agrupamiento. En simulaciones de concursos de Codeforces, AlphaCode superó a aproximadamente la mitad de los competidores humanos, demostrando el potencial de los grandes modelos en tareas de programación difíciles. Este resultado muestra que los modelos de generación de código pueden aprender algoritmos complejos y sienta las bases de asistentes de programación generales."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "starcoder2-2024",
+        "title": "StarCoder2: Open Multilingual Code Generation Model",
+        "year": 2024,
+        "venue": "GitHub",
+        "paper_url": "https://huggingface.co/bigcode/starcoder2",
+        "code": ["https://github.com/bigcode-project/starcoder2"],
+        "summary_zh": "开源社区需要可用于实际编程的多语言代码生成模型。StarCoder2 的目标是提供一个训练于多种编程语言的大模型，支持自然语言到代码和代码到代码任务。该模型在超过 80 种语言的大规模代码库上训练，并引入许可过滤和安全机制以防生成有害代码。实验表明，StarCoder2 在 HumanEval、MBPP 等基准上达到或超过闭源模型性能，并支持交互式编程助手。该项目推进了开源代码模型的发展，推动负责任的代码生成应用。",
+        "summary_en": "The open‑source community needs multilingual code generation models that can be used for practical programming. StarCoder2 aimed to provide a large model trained on many programming languages that supports natural language to code and code‑to‑code tasks. The model was trained on a large code corpus covering over 80 languages and introduced license filtering and safety mechanisms to prevent harmful code generation. Experiments showed that StarCoder2 achieved performance on benchmarks such as HumanEval and MBPP comparable to or exceeding closed‑source models and supported interactive programming assistants. This project advances open‑source code models and promotes responsible code generation applications.",
+        "summary_es": "La comunidad de código abierto necesita modelos de generación de código multilingües que puedan utilizarse en programación práctica. StarCoder2 se propuso proporcionar un gran modelo entrenado en muchos lenguajes de programación que admite tareas de lenguaje natural a código y de código a código. El modelo se entrenó en un gran corpus de código que abarca más de 80 lenguajes e introdujo filtrado de licencias y mecanismos de seguridad para evitar la generación de código dañino. Los experimentos mostraron que StarCoder2 lograba un rendimiento en bancos como HumanEval y MBPP comparable o superior al de los modelos de código cerrado y admitía asistentes de programación interactivos. Este proyecto impulsa el desarrollo de modelos de código abiertos y promueve aplicaciones responsables de generación de código."
+      },
+      {
+        "id": "code-llama-2023",
+        "title": "Code LLaMA: Open Foundation Model for Coding",
+        "year": 2023,
+        "venue": "Meta AI Blog",
+        "paper_url": "https://github.com/facebookresearch/codellama",
+        "code": ["https://github.com/facebookresearch/codellama"],
+        "summary_zh": "基于 LLaMA 的开源模型为通用语言任务提供了基础，但没有针对编程优化。Code LLaMA 的目标是通过在大量代码和自然语言混合数据上继续训练 LLaMA，使其适用于代码生成和补全。模型采用因果语言建模，添加了专门的代码注释预训练任务，并支持多语言代码输入。实验结果表明，Code LLaMA 在 HumanEval 和 MBPP 基准上优于同规模的 GPT‑J 等模型，且易于部署。该工作将开源大模型扩展到编程领域，为开发者提供可访问的编码助手。",
+        "summary_en": "LLaMA‑based open models provide a foundation for general language tasks but are not optimized for programming. Code LLaMA aimed to adapt LLaMA for code generation and completion by continuing training on a large mixture of code and natural language data. The model used causal language modeling, added specialized code‑comment pre‑training tasks and supported multi‑language code input. Experiments showed that Code LLaMA outperformed models of similar size such as GPT‑J on HumanEval and MBPP benchmarks and was easy to deploy. This work extends open source large models to the programming domain and offers developers an accessible coding assistant.",
+        "summary_es": "Los modelos abiertos basados en LLaMA proporcionan una base para tareas generales de lenguaje, pero no están optimizados para programación. Code LLaMA se propuso adaptar LLaMA para la generación y completado de código continuando el entrenamiento en una gran mezcla de código y datos de lenguaje natural. El modelo utilizó modelado de lenguaje causal, añadió tareas de preentrenamiento de comentarios de código y admitió entrada de código en varios lenguajes. Los experimentos demostraron que Code LLaMA superaba a modelos de tamaño similar como GPT‑J en los bancos HumanEval y MBPP y era fácil de desplegar. Este trabajo amplía los grandes modelos de código abierto al ámbito de la programación y ofrece a los desarrolladores un asistente de codificación accesible."
+      }
+    ],
+    "survey": [
+      {
+        "id": "codegen-survey-2023",
+        "title": "A Survey on Code Generation with Large Language Models",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2308.10184",
+        "code": [],
+        "summary_zh": "随着 CodeT5、Codex 等代码生成模型的兴起，研究者需要综合梳理本领域的技术路线和挑战。该综述的目标是总结基于大语言模型的代码生成在数据、模型、训练策略和评测方面的进展。文章介绍了数据集构建、去重和清洗，讨论了编码器‑解码器与纯解码模型的比较，以及多任务预训练和指令微调策略。作者还梳理了评测指标、常见基准和生成安全性问题，并提出了未来方向，如多语言支持、复杂依赖理解和人机协作。综述帮助研究者全面了解代码生成领域。",
+        "summary_en": "With the rise of code generation models such as CodeT5 and Codex, researchers need a comprehensive overview of technical approaches and challenges in the field. The goal of this survey is to summarize progress in code generation with large language models in terms of data, models, training strategies and evaluation. The article covers dataset construction, deduplication and cleaning, compares encoder–decoder versus decoder‑only models and discusses multi‑task pre‑training and instruction fine‑tuning strategies. The authors also review evaluation metrics, common benchmarks and issues of generation safety and propose future directions such as multilingual support, understanding complex dependencies and human–machine collaboration. The survey helps researchers gain a comprehensive understanding of the code generation domain.",
+        "summary_es": "Con el auge de modelos de generación de código como CodeT5 y Codex, los investigadores necesitan una visión general exhaustiva de los enfoques técnicos y los desafíos en el campo. El objetivo de esta encuesta es resumir los avances en la generación de código con grandes modelos lingüísticos en términos de datos, modelos, estrategias de entrenamiento y evaluación. El artículo cubre la construcción de conjuntos de datos, la eliminación de duplicados y la limpieza, compara los modelos codificador‑decodificador frente a los de sólo decodificador y analiza estrategias de preentrenamiento multitarea y afinamiento por instrucciones. Los autores también revisan las métricas de evaluación, los bancos de pruebas comunes y los problemas de seguridad en la generación y proponen direcciones futuras como el soporte multilingüe, la comprensión de dependencias complejas y la colaboración hombre‑máquina. La encuesta ayuda a los investigadores a obtener una comprensión completa del dominio de la generación de código."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "plbart-2020",
+      "title": "PLBART: Unified Pre‑Training for Programming and Natural Languages",
+      "year": 2020,
+      "venue": "ACL",
+      "paper_url": "https://arxiv.org/abs/2010.06779",
+      "code": ["https://github.com/salesforce/PLBART"],
+      "why_transition": "融合编程语言与自然语言预训练，奠定后续统一模型基础。",
+      "summary_zh": "早期代码模型往往针对特定任务和语言，缺乏统一预训练框架。PLBART 的目标是同时建模编程语言和自然语言，提升代码翻译和生成能力。作者使用 BART 架构在混合的代码和自然语言数据上进行自编码和自回归预训练，并在代码翻译、生成和修复任务上进行微调。结果显示，PLBART 在多项任务上超过了专门为代码设计的模型。该方法证明跨语言预训练的有效性，为后来的 CodeT5 和 Codex 等统一模型铺平道路。",
+      "summary_en": "Early code models often targeted specific tasks and languages and lacked a unified pre‑training framework. PLBART aimed to model programming languages and natural languages simultaneously to improve code translation and generation. The authors used the BART architecture to pre‑train on a mixture of code and natural language data with autoencoding and autoregressive objectives and fine‑tuned the model on tasks such as code translation, generation and repair. Results showed that PLBART outperformed models specifically designed for code on multiple tasks. This method demonstrated the effectiveness of cross‑linguistic pre‑training and paved the way for unified models such as CodeT5 and Codex.",
+      "summary_es": "Los primeros modelos de código solían dirigirse a tareas y lenguajes específicos y carecían de un marco de preentrenamiento unificado. PLBART se propuso modelar simultáneamente los lenguajes de programación y el lenguaje natural para mejorar la traducción y generación de código. Los autores utilizaron la arquitectura BART para preentrenar en una mezcla de datos de código y lenguaje natural con objetivos autoencoder y autoregresivos y afinaron el modelo en tareas como traducción, generación y reparación de código. Los resultados mostraron que PLBART superaba a los modelos diseñados específicamente para código en varias tareas. Este método demostró la eficacia del preentrenamiento multilingüe y allanó el camino para modelos unificados como CodeT5 y Codex."
+    },
+    {
+      "id": "incoder-2022",
+      "title": "InCoder: Generative Editing and Autocompletion of Code",
+      "year": 2022,
+      "venue": "ArXiv",
+      "paper_url": "https://arxiv.org/abs/2203.07814",
+      "code": ["https://github.com/facebookresearch/incoder"],
+      "why_transition": "引入填空生成和编辑能力，使模型支持插入式补全。",
+      "summary_zh": "多数代码模型采用自回归生成，难以在已有代码中间插入或编辑。InCoder 的目标是通过可填空生成实现代码自动补全和编辑。作者设计了编码‑解码器融合架构，使用混合跨度遮蔽训练模型生成被遮蔽区域代码，实现填空式生成和代码补丁的插入。实验结果表明，InCoder 在插入式补全任务上优于其他模型，并能结合编辑操作提升代码质量。该方法拓展了代码生成的交互方式，为后续填空式编码模型奠定基础。",
+      "summary_en": "Most code models use autoregressive generation and find it difficult to insert or edit code in the middle of existing code. InCoder aimed to achieve automatic code completion and editing via fill‑in‑the‑middle generation. The authors designed a hybrid encoder–decoder architecture and used mixed span masking to train the model to generate code for masked regions, enabling fill‑in‑the‑blank generation and insertion of code patches. Experimental results showed that InCoder outperformed other models on insertion completion tasks and could combine editing operations to improve code quality. This method expanded the interaction mode of code generation and laid the foundation for subsequent fill‑in‑the‑middle code models.",
+      "summary_es": "La mayoría de los modelos de código utilizan generación autoregresiva y tienen dificultades para insertar o editar código en mitad de un código existente. InCoder se propuso lograr la autocompletación y edición de código mediante la generación de relleno de huecos. Los autores diseñaron una arquitectura híbrida codificador‑decodificador y utilizaron enmascaramiento de segmentos mixtos para entrenar al modelo a generar código para las regiones enmascaradas, lo que permite la generación tipo rellenar huecos e insertar fragmentos de código. Los resultados experimentales mostraron que InCoder superaba a otros modelos en tareas de completado con inserción y podía combinar operaciones de edición para mejorar la calidad del código. Este método amplió el modo de interacción de la generación de código y sentó las bases de los modelos de código de relleno."
+    },
+    {
+      "id": "wizardcoder-2023",
+      "title": "WizardCoder: Instruction‑Tuned Code LLMs via Evol‑Instruct",
+      "year": 2023,
+      "venue": "ArXiv",
+      "paper_url": "https://arxiv.org/abs/2306.08568",
+      "code": ["https://github.com/nlpxucan/WizardLM"],
+      "why_transition": "采用进化式指令扩充策略提升代码模型的指令遵循能力。",
+      "summary_zh": "代码模型在遵循复杂自然语言指令方面表现不足。WizardCoder 的目标是通过进化式指令扩充策略训练代码模型，使其能理解并执行多样化指令。作者提出 Evol‑Instruct 框架，利用强大的语言模型迭代生成更难指令，并用这些指令微调代码模型，提升理解复杂意图的能力。实验表明，WizardCoder 在 HumanEval 和 MBPP 上明显超过同规模模型，并在执行复杂任务时表现更好。该方法强调了指令数据的持续进化，推动了指令驱动的代码生成研究。",
+      "summary_en": "Code models often struggle to follow complex natural language instructions. WizardCoder aimed to train code models to understand and execute diverse instructions through an evolutionary instruction expansion strategy. The authors proposed the Evol‑Instruct framework, which uses a powerful language model to iteratively generate increasingly difficult instructions and fine‑tunes the code model on these instructions to improve its ability to understand complex intents. Experiments showed that WizardCoder significantly outperformed models of the same size on HumanEval and MBPP and performed better on complex tasks. This method highlights the importance of continuously evolving instruction data and advances instruction‑driven code generation research.",
+      "summary_es": "Los modelos de código suelen tener dificultades para seguir instrucciones complejas en lenguaje natural. WizardCoder se propuso entrenar modelos de código para comprender y ejecutar instrucciones diversas mediante una estrategia de ampliación evolutiva de instrucciones. Los autores propusieron el marco Evol‑Instruct, que utiliza un potente modelo lingüístico para generar iterativamente instrucciones cada vez más difíciles y ajusta el modelo de código con estas instrucciones para mejorar su capacidad de comprender intenciones complejas. Los experimentos demostraron que WizardCoder superaba significativamente a los modelos de igual tamaño en HumanEval y MBPP y obtenía mejores resultados en tareas complejas. Este método pone de relieve la importancia de la evolución continua de los datos de instrucciones y avanza en la investigación de generación de código impulsada por instrucciones."
+    },
+    {
+      "id": "codegen-2022",
+      "title": "CodeGen: An Open Large Language Model for Code with Multilingual Capabilities",
+      "year": 2022,
+      "venue": "ArXiv",
+      "paper_url": "https://arxiv.org/abs/2203.13474",
+      "code": ["https://github.com/salesforce/CodeGen"],
+      "why_transition": "开放源代码生成模型，支持多语言编程并助力研究社区。",
+      "summary_zh": "为加速代码生成研究，需要公开的高性能基础模型。CodeGen 的目标是发布一个多语言的开放源代码生成模型，支持研究和应用。Salesforce 预训练了 16B 参数的模型，在大量代码和自然语言混合语料上训练，并提供分层模型选择。实验表明，CodeGen 在 Python、Java 等语言的生成任务上与 Codex 接近，并在文本到代码生成方面表现良好。该项目推动了开源代码模型的发展，为学术研究提供了基线。",
+      "summary_en": "To accelerate research in code generation, a high‑performance open baseline is required. CodeGen aimed to release an open, multilingual code generation model to support research and applications. Salesforce pre‑trained a 16B‑parameter model on a large mixture of code and natural language and provided models at various scales. Experiments showed that CodeGen approached the performance of Codex on generation tasks in Python, Java and other languages and performed well on text‑to‑code generation. This project advanced the development of open code models and provided a baseline for academic research.",
+      "summary_es": "Para acelerar la investigación en generación de código, se requiere un modelo base de alto rendimiento abierto. CodeGen se propuso publicar un modelo de generación de código multilingüe abierto para apoyar la investigación y las aplicaciones. Salesforce preentrenó un modelo de 16 mil millones de parámetros en una gran mezcla de código y lenguaje natural y proporcionó modelos de varias escalas. Los experimentos demostraron que CodeGen se acercaba al rendimiento de Codex en tareas de generación en Python, Java y otros lenguajes y tenía un buen comportamiento en generación de texto a código. Este proyecto impulsó el desarrollo de modelos de código abiertos y proporcionó una base para la investigación académica."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【982011905704861†L63-L74】",
+      "milestone": "【982011905704861†L63-L74】",
+      "frontier": "【982011905704861†L63-L74】",
+      "survey": "【982011905704861†L63-L74】"
+    }
+  }
+}

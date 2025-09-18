@@ -302,7 +302,10 @@
       },
       "summary": "这是一个基于Vision Transformer（ViT）架构的图像分类模型，专门用于从人脸图像中预测年龄。该模型在FairFace数据集上进行了微调，能够识别不同年龄段的人脸特征。其核心优势在于利用预训练的ViT-base-patch16-224-in21k模型，结合公平性数据集训练，提升了年龄预测的准确性和泛化能力。适用于人脸分析、年龄验证、用户画像构建等场景，尤其适合需要自动化年龄识别的应用。",
       "updated_at": "2025-09-17T17:31:02.898Z",
-      "summary_zh": "这是一个基于Vision Transformer（ViT）架构的图像分类模型，专门用于从人脸图像中预测年龄。该模型在FairFace数据集上进行了微调，能够识别不同年龄段的人脸特征。其核心优势在于利用预训练的ViT-base-patch16-224-in21k模型，结合公平性数据集训练，提升了年龄预测的准确性和泛化能力。适用于人脸分析、年龄验证、用户画像构建等场景，尤其适合需要自动化年龄识别的应用。"
+      "summary_zh": "这是一个基于Vision Transformer（ViT）架构的图像分类模型，专门用于从人脸图像中预测年龄。该模型在FairFace数据集上进行了微调，能够识别不同年龄段的人脸特征。其核心优势在于利用预训练的ViT-base-patch16-224-in21k模型，结合公平性数据集训练，提升了年龄预测的准确性和泛化能力。适用于人脸分析、年龄验证、用户画像构建等场景，尤其适合需要自动化年龄识别的应用。",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "timm/mobilenetv3_small_100.lamb_in1k",
@@ -340,7 +343,10 @@
       },
       "summary": "MobileNetV3-Small-100 是一个轻量级卷积神经网络，专为移动端和边缘设备上的图像分类任务设计。该模型基于 MobileNetV3 架构，通过引入 Squeeze-and-Excitation 模块和 h-swish 激活函数，在保持低计算量的同时显著提升性能。它在 ImageNet-1K 数据集上使用 LAMB 优化器训练，适用于资源受限环境中的高效推理，如移动应用或嵌入式视觉系统。该模型由 timm 库提供，支持 PyTorch 和 SafeTensors 格式。",
       "updated_at": "2025-09-17T17:31:02.898Z",
-      "summary_zh": "MobileNetV3-Small-100 是一个轻量级卷积神经网络，专为移动端和边缘设备上的图像分类任务设计。该模型基于 MobileNetV3 架构，通过引入 Squeeze-and-Excitation 模块和 h-swish 激活函数，在保持低计算量的同时显著提升性能。它在 ImageNet-1K 数据集上使用 LAMB 优化器训练，适用于资源受限环境中的高效推理，如移动应用或嵌入式视觉系统。该模型由 timm 库提供，支持 PyTorch 和 SafeTensors 格式。"
+      "summary_zh": "MobileNetV3-Small-100 是一个轻量级卷积神经网络，专为移动端和边缘设备上的图像分类任务设计。该模型基于 MobileNetV3 架构，通过引入 Squeeze-and-Excitation 模块和 h-swish 激活函数，在保持低计算量的同时显著提升性能。它在 ImageNet-1K 数据集上使用 LAMB 优化器训练，适用于资源受限环境中的高效推理，如移动应用或嵌入式视觉系统。该模型由 timm 库提供，支持 PyTorch 和 SafeTensors 格式。",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "Falconsai/nsfw_image_detection",
@@ -378,7 +384,10 @@
       },
       "summary": "这是一个基于Vision Transformer的图像分类模型，专门用于检测图像中的NSFW（不适宜工作场所）内容。该模型基于Google的ViT架构，能够高效识别包含成人或敏感内容的图片。适用于内容审核、社交媒体过滤、以及企业环境的安全防护等场景。模型支持Transformers和PyTorch框架，提供高精度的分类结果，帮助开发者自动化处理图像内容安全。",
       "updated_at": "2025-09-17T17:31:02.898Z",
-      "summary_zh": "这是一个基于Vision Transformer的图像分类模型，专门用于检测图像中的NSFW（不适宜工作场所）内容。该模型基于Google的ViT架构，能够高效识别包含成人或敏感内容的图片。适用于内容审核、社交媒体过滤、以及企业环境的安全防护等场景。模型支持Transformers和PyTorch框架，提供高精度的分类结果，帮助开发者自动化处理图像内容安全。"
+      "summary_zh": "这是一个基于Vision Transformer的图像分类模型，专门用于检测图像中的NSFW（不适宜工作场所）内容。该模型基于Google的ViT架构，能够高效识别包含成人或敏感内容的图片。适用于内容审核、社交媒体过滤、以及企业环境的安全防护等场景。模型支持Transformers和PyTorch框架，提供高精度的分类结果，帮助开发者自动化处理图像内容安全。",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "sentence-transformers/all-MiniLM-L6-v2",
@@ -449,7 +458,11 @@
       },
       "summary": "all-MiniLM-L6-v2 是一个基于 BERT 架构的轻量级句子嵌入模型，由 Sentence Transformers 团队开发。该模型通过知识蒸馏技术压缩至仅 6 层结构，在保持较高语义理解能力的同时显著提升了推理速度。它能够将文本转换为高维向量表示，适用于句子相似度计算、语义搜索和文本聚类等任务。模型支持多种框架部署（包括 PyTorch、TensorFlow 和 ONNX），适合对性能和效率有平衡需求的场景，如检索增强生成（RAG）或实时语义匹配应用。",
       "updated_at": "2025-09-17T17:31:02.898Z",
-      "summary_zh": "all-MiniLM-L6-v2 是一个基于 BERT 架构的轻量级句子嵌入模型，由 Sentence Transformers 团队开发。该模型通过知识蒸馏技术压缩至仅 6 层结构，在保持较高语义理解能力的同时显著提升了推理速度。它能够将文本转换为高维向量表示，适用于句子相似度计算、语义搜索和文本聚类等任务。模型支持多种框架部署（包括 PyTorch、TensorFlow 和 ONNX），适合对性能和效率有平衡需求的场景，如检索增强生成（RAG）或实时语义匹配应用。"
+      "summary_zh": "all-MiniLM-L6-v2 是一个基于 BERT 架构的轻量级句子嵌入模型，由 Sentence Transformers 团队开发。该模型通过知识蒸馏技术压缩至仅 6 层结构，在保持较高语义理解能力的同时显著提升了推理速度。它能够将文本转换为高维向量表示，适用于句子相似度计算、语义搜索和文本聚类等任务。模型支持多种框架部署（包括 PyTorch、TensorFlow 和 ONNX），适合对性能和效率有平衡需求的场景，如检索增强生成（RAG）或实时语义匹配应用。",
+      "task_keys": [
+        "rag",
+        "inference_acceleration"
+      ]
     },
     {
       "id": "google-bert/bert-base-uncased",

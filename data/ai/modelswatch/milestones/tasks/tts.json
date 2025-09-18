@@ -1,0 +1,135 @@
+{
+  "slug": "tts",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "wavenet-2016",
+      "title": "WaveNet: A Generative Model for Raw Audio",
+      "year": 2016,
+      "venue": "SSW",
+      "paper_url": "https://arxiv.org/abs/1609.03499",
+      "code": ["https://github.com/deepmind/wavenet"],
+      "summary_zh": "传统文本到语音合成依赖拼接或参数模型，合成声音缺乏自然度和细节。WaveNet 的目标是直接在时间域生成原始音频波形，以端到端方式提高语音自然度。作者提出一种基于扩张因果卷积的深度神经网络，建模每个音频样本的条件概率分布，并通过残差连接和门控机制促进训练。实验表明，WaveNet 在多语言 TTS 和语音生成任务上显著提升了主观自然度分数，其生成的波形细腻且逼真。该工作拉开了神经语音合成的序幕，启发了后续的端到端 TTS 架构。",
+      "summary_en": "Traditional text‑to‑speech synthesis relies on concatenative or parametric models and often produces speech lacking naturalness and detail. WaveNet aimed to directly generate raw audio waveforms in the time domain to improve naturalness in an end‑to‑end manner. The authors proposed a deep neural network based on dilated causal convolutions to model the conditional distribution of each audio sample and used residual connections and gated activations to facilitate training. Experiments showed that WaveNet dramatically improved subjective naturalness scores on multilingual TTS and speech generation tasks, producing rich and realistic waveforms. This work kicked off the neural speech synthesis revolution and inspired subsequent end‑to‑end TTS architectures.",
+      "summary_es": "La síntesis de texto a voz tradicional se basa en modelos concatenativos o paramétricos y a menudo produce un habla que carece de naturalidad y detalles. WaveNet se propuso generar directamente formas de onda de audio en el dominio temporal para mejorar la naturalidad de forma de extremo a extremo. Los autores propusieron una red neuronal profunda basada en convoluciones causales dilatadas para modelar la distribución condicional de cada muestra de audio y utilizaron conexiones residuales y activaciones con compuertas para facilitar el entrenamiento. Los experimentos demostraron que WaveNet mejoraba notablemente las puntuaciones de naturalidad subjetiva en tareas de TTS multilingüe y generación de voz, produciendo formas de onda ricas y realistas. Este trabajo dio inicio a la revolución de la síntesis de voz neuronal e inspiró las posteriores arquitecturas TTS de extremo a extremo."
+    },
+    "milestone": [
+      {
+        "id": "tacotron2-2018",
+        "title": "Tacotron 2: Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions",
+        "year": 2018,
+        "venue": "ICLR",
+        "paper_url": "https://arxiv.org/abs/1712.05884",
+        "code": ["https://github.com/keithito/tacotron"],
+        "summary_zh": "神经端到端语音合成的早期模型仍存在发音不稳和声码器不易训练的问题。Tacotron 2 的目标是通过两阶段架构实现高质量文本到语音，并简化声码器训练。作者首先使用序列到序列模型预测 mel 频谱图，然后采用精简后的 WaveNet 作为声码器，将频谱转换为波形。实验表明，Tacotron 2 生成的语音在主观评价上接近专业配音，并且端到端模型能够处理多种语言和说话人。该工作成为神经 TTS 的重要里程碑，推动了谱图先预测再声码器合成的范式。",
+        "summary_en": "Early neural end‑to‑end speech synthesis models still suffered from unstable pronunciation and difficult‑to‑train vocoders. Tacotron 2 aimed to achieve high‑quality text‑to‑speech through a two‑stage architecture and simplify vocoder training. The authors first used a sequence‑to‑sequence model to predict mel spectrograms and then employed a streamlined WaveNet as the vocoder to convert spectrograms to waveforms. Experiments showed that Tacotron 2 produced speech with subjective quality close to that of professional voice actors, and the end‑to‑end model could handle multiple languages and speakers. This work became an important milestone in neural TTS and propelled the paradigm of predicting spectrograms followed by vocoder synthesis.",
+        "summary_es": "Los modelos neuronales de síntesis de voz de extremo a extremo iniciales aún sufrían de pronunciación inestable y de vocoders difíciles de entrenar. Tacotron 2 se propuso lograr una síntesis texto‑voz de alta calidad mediante una arquitectura de dos etapas y simplificar el entrenamiento del vocoder. Los autores utilizaron primero un modelo de secuencia a secuencia para predecir espectrogramas mel y luego emplearon una WaveNet simplificada como vocoder para convertir los espectrogramas en formas de onda. Los experimentos demostraron que Tacotron 2 producía un habla con una calidad subjetiva cercana a la de actores de voz profesionales y que el modelo de extremo a extremo podía manejar varios idiomas y hablantes. Este trabajo se convirtió en un hito importante en la TTS neuronal y propulsó el paradigma de predecir espectrogramas seguido de síntesis con vocoder."
+      },
+      {
+        "id": "vits-2021",
+        "title": "VITS: Conditional Variational Autoencoder with Adversarial Learning for End‑to‑End TTS",
+        "year": 2021,
+        "venue": "ICML",
+        "paper_url": "https://arxiv.org/abs/2106.06103",
+        "code": ["https://github.com/jaywalnut310/vits"],
+        "summary_zh": "传统两阶段 TTS 流水线将声学模型与声码器分离，存在复杂度高和建模误差累积的问题。VITS 的目标是统一声学模型和声码器，通过单一模型直接从文本生成波形。该方法采用条件变分自编码器结合 GAN 训练，将文本序列映射到隐变量并通过流模型解码为波形，同时使用对抗判别器提升自然度。实验结果显示，VITS 在多个基准上取得与 Tacotron 2 相当甚至更好的语音质量，并具有端到端、高效推断的特点。VITS 标志着一阶段神经 TTS 的成熟，为后续模型奠定基础。",
+        "summary_en": "Traditional two‑stage TTS pipelines separate the acoustic model and vocoder, leading to high complexity and error accumulation. VITS aimed to unify the acoustic model and vocoder by directly generating waveforms from text with a single model. The method uses a conditional variational autoencoder trained with adversarial learning, mapping text sequences to latent variables and decoding them into waveforms through a flow model while a discriminator improves naturalness. Experimental results showed that VITS achieved speech quality comparable or superior to Tacotron 2 on multiple benchmarks and offered end‑to‑end inference efficiency. VITS marks the maturation of one‑stage neural TTS and lays the foundation for later models.",
+        "summary_es": "Los flujos de trabajo tradicionales de TTS en dos etapas separan el modelo acústico y el vocoder, lo que conlleva una alta complejidad y la acumulación de errores de modelado. VITS se propuso unificar el modelo acústico y el vocoder generando directamente las formas de onda a partir del texto con un único modelo. El método utiliza un autoencoder variacional condicional entrenado con aprendizaje adversarial, mapeando secuencias de texto a variables latentes y decodificándolas en formas de onda mediante un modelo de flujo, mientras un discriminador mejora la naturalidad. Los resultados experimentales mostraron que VITS lograba una calidad de voz comparable o superior a la de Tacotron 2 en múltiples referencias y ofrecía eficiencia de inferencia de extremo a extremo. VITS marca la madurez de la TTS neuronal de una etapa y sienta las bases para modelos posteriores."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "valle-2023",
+        "title": "VALL‑E: Neural Codec Language Models for Zero‑Shot TTS",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2301.02111",
+        "code": [],
+        "summary_zh": "现有 TTS 模型在跨说话人迁移和少样本场景下表现有限，需要大量录音训练。VALL‑E 的目标是通过神经编码器语言模型实现零样本语音克隆，仅凭几秒参考音频复现说话人风格。作者将语音压缩成离散的编码序列，采用自回归 Transformer 在大规模语料上建模编码序列的条件分布，并在合成阶段解码回波形。实验显示，VALL‑E 能以极少的目标语音生成保持韵律和音色的高质量语音，并支持语音编辑和转换。该研究开辟了离散表示驱动的语音生成范式，推动前沿零样本 TTS。",
+        "summary_en": "Existing TTS models perform poorly in cross‑speaker transfer and few‑shot scenarios and require large amounts of recorded training data. VALL‑E aimed to achieve zero‑shot voice cloning by using a neural codec language model that can reproduce a speaker’s style from only a few seconds of reference audio. The authors compressed speech into discrete code sequences and trained an autoregressive Transformer to model the conditional distribution of code sequences on large corpora, then decoded them back to waveforms during synthesis. Experiments showed that VALL‑E could generate high‑quality speech that preserves prosody and timbre with very little target speech and supports voice editing and conversion. This research pioneered the discrete‑representation‑driven paradigm for speech generation and advanced frontier zero‑shot TTS.",
+        "summary_es": "Los modelos TTS existentes tienen un rendimiento limitado en la transferencia de locutor y en escenarios de pocos ejemplos y requieren grandes cantidades de grabaciones de entrenamiento. VALL‑E se propuso lograr la clonación de voz de cero disparos mediante un modelo lingüístico de códec neuronal que puede reproducir el estilo de un locutor a partir de solo unos segundos de audio de referencia. Los autores comprimieron la voz en secuencias de códigos discretos y entrenaron un Transformer autorregresivo para modelar la distribución condicional de las secuencias de códigos en grandes corpus y luego las decodificaron de nuevo a formas de onda durante la síntesis. Los experimentos demostraron que VALL‑E podía generar un habla de alta calidad que preserva la prosodia y el timbre con muy poco habla objetivo y admite la edición y conversión de la voz. Esta investigación inauguró el paradigma de generación de voz impulsada por representaciones discretas y avanzó la frontera de la TTS de cero disparos."
+      },
+      {
+        "id": "naturalspeech2-2023",
+        "title": "NaturalSpeech 2: Latent Diffusion Models for High‑Fidelity Text‑to‑Speech",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2304.09116",
+        "code": ["https://github.com/kan-bayashi/naturalspeech2"],
+        "summary_zh": "尽管单阶段模型取得了进展，TTS 仍然在自然度和多样性上存在不足，尤其是在难度较大的音色和韵律建模上。NaturalSpeech 2 的目标是通过潜变量扩散模型实现高保真、可控的文本到语音合成。作者将文本映射到语音编码器隐空间，并使用扩散模型在该空间内迭代去噪生成语音隐变量，再通过神经声码器解码为波形；同时引入持续时间和基频预测模块实现韵律控制。实验结果表明，该模型在自然度和多样性上超越此前方法，并支持可调节的语速和情感。NaturalSpeech 2 将扩散模型应用于 TTS，代表当前的前沿方向。",
+        "summary_en": "Despite progress in one‑stage models, TTS still suffers from limitations in naturalness and diversity, especially in modeling challenging timbre and prosody. NaturalSpeech 2 aimed to achieve high‑fidelity and controllable text‑to‑speech synthesis using latent diffusion models. The authors mapped text into a latent space of a speech codec and used a diffusion model to iteratively denoise and generate latent variables in this space, then decoded them into waveforms via a neural vocoder; duration and fundamental frequency predictors were introduced for prosody control. Experimental results showed that this model surpassed previous methods in naturalness and diversity and supported adjustable speaking rate and emotion. NaturalSpeech 2 applies diffusion models to TTS and represents a current frontier direction.",
+        "summary_es": "A pesar de los avances en modelos de una sola etapa, la TTS sigue teniendo limitaciones en naturalidad y diversidad, especialmente en el modelado del timbre y la prosodia más difíciles. NaturalSpeech 2 se propuso lograr una síntesis texto‑voz de alta fidelidad y controlable mediante modelos de difusión latente. Los autores mapearon el texto en un espacio latente de un códec de voz y utilizaron un modelo de difusión para denoising iterativo y generar variables latentes en este espacio, luego las decodificaron en formas de onda mediante un vocoder neuronal; se introdujeron módulos de predicción de duración y frecuencia fundamental para controlar la prosodia. Los resultados experimentales mostraron que este modelo superaba a los métodos anteriores en naturalidad y diversidad y admitía ajustes de velocidad de habla y emoción. NaturalSpeech 2 aplica modelos de difusión a la TTS y representa una dirección de vanguardia actual."
+      }
+    ],
+    "survey": [
+      {
+        "id": "tts-survey-2022",
+        "title": "Neural Speech Synthesis: A Review",
+        "year": 2022,
+        "venue": "IEEE/ACM TASLP",
+        "paper_url": "https://arxiv.org/abs/2106.15561",
+        "summary_zh": "随着深度学习的发展，神经语音合成方法迅速迭代，但缺乏系统梳理。该综述的目标是全面回顾神经文本到语音领域的发展，包括模型结构、声码器技术、训练策略和评价指标。作者从两阶段模型、一阶段模型到扩散与离散表示等最新方向，分析了 Tacotron、Flow‑TTS、GAN‑TTS、VITS、离散代码模型等方法的原理和优缺点，并总结了自然度、多样性、表达力等评价标准。文章还讨论了多说话人、跨语言和可控语音合成等应用场景，指出了数据效率、实时性和可解释性等挑战。该综述为研究者提供了系统的知识框架和未来研究方向参考。",
+        "summary_en": "With the development of deep learning, neural speech synthesis methods have evolved rapidly but lacked a systematic overview. The goal of this review was to comprehensively examine progress in neural text‑to‑speech, including model architectures, vocoder technologies, training strategies and evaluation metrics. The authors analyzed methods ranging from two‑stage models and one‑stage models to recent directions such as diffusion and discrete representations, discussing the principles and pros and cons of Tacotron, Flow‑TTS, GAN‑TTS, VITS, discrete code models and others and summarizing evaluation criteria such as naturalness, diversity and expressiveness. The article also discussed applications such as multi‑speaker, cross‑language and controllable speech synthesis and pointed out challenges like data efficiency, real‑time performance and interpretability. This survey provides researchers with a systematic knowledge framework and a reference for future research directions.",
+        "summary_es": "Con el desarrollo del aprendizaje profundo, los métodos de síntesis de voz neuronal han evolucionado rápidamente pero carecían de una visión general sistemática. El objetivo de esta revisión fue examinar de forma exhaustiva el progreso en el texto a voz neuronal, incluyendo las arquitecturas de los modelos, las tecnologías de vocoder, las estrategias de entrenamiento y las métricas de evaluación. Los autores analizaron métodos que van desde modelos de dos etapas y modelos de una etapa hasta direcciones recientes como la difusión y las representaciones discretas, discutiendo los principios y las ventajas e inconvenientes de Tacotron, Flow‑TTS, GAN‑TTS, VITS, modelos de códigos discretos y otros, y resumieron criterios de evaluación como la naturalidad, la diversidad y la expresividad. El artículo también discutió aplicaciones como la síntesis de voz multivocutor, multilingüe y controlable, y señaló retos como la eficiencia de los datos, el rendimiento en tiempo real y la interpretabilidad. Esta encuesta proporciona a los investigadores un marco de conocimientos sistemático y una referencia para futuras direcciones de investigación."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "tacotron-2017",
+      "title": "Tacotron: End‑to‑End Speech Synthesis",
+      "year": 2017,
+      "venue": "ICASSP",
+      "paper_url": "https://arxiv.org/abs/1703.10135",
+      "code": [],
+      "why_transition": "首次提出序列到序列模型直接从字符生成频谱，为端到端 TTS 奠定基础。",
+      "summary_zh": "在 WaveNet 之后，如何简化训练并将语音合成端到端成为研究重点。Tacotron 的目标是用单一神经网络将字符序列映射到梅尔频谱图，省去传统前端和后端分离。作者采用卷积与循环结合的编码器获取字符表示，解码器使用注意力生成帧级频谱图，并使用 Griffin‑Lim 重建波形。Tacotron 在合成自然度上超过传统参数法，但音质仍受限于声码器。该工作首次展示了端到端文本到频谱的可行性，是向现代 TTS 过渡的重要一步。",
+      "summary_en": "After WaveNet, simplifying training and making speech synthesis end‑to‑end became a focus of research. Tacotron aimed to map character sequences to mel spectrograms using a single neural network, eliminating the separation between traditional front‑end and back‑end components. The authors used a convolutional and recurrent encoder to obtain character representations, while the decoder with attention generated frame‑level spectrograms and a Griffin‑Lim algorithm reconstructed waveforms. Tacotron surpassed traditional parametric methods in synthesis naturalness but still relied on vocoder quality. This work first demonstrated the feasibility of end‑to‑end text‑to‑spectrogram synthesis and was an important step toward modern TTS.",
+      "summary_es": "Tras WaveNet, simplificar el entrenamiento y hacer que la síntesis de voz fuese de extremo a extremo se convirtió en un foco de investigación. Tacotron se propuso mapear las secuencias de caracteres a espectrogramas mel utilizando una única red neuronal, eliminando la separación entre los componentes tradicionales de preprocesamiento y posprocesamiento. Los autores utilizaron un codificador combinado convolucional y recurrente para obtener representaciones de caracteres, mientras que el decodificador con atención generaba espectrogramas a nivel de fotograma y un algoritmo Griffin‑Lim reconstruía las formas de onda. Tacotron superaba a los métodos paramétricos tradicionales en naturalidad de síntesis, pero aún dependía de la calidad del vocoder. Este trabajo demostró por primera vez la viabilidad de la síntesis texto‑espectrograma de extremo a extremo y fue un paso importante hacia la TTS moderna."
+    },
+    {
+      "id": "fastspeech-2019",
+      "title": "FastSpeech: Fast, Robust and Controllable Text to Speech",
+      "year": 2019,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/1905.09263",
+      "code": ["https://github.com/ming024/FastSpeech2"],
+      "why_transition": "使用非自回归 Transformer 解决 Tacotron 流水线速度慢和错误传播问题，提升效率。",
+      "summary_zh": "Tacotron 等自回归模型在推理时速度较慢且存在暴露偏差。FastSpeech 的目标是利用非自回归 Transformer 架构加速推断并提升鲁棒性。作者先训练一个教师模型产生持续时间信息，然后用长度调节器将文本展开为目标帧数，最后由一个并行 Transformer 预测频谱图。FastSpeech 在合成速度上提升数倍，并通过可控持续时间改善断词和停顿问题，音质接近 Tacotron 2。该方法为快速语音合成提供了新思路，后续 FastSpeech 2 进一步加入音高预测。",
+      "summary_en": "Autoregressive models like Tacotron are slow at inference and suffer from exposure bias. FastSpeech aimed to accelerate inference and improve robustness using a non‑autoregressive Transformer architecture. The authors first trained a teacher model to produce duration information, then used a length regulator to expand text into the target number of frames and finally employed a parallel Transformer to predict spectrograms. FastSpeech achieved several‑fold speedups in synthesis and improved word and pause segmentation through controllable duration, with audio quality approaching that of Tacotron 2. This method provided new ideas for fast speech synthesis, and FastSpeech 2 later added pitch prediction.",
+      "summary_es": "Los modelos autoregresivos como Tacotron son lentos en la inferencia y sufren de sesgo de exposición. FastSpeech se propuso acelerar la inferencia y mejorar la robustez mediante una arquitectura Transformer no autoregresiva. Los autores entrenaron primero un modelo maestro para producir información de duración, luego utilizaron un regulador de longitud para expandir el texto al número de cuadros objetivo y finalmente emplearon un Transformer paralelo para predecir espectrogramas. FastSpeech lograba aceleraciones de síntesis de varios órdenes y mejoraba la segmentación de palabras y pausas mediante una duración controlable, con una calidad de audio cercana a la de Tacotron 2. Este método aportó nuevas ideas para la síntesis de voz rápida, y FastSpeech 2 añadió posteriormente la predicción de tono."
+    },
+    {
+      "id": "glow-tts-2020",
+      "title": "Glow‑TTS: A Generative Flow for Text‑to‑Speech via Monotonic Alignment",
+      "year": 2020,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/2005.11129",
+      "code": ["https://github.com/jaywalnut310/glow-tts"],
+      "why_transition": "引入可逆流模型并通过单调对齐学习文本到语音映射，实现并行生成。",
+      "summary_zh": "在快速语音合成的探索中，如何保证灵活对齐和高质量仍是挑战。Glow‑TTS 的目标是使用可逆流模型学习文本到声学隐变量的映射，并通过单调对齐寻求稳定的发音顺序。作者利用流模型建立可逆映射，使解码阶段能并行生成，同时引入可训练的对齐机制确保文本与帧的对应关系。Glow‑TTS 达到与 FastSpeech 相当的合成速度，并在自然度上有一定提升。该工作证明了基于流的 TTS 的可行性，丰富了端到端语音合成方案。",
+      "summary_en": "In the quest for fast speech synthesis, ensuring flexible alignment and high quality remained challenging. Glow‑TTS aimed to use a generative flow model to learn the mapping from text to acoustic latent variables and to seek a stable pronunciation order through monotonic alignment. The authors employed a flow model to establish an invertible mapping so that the decoding stage could generate in parallel and introduced a trainable alignment mechanism to ensure correspondence between text and frames. Glow‑TTS achieved synthesis speed comparable to FastSpeech and showed some improvement in naturalness. This work proved the feasibility of flow‑based TTS and enriched end‑to‑end speech synthesis approaches.",
+      "summary_es": "En la búsqueda de la síntesis de voz rápida, garantizar una alineación flexible y una alta calidad seguía siendo un desafío. Glow‑TTS se propuso utilizar un modelo de flujo generativo para aprender la correspondencia del texto a las variables latentes acústicas y buscar un orden de pronunciación estable mediante una alineación monótona. Los autores emplearon un modelo de flujo para establecer una correspondencia invertible de modo que la etapa de decodificación pudiera generar en paralelo e introdujeron un mecanismo de alineación entrenable para asegurar la correspondencia entre el texto y los fotogramas. Glow‑TTS lograba una velocidad de síntesis comparable a la de FastSpeech y mostraba cierta mejora en la naturalidad. Este trabajo demostró la viabilidad de la TTS basada en flujos y enriqueció los enfoques de síntesis de voz de extremo a extremo."
+    },
+    {
+      "id": "styletts2-2023",
+      "title": "StyleTTS 2: End‑to‑End Speech Synthesis with Style Modeling",
+      "year": 2023,
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/abs/2309.03978",
+      "code": ["https://github.com/yl4579/StyleTTS2"],
+      "why_transition": "通过显式建模情感和语气等风格因素，提高 TTS 表达力与个性化。",
+      "summary_zh": "大多数 TTS 模型主要关注内容准确性和自然度，缺乏对风格的精细控制。StyleTTS 2 的目标是通过显式风格建模在端到端框架中生成具有情感和个性化的语音。作者采用变分自编码器将风格因子嵌入隐空间，并通过对抗训练分解说话人特征与语调情绪，同时在解码阶段引入风格向量调制波形生成。实验表明，该模型可以根据输入的风格标签或示例合成不同情感和风格的语音，同时保持清晰度。StyleTTS 2 推动了可控和多样化语音合成的研究，为个性化语音提供了新方向。",
+      "summary_en": "Most TTS models mainly focus on content accuracy and naturalness and lack fine control over speaking style. StyleTTS 2 aimed to generate speech with emotion and personalization in an end‑to‑end framework by explicitly modeling style. The authors used a variational autoencoder to embed style factors into a latent space and employed adversarial training to disentangle speaker identity from intonation and emotion, while introducing style vectors to modulate waveform generation in the decoder. Experiments showed that the model could synthesize speech with different emotions and styles according to input style labels or examples while maintaining clarity. StyleTTS 2 advances research on controllable and diverse speech synthesis and provides new directions for personalized voice.",
+      "summary_es": "La mayoría de los modelos TTS se centran principalmente en la precisión del contenido y la naturalidad y carecen de un control fino sobre el estilo de habla. StyleTTS 2 se propuso generar voz con emoción y personalización en un marco de extremo a extremo mediante el modelado explícito del estilo. Los autores utilizaron un autoencoder variacional para incrustar factores de estilo en un espacio latente y emplearon entrenamiento adversarial para desentrañar la identidad del hablante de la entonación y la emoción, mientras introducían vectores de estilo para modular la generación de formas de onda en el decodificador. Los experimentos demostraron que el modelo podía sintetizar voz con diferentes emociones y estilos de acuerdo con las etiquetas de estilo de entrada o ejemplos conservando la claridad. StyleTTS 2 impulsa la investigación sobre la síntesis de voz controlable y diversa y ofrece nuevas direcciones para la voz personalizada."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【28571265795531†L52-L63】",
+      "milestone": "【28571265795531†L52-L63】",
+      "frontier": "【28571265795531†L52-L63】",
+      "survey": "【28571265795531†L52-L63】"
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "slug": "object-detection",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "rcnn-2014",
+      "title": "Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation (R-CNN)",
+      "year": 2014,
+      "venue": "CVPR",
+      "paper_url": "https://arxiv.org/abs/1311.2524",
+      "code": ["https://github.com/rbgirshick/rcnn"],
+      "summary_zh": "传统滑动窗口和手工特征难以在目标检测中兼顾准确率与效率。R‑CNN 的目标是利用深度卷积网络为候选区域提取判别特征并提高检测性能。作者采用选择性搜索生成候选框，用 CNN 提取每个区域的特征并用 SVM 分类与回归进行判定。在 PASCAL VOC 等数据集上，R‑CNN 显著提升了平均准确率并证明了 CNN 特征优于传统特征。该工作开创了基于区域的深度检测范式，为后续 Fast/Faster R‑CNN 等模型奠定基础。",
+      "summary_en": "Traditional sliding‑window detectors with handcrafted features could not balance accuracy and efficiency in object detection. R‑CNN aimed to leverage deep convolutional networks to extract discriminative features for region proposals and improve detection performance. The authors used selective search to generate candidate boxes, extracted CNN features for each region and applied SVM classifiers and regressors to refine predictions. On benchmarks such as PASCAL VOC, R‑CNN significantly increased mean average precision and demonstrated that CNN features outperform traditional hand‑crafted features. This work launched the region‑based deep detection paradigm and paved the way for Fast/Faster R‑CNN and subsequent models.",
+      "summary_es": "Los detectores basados en ventanas deslizantes y características manuales no podían equilibrar precisión y eficiencia en la detección de objetos. R‑CNN se propuso utilizar redes neuronales convolucionales profundas para extraer características discriminativas de las propuestas de región y mejorar el rendimiento. Los autores emplearon búsqueda selectiva para generar cuadros candidatos, extrajeron características con una CNN y utilizaron SVM para clasificar y refinar las cajas. En bancos como PASCAL VOC, R‑CNN aumentó significativamente la precisión media y demostró que las características de la CNN superan a las tradicionales. Este trabajo inauguró el paradigma de detección profunda basada en regiones y sentó las bases de Fast/Faster R‑CNN y modelos posteriores."
+    },
+    "milestone": [
+      {
+        "id": "faster-rcnn-2015",
+        "title": "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks",
+        "year": 2015,
+        "venue": "NeurIPS",
+        "paper_url": "https://arxiv.org/abs/1506.01497",
+        "code": ["https://github.com/rbgirshick/py-faster-rcnn"],
+        "summary_zh": "R‑CNN 系列因分离训练和重复特征提取效率低下，难以实时应用。Faster R‑CNN 的目标是通过端到端网络同时生成区域候选与分类结果，提高速度和精度。论文引入区域提议网络 (RPN)，在共享卷积特征上预测锚框并与检测网络联合训练。实验表明 Faster R‑CNN 在 PASCAL VOC 和 COCO 数据集上显著提升帧率并保持高精度。该模型奠定了端到端目标检测的新范式，并启发了后续单阶段和两阶段检测器的发展。",
+        "summary_en": "Variants of R‑CNN suffered from inefficiency because region proposal and feature extraction were separated. Faster R‑CNN aimed to develop an end‑to‑end network that generates region proposals and performs detection jointly to improve speed and accuracy. The paper introduced a Region Proposal Network (RPN) that shares convolutional features, predicts anchor boxes and is trained with the detector. Experiments showed that Faster R‑CNN dramatically improved frame rates on PASCAL VOC and COCO while maintaining high precision. This model established a new paradigm of end‑to‑end detection and inspired subsequent two‑stage and one‑stage detectors.",
+        "summary_es": "Las variantes de R‑CNN sufrían ineficiencia porque la generación de propuestas y la extracción de características estaban separadas. Faster R‑CNN se propuso desarrollar una red de extremo a extremo que generara propuestas de región y realizara la detección conjuntamente para mejorar velocidad y precisión. El artículo introdujo una Red de Propuestas de Región (RPN) que comparte características convolucionales, predice cajas ancla y se entrena junto con el detector. Los experimentos demostraron que Faster R‑CNN mejoró drásticamente la tasa de cuadros en PASCAL VOC y COCO manteniendo alta precisión. Este modelo estableció un nuevo paradigma de detección de extremo a extremo e inspiró detectores de dos y una etapa posteriores."
+      },
+      {
+        "id": "yolo-2016",
+        "title": "You Only Look Once: Unified, Real-Time Object Detection (YOLO)",
+        "year": 2016,
+        "venue": "CVPR",
+        "paper_url": "https://arxiv.org/abs/1506.02640",
+        "code": ["https://github.com/pjreddie/darknet"],
+        "summary_zh": "两阶段检测器虽然准确，但推理速度难以满足实时应用需求。YOLO 的目标是提出单阶段检测框架，在端到端网络中同时预测类别和位置，实现实时检测。作者将图像划分为网格，每个网格预测多个边界框和类别概率，一次性完成检测。YOLO 在 VOC 数据集上实现了较高的平均精度和显著的帧率，展示了实时性与精度的平衡。作为首个高性能单阶段检测器，YOLO 系列催生了众多实时检测应用并影响后续改进。",
+        "summary_en": "Conventional two‑stage detectors were accurate but too slow for real‑time applications. YOLO aimed to propose a single‑stage framework that predicts classes and locations simultaneously in an end‑to‑end network for real‑time detection. The authors divide the image into a grid, and each cell predicts multiple bounding boxes and class probabilities, completing detection in one pass. YOLO achieved competitive mean average precision and high frame rate on VOC datasets, showing a balance between speed and accuracy. As the first high‑performance single‑stage detector, the YOLO series inspired numerous real‑time applications and subsequent improvements.",
+        "summary_es": "Los detectores de dos etapas eran precisos pero demasiado lentos para aplicaciones en tiempo real. YOLO se propuso presentar un marco de una sola etapa que predijera simultáneamente clases y posiciones en una red de extremo a extremo para detección en tiempo real. Los autores dividen la imagen en una cuadrícula y cada celda predice múltiples cajas delimitadoras y probabilidades de clase, completando la detección en una sola pasada. YOLO logró una precisión media competitiva y una alta tasa de cuadros en los conjuntos VOC, mostrando un equilibrio entre velocidad y precisión. Como el primer detector de una sola etapa de alto rendimiento, la serie YOLO inspiró numerosas aplicaciones en tiempo real y mejoras posteriores."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "detr-2020",
+        "title": "End-to-End Object Detection with Transformers (DETR)",
+        "year": 2020,
+        "venue": "ECCV",
+        "paper_url": "https://arxiv.org/abs/2005.12872",
+        "code": ["https://github.com/facebookresearch/detr"],
+        "summary_zh": "传统检测器依赖手工设计的锚框和复杂后处理，难以统一建模。DETR 的目标是利用 Transformer 和集合匹配机制构建端到端检测框架，消除锚框和非极大值抑制。论文将检测视为序列到序列任务，先用 CNN 提取特征后送入 Transformer 解码器，并通过匈牙利算法匹配预测与真实框。在 COCO 数据集上，DETR 达到与先进两阶段检测器相当的精度并简化了训练流程。该工作开启了 Transformer 在检测领域的应用，并推动了无锚框检测新范式。",
+        "summary_en": "Conventional detectors rely on hand‑crafted anchors and complex post‑processing, making unified modeling difficult. DETR aimed to build an end‑to‑end detection framework using Transformers and set‑based matching to eliminate anchors and non‑maximum suppression. The paper treats detection as a sequence‑to‑sequence task: after CNN feature extraction, a Transformer decoder predicts objects and the Hungarian algorithm matches predictions to ground truth boxes. On COCO, DETR achieved accuracy comparable to advanced two‑stage detectors and simplified the pipeline. This work opened the application of Transformers in detection and spurred the development of anchor‑free paradigms.",
+        "summary_es": "Los detectores convencionales dependen de anclas diseñadas a mano y un posprocesamiento complejo, lo que dificulta un modelado unificado. DETR se propuso construir un marco de detección de extremo a extremo utilizando Transformers y emparejamiento basado en conjuntos para eliminar anclas y la supresión no máxima. El artículo trata la detección como una tarea secuencia a secuencia: tras la extracción de características con una CNN, un decodificador Transformer predice objetos y el algoritmo húngaro asigna las predicciones a las cajas de referencia. En COCO, DETR alcanzó una precisión comparable a la de los detectores de dos etapas avanzados y simplificó el flujo. Este trabajo abrió la aplicación de Transformers en detección y estimuló el desarrollo de paradigmas sin anclas."
+      },
+      {
+        "id": "dino-2023",
+        "title": "DeNoising and Overlap-aware Transformer for End-to-End Object Detection (DINO)",
+        "year": 2023,
+        "venue": "ICLR",
+        "paper_url": "https://arxiv.org/abs/2203.03605",
+        "code": ["https://github.com/IDEA-Research/DINO"],
+        "summary_zh": "虽然 DETR 提供了端到端框架，但存在收敛慢和小目标性能差的问题。DINO 的目标是通过引入降噪训练和重叠框监督提升 Transformer 检测器的收敛速度和精度。研究在训练阶段加入随机噪声目标并采用匈牙利匹配，同时使用框监督优化候选框更新，提高学习效率。实验显示 DINO 在 COCO 上取得更高的 AP 并显著加快收敛速度。该工作表明改进训练策略可显著提升 Transformer 检测器，并为后续模型提供实用技术。",
+        "summary_en": "Although DETR offers an end‑to‑end framework, it suffers from slow convergence and poor small‑object performance. DINO aimed to improve Transformer detectors by introducing denoising training and overlap‑aware box supervision to boost convergence and accuracy. The study adds random noise targets during training and uses Hungarian matching, while optimizing candidate boxes via box supervision to enhance learning efficiency. Experiments show that DINO achieves higher AP on COCO and significantly accelerates convergence. This work indicates that improved training strategies can substantially enhance Transformer detectors and provides practical techniques for future models.",
+        "summary_es": "Aunque DETR ofrece un marco de extremo a extremo, sufre de convergencia lenta y bajo rendimiento en objetos pequeños. DINO se propuso mejorar los detectores Transformer introduciendo entrenamiento con desenso y supervisión de solapamiento de cajas para acelerar la convergencia y mejorar la precisión. El estudio añade objetivos de ruido aleatorio durante el entrenamiento y utiliza el algoritmo húngaro, mientras optimiza las cajas candidatas mediante supervisión de cajas para mejorar la eficiencia de aprendizaje. Los experimentos muestran que DINO logra un AP más alto en COCO y acelera significativamente la convergencia. Este trabajo indica que las estrategias de entrenamiento mejoradas pueden potenciar los detectores Transformer y proporciona técnicas prácticas para modelos futuros."
+      }
+    ],
+    "survey": [
+      {
+        "id": "object-detection-survey-2023",
+        "title": "Object Detection in 20 Years: A Survey",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2204.02605",
+        "code": [],
+        "summary_zh": "目标检测作为计算机视觉的核心任务，在过去二十年经历了快速发展。该综述旨在系统回顾从早期的传统方法到深度学习主导的现代检测器的发展历程、数据集与评测指标。作者在两阶段和单阶段框架下梳理了经典模型及改进，并分析了深度网络、损失函数和训练策略对性能的影响。综合比较表明不同架构在速度、精度和应用场景上各有优势。文章最后讨论了现有挑战和未来趋势，为研究者提供全面的参考指南。",
+        "summary_en": "Object detection, a core task in computer vision, has undergone rapid development over the past two decades. This survey aims to systematically review the evolution from early traditional methods to deep learning‑dominated modern detectors, including datasets and evaluation metrics. The authors organize classic models and improvements under two‑stage and single‑stage frameworks and analyze how deep networks, loss functions, and training strategies influence performance. Comparative analyses show that different architectures offer varying advantages in speed, accuracy, and application scenarios. The article concludes by discussing current challenges and future directions, providing researchers with a comprehensive reference guide.",
+        "summary_es": "La detección de objetos, una tarea central de la visión por ordenador, ha experimentado un rápido desarrollo en las dos últimas décadas. Esta encuesta pretende revisar sistemáticamente la evolución desde los métodos tradicionales tempranos hasta los detectores modernos dominados por el aprendizaje profundo, incluidos los conjuntos de datos y las métricas de evaluación. Los autores organizan modelos clásicos y mejoras en marcos de dos etapas y de una etapa y analizan cómo las redes profundas, las funciones de pérdida y las estrategias de entrenamiento influyen en el rendimiento. Los análisis comparativos muestran que las distintas arquitecturas ofrecen ventajas variables en velocidad, precisión y escenarios de aplicación. El artículo concluye con una discusión de los desafíos actuales y las direcciones futuras, proporcionando a los investigadores una guía de referencia completa."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "fast-rcnn-2015",
+      "title": "Fast R-CNN",
+      "year": 2015,
+      "venue": "ICCV",
+      "paper_url": "https://arxiv.org/abs/1504.08083",
+      "code": ["https://github.com/rbgirshick/fast-rcnn"],
+      "why_transition": "简化 R‑CNN 的多阶段流程并显著提高训练和推理效率。",
+      "summary_zh": "尽管 R‑CNN 使用深度特征，但多级训练和重复特征提取导致效率低下。Fast R‑CNN 的目标是通过端到端的多任务学习提升检测速度和精度。论文在整张图像上计算特征图，用 ROI 池化层为每个候选框提取固定长度特征，并同时进行分类和边界框回归。Fast R‑CNN 比 R‑CNN 在 VOC 数据集上速度快数十倍且精度更高。该方法简化了训练流程，为 Faster R‑CNN 奠定了基础。",
+      "summary_en": "Although R‑CNN used deep features, its multi‑stage training and repeated feature extraction led to inefficiency. Fast R‑CNN aimed to improve detection speed and accuracy through end‑to‑end multi‑task learning. The paper computes a single feature map for the whole image, uses an ROI pooling layer to extract fixed‑length features for each candidate box, and jointly performs classification and bounding‑box regression. Fast R‑CNN is tens of times faster than R‑CNN on VOC datasets and delivers higher accuracy. This method simplified the training pipeline and paved the way for Faster R‑CNN.",
+      "summary_es": "Aunque R‑CNN utilizaba características profundas, su entrenamiento en varias etapas y la extracción repetida de características lo hacían ineficiente. Fast R‑CNN pretendía mejorar la velocidad y la precisión de la detección mediante aprendizaje multitarea de extremo a extremo. El artículo calcula un único mapa de características para toda la imagen, utiliza una capa de pooling de ROI para extraer características de longitud fija para cada cuadro candidato y realiza conjuntamente la clasificación y la regresión de cajas. Fast R‑CNN es decenas de veces más rápido que R‑CNN en los conjuntos VOC y ofrece mayor precisión. Este método simplificó el flujo de entrenamiento y allanó el camino para Faster R‑CNN."
+    },
+    {
+      "id": "ssd-2016",
+      "title": "Single Shot MultiBox Detector (SSD)",
+      "year": 2016,
+      "venue": "ECCV",
+      "paper_url": "https://arxiv.org/abs/1512.02325",
+      "code": ["https://github.com/weiliu89/caffe/tree/ssd"],
+      "why_transition": "提出多尺度单阶段检测架构，实现实时性能并简化框生成。",
+      "summary_zh": "两阶段检测器虽然准确，但速度不能满足边缘设备需求。SSD 的目标是提出单阶段端到端网络，通过多尺度特征金字塔实现实时目标检测。论文在多个卷积层上预测默认框和类别概率，通过硬负样本挖掘进行优化。SSD 在 VOC 和 COCO 数据集上取得高速度和竞争性精度。该方法证明单阶段检测器可以在不牺牲太多精度的情况下实现实时性能。",
+      "summary_en": "Two‑stage detectors were accurate but lacked the speed needed for edge devices. SSD aimed to propose a single‑stage end‑to‑end network that performs real‑time object detection using a multi‑scale feature pyramid. The paper predicts default boxes and class probabilities on multiple convolutional layers and optimizes using hard negative mining. SSD achieved high speed and competitive accuracy on VOC and COCO datasets. This method demonstrated that single‑stage detectors can achieve real‑time performance without sacrificing much accuracy.",
+      "summary_es": "Los detectores de dos etapas eran precisos pero carecían de la velocidad necesaria para los dispositivos en el borde. SSD se propuso presentar una red monolítica de extremo a extremo que realizara detección de objetos en tiempo real mediante una pirámide de características multiescala. El artículo predice cajas por defecto y probabilidades de clase en varias capas convolucionales y optimiza mediante minería de negativos duros. SSD alcanzó gran velocidad y precisión competitiva en los conjuntos VOC y COCO. Este método demostró que los detectores de una sola etapa pueden lograr rendimiento en tiempo real sin sacrificar demasiada precisión."
+    },
+    {
+      "id": "retinanet-2017",
+      "title": "Focal Loss for Dense Object Detection (RetinaNet)",
+      "year": 2017,
+      "venue": "ICCV",
+      "paper_url": "https://arxiv.org/abs/1708.02002",
+      "code": ["https://github.com/facebookresearch/Detectron"],
+      "why_transition": "通过焦点损失解决类别不平衡问题，提升单阶段检测器精度。",
+      "summary_zh": "单阶段检测器速度快但精度较低，主要受前景与背景不平衡影响。RetinaNet 的目标是通过新的焦点损失解决类别不平衡并提升单阶段检测器性能。论文采用特征金字塔网络预测多尺度锚框，并使用焦点损失降低易分类样本权重。RetinaNet 在 COCO 数据集上显著超过 SSD 等单阶段方法，并接近两阶段检测器。该研究表明改进损失函数可以显著提升单阶段检测器的精度，启发了后续工作。",
+      "summary_en": "Single‑stage detectors are fast but have lower accuracy largely due to class imbalance between foreground and background. RetinaNet aimed to introduce a new focal loss to address class imbalance and improve single‑stage detector performance. The paper employs a feature pyramid network to predict multi‑scale anchors and uses focal loss to down‑weight easy examples. On COCO, RetinaNet significantly outperformed SSD and other single‑stage methods and approached two‑stage detectors in accuracy. This study demonstrated that improving the loss function can boost the accuracy of single‑stage detectors and inspired subsequent work.",
+      "summary_es": "Los detectores de una etapa son rápidos pero tienen menor precisión debido principalmente al desequilibrio entre primer plano y fondo. RetinaNet se propuso introducir una nueva función de pérdida focal para abordar el desequilibrio de clases y mejorar el rendimiento de los detectores de una etapa. El artículo emplea una red de pirámide de características para predecir anclas multiescala y utiliza la pérdida focal para reducir el peso de los ejemplos fáciles. En COCO, RetinaNet superó significativamente a SSD y otros métodos de una etapa y se acercó a los detectores de dos etapas en precisión. Este estudio demostró que mejorar la función de pérdida puede aumentar la precisión de los detectores de una etapa e inspiró trabajos posteriores."
+    },
+    {
+      "id": "deformableconv-2017",
+      "title": "Deformable Convolutional Networks",
+      "year": 2017,
+      "venue": "ICCV",
+      "paper_url": "https://arxiv.org/abs/1703.06211",
+      "code": ["https://github.com/msracver/Deformable-DETR"],
+      "why_transition": "通过学习采样偏移增强卷积的几何适应性，提高检测能力。",
+      "summary_zh": "标准卷积使用固定采样网格，难以适应对象的形状变化和几何变换。可变形卷积网络的目标是增强卷积和 ROI 池化的空间采样灵活性，以更好处理几何形变。论文引入可变形卷积，在卷积核采样位置上学习偏移量，并在 ROI 对齐中采用可变形采样。可变形网络在目标检测和分割任务上提高了精度并处理复杂姿态。该技术成为提升卷积网络建模能力的重要工具，被广泛应用于检测模型。",
+      "summary_en": "Standard convolutions use a fixed regular sampling grid, making it difficult to adapt to object shape variation and geometric transformations. Deformable convolutional networks aimed to enhance the spatial sampling flexibility of convolutions and ROI pooling to better handle geometric deformations. The paper introduced deformable convolutions that learn offsets for kernel sampling positions and applied deformable sampling in ROI align. Deformable networks improved accuracy on detection and segmentation tasks and handled complex poses. This technique became an important tool for improving the modeling capability of convolutional networks and has been widely adopted in detection models.",
+      "summary_es": "Las convoluciones estándar utilizan una malla de muestreo fija, lo que dificulta la adaptación a las variaciones de forma y las transformaciones geométricas. Las redes convolucionales deformables se propusieron aumentar la flexibilidad del muestreo espacial de las convoluciones y del ROI pooling para manejar mejor las deformaciones geométricas. El artículo introdujo convoluciones deformables que aprenden desplazamientos para las posiciones de muestreo del núcleo y aplicó muestreo deformable en ROI Align. Las redes deformables mejoraron la precisión en tareas de detección y segmentación y gestionaron posturas complejas. Esta técnica se convirtió en una herramienta importante para mejorar la capacidad de modelado de las redes convolucionales y se ha utilizado ampliamente en modelos de detección."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【457512628258016†L50-L61】",
+      "milestone": "【457512628258016†L50-L61】",
+      "frontier": "【457512628258016†L50-L61】",
+      "survey": "【457512628258016†L50-L61】"
+    }
+  }
+}

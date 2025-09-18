@@ -28,9 +28,9 @@
   <style>
     .mw-wrap{max-width:1200px;margin:0 auto;padding:0 12px}
     /* Toolbar layout */
-    .mw-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:12px}
-    /* Put the three mode buttons on their own full-width row and center them */
-    .mw-modes{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%;margin-bottom:6px}
+  .mw-toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;padding:14px 12px}
+  /* Modes row: first row full-width */
+  .mw-modes{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%;margin-bottom:6px}
     /* Distinct, polished style for the three mode buttons (different from tag chips) */
     .mw-modes .btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;line-height:1;text-align:center;border-radius:999px;margin-right:0;font-weight:700;letter-spacing:.2px;min-width:180px;box-shadow:var(--shadow-sm);border:1px solid color-mix(in oklab, var(--border), var(--primary) 14%)}
     /* Active state: brand gradient pill */
@@ -43,7 +43,22 @@
     :root[data-theme="dark"] .mw-modes .btn.primary{box-shadow:0 10px 24px rgba(59,130,246,0.25)}
     :root[data-theme="dark"] .mw-modes .btn.outline{background:color-mix(in oklab, var(--surface), black 6%);color:#e5e7eb;border-color:color-mix(in oklab, var(--border), var(--primary) 25%)}
     @media (max-width:560px){.mw-modes .btn{min-width:auto;flex:1 1 auto;padding:0 14px;height:42px}}
-    .mw-toolbar .input{height:36px;padding:6px 10px}
+  /* Unified control sizing and aesthetics */
+  :root{ --mw-ctrl-h: 38px; --mw-radius: 10px; }
+  .mw-toolbar .input{height:var(--mw-ctrl-h);padding:6px 12px;border-radius:var(--mw-radius);border:1px solid color-mix(in oklab, var(--border), var(--primary) 18%);background:color-mix(in oklab, var(--surface-2), white 2%);box-shadow:var(--shadow-sm)}
+  .mw-toolbar .btn.small{height:var(--mw-ctrl-h);padding:0 12px;border-radius:var(--mw-radius)}
+  /* Date group: segmented control with equal spacing */
+  #mw-datewrap{gap:0!important;border:1px solid color-mix(in oklab, var(--border), var(--primary) 18%);border-radius:var(--mw-radius);overflow:hidden;background:color-mix(in oklab, var(--surface-2), white 2%);box-shadow:var(--shadow-sm);padding:0 8px}
+  #mw-datewrap .btn{border:none;border-right:1px solid color-mix(in oklab, var(--border), var(--primary) 18%);width:var(--mw-ctrl-h);display:inline-grid;place-items:center;padding:0}
+  #mw-datewrap .btn:last-child{border-right:none}
+  #mw-datewrap .input{border:none;border-left:1px solid color-mix(in oklab, var(--border), var(--primary) 18%);border-right:1px solid color-mix(in oklab, var(--border), var(--primary) 18%);border-radius:0;height:var(--mw-ctrl-h);box-shadow:none;background:transparent}
+  /* Cascader trigger: pill appearance */
+  .mw-cas-inline > #mw-cas-trigger{font-weight:600}
+  /* Active state for trigger when filters applied */
+  .mw-cas-inline > #mw-cas-trigger.active{background:linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);color:#fff;border-color:color-mix(in oklab, var(--primary-600), white 10%);box-shadow:0 8px 18px rgba(37,99,235,.18)}
+  /* Search input: add subtle search icon */
+  #mw-q{padding-left:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2399a3ad' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:10px center}
+  @media (max-width:800px){ .mw-toolbar .input{flex:1 1 220px} }
     .mw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
     @media (max-width:1100px){.mw-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
     @media (max-width:700px){.mw-grid{grid-template-columns:1fr;}}
@@ -62,15 +77,10 @@
     .mw-leader a{color:var(--link);text-decoration:none}
     .mw-leader a:hover{text-decoration:underline}
     .mw-chiprow{display:flex;gap:6px;flex-wrap:wrap}
-  /* Filter chips – active/inactive styles (distinct from mode buttons) */
-  .mw-chiprow .btn{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 10px;line-height:1;border-radius:999px;font-size:.86rem;font-weight:600;border:1px solid color-mix(in oklab, var(--border), var(--primary) 16%);background:color-mix(in oklab, var(--surface-2), white 3%);color:color-mix(in oklab, var(--text), var(--muted) 15%);box-shadow:var(--shadow-sm);transition:background .15s ease, color .15s ease, border-color .15s ease}
-  .mw-chiprow .btn:hover{background:color-mix(in oklab, var(--surface-2), var(--primary) 10%);color:var(--text)}
-  .mw-chiprow .btn.primary{background:linear-gradient(135deg, rgba(59,130,246,0.15), rgba(59,130,246,0.28));color:color-mix(in oklab, var(--primary), black 10%);border-color:color-mix(in oklab, var(--primary), var(--border) 50%)}
-  .mw-chiprow .btn.primary:hover{background:linear-gradient(135deg, rgba(59,130,246,0.22), rgba(59,130,246,0.35))}
-  :root[data-theme="dark"] .mw-chiprow .btn{background:color-mix(in oklab, var(--surface), black 6%);color:#e5e7eb;border-color:color-mix(in oklab, var(--border), var(--primary) 18%)}
-  :root[data-theme="dark"] .mw-chiprow .btn:hover{background:color-mix(in oklab, var(--surface), var(--primary) 10%);color:#fff}
-  :root[data-theme="dark"] .mw-chiprow .btn.primary{background:rgba(59,130,246,0.18);color:#c7d2fe;border-color:rgba(59,130,246,0.38)}
-  :root[data-theme="dark"] .mw-chiprow .btn.primary:hover{background:rgba(59,130,246,0.24)}
+    /* Compact toolbar wrapping */
+    .mw-toolbar{gap:8px}
+    .mw-toolbar .input{min-width:160px}
+    @media (max-width:800px){ .mw-toolbar .input{flex:1 1 220px} }
     .mw-modal[hidden]{display:none!important}
     .mw-modal{position:fixed;inset:0;display:grid;place-items:center;z-index:2000}
     .mw-modal .backdrop{position:absolute;inset:0;background:rgba(2,6,23,.55)}
@@ -80,6 +90,47 @@
     /* Daily sections */
     .mw-sec-title{margin:10px 0 8px;color:var(--secondary);font-weight:600}
     .mw-sec-sep{margin:16px 0;border:none;border-top:1px dashed var(--border)}
+  </style>
+  <!-- Styles: Cascading category filter (三级联动) -->
+  <style>
+    /* 样式定义：三级联动标签筛选 */
+    .mw-cascader { margin-top: 10px; padding: 10px; }
+    .mw-cascader { position: relative; }
+    .mw-cas-section { margin: 6px 0 8px; }
+    .mw-cas-row { display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+    .mw-cas-top { display:flex; gap:8px; flex-wrap:wrap; align-items:center; justify-content:center; margin: 6px 0; }
+    .mw-cas-title { font-weight:600; color: var(--secondary); margin: 4px 0; font-size: .95rem; }
+    .mw-cas-sub { margin: 4px 0 0 0; padding-left: 4px; border-left: 2px solid var(--border); }
+    .mw-cas-hidden { display:none; }
+    /* 一级/二级按钮沿用现有圆角按钮风格 */
+    .mw-cas-row .btn, .mw-cas-top .btn { height: 34px; padding: 0 12px; border-radius: 999px; font-size: .9rem; }
+    .mw-cas-row .btn.primary { background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(59,130,246,0.28)); color: color-mix(in oklab, var(--primary), black 10%); border-color: color-mix(in oklab, var(--primary), var(--border) 50%); }
+    /* 三级任务：复用现有 .tag 标签风格，附加选中高亮 */
+    .mw-task { cursor: pointer; user-select: none; }
+    .mw-task.active { background: color-mix(in oklab, var(--primary) 18%, white); color: color-mix(in oklab, var(--primary), black 20%); border-color: color-mix(in oklab, var(--primary), var(--border) 40%); }
+    :root[data-theme="dark"] .mw-task.active { background: rgba(59,130,246,0.22); color: #e5e7eb; border-color: rgba(59,130,246,0.42); }
+    /* 命中卡片高亮（可选，卡片同时被筛选显示） */
+    .mw-card.mw-hit { border-color: color-mix(in oklab, var(--primary) 38%, var(--border)); box-shadow: 0 6px 18px rgba(59,130,246,0.18); }
+    .mw-cas-tools { display:flex; gap:6px; align-items:center; margin-top: 6px; }
+
+    /* 下拉面板（多列级联选择） */
+  .mw-cas-dd { position: absolute; top: 42px; left: 0; z-index: 50; background: var(--surface); border: 1px solid color-mix(in oklab, var(--border), var(--primary) 15%); border-radius: 14px; box-shadow: 0 16px 40px rgba(2,6,23,.18); width: min(92vw, 920px); overflow:hidden }
+    .mw-cas-dd .dd-body { display: grid; grid-template-columns: 1.05fr 1.25fr 1.6fr; gap: 0; min-height: 260px; max-height: 62vh; overflow: hidden; }
+    .mw-cas-dd .col { border-right: 1px solid var(--border); padding: 10px; overflow: auto; background: color-mix(in oklab, var(--surface), white 2%); }
+    .mw-cas-dd .col:nth-child(2){ background: color-mix(in oklab, var(--surface), var(--primary) 3%); }
+    .mw-cas-dd .col:last-child { border-right: none; background: color-mix(in oklab, var(--surface), var(--primary) 6%); }
+    .mw-cas-dd .dd-foot { display:flex; justify-content: flex-end; gap:10px; padding: 10px; border-top: 1px solid var(--border); background: var(--surface-2); }
+    .mw-list { display:grid; gap:6px; }
+    .mw-item { display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:10px; cursor:pointer; position:relative; transition: background .15s ease, transform .08s ease; }
+    .mw-item::before{content:""; position:absolute; left:4px; top:8px; bottom:8px; width:3px; border-radius:3px; background:transparent}
+    .mw-item:hover { background: color-mix(in oklab, var(--surface-2), var(--primary) 10%); }
+    .mw-item.active { background: color-mix(in oklab, var(--primary) 14%, white); box-shadow: var(--shadow-sm); }
+    .mw-item.active::before{ background: color-mix(in oklab, var(--primary), white 10%); }
+    :root[data-theme="dark"] .mw-item.active { background: rgba(59,130,246,0.2); }
+    .mw-check { width: 18px; height: 18px; border: 1.5px solid color-mix(in oklab, var(--border), var(--primary) 20%); border-radius: 6px; display:inline-grid; place-items:center; background: var(--surface); color: #fff; font-size:14px; line-height:1; }
+    .mw-check[data-on="1"] { border-color: color-mix(in oklab, var(--primary), var(--border) 10%); background: color-mix(in oklab, var(--primary) 28%, white); }
+    .mw-muted { color: var(--muted); font-size: .9rem; padding: 10px; }
+    @media (max-width: 800px){ .mw-cas-dd .dd-body { grid-template-columns: 1fr; } .mw-cas-dd { left: 0; width: 100%; max-width: 100vw; } .mw-item{padding:12px 12px} }
   </style>
 </head>
 <body>
@@ -160,12 +211,28 @@
             <button class="btn outline" data-mode="gh" data-i18n="mw_mode_gh_top">开源项目热门榜</button>
             <button class="btn outline" data-mode="hf" data-i18n="mw_mode_hf_top">开源模型热门榜</button>
           </div>
-          <div class="mw-chiprow" id="mw-filters" style="margin-left:4px"></div>
-          <span style="flex:1 1 auto"></span>
-          <div id="mw-datewrap" style="display:flex;gap:6px;align-items:center" hidden>
-            <button id="mw-prev" class="btn outline small" title="Prev day" aria-label="Previous day">◀</button>
+          <div class="mw-cas-inline" style="position:relative;display:flex;align-items:center;gap:12px">
+            <button class="btn outline small" id="mw-cas-trigger"><span class="i18n l-zh">按类别查看模型</span><span class="i18n l-en">Browse by Category</span><span class="i18n l-es">Ver por categoría</span></button>
+            <!-- 下拉面板：三级级联（单选/单选/多选） -->
+            <div class="mw-cas-dd" id="mw-cas-dd" hidden>
+              <div class="dd-body">
+                <div class="col" id="mw-cas-c1"><div class="mw-muted">—</div></div>
+                <div class="col" id="mw-cas-c2"><div class="mw-muted">—</div></div>
+                <div class="col" id="mw-cas-c3"><div class="mw-muted">—</div></div>
+              </div>
+              <div class="dd-foot">
+                <button class="btn outline small" id="mw-cas-close"><span class="i18n l-zh">完成</span><span class="i18n l-en">Done</span><span class="i18n l-es">Listo</span></button>
+              </div>
+            </div>
+          </div>
+          <div id="mw-datewrap" style="display:flex;align-items:center" hidden>
+            <button id="mw-prev" class="btn outline small" title="Prev day" aria-label="Previous day">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
             <input type="date" id="mw-date" class="input" style="height:36px;padding:6px 8px" />
-            <button id="mw-next" class="btn outline small" title="Next day" aria-label="Next day">▶</button>
+            <button id="mw-next" class="btn outline small" title="Next day" aria-label="Next day">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
           </div>
           <select id="mw-sort" class="input">
             <option value="score" data-i18n="mw_sort_score">综合分</option>
@@ -174,9 +241,12 @@
             <option value="downloads" data-i18n="mw_sort_downloads">Downloads</option>
           </select>
           <input id="mw-q" class="input" placeholder="搜索名称/标签…" data-i18n-placeholder="search_placeholder" />
+          <button class="btn outline small" id="mw-cas-clear"><span class="i18n l-zh">清空筛选</span><span class="i18n l-en">Clear</span><span class="i18n l-es">Limpiar</span></button>
         </div>
 
         <div style="margin:12px 0 6px 0" class="muted" id="mw-sub">—</div>
+
+        <!-- 分类级联已集成在工具栏中 -->
 
         <div class="mw-grid" id="mw-grid"></div>
       </div>
@@ -202,7 +272,6 @@
 
   <script>
   (function(){
-    const filtersEl = document.getElementById('mw-filters');
     const modesEl = document.getElementById('mw-modes');
     const sortEl = document.getElementById('mw-sort');
     const qEl = document.getElementById('mw-q');
@@ -217,10 +286,23 @@
     let MODE = 'daily';
     let items = [];
     let catsLoaded = false;
-    let activeTags = new Set();
+  // no dedicated model picker
     let query = '';
   let availableDates = [];
   let selectedDate = '';
+    // Global aggregation cache for Daily across all dates
+    let itemsAll = [];
+    let allLoaded = false;
+    let globalActive = false;
+
+    function isGlobalActive(){ return globalActive; }
+    function setGlobalActive(on){
+      globalActive = !!on;
+      try{
+        dateWrap.hidden = globalActive || (MODE !== 'daily');
+        subEl.hidden = globalActive;
+      }catch{}
+    }
 
     // Fallback canonical categories and labels (used if categories.json not found)
     let CANON = {
@@ -234,9 +316,9 @@
       es: { chat:'Conversación', multimodal:'Multimodal', retrieval:'Recuperación', code:'Código', speech:'Voz', video:'Vídeo', vision:'Visión', planning:'Planificación', safety:'Seguridad', compression:'Compresión', distillation:'Destilación', devex:'DevEx', education:'Educación', research:'Investigación', search:'Búsqueda', content:'Generación de contenido', productization:'Productización', robotics:'Robótica', data:'Datos', training:'Entrenamiento', evaluation:'Evaluación', deployment:'Despliegue', inference:'Inferencia', monitoring:'Monitorización' }
     };
 
-    // Build reverse map from any label to canonical key
+    // Build reverse map from any label to canonical key (kept for deriving categories)
     let LABEL_TO_KEY = {};
-    function rebuildLabelIndex(){
+    (function rebuildLabelIndex(){
       const m = {};
       for(const lang of Object.keys(TAG_LABELS)){
         const dict = TAG_LABELS[lang]||{};
@@ -244,8 +326,7 @@
       }
       for(const group of Object.values(CANON)) for(const k of group) m[k] = k;
       LABEL_TO_KEY = m;
-    }
-    rebuildLabelIndex();
+    })();
 
     const getLang = ()=> (localStorage.getItem('lang')||document.documentElement.lang||'zh');
     const tagLabel = (key)=> TAG_LABELS[getLang()]?.[key] || key;
@@ -257,25 +338,7 @@
     function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');}
     function rel(iso){ try{ const d=new Date(iso); const s=(Date.now()-d)/1000; if(s<60) return 'just now'; if(s<3600) return Math.floor(s/60)+'m'; if(s<86400) return Math.floor(s/3600)+'h'; return Math.floor(s/86400)+'d'; }catch{return ''} }
 
-    function buildFilters(){
-      filtersEl.innerHTML='';
-      const allBtn = document.createElement('button'); allBtn.className='btn outline small'+(activeTags.size===0?' primary':''); allBtn.textContent=t('all_label','全部'); allBtn.onclick=()=>{activeTags.clear(); buildFilters(); render();}; filtersEl.appendChild(allBtn);
-      for(const [group, keys] of Object.entries(CANON)){
-        keys.forEach(key=>{
-          const b = document.createElement('button');
-          b.dataset.key = key;
-          b.className='btn outline small'+(activeTags.has(key)?' primary':'');
-          b.textContent = tagLabel(key);
-          b.onclick = ()=>{
-            if(activeTags.has(key)) activeTags.delete(key); else activeTags.add(key);
-            // re-render chips to reflect active state; do not toggle back immediately
-            buildFilters();
-            render();
-          };
-          filtersEl.appendChild(b);
-        });
-      }
-    }
+    // No top chips anymore
 
     function sparkline(ts=[], vals=[], color){
       // Lightweight inline SVG sparkline (last 30 pts or fewer)
@@ -350,6 +413,208 @@
       };
     }
 
+    // Task label mapping from ai_categories.json
+    let TASK_KEY_BY_LABEL = {};
+    let TASK_LABELS_BY_KEY = {};
+  let TASK_MATCHERS = [];
+    function buildTaskMapFromCategories(tree){
+      const keyByLabel = {};
+      const labelsByKey = {};
+      (tree||[]).forEach(c=> (c.subcategories||[]).forEach(s=> (s.tasks||[]).forEach(t=>{
+        labelsByKey[t.key] = { zh: t.zh||'', en: t.en||'', es: t.es||'' };
+        ['zh','en','es'].forEach(L=>{ const v = (t[L]||'').trim().toLowerCase(); if(v) keyByLabel[v] = t.key; });
+      })));
+      TASK_KEY_BY_LABEL = keyByLabel; TASK_LABELS_BY_KEY = labelsByKey;
+    }
+    function escRe(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+    function buildTaskMatchers(){
+      // Core synonyms/abbreviations per task key
+      const SYN = {
+        // Vision
+        image_classification: ['image classification','图像分类','clasificación de imágenes','imagenet','classifier'],
+        object_detection: ['object detection','目标检测','detección de objetos','yolo','rcnn','retinanet'],
+        semantic_segmentation: ['semantic segmentation','语义分割','segmentación semántica','segmentation model','deeplab'],
+        instance_segmentation: ['instance segmentation','实例分割','segmentación de instancias','mask r-cnn','mask-rcnn','maskrcnn'],
+        panoptic_segmentation: ['panoptic segmentation','全景分割','segmentación panóptica','panoptic'],
+        text_to_image: ['text-to-image','文本生成图像','文生图','texto a imagen','stable diffusion','sdxl','diffusion','gan'],
+        text_to_video: ['text-to-video','文本生成视频','文生视频','texto a video','video diffusion','sora'],
+        nerf: ['nerf','神经辐射场','campos radiantes','instant-ngp'],
+        super_resolution: ['super-resolution','超分辨','超分','superres','sr','esrgan','real-esrgan'],
+        denoising: ['denoising','去噪','reducción de ruido','denoise','denoiser'],
+        restoration: ['restoration','复原','restauración','deblurring','inpainting'],
+  vqa: ['vqa','视觉问答','visual question answering'],
+        visual_grounding: ['visual grounding','视觉定位','grounding','phrase grounding'],
+  // keep lightweight but avoid overly generic matches by relying on boundaries later
+  lightweight_visual_model: ['lightweight','轻量化','mobile','edge','tiny','nano'],
+        // LLM & NLP
+        llm_pretraining: ['pre-training','pretraining','预训练','preentrenamiento','language modeling'],
+        instruction_tuning: ['instruction tuning','指令微调','指令学习','sft','supervised fine-tuning'],
+        rlhf: ['rlhf','human feedback','人类反馈','pbrl','rm','reward model'],
+        rag: ['rag','retrieval-augmented generation','检索增强生成','generación aumentada por recuperación'],
+        code_generation: ['code generation','代码生成','generación de código','coder','codegen'],
+  structured_reasoning: ['structured reasoning','结构化推理','razonamiento estructurado','tree of thoughts','graph of thoughts','chain of thought','cot'],
+  tool_use: ['tool use','工具调用','uso de herramientas','agents','function calling','tool calling'],
+  // drop overly generic 'adapter' to avoid false positives
+  lora_adapter: ['lora','peft','low-rank','adalora','qlora'],
+        multilingual_processing: ['multilingual','多语言','multilingüe','cross-lingual'],
+        low_resource_language: ['low-resource language','低资源语言','pocos recursos','low resource'],
+        knowledge_editing: ['knowledge editing','知识编辑','edición de conocimiento','knowledge injection'],
+        nlp_data_synthesis: ['data synthesis','数据合成','síntesis de datos','synthetic data'],
+        nlp_data_distillation: ['data distillation','数据蒸馏','destilación de datos'],
+        dialogue_system_optimization: ['dialogue system','对话系统','sistema de diálogo','chatbot'],
+        nlp_bias_mitigation: ['bias','偏见','sesgo','mitigation','harmful'],
+        // Multimodal & Speech
+        image_text_alignment: ['clip','图文对齐','image-text alignment'],
+        multimodal_understanding_generation: ['multimodal','多模态','multimodal generation','gpt-4v','flamingo','llava'],
+        asr: ['asr','automatic speech recognition','语音识别'],
+        tts: ['tts','text-to-speech','语音合成'],
+        slu: ['slu','spoken language understanding','语音理解'],
+        speaker_separation: ['speaker separation','说话人分离','separación de hablantes'],
+        noise_separation: ['noise separation','噪声分离','ruido ambiental'],
+        full_duplex_dialogue: ['full-duplex','全双工'],
+        avsr: ['avsr','audio-visual speech recognition','视听语音识别'],
+        multimodal_dialogue_system: ['multimodal dialogue','多模态对话'],
+        lightweight_multimodal_model: ['lightweight multimodal','多模态轻量化','edge multimodal'],
+        // Graph / Recommendation / Retrieval
+        gnn: ['gnn','graph neural network','图神经网络'],
+        kg_construction: ['knowledge graph construction','知识图谱构建','construcción de grafos de conocimiento','kg build'],
+        kg_reasoning: ['kg reasoning','知识图谱推理','razonamiento kg'],
+  general_recommendation: ['recommendation system','推荐系统','recommender','reco'],
+        vertical_recommendation: ['vertical recommendation','垂直推荐'],
+        vector_retrieval: ['vector retrieval','向量检索','similarity search','faiss','ann','hnsw'],
+        vector_db_optimization: ['vector database','向量数据库','milvus','weaviate','qdrant','chroma'],
+        metric_learning: ['metric learning','度量学习'],
+        contrastive_learning: ['contrastive learning','对比学习','cl'],
+        ltr: ['learning to rank','学习排序','ltr'],
+        neural_retrieval: ['neural retrieval','神经检索'],
+        graph_augmented_reco: ['graph-augmented recommendation','图增强推荐'],
+        // Optimization / System / Security
+        model_compression: ['model compression','模型压缩','pruning','sparsity'],
+  model_quantization: ['quantization','量化','int8','int4','quantize','gptq','awq'],
+        model_distillation: ['distillation','蒸馏','knowledge distillation'],
+        compilation_optimization: ['compilation optimization','编译优化','tvm','xla','triton'],
+        inference_acceleration: ['inference acceleration','推理加速','vllm','tensorrt-llm','onnxruntime','openvino'],
+        federated_learning: ['federated learning','联邦学习','fl'],
+        privacy_computing: ['differential privacy','同态加密','差分隐私','homomorphic encryption','dp'],
+  adversarial_attack: ['adversarial attack','对抗攻击'],
+  adversarial_defense: ['adversarial defense','对抗防御'],
+  red_teaming: ['red team','红队测试','red teaming'],
+        content_moderation: ['content moderation','内容审查','moderación de contenidos'],
+        auto_evaluation_models: ['evaluation model','评测模型','judge','arena','autoeval'],
+        edge_hw_sw_co_design: ['edge ai hardware','硬件 软件 协同','硬软协同','co-design'],
+        xai: ['xai','explainable ai','可解释'],
+        ai_ethics_risk_assessment: ['ethics risk','伦理 风险','cumplimiento ético'],
+        training_data_anonymization: ['anonymization','脱敏','anonimización'],
+        training_data_copyright: ['copyright','版权'],
+        model_monitoring: ['model monitoring','模型监控','monitorización de modelos'],
+        model_iterative_update: ['iterative update','迭代 更新'],
+        // Emerging / Temporal
+        fluid_simulation: ['fluid simulation','流体模拟'],
+        material_design: ['material design','材料 设计'],
+        drug_molecule_prediction: ['drug','molecule','药物 分子'],
+        robotic_vision: ['robotic vision','机器人 视觉'],
+        robot_motion_planning: ['motion planning','运动 规划'],
+        robot_environment_interaction: ['environment interaction','环境 交互'],
+        molecular_generation: ['molecular generation','分子 生成'],
+        bioinformatics_analysis: ['bioinformatics','生物 信息'],
+        time_series_forecasting: ['time series forecasting','时间 序列 预测','ts forecasting'],
+        time_series_anomaly_detection: ['time series anomaly detection','序列 异常 检测','ts anomaly'],
+        radar_understanding: ['radar','雷达'],
+        lidar_understanding: ['lidar','激光雷达','lidar data'],
+        low_resource_medical_ai: ['low-resource medical ai','低资源 医疗'],
+        low_resource_voice_assistant: ['low-resource voice assistant','低资源 语音 助手'],
+        ar_vr_interaction: ['ar/vr','xr','虚拟 现实','增强 现实'],
+        multimodal_temporal_fusion: ['multimodal temporal fusion','多模态 时序 融合'],
+        robot_dialogue_logic: ['robot dialogue','机器人 对话']
+      };
+      const matchers = [];
+      const ALLOWED_SHORTS = new Set(['ASR','TTS','SLU','RAG','GNN','XAI','NERF','AVSR','LTR','LORA']);
+      for(const key of Object.keys(TASK_LABELS_BY_KEY)){
+        const labels = TASK_LABELS_BY_KEY[key]||{};
+        const pats = [];
+        // exact label boundaries to avoid substring matches
+        for(const L of ['zh','en','es']){
+          const v = (labels[L]||'').trim();
+          if(v){
+            // Use word boundaries for latin labels, raw for CJK
+            const isLatin = /[A-Za-z]/.test(v);
+            pats.push(new RegExp(isLatin?`\\b${escRe(v.toLowerCase())}\\b`:escRe(v.toLowerCase()), 'i'));
+          }
+        }
+        // curated aliases with safeguards: skip very short generic tokens (<4) unless whitelisted
+        for(const aliasRaw of (SYN[key]||[])){
+          const alias = aliasRaw.toLowerCase();
+          const isLatin = /[A-Za-z]/.test(alias);
+          const isShort = alias.replace(/[^A-Za-z0-9]/g,'').length < 4;
+          if(isShort && !ALLOWED_SHORTS.has(alias.toUpperCase())) continue;
+          const re = new RegExp(isLatin?`\\b${escRe(alias)}\\b`:escRe(alias), 'i');
+          pats.push(re);
+        }
+        // common abbreviations (safe, with boundaries)
+        const caps = key.toUpperCase();
+        if(ALLOWED_SHORTS.has(caps)) pats.push(new RegExp(`\\b${escRe(caps)}\\b`, 'i'));
+        matchers.push({ key, pats });
+      }
+      TASK_MATCHERS = matchers;
+    }
+    async function loadTaskMap(){
+      const paths = [
+        '../../data/ai/ai_categories.json',
+        '/data/ai/ai_categories.json',
+        '../data/ai/ai_categories.json',
+        './data/ai/ai_categories.json'
+      ];
+      for(const p of paths){
+        try{
+          const res = await fetch(p,{cache:'no-store'}); if(!res.ok) continue;
+          const txt = await res.text();
+          try{
+            const cj = JSON.parse(txt);
+            if(cj?.categories){ buildTaskMapFromCategories(cj.categories); buildTaskMatchers(); return true; }
+          }catch{}
+        }catch{}
+      }
+      // even without file, keep empty matchers
+      TASK_MATCHERS = [];
+      return false;
+    }
+    function stdTagLabel(x){
+      const raw = String(x||'');
+      const rawTrim = raw.trim();
+      const L = getLang();
+      // If tag is exactly a known task key, map directly
+      if(TASK_LABELS_BY_KEY[rawTrim]) return TASK_LABELS_BY_KEY[rawTrim][L] || rawTrim;
+      const low = rawTrim.toLowerCase();
+      const key = TASK_KEY_BY_LABEL[low]; if(!key) return raw;
+      return TASK_LABELS_BY_KEY[key]?.[L] || raw;
+    }
+
+    function textOf(it){
+      const fields = [it.id,it.name,it.url,it.summary,it.summary_en,it.summary_zh,it.summary_es].concat(it.tags||[]);
+      return (fields.filter(Boolean).join(' ').toLowerCase());
+    }
+    function computeMatchedTaskKeys(it){
+      const txt = textOf(it);
+      const keys = new Set();
+      // leverage existing tags mapping if any
+      (it.tags||[]).forEach(tag=>{
+        const low = String(tag||'').trim().toLowerCase();
+        const k = TASK_KEY_BY_LABEL[low]; if(k) keys.add(k);
+      });
+      // run matchers
+      for(const m of TASK_MATCHERS){
+        if(m.pats.some(p=> p.test(txt))){ keys.add(m.key); }
+      }
+      return [...keys];
+    }
+    function labelsFromTaskKeys(keys){
+      const L = getLang();
+      const out = [];
+      const seen = new Set();
+      for(const k of keys){ const v = TASK_LABELS_BY_KEY[k]?.[L]; if(v && !seen.has(v)){ seen.add(v); out.push(v); } }
+      return out.slice(0,6);
+    }
+
     function pickSummary(it){
       const lang = getLang();
       if(lang==='zh') return it.summary_zh || it.summary || it.description || '';
@@ -393,23 +658,10 @@
         const key = `${it.source||''}::${it.id||it.url||it.name||''}`;
         if(seen.has(key)) continue; seen.add(key); out.push(it);
       }
-      // filter
-      if(activeTags.size>0){
-        out = out.filter(it => {
-          const catsRaw = [
-            ...(it.categories?.capabilities||[]),
-            ...(it.categories?.scenes||[]),
-            ...(it.categories?.lifecycle||[]),
-            ...(it.tags||[]),
-          ];
-          const cats = new Set();
-          for(const v of catsRaw){ const k = toKey(v); if(k) cats.add(k); }
-          return [...activeTags].every(x => cats.has(x));
-        });
-      }
+  // no model-id exact filter (covered by search)
       // search
-      const qs = (query||'').trim().toLowerCase();
-      if(qs){ out = out.filter(it => `${it.id} ${it.name} ${(it.tags||[]).join(' ')}`.toLowerCase().includes(qs)); }
+  const qs = (query||'').trim().toLowerCase();
+  if(qs){ out = out.filter(it => `${it.id} ${it.name} ${(it.tags||[]).join(' ')}`.toLowerCase().includes(qs)); }
       // sort
       const key = sortEl.value||'score';
       out.sort((a,b)=>{
@@ -426,14 +678,19 @@
     }
 
     function render(){
-      const arr = filterSort(items);
+    const arr = filterSort(items);
   const dt = window.__mw_updated_at || '';
       const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh';
       const dtStr = dt? dt.slice(0,16).replace('T',' ') : '';
       let modeLabel = MODE==='daily'? (window.translations?.[lang]?.mw_mode_daily || 'Daily Picks') : MODE==='gh'? (window.translations?.[lang]?.mw_mode_gh_top || 'GitHub Top') : (window.translations?.[lang]?.mw_mode_hf_top || 'HF Top');
-      if (lang==='en') subEl.textContent = `${modeLabel} · Items ${arr.length}${dtStr?` · Updated ${dtStr}`:''}`;
-      else if (lang==='es') subEl.textContent = `${modeLabel} · Elementos ${arr.length}${dtStr?` · Actualizado ${dtStr}`:''}`;
-      else subEl.textContent = `${modeLabel} · 共 ${arr.length} 项${dtStr?` · 更新于 ${dtStr}`:''}`;
+      if(isGlobalActive()){
+        subEl.hidden = true;
+      }else{
+        subEl.hidden = false;
+        if (lang==='en') subEl.textContent = `${modeLabel} · Items ${arr.length}${dtStr?` · Updated ${dtStr}`:''}`;
+        else if (lang==='es') subEl.textContent = `${modeLabel} · Elementos ${arr.length}${dtStr?` · Actualizado ${dtStr}`:''}`;
+        else subEl.textContent = `${modeLabel} · 共 ${arr.length} 项${dtStr?` · 更新于 ${dtStr}`:''}`;
+      }
 
       // Disable irrelevant sort options per mode
       for(const opt of sortEl.options){
@@ -442,18 +699,26 @@
         else opt.disabled = false;
       }
 
+      // no datalist population
+
       // Render content
       if (MODE==='daily'){
-        // Render two full-width sections: GitHub first, then a divider, then HF
-        gridEl.classList.remove('mw-grid');
-        const gh = arr.filter(x=>x.source==='github');
-        const hf = arr.filter(x=>x.source!=='github');
-        const ghTitle = t('mw_section_gh', 'GitHub 开源项目');
-        const hfTitle = t('mw_section_hf', 'Hugging Face 开源模型');
-        const ghHtml = gh.length? `<div class="mw-sec-title">${esc(ghTitle)} · ${gh.length}</div><div class="mw-grid">${gh.map(card).join('')}</div>` : '';
-        const sep = (gh.length && hf.length)? `<hr class="mw-sec-sep"/>` : '';
-        const hfHtml = hf.length? `<div class="mw-sec-title">${esc(hfTitle)} · ${hf.length}</div><div class="mw-grid">${hf.map(card).join('')}</div>` : '';
-        gridEl.innerHTML = ghHtml + sep + hfHtml;
+        if(isGlobalActive()){
+          gridEl.classList.add('mw-grid');
+          const arrG = filterSort(itemsAll);
+          gridEl.innerHTML = arrG.map(card).join('');
+        }else{
+          // Render two full-width sections: GitHub first, then a divider, then HF
+          gridEl.classList.remove('mw-grid');
+          const gh = arr.filter(x=>x.source==='github');
+          const hf = arr.filter(x=>x.source!=='github');
+          const ghTitle = t('mw_section_gh', 'GitHub 开源项目');
+          const hfTitle = t('mw_section_hf', 'Hugging Face 开源模型');
+          const ghHtml = gh.length? `<div class="mw-sec-title">${esc(ghTitle)} · ${gh.length}</div><div class="mw-grid">${gh.map(card).join('')}</div>` : '';
+          const sep = (gh.length && hf.length)? `<hr class="mw-sec-sep"/>` : '';
+          const hfHtml = hf.length? `<div class="mw-sec-title">${esc(hfTitle)} · ${hf.length}</div><div class="mw-grid">${hf.map(card).join('')}</div>` : '';
+          gridEl.innerHTML = ghHtml + sep + hfHtml;
+        }
       }else{
         // Normal grid for Top views
         gridEl.classList.add('mw-grid');
@@ -510,6 +775,29 @@
       }catch{ items=[]; window.__mw_updated_at=''; }
     }
 
+    async function loadAllDaily(){
+      if(allLoaded) return;
+      try{
+        if(availableDates.length===0){
+          try{ availableDates = await fetch('../../data/ai/modelswatch/daily/dates.json',{cache:'no-store'}).then(r=>r.json()); }
+          catch{ availableDates = []; }
+        }
+        const seen = new Set(); const merged = [];
+        const chunk = 6;
+        for(let i=0;i<availableDates.length;i+=chunk){
+          const batch = availableDates.slice(i,i+chunk);
+          const res = await Promise.allSettled(batch.map(d=> fetch(`../../data/ai/modelswatch/daily/${d}.json`,{cache:'no-store'}).then(r=>r.json())));
+          for(const r of res){
+            if(r.status==='fulfilled'){
+              const arr = (r.value?.items||[]).map(shallowNormalize);
+              for(const it of arr){ const k = `${it.source||''}::${it.id||it.url||it.name||''}`; if(seen.has(k)) continue; seen.add(k); merged.push(it); }
+            }
+          }
+        }
+        itemsAll = merged; allLoaded = true;
+      }catch{ itemsAll = []; allLoaded = false; }
+    }
+
     function shallowNormalize(it){
       const id = it.id || it.repo_id || it.url || it.name;
       const source = it.source || (id&&id.includes('huggingface.co')?'hf':'github');
@@ -519,7 +807,8 @@
         url: it.url || it.homepage || it.card_url,
         license: it.license || 'N/A',
         lang: it.lang || it.language || 'N/A',
-        tags: (it.tags||[]).map(x=> tagLabel(toKey(x)||x)),
+        // Tags will be derived from authoritative task_keys first, then fuzzy fallback
+        tags: [],
         categories: it.categories||{capabilities:[],scenes:[],lifecycle:[]},
         stats: it.stats||{},
         score: it.score||0,
@@ -530,6 +819,20 @@
         summary_es: it.summary_es||'',
         updated_at: it.updated_at||new Date().toISOString()
       };
+      // Prefer server-provided task_keys to avoid client overlabeling
+      try{
+        const providedKeys = Array.isArray(it.task_keys)? it.task_keys : [];
+        let labels = [];
+        if(providedKeys.length){
+          labels = labelsFromTaskKeys(providedKeys);
+        }
+        if(labels.length===0){
+          const keys = computeMatchedTaskKeys({ ...it, ...base });
+          labels = labelsFromTaskKeys(keys);
+        }
+        base.tags = labels.length>0 ? labels : (it.tags||[]).map(stdTagLabel);
+      }catch{}
+      // Keep old deriveCategories if needed (not used for tags)
       if ((!base.categories.capabilities?.length) && (!base.categories.scenes?.length) && (!base.categories.lifecycle?.length)){
         base.categories = deriveCategories(base);
       }
@@ -537,8 +840,8 @@
     }
 
     async function init(){
-      await loadCategories();
-      buildFilters();
+  await loadCategories();
+    await loadTaskMap();
       // Load date list for daily archives
       try{ availableDates = await fetch('../../data/ai/modelswatch/daily/dates.json', {cache:'no-store'}).then(r=>r.json()); if(!Array.isArray(availableDates)) availableDates = []; }catch{ availableDates = []; }
       // set bounds for native calendar (if we have dates)
@@ -552,9 +855,31 @@
       dateWrap.hidden = (MODE !== 'daily');
       await loadDaily(selectedDate);
       render();
-      sortEl.onchange = render;
-      qEl.addEventListener('input', ()=>{ query=qEl.value||''; render(); });
-      window.addEventListener('language-changed', ()=>{ buildFilters(); render(); });
+      sortEl.onchange = async ()=>{
+        if(MODE==='daily'){
+          if(!allLoaded) await loadAllDaily();
+          setGlobalActive(true);
+        }
+        render();
+      };
+      qEl.addEventListener('input', async ()=>{
+        query=qEl.value||'';
+        if(MODE==='daily'){
+          if(!allLoaded) await loadAllDaily();
+          setGlobalActive(!!query);
+        }
+        render();
+      });
+      // toggle global view when cascader makes a selection or clears
+      window.addEventListener('mw-global-toggle', async (e)=>{
+        const on = !!(e?.detail?.on);
+        if(MODE==='daily'){
+          if(on && !allLoaded) await loadAllDaily();
+          setGlobalActive(on);
+          render();
+        }
+      });
+  window.addEventListener('language-changed', ()=>{ render(); });
       // Mode switching
       modesEl.addEventListener('click', async (e)=>{
         const btn = e.target.closest('button[data-mode]');
@@ -573,7 +898,7 @@
         }
         else if(MODE==='gh') await loadTopGH();
         else await loadTopHF();
-        if(MODE!=='daily') dateWrap.hidden = true;
+        if(MODE!=='daily') dateWrap.hidden = true; else setGlobalActive(false);
         render();
       });
 
@@ -582,6 +907,7 @@
         const v = dateInput.value;
         selectedDate = (v && availableDates.includes(v)) ? v : '';
         await loadDaily(selectedDate);
+        setGlobalActive(false);
         render();
       });
       prevBtn.addEventListener('click', async ()=>{
@@ -593,6 +919,7 @@
           dateInput.value = availableDates[idx+1];
           selectedDate = dateInput.value;
           await loadDaily(selectedDate);
+          setGlobalActive(false);
           render();
         }
       });
@@ -604,12 +931,332 @@
           dateInput.value = availableDates[idx-1];
           selectedDate = dateInput.value;
           await loadDaily(selectedDate);
+          setGlobalActive(false);
           render();
         }
       });
     }
 
     init();
+  })();
+  </script>
+
+  <!-- Script: Cascading category filter (三级联动标签筛选逻辑) -->
+  <script>
+  (function(){
+    // DOM refs
+  const casWrap = document.querySelector('.mw-cas-inline');
+  const casBody = null; // no inline body needed now
+    const clearBtn = document.getElementById('mw-cas-clear');
+    const triggerBtn = document.getElementById('mw-cas-trigger');
+    const dd = document.getElementById('mw-cas-dd');
+    const col1 = document.getElementById('mw-cas-c1');
+    const col2 = document.getElementById('mw-cas-c2');
+    const col3 = document.getElementById('mw-cas-c3');
+    const closeBtn = document.getElementById('mw-cas-close');
+    const gridEl = document.getElementById('mw-grid');
+    const subEl = document.getElementById('mw-sub');
+
+  if(!casWrap) return;
+
+  // State
+  let CAT_TREE = null; // loaded from ../../data/ai/ai_categories.json or BUILTIN_TREE fallback
+    // Set of selected task keys (e.g., 'image_classification')
+    const selectedTasks = new Set();
+    // Single-selected category and subcategory keys
+    let selCat = null; // e.g., 'cv'
+    let selSub = null; // e.g., 'general_visual_understanding'
+
+    const getLang = ()=> (localStorage.getItem('lang')||document.documentElement.lang||'zh');
+    const labelOf = (obj)=> { const L=getLang(); return obj?.[L] || obj?.zh || obj?.en || obj?.es || ''; }
+
+    // Built-in fallback tree (partial) for robust UX if JSON cannot be loaded
+    const BUILTIN_TREE = [
+      {
+        key: 'cv', zh: '计算机视觉', en: 'Computer Vision', es: 'Visión por Computadora',
+        subcategories: [
+          { key: 'general_visual_understanding', zh:'通用视觉理解', en:'General Visual Understanding', es:'Comprensión Visual General', tasks:[
+            { key:'image_classification', zh:'图像分类', en:'Image Classification', es:'Clasificación de Imágenes' },
+            { key:'object_detection', zh:'目标检测', en:'Object Detection', es:'Detección de Objetos' },
+            { key:'semantic_segmentation', zh:'语义分割', en:'Semantic Segmentation', es:'Segmentación Semántica' },
+            { key:'instance_segmentation', zh:'实例分割', en:'Instance Segmentation', es:'Segmentación de Instancias' },
+            { key:'panoptic_segmentation', zh:'全景分割', en:'Panoptic Segmentation', es:'Segmentación Panóptica' }
+          ]},
+          { key:'generative_vision', zh:'生成式视觉', en:'Generative Vision', es:'Visión Generativa', tasks:[
+            { key:'text_to_image', zh:'文生图（Diffusion/GAN）', en:'Text-to-Image (Diffusion/GAN)', es:'Texto-a-Imagen (Diffusion/GAN)' },
+            { key:'text_to_video', zh:'文生视频', en:'Text-to-Video', es:'Texto-a-Video' },
+            { key:'3d_reconstruction', zh:'三维重建', en:'3D Reconstruction', es:'Reconstrucción 3D' },
+            { key:'nerf', zh:'NeRF（神经辐射场）', en:'NeRF (Neural Radiance Fields)', es:'NeRF (Campos Radiantes Neuronales)' }
+          ]},
+          { key:'visual_quality_enhancement', zh:'视觉质量增强', en:'Visual Quality Enhancement', es:'Mejora de Calidad Visual', tasks:[
+            { key:'super_resolution', zh:'图像/视频超分', en:'Image/Video Super-Resolution', es:'Sobreresolución de Imágenes/Videos' },
+            { key:'denoising', zh:'图像/视频去噪', en:'Image/Video Denoising', es:'Reducción de Ruido en Imágenes/Videos' },
+            { key:'restoration', zh:'图像/视频复原', en:'Image/Video Restoration', es:'Restauración de Imágenes/Videos' }
+          ]},
+          { key:'vertical_visual_applications', zh:'垂直视觉应用', en:'Vertical Visual Applications', es:'Aplicaciones Visuales Verticals', tasks:[
+            { key:'medical_image_processing', zh:'医学影像处理', en:'Medical Image Processing', es:'Procesamiento de Imágenes Médicas' },
+            { key:'remote_sensing_image_processing', zh:'遥感/工业影像处理', en:'Remote Sensing/Industrial Image Processing', es:'Procesamiento de Imágenes de Teledetección/Industriales' }
+          ]},
+          { key:'multimodal_visual_interaction', zh:'多模态视觉交互', en:'Multimodal Visual Interaction', es:'Interacción Visual Multimodal', tasks:[
+            { key:'vqa', zh:'视觉问答（VQA）', en:'Visual Question Answering (VQA)', es:'Pregunta-Respuesta Visual (VQA)' },
+            { key:'visual_grounding', zh:'视觉定位（Grounding）', en:'Visual Grounding', es:'Localización Visual (Grounding)' }
+          ]},
+          { key:'edge_visual_optimization', zh:'端侧视觉优化', en:'Edge-Side Visual Optimization', es:'Optimización Visual para Dispositivos Periféricos', tasks:[
+            { key:'lightweight_visual_model', zh:'边缘端视觉模型轻量化', en:'Lightweight Visual Model for Edge Devices', es:'Modelo Visual Ligero para Dispositivos de Borde' }
+          ]}
+        ]
+      },
+      {
+        key:'llm_nlp', zh:'大语言模型与自然语言处理', en:'Large Language Models & Natural Language Processing', es:'Modelos de Lenguaje Grande y Procesamiento de Lenguaje Natural',
+        subcategories:[
+          { key:'llm_foundation_training', zh:'LLM基础训练', en:'LLM Foundation Training', es:'Entrenamiento Básico de LLM', tasks:[
+            { key:'llm_pretraining', zh:'语言建模（LLM预训练）', en:'Language Modeling (LLM Pre-training)', es:'Modelado de Lenguaje (Preentrenamiento de LLM)' }
+          ]},
+          { key:'llm_training_optimization', zh:'LLM训练优化', en:'LLM Training Optimization', es:'Optimización de Entrenamiento de LLM', tasks:[
+            { key:'instruction_tuning', zh:'指令学习（Instruction Tuning）', en:'Instruction Tuning', es:'Ajuste por Instrucciones (Instruction Tuning)' }
+          ]},
+          { key:'llm_alignment_optimization', zh:'LLM对齐优化', en:'LLM Alignment Optimization', es:'Optimización de Alineación de LLM', tasks:[
+            { key:'rlhf', zh:'RLHF（基于人类反馈的强化学习）', en:'RLHF (Reinforcement Learning from Human Feedback)', es:'RLHF (Aprendizaje por Refuerzo a partir de Retroalimentación Humana)' }
+          ]},
+          { key:'llm_capability_enhancement', zh:'LLM能力增强', en:'LLM Capability Enhancement', es:'Mejora de Capacidades de LLM', tasks:[
+            { key:'rag', zh:'RAG（检索增强生成）', en:'RAG (Retrieval-Augmented Generation)', es:'RAG (Generación Mejorada por Recuperación)' }
+          ]},
+          { key:'llm_application_deployment', zh:'LLM应用落地', en:'LLM Application Deployment', es:'Despliegue de Aplicaciones de LLM', tasks:[
+            { key:'code_generation', zh:'代码生成', en:'Code Generation', es:'Generación de Código' }
+          ]},
+          { key:'llm_complex_reasoning', zh:'LLM复杂推理', en:'LLM Complex Reasoning', es:'Razonamiento Complejo de LLM', tasks:[
+            { key:'structured_reasoning', zh:'结构化推理', en:'Structured Reasoning', es:'Razonamiento Estructurado' },
+            { key:'tool_use', zh:'工具调用（Tool Use）', en:'Tool Use', es:'Uso de Herramientas (Tool Use)' }
+          ]},
+          { key:'llm_efficient_fine_tuning', zh:'LLM高效微调', en:'LLM Efficient Fine-Tuning', es:'Ajuste Fino Eficiente de LLM', tasks:[
+            { key:'lora_adapter', zh:'LoRA/Adapter（参数高效微调）', en:'LoRA/Adapter (Parameter-Efficient Fine-Tuning)', es:'LoRA/Adapter (Ajuste Fino Eficiente en Parámetros)' }
+          ]},
+          { key:'llm_cross_lingual', zh:'LLM跨语言能力', en:'LLM Cross-Lingual Capability', es:'Capacidad Multilingüe de LLM', tasks:[
+            { key:'multilingual_processing', zh:'多语言处理', en:'Multilingual Processing', es:'Procesamiento Multilingüe' },
+            { key:'low_resource_language', zh:'低资源语言处理', en:'Low-Resource Language Processing', es:'Procesamiento de Idiomas con Poca Recursos' }
+          ]},
+          { key:'llm_knowledge_management', zh:'LLM知识管理', en:'LLM Knowledge Management', es:'Gestión de Conocimiento de LLM', tasks:[
+            { key:'knowledge_editing', zh:'知识编辑/注入', en:'Knowledge Editing/Injection', es:'Edición/Inyección de Conocimiento' }
+          ]},
+          { key:'llm_data_support', zh:'LLM数据支撑', en:'LLM Data Support', es:'Soporte de Datos para LLM', tasks:[
+            { key:'nlp_data_synthesis', zh:'NLP数据合成', en:'NLP Data Synthesis', es:'Síntesis de Datos en PLN' },
+            { key:'nlp_data_distillation', zh:'NLP数据蒸馏', en:'NLP Data Distillation', es:'Destilación de Datos en PLN' }
+          ]},
+          { key:'nlp_hci', zh:'NLP人机交互', en:'NLP Human-Computer Interaction', es:'Interacción Humano-Computadora en PLN', tasks:[
+            { key:'dialogue_system_optimization', zh:'对话系统优化', en:'Dialogue System Optimization', es:'Optimización de Sistema de Diálogo' }
+          ]},
+          { key:'nlp_ethical_compliance', zh:'NLP伦理合规', en:'NLP Ethical Compliance', es:'Cumplimiento Ético en PLN', tasks:[
+            { key:'nlp_bias_mitigation', zh:'NLP偏见检测与消除', en:'NLP Bias Detection and Mitigation', es:'Detección y Mitigación de Prejuicios en PLN' }
+          ]}
+        ]
+      },
+      {
+        key:'multimodal_speech', zh:'多模态与语音', en:'Multimodal & Speech', es:'Multimodal y Voz',
+        subcategories:[
+          { key:'cross_modal_alignment', zh:'跨模态基础对齐', en:'Cross-Modal Foundation Alignment', es:'Alineación Básica Intermodal', tasks:[
+            { key:'image_text_alignment', zh:'图文对齐（CLIP系）', en:'Image-Text Alignment (CLIP Series)', es:'Alineación Imagen-Texto (Serie CLIP)' }
+          ]},
+          { key:'multimodal_large_models', zh:'多模态大模型', en:'Multimodal Large Models', es:'Modelos Grandes Multimodales', tasks:[
+            { key:'multimodal_understanding_generation', zh:'多模态理解与生成（GPT-4V/Flamingo）', en:'Multimodal Understanding & Generation (GPT-4V/Flamingo)', es:'Comprensión y Generación Multimodales (GPT-4V/Flamingo)' }
+          ]},
+          { key:'fundamental_speech_tech', zh:'语音基础技术', en:'Fundamental Speech Technologies', es:'Tecnologías Básicas de Voz', tasks:[
+            { key:'asr', zh:'ASR（语音识别）', en:'ASR (Automatic Speech Recognition)', es:'ASR (Reconocimiento Automático de Voz)' },
+            { key:'tts', zh:'TTS（语音合成）', en:'TTS (Text-to-Speech)', es:'TTS (Texto-a-Voz)' }
+          ]},
+          { key:'advanced_speech_understanding', zh:'语音深度理解', en:'Advanced Speech Understanding', es:'Comprensión Avanzada de Voz', tasks:[
+            { key:'slu', zh:'SLU（语音理解）', en:'SLU (Spoken Language Understanding)', es:'SLU (Comprensión de Lenguaje Hablado)' }
+          ]},
+          { key:'speech_separation_recognition', zh:'语音分离与识别', en:'Speech Separation & Recognition', es:'Separación y Reconocimiento de Voz', tasks:[
+            { key:'speaker_separation', zh:'说话人分离', en:'Speaker Separation', es:'Separación de Habitantes' },
+            { key:'noise_separation', zh:'场景噪声分离', en:'Environmental Noise Separation', es:'Separación de Ruido Ambiental' }
+          ]}
+        ]
+      }
+    ];
+
+    async function loadAiCategories(){
+      // Try multiple paths to be robust in different hosting contexts
+      const paths = [
+        '../../data/ai/ai_categories.json',
+        '/data/ai/ai_categories.json',
+        '../data/ai/ai_categories.json',
+        './data/ai/ai_categories.json'
+      ];
+      for(const p of paths){
+        try{
+          const res = await fetch(p,{cache:'no-store'});
+          if(!res.ok) continue;
+          const txt = await res.text();
+          try{
+            const cj = JSON.parse(txt);
+            if(cj?.categories){ CAT_TREE = cj.categories; return; }
+          }catch{ /* try next */ }
+        }catch{ /* try next */ }
+      }
+      // fallback to built-in tree instead of blocking UX
+      CAT_TREE = BUILTIN_TREE;
+    }
+
+    // Built-in labels for the six top-level categories (fallback labels when JSON fails or before load)
+    const TOP_CATS = [
+      { key: 'cv', zh: '计算机视觉', en: 'Computer Vision', es: 'Visión por Computadora' },
+  { key: 'llm_nlp', zh: '大语言模型与自然语言处理', en: 'Large Language Models & Natural Language Processing', es: 'Modelos de Lenguaje Grande y Procesamiento de Lenguaje Natural' },
+      { key: 'multimodal_speech', zh: '多模态与语音', en: 'Multimodal & Speech', es: 'Multimodal y Voz' },
+  { key: 'graph_reco_retrieval', zh: '图网络、推荐与检索', en: 'Graph, Recommendation & Retrieval', es: 'Grafos, Recomendación y Recuperación' },
+  { key: 'optimization_system_security', zh: '优化、系统与安全', en: 'Optimization, System & Security', es: 'Optimización, Sistemas y Seguridad' },
+  { key: 'emerging_temporal', zh: '新兴交叉与时序模态', en: 'Emerging Interdisciplinary & Temporal Modalities', es: 'Interdisciplinario Emergente y Modalidades Temporales' }
+    ];
+
+    function findCatByKey(key){
+      if(!CAT_TREE) return null;
+      return CAT_TREE.find(c=> c.key===key) || null;
+    }
+
+    // Dropdown cascader rendering
+    function renderCol1(){
+      const list = document.createElement('div'); list.className = 'mw-list';
+      TOP_CATS.forEach(meta=>{
+        const item = document.createElement('div'); item.className = 'mw-item' + (selCat===meta.key?' active':''); item.dataset.key = meta.key;
+        item.textContent = labelOf(meta);
+        item.addEventListener('click', async ()=>{
+          selCat = meta.key; selSub = null; // reset second level when switching
+          // lazy load
+          if(CAT_TREE===null) await loadAiCategories();
+          renderCol1(); renderCol2(); renderCol3();
+        });
+        list.appendChild(item);
+      });
+      col1.innerHTML = ''; col1.appendChild(list);
+    }
+
+    function renderCol2(){
+      col2.innerHTML = '';
+      const cat = selCat && findCatByKey(selCat);
+      if(!cat){ col2.innerHTML = '<div class="mw-muted">—</div>'; return; }
+      const list = document.createElement('div'); list.className = 'mw-list';
+      (cat.subcategories||[]).forEach(sub=>{
+        const item = document.createElement('div'); item.className = 'mw-item' + (selSub===sub.key?' active':''); item.dataset.key = sub.key;
+        item.textContent = labelOf(sub);
+        item.addEventListener('click', ()=>{ selSub = sub.key; renderCol2(); renderCol3(); });
+        list.appendChild(item);
+      });
+      col2.appendChild(list);
+    }
+
+    function renderCol3(){
+      col3.innerHTML = '';
+      const cat = selCat && findCatByKey(selCat);
+      const sub = (cat?.subcategories||[]).find(s=> s.key===selSub);
+      if(!sub){ col3.innerHTML = '<div class="mw-muted">—</div>'; return; }
+      const list = document.createElement('div'); list.className = 'mw-list';
+      (sub.tasks||[]).forEach(tsk=>{
+        const item = document.createElement('div'); item.className = 'mw-item' + (selectedTasks.has(tsk.key)?' active':'');
+        const box = document.createElement('span'); box.className = 'mw-check'; box.dataset.on = selectedTasks.has(tsk.key)?'1':'0'; box.innerHTML = selectedTasks.has(tsk.key)?'✓':'';
+        const label = document.createElement('span'); label.textContent = labelOf(tsk);
+        item.appendChild(box); item.appendChild(label);
+        const toggle = ()=>{
+          if(selectedTasks.has(tsk.key)) selectedTasks.delete(tsk.key); else selectedTasks.add(tsk.key);
+          applyFilter(); renderCol3(); updateTriggerLabel();
+          // Notify main script to toggle global mode in Daily
+          const on = selectedTasks.size>0; window.dispatchEvent(new CustomEvent('mw-global-toggle',{detail:{on}}));
+        };
+        item.addEventListener('click', toggle);
+        list.appendChild(item);
+      });
+      col3.appendChild(list);
+    }
+
+    function openDropdown(){ dd.hidden = false; renderCol1(); renderCol2(); renderCol3(); document.addEventListener('click', outsideClose, { capture:true }); }
+    function closeDropdown(){ dd.hidden = true; document.removeEventListener('click', outsideClose, { capture:true }); }
+    function outsideClose(e){ if(!dd.contains(e.target) && e.target!==triggerBtn && !triggerBtn.contains(e.target)) closeDropdown(); }
+
+    if(triggerBtn){ triggerBtn.addEventListener('click', (e)=>{ e.stopPropagation(); if(dd.hidden) openDropdown(); else closeDropdown(); }); }
+    if(closeBtn){ closeBtn.addEventListener('click', ()=> closeDropdown()); }
+
+    function normalize(str){ return String(str||'').trim().toLowerCase(); }
+
+    function itemMatchesTasks(cardEl){
+      if(selectedTasks.size===0) return true;
+      // Collect visible labels (from tags inside the card)
+      const tagEls = cardEl.querySelectorAll('.mw-tags .tag');
+      const labels = new Set();
+      tagEls.forEach(t=> labels.add(normalize(t.textContent)));
+      const title = normalize(cardEl.querySelector('.mw-title')?.textContent||'');
+      const sum = normalize(cardEl.querySelector('.muted')?.textContent||'');
+      // Build label set of selected tasks (current language first, but fallback all languages)
+      const want = new Set();
+      // Map selected keys to labels from CAT_TREE
+      const map = new Map(); // key -> {zh,en,es}
+      CAT_TREE?.forEach(c=> (c.subcategories||[]).forEach(s=> (s.tasks||[]).forEach(t=>{ map.set(t.key, t); })));
+      selectedTasks.forEach(k=>{ const t = map.get(k)||{}; ['zh','en','es'].forEach(L=>{ if(t[L]) want.add(normalize(t[L])); }); });
+      // OR logic: match if any label present as exact tag OR appears in title/summary
+      for(const w of want){ if(labels.has(w) || title.includes(w) || sum.includes(w)) return true; }
+      return false;
+    }
+
+    function applyFilter(){
+      // Show/hide cards and add highlight class
+      const cards = gridEl.querySelectorAll('.mw-card');
+      let shown = 0;
+      cards.forEach(card=>{
+        const hit = itemMatchesTasks(card);
+        card.style.display = hit? '' : 'none';
+        card.classList.toggle('mw-hit', hit && selectedTasks.size>0);
+        if(hit) shown++;
+      });
+      // Update subtle count suffix
+      try{
+        const L = getLang();
+        const suffix = (selectedTasks.size>0) ? (L==='en'? ` · Filtered ${shown}` : L==='es'? ` · Filtrado ${shown}` : ` · 已筛选 ${shown} 项`) : '';
+        // Always compute fresh base from current text (strip previous suffix if exists)
+        const current = subEl.textContent || '';
+        const base = current.replace(/\s·\s(已筛选|Filtered|Filtrado).*$/, '');
+        subEl.setAttribute('data-base', base);
+        subEl.textContent = base + suffix;
+      }catch{}
+    }
+
+    // Re-apply filter whenever grid re-renders (mode switch, search, date change)
+    const mo = new MutationObserver(()=>{ applyFilter(); });
+    mo.observe(gridEl, { childList: true, subtree: false });
+
+    // Clear selection
+    clearBtn.addEventListener('click', ()=>{
+      // Reset cascader tasks, model picker, search, and sort
+  selectedTasks.clear(); updateTriggerLabel();
+      const qEl = document.getElementById('mw-q'); if(qEl){ qEl.value=''; }
+      const sortEl = document.getElementById('mw-sort'); if(sortEl){ sortEl.value='score'; }
+      applyFilter();
+      // trigger top-level re-render to apply search/sort reset
+      try{ const evt = new Event('input'); qEl?.dispatchEvent(evt); }catch{}
+      // Notify main to exit global mode
+      try{ window.dispatchEvent(new CustomEvent('mw-global-toggle',{detail:{on:false}})); }catch{}
+    });
+
+    function markActiveTasks(){
+      casBody.querySelectorAll('.mw-task').forEach(el=>{
+        const k = el.dataset.key; el.classList.toggle('active', selectedTasks.has(k));
+      });
+    }
+
+    function updateTriggerLabel(){
+      if(!triggerBtn) return;
+      const cnt = selectedTasks.size;
+  const zh = triggerBtn.querySelector('.i18n.l-zh'); if(zh) zh.textContent = `按类别查看模型${cnt>0?` (${cnt})`:''}`;
+  const en = triggerBtn.querySelector('.i18n.l-en'); if(en) en.textContent = `Browse by Category${cnt>0?` (${cnt})`:''}`;
+  const es = triggerBtn.querySelector('.i18n.l-es'); if(es) es.textContent = `Ver por categoría${cnt>0?` (${cnt})`:''}`;
+      triggerBtn.classList.toggle('active', cnt>0);
+    }
+
+    // Rebuild labels on language change and update counts
+    window.addEventListener('language-changed', ()=>{ if(!dd.hidden){ renderCol1(); renderCol2(); renderCol3(); } updateTriggerLabel(); });
+
+    // Init
+    (async function(){
+      // initial lazy state: do not force load; render top column immediately
+      renderCol1(); renderCol2(); renderCol3();
+      applyFilter(); updateTriggerLabel();
+    })();
   })();
   </script>
 </body>

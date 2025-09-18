@@ -1,0 +1,135 @@
+{
+  "slug": "segmentation",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "fcn-2015",
+      "title": "Fully Convolutional Networks for Semantic Segmentation (FCN)",
+      "year": 2015,
+      "venue": "CVPR",
+      "paper_url": "https://arxiv.org/abs/1411.4038",
+      "code": ["https://github.com/shelhamer/fcn.berkeleyvision.org"],
+      "summary_zh": "在像素级分类任务上，传统方法需要滑动窗口或图像块，计算量大且难以端到端训练，语义分割模型缺乏统一的深度学习框架。Fully Convolutional Network(FCN)的目标是提出一种全卷积架构，可以直接从输入图像输出像素级标签，实现高效的语义分割。作者将分类网络中的全连接层替换为卷积层并引入反卷积上采样，使网络能够产生与输入同大小的密集预测。实验表明，FCN在PASCAL VOC等数据集上大幅提升了分割精度，超越了基于补丁的传统方法。该工作开创了端到端的深度学习分割范式，为U‑Net和DeepLab等后续模型奠定了基础。",
+      "summary_en": "For pixel‑level classification tasks, traditional methods relied on sliding windows or image patches, leading to heavy computation and preventing end‑to‑end training; semantic segmentation lacked a unified deep learning framework. The goal of the Fully Convolutional Network (FCN) was to propose an all‑convolutional architecture that could directly output pixel‑wise labels from an input image, enabling efficient semantic segmentation. The authors replaced fully connected layers in classification networks with convolutional layers and introduced deconvolutional upsampling so the network could produce dense predictions of the same size as the input. Experiments showed that FCN significantly improved segmentation accuracy on datasets such as PASCAL VOC and surpassed patch‑based traditional methods. This work pioneered end‑to‑end deep learning for segmentation and laid the foundation for subsequent models such as U‑Net and DeepLab.",
+      "summary_es": "En las tareas de clasificación a nivel de píxel, los métodos tradicionales empleaban ventanas deslizantes o bloques de imagen, lo que generaba un gran coste computacional y dificultaba el entrenamiento de extremo a extremo; la segmentación semántica carecía de un marco de aprendizaje profundo unificado. El objetivo de la Fully Convolutional Network (FCN) era proponer una arquitectura totalmente convolucional capaz de producir directamente etiquetas a nivel de píxel a partir de una imagen de entrada y permitir una segmentación semántica eficiente. Los autores sustituyeron las capas totalmente conectadas de las redes de clasificación por capas convolucionales e introdujeron un upsampling con deconvoluciones para que la red pudiera generar predicciones densas del mismo tamaño que la entrada. Los experimentos demostraron que FCN mejoraba significativamente la precisión de la segmentación en conjuntos como PASCAL VOC y superaba a los métodos tradicionales basados en fragmentos. Este trabajo inauguró el aprendizaje profundo de extremo a extremo para la segmentación y sentó las bases para modelos posteriores como U‑Net y DeepLab."
+    },
+    "milestone": [
+      {
+        "id": "deeplabv3-2017",
+        "title": "Rethinking Atrous Convolution for Semantic Image Segmentation (DeepLab v3)",
+        "year": 2017,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/1706.05587",
+        "code": ["https://github.com/tensorflow/models/tree/master/research/deeplab"],
+        "summary_zh": "语义分割需要在保留分辨率的同时捕获多尺度上下文，传统卷积网络下采样导致信息丢失。DeepLab v3 的目标是通过空洞卷积和多尺度特征融合提升分割精度。作者提出空洞空间金字塔池化(ASPP)，在不同膨胀率的卷积上并行采样，并结合批归一化和更深的骨干网络。实验结果显示，DeepLab v3 在 PASCAL VOC 和 Cityscapes 等数据集上取得了领先的交并比，并改善了边界细节。该系列工作展示了利用空洞卷积捕获上下文的有效性，成为语义分割的主流方法之一。",
+        "summary_en": "Semantic segmentation requires capturing multi‑scale context while preserving resolution, but downsampling in conventional convolutional networks causes information loss. The aim of DeepLab v3 was to improve segmentation accuracy through atrous convolutions and multi‑scale feature fusion. The authors proposed atrous spatial pyramid pooling (ASPP), which samples in parallel with different dilation rates and combines batch normalization and deeper backbone networks. Experimental results showed that DeepLab v3 achieved leading intersection‑over‑union scores on datasets like PASCAL VOC and Cityscapes and improved boundary detail. This line of work demonstrated the effectiveness of using atrous convolution to capture context and became one of the mainstream methods for semantic segmentation.",
+        "summary_es": "La segmentación semántica requiere captar contexto de varias escalas y al mismo tiempo preservar la resolución, pero el muestreo descendente en las redes convolucionales convencionales causa pérdida de información. DeepLab v3 tenía como objetivo mejorar la precisión de la segmentación mediante convoluciones atrous y la fusión de características de varias escalas. Los autores propusieron el atrous spatial pyramid pooling (ASPP), que realiza muestreos en paralelo con diferentes tasas de dilatación y combina normalización por lotes y espinas dorsales más profundas. Los resultados experimentales mostraron que DeepLab v3 alcanzaba índices de intersección‑sobre‑unión líderes en bancos como PASCAL VOC y Cityscapes y mejoraba el detalle de los contornos. Esta línea de trabajo demostró la eficacia de utilizar convoluciones atrous para capturar contexto y se convirtió en uno de los métodos principales para la segmentación semántica."
+      },
+      {
+        "id": "maskrcnn-2017",
+        "title": "Mask R‑CNN",
+        "year": 2017,
+        "venue": "ICCV",
+        "paper_url": "https://arxiv.org/abs/1703.06870",
+        "code": ["https://github.com/facebookresearch/Detectron"],
+        "summary_zh": "物体检测主要产生边界框而无法提供像素级实例，实例分割需要一种简洁有效的解决方案。Mask R‑CNN 的目标是在 Faster R‑CNN 的基础上预测每个检测对象的分割掩码，实现端到端的实例分割。作者在区域预测分支旁添加了一个小的全卷积分支用于生成掩码，并提出 ROI Align 操作以提高空间对齐精度。实验表明，该方法在 COCO 数据集上显著提升了实例分割指标，同时保持了检测速度。Mask R‑CNN 简洁的设计成为实例分割的标准框架，为许多扩展工作奠定了基础。",
+        "summary_en": "Object detectors primarily output bounding boxes and cannot provide pixel‑level instances; instance segmentation requires a concise and effective solution. Mask R‑CNN aimed to predict segmentation masks for each detected object on top of Faster R‑CNN, enabling end‑to‑end instance segmentation. The authors added a small fully convolutional branch for mask generation alongside the region prediction branch and introduced the ROI Align operation to improve spatial alignment. Experiments showed that this method significantly improved instance segmentation metrics on the COCO dataset while maintaining detection speed. The clean design of Mask R‑CNN became a standard framework for instance segmentation and laid the groundwork for many extensions.",
+        "summary_es": "Los detectores de objetos producen principalmente cajas delimitadoras y no pueden proporcionar instancias a nivel de píxel; la segmentación de instancias requiere una solución sencilla y eficaz. Mask R‑CNN se propuso predecir máscaras de segmentación para cada objeto detectado sobre la base de Faster R‑CNN, permitiendo así una segmentación de instancias de extremo a extremo. Los autores añadieron una pequeña rama completamente convolucional para la generación de máscaras junto a la rama de predicción de regiones e introdujeron la operación ROI Align para mejorar la alineación espacial. Los experimentos demostraron que este método mejoraba notablemente las métricas de segmentación de instancias en el conjunto COCO a la vez que mantenía la velocidad de detección. El diseño limpio de Mask R‑CNN se convirtió en un marco estándar para la segmentación de instancias y sentó las bases para muchas ampliaciones."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "mask2former-2022",
+        "title": "Masked‑Attention Mask Transformer for Universal Image Segmentation (Mask2Former)",
+        "year": 2022,
+        "venue": "CVPR",
+        "paper_url": "https://arxiv.org/abs/2112.01527",
+        "code": ["https://github.com/facebookresearch/Mask2Former"],
+        "summary_zh": "语义、实例和全景分割长期采用不同的架构，无法统一解决。Mask2Former 的目标是提出一种使用掩码注意力的 Transformer 框架，统一处理所有类型的分割任务。作者设计了一个像素解码器结合 Transformer 解码器，通过掩码注意力机制生成一组可学习的查询来预测分割掩码，并使用相同的架构适配不同的损失和评估指标。实验表明，该模型在 COCO、ADE20K 等多种分割任务上都取得了新的最优结果，并具备高效的推理速度。Mask2Former 标志着从 CNN 向 Transformer 统一分割范式的转移，推动了通用分割研究。",
+        "summary_en": "Semantic, instance and panoptic segmentation have long used different architectures and cannot be solved in a unified way. Mask2Former aimed to propose a Transformer framework with masked attention that can handle all types of segmentation tasks. The authors designed a pixel decoder combined with a Transformer decoder that uses masked attention to generate a set of learnable queries to predict segmentation masks and applied the same architecture with appropriate losses and evaluation metrics. Experiments showed that the model achieved new state‑of‑the‑art results on multiple segmentation tasks such as COCO and ADE20K and offered efficient inference. Mask2Former marks a shift from CNNs to a unified Transformer‑based segmentation paradigm and advances research into universal segmentation.",
+        "summary_es": "La segmentación semántica, de instancias y panóptica han utilizado durante mucho tiempo arquitecturas diferentes y no pueden resolverse de forma unificada. Mask2Former se propuso presentar un marco Transformer con atención enmascarada que pueda gestionar todos los tipos de tareas de segmentación. Los autores diseñaron un decodificador de píxeles combinado con un decodificador Transformer que utiliza atención enmascarada para generar un conjunto de consultas aprendibles que predicen máscaras de segmentación y aplicaron la misma arquitectura con pérdidas y métricas de evaluación adecuadas. Los experimentos demostraron que el modelo alcanzaba nuevos resultados de vanguardia en múltiples tareas de segmentación como COCO y ADE20K y ofrecía una inferencia eficiente. Mask2Former marca un cambio de las CNN hacia un paradigma de segmentación unificado basado en Transformers y impulsa la investigación de la segmentación universal."
+      },
+      {
+        "id": "segment-anything-2023",
+        "title": "Segment Anything: A Foundation Model for Image Segmentation",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2304.02643",
+        "code": ["https://github.com/facebookresearch/segment-anything"],
+        "summary_zh": "大多数分割模型针对特定类别或数据集训练，难以泛化到任意对象或场景。Segment Anything 的目标是构建一个可提示式的基础模型，能够在任何图像中分割任何对象。作者收集了包含 11 万张图像和 10 亿个掩码的大规模数据集，并设计了一个结合图像编码器、提示编码器和掩码解码器的 Transformer 模型，可以接受点、框等提示并输出高质量掩码。实验表明，该模型在零样本或少样本情况下对未知类别具有很强的泛化能力，并可用于交互式编辑、医疗等应用。Segment Anything 的发布开启了计算机视觉基础模型时代，为各种视觉任务提供了强大的分割引擎。",
+        "summary_en": "Most segmentation models are trained for specific categories or datasets and struggle to generalize to arbitrary objects or scenes. The goal of Segment Anything was to build a promptable foundation model that can segment any object in any image. The authors collected a large‑scale dataset containing 110 thousand images and one billion masks and designed a Transformer model with an image encoder, prompt encoder and mask decoder that accepts points, boxes and other prompts and outputs high‑quality masks. Experiments showed that the model exhibits strong generalization to unknown categories in zero‑ or few‑shot settings and can be used for interactive editing, medical imaging and other applications. The release of Segment Anything ushered in the era of foundation models in computer vision and provides a powerful segmentation engine for various vision tasks.",
+        "summary_es": "La mayoría de los modelos de segmentación se entrenan para categorías o conjuntos de datos específicos y tienen dificultades para generalizar a objetos o escenas arbitrarios. El objetivo de Segment Anything era construir un modelo básico con avisos capaz de segmentar cualquier objeto en cualquier imagen. Los autores recopilaron un conjunto de datos a gran escala con 110 000 imágenes y mil millones de máscaras y diseñaron un modelo Transformer con codificador de imagen, codificador de avisos y decodificador de máscaras que acepta puntos, cuadros y otros avisos y produce máscaras de alta calidad. Los experimentos demostraron que el modelo presenta una gran capacidad de generalización a categorías desconocidas en configuraciones cero o con pocos ejemplos y puede utilizarse para edición interactiva, imagen médica y otras aplicaciones. El lanzamiento de Segment Anything inauguró la era de los modelos básicos en visión por ordenador y proporciona un motor de segmentación potente para diversas tareas de visión."
+      }
+    ],
+    "survey": [
+      {
+        "id": "segmentation-survey-2021",
+        "title": "Image Segmentation Using Deep Learning: A Survey",
+        "year": 2021,
+        "venue": "Pattern Recognition",
+        "paper_url": "https://arxiv.org/abs/2001.05566",
+        "summary_zh": "语义、实例及全景分割是计算机视觉中的核心任务，近年来深度学习在这些领域取得巨大进展。该综述的目标是系统总结基于深度学习的图像分割方法的发展脉络和技术趋势。作者按照像素标注网络、编码器‑解码器架构、多尺度融合、注意力机制等类别，对典型方法的原理和优缺点进行了梳理，并讨论了公开数据集、评测指标及实验结果。文章还分析了当前挑战、应用场景和未来方向，为研究者和开发者提供全面的参考。综述的出版为理解分割技术的发展提供了重要资源，促进了新方法的探索。",
+        "summary_en": "Semantic, instance and panoptic segmentation are core tasks in computer vision, and recent years have seen huge advances in these areas due to deep learning. The goal of this survey was to systematically summarize the development and technical trends of deep learning‑based image segmentation methods. The authors categorized typical approaches into pixel‑labeling networks, encoder–decoder architectures, multi‑scale fusion and attention mechanisms, describing their principles and strengths and weaknesses, and discussed public datasets, evaluation metrics and experimental results. The paper also analyzed current challenges, application scenarios and future directions, providing a comprehensive reference for researchers and practitioners. The publication of this survey offers an important resource for understanding the evolution of segmentation techniques and fosters the exploration of new methods.",
+        "summary_es": "La segmentación semántica, de instancias y panóptica son tareas centrales en visión por ordenador, y en los últimos años se han producido grandes avances en estas áreas gracias al aprendizaje profundo. El objetivo de esta encuesta fue resumir sistemáticamente el desarrollo y las tendencias técnicas de los métodos de segmentación de imágenes basados en aprendizaje profundo. Los autores clasificaron los enfoques típicos en redes de etiquetado de píxeles, arquitecturas codificador‑decodificador, fusión multiescala y mecanismos de atención, describiendo sus principios, fortalezas y debilidades, y discutieron conjuntos de datos públicos, métricas de evaluación y resultados experimentales. El artículo también analizó los retos actuales, los escenarios de aplicación y las direcciones futuras, proporcionando una referencia completa para investigadores y profesionales. La publicación de esta encuesta ofrece un recurso importante para comprender la evolución de las técnicas de segmentación y fomenta la exploración de nuevos métodos."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "unet-2015",
+      "title": "U‑Net: Convolutional Networks for Biomedical Image Segmentation",
+      "year": 2015,
+      "venue": "MICCAI",
+      "paper_url": "https://arxiv.org/abs/1505.04597",
+      "code": ["https://github.com/milesial/Pytorch-UNet"],
+      "why_transition": "采用编码器‑解码器结构和跳连融合特征，提高小样本医疗图像分割精度。",
+      "summary_zh": "医学图像分割通常样本有限，传统卷积网络难以同时利用低层细节和高层语义信息。U‑Net 的目标是通过编码器‑解码器结构和跳跃连接，实现小数据集上的准确分割。作者设计了一个对称的下采样和上采样网络，并利用特征图级联融合细粒度和语义信息，通过随机剪裁和镜像增强扩充训练集。实验在细胞和组织分割任务上取得了显著领先的准确率。U‑Net 的结构广泛应用于医学和工业视觉，其跳连设计启发了众多后续分割模型。",
+      "summary_en": "Medical image segmentation often has limited samples, and traditional convolutional networks struggle to leverage both low‑level details and high‑level semantics. U‑Net aimed to achieve accurate segmentation on small datasets through an encoder–decoder structure with skip connections. The authors designed a symmetric downsampling and upsampling network and fused fine‑grained and semantic information via concatenation of feature maps, while augmenting training data through random cropping and mirroring. Experiments on cell and tissue segmentation tasks achieved significantly superior accuracy. The U‑Net architecture has been widely applied in medical and industrial vision, and its skip‑connection design inspired many subsequent segmentation models.",
+      "summary_es": "La segmentación de imágenes médicas suele disponer de pocas muestras, y las redes convolucionales tradicionales tienen dificultades para aprovechar tanto los detalles de bajo nivel como las semánticas de alto nivel. U‑Net se propuso lograr una segmentación precisa en conjuntos pequeños mediante una estructura codificador‑decodificador con conexiones de salto. Los autores diseñaron una red simétrica de muestreo descendente y ascendente y fusionaron la información fina y semántica mediante la concatenación de mapas de características, a la vez que aumentaban los datos de entrenamiento con recortes aleatorios e inversión. Los experimentos en tareas de segmentación de células y tejidos lograron una precisión notablemente superior. La arquitectura U‑Net se ha aplicado ampliamente en visión médica e industrial, y su diseño de conexiones de salto inspiró numerosos modelos de segmentación posteriores."
+    },
+    {
+      "id": "pspnet-2017",
+      "title": "Pyramid Scene Parsing Network (PSPNet)",
+      "year": 2017,
+      "venue": "CVPR",
+      "paper_url": "https://arxiv.org/abs/1612.01105",
+      "code": ["https://github.com/hszhao/PSPNet"],
+      "why_transition": "提出金字塔池化模块聚合全局上下文，缓解卷积网络视野有限问题。",
+      "summary_zh": "基于卷积的分割模型通常受限于固定感受野，难以获得全局场景信息。PSPNet 的目标是通过金字塔池化策略汇聚不同尺度的上下文提升分割性能。作者在深度网络后添加金字塔场景解析模块，在多种网格尺度上进行池化并将结果拼接，以融合局部与全局特征。该方法在 PASCAL VOC 2012 和 Cityscapes 数据集上刷新了记录，特别是在复杂场景下表现出色。PSPNet 强调全局上下文对分割的重要性，为后续的多尺度和注意力机制奠定了基础。",
+      "summary_en": "Convolution‑based segmentation models are usually limited by a fixed receptive field and struggle to capture global scene information. PSPNet aimed to improve segmentation performance by aggregating contextual information at multiple scales via a pyramid pooling strategy. The authors added a pyramid scene parsing module after a deep network that performs pooling at several grid scales and concatenates the results to fuse local and global features. This method set new records on the PASCAL VOC 2012 and Cityscapes datasets and was particularly effective in complex scenes. PSPNet underscored the importance of global context for segmentation and laid the groundwork for subsequent multi‑scale and attention mechanisms.",
+      "summary_es": "Los modelos de segmentación basados en convoluciones suelen estar limitados por un campo receptivo fijo y tienen dificultades para captar la información global de la escena. PSPNet se propuso mejorar el rendimiento de la segmentación mediante la agregación de información contextual a varias escalas mediante una estrategia de agrupación piramidal. Los autores añadieron un módulo de análisis de escena piramidal después de una red profunda que realiza agrupaciones en varias escalas de cuadrícula y concatena los resultados para fusionar características locales y globales. Este método estableció nuevos récords en los conjuntos de PASCAL VOC 2012 y Cityscapes y fue especialmente eficaz en escenas complejas. PSPNet subrayó la importancia del contexto global para la segmentación y sentó las bases de los posteriores mecanismos de multiescala y atención."
+    },
+    {
+      "id": "hrnet-2019",
+      "title": "High‑Resolution Representations for Labeling Pixels and Regions (HRNet)",
+      "year": 2019,
+      "venue": "TPAMI",
+      "paper_url": "https://arxiv.org/abs/1904.04514",
+      "code": ["https://github.com/HRNet"],
+      "why_transition": "保持高分辨率分支并与低分辨率分支交换信息，改善空间精度。",
+      "summary_zh": "许多分割网络不断下采样导致特征图过小，恢复空间细节困难。HRNet 的目标是在整个网络中保持高分辨率表示，同时融合多分辨率特征。作者构建了并行的多尺度分支，在每个阶段交换信息，并保持最高分辨率分支不间断。实验表明，HRNet 在姿态估计和语义分割上显著提升了精度，尤其在边界和小目标方面表现突出。该设计强调连续高分辨率的重要性，对后续网络带来影响。",
+      "summary_en": "Many segmentation networks continuously downsample, resulting in very small feature maps and making it difficult to recover spatial details. HRNet aimed to maintain high‑resolution representations throughout the network while fusing multi‑resolution features. The authors built parallel multi‑scale branches that exchange information at each stage and kept the highest resolution branch uninterrupted. Experiments showed that HRNet significantly improved accuracy in pose estimation and semantic segmentation, particularly for boundaries and small objects. This design highlights the importance of maintaining high resolution and has influenced subsequent network architectures.",
+      "summary_es": "Muchas redes de segmentación realizan muestreos descendentes continuos, lo que da lugar a mapas de características muy pequeños y dificulta la recuperación de los detalles espaciales. HRNet se propuso mantener representaciones de alta resolución a lo largo de toda la red a la vez que fusionaba características de varias resoluciones. Los autores construyeron ramas multiescala paralelas que intercambian información en cada fase y mantuvieron ininterrumpida la rama de mayor resolución. Los experimentos demostraron que HRNet mejoraba significativamente la precisión en la estimación de poses y la segmentación semántica, especialmente en los contornos y los objetos pequeños. Este diseño pone de relieve la importancia de mantener una alta resolución e influyó en las arquitecturas de redes posteriores."
+    },
+    {
+      "id": "segformer-2021",
+      "title": "SegFormer: Simple and Efficient Design for Semantic Segmentation with Transformers",
+      "year": 2021,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/2105.15203",
+      "code": ["https://github.com/NVlabs/SegFormer"],
+      "why_transition": "提出轻量级Transformer编码器和MLP解码器，兼顾精度与效率。",
+      "summary_zh": "随着 Transformer 应用于视觉任务，传统卷积网络在语义分割上的效率与准确性面临挑战。SegFormer 的目标是设计一种简单高效的基于 Transformer 的分割模型，兼顾精度与推理速度。作者构建了一个分层的 Mix‑FFN Transformer 编码器和轻量级多层感知机解码器，并取消位置编码和复杂的解码结构。实验结果表明，SegFormer 在 ADE20K 等数据集上取得了优异的准确率‑速度平衡，特别适合实时应用。该模型证明了轻量 Transformer 在分割任务中的潜力，为工业部署提供了新选择。",
+      "summary_en": "As Transformers are applied to vision tasks, traditional convolutional networks face challenges in terms of efficiency and accuracy for semantic segmentation. SegFormer aimed to design a simple and efficient Transformer‑based segmentation model that balances accuracy and inference speed. The authors built a hierarchical Mix‑FFN Transformer encoder and a lightweight multilayer perceptron decoder and removed position encodings and complex decoding structures. Experimental results showed that SegFormer achieved an excellent accuracy‑speed trade‑off on datasets such as ADE20K and is particularly suitable for real‑time applications. This model demonstrated the potential of lightweight Transformers in segmentation tasks and provided a new option for industrial deployment.",
+      "summary_es": "A medida que los Transformers se aplican a las tareas de visión, las redes convolucionales tradicionales se enfrentan a retos en cuanto a eficiencia y precisión para la segmentación semántica. SegFormer se propuso diseñar un modelo de segmentación basado en Transformer sencillo y eficiente que equilibrara la precisión y la velocidad de inferencia. Los autores construyeron un codificador Transformer jerárquico Mix‑FFN y un decodificador de perceptrón multicapa ligero y eliminaron las codificaciones posicionales y las estructuras de decodificación complejas. Los resultados experimentales demostraron que SegFormer conseguía un excelente equilibrio precisión‑velocidad en conjuntos como ADE20K y es especialmente adecuado para aplicaciones en tiempo real. Este modelo demostró el potencial de los Transformers ligeros en las tareas de segmentación y proporcionó una nueva opción para el despliegue industrial."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【81802419430520†L49-L64】",
+      "milestone": "【81802419430520†L49-L64】",
+      "frontier": "【81802419430520†L49-L64】",
+      "survey": "【81802419430520†L49-L64】"
+    }
+  }
+}

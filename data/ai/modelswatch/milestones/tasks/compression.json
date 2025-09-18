@@ -1,0 +1,135 @@
+{
+  "slug": "compression",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "knowledge-distillation-2015",
+      "title": "Distilling the Knowledge in a Neural Network",
+      "year": 2015,
+      "venue": "NIPS Deep Learning Workshop",
+      "paper_url": "https://arxiv.org/abs/1503.02531",
+      "code": [],
+      "summary_zh": "大型深度模型和集成在实际部署中计算成本高，不适合资源受限设备。该论文的目标是通过一种知识蒸馏技术将复杂模型的知识迁移到较小的模型，以便在保持性能的同时减少规模。作者提出使用教师模型的软标签作为学生模型的训练目标，结合温度参数平滑输出分布，并可采用多教师或专家模型集成。实验在手写数字识别和商用语音模型上证明，小模型在学习教师概率分布后可接近甚至匹配教师性能。此方法首次提出利用蒸馏压缩神经网络，为后续模型压缩研究奠定了基础。",
+      "summary_en": "Large deep models and ensembles incur high computational costs in practical deployment and are unsuitable for resource‑constrained devices. The goal of this paper was to transfer the knowledge of complex models to a smaller model via a technique called knowledge distillation, so that the student can match performance while reducing size. The authors proposed using the soft targets of a teacher model as training objectives for the student, applying a temperature parameter to smooth the output distribution and optionally using multiple teachers or specialist models. Experiments on handwritten digit recognition and a commercial speech model showed that the small model, after learning the teacher’s probability distribution, could approach or even match teacher performance. This method first introduced using distillation to compress neural networks and laid the foundation for subsequent model compression research.",
+      "summary_es": "Los grandes modelos profundos y los conjuntos tienen un alto coste computacional en el despliegue práctico y no son adecuados para dispositivos con recursos limitados. El objetivo de este trabajo era transferir el conocimiento de modelos complejos a un modelo más pequeño mediante una técnica denominada destilación del conocimiento, de modo que el alumno pudiera igualar el rendimiento reduciendo su tamaño. Los autores propusieron utilizar los objetivos suaves del modelo maestro como objetivos de entrenamiento para el alumno, aplicar un parámetro de temperatura para suavizar la distribución de salidas y utilizar opcionalmente varios maestros o modelos especialistas. Los experimentos en el reconocimiento de dígitos manuscritos y en un modelo comercial de habla demostraron que el modelo pequeño, tras aprender la distribución de probabilidad del maestro, podía acercarse o incluso igualar el rendimiento del maestro. Este método introdujo por primera vez el uso de la destilación para comprimir redes neuronales y sentó las bases de la investigación posterior sobre compresión de modelos."
+    },
+    "milestone": [
+      {
+        "id": "distilbert-2019",
+        "title": "DistilBERT: A Distilled Version of BERT",
+        "year": 2019,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/1910.01108",
+        "code": ["https://github.com/huggingface/transformers"],
+        "summary_zh": "BERT 等预训练语言模型规模庞大，推理速度慢，不利于实时应用。DistilBERT 的目标是通过知识蒸馏方法生成一个较小但保持大部分性能的模型，提升效率。作者采用带有语言建模、蒸馏和余弦损失的多任务训练，让学生模型学习教师的隐藏状态和输出分布，并减少层数和参数。结果显示，DistilBERT 在 GLUE 和 SQuAD 等基准上达到原模型 97% 的准确率，但参数减少 40%、推理速度提高 60%。该工作证明大型 Transformer 可以有效压缩，并推动了小型预训练模型在工业中的应用。",
+        "summary_en": "Pretrained language models like BERT are large and slow to infer, which is unfavorable for real‑time applications. DistilBERT aimed to produce a smaller model that retains most of the performance via knowledge distillation to improve efficiency. The authors used multi‑task training with language modeling, distillation and cosine losses, guiding the student model to learn the teacher’s hidden states and output distribution while reducing the number of layers and parameters. Results showed that DistilBERT achieved 97% of the original model’s accuracy on benchmarks like GLUE and SQuAD while reducing parameters by 40% and increasing inference speed by 60%. This work demonstrated that large Transformers can be effectively compressed and promoted the use of small pretrained models in industry.",
+        "summary_es": "Los modelos lingüísticos preentrenados como BERT son grandes y lentos de inferir, lo que no favorece las aplicaciones en tiempo real. DistilBERT se propuso producir un modelo más pequeño que mantuviera la mayor parte del rendimiento mediante destilación de conocimiento para mejorar la eficiencia. Los autores utilizaron un entrenamiento multitarea con modelado lingüístico, destilación y pérdidas de coseno, guiando al modelo alumno a aprender los estados ocultos y la distribución de salidas del maestro mientras reducían el número de capas y parámetros. Los resultados mostraron que DistilBERT lograba el 97 % de la precisión del modelo original en puntos de referencia como GLUE y SQuAD mientras reducía los parámetros en un 40 % y aumentaba la velocidad de inferencia en un 60 %. Este trabajo demostró que los Transformers grandes pueden comprimirse eficazmente y promovió el uso de pequeños modelos preentrenados en la industria."
+      },
+      {
+        "id": "lora-2021",
+        "title": "LoRA: Low‑Rank Adaptation for Efficient Model Fine‑Tuning",
+        "year": 2021,
+        "venue": "ICLR",
+        "paper_url": "https://arxiv.org/abs/2106.09685",
+        "code": [],
+        "summary_zh": "对大型预训练模型进行微调需要更新全部参数，内存和计算开销巨大，阻碍了应用。LoRA 的目标是在保持预训练权重冻结的情况下，通过低秩矩阵来高效表示参数增量，减少可训练参数量。作者在 Transformer 的权重矩阵旁插入两个较小的乘数矩阵，仅学习这些低秩矩阵并在推理时与原权重相加。实验结果表明，在语言和视觉任务中，LoRA 达到与全参微调相近的性能，但训练参数数量和内存显著降低。LoRA 成为参数高效微调的里程碑，促进了大模型适配的普及。",
+        "summary_en": "Fine‑tuning large pretrained models requires updating all parameters, which incurs huge memory and computation costs and hinders deployment. LoRA aimed to efficiently represent parameter updates by using low‑rank matrices while keeping pretrained weights frozen, reducing the number of trainable parameters. The authors inserted two small multiplier matrices alongside each weight matrix in a Transformer and learned only these low‑rank matrices, adding them to the original weights at inference time. Experimental results on language and vision tasks showed that LoRA achieved performance comparable to full fine‑tuning while significantly reducing the number of training parameters and memory footprint. LoRA has become a milestone in parameter‑efficient fine‑tuning and has facilitated widespread adaptation of large models.",
+        "summary_es": "El ajuste fino de grandes modelos preentrenados requiere actualizar todos los parámetros, lo que supone un gran consumo de memoria y cálculo y dificulta su despliegue. LoRA se propuso representar eficazmente las actualizaciones de parámetros utilizando matrices de bajo rango mientras mantiene congelados los pesos preentrenados, reduciendo el número de parámetros entrenables. Los autores insertaron dos pequeñas matrices multiplicadoras junto a cada matriz de pesos en un Transformer y aprendieron solo estas matrices de bajo rango, sumándolas a los pesos originales en el momento de la inferencia. Los resultados experimentales en tareas lingüísticas y visuales mostraron que LoRA alcanzaba un rendimiento comparable al del ajuste fino completo, al tiempo que reducía significativamente el número de parámetros de entrenamiento y la huella de memoria. LoRA se ha convertido en un hito en el ajuste fino eficiente en parámetros y ha facilitado la adaptación generalizada de grandes modelos."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "qlora-2023",
+        "title": "QLoRA: Efficient Fine‑Tuning of Quantized Large Language Models",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2305.14314",
+        "code": ["https://github.com/artidoro/qlora"],
+        "summary_zh": "全参微调大型语言模型需要高端 GPU，大大限制了研究人员的可达性。QLoRA 的目标是通过结合 4 位量化和低秩适配器，使得普通 16 GB GPU 也能微调数十亿参数模型。作者将预训练权重量化到 4 位并冻结，通过双量化技术和内存高效的优化器训练 16 位的 LoRA 适配器，同时采用二次量化处理激活。实验表明，QLoRA 在 Alpaca、WizardLM 等多项指令跟随任务上达到与 16 位微调相当的性能。该工作使 LLM 微调民主化，表明低精度与参数高效方法的结合具有巨大潜力。",
+        "summary_en": "Full fine‑tuning of large language models requires high‑end GPUs, greatly limiting accessibility for researchers. QLoRA aimed to enable fine‑tuning models with billions of parameters on a single 16‑GB GPU by combining 4‑bit quantization with low‑rank adapters. The authors quantized pretrained weights to 4‑bit precision and kept them frozen, trained 16‑bit LoRA adapters with a memory‑efficient optimizer using double quantization, and applied second‑stage quantization to activations. Experiments showed that QLoRA achieved performance comparable to 16‑bit fine‑tuning on instruction‑following tasks such as Alpaca and WizardLM. This work democratizes LLM fine‑tuning and demonstrates the great potential of combining low precision with parameter‑efficient methods.",
+        "summary_es": "El ajuste fino de grandes modelos lingüísticos con todos los parámetros requiere GPUs de alta gama, lo que limita en gran medida la accesibilidad para los investigadores. QLoRA se propuso permitir el ajuste fino de modelos con miles de millones de parámetros en una sola GPU de 16 GB combinando la cuantificación de 4 bits con adaptadores de bajo rango. Los autores cuantificaron los pesos preentrenados a una precisión de 4 bits y los mantuvieron congelados, entrenaron adaptadores LoRA de 16 bits con un optimizador eficiente en memoria utilizando doble cuantificación y aplicaron una cuantificación de segunda etapa a las activaciones. Los experimentos demostraron que QLoRA alcanzaba un rendimiento comparable al ajuste fino de 16 bits en tareas de seguimiento de instrucciones como Alpaca y WizardLM. Este trabajo democratiza el ajuste fino de LLM y demuestra el gran potencial de combinar baja precisión con métodos eficientes en parámetros."
+      },
+      {
+        "id": "gptq-2023",
+        "title": "GPTQ: Accurate Post‑Training Quantization for Large Language Models",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2210.17323",
+        "code": ["https://github.com/IST-DASLab/gptq"],
+        "summary_zh": "后训练量化是压缩模型的实用方法，但在大语言模型上会导致精度大幅下降。GPTQ 的目标是通过优化策略将权重和激活量化到低位宽，同时尽量保持输出一致性。作者提出列块分组量化方法，利用二阶信息优化每层权重的近似，并为每层选择合适的缩放因子以减少累积误差。实验在 LLaMA、OPT 等模型上表明，GPTQ 在 4 位量化下几乎不损失下游任务性能，并显著减小了模型体积。该方法为大模型的后训练量化提供了有效方案，推动了低比特推理。",
+        "summary_en": "Post‑training quantization is a practical way to compress models, but applying it to large language models often leads to significant accuracy loss. GPTQ aimed to quantize weights and activations to low bit widths with an optimization strategy that preserves output consistency. The authors proposed a column‑wise group quantization method, using second‑order information to optimize approximations of each layer’s weights and selecting appropriate scaling factors per layer to reduce cumulative errors. Experiments on LLaMA and OPT models showed that GPTQ achieved near‑lossless downstream task performance under 4‑bit quantization and significantly reduced model size. This method provides an effective solution for post‑training quantization of large models and promotes low‑bit inference.",
+        "summary_es": "La cuantificación posterior al entrenamiento es una forma práctica de comprimir modelos, pero su aplicación a grandes modelos lingüísticos suele provocar una pérdida significativa de precisión. GPTQ se propuso cuantificar los pesos y las activaciones a anchuras de bits bajas con una estrategia de optimización que preserva la coherencia de la salida. Los autores propusieron un método de cuantificación por grupos por columnas utilizando información de segundo orden para optimizar la aproximación de los pesos de cada capa y seleccionar factores de escala apropiados por capa para reducir los errores acumulados. Los experimentos en modelos LLaMA y OPT demostraron que GPTQ lograba un rendimiento casi sin pérdida en tareas posteriores con cuantificación de 4 bits y reducía significativamente el tamaño del modelo. Este método ofrece una solución eficaz para la cuantificación posterior al entrenamiento de grandes modelos y fomenta la inferencia de bajo bit."
+      }
+    ],
+    "survey": [
+      {
+        "id": "compression-survey-2017",
+        "title": "Model Compression and Acceleration Survey",
+        "year": 2017,
+        "venue": "IEEE TPAMI",
+        "paper_url": "https://arxiv.org/abs/1710.09282",
+        "summary_zh": "随着深度网络应用的普及，模型压缩与加速技术快速发展，产生了剪枝、量化、矩阵分解、蒸馏等多种方法。该综述的目标是系统梳理这些技术，比较其优缺点，并指明未来方向。作者从权重剪枝、低秩分解、参数共享、数值量化、知识蒸馏到硬件友好优化全面回顾了各类方法，并通过案例分析展示其应用效果。文章还讨论了压缩带来的精度损失、部署复杂度以及与硬件协同设计的问题，指出神经结构搜索和自适应压缩等新趋势。该综述为研究者和工程师选择合适的压缩策略提供了参考，并促进了高效深度学习的发展。",
+        "summary_en": "With the widespread adoption of deep networks, model compression and acceleration techniques have rapidly developed, giving rise to methods such as pruning, quantization, matrix factorization and distillation. The goal of this survey was to systematically organize these techniques, compare their advantages and disadvantages and indicate future directions. The authors comprehensively reviewed methods from weight pruning, low‑rank factorization and parameter sharing to numerical quantization, knowledge distillation and hardware‑friendly optimizations and presented case studies demonstrating their effects. The article also discussed issues such as accuracy loss, deployment complexity and co‑design with hardware and pointed out new trends including neural architecture search and adaptive compression. This survey provides researchers and engineers with a reference for selecting appropriate compression strategies and promotes the development of efficient deep learning.",
+        "summary_es": "Con la adopción generalizada de las redes profundas, las técnicas de compresión y aceleración de modelos se han desarrollado rápidamente, dando lugar a métodos como la poda, la cuantificación, la factorización de matrices y la destilación. El objetivo de esta encuesta fue organizar sistemáticamente estas técnicas, comparar sus ventajas e inconvenientes e indicar las direcciones futuras. Los autores revisaron de forma exhaustiva métodos que van desde la poda de pesos, la factorización de bajo rango y la compartición de parámetros hasta la cuantificación numérica, la destilación del conocimiento y las optimizaciones amigables con el hardware, y presentaron estudios de casos que demuestran sus efectos. El artículo también trató cuestiones como la pérdida de precisión, la complejidad del despliegue y el codesarrollo con el hardware y señaló nuevas tendencias, como la búsqueda de arquitectura neuronal y la compresión adaptativa. Esta encuesta ofrece a los investigadores e ingenieros una referencia para seleccionar estrategias de compresión adecuadas y promueve el desarrollo del aprendizaje profundo eficiente."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "deep-compression-2016",
+      "title": "Deep Compression: Pruning, Quantization and Huffman Coding",
+      "year": 2016,
+      "venue": "ICLR",
+      "paper_url": "https://arxiv.org/abs/1510.00149",
+      "code": [],
+      "why_transition": "提出联合剪枝与量化的管线，显著减少模型存储和带宽，为高效推理奠定基础。",
+      "summary_zh": "随着神经网络规模的增加，模型存储和传输成为部署瓶颈。Deep Compression 的目标是通过剪枝、量化和霍夫曼编码将网络压缩数十倍，同时保持准确率。作者首先按权重大小剪除冗余连接，随后对剩余权重进行聚类量化以减少位宽，最后使用霍夫曼编码进一步压缩存储。实验在 ImageNet 和语音模型上显示，这一三步流程可将模型大小减少 35× 至 49×，而几乎不损失精度。该工作奠定了集成剪枝与量化的压缩范式，推动了硬件友好模型设计。",
+      "summary_en": "As neural networks grow larger, model storage and transmission become deployment bottlenecks. The goal of Deep Compression was to compress networks by tens of times through pruning, quantization and Huffman coding while preserving accuracy. The authors first pruned redundant connections based on weight magnitude, then performed cluster‑based quantization on the remaining weights to reduce bit width and finally applied Huffman coding for further storage compression. Experiments on ImageNet and speech models showed that this three‑stage pipeline reduced model size by 35× to 49× with almost no loss in accuracy. This work established the integrated pruning and quantization paradigm and promoted hardware‑friendly model design.",
+      "summary_es": "A medida que las redes neuronales crecen, el almacenamiento y la transmisión de modelos se convierten en cuellos de botella en el despliegue. El objetivo de Deep Compression era comprimir las redes decenas de veces mediante poda, cuantificación y codificación de Huffman manteniendo la precisión. Los autores eliminaron primero las conexiones redundantes según la magnitud de los pesos, luego realizaron una cuantificación basada en agrupación sobre los pesos restantes para reducir la anchura de bits y finalmente aplicaron codificación de Huffman para una mayor compresión del almacenamiento. Los experimentos en modelos de ImageNet y de voz mostraron que esta canalización de tres etapas reducía el tamaño del modelo entre 35 y 49 veces con casi ninguna pérdida de precisión. Este trabajo estableció el paradigma de integración de poda y cuantificación y promovió el diseño de modelos compatibles con el hardware."
+    },
+    {
+      "id": "lottery-ticket-2019",
+      "title": "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks",
+      "year": 2019,
+      "venue": "ICLR",
+      "paper_url": "https://arxiv.org/abs/1803.03635",
+      "code": [],
+      "why_transition": "提出存在可独立训练的稀疏子网络，为理解剪枝有效性和稀疏化训练提供理论线索。",
+      "summary_zh": "剪枝方法能在保持精度的情况下大幅减少模型规模，但其工作原理尚不清楚。彩票票根假设的目标是验证是否存在一个稀疏的子网络，在随机初始化后即可独立训练达到与原网络相当的性能。作者在训练完密集网络后按权重大小剪枝，然后将剩余权重重置为初始值，重新训练得到的稀疏网络。实验发现，这些“中奖子网”在多个数据集上可以独立训练并达到接近原网络的准确率。该发现揭示了过参数化网络中隐藏的有效子结构，促进了稀疏训练和动态网络研究。",
+      "summary_en": "Pruning methods can greatly reduce model size while maintaining accuracy, but their working principles are not well understood. The Lottery Ticket Hypothesis aimed to verify whether a sparse sub‑network exists that, when randomly initialized, can be trained independently to achieve performance comparable to the original network. The authors trained a dense network, pruned weights based on magnitude and reset the remaining weights to their initial values, then retrained the resulting sparse network. Experiments found that these “winning tickets” could be trained independently on multiple datasets and achieve accuracy close to that of the full network. This discovery revealed effective substructures hidden in over‑parameterized networks and stimulated research on sparse training and dynamic networks.",
+      "summary_es": "Los métodos de poda pueden reducir en gran medida el tamaño del modelo manteniendo la precisión, pero sus principios de funcionamiento no se comprenden bien. La hipótesis del billete de lotería se propuso verificar si existe una subred dispersa que, al ser inicializada al azar, pueda entrenarse independientemente para alcanzar un rendimiento comparable al de la red original. Los autores entrenaron una red densa, eliminaron los pesos basándose en su magnitud y restablecieron los pesos restantes a sus valores iniciales, y luego volvieron a entrenar la red dispersa resultante. Los experimentos hallaron que estos “billetes premiados” podían entrenarse independientemente en varios conjuntos de datos y alcanzar una precisión cercana a la de la red completa. Este descubrimiento reveló subestructuras eficaces ocultas en redes sobreparametrizadas y estimuló la investigación sobre el entrenamiento disperso y las redes dinámicas."
+    },
+    {
+      "id": "qat-2018",
+      "title": "Quantization‑Aware Training for Low‑Precision Neural Networks",
+      "year": 2018,
+      "venue": "Google AI Blog",
+      "paper_url": "https://arxiv.org/abs/1712.05877",
+      "code": [],
+      "why_transition": "通过在训练过程中模拟量化操作，使模型适应低精度表示，改善部署精度。",
+      "summary_zh": "后训练量化简单但易损失精度，因模型未考虑量化误差。量化感知训练的目标是在训练期间模拟权重和激活的量化过程，使网络在低精度下保持准确性。该方法在前向传播中使用伪量化算子将权重和激活裁剪到整数表示，在反向传播中仍用高精度梯度更新，从而令网络学习抵抗量化噪声。实验表明，经过 QAT 的模型在部署为 8 位或 4 位整数时性能优于直接后量化模型，并可在移动和边缘设备上高效运行。QAT 成为工业界训练量化模型的标准流程，推动低精度推理的普及。",
+      "summary_en": "Post‑training quantization is simple but often loses accuracy because the model does not account for quantization errors. Quantization‑aware training (QAT) aimed to simulate the quantization process of weights and activations during training so that networks maintain accuracy at low precision. The method uses fake quantization operators in the forward pass to clamp weights and activations to integer representations while using full‑precision gradients in the backward pass, enabling the network to learn to resist quantization noise. Experiments showed that models undergoing QAT perform better when deployed as 8‑bit or 4‑bit integers than models that undergo only post‑training quantization and can run efficiently on mobile and edge devices. QAT has become the industry standard for training quantized models and has promoted the adoption of low‑precision inference.",
+      "summary_es": "La cuantificación posterior al entrenamiento es sencilla pero a menudo pierde precisión porque el modelo no tiene en cuenta los errores de cuantificación. El entrenamiento consciente de la cuantificación (QAT) se propuso simular el proceso de cuantificación de pesos y activaciones durante el entrenamiento para que las redes mantuvieran la precisión a baja precisión. El método utiliza operadores de cuantificación falsa en la pasada hacia adelante para recortar los pesos y las activaciones a representaciones enteras mientras utiliza gradientes de alta precisión en la pasada hacia atrás, lo que permite a la red aprender a resistir el ruido de cuantificación. Los experimentos demostraron que los modelos sometidos a QAT tienen un mejor rendimiento cuando se implantan como enteros de 8 bits o 4 bits que los modelos que solo sufren cuantificación posterior al entrenamiento y pueden funcionar eficazmente en dispositivos móviles y periféricos. QAT se ha convertido en la norma industrial para entrenar modelos cuantificados y ha impulsado la adopción de la inferencia de baja precisión."
+    },
+    {
+      "id": "llm-int8-2022",
+      "title": "LLM.int8(): 8‑Bit Matrix Multiplication for Transformer Inference",
+      "year": 2022,
+      "venue": "ICML",
+      "paper_url": "https://arxiv.org/abs/2208.07339",
+      "code": [],
+      "why_transition": "通过 8 位量化和异常值通道分裂，使大模型在消费级硬件上高效推理，开启后量化浪潮。",
+      "summary_zh": "大语言模型在消费级 GPU 上运行受到显存限制，8 位量化提供了潜在解决方案但易损坏精度。LLM.int8() 的目标是在保持性能的前提下将 Transformer 推理矩阵乘法量化为 8 位，以降低内存和计算需求。作者提出对权重矩阵按通道分离异常值并使用混合精度乘法，同时采用分组量化对激活进行尺度化，解决了动态范围问题。实验表明，经过 8 位量化的模型在机器翻译和零样本分类等任务上与全精度模型性能差距很小，并将显存使用降低约一半。该方法推动了大模型量化部署的实践，为后续 GPTQ 等工作奠定基础。",
+      "summary_en": "Running large language models on consumer GPUs is limited by memory, and 8‑bit quantization offers a potential solution but often harms accuracy. LLM.int8() aimed to quantize Transformer inference matrix multiplications to 8‑bit precision while preserving performance, thereby reducing memory and compute requirements. The authors proposed splitting outlier channels of weight matrices and using mixed‑precision multiplications, combined with groupwise quantization to rescale activations and address dynamic range issues. Experiments showed that models quantized to 8 bits had little performance loss on tasks such as machine translation and zero‑shot classification while reducing memory usage by about half. This method advanced practical deployment of large model quantization and laid the groundwork for subsequent works like GPTQ.",
+      "summary_es": "La ejecución de grandes modelos lingüísticos en GPUs de consumo está limitada por la memoria, y la cuantificación de 8 bits ofrece una solución potencial pero suele perjudicar la precisión. LLM.int8() se propuso cuantificar las multiplicaciones de matrices en la inferencia de Transformers a una precisión de 8 bits manteniendo el rendimiento, reduciendo así la memoria y el cálculo necesarios. Los autores propusieron separar los canales con valores atípicos de las matrices de pesos y utilizar multiplicaciones de precisión mixta, combinadas con la cuantificación por grupos para reescalar las activaciones y abordar los problemas de rango dinámico. Los experimentos demostraron que los modelos cuantificados a 8 bits tenían poca pérdida de rendimiento en tareas como traducción automática y clasificación sin ejemplos, al tiempo que reducían el uso de memoria aproximadamente a la mitad. Este método impulsó el despliegue práctico de la cuantificación de grandes modelos y sentó las bases de trabajos posteriores como GPTQ."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【768883211736006†L48-L62】",
+      "milestone": "【768883211736006†L48-L62】",
+      "frontier": "【768883211736006†L48-L62】",
+      "survey": "【768883211736006†L48-L62】"
+    }
+  }
+}

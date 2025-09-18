@@ -1,0 +1,136 @@
+{
+  "slug": "agent",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "react-2022",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "year": 2022,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/2210.03629",
+      "code": [],
+      "summary_zh": "早期语言模型在使用工具或进行多步推理时缺乏规划和交互能力，难以完成复杂任务。ReAct 的目标是通过结合推理轨迹和动作步骤，让模型在外部环境中边推理边行动。作者设计了一种模式，模型生成带有思考链的文本和实际调用 API 的动作，利用中间反馈更新计划并继续执行。实验证明，该方法在问答和交互式决策任务上比仅推理或仅行动的策略更强，并提高了解释性和可控性。ReAct 为后续 Agent 系统奠定了框架基础。",
+      "summary_en": "Early language models lacked planning and interaction abilities when using tools or performing multi‑step reasoning, making it difficult to accomplish complex tasks. ReAct aimed to combine reasoning traces and action steps so that a model could reason while acting in an external environment. The authors designed a pattern where the model generates text containing a chain of thought and an actual API call, uses intermediate feedback to update the plan and continues execution. Experiments showed that this method outperformed strategies that only reason or only act on question answering and interactive decision tasks and improved interpretability and controllability. ReAct laid the framework foundation for subsequent agent systems.",
+      "summary_es": "Los primeros modelos lingüísticos carecían de capacidad de planificación e interacción al utilizar herramientas o realizar razonamientos de varios pasos, lo que dificultaba la realización de tareas complejas. ReAct se propuso combinar las trazas de razonamiento y los pasos de acción para que un modelo pudiera razonar mientras actuaba en un entorno externo. Los autores diseñaron un patrón en el que el modelo genera texto que contiene una cadena de pensamientos y una llamada a la API, utiliza la retroalimentación intermedia para actualizar el plan y continúa la ejecución. Los experimentos demostraron que este método superaba a las estrategias que solo razonaban o solo actuaban en preguntas y respuestas y tareas de decisión interactiva y mejoraba la interpretabilidad y la controlabilidad. ReAct sentó las bases del marco para los sistemas de agentes posteriores."
+    },
+    "milestone": [
+      {
+        "id": "toolformer-2023",
+        "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2302.04761",
+        "code": [],
+        "summary_zh": "大模型需要有效调用外部 API 才能解决复杂问题，但缺少标注数据。Toolformer 的目标是让语言模型通过自生成数据学习 API 调用，从而无需人工标注即可掌握工具使用。作者利用少量示例指导模型在生成文本时插入 API 调用模板，通过模型自身评估调用价值筛选数据，然后用筛选后的数据微调模型。实验结果表明，Toolformer 能够在计算、搜索等 API 调用任务上学会在合适时使用工具，显著提升了推理和计算能力。该方法证明模型可以自我监督学习工具使用，是 Agent 研究的重要里程碑。",
+        "summary_en": "Large models need to call external APIs effectively to solve complex problems but lack annotated data. Toolformer aimed to enable a language model to learn API calls by self‑generating data, thus mastering tool use without human annotations. The authors used a few examples to guide the model to insert API call templates while generating text, then let the model itself evaluate the usefulness of the calls to filter the data and fine‑tuned the model on the filtered data. Experiments showed that Toolformer learned to use tools appropriately in tasks such as computation and search and significantly improved reasoning and calculation abilities. This method proves that a model can learn tool use via self‑supervision and is an important milestone in agent research.",
+        "summary_es": "Los grandes modelos necesitan invocar APIs externas de forma eficaz para resolver problemas complejos, pero carecen de datos anotados. Toolformer se propuso permitir que un modelo lingüístico aprendiera a llamar APIs generando sus propios datos, de modo que dominara el uso de herramientas sin anotaciones humanas. Los autores utilizaron algunos ejemplos para guiar al modelo en la inserción de plantillas de llamadas de APIs al generar texto, luego dejaron que el propio modelo evaluara la utilidad de las llamadas para filtrar los datos y ajustaron el modelo con los datos filtrados. Los experimentos demostraron que Toolformer aprendía a utilizar las herramientas adecuadamente en tareas como cálculos y búsquedas y mejoraba significativamente las capacidades de razonamiento y cálculo. Este método demuestra que un modelo puede aprender el uso de herramientas mediante autoaprendizaje y es un hito importante en la investigación de agentes."
+      },
+      {
+        "id": "autogpt-2023",
+        "title": "AutoGPT: Autonomous GPT Agents for Task Execution",
+        "year": 2023,
+        "venue": "GitHub",
+        "paper_url": "https://github.com/Significant-Gravitas/AutoGPT",
+        "code": ["https://github.com/Significant-Gravitas/AutoGPT"],
+        "summary_zh": "Agent 系统需要将大型语言模型与任务规划和长期记忆结合，实现持续自主执行。AutoGPT 的目标是构建一种高度自动化的代理框架，允许模型在给定高层目标后自主分解任务、调用工具并迭代反思。该项目结合 GPT 模型、向量数据库和插件系统，使 Agent 能够生成子目标、执行网页搜索、编写文件并根据反馈调整策略。虽然效率和安全性仍有待改进，AutoGPT 展示了无需人工干预的长任务执行能力，引发了社区对自治智能体的广泛兴趣。",
+        "summary_en": "Agent systems need to combine large language models with task planning and long‑term memory to achieve sustained autonomous execution. AutoGPT aimed to build a highly automated agent framework that allows a model to autonomously decompose tasks, call tools and reflect iteratively after being given high‑level goals. The project integrates GPT models, vector databases and a plugin system so that the agent can generate sub‑goals, perform web searches, write files and adjust strategies based on feedback. Although efficiency and safety still need improvement, AutoGPT demonstrates the ability to execute long tasks without human intervention and has sparked widespread community interest in autonomous agents.",
+        "summary_es": "Los sistemas de agentes necesitan combinar grandes modelos lingüísticos con la planificación de tareas y la memoria a largo plazo para lograr una ejecución autónoma sostenida. AutoGPT se propuso construir un marco de agente altamente automatizado que permita a un modelo descomponer tareas, llamar herramientas y reflexionar iterativamente tras recibir objetivos de alto nivel. El proyecto integra modelos GPT, bases de datos vectoriales y un sistema de plugins para que el agente pueda generar subobjetivos, realizar búsquedas web, escribir archivos y ajustar estrategias en función de la retroalimentación. Aunque la eficiencia y la seguridad aún deben mejorar, AutoGPT demuestra la capacidad de ejecutar tareas largas sin intervención humana y ha despertado un gran interés en la comunidad por los agentes autónomos."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "graph-of-thoughts-2023",
+        "title": "Graph‑of‑Thought: Integrating Reasoning Paths for Agent Planning",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2308.08708",
+        "code": [],
+        "summary_zh": "现有 Agent 往往基于线性思维链，难以表达复杂的推理分支。Graph‑of‑Thought 的目标是通过图结构表示多分支推理路径，提升 Agent 的规划和探索能力。作者提出将思维链表示为节点与边组成的有向图，利用搜索算法在图中选择最优子路径，并在语言模型的指导下进行扩展。实验表明，该方法在数学推理和规划任务上优于传统链式推理，能有效利用多分支信息。该工作推动了 Agent 推理从序列到图的转变，是当前前沿研究。",
+        "summary_en": "Existing agents often rely on linear chains of thought and cannot represent complex branching reasoning. Graph‑of‑Thought aimed to enhance agent planning and exploration by representing multi‑branch reasoning paths as a graph structure. The authors proposed representing chains of thought as a directed graph of nodes and edges, using search algorithms to select optimal subpaths and expanding them under the guidance of a language model. Experiments showed that this method outperformed traditional chain‑based reasoning on mathematical reasoning and planning tasks and could effectively leverage multi‑branch information. This work advances agent reasoning from sequences to graphs and is a current frontier.",
+        "summary_es": "Los agentes existentes suelen basarse en cadenas de pensamiento lineales y no pueden representar razonamientos ramificados complejos. Graph‑of‑Thought se propuso mejorar la planificación y exploración de los agentes representando los caminos de razonamiento multirama como una estructura de grafo. Los autores propusieron representar las cadenas de pensamiento como un grafo dirigido de nodos y aristas, utilizando algoritmos de búsqueda para seleccionar las subrutas óptimas y ampliándolas bajo la guía de un modelo lingüístico. Los experimentos demostraron que este método superaba al razonamiento tradicional basado en cadenas en tareas de razonamiento matemático y planificación y podía aprovechar eficazmente la información multirrama. Este trabajo impulsa el razonamiento de los agentes de secuencias a grafos y es una frontera actual."
+      },
+      {
+        "id": "voyager-2023",
+        "title": "Voyager: LLM‑Powered Autonomous Agents in Minecraft",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2308.04985",
+        "code": ["https://github.com/MineDojo/Voyager"],
+        "summary_zh": "现有 Agent 演示多步骤规划能力有限，缺乏持续探索和自我改进机制。Voyager 的目标是在开放世界环境中构建可持续学习和任务发现的自主 Agent。作者将 GPT‑4 与强化学习环境结合，通过自动编写代码与游戏接口交互，利用记忆库存储工具并在失败后自我修正。Voyager 能在 Minecraft 中不断学习新的技能，逐渐解锁复杂任务。该工作展示了 LLM 结合长期探索的潜力，为具身智能体研究提供新范式。",
+        "summary_en": "Existing agents demonstrate limited multi‑step planning ability and lack mechanisms for continual exploration and self‑improvement. Voyager aimed to build an autonomous agent capable of continual learning and task discovery in an open‑world environment. The authors combined GPT‑4 with a reinforcement learning environment, automatically writing code to interact with the game interface, using a memory library to store tools and self‑correcting after failure. Voyager continuously learned new skills in Minecraft and progressively unlocked complex tasks. This work demonstrates the potential of LLMs combined with long‑term exploration and provides a new paradigm for embodied intelligence research.",
+        "summary_es": "Los agentes existentes demuestran una capacidad limitada de planificación de varios pasos y carecen de mecanismos de exploración continua y auto‑mejora. Voyager se propuso construir un agente autónomo capaz de aprendizaje continuo y descubrimiento de tareas en un entorno de mundo abierto. Los autores combinaron GPT‑4 con un entorno de aprendizaje por refuerzo, generando automáticamente código para interactuar con la interfaz del juego, utilizando una biblioteca de memoria para almacenar herramientas y autocorregirse tras el fracaso. Voyager aprendió continuamente nuevas habilidades en Minecraft y desbloqueó progresivamente tareas complejas. Este trabajo demuestra el potencial de los grandes modelos lingüísticos combinados con la exploración a largo plazo y proporciona un nuevo paradigma para la investigación de inteligencia incorporada."
+      }
+    ],
+    "survey": [
+      {
+        "id": "agent-survey-2023",
+        "title": "Large Language Models as Autonomous Agents: A Survey",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2308.06930",
+        "code": [],
+        "summary_zh": "近期自动化 Agent 研究快速发展，缺乏系统总结。该综述的目标是梳理基于大语言模型的 Agent 系统的框架、关键技术和应用。文章介绍了工具调用、记忆管理、任务分解和计划策略等核心组件，比较了 ReAct、Toolformer、AutoGPT 等典型方法的优缺点，并讨论了可靠性、安全性和评测难点。作者还展望了多模态、长期学习和多 Agent 协作等未来方向。该综述为读者系统了解 LLM‑Agent 生态提供了参考。",
+        "summary_en": "Recent research on autonomous agents has developed rapidly, but systematic summaries are lacking. The goal of this survey is to outline the frameworks, key techniques and applications of agent systems based on large language models. The article introduces core components such as tool calling, memory management, task decomposition and planning strategies, compares representative methods like ReAct, Toolformer and AutoGPT, and discusses reliability, safety and evaluation challenges. The authors also look ahead to future directions including multimodality, lifelong learning and multi‑agent collaboration. This survey provides readers with a systematic understanding of the LLM‑agent ecosystem.",
+        "summary_es": "La investigación reciente sobre agentes autónomos se ha desarrollado rápidamente, pero faltan resúmenes sistemáticos. El objetivo de esta encuesta es describir los marcos, las técnicas clave y las aplicaciones de los sistemas de agentes basados en grandes modelos lingüísticos. El artículo introduce componentes clave como la invocación de herramientas, la gestión de la memoria, la descomposición de tareas y las estrategias de planificación, compara métodos representativos como ReAct, Toolformer y AutoGPT y analiza los retos de fiabilidad, seguridad y evaluación. Los autores también anticipan direcciones futuras, como la multimodalidad, el aprendizaje de por vida y la colaboración multiagente. Esta encuesta ofrece a los lectores una comprensión sistemática del ecosistema LLM‑Agent."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "mrkl-2022",
+      "title": "MRKL Systems: Modular Reasoning, Knowledge and Language",
+      "year": 2022,
+      "venue": "ArXiv",
+      "paper_url": "https://arxiv.org/abs/2201.10363",
+      "code": [],
+      "why_transition": "提出模块化框架将语言模型与工具组合，是通用 Agent 的雏形。",
+      "summary_zh": "为了让语言模型解决更复杂的任务，需要组合外部知识和计算模块。MRKL 系统的目标是通过模块化框架将语言模型与符号计算器、搜索引擎等专家组件连接。作者将问题分解为调用不同专家的子问题，并用路由器选择合适模块，由语言模型统筹回答。实验在数学、检索等任务上显示，该系统比单纯语言模型更准确。MRKL 系统展示了模块组合的潜力，是通用 Agent 的重要前身。",
+      "summary_en": "To enable language models to solve more complex tasks, external knowledge and computation modules need to be combined. The goal of the MRKL system was to connect a language model with expert components such as symbolic calculators and search engines through a modular framework. The authors decomposed problems into sub‑problems requiring different experts, used a router to select the appropriate module and coordinated answers with the language model. Experiments on mathematics and retrieval tasks showed that the system was more accurate than using a language model alone. The MRKL system demonstrates the potential of module composition and is an important precursor to general agents.",
+      "summary_es": "Para que los modelos lingüísticos resuelvan tareas más complejas, es necesario combinar módulos de conocimiento externo y cálculo. El objetivo del sistema MRKL era conectar un modelo lingüístico con componentes expertos como calculadoras simbólicas y motores de búsqueda mediante un marco modular. Los autores descompusieron los problemas en subproblemas que requerían diferentes expertos, utilizaron un enrutador para seleccionar el módulo apropiado y coordinaron las respuestas con el modelo lingüístico. Los experimentos en tareas de matemáticas y recuperación mostraron que el sistema era más preciso que utilizar un modelo lingüístico por sí solo. El sistema MRKL demuestra el potencial de la composición modular y es un precursor importante de los agentes generales."
+    },
+    {
+      "id": "pal-2023",
+      "title": "PAL: Program‑Aided Language Models",
+      "year": 2023,
+      "venue": "ICLR",
+      "paper_url": "https://arxiv.org/abs/2211.10435",
+      "code": [],
+      "why_transition": "使用外部编程解释器辅助语言模型推理，提升数学和逻辑推理能力。",
+      "summary_zh": "大型语言模型在复杂逻辑和数学推理任务上容易出错，需要外部工具辅助。PAL 的目标是让语言模型生成可执行程序作为思考步骤，通过编程语言求解问题。作者让模型输出 Python 代码来表示解题过程，然后运行代码获取结果，以替代纯自然语言推理。实验表明，PAL 在数学题和算术推理上显著优于 CoT 和 ReAct 等方法，并减少了幻觉。该方法拓宽了 Agent 使用外部工具的方式，促进了程序辅助的推理研究。",
+      "summary_en": "Large language models often make mistakes on complex logic and math reasoning tasks and require external tools. PAL aimed to have the language model generate executable programs as intermediate reasoning steps to solve problems via programming languages. The authors had the model output Python code representing the solution process and then executed the code to obtain the result, replacing pure natural language reasoning. Experiments showed that PAL significantly outperformed Chain‑of‑Thought and ReAct on math and arithmetic reasoning problems and reduced hallucinations. This method broadens the ways agents can use external tools and promotes program‑aided reasoning research.",
+      "summary_es": "Los grandes modelos lingüísticos suelen cometer errores en tareas de lógica compleja y razonamiento matemático y requieren herramientas externas. PAL se propuso que el modelo lingüístico generara programas ejecutables como pasos intermedios de razonamiento para resolver problemas mediante lenguajes de programación. Los autores hicieron que el modelo generara código Python que representara el proceso de solución y luego ejecutaron el código para obtener el resultado, sustituyendo el razonamiento puramente en lenguaje natural. Los experimentos demostraron que PAL superaba significativamente a Chain‑of‑Thought y ReAct en problemas de razonamiento matemático y aritmético y reducía las alucinaciones. Este método amplía las formas en que los agentes pueden utilizar herramientas externas y promueve la investigación sobre razonamiento asistido por programas."
+    },
+    {
+      "id": "toollmm-2023",
+      "title": "ToolLLM: Facilitating LLM to Use Tools via Slot Filling and Alignment",
+      "year": 2023,
+      "venue": "ArXiv",
+      "paper_url": "https://arxiv.org/abs/2305.17126",
+      "code": [],
+      "why_transition": "通过槽填充策略简化工具调用格式，让模型轻松集成多种 API。",
+      "summary_zh": "在多工具场景中，复杂的调用格式增加了模型学习成本。ToolLLM 的目标是通过槽位填充和文本对齐策略，使模型能够统一调用不同 API。作者设计了统一的模板，将工具参数映射为槽位，并训练模型根据自然语言填充槽位，同时调整语言模型输出格式与工具输入对齐。实验结果表明，该方法能有效支持多个搜索、计算和数据库 API 调用，提高了问答和数据分析任务的正确率。ToolLLM 简化了 Agent 工具集成，是多工具协同的重要过渡工作。",
+      "summary_en": "In multi‑tool scenarios, complex call formats increase the learning burden of models. ToolLLM aimed to unify calls to different APIs through a slot‑filling and text alignment strategy so that a model could easily integrate multiple APIs. The authors designed a unified template that maps tool parameters to slots and trained the model to fill slots based on natural language while aligning the model’s output format with tool input. Experimental results showed that this method effectively supported multiple search, computation and database API calls and improved accuracy on QA and data analysis tasks. ToolLLM simplifies agent tool integration and is an important transitional work for multi‑tool collaboration.",
+      "summary_es": "En escenarios con varias herramientas, los formatos de llamada complejos aumentan la carga de aprendizaje de los modelos. ToolLLM se propuso unificar las llamadas a diferentes APIs mediante una estrategia de relleno de ranuras y alineación de texto para que un modelo pudiera integrar fácilmente múltiples APIs. Los autores diseñaron una plantilla unificada que asigna los parámetros de las herramientas a ranuras y entrenaron al modelo para llenar las ranuras según el lenguaje natural, alineando al mismo tiempo el formato de salida del modelo con la entrada de las herramientas. Los resultados experimentales mostraron que este método soportaba eficazmente múltiples llamadas a APIs de búsqueda, cálculo y bases de datos y mejoraba la precisión en tareas de QA y análisis de datos. ToolLLM simplifica la integración de herramientas en los agentes y es un importante trabajo de transición para la colaboración multiherramienta."
+    },
+    {
+      "id": "generative-agents-2023",
+      "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+      "year": 2023,
+      "venue": "ICLR",
+      "paper_url": "https://arxiv.org/abs/2304.03442",
+      "code": ["https://github.com/joeypark95/generative_agents"],
+      "why_transition": "首次展示基于大模型的虚拟角色在模拟社会中的互动和长期记忆。",
+      "summary_zh": "Agent 研究通常关注任务执行，缺少对长期社会互动的探索。Generative Agents 的目标是构建能够模拟人类社会行为的虚拟角色，通过记忆和规划系统实现连续互动。作者在游戏环境中创建多个由 GPT 驱动的代理，赋予他们记忆库、日程规划和反思机制，使其能产生逼真的日常行为并相互影响。实验展示了虚拟社区中出现的社会动态，如结识、聚会和惊喜事件。该研究拓展了 Agent 应用场景，为模拟社会系统和虚拟伙伴提供了新范式。",
+      "summary_en": "Agent research usually focuses on task execution and lacks exploration of long‑term social interaction. Generative Agents aimed to build virtual characters that can simulate human social behavior through memory and planning systems to support continuous interaction. The authors created multiple GPT‑driven agents in a game environment and endowed them with memory stores, schedule planning and reflection mechanisms so that they could produce realistic daily behaviors and influence each other. Experiments showed social dynamics emerging in the virtual community, such as meeting people, hosting parties and surprising events. This research expands agent application scenarios and offers a new paradigm for simulating social systems and virtual companions.",
+      "summary_es": "La investigación sobre agentes suele centrarse en la ejecución de tareas y carece de exploración de la interacción social a largo plazo. Generative Agents se propuso construir personajes virtuales capaces de simular el comportamiento social humano mediante sistemas de memoria y planificación para apoyar la interacción continua. Los autores crearon varios agentes impulsados por GPT en un entorno de juego y les dotaron de almacenes de memoria, planificación de agendas y mecanismos de reflexión para que pudieran producir comportamientos cotidianos realistas e influirse mutuamente. Los experimentos mostraron dinámicas sociales emergentes en la comunidad virtual, como encuentros, fiestas y eventos sorpresa. Esta investigación amplía los escenarios de aplicación de los agentes y ofrece un nuevo paradigma para simular sistemas sociales y compañeros virtuales."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【8997727460510†L49-L68】",
+      "milestone": "【8997727460510†L49-L68】",
+      "frontier": "【8997727460510†L49-L68】",
+      "survey": "【8997727460510†L49-L68】"
+    }
+  }
+}

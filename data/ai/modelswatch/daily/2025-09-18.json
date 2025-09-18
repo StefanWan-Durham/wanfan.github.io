@@ -388,7 +388,10 @@
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_en": "A YOLOv8-based model fine-tuned for signature detection in documents. It excels in identifying and localizing handwritten or digital signatures with high accuracy and speed. Suitable for automating document processing, verification workflows, and fraud detection in legal, financial, or administrative contexts. Built on Ultralytics' framework, it supports integration via ONNX and PyTorch for deployment flexibility.",
       "summary_zh": "yolov8s-signature-detector 是基于 YOLOv8s 架构优化的签名检测模型，专门用于识别图像中的签名区域。该模型在 tech4humans/signature-detection 数据集上训练，具备较高的检测精度和实时处理能力。其亮点包括支持 ONNX 格式部署、兼容 TensorBoard 可视化训练过程，并可通过 PyTorch 或 Ultralytics 框架灵活调用。适用于文档处理、合同自动化、身份验证等需要快速定位签名位置的场景。",
-      "summary_es": "Modelo YOLOv8s especializado en detección de firmas, basado en Ultralytics. Optimizado para identificación precisa de firmas en documentos mediante técnicas de visión por computadora. Incluye soporte para ONNX y TensorBoard, facilitando despliegue y monitoreo. Ideal para automatización de procesos documentales y verificación de autenticidad."
+      "summary_es": "Modelo YOLOv8s especializado en detección de firmas, basado en Ultralytics. Optimizado para identificación precisa de firmas en documentos mediante técnicas de visión por computadora. Incluye soporte para ONNX y TensorBoard, facilitando despliegue y monitoreo. Ideal para automatización de procesos documentales y verificación de autenticidad.",
+      "task_keys": [
+        "object_detection"
+      ]
     },
     {
       "id": "pyannote/segmentation-3.0",
@@ -471,7 +474,10 @@
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_en": "ADetailer is an open-source face detection and segmentation model built on Ultralytics and PyTorch. It is trained on datasets like WIDER FACE and anime-specific segmentation data, making it suitable for both real-world and anime-style images. Its strengths include high accuracy in detecting and segmenting faces, even in complex scenes. It is applicable for tasks such as image editing, content moderation, and anime art processing.",
       "summary_zh": "adetailer是一个基于Ultralytics和PyTorch的开源图像修复模型，专注于自动检测和修复图像中的人脸区域。该模型结合了WiderFace和动漫分割数据集，能够有效处理真实人像和动漫风格图像中的瑕疵或缺失部分。其核心功能包括高精度的人脸检测与修复，适用于图像编辑、内容生成以及数据增强等场景。通过Apache 2.0协议开源，支持开发者灵活集成与应用。",
-      "summary_es": "Adetailer es un modelo de detección y segmentación facial basado en Ultralytics y PyTorch. Optimiza el reconocimiento de rostros en imágenes reales y de anime, utilizando datasets como WIDER FACE y anime-segmentation. Su principal fortaleza es la precisión en entornos diversos, ideal para aplicaciones de edición automática, moderación de contenido y análisis visual. Licenciado bajo Apache 2.0."
+      "summary_es": "Adetailer es un modelo de detección y segmentación facial basado en Ultralytics y PyTorch. Optimiza el reconocimiento de rostros en imágenes reales y de anime, utilizando datasets como WIDER FACE y anime-segmentation. Su principal fortaleza es la precisión en entornos diversos, ideal para aplicaciones de edición automática, moderación de contenido y análisis visual. Licenciado bajo Apache 2.0.",
+      "task_keys": [
+        "content_moderation"
+      ]
     },
     {
       "id": "openai/clip-vit-base-patch32",
@@ -512,7 +518,11 @@
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_en": "CLIP-ViT-Base-Patch32 is a multimodal model that aligns images and text in a shared embedding space. It excels at zero-shot image classification, enabling tasks like content moderation and visual search without task-specific training. The model is versatile, supporting frameworks like PyTorch, TensorFlow, and JAX, and is widely used for research and applications requiring robust vision-language understanding. Its strong performance and adaptability make it suitable for both academic and industrial use cases.",
       "summary_zh": "CLIP-ViT-Base-Patch32 是一个基于 Transformer 架构的多模态视觉-语言模型，由 OpenAI 开发。该模型能够同时理解图像和文本，适用于零样本图像分类、跨模态检索和图像生成等任务。其核心亮点在于无需特定任务训练即可泛化到多种视觉任务，具备较强的迁移能力。该模型适用于内容理解、智能搜索和自动化标注等场景，尤其适合需要快速适配新类别或任务的场景。",
-      "summary_es": "Modelo CLIP con arquitectura ViT-Base/32, desarrollado por OpenAI. Combina visión y lenguaje para clasificación de imágenes zero-shot. Destaca por su versatilidad en múltiples frameworks (PyTorch, TensorFlow, JAX) y alta eficiencia. Usos principales: búsqueda multimodal, generación de etiquetas automáticas y aplicaciones de IA comprensiva."
+      "summary_es": "Modelo CLIP con arquitectura ViT-Base/32, desarrollado por OpenAI. Combina visión y lenguaje para clasificación de imágenes zero-shot. Destaca por su versatilidad en múltiples frameworks (PyTorch, TensorFlow, JAX) y alta eficiencia. Usos principales: búsqueda multimodal, generación de etiquetas automáticas y aplicaciones de IA comprensiva.",
+      "task_keys": [
+        "image_classification",
+        "content_moderation"
+      ]
     }
   ]
 }

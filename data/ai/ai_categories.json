@@ -1,0 +1,1030 @@
+{
+  "categories": [
+    {
+      "key": "cv",
+      "zh": "计算机视觉",
+      "en": "Computer Vision",
+      "es": "Visión por Computadora",
+      "subcategories": [
+        {
+          "key": "general_visual_understanding",
+          "zh": "通用视觉理解",
+          "en": "General Visual Understanding",
+          "es": "Comprensión Visual General",
+          "tasks": [
+            {
+              "key": "image_classification",
+              "zh": "图像分类",
+              "en": "Image Classification",
+              "es": "Clasificación de Imágenes"
+            },
+            {
+              "key": "object_detection",
+              "zh": "目标检测",
+              "en": "Object Detection",
+              "es": "Detección de Objetos"
+            },
+            {
+              "key": "semantic_segmentation",
+              "zh": "语义分割",
+              "en": "Semantic Segmentation",
+              "es": "Segmentación Semántica"
+            },
+            {
+              "key": "instance_segmentation",
+              "zh": "实例分割",
+              "en": "Instance Segmentation",
+              "es": "Segmentación de Instancias"
+            },
+            {
+              "key": "panoptic_segmentation",
+              "zh": "全景分割",
+              "en": "Panoptic Segmentation",
+              "es": "Segmentación Panóptica"
+            }
+          ]
+        },
+        {
+          "key": "generative_vision",
+          "zh": "生成式视觉",
+          "en": "Generative Vision",
+          "es": "Visión Generativa",
+          "tasks": [
+            {
+              "key": "text_to_image",
+              "zh": "文生图（Diffusion/GAN）",
+              "en": "Text-to-Image (Diffusion/GAN)",
+              "es": "Texto a Imagen (Difusión/GAN)"
+            },
+            {
+              "key": "text_to_video",
+              "zh": "文生视频",
+              "en": "Text-to-Video",
+              "es": "Texto a Video"
+            },
+            {
+              "key": "3d_reconstruction",
+              "zh": "三维重建",
+              "en": "3D Reconstruction",
+              "es": "Reconstrucción 3D"
+            },
+            {
+              "key": "nerf",
+              "zh": "NeRF（神经辐射场）",
+              "en": "NeRF (Neural Radiance Fields)",
+              "es": "NeRF (Campos Radiantes Neuronales)"
+            }
+          ]
+        },
+        {
+          "key": "visual_quality_enhancement",
+          "zh": "视觉质量增强",
+          "en": "Visual Quality Enhancement",
+          "es": "Mejora de Calidad Visual",
+          "tasks": [
+            {
+              "key": "super_resolution",
+              "zh": "图像/视频超分",
+              "en": "Image/Video Super-Resolution",
+              "es": "Superresolución de Imágenes/Videos"
+            },
+            {
+              "key": "denoising",
+              "zh": "图像/视频去噪",
+              "en": "Image/Video Denoising",
+              "es": "Reducción de Ruido en Imágenes/Videos"
+            },
+            {
+              "key": "restoration",
+              "zh": "图像/视频复原",
+              "en": "Image/Video Restoration",
+              "es": "Restauración de Imágenes/Videos"
+            }
+          ]
+        },
+        {
+          "key": "vertical_visual_applications",
+          "zh": "垂直视觉应用",
+          "en": "Vertical Visual Applications",
+          "es": "Aplicaciones Visuales Verticales",
+          "tasks": [
+            {
+              "key": "medical_image_processing",
+              "zh": "医学影像处理",
+              "en": "Medical Image Processing",
+              "es": "Procesamiento de Imágenes Médicas"
+            },
+            {
+              "key": "remote_sensing_image_processing",
+              "zh": "遥感/工业影像处理",
+              "en": "Remote Sensing/Industrial Image Processing",
+              "es": "Procesamiento de Imágenes de Teledetección/Industriales"
+            }
+          ]
+        },
+        {
+          "key": "multimodal_visual_interaction",
+          "zh": "多模态视觉交互",
+          "en": "Multimodal Visual Interaction",
+          "es": "Interacción Visual Multimodal",
+          "tasks": [
+            {
+              "key": "vqa",
+              "zh": "视觉问答（VQA）",
+              "en": "Visual Question Answering (VQA)",
+              "es": "Pregunta-Respuesta Visual (VQA)"
+            },
+            {
+              "key": "visual_grounding",
+              "zh": "视觉定位（Grounding）",
+              "en": "Visual Grounding",
+              "es": "Localización Visual (Grounding)"
+            }
+          ]
+        },
+        {
+          "key": "edge_visual_optimization",
+          "zh": "端侧视觉优化",
+          "en": "Edge-Side Visual Optimization",
+          "es": "Optimización Visual en el Borde",
+          "tasks": [
+            {
+              "key": "lightweight_visual_model",
+              "zh": "边缘端视觉模型轻量化",
+              "en": "Lightweight Visual Model for Edge Devices",
+              "es": "Modelos Visuales Ligeros para Dispositivos de Borde"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "llm_nlp",
+      "zh": "大语言模型与自然语言处理",
+      "en": "Large Language Models & Natural Language Processing",
+      "es": "Modelos de Lenguaje Grande y Procesamiento de Lenguaje Natural",
+      "subcategories": [
+        {
+          "key": "llm_foundation_training",
+          "zh": "LLM基础训练",
+          "en": "LLM Foundation Training",
+          "es": "Entrenamiento Fundacional de LLM",
+          "tasks": [
+            {
+              "key": "llm_pretraining",
+              "zh": "语言建模（LLM预训练）",
+              "en": "Language Modeling (LLM Pre-training)",
+              "es": "Modelado del Lenguaje (Preentrenamiento de LLM)"
+            }
+          ]
+        },
+        {
+          "key": "llm_training_optimization",
+          "zh": "LLM训练优化",
+          "en": "LLM Training Optimization",
+          "es": "Optimización del Entrenamiento de LLM",
+          "tasks": [
+            {
+              "key": "instruction_tuning",
+              "zh": "指令学习（Instruction Tuning）",
+              "en": "Instruction Tuning",
+              "es": "Ajuste por Instrucciones"
+            }
+          ]
+        },
+        {
+          "key": "llm_alignment_optimization",
+          "zh": "LLM对齐优化",
+          "en": "LLM Alignment Optimization",
+          "es": "Optimización de Alineación de LLM",
+          "tasks": [
+            {
+              "key": "rlhf",
+              "zh": "RLHF（基于人类反馈的强化学习）",
+              "en": "RLHF (Reinforcement Learning from Human Feedback)",
+              "es": "RLHF (Aprendizaje por Refuerzo con Retroalimentación Humana)"
+            }
+          ]
+        },
+        {
+          "key": "llm_capability_enhancement",
+          "zh": "LLM能力增强",
+          "en": "LLM Capability Enhancement",
+          "es": "Mejora de Capacidades de LLM",
+          "tasks": [
+            {
+              "key": "rag",
+              "zh": "RAG（检索增强生成）",
+              "en": "RAG (Retrieval-Augmented Generation)",
+              "es": "RAG (Generación Aumentada por Recuperación)"
+            }
+          ]
+        },
+        {
+          "key": "llm_application_deployment",
+          "zh": "LLM应用落地",
+          "en": "LLM Application Deployment",
+          "es": "Despliegue de Aplicaciones con LLM",
+          "tasks": [
+            {
+              "key": "code_generation",
+              "zh": "代码生成",
+              "en": "Code Generation",
+              "es": "Generación de Código"
+            }
+          ]
+        },
+        {
+          "key": "llm_complex_reasoning",
+          "zh": "LLM复杂推理",
+          "en": "LLM Complex Reasoning",
+          "es": "Razonamiento Complejo con LLM",
+          "tasks": [
+            {
+              "key": "structured_reasoning",
+              "zh": "结构化推理",
+              "en": "Structured Reasoning",
+              "es": "Razonamiento Estructurado"
+            },
+            {
+              "key": "tool_use",
+              "zh": "工具调用（Tool Use）",
+              "en": "Tool Use",
+              "es": "Uso de Herramientas"
+            }
+          ]
+        },
+        {
+          "key": "llm_efficient_fine_tuning",
+          "zh": "LLM高效微调",
+          "en": "LLM Efficient Fine-Tuning",
+          "es": "Ajuste Fino Eficiente de LLM",
+          "tasks": [
+            {
+              "key": "lora_adapter",
+              "zh": "LoRA/Adapter（参数高效微调）",
+              "en": "LoRA/Adapter (Parameter-Efficient Fine-Tuning)",
+              "es": "LoRA/Adapter (Ajuste Fino Eficiente en Parámetros)"
+            }
+          ]
+        },
+        {
+          "key": "llm_cross_lingual",
+          "zh": "LLM跨语言能力",
+          "en": "LLM Cross-Lingual Capability",
+          "es": "Capacidad Multilingüe de LLM",
+          "tasks": [
+            {
+              "key": "multilingual_processing",
+              "zh": "多语言处理",
+              "en": "Multilingual Processing",
+              "es": "Procesamiento Multilingüe"
+            },
+            {
+              "key": "low_resource_language",
+              "zh": "低资源语言处理",
+              "en": "Low-Resource Language Processing",
+              "es": "Procesamiento de Lenguas de Bajos Recursos"
+            }
+          ]
+        },
+        {
+          "key": "llm_knowledge_management",
+          "zh": "LLM知识管理",
+          "en": "LLM Knowledge Management",
+          "es": "Gestión del Conocimiento en LLM",
+          "tasks": [
+            {
+              "key": "knowledge_editing",
+              "zh": "知识编辑/注入",
+              "en": "Knowledge Editing/Injection",
+              "es": "Edición/Inyección de Conocimiento"
+            }
+          ]
+        },
+        {
+          "key": "llm_data_support",
+          "zh": "LLM数据支撑",
+          "en": "LLM Data Support",
+          "es": "Soporte de Datos para LLM",
+          "tasks": [
+            {
+              "key": "nlp_data_synthesis",
+              "zh": "NLP数据合成",
+              "en": "NLP Data Synthesis",
+              "es": "Síntesis de Datos en PLN"
+            },
+            {
+              "key": "nlp_data_distillation",
+              "zh": "NLP数据蒸馏",
+              "en": "NLP Data Distillation",
+              "es": "Destilación de Datos en PLN"
+            }
+          ]
+        },
+        {
+          "key": "nlp_hci",
+          "zh": "NLP人机交互",
+          "en": "NLP Human-Computer Interaction",
+          "es": "Interacción Humano-Computadora en PLN",
+          "tasks": [
+            {
+              "key": "dialogue_system_optimization",
+              "zh": "对话系统优化",
+              "en": "Dialogue System Optimization",
+              "es": "Optimización de Sistemas de Diálogo"
+            }
+          ]
+        },
+        {
+          "key": "nlp_ethical_compliance",
+          "zh": "NLP伦理合规",
+          "en": "NLP Ethical Compliance",
+          "es": "Cumplimiento Ético en PLN",
+          "tasks": [
+            {
+              "key": "nlp_bias_mitigation",
+              "zh": "NLP偏见检测与消除",
+              "en": "NLP Bias Detection and Mitigation",
+              "es": "Detección y Mitigación de Sesgos en PLN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "multimodal_speech",
+      "zh": "多模态与语音",
+      "en": "Multimodal & Speech",
+      "es": "Multimodal y Voz",
+      "subcategories": [
+        {
+          "key": "cross_modal_alignment",
+          "zh": "跨模态基础对齐",
+          "en": "Cross-Modal Foundation Alignment",
+          "es": "Alineación Fundacional Intermodal",
+          "tasks": [
+            {
+              "key": "image_text_alignment",
+              "zh": "图文对齐（CLIP系）",
+              "en": "Image-Text Alignment (CLIP Series)",
+              "es": "Alineación Imagen-Texto (Serie CLIP)"
+            }
+          ]
+        },
+        {
+          "key": "multimodal_large_models",
+          "zh": "多模态大模型",
+          "en": "Multimodal Large Models",
+          "es": "Modelos Grandes Multimodales",
+          "tasks": [
+            {
+              "key": "multimodal_understanding_generation",
+              "zh": "多模态理解与生成（GPT-4V/Flamingo）",
+              "en": "Multimodal Understanding & Generation (GPT-4V/Flamingo)",
+              "es": "Comprensión y Generación Multimodales (GPT-4V/Flamingo)"
+            }
+          ]
+        },
+        {
+          "key": "fundamental_speech_tech",
+          "zh": "语音基础技术",
+          "en": "Fundamental Speech Technologies",
+          "es": "Tecnologías Básicas de Voz",
+          "tasks": [
+            {
+              "key": "asr",
+              "zh": "ASR（语音识别）",
+              "en": "ASR (Automatic Speech Recognition)",
+              "es": "ASR (Reconocimiento Automático del Habla)"
+            },
+            {
+              "key": "tts",
+              "zh": "TTS（语音合成）",
+              "en": "TTS (Text-to-Speech)",
+              "es": "TTS (Texto a Voz)"
+            }
+          ]
+        },
+        {
+          "key": "advanced_speech_understanding",
+          "zh": "语音深度理解",
+          "en": "Advanced Speech Understanding",
+          "es": "Comprensión Avanzada del Habla",
+          "tasks": [
+            {
+              "key": "slu",
+              "zh": "SLU（语音理解）",
+              "en": "SLU (Spoken Language Understanding)",
+              "es": "SLU (Comprensión del Lenguaje Hablado)"
+            }
+          ]
+        },
+        {
+          "key": "speech_separation_recognition",
+          "zh": "语音分离与识别",
+          "en": "Speech Separation & Recognition",
+          "es": "Separación y Reconocimiento del Habla",
+          "tasks": [
+            {
+              "key": "speaker_separation",
+              "zh": "说话人分离",
+              "en": "Speaker Separation",
+              "es": "Separación de Hablantes"
+            },
+            {
+              "key": "noise_separation",
+              "zh": "场景噪声分离",
+              "en": "Environmental Noise Separation",
+              "es": "Separación de Ruido Ambiental"
+            }
+          ]
+        },
+        {
+          "key": "speech_interaction_optimization",
+          "zh": "语音交互优化",
+          "en": "Speech Interaction Optimization",
+          "es": "Optimización de Interacción por Voz",
+          "tasks": [
+            {
+              "key": "full_duplex_dialogue",
+              "zh": "全双工语音对话",
+              "en": "Full-Duplex Speech Dialogue",
+              "es": "Diálogo de Voz Full-Dúplex"
+            }
+          ]
+        },
+        {
+          "key": "cross_modal_speech_enhancement",
+          "zh": "跨模态语音增强",
+          "en": "Cross-Modal Speech Enhancement",
+          "es": "Mejora de Voz Intermodal",
+          "tasks": [
+            {
+              "key": "avsr",
+              "zh": "AVSR（视听语音识别）",
+              "en": "AVSR (Audio-Visual Speech Recognition)",
+              "es": "AVSR (Reconocimiento Audiovisual del Habla)"
+            }
+          ]
+        },
+        {
+          "key": "multimodal_interaction",
+          "zh": "多模态交互",
+          "en": "Multimodal Interaction",
+          "es": "Interacción Multimodal",
+          "tasks": [
+            {
+              "key": "multimodal_dialogue_system",
+              "zh": "多模态对话系统",
+              "en": "Multimodal Dialogue System",
+              "es": "Sistema de Diálogo Multimodal"
+            }
+          ]
+        },
+        {
+          "key": "edge_multimodal",
+          "zh": "端侧多模态",
+          "en": "Edge-Side Multimodal",
+          "es": "Multimodal en el Borde",
+          "tasks": [
+            {
+              "key": "lightweight_multimodal_model",
+              "zh": "边缘端多模态轻量化",
+              "en": "Lightweight Multimodal Model for Edge Devices",
+              "es": "Modelos Multimodales Ligeros para Dispositivos de Borde"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "graph_reco_retrieval",
+      "zh": "图、推荐与检索",
+      "en": "Graph, Recommendation & Retrieval",
+      "es": "Grafos, Recomendación y Recuperación",
+      "subcategories": [
+        {
+          "key": "graph_data_modeling",
+          "zh": "图数据建模",
+          "en": "Graph Data Modeling",
+          "es": "Modelado de Datos en Grafos",
+          "tasks": [
+            {
+              "key": "gnn",
+              "zh": "GNN（图神经网络）",
+              "en": "GNN (Graph Neural Networks)",
+              "es": "GNN (Redes Neuronales de Grafos)"
+            }
+          ]
+        },
+        {
+          "key": "knowledge_graph_applications",
+          "zh": "知识图谱应用",
+          "en": "Knowledge Graph Applications",
+          "es": "Aplicaciones de Grafos de Conocimiento",
+          "tasks": [
+            {
+              "key": "kg_construction",
+              "zh": "知识图谱构建",
+              "en": "Knowledge Graph Construction",
+              "es": "Construcción de Grafos de Conocimiento"
+            },
+            {
+              "key": "kg_reasoning",
+              "zh": "知识图谱推理",
+              "en": "Knowledge Graph Reasoning",
+              "es": "Razonamiento en Grafos de Conocimiento"
+            }
+          ]
+        },
+        {
+          "key": "personalized_recommendation",
+          "zh": "个性化推荐",
+          "en": "Personalized Recommendation",
+          "es": "Recomendación Personalizada",
+          "tasks": [
+            {
+              "key": "general_recommendation",
+              "zh": "通用推荐系统",
+              "en": "General Recommendation Systems",
+              "es": "Sistemas de Recomendación Generales"
+            },
+            {
+              "key": "vertical_recommendation",
+              "zh": "垂直场景推荐",
+              "en": "Vertical-Scenario Recommendation",
+              "es": "Recomendación para Escenarios Verticales"
+            }
+          ]
+        },
+        {
+          "key": "efficient_retrieval",
+          "zh": "高效检索技术",
+          "en": "Efficient Retrieval Technologies",
+          "es": "Tecnologías de Recuperación Eficiente",
+          "tasks": [
+            {
+              "key": "vector_retrieval",
+              "zh": "相似检索（向量检索）",
+              "en": "Similarity Retrieval (Vector Retrieval)",
+              "es": "Recuperación por Similitud (Recuperación Vectorial)"
+            },
+            {
+              "key": "vector_db_optimization",
+              "zh": "向量数据库优化",
+              "en": "Vector Database Optimization",
+              "es": "Optimización de Bases de Datos Vectoriales"
+            }
+          ]
+        },
+        {
+          "key": "fundamental_retrieval_methods",
+          "zh": "检索基础方法",
+          "en": "Fundamental Retrieval Methods",
+          "es": "Métodos Fundamentales de Recuperación",
+          "tasks": [
+            {
+              "key": "metric_learning",
+              "zh": "度量学习",
+              "en": "Metric Learning",
+              "es": "Aprendizaje de Métricas"
+            },
+            {
+              "key": "contrastive_learning",
+              "zh": "对比学习",
+              "en": "Contrastive Learning",
+              "es": "Aprendizaje Contrastivo"
+            }
+          ]
+        },
+        {
+          "key": "ir_optimization",
+          "zh": "信息检索优化",
+          "en": "Information Retrieval Optimization",
+          "es": "Optimización de Recuperación de Información",
+          "tasks": [
+            {
+              "key": "ltr",
+              "zh": "学习排序（LTR）",
+              "en": "Learning to Rank (LTR)",
+              "es": "Aprendizaje para Clasificación (LTR)"
+            },
+            {
+              "key": "neural_retrieval",
+              "zh": "神经检索",
+              "en": "Neural Retrieval",
+              "es": "Recuperación Neuronal"
+            }
+          ]
+        },
+        {
+          "key": "graph_enhanced_recommendation",
+          "zh": "图与推荐融合",
+          "en": "Graph-Enhanced Recommendation",
+          "es": "Recomendación Mejorada por Grafos",
+          "tasks": [
+            {
+              "key": "graph_augmented_reco",
+              "zh": "图增强推荐",
+              "en": "Graph-Augmented Recommendation",
+              "es": "Recomendación Ampliada por Grafos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "optimization_system_security",
+      "zh": "优化、系统与安全",
+      "en": "Optimization, System & Security",
+      "es": "Optimización, Sistema y Seguridad",
+      "subcategories": [
+        {
+          "key": "model_lightweighting",
+          "zh": "模型轻量化",
+          "en": "Model Lightweighting",
+          "es": "Reducción de Peso de Modelos",
+          "tasks": [
+            {
+              "key": "model_compression",
+              "zh": "模型压缩",
+              "en": "Model Compression",
+              "es": "Compresión de Modelos"
+            },
+            {
+              "key": "model_quantization",
+              "zh": "模型量化",
+              "en": "Model Quantization",
+              "es": "Cuantificación de Modelos"
+            },
+            {
+              "key": "model_distillation",
+              "zh": "模型蒸馏",
+              "en": "Model Distillation",
+              "es": "Destilación de Modelos"
+            }
+          ]
+        },
+        {
+          "key": "engineering_deployment",
+          "zh": "工程化落地",
+          "en": "Engineering Deployment",
+          "es": "Despliegue de Ingeniería",
+          "tasks": [
+            {
+              "key": "compilation_optimization",
+              "zh": "模型编译优化",
+              "en": "Model Compilation Optimization",
+              "es": "Optimización de Compilación de Modelos"
+            },
+            {
+              "key": "inference_acceleration",
+              "zh": "模型推理加速",
+              "en": "Model Inference Acceleration",
+              "es": "Aceleración de Inferencia de Modelos"
+            }
+          ]
+        },
+        {
+          "key": "privacy_preservation",
+          "zh": "隐私保护技术",
+          "en": "Privacy-Preserving Technologies",
+          "es": "Tecnologías de Preservación de Privacidad",
+          "tasks": [
+            {
+              "key": "federated_learning",
+              "zh": "联邦学习",
+              "en": "Federated Learning",
+              "es": "Aprendizaje Federado"
+            },
+            {
+              "key": "privacy_computing",
+              "zh": "隐私计算（差分隐私/同态加密）",
+              "en": "Privacy Computing (Differential Privacy/Homomorphic Encryption)",
+              "es": "Cómputo Privado (Privacidad Diferencial/Cifrado Homomórfico)"
+            }
+          ]
+        },
+        {
+          "key": "model_robustness",
+          "zh": "模型鲁棒性",
+          "en": "Model Robustness",
+          "es": "Robustez de Modelos",
+          "tasks": [
+            {
+              "key": "adversarial_attack",
+              "zh": "对抗攻击",
+              "en": "Adversarial Attack",
+              "es": "Ataque Adversario"
+            },
+            {
+              "key": "adversarial_defense",
+              "zh": "对抗防御",
+              "en": "Adversarial Defense",
+              "es": "Defensa Adversaria"
+            }
+          ]
+        },
+        {
+          "key": "content_safety",
+          "zh": "内容安全管控",
+          "en": "Content Security Control",
+          "es": "Control de Seguridad de Contenidos",
+          "tasks": [
+            {
+              "key": "red_teaming",
+              "zh": "红队测试",
+              "en": "Red Teaming",
+              "es": "Pruebas de Equipo Rojo (Red Teaming)"
+            },
+            {
+              "key": "content_moderation",
+              "zh": "内容审查",
+              "en": "Content Moderation",
+              "es": "Moderación de Contenidos"
+            }
+          ]
+        },
+        {
+          "key": "model_evaluation",
+          "zh": "模型评测体系",
+          "en": "Model Evaluation System",
+          "es": "Sistema de Evaluación de Modelos",
+          "tasks": [
+            {
+              "key": "auto_evaluation_models",
+              "zh": "自动评测模型",
+              "en": "Automatic Evaluation Models",
+              "es": "Modelos de Evaluación Automática"
+            }
+          ]
+        },
+        {
+          "key": "edge_system_optimization",
+          "zh": "端侧系统优化",
+          "en": "Edge-Side System Optimization",
+          "es": "Optimización de Sistema en el Borde",
+          "tasks": [
+            {
+              "key": "edge_hw_sw_co_design",
+              "zh": "边缘AI硬件-软件协同",
+              "en": "Edge AI Hardware-Software Coordination",
+              "es": "Coordinación Hardware-Software de IA en el Borde"
+            }
+          ]
+        },
+        {
+          "key": "explainable_ai",
+          "zh": "可解释AI",
+          "en": "Explainable AI",
+          "es": "IA Explicable",
+          "tasks": [
+            {
+              "key": "xai",
+              "zh": "XAI（可解释人工智能）",
+              "en": "XAI (Explainable Artificial Intelligence)",
+              "es": "XAI (Inteligencia Artificial Explicable)"
+            }
+          ]
+        },
+        {
+          "key": "ethical_compliance",
+          "zh": "伦理合规管控",
+          "en": "Ethical Compliance Control",
+          "es": "Control de Cumplimiento Ético",
+          "tasks": [
+            {
+              "key": "ai_ethics_risk_assessment",
+              "zh": "AI伦理风险评估",
+              "en": "AI Ethical Risk Assessment",
+              "es": "Evaluación de Riesgos Éticos de IA"
+            }
+          ]
+        },
+        {
+          "key": "data_security",
+          "zh": "数据安全保障",
+          "en": "Data Security Assurance",
+          "es": "Garantía de Seguridad de Datos",
+          "tasks": [
+            {
+              "key": "training_data_anonymization",
+              "zh": "训练数据脱敏",
+              "en": "Training Data Anonymization",
+              "es": "Anonimización de Datos de Entrenamiento"
+            },
+            {
+              "key": "training_data_copyright",
+              "zh": "训练数据版权保护",
+              "en": "Training Data Copyright Protection",
+              "es": "Protección de Derechos de Autor de Datos de Entrenamiento"
+            }
+          ]
+        },
+        {
+          "key": "mlops_continuous_ops",
+          "zh": "持续运维优化",
+          "en": "Continuous Operation Optimization",
+          "es": "Optimización de Operación Continua",
+          "tasks": [
+            {
+              "key": "model_monitoring",
+              "zh": "模型监控",
+              "en": "Model Monitoring",
+              "es": "Monitoreo de Modelos"
+            },
+            {
+              "key": "model_iterative_update",
+              "zh": "模型迭代更新",
+              "en": "Model Iterative Update",
+              "es": "Actualización Iterativa de Modelos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "emerging_temporal",
+      "zh": "新兴交叉与时序模态",
+      "en": "Emerging Interdisciplinary & Temporal Modalities",
+      "es": "Modalidades Temporales e Interdisciplinares Emergentes",
+      "subcategories": [
+        {
+          "key": "ai_scientific_computing",
+          "zh": "AI+科学计算",
+          "en": "AI + Scientific Computing",
+          "es": "IA + Cómputo Científico",
+          "tasks": [
+            {
+              "key": "fluid_simulation",
+              "zh": "流体模拟",
+              "en": "Fluid Simulation",
+              "es": "Simulación de Fluidos"
+            },
+            {
+              "key": "material_design",
+              "zh": "材料设计",
+              "en": "Material Design",
+              "es": "Diseño de Materiales"
+            },
+            {
+              "key": "drug_molecule_prediction",
+              "zh": "药物分子预测",
+              "en": "Drug Molecule Prediction",
+              "es": "Predicción de Moléculas Farmacéuticas"
+            }
+          ]
+        },
+        {
+          "key": "ai_robotics",
+          "zh": "AI+机器人（具身智能）",
+          "en": "AI + Robotics (Embodied Intelligence)",
+          "es": "IA + Robótica (Inteligencia Encarnada)",
+          "tasks": [
+            {
+              "key": "robotic_vision",
+              "zh": "机器人视觉",
+              "en": "Robotic Vision",
+              "es": "Visión Robótica"
+            },
+            {
+              "key": "robot_motion_planning",
+              "zh": "机器人运动规划",
+              "en": "Robotic Motion Planning",
+              "es": "Planificación de Movimiento Robótico"
+            },
+            {
+              "key": "robot_environment_interaction",
+              "zh": "机器人环境交互",
+              "en": "Robotic Environmental Interaction",
+              "es": "Interacción Ambiental Robótica"
+            }
+          ]
+        },
+        {
+          "key": "molecular_bio_ai",
+          "zh": "分子与生物AI",
+          "en": "Molecular & Biological AI",
+          "es": "IA Molecular y Biológica",
+          "tasks": [
+            {
+              "key": "molecular_generation",
+              "zh": "分子生成",
+              "en": "Molecular Generation",
+              "es": "Generación Molecular"
+            },
+            {
+              "key": "bioinformatics_analysis",
+              "zh": "生物信息分析",
+              "en": "Bioinformatics Analysis",
+              "es": "Análisis de Bioinformática"
+            }
+          ]
+        },
+        {
+          "key": "temporal_modeling",
+          "zh": "时序数据建模",
+          "en": "Temporal Data Modeling",
+          "es": "Modelado de Datos Temporales",
+          "tasks": [
+            {
+              "key": "time_series_forecasting",
+              "zh": "时间序列预测",
+              "en": "Time Series Forecasting",
+              "es": "Predicción de Series Temporales"
+            },
+            {
+              "key": "time_series_anomaly_detection",
+              "zh": "时间序列异常检测",
+              "en": "Time Series Anomaly Detection",
+              "es": "Detección de Anomalías en Series Temporales"
+            }
+          ]
+        },
+        {
+          "key": "sensor_data_processing",
+          "zh": "传感器数据处理",
+          "en": "Sensor Data Processing",
+          "es": "Procesamiento de Datos de Sensores",
+          "tasks": [
+            {
+              "key": "radar_understanding",
+              "zh": "雷达数据理解",
+              "en": "Radar Data Understanding",
+              "es": "Comprensión de Datos de Radar"
+            },
+            {
+              "key": "lidar_understanding",
+              "zh": "LiDAR数据理解",
+              "en": "LiDAR Data Understanding",
+              "es": "Comprensión de Datos de LiDAR"
+            }
+          ]
+        },
+        {
+          "key": "low_resource_cross_tasks",
+          "zh": "低资源交叉任务",
+          "en": "Low-Resource Interdisciplinary Tasks",
+          "es": "Tareas Interdisciplinares con Pocos Recursos",
+          "tasks": [
+            {
+              "key": "low_resource_medical_ai",
+              "zh": "低资源医疗AI",
+              "en": "Low-Resource Medical AI",
+              "es": "IA Médica con Pocos Recursos"
+            },
+            {
+              "key": "low_resource_voice_assistant",
+              "zh": "低资源语音助手",
+              "en": "Low-Resource Voice Assistants",
+              "es": "Asistentes de Voz con Pocos Recursos"
+            }
+          ]
+        },
+        {
+          "key": "xr_fusion_ai",
+          "zh": "虚实融合AI",
+          "en": "Virtual-Real Fusion AI",
+          "es": "IA de Fusión Virtual-Real",
+          "tasks": [
+            {
+              "key": "ar_vr_interaction",
+              "zh": "AR/VR场景AI交互",
+              "en": "AI Interaction in AR/VR Scenarios",
+              "es": "Interacción de IA en Escenarios AR/VR"
+            }
+          ]
+        },
+        {
+          "key": "multimodal_temporal_understanding",
+          "zh": "多模态时序理解",
+          "en": "Multimodal Temporal Understanding",
+          "es": "Comprensión Temporal Multimodal",
+          "tasks": [
+            {
+              "key": "multimodal_temporal_fusion",
+              "zh": "多模态时序数据融合",
+              "en": "Multimodal Temporal Data Fusion",
+              "es": "Fusión de Datos Temporales Multimodales"
+            }
+          ]
+        },
+        {
+          "key": "embodied_dialogue",
+          "zh": "具身对话交互",
+          "en": "Embodied Dialogue Interaction",
+          "es": "Interacción de Diálogo Encarnada",
+          "tasks": [
+            {
+              "key": "robot_dialogue_logic",
+              "zh": "机器人对话逻辑设计",
+              "en": "Dialogue Logic Design for Robotics",
+              "es": "Diseño de Lógica de Diálogo para Robots"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

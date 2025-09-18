@@ -1,0 +1,136 @@
+{
+  "slug": "rag",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "rag-2020",
+      "title": "Retrieval‑Augmented Generation for Knowledge‑Intensive NLP Tasks",
+      "year": 2020,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/2005.11401",
+      "code": ["https://github.com/facebookresearch/FiD", "https://github.com/huggingface/transformers"],
+      "summary_zh": "大型语言模型作为参数化记忆会遗忘或错误生成事实，限制了知识密集型任务的应用。RAG 的目标是结合非参数检索和生成模型，让模型在生成时引用外部知识库以补充知识。作者提出利用密集向量索引检索相关文档，将检索结果与解码器交互，并在端到端框架中训练生成模型。实验证明，RAG 在开放域问答和事实验证任务上显著提高了准确性，生成语言更加客观。该工作奠定了检索增强生成范式，将检索和生成有机结合，推动了知识驱动的语言模型研究。",
+      "summary_en": "Large language models used as parametric memory may hallucinate or forget facts, limiting their applicability to knowledge‑intensive tasks. The goal of RAG was to combine non‑parametric retrieval with a generative model so that the model could consult an external knowledge base during generation. The authors proposed using a dense vector index to retrieve relevant documents, interacting the retrieved results with the decoder and training the generation model in an end‑to‑end framework. Experiments showed that RAG significantly improved accuracy on open‑domain question answering and fact verification tasks and produced more factual language. This work laid the foundation for the retrieval‑augmented generation paradigm, organically integrating retrieval and generation and advancing knowledge‑driven language model research.",
+      "summary_es": "Los grandes modelos lingüísticos utilizados como memoria paramétrica pueden alucinar u olvidar hechos, lo que limita su aplicabilidad a tareas intensivas de conocimiento. El objetivo de RAG era combinar la recuperación no paramétrica con un modelo generativo para que el modelo pudiera consultar una base de conocimientos externa durante la generación. Los autores propusieron utilizar un índice de vectores densos para recuperar documentos relevantes, interactuando los resultados recuperados con el decodificador y entrenando el modelo generativo en un marco de extremo a extremo. Los experimentos demostraron que RAG mejoraba significativamente la precisión en tareas de respuesta a preguntas de dominio abierto y verificación de hechos y producía un lenguaje más fáctico. Este trabajo sentó las bases del paradigma de generación aumentada por recuperación, integrando orgánicamente recuperación y generación y avanzando en la investigación de modelos lingüísticos basados en el conocimiento."
+    },
+    "milestone": [
+      {
+        "id": "realm-2020",
+        "title": "REALM: Retrieval‑Augmented Language Model Pre‑Training",
+        "year": 2020,
+        "venue": "ICML",
+        "paper_url": "https://arxiv.org/abs/2002.08909",
+        "code": [],
+        "summary_zh": "传统语言模型在预训练时无法访问外部知识，导致知识更新困难。REALM 的目标是在预训练阶段引入可微分检索，使模型能够主动查找相关文档并学习利用检索结果。作者设计了一个端到端框架，模型在编码输入时检索并选择文档片段，通过最大似然对生成目标进行训练，同时优化检索器。实验显示，REALM 在问答等任务上优于纯参数模型，并且能够通过更新知识索引快速适应新信息。该工作展示了将检索机制纳入预训练的可行性，为后续 RAG 模型奠定基础。",
+        "summary_en": "Traditional language models cannot access external knowledge during pre‑training, making knowledge updates difficult. REALM aimed to incorporate differentiable retrieval into the pre‑training phase so that the model could actively search for relevant documents and learn to use retrieval results. The authors designed an end‑to‑end framework in which the model retrieves and selects document snippets when encoding the input and trains to maximize likelihood on generation targets while jointly optimizing the retriever. Experiments showed that REALM outperformed purely parametric models on tasks such as question answering and could quickly adapt to new information by updating the knowledge index. This work demonstrated the feasibility of integrating a retrieval mechanism into pre‑training and laid the groundwork for subsequent RAG models.",
+        "summary_es": "Los modelos lingüísticos tradicionales no pueden acceder a conocimientos externos durante el preentrenamiento, lo que dificulta la actualización de conocimientos. REALM se propuso incorporar la recuperación diferenciable en la fase de preentrenamiento para que el modelo pudiera buscar activamente documentos relevantes y aprender a utilizar los resultados de la recuperación. Los autores diseñaron un marco de extremo a extremo en el que el modelo recupera y selecciona fragmentos de documentos al codificar la entrada y se entrena para maximizar la probabilidad de los objetivos de generación mientras optimiza conjuntamente el recuperador. Los experimentos demostraron que REALM superaba a los modelos puramente paramétricos en tareas como respuesta a preguntas y podía adaptarse rápidamente a nueva información actualizando el índice de conocimientos. Este trabajo demostró la viabilidad de integrar un mecanismo de recuperación en el preentrenamiento y sentó las bases de los modelos RAG posteriores."
+      },
+      {
+        "id": "fid-2020",
+        "title": "Fusion‑in‑Decoder: Generating with Interleaved Retrieval and Generation",
+        "year": 2020,
+        "venue": "NeurIPS",
+        "paper_url": "https://arxiv.org/abs/2007.01282",
+        "code": ["https://github.com/facebookresearch/FiD"],
+        "summary_zh": "在检索增强生成中，如何融合多个文档证据是关键问题。Fusion‑in‑Decoder 的目标是在生成过程中利用解码器对多个检索结果进行融合以生成答案。作者提出在编码阶段独立编码每个检索文档，在解码阶段通过自注意力跨文档融合信息，实现基于证据的生成。实验表明，FiD 在开放域问答和多文档阅读理解上显著提升了性能，特别擅长整合分散证据。该工作展示了在解码器端融合检索信息的有效性，推动了多文档知识集成方法的发展。",
+        "summary_en": "In retrieval‑augmented generation, how to fuse evidence from multiple documents is a key problem. Fusion‑in‑Decoder (FiD) aimed to utilize the decoder to fuse multiple retrieved results during the generation process. The authors proposed encoding each retrieved document independently in the encoder and using self‑attention in the decoder to fuse information across documents, enabling evidence‑based generation. Experiments showed that FiD significantly improved performance on open‑domain QA and multi‑document reading comprehension and was particularly adept at integrating scattered evidence. This work demonstrated the effectiveness of fusing retrieval information in the decoder and advanced methods for multi‑document knowledge integration.",
+        "summary_es": "En la generación aumentada por recuperación, cómo fusionar pruebas de múltiples documentos es un problema clave. Fusion‑in‑Decoder (FiD) se propuso utilizar el decodificador para fusionar varios resultados recuperados durante el proceso de generación. Los autores propusieron codificar cada documento recuperado de forma independiente en el codificador y utilizar la autoatención en el decodificador para fusionar la información entre documentos, lo que permite una generación basada en pruebas. Los experimentos demostraron que FiD mejoraba significativamente el rendimiento en preguntas y respuestas de dominio abierto y comprensión de lectura con múltiples documentos y era especialmente apto para integrar pruebas dispersas. Este trabajo demostró la eficacia de fusionar la información recuperada en el decodificador y fomentó los métodos de integración de conocimientos de múltiples documentos."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "graphrag-2024",
+        "title": "GraphRAG: Retrieval‑Augmented Generation via Knowledge Graph",
+        "year": 2024,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2404.16994",
+        "code": ["https://github.com/microsoft/graphrag"],
+        "summary_zh": "标准 RAG 模型常使用文档级检索，忽略知识之间的结构关系。GraphRAG 的目标是结合知识图谱对检索结果进行显式结构化，提升检索覆盖和可解释性。作者构建了将实体和关系编码为图结构的检索模块，在生成过程中根据图的邻接扩展检索，利用图注意力融合上下文。实验表明，GraphRAG 在开放域问答和关系抽取任务上优于基线，并且提供了可视化的推理路径。该方法拓展了 RAG 在结构化知识上的应用，是当前的研究热点。",
+        "summary_en": "Standard RAG models typically use document‑level retrieval and ignore the structural relationships among pieces of knowledge. GraphRAG aimed to improve retrieval coverage and interpretability by incorporating knowledge graphs into the retrieval process. The authors built a retriever that encodes entities and relations as a graph structure, expands retrieval along graph neighbors during generation and uses graph attention to fuse context. Experiments showed that GraphRAG outperformed baselines on open‑domain QA and relation extraction tasks and provided visualizable reasoning paths. This method extends RAG applications to structured knowledge and is a current research hotspot.",
+        "summary_es": "Los modelos RAG estándar suelen utilizar la recuperación a nivel de documento e ignoran las relaciones estructurales entre los conocimientos. GraphRAG se propuso mejorar la cobertura de la recuperación y la interpretabilidad incorporando grafos de conocimiento en el proceso de recuperación. Los autores construyeron un recuperador que codifica entidades y relaciones como una estructura de grafo, amplía la recuperación a lo largo de los vecinos del grafo durante la generación y utiliza atención sobre grafos para fusionar el contexto. Los experimentos demostraron que GraphRAG superaba a las líneas base en preguntas y respuestas de dominio abierto y tareas de extracción de relaciones y proporcionaba trayectorias de razonamiento visualizables. Este método amplía las aplicaciones de RAG al conocimiento estructurado y es un tema de investigación actual."
+      },
+      {
+        "id": "hyde-2023",
+        "title": "HyDE: Hypothetical Document Embeddings for Zero‑Shot Dense Retrieval",
+        "year": 2023,
+        "venue": "ICLR",
+        "paper_url": "https://arxiv.org/abs/2212.10496",
+        "code": ["https://github.com/texttron/hyde"],
+        "summary_zh": "密集检索模型在零样本设置下难以召回相关文档，影响 RAG 的检索质量。HyDE 的目标是通过生成假设文档嵌入来改进零样本检索。作者利用生成模型根据查询生成假想文档，然后编码这些文档并用其嵌入作为检索键，与查询在向量空间中匹配。实验结果在多个知识密集任务上显著提升了无监督检索性能，使得 RAG 在无标注领域也能获得更好的知识支持。该工作展示了将生成与检索结合的新思路，推动了零样本 RAG 的发展。",
+        "summary_en": "Dense retrieval models struggle to recall relevant documents in zero‑shot settings, limiting the retrieval quality in RAG. HyDE aimed to improve zero‑shot retrieval by generating hypothetical document embeddings. The authors used a generative model to produce hypothetical documents based on the query, encoded these documents and used their embeddings as retrieval keys, matching them with the query in vector space. Experimental results significantly improved unsupervised retrieval performance on several knowledge‑intensive tasks, enabling RAG to obtain better knowledge support in unlabelled domains. This work presents a new idea of combining generation and retrieval and advances zero‑shot RAG.",
+        "summary_es": "Los modelos de recuperación densa tienen dificultades para recuperar documentos relevantes en configuraciones de cero ejemplos, lo que limita la calidad de recuperación en RAG. HyDE se propuso mejorar la recuperación de cero ejemplos generando incrustaciones de documentos hipotéticos. Los autores utilizaron un modelo generativo para producir documentos hipotéticos basados en la consulta, codificaron estos documentos y utilizaron sus incrustaciones como claves de recuperación, emparejándolas con la consulta en el espacio vectorial. Los resultados experimentales mejoraron significativamente el rendimiento de la recuperación no supervisada en varias tareas intensivas de conocimiento, lo que permite a RAG obtener un mejor apoyo de conocimientos en dominios sin etiquetar. Este trabajo presenta una nueva idea de combinar generación y recuperación y avanza el RAG de cero ejemplos."
+      }
+    ],
+    "survey": [
+      {
+        "id": "rag-survey-2024",
+        "title": "A Survey on Retrieval‑Augmented Generation",
+        "year": 2024,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2312.10997",
+        "code": [],
+        "summary_zh": "随着检索增强生成在问答、聊天和知识图谱等领域广受关注，相关研究迅速增长。该综述的目标是系统回顾 RAG 模型的组成模块、训练方法和应用场景，为研究人员提供全景视角。文章介绍了检索组件的索引构建、编码器设计和负样本采样，生成组件的融合策略和训练目标，以及联合训练与推理技巧。作者还讨论了评估指标、常用数据集及当前挑战，如噪声检索、计算效率和事实一致性。综述为后续研究者理解 RAG 体系提供了指南。",
+        "summary_en": "As retrieval‑augmented generation gains traction in QA, chat and knowledge graph applications, the related research has grown rapidly. The goal of this survey is to systematically review RAG models’ components, training methods and application scenarios and provide a panoramic view for researchers. The article covers index construction, encoder design and negative sampling for the retrieval component, fusion strategies and training objectives for the generation component and joint training and inference techniques. The authors also discuss evaluation metrics, commonly used datasets and current challenges such as noisy retrieval, computational efficiency and factual consistency. The survey offers guidance for researchers to understand the RAG framework.",
+        "summary_es": "A medida que la generación aumentada por recuperación gana protagonismo en aplicaciones de preguntas y respuestas, chat y grafos de conocimiento, la investigación relacionada ha crecido rápidamente. El objetivo de esta encuesta es revisar sistemáticamente los componentes de los modelos RAG, los métodos de entrenamiento y los escenarios de aplicación y proporcionar una visión panorámica a los investigadores. El artículo abarca la construcción de índices, el diseño de codificadores y el muestreo negativo para el componente de recuperación, las estrategias de fusión y los objetivos de entrenamiento para el componente de generación y las técnicas de entrenamiento conjunto e inferencia. Los autores también analizan las métricas de evaluación, los conjuntos de datos más utilizados y los desafíos actuales, como la recuperación ruidosa, la eficiencia computacional y la consistencia factual. La encuesta ofrece orientación a los investigadores para comprender el marco RAG."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "dpr-2020",
+      "title": "Dense Passage Retrieval (DPR)",
+      "year": 2020,
+      "venue": "EMNLP",
+      "paper_url": "https://arxiv.org/abs/2004.04906",
+      "code": ["https://github.com/facebookresearch/DPR"],
+      "why_transition": "提出双塔架构的密集检索器，为 RAG 提供高质量查询召回基础。",
+      "summary_zh": "稀疏检索如 BM25 难以满足知识密集任务对语义匹配的需求。Dense Passage Retrieval 的目标是使用双编码器架构学习问题和文档的密集向量表示，实现高效语义检索。作者采用对比学习同时训练问题编码器和文档编码器，在大规模问答数据集上优化内积相似度。结果表明 DPR 在开放域问答中显著优于传统稀疏检索，为后续 RAG 模型提供了强大的召回支撑。该工作开创了密集检索路线，推动了向量数据库和检索器的发展。",
+      "summary_en": "Sparse retrieval methods such as BM25 struggle to meet the semantic matching needs of knowledge‑intensive tasks. Dense Passage Retrieval aimed to learn dense vector representations of questions and documents using a dual‑encoder architecture to achieve efficient semantic retrieval. The authors employed contrastive learning to jointly train question and document encoders and optimized inner product similarity on large QA datasets. Results showed that DPR significantly outperformed traditional sparse retrieval on open‑domain question answering and provided a strong recall foundation for subsequent RAG models. This work pioneered the dense retrieval line and spurred the development of vector databases and retrievers.",
+      "summary_es": "Los métodos de recuperación dispersa como BM25 tienen dificultades para satisfacer las necesidades de coincidencia semántica de las tareas intensivas de conocimiento. Dense Passage Retrieval se propuso aprender representaciones vectoriales densas de preguntas y documentos mediante una arquitectura de codificador dual para lograr una recuperación semántica eficiente. Los autores emplearon aprendizaje contrastivo para entrenar conjuntamente los codificadores de preguntas y documentos y optimizar la similitud de producto interior en grandes conjuntos de datos de preguntas y respuestas. Los resultados mostraron que DPR superaba significativamente a la recuperación dispersa tradicional en preguntas y respuestas de dominio abierto y proporcionaba una sólida base de recuperación para los modelos RAG posteriores. Este trabajo inauguró la línea de recuperación densa y estimuló el desarrollo de bases de datos vectoriales y recuperadores."
+    },
+    {
+      "id": "contriever-2021",
+      "title": "Contriever: Unsupervised Dense Retrieval via In‑Batch Negatives",
+      "year": 2021,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/2112.09118",
+      "code": ["https://github.com/facebookresearch/contriever"],
+      "why_transition": "无监督训练的密检模型降低了标注依赖，为低资源场景提供检索器。",
+      "summary_zh": "密集检索通常需要大规模标注数据，限制了其在低资源领域的应用。Contriever 的目标是通过无监督对比学习训练密检模型，减少对人工标注的依赖。作者构建了一个句子级无监督预训练任务，通过随机掩盖句子并使用同一批次内的其他句子作为负样本来训练文本编码器。实验结果表明，该无监督检索器在常见问答和检索任务上接近或超过有监督模型性能，并能在低资源环境中快速适配。该方法为 RAG 提供了在缺少标注的情况下训练检索器的新途径。",
+      "summary_en": "Dense retrieval typically requires large amounts of labeled data, limiting its application in low‑resource domains. Contriever aimed to reduce dependence on manual annotations by training dense retrievers via unsupervised contrastive learning. The authors devised a sentence‑level unsupervised pre‑training task by randomly masking sentences and using other sentences in the same batch as negatives to train the text encoder. Experimental results showed that the unsupervised retriever approached or exceeded supervised models on common QA and retrieval tasks and could adapt quickly in low‑resource settings. This method provides a new way to train retrievers for RAG when labels are scarce.",
+      "summary_es": "La recuperación densa suele requerir grandes cantidades de datos etiquetados, lo que limita su aplicación en dominios con pocos recursos. Contriever se propuso reducir la dependencia de anotaciones manuales entrenando recuperadores densos mediante aprendizaje contrastivo no supervisado. Los autores idearon una tarea de preentrenamiento no supervisado a nivel de frase, en la que se enmascaraban frases aleatoriamente y se utilizaban otras frases del mismo lote como negativas para entrenar el codificador de texto. Los resultados experimentales mostraron que el recuperador no supervisado se acercaba o superaba a los modelos supervisados en tareas comunes de preguntas y respuestas y recuperación y podía adaptarse rápidamente en entornos de pocos recursos. Este método proporciona una nueva forma de entrenar recuperadores para RAG cuando escasean las etiquetas."
+    },
+    {
+      "id": "colbert-2020",
+      "title": "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction",
+      "year": 2020,
+      "venue": "SIGIR",
+      "paper_url": "https://arxiv.org/abs/2004.12832",
+      "code": ["https://github.com/stanford-futuredata/ColBERT"],
+      "why_transition": "提出延迟交互机制在检索阶段保留细粒度匹配，提高了性能。",
+      "summary_zh": "传统密检模型压缩整个文档为单个向量，丢失了细粒度匹配信息。ColBERT 的目标是通过延迟交互机制在检索阶段保留词级别匹配，提高检索质量。作者为查询和文档分别计算深度上下文嵌入，并在检索时对词向量进行最大内积匹配而非整体向量匹配，从而同时保持效率和效果。实验显示，ColBERT 在 TREC 和 MSMARCO 等基准上超过了其他密检模型，并支持快速检索。该设计为 RAG 提供了高性能检索器，并启发了后续基于浅交互的模型。",
+      "summary_en": "Traditional dense retrieval models compress an entire document into a single vector, losing fine‑grained matching information. ColBERT aimed to preserve word‑level matching during retrieval through a late interaction mechanism, thereby improving retrieval quality. The authors computed deeply contextualized embeddings for queries and documents separately and matched word vectors via maximum inner product during retrieval instead of matching whole document vectors, achieving both efficiency and effectiveness. Experiments showed that ColBERT outperformed other dense retrievers on benchmarks such as TREC and MSMARCO and supported fast retrieval. This design provides a high‑performance retriever for RAG and inspired subsequent shallow interaction models.",
+      "summary_es": "Los modelos tradicionales de recuperación densa comprimen todo un documento en un solo vector, perdiendo información de coincidencia de grano fino. ColBERT se propuso conservar la coincidencia a nivel de palabra durante la recuperación mediante un mecanismo de interacción tardía, mejorando así la calidad de la recuperación. Los autores calcularon incrustaciones profundamente contextualizadas para consultas y documentos por separado y coincidieron vectores de palabras mediante el máximo producto interior durante la recuperación en lugar de coincidir vectores de documentos completos, logrando tanto eficiencia como eficacia. Los experimentos demostraron que ColBERT superaba a otros recuperadores densos en referencias como TREC y MSMARCO y soportaba una recuperación rápida. Este diseño ofrece un recuperador de alto rendimiento para RAG e inspiró modelos posteriores de interacción superficial."
+    },
+    {
+      "id": "raft-corrective-rag-2023",
+      "title": "Corrective Retrieval‑Augmented Generation",
+      "year": 2023,
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/abs/2309.00335",
+      "code": [],
+      "why_transition": "针对检索噪声问题提出纠错机制，提升 RAG 的稳健性。",
+      "summary_zh": "RAG 在实际应用中容易受检索噪声影响，错误文档会误导生成。纠错 RAG 的目标是通过检测并纠正检索错误，提高系统鲁棒性。作者设计了一个分阶段框架，首先利用判别模型评估检索结果的相关性，然后过滤无关文档或重新检索，并在生成过程中动态调整检索输入。实验表明，该方法在对话和问答任务中降低了事实错误率，提高了答案一致性。该研究为缓解 RAG 噪声提供了有效路径，受到社区关注。",
+      "summary_en": "In practical applications, RAG is susceptible to retrieval noise and incorrect documents can mislead generation. Corrective RAG aimed to improve system robustness by detecting and correcting retrieval errors. The authors designed a staged framework that first uses a discriminator to assess the relevance of retrieved results, then filters irrelevant documents or triggers re‑retrieval and dynamically adjusts retrieval inputs during generation. Experiments showed that this method reduced factual error rates and improved answer consistency on dialogue and QA tasks. This study provides an effective path to mitigate RAG noise and has attracted community attention.",
+      "summary_es": "En aplicaciones prácticas, RAG es susceptible al ruido de la recuperación y los documentos incorrectos pueden inducir a error en la generación. Corrective RAG se propuso mejorar la robustez del sistema detectando y corrigiendo los errores de recuperación. Los autores diseñaron un marco por etapas que primero utiliza un discriminador para evaluar la relevancia de los resultados recuperados, luego filtra documentos irrelevantes o desencadena una nueva recuperación y ajusta dinámicamente las entradas de recuperación durante la generación. Los experimentos mostraron que este método reducía las tasas de error fáctico y mejoraba la coherencia de las respuestas en tareas de diálogo y preguntas y respuestas. Este estudio ofrece una vía eficaz para mitigar el ruido de RAG y ha atraído la atención de la comunidad."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【749381838508370†L51-L71】",
+      "milestone": "【749381838508370†L51-L71】",
+      "frontier": "【749381838508370†L51-L71】",
+      "survey": "【749381838508370†L51-L71】"
+    }
+  }
+}

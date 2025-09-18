@@ -1,0 +1,135 @@
+{
+  "slug": "language-modeling",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "transformer-2017",
+      "title": "Attention Is All You Need",
+      "year": 2017,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/1706.03762",
+      "code": ["https://github.com/tensorflow/tensor2tensor"],
+      "summary_zh": "序列到序列模型通常依赖递归或卷积结构，限制了并行化和长距离依赖建模能力。该论文的目标是提出一种完全基于注意力机制的架构，既能建模长程关系，又能高效训练。作者提出了多头自注意力与前馈网络组成的 Transformer，并引入位置编码来保留序列顺序。实验表明，Transformer 在机器翻译任务上取得了更高的蓝色分数，并显著加快训练速度。该模型开创了纯注意力架构，为后续大语言模型奠定了根基。",
+      "summary_en": "Sequence‑to‑sequence models traditionally rely on recurrent or convolutional structures, which limit parallelization and the ability to model long‑range dependencies. The goal of this paper was to propose an architecture based entirely on attention mechanisms that can model long‑range relationships while enabling efficient training. The authors introduced the Transformer, composed of multi‑head self‑attention and feedforward networks, and added positional encoding to retain sequence order. Experiments showed that the Transformer achieved higher BLEU scores on machine translation tasks and significantly sped up training. This model inaugurated the pure attention architecture and laid the foundation for subsequent large language models.",
+      "summary_es": "Los modelos de secuencia a secuencia suelen basarse en estructuras recurrentes o convolucionales, lo que limita la paralelización y la capacidad de modelar dependencias a largo plazo. El objetivo de este trabajo era proponer una arquitectura basada íntegramente en mecanismos de atención que pudiera modelar relaciones de largo alcance y permitir un entrenamiento eficiente. Los autores introdujeron el Transformer, compuesto por autoatención multi‑cabezal y redes feedforward, y añadieron codificación posicional para conservar el orden de la secuencia. Los experimentos demostraron que el Transformer alcanzaba puntuaciones BLEU más altas en tareas de traducción automática y aceleraba notablemente el entrenamiento. Este modelo inauguró la arquitectura de atención pura y sentó las bases de los posteriores grandes modelos lingüísticos."
+    },
+    "milestone": [
+      {
+        "id": "gpt2-2019",
+        "title": "Language Models are Unsupervised Multitask Learners (GPT‑2)",
+        "year": 2019,
+        "venue": "OpenAI Blog",
+        "paper_url": "https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
+        "code": ["https://github.com/openai/gpt-2"],
+        "summary_zh": "早期的语言模型规模有限，对下游任务的泛化能力较弱。GPT‑2 的目标是通过扩大模型规模和语料规模，探索生成模型在无监督多任务学习中的能力。研究团队使用 15 亿参数的 Transformer 在海量互联网文本上进行自监督训练，不使用任务特定微调。实验表明，GPT‑2 能生成连贯的段落，并在翻译、问答等任务中展现零样本或少样本能力。该工作证明了规模化生成模型的通用性，引发了业界对大规模预训练的关注。",
+        "summary_en": "Early language models were small and had weak generalization to downstream tasks. GPT‑2 aimed to explore the abilities of generative models in unsupervised multitask learning by scaling up model and corpus sizes. The research team trained a 1.5‑billion‑parameter Transformer on a massive corpus of internet text using self‑supervision without task‑specific fine‑tuning. Experiments showed that GPT‑2 could generate coherent paragraphs and exhibited zero‑shot and few‑shot capabilities on tasks such as translation and question answering. This work demonstrated the versatility of scaled generative models and sparked industry attention toward large‑scale pretraining.",
+        "summary_es": "Los primeros modelos lingüísticos eran pequeños y tenían una generalización débil a las tareas posteriores. GPT‑2 se propuso explorar las capacidades de los modelos generativos en el aprendizaje multitarea no supervisado mediante el aumento de la escala del modelo y del corpus. El equipo de investigación entrenó un Transformer de 1,5 mil millones de parámetros en un corpus masivo de textos de Internet utilizando autoinstrucción sin ajustes específicos por tarea. Los experimentos mostraron que GPT‑2 podía generar párrafos coherentes y exhibía capacidades de cero y pocos ejemplos en tareas como traducción y preguntas y respuestas. Este trabajo demostró la versatilidad de los modelos generativos a gran escala y provocó la atención de la industria hacia el preentrenamiento a gran escala."
+      },
+      {
+        "id": "gpt3-2020",
+        "title": "Language Models are Few‑Shot Learners (GPT‑3)",
+        "year": 2020,
+        "venue": "NeurIPS",
+        "paper_url": "https://arxiv.org/abs/2005.14165",
+        "code": [],
+        "summary_zh": "在 GPT‑2 的基础上进一步扩大参数规模可能会带来新的能力。GPT‑3 的目标是通过训练 1750 亿参数的 Transformer，探索规模化语言模型在少样本学习中的表现。作者在数千亿词的文本上使用自回归预训练，并分析模型在各种自然语言任务上的零样本、单样本和少样本效果。结果显示，GPT‑3 无需显式微调即可在翻译、闭卷问答等任务上接近专用模型的性能，并展现出代码生成等新能力。该工作引发了大型语言模型热潮，推动了 ChatGPT 等产品的出现。",
+        "summary_en": "Building upon GPT‑2, further scaling up parameters might unlock new capabilities. GPT‑3 aimed to explore few‑shot learning performance by training a 175‑billion‑parameter Transformer. The authors performed autoregressive pretraining on hundreds of billions of words and analyzed the model’s zero‑shot, one‑shot and few‑shot performance on various natural language tasks. Results showed that GPT‑3 approached the performance of specialized models on tasks such as translation and closed‑book question answering without explicit fine‑tuning and exhibited new abilities such as code generation. This work triggered the large language model boom and paved the way for products like ChatGPT.",
+        "summary_es": "Sobre la base de GPT‑2, ampliar aún más el número de parámetros podría desbloquear nuevas capacidades. GPT‑3 se propuso explorar el rendimiento del aprendizaje con pocos ejemplos mediante el entrenamiento de un Transformer de 175 mil millones de parámetros. Los autores realizaron un preentrenamiento autoregresivo con cientos de miles de millones de palabras y analizaron el rendimiento del modelo en tareas de lenguaje natural con cero, uno y pocos ejemplos. Los resultados mostraron que GPT‑3 se acercaba al rendimiento de modelos especializados en tareas como traducción y preguntas cerradas sin ajuste explícito y exhibía nuevas capacidades como la generación de código. Este trabajo desencadenó el auge de los grandes modelos lingüísticos y allanó el camino para productos como ChatGPT."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "llama3-2024",
+        "title": "LLaMA 3: Open and Efficient Foundation Models",
+        "year": 2024,
+        "venue": "Meta AI Release",
+        "paper_url": "https://ai.meta.com/blog/llama-3/",
+        "code": ["https://github.com/facebookresearch/llama"],
+        "summary_zh": "随着大语言模型不断增大，开源社区缺乏高性能且效率友好的基础模型。LLaMA 3 的目标是提供一系列开源模型，在保持高质量的同时提高可用性和效率。团队在多语种和多任务数据上训练了数十亿参数的模型，采用优化的训练策略和稀疏激活技术，以支持较长上下文和较低推理成本。结果显示，LLaMA 3 在多项基准上接近或超过闭源模型，并支持更自由的研究和商业应用。该系列的发布推动了开源 LLM 生态的发展，为普惠人工智能奠定基础。",
+        "summary_en": "As language models grow larger, the open‑source community lacks high‑performance and efficiency‑friendly foundation models. LLaMA 3 aimed to provide a suite of open models that maintain high quality while improving usability and efficiency. The team trained models with billions of parameters on multilingual and multitask data, employing optimized training strategies and sparse activation techniques to support longer contexts and lower inference costs. Results showed that LLaMA 3 matched or exceeded closed models on multiple benchmarks and supported more free research and commercial applications. The release of this series propelled the development of the open LLM ecosystem and laid a foundation for accessible artificial intelligence.",
+        "summary_es": "A medida que los modelos lingüísticos se hacen más grandes, la comunidad de código abierto carece de modelos de base de alto rendimiento y eficientes. LLaMA 3 tenía como objetivo ofrecer una serie de modelos abiertos que mantuvieran una alta calidad y mejoraran la usabilidad y la eficiencia. El equipo entrenó modelos con miles de millones de parámetros en datos multilingües y multitarea, empleando estrategias de entrenamiento optimizadas y técnicas de activación dispersa para admitir contextos más largos y menores costes de inferencia. Los resultados mostraron que LLaMA 3 igualaba o superaba a los modelos cerrados en varios puntos de referencia y admitía una investigación y aplicaciones comerciales más libres. El lanzamiento de esta serie impulsó el desarrollo del ecosistema LLM de código abierto y sentó las bases de una inteligencia artificial accesible."
+      },
+      {
+        "id": "gemini1_5-2024",
+        "title": "Gemini 1.5: Scaling Context for Multimodal Large Language Models",
+        "year": 2024,
+        "venue": "Google DeepMind Announcement",
+        "paper_url": "https://blog.google/technology/ai/google-gemini-15/",
+        "code": [],
+        "summary_zh": "主流大语言模型的上下文长度有限，难以处理长文档和复杂推理任务。Gemini 1.5 的目标是通过新的 Mixture‑of‑Experts 架构与长上下文训练，扩展模型的记忆范围并融合多模态输入。研究采用百万级上下文窗口训练模型，加入视觉和音频编码器，实现跨模态推理。演示表明，Gemini 1.5 能够理解和生成包含数万字的文档内容，并在图像、音频任务上展现强大的推理能力。该模型代表了长上下文和多模态大模型的前沿，推动了 AI 应用的深度和广度。",
+        "summary_en": "Mainstream large language models have limited context windows and struggle to handle long documents and complex reasoning tasks. Gemini 1.5 aimed to expand the memory span and fuse multimodal inputs through a new Mixture‑of‑Experts architecture and long‑context training. The research trained models with million‑token context windows and added vision and audio encoders to enable cross‑modal reasoning. Demonstrations showed that Gemini 1.5 could understand and generate content from documents containing tens of thousands of words and exhibited strong reasoning abilities on image and audio tasks. This model represents the frontier of long‑context and multimodal large models and extends the depth and breadth of AI applications.",
+        "summary_es": "Los modelos lingüísticos grandes actuales tienen ventanas de contexto limitadas y tienen dificultades para manejar documentos largos y tareas de razonamiento complejas. Gemini 1.5 se propuso ampliar el alcance de la memoria y fusionar entradas multimodales mediante una nueva arquitectura Mixture‑of‑Experts y entrenamiento con contexto largo. La investigación entrenó modelos con ventanas de contexto de millones de tokens y añadió codificadores de visión y audio para habilitar el razonamiento multimodal. Las demostraciones mostraron que Gemini 1.5 podía comprender y generar contenido de documentos que contenían decenas de miles de palabras y exhibía fuertes capacidades de razonamiento en tareas de imagen y audio. Este modelo representa la frontera de los grandes modelos de contexto largo y multimodal y amplía la profundidad y amplitud de las aplicaciones de la IA."
+      }
+    ],
+    "survey": [
+      {
+        "id": "llm-survey-2023",
+        "title": "A Survey of Large Language Models",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2303.18223",
+        "summary_zh": "大型语言模型在近几年迅速发展，引发了跨学科的研究和应用热潮，但全局综述相对缺乏。该综述的目标是系统梳理大型语言模型的架构、训练策略、适配方法和安全问题。作者总结了模型扩展带来的规律，讨论了预训练阶段的数据选择、优化技巧以及指令微调、检索增强等方法，并分析了如 ChatGPT 带来的社会影响、算力需求与对齐挑战。文章还展望了长期记忆、跨模态融合和可控生成等方向，为学术和工业界提供了全面参考。此综述帮助读者把握大模型发展的全貌和未来趋势。",
+        "summary_en": "Large language models have rapidly developed in recent years, sparking interdisciplinary research and applications, but a comprehensive review has been lacking. The goal of this survey was to systematically organize large language model architectures, training strategies, adaptation methods and safety issues. The authors summarized scaling laws, discussed data selection and optimization techniques in pretraining, as well as instruction fine‑tuning, retrieval augmentation and other methods, and analyzed social impacts, compute requirements and alignment challenges brought by models such as ChatGPT. The paper also looked ahead to directions such as long‑term memory, cross‑modal fusion and controllable generation, providing a comprehensive reference for academia and industry. This survey helps readers grasp the full picture of LLM development and future trends.",
+        "summary_es": "Los grandes modelos de lenguaje se han desarrollado rápidamente en los últimos años, desatando una oleada de investigaciones y aplicaciones interdisciplinarias, pero ha faltado una revisión exhaustiva. El objetivo de esta encuesta fue organizar sistemáticamente las arquitecturas, estrategias de entrenamiento, métodos de adaptación y problemas de seguridad de los grandes modelos de lenguaje. Los autores resumieron las leyes de escalado, discutieron la selección de datos y las técnicas de optimización en el preentrenamiento, así como el ajuste fino basado en instrucciones, el aumento con recuperación y otros métodos, y analizaron los impactos sociales, los requisitos de computación y los retos de alineación que plantean modelos como ChatGPT. El artículo también miró hacia direcciones como la memoria a largo plazo, la fusión multimodal y la generación controlable, proporcionando una referencia completa para el mundo académico y la industria. Esta encuesta ayuda a los lectores a comprender la panorámica del desarrollo de los LLM y las tendencias futuras."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "bert-2018",
+      "title": "BERT: Pre‑training of Deep Bidirectional Transformers for Language Understanding",
+      "year": 2018,
+      "venue": "NAACL",
+      "paper_url": "https://arxiv.org/abs/1810.04805",
+      "code": ["https://github.com/google-research/bert"],
+      "why_transition": "引入双向掩码语言模型和预训练微调范式，引领NLP革命。",
+      "summary_zh": "早期的预训练模型多为单向语言模型或浅层表示，难以充分利用上下文。BERT 的目标是通过双向 Transformer 预训练出上下文相关的词表示，然后通过微调适配下游任务。作者使用掩码语言建模和下一句预测任务在大规模文本上预训练，并通过简单的输出层在问答、分类等任务上微调。BERT 在多项 NLP 基准上取得突破性成绩，证明大规模预训练和微调范式的有效性。该工作开启了预训练‑微调的新时代，成为大量模型的基石。",
+      "summary_en": "Early pretrained models were mostly unidirectional or shallow representations, making it hard to fully utilize context. BERT aimed to pretrain contextualized word representations using a bidirectional Transformer and then adapt them to downstream tasks through fine‑tuning. The authors pre‑trained BERT on large text corpora using masked language modeling and next sentence prediction tasks and added simple output layers to fine‑tune on tasks such as question answering and classification. BERT achieved breakthrough results on numerous NLP benchmarks, demonstrating the effectiveness of large‑scale pretraining and fine‑tuning. This work ushered in the era of pretrain‑and‑fine‑tune and became the foundation for many models.",
+      "summary_es": "Los modelos preentrenados tempranos eran en su mayoría modelos de lenguaje unidireccionales o representaciones poco profundas, lo que dificultaba aprovechar plenamente el contexto. BERT se propuso preentrenar representaciones de palabras contextualizadas utilizando un Transformer bidireccional y luego adaptarlas a tareas posteriores mediante ajuste fino. Los autores preentrenaron BERT en grandes corpus de texto utilizando tareas de modelado de lenguaje enmascarado y predicción de la siguiente oración y añadieron capas de salida sencillas para ajustarlo en tareas como preguntas y respuestas y clasificación. BERT logró resultados revolucionarios en numerosos puntos de referencia de PLN, demostrando la eficacia del preentrenamiento a gran escala y el ajuste fino. Este trabajo inauguró la era del preentrenamiento y el ajuste fino y se convirtió en la base de muchos modelos."
+    },
+    {
+      "id": "t5-2019",
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text‑to‑Text Transformer (T5)",
+      "year": 2019,
+      "venue": "JMLR",
+      "paper_url": "https://arxiv.org/abs/1910.10683",
+      "code": ["https://github.com/google-research/text-to-text-transfer-transformer"],
+      "why_transition": "将各种 NLP 任务统一为文本到文本格式，促进多任务学习。",
+      "summary_zh": "不同自然语言任务的模型结构和训练方式各不相同，难以统一。T5 的目标是将所有任务表述为文本到文本的转换，通过单一架构实现多任务学习。作者构建了 C4 数据集，对海量爬取文本清洗并用于预训练，并在多种任务上使用统一的输入输出格式进行微调。实验表明，T5 在翻译、摘要、问答等任务上刷新了多项记录，并证明了任务统一和大规模预训练的优势。该工作推动了以序列到序列方式解决各类语言任务的潮流。",
+      "summary_en": "Different natural language tasks often require different model structures and training methods, making unification challenging. T5 aimed to cast all tasks as text‑to‑text transformations and achieve multitask learning with a single architecture. The authors built the C4 dataset by cleaning massive web‑scraped text for pretraining and fine‑tuned on various tasks using a uniform input–output format. Experiments showed that T5 set new records on translation, summarization, question answering and other tasks and demonstrated the advantages of task unification and large‑scale pretraining. This work promoted the trend of solving various language tasks using sequence‑to‑sequence approaches.",
+      "summary_es": "Las distintas tareas de lenguaje natural suelen requerir diferentes estructuras de modelo y métodos de entrenamiento, lo que dificulta su unificación. T5 tenía como objetivo convertir todas las tareas en transformaciones de texto a texto y lograr el aprendizaje multitarea con una única arquitectura. Los autores construyeron el conjunto de datos C4 limpiando grandes cantidades de texto obtenido de la web para el preentrenamiento y ajustaron el modelo en diversas tareas utilizando un formato de entrada‑salida uniforme. Los experimentos demostraron que T5 establecía nuevos récords en traducción, resumen, preguntas y respuestas y otras tareas y demostraba las ventajas de la unificación de tareas y el preentrenamiento a gran escala. Este trabajo promovió la tendencia de resolver diversas tareas lingüísticas mediante enfoques de secuencia a secuencia."
+    },
+    {
+      "id": "transformer-xl-2019",
+      "title": "Transformer‑XL: Attentive Language Models Beyond a Fixed‑Length Context",
+      "year": 2019,
+      "venue": "ACL",
+      "paper_url": "https://arxiv.org/abs/1901.02860",
+      "code": ["https://github.com/kimiyoung/transformer-xl"],
+      "why_transition": "通过引入段级递归机制，解决 Transformer 固定上下文的问题，提升长序列建模能力。",
+      "summary_zh": "标准 Transformer 在长序列建模时受到固定上下文长度限制，导致信息无法跨段传递。Transformer‑XL 的目标是通过段级递归机制延长可见范围，并改善长距离依赖建模。作者在自注意力中引入记忆缓存，将前一段的表示作为当前段的额外上下文，并结合相对位置编码保持位置信息。实验显示，该模型在语言建模基准上显著优于基线，并能够生成连贯的长文本。Transformer‑XL 为后续长上下文 LLM 提供了重要思路。",
+      "summary_en": "The standard Transformer is limited by a fixed context length when modeling long sequences, preventing information from propagating across segments. Transformer‑XL aimed to extend the receptive field and improve long‑range dependency modeling via a segment‑level recurrence mechanism. The authors introduced a memory cache in self‑attention that carries representations from the previous segment as additional context for the current one and used relative positional encodings to preserve location information. Experiments showed that the model significantly outperformed baselines on language modeling benchmarks and could generate coherent long text. Transformer‑XL provided an important idea for later long‑context LLMs.",
+      "summary_es": "El Transformer estándar está limitado por una longitud de contexto fija al modelar secuencias largas, lo que impide que la información se propague entre segmentos. Transformer‑XL se propuso ampliar el campo receptivo y mejorar el modelado de dependencias de largo alcance mediante un mecanismo de recurrencia a nivel de segmento. Los autores introdujeron una memoria caché en la autoatención que lleva representaciones del segmento anterior como contexto adicional para el actual y utilizaron codificaciones posicionales relativas para preservar la información de posición. Los experimentos demostraron que el modelo superaba significativamente a las líneas de base en puntos de referencia de modelado del lenguaje y podía generar textos largos coherentes. Transformer‑XL proporcionó una idea importante para los posteriores LLM de contexto largo."
+    },
+    {
+      "id": "palm-2022",
+      "title": "PaLM: Scaling Language Modeling with Pathways",
+      "year": 2022,
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/abs/2204.02311",
+      "code": [],
+      "why_transition": "通过 Pathways 架构训练 540B 参数模型，展示进一步规模化的强大能力。",
+      "summary_zh": "在 GPT‑3 之后，是否继续扩大模型规模可以带来更多通用能力仍有疑问。PaLM 的目标是探索超过五百亿参数规模下的大模型性能，并利用 Pathways 架构提高训练效率。团队训练了 5400 亿参数的 Transformer，采用稀疏激活路由和优质数据，在大规模云基础设施上进行预训练。实验显示，PaLM 在逻辑推理、代码生成和常识问答上取得了显著领先，并展示了少样本推理的新能力。该工作证明了进一步扩大的益处，激励了对超大模型训练方法的研究。",
+      "summary_en": "After GPT‑3, it remained uncertain whether further scaling would bring more general capabilities. PaLM aimed to explore performance at scales above 100 billion parameters and used the Pathways architecture to improve training efficiency. The team trained a 540‑billion‑parameter Transformer using sparsely activated routing and high‑quality data on large cloud infrastructure. Experiments showed that PaLM achieved significant advances in logical reasoning, code generation and commonsense question answering and demonstrated new few‑shot reasoning capabilities. This work proved the benefits of further scaling and stimulated research on ultra‑large model training methods.",
+      "summary_es": "Después de GPT‑3, seguía siendo incierto si una ampliación adicional aportaría más capacidades generales. PaLM se propuso explorar el rendimiento a escalas superiores a 100 mil millones de parámetros y utilizó la arquitectura Pathways para mejorar la eficiencia del entrenamiento. El equipo entrenó un Transformer de 540 mil millones de parámetros utilizando enrutamiento de activación dispersa y datos de alta calidad en una gran infraestructura de nube. Los experimentos mostraron que PaLM lograba avances significativos en razonamiento lógico, generación de código y preguntas de sentido común, y demostraba nuevas capacidades de razonamiento con pocos ejemplos. Este trabajo demostró los beneficios de seguir ampliando la escala y estimuló la investigación sobre métodos de entrenamiento de modelos ultragrandes."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【131425322034444†L54-L78】",
+      "milestone": "【131425322034444†L54-L78】",
+      "frontier": "【131425322034444†L54-L78】",
+      "survey": "【131425322034444†L54-L78】"
+    }
+  }
+}

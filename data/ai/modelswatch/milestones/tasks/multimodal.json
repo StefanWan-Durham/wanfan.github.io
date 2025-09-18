@@ -1,0 +1,136 @@
+{
+  "slug": "multimodal",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "clip-2021",
+      "title": "Learning Transferable Visual Models From Natural Language Supervision (CLIP)",
+      "year": 2021,
+      "venue": "ICML",
+      "paper_url": "https://arxiv.org/abs/2103.00020",
+      "code": ["https://github.com/openai/CLIP"],
+      "summary_zh": "传统视觉模型主要依赖有标签图像训练，难以泛化到未见过的任务。CLIP 的目标是通过大规模图文对预测任务学习通用的视觉语义表示，实现零样本迁移。作者使用 4 亿对互联网图像和文本，训练模型去预测图像与文本对是否匹配，从而同时学习视觉和文本嵌入。实验证明，CLIP 在 ImageNet 零样本分类中可媲美监督训练的 ResNet‑50，并在多任务上表现出强大的迁移能力。该工作揭示了自然语言监督可以构建通用视觉模型，为多模态大模型奠定了基础。",
+      "summary_en": "Traditional vision models rely mainly on labeled images and struggle to generalize to unseen tasks. CLIP aimed to learn universal visual semantic representations by training on a large‑scale image–text matching task, enabling zero‑shot transfer. The authors used 400 million image–text pairs from the internet to train a model to predict whether an image and text pair matched, thereby learning both visual and text embeddings. Experiments showed that CLIP matched the performance of a supervised ResNet‑50 on ImageNet zero‑shot classification and demonstrated strong transfer to many downstream tasks. This work revealed that natural language supervision can build general‑purpose visual models and laid the foundation for multimodal foundation models.",
+      "summary_es": "Los modelos de visión tradicionales dependen principalmente de imágenes etiquetadas y tienen dificultades para generalizar a tareas no vistas. CLIP se propuso aprender representaciones semánticas visuales universales mediante el entrenamiento en una tarea de emparejamiento imagen‑texto a gran escala, permitiendo la transferencia en cero ejemplos. Los autores utilizaron 400 millones de pares imagen‑texto de Internet para entrenar un modelo que predijera si un par de imagen y texto coincidía, aprendiendo así incrustaciones tanto visuales como textuales. Los experimentos demostraron que CLIP igualaba el rendimiento de un ResNet‑50 supervisado en la clasificación ImageNet de cero ejemplos y mostraba una fuerte transferencia a muchas tareas. Este trabajo reveló que la supervisión en lenguaje natural puede construir modelos visuales de propósito general y sentó las bases de los modelos fundamentales multimodales."
+    },
+    "milestone": [
+      {
+        "id": "align-2021",
+        "title": "ALIGN: Scaling Up Visual and Vision‑Language Representation Learning With Noisy Text Supervision",
+        "year": 2021,
+        "venue": "ICML",
+        "paper_url": "https://arxiv.org/abs/2102.05918",
+        "code": [],
+        "summary_zh": "基于图文对的模型需要大规模干净数据，而现实数据常包含噪声。ALIGN 的目标是利用弱标签图文数据扩展视觉语言表示学习规模。作者收集了十亿级的噪声图文对，并在大型云 TPU 上训练对比模型，通过数据过滤和负采样缓解噪声影响。模型在零样本分类和图文检索上超过 CLIP，验证了数据规模的重要性。该研究强调了弱标注数据在多模态学习中的价值，为后续更大规模模型铺路。",
+        "summary_en": "Models based on image–text pairs require large amounts of clean data, while real‑world data often contain noise. ALIGN aimed to scale visual‑language representation learning by leveraging weakly labeled image–text data. The authors collected hundreds of millions of noisy image–text pairs and trained a contrastive model on large cloud TPUs, using data filtering and negative sampling to mitigate noise. The model surpassed CLIP on zero‑shot classification and image–text retrieval, demonstrating the importance of data scale. This study highlighted the value of weakly annotated data in multimodal learning and paved the way for even larger models.",
+        "summary_es": "Los modelos basados en pares imagen‑texto requieren grandes cantidades de datos limpios, mientras que los datos del mundo real suelen contener ruido. ALIGN se propuso ampliar el aprendizaje de representaciones visuales y de lenguaje aprovechando datos imagen‑texto etiquetados de forma débil. Los autores recopilaron cientos de millones de pares imagen‑texto ruidosos y entrenaron un modelo contrastivo en grandes TPU en la nube, utilizando filtrado de datos y muestreo negativo para mitigar el ruido. El modelo superó a CLIP en clasificación de cero ejemplos y recuperación imagen‑texto, demostrando la importancia de la escala de datos. Este estudio destacó el valor de los datos débilmente anotados en el aprendizaje multimodal y allanó el camino para modelos aún más grandes."
+      },
+      {
+        "id": "blip2-2023",
+        "title": "BLIP‑2: Bootstrapping Language‑Image Pre‑Training for Unified Vision‑Language Models",
+        "year": 2023,
+        "venue": "ICLR",
+        "paper_url": "https://arxiv.org/abs/2301.12597",
+        "code": ["https://github.com/salesforce/LAVIS"],
+        "summary_zh": "多模态模型普遍使用单一模态编码器，无法充分利用现有语言模型。BLIP‑2 的目标是设计一种将冻结的预训练语言模型与视觉编码器无缝结合的方法，以降低训练成本并提升性能。作者通过轻量适配器将视觉特征映射到语言模型空间，并使用 Q‑former 学习视觉查询，从而引导语言模型理解视觉输入。实验表明，BLIP‑2 在视觉问答和图文生成等任务上接近或超越了全参数微调的模型。该框架说明预训练语言模型可作为视觉语言模型的强大解码器，是跨模态学习的里程碑。",
+        "summary_en": "Multimodal models often use a single modality encoder and cannot fully leverage existing language models. BLIP‑2 aimed to design a method that seamlessly combines a frozen pre‑trained language model with a vision encoder to reduce training cost and improve performance. The authors used a lightweight adapter to map visual features into the language model space and employed a Q‑former to learn visual queries, guiding the language model to understand visual inputs. Experiments showed that BLIP‑2 achieved performance comparable to or exceeding fully fine‑tuned models on tasks such as visual QA and image–text generation. This framework demonstrates that pre‑trained language models can serve as powerful decoders for vision‑language models and marks a milestone in cross‑modal learning.",
+        "summary_es": "Los modelos multimodales suelen utilizar un codificador de una sola modalidad y no pueden aprovechar plenamente los modelos lingüísticos existentes. BLIP‑2 se propuso diseñar un método que combinara de forma fluida un modelo lingüístico preentrenado congelado con un codificador visual para reducir el coste de entrenamiento y mejorar el rendimiento. Los autores utilizaron un adaptador ligero para mapear las características visuales al espacio del modelo lingüístico y emplearon un Q‑former para aprender consultas visuales, guiando al modelo lingüístico a comprender las entradas visuales. Los experimentos demostraron que BLIP‑2 lograba un rendimiento comparable o superior al de los modelos totalmente afinados en tareas como VQA y generación imagen‑texto. Este marco demuestra que los modelos lingüísticos preentrenados pueden servir como potentes decodificadores para modelos de visión‑lenguaje y marca un hito en el aprendizaje multimodal."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "flamingo-2022",
+        "title": "Flamingo: A Visual Language Model for Few‑Shot Learning",
+        "year": 2022,
+        "venue": "Nature Machine Intelligence",
+        "paper_url": "https://arxiv.org/abs/2204.14198",
+        "code": [],
+        "summary_zh": "现有多模态模型在学习新任务时需要大量任务特定数据，缺乏 Few‑Shot 能力。Flamingo 的目标是构建一个视觉语言模型，通过大规模训练具备快速适应新任务的能力。作者在冻结的语言模型上叠加视觉适配模块，并使用跨模态注意力融合图像特征与文本输入，联合训练一个高度可扩展的模型。实验结果在视觉问答、图像描述等任务上以极少样本达到或超过专用模型的性能。Flamingo 展示了通用多模态模型的可行性，为 GPT‑4V 等更大模型奠定了基础。",
+        "summary_en": "Existing multimodal models require large amounts of task‑specific data to learn new tasks and lack few‑shot capability. Flamingo aimed to build a visual‑language model that, through large‑scale training, can quickly adapt to new tasks with few examples. The authors stacked a visual adapter on top of a frozen language model and used cross‑modal attention to fuse image features with textual inputs, jointly training a highly scalable model. Experiments showed that Flamingo achieved or exceeded the performance of specialized models on tasks such as visual question answering and image captioning with very few examples. Flamingo demonstrates the feasibility of a general multimodal model and laid the groundwork for larger models such as GPT‑4V.",
+        "summary_es": "Los modelos multimodales existentes requieren grandes cantidades de datos específicos de tarea para aprender nuevas tareas y carecen de capacidad de pocos ejemplos. Flamingo se propuso construir un modelo visual‑lingüístico que, mediante entrenamiento a gran escala, pudiera adaptarse rápidamente a nuevas tareas con pocos ejemplos. Los autores apilaron un adaptador visual sobre un modelo lingüístico congelado y utilizaron atención cruzada para fusionar las características de la imagen con las entradas textuales, entrenando conjuntamente un modelo altamente escalable. Los experimentos demostraron que Flamingo lograba o superaba el rendimiento de los modelos especializados en tareas como VQA y generación de descripciones con muy pocos ejemplos. Flamingo demuestra la viabilidad de un modelo multimodal general y sentó las bases de modelos más grandes como GPT‑4V."
+      },
+      {
+        "id": "gpt4v-2023",
+        "title": "GPT‑4V: Visual Capabilities of GPT‑4",
+        "year": 2023,
+        "venue": "OpenAI Blog",
+        "paper_url": "https://openai.com/research/gpt-4v", 
+        "code": [],
+        "summary_zh": "大型语言模型在多模态方向的发展带来了跨模态理解和生成的新可能。GPT‑4V 的目标是扩展 GPT‑4 使其具备视觉输入和理解能力，从而支持更复杂的对话和分析。OpenAI 将视觉编码器与 GPT‑4 解码器集成，通过多阶段训练使模型能够处理图像描述、视觉推理等任务，并设计安全过滤机制。该模型在多种基准上达到 SOTA，并能将视觉信息用于复杂问题解答。GPT‑4V 标志着语言模型迈向通用多模态智能的重要一步，是当前的前沿热点。",
+        "summary_en": "The development of large language models in the multimodal direction has opened new possibilities for cross‑modal understanding and generation. GPT‑4V aimed to extend GPT‑4 to have visual input and understanding capabilities, enabling more complex dialogue and analysis. OpenAI integrated a vision encoder with the GPT‑4 decoder and trained the model in multiple stages so that it could handle image descriptions, visual reasoning and other tasks, while implementing safety filters. The model achieved state‑of‑the‑art performance on various benchmarks and could use visual information to answer complex questions. GPT‑4V marks an important step toward general multimodal intelligence for language models and is a current frontier hotspot.",
+        "summary_es": "El desarrollo de grandes modelos lingüísticos en la dirección multimodal ha abierto nuevas posibilidades para la comprensión y generación entre modalidades. GPT‑4V se propuso ampliar GPT‑4 para que tuviera capacidad de entrada y comprensión visual, permitiendo diálogos y análisis más complejos. OpenAI integró un codificador visual con el decodificador de GPT‑4 y entrenó el modelo en varias etapas para que pudiera manejar descripciones de imágenes, razonamiento visual y otras tareas, implementando al mismo tiempo filtros de seguridad. El modelo alcanzó un rendimiento de vanguardia en varios bancos de pruebas y podía utilizar la información visual para responder preguntas complejas. GPT‑4V marca un paso importante hacia la inteligencia multimodal general para los modelos lingüísticos y es un punto caliente actual en la frontera."
+      }
+    ],
+    "survey": [
+      {
+        "id": "multimodal-survey-2023",
+        "title": "Multimodal Foundation Models: A Survey",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2304.11598",
+        "code": [],
+        "summary_zh": "随着 CLIP、ALIGN 等模型推动多模态基础模型的爆发，领域内需要系统梳理。该综述的目标是总结多模态基础模型的核心技术、训练范式与应用趋势。文章介绍了对比学习、图文配对和生成模型等关键方法，比较了视觉语言模型在零样本分类、检索、问答等任务上的表现，并讨论了计算效率、数据规模和安全问题。作者还展望了跨模态推理、可解释性和多语言多模态等未来挑战。该综述为研究者把握多模态模型进展提供了详尽参考。",
+        "summary_en": "With models such as CLIP and ALIGN driving the boom of multimodal foundation models, the field needs a systematic review. The goal of this survey is to summarize the core technologies, training paradigms and application trends of multimodal foundation models. The article introduces key methods such as contrastive learning, image–text pairing and generative models, compares the performance of vision–language models on tasks like zero‑shot classification, retrieval and question answering and discusses issues of computational efficiency, data scale and safety. The authors also look ahead to future challenges such as cross‑modal reasoning, interpretability and multilingual multimodality. This survey provides researchers with a detailed reference to understand progress in multimodal models.",
+        "summary_es": "Con modelos como CLIP y ALIGN impulsando el auge de los modelos fundamentales multimodales, el campo necesita una revisión sistemática. El objetivo de esta encuesta es resumir las tecnologías centrales, los paradigmas de entrenamiento y las tendencias de aplicación de los modelos fundamentales multimodales. El artículo presenta métodos clave como el aprendizaje contrastivo, el emparejamiento imagen‑texto y los modelos generativos, compara el rendimiento de los modelos visión‑lenguaje en tareas como clasificación en cero ejemplos, recuperación y preguntas y respuestas y analiza cuestiones de eficiencia computacional, escala de datos y seguridad. Los autores también anticipan retos futuros como el razonamiento entre modalidades, la interpretabilidad y la multimodalidad multilingüe. Esta encuesta proporciona a los investigadores una referencia detallada para comprender los avances en modelos multimodales."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "vilbert-2019",
+      "title": "ViLBERT: Pretraining Task‑Agnostic Visiolinguistic Representations",
+      "year": 2019,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/1908.02265",
+      "code": ["https://github.com/jiasenlu/vilbert_beta"],
+      "why_transition": "引入双流 Transformer 实现视觉和文本的联合预训练，开启多模态预训练探索。",
+      "summary_zh": "在 CLIP 之前，跨模态模型多为任务特定结构，难以迁移。ViLBERT 的目标是构建一种任务无关的视觉语言预训练框架，通过 Transformer 学习联合表示。作者采用两个独立的 Transformer 编码器分别处理视觉和文本特征，并引入跨模态注意力层实现信息交互，在多任务预训练后微调。ViLBERT 在视觉问答和短句推理等任务上显著优于无预训练模型，验证了跨模态预训练的价值。该工作为后续 SimVLM、BLIP 等方法奠定了基础，是重要过渡。",
+      "summary_en": "Before CLIP, many cross‑modal models were task‑specific and difficult to transfer. ViLBERT aimed to build a task‑agnostic vision–language pre‑training framework using Transformers to learn joint representations. The authors employed two separate Transformer encoders to process visual and textual features and introduced cross‑modal attention layers to facilitate information exchange, followed by multi‑task pre‑training and fine‑tuning. ViLBERT significantly outperformed models without pre‑training on visual QA and referring expression tasks, validating the value of cross‑modal pre‑training. This work laid the foundation for subsequent methods such as SimVLM and BLIP and is an important transition.",
+      "summary_es": "Antes de CLIP, muchos modelos multimodales eran específicos de tareas y difíciles de transferir. ViLBERT se propuso construir un marco de preentrenamiento visión‑lenguaje independiente de la tarea mediante Transformers para aprender representaciones conjuntas. Los autores utilizaron dos codificadores Transformer independientes para procesar las características visuales y textuales e introdujeron capas de atención cruzada para facilitar el intercambio de información, seguidas de un preentrenamiento multitarea y afinamiento. ViLBERT superaba significativamente a los modelos sin preentrenamiento en tareas de VQA y de referencias, lo que validó el valor del preentrenamiento multimodal. Este trabajo sentó las bases de métodos posteriores como SimVLM y BLIP y es una transición importante."
+    },
+    {
+      "id": "simvlm-2021",
+      "title": "SimVLM: Simple Visual Language Model Pre‑Training with Weak Supervision",
+      "year": 2021,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/2108.10904",
+      "code": [],
+      "why_transition": "简化跨模态预训练任务，统一文本和视觉掩码语言建模。",
+      "summary_zh": "复杂的多任务预训练增加了模型和工程成本。SimVLM 的目标是提出一种简单的视觉语言预训练方法，在弱监督数据下通过单一目标学习。作者提出统一掩码语言建模任务，将视觉输入转换为序列并与文本一同随机掩码，然后训练 Transformer 同时重建图像和文本标记。实验证明，SimVLM 在零样本 VQA 和图文检索上与多任务预训练模型相当或更好，训练效率更高。该方法降低了跨模态预训练的复杂度，促进了大规模模型训练。",
+      "summary_en": "Complex multi‑task pre‑training increases model and engineering costs. SimVLM aimed to propose a simple vision–language pre‑training method that learns with a single objective on weakly supervised data. The authors unified the masked language modeling task by converting visual inputs into sequences, jointly masking image and text tokens and training a Transformer to reconstruct both modalities simultaneously. Experiments showed that SimVLM achieved comparable or better results to multi‑task pre‑training models on zero‑shot VQA and image–text retrieval with higher training efficiency. This method reduces the complexity of cross‑modal pre‑training and promotes large‑scale model training.",
+      "summary_es": "El preentrenamiento multitarea complejo aumenta los costes de modelo e ingeniería. SimVLM se propuso presentar un método sencillo de preentrenamiento visión‑lenguaje que aprendiera con un solo objetivo en datos débilmente supervisados. Los autores unificaron la tarea de modelado de lenguaje enmascarado convirtiendo las entradas visuales en secuencias, enmascarando conjuntamente los tokens de imagen y texto y entrenando un Transformer para reconstruir ambas modalidades simultáneamente. Los experimentos demostraron que SimVLM lograba resultados comparables o mejores que los modelos de preentrenamiento multitarea en VQA de cero ejemplos y recuperación imagen‑texto con mayor eficiencia de entrenamiento. Este método reduce la complejidad del preentrenamiento multimodal y promueve el entrenamiento de modelos a gran escala."
+    },
+    {
+      "id": "coca-2022",
+      "title": "CoCa: Contrastive Captioners Are All You Need",
+      "year": 2022,
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/abs/2205.01917",
+      "code": [],
+      "why_transition": "结合对比学习和生成任务，统一解决图文检索与描述问题。",
+      "summary_zh": "现有模型常将图文检索和生成作为独立任务处理。CoCa 的目标是设计一种统一模型，同时具备对比学习和文本生成能力。作者使用编码器‑解码器架构，在编码阶段进行图文对比学习以训练视觉和文本表示，在解码阶段生成图像描述，从而同时优化检索和生成目标。结果显示，CoCa 在 COCO Caption 和 Zero‑Shot CLIP 评测中取得优异表现。该模型证明了对比与生成任务可以协同学习，为多模态统一模型提供了范式。",
+      "summary_en": "Existing models often treat image–text retrieval and generation as separate tasks. CoCa aimed to design a unified model that possesses both contrastive learning and text generation capabilities. The authors used an encoder–decoder architecture that performs image–text contrastive learning in the encoding stage to train visual and textual representations and generates image captions in the decoding stage, optimizing both retrieval and generation objectives simultaneously. Results showed that CoCa achieved excellent performance on COCO Caption and zero‑shot CLIP evaluations. This model proves that contrastive and generative tasks can be learned jointly and provides a paradigm for unified multimodal models.",
+      "summary_es": "Los modelos existentes suelen tratar la recuperación y la generación de imágenes y textos como tareas separadas. CoCa se propuso diseñar un modelo unificado que posea capacidades tanto de aprendizaje contrastivo como de generación de texto. Los autores utilizaron una arquitectura codificador‑decodificador que realiza aprendizaje contrastivo imagen‑texto en la etapa de codificación para entrenar las representaciones visuales y textuales y genera descripciones de imágenes en la etapa de decodificación, optimizando simultáneamente los objetivos de recuperación y generación. Los resultados mostraron que CoCa lograba un excelente rendimiento en la evaluación COCO Caption y en la evaluación CLIP de cero ejemplos. Este modelo demuestra que las tareas contrastivas y generativas pueden aprenderse conjuntamente y proporciona un paradigma para modelos multimodales unificados."
+    },
+    {
+      "id": "llava-2023",
+      "title": "LLaVA: Large Language and Vision Assistant",
+      "year": 2023,
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/abs/2304.08485",
+      "code": ["https://github.com/haotian-liu/LLaVA"],
+      "why_transition": "将开源语言模型与视觉编码器对齐，促进大众使用的多模态助手。",
+      "summary_zh": "高性能多模态模型大多由大型商业机构训练，缺乏开源替代方案。LLaVA 的目标是通过对齐开源大语言模型与视觉编码器，构建可公开使用的视觉助手。作者采用 CLIP 图像编码器和 Vicuna 语言模型，通过微调教数据集对齐视觉特征与语言嵌入，并采用指令精调提升对话能力。实验显示，LLaVA 在科学理解和基于图像对话上表现良好，并允许用户在本地部署多模态模型。该项目推动了开源多模态社区发展，为教育和研究提供了平台。",
+      "summary_en": "High‑performance multimodal models are mostly trained by large commercial institutions and lack open‑source alternatives. LLaVA aimed to build a publicly available visual assistant by aligning an open‑source large language model with a vision encoder. The authors used a CLIP image encoder and the Vicuna language model, aligned visual features with language embeddings through fine‑tuning on instruction‑guided datasets and used instruction tuning to enhance dialogue capabilities. Experiments showed that LLaVA performed well on scientific understanding and image‑grounded conversation tasks and allowed users to deploy a multimodal model locally. This project accelerated the development of the open‑source multimodal community and provided a platform for education and research.",
+      "summary_es": "Los modelos multimodales de alto rendimiento son en su mayoría entrenados por grandes instituciones comerciales y carecen de alternativas de código abierto. LLaVA se propuso construir un asistente visual de acceso público alineando un gran modelo lingüístico de código abierto con un codificador visual. Los autores utilizaron un codificador de imágenes CLIP y el modelo lingüístico Vicuna, alinearon las características visuales con las incrustaciones lingüísticas mediante el afinamiento en conjuntos de datos guiados por instrucciones y utilizaron el afinamiento con instrucciones para mejorar las capacidades de diálogo. Los experimentos demostraron que LLaVA tenía un buen rendimiento en comprensión científica y conversación basada en imágenes y permitía a los usuarios desplegar un modelo multimodal localmente. Este proyecto aceleró el desarrollo de la comunidad multimodal de código abierto y proporcionó una plataforma para la educación y la investigación."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【636134506284958†L51-L68】",
+      "milestone": "【636134506284958†L51-L68】",
+      "frontier": "【636134506284958†L51-L68】",
+      "survey": "【636134506284958†L51-L68】"
+    }
+  }
+}

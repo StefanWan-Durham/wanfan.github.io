@@ -1,0 +1,135 @@
+{
+  "slug": "nerf",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "nerf-2020",
+      "title": "NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis",
+      "year": 2020,
+      "venue": "ECCV",
+      "paper_url": "https://arxiv.org/abs/2003.08934",
+      "code": ["https://github.com/bmild/nerf"],
+      "summary_zh": "从稀疏图像中生成新的视角一直是计算机图形和视觉的挑战，传统基于网格或点云的方法难以达到真实的渲染质量。NeRF 的目标是使用连续的辐射场表示场景，通过神经网络学习颜色和密度，从而实现高质量视角合成。作者采用多层感知机，将三维坐标和视角方向映射到体素密度和发射辐射，利用可微分的体渲染在图像上优化网络参数。实验表明，该方法在合成和真实数据集上实现了前所未有的细节和真实感，大幅超越传统方法。NeRF 的提出开创了神经渲染领域，激发了大量后续改进和应用。",
+      "summary_en": "Generating novel views from sparse images has long been a challenge in computer graphics and vision, and traditional mesh‑ or point‑based methods struggle to achieve photorealistic quality. NeRF aimed to represent a scene using a continuous radiance field learned by a neural network to enable high‑quality view synthesis. The authors used a multilayer perceptron to map 3D coordinates and viewing directions to volume density and emitted radiance and optimized network parameters using differentiable volume rendering on the training images. Experiments showed that the method produced unprecedented detail and realism on synthetic and real datasets, far surpassing traditional approaches. The introduction of NeRF inaugurated the field of neural rendering and inspired a large number of subsequent improvements and applications.",
+      "summary_es": "Generar nuevas vistas a partir de imágenes escasas ha sido durante mucho tiempo un reto en gráficos por ordenador y visión, y los métodos tradicionales basados en mallas o nubes de puntos tienen dificultades para alcanzar una calidad fotorrealista. NeRF se propuso representar una escena mediante un campo de radiancia continuo aprendido por una red neuronal para posibilitar la síntesis de vistas de alta calidad. Los autores utilizaron un perceptrón multicapa para mapear coordenadas 3D y direcciones de visión a densidad de volumen y radiancia emitida y optimizaron los parámetros de la red mediante renderizado volumétrico diferenciable sobre las imágenes de entrenamiento. Los experimentos demostraron que el método producía un detalle y realismo sin precedentes en conjuntos sintéticos y reales, superando con mucho a los enfoques tradicionales. La introducción de NeRF inauguró el campo del renderizado neuronal y dio lugar a una gran cantidad de mejoras y aplicaciones posteriores."
+    },
+    "milestone": [
+      {
+        "id": "mipnerf-2021",
+        "title": "Mip‑NeRF: A Multiscale Representation for Anti‑Aliasing Neural Radiance Fields",
+        "year": 2021,
+        "venue": "ICCV",
+        "paper_url": "https://arxiv.org/abs/2103.13415",
+        "code": ["https://github.com/google/mipnerf"],
+        "summary_zh": "NeRF 渲染时从单一射线样本中采样会导致走样和模糊，尤其在远距离和小像素区域。Mip‑NeRF 的目标是在渲染过程中引入抗锯齿机制，提升视图合成质量和训练效率。作者提出将每个像素视为一个圆锥而非射线，并对样本沿圆锥积分，从而模拟不同尺寸的感受野；同时调整网络采样策略以利用这一多尺度信息。实验表明，Mip‑NeRF 在合成质量上优于原始 NeRF，并减少了训练时间和伪影。该方法解决了走样问题，为后续更高分辨率和高效的 NeRF 变体奠定了基础。",
+        "summary_en": "When rendering NeRF, sampling from a single ray leads to aliasing and blurring, especially for distant objects and small pixel areas. Mip‑NeRF aimed to introduce an anti‑aliasing mechanism in the rendering process to improve view synthesis quality and training efficiency. The authors proposed treating each pixel as a cone rather than a ray and integrated samples along the cone to simulate receptive fields of different sizes, while adjusting the network's sampling strategy to exploit this multiscale information. Experiments showed that Mip‑NeRF outperformed the original NeRF in synthesis quality and reduced training time and artifacts. This method addressed the aliasing issue and laid the groundwork for subsequent higher‑resolution and efficient NeRF variants.",
+        "summary_es": "Al renderizar NeRF, el muestreo a partir de un único rayo provoca aliasing y desenfoque, especialmente para objetos distantes y zonas de píxeles pequeñas. Mip‑NeRF se propuso introducir un mecanismo antialiasing en el proceso de renderizado para mejorar la calidad de la síntesis de vistas y la eficiencia del entrenamiento. Los autores propusieron tratar cada píxel como un cono en lugar de un rayo e integraron las muestras a lo largo del cono para simular campos receptivos de diferentes tamaños, ajustando al mismo tiempo la estrategia de muestreo de la red para explotar esta información multiescala. Los experimentos demostraron que Mip‑NeRF superaba al NeRF original en la calidad de la síntesis y reducía el tiempo de entrenamiento y los artefactos. Este método solucionó el problema del aliasing y sentó las bases para posteriores variantes de NeRF de mayor resolución y eficiencia."
+      },
+      {
+        "id": "instant-ngp-2022",
+        "title": "Instant Neural Graphics Primitives with a Multiresolution Hash Encoding",
+        "year": 2022,
+        "venue": "SIGGRAPH",
+        "paper_url": "https://arxiv.org/abs/2201.05989",
+        "code": ["https://github.com/NVlabs/instant-ngp"],
+        "summary_zh": "NeRF 在训练和渲染方面速度缓慢，阻碍了交互式应用。Instant‑NGP 的目标是通过高效的编码和 GPU 优化，实现实时训练和渲染神经场。作者引入多分辨率哈希格网编码替代全连接网络，并设计了基于 CUDA 的高效实现，使模型能够在几秒内学习小场景，并实现实时更新。实验表明，Instant‑NGP 在速度和质量之间取得了良好平衡，使用户能够交互式编辑和查看神经场。该成果极大降低了 NeRF 的使用门槛，推动神经渲染向实时应用迈进。",
+        "summary_en": "NeRF suffers from slow training and rendering, limiting interactive applications. The goal of Instant‑NGP was to achieve real‑time training and rendering of neural fields through efficient encoding and GPU optimization. The authors introduced a multiresolution hash grid encoding to replace fully connected networks and designed a highly optimized CUDA implementation, enabling the model to learn small scenes within seconds and support real‑time updates. Experiments showed that Instant‑NGP achieved a good balance between speed and quality, allowing users to interactively edit and view neural fields. This achievement greatly lowered the barrier to using NeRF and pushed neural rendering towards real‑time applications.",
+        "summary_es": "NeRF adolece de un entrenamiento y renderizado lentos, lo que limita las aplicaciones interactivas. El objetivo de Instant‑NGP era lograr el entrenamiento y renderizado en tiempo real de campos neuronales mediante una codificación eficiente y la optimización de GPU. Los autores introdujeron una codificación de cuadrícula hash multirresolución para sustituir las redes totalmente conectadas y diseñaron una implementación altamente optimizada en CUDA, permitiendo que el modelo aprendiera escenas pequeñas en segundos y soportara actualizaciones en tiempo real. Los experimentos demostraron que Instant‑NGP lograba un buen equilibrio entre velocidad y calidad, permitiendo a los usuarios editar y visualizar campos neuronales de forma interactiva. Este logro redujo enormemente la barrera para utilizar NeRF y acercó el renderizado neuronal a las aplicaciones en tiempo real."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "gaussian-splatting-2023",
+        "title": "3D Gaussian Splatting for Real‑Time Radiance Field Rendering",
+        "year": 2023,
+        "venue": "SIGGRAPH",
+        "paper_url": "https://arxiv.org/abs/2308.00675",
+        "code": ["https://github.com/graphdeco-inria/gaussian-splatting"],
+        "summary_zh": "尽管实时训练已有突破，NeRF 的实时渲染仍然受限于光线行进和体渲染的计算。3D Gaussian Splatting 的目标是提出一种不同于体渲染的表示，使得渲染速度和质量兼得。作者将场景表示为大量具有位置、大小和不透明度的高斯球，通过光栅化实现快速渲染，并使用优化学习这些高斯参数以匹配训练图像。实验证明，该方法能够以数百 FPS 实时渲染复杂场景，视觉质量与 NeRF 相当甚至更好。高斯 Splatting 开辟了神经场加速的新方向，为实时 AR/VR 和游戏应用提供了可能。",
+        "summary_en": "Although real‑time training has been achieved, real‑time rendering of NeRF is still limited by ray marching and volumetric rendering. The goal of 3D Gaussian Splatting was to propose a representation different from volumetric rendering to achieve both speed and quality. The authors represented scenes as a large set of Gaussians with learned positions, sizes and opacities and used rasterization to achieve fast rendering, optimizing these Gaussian parameters to match training images. Experiments demonstrated that the method can render complex scenes in real time at hundreds of frames per second, with visual quality comparable to or better than NeRF. Gaussian Splatting opens a new direction for accelerating neural fields and enables possibilities for real‑time AR/VR and gaming applications.",
+        "summary_es": "Aunque se ha conseguido un entrenamiento en tiempo real, el renderizado en tiempo real de NeRF sigue limitado por el trazado de rayos y el renderizado volumétrico. El objetivo de la técnica 3D Gaussian Splatting era proponer una representación diferente del renderizado volumétrico para conseguir tanto velocidad como calidad. Los autores representaron las escenas como un gran conjunto de gaussianas con posiciones, tamaños y opacidades aprendidas y utilizaron la rasterización para lograr un renderizado rápido, optimizando estos parámetros gaussianos para que coincidieran con las imágenes de entrenamiento. Los experimentos demostraron que el método puede renderizar escenas complejas en tiempo real a cientos de fotogramas por segundo, con una calidad visual comparable o superior a NeRF. La técnica de gaussianas abre una nueva dirección para acelerar los campos neuronales y hace posibles aplicaciones en tiempo real de AR/VR y juegos."
+      },
+      {
+        "id": "zipnerf-2023",
+        "title": "Zip‑NeRF: Anti‑Aliased Grid‑Based Neural Radiance Fields",
+        "year": 2023,
+        "venue": "SIGGRAPH",
+        "paper_url": "https://arxiv.org/abs/2308.11683",
+        "code": ["https://github.com/google/zipnerf"],
+        "summary_zh": "格子‑基的神经场方法提高了训练和渲染效率，但容易产生走样，空间分辨率与内存占用之间难以权衡。Zip‑NeRF 的目标是提出一种抗走样的格子表示，实现高质量渲染和低内存消耗。作者使用锯齿状的网格（zip grid）结合 mip‑map 滤波对体密度和颜色进行存储，并采用反走样采样策略获取视图颜色。实验表明，Zip‑NeRF 在质量上接近 Mip‑NeRF 360，同时内存占用大幅降低，推理速度更快。该方法为格子表示带来新的平衡点，促进了高效神经渲染的发展。",
+        "summary_en": "Grid‑based neural field methods improve training and rendering efficiency but tend to suffer from aliasing and face trade‑offs between spatial resolution and memory usage. Zip‑NeRF aimed to propose an anti‑aliased grid representation that achieves high‑quality rendering with low memory consumption. The authors used a zigzag or zip grid combined with mip‑map filtering to store volume density and color and adopted anti‑aliasing sampling strategies to obtain view colors. Experiments showed that Zip‑NeRF achieved quality close to Mip‑NeRF 360 while greatly reducing memory usage and improving inference speed. This method provides a new balance point for grid representations and promotes the development of efficient neural rendering.",
+        "summary_es": "Los métodos de campos neuronales basados en rejillas mejoran la eficiencia de entrenamiento y renderizado pero tienden a sufrir aliasing y enfrentan compensaciones entre resolución espacial y uso de memoria. Zip‑NeRF se propuso presentar una representación de rejilla antialiasing que lograra un renderizado de alta calidad con bajo consumo de memoria. Los autores utilizaron una rejilla en zigzag (rejilla zip) combinada con filtrado mip‑map para almacenar la densidad de volumen y el color y adoptaron estrategias de muestreo antialiasing para obtener los colores de las vistas. Los experimentos demostraron que Zip‑NeRF lograba una calidad cercana a Mip‑NeRF 360 a la vez que reducía mucho el uso de memoria y mejoraba la velocidad de inferencia. Este método proporciona un nuevo punto de equilibrio para las representaciones en rejilla y promueve el desarrollo de renderizado neuronal eficiente."
+      }
+    ],
+    "survey": [
+      {
+        "id": "nerf-survey-2023",
+        "title": "NeRF in Vision: A Comprehensive Review",
+        "year": 2023,
+        "venue": "TPAMI",
+        "paper_url": "https://arxiv.org/abs/2304.09182",
+        "summary_zh": "神经辐射场在三维重建、虚拟现实和内容创作中快速传播，但相关研究散乱难以系统掌握。该综述的目标是对 NeRF 及其扩展进行全面梳理，涵盖模型变体、加速方法和应用领域。作者回顾了 NeRF 的基本理论、采样策略和优化流程，归纳出网格表示、张量分解、稀疏结构等加速技巧，并总结了在人脸、城市、科学可视化等领域的应用。文章还讨论了当前挑战，如实时渲染、非静态场景和多模态融合，并提出未来研究方向。该综述是理解神经辐射场生态的重要参考。",
+        "summary_en": "Neural radiance fields have rapidly spread across 3D reconstruction, virtual reality and content creation, but related research is scattered and difficult to grasp systematically. The goal of this survey was to comprehensively review NeRF and its extensions, covering model variants, acceleration methods and application domains. The authors reviewed NeRF's basic theory, sampling strategies and optimization procedures and summarized acceleration techniques such as grid representations, tensor decomposition and sparsity, as well as applications in faces, cities and scientific visualization. The paper also discussed current challenges, including real‑time rendering, dynamic scenes and multimodal fusion, and suggested future research directions. This survey is an important reference for understanding the neural radiance field ecosystem.",
+        "summary_es": "Los campos de radiancia neuronales se han difundido rápidamente en la reconstrucción 3D, la realidad virtual y la creación de contenidos, pero la investigación relacionada está dispersa y resulta difícil de comprender de forma sistemática. El objetivo de esta encuesta fue revisar de forma exhaustiva NeRF y sus extensiones, abarcando variantes de modelos, métodos de aceleración y dominios de aplicación. Los autores revisaron la teoría básica de NeRF, las estrategias de muestreo y los procedimientos de optimización y resumieron técnicas de aceleración como las representaciones en rejilla, la descomposición tensorial y la esparcidad, así como aplicaciones en rostros, ciudades y visualización científica. El artículo también analizó los retos actuales, como el renderizado en tiempo real, las escenas dinámicas y la fusión multimodal, y sugirió direcciones de investigación futuras. Esta encuesta es una referencia importante para comprender el ecosistema de campos de radiancia neuronales."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "nerf-w-2021",
+      "title": "NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections",
+      "year": 2021,
+      "venue": "CVPR",
+      "paper_url": "https://arxiv.org/abs/2008.02268",
+      "code": ["https://github.com/google/nerf_in_the_wild"],
+      "why_transition": "通过图像特定的潜变量和曝光建模，扩展 NeRF 以适应真实世界不一致光照。",
+      "summary_zh": "原始 NeRF 假设固定光照和相机参数，难以应用于来自互联网的照片集合。NeRF‑W 的目标是通过建模图像特定的显著特征和曝光变化，使神经辐射场适用于自由场景。作者引入了每幅图像的潜在码和曝光参数，以解释亮度和颜色差异，同时在训练中对几何和外观进行分离优化。实验在真实世界的旅游景点图像上显示出更鲁棒的重建效果和逼真的新视图合成。该方法为在不受控条件下使用 NeRF 提供了可行途径。",
+      "summary_en": "The original NeRF assumes fixed lighting and camera parameters and is difficult to apply to photo collections from the internet. The goal of NeRF‑W was to make neural radiance fields applicable to unconstrained scenes by modeling image‑specific salient features and exposure variations. The authors introduced a latent code and exposure parameters for each image to account for brightness and color differences while separately optimizing geometry and appearance during training. Experiments on real‑world tourist photo collections demonstrated more robust reconstruction and realistic novel view synthesis. This method provides a feasible path for using NeRF under uncontrolled conditions.",
+      "summary_es": "El NeRF original supone una iluminación fija y parámetros de cámara constantes y resulta difícil de aplicar a colecciones de fotos de internet. El objetivo de NeRF‑W era hacer que los campos de radiancia neuronales fueran aplicables a escenas sin restricciones mediante el modelado de características salientes específicas de cada imagen y variaciones de exposición. Los autores introdujeron un código latente y parámetros de exposición para cada imagen a fin de tener en cuenta las diferencias de brillo y color, al tiempo que optimizaban por separado la geometría y el aspecto durante el entrenamiento. Los experimentos en colecciones de fotos turísticas del mundo real demostraron una reconstrucción más robusta y una síntesis de nuevas vistas más realista. Este método proporciona una vía factible para utilizar NeRF en condiciones no controladas."
+    },
+    {
+      "id": "plenoxels-2021",
+      "title": "Plenoxels: Radiance Fields without Neural Networks",
+      "year": 2021,
+      "venue": "CVPR",
+      "paper_url": "https://arxiv.org/abs/2104.05277",
+      "code": ["https://github.com/sxyu/plenoxels"],
+      "why_transition": "用 voxel 网格和球谐函数替代神经网络，显著提升训练速度和渲染效率。",
+      "summary_zh": "NeRF 使用 MLP 建模辐射场导致训练耗时且推理慢。Plenoxels 的目标是用离散的体素网格和球谐函数替代神经网络，实现更快的训练和渲染。作者将场景表示为每个体素的密度和球谐系数，通过梯度下降直接优化这些参数，不依赖神经网络。实验表明，该方法训练和渲染速度比 NeRF 快一个数量级，同时在合成质量上保持竞争力。Plenoxels 引出了基于网格的神经辐射场家族，为实时应用提供可能。",
+      "summary_en": "NeRF uses an MLP to model radiance fields, resulting in time‑consuming training and slow inference. The goal of Plenoxels was to replace the neural network with a discrete voxel grid and spherical harmonics to achieve faster training and rendering. The authors represented the scene as density and spherical harmonic coefficients for each voxel and optimized these parameters directly via gradient descent without a neural network. Experiments showed that the method achieved training and rendering speeds an order of magnitude faster than NeRF while maintaining competitive synthesis quality. Plenoxels gave rise to a family of grid‑based neural radiance fields and provides possibilities for real‑time applications.",
+      "summary_es": "NeRF utiliza un MLP para modelar campos de radiancia, lo que resulta en un entrenamiento que consume mucho tiempo y una inferencia lenta. El objetivo de Plenoxels era sustituir la red neuronal por una rejilla de voxels discreta y armónicos esféricos para lograr un entrenamiento y un renderizado más rápidos. Los autores representaron la escena como densidad y coeficientes de armónicos esféricos para cada voxel y optimizaron estos parámetros directamente mediante descenso del gradiente sin una red neuronal. Los experimentos demostraron que el método alcanzaba velocidades de entrenamiento y renderizado un orden de magnitud más rápidas que NeRF y mantenía una calidad de síntesis competitiva. Plenoxels dio lugar a una familia de campos de radiancia neuronales basados en rejillas y ofrece posibilidades para aplicaciones en tiempo real."
+    },
+    {
+      "id": "tensorrf-2022",
+      "title": "TensorRF: Compact Neural Radiance Fields through Tensor Decomposition",
+      "year": 2022,
+      "venue": "ECCV",
+      "paper_url": "https://arxiv.org/abs/2203.09517",
+      "code": ["https://github.com/apchenstu/TensoRF"],
+      "why_transition": "利用张量分解降低参数量和内存需求，提高渲染效率。",
+      "summary_zh": "神经辐射场在高分辨率场景中需要大量参数和存储，限制了其实用性。TensorRF 的目标是通过张量分解技术实现紧凑的场景表示，提高效率。作者将密度和颜色分解为若干低秩平面和线向量的乘积，使参数规模从立方增长降为线性，并使用快速交叉注意实现渲染。实验证明，TensoRF 在合成质量接近 NeRF 的同时，显著减少了内存和计算开销。该方法为神经辐射场的紧凑表示提供了新途径，促进了轻量化研究。",
+      "summary_en": "Neural radiance fields require a large number of parameters and storage for high‑resolution scenes, limiting their practicality. The goal of TensoRF was to achieve a compact scene representation by using tensor decomposition to improve efficiency. The authors decomposed density and color into products of a few low‑rank plane and line vectors, reducing the parameter growth from cubic to linear, and used fast cross‑attention for rendering. Experiments showed that TensoRF achieved synthesis quality close to NeRF while significantly reducing memory and computational costs. This method provides a new avenue for compact representations of neural radiance fields and promotes lightweight research.",
+      "summary_es": "Los campos de radiancia neuronales requieren un gran número de parámetros y almacenamiento para escenas de alta resolución, lo que limita su practicidad. El objetivo de TensoRF era lograr una representación compacta de escenas mediante el uso de descomposición tensorial para mejorar la eficiencia. Los autores descompusieron la densidad y el color en productos de unos pocos vectores de plano y línea de bajo rango, reduciendo el crecimiento de los parámetros de cúbico a lineal, y utilizaron una atención cruzada rápida para el renderizado. Los experimentos demostraron que TensoRF lograba una calidad de síntesis cercana a NeRF al tiempo que reducía significativamente el uso de memoria y los costes computacionales. Este método ofrece una nueva vía para representaciones compactas de campos de radiancia neuronales y fomenta la investigación de modelos ligeros."
+    },
+    {
+      "id": "nerfplusplus-2020",
+      "title": "NeRF++: Analyzing and Improving Neural Radiance Fields",
+      "year": 2020,
+      "venue": "ICGTA",
+      "paper_url": "https://arxiv.org/abs/2010.07492",
+      "code": ["https://github.com/Kai-46/nerfplusplus"],
+      "why_transition": "扩展 NeRF 支持无界场景并提高外部区域渲染效果。",
+      "summary_zh": "原始 NeRF 假定有限边界，无法有效渲染无界场景或场景外部区域。NeRF++ 的目标是通过改进坐标表示和分层体渲染，使神经辐射场适应无界场景。作者引入一个外层场表示远端空域，并采用球坐标将外部区域映射到有限域，同时在外部和内部场景之间平滑过渡。实验显示，NeRF++ 可在户外或街景场景中生成更逼真的远景，并显著减少伪影。该工作拓宽了 NeRF 的应用范围，为城市级重建和全景视图合成铺平道路。",
+      "summary_en": "The original NeRF assumes a bounded volume and cannot effectively render unbounded scenes or exterior regions. The goal of NeRF++ was to adapt neural radiance fields to unbounded scenes by improving coordinate representation and layered volumetric rendering. The authors introduced an outer field representing the far space and used spherical coordinates to map the exterior region into a finite domain, blending smoothly between the outer and inner scenes. Experiments showed that NeRF++ generated more realistic distant views in outdoor or street scenes and significantly reduced artifacts. This work expanded the application scope of NeRF and paved the way for city‑scale reconstruction and panoramic view synthesis.",
+      "summary_es": "El NeRF original supone un volumen acotado y no puede renderizar eficazmente escenas sin límites ni regiones exteriores. El objetivo de NeRF++ era adaptar los campos de radiancia neuronales a escenas sin límites mediante la mejora de la representación de coordenadas y el renderizado volumétrico por capas. Los autores introdujeron un campo exterior que representa el espacio lejano y utilizaron coordenadas esféricas para mapear la región exterior en un dominio finito, mezclando suavemente las escenas exterior e interior. Los experimentos demostraron que NeRF++ generaba vistas distantes más realistas en escenas al aire libre o en la calle y reducía significativamente los artefactos. Este trabajo amplió el ámbito de aplicación de NeRF y allanó el camino para la reconstrucción a escala de ciudad y la síntesis de vistas panorámicas."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【896649381197060†L49-L62】",
+      "milestone": "【896649381197060†L49-L62】",
+      "frontier": "【896649381197060†L49-L62】",
+      "survey": "【896649381197060†L49-L62】"
+    }
+  }
+}

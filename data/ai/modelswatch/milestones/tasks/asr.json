@@ -1,0 +1,135 @@
+{
+  "slug": "asr",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "deep-speech2-2016",
+      "title": "Deep Speech 2: End-to-End Speech Recognition in English and Mandarin",
+      "year": 2016,
+      "venue": "ICML",
+      "paper_url": "https://arxiv.org/abs/1512.02595",
+      "code": ["https://github.com/mozilla/DeepSpeech"],
+      "summary_zh": "传统语音识别系统依赖声学模型、语言模型和词典等多阶段管道，训练复杂且难以端到端优化。Deep Speech 2 的目标是利用大型循环神经网络和时间序列对齐损失建立端到端语音识别系统，简化流程并提升精度。作者训练了多层循环网络结合连接时序分类（CTC）损失，在数千小时中英文语音数据上进行自监督学习，并使用数据增强和分布式 GPU 加速。结果显示，该模型在英语和普通话识别任务上超越传统 HMM‑GMM 系统，在噪声和口音条件下保持稳健。此研究表明端到端深度学习可以有效替代传统管道，为后续 ASR 模型奠定基础。",
+      "summary_en": "Traditional speech recognition systems rely on acoustic models, language models and lexicons in multi‑stage pipelines, making training complex and limiting end‑to‑end optimization. Deep Speech 2 aimed to build an end‑to‑end ASR system using large recurrent neural networks and sequence alignment losses to simplify the pipeline and improve accuracy. The authors trained multi‑layer recurrent networks with connectionist temporal classification (CTC) loss on thousands of hours of English and Mandarin speech, employing data augmentation and distributed GPU acceleration. Results showed that the model outperformed traditional HMM‑GMM systems on English and Mandarin tasks and remained robust under noise and accent variations. This work demonstrated that end‑to‑end deep learning can effectively replace traditional pipelines and laid the foundation for subsequent ASR models.",
+      "summary_es": "Los sistemas de reconocimiento de voz tradicionales dependen de modelos acústicos, modelos lingüísticos y diccionarios en cadenas de varias etapas, lo que complica el entrenamiento y limita la optimización de extremo a extremo. Deep Speech 2 se propuso construir un sistema ASR de extremo a extremo mediante grandes redes neuronales recurrentes y pérdidas de alineación de secuencias para simplificar el flujo y mejorar la precisión. Los autores entrenaron redes recurrentes de varias capas con la pérdida CTC en miles de horas de habla en inglés y mandarín, empleando aumento de datos y aceleración distribuida en GPU. Los resultados mostraron que el modelo superaba a los sistemas tradicionales HMM‑GMM en tareas de inglés y mandarín y seguía siendo robusto frente al ruido y las variaciones de acento. Este trabajo demostró que el aprendizaje profundo de extremo a extremo puede reemplazar eficazmente las cadenas tradicionales y sentó las bases para los modelos ASR posteriores."
+    },
+    "milestone": [
+      {
+        "id": "las-2016",
+        "title": "Listen, Attend and Spell",
+        "year": 2016,
+        "venue": "ICASSP",
+        "paper_url": "https://arxiv.org/abs/1508.01211",
+        "code": [],
+        "summary_zh": "端到端语音模型早期难以对齐长序列并充分利用上下文。Listen, Attend and Spell（LAS）旨在将注意力机制引入语音识别，通过编码器–解码器架构端到端生成字符序列。作者使用卷积前端和双向循环编码器提取声学表示，解码器通过注意力权重对输入帧进行对齐并输出字符。实验在 TIMIT 和 Switchboard 等数据集上显示，该模型相较纯 CTC 模型能更好地建模长程依赖并去除词典依赖。LAS 将序列到序列和注意力引入 ASR，被视为神经端到端语音的重要里程碑。",
+        "summary_en": "Early end‑to‑end speech models struggled to align long sequences and fully exploit context. Listen, Attend and Spell (LAS) sought to bring attention mechanisms into speech recognition by using an encoder–decoder architecture to generate character sequences end‑to‑end. The authors employed a convolutional frontend and a bidirectional recurrent encoder to extract acoustic representations, while the decoder applied attention weights to align input frames and output characters. Experiments on datasets such as TIMIT and Switchboard showed that this model better captured long‑range dependencies and removed reliance on pronunciation dictionaries compared with pure CTC models. LAS introduced sequence‑to‑sequence and attention mechanisms into ASR and is considered an important milestone in neural end‑to‑end speech.",
+        "summary_es": "Los modelos de voz de extremo a extremo tempranos tenían dificultades para alinear secuencias largas y aprovechar plenamente el contexto. Listen, Attend and Spell (LAS) pretendía incorporar mecanismos de atención al reconocimiento de voz mediante una arquitectura codificador‑decodificador para generar secuencias de caracteres de extremo a extremo. Los autores utilizaron un frontend convolucional y un codificador recurrente bidireccional para extraer representaciones acústicas, mientras que el decodificador aplicaba pesos de atención para alinear los fotogramas de entrada y producir caracteres. Los experimentos en conjuntos de datos como TIMIT y Switchboard mostraron que este modelo captaba mejor las dependencias a largo plazo y eliminaba la dependencia de diccionarios en comparación con modelos CTC puros. LAS introdujo mecanismos de secuencia a secuencia y atención en ASR y se considera un hito importante en el reconocimiento de voz neuronal."
+      },
+      {
+        "id": "conformer-2020",
+        "title": "Conformer: Convolution‑augmented Transformer for Speech Recognition",
+        "year": 2020,
+        "venue": "INTERSPEECH",
+        "paper_url": "https://arxiv.org/abs/2005.08100",
+        "code": ["https://github.com/sooftware/conformer"],
+        "summary_zh": "基于 RNN 的模型难以并行，纯 Transformer 模型又欠缺局部建模能力，限制了 ASR 表现。Conformer 的目标是结合卷积和自注意力，既捕捉局部特征又建模全局依赖。作者在 Transformer 编码器中嵌入卷积模块，与多头自注意力和前馈层串联，从而提升时间和频率建模能力。实验表明，Conformer 在 LibriSpeech 等基准上取得当时最佳的字错误率，并在参数数量相似的情况下超过纯 Transformer。Conformer 成为新一代声学编码器，被广泛用于后续模型。",
+        "summary_en": "RNN‑based models are hard to parallelize, while pure Transformer models lack local modeling ability, limiting ASR performance. The Conformer aimed to combine convolution and self‑attention to capture both local features and global dependencies. The authors embedded convolution modules into Transformer encoder blocks in series with multi‑head self‑attention and feedforward layers to enhance temporal and spectral modeling. Experiments showed that Conformer achieved state‑of‑the‑art word error rates on benchmarks such as LibriSpeech and surpassed pure Transformer models with comparable parameter counts. Conformer has become a next‑generation acoustic encoder and is widely used in subsequent models.",
+        "summary_es": "Los modelos basados en RNN son difíciles de paralelizar, mientras que los modelos Transformer puros carecen de capacidad de modelado local, lo que limita el rendimiento de ASR. Conformer pretendía combinar la convolución y la autoatención para capturar tanto las características locales como las dependencias globales. Los autores integraron módulos convolucionales en los bloques de codificación Transformer en serie con la autoatención multi‑cabezal y las capas feedforward para mejorar el modelado temporal y espectral. Los experimentos mostraron que Conformer lograba tasas de error de palabra de última generación en conjuntos como LibriSpeech y superaba a los modelos Transformer puros con un número de parámetros comparable. Conformer se ha convertido en un codificador acústico de nueva generación y se utiliza ampliamente en modelos posteriores."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "whisper-2022",
+        "title": "Whisper: Robust Speech Recognition via Large‑Scale Weak Supervision",
+        "year": 2022,
+        "venue": "OpenAI Release",
+        "paper_url": "https://openai.com/research/whisper",
+        "code": ["https://github.com/openai/whisper"],
+        "summary_zh": "现有端到端语音识别模型通常依赖有限的标注语音数据，泛化和抗噪能力有限。Whisper 的目标是通过大规模弱监督训练构建一个通用、高鲁棒性的语音模型，涵盖多语言和多任务。研究人员利用从网络爬取的 68 万小时语音、转录和翻译数据，训练了编码器–解码器架构，在语音识别、翻译和语音活动检测等任务上联合优化。结果表明，Whisper 在多语言和嘈杂条件下表现稳健，支持零样本和少样本的任务应用，并向公众发布开源模型。该项目展示了大规模弱监督在提升 ASR 通用性方面的潜力，促进了开源语音研究。",
+        "summary_en": "Existing end‑to‑end ASR models often rely on limited labeled speech data and show limited generalization and noise robustness. Whisper aimed to build a general and robust speech model through large‑scale weak supervision across multiple languages and tasks. Researchers used 680,000 hours of web‑crawled speech, transcripts and translations to train an encoder–decoder architecture jointly on speech recognition, translation and voice activity detection tasks. Results showed that Whisper performed robustly across languages and noisy conditions, supported zero‑shot and few‑shot task applications and released open models to the public. This project demonstrated the potential of large‑scale weak supervision for improving ASR generality and promoted open speech research.",
+        "summary_es": "Los modelos ASR de extremo a extremo existentes suelen depender de datos de voz etiquetados limitados y muestran una capacidad de generalización y robustez frente al ruido limitada. Whisper se propuso construir un modelo de voz general y robusto mediante un gran entrenamiento con supervisión débil en múltiples idiomas y tareas. Los investigadores utilizaron 680 000 horas de voz, transcripciones y traducciones obtenidas de la web para entrenar una arquitectura codificador‑decodificador de forma conjunta en tareas de reconocimiento de voz, traducción y detección de actividad vocal. Los resultados mostraron que Whisper era robusto en múltiples idiomas y condiciones ruidosas, permitía aplicaciones de cero y pocos ejemplos y publicó modelos abiertos al público. Este proyecto demostró el potencial de la supervisión débil a gran escala para mejorar la generalidad del ASR y promovió la investigación de voz abierta."
+      },
+      {
+        "id": "seamlessm4t-2023",
+        "title": "SeamlessM4T: Multilingual and Multimodal Speech and Text Translation",
+        "year": 2023,
+        "venue": "Meta AI Research",
+        "paper_url": "https://ai.facebook.com/blog/seamless-m4t/",
+        "code": ["https://github.com/facebookresearch/seamless_communication"],
+        "summary_zh": "跨语言沟通需要同时进行语音识别、翻译和合成，但现有系统通常拆分为多个模型，效率低且难以扩展。SeamlessM4T 的目标是构建一个统一的模型，支持近百种语言间的语音到文本和语音的转换以及文本翻译。研究采用多阶段 Transformer 架构，将语音到文本转换、文本翻译和文本到语音合成串联，并结合大规模自监督和跨模态训练。实验显示，该模型在语音翻译基准上达到或超越专用系统，同时具备端到端特性。SeamlessM4T 打破了 ASR 和 TTS 的壁垒，为全球实时跨语言沟通提供新范式。",
+        "summary_en": "Cross‑lingual communication requires speech recognition, translation and synthesis, yet existing systems usually split tasks into multiple models, leading to inefficiency and limited scalability. SeamlessM4T aimed to build a unified model supporting speech‑to‑text and speech conversion as well as text translation across nearly one hundred languages. The research employed a multi‑stage Transformer architecture chaining speech‑to‑text conversion, text translation and text‑to‑speech synthesis and combined large‑scale self‑supervised and cross‑modal training. Experiments showed that the model matched or surpassed specialized systems on speech translation benchmarks while maintaining end‑to‑end characteristics. SeamlessM4T breaks down barriers between ASR and TTS and provides a new paradigm for real‑time global cross‑lingual communication.",
+        "summary_es": "La comunicación entre idiomas requiere reconocimiento de voz, traducción y síntesis, pero los sistemas existentes suelen dividir las tareas en varios modelos, lo que provoca ineficiencia y poca escalabilidad. SeamlessM4T se propuso construir un modelo unificado que admitiera la conversión de voz a texto y de voz así como la traducción de texto en casi cien idiomas. La investigación empleó una arquitectura Transformer de varias etapas que encadena la conversión de voz a texto, la traducción de texto y la síntesis de texto a voz y combinó un entrenamiento auto‑supervisado a gran escala y multimodal. Los experimentos mostraron que el modelo igualaba o superaba a los sistemas especializados en referencias de traducción de voz y mantenía características de extremo a extremo. SeamlessM4T rompe las barreras entre ASR y TTS y ofrece un nuevo paradigma para la comunicación global en tiempo real entre idiomas."
+      }
+    ],
+    "survey": [
+      {
+        "id": "asr-survey-2021",
+        "title": "End‑to‑End Speech Recognition: A Survey",
+        "year": 2021,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2005.07910",
+        "summary_zh": "深度学习彻底改变了语音识别研究，端到端方法正在取代传统的声学和语言模型组合。该综述的目标是梳理端到端语音识别的模型类型、训练策略和解码方法，并总结研究趋势。作者建立了系统的分类，涵盖 CTC、注意力模型、RNN‑T 等架构，讨论了大规模数据预训练、无监督学习和多语种扩展等技术，并分析了开放挑战和未来方向。文中指出，端到端模型已将词错误率降低了一半以上，但仍需在鲁棒性、实时性和稀缺资源语种上改进。该综述为研究者理解 E2E ASR 提供了全面参考，促进了后续技术发展。",
+        "summary_en": "Deep learning has dramatically transformed speech recognition research, and end‑to‑end methods are replacing the traditional combination of acoustic and language models. The goal of this survey was to outline end‑to‑end ASR model types, training strategies and decoding methods and to summarize research trends. The authors provided a systematic taxonomy covering architectures such as CTC, attention models and RNN‑Transducers, discussed large‑scale data pretraining, unsupervised learning and multilingual expansion and analyzed open challenges and future directions. They noted that end‑to‑end models have reduced word error rates by more than half but still need improvements in robustness, real‑time performance and low‑resource languages. This survey offers researchers a comprehensive reference for understanding E2E ASR and fosters further technological development.",
+        "summary_es": "El aprendizaje profundo ha transformado drásticamente la investigación del reconocimiento de voz y los métodos de extremo a extremo están sustituyendo la combinación tradicional de modelos acústicos y lingüísticos. El objetivo de esta encuesta fue describir los tipos de modelos ASR de extremo a extremo, las estrategias de entrenamiento y los métodos de decodificación y resumir las tendencias de investigación. Los autores proporcionaron una taxonomía sistemática que abarca arquitecturas como CTC, modelos de atención y RNN‑Transducers, discutieron el preentrenamiento de datos a gran escala, el aprendizaje no supervisado y la expansión multilingüe y analizaron los retos abiertos y las direcciones futuras. Señalaron que los modelos de extremo a extremo han reducido la tasa de error de palabras en más de la mitad, pero aún necesitan mejoras en la robustez, el rendimiento en tiempo real y los idiomas de recursos limitados. Esta encuesta ofrece a los investigadores una referencia exhaustiva para comprender el ASR de extremo a extremo y fomenta el desarrollo tecnológico posterior."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "hmm-gmm-1980",
+      "title": "Hidden Markov Models and Gaussian Mixtures for ASR",
+      "year": 1980,
+      "venue": "Various",
+      "paper_url": "",
+      "code": [],
+      "why_transition": "早期语音识别采用 HMM 与高斯混合模型构建声学模型，为统计 ASR 奠定基础。",
+      "summary_zh": "20 世纪八九十年代的自动语音识别系统采用隐藏马尔可夫模型(HMM)和高斯混合模型(GMM)建立声学概率分布，并结合字典和语言模型解码。此范式的目标是通过统计建模将连续语音映射为离散词序列。研究者利用贝叶斯网络和 Viterbi 解码算法训练 HMM 参数，用高斯混合拟合每个音素的特征分布。虽然这种方法提升了语音识别的实用性，但存在模型独立训练、端到端优化困难等局限。该体系奠定了语音识别的统计基础，为后来深度学习方法提供了参考。",
+      "summary_en": "Automatic speech recognition systems of the 1980s and 1990s employed Hidden Markov Models (HMMs) and Gaussian Mixture Models (GMMs) to model acoustic probability distributions and decoded sequences using lexicons and language models. The objective of this paradigm was to statistically map continuous speech into discrete word sequences. Researchers trained HMM parameters via Bayesian frameworks and the Viterbi algorithm and used Gaussian mixtures to fit feature distributions for each phoneme. Although this approach increased the practicality of speech recognition, it suffered from independently trained components and difficulties in end‑to‑end optimization. The framework laid the statistical foundation for speech recognition and provided a reference for later deep learning methods.",
+      "summary_es": "Los sistemas de reconocimiento automático de voz de los años ochenta y noventa empleaban modelos ocultos de Markov (HMM) y modelos de mezcla gaussiana (GMM) para modelar las distribuciones de probabilidad acústica y decodificaban secuencias utilizando diccionarios y modelos lingüísticos. El objetivo de este paradigma era mapear estadísticamente el habla continua en secuencias de palabras discretas. Los investigadores entrenaban los parámetros de los HMM mediante marcos bayesianos y el algoritmo Viterbi y utilizaban mezclas gaussianas para ajustar las distribuciones de características de cada fonema. Aunque este enfoque incrementó la practicidad del reconocimiento de voz, adolecía de componentes entrenados de forma independiente y de dificultades para la optimización de extremo a extremo. Este marco sentó las bases estadísticas del reconocimiento de voz y proporcionó una referencia para los métodos de aprendizaje profundo posteriores."
+    },
+    {
+      "id": "ctc-2006",
+      "title": "Connectionist Temporal Classification",
+      "year": 2006,
+      "venue": "ICML",
+      "paper_url": "https://www.cs.toronto.edu/~graves/icml_2006.pdf",
+      "code": [],
+      "why_transition": "CTC 提出无对齐标签的序列标注方法，连接神经网络与语音识别管道，为端到端模型铺路。",
+      "summary_zh": "在语音识别中，输入音频和输出文本长度不一致，传统训练需要精确对齐。连接时序分类(CTC) 的目标是在没有帧级标签的情况下训练循环神经网络进行序列标注。该方法通过引入空白符和动态规划算法计算对齐概率，将标签空间扩展以允许重复和跳过，从而在一次前向传播中得到所有可能对齐。实验表明，使用 CTC 的网络可直接从未对齐的语音–文本对学习，并支持端到端优化。CTC 为端到端语音识别奠定了理论基础，被广泛用于 DeepSpeech 等模型。",
+      "summary_en": "In speech recognition, input audio and output text have mismatched lengths, and traditional training requires precise alignment. Connectionist Temporal Classification (CTC) aimed to train recurrent neural networks for sequence labeling without frame‑level labels. The method introduces a blank symbol and a dynamic programming algorithm to compute alignment probabilities, expanding the label space to allow repeats and skips so that all possible alignments are considered in one forward pass. Experiments showed that networks using CTC can learn directly from unaligned speech–text pairs and support end‑to‑end optimization. CTC laid the theoretical foundation for end‑to‑end speech recognition and has been widely used in models such as DeepSpeech.",
+      "summary_es": "En el reconocimiento de voz, las longitudes del audio de entrada y del texto de salida no coinciden, y el entrenamiento tradicional requiere una alineación precisa. La clasificación temporal conexionista (CTC) se propuso entrenar redes neuronales recurrentes para el etiquetado de secuencias sin etiquetas a nivel de fotograma. El método introduce un símbolo en blanco y un algoritmo de programación dinámica para calcular las probabilidades de alineación, ampliando el espacio de etiquetas para permitir repeticiones y saltos de modo que todas las alineaciones posibles se consideren en una única pasada hacia adelante. Los experimentos demostraron que las redes que utilizan CTC pueden aprender directamente de pares habla‑texto no alineados y permiten la optimización de extremo a extremo. CTC sentó las bases teóricas del reconocimiento de voz de extremo a extremo y se ha utilizado ampliamente en modelos como DeepSpeech."
+    },
+    {
+      "id": "rnnt-2019",
+      "title": "RNN‑Transducer: Sequence Transduction with RNNs",
+      "year": 2019,
+      "venue": "ICASSP",
+      "paper_url": "https://arxiv.org/abs/1211.3711",
+      "code": [],
+      "why_transition": "RNN‑T 将声学模型和语言模型融合为统一的端到端网络，成为主流流式 ASR 架构。",
+      "summary_zh": "为了在端到端语音识别中联合建模声学和语言信息，研究者提出了 RNN‑Transducer (RNN‑T) 框架。该方法的目标是通过一个统一网络同时预测输出符号和对齐，避免单独语言模型的需要。RNN‑T 使用编码器提取音频特征，预测器生成先前输出的隐状态，联合网络结合两者产出概率分布。实验表明，RNN‑T 在流式语音识别任务中取得优异表现，成为 Google 等工业系统的核心架构。此方法打通了即时解码和端到端建模，是从 CTC 向实时应用的过渡。",
+      "summary_en": "To jointly model acoustic and linguistic information in end‑to‑end ASR, researchers proposed the RNN‑Transducer (RNN‑T) framework. The goal of this method is to use a unified network to predict output symbols and alignments simultaneously, eliminating the need for an external language model. RNN‑T uses an encoder to extract audio features, a predictor to generate hidden states from previous outputs and a joint network to produce the probability distribution over output symbols. Experiments showed that RNN‑T achieved excellent performance on streaming speech recognition tasks and became the core architecture of industrial systems at Google and others. This method bridged CTC and real‑time applications and is an important transition.",
+      "summary_es": "Para modelar conjuntamente la información acústica y lingüística en el ASR de extremo a extremo, los investigadores propusieron el marco RNN‑Transducer (RNN‑T). El objetivo de este método es utilizar una red unificada para predecir simultáneamente los símbolos de salida y las alineaciones, eliminando la necesidad de un modelo lingüístico externo. RNN‑T utiliza un codificador para extraer las características de audio, un predictor para generar estados ocultos a partir de las salidas anteriores y una red conjunta para producir la distribución de probabilidad sobre los símbolos de salida. Los experimentos demostraron que RNN‑T lograba un rendimiento excelente en tareas de reconocimiento de voz en streaming y se convirtió en la arquitectura central de sistemas industriales como los de Google. Este método sirvió de puente entre CTC y las aplicaciones en tiempo real y representa una transición importante."
+    },
+    {
+      "id": "wav2vec2-2020",
+      "title": "Wav2Vec 2.0: A Framework for Self‑Supervised Speech Representation Learning",
+      "year": 2020,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/2006.11477",
+      "code": ["https://github.com/facebookresearch/fairseq/tree/main/examples/wav2vec"],
+      "why_transition": "提出自监督学习从原始音频中学到通用特征，为数据匮乏场景和微调奠定基础。",
+      "summary_zh": "大规模有标注语音资源稀缺，限制了端到端模型在多语种和低资源条件下的性能。Wav2Vec 2.0 的目标是通过自监督学习从未标注的原始音频中学得强大的表征，然后用少量标注数据微调进行语音识别。作者设计了卷积特征提取器和 Transformer 编码器，并通过对比学习预测掩蔽的潜在表示，训练阶段不需要标签。实验表明，Wav2Vec 2.0 在仅使用 10 分钟标注数据的情况下实现了接近全监督模型的性能，在多个语种和任务上取得显著提升。该方法推动了自监督在语音领域的应用，并成为许多系统的预训练基石。",
+      "summary_en": "Large amounts of labeled speech resources are scarce, limiting end‑to‑end models in multilingual and low‑resource conditions. Wav2Vec 2.0 aimed to learn powerful representations from unlabeled raw audio through self‑supervised learning and then fine‑tune on small amounts of labeled data for speech recognition. The authors designed a convolutional feature extractor and a Transformer encoder and trained them with contrastive learning to predict masked latent representations without labels. Experiments showed that Wav2Vec 2.0 achieved performance close to fully supervised models using only ten minutes of labeled data and delivered significant gains across languages and tasks. This method advanced self‑supervised learning in speech and became a pretraining cornerstone for many systems.",
+      "summary_es": "Hay pocos recursos de voz etiquetados a gran escala, lo que limita los modelos de extremo a extremo en condiciones multilingües y de bajos recursos. Wav2Vec 2.0 se propuso aprender representaciones potentes a partir de audio sin etiquetar mediante aprendizaje auto‑supervisado y luego ajustar con pequeñas cantidades de datos etiquetados para el reconocimiento de voz. Los autores diseñaron un extractor de características convolucional y un codificador Transformer y los entrenaron con aprendizaje contrastivo para predecir representaciones latentes enmascaradas sin etiquetas. Los experimentos demostraron que Wav2Vec 2.0 alcanzaba un rendimiento cercano al de los modelos totalmente supervisados utilizando solo diez minutos de datos etiquetados y lograba mejoras significativas en varios idiomas y tareas. Este método impulsó el aprendizaje auto‑supervisado en el ámbito de la voz y se convirtió en una piedra angular del preentrenamiento para muchos sistemas."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【126428085619729†L49-L64】",
+      "milestone": "【126428085619729†L49-L64】",
+      "frontier": "【126428085619729†L49-L64】",
+      "survey": "【126428085619729†L49-L64】"
+    }
+  }
+}

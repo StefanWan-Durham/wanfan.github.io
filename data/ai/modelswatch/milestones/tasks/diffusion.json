@@ -1,0 +1,135 @@
+{
+  "slug": "diffusion",
+  "last_reviewed": "2025-09-18",
+  "core": {
+    "earliest": {
+      "id": "ddpm-2020",
+      "title": "Denoising Diffusion Probabilistic Models (DDPM)",
+      "year": 2020,
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/abs/2006.11239",
+      "code": ["https://github.com/hojonathanho/diffusion"],
+      "summary_zh": "生成对抗网络在图像生成方面表现出色，但存在训练不稳定和模式崩溃等问题，需要新的生成模型。DDPM 的目标是引入一种基于逐步扩散和去噪的概率模型，用统一的框架实现高质量样本生成。作者设计了一个前向过程，通过向数据逐渐添加高斯噪声直到成为纯噪声，并训练一个神经网络反向去噪恢复原始样本，利用变分下界进行优化。实验表明，该模型在 CIFAR‑10 等数据集上的生成质量竞争甚至优于部分自回归模型，同时具有良好的对数似然。该工作使扩散模型成为深度生成的重要分支，为后续改进和跨领域应用奠定了理论基础。",
+      "summary_en": "Generative adversarial networks achieved impressive image generation but suffer from unstable training and mode collapse, motivating the need for new generative models. The goal of DDPM was to introduce a probabilistic model based on a gradual diffusion and denoising process that provides a unified framework for high‑quality sample generation. The authors designed a forward process that progressively adds Gaussian noise to data until it becomes pure noise and trained a neural network to reverse the diffusion and recover the original samples, optimizing a variational lower bound. Experiments showed that the model produced competitive sample quality on datasets such as CIFAR‑10 and achieved log‑likelihoods comparable to some autoregressive models. This work established diffusion models as an important branch of deep generative modeling and laid the theoretical foundation for subsequent improvements and cross‑domain applications.",
+      "summary_es": "Las redes generativas antagónicas lograron una generación de imágenes impresionante, pero sufren de entrenamiento inestable y colapso de modos, lo que motiva la necesidad de nuevos modelos generativos. El objetivo de DDPM era introducir un modelo probabilístico basado en un proceso gradual de difusión y desruido que proporcionara un marco unificado para la generación de muestras de alta calidad. Los autores diseñaron un proceso directo que añade progresivamente ruido gaussiano a los datos hasta convertirlos en ruido puro y entrenaron una red neuronal para invertir la difusión y recuperar las muestras originales, optimizando una cota inferior variacional. Los experimentos demostraron que el modelo producía una calidad de muestra competitiva en conjuntos como CIFAR‑10 y lograba log‑verosimilitudes comparables a algunos modelos autoregresivos. Este trabajo estableció los modelos de difusión como una rama importante de la generación profunda y sentó las bases teóricas para mejoras posteriores y aplicaciones en dominios cruzados."
+    },
+    "milestone": [
+      {
+        "id": "glide-2021",
+        "title": "GLIDE: Towards Photorealistic Image Generation and Editing with Text‑Guided Diffusion Models",
+        "year": 2021,
+        "venue": "ICML",
+        "paper_url": "https://arxiv.org/abs/2112.10741",
+        "code": [],
+        "summary_zh": "早期扩散模型在无条件图像生成上取得成功，但缺乏对文本的精细控制，难以实现高质量的文本到图像生成与编辑。GLIDE 的目标是将文本引导融入扩散模型，实现可控的图像生成和编辑。作者采用了语言‑引导的扩散模型，结合 CLIP 条件和一个去噪网络，通过梯度指导在生成过程中逐步调整样本使其符合文本描述。该模型能够生成高保真、语义一致的图像，并支持在生成后的细粒度编辑。GLIDE 展示了扩散模型在多模态生成中的潜力，为后续 DALL·E 2 和 Imagen 等模型奠定基础。",
+        "summary_en": "Early diffusion models were successful at unconditional image generation but lacked fine‑grained control by text, making it difficult to achieve high‑quality text‑to‑image generation and editing. GLIDE aimed to integrate text guidance into diffusion models to enable controllable image generation and editing. The authors employed a language‑guided diffusion model that combined CLIP conditioning and a denoising network and used gradient guidance to iteratively adjust samples during generation to match the text description. The model could generate high‑fidelity, semantically consistent images and supported fine‑grained editing after generation. GLIDE demonstrated the potential of diffusion models for multimodal generation and laid the groundwork for later models such as DALL·E 2 and Imagen.",
+        "summary_es": "Los modelos de difusión iniciales tuvieron éxito en la generación de imágenes incondicionales, pero carecían de un control detallado por texto, lo que dificultaba lograr una generación y edición de imágenes a partir de texto de alta calidad. GLIDE se propuso integrar la guía de texto en los modelos de difusión para habilitar una generación de imágenes controlable y su edición. Los autores emplearon un modelo de difusión guiado por lenguaje que combinaba el condicionamiento de CLIP y una red de desruido, y utilizaron guía por gradientes para ajustar iterativamente las muestras durante la generación de modo que coincidieran con la descripción textual. El modelo podía generar imágenes de alta fidelidad y semánticamente coherentes y admitía ediciones de grano fino después de la generación. GLIDE demostró el potencial de los modelos de difusión para la generación multimodal y sentó las bases para modelos posteriores como DALL·E 2 e Imagen."
+      },
+      {
+        "id": "imagen-2022",
+        "title": "Photorealistic Text‑to‑Image Diffusion with Imagen",
+        "year": 2022,
+        "venue": "ICML",
+        "paper_url": "https://arxiv.org/abs/2205.11487",
+        "code": [],
+        "summary_zh": "文本到图像扩散模型在逼真度和文本对齐方面仍有局限，尤其需要更强的语言理解和图像细节。Imagen 的目标是通过大规模文本编码和级联扩散架构，生成高分辨率、具备语义一致性的图像。研究采用基于 T5 的大模型作为文本编码器，将语言理解能力引入扩散过程，并使用多阶段级联扩散，从低分辨率逐步提升到高清晰度。实验表明，Imagen 在 FID 和人类偏好评测上超过了 GLIDE 等前作，能生成细腻自然的场景和对象。该工作显示出扩散模型在可控文本生成方面的强大潜力，推动了大型模型与扩散技术的结合。",
+        "summary_en": "Text‑to‑image diffusion models still had limitations in realism and text alignment and required stronger language understanding and image detail. Imagen aimed to generate high‑resolution, semantically coherent images by employing large‑scale text encoding and a cascaded diffusion architecture. The research used a T5‑based large model as a text encoder to inject language understanding into the diffusion process and employed multi‑stage cascaded diffusion to progressively refine images from low to high resolution. Experiments showed that Imagen outperformed earlier works such as GLIDE on FID and human preference evaluations and could generate delicate and natural scenes and objects. This work demonstrated the strong potential of diffusion models for controllable text generation and promoted the combination of large language models with diffusion techniques.",
+        "summary_es": "Los modelos de difusión de texto a imagen seguían teniendo limitaciones en cuanto a realismo y alineación textual, y requerían una comprensión lingüística más sólida y detalles de imagen. Imagen se propuso generar imágenes de alta resolución y coherencia semántica mediante el uso de codificación de texto a gran escala y una arquitectura de difusión en cascada. La investigación utilizó un gran modelo basado en T5 como codificador de texto para inyectar comprensión lingüística en el proceso de difusión y empleó una difusión en cascada de varias etapas para refinar progresivamente las imágenes de baja a alta resolución. Los experimentos demostraron que Imagen superaba a trabajos anteriores como GLIDE en FID y evaluaciones de preferencia humana y podía generar escenas y objetos delicados y naturales. Este trabajo demostró el gran potencial de los modelos de difusión para la generación controlada de texto e impulsó la combinación de grandes modelos lingüísticos con técnicas de difusión."
+      }
+    ],
+    "frontier": [
+      {
+        "id": "stable-diffusion-2022",
+        "title": "High‑Resolution Image Synthesis with Latent Diffusion Models (Stable Diffusion)",
+        "year": 2022,
+        "venue": "CVPR",
+        "paper_url": "https://arxiv.org/abs/2112.10752",
+        "code": ["https://github.com/CompVis/stable-diffusion"],
+        "summary_zh": "扩散模型生成图像效果优异，但在像素空间训练计算成本高且难以应用于普通硬件。Stable Diffusion 的目标是利用潜空间扩散实现高效的高分辨率文本生成，同时公开开源模型。研究首先训练自动编码器将图像压缩到潜空间，再在该潜表示上训练扩散模型，并采用 U‑Net 结构和条件文本编码进行生成。结果显示，该模型能够在消费级 GPU 上生成 512×512 的高质量图像，文本控制能力强，社区广泛使用。Stable Diffusion 的开源推动了生成式艺术的民主化，引发了开源生成模型的浪潮。",
+        "summary_en": "Diffusion models produce excellent images, but training in pixel space is computationally expensive and difficult to deploy on consumer hardware. The goal of Stable Diffusion was to achieve efficient high‑resolution text‑based generation using latent space diffusion while releasing the model openly. The researchers first trained an autoencoder to compress images into a latent space, then trained a diffusion model in that latent representation, employing a U‑Net architecture and conditional text encoding for generation. Results showed that the model could generate 512×512 high‑quality images on consumer GPUs with strong text control and has been widely adopted by the community. The open release of Stable Diffusion democratized generative art and triggered a wave of open‑source generative models.",
+        "summary_es": "Los modelos de difusión producen imágenes excelentes, pero el entrenamiento en el espacio de píxeles es computacionalmente costoso y difícil de desplegar en hardware de consumo. El objetivo de Stable Diffusion era lograr una generación eficiente de texto a alta resolución utilizando difusión en un espacio latente y publicar el modelo de manera abierta. Los investigadores primero entrenaron un codificador automático para comprimir las imágenes en un espacio latente y después entrenaron un modelo de difusión en esa representación latente, empleando una arquitectura U‑Net y codificación de texto condicional para la generación. Los resultados mostraron que el modelo podía generar imágenes de 512×512 de alta calidad en GPU de consumo, con un fuerte control por texto, y ha sido ampliamente adoptado por la comunidad. La publicación abierta de Stable Diffusion democratizó el arte generativo y desencadenó una ola de modelos generativos de código abierto."
+      },
+      {
+        "id": "sdxl-2023",
+        "title": "SDXL: Enhancing Stable Diffusion for High‑Quality Image Generation",
+        "year": 2023,
+        "venue": "arXiv",
+        "paper_url": "https://github.com/Stability-AI/Stable-Diffusion-X4",
+        "code": ["https://github.com/Stability-AI/Stable-Diffusion-X4"],
+        "summary_zh": "随着 Stable Diffusion 的普及，社区对更高分辨率和真实感提出需求，而原模型存在细节不足和颜色偏差。SDXL 的目标是改进稳定扩散架构，提供更好的图像质量和文本一致性。研究团队引入了三通道潜编码器、更大的 UNet 和新的文本编码器，并采用高分辨率训练和配准技巧。实验表明，SDXL 在细节、照明和构图方面明显优于原 Stable Diffusion，并保留了高效的推理速度。该版本成为开源文本生成图像的最新基线，推动了开源生成模型的持续发展。",
+        "summary_en": "As Stable Diffusion became popular, the community demanded higher resolution and realism, and the original model showed limitations in detail and color fidelity. SDXL aimed to improve the stable diffusion architecture to provide better image quality and text consistency. The research team introduced a three‑channel latent encoder, a larger U‑Net and a new text encoder and applied high‑resolution training and alignment techniques. Experiments showed that SDXL significantly outperformed the original Stable Diffusion in detail, lighting and composition while retaining efficient inference speed. This version became the latest baseline for open‑source text‑to‑image generation and propelled the continued development of open‑source generative models.",
+        "summary_es": "A medida que Stable Diffusion se popularizaba, la comunidad exigía mayor resolución y realismo, y el modelo original presentaba limitaciones en cuanto a detalle y fidelidad del color. SDXL se propuso mejorar la arquitectura de la difusión estable para proporcionar mejor calidad de imagen y coherencia textual. El equipo de investigación introdujo un codificador latente de tres canales, una U‑Net más grande y un nuevo codificador de texto, y aplicó entrenamiento de alta resolución y técnicas de alineación. Los experimentos demostraron que SDXL superaba significativamente al Stable Diffusion original en detalle, iluminación y composición, manteniendo una velocidad de inferencia eficiente. Esta versión se convirtió en la nueva referencia para la generación de imágenes a partir de texto de código abierto y fomentó el desarrollo continuo de modelos generativos de código abierto."
+      }
+    ],
+    "survey": [
+      {
+        "id": "diffusion-survey-2022",
+        "title": "Diffusion Models: A Comprehensive Survey of Methods and Applications",
+        "year": 2022,
+        "venue": "arXiv",
+        "paper_url": "https://arxiv.org/abs/2209.00796",
+        "summary_zh": "扩散模型在图像、语音和信号生成等领域迅速崛起，但缺乏系统性的综述。该综述的目标是对扩散模型的发展、方法类别和应用场景进行全面总结。作者将研究归纳为高效采样、似然估计和处理特殊结构数据三大方向，介绍了扩散模型的理论基础以及改进策略，并盘点了在计算机视觉、自然语言、科学计算等多领域的应用。文章还讨论了扩散模型的优势与挑战及未来趋势，为研究人员提供了系统参考。该综述对认识扩散模型的全貌和推动跨领域应用具有重要意义。",
+        "summary_en": "Diffusion models have rapidly emerged in image, speech and signal generation, but lacked a systematic review. The goal of this survey was to provide a comprehensive summary of the development, methodological categories and application scenarios of diffusion models. The authors organized research into three main directions: efficient sampling, likelihood estimation and handling data with special structures, introduced the theoretical foundations of diffusion models and improvement strategies and surveyed their applications in computer vision, natural language and scientific computing. The paper also discussed the advantages, challenges and future trends of diffusion models, providing a systematic reference for researchers. This survey is significant for understanding the full landscape of diffusion models and promoting cross‑domain applications.",
+        "summary_es": "Los modelos de difusión han surgido rápidamente en la generación de imágenes, voz y señales, pero carecían de una revisión sistemática. El objetivo de esta encuesta fue ofrecer un resumen completo del desarrollo, las categorías metodológicas y los escenarios de aplicación de los modelos de difusión. Los autores organizaron la investigación en tres direcciones principales: muestreo eficiente, estimación de probabilidad y tratamiento de datos con estructuras especiales; introdujeron los fundamentos teóricos de los modelos de difusión y las estrategias de mejora y revisaron sus aplicaciones en visión por ordenador, lenguaje natural y computación científica. El artículo también discutió las ventajas, los retos y las tendencias futuras de los modelos de difusión, proporcionando una referencia sistemática para los investigadores. Esta encuesta es significativa para comprender el panorama completo de los modelos de difusión y promover las aplicaciones en dominios cruzados."
+      }
+    ]
+  },
+  "transitions": [
+    {
+      "id": "adm-2021",
+      "title": "Improved Denoising Diffusion Probabilistic Models (ADM)",
+      "year": 2021,
+      "venue": "ICML",
+      "paper_url": "https://arxiv.org/abs/2102.09672",
+      "code": ["https://github.com/openai/guided-diffusion"],
+      "why_transition": "改进基础扩散模型并加入分类器指导，显著提升样本质量。",
+      "summary_zh": "原始扩散模型生成速度慢且图像质量有限，需要改进训练和指导策略。ADM 的目标是通过改进损失函数和引入分类器指导，提升扩散模型的生成性能。作者采用了余弦调度和重加权训练，结合独立分类器在采样过程中施加梯度引导，从而控制生成目标类别。实验表明，该模型在 ImageNet 上取得了比 GAN 更好的 FID，并提高了采样效率。ADM 成为扩散模型的重要基线，为后续的条件引导研究奠定了框架。",
+      "summary_en": "The original diffusion models had slow sampling and limited image quality, necessitating improvements in training and guidance strategies. The goal of ADM was to enhance diffusion model generation performance by improving the loss function and introducing classifier guidance. The authors employed cosine noise schedules and reweighted training and combined an independent classifier to apply gradient guidance during sampling to control the generated class. Experiments showed that the model achieved better FID scores on ImageNet than GANs and improved sampling efficiency. ADM became an important baseline for diffusion models and laid the framework for subsequent work on conditional guidance.",
+      "summary_es": "Los modelos de difusión originales tenían un muestreo lento y una calidad de imagen limitada, por lo que era necesario mejorar las estrategias de entrenamiento y guía. El objetivo de ADM era mejorar el rendimiento generativo de los modelos de difusión mediante la mejora de la función de pérdida y la introducción de una guía de clasificador. Los autores emplearon programaciones de ruido cosenoidal y un entrenamiento reponderado, y combinaron un clasificador independiente para aplicar guía por gradiente durante el muestreo, controlando así la clase generada. Los experimentos demostraron que el modelo conseguía mejores puntuaciones FID en ImageNet que las GAN y mejoraba la eficiencia del muestreo. ADM se convirtió en una base importante para los modelos de difusión y sentó el marco para trabajos posteriores sobre guía condicional."
+    },
+    {
+      "id": "classifier-free-guidance-2021",
+      "title": "Classifier‑Free Diffusion Guidance",
+      "year": 2021,
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/abs/2207.12598",
+      "code": [],
+      "why_transition": "无需外部分类器即可实现条件控制，提高生成质量和灵活性。",
+      "summary_zh": "分类器指导扩散需要训练独立的分类器，增加了复杂性并限制了条件种类。Classifier‑Free Guidance 的目标是通过同一模型在有条件和无条件模式下训练，实现无分类器的条件控制。方法是同时训练模型在输入文本条件和无条件情况下的去噪能力，并在采样时按比例线性组合两种预测，以调节引导强度。结果表明，该技术可以在不增加额外网络的情况下显著提高图像质量和一致性，被广泛用于文本到图像扩散。Classifier‑Free Guidance 改善了控制方式，为后续的扩散模型提供了灵活手段。",
+      "summary_en": "Classifier guidance for diffusion requires training an independent classifier, adding complexity and limiting the types of conditions. The goal of classifier‑free guidance was to achieve conditional control without an external classifier by training the same model in conditional and unconditional modes. The method trains the model to denoise both with and without text conditioning and linearly combines the two predictions during sampling to adjust guidance strength. Results showed that this technique could significantly improve image quality and consistency without adding extra networks and has been widely used in text‑to‑image diffusion. Classifier‑free guidance improved control and provided a flexible tool for subsequent diffusion models.",
+      "summary_es": "La guía de clasificadores para la difusión requiere entrenar un clasificador independiente, lo que añade complejidad y limita los tipos de condiciones. El objetivo de la guía sin clasificador era lograr un control condicional sin un clasificador externo entrenando el mismo modelo en modos condicional y no condicional. El método entrena el modelo para desruido tanto con como sin condicionamiento de texto y combina linealmente las dos predicciones durante el muestreo para ajustar la intensidad de la guía. Los resultados mostraron que esta técnica podía mejorar significativamente la calidad y coherencia de la imagen sin añadir redes adicionales y se ha utilizado ampliamente en la difusión de texto a imagen. La guía sin clasificador mejoró el control y proporcionó una herramienta flexible para los modelos de difusión posteriores."
+    },
+    {
+      "id": "latent-diffusion-2022",
+      "title": "High‑Resolution Diffusion Models Using Latent Spaces (Latent Diffusion)",
+      "year": 2022,
+      "venue": "CVPR",
+      "paper_url": "https://arxiv.org/abs/2112.10752",
+      "code": ["https://github.com/CompVis/latent-diffusion"],
+      "why_transition": "将扩散过程转移到潜空间，大幅降低计算成本并保持生成质量。",
+      "summary_zh": "直接在像素空间进行扩散建模计算复杂且难以扩展到高分辨率。Latent Diffusion 的目标是通过在潜空间执行扩散过程，兼顾效率和图像质量。作者首先用变分自动编码器训练一个感知损失驱动的压缩器，将图像映射到低维潜表示，然后在该潜空间上训练扩散模型，并在解码时恢复到像素域。实验表明，潜扩散模型在保持视觉质量的同时大幅减少了训练和推理成本，并支持更高分辨率的生成。该方法成为 Stable Diffusion 等开源模型的核心，推动扩散技术普及。",
+      "summary_en": "Directly modeling diffusion in pixel space is computationally intensive and difficult to scale to high resolutions. The goal of Latent Diffusion was to perform the diffusion process in a latent space to balance efficiency and image quality. The authors first trained a variational autoencoder with perceptual loss to compress images into a low‑dimensional latent representation, then trained a diffusion model in that latent space and decoded back to the pixel domain. Experiments showed that latent diffusion models significantly reduced training and inference costs while maintaining visual quality and supported higher‑resolution generation. This method became the core of open models such as Stable Diffusion and advanced the widespread adoption of diffusion techniques.",
+      "summary_es": "Modelar directamente la difusión en el espacio de píxeles es computacionalmente intensivo y difícil de escalar a altas resoluciones. El objetivo de Latent Diffusion era ejecutar el proceso de difusión en un espacio latente para equilibrar la eficiencia y la calidad de la imagen. Los autores primero entrenaron un codificador automático variacional con pérdida perceptual para comprimir las imágenes en una representación latente de baja dimensión, luego entrenaron un modelo de difusión en ese espacio latente y descodificaron de nuevo al dominio de los píxeles. Los experimentos demostraron que los modelos de difusión latente reducían significativamente los costes de entrenamiento e inferencia manteniendo la calidad visual y admitían la generación de mayor resolución. Este método se convirtió en el núcleo de modelos abiertos como Stable Diffusion y promovió la adopción generalizada de las técnicas de difusión."
+    },
+    {
+      "id": "controlnet-2023",
+      "title": "ControlNet: Adding Conditional Control to Text‑to‑Image Diffusion Models",
+      "year": 2023,
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/abs/2302.05543",
+      "code": ["https://github.com/lllyasviel/ControlNet"],
+      "why_transition": "引入额外的控制分支，使扩散模型能够根据姿态、边缘等条件生成符合约束的图像。",
+      "summary_zh": "文本到图像扩散模型在自由生成时表现优异，但缺乏对结构化条件的精细控制，如姿态、草图或深度图。ControlNet 的目标是通过引入控制分支，使扩散模型在保持原能力的同时遵循用户提供的条件。作者在预训练的稳定扩散模型中添加一个复制的控制网络，接收边缘、姿态等条件特征，与原始网络共享权重并在训练时冻结主体模型，仅调整控制分支。实验表明，ControlNet 能够生成与条件严格一致的图像，例如根据草图生成详细的照片，同时保持文本语义。该方法扩展了扩散模型的适用范围，成为应用场景中常用的控制工具。",
+      "summary_en": "Text‑to‑image diffusion models excel at free generation but lack fine‑grained control over structured conditions such as pose, sketches or depth maps. ControlNet aimed to enable diffusion models to follow user‑provided conditions while retaining their original capabilities. The authors added a duplicated control network to a pre‑trained stable diffusion model that receives conditional features such as edges or poses, shares weights with the original network and keeps the main model frozen during training while only tuning the control branch. Experiments showed that ControlNet can generate images that strictly adhere to the conditions—for example, producing detailed photos from a sketch—while maintaining the text semantics. This method extended the applicability of diffusion models and has become a commonly used control tool in applications.",
+      "summary_es": "Los modelos de difusión texto‑imagen son excelentes en la generación libre, pero carecen de control detallado sobre condiciones estructuradas como posturas, bocetos o mapas de profundidad. ControlNet se propuso permitir que los modelos de difusión siguieran las condiciones proporcionadas por el usuario conservando al mismo tiempo sus capacidades originales. Los autores añadieron una red de control duplicada a un modelo de difusión estable preentrenado que recibe características condicionales como bordes o posturas, comparte pesos con la red original y mantiene el modelo principal congelado durante el entrenamiento, ajustando únicamente la rama de control. Los experimentos demostraron que ControlNet puede generar imágenes que se adhieren estrictamente a las condiciones, por ejemplo, produciendo fotos detalladas a partir de un boceto, y mantiene la semántica del texto. Este método amplió la aplicabilidad de los modelos de difusión y se ha convertido en una herramienta de control de uso común en aplicaciones."
+    }
+  ],
+  "meta": {
+    "citations": {
+      "earliest": "【7168647884331†L50-L62】",
+      "milestone": "【7168647884331†L50-L62】",
+      "frontier": "【7168647884331†L50-L62】",
+      "survey": "【7168647884331†L50-L62】"
+    }
+  }
+}
