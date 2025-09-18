@@ -718,7 +718,10 @@
       "summary": "Stable Diffusion web UI",
       "updated_at": "2025-09-17T17:49:02Z",
       "summary_zh": "Stable Diffusion web UI 是一个基于 Gradio 构建的 Web 界面，用于运行和操作 Stable Diffusion 模型。它提供了丰富的功能，包括文生图、图生图、图像修复、超分辨率以及模型训练等。该工具支持多种插件和自定义选项，适用于 AI 艺术创作、图像编辑和实验研究等场景。其开源特性吸引了大量开发者和创作者参与改进和扩展。",
-      "summary_es": "Interfaz web para Stable Diffusion que permite generar imágenes mediante IA. Destaca por su facilidad de uso, amplia personalización y extensibilidad mediante complementos. Ideal para artistas digitales, diseñadores e investigadores que buscan una herramienta versátil para creación visual asistida."
+      "summary_es": "Interfaz web para Stable Diffusion que permite generar imágenes mediante IA. Destaca por su facilidad de uso, amplia personalización y extensibilidad mediante complementos. Ideal para artistas digitales, diseñadores e investigadores que buscan una herramienta versátil para creación visual asistida.",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "avelino/awesome-go",
@@ -890,7 +893,10 @@
       "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "updated_at": "2025-09-17T17:38:23Z",
       "summary_zh": "Transformers 是由 Hugging Face 开发的开源库，专注于提供最先进的自然语言处理、计算机视觉、音频和多模态模型的实现。该库支持多种预训练模型，如 BERT、GPT 和 T5，适用于推理和训练任务。其模块化设计允许开发者轻松调用、微调和部署模型，同时支持 TensorFlow 和 PyTorch 框架。Transformers 广泛应用于文本生成、情感分析、图像分类等场景，是机器学习和深度学习领域的重要工具。",
-      "summary_es": "Transformers es un framework de código abierto para modelos de aprendizaje automático de última generación en texto, visión, audio y multimodal. Permite inferencia y entrenamiento con arquitecturas como BERT, GPT y T5. Es ampliamente usado en NLP, generación de imágenes y procesamiento de audio."
+      "summary_es": "Transformers es un framework de código abierto para modelos de aprendizaje automático de última generación en texto, visión, audio y multimodal. Permite inferencia y entrenamiento con arquitecturas como BERT, GPT y T5. Es ampliamente usado en NLP, generación de imágenes y procesamiento de audio.",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "massgravel/Microsoft-Activation-Scripts",
@@ -1392,7 +1398,10 @@
       "summary": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
       "updated_at": "2025-09-17T17:52:43Z",
       "summary_zh": "Langflow 是一个用于构建和部署 AI 驱动的智能体与工作流的开源工具。它通过可视化界面简化了复杂 AI 流程的设计，支持用户以拖拽方式编排任务流。该工具兼容多种主流 AI 框架和 API，适用于自动化数据处理、内容生成及智能决策等场景。Langflow 特别适合开发者和技术团队快速搭建可扩展的 AI 应用原型或生产级解决方案。",
-      "summary_es": "Langflow es una herramienta para crear y desplegar agentes y flujos de trabajo con IA. Permite diseñar pipelines visualmente, integrando modelos y APIs. Destaca por su interfaz intuitiva y flexibilidad para prototipado rápido. Ideal para desarrolladores que buscan automatizar procesos con inteligencia artificial."
+      "summary_es": "Langflow es una herramienta para crear y desplegar agentes y flujos de trabajo con IA. Permite diseñar pipelines visualmente, integrando modelos y APIs. Destaca por su interfaz intuitiva y flexibilidad para prototipado rápido. Ideal para desarrolladores que buscan automatizar procesos con inteligencia artificial.",
+      "task_keys": [
+        "tool_use"
+      ]
     },
     {
       "id": "electron/electron",

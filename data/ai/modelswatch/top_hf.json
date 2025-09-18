@@ -38,7 +38,11 @@
       "summary": "MobileNetV3-Small 100 是一个轻量级卷积神经网络模型，专为移动和边缘设备设计。它基于 MobileNetV3 架构，通过优化网络结构和引入高效的注意力机制，在保持较低计算成本的同时实现较高的图像分类精度。该模型使用 LAMB 优化器在 ImageNet-1k 数据集上训练，适用于资源受限环境中的实时图像识别任务。其紧凑的参数量和高效的计算性能使其成为移动端和嵌入式设备部署的理想选择。",
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_zh": "MobileNetV3-Small 100 是一个轻量级卷积神经网络模型，专为移动和边缘设备设计。它基于 MobileNetV3 架构，通过优化网络结构和引入高效的注意力机制，在保持较低计算成本的同时实现较高的图像分类精度。该模型使用 LAMB 优化器在 ImageNet-1k 数据集上训练，适用于资源受限环境中的实时图像识别任务。其紧凑的参数量和高效的计算性能使其成为移动端和嵌入式设备部署的理想选择。",
-      "summary_es": "MobileNetV3-Small es un modelo de visión por computadora optimizado para dispositivos móviles. Destaca por su eficiencia computacional y bajo consumo de recursos, ideal para aplicaciones en tiempo real. Utiliza la función de activación h-swish y arquitectura de búsqueda neural para mejorar el rendimiento. Casos de uso incluyen clasificación de imágenes y detección de objetos en entornos con limitaciones de hardware."
+      "summary_es": "MobileNetV3-Small es un modelo de visión por computadora optimizado para dispositivos móviles. Destaca por su eficiencia computacional y bajo consumo de recursos, ideal para aplicaciones en tiempo real. Utiliza la función de activación h-swish y arquitectura de búsqueda neural para mejorar el rendimiento. Casos de uso incluyen clasificación de imágenes y detección de objetos en entornos con limitaciones de hardware.",
+      "task_keys": [
+        "image_classification",
+        "object_detection"
+      ]
     },
     {
       "id": "Falconsai/nsfw_image_detection",
@@ -149,7 +153,10 @@
       "summary": "all-MiniLM-L6-v2 是一个轻量级通用句子嵌入模型，基于 MiniLM 架构优化，适用于语义相似度计算、文本检索和聚类任务。该模型在保持较高性能的同时显著减小了参数量和计算开销，支持多语言文本处理。其紧凑的模型结构适合部署在资源受限的环境中，如边缘设备或低延迟应用场景。广泛应用于搜索引擎、推荐系统和文档匹配等实际任务。",
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_zh": "all-MiniLM-L6-v2 是一个轻量级通用句子嵌入模型，基于 MiniLM 架构优化，适用于语义相似度计算、文本检索和聚类任务。该模型在保持较高性能的同时显著减小了参数量和计算开销，支持多语言文本处理。其紧凑的模型结构适合部署在资源受限的环境中，如边缘设备或低延迟应用场景。广泛应用于搜索引擎、推荐系统和文档匹配等实际任务。",
-      "summary_es": "Modelo de embeddings de oraciones compacto y eficiente. Ideal para búsqueda semántica, clustering y similitud de texto. Destaca por su bajo consumo computacional manteniendo buen rendimiento. Perfecto para aplicaciones con recursos limitados."
+      "summary_es": "Modelo de embeddings de oraciones compacto y eficiente. Ideal para búsqueda semántica, clustering y similitud de texto. Destaca por su bajo consumo computacional manteniendo buen rendimiento. Perfecto para aplicaciones con recursos limitados.",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "dima806/fairface_age_image_detection",
@@ -281,7 +288,10 @@
       "summary": "yolov8s-signature-detector 是基于 YOLOv8s 架构优化的签名检测模型，专门用于识别图像或文档中的签名区域。该模型在 YOLOv8 的基础上针对签名检测任务进行了微调，具备较高的检测精度和较快的推理速度。适用于文档处理、合同管理、身份验证等需要自动化签名识别与提取的场景。模型支持多种输入格式，可集成到现有的 OCR 或文档处理流程中，提升自动化处理的效率。",
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_zh": "yolov8s-signature-detector 是基于 YOLOv8s 架构优化的签名检测模型，专门用于识别图像或文档中的签名区域。该模型在 YOLOv8 的基础上针对签名检测任务进行了微调，具备较高的检测精度和较快的推理速度。适用于文档处理、合同管理、身份验证等需要自动化签名识别与提取的场景。模型支持多种输入格式，可集成到现有的 OCR 或文档处理流程中，提升自动化处理的效率。",
-      "summary_es": "Detector de firmas basado en YOLOv8s, optimizado para identificación precisa en documentos. Ofrece alta velocidad y precisión en entornos con recursos limitados. Ideal para automatización de procesos, verificación de documentos y aplicaciones OCR."
+      "summary_es": "Detector de firmas basado en YOLOv8s, optimizado para identificación precisa en documentos. Ofrece alta velocidad y precisión en entornos con recursos limitados. Ideal para automatización de procesos, verificación de documentos y aplicaciones OCR.",
+      "task_keys": [
+        "object_detection"
+      ]
     },
     {
       "id": "pyannote/segmentation-3.0",
@@ -326,7 +336,10 @@
       "summary": "segmentation-3.0 是一个基于深度学习的语音分割模型，专注于音频信号中的说话人分割任务。该模型能够准确识别音频中不同说话人的切换点，并生成对应的分割时间戳。其核心优势在于结合了Transformer架构与聚类算法，显著提升了分割的准确性和鲁棒性。适用于会议转录、音频编辑和语音分析等场景，尤其适合需要高精度说话人分离的应用。",
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_zh": "segmentation-3.0 是一个基于深度学习的语音分割模型，专注于音频信号中的说话人分割任务。该模型能够准确识别音频中不同说话人的切换点，并生成对应的分割时间戳。其核心优势在于结合了Transformer架构与聚类算法，显著提升了分割的准确性和鲁棒性。适用于会议转录、音频编辑和语音分析等场景，尤其适合需要高精度说话人分离的应用。",
-      "summary_es": "Segmentación de audio en habla y no habla. Detecta cambios entre voz, música, ruido y silencio. Útil para transcripción, análisis de contenido y preprocesamiento de audio. Basado en PyTorch, con alta precisión temporal."
+      "summary_es": "Segmentación de audio en habla y no habla. Detecta cambios entre voz, música, ruido y silencio. Útil para transcripción, análisis de contenido y preprocesamiento de audio. Basado en PyTorch, con alta precisión temporal.",
+      "task_keys": [
+        "speaker_separation"
+      ]
     },
     {
       "id": "pyannote/wespeaker-voxceleb-resnet34-LM",
@@ -442,7 +455,10 @@
       "summary": "all-mpnet-base-v2 是一个基于 MPNet 架构的通用文本嵌入模型，由 Sentence Transformers 提供。该模型能够将任意长度的文本转换为高维向量表示，适用于语义相似度计算、文本检索和聚类任务。其优势在于结合了 BERT 的掩码语言建模和自回归模型的优点，在多项自然语言处理基准测试中表现优异。该模型适用于搜索引擎、推荐系统、问答匹配等需要高效语义理解的应用场景。",
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_zh": "all-mpnet-base-v2 是一个基于 MPNet 架构的通用文本嵌入模型，由 Sentence Transformers 提供。该模型能够将任意长度的文本转换为高维向量表示，适用于语义相似度计算、文本检索和聚类任务。其优势在于结合了 BERT 的掩码语言建模和自回归模型的优点，在多项自然语言处理基准测试中表现优异。该模型适用于搜索引擎、推荐系统、问答匹配等需要高效语义理解的应用场景。",
-      "summary_es": "Modelo de embeddings de texto basado en MPNet. Genera representaciones vectoriales densas para búsqueda semántica, clustering y similares. Alta precisión en tareas de similitud y búsqueda de información. Ideal para sistemas de recomendación y análisis de texto."
+      "summary_es": "Modelo de embeddings de texto basado en MPNet. Genera representaciones vectoriales densas para búsqueda semántica, clustering y similares. Alta precisión en tareas de similitud y búsqueda de información. Ideal para sistemas de recomendación y análisis de texto.",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "pyannote/speaker-diarization-3.1",
@@ -524,7 +540,10 @@
       "summary": "adetailer是一款基于深度学习的自动面部修复工具，适用于图像生成和编辑场景。它能够自动检测并修复图像中的人脸细节，包括五官、皮肤纹理和表情，提升生成图像的真实感和质量。该工具适用于AI绘画、图像修复和人像美化等任务，尤其适合需要批量处理或高精度细节优化的用户。其开源特性及易用性使其成为开发者和创作者的热门选择。",
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_zh": "adetailer是一款基于深度学习的自动面部修复工具，适用于图像生成和编辑场景。它能够自动检测并修复图像中的人脸细节，包括五官、皮肤纹理和表情，提升生成图像的真实感和质量。该工具适用于AI绘画、图像修复和人像美化等任务，尤其适合需要批量处理或高精度细节优化的用户。其开源特性及易用性使其成为开发者和创作者的热门选择。",
-      "summary_es": "Adetailer es un detector y mejorador automático de rostros para Stable Diffusion. Detecta y regenera automáticamente áreas faciales en imágenes generadas, mejorando detalles y coherencia anatómica. Ideal para retratos y personajes, corrige errores comunes como ojos asimétricos o rostros borrosos sin intervención manual."
+      "summary_es": "Adetailer es un detector y mejorador automático de rostros para Stable Diffusion. Detecta y regenera automáticamente áreas faciales en imágenes generadas, mejorando detalles y coherencia anatómica. Ideal para retratos y personajes, corrige errores comunes como ojos asimétricos o rostros borrosos sin intervención manual.",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "openai/clip-vit-base-patch32",
@@ -564,7 +583,11 @@
       "summary": "CLIP-ViT-Base-Patch32 是一个多模态视觉-语言模型，由 OpenAI 开发，基于 Vision Transformer（ViT）架构。该模型能够同时理解图像和文本，通过对比学习实现跨模态语义匹配。其核心亮点在于无需特定任务微调即可泛化到多种视觉和语言任务，如图像分类、图像检索和文本引导的图像生成。适用于内容推荐、搜索引擎优化、自动化标注以及创意设计等场景，尤其适合需要高效处理多模态数据的应用。",
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_zh": "CLIP-ViT-Base-Patch32 是一个多模态视觉-语言模型，由 OpenAI 开发，基于 Vision Transformer（ViT）架构。该模型能够同时理解图像和文本，通过对比学习实现跨模态语义匹配。其核心亮点在于无需特定任务微调即可泛化到多种视觉和语言任务，如图像分类、图像检索和文本引导的图像生成。适用于内容推荐、搜索引擎优化、自动化标注以及创意设计等场景，尤其适合需要高效处理多模态数据的应用。",
-      "summary_es": "CLIP-ViT-Base-Patch32 es un modelo multimodal de OpenAI que combina visión y lenguaje. Utiliza una arquitectura ViT con parches de 32x32 para procesar imágenes y texto simultáneamente. Es ideal para tareas como búsqueda de imágenes, clasificación zero-shot y generación de descripciones. Su principal fortaleza es la capacidad de entender relaciones entre imágenes y texto sin entrenamiento específico."
+      "summary_es": "CLIP-ViT-Base-Patch32 es un modelo multimodal de OpenAI que combina visión y lenguaje. Utiliza una arquitectura ViT con parches de 32x32 para procesar imágenes y texto simultáneamente. Es ideal para tareas como búsqueda de imágenes, clasificación zero-shot y generación de descripciones. Su principal fortaleza es la capacidad de entender relaciones entre imágenes y texto sin entrenamiento específico.",
+      "task_keys": [
+        "image_classification",
+        "contrastive_learning"
+      ]
     },
     {
       "id": "amazon/chronos-t5-small",
@@ -610,7 +633,10 @@
       "summary": "Chronos-T5-small是亚马逊基于T5架构开发的时间序列预测模型。该模型通过将数值序列转换为标记化文本进行训练，能够直接生成未来时间点的预测数值。其核心优势在于统一的概率建模框架，无需针对不同领域进行特定预处理，支持任意长度的时间序列输入与输出。适用于金融、气象、物联网等领域的多步预测任务，尤其适合需要快速部署且计算资源有限的场景。模型以小型参数量实现了预测效率与精度的平衡。",
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_zh": "Chronos-T5-small是亚马逊基于T5架构开发的时间序列预测模型。该模型通过将数值序列转换为标记化文本进行训练，能够直接生成未来时间点的预测数值。其核心优势在于统一的概率建模框架，无需针对不同领域进行特定预处理，支持任意长度的时间序列输入与输出。适用于金融、气象、物联网等领域的多步预测任务，尤其适合需要快速部署且计算资源有限的场景。模型以小型参数量实现了预测效率与精度的平衡。",
-      "summary_es": "Chronos-T5-small es un modelo de series temporales de código abierto desarrollado por Amazon. Basado en T5, está diseñado para predecir secuencias temporales en múltiples dominios como finanzas, energía o IoT. Su principal fortaleza es la capacidad de realizar forecasting sin necesidad de ajuste específico por dominio. Es ideal para aplicaciones que requieren predicciones rápidas y precisas con datos históricos."
+      "summary_es": "Chronos-T5-small es un modelo de series temporales de código abierto desarrollado por Amazon. Basado en T5, está diseñado para predecir secuencias temporales en múltiples dominios como finanzas, energía o IoT. Su principal fortaleza es la capacidad de realizar forecasting sin necesidad de ajuste específico por dominio. Es ideal para aplicaciones que requieren predicciones rápidas y precisas con datos históricos.",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     },
     {
       "id": "distilbert/distilbert-base-uncased",
@@ -1070,7 +1096,10 @@
       "summary": "paraphrase-multilingual-MiniLM-L12-v2 是一个多语言句子嵌入模型，基于 MiniLM 架构，支持 50 多种语言。该模型专门用于生成语义相似的句子表示，适用于文本相似度计算、语义搜索和跨语言检索任务。其亮点在于轻量化的 12 层结构，在保持高精度的同时显著提升推理效率。该模型适用于多语言场景下的信息检索、重复内容检测和语义匹配等应用。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "paraphrase-multilingual-MiniLM-L12-v2 是一个多语言句子嵌入模型，基于 MiniLM 架构，支持 50 多种语言。该模型专门用于生成语义相似的句子表示，适用于文本相似度计算、语义搜索和跨语言检索任务。其亮点在于轻量化的 12 层结构，在保持高精度的同时显著提升推理效率。该模型适用于多语言场景下的信息检索、重复内容检测和语义匹配等应用。",
-      "summary_es": "Modelo de embeddings multilingüe para detección de paráfrasis y similitud semántica. Basado en MiniLM-L12, procesa 50+ idiomas. Ideal para búsqueda semántica, clustering de textos y deduplicación de contenido. Alta eficiencia con embeddings de 384 dimensiones."
+      "summary_es": "Modelo de embeddings multilingüe para detección de paráfrasis y similitud semántica. Basado en MiniLM-L12, procesa 50+ idiomas. Ideal para búsqueda semántica, clustering de textos y deduplicación de contenido. Alta eficiencia con embeddings de 384 dimensiones.",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "facebook/bart-base",
@@ -1152,7 +1181,11 @@
       "summary": "CLIP-ViT-Large-Patch14 是一个基于 Vision Transformer 架构的多模态模型，由 OpenAI 开发。它能够同时理解图像和文本，通过对比学习实现跨模态语义匹配。该模型在图像分类、图像检索和文本-图像匹配等任务中表现优异，尤其适用于零样本或少样本场景。其预训练权重开放下载，便于研究者和开发者直接使用或进行微调。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "CLIP-ViT-Large-Patch14 是一个基于 Vision Transformer 架构的多模态模型，由 OpenAI 开发。它能够同时理解图像和文本，通过对比学习实现跨模态语义匹配。该模型在图像分类、图像检索和文本-图像匹配等任务中表现优异，尤其适用于零样本或少样本场景。其预训练权重开放下载，便于研究者和开发者直接使用或进行微调。",
-      "summary_es": "Modelo de visión por computadora y procesamiento de lenguaje natural multimodal. Combina un codificador visual ViT-L/14 con un transformador de texto. Destaca por su capacidad para emparejar imágenes y texto de forma precisa. Usos comunes: búsqueda multimodal, clasificación de imágenes zero-shot y generación de contenido."
+      "summary_es": "Modelo de visión por computadora y procesamiento de lenguaje natural multimodal. Combina un codificador visual ViT-L/14 con un transformador de texto. Destaca por su capacidad para emparejar imágenes y texto de forma precisa. Usos comunes: búsqueda multimodal, clasificación de imágenes zero-shot y generación de contenido.",
+      "task_keys": [
+        "image_classification",
+        "contrastive_learning"
+      ]
     },
     {
       "id": "FacebookAI/xlm-roberta-base",
@@ -1365,7 +1398,11 @@
       "summary": "这是一个基于Vision Transformer (ViT)架构的预训练图像分类模型，由Google开发。该模型在ImageNet-21k数据集上预训练，能够处理224x224像素的输入图像，使用16x16的图像块分割策略。其核心优势在于将Transformer架构成功应用于计算机视觉任务，在图像分类、目标检测等下游任务中表现出色。适用于需要高精度图像理解的场景，如医疗影像分析、自动驾驶视觉感知等。开发者可以基于该模型进行微调，快速构建定制化的视觉应用。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "这是一个基于Vision Transformer (ViT)架构的预训练图像分类模型，由Google开发。该模型在ImageNet-21k数据集上预训练，能够处理224x224像素的输入图像，使用16x16的图像块分割策略。其核心优势在于将Transformer架构成功应用于计算机视觉任务，在图像分类、目标检测等下游任务中表现出色。适用于需要高精度图像理解的场景，如医疗影像分析、自动驾驶视觉感知等。开发者可以基于该模型进行微调，快速构建定制化的视觉应用。",
-      "summary_es": "Modelo de visión por computadora basado en transformers. Entrenado en ImageNet-21k, procesa imágenes de 224x224 píxeles divididas en parches de 16x16. Ideal para clasificación de imágenes, transfer learning y aplicaciones de visión artificial. Alta precisión y escalabilidad."
+      "summary_es": "Modelo de visión por computadora basado en transformers. Entrenado en ImageNet-21k, procesa imágenes de 224x224 píxeles divididas en parches de 16x16. Ideal para clasificación de imágenes, transfer learning y aplicaciones de visión artificial. Alta precisión y escalabilidad.",
+      "task_keys": [
+        "image_classification",
+        "object_detection"
+      ]
     },
     {
       "id": "openai/gpt-oss-20b",
@@ -1407,7 +1444,10 @@
       "summary": "GPT-OSS-20B 是由 OpenAI 开源的一个 200 亿参数规模的语言模型，基于 Transformer 架构构建。该模型支持多种自然语言处理任务，包括文本生成、摘要、翻译和问答等。其开源特性使得研究者和开发者能够自由使用、修改和优化，适用于学术研究、原型开发和中小规模应用部署。模型在多个基准测试中表现出色，尤其擅长处理复杂语境下的长文本生成任务。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "GPT-OSS-20B 是由 OpenAI 开源的一个 200 亿参数规模的语言模型，基于 Transformer 架构构建。该模型支持多种自然语言处理任务，包括文本生成、摘要、翻译和问答等。其开源特性使得研究者和开发者能够自由使用、修改和优化，适用于学术研究、原型开发和中小规模应用部署。模型在多个基准测试中表现出色，尤其擅长处理复杂语境下的长文本生成任务。",
-      "summary_es": "GPT-OSS-20B es un modelo de lenguaje de 20 mil millones de parámetros de código abierto. Diseñado para procesamiento de lenguaje natural, destaca por su capacidad de generación de texto y comprensión contextual. Es ideal para tareas como traducción automática, resumen de textos y asistencia en programación. Su arquitectura escalable permite aplicaciones en investigación y desarrollo de IA."
+      "summary_es": "GPT-OSS-20B es un modelo de lenguaje de 20 mil millones de parámetros de código abierto. Diseñado para procesamiento de lenguaje natural, destaca por su capacidad de generación de texto y comprensión contextual. Es ideal para tareas como traducción automática, resumen de textos y asistencia en programación. Su arquitectura escalable permite aplicaciones en investigación y desarrollo de IA.",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "facebook/contriever",
@@ -1442,7 +1482,10 @@
       "summary": "Contriever是Facebook开发的一种基于对比学习的通用文本检索模型，适用于大规模无监督文本嵌入任务。它通过对比学习框架在大规模语料上进行预训练，无需人工标注数据即可学习高质量的文本表示。模型支持跨语言检索和语义相似度计算，适用于文档检索、问答匹配和语义搜索等场景。其无监督训练方式降低了数据标注成本，同时保持了较高的检索性能。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "Contriever是Facebook开发的一种基于对比学习的通用文本检索模型，适用于大规模无监督文本嵌入任务。它通过对比学习框架在大规模语料上进行预训练，无需人工标注数据即可学习高质量的文本表示。模型支持跨语言检索和语义相似度计算，适用于文档检索、问答匹配和语义搜索等场景。其无监督训练方式降低了数据标注成本，同时保持了较高的检索性能。",
-      "summary_es": "Contriever es un modelo de recuperación de información basado en transformers. Utiliza aprendizaje contrastivo para generar representaciones densas de texto, optimizando la similitud semántica. Es ideal para tareas de búsqueda y recuperación de documentos, recomendación de contenido y sistemas de preguntas y respuestas. Su principal fortaleza radica en su eficiencia para manejar grandes volúmenes de datos textuales."
+      "summary_es": "Contriever es un modelo de recuperación de información basado en transformers. Utiliza aprendizaje contrastivo para generar representaciones densas de texto, optimizando la similitud semántica. Es ideal para tareas de búsqueda y recuperación de documentos, recomendación de contenido y sistemas de preguntas y respuestas. Su principal fortaleza radica en su eficiencia para manejar grandes volúmenes de datos textuales.",
+      "task_keys": [
+        "contrastive_learning"
+      ]
     },
     {
       "id": "trpakov/vit-face-expression",
@@ -1527,7 +1570,10 @@
       "summary": "Qwen2.5-7B-Instruct 是阿里云推出的一款开源指令微调大语言模型，参数量为 70 亿。该模型基于 Qwen2.5 架构优化，具备更强的推理能力和更自然的对话表现，支持多轮交互和复杂任务处理。它在代码生成、文本摘要、逻辑推理等场景表现优异，适用于开发智能助手、自动化任务处理及教育辅助工具。模型支持多语言，并具备较强的上下文理解能力，适合部署在资源受限的环境中。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "Qwen2.5-7B-Instruct 是阿里云推出的一款开源指令微调大语言模型，参数量为 70 亿。该模型基于 Qwen2.5 架构优化，具备更强的推理能力和更自然的对话表现，支持多轮交互和复杂任务处理。它在代码生成、文本摘要、逻辑推理等场景表现优异，适用于开发智能助手、自动化任务处理及教育辅助工具。模型支持多语言，并具备较强的上下文理解能力，适合部署在资源受限的环境中。",
-      "summary_es": "Qwen2.5-7B-Instruct es un modelo de lenguaje de 7B parámetros optimizado para instrucciones. Destaca por su eficiencia en tareas de generación de texto, resolución de problemas y asistencia conversacional. Su tamaño compacto lo hace ideal para despliegues en entornos con recursos limitados, como aplicaciones locales o dispositivos edge. Es adecuado para chatbots, automatización de respuestas y procesamiento de lenguaje natural en tiempo real."
+      "summary_es": "Qwen2.5-7B-Instruct es un modelo de lenguaje de 7B parámetros optimizado para instrucciones. Destaca por su eficiencia en tareas de generación de texto, resolución de problemas y asistencia conversacional. Su tamaño compacto lo hace ideal para despliegues en entornos con recursos limitados, como aplicaciones locales o dispositivos edge. Es adecuado para chatbots, automatización de respuestas y procesamiento de lenguaje natural en tiempo real.",
+      "task_keys": [
+        "code_generation"
+      ]
     },
     {
       "id": "meta-llama/Llama-3.2-1B-Instruct",
@@ -1674,7 +1720,11 @@
       "summary": "bge-base-en-v1.5 是由北京智源人工智能研究院（BAAI）开发的英文文本嵌入模型，基于BERT架构优化。该模型专注于生成高质量的句子级向量表示，适用于语义搜索、文本相似度计算和检索增强生成（RAG）等任务。其亮点在于通过对比学习和大规模数据训练显著提升了嵌入效果，在多个基准测试中表现优异。适用于需要高效文本匹配或语义理解的英文自然语言处理应用场景。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "bge-base-en-v1.5 是由北京智源人工智能研究院（BAAI）开发的英文文本嵌入模型，基于BERT架构优化。该模型专注于生成高质量的句子级向量表示，适用于语义搜索、文本相似度计算和检索增强生成（RAG）等任务。其亮点在于通过对比学习和大规模数据训练显著提升了嵌入效果，在多个基准测试中表现优异。适用于需要高效文本匹配或语义理解的英文自然语言处理应用场景。",
-      "summary_es": "Modelo de embeddings de texto en inglés para representación semántica. Destaca por su alta precisión en tareas de búsqueda, clustering y clasificación. Casos de uso incluye sistemas de recomendación y motores de búsqueda semántica."
+      "summary_es": "Modelo de embeddings de texto en inglés para representación semántica. Destaca por su alta precisión en tareas de búsqueda, clustering y clasificación. Casos de uso incluye sistemas de recomendación y motores de búsqueda semántica.",
+      "task_keys": [
+        "rag",
+        "contrastive_learning"
+      ]
     },
     {
       "id": "meta-llama/Llama-3.1-8B-Instruct",
@@ -1824,7 +1874,10 @@
       "summary": "Qwen2.5-3B-Instruct 是阿里云推出的一款轻量级开源指令微调语言模型，参数量为 30 亿。该模型基于 Qwen2.5 架构优化，具备较强的推理、代码生成和自然语言理解能力，同时支持多轮对话和上下文理解。其亮点在于高效的计算性能和较低的资源占用，适用于边缘设备部署或资源受限环境。该模型可用于智能助手、代码补全、文本摘要等任务，适合开发者和研究者进行快速原型验证或轻量级 AI 应用开发。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "Qwen2.5-3B-Instruct 是阿里云推出的一款轻量级开源指令微调语言模型，参数量为 30 亿。该模型基于 Qwen2.5 架构优化，具备较强的推理、代码生成和自然语言理解能力，同时支持多轮对话和上下文理解。其亮点在于高效的计算性能和较低的资源占用，适用于边缘设备部署或资源受限环境。该模型可用于智能助手、代码补全、文本摘要等任务，适合开发者和研究者进行快速原型验证或轻量级 AI 应用开发。",
-      "summary_es": "Qwen2.5-3B-Instruct es un modelo de lenguaje pequeño optimizado para instrucciones. Destaca por su eficiencia en tareas de generación de texto, resúmenes y asistencia conversacional. Ideal para aplicaciones con recursos limitados, como dispositivos móviles o entornos de borde. Su popularidad refleja su utilidad en proyectos de IA accesibles."
+      "summary_es": "Qwen2.5-3B-Instruct es un modelo de lenguaje pequeño optimizado para instrucciones. Destaca por su eficiencia en tareas de generación de texto, resúmenes y asistencia conversacional. Ideal para aplicaciones con recursos limitados, como dispositivos móviles o entornos de borde. Su popularidad refleja su utilidad en proyectos de IA accesibles.",
+      "task_keys": [
+        "code_generation"
+      ]
     },
     {
       "id": "pyannote/voice-activity-detection",
@@ -1995,7 +2048,10 @@
       "summary": "Chronos-Bolt-Base 是一个轻量级时间序列预测模型，基于 Transformer 架构设计，适用于单变量时间序列的快速预测任务。该模型通过预训练和微调机制，能够高效处理多种时间序列数据，无需复杂的特征工程。其核心亮点在于模型规模小、推理速度快，同时保持较高的预测准确性，适合资源受限或对实时性要求较高的场景。典型应用包括电商销量预测、能源消耗分析和金融指标短期趋势判断。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "Chronos-Bolt-Base 是一个轻量级时间序列预测模型，基于 Transformer 架构设计，适用于单变量时间序列的快速预测任务。该模型通过预训练和微调机制，能够高效处理多种时间序列数据，无需复杂的特征工程。其核心亮点在于模型规模小、推理速度快，同时保持较高的预测准确性，适合资源受限或对实时性要求较高的场景。典型应用包括电商销量预测、能源消耗分析和金融指标短期趋势判断。",
-      "summary_es": "Chronos-Bolt-Base es un modelo de series temporales de código abierto desarrollado por AutoGluon. Diseñado para predecir datos secuenciales, es ideal para aplicaciones en finanzas, logística y análisis de demanda. Su principal fortaleza es la facilidad de uso y escalabilidad, permitiendo implementaciones rápidas sin configuración compleja."
+      "summary_es": "Chronos-Bolt-Base es un modelo de series temporales de código abierto desarrollado por AutoGluon. Diseñado para predecir datos secuenciales, es ideal para aplicaciones en finanzas, logística y análisis de demanda. Su principal fortaleza es la facilidad de uso y escalabilidad, permitiendo implementaciones rápidas sin configuración compleja.",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     },
     {
       "id": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
@@ -2027,7 +2083,10 @@
       "summary": "Wan_2.2_ComfyUI_Repackaged 是一个基于 ComfyUI 框架的 AI 图像生成工具，专为 Stable Diffusion 用户设计。它优化了工作流，简化了节点操作，提升了生成效率和易用性。该工具适用于需要快速、稳定生成高质量图像的用户，尤其适合艺术创作、概念设计和原型制作等场景。其受欢迎程度体现在近期超过 500 万次的下载量，显示出社区的高度认可。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "Wan_2.2_ComfyUI_Repackaged 是一个基于 ComfyUI 框架的 AI 图像生成工具，专为 Stable Diffusion 用户设计。它优化了工作流，简化了节点操作，提升了生成效率和易用性。该工具适用于需要快速、稳定生成高质量图像的用户，尤其适合艺术创作、概念设计和原型制作等场景。其受欢迎程度体现在近期超过 500 万次的下载量，显示出社区的高度认可。",
-      "summary_es": "Wan 2.2 ComfyUI Repackaged es una distribución optimizada de ComfyUI enfocada en facilitar la generación de imágenes con IA. Incluye modelos preconfigurados y dependencias listas para usar, eliminando la necesidad de instalaciones complejas. Destaca por su estabilidad y compatibilidad con múltiples arquitecturas de modelos. Ideal para artistas digitales e investigadores que buscan un flujo de trabajo simplificado para creación visual."
+      "summary_es": "Wan 2.2 ComfyUI Repackaged es una distribución optimizada de ComfyUI enfocada en facilitar la generación de imágenes con IA. Incluye modelos preconfigurados y dependencias listas para usar, eliminando la necesidad de instalaciones complejas. Destaca por su estabilidad y compatibilidad con múltiples arquitecturas de modelos. Ideal para artistas digitales e investigadores que buscan un flujo de trabajo simplificado para creación visual.",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "facebook/esmfold_v1",
@@ -2148,7 +2207,10 @@
       "summary": "Qwen2.5-1.5B-Instruct 是阿里云推出的一款轻量级指令微调语言模型，参数量为 1.5B。该模型基于 Qwen2.5 架构优化，具备较强的指令理解和任务执行能力，适用于对话生成、文本摘要、代码生成等多种任务。其轻量化设计使其能够在资源受限的环境中高效运行，适合移动端或边缘计算部署。该模型在 Hugging Face 社区广受欢迎，下载量和点赞数均表现突出，适用于开发者和研究者进行快速原型验证与应用集成。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "Qwen2.5-1.5B-Instruct 是阿里云推出的一款轻量级指令微调语言模型，参数量为 1.5B。该模型基于 Qwen2.5 架构优化，具备较强的指令理解和任务执行能力，适用于对话生成、文本摘要、代码生成等多种任务。其轻量化设计使其能够在资源受限的环境中高效运行，适合移动端或边缘计算部署。该模型在 Hugging Face 社区广受欢迎，下载量和点赞数均表现突出，适用于开发者和研究者进行快速原型验证与应用集成。",
-      "summary_es": "Modelo de lenguaje pequeño (1.5B parámetros) optimizado para instrucciones. Ideal para aplicaciones de IA conversacional, generación de texto y asistencia en dispositivos con recursos limitados. Destaca por su eficiencia computacional y buen rendimiento en tareas de comprensión y respuesta."
+      "summary_es": "Modelo de lenguaje pequeño (1.5B parámetros) optimizado para instrucciones. Ideal para aplicaciones de IA conversacional, generación de texto y asistencia en dispositivos con recursos limitados. Destaca por su eficiencia computacional y buen rendimiento en tareas de comprensión y respuesta.",
+      "task_keys": [
+        "code_generation"
+      ]
     },
     {
       "id": "colbert-ir/colbertv2.0",
@@ -2242,7 +2304,10 @@
       "summary": "bge-small-en-v1.5 是一个高效的英文文本嵌入模型，由北京智源人工智能研究院（BAAI）开发。该模型专注于将文本转换为高维向量表示，适用于语义搜索、文本相似度计算和检索增强生成（RAG）等任务。其亮点在于轻量化设计，在保持较高性能的同时显著降低了计算资源需求。适用于需要快速部署嵌入服务的场景，如搜索引擎优化、推荐系统和问答系统。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "bge-small-en-v1.5 是一个高效的英文文本嵌入模型，由北京智源人工智能研究院（BAAI）开发。该模型专注于将文本转换为高维向量表示，适用于语义搜索、文本相似度计算和检索增强生成（RAG）等任务。其亮点在于轻量化设计，在保持较高性能的同时显著降低了计算资源需求。适用于需要快速部署嵌入服务的场景，如搜索引擎优化、推荐系统和问答系统。",
-      "summary_es": "Modelo de embeddings en inglés, optimizado para similitud semántica y búsqueda. Eficiente en recursos, ideal para aplicaciones de RAG, clustering y clasificación de texto. Destaca por su equilibrio entre rendimiento y velocidad."
+      "summary_es": "Modelo de embeddings en inglés, optimizado para similitud semántica y búsqueda. Eficiente en recursos, ideal para aplicaciones de RAG, clustering y clasificación de texto. Destaca por su equilibrio entre rendimiento y velocidad.",
+      "task_keys": [
+        "rag"
+      ]
     },
     {
       "id": "coqui/XTTS-v2",
@@ -2275,7 +2340,10 @@
       "summary": "XTTS-v2 是一款高质量的多语言文本转语音模型，支持 17 种语言，并能通过几秒钟的语音样本实现声音克隆。该模型基于 VALL-E 架构，具备出色的语音自然度和情感表现力，适用于语音合成、有声内容制作和个性化语音交互等场景。其开源特性及易用性使其成为开发者和研究者的理想选择，尤其适合需要多语言支持或定制化语音生成的应用。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "XTTS-v2 是一款高质量的多语言文本转语音模型，支持 17 种语言，并能通过几秒钟的语音样本实现声音克隆。该模型基于 VALL-E 架构，具备出色的语音自然度和情感表现力，适用于语音合成、有声内容制作和个性化语音交互等场景。其开源特性及易用性使其成为开发者和研究者的理想选择，尤其适合需要多语言支持或定制化语音生成的应用。",
-      "summary_es": "XTTS-v2 es un modelo de síntesis de voz que genera habla multilingüe a partir de texto y una muestra de voz de referencia. Destaca por su alta calidad, baja latencia y soporte para 13 idiomas. Ideal para aplicaciones de locución, accesibilidad y generación de contenido."
+      "summary_es": "XTTS-v2 es un modelo de síntesis de voz que genera habla multilingüe a partir de texto y una muestra de voz de referencia. Destaca por su alta calidad, baja latencia y soporte para 13 idiomas. Ideal para aplicaciones de locución, accesibilidad y generación de contenido.",
+      "task_keys": [
+        "tts"
+      ]
     },
     {
       "id": "dphn/dolphin-2.9.1-yi-1.5-34b",
@@ -2326,7 +2394,10 @@
       "summary": "dolphin-2.9.1-yi-1.5-34b 是一个基于 Yi-34B 语言模型微调的开源对话模型，由社区开发者 dphn 发布。该模型在保持 Yi-34B 强大推理能力的基础上，通过指令微调提升了对话交互的自然度和实用性。它适用于多种任务，包括代码生成、文本摘要、问答以及创意写作等。该模型在开源社区中受到广泛关注，尤其适合需要高性能对话能力的开发者和研究人员使用。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "dolphin-2.9.1-yi-1.5-34b 是一个基于 Yi-34B 语言模型微调的开源对话模型，由社区开发者 dphn 发布。该模型在保持 Yi-34B 强大推理能力的基础上，通过指令微调提升了对话交互的自然度和实用性。它适用于多种任务，包括代码生成、文本摘要、问答以及创意写作等。该模型在开源社区中受到广泛关注，尤其适合需要高性能对话能力的开发者和研究人员使用。",
-      "summary_es": "Modelo de lenguaje de 34B parámetros basado en Yi-1.5, optimizado para asistencia y razonamiento. Destaca por su capacidad de seguir instrucciones complejas y generar respuestas útiles. Ideal para aplicaciones de IA conversacional, análisis de datos y automatización de tareas."
+      "summary_es": "Modelo de lenguaje de 34B parámetros basado en Yi-1.5, optimizado para asistencia y razonamiento. Destaca por su capacidad de seguir instrucciones complejas y generar respuestas útiles. Ideal para aplicaciones de IA conversacional, análisis de datos y automatización de tareas.",
+      "task_keys": [
+        "code_generation"
+      ]
     },
     {
       "id": "google-bert/bert-base-multilingual-cased",
@@ -2512,7 +2583,10 @@
       "summary": "gtr-t5-base是基于T5架构的文本嵌入模型，专注于生成高质量的句子向量表示。该模型通过对比学习进行训练，能够将语义相似的句子映射到相近的向量空间。其核心优势在于高效处理大规模文本检索和语义相似度计算任务，适用于搜索引擎、推荐系统和文档聚类等场景。模型在多个基准测试中表现出色，尤其擅长跨语言和跨领域的语义匹配。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "gtr-t5-base是基于T5架构的文本嵌入模型，专注于生成高质量的句子向量表示。该模型通过对比学习进行训练，能够将语义相似的句子映射到相近的向量空间。其核心优势在于高效处理大规模文本检索和语义相似度计算任务，适用于搜索引擎、推荐系统和文档聚类等场景。模型在多个基准测试中表现出色，尤其擅长跨语言和跨领域的语义匹配。",
-      "summary_es": "Modelo de embeddings de texto basado en T5. Genera representaciones vectoriales densas para búsqueda semántica, clustering y clasificación. Destaca por su escalabilidad y precisión en tareas de recuperación de información. Ideal para sistemas de recomendación y motores de búsqueda semánticos."
+      "summary_es": "Modelo de embeddings de texto basado en T5. Genera representaciones vectoriales densas para búsqueda semántica, clustering y clasificación. Destaca por su escalabilidad y precisión en tareas de recuperación de información. Ideal para sistemas de recomendación y motores de búsqueda semánticos.",
+      "task_keys": [
+        "contrastive_learning"
+      ]
     },
     {
       "id": "openai/whisper-large-v3",
@@ -2652,7 +2726,10 @@
       "summary": "Whisper-large-v3 是 OpenAI 推出的最新语音识别模型，支持多语言转录和翻译任务。该模型基于大规模多语言音频数据训练，具备高精度的语音转文本能力，尤其擅长处理带口音、背景噪声或专业术语的复杂音频。其亮点在于支持 99 种语言的转录，并能将非英语语音直接翻译为英语文本。适用于会议记录、字幕生成、内容转录等场景，适合开发者、研究人员及企业集成使用。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "Whisper-large-v3 是 OpenAI 推出的最新语音识别模型，支持多语言转录和翻译任务。该模型基于大规模多语言音频数据训练，具备高精度的语音转文本能力，尤其擅长处理带口音、背景噪声或专业术语的复杂音频。其亮点在于支持 99 种语言的转录，并能将非英语语音直接翻译为英语文本。适用于会议记录、字幕生成、内容转录等场景，适合开发者、研究人员及企业集成使用。",
-      "summary_es": "Whisper-large-v3 es un modelo de reconocimiento de voz multilingüe de OpenAI. Destaca por su alta precisión en transcripción y traducción automática. Es ideal para aplicaciones de subtitulado, análisis de audio y asistencia vocal. Su arquitectura robusta permite procesar grabaciones con ruido y acentos diversos."
+      "summary_es": "Whisper-large-v3 es un modelo de reconocimiento de voz multilingüe de OpenAI. Destaca por su alta precisión en transcripción y traducción automática. Es ideal para aplicaciones de subtitulado, análisis de audio y asistencia vocal. Su arquitectura robusta permite procesar grabaciones con ruido y acentos diversos.",
+      "task_keys": [
+        "asr"
+      ]
     },
     {
       "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
@@ -2723,7 +2800,10 @@
       "summary": "Wan_2.1_ComfyUI_repackaged 是一个基于 ComfyUI 框架重新封装的图像生成模型，适用于稳定扩散工作流。该模型优化了用户界面和操作流程，提升了易用性和生成效率，尤其适合需要批量处理或自定义工作流的用户。其亮点在于简化了节点配置，降低了上手门槛，同时保持了高质量的图像输出。适用于数字艺术创作、概念设计以及 AI 辅助视觉内容生成等场景。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "Wan_2.1_ComfyUI_repackaged 是一个基于 ComfyUI 框架重新封装的图像生成模型，适用于稳定扩散工作流。该模型优化了用户界面和操作流程，提升了易用性和生成效率，尤其适合需要批量处理或自定义工作流的用户。其亮点在于简化了节点配置，降低了上手门槛，同时保持了高质量的图像输出。适用于数字艺术创作、概念设计以及 AI 辅助视觉内容生成等场景。",
-      "summary_es": "Wan 2.1 ComfyUI es un modelo de generación de imágenes optimizado para la interfaz ComfyUI. Destaca por su alta calidad visual, velocidad de inferencia y compatibilidad con flujos de trabajo personalizados. Ideal para artistas digitales, diseñadores y creadores de contenido que buscan generar ilustraciones detalladas y estilizadas de manera eficiente."
+      "summary_es": "Wan 2.1 ComfyUI es un modelo de generación de imágenes optimizado para la interfaz ComfyUI. Destaca por su alta calidad visual, velocidad de inferencia y compatibilidad con flujos de trabajo personalizados. Ideal para artistas digitales, diseñadores y creadores de contenido que buscan generar ilustraciones detalladas y estilizadas de manera eficiente.",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "google-t5/t5-small",
@@ -2962,7 +3042,11 @@
       "summary": "paraphrase-MiniLM-L6-v2 是一个基于 MiniLM 架构的轻量级句子嵌入模型，专门用于语义相似度计算和文本复述识别。该模型通过对比学习训练，能够高效地将文本转换为高维向量表示，适用于句子级别的语义匹配任务。其优势在于模型体积小、推理速度快，同时保持了较高的语义理解能力。典型应用场景包括文本去重、问答匹配、语义搜索以及推荐系统中的相似内容识别。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "paraphrase-MiniLM-L6-v2 是一个基于 MiniLM 架构的轻量级句子嵌入模型，专门用于语义相似度计算和文本复述识别。该模型通过对比学习训练，能够高效地将文本转换为高维向量表示，适用于句子级别的语义匹配任务。其优势在于模型体积小、推理速度快，同时保持了较高的语义理解能力。典型应用场景包括文本去重、问答匹配、语义搜索以及推荐系统中的相似内容识别。",
-      "summary_es": "Modelo de embeddings para parafraseo y similitud semántica. Basado en MiniLM, genera representaciones vectoriales de texto. Ideal para búsqueda semántica, clustering y deduplicación de contenido. Ligero y eficiente para producción."
+      "summary_es": "Modelo de embeddings para parafraseo y similitud semántica. Basado en MiniLM, genera representaciones vectoriales de texto. Ideal para búsqueda semántica, clustering y deduplicación de contenido. Ligero y eficiente para producción.",
+      "task_keys": [
+        "contrastive_learning",
+        "inference_acceleration"
+      ]
     },
     {
       "id": "Qwen/Qwen2.5-VL-7B-Instruct",
@@ -3044,7 +3128,11 @@
       "summary": "ResNet50.a1_in1k 是基于 ResNet-50 架构的深度残差网络模型，在 ImageNet-1k 数据集上完成训练。该模型通过引入改进的训练策略和正则化技术，显著提升了图像分类任务的准确性和泛化能力。其核心亮点在于优化了残差连接和批量归一化结构，使模型在保持计算效率的同时，具备更强的特征提取能力。适用于图像分类、目标检测以及迁移学习等计算机视觉任务，尤其适合需要高精度且资源受限的应用场景。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "ResNet50.a1_in1k 是基于 ResNet-50 架构的深度残差网络模型，在 ImageNet-1k 数据集上完成训练。该模型通过引入改进的训练策略和正则化技术，显著提升了图像分类任务的准确性和泛化能力。其核心亮点在于优化了残差连接和批量归一化结构，使模型在保持计算效率的同时，具备更强的特征提取能力。适用于图像分类、目标检测以及迁移学习等计算机视觉任务，尤其适合需要高精度且资源受限的应用场景。",
-      "summary_es": "ResNet50-A1 es una variante optimizada de ResNet50 entrenada en ImageNet-1k. Ofrece mejor precisión y eficiencia computacional respecto a la versión estándar. Ideal para clasificación de imágenes, detección de objetos y transfer learning. Ampliamente usado en investigación y aplicaciones de visión por computador."
+      "summary_es": "ResNet50-A1 es una variante optimizada de ResNet50 entrenada en ImageNet-1k. Ofrece mejor precisión y eficiencia computacional respecto a la versión estándar. Ideal para clasificación de imágenes, detección de objetos y transfer learning. Ampliamente usado en investigación y aplicaciones de visión por computador.",
+      "task_keys": [
+        "image_classification",
+        "object_detection"
+      ]
     },
     {
       "id": "Kijai/WanVideo_comfy",
@@ -3078,7 +3166,10 @@
       "summary": "WanVideo_comfy是一个基于ComfyUI的视频生成模型，专注于高质量视频内容合成。该模型支持文本到视频和图像到视频的转换，适用于创意内容制作、动态视觉设计等场景。其亮点在于能够生成流畅且细节丰富的视频片段，同时具备良好的用户交互体验。该模型适合需要快速生成视频原型或动态效果的技术创作者使用。",
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_zh": "WanVideo_comfy是一个基于ComfyUI的视频生成模型，专注于高质量视频内容合成。该模型支持文本到视频和图像到视频的转换，适用于创意内容制作、动态视觉设计等场景。其亮点在于能够生成流畅且细节丰富的视频片段，同时具备良好的用户交互体验。该模型适合需要快速生成视频原型或动态效果的技术创作者使用。",
-      "summary_es": "WanVideo_comfy es un nodo para ComfyUI que permite generar videos a partir de texto. Destaca por su facilidad de integración y uso en flujos de trabajo de IA generativa. Ideal para creadores de contenido y artistas digitales que buscan producir animaciones o clips cortos mediante prompts textuales. Su popularidad se refleja en su alta tasa de descargas."
+      "summary_es": "WanVideo_comfy es un nodo para ComfyUI que permite generar videos a partir de texto. Destaca por su facilidad de integración y uso en flujos de trabajo de IA generativa. Ideal para creadores de contenido y artistas digitales que buscan producir animaciones o clips cortos mediante prompts textuales. Su popularidad se refleja en su alta tasa de descargas.",
+      "task_keys": [
+        "text_to_image"
+      ]
     }
   ]
 }

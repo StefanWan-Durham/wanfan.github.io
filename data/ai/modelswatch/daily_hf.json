@@ -99,7 +99,10 @@
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_en": "Qwen2.5-7B-Instruct is a 7-billion-parameter instruction-tuned language model optimized for conversational and text-generation tasks. It excels in multilingual contexts, particularly English and Arabic, and is well-suited for applications like chatbots, content creation, and question answering. Built on the Qwen2.5 architecture, it balances performance and efficiency, making it practical for deployment in resource-constrained environments. The model is available under open licenses and supports integration via Hugging Face Transformers and Safetensors.",
       "summary_zh": "Qwen2.5-7B-Instruct 是阿里云通义千问团队推出的开源对话模型，基于 Qwen2.5-7B 微调优化，专为指令遵循和对话交互设计。该模型具备 70 亿参数，支持多轮对话、文本生成等任务，适用于聊天助手、内容创作和代码生成等场景。其训练数据涵盖多语言，在多项基准测试中表现出较强的推理和语言理解能力。模型以 Apache 2.0 协议开源，可通过 Transformers 框架直接调用，适合开发者和研究者用于构建对话系统或进行自然语言处理实验。",
-      "summary_es": "Qwen2.5-7B-Instruct es un modelo de lenguaje de 7 mil millones de parámetros optimizado para tareas conversacionales y generación de texto. Basado en la arquitectura Transformer, destaca por su capacidad multilingüe y eficiencia en diálogos interactivos. Es ideal para aplicaciones como chatbots, asistentes virtuales y procesamiento de lenguaje natural. Su diseño equilibrado permite un buen rendimiento incluso en hardware limitado."
+      "summary_es": "Qwen2.5-7B-Instruct es un modelo de lenguaje de 7 mil millones de parámetros optimizado para tareas conversacionales y generación de texto. Basado en la arquitectura Transformer, destaca por su capacidad multilingüe y eficiencia en diálogos interactivos. Es ideal para aplicaciones como chatbots, asistentes virtuales y procesamiento de lenguaje natural. Su diseño equilibrado permite un buen rendimiento incluso en hardware limitado.",
+      "task_keys": [
+        "code_generation"
+      ]
     },
     {
       "id": "tech4humans/yolov8s-signature-detector",
@@ -144,7 +147,10 @@
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_en": "A YOLOv8-based object detection model fine-tuned for signature detection. It excels at identifying and localizing signatures in documents, forms, and images with high accuracy and speed. Built on PyTorch and compatible with ONNX, it is suitable for automated document processing, fraud detection, and archival digitization. Its lightweight design makes it deployable in resource-constrained environments.",
       "summary_zh": "yolov8s-signature-detector 是一个基于 YOLOv8s 的签名检测模型，专门用于识别和定位文档中的签名区域。该模型基于 Ultralytics/YOLOv8 架构，使用 tech4humans/signature-detection 数据集训练，具备较高的检测精度和推理速度。支持 ONNX 格式导出，便于部署到不同平台，同时兼容 TensorBoard 进行训练可视化。适用于文档处理、自动化办公和身份验证等场景，能够有效提升签名识别的效率。",
-      "summary_es": "Modelo YOLOv8 especializado en detección de firmas manuscritas. Optimizado para procesamiento rápido con alto rendimiento en documentos escaneados. Ideal para automatización de validación en sectores financieros y legales. Soporta integración mediante ONNX y ofrece métricas detalladas con TensorBoard."
+      "summary_es": "Modelo YOLOv8 especializado en detección de firmas manuscritas. Optimizado para procesamiento rápido con alto rendimiento en documentos escaneados. Ideal para automatización de validación en sectores financieros y legales. Soporta integración mediante ONNX y ofrece métricas detalladas con TensorBoard.",
+      "task_keys": [
+        "object_detection"
+      ]
     },
     {
       "id": "pyannote/segmentation-3.0",
@@ -227,7 +233,10 @@
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_en": "ADetailer is an open-source face detection and segmentation model built on Ultralytics and PyTorch. It is trained on datasets like WIDER FACE and anime-specific segmentation data, making it suitable for both real-world and anime-style image processing. Its strengths include high accuracy in detecting and segmenting faces across diverse visual styles. It is applicable for tasks such as content moderation, image editing, and anime art generation.",
       "summary_zh": "adetailer是一个基于Ultralytics和PyTorch的开源图像修复模型，专注于自动检测和修复图像中的人脸区域。它结合了WiderFace数据集和动漫分割数据集，能够有效处理真实照片和动漫风格图像。该模型支持批量处理，适用于图像编辑、内容修复以及自动化后处理等场景。通过Apache 2.0协议开源，适合开发者和研究人员用于图像处理相关的项目。",
-      "summary_es": "Adetailer es un modelo de detección y segmentación de rostros basado en PyTorch. Optimiza la precisión en imágenes con múltiples caras o fondos complejos. Es útil para procesamiento de imágenes, edición automática y análisis facial. Incluye soporte para datos de anime y caras reales."
+      "summary_es": "Adetailer es un modelo de detección y segmentación de rostros basado en PyTorch. Optimiza la precisión en imágenes con múltiples caras o fondos complejos. Es útil para procesamiento de imágenes, edición automática y análisis facial. Incluye soporte para datos de anime y caras reales.",
+      "task_keys": [
+        "content_moderation"
+      ]
     },
     {
       "id": "openai/clip-vit-base-patch32",
@@ -268,7 +277,11 @@
       "updated_at": "2025-09-17T17:53:14.778Z",
       "summary_en": "CLIP-ViT-Base-Patch32 is a multimodal model that aligns images and text in a shared embedding space. It excels at zero-shot image classification, enabling tasks like content moderation and visual search without task-specific training. The model is versatile, supporting frameworks like PyTorch, TensorFlow, and JAX, and is widely used for research and applications requiring robust vision-language understanding. Its strong performance and flexibility make it suitable for both academic and industrial use cases.",
       "summary_zh": "CLIP-ViT-Base-Patch32 是一个基于 Transformer 架构的多模态模型，由 OpenAI 开发。它能够同时处理图像和文本，实现跨模态的语义理解与匹配。该模型在零样本图像分类任务上表现优异，无需针对特定任务进行微调即可泛化到多种视觉识别场景。适用于内容检索、图像标注、多模态搜索等应用，尤其适合需要快速原型验证或资源受限的环境。",
-      "summary_es": "Modelo multimodal CLIP que combina visión y lenguaje. Permite clasificación de imágenes zero-shot y búsqueda cross-modal. Basado en ViT-B/32 con embeddings de 512 dimensiones. Ideal para aplicaciones de matching texto-imagen sin entrenamiento específico."
+      "summary_es": "Modelo multimodal CLIP que combina visión y lenguaje. Permite clasificación de imágenes zero-shot y búsqueda cross-modal. Basado en ViT-B/32 con embeddings de 512 dimensiones. Ideal para aplicaciones de matching texto-imagen sin entrenamiento específico.",
+      "task_keys": [
+        "image_classification",
+        "content_moderation"
+      ]
     },
     {
       "id": "facebook/opt-125m",
@@ -396,7 +409,10 @@
       "updated_at": "2025-09-17T17:53:14.779Z",
       "summary_en": "Chronos-Bolt-Base is a pretrained T5-based foundation model for time series forecasting. It excels at generating probabilistic forecasts across diverse domains without task-specific training. The model is particularly useful for applications in finance, retail, and IoT, where scalable and accurate predictions are needed. Its strength lies in leveraging transfer learning to handle various time series patterns efficiently.",
       "summary_zh": "Chronos-Bolt-Base 是一个基于 T5 架构的时间序列预测基础模型，适用于单变量时间序列的预测任务。该模型通过预训练和微调的方式，能够高效处理多种时间序列数据，无需复杂的特征工程。其亮点在于利用 Transformer 架构的强大表示能力，在多个基准数据集上表现出优异的预测性能。适用于金融、气象、能源等领域的短期和长期时间序列预测需求。",
-      "summary_es": "Chronos-Bolt-Base es un modelo de base para pronóstico de series temporales, basado en T5 y preentrenado con datos sintéticos. Su principal fortaleza es la capacidad de adaptarse a múltiples dominios sin necesidad de ajuste específico. Es ideal para predicciones univariantes en aplicaciones como finanzas, energía o logística. Emplea tokens discretizados para representar valores temporales, facilitando su integración en pipelines existentes."
+      "summary_es": "Chronos-Bolt-Base es un modelo de base para pronóstico de series temporales, basado en T5 y preentrenado con datos sintéticos. Su principal fortaleza es la capacidad de adaptarse a múltiples dominios sin necesidad de ajuste específico. Es ideal para predicciones univariantes en aplicaciones como finanzas, energía o logística. Emplea tokens discretizados para representar valores temporales, facilitando su integración en pipelines existentes.",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     }
   ]
 }
