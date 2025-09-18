@@ -338,6 +338,30 @@
     function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');}
     function rel(iso){ try{ const d=new Date(iso); const s=(Date.now()-d)/1000; if(s<60) return 'just now'; if(s<3600) return Math.floor(s/60)+'m'; if(s<86400) return Math.floor(s/3600)+'h'; return Math.floor(s/86400)+'d'; }catch{return ''} }
 
+    // Compute a robust updated_at string (ISO) using meta.updated_at, max item.updated_at, or a date hint
+    function toIso(x){
+      try{ const t = new Date(x); if(!isNaN(t)) return t.toISOString(); }catch{}
+      return '';
+    }
+    function computeUpdatedAt(metaUpdatedAt, arr, dateHint){
+      const cands = [];
+      const mIso = toIso(metaUpdatedAt); if(mIso) cands.push(mIso);
+      if(Array.isArray(arr)){
+        for(const it of arr){
+          const u = it?.updated_at || it?.stats?.updated_at;
+          const iso = toIso(u); if(iso) cands.push(iso);
+        }
+      }
+      if(!cands.length && dateHint){
+        // fallback to the hint date at noon UTC to avoid TZ-aliasing to previous day
+        const iso = toIso(`${dateHint}T12:00:00Z`);
+        if(iso) cands.push(iso);
+      }
+      if(!cands.length) return new Date().toISOString();
+      // pick the latest
+      return cands.reduce((a,b)=> a>b?a:b);
+    }
+
     // No top chips anymore
 
     function sparkline(ts=[], vals=[], color){
@@ -741,8 +765,9 @@
         if(dateStr){
           // load combined archive for the specified date
           const d = await fetch(`../../data/ai/modelswatch/daily/${dateStr}.json`,{cache:'no-store'}).then(r=>r.json());
-          items = (d?.items||[]).map(shallowNormalize);
-          window.__mw_updated_at = d?.updated_at || `${dateStr}T00:00:00Z`;
+          const arr = (d?.items||[]).map(shallowNormalize);
+          items = arr;
+          window.__mw_updated_at = computeUpdatedAt(d?.updated_at, arr, dateStr);
         }else{
           const [g,h] = await Promise.all([
             fetch('../../data/ai/modelswatch/daily_github.json',{cache:'no-store'}).then(r=>r.json()),
@@ -754,7 +779,11 @@
           const seen = new Set(); const merged=[];
           for(const it of [...gi, ...hi]){ const k = `${it.source||''}::${it.id||it.url||it.name||''}`; if(seen.has(k)) continue; seen.add(k); merged.push(it); }
           items = merged;
-          window.__mw_updated_at = g?.updated_at || h?.updated_at || '';
+          // choose the newer meta among g/h
+          const gIso = toIso(g?.updated_at);
+          const hIso = toIso(h?.updated_at);
+          const newerMeta = (gIso && hIso) ? (gIso>hIso?gIso:hIso) : (gIso || hIso || '');
+          window.__mw_updated_at = computeUpdatedAt(newerMeta, merged);
         }
       }catch{ items=[]; window.__mw_updated_at=''; }
     }
@@ -762,16 +791,18 @@
     async function loadTopGH(){
       try{
         const g = await fetch('../../data/ai/modelswatch/top_github.json',{cache:'no-store'}).then(r=>r.json());
-        items = (g?.items||[]).map(shallowNormalize);
-        window.__mw_updated_at = g?.updated_at || '';
+        const arr = (g?.items||[]).map(shallowNormalize);
+        items = arr;
+        window.__mw_updated_at = computeUpdatedAt(g?.updated_at, arr);
       }catch{ items=[]; window.__mw_updated_at=''; }
     }
 
     async function loadTopHF(){
       try{
         const h = await fetch('../../data/ai/modelswatch/top_hf.json',{cache:'no-store'}).then(r=>r.json());
-        items = (h?.items||[]).map(shallowNormalize);
-        window.__mw_updated_at = h?.updated_at || '';
+        const arr = (h?.items||[]).map(shallowNormalize);
+        items = arr;
+        window.__mw_updated_at = computeUpdatedAt(h?.updated_at, arr);
       }catch{ items=[]; window.__mw_updated_at=''; }
     }
 
