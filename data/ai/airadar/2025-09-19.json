@@ -1,0 +1,742 @@
+{
+  "generated_at": "2025-09-18T23:15:07.291147Z",
+  "window_hours": 48,
+  "count": 31,
+  "items": [
+    {
+      "id": "a53c55d1cabae684",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://github.com/ddaras/melony",
+      "title": "Show HN: Build AI chat interfaces with Melony",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T22:32:46Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Show HN: Build AI chat interfaces with Melony",
+        "zh": "展示 HN：使用 Melony 构建 AI 聊天界面",
+        "es": "Mostrar HN: Crea interfaces de chat con IA usando Melony"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 1.237322
+    },
+    {
+      "id": "771b27d56e8dec81",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://strat7.com/blogs/weird-in-weird-out/",
+      "title": "AI tools are making the world look weird",
+      "raw_excerpt": "",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-18T22:27:17Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "AI tools are making the world look weird",
+        "zh": "人工智能工具正让世界变得怪异。",
+        "es": "Las herramientas de inteligencia artificial están haciendo que el mundo parezca extraño."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.988553
+    },
+    {
+      "id": "d63871e211d8bfac",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/news/781635/intel-says-arc-gpus-will-live-on-after-nvidia-deal",
+      "title": "Intel says Arc GPUs will live on after Nvidia deal",
+      "raw_excerpt": "In the future, Intel will make CPUs with Nvidia graphics inside — among other things, Nvidia CEO Jensen Huang confirmed today that Nvidia will contribute “GPU chiplets” that Intel can place alongside its x86 CPU cores instead of the Arc integrated graphics it develops in-house today. But, at least for now, Intel says that doesn’t [&#8230;]",
+      "tags": [],
+      "published_at": "2025-09-18T22:23:42Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Intel says Arc GPUs will live on after Nvidia deal",
+        "zh": "英特尔表示与英伟达达成协议后Arc显卡仍将继续存在。",
+        "es": "Intel afirma que las GPU Arc continuarán existiendo tras el acuerdo con Nvidia"
+      },
+      "excerpt_i18n": {
+        "en": "In the future, Intel will make CPUs with Nvidia graphics inside — among other things, Nvidia CEO Jensen Huang confirmed today that Nvidia will contribute “GPU chiplets” that Intel can place alongside its x86 CPU cores instead of the Arc integrated graphics it develops in-house today. But, at least for now, Intel says that doesn’t [&#8230;]",
+        "zh": "未来，英特尔将在CPU中集成英伟达显卡——英伟达CEO黄仁勋今日确认，除其他合作外，英伟达将提供\"GPU小芯片\"，供英特尔将其与x86 CPU核心封装在同一处理器中。",
+        "es": "En el futuro, Intel fabricará CPUs con gráficos de Nvidia en su interior — entre otras cosas, el CEO de Nvidia, Jensen Huang, confirmó hoy que Nvidia contribuirá con \"chiplets de GPU\" que Intel podrá colocar junto a sus núcleos de CPU x86."
+      },
+      "hotness": 1.037085
+    },
+    {
+      "id": "e29abd3fac6d4646",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://arcanvia.com/illustria",
+      "title": "Show HN: Illustria – AI illustration generator with free downloadable gallery",
+      "raw_excerpt": "Hi HN I built Illustria – a simple tool to generate custom illustrations on demand Why I built it:\n- I was frustrated spending hours browsing stock sites for the right visuals.\n- Free illustrations often didn’t match the style I needed.\n- I wanted a faster way to get usable illustrations for landing pages, pitch decks, and side projects. What it does today:\n- Generate illustrations instantly based on your input (first generation is free).\n- Explore different looks/styles without needing design skills.\n- Download and use them right away.\n- Browse a free gallery of ready-made illustrations: https://arcanvia.com/illustria/gallery I’d love feedback on:\n- Would you actually use this for your side projects?\n- What features would make it more valuable for you?",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-18T21:51:54Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Show HN: Illustria – AI illustration generator with free downloadable gallery",
+        "zh": "展示HN：Illustria – 带免费可下载图库的AI插画生成器",
+        "es": "Mostrar HN: Illustria – Generador de ilustraciones con IA con galería descargable gratuita"
+      },
+      "excerpt_i18n": {
+        "en": "Hi HN I built Illustria – a simple tool to generate custom illustrations on demand Why I built it:\n- I was frustrated spending hours browsing stock sites for the right visuals.\n- Free illustrations often didn’t match the style I needed.\n- I wanted a faster way to get usable illustrations for landing pages, pitch decks, and side projects. What it does today:\n- Generate illustrations instantly based on your input (first generation is free).\n- Explore different looks/styles without needing design skills.\n- Download and use them right away.\n- Browse a free gallery of ready-made illustrations: https://arcanvia.com/illustria/gallery I’d love feedback on:\n- Would you actually use this for your side projects?\n- What features would make it more valuable for you?",
+        "zh": "大家好，我开发了Illustria——一个能按需生成定制插画的简易工具。开发原因：\n- 厌倦了花数小时在素材网站搜寻合适视觉素材\n- 免费插画往往与需求不匹配",
+        "es": "Hola HN, he creado Illustria: una herramienta sencilla para generar ilustraciones personalizadas bajo demanda. Por qué la creé:\n- Me frustraba pasar horas navegando por sitios de bancos de imágenes buscando los recursos visuales adecuados.\n- Las ilustraciones gratuitas a menudo no coincidían con el"
+      },
+      "hotness": 0.98017
+    },
+    {
+      "id": "6208d39acd81df5d",
+      "source": {
+        "site": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      "url": "https://aws.amazon.com/blogs/machine-learning/scale-visual-production-using-stability-ai-image-services-in-amazon-bedrock/",
+      "title": "Scale visual production using Stability AI Image Services in Amazon Bedrock",
+      "raw_excerpt": "This post was written with Alex Gnibus of Stability AI. Stability AI Image Services are now available in Amazon Bedrock, offering ready-to-use media editing capabilities delivered through the Amazon Bedrock API. These image editing tools expand on the capabilities of Stability AI’s Stable Diffusion 3.5 models (SD3.5) and Stable Image Core and Ultra models, which […]",
+      "tags": [
+        "Tools",
+        "Industry"
+      ],
+      "published_at": "2025-09-18T21:25:49Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Scale visual production using Stability AI Image Services in Amazon Bedrock",
+        "zh": "利用Amazon Bedrock中的Stability AI图像服务扩展视觉制作规模。",
+        "es": "Escala la producción visual utilizando los Servicios de Imágenes de Stability AI en Amazon Bedrock"
+      },
+      "excerpt_i18n": {
+        "en": "This post was written with Alex Gnibus of Stability AI. Stability AI Image Services are now available in Amazon Bedrock, offering ready-to-use media editing capabilities delivered through the Amazon Bedrock API. These image editing tools expand on the capabilities of Stability AI’s Stable Diffusion 3.5 models (SD3.5) and Stable Image Core and Ultra models, which […]",
+        "zh": "这篇文章是与Stability AI的Alex Gnibus共同撰写。Stability AI图像服务现已登陆Amazon Bedrock平台，通过Amazon Bedrock API提供即开即用的媒体编辑功能。这些图像...",
+        "es": "Esta publicación fue escrita con Alex Gnibus de Stability AI. Los servicios de imagen de Stability AI ya están disponibles en Amazon Bedrock, ofreciendo capacidades de edición multimedia listas para usar entregadas a través de la API de Amazon Bedrock. Estas im"
+      },
+      "hotness": 0.974036
+    },
+    {
+      "id": "bed936759e1ee7af",
+      "source": {
+        "site": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      "url": "https://aws.amazon.com/blogs/machine-learning/prompting-for-precision-with-stability-ai-image-services-in-amazon-bedrock/",
+      "title": "Prompting for precision with Stability AI Image Services in Amazon Bedrock",
+      "raw_excerpt": "Amazon Bedrock now offers Stability AI Image Services: 9 tools that improve how businesses create and modify images. The technology extends Stable Diffusion and Stable Image models to give you precise control over image creation and editing. Clear prompts are critical—they provide art direction to the AI system. Strong prompts control specific elements like tone, […]",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-18T21:25:34Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Prompting for precision with Stability AI Image Services in Amazon Bedrock",
+        "zh": "在亚马逊Bedrock中使用Stability AI图像服务实现精准提示",
+        "es": "Solicitando precisión con los Servicios de Imágenes de Stability AI en Amazon Bedrock"
+      },
+      "excerpt_i18n": {
+        "en": "Amazon Bedrock now offers Stability AI Image Services: 9 tools that improve how businesses create and modify images. The technology extends Stable Diffusion and Stable Image models to give you precise control over image creation and editing. Clear prompts are critical—they provide art direction to the AI system. Strong prompts control specific elements like tone, […]",
+        "zh": "亚马逊Bedrock现推出Stability AI图像服务：9款工具优化企业图像创建与修改流程。该技术扩展了Stable Diffusion和Stable Image模型，实现对图像的精准控制。",
+        "es": "Amazon Bedrock ahora ofrece los servicios de imagen de Stability AI: 9 herramientas que mejoran la forma en que las empresas crean y modifican imágenes. La tecnología amplía los modelos Stable Diffusion y Stable Image para ofrecerte un control preciso sobre las imágenes."
+      },
+      "hotness": 0.973977
+    },
+    {
+      "id": "130794e61efc21c2",
+      "source": {
+        "site": "https://blogs.nvidia.com/",
+        "feed": "https://blogs.nvidia.com/feed/"
+      },
+      "url": "https://blogs.nvidia.com/blog/uk-ai-ecosystem-celebration/",
+      "title": "The UK’s ‘Goldilocks Moment for AI’: NVIDIA, UK and US Leaders Highlight AI Infrastructure Investments",
+      "raw_excerpt": "The U.K. was the center of the AI world this week as NVIDIA, U.K. and U.S. leaders announced new initiatives toward making the nation an AI superpower. NVIDIA founder and CEO Jensen Huang’s visit to the U.K. this week culminated in an NVIDIA AI ecosystem celebration today at Vision Hall in London, where he welcomed Read Article",
+      "tags": [],
+      "published_at": "2025-09-18T21:21:03Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "The UK’s ‘Goldilocks Moment for AI’: NVIDIA, UK and US Leaders Highlight AI Infrastructure Investments",
+        "zh": "英国迎来AI发展黄金期：英伟达与英美领导人强调AI基础设施投资",
+        "es": "El momento ideal del Reino Unido para la IA: líderes de NVIDIA, Reino Unido y Estados Unidos destacan las inversiones en infraestructura de IA"
+      },
+      "excerpt_i18n": {
+        "en": "The U.K. was the center of the AI world this week as NVIDIA, U.K. and U.S. leaders announced new initiatives toward making the nation an AI superpower. NVIDIA founder and CEO Jensen Huang’s visit to the U.K. this week culminated in an NVIDIA AI ecosystem celebration today at Vision Hall in London, where he welcomed Read Article",
+        "zh": "本周英国成为人工智能世界的中心，英伟达及英美领导人宣布新计划，旨在将英国打造为人工智能超级大国。英伟达创始人兼首席执行官黄仁勋本周访英期间",
+        "es": "El Reino Unido fue el centro del mundo de la IA esta semana, ya que NVIDIA y los líderes del Reino Unido y Estados Unidos anunciaron nuevas iniciativas para convertir a la nación en una superpotencia de IA. La visita del fundador y director ejecutivo de NVIDIA, Jensen Huang, al Reino Unido esta semana cu"
+      },
+      "hotness": 0.972919
+    },
+    {
+      "id": "28fbf1ea9b6a38db",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "http://muratbuffalo.blogspot.com/2025/09/supporting-our-ai-overlords-redesigning.html",
+      "title": "Supporting our AI overlords: Redesigning data systems to be Agent-first",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T21:17:57Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Supporting our AI overlords: Redesigning data systems to be Agent-first",
+        "zh": "支持我们的AI霸主：以智能体优先重构数据系统",
+        "es": "Apoyando a nuestros señores supremos de la IA: Rediseñando los sistemas de datos para priorizar a los agentes"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.972194
+    },
+    {
+      "id": "324880fa79dae229",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://dumpall.pages.dev",
+      "title": "Show HN: dumpall — Dump project code into AI-ready Markdown",
+      "raw_excerpt": "dumpall: The smart file aggregator for AI context and code reviews I've built a new CLI utility called dumpall that solves a pain point I've often had: needing to quickly provide a structured dump of project files to an AI for context, or to a colleague for a code review. The core idea is to follow the Unix philosophy: do one thing well. dumpall recursively reads files in a directory, respects exclusions (like node_modules or .git), and formats the output into clean Markdown fenced code blocks. Key Features: LLM-Optimized: Output is designed for easy consumption by large language models, providing clean and structured context. Clipboard Integration: Use the --clip flag to send the entire output directly to your clipboard. Smart Exclusions: Easily ignore unwanted directories and files. Vers",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-18T20:57:52Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Show HN: dumpall — Dump project code into AI-ready Markdown",
+        "zh": "展示 HN：dumpall —— 将项目代码转储为 AI 就绪的 Markdown 格式",
+        "es": "Mostrar HN: dumpall — Volcar código de proyecto a Markdown listo para IA"
+      },
+      "excerpt_i18n": {
+        "en": "dumpall: The smart file aggregator for AI context and code reviews I've built a new CLI utility called dumpall that solves a pain point I've often had: needing to quickly provide a structured dump of project files to an AI for context, or to a colleague for a code review. The core idea is to follow the Unix philosophy: do one thing well. dumpall recursively reads files in a directory, respects exclusions (like node_modules or .git), and formats the output into clean Markdown fenced code blocks. Key Features: LLM-Optimized: Output is designed for easy consumption by large language models, providing clean and structured context. Clipboard Integration: Use the --clip flag to send the entire output directly to your clipboard. Smart Exclusions: Easily ignore unwanted directories and files. Vers",
+        "zh": "dumpall：专为AI上下文和代码审查打造的智能文件聚合工具。我开发了一款名为dumpall的新CLI实用程序，它解决了我长期面临的痛点：需要快速为AI提供项目文件的结构化转储。",
+        "es": "dumpall: El agregador inteligente de archivos para contexto de IA y revisiones de código He construido una nueva utilidad CLI llamada dumpall que resuelve un problema que he tenido a menudo: la necesidad de proporcionar rápidamente un volcado estructurado de archivos de proyecto a un"
+      },
+      "hotness": 0.967506
+    },
+    {
+      "id": "9af1938eebe27482",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://old.reddit.com/r/LivestreamFail/comments/1nkbig7/metas_live_staged_demo_fails_the_ai_recording/",
+      "title": "Meta's live staged demo fails; the \"AI\" recording plays before the actor acts",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T20:50:33Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Meta's live staged demo fails; the \"AI\" recording plays before the actor acts",
+        "zh": "Meta现场演示出现失误，AI录音在演员表演前就已播放。",
+        "es": "La demostración en directo de Meta fracasa; la grabación de \"inteligencia artificial\" se reproduce antes de que el actor actúe."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.965803
+    },
+    {
+      "id": "35e6ee0ed6c5bb33",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.dariuszparys.com/should-ai-be-listed-as-a-co-author-in-your-git-commits/",
+      "title": "Should AI Be Listed as a Co-Author in Your Git Commits?",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T20:48:18Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Should AI Be Listed as a Co-Author in Your Git Commits?",
+        "zh": "AI是否应被列为Git提交的共同作者？",
+        "es": "¿Debería la IA figurar como coautora en tus commits de Git?"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.965281
+    },
+    {
+      "id": "6e15c3b379832235",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/report/781330/nvidia-intel-explain-5-billion-deal-jensen-huang-lip-bu-tan-amd",
+      "title": "Nvidia and Intel’s $5 billion deal is apparently about eating AMD’s lunch",
+      "raw_excerpt": "Today, Nvidia CEO Jensen Huang and Intel CEO Lip-Bu Tan held a joint webcast to explain just why the world's most valuable company (Nvidia's at $4.28 trillion) is throwing a $5 billion lifeline to a struggling competitor. Nvidia quickly shut down several possible explanations. Huang claimed it had nothing to do with Trump, who famously [&#8230;]",
+      "tags": [],
+      "published_at": "2025-09-18T20:15:36Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Nvidia and Intel’s $5 billion deal is apparently about eating AMD’s lunch",
+        "zh": "英伟达与英特尔50亿美元的交易显然意在抢占AMD的市场份额。",
+        "es": "El acuerdo de 5.000 millones de dólares entre Nvidia e Intel aparentemente trata de arrebatarle el negocio a AMD."
+      },
+      "excerpt_i18n": {
+        "en": "Today, Nvidia CEO Jensen Huang and Intel CEO Lip-Bu Tan held a joint webcast to explain just why the world's most valuable company (Nvidia's at $4.28 trillion) is throwing a $5 billion lifeline to a struggling competitor. Nvidia quickly shut down several possible explanations. Huang claimed it had nothing to do with Trump, who famously [&#8230;]",
+        "zh": "今天，英伟达首席执行官黄仁勋与英特尔首席执行官陈立武联合举行网络直播，阐释这家全球市值最高的公司（英伟达市值4.28万亿美元）为何向陷入困境的竞争对手提供50亿美元纾困资金。",
+        "es": "Hoy, el consejero delegado de Nvidia, Jensen Huang, y el consejero delegado de Intel, Lip-Bu Tan, realizaron una retransmisión web conjunta para explicar por qué la empresa más valiosa del mundo (Nvidia, con 4,28 billones de dólares) está lanzando un salvavidas de 5000 millones de dólares a un competidor en dificultades."
+      },
+      "hotness": 1.005599
+    },
+    {
+      "id": "1cadc23eb623be30",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.nanobot.ai/",
+      "title": "Show HN: Nanobot – Turn MCP servers into full AI agents",
+      "raw_excerpt": "Today we're releasing Nanobot an open-source framework for building AI agents on top of the Model Context Protocol (MCP). MCP servers are a great way to expose structured tools, but they’re usually just that—collections of functions. Nanobot makes it simple to wrap any MCP server with reasoning, a system prompt, and orchestration so it behaves like a real agent. Even better, Nanobot fully supports MCP-UI, so agents can pass rich interactive components (forms, dashboards, even mini-apps) directly into chat. A simple example: if you had a Blackjack MCP server with tools like deal, bet, and hit, you could wrap it with Nanobot to create a dealer agent that knows how to explain the game, guide a player, and render an interactive Blackjack table inside chat. We built this because we wanted agent",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-18T19:46:07Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Show HN: Nanobot – Turn MCP servers into full AI agents",
+        "zh": "展示 HN：纳米机器人——将 MCP 服务器转变为完整 AI 代理",
+        "es": "Mostrar HN: Nanobot – Convierte servidores MCP en agentes de IA completos"
+      },
+      "excerpt_i18n": {
+        "en": "Today we're releasing Nanobot an open-source framework for building AI agents on top of the Model Context Protocol (MCP). MCP servers are a great way to expose structured tools, but they’re usually just that—collections of functions. Nanobot makes it simple to wrap any MCP server with reasoning, a system prompt, and orchestration so it behaves like a real agent. Even better, Nanobot fully supports MCP-UI, so agents can pass rich interactive components (forms, dashboards, even mini-apps) directly into chat. A simple example: if you had a Blackjack MCP server with tools like deal, bet, and hit, you could wrap it with Nanobot to create a dealer agent that knows how to explain the game, guide a player, and render an interactive Blackjack table inside chat. We built this because we wanted agent",
+        "zh": "今天我们发布Nanobot，这是一个基于模型上下文协议（MCP）构建AI代理的开源框架。MCP服务器是暴露结构化工具的绝佳方式，但它们通常仅止于此——即工具集合。",
+        "es": "Hoy lanzamos Nanobot, un framework de código abierto para construir agentes de IA sobre el Protocolo de Contexto de Modelo (MCP). Los servidores MCP son una excelente manera de exponer herramientas estructuradas, pero normalmente son solo eso: colecciones"
+      },
+      "hotness": 0.950942
+    },
+    {
+      "id": "372931d81463b1f2",
+      "source": {
+        "site": "https://www.wired.com",
+        "feed": "https://www.wired.com/feed/category/business/latest/rss"
+      },
+      "url": "https://www.wired.com/story/uncanny-valley-podcast-move-aside-chatbots-ai-humanoids-are-here/",
+      "title": "Move Aside, Chatbots: AI Humanoids Are Here",
+      "raw_excerpt": "Today on Uncanny Valley, we talk about why the AI industry is investing in the development of humanoid robots, and what that means for us non-robots.",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-18T19:45:20Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Move Aside, Chatbots: AI Humanoids Are Here",
+        "zh": "聊天机器人请让位：AI人形机器人已登场",
+        "es": "A un lado, chatbots: los humanoides de IA han llegado."
+      },
+      "excerpt_i18n": {
+        "en": "Today on Uncanny Valley, we talk about why the AI industry is investing in the development of humanoid robots, and what that means for us non-robots.",
+        "zh": "今日《诡异谷》探讨人工智能产业为何投资研发人形机器人，以及这对我们人类的意义。",
+        "es": "Hoy en Uncanny Valley hablamos sobre por qué la industria de la inteligencia artificial está invirtiendo en el desarrollo de robots humanoides, y lo que eso significa para nosotros, los no robots."
+      },
+      "hotness": 0.950762
+    },
+    {
+      "id": "383d7307711f3b24",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.nature.com/articles/d41586-025-03020-9",
+      "title": "Can AI chatbots trigger psychosis? What the science says",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T19:45:13Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Can AI chatbots trigger psychosis? What the science says",
+        "zh": "人工智能聊天机器人会引发精神病吗？科学依据如下",
+        "es": "¿Pueden los chatbots de IA desencadenar psicosis? Lo que dice la ciencia."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.950736
+    },
+    {
+      "id": "62424dd3ee6cd535",
+      "source": {
+        "site": "https://www.wired.com",
+        "feed": "https://www.wired.com/feed/category/business/latest/rss"
+      },
+      "url": "https://www.wired.com/story/nvidia-intel-announce-collaboration-chips/",
+      "title": "Jensen Huang Wants You to Know He’s Getting a Lot Out of the ‘Fantastic’ Nvidia-Intel Deal",
+      "raw_excerpt": "Nvidia is investing $5 billion in Intel. The news comes after the US government took a roughly 10 percent equity stake in the struggling chipmaker.",
+      "tags": [
+        "Policy"
+      ],
+      "published_at": "2025-09-18T19:44:10Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Jensen Huang Wants You to Know He’s Getting a Lot Out of the ‘Fantastic’ Nvidia-Intel Deal",
+        "zh": "黄仁勋希望你知道他从“绝佳”的英伟达-英特尔交易中获益良多。",
+        "es": "Jensen Huang quiere que sepas que está sacando mucho partido del \"fantástico\" acuerdo entre Nvidia e Intel."
+      },
+      "excerpt_i18n": {
+        "en": "Nvidia is investing $5 billion in Intel. The news comes after the US government took a roughly 10 percent equity stake in the struggling chipmaker.",
+        "zh": "英伟达向英特尔投资50亿美元。此前美国政府已收购这家陷入困境的芯片制造商约10%的股份。",
+        "es": "Nvidia está invirtiendo 5000 millones de dólares en Intel. La noticia llega después de que el gobierno de Estados Unidos adquiriera aproximadamente un 10 por ciento de participación accionarial en el fabricante de chips en dificultades."
+      },
+      "hotness": 0.950496
+    },
+    {
+      "id": "69450746f3636445",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://textjam.com/",
+      "title": "TextJam: The multi-player AI editor",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T19:37:42Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "TextJam: The multi-player AI editor",
+        "zh": "文本果酱：多人AI编辑器",
+        "es": "TextJam: El editor de IA multijugador"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.949017
+    },
+    {
+      "id": "16084898c97cd205",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://builders.ramp.com/post/meet-ramp-research",
+      "title": "We built an AI agent that answers 1k data questions a month",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T19:33:29Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "We built an AI agent that answers 1k data questions a month",
+        "zh": "我们构建了一个每月回答1000个数据问题的AI代理。",
+        "es": "Hemos creado un agente de inteligencia artificial que responde mil preguntas de datos al mes."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.948055
+    },
+    {
+      "id": "9951433b94882051",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/",
+      "title": "Inside the world’s most powerful AI datacenter",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T18:59:50Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Inside the world’s most powerful AI datacenter",
+        "zh": "全球最强大的人工智能数据中心内部",
+        "es": "Dentro del centro de datos de IA más potente del mundo"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.940408
+    },
+    {
+      "id": "ef8ff55dc4ac721f",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45293564",
+      "title": "Research: AI and Software Verification/Validation",
+      "raw_excerpt": "I’m Guilherme Bolfe, and I recently started my Master’s in Software Engineering. I’m conducting a research study to understand how Artificial Intelligence (AI) and Language Models (LLMs) are being used to support software Verification and Validation (V&amp;V) activities — both in industry and in academic proof-of-concepts. * If you work in software development, testing, quality assurance, or related fields, your experience could greatly help us map: * Tools already in use * Perceived benefits (productivity, quality, time savings, etc.) * Challenges and limitations encountered * How you see the future of AI in V&amp;V The survey is quick (5–10 min), completely anonymous, and your answers are confidential: [Take the survey] https://forms.gle/XCxpzt6Par4XHR37A I really appreciate your time an",
+      "tags": [
+        "Research",
+        "Tools",
+        "Industry"
+      ],
+      "published_at": "2025-09-18T18:54:40Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Research: AI and Software Verification/Validation",
+        "zh": "研究：人工智能与软件验证/确认",
+        "es": "Investigación: IA y Verificación/Validación de Software"
+      },
+      "excerpt_i18n": {
+        "en": "I’m Guilherme Bolfe, and I recently started my Master’s in Software Engineering. I’m conducting a research study to understand how Artificial Intelligence (AI) and Language Models (LLMs) are being used to support software Verification and Validation (V&amp;V) activities — both in industry and in academic proof-of-concepts. * If you work in software development, testing, quality assurance, or related fields, your experience could greatly help us map: * Tools already in use * Perceived benefits (productivity, quality, time savings, etc.) * Challenges and limitations encountered * How you see the future of AI in V&amp;V The survey is quick (5–10 min), completely anonymous, and your answers are confidential: [Take the survey] https://forms.gle/XCxpzt6Par4XHR37A I really appreciate your time an",
+        "zh": "我是Guilherme Bolfe，最近刚开始攻读软件工程硕士学位。我正在开展一项研究，旨在了解人工智能（AI）和语言模型（LLM）如何被用于支持软件...",
+        "es": "Soy Guilherme Bolfe y recientemente he comenzado mi máster en Ingeniería del Software. Estoy realizando un estudio de investigación para comprender cómo la Inteligencia Artificial (IA) y los Modelos de Lenguaje (LLM) se están utilizando para apoyar el desarrol"
+      },
+      "hotness": 0.939239
+    },
+    {
+      "id": "65feba338c524d4f",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.timeplus.com/post/python-udf",
+      "title": "Streaming SQL for Real-Time AI and Machine Learning",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T18:43:11Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Streaming SQL for Real-Time AI and Machine Learning",
+        "zh": "实时AI与机器学习的流式SQL",
+        "es": "SQL de transmisión para inteligencia artificial y aprendizaje automático en tiempo real"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.936647
+    },
+    {
+      "id": "685c2d17cb32a813",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.theregister.com/2025/09/18/atlassian_dx_purchase/",
+      "title": "Atlassian CEO promises AI everywhere, clearer views of what your devs are up to",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T18:42:17Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Atlassian CEO promises AI everywhere, clearer views of what your devs are up to",
+        "zh": "Atlassian首席执行官承诺全面应用人工智能，更清晰地展示开发人员的工作动态。",
+        "es": "El CEO de Atlassian promete inteligencia artificial en todas partes y vistas más claras de lo que están haciendo tus desarrolladores."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.936444
+    },
+    {
+      "id": "feac9edc04a15e4a",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.meta.com/blog/michael-abrash-richard-newcombe-contextual-ai-reality-labs-research-connect-2025/",
+      "title": "Michael Abrash and Richard Newcombe on Contextual AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T18:26:11Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Michael Abrash and Richard Newcombe on Contextual AI",
+        "zh": "迈克尔·阿布拉什与理查德·纽科姆谈情境人工智能",
+        "es": "Michael Abrash y Richard Newcombe sobre Inteligencia Artificial Contextual"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.932822
+    },
+    {
+      "id": "1f7bc04a7a34b9ff",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.huawei.com/en/news/2025/9/hc-xu-keynote-speech",
+      "title": "Huawei: SuperPoD Interconnect: Leading a New Paradigm for AI Infrastructure",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T18:18:11Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Huawei: SuperPoD Interconnect: Leading a New Paradigm for AI Infrastructure",
+        "zh": "华为：SuperPoD互联：引领AI基础设施新范式",
+        "es": "Huawei: Interconexión SuperPoD: Liderando un Nuevo Paradigma para la Infraestructura de IA"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.931028
+    },
+    {
+      "id": "6aa0cd615a01a98b",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.theguardian.com/world/2025/sep/18/italy-first-in-eu-to-pass-comprehensive-law-regulating-ai",
+      "title": "Italy first in EU to pass comprehensive law regulating use of AI",
+      "raw_excerpt": "",
+      "tags": [
+        "Policy"
+      ],
+      "published_at": "2025-09-18T18:17:52Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Italy first in EU to pass comprehensive law regulating use of AI",
+        "zh": "意大利成为欧盟首个通过全面人工智能使用监管法律的国家。",
+        "es": "Italia es el primer país de la UE en aprobar una ley integral que regula el uso de la inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.930957
+    },
+    {
+      "id": "abd4838e6008d4bb",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/tech/780353/meta-ray-ban-display-oakley-vanguard-preorder-price-how-to-buy",
+      "title": "Meta&#8217;s Ray-Ban Gen 2 and Oakley Vanguard glasses are available to preorder",
+      "raw_excerpt": "At its Connect keynote on Wednesday, Meta officially introduced the $799.99 Meta Ray-Ban Display, also known as Hypernova. The brand's new, high-end smart glasses feature an in-lens display you can control with wrist-based gestures via the new Meta Neural Band that's included. The display pairs with your phone and allows you to see everything from [&#8230;]",
+      "tags": [],
+      "published_at": "2025-09-18T18:17:08Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Meta&#8217;s Ray-Ban Gen 2 and Oakley Vanguard glasses are available to preorder",
+        "zh": "Meta的雷朋第二代和奥克利先锋眼镜现已开放预订。",
+        "es": "Las gafas Ray-Ban Gen 2 y Oakley Vanguard de Meta están disponibles para reserva anticipada."
+      },
+      "excerpt_i18n": {
+        "en": "At its Connect keynote on Wednesday, Meta officially introduced the $799.99 Meta Ray-Ban Display, also known as Hypernova. The brand's new, high-end smart glasses feature an in-lens display you can control with wrist-based gestures via the new Meta Neural Band that's included. The display pairs with your phone and allows you to see everything from [&#8230;]",
+        "zh": "在周三的Connect主题演讲中，Meta正式推出了售价799.99美元的Meta Ray-Ban Display智能眼镜，又名Hypernova。这款高端新品采用镜片内置显示屏技术，可通过腕部动作进行操控。",
+        "es": "En su presentación principal de Connect del miércoles, Meta presentó oficialmente las Meta Ray-Ban Display de 799,99 dólares, también conocidas como Hypernova. Las nuevas gafas inteligentes de gama alta de la marca cuentan con una pantalla en la lente que puedes controlar con gestos de muñeca."
+      },
+      "hotness": 0.977332
+    },
+    {
+      "id": "2ee9ed1766043c10",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://hassanshaikley.com/digital-plastic/index.html",
+      "title": "AI Is Just Digital Plastic",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T18:15:29Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "AI Is Just Digital Plastic",
+        "zh": "人工智能不过是数字塑料。",
+        "es": "La inteligencia artificial es solo plástico digital."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.930423
+    },
+    {
+      "id": "a52e3a21cddbd965",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://nextvise.ai/",
+      "title": "NextViseAI – white-label AI agents for healthcare and agencies",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T18:05:28Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "NextViseAI – white-label AI agents for healthcare and agencies",
+        "zh": "NextViseAI——面向医疗和机构的白标人工智能代理。",
+        "es": "NextViseAI: agentes de IA de marca blanca para el sector sanitario y agencias."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.928183
+    },
+    {
+      "id": "b7f8098a35ab094c",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://research.google/blog/learn-your-way-reimagining-textbooks-with-generative-ai/",
+      "title": "Learn Your Way: Reimagining Textbooks with Generative AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-18T17:42:56Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Learn Your Way: Reimagining Textbooks with Generative AI",
+        "zh": "学习随心：用生成式AI重塑教科书",
+        "es": "Aprende a tu manera: Reimaginando los libros de texto con IA generativa"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.923163
+    },
+    {
+      "id": "558c05eec3000327",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/0F6EidxIFUmGNsSx3V2o",
+      "title": "AI 引领的企业级智能分析架构演进与行业实践",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-18T17:34:41Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "zh": "AI 引领的企业级智能分析架构演进与行业实践",
+        "en": "Evolution of Enterprise-Grade Intelligent Analytics Architecture Driven by AI and Industry Practices",
+        "es": "Evolución y prácticas sectoriales de la arquitectura de análisis inteligente empresarial liderada por IA"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el texto original>"
+      },
+      "hotness": 0.921332
+    },
+    {
+      "id": "2b2b028d7a4e69d4",
+      "source": {
+        "site": "https://arstechnica.com",
+        "feed": "https://arstechnica.com/information-technology/feed/"
+      },
+      "url": "https://arstechnica.com/information-technology/2025/09/new-attack-on-chatgpt-research-agent-pilfers-secrets-from-gmail-inboxes/",
+      "title": "New attack on ChatGPT research agent pilfers secrets from Gmail inboxes",
+      "raw_excerpt": "Unlike most prompt injections, ShadowLeak executes on OpenAI's cloud-based infrastructure.",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-18T16:29:22Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "New attack on ChatGPT research agent pilfers secrets from Gmail inboxes",
+        "zh": "新型ChatGPT研究代理攻击窃取Gmail收件箱机密。",
+        "es": "Nuevo ataque al agente de investigación de ChatGPT roba secretos de los buzones de Gmail."
+      },
+      "excerpt_i18n": {
+        "en": "Unlike most prompt injections, ShadowLeak executes on OpenAI's cloud-based infrastructure.",
+        "zh": "与大多数提示注入不同，ShadowLeak在OpenAI的云端基础设施上执行。",
+        "es": "A diferencia de la mayoría de las inyecciones de comandos, ShadowLeak se ejecuta en la infraestructura basada en la nube de OpenAI."
+      },
+      "hotness": 0.906961
+    }
+  ]
+}
