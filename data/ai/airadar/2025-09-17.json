@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-17T23:14:58.886275Z",
+  "generated_at": "2025-09-18T23:15:07.291147Z",
   "window_hours": 48,
-  "count": 50,
+  "count": 51,
   "items": [
     {
       "id": "4756a268827eab94",
@@ -1186,6 +1186,28 @@
         "es": "Apollo Research y OpenAI desarrollaron evaluaciones para la desalineación oculta (\"maquinación\") y encontraron comportamientos consistentes con la maquinación en pruebas controladas con modelos de vanguardia. El equipo compartió ejemplos concretos y enfatiza"
       },
       "hotness": 1.143696
+    },
+    {
+      "id": "d3c545895ce4716b",
+      "source": {
+        "site": "https://huggingface.co/blog",
+        "feed": "https://huggingface.co/blog/feed.xml"
+      },
+      "url": "https://huggingface.co/blog/inference-providers-publicai",
+      "title": "Public AI on Hugging Face Inference Providers 🔥",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-17T00:00:00Z",
+      "fetched_at": "2025-09-18T23:14:47.197176Z",
+      "title_i18n": {
+        "en": "Public AI on Hugging Face Inference Providers 🔥",
+        "zh": "Hugging Face 推理平台上的公共AI 🔥",
+        "es": "IA pública en proveedores de inferencia de Hugging Face 🔥"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.707602
     }
   ]
 }
