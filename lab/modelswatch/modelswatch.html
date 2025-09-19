@@ -6,7 +6,7 @@
   <title data-i18n="modelwatch_title">模型追踪器</title>
   <link rel="icon" href="../../assets/logo.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0ea5e9">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://busuanzi.ibruce.info; font-src 'self' data:; connect-src 'self' https://api.countapi.xyz https://counterapi.dev https://busuanzi.ibruce.info; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://busuanzi.ibruce.info; font-src 'self' data:; connect-src 'self' https://busuanzi.ibruce.info; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <meta name="description" content="模型追踪器：跟踪 GitHub 与 Hugging Face 热门模型/项目的热度趋势、榜单与详情" data-i18n-content="modelwatch_desc">
   <link rel="canonical" href="https://fanwan-ai.github.io/lab/modelswatch/modelswatch.html">
@@ -57,7 +57,32 @@
   /* Active state for trigger when filters applied */
   .mw-cas-inline > #mw-cas-trigger.active{background:linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);color:#fff;border-color:color-mix(in oklab, var(--primary-600), white 10%);box-shadow:0 8px 18px rgba(37,99,235,.18)}
   /* Search input: add subtle search icon */
-  #mw-q{padding-left:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2399a3ad' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:10px center}
+  #mw-q{padding-left:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2399a3ad' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:10px center;color:var(--text)}
+  #mw-q::placeholder{color:color-mix(in oklab, var(--muted), var(--text) 25%)}
+  :root[data-theme="dark"] #mw-q{color:#111;background:#fff;border-color:color-mix(in oklab, var(--border), white 35%)}
+  :root[data-theme="dark"] #mw-q::placeholder{color:#555}
+  /* Dark theme cascader trigger & clear button accessibility */
+  :root[data-theme="dark"] #mw-cas-trigger{background:#fff;color:#111;border:1px solid color-mix(in oklab,var(--border),white 35%);transition:background .15s,color .15s,border-color .15s}
+  :root[data-theme="dark"] #mw-cas-trigger:hover{background:#f1f5f9}
+  :root[data-theme="dark"] #mw-cas-trigger.active{background:#e2e8f0;border-color:#cbd5e1}
+  :root[data-theme="dark"] #mw-cas-clear{background:#fff;color:#111;border:1px solid color-mix(in oklab,var(--border),white 35%)}
+  :root[data-theme="dark"] #mw-cas-clear:hover{background:#fee2e2;color:#991b1b;border-color:#fca5a5}
+  :root[data-theme="dark"] #mw-cas-clear:active{background:#fecaca}
+  :root[data-theme="dark"] #mw-cas-clear:focus-visible{outline:2px solid #ef4444;outline-offset:2px}
+  /* Date input contrast */
+  #mw-date{color:var(--text);background:transparent}
+  #mw-date::placeholder{color:color-mix(in oklab, var(--muted), var(--text) 30%)}
+  :root[data-theme="dark"] #mw-date{color:#111;background:#fff;border:1px solid color-mix(in oklab, var(--border), white 35%);border-radius:var(--mw-radius)}
+  :root[data-theme="dark"] #mw-date::placeholder{color:#555}
+  :root[data-theme="dark"] #mw-sort{color:#111;background:#fff;border:1px solid color-mix(in oklab, var(--border), white 35%)}
+  :root[data-theme="dark"] #mw-datewrap{background:#fff}
+  :root[data-theme="dark"] #mw-datewrap .btn{background:#fff;color:#111}
+  :root[data-theme="dark"] #mw-datewrap .btn:hover{background:#f2f2f2}
+  :root[data-theme="dark"] .mw-toolbar .input{background:#fff;color:#111}
+  :root[data-theme="dark"] .mw-toolbar .btn.small{background:color-mix(in oklab, #fff, var(--primary) 4%);color:#111}
+  :root[data-theme="dark"] .mw-toolbar .btn.small.active, :root[data-theme="dark"] .mw-toolbar .btn.small:focus{color:#111}
+  .mw-highlight{background:color-mix(in oklab, var(--primary) 25%, transparent);padding:0 2px;border-radius:4px}
+  :root[data-theme="dark"] .mw-highlight{background:rgba(59,130,246,.35)}
   @media (max-width:800px){ .mw-toolbar .input{flex:1 1 220px} }
     .mw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
     @media (max-width:1100px){.mw-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
@@ -130,7 +155,21 @@
     .mw-check { width: 18px; height: 18px; border: 1.5px solid color-mix(in oklab, var(--border), var(--primary) 20%); border-radius: 6px; display:inline-grid; place-items:center; background: var(--surface); color: #fff; font-size:14px; line-height:1; }
     .mw-check[data-on="1"] { border-color: color-mix(in oklab, var(--primary), var(--border) 10%); background: color-mix(in oklab, var(--primary) 28%, white); }
     .mw-muted { color: var(--muted); font-size: .9rem; padding: 10px; }
-    @media (max-width: 800px){ .mw-cas-dd .dd-body { grid-template-columns: 1fr; } .mw-cas-dd { left: 0; width: 100%; max-width: 100vw; } .mw-item{padding:12px 12px} }
+    /* Mobile cascader - staged navigation */
+    @media (max-width: 800px){ 
+      .mw-cas-dd .dd-body { grid-template-columns: 1fr; position: relative; overflow: hidden; } 
+      .mw-cas-dd { left: 0; width: 100%; max-width: 100vw; } 
+      .mw-item{padding:12px 12px; font-size: 16px; -webkit-tap-highlight-color: transparent; }
+      .mw-cas-dd .col { border-right: none; position: absolute; width: 100%; height: 100%; transition: transform 0.3s ease; }
+      .mw-cas-dd .col.stage-0 { transform: translateX(0); }
+      .mw-cas-dd .col.stage-1 { transform: translateX(100%); }
+      .mw-cas-dd .col.stage-2 { transform: translateX(200%); }
+      .mw-cas-dd .col.stage-active { transform: translateX(0) !important; }
+      .mw-cas-dd .col.stage-hidden { transform: translateX(-100%) !important; }
+      .mw-mobile-nav { display: flex; align-items: center; padding: 8px 10px; border-bottom: 1px solid var(--border); background: var(--surface-2); }
+      .mw-mobile-back { background: none; border: none; color: var(--primary); font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 4px; }
+      .mw-mobile-title { flex: 1; font-weight: 600; color: var(--secondary); text-align: center; font-size: 14px; }
+    }
   </style>
 </head>
 <body>
@@ -240,7 +279,7 @@
             <option value="stars" data-i18n="mw_sort_stars">Stars</option>
             <option value="downloads" data-i18n="mw_sort_downloads">Downloads</option>
           </select>
-          <input id="mw-q" class="input" placeholder="搜索名称/标签…" data-i18n-placeholder="search_placeholder" />
+          <input id="mw-q" class="input" placeholder="搜索标题/摘要/来源…" data-i18n-placeholder="search_placeholder" />
           <button class="btn outline small" id="mw-cas-clear"><span class="i18n l-zh">清空筛选</span><span class="i18n l-en">Clear</span><span class="i18n l-es">Limpiar</span></button>
         </div>
 
@@ -275,8 +314,7 @@
     const modesEl = document.getElementById('mw-modes');
     const sortEl = document.getElementById('mw-sort');
     const qEl = document.getElementById('mw-q');
-    const gridEl = document.getElementById('mw-grid');
-    const subEl = document.getElementById('mw-sub');
+  // (gridEl/subEl not needed inside cascader context for dropdown operations)
   const dateWrap = document.getElementById('mw-datewrap');
   const dateInput = document.getElementById('mw-date');
   const prevBtn = document.getElementById('mw-prev');
@@ -329,7 +367,17 @@
     })();
 
     const getLang = ()=> (localStorage.getItem('lang')||document.documentElement.lang||'zh');
-    const tagLabel = (key)=> TAG_LABELS[getLang()]?.[key] || key;
+    // Safe language resolver (fallback zh)
+    window.getLangSafe = function getLangSafe(){
+      try{
+        if(typeof getLang === 'function'){ const v = getLang(); if(v) return v; }
+        // Try reading from html[data-lang] or documentElement lang
+        const el = document.documentElement;
+        const attr = el.getAttribute('data-lang') || el.lang || 'zh';
+        return ['zh','en','es'].includes(attr)? attr : 'zh';
+      }catch{ return 'zh'; }
+    }
+    const tagLabel = (key)=> TAG_LABELS[getLangSafe()]?.[key] || key;
     const toKey = (s)=> LABEL_TO_KEY[String(s||'').trim()] || null;
   function string(s){ return String(s); }
 
@@ -674,6 +722,40 @@
       </article>`;
     }
 
+    // Build searchable text and score by query tokens
+    function buildSearchIndex(it){
+      const lang = getLang();
+      const summaryLang = lang==='zh'? it.summary_zh : lang==='es'? it.summary_es : it.summary_en;
+      const parts = [it.id,it.name,it.source,summaryLang,it.summary,it.summary_en,it.summary_zh,it.summary_es].concat(it.tags||[]);
+      return parts.filter(Boolean).join(' ').toLowerCase();
+    }
+    function scoreItem(it, tokens){
+      if(!tokens.length) return 0;
+      let score = 0;
+      const text = buildSearchIndex(it);
+      for(const tk of tokens){
+        const idx = text.indexOf(tk);
+        if(idx>=0){
+          // proximity + early boost
+          score += 10;
+          if(idx<40) score += 4;
+          if(/\b/.test(tk)) score += 2;
+        }
+      }
+      // small boost for more matching tags
+      const tg = (it.tags||[]).join(' ').toLowerCase();
+      for(const tk of tokens){ if(tg.includes(tk)) score+=3; }
+      return score;
+    }
+    function highlightText(html, tokens){
+      if(!tokens.length) return html;
+      try{
+        const escaped = tokens.map(t=> t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+        if(!escaped.length) return html;
+        const re = new RegExp('('+escaped.join('|')+')','ig');
+        return html.replace(re, m=>`<span class="mw-highlight">${m}</span>`);
+      }catch{return html;}
+    }
     function filterSort(arr){
       // 1) Defensive de-duplication (source + id/url/name as stable key)
       const seen = new Set();
@@ -684,20 +766,34 @@
       }
   // no model-id exact filter (covered by search)
       // search
-  const qs = (query||'').trim().toLowerCase();
-  if(qs){ out = out.filter(it => `${it.id} ${it.name} ${(it.tags||[]).join(' ')}`.toLowerCase().includes(qs)); }
+      const qs = (query||'').trim().toLowerCase();
+      if(qs){
+        const rawTokens = qs.split(/\s+/).filter(Boolean);
+        // allow simple partial tokens by also trying original string
+        out = out.filter(it =>{
+          const text = buildSearchIndex(it);
+          if(text.includes(qs)) return true;
+          return rawTokens.every(tk => text.includes(tk));
+        });
+      }
       // sort
       const key = sortEl.value||'score';
-      out.sort((a,b)=>{
-        if(key==='delta7'){
-          const av = (a.stats?.stars_7d ?? a.stats?.hf_downloads_7d ?? 0);
-          const bv = (b.stats?.stars_7d ?? b.stats?.hf_downloads_7d ?? 0);
-          return bv - av;
-        }
-        if(key==='stars') return (b.stats?.stars||0) - (a.stats?.stars||0);
-        if(key==='downloads') return (b.stats?.hf_downloads_7d||0) - (a.stats?.hf_downloads_7d||0);
-        return (b.score||0) - (a.score||0);
-      });
+      if(qs){
+        const tokens = qs.split(/\s+/).filter(Boolean);
+        out.forEach(o=>{ o.__qScore = scoreItem(o, tokens); });
+        out.sort((a,b)=> b.__qScore - a.__qScore);
+      } else {
+        out.sort((a,b)=>{
+          if(key==='delta7'){
+            const av = (a.stats?.stars_7d ?? a.stats?.hf_downloads_7d ?? 0);
+            const bv = (b.stats?.stars_7d ?? b.stats?.hf_downloads_7d ?? 0);
+            return bv - av;
+          }
+            if(key==='stars') return (b.stats?.stars||0) - (a.stats?.stars||0);
+            if(key==='downloads') return (b.stats?.hf_downloads_7d||0) - (a.stats?.hf_downloads_7d||0);
+            return (b.score||0) - (a.score||0);
+        });
+      }
       return out;
     }
 
@@ -974,10 +1070,19 @@
 
   <!-- Script: Cascading category filter (三级联动标签筛选逻辑) -->
   <script>
-  (function(){
-    // DOM refs
-  const casWrap = document.querySelector('.mw-cas-inline');
-  const casBody = null; // no inline body needed now
+    // Card renderer (kept minimal & robust)
+    function card(it){
+      const url = it.url || it.homepage || it.repo || '#';
+      const src = esc(it.source||'');
+      const metrics = esc(it.stars?`★${it.stars}`: it.likes?`❤${it.likes}`:'');
+      const last = it.updated_at?` · ${esc(it.updated_at.substring(0,10))}`:'';
+      const tags = (it.task_keys||it.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
+      const sum = it.summary_en || it.summary || '';
+      return `<article class="card mw-card" data-id="${esc(it.id)}">\n        <h4 class="mw-title"><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(it.name||it.id)}</a></h4>\n        <div class="mw-meta">${src} · ${metrics}${last}</div>\n        <div class="mw-tags">${tags}</div>\n        ${sum?`<p class=\\"muted\\" style=\\"margin:.5rem 0 0 0; line-height:1.4\\">${esc(sum)}</p>`:''}\n      </article>`;
+    }
+
+    // ===== Cascader (三级分类筛选) =====
+    const casWrap = document.querySelector('.mw-cas-inline');
     const clearBtn = document.getElementById('mw-cas-clear');
     const triggerBtn = document.getElementById('mw-cas-trigger');
     const dd = document.getElementById('mw-cas-dd');
@@ -985,21 +1090,12 @@
     const col2 = document.getElementById('mw-cas-c2');
     const col3 = document.getElementById('mw-cas-c3');
     const closeBtn = document.getElementById('mw-cas-close');
-    const gridEl = document.getElementById('mw-grid');
-    const subEl = document.getElementById('mw-sub');
-
-  if(!casWrap) return;
-
-  // State
-  let CAT_TREE = null; // loaded from ../../data/ai/ai_categories.json or BUILTIN_TREE fallback
-    // Set of selected task keys (e.g., 'image_classification')
-    const selectedTasks = new Set();
-    // Single-selected category and subcategory keys
-    let selCat = null; // e.g., 'cv'
-    let selSub = null; // e.g., 'general_visual_understanding'
-
-    const getLang = ()=> (localStorage.getItem('lang')||document.documentElement.lang||'zh');
-    const labelOf = (obj)=> { const L=getLang(); return obj?.[L] || obj?.zh || obj?.en || obj?.es || ''; }
+  // Global grid/sub header elements (restored after earlier refactor removal)
+  const gridEl = document.getElementById('mw-grid');
+  const subEl = document.getElementById('mw-sub');
+    let mobileStage = 0; let selCat = null, selSub = null; const selectedTasks = new Set();
+    let CAT_TREE = null; // taxonomy will load lazily
+  const labelOf = (obj)=> { if(!obj) return ''; const L = getLangSafe(); return obj[L] || obj.zh || obj.en || obj.es || ''; }
 
     // Built-in fallback tree (partial) for robust UX if JSON cannot be loaded
     const BUILTIN_TREE = [
@@ -1137,55 +1233,133 @@
   { key: 'optimization_system_security', zh: '优化、系统与安全', en: 'Optimization, System & Security', es: 'Optimización, Sistemas y Seguridad' },
   { key: 'emerging_temporal', zh: '新兴交叉与时序模态', en: 'Emerging Interdisciplinary & Temporal Modalities', es: 'Interdisciplinario Emergente y Modalidades Temporales' }
     ];
+    console.log('[Cascader] TOP_CATS initialized', { count: TOP_CATS.length, sample: TOP_CATS.map(c=>c.key) });
+
+    // Safety: if cascader container missing, skip all without affecting rest of page
+    if(!casWrap){ console.debug('[Cascader] no container, aborting cascader init'); }
 
     function findCatByKey(key){
       if(!CAT_TREE) return null;
       return CAT_TREE.find(c=> c.key===key) || null;
     }
 
+    // Mobile navigation helpers
+    function isMobile(){ return window.innerWidth <= 800; }
+    function setMobileStage(stage){ 
+      mobileStage = stage; 
+      if(!isMobile()) return;
+      [col1, col2, col3].forEach((col, i) => {
+        col.className = col.className.replace(/stage-\w+/g, '');
+        if(i === stage) col.classList.add('stage-active');
+        else if(i < stage) col.classList.add('stage-hidden'); 
+        else col.classList.add(`stage-${i}`);
+      });
+    }
+    function updateMobileVisibility(){
+      if(!isMobile()){
+        // desktop ensure all visible
+        [col1,col2,col3].forEach(c=>{ if(c) c.style.display='block'; });
+        return;
+      }
+      if(mobileStage===0){
+        if(col1) col1.style.display='block';
+        if(col2) col2.style.display='none';
+        if(col3) col3.style.display='none';
+      }else if(mobileStage===1){
+        if(col1) col1.style.display='none';
+        if(col2) col2.style.display='block';
+        if(col3) col3.style.display='none';
+      }else{
+        if(col1) col1.style.display='none';
+        if(col2) col2.style.display='none';
+        if(col3) col3.style.display='block';
+      }
+    }
+    function addMobileNavHeader(col, title, canGoBack = false){
+      if(!isMobile()) return;
+      const nav = document.createElement('div'); nav.className = 'mw-mobile-nav';
+      if(canGoBack){
+        const back = document.createElement('button'); 
+        back.className = 'mw-mobile-back';
+        back.innerHTML = '← Back';
+        back.addEventListener('click', ()=> setMobileStage(mobileStage - 1));
+        nav.appendChild(back);
+      }
+      const titleEl = document.createElement('div'); titleEl.className = 'mw-mobile-title'; titleEl.textContent = title;
+      nav.appendChild(titleEl);
+      col.prepend(nav);
+    }
+
     // Dropdown cascader rendering
     function renderCol1(){
+      if(!casWrap||!col1) return;
+      console.log('[Cascader] renderCol1 start', { selCat, hasTree: !!CAT_TREE, topCount: Array.isArray(TOP_CATS)?TOP_CATS.length:'n/a' });
       const list = document.createElement('div'); list.className = 'mw-list';
+      if(!Array.isArray(TOP_CATS) || TOP_CATS.length===0){
+        list.innerHTML = '<div class="mw-muted">(no categories)</div>';
+        console.warn('[Cascader] TOP_CATS empty at renderCol1');
+      }
       TOP_CATS.forEach(meta=>{
+        console.log('[Cascader] renderCol1 item', meta.key, labelOf(meta));
         const item = document.createElement('div'); item.className = 'mw-item' + (selCat===meta.key?' active':''); item.dataset.key = meta.key;
-        item.textContent = labelOf(meta);
-        item.addEventListener('click', async ()=>{
+        let lbl = labelOf(meta);
+        if(!lbl){
+          console.warn('[Cascader] empty label for top category key=', meta.key, meta);
+          lbl = meta.key || '(?)';
+        }
+        item.textContent = lbl;
+        item.addEventListener('click', async (e)=>{
+          e.stopPropagation();
           selCat = meta.key; selSub = null; // reset second level when switching
           // lazy load
           if(CAT_TREE===null) await loadAiCategories();
           renderCol1(); renderCol2(); renderCol3();
+          if(isMobile()) setMobileStage(1);
         });
         list.appendChild(item);
       });
-      col1.innerHTML = ''; col1.appendChild(list);
+      col1.innerHTML = ''; 
+      if(isMobile()) addMobileNavHeader(col1, 'Categories');
+      col1.appendChild(list);
+      updateMobileVisibility();
     }
 
     function renderCol2(){
+      if(!casWrap||!col2) return;
       col2.innerHTML = '';
       const cat = selCat && findCatByKey(selCat);
       if(!cat){ col2.innerHTML = '<div class="mw-muted">—</div>'; return; }
+      if(isMobile()) addMobileNavHeader(col2, labelOf(cat), true);
       const list = document.createElement('div'); list.className = 'mw-list';
       (cat.subcategories||[]).forEach(sub=>{
         const item = document.createElement('div'); item.className = 'mw-item' + (selSub===sub.key?' active':''); item.dataset.key = sub.key;
         item.textContent = labelOf(sub);
-        item.addEventListener('click', ()=>{ selSub = sub.key; renderCol2(); renderCol3(); });
+        item.addEventListener('click', (e)=>{ 
+          e.stopPropagation();
+          selSub = sub.key; renderCol2(); renderCol3(); 
+          if(isMobile()) setMobileStage(2);
+        });
         list.appendChild(item);
       });
       col2.appendChild(list);
+      updateMobileVisibility();
     }
 
     function renderCol3(){
+      if(!casWrap||!col3) return;
       col3.innerHTML = '';
       const cat = selCat && findCatByKey(selCat);
       const sub = (cat?.subcategories||[]).find(s=> s.key===selSub);
       if(!sub){ col3.innerHTML = '<div class="mw-muted">—</div>'; return; }
+      if(isMobile()) addMobileNavHeader(col3, labelOf(sub), true);
       const list = document.createElement('div'); list.className = 'mw-list';
       (sub.tasks||[]).forEach(tsk=>{
         const item = document.createElement('div'); item.className = 'mw-item' + (selectedTasks.has(tsk.key)?' active':'');
         const box = document.createElement('span'); box.className = 'mw-check'; box.dataset.on = selectedTasks.has(tsk.key)?'1':'0'; box.innerHTML = selectedTasks.has(tsk.key)?'✓':'';
         const label = document.createElement('span'); label.textContent = labelOf(tsk);
         item.appendChild(box); item.appendChild(label);
-        const toggle = ()=>{
+        const toggle = (e)=>{
+          e?.stopPropagation();
           if(selectedTasks.has(tsk.key)) selectedTasks.delete(tsk.key); else selectedTasks.add(tsk.key);
           applyFilter(); renderCol3(); updateTriggerLabel();
           // Notify main script to toggle global mode in Daily
@@ -1195,13 +1369,15 @@
         list.appendChild(item);
       });
       col3.appendChild(list);
+      updateMobileVisibility();
     }
 
-    function openDropdown(){ dd.hidden = false; renderCol1(); renderCol2(); renderCol3(); document.addEventListener('click', outsideClose, { capture:true }); }
-    function closeDropdown(){ dd.hidden = true; document.removeEventListener('click', outsideClose, { capture:true }); }
-    function outsideClose(e){ if(!dd.contains(e.target) && e.target!==triggerBtn && !triggerBtn.contains(e.target)) closeDropdown(); }
-
-    if(triggerBtn){ triggerBtn.addEventListener('click', (e)=>{ e.stopPropagation(); if(dd.hidden) openDropdown(); else closeDropdown(); }); }
+    function openDropdown(){
+      if(!dd) return; dd.hidden = false; mobileStage = 0; renderCol1(); renderCol2(); renderCol3(); if(isMobile()) { setMobileStage(0); updateMobileVisibility(); } setTimeout(()=> document.addEventListener('click', outsideClose),0);
+    }
+    function closeDropdown(){ if(!dd) return; dd.hidden = true; document.removeEventListener('click', outsideClose); }
+    function outsideClose(e){ if(!dd) return; if(!dd.contains(e.target) && e.target!==triggerBtn && !triggerBtn?.contains(e.target)) closeDropdown(); }
+    if(triggerBtn){ triggerBtn.addEventListener('click', e=>{ e.stopPropagation(); if(dd?.hidden) openDropdown(); else closeDropdown(); }); }
     if(closeBtn){ closeBtn.addEventListener('click', ()=> closeDropdown()); }
 
     function normalize(str){ return String(str||'').trim().toLowerCase(); }
@@ -1264,11 +1440,6 @@
       try{ window.dispatchEvent(new CustomEvent('mw-global-toggle',{detail:{on:false}})); }catch{}
     });
 
-    function markActiveTasks(){
-      casBody.querySelectorAll('.mw-task').forEach(el=>{
-        const k = el.dataset.key; el.classList.toggle('active', selectedTasks.has(k));
-      });
-    }
 
     function updateTriggerLabel(){
       if(!triggerBtn) return;
@@ -1281,6 +1452,22 @@
 
     // Rebuild labels on language change and update counts
     window.addEventListener('language-changed', ()=>{ if(!dd.hidden){ renderCol1(); renderCol2(); renderCol3(); } updateTriggerLabel(); });
+    
+    // Handle resize/orientation changes
+    window.addEventListener('resize', ()=>{ 
+      if(!dd.hidden){ 
+        renderCol1(); renderCol2(); renderCol3(); 
+        if(isMobile()) setMobileStage(mobileStage);
+      } 
+    });
+
+    // Bootstrap cascader after DOM ready
+    (function initCascader(){
+      try{
+        if(!casWrap) return; // silent skip
+        renderCol1(); renderCol2(); renderCol3(); updateTriggerLabel();
+      }catch(err){ console.error('[Cascader] init failed', err); }
+    })();
 
     // Init
     (async function(){
@@ -1288,7 +1475,6 @@
       renderCol1(); renderCol2(); renderCol3();
       applyFilter(); updateTriggerLabel();
     })();
-  })();
   </script>
 </body>
 </html>
