@@ -301,7 +301,10 @@
       "updated_at": "2025-09-18T19:05:55Z",
       "summary_en": "Stable Diffusion web UI is a popular open-source interface for generating and manipulating images using AI. It supports text-to-image, image-to-image, and inpainting workflows, making it versatile for creative and practical applications. Built on Gradio and PyTorch, it is user-friendly and highly extensible, appealing to both beginners and developers. Its AGPL-3.0 license ensures open access while encouraging community contributions.",
       "summary_zh": "Stable Diffusion web UI 是一个基于 Gradio 构建的 Web 界面，用于运行和自定义 Stable Diffusion 图像生成模型。它支持文本生成图像、图像到图像转换、图像修复等多种功能，并提供了丰富的插件和自定义选项。该项目适用于 AI 艺术创作、设计辅助和图像处理实验等场景，用户无需编写代码即可使用高级功能。其开源特性允许开发者扩展和优化界面，适合对 AI 生成图像感兴趣的技术爱好者和创作者。",
-      "summary_es": "Interfaz web para Stable Diffusion que permite generar y transformar imágenes mediante IA. Destaca por su interfaz accesible, múltiples funciones avanzadas y amplia personalización. Ideal para artistas digitales, investigadores y entusiastas que buscan explorar modelos de difusión sin requerir conocimientos técnicos profundos."
+      "summary_es": "Interfaz web para Stable Diffusion que permite generar y transformar imágenes mediante IA. Destaca por su interfaz accesible, múltiples funciones avanzadas y amplia personalización. Ideal para artistas digitales, investigadores y entusiastas que buscan explorar modelos de difusión sin requerir conocimientos técnicos profundos.",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "Snailclimb/JavaGuide",
