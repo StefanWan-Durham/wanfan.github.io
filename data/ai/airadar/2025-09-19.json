@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-18T23:15:07.291147Z",
+  "generated_at": "2025-09-19T23:14:57.607873Z",
   "window_hours": 48,
-  "count": 31,
+  "count": 44,
   "items": [
     {
       "id": "a53c55d1cabae684",
@@ -737,6 +737,315 @@
         "es": "A diferencia de la mayoría de las inyecciones de comandos, ShadowLeak se ejecuta en la infraestructura basada en la nube de OpenAI."
       },
       "hotness": 0.906961
+    },
+    {
+      "id": "d2387b6277ef6be2",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/tPSk2VDGP5K9P9R978y7",
+      "title": "AI Coding正在重塑大前端！一码多端如何破局？",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-19T15:03:09Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "zh": "AI Coding正在重塑大前端！一码多端如何破局？",
+        "en": "AI Coding is reshaping the big frontend! How to break through with one codebase for multiple platforms?",
+        "es": "La codificación con IA está remodelando el gran frontend. ¿Cómo resolver el desafío de un código para múltiples terminales?"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el original>"
+      },
+      "hotness": 0.88837
+    },
+    {
+      "id": "cab1fa45b3364f9d",
+      "source": {
+        "site": "https://blogs.nvidia.com/",
+        "feed": "https://blogs.nvidia.com/feed/"
+      },
+      "url": "https://blogs.nvidia.com/blog/onboarding-teams-ai-agents-productivity-revenue-businesses/",
+      "title": "AI On: How Onboarding Teams of AI Agents Drives Productivity and Revenue for Businesses",
+      "raw_excerpt": "AI is no longer solely a back-office tool. It’s a strategic partner that can augment decision-making across every line of business. Whether users aim to reduce operational overhead or personalize customer experiences at scale, custom AI agents are key. As AI agents are adopted across enterprises, managing their deployment will require a deliberate strategy. The Read Article",
+      "tags": [
+        "Tools",
+        "Industry"
+      ],
+      "published_at": "2025-09-19T15:00:39Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "AI On: How Onboarding Teams of AI Agents Drives Productivity and Revenue for Businesses",
+        "zh": "AI开启：AI代理团队入职如何提升企业生产力与收益",
+        "es": "IA en marcha: Cómo la incorporación de equipos de agentes de IA impulsa la productividad y los ingresos de las empresas"
+      },
+      "excerpt_i18n": {
+        "en": "AI is no longer solely a back-office tool. It’s a strategic partner that can augment decision-making across every line of business. Whether users aim to reduce operational overhead or personalize customer experiences at scale, custom AI agents are key. As AI agents are adopted across enterprises, managing their deployment will require a deliberate strategy. The Read Article",
+        "zh": "人工智能已不再仅是后台工具，它已成为能增强各业务领域决策能力的战略伙伴。无论用户目标是降低运营成本，还是实现客户体验个性化，",
+        "es": "La IA ya no es solo una herramienta de back-office. Es un socio estratégico que puede potenciar la toma de decisiones en todas las líneas de negocio. Ya sea que los usuarios busquen reducir gastos operativos o personalizar experiencias de cliente a"
+      },
+      "hotness": 0.887836
+    },
+    {
+      "id": "42e736af97cb319a",
+      "source": {
+        "site": "https://www.wired.com",
+        "feed": "https://www.wired.com/feed/category/business/latest/rss"
+      },
+      "url": "https://www.wired.com/story/youtube-thinks-ai-is-its-next-big-bang/",
+      "title": "YouTube Thinks AI Is Its Next Big Bang",
+      "raw_excerpt": "On its 20th anniversary, YouTube is venturing into an era of AI-generated video, and may never be the same.",
+      "tags": [],
+      "published_at": "2025-09-19T15:00:00Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "YouTube Thinks AI Is Its Next Big Bang",
+        "zh": "YouTube认为人工智能是其下一个重大突破。",
+        "es": "YouTube cree que la inteligencia artificial es su próximo gran boom."
+      },
+      "excerpt_i18n": {
+        "en": "On its 20th anniversary, YouTube is venturing into an era of AI-generated video, and may never be the same.",
+        "zh": "YouTube在20周年之际迈入AI生成视频时代，或将彻底改变原有面貌。",
+        "es": "En su vigésimo aniversario, YouTube se adentra en una era de vídeos generados por inteligencia artificial, y quizás nunca vuelva a ser igual."
+      },
+      "hotness": 0.887697
+    },
+    {
+      "id": "abea46df0daf7210",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/TUjGZ9YfGIp8WO7OcCEA",
+      "title": "模型测试不再跳来跳去，VS Code + Hugging Face = 真香",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-19T14:30:00Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "zh": "模型测试不再跳来跳去，VS Code + Hugging Face = 真香",
+        "en": "Model testing is no longer a hassle; VS Code plus Hugging Face equals pure satisfaction.",
+        "es": "Las pruebas de modelos ya no van de un lado a otro, VS Code + Hugging Face = una maravilla."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el original>"
+      },
+      "hotness": 0.88131
+    },
+    {
+      "id": "c0b96e8b001e6533",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://www.jeffgeerling.com/blog/2025/i-regret-building-3000-pi-ai-cluster",
+      "title": "I regret building this $3000 Pi AI cluster",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T14:28:47Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "I regret building this $3000 Pi AI cluster",
+        "zh": "我后悔搭建了这个3000美元的Pi AI集群。",
+        "es": "Lamento haber construido este clúster de IA con Raspberry Pi de 3000 dólares."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.881052
+    },
+    {
+      "id": "c4c6aa258eda8bbc",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/qLx1oHCkcH49uJZSo5Ux",
+      "title": "智能体时代：AI 应用架构、交付与基础设施全景指南",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-19T13:54:43Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "zh": "智能体时代：AI 应用架构、交付与基础设施全景指南",
+        "en": "The Era of Agents: A Comprehensive Guide to AI Application Architecture, Delivery, and Infrastructure",
+        "es": "Era de los agentes inteligentes: Guía integral sobre arquitectura de aplicaciones de IA, entrega e infraestructura"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el texto original>"
+      },
+      "hotness": 0.873858
+    },
+    {
+      "id": "008bb06651348688",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://www.ycombinator.com/companies/dynamo-ai/jobs/fU1oC9q-senior-kubernetes-engineer",
+      "title": "Dynamo AI (YC W22) Is Hiring a Senior Kubernetes Engineer",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T12:00:16Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Dynamo AI (YC W22) Is Hiring a Senior Kubernetes Engineer",
+        "zh": "Dynamo AI（YC W22）正在招聘高级Kubernetes工程师。",
+        "es": "Dynamo AI (YC W22) busca contratar a un ingeniero senior de Kubernetes"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.850116
+    },
+    {
+      "id": "6778ac7358ada32c",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/ulXC7keFG0iM0whWO0KO",
+      "title": "因果推理如何破解 LLM 在可观测性领域的局限性",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-19T11:29:13Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "zh": "因果推理如何破解 LLM 在可观测性领域的局限性",
+        "en": "How Causal Reasoning Overcomes the Limitations of LLMs in the Observability Domain",
+        "es": "Cómo el razonamiento causal supera las limitaciones de los LLM en el ámbito de la observabilidad"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el texto original>"
+      },
+      "hotness": 0.843787
+    },
+    {
+      "id": "850693260cb75e25",
+      "source": {
+        "site": "https://www.wired.com",
+        "feed": "https://www.wired.com/feed/category/business/latest/rss"
+      },
+      "url": "https://www.wired.com/story/meta-lawsuit-strike-3-porn-copyright-ai/",
+      "title": "Meta Accused of Torrenting Porn to Advance Its Goal of AI ‘Superintelligence’",
+      "raw_excerpt": "Strike 3 Holdings is suing Meta in federal court, alleging the tech giant pirated copyrighted adult videos to train its AI models.",
+      "tags": [],
+      "published_at": "2025-09-19T10:30:00Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Meta Accused of Torrenting Porn to Advance Its Goal of AI ‘Superintelligence’",
+        "zh": "Meta被指控利用盗版色情内容推进其人工智能“超级智能”目标。",
+        "es": "Meta acusada de usar torrents de pornografía para avanzar en su objetivo de la \"superinteligencia\" de IA"
+      },
+      "excerpt_i18n": {
+        "en": "Strike 3 Holdings is suing Meta in federal court, alleging the tech giant pirated copyrighted adult videos to train its AI models.",
+        "zh": "Strike 3 Holdings在联邦法院起诉Meta，指控该科技巨头盗用受版权保护的成人视频来训练其AI模型。",
+        "es": "Strike 3 Holdings está demandando a Meta en un tribunal federal, alegando que el gigante tecnológico pirateó vídeos para adultos con derechos de autor para entrenar sus modelos de inteligencia artificial."
+      },
+      "hotness": 0.831846
+    },
+    {
+      "id": "31dd2b1d75dab336",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/9licMJwt1S3wgMYp.html",
+      "title": "17款“AI+公益”作品诞生！首届腾讯云黑客松暨全球路演日落幕",
+      "raw_excerpt": "9月18日，首届腾讯云黑客松（Hackathon，即黑客马拉松）暨全球路演日在深圳2025腾讯全球数字生态大会现场落下帷幕，共17组选手，46名开发者，通过48小时极限开发，创作完成了17款“AI+公益”全新作品。经过全球路演和投票，来自清华大学、香港城市大学、华南理工大学等学校组成的三个团队分获各赛道一等奖。 全球开发者和国内高校学生齐聚，探索“AI+公益”场景落地 此前，国务院印发《关于深入实施“人工智能+”行动的意见》，提出要加快人工智能与经济社会各领域的深度融合，推动形成新质生产力。本届腾讯云“黑客松”联合腾讯SSV，聚焦生物多样性和心理健康专家助手的落地场景开发。来自全球开发者社区和国内高校的开发者，分别围绕AI Coding、AI Agent、国际赛道三大赛道，共同探索“AI+公益”场景落地。 在生物多样性主题下，来自华南理工大学的F1队创作的《BioSphere（野生星球）》获AI Coding赛道一等奖。该作品构建了一个由用户共创、AI驱动、具有深远社会价值的数字绿色经济体；由香港城市大学、上海交通大学、东南大学[1]&nbsp;[2]&nbsp;组成的EchoQuest队创作的《PokePlanet》获国际赛道一等奖，该作品以合成游戏为基础，将“复活”等激励点转化为公益标注和知识科普，体现“科技向善”的理念。 围绕心理健康专家助手场景，清华大学智护心言队创作的《智护心言AuraCalm》作为一款集心理疏导、医疗知识解答与生成心理报告于一体的全流程手术心理辅导智能体，为手术患者提供全方位心理支持，获AI Agent赛道一等奖。 AI开发者工具助力48小时开发，EO保障产品部署与加速 “黑客松”作为全球科技圈推崇的创新赛事，参赛者需在短时间内完成概念设计、系统架构、编码开发、硬件集成到现场演示的全流程。本届腾讯云黑客松限时48小时，腾讯CodeBuddy、腾讯",
+      "tags": [],
+      "published_at": "2025-09-19T10:00:00Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "zh": "17款“AI+公益”作品诞生！首届腾讯云黑客松暨全球路演日落幕",
+        "en": "17 \"AI + Public Welfare\" projects created! The inaugural Tencent Cloud Hackathon and Global Demo Day concludes.",
+        "es": "Se crearon 17 obras de \"IA + bien público\". Concluyó el primer maratón de programación de Tencent Cloud y la jornada de presentaciones globales."
+      },
+      "excerpt_i18n": {
+        "zh": "9月18日，首届腾讯云黑客松（Hackathon，即黑客马拉松）暨全球路演日在深圳2025腾讯全球数字生态大会现场落下帷幕，共17组选手，46名开发者，通过48小时极限开发，创作完成了17款“AI+公益”全新作品。经过全球路演和投票，来自清华大学、香港城市大学、华南理工大学等学校组成的三个团队分获各赛道一等奖。 全球开发者和国内高校学生齐聚，探索“AI+公益”场景落地 此前，国务院印发《关于深入实施“人工智能+”行动的意见》，提出要加快人工智能与经济社会各领域的深度融合，推动形成新质生产力。本届腾讯云“黑客松”联合腾讯SSV，聚焦生物多样性和心理健康专家助手的落地场景开发。来自全球开发者社区和国内高校的开发者，分别围绕AI Coding、AI Agent、国际赛道三大赛道，共同探索“AI+公益”场景落地。 在生物多样性主题下，来自华南理工大学的F1队创作的《BioSphere（野生星球）》获AI Coding赛道一等奖。该作品构建了一个由用户共创、AI驱动、具有深远社会价值的数字绿色经济体；由香港城市大学、上海交通大学、东南大学[1]&nbsp;[2]&nbsp;组成的EchoQuest队创作的《PokePlanet》获国际赛道一等奖，该作品以合成游戏为基础，将“复活”等激励点转化为公益标注和知识科普，体现“科技向善”的理念。 围绕心理健康专家助手场景，清华大学智护心言队创作的《智护心言AuraCalm》作为一款集心理疏导、医疗知识解答与生成心理报告于一体的全流程手术心理辅导智能体，为手术患者提供全方位心理支持，获AI Agent赛道一等奖。 AI开发者工具助力48小时开发，EO保障产品部署与加速 “黑客松”作为全球科技圈推崇的创新赛事，参赛者需在短时间内完成概念设计、系统架构、编码开发、硬件集成到现场演示的全流程。本届腾讯云黑客松限时48小时，腾讯CodeBuddy、腾讯",
+        "en": "On September 18, the inaugural Tencent Cloud Hackathon and Global Demo Day concluded at the 2025 Tencent Global Digital Ecosystem Conference in Shenzhen. A total of 17 teams and 46 developers completed 17 new \"AI + Public Welfare\" projects through 48 hours of intensive development. After global demos and voting, three teams from Tsinghua University, City University of Hong Kong, and South China University of Technology won first prizes in their respective tracks.\n\nGlobal developers and domestic university students gathered to explore the implementation of \"AI + Public Welfare\" scenarios. Previously, the State Council issued the \"Opinions on Deepening the Implementation of the 'AI+' Initiative,\" proposing to accelerate the deep integration of artificial intelligence with all sectors of the economy and society and promote the formation of new quality productive forces. This Tencent Cloud Hackathon, in collaboration with Tencent SSV, focused on developing practical applications for biodiversity and mental health assistant scenarios. Developers from global communities and domestic universities explored the implementation of \"AI + Public Welfare\" across three tracks: AI Coding, AI Agent, and the International Track.\n\nUnder the biodiversity theme, the F1 team from South China University of Technology won first prize in the AI Coding track with their project \"BioSphere (Wild Planet).\" The project builds a user-co-created, AI-driven digital green economy with profound social value. The EchoQues team, composed of students from City University of Hong Kong, Shanghai Jiao Tong University, and Southeast University,",
+        "es": "El 18 de septiembre concluyó en Shenzhen la primera Hackathon de Tencent Cloud y la jornada global de presentaciones, celebrada durante la Cumbre Global de Ecosistema Digital de Tencent 2025. Diecisiete equipos con 46 desarrolladores crearon 17 nuevas obras de \"IA + bienestar social\" tras 48 horas de desarrollo intensivo. Tras las presentaciones globales y votaciones, tres equipos de universidades como la Universidad de Tsinghua, la Universidad de la Ciudad de Hong Kong y la Universidad de Tecnología del Sur de China obtuvieron el primer premio en sus respectivas categorías. Desarrolladores globales y estudiantes universitarios nacionales se reunieron para explorar la implementación de escenarios de \"IA + bienestar social\". Previamente, el Consejo de Estado publicó la \"Opinión sobre la implementación profunda de la acción 'Inteligencia Artificial+'\", proponiendo acelerar"
+      },
+      "hotness": 0.825862
+    },
+    {
+      "id": "da6da4da7bfc76e7",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/ai/n2tWUbEyFiJWP6Jt.html",
+      "title": "高德 AI 别再打古典互联网战争了",
+      "raw_excerpt": "高德切入leifen市场的小道消息传得沸沸扬扬，昨天这个新产品揭开帷幕，原来并非是口碑重启，而是高德扫街榜发布。 谜底揭开，但是疑问并没有结束，过去三个月的外卖补贴大战如火如荼，高德再再再打到店，是不是还要再来一次补贴大战？十年前，美团横扫所有团购平台，现在阿里要“君子报仇”，卷土重来？ 在 AI 科技评论看来，团购已经是美团和抖音的修罗场，高德再下场也就是卷补贴、打价格战，不可能形成新的叙事，反而会让人担心是否会重复之前的结果，担心是否会影响阿里的盈利能力。 在智能时代，用更高的维度，打一场全新的技术战争，凸显高德优势，才是最佳选择。 高德的优势，在于 POI，在于数据，在于路线规划，而不在于内容和社交。如果这些数据能够成为帮助高德成为人们生活规划的大管家，那么本地生活也就手到擒来。 地图的未来，就是升级成「生活操作系统」 地图的本质，就是在数字世界里建模现实空间，AI时代带来之后，地图就可以不仅仅是一个平面、瞬时的二维空间，而是可以成为了一个，能够加入规划和决策、历时性、立体性的三维空间。 这会带来什么结果呢？以前的地图是告诉你「从 A 到 B 怎么走」，这是解决点到点的问题；以后的地图，告诉你「某段时间内要做什么」，这解决的是「人在一个场景里如何行动」的问题。 比如你在北京西单，AI 不是只给你一个火锅店地址，而是帮你规划：停车 → 吃饭 → 看电影 → 买单返券。它能理解这个空间下的一整套需求链。换句话说，从「导航」到「编排生活」，这就是空间智能。 高德在这方面其实有天然优势。它有全国最全的路网数据、POI 数据、实时路况，背后是十几年积累下来的街景采集、路径规划算法。别人要做空间智能，第一步还得先买数据，但高德直接站在金矿上。理论上，它最有机会把地图升级成「生活操作系统」。但问题是，高德现在走的方向还是偏「智能体」，就是在地图里放一个 AI 助手，帮你算路、推荐餐",
+      "tags": [],
+      "published_at": "2025-09-19T05:36:00Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "zh": "高德 AI 别再打古典互联网战争了",
+        "en": "Gaode AI, stop fighting the classical internet wars.",
+        "es": "Alto Mapa IA, deja de librar las guerras clásicas de internet."
+      },
+      "excerpt_i18n": {
+        "zh": "高德切入leifen市场的小道消息传得沸沸扬扬，昨天这个新产品揭开帷幕，原来并非是口碑重启，而是高德扫街榜发布。 谜底揭开，但是疑问并没有结束，过去三个月的外卖补贴大战如火如荼，高德再再再打到店，是不是还要再来一次补贴大战？十年前，美团横扫所有团购平台，现在阿里要“君子报仇”，卷土重来？ 在 AI 科技评论看来，团购已经是美团和抖音的修罗场，高德再下场也就是卷补贴、打价格战，不可能形成新的叙事，反而会让人担心是否会重复之前的结果，担心是否会影响阿里的盈利能力。 在智能时代，用更高的维度，打一场全新的技术战争，凸显高德优势，才是最佳选择。 高德的优势，在于 POI，在于数据，在于路线规划，而不在于内容和社交。如果这些数据能够成为帮助高德成为人们生活规划的大管家，那么本地生活也就手到擒来。 地图的未来，就是升级成「生活操作系统」 地图的本质，就是在数字世界里建模现实空间，AI时代带来之后，地图就可以不仅仅是一个平面、瞬时的二维空间，而是可以成为了一个，能够加入规划和决策、历时性、立体性的三维空间。 这会带来什么结果呢？以前的地图是告诉你「从 A 到 B 怎么走」，这是解决点到点的问题；以后的地图，告诉你「某段时间内要做什么」，这解决的是「人在一个场景里如何行动」的问题。 比如你在北京西单，AI 不是只给你一个火锅店地址，而是帮你规划：停车 → 吃饭 → 看电影 → 买单返券。它能理解这个空间下的一整套需求链。换句话说，从「导航」到「编排生活」，这就是空间智能。 高德在这方面其实有天然优势。它有全国最全的路网数据、POI 数据、实时路况，背后是十几年积累下来的街景采集、路径规划算法。别人要做空间智能，第一步还得先买数据，但高德直接站在金矿上。理论上，它最有机会把地图升级成「生活操作系统」。但问题是，高德现在走的方向还是偏「智能体」，就是在地图里放一个 AI 助手，帮你算路、推荐餐",
+        "en": "Rumors about Amap entering the local services market have been swirling. Yesterday, the new product was unveiled—not a revival of Koubei, but the launch of Amap's Street Rankings. The mystery is solved, but questions remain. Over the past three months, the food delivery subsidy war has been intense. With Amap re-entering the in-store services sector, will another subsidy battle ensue? A decade ago, Meituan dominated all group-buying platforms. Now, is Alibaba seeking revenge and making a comeback? \n\nFrom the perspective of AI Tech Review, group buying is already a battleground for Meituan and Douyin. If Amap joins the fray, it will only mean more subsidies and price wars, unlikely to create a new narrative. Instead, it raises concerns about repeating past outcomes and potentially impacting Alibaba's profitability. In the smart era, the best choice is to fight a new technological war on a higher plane, highlighting Amap's strengths. \n\nAmap's advantages lie in POI, data, and route planning, not in content and social features. If this data can help Amap become a life planning assistant for users, conquering local services will be effortless. The future of maps is evolving into a \"life operating system.\" \n\nAt its core, a map models real-world spaces in the digital realm. With the advent of the AI era, maps can transcend flat, instantaneous 2D spaces to become 3D spaces that incorporate planning, decision-making, and a temporal dimension. What will this lead to? Traditional maps solve point-to-point navigation—how to get from A to B. In the future,",
+        "es": "Los rumores sobre la entrada de Gaode en el mercado de leifen han circulado ampliamente. Ayer, este nuevo producto se dio a conocer, y resulta que no era un reinicio de Koubei, sino el lanzamiento de la lista de Gaode para calles comerciales. El misterio se ha desvelado, pero las dudas persisten. En los últimos tres meses, la batalla de subsidios de comida a domicilio ha sido feroz. Gaode vuelve una y otra vez al mercado local, ¿acaso se avecina otra guerra de subsidios? Hace diez años, Meituan barrió con todas las plataformas de compras grupales. Ahora, Alibaba busca vengarse y regresar con fuerza. Según AI Tech Review, las compras grupales ya son un campo de batalla entre Meituan y Douyin. Si Gaode se une, solo significará más subsidios y guerras de precios, sin posibilidad de crear una nueva narrativa. Por el contrario, genera preocupación sobre si se repetirán los resultados anteriores."
+      },
+      "hotness": 0.77502
+    },
+    {
+      "id": "c2af6a16190506a9",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/ai/8KllY2XsfwVrBjtk.html",
+      "title": "谁在重新定义 AI 云？",
+      "raw_excerpt": "过去几年，AI&nbsp;几乎成了云计算行业的统一叙事。 无论是阿里提出的全面&nbsp;AI&nbsp;化，火山云强调的&nbsp;Token性价比，还是百度持续加码的大模型战略，厂商们都在努力用&nbsp;AI&nbsp;定义未来的云。但当这些口号越来越密集时，也变得越来越相似。 算力提升、模型迭代、Agent&nbsp;探索，几乎成了每一家厂商的必备动作，差异化正在快速消解。宣传中，各种“全球领先”“业内首创”的表述层出不穷，但落到用户体验与产业落地，差别并不显著。对大多数企业来说，除了价格、服务条款和生态黏性，真正能感知到的差异其实并不多。 另一方面，AI&nbsp;本身也正从“炫技”走向“应用”。2023年&nbsp;到&nbsp;2024&nbsp;年间，行业一度沉浸在大模型突破带来的震撼中，但进入&nbsp;2025年，客户的关注点已不再是模型参数的数量或推理速度的极限，而是如何把&nbsp;AI&nbsp;嵌入产业流程，真正带来效率和价值。换句话说，现在的问题已经不在于&nbsp;AI&nbsp;能否更强，而在于它能否更有用。 在这样的背景下，华为云在华为全联接大会&nbsp;2025&nbsp;上提出了一套新的组合：超节点&nbsp;Token&nbsp;服务、液冷、企业级&nbsp;Agent，并将具身智能、盘古大模型纳入其中，颇有一种想要突破行业现状的感觉。表面上是新技术的推出，实质上是对行业现实的回应——当成本、基建和应用都成为瓶颈时，差异化的叙事已成为厂商的必答题。 AI&nbsp;云的困境 今天的&nbsp;AI&nbsp;云，几乎都在讲同样的故事：大算力、大模型、大生态。 算力规模、训练速度、推理延迟被摆在最显眼的位置，厂商之间不断刷新极限，以此证明自己的领先地位。大家的焦点都落在技术性能的极限上，却鲜少能回答一个更现实的问题：这些技术突破如何",
+      "tags": [],
+      "published_at": "2025-09-19T05:34:00Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "zh": "谁在重新定义 AI 云？",
+        "en": "Who is redefining AI cloud?",
+        "es": "¿Quién está redefiniendo la nube de IA?"
+      },
+      "excerpt_i18n": {
+        "zh": "过去几年，AI&nbsp;几乎成了云计算行业的统一叙事。 无论是阿里提出的全面&nbsp;AI&nbsp;化，火山云强调的&nbsp;Token性价比，还是百度持续加码的大模型战略，厂商们都在努力用&nbsp;AI&nbsp;定义未来的云。但当这些口号越来越密集时，也变得越来越相似。 算力提升、模型迭代、Agent&nbsp;探索，几乎成了每一家厂商的必备动作，差异化正在快速消解。宣传中，各种“全球领先”“业内首创”的表述层出不穷，但落到用户体验与产业落地，差别并不显著。对大多数企业来说，除了价格、服务条款和生态黏性，真正能感知到的差异其实并不多。 另一方面，AI&nbsp;本身也正从“炫技”走向“应用”。2023年&nbsp;到&nbsp;2024&nbsp;年间，行业一度沉浸在大模型突破带来的震撼中，但进入&nbsp;2025年，客户的关注点已不再是模型参数的数量或推理速度的极限，而是如何把&nbsp;AI&nbsp;嵌入产业流程，真正带来效率和价值。换句话说，现在的问题已经不在于&nbsp;AI&nbsp;能否更强，而在于它能否更有用。 在这样的背景下，华为云在华为全联接大会&nbsp;2025&nbsp;上提出了一套新的组合：超节点&nbsp;Token&nbsp;服务、液冷、企业级&nbsp;Agent，并将具身智能、盘古大模型纳入其中，颇有一种想要突破行业现状的感觉。表面上是新技术的推出，实质上是对行业现实的回应——当成本、基建和应用都成为瓶颈时，差异化的叙事已成为厂商的必答题。 AI&nbsp;云的困境 今天的&nbsp;AI&nbsp;云，几乎都在讲同样的故事：大算力、大模型、大生态。 算力规模、训练速度、推理延迟被摆在最显眼的位置，厂商之间不断刷新极限，以此证明自己的领先地位。大家的焦点都落在技术性能的极限上，却鲜少能回答一个更现实的问题：这些技术突破如何",
+        "en": "In recent years, AI has almost become the unifying narrative of the cloud computing industry. Whether it's Alibaba's push for comprehensive AI integration, Volcano Cloud's emphasis on token cost-effectiveness, or Baidu's continued investment in large model strategies, vendors are striving to define the future of the cloud with AI. However, as these slogans grow more frequent, they also become increasingly similar. Improvements in computing power, model iterations, and Agent exploration have become standard moves for nearly every vendor, with differentiation rapidly diminishing. In promotional materials, claims of \"global leadership\" and \"industry firsts\" abound, but in terms of user experience and industrial implementation, the differences are not significant. For most enterprises, beyond pricing, service terms, and ecosystem stickiness, there are few truly perceptible distinctions.\n\nOn the other hand, AI itself is shifting from \"showcasing technical prowess\" to \"practical application.\" Between 2023 and 2024, the industry was once immersed in the awe of breakthroughs in large models, but by 2025, customer focus has moved away from model parameter counts or inference speed limits to how AI can be embedded into industrial processes to genuinely enhance efficiency and value. In other words, the question is no longer whether AI can become more powerful, but whether it can become more useful.\n\nAgainst this backdrop, Huawei Cloud at Huawei Connect",
+        "es": "En los últimos años, la IA se ha convertido casi en la narrativa unificada de la industria de la computación en la nube. Ya sea la transformación integral impulsada por IA propuesta por Alibaba, la relación calidad-precio de Token enfatizada por Volcano Cloud, o la estrategia de modelos grandes en la que Baidu sigue invirtiendo, los proveedores se esfuerzan por definir la nube del futuro con IA. Pero cuando estos eslóganes se vuelven cada vez más frecuentes, también se tornan más similares. La mejora de la capacidad de computación, la iteración de modelos y la exploración de Agent se han convertido en acciones casi obligatorias para cada proveedor, y la diferenciación se disuelve rápidamente. En la publicidad, proliferan expresiones como \"líder mundial\" e \"innovación pionera en la industria\", pero su implementación..."
+      },
+      "hotness": 0.774647
+    },
+    {
+      "id": "c496df7a874321a6",
+      "source": {
+        "site": "https://huggingface.co/blog",
+        "feed": "https://huggingface.co/blog/feed.xml"
+      },
+      "url": "https://huggingface.co/blog/inference-providers-scaleway",
+      "title": "Scaleway on Hugging Face Inference Providers 🔥",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T00:00:00Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Scaleway on Hugging Face Inference Providers 🔥",
+        "zh": "Scaleway 在 Hugging Face 推理提供商中表现突出 🔥",
+        "es": "Scaleway en los Proveedores de Inferencia de Hugging Face 🔥"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 1.000739
     }
   ]
 }

@@ -1,0 +1,620 @@
+{
+  "generated_at": "2025-09-19T23:14:57.607873Z",
+  "window_hours": 48,
+  "count": 26,
+  "items": [
+    {
+      "id": "2106b2fb37b7081d",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/X2TgjBWrDhtad74ul0KL",
+      "title": "AI 上岗：大模型能否接管 SRE 的值班？",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-19T23:59:18Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "zh": "AI 上岗：大模型能否接管 SRE 的值班？",
+        "en": "AI Onboarding: Can Large Models Take Over SRE On-Call Duties?",
+        "es": "IA en servicio: ¿Pueden los modelos grandes asumir las guardias de SRE?"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el original>"
+      },
+      "hotness": 1.0
+    },
+    {
+      "id": "cb7e9dc429dcdc7a",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/news/782218/trump-claims-the-us-is-about-to-get-a-tremendous-fee-for-taking-tiktok-out-of-china",
+      "title": "Trump claims the US is about to get a tremendous fee for taking TikTok out of China",
+      "raw_excerpt": "A 10 percent stake in Intel, 15 percent of Nvidia’s China sales, a “golden share” of Nippon Steel — what price will Trump extract next in exchange for favorable treatment? Well, The Wall Street Journal is reporting that the Trump Administration is “expected to collect a multibillion-dollar fee” in exchange for negotiating a US takeover [&#8230;]",
+      "tags": [],
+      "published_at": "2025-09-19T23:13:36Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Trump claims the US is about to get a tremendous fee for taking TikTok out of China",
+        "zh": "特朗普声称美国将因让TikTok退出中国而获得巨额费用。",
+        "es": "Trump afirma que Estados Unidos está a punto de recibir una tarifa tremenda por sacar TikTok de China."
+      },
+      "excerpt_i18n": {
+        "en": "A 10 percent stake in Intel, 15 percent of Nvidia’s China sales, a “golden share” of Nippon Steel — what price will Trump extract next in exchange for favorable treatment? Well, The Wall Street Journal is reporting that the Trump Administration is “expected to collect a multibillion-dollar fee” in exchange for negotiating a US takeover [&#8230;]",
+        "zh": "英特尔10%的股份、英伟达在华销售额的15%、新日铁的\"黄金股\"——特朗普接下来会以优惠待遇换取什么价码？据《华尔街日报》报道",
+        "es": "Una participación del 10% en Intel, el 15% de las ventas de Nvidia en China, una \"acción de oro\" de Nippon Steel: ¿qué precio exigirá Trump a cambio de un trato favorable? Pues bien, The Wall Street Journal informa que"
+      },
+      "hotness": 1.049656
+    },
+    {
+      "id": "b322682624e6fdbc",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/news/782194/windows-11-share-with-copilot-button",
+      "title": "Windows 11 is adding another Copilot button nobody asked for",
+      "raw_excerpt": "Have enough Copilot buttons in your life? No you don’t — have another one! This one pops up in the latest Windows 11 Insider Preview when mousing over an open app in your taskbar; it lets you share the contents with Copilot Vision. Want to know who is celebrating in that dogpile on the mound, [&#8230;]",
+      "tags": [],
+      "published_at": "2025-09-19T22:12:02Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Windows 11 is adding another Copilot button nobody asked for",
+        "zh": "Windows 11又添加了一个没人要求的Copilot按钮",
+        "es": "Windows 11 está añadiendo otro botón de Copilot que nadie pidió."
+      },
+      "excerpt_i18n": {
+        "en": "Have enough Copilot buttons in your life? No you don’t — have another one! This one pops up in the latest Windows 11 Insider Preview when mousing over an open app in your taskbar; it lets you share the contents with Copilot Vision. Want to know who is celebrating in that dogpile on the mound, [&#8230;]",
+        "zh": "你的生活中有足够的Copilot按钮吗？显然还不够——再来一个吧！这个新按钮出现在最新的Windows 11 Insider Preview中，当你将鼠标悬停在任务栏上已打开的应用程序时，它会让你与Copilot分享内容。",
+        "es": "¿Tienes suficientes botones de Copilot en tu vida? No, no es así — ¡aquí tienes otro! Este aparece en la última versión preliminar de Windows 11 Insider al pasar el ratón por encima de una aplicación abierta en tu barra de tareas; te permite compartir el contenido con Copilot."
+      },
+      "hotness": 1.034218
+    },
+    {
+      "id": "3f3a69b34ec05708",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://www.codeintegrity.ai/blog/notion",
+      "title": "Hidden risk in Notion 3.0 AI agents: Web search tool abuse for data exfiltration",
+      "raw_excerpt": "",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-19T21:49:37Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Hidden risk in Notion 3.0 AI agents: Web search tool abuse for data exfiltration",
+        "zh": "Notion 3.0 AI代理的隐藏风险：网络搜索工具滥用导致数据泄露",
+        "es": "Riesgo oculto en los agentes de IA de Notion 3.0: Abuso de la herramienta de búsqueda web para exfiltración de datos."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.979669
+    },
+    {
+      "id": "3b8b051b229b1c76",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://substack.com/inbox/post/174054976",
+      "title": "Will AI have the same adoption challenges as the cloud?",
+      "raw_excerpt": "",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-19T21:39:08Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Will AI have the same adoption challenges as the cloud?",
+        "zh": "人工智能会面临与云计算相同的采用挑战吗？",
+        "es": "¿Enfrentará la inteligencia artificial los mismos desafíos de adopción que la nube?"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.977201
+    },
+    {
+      "id": "9d7b3d517a8c00dc",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://arstechnica.com/google/2025/09/google-announces-massive-expansion-of-ai-features-in-chrome/",
+      "title": "Google announces expansion of AI features in Chrome",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T21:31:56Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Google announces expansion of AI features in Chrome",
+        "zh": "谷歌宣布在Chrome浏览器中扩展人工智能功能",
+        "es": "Google anuncia la expansión de funciones de IA en Chrome"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.975509
+    },
+    {
+      "id": "0061798cf30f55df",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.cnn.com/2025/09/19/entertainment/akb48-ai-song-japan-scli-intl",
+      "title": "AKB48 releases AI-generated single after fans preferred it to human-written song",
+      "raw_excerpt": "",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-19T21:27:29Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "AKB48 releases AI-generated single after fans preferred it to human-written song",
+        "zh": "AKB48发布AI生成单曲，因粉丝更青睐于人类创作歌曲。",
+        "es": "AKB48 lanza un sencillo generado por inteligencia artificial tras la preferencia de los fans sobre la canción escrita por humanos."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.974465
+    },
+    {
+      "id": "0b5dd04e6ca6d234",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://cmpld.ai/issues/002/",
+      "title": "Compiled AI #002",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T21:15:07Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Compiled AI #002",
+        "zh": "编译AI #002",
+        "es": "Inteligencia Artificial Compilada n.º 002"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.971569
+    },
+    {
+      "id": "bf7a4517ebc0f6ac",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://paydroid.ai/",
+      "title": "Show HN: PayDroid – AI agents can now accept payments",
+      "raw_excerpt": "Agents can talk, code, and browse… but until now, they couldn’t accept money. We built PayDroid, a universal checkout for AI agents. It routes through the merchant’s own processor (starting with PayPal, Stripe coming soon), so there’s no license, no custody, and no messy integration work. Developers just integrate once, and agents get a frictionless callback flow that works everywhere. Demo (live with PayPal): https://demo.paydroid.ai Docs: https://paydroid.ai Would love feedback — what would you sell through your agent?",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-19T20:56:42Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Show HN: PayDroid – AI agents can now accept payments",
+        "zh": "展示 HN：PayDroid——AI 代理现可接收付款",
+        "es": "Mostrar HN: PayDroid – Los agentes de IA ya pueden aceptar pagos"
+      },
+      "excerpt_i18n": {
+        "en": "Agents can talk, code, and browse… but until now, they couldn’t accept money. We built PayDroid, a universal checkout for AI agents. It routes through the merchant’s own processor (starting with PayPal, Stripe coming soon), so there’s no license, no custody, and no messy integration work. Developers just integrate once, and agents get a frictionless callback flow that works everywhere. Demo (live with PayPal): https://demo.paydroid.ai Docs: https://paydroid.ai Would love feedback — what would you sell through your agent?",
+        "zh": "智能体可以交谈、编程和浏览……但直到现在，它们还无法收款。我们开发了PayDroid——专为AI智能体打造的通用支付系统。它通过商家自有支付处理器进行路由（首批支持PayPal，Stripe即将接入）。",
+        "es": "Los agentes pueden hablar, programar y navegar… pero hasta ahora no podían aceptar dinero. Creamos PayDroid, una pasarela de pago universal para agentes de IA. Se canaliza a través del procesador propio del comerciante (empezando por PayPal, Stripe llegará pronto)."
+      },
+      "hotness": 0.967272
+    },
+    {
+      "id": "7d1d78763ccdd6dc",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/apple-used-ai-uncover-new-blood-pressure-notification-feature-watch-2025-09-19/",
+      "title": "Apple used AI, heart study data for Watch blood pressure feature",
+      "raw_excerpt": "",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-19T20:46:41Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Apple used AI, heart study data for Watch blood pressure feature",
+        "zh": "苹果利用人工智能和心脏研究数据开发了手表血压功能。",
+        "es": "Apple utilizó IA y datos de estudios cardíacos para la función de presión arterial del reloj."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.964943
+    },
+    {
+      "id": "0c7e9cf0b37e421c",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.plantdiagrams.com",
+      "title": "Show HN: PlantDiagrams – AI-powered PlantUML editor",
+      "raw_excerpt": "Hi HN! I couldn’t find a truly user-friendly PlantUML editor, so I set out to build one. PlantDiagrams lets you describe a diagram in plain English; it generates the PlantUML and renders it instantly. The goal is to shorten the path from idea → diagram without fighting the editor. Tech: - Next.js / Supabase / FLy.io / Vercel Highlights\n- Natural-language to PlantUML with live preview\n- Export diagrams (SVG/PNG/TXT)\n- Organize work with Projects\n- Share via link; optional comments for review\n- Sample gallery to open and tweak examples Try it: https://www.plantdiagrams.com",
+      "tags": [],
+      "published_at": "2025-09-19T20:34:48Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Show HN: PlantDiagrams – AI-powered PlantUML editor",
+        "zh": "HN展示：PlantDiagrams——AI驱动的PlantUML编辑器",
+        "es": "Mostrar HN: PlantDiagrams – Editor de PlantUML con tecnología de IA"
+      },
+      "excerpt_i18n": {
+        "en": "Hi HN! I couldn’t find a truly user-friendly PlantUML editor, so I set out to build one. PlantDiagrams lets you describe a diagram in plain English; it generates the PlantUML and renders it instantly. The goal is to shorten the path from idea → diagram without fighting the editor. Tech: - Next.js / Supabase / FLy.io / Vercel Highlights\n- Natural-language to PlantUML with live preview\n- Export diagrams (SVG/PNG/TXT)\n- Organize work with Projects\n- Share via link; optional comments for review\n- Sample gallery to open and tweak examples Try it: https://www.plantdiagrams.com",
+        "zh": "大家好！我找不到真正好用的PlantUML编辑器，就自己动手做了一个。PlantDiagrams让你用简单英语描述图表，它生成PlantUML代码并即时渲染，目标是缩短",
+        "es": "¡Hola HN! No pude encontrar un editor de PlantUML verdaderamente fácil de usar, así que me puse a construir uno. PlantDiagrams te permite describir un diagrama en inglés sencillo; genera el código PlantUML y lo renderiza al instante. El objetivo es acortar"
+      },
+      "hotness": 0.962187
+    },
+    {
+      "id": "051fa59ba53cb433",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.mit.edu/2025/what-does-future-hold-generative-ai-0919",
+      "title": "What does the future hold for generative AI?",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T20:17:20Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "What does the future hold for generative AI?",
+        "zh": "生成式人工智能的未来前景如何？",
+        "es": "¿Qué depara el futuro para la IA generativa?"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.95815
+    },
+    {
+      "id": "328c6e29cdeb7666",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://github.com/jmiao24/Paper2Agent",
+      "title": "Paper2Agent – transforming research papers into interactive AI agents",
+      "raw_excerpt": "",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-19T20:08:01Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Paper2Agent – transforming research papers into interactive AI agents",
+        "zh": "Paper2Agent——将研究论文转化为交互式AI代理。",
+        "es": "Paper2Agent: transformando artículos de investigación en agentes de inteligencia artificial interactivos."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 1.195005
+    },
+    {
+      "id": "528dc56a5f35bdc6",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://useallmind.ai",
+      "title": "Show HN: M365 Office of Finance – AI, Third-Party Research, Quant and More",
+      "raw_excerpt": "",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-19T19:57:51Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Show HN: M365 Office of Finance – AI, Third-Party Research, Quant and More",
+        "zh": "展示 HN：M365 财务办公室——人工智能、第三方研究、量化分析等",
+        "es": "Mostrar HN: M365 Office of Finance – IA, Investigación de Terceros, Cuantitativa y Más"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.953668
+    },
+    {
+      "id": "d4bcf62d4ef7e757",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://jacobin.com/2025/09/therapy-artificial-intelligence-data-privacy",
+      "title": "Your Therapist's Notes Could Become Fodder for AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T19:45:10Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Your Therapist's Notes Could Become Fodder for AI",
+        "zh": "你的治疗师笔记可能成为人工智能的素材",
+        "es": "Las notas de tu terapeuta podrían convertirse en alimento para la inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.950761
+    },
+    {
+      "id": "9a7d98c2e075dcd4",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://kevinbryanecon.com/BryanAIBookReview.pdf",
+      "title": "The Economic Impacts of AI: A Multidisciplinary, Multibook Review [pdf]",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T19:44:16Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "The Economic Impacts of AI: A Multidisciplinary, Multibook Review [pdf]",
+        "zh": "人工智能的经济影响：多学科多书评述 [pdf]",
+        "es": "Impactos económicos de la IA: una revisión multidisciplinar y multilibro [pdf]"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.950555
+    },
+    {
+      "id": "ae8c0414829f023b",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://unherd.com/2025/09/what-the-tech-giants-arent-telling-us/",
+      "title": "What the tech giants aren't telling us: Superintelligent AI could still kill us",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T19:43:12Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "What the tech giants aren't telling us: Superintelligent AI could still kill us",
+        "zh": "科技巨头未言明的事实：超智能AI仍可能致人类于死地",
+        "es": "Lo que los gigantes tecnológicos no nos cuentan: la superinteligencia artificial aún podría matarnos"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.950311
+    },
+    {
+      "id": "2862e2c5506f2925",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.educative.io/blog/is-model-choice-the-only-free-lunch-in-ai",
+      "title": "Is model choice the only free lunch in AI?",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T19:25:56Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Is model choice the only free lunch in AI?",
+        "zh": "模型选择是人工智能中唯一的免费午餐吗？",
+        "es": "¿Es la elección del modelo el único almuerzo gratis en la inteligencia artificial?"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.94637
+    },
+    {
+      "id": "6fb092a9cddd4eb7",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://ctx.directory",
+      "title": "Show HN: I built a free AI prompts and rules directory",
+      "raw_excerpt": "Got tired of saving my prompts scattered across X, Reddit, and Notion with no good way to organize or share them. That's why I built CTX, a community collection of prompts and rules. Create, share, and remix – everything's free and community-curated. Let me know what you think, any feedback is very welcome!",
+      "tags": [],
+      "published_at": "2025-09-19T19:07:21Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Show HN: I built a free AI prompts and rules directory",
+        "zh": "展示HN：我创建了一个免费的AI提示与规则目录",
+        "es": "Mostrar HN: Creé un directorio gratuito de instrucciones y reglas de IA"
+      },
+      "excerpt_i18n": {
+        "en": "Got tired of saving my prompts scattered across X, Reddit, and Notion with no good way to organize or share them. That's why I built CTX, a community collection of prompts and rules. Create, share, and remix – everything's free and community-curated. Let me know what you think, any feedback is very welcome!",
+        "zh": "厌倦了在X、Reddit和Notion上零散保存提示词却无法有效整理或分享，因此我创建了CTX——一个提示词与规则的社区合集。创作、分享、再混合，一切尽在其中。",
+        "es": "Me cansé de guardar mis prompts dispersos por X, Reddit y Notion sin una buena forma de organizarlos o compartirlos. Por eso creé CTX, una colección comunitaria de prompts y reglas. Crea, comparte y remezcla: todo."
+      },
+      "hotness": 0.942147
+    },
+    {
+      "id": "ffd021c18c12554b",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45305173",
+      "title": "Fireworks AI – Charging $192 for less than $0.20 of Training Cost",
+      "raw_excerpt": "Fireworks AI is one of the most overpriced model hosting companies in the ecosystem. I tried their fine-tuning service with a very small dataset of 10k records using SFT with gpt-oss-20b. It ran for 8 mins, and I got a bill for $192 !!! You can get A100s for $1.29/hr on Lambda, for 8 minutes of time that’s $0.17 This is maybe the biggest markup I’ve ever seen in the industry. Anyone can just spin up a runpod or modal instance and do it for a small fraction of the cost. Anyway, buyer beware, this is money I won’t get back. Not to mention the service is overall just mediocre.",
+      "tags": [
+        "Research",
+        "Industry"
+      ],
+      "published_at": "2025-09-19T19:02:22Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Fireworks AI – Charging $192 for less than $0.20 of Training Cost",
+        "zh": "Fireworks AI——训练成本不足0.20美元却收费192美元",
+        "es": "Fireworks AI: cobrando 192 dólares por menos de 0,20 dólares de coste de entrenamiento."
+      },
+      "excerpt_i18n": {
+        "en": "Fireworks AI is one of the most overpriced model hosting companies in the ecosystem. I tried their fine-tuning service with a very small dataset of 10k records using SFT with gpt-oss-20b. It ran for 8 mins, and I got a bill for $192 !!! You can get A100s for $1.29/hr on Lambda, for 8 minutes of time that’s $0.17 This is maybe the biggest markup I’ve ever seen in the industry. Anyone can just spin up a runpod or modal instance and do it for a small fraction of the cost. Anyway, buyer beware, this is money I won’t get back. Not to mention the service is overall just mediocre.",
+        "zh": "Fireworks AI是生态圈中定价最虚高的模型托管公司之一。我尝试用他们1万条记录的小型数据集，通过GPT-OSS-20B模型进行监督微调服务。运行8分钟后，我收到了一个b",
+        "es": "Fireworks AI es una de las empresas de alojamiento de modelos más sobrevaloradas del ecosistema. Probé su servicio de fine-tuning con un conjunto de datos muy pequeño de 10.000 registros usando SFT con gpt-oss-20b. Se ejecutó durante 8 minutos y obtuve una b"
+      },
+      "hotness": 0.941018
+    },
+    {
+      "id": "dc2519b91de73bae",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://theoria-ai.com/",
+      "title": "AI Research Assistant that explains scientific preprints at your level",
+      "raw_excerpt": "",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-19T18:54:36Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "AI Research Assistant that explains scientific preprints at your level",
+        "zh": "适合你水平的科学预印本AI研究助手",
+        "es": "Asistente de Investigación en IA que explica preimpresiones científicas a tu nivel"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.93926
+    },
+    {
+      "id": "22086825ee741282",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://highentropythoughts.substack.com/p/the-ungrounded-flavor",
+      "title": "Why AI can describe taste but not taste",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T18:51:54Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Why AI can describe taste but not taste",
+        "zh": "人工智能能描述味道却无法品尝",
+        "es": "Por qué la IA puede describir el sabor pero no saborear"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.93865
+    },
+    {
+      "id": "f7e5b6183b300b03",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45305062",
+      "title": "Ask HN: Would you allow an AI to go on most of your dates for you?",
+      "raw_excerpt": "Dating is expensive, time-consuming, and often… exhausting. What if there were a way to test compatibility before even leaving your couch? Here’s the idea: * Your personal AI chatbot learns your personality from your social media writing. * Instead of going on every date in real life, your chatbot \"goes on dates\" with other users' chatbots. * Chats that go well in these AI simulations are then escalated to actual humans, so you only meet people with real potential. * Basically, AI-simulated conversations filter out the bad dates so you can focus on the good ones — saving time, money, and awkward conversations. Would you try a service like this?",
+      "tags": [],
+      "published_at": "2025-09-19T18:49:11Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Ask HN: Would you allow an AI to go on most of your dates for you?",
+        "zh": "问HN：你会允许AI替你参加大部分约会吗？",
+        "es": "Pregunta para HN: ¿Permitirías que una IA acudiera a la mayoría de tus citas por ti?"
+      },
+      "excerpt_i18n": {
+        "en": "Dating is expensive, time-consuming, and often… exhausting. What if there were a way to test compatibility before even leaving your couch? Here’s the idea: * Your personal AI chatbot learns your personality from your social media writing. * Instead of going on every date in real life, your chatbot \"goes on dates\" with other users' chatbots. * Chats that go well in these AI simulations are then escalated to actual humans, so you only meet people with real potential. * Basically, AI-simulated conversations filter out the bad dates so you can focus on the good ones — saving time, money, and awkward conversations. Would you try a service like this?",
+        "zh": "约会既昂贵又耗时，还常常令人疲惫。如果足不出户就能测试双方契合度呢？设想如下：* 您的个人AI聊天机器人通过社媒数据学习您的个性特征——",
+        "es": "Las citas son caras, consumen mucho tiempo y a menudo... agotadoras. ¿Y si existiera una forma de probar la compatibilidad incluso antes de levantarse del sofá? Esta es la idea: * Tu chatbot de IA personal aprende tu personalidad a partir de tus redes"
+      },
+      "hotness": 0.938037
+    },
+    {
+      "id": "803448139796c9cc",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://hedgehogreview.com/issues/lessons-of-babel/articles/perplexity",
+      "title": "An untidy history of AI across four books",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-19T18:15:18Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "An untidy history of AI across four books",
+        "zh": "四本书中的人工智能凌乱史",
+        "es": "Una historia desordenada de la inteligencia artificial a través de cuatro libros"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.930418
+    },
+    {
+      "id": "f2d334e8a4591bfa",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/j4Iv0tAbkblL7me2b8Vd",
+      "title": "字节跳动 Trae 架构师张聪确认出席 QCon 上海，分享Trae Agent 架构演进",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-19T16:50:00Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "zh": "字节跳动 Trae 架构师张聪确认出席 QCon 上海，分享Trae Agent 架构演进",
+        "en": "ByteDance Trae Architect Zhang Cong has confirmed attendance at QCon Shanghai to share the architectural evolution of Trae Agent.",
+        "es": "El arquitecto de Trae de ByteDance, Zhang Cong, confirmó su asistencia a QCon Shanghai para compartir la evolución de la arquitectura de Trae Agent."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "Click to view the original text>",
+        "es": "Haga clic para ver el texto original>"
+      },
+      "hotness": 0.911512
+    },
+    {
+      "id": "45f597af4a73f110",
+      "source": {
+        "site": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      "url": "https://aws.amazon.com/blogs/machine-learning/move-your-ai-agents-from-proof-of-concept-to-production-with-amazon-bedrock-agentcore/",
+      "title": "Move your AI agents from proof of concept to production with Amazon Bedrock AgentCore",
+      "raw_excerpt": "This post explores how Amazon Bedrock AgentCore helps you transition your agentic applications from experimental proof of concept to production-ready systems. We follow the journey of a customer support agent that evolves from a simple local prototype to a comprehensive, enterprise-grade solution capable of handling multiple concurrent users while maintaining security and performance standards.",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-19T16:09:26Z",
+      "fetched_at": "2025-09-19T23:14:38.480742Z",
+      "title_i18n": {
+        "en": "Move your AI agents from proof of concept to production with Amazon Bedrock AgentCore",
+        "zh": "借助Amazon Bedrock AgentCore，将您的AI代理从概念验证推进至生产环境。",
+        "es": "Lleva tus agentes de IA del concepto a la producción con Amazon Bedrock AgentCore."
+      },
+      "excerpt_i18n": {
+        "en": "This post explores how Amazon Bedrock AgentCore helps you transition your agentic applications from experimental proof of concept to production-ready systems. We follow the journey of a customer support agent that evolves from a simple local prototype to a comprehensive, enterprise-grade solution capable of handling multiple concurrent users while maintaining security and performance standards.",
+        "zh": "本文探讨了Amazon Bedrock AgentCore如何帮助您将智能体应用程序从实验性概念验证转变为生产就绪系统。我们将跟随一个客户支持智能体的演进历程展开说明。",
+        "es": "Esta publicación explora cómo Amazon Bedrock AgentCore te ayuda a transicionar tus aplicaciones agentivas desde pruebas de concepto experimentales hasta sistemas listos para producción. Seguimos el recorrido de un agente de soporte al cliente que evoluciona"
+      },
+      "hotness": 0.902656
+    }
+  ]
+}
