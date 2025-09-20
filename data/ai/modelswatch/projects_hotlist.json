@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T15:32:34.075Z",
+  "updated_at": "2025-09-20T15:44:11.877Z",
   "by_category": {
     "framework_core": [
       {
@@ -485,6 +485,68 @@
           "hidden": false
         },
         "score_engineering": 0.1999900407572338
+      },
+      {
+        "id": "f/awesome-chatgpt-prompts",
+        "source": "github",
+        "name": "awesome-chatgpt-prompts",
+        "url": "https://github.com/f/awesome-chatgpt-prompts",
+        "tags": [
+          "bots",
+          "chatbot",
+          "chatgpt",
+          "chatgpt-api",
+          "language"
+        ],
+        "stats": {
+          "stars_total": 134262,
+          "forks_total": 17845,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T15:39:27Z",
+        "added_at": "2025-09-20",
+        "summary": "This repo includes ChatGPT prompt curation to use ChatGPT and other LLM tools better.",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19997801995789413
+      },
+      {
+        "id": "Chalarangelo/30-seconds-of-code",
+        "source": "github",
+        "name": "30-seconds-of-code",
+        "url": "https://github.com/Chalarangelo/30-seconds-of-code",
+        "tags": [
+          "astro",
+          "awesome-list",
+          "css",
+          "education",
+          "es6-javascript",
+          "git",
+          "html",
+          "javascript",
+          "learn-to-code",
+          "learning-resources",
+          "nodejs",
+          "programming",
+          "snippets"
+        ],
+        "stats": {
+          "stars_total": 125294,
+          "forks_total": 12320,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T15:30:24Z",
+        "added_at": "2025-09-20",
+        "summary": "Coding articles to level up your development skills",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19993613080220962
       }
     ],
     "deployment_serving": [
