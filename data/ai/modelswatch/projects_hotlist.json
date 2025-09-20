@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T15:24:12.043Z",
+  "updated_at": "2025-09-20T15:32:34.075Z",
   "by_category": {
     "framework_core": [
       {
@@ -416,6 +416,75 @@
           "hidden": false
         },
         "score_engineering": 0.19999220370134235
+      },
+      {
+        "id": "avelino/awesome-go",
+        "source": "github",
+        "name": "awesome-go",
+        "url": "https://github.com/avelino/awesome-go",
+        "tags": [
+          "awesome",
+          "awesome-list",
+          "go",
+          "golang",
+          "golang-library",
+          "hacktoberfest"
+        ],
+        "stats": {
+          "stars_total": 152771,
+          "forks_total": 12575,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T15:31:55Z",
+        "added_at": "2025-09-20",
+        "summary": "A curated list of awesome Go frameworks, libraries and software",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19999698497642987
+      },
+      {
+        "id": "huggingface/transformers",
+        "source": "github",
+        "name": "transformers",
+        "url": "https://github.com/huggingface/transformers",
+        "tags": [
+          "audio",
+          "deep-learning",
+          "deepseek",
+          "gemma",
+          "glm",
+          "hacktoberfest",
+          "llm",
+          "machine-learning",
+          "model-hub",
+          "natural-language-processing",
+          "nlp",
+          "pretrained-models",
+          "python",
+          "pytorch",
+          "pytorch-transformers",
+          "qwen",
+          "speech-recognition",
+          "transformer",
+          "vlm"
+        ],
+        "stats": {
+          "stars_total": 150014,
+          "forks_total": 30463,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T15:30:25Z",
+        "added_at": "2025-09-20",
+        "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.1999900407572338
       }
     ],
     "deployment_serving": [
