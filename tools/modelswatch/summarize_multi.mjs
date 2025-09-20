@@ -119,6 +119,40 @@ export async function summarizeTriJSON(prompt, opts={}){
       out = await attempt();
     }
   }
+  if(!(out.en||out.zh||out.es)){
+    // PYTHON FALLBACK (Option B): invoke ai_llm.chat_once once, then heuristic split to tri-lingual via quick translation mini-prompts.
+    if(DEBUG) console.log('[summarize_multi] invoking python fallback');
+    try {
+      const { spawnSync } = await import('child_process');
+      // Ask Python LLM to produce a neutral English summary first (we'll translate below to avoid multi JSON complexity in cross-language fallback)
+      const pyPrompt = `Summarize the following open-source AI project in 90 concise English words. Focus on purpose, core capabilities, strengths, and typical use cases. Avoid marketing.\n---\n${prompt}`.replace(/`/g,'');
+      const pyCode = `from ai_llm import chat_once;import json;import sys;\ntext=chat_once(${JSON.stringify(pyPrompt)}, system='You are a precise summarizer.')\nprint(text.strip())`;
+      const r = spawnSync('python',['-c',pyCode], { encoding:'utf-8' });
+      if(r.status===0){
+        const baseEn = (r.stdout||'').trim().replace(/\s+/g,' ').slice(0,900);
+        if(baseEn){
+          // Quick inline translation using same python adapter (sequential small calls)
+          function callTrans(langTag, instruction){
+            const tPrompt = `${instruction}\n---\n${baseEn}`;
+            const tCode = `from ai_llm import chat_once;print(chat_once(${JSON.stringify(tPrompt)}, system='You are a concise translator.', temperature=0.2, max_tokens=512))`;
+            const tr = spawnSync('python',['-c',tCode], { encoding:'utf-8' });
+            if(tr.status===0) return (tr.stdout||'').strip?.() || tr.stdout.trim();
+            return '';
+          }
+          const zh = callTrans('zh','将以下英文精确翻译为 130-150 汉字中文摘要，保持技术名词准确，不加扩展解释，只保留核心事实：');
+          const es = callTrans('es','Traduce el siguiente resumen al español en 80-95 palabras, manteniendo términos técnicos y tono factual:');
+          out = { en: baseEn, zh: zh||'', es: es||'' };
+          if(out.en||out.zh||out.es) summarizeDiagnostics.success++;
+        }
+      } else {
+        if(DEBUG) console.log('[summarize_multi] python fallback failed status', r.status, 'stderr', r.stderr?.slice(0,200));
+        summarizeDiagnostics.last_error = 'python_fallback_failed';
+      }
+    } catch(e){
+      if(DEBUG) console.log('[summarize_multi] python fallback exception', e.message);
+      summarizeDiagnostics.last_error = 'python_fallback_exception:'+e.message;
+    }
+  }
   if(out.en||out.zh||out.es) networkErrorStreak = 0; // reset streak on success
   return out;
 }

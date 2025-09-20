@@ -94,6 +94,22 @@ async function main(){
   processList(itemsGH, 'github');
   console.log('[snapshot-summaries] debug after processList total', total, 'toGen', toGen.length);
 
+  // EARLY AVAILABILITY PROBE: Avoid hammering endpoint if clearly unreachable.
+  let llmUnavailable = false;
+  if(API_KEY && toGen.length){
+    try {
+      const probe = await llmRequest('PING TEST ONLY');
+      const any = (probe.en||probe.zh||probe.es);
+      if(!any && summarizeDiagnostics.network_error>0 && summarizeDiagnostics.success===0){
+        llmUnavailable = true;
+        console.warn('[snapshot-summaries] LLM appears unreachable after probe; will skip per-item calls and use fallback logic.');
+      }
+    } catch(e){
+      llmUnavailable = true;
+      console.warn('[snapshot-summaries] probe exception; marking LLM unavailable', e.message);
+    }
+  }
+
   if(toGen.length && !API_KEY){
     console.warn('[snapshot-summaries] API key missing; cannot generate new summaries.');
   }
@@ -105,6 +121,21 @@ async function main(){
   let fallbackCount = 0;
   const generated = await mapLimit(toGen, MAX_CONCURRENCY, async ({ it, key, hash })=>{
     if(!API_KEY) return null;
+    if(llmUnavailable){
+      // Direct fallback path
+      if(ENABLE_FALLBACK){
+        const base = (it.summary || it.description || '').slice(0,160).trim();
+        const short = base || it.name || it.id;
+        const en = `Auto summary (fallback:unavailable): ${short}`;
+        const zh = `自动摘要（占位:无法连接）: ${short}`;
+        const es = `Resumen automático (fallback: sin conexión): ${short}`;
+        const neutral = zh || en || es;
+        it.summary_en = en; it.summary_zh = zh; it.summary_es = es; it.summary = neutral;
+        cache.models[key] = { hash, updated_at: it.updated_at || nowIso, summary_en: en, summary_zh: zh, summary_es: es, summary: neutral, last_generated: nowIso, fallback: true };
+        fallbackCount++; gen++; return true;
+      }
+      return false;
+    }
     const prompt = buildPrompt(it);
     const res = await llmRequest(prompt);
     let { en, zh, es } = res;
