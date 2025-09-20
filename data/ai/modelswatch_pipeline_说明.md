@@ -2,7 +2,7 @@
 
 > 本文档系统性描述当前模型/工程热榜的数据来源、执行顺序、分类与打标签逻辑、评分策略、三语摘要、占位符与质量监控等，实现维护与二次扩展的技术基线。
 
-更新时间：2025-09-20
+更新时间：2025-09-21
 
 ---
 ## 1. 目标概述
@@ -131,18 +131,55 @@ Z 值：基于候选集合的均值/方差，方差近 0 时退化为 0 防止�
 4. UI 可过滤 / 灰显占位符。
 
 ---
-## 12. 三语摘要生成
-脚本：`generate_snapshot_summaries.mjs` + `summarize_multi.mjs`
+## 12. 三语摘要生成（新版：Python 批处理 + 缓存 + 冷启动支持）
+核心脚本链：
+1. `generate_snapshot_summaries.mjs` （JS 调度层，决定待生成列表 / 限流 / 冷启动 gating / 调用批处理）
+2. `summarize_multi.mjs` （保持向后兼容，内部已优先走 Python）
+3. `tools/tri_summarizer.py` （Python 主实现：JSON-first → 失败再逐语言回退，可选重写+扩展）
 
-流程：
-1. 读取当天快照 + corpus items，筛出今日仍存在的条目（保证 stats 对应）。
-2. 计算 item hash（字段拼接：id/name/source/desc/summary/tags/核心统计/更新时间）。
-3. 若 cache 命中且三语齐全 → 复用；否则加入待生成列表。
-4. 并发 (MAX_CONCURRENCY 默认 3) 调用 DeepSeek：输出 JSON `{summary_en, summary_zh, summary_es}`。
-5. 失败或无 Key → 留空字段（完整性检查会告警）。
-6. 写入：`hf_summaries.json` / `gh_summaries.json` + 更新 `summary_cache.json`。
+改进要点：
+- 批处理：一次性将待生成 item 列表通过 `--batch` 传递给 Python，避免过去“每条 spawn 一次”的高额进程开销。
+- 进度流式：Python 每 N 条（由 `BATCH_PROGRESS_INTERVAL` 环境变量控制，默认 25）输出进度行，GitHub Actions 日志可实时观测。
+- JSON-first 策略：优先尝试一次调用返回三语 JSON，解析失败或缺少字段再进入顺序补偿（可通过 `UNIFIED_JSON_NO_SEQ=1` 强制只走一次避免回退）。
+- 缓存：`summary_cache.json` 采用 prompt 内容哈希（聚合关键字段 id/name/source/desc/summary/tags/核心 stats 与更新时间）→ 命中直接复用，减少 LLM 成本。
+- 重写 / 扩展（可选）：`TRI_ENABLE_REWRITE=1` / `TRI_ENABLE_EXPAND=1` 在非 `SPEED_MODE=1` 时启用质量增强阶段；速度优先场景关闭减少 tokens。
+- 并发（语言级回退时）：`TRI_BATCH_CONCURRENCY` 控制内部并行度（默认安全值 3~5）。
+- 诊断输出扩展：记录生成 vs 复用数量、跳过原因、限流跳过数（见第 24 节）。
 
-特点：增量友好 / 易审计 / 可扩展语言。
+执行流程（新版）：
+1. JS 层加载当天快照（hf / gh）并关联 corpus 详情，过滤仍存在条目。
+2. 构造哈希，分离 reuse vs 待生成列表（toGen）。
+3. 若处于“冷启动阶段”且未写入冷启动标记文件（见第 24 节），跳过所有限流策略，直接全量 toGen。
+4. 否则应用限流（MAX_NEW / MIN_PER_SOURCE / 优先级字段排序）。
+5. 批传给 Python：`python tools/tri_summarizer.py --batch <json>`。
+6. Python 内部：逐条检查缓存 → 未命中执行 tri-summary（JSON-first → fallback）；可在 rewrite/expand 阶段进行风格一致化与信息密度提升。
+7. 周期性 flush 缓存到磁盘（降低丢失风险）。
+8. 回写 `hf_summaries.json` / `gh_summaries.json` 与更新后的 `summary_cache.json`。
+9. 生成诊断 JSON：包括 cold_start_done、skipped_due_to_limit、original_to_generate 等字段。
+
+关键环境变量（本节相关）：
+| 变量 | 功能 |
+|------|------|
+| `USE_PYTHON_SUMMARIZER=1` | 启用 Python 主路径（默认已开启） |
+| `SNAPSHOT_USE_BATCH=1` | 允许批处理调用 Python |
+| `TRI_JSON_FIRST=1` | 先尝试一次返回三语 JSON |
+| `UNIFIED_JSON_NO_SEQ=1` | 禁止失败后逐语言回退（速度优先） |
+| `TRI_BATCH_CONCURRENCY` | 回退顺序阶段的并行度 |
+| `TRI_ENABLE_REWRITE` | 质量增强（rewrite） |
+| `TRI_ENABLE_EXPAND` | 质量增强（扩展补充细节） |
+| `SPEED_MODE=1` | 关闭 rewrite/expand，最少调用最少 tokens |
+| `BATCH_PROGRESS_INTERVAL` | 进度输出间隔 |
+
+新增诊断字段：
+| 字段 | 说明 |
+|------|------|
+| `generated` | 实际新生成条数 |
+| `reused` | 直接缓存复用条数 |
+| `original_to_generate` | 限流前理论待生成总数 |
+| `skipped_due_to_limit` | 限流后被跳过的条目数 |
+| `cold_start_done` | 本轮是否已处于冷启动完成阶段 |
+
+特点：在冷启动拿到高质量完整基线后，再逐步进入有成本上限的稳态增量模式。
 
 ---
 ## 13. 周度汇总
@@ -260,3 +297,105 @@ Z 值：基于候选集合的均值/方差，方差近 0 时退化为 0 防止�
 
 ---
 如需英文版、精简 README 版或新增“新星检测”实现，请提出下一步需求。
+
+---
+## 24. 冷启动与成本治理策略（新增）
+目标：首轮（冷启动）不设上限获取完整三语摘要基线；后续稳态运行受控增量（成本可预测）。
+
+核心变量与文件：
+| 名称 | 说明 |
+|------|------|
+| `COLD_START_MARK_FILE` | 冷启动标记文件路径，默认：`data/ai/modelswatch/cold_start_done.json` |
+| `AUTO_WRITE_COLD_START_MARK=1` | 在“未限流”且运行成功后自动写入标记文件 |
+| `COLD_START_DONE=1` | 人工/强制指示系统视为已完成冷启动（即使标记文件不存在） |
+| `SNAPSHOT_MAX_NEW` | 稳态运行允许每次新增生成的最大摘要条数 |
+| `SNAPSHOT_MIN_PER_SOURCE` | 保证每个来源（hf/github）最少生成条数（防 starvation） |
+| `SNAPSHOT_PRIORITY_FIELDS` | 逗号分隔优先级字段（如 `tier,recency,mentions`）用于排序挑选 |
+| `SNAPSHOT_LIMIT_MODE` | `priority`（按排序截断）或 `random`（随机抽样） |
+
+判定流程：
+1. 若（标记文件存在 OR `COLD_START_DONE=1`）→ 进入“稳态” → 应用限流。
+2. 否则 → 视为冷启动 → 全量 toGen；若 `AUTO_WRITE_COLD_START_MARK=1` 成功生成后写入标记。
+
+诊断增强：`original_to_generate` 与 `skipped_due_to_limit` 用于衡量 backlog 压力与阈值合理性。
+
+推荐操作步骤：
+1. 冷启动：设置 `RESET_MODELWATCH_ALL=1`（及确认变量）运行；不设置任何 SNAPSHOT_* 限流变量；开启 `AUTO_WRITE_COLD_START_MARK=1`。
+2. 观察完成后仓库出现 `cold_start_done.json`，第二次开始可配置：
+  - `SNAPSHOT_MAX_NEW=60`
+  - `SNAPSHOT_MIN_PER_SOURCE=1`
+  - `SNAPSHOT_PRIORITY_FIELDS=tier,recency,mentions`
+  - `SNAPSHOT_LIMIT_MODE=priority`
+3. 后续根据 backlog 大小调整 MAX_NEW：大 → 100~150；趋稳 → 30~60。
+4. 如果需要重新全量重建：删除标记文件并清理缓存（或再执行 reset）。
+
+风险与缓解：
+- 冷启动中途失败：未写入标记 → 下次继续全量补齐。
+- 标记误写过早：删除标记文件重跑一次全量。
+- 长期 backlog 偏大：暂时提升 `SNAPSHOT_MAX_NEW` 或切换 `SNAPSHOT_LIMIT_MODE=random` 洗出长尾。
+
+---
+## 25. 重置与数据清理（新增）
+脚本：`reset_modelswatch.mjs`
+
+触发变量：
+| 变量 | 用途 |
+|------|------|
+| `RESET_MODELWATCH_ALL=1` | 全量清理（snapshots/ 缓存 / 诊断 / hotlists） |
+| `RESET_MODELWATCH_CONFIRM=YES` | 可选二级确认（视实现而定） |
+
+典型使用场景：
+1. 语义哈希逻辑大幅变更。
+2. taxonomy 与标签策略大规模调整，需要重新生成摘要与分类。
+3. 噪声/脏数据累积（历史调参试验产物）。
+
+执行后建议：立即跑一次“冷启动”完整构建，写入新缓存与标记文件。
+
+---
+## 26. 新增日志与可观测性（新增）
+新增 / 扩展的诊断与日志输出：
+| 文件 | 说明 |
+|------|------|
+| `summaries_diagnostics.json` | 当日/本轮摘要生成统计（含限流字段） |
+| `weekly_summaries_diagnostics.json` | 周度聚合（可含累计生成 / 复用曲线） |
+| Python 批处理 stderr | 每批/定期进度：Processed X / Total Y |
+
+关键指标解读：
+| 指标 | 解读 |
+|------|------|
+| `original_to_generate` >> `generated` | 限流强度高；可临时调大 MAX_NEW |
+| `skipped_due_to_limit` 长期高 | backlog 无法消化；需增加速率或放宽策略 |
+| `reused / (reused + generated)` | 缓存命中率（越高成本越低） |
+
+潜在后续增强（未实现）：
+- token 估算 / 成本归因（按语言 / 来源拆分）。
+- backlog 队列文件（如 `pending_summaries.json`）便于审计被跳过对象。
+- 动态调节：基于 backlog 深度自动升降 `SNAPSHOT_MAX_NEW`。
+
+---
+## 27. 环境变量速查（新增补充）
+（仅列与新增机制高度相关，旧文已述不重复）
+| 变量 | 作用 |
+|------|------|
+| `USE_PYTHON_SUMMARIZER` | 启用 Python 三语摘要主实现 |
+| `SNAPSHOT_USE_BATCH` | 摘要批处理模式开关 |
+| `TRI_JSON_FIRST` | JSON 一次返回三语优先 |
+| `UNIFIED_JSON_NO_SEQ` | 禁止失败后逐语言顺序补偿 |
+| `TRI_BATCH_CONCURRENCY` | Fallback 阶段并行度 |
+| `TRI_ENABLE_REWRITE` / `TRI_ENABLE_EXPAND` | 质量增强阶段 |
+| `SPEED_MODE` | 全局加速（关闭增强、最少 tokens） |
+| `BATCH_PROGRESS_INTERVAL` | 批处理进度输出间隔 |
+| `COLD_START_DONE` / `COLD_START_MARK_FILE` / `AUTO_WRITE_COLD_START_MARK` | 冷启动 gating 机制 |
+| `SNAPSHOT_MAX_NEW` / `SNAPSHOT_MIN_PER_SOURCE` | 限流核心 |
+| `SNAPSHOT_PRIORITY_FIELDS` | 优先级排序字段列表 |
+| `SNAPSHOT_LIMIT_MODE` | priority / random |
+| `RESET_MODELWATCH_ALL` | 全量重置触发 |
+
+---
+## 28. 未来增强建议（增补）
+- Category 级最小保障（除 source 维度再细化）。
+- Backlog aging：按等待时长提升优先级。
+- 失败样本集中重试队列，避免一次失败永久沉底。
+- 缓存版本号：哈希加入 schema_version，变更时自动invalidate。
+
+（本文档新增章节 24~28 对应 2025-09-21 更新。）

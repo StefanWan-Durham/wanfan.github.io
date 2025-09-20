@@ -50,6 +50,11 @@ jobs:
           BATCH_PROGRESS_INTERVAL: 10   # every 10 items print progress to stderr during batch
           RESET_MODELWATCH_ALL: ${{ vars.RESET_MODELWATCH_ALL }}
           RESET_MODELWATCH_CONFIRM: 1
+          # (Optional) Post-cold-start cost controls (uncomment to enable)
+          # SNAPSHOT_MAX_NEW: 40                # cap number of NEW items per run needing LLM summaries
+          # SNAPSHOT_MIN_PER_SOURCE: 5          # guarantee at least 5 from each source (hf/github) before cap
+          # SNAPSHOT_PRIORITY_FIELDS: downloads_total,stars,likes_total  # ordering for priority mode
+          # SNAPSHOT_LIMIT_MODE: priority       # or 'random'
         run: |
           node -v
           python -V

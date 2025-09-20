@@ -94,6 +94,67 @@ async function main(){
   processList(itemsHF, 'hf');
   processList(itemsGH, 'github');
   console.log('[snapshot-summaries] debug after processList total', total, 'toGen', toGen.length);
+  // Optional limiting (post-cold-start cost control)
+  // Env variables:
+  //   SNAPSHOT_MAX_NEW: absolute cap of new items to summarize (after reuse) (e.g. 40)
+  //   SNAPSHOT_MIN_PER_SOURCE: guarantee at least N per source (hf/github) before applying global cap (default 0)
+  //   SNAPSHOT_PRIORITY_FIELDS: comma-separated stat fields to sort desc (e.g. "downloads_total,stars,likes_total")
+  //   SNAPSHOT_LIMIT_MODE: 'priority' (default) | 'random'
+  //   COLD_START_DONE: if set truthy -> enable limiting logic. If not, skip limiting so first run builds full cache.
+  //   COLD_START_MARK_FILE: marker file path (default data/ai/modelswatch/cold_start_done.json); if exists treat as done.
+  //   AUTO_WRITE_COLD_START_MARK: if '1' then after a run where no limiting applied and all new items processed, create marker file.
+  // If cap < toGen.length we trim and record skipped count.
+  let skippedDueToLimit = 0;
+  const originalToGenCount = toGen.length;
+  const MAX_NEW = parseInt(process.env.SNAPSHOT_MAX_NEW||'0',10) || 0;
+  const markFile = process.env.COLD_START_MARK_FILE || path.join(DATA_DIR,'cold_start_done.json');
+  const coldStartDoneEnv = /^(1|true|yes|on)$/i.test(process.env.COLD_START_DONE||'');
+  let coldStartDone = coldStartDoneEnv || fs.existsSync(markFile);
+  if(!coldStartDone && MAX_NEW>0){
+    console.log('[snapshot-summaries] cold start not marked done; ignoring limiting vars this run');
+  }
+  if(coldStartDone && MAX_NEW>0 && toGen.length>MAX_NEW){
+    const MIN_PER_SOURCE = parseInt(process.env.SNAPSHOT_MIN_PER_SOURCE||'0',10) || 0;
+    const priorityFields = (process.env.SNAPSHOT_PRIORITY_FIELDS||'downloads_total,stars,likes_total').split(',').map(s=>s.trim()).filter(Boolean);
+    const mode = (process.env.SNAPSHOT_LIMIT_MODE||'priority').toLowerCase();
+    // Bucket by source
+    const bucket = { hf: [], github: [] };
+    toGen.forEach(e=> bucket[e.source]?.push(e));
+    function score(entry){
+      const st = entry.it.stats||{}; let s=0; let m=1;
+      for(const f of priorityFields){
+        if(typeof st[f]==='number'){ s += st[f]*m; }
+        m = m/10; // diminishing weight chain
+      }
+      return s;
+    }
+    if(mode==='priority'){
+      bucket.hf.sort((a,b)=> score(b)-score(a));
+      bucket.github.sort((a,b)=> score(b)-score(a));
+    } else if(mode==='random') {
+      for(const k of ['hf','github']) bucket[k].sort(()=> Math.random()-0.5);
+    }
+    // Take guaranteed minimum first
+    const selected = [];
+    for(const k of ['hf','github']){
+      const arr = bucket[k];
+      const take = MIN_PER_SOURCE>0 ? arr.splice(0, Math.min(MIN_PER_SOURCE, arr.length)) : [];
+      selected.push(...take);
+    }
+    // Merge remaining into one pool and apply ordering again if priority mode across combined
+    const remaining = [...bucket.hf, ...bucket.github];
+    if(mode==='priority') remaining.sort((a,b)=> score(b)-score(a));
+    else if(mode==='random') remaining.sort(()=> Math.random()-0.5);
+    const slotsLeft = Math.max(0, MAX_NEW - selected.length);
+    selected.push(...remaining.slice(0, slotsLeft));
+    const newSet = new Set(selected.map(e=> e.key));
+    skippedDueToLimit = toGen.filter(e=> !newSet.has(e.key)).length;
+    if(skippedDueToLimit>0){
+      console.log(`[snapshot-summaries] limit applied: MAX_NEW=${MAX_NEW} kept=${selected.length} skipped=${skippedDueToLimit} mode=${mode} priorityFields=${priorityFields.join('|')}`);
+      toGen.length = 0; // mutate original
+      selected.forEach(e=> toGen.push(e));
+    }
+  }
   if(toGen.length){
     const sampleIds = toGen.slice(0,8).map(x=>x.it.id).join(', ');
     console.log(`[snapshot-summaries] planning batch: toGenerate=${toGen.length} reuse=${reuse} sampleIds=[${sampleIds}]`);
@@ -250,8 +311,23 @@ async function main(){
       network_error: summarizeDiagnostics.network_error,
       status_errors: summarizeDiagnostics.status_errors,
       endpoint_fallbacks: summarizeDiagnostics.endpoint_fallbacks,
-      fallback_count: fallbackCount
+      fallback_count: fallbackCount,
+      skipped_due_to_limit: skippedDueToLimit,
+      cold_start_done: coldStartDone,
+      original_to_generate: originalToGenCount
     });
+  } catch{}
+  // Cold start marker auto-write
+  try {
+    const autoWrite = /^(1|true|yes|on)$/i.test(process.env.AUTO_WRITE_COLD_START_MARK||'');
+    if(autoWrite && !coldStartDone){
+      if(skippedDueToLimit===0){
+        writeJSON(markFile, { created_at: nowIso, note: 'Cold start full generation completed', original_to_gen: originalToGenCount });
+        console.log('[snapshot-summaries] wrote cold start marker', markFile);
+      } else {
+        console.log('[snapshot-summaries] cold start marker NOT written (limiting applied)');
+      }
+    }
   } catch{}
 }
 
