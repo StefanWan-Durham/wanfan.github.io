@@ -36,7 +36,8 @@ async function main(){
   const gh = await fetchGithubTop();
   const hf = await fetchHFTop();
   // Optionally enrich with Chinese summary for Top views
-  if(DS_KEY){
+  const SKIP_TOP_ENRICH = /^(1|true|yes|on)$/i.test(process.env.SKIP_TOP_ENRICH||'');
+  if(DS_KEY && !SKIP_TOP_ENRICH){
     const mapLimit = async (arr, limit, fn)=>{
       if(!Array.isArray(arr)||arr.length===0) return [];
       const out=new Array(arr.length); let i=0; let running=0;
@@ -63,6 +64,7 @@ async function main(){
     writeJSON(path.join(outDir, 'top_github.json'), { updated_at: now, items: gh2 });
     writeJSON(path.join(outDir, 'top_hf.json'), { updated_at: now, items: hf2 });
   }else{
+  if(SKIP_TOP_ENRICH) warn('[weekly] SKIP_TOP_ENRICH=on -> bypassing summarization for top lists');
     // Weekly job updates only the weekly top files and corpus; it does NOT write daily_* files.
   writeJSON(path.join(outDir, 'top_github.json'), { updated_at: now, items: gh });
   writeJSON(path.join(outDir, 'top_hf.json'), { updated_at: now, items: hf });

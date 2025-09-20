@@ -201,7 +201,12 @@ def _expand(lang: str, content: str, target: str) -> str:
 def tri_summary(prompt: str) -> Dict[str, Any]:
     t0 = _now()
     temperature = float(os.getenv("TRI_MODEL_TEMPERATURE", "0.35"))
+    speed_mode = os.getenv('SPEED_MODE','0').lower() in ('1','true','yes','on')
     attempt_json_first = os.getenv("TRI_JSON_FIRST", "1").lower() in ("1","true","yes","on")
+    if speed_mode:
+        # In speed mode, we may disable JSON-first if explicitly requested via TRI_JSON_FIRST=0
+        # else keep behavior but disable rewrite/expand later.
+        pass
     meta = {"json_first": attempt_json_first, "path": "", "errors": []}
 
     en = zh = es = ""
@@ -217,7 +222,9 @@ def tri_summary(prompt: str) -> Dict[str, Any]:
             meta["errors"].append(f"json_first_failed:{type(e).__name__}:{str(e)[:160]}")
             en = zh = es = ""
 
-    if not (en and zh and es):
+    # Optional: if UNIFIED_JSON_NO_SEQ set and we got ANY content from JSON path, skip sequential to save tokens.
+    unified_no_seq = os.getenv('UNIFIED_JSON_NO_SEQ','0').lower() in ('1','true','yes','on')
+    if not (en and zh and es) and not (unified_no_seq and (en or zh or es)):
         # sequential fallback
         meta["path"] = meta.get("path","") + ("+seq" if meta.get("path") else "seq")
         try:
@@ -248,8 +255,8 @@ def tri_summary(prompt: str) -> Dict[str, Any]:
     if warn_list:
         meta.setdefault("warnings", []).extend(warn_list)
 
-    enable_rewrite = os.getenv("TRI_ENABLE_REWRITE", "1").lower() in ("1","true","yes","on")
-    enable_expand = os.getenv("TRI_ENABLE_EXPAND", "0").lower() in ("1","true","yes","on")
+    enable_rewrite = os.getenv("TRI_ENABLE_REWRITE", "1").lower() in ("1","true","yes","on") and not speed_mode
+    enable_expand = os.getenv("TRI_ENABLE_EXPAND", "0").lower() in ("1","true","yes","on") and not speed_mode
     rewrote = []
     expanded = []
     # Rewrite for trimmed
@@ -356,11 +363,20 @@ def tri_summary_batch(prompts: List[str]) -> Dict[str, Any]:
     errors_total = 0
     concurrency = int(os.getenv("TRI_BATCH_CONCURRENCY", "1") or "1")
     concurrency = max(1, concurrency)
+    progress_interval = float(os.getenv('BATCH_PROGRESS_INTERVAL','0')) or 0.0
+    next_progress = progress_interval if progress_interval>0 else None
+    processed = 0
     if concurrency == 1:
         iterable = enumerate(prompts)
         for idx, p in iterable:
             r = tri_summary_cached(p)
             results.append(r)
+            processed += 1
+            if next_progress and processed >= next_progress:
+                # Write to stderr to not pollute JSON consumers (call site may just capture stdout)
+                sys.stderr.write(f"[tri_summarizer][progress] {processed}/{len(prompts)} done\n")
+                sys.stderr.flush()
+                next_progress += progress_interval
     else:
         with ThreadPoolExecutor(max_workers=concurrency) as ex:
             future_map = {ex.submit(tri_summary_cached, p): i for i, p in enumerate(prompts)}
@@ -371,6 +387,11 @@ def tri_summary_batch(prompts: List[str]) -> Dict[str, Any]:
                     temp_results[i] = fut.result()
                 except Exception as e:
                     temp_results[i] = {"en":"","zh":"","es":"","meta":{"ok":False,"errors":[f"batch_exc:{type(e).__name__}"],"path":"batch"}}
+                processed += 1
+                if next_progress and processed >= next_progress:
+                    sys.stderr.write(f"[tri_summarizer][progress] {processed}/{len(prompts)} done\n")
+                    sys.stderr.flush()
+                    next_progress += progress_interval
             results.extend(temp_results)
     # aggregate meta
     for r in results:
