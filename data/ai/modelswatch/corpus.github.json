@@ -682,7 +682,10 @@
         "downloads": []
       },
       "summary": "Stable Diffusion web UI",
-      "updated_at": "2025-09-20T14:25:45Z"
+      "updated_at": "2025-09-20T14:25:45Z",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "avelino/awesome-go",
@@ -1325,7 +1328,10 @@
         "downloads": []
       },
       "summary": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
-      "updated_at": "2025-09-20T14:14:01Z"
+      "updated_at": "2025-09-20T14:14:01Z",
+      "task_keys": [
+        "tool_use"
+      ]
     },
     {
       "id": "electron/electron",

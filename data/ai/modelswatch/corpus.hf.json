@@ -36,7 +36,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "Falconsai/nsfw_image_detection",
@@ -143,7 +146,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "dima806/fairface_age_image_detection",
@@ -269,7 +275,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "object_detection"
+      ]
     },
     {
       "id": "pyannote/segmentation-3.0",
@@ -468,7 +477,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "Bingsu/adetailer",
@@ -931,7 +943,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "amazon/chronos-t5-small",
@@ -975,7 +990,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     },
     {
       "id": "context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16",
@@ -1175,7 +1193,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "FacebookAI/xlm-roberta-base",
@@ -1464,7 +1485,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "meta-llama/Llama-3.2-1B-Instruct",
@@ -1945,7 +1969,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     },
     {
       "id": "Datadog/Toto-Open-Base-1.0",
@@ -2019,7 +2046,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "facebook/esmfold_v1",
@@ -2173,7 +2203,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "tts"
+      ]
     },
     {
       "id": "thuml/sundial-base-128m",
@@ -2267,7 +2300,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T14:35:51.935Z",
+      "task_keys": [
+        "code_generation"
+      ]
     },
     {
       "id": "google-bert/bert-base-multilingual-cased",
@@ -2630,7 +2666,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T14:35:51.936Z",
+      "task_keys": [
+        "asr"
+      ]
     },
     {
       "id": "google-t5/t5-small",
@@ -2937,7 +2976,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T14:35:51.936Z",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "Salesforce/moirai-2.0-R-small",
@@ -2976,7 +3018,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T14:35:51.936Z",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     }
   ]
 }
