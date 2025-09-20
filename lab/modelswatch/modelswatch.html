@@ -27,6 +27,24 @@
   <script defer src="../../script.js"></script>
   <style>
     .mw-wrap{max-width:1200px;margin:0 auto;padding:0 12px}
+    /* Weekly summary block */
+    #mw-weekly-summary{position:relative;margin:18px 0 24px;padding:18px 20px;border:1px solid color-mix(in oklab,var(--border),var(--primary) 20%);border-radius:18px;background:linear-gradient(145deg,color-mix(in oklab,var(--surface-2),var(--primary) 4%),color-mix(in oklab,var(--surface-2),var(--primary) 10%));box-shadow:0 6px 18px -4px rgba(37,99,235,.18),0 2px 4px rgba(0,0,0,.06);overflow:hidden}
+    #mw-weekly-summary:before{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;background:radial-gradient(circle at 30% 30%,color-mix(in oklab,var(--primary) 65%,white 10%),transparent 70%);opacity:.18;pointer-events:none}
+    #mw-weekly-summary h3{margin:0 0 10px;font-size:1.05rem;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--secondary);letter-spacing:.5px}
+    #mw-weekly-summary h3 svg{width:18px;height:18px;color:var(--primary)}
+    #mw-weekly-summary .mw-summary-text{margin:0 0 10px;line-height:1.55;font-size:.92rem;white-space:pre-wrap}
+    #mw-weekly-summary .mw-summary-tabs{display:flex;gap:6px;margin:0 0 10px;flex-wrap:wrap}
+    #mw-weekly-summary .mw-summary-tabs button{border:1px solid color-mix(in oklab,var(--border),var(--primary) 25%);background:color-mix(in oklab,var(--surface),white 4%);padding:4px 10px;border-radius:999px;font-size:.7rem;font-weight:600;letter-spacing:.4px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;color:var(--text)}
+    #mw-weekly-summary .mw-summary-tabs button.active{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-600) 100%);color:#fff;border-color:color-mix(in oklab,var(--primary-600),white 8%);box-shadow:0 4px 12px rgba(37,99,235,.35)}
+    #mw-weekly-summary .mw-task-dist{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0}
+    #mw-weekly-summary .mw-task-pill{font-size:.62rem;padding:4px 8px;border:1px solid color-mix(in oklab,var(--primary) 55%,var(--border));border-radius:999px;background:color-mix(in oklab,var(--surface-2),var(--primary) 12%);font-weight:600;letter-spacing:.3px;display:inline-flex;align-items:center;gap:4px;line-height:1}
+    #mw-weekly-summary .mw-task-pill span{color:color-mix(in oklab,var(--primary-700,#1d4ed8),black 5%)}
+    :root[data-theme="dark"] #mw-weekly-summary{background:linear-gradient(145deg,color-mix(in oklab,var(--surface-2),black 8%),color-mix(in oklab,var(--surface-2),var(--primary-900,#1e3a8a) 35%));box-shadow:0 10px 28px -6px rgba(15,23,42,.6),0 4px 10px -2px rgba(0,0,0,.55)}
+    :root[data-theme="dark"] #mw-weekly-summary .mw-task-pill{background:color-mix(in oklab,var(--primary-900,#1e3a8a),black 12%);color:#e2e8f0;border-color:color-mix(in oklab,var(--primary-500,#3b82f6),#1e293b 55%)}
+    :root[data-theme="dark"] #mw-weekly-summary .mw-summary-tabs button{background:color-mix(in oklab,var(--surface-2),black 12%);color:#e2e8f0;border-color:color-mix(in oklab,var(--border),var(--primary) 28%)}
+    :root[data-theme="dark"] #mw-weekly-summary .mw-summary-tabs button.active{background:linear-gradient(135deg,var(--primary-400,#60a5fa) 0%,var(--primary-700,#1d4ed8) 100%);color:#fff}
+    #mw-weekly-summary .mw-empty{font-size:.8rem;color:var(--muted);margin:0}
+    @media (max-width:680px){#mw-weekly-summary{padding:16px 16px;border-radius:16px}#mw-weekly-summary h3{font-size:1rem}#mw-weekly-summary .mw-summary-text{font-size:.9rem}}
     /* Toolbar layout */
   .mw-toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;padding:14px 12px}
   /* Modes row: first row full-width */
@@ -254,6 +272,20 @@
 
     <section class="section">
       <div class="container mw-wrap">
+        <section id="mw-weekly-summary" hidden aria-live="polite">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v4H3z"/><path d="M8 7v14"/><path d="M16 7v14"/><path d="M3 11h18"/><path d="M3 17h18"/></svg>
+            <span class="i18n l-zh">每周摘要</span><span class="i18n l-en">Weekly Summary</span><span class="i18n l-es">Resumen semanal</span>
+          </h3>
+          <div class="mw-summary-tabs" role="tablist" aria-label="Weekly summary language">
+            <button data-lang="zh" class="active" role="tab" aria-selected="true">中文</button>
+            <button data-lang="en" role="tab" aria-selected="false">EN</button>
+            <button data-lang="es" role="tab" aria-selected="false">ES</button>
+          </div>
+          <p class="mw-summary-text"></p>
+          <div class="mw-task-dist" aria-label="Task distribution"></div>
+          <p class="mw-empty" hidden></p>
+        </section>
         <div class="card mw-card mw-toolbar" role="toolbar" aria-label="Filters">
           <div class="mw-modes" id="mw-modes">
             <button class="btn primary" data-mode="daily" data-i18n="mw_mode_daily">今日灵感</button>
@@ -399,6 +431,51 @@
     function t(key, fallback){ try { const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh'; const tx=(window.translations?.[lang]?.[key]); return tx||fallback||key; } catch { return fallback||key; } }
 
     function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+    // ================= Weekly Summary Loader =================
+    (function initWeeklySummary(){
+      const el = document.getElementById('mw-weekly-summary');
+      if(!el) return;
+      const summaryP = el.querySelector('.mw-summary-text');
+      const distBox = el.querySelector('.mw-task-dist');
+      const emptyP = el.querySelector('.mw-empty');
+      const tabs = el.querySelectorAll('.mw-summary-tabs button');
+      let summaryData = null;
+      let currentLang = getLangSafe();
+      function applyLangButtons(){
+        tabs.forEach(btn=>{
+          const L = btn.getAttribute('data-lang');
+            if(L === currentLang){ btn.classList.add('active'); btn.setAttribute('aria-selected','true'); }
+            else { btn.classList.remove('active'); btn.setAttribute('aria-selected','false'); }
+        });
+      }
+      function render(){
+        if(!summaryData){ el.hidden=true; return; }
+        const sec = summaryData.sections?.overview || {};
+        const txt = sec[currentLang] || sec[getLangSafe()] || sec.en || sec.zh || '';
+        summaryP.textContent = txt;
+        emptyP.hidden = !!txt;
+        if(!txt){ emptyP.textContent = currentLang==='zh'? '暂无摘要': (currentLang==='es'? 'Sin resumen disponible' : 'No summary available'); }
+        const dist = (summaryData.meta?.task_distribution||[]).slice(0,14);
+        distBox.innerHTML = dist.map(d=>`<span class="mw-task-pill" title="${d.task}"><span>${d.task}</span><strong>${d.count}</strong></span>`).join('');
+        el.hidden = false;
+      }
+      async function fetchSummary(){
+        const paths=[
+          '../../data/ai/modelswatch/weekly_summaries.json',
+          '/data/ai/modelswatch/weekly_summaries.json',
+          '../data/ai/modelswatch/weekly_summaries.json',
+          './data/ai/modelswatch/weekly_summaries.json'
+        ];
+        for(const p of paths){
+          try{ const r = await fetch(p,{cache:'no-store'}); if(r.ok){ summaryData = await r.json(); break; } }catch{}
+        }
+        if(summaryData){ render(); }
+      }
+      tabs.forEach(btn=> btn.addEventListener('click',()=>{ const L=btn.getAttribute('data-lang'); if(L){ currentLang=L; applyLangButtons(); render(); }}));
+      const obs = new MutationObserver(()=>{ const L=document.documentElement.getAttribute('lang')||'zh'; if(L!==currentLang){ currentLang=L; applyLangButtons(); render(); } });
+      obs.observe(document.documentElement,{ attributes:true, attributeFilter:['lang'] });
+      fetchSummary(); applyLangButtons();
+    })();
     function normalizeStats(it){ if(!it||!it.stats) return it; const s=it.stats; if(s.hf_downloads_7d && !s.downloads_total) s.downloads_total = s.hf_downloads_7d; if(s.hf_likes && !s.likes_total) s.likes_total = s.hf_likes; return it; }
     function normalizeArray(arr){ return (arr||[]).map(normalizeStats); }
     function rel(iso){ try{ const d=new Date(iso); const s=(Date.now()-d)/1000; if(s<60) return 'just now'; if(s<3600) return Math.floor(s/60)+'m'; if(s<86400) return Math.floor(s/3600)+'h'; return Math.floor(s/86400)+'d'; }catch{return ''} }
@@ -744,15 +821,40 @@
         const mapKey = 'mw_reason_'+key.replace(/[^a-z0-9_]/g,'');
         return (window.translations?.[lang]?.[mapKey]) || key;
       }
+      // Task badge translation with fallbacks (meta -> translations -> en -> zh -> key)
+      function taskLabel(key, lang){
+        const meta = (TASK_LABELS_BY_KEY && TASK_LABELS_BY_KEY[key]) || {};
+        // Direct meta match for current language
+        if(meta[lang]) return meta[lang];
+        // Look for explicit translation dictionary entry e.g. mw_task_<key>
+        const tKey = 'mw_task_'+key.replace(/[^a-z0-9_]/g,'');
+        const trans = window.translations?.[lang]?.[tKey];
+        if(trans) return trans;
+        // Fall back priority: English meta (if different), then Chinese, then any non-empty, finally raw key
+        if(lang !== 'en' && meta.en) return meta.en;
+        if(meta.zh) return meta.zh;
+        if(meta.es) return meta.es; // last resort other locale
+        return meta.en || key;
+      }
       const reason = it.reason_label ? `<span class="mw-badge" data-type="reason" title="${esc(it.reason_text||'')}">${esc(reasonLabel(it.reason_label))}</span>` : '';
-      // Multi-list detection placeholder: mark if appears both in daily and another source within current session (flag could be precomputed later)
+      // Per-task badges: always show task list if task_keys present. Replace generic Multi badge.
       let multi = '';
       try{
-        if(it.__multi){
+        if(Array.isArray(it.task_keys) && it.task_keys.length){
           const lang = getLangSafe();
-          const mKey = 'mw_reason_multi';
-          const labelMulti = window.translations?.[lang]?.[mKey] || 'Multi';
-          multi = `<span class=\"mw-badge\" data-type=\"multi\" title=\"Appears in multiple lists\">${esc(labelMulti)}</span>`;
+          const maxShow = 3;
+          const tkAll = it.task_keys;
+          const shown = tkAll.slice(0,maxShow);
+          const hidden = tkAll.length - shown.length;
+          const labelMap = TASK_LABELS_BY_KEY || {};
+          multi = shown.map(k=>{
+            const txt = taskLabel(k, lang);
+            return `<span class=\"mw-badge\" data-type=\"multi\" title=\"${esc(k)}\">${esc(txt)}</span>`;
+          }).join('');
+          if(hidden>0){
+            multi += `<span class=\"mw-badge\" data-type=\"multi\" title=\"${esc(tkAll.join(', '))}\">+${hidden}</span>`;
+          }
+          if(multi) multi = `<div class=\"mw-badges\">${multi}</div>`;
         }
       }catch{}
       const badges = (reason||multi)? `<div class=\"mw-badges\">${reason}${multi}</div>` : '';
@@ -1549,6 +1651,8 @@
           applyFilter(); renderCol3(); updateTriggerLabel();
           // Notify main script to toggle global mode in Daily
           const on = selectedTasks.size>0; window.dispatchEvent(new CustomEvent('mw-global-toggle',{detail:{on}}));
+          // Ensure clear button visibility updates immediately after task selection
+          try{ updateClearButtonVisibility(); }catch{}
         };
         item.addEventListener('click', toggle);
         list.appendChild(item);
@@ -1671,9 +1775,15 @@
     function updateClearButtonVisibility(){
       if(!clearBtn) return;
       const mode = window.__mw_mode_current||'daily';
-      const qActive = (document.getElementById('mw-q')?.value||'').trim().length>0; // query doesn't count toward showing clear per spec ("besides query")
+      // Show clear button only when a category (engineering) or task selection (model lab) is active
       let filtered = false;
-      if(mode==='gh') filtered = !!selectedEngineeringCategory; else filtered = selectedTasks.size>0;
+      if(mode==='gh') {
+        filtered = !!selectedEngineeringCategory;
+      } else if(mode==='hf') {
+        filtered = selectedTasks.size>0; // tasks chosen in model lab
+      } else {
+        filtered = selectedTasks.size>0; // daily global multi-view also can use selection to expand view
+      }
       clearBtn.style.display = filtered ? '' : 'none';
     }
 

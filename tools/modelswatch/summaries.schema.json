@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Modelswatch Weekly Summaries",
+  "type": "object",
+  "required": ["schema_version", "updated_at", "period", "sections", "meta"],
+  "properties": {
+    "schema_version": { "type": "integer", "minimum": 1 },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "period": { "type": "string", "description": "ISO week label e.g. 2025-W37" },
+    "sections": {
+      "type": "object",
+      "required": ["overview"],
+      "additionalProperties": false,
+      "properties": {
+        "overview": { "$ref": "#/definitions/i18nSection" },
+        "top_movers": { "$ref": "#/definitions/i18nSection" },
+        "emerging_tasks": { "$ref": "#/definitions/i18nSection" },
+        "notable_models": { "$ref": "#/definitions/i18nSection" }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": ["task_distribution", "hotlist_version"],
+      "properties": {
+        "task_distribution": {
+          "type": "array",
+          "items": { "type": "object", "required": ["task", "count"], "properties": {"task": {"type":"string"}, "count": {"type":"integer"}} }
+        },
+        "emerging": { "type": "array", "items": { "type": "string" } },
+        "generated_with_model": { "type": "string" },
+        "hotlist_version": { "type": "integer" }
+      }
+    }
+  },
+  "definitions": {
+    "i18nSection": {
+      "type": "object",
+      "properties": {
+        "zh": {"type":"string"},
+        "en": {"type":"string"},
+        "es": {"type":"string"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

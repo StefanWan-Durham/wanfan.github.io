@@ -1,0 +1,74 @@
+#!/usr/bin/env node
+/**
+ * analyze_hotlist_coverage.mjs
+ * Reports coverage statistics for models_hotlist.json:
+ *  - Total models
+ *  - Per-task counts
+ *  - Tasks with zero items (vs taxonomy)
+ *  - Top N tasks by count
+ *  - Optional JSON output for CI consumption (pass OUT=path)
+ *
+ * Usage:
+ *   node tools/modelswatch/analyze_hotlist_coverage.mjs [--hotlist path] [--categories path] [--out path]
+ * Env (alternative):
+ *   HOTLIST_PATH, AI_CATEGORIES_PATH, OUT_JSON
+ */
+import fs from 'fs';
+import path from 'path';
+import url from 'url';
+
+const args = process.argv.slice(2);
+function argVal(name, env){
+  const i = args.indexOf(name); if(i>=0 && args[i+1]) return args[i+1];
+  if(process.env[env]) return process.env[env];
+}
+const hotlistPath = argVal('--hotlist','HOTLIST_PATH') || 'data/models/models_hotlist.json';
+const categoriesPath = argVal('--categories','AI_CATEGORIES_PATH') || 'data/ai/ai_categories.json';
+const outPath = argVal('--out','OUT_JSON') || '';
+
+function readJSON(p){ try{ return JSON.parse(fs.readFileSync(p,'utf-8')); }catch(e){ return null; } }
+
+const hotlist = readJSON(hotlistPath) || [];
+const cats = readJSON(categoriesPath) || [];
+
+// Gather all task keys from taxonomy
+const taxonomyTasks = new Set();
+for(const c of cats) for(const s of (c.subcategories||[])) for(const t of (s.tasks||[])) taxonomyTasks.add(t.key);
+
+// Count occurrences
+const counts = {}; let modelsWithTasks = 0;
+for(const m of hotlist){
+  const tks = Array.isArray(m.task_keys)? m.task_keys : [];
+  if(tks.length) modelsWithTasks++;
+  for(const k of tks){ counts[k] = (counts[k]||0)+1; }
+}
+
+// Build coverage arrays
+const zeroTasks = [...taxonomyTasks].filter(k=> !counts[k]);
+const presentTasks = Object.keys(counts).sort((a,b)=> counts[b]-counts[a]);
+
+const summary = {
+  hotlistPath,
+  totalModels: hotlist.length,
+  modelsWithTasks,
+  distinctTasks: presentTasks.length,
+  taxonomyTasks: taxonomyTasks.size,
+  zeroTasks,
+  topTasks: presentTasks.slice(0,15).map(k=> ({ key:k, count:counts[k] }))
+};
+
+// CLI Report
+console.log('[coverage] Hotlist:', hotlistPath);
+console.log('[coverage] Total models:', summary.totalModels, 'with any task_keys:', modelsWithTasks);
+console.log('[coverage] Distinct tasks present:', summary.distinctTasks, 'of taxonomy:', summary.taxonomyTasks);
+if(zeroTasks.length){
+  console.log('[coverage] Tasks with zero items ('+zeroTasks.length+'):', zeroTasks.join(', '));
+}else{
+  console.log('[coverage] All taxonomy tasks have at least one model.');
+}
+console.log('[coverage] Top tasks by count:');
+for(const t of summary.topTasks){ console.log('  -', t.key, ':', t.count); }
+
+if(outPath){
+  try{ fs.writeFileSync(outPath, JSON.stringify(summary,null,2)); console.log('[coverage] Wrote JSON summary ->', outPath); }catch(e){ console.error('[coverage] Failed write', outPath, e); }
+}

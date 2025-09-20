@@ -25,9 +25,21 @@ jobs:
           DEEPSEEK_MODEL: ${{ secrets.DEEPSEEK_MODEL }}
           LLM_CONN_TIMEOUT: ${{ secrets.LLM_CONN_TIMEOUT }}
           LLM_READ_TIMEOUT: ${{ secrets.LLM_READ_TIMEOUT }}
+          HOTLIST_LIMIT_PER_TASK: 2
+          HOTLIST_MIN_SEED_PER_TASK: 2
+          HOTLIST_LIMIT_PER_CATEGORY: 2
+          HOTLIST_MIN_SEED_PER_CATEGORY: 2
+          HOTLIST_DEBUG: 1
         run: |
           node -v
           node tools/modelswatch/weekly.mjs
+          node tools/modelswatch/seed_hotlists.mjs
+          # Coverage report (write JSON + console)
+          node tools/modelswatch/analyze_hotlist_coverage.mjs --hotlist data/ai/modelswatch/models_hotlist.json --categories data/ai/ai_categories.json --out data/ai/modelswatch/coverage_summary.json || echo "coverage script failed"
+          echo "--- coverage_summary.json ---" && cat data/ai/modelswatch/coverage_summary.json || true
+          # Generate tri-lingual summaries (non-fatal on failure)
+          node tools/modelswatch/generate_summaries.mjs || echo "summaries generation failed"
+          echo "--- weekly_summaries.json (excerpt) ---" && head -c 800 data/ai/modelswatch/weekly_summaries.json || true
       - name: Commit and push
         run: |
           git config user.name "github-actions"
@@ -36,7 +48,9 @@ jobs:
             data/ai/modelswatch/corpus.*.json \
             data/ai/modelswatch/snapshots/** \
             data/ai/modelswatch/models_hotlist.json \
-            data/ai/modelswatch/projects_hotlist.json
+            data/ai/modelswatch/projects_hotlist.json \
+            data/ai/modelswatch/coverage_summary.json
+            data/ai/modelswatch/weekly_summaries.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
