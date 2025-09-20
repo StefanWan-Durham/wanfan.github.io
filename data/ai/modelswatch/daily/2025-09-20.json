@@ -418,7 +418,10 @@
       "updated_at": "2025-09-18T19:21:47.074Z",
       "summary_en": "Dolphin-2.9.1-Yi-1.5-34B is a 34-billion-parameter conversational AI model fine-tuned on datasets including Dolphin-2.9, OpenHermes-2.5, and CodeFeedback. It excels in text generation, dialogue, and code-related tasks, leveraging the Yi-1.5 base for strong reasoning and instruction-following capabilities. Suitable for developers and researchers, it supports applications in chatbots, coding assistance, and general-purpose AI interactions. The model is available via Hugging Face Transformers and Safetensors, ensuring ease of integration and deployment.",
       "summary_zh": "dolphin-2.9.1-yi-1.5-34b 是一个基于 Yi-34B 架构的开源对话生成模型，由多个高质量数据集训练而成，包括 Dolphin-2.9、OpenHermes-2.5 和 CodeFeedback-Filtered-Instruction。该模型专注于自然语言理解和生成，支持多轮对话、代码生成和指令遵循任务。其亮点在于结合了通用对话能力和代码相关任务的优化，适用于聊天助手、编程辅助和自动化任务处理等场景。模型采用 transformers 和 safetensors 格式，便于集成和部署。",
-      "summary_es": "Modelo de lenguaje Dolphin 2.9.1 Yi 1.5 34B, basado en LLaMA y entrenado con conjuntos de datos de instrucciones conversacionales y de código. Destaca en generación de texto, diálogo natural y asistencia en programación. Usos principales: chatbots, soporte técnico y herramientas de desarrollo. Fuerzas: gran capacidad contextual (34B) y enfoque en respuestas útiles y seguras."
+      "summary_es": "Modelo de lenguaje Dolphin 2.9.1 Yi 1.5 34B, basado en LLaMA y entrenado con conjuntos de datos de instrucciones conversacionales y de código. Destaca en generación de texto, diálogo natural y asistencia en programación. Usos principales: chatbots, soporte técnico y herramientas de desarrollo. Fuerzas: gran capacidad contextual (34B) y enfoque en respuestas útiles y seguras.",
+      "task_keys": [
+        "code_generation"
+      ]
     },
     {
       "id": "Kijai/WanVideo_comfy",
@@ -453,7 +456,10 @@
       "updated_at": "2025-09-18T19:21:47.074Z",
       "summary_en": "WanVideo_comfy is a single-file diffusion model fine-tuned from Wan2.1-VACE-1.3B, optimized for use with ComfyUI. It enables efficient video generation and editing tasks, leveraging a lightweight architecture for accessible deployment. The model is particularly suited for applications requiring rapid prototyping and creative workflows in video synthesis. Its high download count reflects strong community adoption and practical usability.",
       "summary_zh": "WanVideo_comfy 是基于 Wan2.1-VACE-1.3B 模型微调的视频生成模型，专为 ComfyUI 用户设计。它支持单文件加载，简化了工作流配置，适用于快速生成高质量视频内容。该模型在风格一致性和细节表现上有所优化，适合动画制作、创意内容生成等场景。用户可通过 ComfyUI 界面灵活调整参数，实现个性化的视频输出。",
-      "summary_es": "WanVideo_comfy es un modelo de difusión optimizado para ComfyUI, basado en Wan2.1-VACE-1.3B. Destaca por su facilidad de uso y eficiencia en generación de video. Ideal para aplicaciones de edición y creación de contenido visual. Su alta tasa de descargas refleja adopción significativa en la comunidad."
+      "summary_es": "WanVideo_comfy es un modelo de difusión optimizado para ComfyUI, basado en Wan2.1-VACE-1.3B. Destaca por su facilidad de uso y eficiencia en generación de video. Ideal para aplicaciones de edición y creación de contenido visual. Su alta tasa de descargas refleja adopción significativa en la comunidad.",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "nlpaueb/legal-bert-base-uncased",
@@ -538,7 +544,10 @@
       "updated_at": "2025-09-18T19:21:47.074Z",
       "summary_en": "Chronos-Bolt-Base is a pretrained T5-based foundation model for time series forecasting. It excels at generating accurate probabilistic forecasts across diverse domains, including finance, energy, and retail. Its key strength lies in leveraging transfer learning to adapt to new datasets with minimal fine-tuning. The model is suitable for both univariate and multivariate forecasting tasks, offering a scalable and efficient alternative to traditional statistical methods.",
       "summary_zh": "Chronos-Bolt-Base 是一个基于 T5 架构的时间序列预测基础模型，由 AutoGluon 团队开发。该模型通过预训练学习时间序列的通用表示，能够适应多种预测任务而无需大量领域特定数据。其核心亮点在于利用 Transformer 结构捕捉长期依赖关系，并支持零样本或少样本预测，显著降低了时间序列建模的门槛。适用于金融、气象、工业监控等领域的多步预测场景，为研究人员和工程师提供了高效且灵活的解决方案。",
-      "summary_es": "Chronos-Bolt-Base es un modelo de base para pronóstico de series temporales, basado en T5 y preentrenado con datos sintéticos. Destaca por su capacidad de adaptación a múltiples dominios y escalas temporales sin necesidad de ajuste fino. Es ideal para aplicaciones en finanzas, logística y monitorización industrial, ofreciendo predicciones rápidas y eficientes. Su arquitectura transformer permite capturar dependencias temporales complejas de manera robusta."
+      "summary_es": "Chronos-Bolt-Base es un modelo de base para pronóstico de series temporales, basado en T5 y preentrenado con datos sintéticos. Destaca por su capacidad de adaptación a múltiples dominios y escalas temporales sin necesidad de ajuste fino. Es ideal para aplicaciones en finanzas, logística y monitorización industrial, ofreciendo predicciones rápidas y eficientes. Su arquitectura transformer permite capturar dependencias temporales complejas de manera robusta.",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     },
     {
       "id": "colbert-ir/colbertv2.0",
@@ -583,7 +592,10 @@
       "updated_at": "2025-09-18T19:21:47.074Z",
       "summary_en": "ColBERTv2.0 is a neural retrieval model that enhances dense passage retrieval with late interaction, combining BERT-based contextual embeddings with efficient similarity computation. It excels in information retrieval tasks, offering strong performance in both zero-shot and fine-tuned settings. The model is particularly useful for search engines, question answering, and document retrieval systems. Its support for ONNX and SafeTensors ensures compatibility and ease of deployment in production environments.",
       "summary_zh": "ColBERTv2.0 是一种基于 BERT 的高效检索模型，通过改进的交互式表示方法提升信息检索性能。它结合了深度语义理解和向量检索的优势，支持快速且准确的文档匹配。该模型适用于大规模文本检索、问答系统和搜索引擎优化等场景，尤其擅长处理复杂查询和长文档。支持 Transformers、PyTorch 和 ONNX 等多种框架，便于集成和部署。",
-      "summary_es": "ColBERTv2.0 es un modelo de recuperación de información basado en BERT que indexa y busca documentos mediante representaciones densas y dispersas. Destaca por su eficiencia en búsqueda semántica, permitiendo consultas rápidas y precisas en grandes volúmenes de texto. Es ideal para sistemas de preguntas y respuestas, motores de búsqueda y aplicaciones que requieran recuperación contextualmente relevante. Soporta múltiples idiomas y se integra fácilmente con frameworks como PyTorch y ONNX."
+      "summary_es": "ColBERTv2.0 es un modelo de recuperación de información basado en BERT que indexa y busca documentos mediante representaciones densas y dispersas. Destaca por su eficiencia en búsqueda semántica, permitiendo consultas rápidas y precisas en grandes volúmenes de texto. Es ideal para sistemas de preguntas y respuestas, motores de búsqueda y aplicaciones que requieran recuperación contextualmente relevante. Soporta múltiples idiomas y se integra fácilmente con frameworks como PyTorch y ONNX.",
+      "task_keys": [
+        "neural_retrieval"
+      ]
     },
     {
       "id": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
@@ -616,7 +628,10 @@
       "updated_at": "2025-09-18T19:21:47.074Z",
       "summary_en": "Wan_2.2_ComfyUI_Repackaged is a single-file diffusion model optimized for use with ComfyUI, a popular node-based interface for stable diffusion workflows. It enables efficient image generation and manipulation, particularly suited for users seeking streamlined, high-performance inference without complex setup. Its repackaged format simplifies deployment and integration, making it ideal for artists, developers, and researchers focused on creative or experimental applications. The high download count reflects its practicality and broad appeal in the AI art community.",
       "summary_zh": "Wan_2.2_ComfyUI_Repackaged 是一个基于 ComfyUI 框架的 Stable Diffusion 模型打包版本，专为简化图像生成流程而设计。该模型整合了 Wan 2.2 版本的权重，并针对 ComfyUI 进行了优化，支持单文件加载，极大提升了易用性和部署效率。其亮点在于无需复杂配置即可快速启动高质量图像生成任务，适用于艺术创作、概念设计和原型可视化等场景。该模型特别适合希望快速上手 Stable Diffusion 且偏好 ComfyUI 工作流的用户。",
-      "summary_es": "Wan_2.2_ComfyUI_Repackaged es un modelo de difusión optimizado para ComfyUI, enfocado en generación de imágenes. Destaca por su facilidad de uso, integración directa y alto rendimiento en inferencia. Ideal para artistas digitales y desarrolladores que buscan flujos de trabajo estables y eficientes en creación visual. Su formato single-file simplifica la implementación."
+      "summary_es": "Wan_2.2_ComfyUI_Repackaged es un modelo de difusión optimizado para ComfyUI, enfocado en generación de imágenes. Destaca por su facilidad de uso, integración directa y alto rendimiento en inferencia. Ideal para artistas digitales y desarrolladores que buscan flujos de trabajo estables y eficientes en creación visual. Su formato single-file simplifica la implementación.",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "coqui/XTTS-v2",
@@ -650,7 +665,10 @@
       "updated_at": "2025-09-18T19:21:47.074Z",
       "summary_en": "XTTS-v2 is a multilingual text-to-speech model supporting voice cloning with just a few seconds of reference audio. It excels in generating natural, expressive speech across languages like English, Spanish, French, and German. Ideal for content creation, audiobooks, and accessibility tools, it offers high-quality output with minimal data. Its open-source nature encourages integration into diverse applications.",
       "summary_zh": "XTTS-v2 是由 Coqui 开发的开源文本转语音模型，支持多语言语音合成与语音克隆功能。该模型基于先进的深度学习架构，能够根据少量参考音频生成自然且富有表现力的语音。其亮点在于支持跨语言语音转换，并具备优秀的音色保持能力，适用于配音、有声读物制作和多语言内容生成等场景。XTTS-v2 适合开发者、内容创作者及研究人员用于语音合成相关的应用开发与实验。",
-      "summary_es": "XTTS-v2 es un modelo de síntesis de voz que genera habla natural multilingüe a partir de texto. Destaca por su capacidad de clonación de voz con pocos datos de referencia, alta calidad y soporte para varios idiomas. Es ideal para aplicaciones de accesibilidad, narración automatizada y generación de contenido multimedia."
+      "summary_es": "XTTS-v2 es un modelo de síntesis de voz que genera habla natural multilingüe a partir de texto. Destaca por su capacidad de clonación de voz con pocos datos de referencia, alta calidad y soporte para varios idiomas. Es ideal para aplicaciones de accesibilidad, narración automatizada y generación de contenido multimedia.",
+      "task_keys": [
+        "tts"
+      ]
     },
     {
       "id": "google-t5/t5-small",
