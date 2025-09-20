@@ -801,15 +801,15 @@
     const arr = filterSort(items);
   const dt = window.__mw_updated_at || '';
       const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh';
-      const dtStr = dt? dt.slice(0,16).replace('T',' ') : '';
+      // Removed explicit updated-at display per user request
       let modeLabel = MODE==='daily'? (window.translations?.[lang]?.mw_mode_daily || 'Daily Picks') : MODE==='gh'? (window.translations?.[lang]?.mw_mode_gh_top || 'GitHub Top') : (window.translations?.[lang]?.mw_mode_hf_top || 'HF Top');
       if(isGlobalActive()){
         subEl.hidden = true;
       }else{
         subEl.hidden = false;
-        if (lang==='en') subEl.textContent = `${modeLabel} · Items ${arr.length}${dtStr?` · Updated ${dtStr}`:''}`;
-        else if (lang==='es') subEl.textContent = `${modeLabel} · Elementos ${arr.length}${dtStr?` · Actualizado ${dtStr}`:''}`;
-        else subEl.textContent = `${modeLabel} · 共 ${arr.length} 项${dtStr?` · 更新于 ${dtStr}`:''}`;
+        if (lang==='en') subEl.textContent = `${modeLabel} · Items ${arr.length}`;
+        else if (lang==='es') subEl.textContent = `${modeLabel} · Elementos ${arr.length}`;
+        else subEl.textContent = `${modeLabel} · 共 ${arr.length} 项`;
       }
 
       // Disable irrelevant sort options per mode
@@ -1093,12 +1093,14 @@
   // Global grid/sub header elements (restored after earlier refactor removal)
   const gridEl = document.getElementById('mw-grid');
   const subEl = document.getElementById('mw-sub');
-    let mobileStage = 0; let selCat = null, selSub = null; const selectedTasks = new Set();
-    let CAT_TREE = null; // taxonomy will load lazily
+  let mobileStage = 0; let selCat = null, selSub = null; const selectedTasks = new Set();
+  // Initialize immediately with builtin tree so UI renders instantly; remote JSON (if any) will hydrate later.
+  let CAT_TREE = null; // will be assigned after BUILTIN_TREE declared
+  let CAT_REMOTE_LOADED = false; // whether remote categories replaced builtin
   const labelOf = (obj)=> { if(!obj) return ''; const L = getLangSafe(); return obj[L] || obj.zh || obj.en || obj.es || ''; }
 
     // Built-in fallback tree (partial) for robust UX if JSON cannot be loaded
-    const BUILTIN_TREE = [
+  const BUILTIN_TREE = [
       {
         key: 'cv', zh: '计算机视觉', en: 'Computer Vision', es: 'Visión por Computadora',
         subcategories: [
@@ -1201,27 +1203,48 @@
       }
     ];
 
+    const CAT_CACHE_KEY = 'mw_cat_tree_v1';
+    const CAT_CACHE_TTL = 1000 * 60 * 60 * 24 * 7; // 7 days
+    function tryLoadCachedCats(){
+      try{
+        const raw = localStorage.getItem(CAT_CACHE_KEY); if(!raw) return false;
+        const obj = JSON.parse(raw);
+        if(!obj || !obj.ts || !Array.isArray(obj.data)) return false;
+        if(Date.now() - obj.ts > CAT_CACHE_TTL) return false;
+        CAT_TREE = obj.data; CAT_REMOTE_LOADED = true; console.log('[Cascader] loaded categories from cache'); return true;
+      }catch{ return false; }
+    }
+    function cacheCats(){
+      try{ if(CAT_REMOTE_LOADED && Array.isArray(CAT_TREE)){ localStorage.setItem(CAT_CACHE_KEY, JSON.stringify({ts:Date.now(), data:CAT_TREE})); } }catch{}
+    }
     async function loadAiCategories(){
-      // Try multiple paths to be robust in different hosting contexts
+      if(CAT_REMOTE_LOADED) return true;
       const paths = [
-        '../../data/ai/ai_categories.json',
-        '/data/ai/ai_categories.json',
-        '../data/ai/ai_categories.json',
-        './data/ai/ai_categories.json'
+        '../../data/ai/ai_categories.json', '/data/ai/ai_categories.json', '../data/ai/ai_categories.json', './data/ai/ai_categories.json'
       ];
-      for(const p of paths){
-        try{
-          const res = await fetch(p,{cache:'no-store'});
-          if(!res.ok) continue;
-          const txt = await res.text();
-          try{
-            const cj = JSON.parse(txt);
-            if(cj?.categories){ CAT_TREE = cj.categories; return; }
-          }catch{ /* try next */ }
-        }catch{ /* try next */ }
+      const controllers = [];
+      const fetches = paths.map(p=>{
+        const c = new AbortController(); controllers.push(c);
+        const to = setTimeout(()=> c.abort(), 2500); // abort slow path
+        return fetch(p,{cache:'no-store', signal:c.signal}).then(r=>{ clearTimeout(to); if(!r.ok) throw new Error('bad '+p); return r.text(); })
+          .then(txt=>{ try{ const cj = JSON.parse(txt); if(cj?.categories) return cj.categories; throw 0; }catch{ throw new Error('parse '+p); }});
+      });
+      let cats = null;
+      try{ cats = await Promise.any(fetches); }catch{ cats = null; }
+      controllers.forEach(c=>{ try{ c.abort(); }catch{} });
+      if(Array.isArray(cats) && cats.length){
+        CAT_TREE = cats; CAT_REMOTE_LOADED = true; cacheCats(); console.log('[Cascader] remote categories loaded');
+        return true;
       }
-      // fallback to built-in tree instead of blocking UX
-      CAT_TREE = BUILTIN_TREE;
+      // if remote fails leave existing (builtin or cache) in place
+      return false;
+    }
+    // Assign initial tree (builtin) before any rendering
+    CAT_TREE = BUILTIN_TREE;
+    // Attempt cache then background refresh (non-blocking)
+    if(!tryLoadCachedCats()){
+      // fire and forget
+      loadAiCategories().then(changed=>{ if(changed && dd && !dd.hidden){ renderCol1(); renderCol2(); renderCol3(); } });
     }
 
     // Built-in labels for the six top-level categories (fallback labels when JSON fails or before load)
@@ -1308,11 +1331,11 @@
           lbl = meta.key || '(?)';
         }
         item.textContent = lbl;
-        item.addEventListener('click', async (e)=>{
+        item.addEventListener('click', (e)=>{
           e.stopPropagation();
           selCat = meta.key; selSub = null; // reset second level when switching
-          // lazy load
-          if(CAT_TREE===null) await loadAiCategories();
+          // fast background load (already triggered on init); if still not remote loaded, try again but don't block UI
+          if(!CAT_REMOTE_LOADED){ loadAiCategories().then(changed=>{ if(changed){ if(selCat===meta.key) { renderCol2(); renderCol3(); }}}); }
           renderCol1(); renderCol2(); renderCol3();
           if(isMobile()) setMobileStage(1);
         });
