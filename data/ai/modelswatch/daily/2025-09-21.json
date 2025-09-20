@@ -1,7 +1,392 @@
 {
   "version": 1,
+  "date": "2025-09-21",
   "updated_at": "2025-09-20T22:06:12.525Z",
   "items": [
+    {
+      "id": "ollama/ollama",
+      "source": "github",
+      "name": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "license": "MIT",
+      "lang": "Go",
+      "tags": [
+        "deepseek",
+        "gemma",
+        "gemma3",
+        "gemma3n",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llama2",
+        "llama3",
+        "llava",
+        "llm",
+        "llms",
+        "mistral",
+        "ollama",
+        "phi4",
+        "qwen"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 152698,
+        "forks": 13191,
+        "issues": 2160
+      },
+      "score": 155436.16718036265,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Ollama是一个开源工具，用于在本地环境中快速部署和运行大型语言模型。它支持多种主流开源模型，包括OpenAI的GPT-OSS、DeepSeek-R1、Gemma 3以及Llama系列等。通过简洁的命令行界面，用户可以轻松下载、配置和调用模型，无需复杂的云服务依赖。该项目基于Go语言开发，适用于开发者、研究人员以及任何希望本地化运行AI模型的用户，兼顾了灵活性和性能。",
+      "updated_at": "2025-09-20T17:38:15Z",
+      "summary_en": "Ollama is a Go-based tool for running open-source LLMs like OpenAI's GPT-OSS, DeepSeek-R1, and Gemma 3 locally. It simplifies setup and deployment, enabling developers to experiment with and integrate these models into applications without cloud dependencies. Its strengths include ease of use, broad model support, and offline capability. Ideal for prototyping, research, and lightweight AI-powered tools.",
+      "summary_zh": "Ollama是一个开源工具，用于在本地环境中快速部署和运行大型语言模型。它支持多种主流开源模型，包括OpenAI的GPT-OSS、DeepSeek-R1、Gemma 3以及Llama系列等。通过简洁的命令行界面，用户可以轻松下载、配置和调用模型，无需复杂的云服务依赖。该项目基于Go语言开发，适用于开发者、研究人员以及任何希望本地化运行AI模型的用户，兼顾了灵活性和性能。",
+      "summary_es": "Ollama es una herramienta de código abierto escrita en Go que permite ejecutar modelos de lenguaje grandes localmente, como OpenAI GPT-OSS, DeepSeek-R1, Gemma 3 y otros. Facilita la instalación y gestión de modelos sin dependencias externas. Es ideal para desarrolladores que buscan privacidad, bajo costo y control total sobre inferencias de IA.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：ollama"
+    },
+    {
+      "id": "massgravel/Microsoft-Activation-Scripts",
+      "source": "github",
+      "name": "Microsoft-Activation-Scripts",
+      "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+      "license": "GPL-3.0",
+      "lang": "Batchfile",
+      "tags": [
+        "activator",
+        "hwid",
+        "kms",
+        "kms38",
+        "massgrave",
+        "massgravel",
+        "microsoft",
+        "microsoft365",
+        "office",
+        "office365",
+        "ohook",
+        "powershell",
+        "tsforge",
+        "windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 149013,
+        "forks": 14471,
+        "issues": 1
+      },
+      "score": 152007.19823746145,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Microsoft-Activation-Scripts 是一个开源工具，用于激活 Windows 和 Office 产品。它支持多种激活方式，包括 HWID、Ohook、KMS38 和在线 KMS，并提供高级故障排除功能。该项目适用于需要临时或长期激活微软产品的用户，尤其适合技术爱好者或测试环境使用。工具完全基于脚本运行，无需安装第三方软件，操作灵活且透明。",
+      "updated_at": "2025-09-20T17:51:40Z",
+      "summary_en": "Microsoft-Activation-Scripts is an open-source tool for activating Windows and Microsoft Office using multiple methods, including HWID, KMS, and Ohook. It supports troubleshooting and is designed for users needing legitimate activation without official licensing. The tool is widely used for educational, testing, or legacy system purposes. Its open nature allows transparency and community-driven improvements.",
+      "summary_zh": "Microsoft-Activation-Scripts 是一个开源工具，用于激活 Windows 和 Office 产品。它支持多种激活方式，包括 HWID、Ohook、KMS38 和在线 KMS，并提供高级故障排除功能。该项目适用于需要临时或长期激活微软产品的用户，尤其适合技术爱好者或测试环境使用。工具完全基于脚本运行，无需安装第三方软件，操作灵活且透明。",
+      "summary_es": "Scripts de activación de código abierto para Windows y Office. Incluye métodos HWID, KMS y Ohook, con herramientas avanzadas de resolución de problemas. Útil para activaciones legítimas en entornos de prueba o legacy. Proyecto comunitario bajo licencia GPL-3.0.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：Microsoft-Activation-Scripts"
+    },
+    {
+      "id": "airbnb/javascript",
+      "source": "github",
+      "name": "javascript",
+      "url": "https://github.com/airbnb/javascript",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "arrow-functions",
+        "es2015",
+        "es2016",
+        "es2017",
+        "es2018",
+        "es6",
+        "eslint",
+        "javascript",
+        "linting",
+        "naming-conventions",
+        "style-guide",
+        "style-linter",
+        "styleguide",
+        "tc39"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 147419,
+        "forks": 26781,
+        "issues": 178
+      },
+      "score": 152874.93712635033,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Airbnb JavaScript 风格指南是一套被广泛采用的代码规范，旨在提升 JavaScript 代码的可读性和一致性。它基于 ES6+ 语法，覆盖了箭头函数、模块导入、命名约定等现代 JavaScript 特性。该指南适用于团队协作开发，尤其适合使用 ESLint 进行自动化代码检查的场景。通过遵循这些规范，开发者可以减少代码风格争议，提高项目的可维护性。",
+      "updated_at": "2025-09-20T15:58:52Z",
+      "summary_en": "A comprehensive JavaScript style guide by Airbnb, widely adopted for maintaining code consistency and readability. It provides detailed rules for modern ES6+ syntax, linting with ESLint, and naming conventions. Ideal for teams and projects aiming to enforce best practices and reduce errors through standardized coding patterns. Highly applicable in collaborative environments and large-scale applications.",
+      "summary_zh": "Airbnb JavaScript 风格指南是一套被广泛采用的代码规范，旨在提升 JavaScript 代码的可读性和一致性。它基于 ES6+ 语法，覆盖了箭头函数、模块导入、命名约定等现代 JavaScript 特性。该指南适用于团队协作开发，尤其适合使用 ESLint 进行自动化代码检查的场景。通过遵循这些规范，开发者可以减少代码风格争议，提高项目的可维护性。",
+      "summary_es": "Guía de estilos de JavaScript de Airbnb. Proporciona convenciones de código consistentes para proyectos modernos. Incluye reglas para ES6+, funciones flecha y linting con ESLint. Ideal para equipos que buscan estandarización y mantenibilidad del código.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：javascript"
+    },
+    {
+      "id": "vercel/next.js",
+      "source": "github",
+      "name": "next.js",
+      "url": "https://github.com/vercel/next.js",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "blog",
+        "browser",
+        "compiler",
+        "components",
+        "hybrid",
+        "nextjs",
+        "node",
+        "react",
+        "server-rendering",
+        "ssg",
+        "static",
+        "static-site-generator",
+        "universal",
+        "vercel"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 134570,
+        "forks": 29358,
+        "issues": 3349
+      },
+      "score": 140541.19488097995,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Next.js 是一个基于 React 的现代前端框架，专为构建高性能 Web 应用而设计。它支持服务端渲染（SSR）、静态站点生成（SSG）和混合渲染模式，显著提升页面加载速度和 SEO 友好性。内置自动代码分割、路由预取和图像优化等功能，简化了开发流程并优化了用户体验。适用于博客、电商网站、企业级应用等多种场景，是 React 生态中最受欢迎的全栈框架之一。",
+      "updated_at": "2025-09-20T14:57:25Z",
+      "summary_en": "Next.js is a React-based framework for building server-rendered and statically generated web applications. It excels in performance optimization, SEO, and developer experience with features like automatic code splitting and hybrid rendering. Ideal for blogs, e-commerce sites, and dynamic web apps, it supports both client and server-side rendering. Its extensive ecosystem and built-in optimizations make it a top choice for modern web development.",
+      "summary_zh": "Next.js 是一个基于 React 的现代前端框架，专为构建高性能 Web 应用而设计。它支持服务端渲染（SSR）、静态站点生成（SSG）和混合渲染模式，显著提升页面加载速度和 SEO 友好性。内置自动代码分割、路由预取和图像优化等功能，简化了开发流程并优化了用户体验。适用于博客、电商网站、企业级应用等多种场景，是 React 生态中最受欢迎的全栈框架之一。",
+      "summary_es": "Next.js es un framework de React para aplicaciones web. Ofrece renderizado híbrido (SSR y SSG), optimizaciones automáticas y enrutamiento simplificado. Ideal para blogs, dashboards y sitios estáticos de alto rendimiento. Su arquitectura sin configuración acelera el desarrollo.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：next.js"
+    },
+    {
+      "id": "ytdl-org/youtube-dl",
+      "source": "github",
+      "name": "youtube-dl",
+      "url": "https://github.com/ytdl-org/youtube-dl",
+      "license": "Unlicense",
+      "lang": "Python",
+      "tags": [],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 137329,
+        "forks": 10466,
+        "issues": 4138
+      },
+      "score": 139522.17192573304,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "youtube-dl 是一个命令行工具，用于从 YouTube 及其他视频网站下载视频。它支持多种视频格式和分辨率，并能够提取音频或字幕。该工具基于 Python 开发，跨平台兼容，适合自动化脚本集成。适用于需要批量下载或离线观看视频的用户，是开发者及技术爱好者的常用工具。",
+      "updated_at": "2025-09-20T17:40:18Z",
+      "summary_en": "youtube-dl is a command-line tool for downloading videos from YouTube and numerous other video platforms. It supports a wide range of sites and offers extensive customization for format selection, subtitles, and metadata. Its primary use is for archiving, offline viewing, and content backup. The tool is highly reliable, frequently updated, and widely used due to its flexibility and broad compatibility.",
+      "summary_zh": "youtube-dl 是一个命令行工具，用于从 YouTube 及其他视频网站下载视频。它支持多种视频格式和分辨率，并能够提取音频或字幕。该工具基于 Python 开发，跨平台兼容，适合自动化脚本集成。适用于需要批量下载或离线观看视频的用户，是开发者及技术爱好者的常用工具。",
+      "summary_es": "youtube-dl es una herramienta de línea de comandos para descargar videos de YouTube y otros sitios. Su principal fortaleza es la compatibilidad con múltiples plataformas y formatos. Es ampliamente usado para archivar contenido, análisis offline o acceso sin conexión. Su código abierto permite extensibilidad y auditoría comunitaria.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：youtube-dl"
+    },
+    {
+      "id": "f/awesome-chatgpt-prompts",
+      "source": "github",
+      "name": "awesome-chatgpt-prompts",
+      "url": "https://github.com/f/awesome-chatgpt-prompts",
+      "license": "CC0-1.0",
+      "lang": "JavaScript",
+      "tags": [
+        "bots",
+        "chatbot",
+        "chatgpt",
+        "chatgpt-api",
+        "language"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 134263,
+        "forks": 17847,
+        "issues": 283
+      },
+      "score": 137932.37196431326,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个专注于提升ChatGPT及其他大型语言模型使用体验的开源项目。它收集了大量精心设计的提示词模板，帮助用户更高效地生成高质量对话和任务输出。项目覆盖多种应用场景，包括写作辅助、编程支持、创意生成和日常问答等。通过结构化分类和持续更新，它为开发者和普通用户提供了实用且可扩展的提示词资源库。适合希望优化AI交互效果或探索提示工程的人群使用。",
+      "updated_at": "2025-09-20T17:40:19Z",
+      "summary_en": "This repository provides a curated collection of prompts designed to enhance interactions with ChatGPT and other large language models. It serves as a practical resource for users seeking to improve output quality, explore creative applications, or streamline workflows. The prompts cover diverse use cases, including writing, coding, brainstorming, and role-playing. Its open license and community contributions make it widely accessible and adaptable for both beginners and advanced users.",
+      "summary_zh": "这是一个专注于提升ChatGPT及其他大型语言模型使用体验的开源项目。它收集了大量精心设计的提示词模板，帮助用户更高效地生成高质量对话和任务输出。项目覆盖多种应用场景，包括写作辅助、编程支持、创意生成和日常问答等。通过结构化分类和持续更新，它为开发者和普通用户提供了实用且可扩展的提示词资源库。适合希望优化AI交互效果或探索提示工程的人群使用。",
+      "summary_es": "Repositorio de prompts para ChatGPT y otros modelos de lenguaje. Facilita la interacción con IA mediante ejemplos prácticos y estructurados. Ideal para desarrolladores, investigadores y usuarios que buscan optimizar respuestas y explorar capacidades de LLMs. Incluye casos de uso variados, desde automatización hasta creatividad.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：awesome-chatgpt-prompts"
+    },
+    {
+      "id": "golang/go",
+      "source": "github",
+      "name": "go",
+      "url": "https://github.com/golang/go",
+      "license": "BSD-3-Clause",
+      "lang": "Go",
+      "tags": [
+        "go",
+        "golang",
+        "language",
+        "programming-language"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 129935,
+        "forks": 18401,
+        "issues": 9571
+      },
+      "score": 133715.18600752315,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Go 是由 Google 开发的一种开源编程语言，设计目标是提高开发效率和代码可维护性。其语法简洁，编译速度快，并内置并发支持，适合构建高性能的分布式系统和网络服务。Go 在云原生开发、微服务架构和命令行工具等领域有广泛应用。其标准库丰富，工具链完善，受到许多大型科技公司的青睐。",
+      "updated_at": "2025-09-20T17:46:23Z",
+      "summary_en": "Go is a statically typed, compiled programming language designed at Google for building efficient, reliable, and scalable software. It excels in concurrent programming with built-in support for goroutines and channels, making it ideal for distributed systems, web servers, and cloud-native applications. Its simplicity, fast compilation, and strong standard library appeal to developers working on high-performance backend services and DevOps tooling. Go is widely adopted in production environments for its robustness and ease of deployment.",
+      "summary_zh": "Go 是由 Google 开发的一种开源编程语言，设计目标是提高开发效率和代码可维护性。其语法简洁，编译速度快，并内置并发支持，适合构建高性能的分布式系统和网络服务。Go 在云原生开发、微服务架构和命令行工具等领域有广泛应用。其标准库丰富，工具链完善，受到许多大型科技公司的青睐。",
+      "summary_es": "Go es un lenguaje de programación de código abierto desarrollado por Google. Destaca por su sintaxis simple, compilación rápida y ejecución eficiente. Es ideal para desarrollo de sistemas, servicios web escalables y herramientas CLI. Su fuerte concurrencia lo hace popular en microservicios y computación distribuida.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：go"
+    },
+    {
+      "id": "yangshun/tech-interview-handbook",
+      "source": "github",
+      "name": "tech-interview-handbook",
+      "url": "https://github.com/yangshun/tech-interview-handbook",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "algorithm",
+        "algorithm-interview",
+        "algorithm-interview-questions",
+        "algorithms",
+        "behavioral-interviews",
+        "coding-interviews",
+        "interview-practice",
+        "interview-preparation",
+        "interview-questions",
+        "system-design"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 129764,
+        "forks": 15776,
+        "issues": 54
+      },
+      "score": 133019.1835769676,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个面向软件工程师的面试准备开源项目，提供全面的技术面试学习资料。内容涵盖算法、数据结构、系统设计以及行为面试等关键领域，适用于求职者系统性地复习和练习。项目整理了高频面试题、解题思路和最佳实践，帮助用户高效备战。无论是初级开发者还是资深工程师，都能从中找到实用的指导和参考资料。",
+      "updated_at": "2025-09-20T17:45:20Z",
+      "summary_en": "A comprehensive, open-source guide for software engineers preparing for technical interviews. Covers coding problems, algorithms, system design, and behavioral questions. Well-structured and community-vetted, it's ideal for self-paced study and interview practice. Suitable for all experience levels, from beginners to seasoned professionals.",
+      "summary_zh": "这是一个面向软件工程师的面试准备开源项目，提供全面的技术面试学习资料。内容涵盖算法、数据结构、系统设计以及行为面试等关键领域，适用于求职者系统性地复习和练习。项目整理了高频面试题、解题思路和最佳实践，帮助用户高效备战。无论是初级开发者还是资深工程师，都能从中找到实用的指导和参考资料。",
+      "summary_es": "Repositorio con materiales para preparar entrevistas técnicas de programación. Incluye algoritmos, preguntas de diseño de sistemas y entrevistas conductuales. Destaca por su enfoque práctico y contenido bien organizado. Ideal para desarrolladores que buscan mejorar sus habilidades para entrevistas técnicas.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：tech-interview-handbook"
+    },
+    {
+      "id": "Genymobile/scrcpy",
+      "source": "github",
+      "name": "scrcpy",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "license": "Apache-2.0",
+      "lang": "C",
+      "tags": [
+        "android",
+        "c",
+        "ffmpeg",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen",
+        "sdl2"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 128365,
+        "forks": 12044,
+        "issues": 2548
+      },
+      "score": 130873.71799054784,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "scrcpy 是一款开源的 Android 设备屏幕镜像与控制工具，通过 USB 或 Wi-Fi 连接，无需 root 权限即可实时显示并操作手机屏幕。它基于 C 语言开发，使用 FFmpeg 和 SDL2 实现高效的视频流传输与渲染，延迟低且资源占用少。适用于开发调试、演示展示或远程协助等场景，支持屏幕录制和键鼠输入控制。该项目代码简洁高效，跨平台兼容 Windows、macOS 和 Linux。",
+      "updated_at": "2025-09-20T17:17:00Z",
+      "summary_en": "Scrcpy is an open-source tool for mirroring and controlling Android devices from a desktop computer. It streams the device's screen in real-time with low latency and supports input forwarding, making it ideal for development, testing, and presentations. Built with C, FFmpeg, and SDL2, it is lightweight, efficient, and works without root access. Its simplicity and performance make it a go-to solution for Android screen sharing and interaction.",
+      "summary_zh": "scrcpy 是一款开源的 Android 设备屏幕镜像与控制工具，通过 USB 或 Wi-Fi 连接，无需 root 权限即可实时显示并操作手机屏幕。它基于 C 语言开发，使用 FFmpeg 和 SDL2 实现高效的视频流传输与渲染，延迟低且资源占用少。适用于开发调试、演示展示或远程协助等场景，支持屏幕录制和键鼠输入控制。该项目代码简洁高效，跨平台兼容 Windows、macOS 和 Linux。",
+      "summary_es": "Scrcpy es una herramienta de código abierto para espejar y controlar dispositivos Android desde una PC. Funciona a través de ADB, sin requerir root, y ofrece baja latencia y alta calidad de imagen. Es ideal para desarrolladores, streamers y usuarios que necesitan interactuar con su dispositivo Android desde el escritorio. Soporta grabación de pantalla, arrastre de archivos y personalización de resolución.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：scrcpy"
+    },
     {
       "id": "dphn/dolphin-2.9.1-yi-1.5-34b",
       "source": "hf",
