@@ -28,12 +28,35 @@ const outPath = argVal('--out','OUT_JSON') || '';
 
 function readJSON(p){ try{ return JSON.parse(fs.readFileSync(p,'utf-8')); }catch(e){ return null; } }
 
-const hotlist = readJSON(hotlistPath) || [];
-const cats = readJSON(categoriesPath) || [];
+const hotlistRaw = readJSON(hotlistPath) || [];
+let hotlist = [];
+if(Array.isArray(hotlistRaw)) hotlist = hotlistRaw;
+else if(hotlistRaw && Array.isArray(hotlistRaw.models)) hotlist = hotlistRaw.models;
+else if(hotlistRaw && Array.isArray(hotlistRaw.items)) hotlist = hotlistRaw.items;
+else hotlist = [];
 
-// Gather all task keys from taxonomy
+let catsRaw = readJSON(categoriesPath);
+let cats = [];
+if(Array.isArray(catsRaw)) cats = catsRaw; else if(catsRaw && Array.isArray(catsRaw.categories)) cats = catsRaw.categories; else cats = [];
+
+// Gather all task keys from taxonomy (robust against malformed nodes)
 const taxonomyTasks = new Set();
-for(const c of cats) for(const s of (c.subcategories||[])) for(const t of (s.tasks||[])) taxonomyTasks.add(t.key);
+try {
+  for(const c of (cats||[])){
+    if(!c || typeof c!=='object') continue;
+    for(const s of (c.subcategories||[])){
+      if(!s || typeof s!=='object') continue;
+      for(const t of (s.tasks||[])){
+        if(t && typeof t==='object' && t.key) taxonomyTasks.add(t.key);
+      }
+    }
+  }
+} catch(e){
+  console.warn('[coverage] taxonomy parse issue:', e.message);
+}
+if(taxonomyTasks.size===0){
+  console.warn('[coverage] WARNING: taxonomyTasks empty – check categories file path or structure');
+}
 
 // Count occurrences
 const counts = {}; let modelsWithTasks = 0;

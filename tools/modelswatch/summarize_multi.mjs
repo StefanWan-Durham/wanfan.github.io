@@ -10,6 +10,9 @@ if(!/\/v1$/.test(RAW_BASE)) RAW_BASE = RAW_BASE + '/v1';
 const BASE_URL = RAW_BASE; // already includes /v1
 const CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT || 10000);
 const DEBUG = /^(1|true|yes|on)$/i.test(process.env.MODELSWATCH_DEBUG||'');
+const MAX_NETWORK_ERROR_STREAK = Number(process.env.SUMMARY_MAX_NETERR_STREAK || 25);
+let networkErrorStreak = 0;
+const agent = new https.Agent({ keepAlive: true, maxSockets: 10 });
 
 // Diagnostics counters (exported for writer)
 export const summarizeDiagnostics = {
@@ -46,21 +49,34 @@ export async function summarizeTriJSON(prompt, opts={}){
     max_tokens: 800
   });
   async function attempt(){
+    if(networkErrorStreak >= MAX_NETWORK_ERROR_STREAK){
+      if(DEBUG) console.log('[summarize_multi] abort further attempts due to network error streak', networkErrorStreak);
+      return { en:'', zh:'', es:'' };
+    }
     return await new Promise(resolve=>{
       summarizeDiagnostics.attempts++;
       const url = `${BASE_URL}/chat/completions`;
       if(DEBUG) console.log('[summarize_multi] POST', url);
       summarizeDiagnostics.endpoints_tried.push('/chat/completions');
       const started = Date.now();
-      const req = https.request(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json','User-Agent':'modelswatch-summarizer/1.0','Authorization':`Bearer ${API_KEY}`}},res=>{
-        let data=''; res.on('data',d=>data+=d); res.on('end',()=>{
+      const bodyBuf = Buffer.from(body);
+      const req = https.request(url,{method:'POST',agent,headers:{
+        'Content-Type':'application/json',
+        'Accept':'application/json',
+        'Content-Length': bodyBuf.length,
+        'User-Agent':'modelswatch-summarizer/1.0',
+        'Authorization':`Bearer ${API_KEY}`
+      }}, res => {
+        let data='';
+        res.on('data', d=> data+=d);
+        res.on('end', ()=>{
           summarizeDiagnostics.timings.push(Date.now()-started);
           if(res.statusCode && res.statusCode>=400){
             summarizeDiagnostics.status_errors[res.statusCode] = (summarizeDiagnostics.status_errors[res.statusCode]||0)+1;
             if(DEBUG) console.log('[summarize_multi] status', res.statusCode, 'body length', data.length);
           }
           summarizeDiagnostics.last_status = res.statusCode||0;
-          summarizeDiagnostics.last_body_excerpt = (data||'').slice(0,180);
+            summarizeDiagnostics.last_body_excerpt = (data||'').slice(0,180);
           try {
             const j = JSON.parse(data||'{}');
             const txt = j.choices?.[0]?.message?.content?.trim() || '';
@@ -73,26 +89,29 @@ export async function summarizeTriJSON(prompt, opts={}){
                 const m = cleaned.match(/\{[\s\S]*?\}/);
                 if(m) parsed = tryParse(m[0]);
               }
-              if(parsed){ en=parsed.summary_en||''; zh=parsed.summary_zh||''; es=parsed.summary_es||''; }
-              else summarizeDiagnostics.parse_fail++;
+              if(parsed){
+                en = parsed.summary_en||''; zh = parsed.summary_zh||''; es = parsed.summary_es||'';
+              } else {
+                summarizeDiagnostics.parse_fail++;
+              }
             } else {
               summarizeDiagnostics.empty++;
             }
             if(en||zh||es) summarizeDiagnostics.success++; else summarizeDiagnostics.empty++;
             resolve({ en, zh, es });
-          } catch {
+          } catch(e){
             summarizeDiagnostics.parse_fail++;
             resolve({ en:'', zh:'', es:''});
           }
         });
       });
-      req.on('error',e=>{ summarizeDiagnostics.network_error++; summarizeDiagnostics.last_error = e.message; if(DEBUG) console.log('[summarize_multi] network error', e.message); resolve({ en:'', zh:'', es:''}); });
-      req.setTimeout(CONN_TIMEOUT,()=>{ req.destroy(); summarizeDiagnostics.network_error++; summarizeDiagnostics.last_error = 'timeout'; resolve({ en:'', zh:'', es:''}); });
-      req.write(body); req.end();
+      req.on('error', e=> { summarizeDiagnostics.network_error++; networkErrorStreak++; summarizeDiagnostics.last_error = (e.code? e.code+': ':'') + e.message; if(DEBUG) console.log('[summarize_multi] network error', e.code, e.message); resolve({ en:'', zh:'', es:''}); });
+      req.setTimeout(CONN_TIMEOUT, ()=> { req.destroy(); summarizeDiagnostics.network_error++; networkErrorStreak++; summarizeDiagnostics.last_error='timeout'; if(DEBUG) console.log('[summarize_multi] timeout'); resolve({ en:'', zh:'', es:''}); });
+      req.write(bodyBuf); req.end();
     });
   }
   let out = await attempt();
-  if(!(out.en||out.zh||out.es) && summarizeDiagnostics.network_error>0 && summarizeDiagnostics.retries < 2){
+  if(!(out.en||out.zh||out.es) && summarizeDiagnostics.network_error>0 && summarizeDiagnostics.retries < 2 && networkErrorStreak < MAX_NETWORK_ERROR_STREAK){
     // Backoff retries (2 attempts total if network errors)
     for(let r=0; r<2 && !(out.en||out.zh||out.es); r++){
       await new Promise(res=> setTimeout(res, 500*(r+1)));
@@ -100,5 +119,6 @@ export async function summarizeTriJSON(prompt, opts={}){
       out = await attempt();
     }
   }
+  if(out.en||out.zh||out.es) networkErrorStreak = 0; // reset streak on success
   return out;
 }
