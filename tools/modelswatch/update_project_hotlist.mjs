@@ -167,6 +167,27 @@ async function main(){
         }
       }
     }
+    // Placeholder fallback if still underfilled
+    if(bucket.length < MIN_SEED_PER_CATEGORY){
+      const need = MIN_SEED_PER_CATEGORY - bucket.length;
+      for(let i=0;i<need;i++){
+        bucket.push({
+          id: `__placeholder__:${key}:${i}`,
+          source: 'github',
+          name: `(${key}) placeholder`,
+          url: '',
+          tags: [],
+          stats: { stars_total:0, forks_total:0, stars_7d:0, forks_7d:0 },
+          updated_at: new Date().toISOString(),
+          added_at: today,
+          summary: '',
+          flags: { pinned:false, hidden:false, placeholder:true },
+          score_engineering: -1,
+          category_key: key
+        });
+        appended += 1;
+      }
+    }
   }
 
   hotlist.updated_at = new Date().toISOString();

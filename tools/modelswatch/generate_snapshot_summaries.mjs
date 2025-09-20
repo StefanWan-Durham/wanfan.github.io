@@ -7,7 +7,6 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import crypto from 'crypto';
-import https from 'https'; // still used for potential future extension
 import { summarizeTriJSON } from './summarize_multi.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -20,10 +19,6 @@ const CORPUS_HF = path.join(DATA_DIR, 'corpus.hf.json');
 const SCHEMA_VERSION = 1;
 
 const API_KEY = process.env.DEEPSEEK_API_KEY || '';
-const MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-chat';
-const BASE_URL = (process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com').replace(/\/$/, '');
-const CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT || 10000);
-const READ_TIMEOUT = Number(process.env.LLM_READ_TIMEOUT || 20000);
 const MAX_CONCURRENCY = Number(process.env.SUMMARY_MAX_CONCURRENCY || 3);
 
 function readJSON(p){ try{return JSON.parse(fs.readFileSync(p,'utf-8'));}catch{return null;} }
@@ -55,6 +50,7 @@ async function mapLimit(arr, limit, fn){
   const out=new Array(arr.length); let i=0; let running=0; return await new Promise(resolve=>{ const step=()=>{ while(i<arr.length && running<limit){ const idx=i++; running++; Promise.resolve(fn(arr[idx],idx)).then(v=>out[idx]=v).catch(()=>out[idx]=null).finally(()=>{ running--; if(i>=arr.length && running===0) resolve(out); else step(); }); } }; step(); }); }
 
 async function main(){
+  console.log('[snapshot-summaries] starting');
   const day = todayKey();
   const dayDir = path.join(SNAP_DIR, day);
   const hfSnapPath = path.join(dayDir,'hf.json');
@@ -95,9 +91,14 @@ async function main(){
   }
   processList(itemsHF, 'hf');
   processList(itemsGH, 'github');
+  console.log('[snapshot-summaries] debug after processList total', total, 'toGen', toGen.length);
 
   if(toGen.length && !API_KEY){
     console.warn('[snapshot-summaries] API key missing; cannot generate new summaries.');
+  }
+  if(toGen.length === 0){
+    // Early fast-path summary (still continue to write files for consistency)
+    console.log(`[snapshot-summaries] total=${total} reuse=${reuse} generated=0 failed=0 (fast-path)`);
   }
 
   const generated = await mapLimit(toGen, MAX_CONCURRENCY, async ({ it, key, hash })=>{
@@ -121,7 +122,10 @@ async function main(){
   const enrichedGHPath = path.join(dayDir, 'gh_summaries.json');
   writeJSON(enrichedHFPath, { date: day, items: itemsHF });
   writeJSON(enrichedGHPath, { date: day, items: itemsGH });
-  console.log(`[snapshot-summaries] total=${total} reuse=${reuse} generated=${gen} failed=${(generated||[]).filter(v=>v===false).length} -> wrote hf_summaries.json & gh_summaries.json`);
+  const failedCount = (generated||[]).filter(v=>v===false).length;
+  if(toGen.length){
+    console.log(`[snapshot-summaries] total=${total} reuse=${reuse} generated=${gen} failed=${failedCount} -> wrote hf_summaries.json & gh_summaries.json`);
+  }
 }
 
-main().catch(e=>{ console.error(e); process.exit(1); });
+main().then(()=>{ console.log('[snapshot-summaries] done'); }).catch(e=>{ console.error(e); process.exit(1); });

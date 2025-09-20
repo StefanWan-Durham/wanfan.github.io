@@ -2,7 +2,7 @@
 /* Fetch popular public HF models via REST (no auth required for public). */
 import fs from 'fs';
 import path from 'path';
-import { info } from './log.js';
+import { info, debug, warn } from './log.js';
 
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, 'data', 'ai', 'modelswatch');
@@ -11,11 +11,28 @@ const ITEMS_DIR = path.join(DATA_DIR, 'items');
 function ensureDirs(){ fs.mkdirSync(DATA_DIR, {recursive:true}); fs.mkdirSync(ITEMS_DIR, {recursive:true}); }
 function writeJSON(p, obj){ fs.writeFileSync(p, JSON.stringify(obj, null, 2) + '\n', 'utf8'); }
 
+const HF_TOKEN = process.env.HF_TOKEN || '';
 async function hfList(){
   // Public browse endpoint (documented): sort=downloads, limit
   const url = 'https://huggingface.co/api/models?sort=downloads&direction=-1&limit=60';
-  const res = await fetch(url);
-  if (!res.ok) throw new Error('HF list failed ' + res.status);
+  const headers = { 'User-Agent': 'modelswatch/1.0' };
+  if (HF_TOKEN) {
+    headers.Authorization = `Bearer ${HF_TOKEN}`;
+    debug('Using HF_TOKEN for authenticated request');
+  } else {
+    debug('No HF_TOKEN provided; using anonymous request');
+  }
+  let res;
+  try {
+    res = await fetch(url, { headers });
+  } catch(e){
+    warn('HF list network error', e.message);
+    throw e;
+  }
+  if (!res.ok) {
+    warn('HF list failed status', res.status);
+    throw new Error('HF list failed ' + res.status);
+  }
   const arr = await res.json();
   return arr;
 }

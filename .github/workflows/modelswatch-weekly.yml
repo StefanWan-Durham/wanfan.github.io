@@ -16,6 +16,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
       - name: Weekly top updates
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -33,8 +37,7 @@ jobs:
         run: |
           node -v
           node tools/modelswatch/weekly.mjs
-          # Snapshot tri-lingual summaries (cache-based incremental)
-          node tools/modelswatch/generate_snapshot_summaries.mjs || echo "snapshot summaries failed"
+          # (generate_snapshot_summaries.mjs already invoked inside weekly.mjs after snapshots; skip duplicate call)
           # Coverage for tri-lingual summaries
           node tools/modelswatch/summaries_coverage.mjs || echo "summaries coverage failed"
           node tools/modelswatch/seed_hotlists.mjs
@@ -44,6 +47,10 @@ jobs:
           # Generate tri-lingual summaries (non-fatal on failure)
           node tools/modelswatch/generate_summaries.mjs || echo "summaries generation failed"
           echo "--- weekly_summaries.json (excerpt) ---" && head -c 800 data/ai/modelswatch/weekly_summaries.json || true
+          # New: summary integrity + bucket coverage guards (warnings only)
+          node tools/modelswatch/summary_integrity_check.mjs || echo "summary integrity check failed"
+          node tools/modelswatch/coverage_guard.mjs || echo "coverage guard failed"
+          node tools/modelswatch/classification_stats.mjs || echo "classification stats failed"
       - name: Commit and push
         run: |
           git config user.name "github-actions"
@@ -56,7 +63,9 @@ jobs:
             data/ai/modelswatch/coverage_summary.json
             data/ai/modelswatch/weekly_summaries.json \
             data/ai/modelswatch/summary_cache.json \
-            data/ai/modelswatch/summaries_coverage.json
+            data/ai/modelswatch/summaries_coverage.json \
+            data/ai/modelswatch/coverage_gaps.json \
+            data/ai/modelswatch/classification_stats.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

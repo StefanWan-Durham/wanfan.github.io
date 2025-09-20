@@ -420,18 +420,15 @@
       LABEL_TO_KEY = m;
     })();
 
-    const getLang = ()=> (localStorage.getItem('lang')||document.documentElement.lang||'zh');
-    // Safe language resolver (fallback zh)
-    window.getLangSafe = function getLangSafe(){
-      try{
-        if(typeof getLang === 'function'){ const v = getLang(); if(v) return v; }
-        // Try reading from html[data-lang] or documentElement lang
-        const el = document.documentElement;
-        const attr = el.getAttribute('data-lang') || el.lang || 'zh';
-        return ['zh','en','es'].includes(attr)? attr : 'zh';
-      }catch{ return 'zh'; }
+    // Unified language resolver with optional override and graceful fallback.
+    // Usage: const L = getLang(); or getLang('es'); Only returns zh/en/es, defaults to zh.
+    function getLang(preferred){
+      const order = [preferred, localStorage.getItem('lang'), document.documentElement.getAttribute('data-lang'), document.documentElement.lang, 'zh'];
+      for(const v of order){ if(typeof v === 'string' && ['zh','en','es'].includes(v)) return v; }
+      return 'zh';
     }
-    const tagLabel = (key)=> TAG_LABELS[getLangSafe()]?.[key] || key;
+    window.getLang = getLang; // expose
+    const tagLabel = (key)=> TAG_LABELS[getLang()]?.[key] || key;
     const toKey = (s)=> LABEL_TO_KEY[String(s||'').trim()] || null;
   function string(s){ return String(s); }
 
@@ -447,7 +444,7 @@
       const emptyP = el.querySelector('.mw-empty');
       const tabs = el.querySelectorAll('.mw-summary-tabs button');
       let summaryData = null;
-      let currentLang = getLangSafe();
+  let currentLang = getLang();
       function applyLangButtons(){
         tabs.forEach(btn=>{
           const L = btn.getAttribute('data-lang');
@@ -458,7 +455,7 @@
       function render(){
         if(!summaryData){ el.hidden=true; return; }
         const sec = summaryData.sections?.overview || {};
-        const txt = sec[currentLang] || sec[getLangSafe()] || sec.en || sec.zh || '';
+  const txt = sec[currentLang] || sec[getLang()] || sec.en || sec.zh || '';
         summaryP.textContent = txt;
         emptyP.hidden = !!txt;
         if(!txt){ emptyP.textContent = currentLang==='zh'? '暂无摘要': (currentLang==='es'? 'Sin resumen disponible' : 'No summary available'); }
@@ -856,7 +853,7 @@
       // Reason badge translation
       function reasonLabel(key){
         if(!key) return '';
-        const lang = getLangSafe();
+  const lang = getLang();
         const mapKey = 'mw_reason_'+key.replace(/[^a-z0-9_]/g,'');
         return (window.translations?.[lang]?.[mapKey]) || key;
       }
@@ -880,7 +877,7 @@
       let multi = '';
       try{
         if(Array.isArray(it.task_keys) && it.task_keys.length){
-          const lang = getLangSafe();
+          const lang = getLang();
           const maxShow = 3;
           const tkAll = it.task_keys;
           const shown = tkAll.slice(0,maxShow);
@@ -1049,7 +1046,7 @@
           const order = [];
           const bucket = {};
           for(const it of arr){ const g=it.__group||'other'; if(!bucket[g]){ bucket[g]=[]; order.push(g);} bucket[g].push(it); }
-          const lang2 = getLangSafe();
+          const lang2 = getLang();
           function labelForGroup(k){ return TAG_LABELS?.[lang2]?.[k] || k; }
           const sections = order.map(k=>{
             let list = filterSort(bucket[k]);
@@ -1239,18 +1236,13 @@
       }catch{ itemsAll = []; allLoaded = false; }
     }
 
-    // Discover the latest snapshot date directory by probing coverage then probing recent dates for sidecar existence
+    // Resolve latest snapshot date: pointer file -> recent probe -> today fallback
     async function latestSnapshotDate(){
-      // 1. Try explicit pointer file
-      try{ const p = await fetch('../../data/ai/modelswatch/latest_snapshot.json',{cache:'no-store'}); if(p.ok){ const j = await p.json(); if(j?.latest) return j.latest; } }catch{}
-      // 2. Fallback: probe recent days
-      try{
-        const dates = candidateRecentDates(7);
-        for(const d of dates){
-          try{ const head = await fetch(`../../data/ai/modelswatch/snapshots/${d}/hf_summaries.json`,{method:'HEAD'}); if(head.ok) return d; }catch{}
-        }
-      }catch{}
-      // 3. final fallback today
+      try{ const r = await fetch('../../data/ai/modelswatch/latest_snapshot.json',{cache:'no-store'}); if(r.ok){ const j = await r.json(); if(j?.latest) return j.latest; } }catch{}
+      const dates = candidateRecentDates(5);
+      for(const d of dates){
+        try{ const head = await fetch(`../../data/ai/modelswatch/snapshots/${d}/hf_summaries.json`,{method:'HEAD'}); if(head.ok) return d; }catch{}
+      }
       return new Date().toISOString().slice(0,10);
     }
     function candidateRecentDates(n){
@@ -1411,17 +1403,6 @@
 
   <!-- Script: Cascading category filter (三级分类筛选) -->
   <script>
-    // Card renderer (kept minimal & robust)
-    function card(it){
-      const url = it.url || it.homepage || it.repo || '#';
-      const src = esc(it.source||'');
-      const metrics = esc(it.stars?`★${it.stars}`: it.likes?`❤${it.likes}`:'');
-      const last = it.updated_at?` · ${esc(it.updated_at.substring(0,10))}`:'';
-      const tags = (it.task_keys||it.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
-      const sum = it.summary_en || it.summary || '';
-      return `<article class="card mw-card" data-id="${esc(it.id)}">\n        <h4 class="mw-title"><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(it.name||it.id)}</a></h4>\n        <div class="mw-meta">${src} · ${metrics}${last}</div>\n        <div class="mw-tags">${tags}</div>\n        ${sum?`<p class=\\"muted\\" style=\\"margin:.5rem 0 0 0; line-height:1.4\\">${esc(sum)}</p>`:''}\n      </article>`;
-    }
-
     // ===== Cascader (三级分类筛选) =====
     const casWrap = document.querySelector('.mw-cas-inline');
     const clearBtn = document.getElementById('mw-cas-clear');
@@ -1435,7 +1416,7 @@
       }catch{ PROJECT_CATEGORIES=[]; }
     }
     function setTriggerLabelForMode(mode){
-      const lang = getLangSafe();
+  const lang = getLang();
       if(mode==='gh'){
         // Engineering hotlist
         triggerBtn.dataset.modeLabel='project';
@@ -1466,7 +1447,7 @@
   // Initialize immediately with builtin tree so UI renders instantly; remote JSON (if any) will hydrate later.
   let CAT_TREE = null; // will be assigned after BUILTIN_TREE declared
   let CAT_REMOTE_LOADED = false; // whether remote categories replaced builtin
-  const labelOf = (obj)=> { if(!obj) return ''; const L = getLangSafe(); return obj[L] || obj.zh || obj.en || obj.es || ''; }
+  const labelOf = (obj)=> { if(!obj) return ''; const L = getLang(); return obj[L] || obj.zh || obj.en || obj.es || ''; }
 
     // Built-in fallback tree (partial) for robust UX if JSON cannot be loaded
   const BUILTIN_TREE = [
@@ -1859,7 +1840,7 @@
       const mode = window.__mw_mode_current||'daily';
       if(mode==='gh'){
         // Engineering: show selected category label if any
-        const lang = getLangSafe();
+  const lang = getLang();
         let baseZh='按类别查看项目', baseEn='Browse Projects by Category', baseEs='Ver proyectos por categoría';
         const catObj = PROJECT_CATEGORIES.find(c=>c.key===selectedEngineeringCategory);
         const catLabel = catObj ? (catObj[lang]||catObj.zh||catObj.en||catObj.es||catObj.key) : '';

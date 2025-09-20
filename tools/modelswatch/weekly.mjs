@@ -78,6 +78,11 @@ async function main(){
       const r = spawnSync('node', [script], { stdio: 'inherit' });
   if(r.status!==0) warn(`[weekly] script failed: ${script}`);
     }
+    // NEW: taxonomy tagging (deterministic + optional LLM) before snapshots/hotlists so task_keys populate
+    try {
+      const py = spawnSync('python', ['tools/modelswatch_tagging.py','--use-llm'], { stdio: 'inherit' });
+      if(py.status!==0) warn('[weekly] tagging script failed');
+    } catch(e){ warn('[weekly] tagging stage failed', e); }
     runNode('tools/modelswatch/build_snapshots.mjs');
     // New: generate tri-lingual snapshot summaries (incremental cache-based)
     try {

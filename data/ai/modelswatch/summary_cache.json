@@ -1,5 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-09-20T13:22:33.459Z",
-  "models": {}
+  "generated_at": "2025-09-20T14:06:29.936Z",
+  "models": {
+    "hf:test-model-xyz": {
+      "hash": "sha256:efda239555ed6ffb1fd8213640c52008923af2571942ff9da744eeb2214951bc",
+      "updated_at": "2025-01-01T00:00:00Z",
+      "summary_en": "EN cached",
+      "summary_zh": "ZH 缓存",
+      "summary_es": "ES en caché",
+      "summary": "ZH 缓存",
+      "last_generated": "2025-09-20T14:06:29.937Z"
+    }
+  }
 }

@@ -281,7 +281,25 @@ async function main(){
         }
       }
     } else if(already.length < MIN_SEED_PER_TASK){
-      // Could attempt backfill from previously added to other tasks sharing same id, skip for simplicity now.
+      // Insert placeholder to guarantee visibility; flagged placeholder:true so UI can style/hide.
+      const need = MIN_SEED_PER_TASK - already.length;
+      for(let i=0;i<need;i++){
+        already.push({
+          id: `__placeholder__:${tk}:${i}`,
+          source: 'hf',
+          name: `(${tk}) placeholder` ,
+          url: '',
+          tags: [],
+          stats: { downloads_total:0, likes_total:0, downloads_7d:0, likes_7d:0 },
+          updated_at: new Date().toISOString(),
+          added_at: today,
+          summary: '',
+          flags: { pinned:false, hidden:false, placeholder:true },
+          score_model: -1,
+          task_keys: [tk]
+        });
+        appended += 1;
+      }
     }
   }
 

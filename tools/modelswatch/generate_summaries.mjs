@@ -43,7 +43,14 @@ function buildStats(){
     .sort((a,b)=> b.count - a.count);
   const totalModels = taskDist.reduce((a,b)=>a+b.count,0);
   const distinctTasks = taskDist.length;
-  const emerging = Array.isArray(coverage.zeroTasks) ? [] : []; // placeholder; emerging detection would need prior snapshot
+  // TODO(emerging detection): Implement logic to identify newly appearing ("emerging") tasks/categories compared to prior weeks.
+  // Proposed approach (future):
+  // 1. Load previous N (e.g., 2-4) weekly_summaries.json entries; gather historical task_distribution keys.
+  // 2. Mark tasks whose count this week > MIN_NEW_COUNT (e.g., 3) and which had 0 presence in all prior N weeks as emerging.
+  // 3. Optionally compute momentum: tasks with > X% growth vs previous week even if they existed before.
+  // 4. Cache previous snapshots to avoid O(n) scan each run; store lightweight index file (emerging_index.json).
+  // For now we return an empty array so downstream UI remains stable.
+  const emerging = Array.isArray(coverage.zeroTasks) ? [] : [];
   return { taskDist, totalModels, distinctTasks, emerging };
 }
 
