@@ -363,6 +363,11 @@ def tri_summary_batch(prompts: List[str]) -> Dict[str, Any]:
     errors_total = 0
     concurrency = int(os.getenv("TRI_BATCH_CONCURRENCY", "1") or "1")
     concurrency = max(1, concurrency)
+    # Batch start header (stderr so JSON stdout stays clean)
+    try:
+        sys.stderr.write(f"[tri_summarizer][batch-start] size={len(prompts)} concurrency={concurrency}\n")
+    except Exception:
+        pass
     progress_interval = float(os.getenv('BATCH_PROGRESS_INTERVAL','0')) or 0.0
     next_progress = progress_interval if progress_interval>0 else None
     processed = 0

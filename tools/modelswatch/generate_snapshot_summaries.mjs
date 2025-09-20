@@ -8,7 +8,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import crypto from 'crypto';
 import { summarizeTriJSON, summarizeDiagnostics } from './summarize_multi.mjs';
-import { spawnSync } from 'child_process';
+import { spawn, spawnSync } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../../');
@@ -148,44 +148,54 @@ async function main(){
       const useBatch = /^(1|true|yes|on)$/i.test(process.env.SNAPSHOT_USE_BATCH||process.env.USE_PYTHON_SUMMARIZER||'');
       if(useBatch){
         const prompts = toGen.map(x=> buildPrompt(x.it));
-        // Use persistent cache if configured inside tri_summarizer.
-        const py = spawnSync('python', ['tools/tri_summarizer.py','--batch'], { input: prompts.join('\n')+'\n', encoding:'utf-8' });
-        if(py.status===0){
-          try {
-            const parsed = JSON.parse(py.stdout);
-            const results = parsed.results||[];
-            results.forEach((r, idx)=>{
-              const entry = toGen[idx]; if(!entry) return;
-              const { it, key, hash } = entry;
-              let en = r.en||''; let zh = r.zh||''; let es = r.es||'';
-              if(!(en||zh||es) && ENABLE_FALLBACK){
-                const base = (it.summary || it.description || '').slice(0,160).trim();
-                const short = base || it.name || it.id;
-                en = en || `Auto summary (fallback:empty): ${short}`;
-                zh = zh || `自动摘要（占位:空响应）: ${short}`;
-                es = es || `Resumen automático (fallback: vacío): ${short}`;
-              }
-              const neutral = zh || en || es || it.summary || it.description || '';
-              if(en||zh||es){
-                it.summary_en = en; it.summary_zh = zh; it.summary_es = es; it.summary = neutral;
-                const isFallback = !(r.en||r.zh||r.es);
-                if(isFallback) fallbackCount++;
-                cache.models[key] = { hash, updated_at: it.updated_at || nowIso, summary_en: en, summary_zh: zh, summary_es: es, summary: neutral, last_generated: nowIso, fallback: isFallback };
-                gen++;
-                generated.push(true);
+        await new Promise(resolveBatch=>{
+          const child = spawn('python', ['tools/tri_summarizer.py','--batch']);
+            let out='';
+            child.stdout.on('data', d=> { out += d.toString(); });
+            child.stderr.on('data', d=> { process.stderr.write(d.toString()); });
+            child.on('error', e=> { console.warn('[snapshot-summaries] batch python spawn error', e.message); });
+            child.on('close', code=>{
+              if(code===0){
+                try {
+                  const parsed = JSON.parse(out);
+                  const results = parsed.results||[];
+                  results.forEach((r, idx)=>{
+                    const entry = toGen[idx]; if(!entry) return;
+                    const { it, key, hash } = entry;
+                    let en = r.en||''; let zh = r.zh||''; let es = r.es||'';
+                    if(!(en||zh||es) && ENABLE_FALLBACK){
+                      const base = (it.summary || it.description || '').slice(0,160).trim();
+                      const short = base || it.name || it.id;
+                      en = en || `Auto summary (fallback:empty): ${short}`;
+                      zh = zh || `自动摘要（占位:空响应）: ${short}`;
+                      es = es || `Resumen automático (fallback: vacío): ${short}`;
+                    }
+                    const neutral = zh || en || es || it.summary || it.description || '';
+                    if(en||zh||es){
+                      it.summary_en = en; it.summary_zh = zh; it.summary_es = es; it.summary = neutral;
+                      const isFallback = !(r.en||r.zh||r.es);
+                      if(isFallback) fallbackCount++;
+                      cache.models[key] = { hash, updated_at: it.updated_at || nowIso, summary_en: en, summary_zh: zh, summary_es: es, summary: neutral, last_generated: nowIso, fallback: isFallback };
+                      gen++;
+                      generated.push(true);
+                    } else {
+                      generated.push(false);
+                    }
+                  });
+                  const diag = parsed.diagnostics || {};
+                  console.log(`[snapshot-summaries] batch tri_summarizer results total=${results.length} ok=${diag.ok_count||''} cacheHits=${diag.cache_hits||''} cacheMiss=${diag.cache_misses||''} json=${diag.json_path_count||''} seq=${diag.seq_path_count||''} elapsed=${diag.elapsed_sec||''}s`);
+                } catch(e){
+                  console.warn('[snapshot-summaries] batch parse error', e.message);
+                }
               } else {
-                generated.push(false);
+                console.warn('[snapshot-summaries] batch python exit', code);
               }
+              resolveBatch();
             });
-            // Consolidated batch log line
-            const diag = parsed.diagnostics || {};
-            console.log(`[snapshot-summaries] batch tri_summarizer results total=${results.length} ok=${diag.ok_count||''} cacheHits=${diag.cache_hits||''} cacheMiss=${diag.cache_misses||''} json=${diag.json_path_count||''} seq=${diag.seq_path_count||''} elapsed=${diag.elapsed_sec||''}s`);
-          } catch(e){
-            console.warn('[snapshot-summaries] batch parse error', e.message);
-          }
-        } else {
-          console.warn('[snapshot-summaries] batch python exit', py.status, (py.stderr||'').slice(0,200));
-        }
+            // feed prompts
+            child.stdin.write(prompts.join('\n')+'\n');
+            child.stdin.end();
+        });
       } else {
         // fallback to previous per-item path if batch disabled
         const per = await mapLimit(toGen, MAX_CONCURRENCY, async ({ it, key, hash })=>{

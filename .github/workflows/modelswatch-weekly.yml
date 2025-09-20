@@ -48,11 +48,19 @@ jobs:
           UNIFIED_JSON_NO_SEQ: 1        # if JSON-first returns partial, skip sequential fallback
           SKIP_TOP_ENRICH: 1            # skip per-item enrichment in weekly top lists (avoid duplicate summarization)
           BATCH_PROGRESS_INTERVAL: 10   # every 10 items print progress to stderr during batch
+          RESET_MODELWATCH_ALL: ${{ secrets.RESET_MODELWATCH_ALL }}
+          RESET_MODELWATCH_CONFIRM: 1
         run: |
           node -v
           python -V
           python -m pip install --upgrade pip >/dev/null 2>&1 || true
           python -m pip install requests >/dev/null 2>&1 || true
+          if [ "${RESET_MODELWATCH_ALL}" = "1" ]; then
+            echo "[workflow] RESET_MODELWATCH_ALL=1 -> purging historical ModelWatch artifacts"
+            node tools/modelswatch/reset_modelswatch.mjs --yes || echo "reset script failed"
+          else
+            echo "[workflow] reset skipped (RESET_MODELWATCH_ALL != 1)"
+          fi
           node tools/modelswatch/weekly.mjs
           # (generate_snapshot_summaries.mjs already invoked inside weekly.mjs after snapshots; skip duplicate call)
           # Coverage for tri-lingual summaries
