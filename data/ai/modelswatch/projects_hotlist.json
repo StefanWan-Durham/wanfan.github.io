@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T09:22:56.500Z",
+  "updated_at": "2025-09-20T11:08:14.509Z",
   "by_category": {
     "framework_core": [
       {
@@ -43,6 +43,45 @@
           "hidden": false
         },
         "score_engineering": 0.18970919138245215
+      },
+      {
+        "id": "ollama/ollama",
+        "source": "github",
+        "name": "ollama",
+        "url": "https://github.com/ollama/ollama",
+        "tags": [
+          "deepseek",
+          "gemma",
+          "gemma3",
+          "gemma3n",
+          "go",
+          "golang",
+          "gpt-oss",
+          "llama",
+          "llama2",
+          "llama3",
+          "llava",
+          "llm",
+          "llms",
+          "mistral",
+          "ollama",
+          "phi4",
+          "qwen"
+        ],
+        "stats": {
+          "stars_total": 152686,
+          "forks_total": 13190,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:27Z",
+        "added_at": "2025-09-20",
+        "summary": "Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models.",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19997781697104866
       }
     ],
     "deployment_serving": [
@@ -111,6 +150,36 @@
           "hidden": false
         },
         "score_engineering": 0.18969909139344546
+      },
+      {
+        "id": "trekhleb/javascript-algorithms",
+        "source": "github",
+        "name": "javascript-algorithms",
+        "url": "https://github.com/trekhleb/javascript-algorithms",
+        "tags": [
+          "algorithm",
+          "algorithms",
+          "computer-science",
+          "data-structures",
+          "interview",
+          "interview-preparation",
+          "javascript",
+          "javascript-algorithms"
+        ],
+        "stats": {
+          "stars_total": 193338,
+          "forks_total": 30889,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T10:56:29Z",
+        "added_at": "2025-09-20",
+        "summary": "📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19994557006221036
       }
     ],
     "agents_workflows": [],
@@ -143,6 +212,44 @@
           "hidden": false
         },
         "score_engineering": 0.189705019582679
+      },
+      {
+        "id": "massgravel/Microsoft-Activation-Scripts",
+        "source": "github",
+        "name": "Microsoft-Activation-Scripts",
+        "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+        "tags": [
+          "activator",
+          "hwid",
+          "kms",
+          "kms38",
+          "massgrave",
+          "massgravel",
+          "microsoft",
+          "microsoft365",
+          "office",
+          "office365",
+          "ohook",
+          "powershell",
+          "tsforge",
+          "windows",
+          "windows-10",
+          "windows-11"
+        ],
+        "stats": {
+          "stars_total": 148966,
+          "forks_total": 14468,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T11:02:19Z",
+        "added_at": "2025-09-20",
+        "summary": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19997257070824762
       }
     ],
     "ui_devex": [
@@ -174,6 +281,37 @@
           "hidden": false
         },
         "score_engineering": 0.1897055319040255
+      },
+      {
+        "id": "electron/electron",
+        "source": "github",
+        "name": "electron",
+        "url": "https://github.com/electron/electron",
+        "tags": [
+          "c-plus-plus",
+          "chrome",
+          "css",
+          "electron",
+          "html",
+          "javascript",
+          "nodejs",
+          "v8",
+          "works-with-codespaces"
+        ],
+        "stats": {
+          "stars_total": 118367,
+          "forks_total": 16417,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:38Z",
+        "added_at": "2025-09-20",
+        "summary": ":electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19997866564414063
       }
     ]
   }
