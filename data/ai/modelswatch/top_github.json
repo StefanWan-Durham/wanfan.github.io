@@ -733,7 +733,10 @@
       "updated_at": "2025-09-18T19:05:55Z",
       "summary_en": "A web-based interface for Stable Diffusion, enabling easy access to text-to-image and image-to-image generation. It supports custom models, extensions, and fine-tuning, making it highly adaptable for creative and research applications. Its user-friendly design lowers the barrier for artists and developers to experiment with AI-generated visuals. Widely used for prototyping, art creation, and exploring generative AI workflows.",
       "summary_zh": "Stable Diffusion web UI 是一个基于 Gradio 构建的 Web 界面，用于运行和操作 Stable Diffusion 模型。它支持文本生成图像、图像修复、超分辨率等多种功能，并提供了丰富的自定义选项和插件扩展能力。该工具适用于 AI 艺术创作、图像编辑和实验研究等场景，用户无需编写代码即可快速上手。其开源特性吸引了大量社区贡献，使其成为 Stable Diffusion 生态中最受欢迎的前端工具之一。",
-      "summary_es": "Interfaz web para generar imágenes con Stable Diffusion. Permite crear, modificar y optimizar ilustraciones mediante prompts. Destaca por su facilidad de uso, amplias personalizaciones y extensibilidad con complementos. Ideal para artistas digitales, diseñadores e investigadores en IA generativa."
+      "summary_es": "Interfaz web para generar imágenes con Stable Diffusion. Permite crear, modificar y optimizar ilustraciones mediante prompts. Destaca por su facilidad de uso, amplias personalizaciones y extensibilidad con complementos. Ideal para artistas digitales, diseñadores e investigadores en IA generativa.",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "avelino/awesome-go",
@@ -1424,7 +1427,10 @@
       "updated_at": "2025-09-18T19:15:47Z",
       "summary_en": "Langflow is an open-source platform for creating and deploying AI agents and workflows. It enables developers to build, test, and scale AI-driven applications with ease. Its visual interface simplifies the design of complex pipelines, making it accessible for prototyping and production use. Ideal for automating tasks, integrating models, and orchestrating multi-step AI processes.",
       "summary_zh": "Langflow是一个用于构建和部署AI驱动代理和工作流的开源工具。它通过可视化界面简化了复杂AI流程的设计与编排，支持用户快速搭建自定义AI应用。该工具兼容多种主流AI框架和模型，具备高度的灵活性和可扩展性。适用于开发者和企业快速实现自动化任务处理、智能对话系统以及数据驱动的工作流场景。",
-      "summary_es": "Langflow es una herramienta para crear y desplegar agentes y flujos de trabajo con IA. Permite diseñar pipelines visualmente, integrando modelos y APIs. Ideal para prototipado rápido y automatización de procesos inteligentes."
+      "summary_es": "Langflow es una herramienta para crear y desplegar agentes y flujos de trabajo con IA. Permite diseñar pipelines visualmente, integrando modelos y APIs. Ideal para prototipado rápido y automatización de procesos inteligentes.",
+      "task_keys": [
+        "tool_use"
+      ]
     },
     {
       "id": "electron/electron",
@@ -1537,7 +1543,10 @@
       "updated_at": "2025-09-18T19:18:59Z",
       "summary_en": "LangChain is a framework for developing applications powered by language models. It enables the creation of context-aware reasoning systems by chaining together components like prompts, models, and tools. Its strengths include modularity, extensibility, and integration with various LLMs and data sources. It is widely used for building chatbots, agents, and automated workflows that require dynamic reasoning and memory.",
       "summary_zh": "LangChain是一个用于构建上下文感知推理应用的开源框架。它通过模块化组件简化了大型语言模型（LLM）的集成与应用开发，支持链式调用、记忆管理和工具调用等功能。该框架适用于开发智能问答、文档分析、自动化代理等多种场景，显著提升了开发效率与模型的可控性。其灵活的架构使得开发者能够轻松结合外部数据源和API，构建功能丰富的AI应用。",
-      "summary_es": "LangChain es un framework para construir aplicaciones con modelos de lenguaje. Permite integrar LLMs con fuentes de datos externas y herramientas. Ideal para chatbots, análisis de documentos y automatización de flujos de trabajo. Su modularidad facilita el desarrollo de sistemas de razonamiento contextual."
+      "summary_es": "LangChain es un framework para construir aplicaciones con modelos de lenguaje. Permite integrar LLMs con fuentes de datos externas y herramientas. Ideal para chatbots, análisis de documentos y automatización de flujos de trabajo. Su modularidad facilita el desarrollo de sistemas de razonamiento contextual.",
+      "task_keys": [
+        "tool_use"
+      ]
     },
     {
       "id": "d3/d3",

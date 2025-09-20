@@ -302,7 +302,10 @@
       "updated_at": "2025-09-18T19:05:55Z",
       "summary_en": "Stable Diffusion web UI is a popular open-source interface for generating and manipulating images using AI. It supports text-to-image, image-to-image, and inpainting workflows, making it versatile for creative and practical applications. Built on Gradio and PyTorch, it is user-friendly and highly extensible, appealing to both beginners and developers. Its AGPL-3.0 license ensures open access while encouraging community contributions.",
       "summary_zh": "Stable Diffusion web UI 是一个基于 Gradio 构建的 Web 界面，用于运行和自定义 Stable Diffusion 图像生成模型。它支持文本生成图像、图像到图像转换、图像修复等多种功能，并提供了丰富的插件和自定义选项。该项目适用于 AI 艺术创作、设计辅助和图像处理实验等场景，用户无需编写代码即可使用高级功能。其开源特性允许开发者扩展和优化界面，适合对 AI 生成图像感兴趣的技术爱好者和创作者。",
-      "summary_es": "Interfaz web para Stable Diffusion que permite generar y transformar imágenes mediante IA. Destaca por su interfaz accesible, múltiples funciones avanzadas y amplia personalización. Ideal para artistas digitales, investigadores y entusiastas que buscan explorar modelos de difusión sin requerir conocimientos técnicos profundos."
+      "summary_es": "Interfaz web para Stable Diffusion que permite generar y transformar imágenes mediante IA. Destaca por su interfaz accesible, múltiples funciones avanzadas y amplia personalización. Ideal para artistas digitales, investigadores y entusiastas que buscan explorar modelos de difusión sin requerir conocimientos técnicos profundos.",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "Snailclimb/JavaGuide",
@@ -483,7 +486,11 @@
       "updated_at": "2025-09-18T19:21:47.074Z",
       "summary_en": "Llama-3.1-8B-Instruct is an 8-billion-parameter language model optimized for instruction-following tasks. It excels in conversational AI, text generation, and structured reasoning, making it suitable for chatbots, content creation, and educational tools. Built on the robust Llama-3 architecture, it balances performance and efficiency for deployment in resource-constrained environments. Its open availability encourages broad use in research and practical applications.",
       "summary_zh": "Llama-3.1-8B-Instruct 是 Meta 推出的开源指令微调语言模型，基于 Llama 3 架构优化，专门用于对话和指令跟随任务。该模型具有 80 亿参数，在多项基准测试中表现出色，尤其擅长生成自然、连贯的文本响应。它适用于聊天机器人、内容创作、代码生成等多种场景，并支持 Transformers 和 PyTorch 框架集成。模型以英文为主，适合开发者构建高质量的 AI 对话应用。",
-      "summary_es": "Llama-3.1-8B-Instruct es un modelo de lenguaje de 8 mil millones de parámetros optimizado para instrucciones y conversaciones. Basado en Transformers, destaca por su eficiencia en generación de texto y su capacidad para diálogos naturales. Es ideal para aplicaciones de chatbots, asistentes virtuales y automatización de respuestas en inglés. Su arquitectura permite un buen equilibrio entre rendimiento y consumo computacional."
+      "summary_es": "Llama-3.1-8B-Instruct es un modelo de lenguaje de 8 mil millones de parámetros optimizado para instrucciones y conversaciones. Basado en Transformers, destaca por su eficiencia en generación de texto y su capacidad para diálogos naturales. Es ideal para aplicaciones de chatbots, asistentes virtuales y automatización de respuestas en inglés. Su arquitectura permite un buen equilibrio entre rendimiento y consumo computacional.",
+      "task_keys": [
+        "code_generation",
+        "structured_reasoning"
+      ]
     },
     {
       "id": "distilbert/distilbert-base-uncased",
@@ -625,7 +632,10 @@
       "updated_at": "2025-09-18T19:21:47.074Z",
       "summary_en": "Chronos-T5-small is a compact pretrained foundation model for time series forecasting, based on the T5 architecture. It excels at converting time series data into text-like sequences for accurate predictions across various domains like finance, energy, and IoT. Its strengths include strong zero-shot performance, scalability, and ease of fine-tuning with minimal data. It is widely applicable for both univariate and multivariate forecasting tasks, offering a flexible and efficient solution for real-world time series analysis.",
       "summary_zh": "Chronos-T5-small是亚马逊基于T5架构开发的时间序列预测基础模型。该模型通过将时间序列数据转换为文本标记序列，利用预训练的文本到文本转换能力进行多步预测。其核心优势在于无需领域特定特征工程，可直接处理不同频率和规模的时间序列数据。模型适用于零售销量预测、能源负荷预测、经济指标分析等通用场景，为时间序列分析提供了零样本和少样本的预测解决方案。",
-      "summary_es": "Chronos-T5-small es un modelo de series temporales basado en T5, preentrenado para predicción. Transforma datos numéricos en secuencias de tokens para generar pronósticos precisos. Es ideal para aplicaciones como demanda energética, finanzas o IoT. Su arquitectura eficiente permite integración sencilla en pipelines existentes."
+      "summary_es": "Chronos-T5-small es un modelo de series temporales basado en T5, preentrenado para predicción. Transforma datos numéricos en secuencias de tokens para generar pronósticos precisos. Es ideal para aplicaciones como demanda energética, finanzas o IoT. Su arquitectura eficiente permite integración sencilla en pipelines existentes.",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     },
     {
       "id": "google/electra-base-discriminator",
@@ -751,7 +761,10 @@
       "updated_at": "2025-09-18T19:21:47.074Z",
       "summary_en": "A Vision Transformer (ViT) model fine-tuned for facial expression recognition. It classifies images into common emotion categories, useful for applications in human-computer interaction, psychology research, and sentiment analysis. Built on PyTorch and ONNX, it supports efficient inference and deployment. Compatible with Hugging Face Transformers and AutoTrain, it is suitable for both research and production use.",
       "summary_zh": "vit-face-expression是基于Vision Transformer（ViT）架构的面部表情分类模型，由trpakov开发并托管于Hugging Face平台。该模型使用Apache 2.0开源协议，支持ONNX和PyTorch格式，适用于图像分类任务，能够识别多种人类面部表情。其核心优势在于结合了Transformer的全局建模能力与高效的特征提取，适用于情感分析、人机交互和心理学研究等场景。模型兼容AutoTrain和端部署，适合需要高精度表情识别的技术团队集成使用。",
-      "summary_es": "Modelo de clasificación de expresiones faciales basado en Vision Transformer (ViT). Detecta emociones como alegría, tristeza o enfado en imágenes. Destaca por su precisión y velocidad usando arquitecturas transformer. Útil para análisis de comportamiento humano e interacción persona-computadora."
+      "summary_es": "Modelo de clasificación de expresiones faciales basado en Vision Transformer (ViT). Detecta emociones como alegría, tristeza o enfado en imágenes. Destaca por su precisión y velocidad usando arquitecturas transformer. Útil para análisis de comportamiento humano e interacción persona-computadora.",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "BAAI/bge-base-en-v1.5",
@@ -802,7 +815,10 @@
       "updated_at": "2025-09-18T19:21:47.074Z",
       "summary_en": "BGE-base-en-v1.5 is a BERT-based English sentence embedding model optimized for semantic similarity and retrieval tasks. It excels in generating dense vector representations for text, making it suitable for search, clustering, and recommendation systems. With strong performance on benchmarks like MTEB, it is widely used in both research and production environments. The model supports multiple deployment formats, including PyTorch, ONNX, and SafeTensors.",
       "summary_zh": "bge-base-en-v1.5 是一个基于 BERT 架构的英文文本嵌入模型，由北京智源人工智能研究院（BAAI）开发。该模型主要用于生成高质量的句子或段落级向量表示，适用于语义相似度计算、信息检索和文本聚类等任务。其亮点在于通过大规模对比学习优化，在多个基准测试（如 MTEB）中表现出色，能够有效捕捉语义细节。适用于需要高效且精准的英文文本表示场景，如搜索引擎、推荐系统和文档分析工具。",
-      "summary_es": "Modelo de incrustación de texto BGE base en inglés. Genera representaciones vectoriales densas para búsqueda semántica y similitud textual. Destaca por su eficiencia en recuperación de información y clustering. Ideal para aplicaciones de búsqueda contextual y análisis de similitud en documentos."
+      "summary_es": "Modelo de incrustación de texto BGE base en inglés. Genera representaciones vectoriales densas para búsqueda semántica y similitud textual. Destaca por su eficiencia en recuperación de información y clustering. Ideal para aplicaciones de búsqueda contextual y análisis de similitud en documentos.",
+      "task_keys": [
+        "contrastive_learning"
+      ]
     }
   ]
 }
