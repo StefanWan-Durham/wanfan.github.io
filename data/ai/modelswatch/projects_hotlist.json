@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T15:09:14.526Z",
+  "updated_at": "2025-09-20T15:24:12.043Z",
   "by_category": {
     "framework_core": [
       {
@@ -349,6 +349,73 @@
           "hidden": false
         },
         "score_engineering": 0.1999858395445298
+      },
+      {
+        "id": "twbs/bootstrap",
+        "source": "github",
+        "name": "bootstrap",
+        "url": "https://github.com/twbs/bootstrap",
+        "tags": [
+          "bootstrap",
+          "css",
+          "css-framework",
+          "html",
+          "javascript",
+          "sass",
+          "scss"
+        ],
+        "stats": {
+          "stars_total": 173436,
+          "forks_total": 79159,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T15:23:43Z",
+        "added_at": "2025-09-20",
+        "summary": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19999775904033262
+      },
+      {
+        "id": "freeCodeCamp/freeCodeCamp",
+        "source": "github",
+        "name": "freeCodeCamp",
+        "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+        "tags": [
+          "careers",
+          "certification",
+          "community",
+          "curriculum",
+          "d3",
+          "education",
+          "freecodecamp",
+          "hacktoberfest",
+          "javascript",
+          "learn-to-code",
+          "math",
+          "nodejs",
+          "nonprofits",
+          "programming",
+          "react",
+          "teachers"
+        ],
+        "stats": {
+          "stars_total": 428296,
+          "forks_total": 41632,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T15:22:31Z",
+        "added_at": "2025-09-20",
+        "summary": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19999220370134235
       }
     ],
     "deployment_serving": [
