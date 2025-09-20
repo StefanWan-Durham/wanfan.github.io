@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-09-20T14:39:07.622Z",
+  "generated_at": "2025-09-20T14:54:50.748Z",
   "models": {
     "hf:test-model-xyz": {
       "hash": "sha256:efda239555ed6ffb1fd8213640c52008923af2571942ff9da744eeb2214951bc",
@@ -10,6 +10,1026 @@
       "summary_es": "ES en caché",
       "summary": "ZH 缓存",
       "last_generated": "2025-09-20T14:06:29.937Z"
+    },
+    "hf:Falconsai/nsfw_image_detection": {
+      "hash": "sha256:45b21927ec7157f97d2c1e096df1dad211bce09426690b1226a0e8d1d839b856",
+      "updated_at": "2025-09-20T14:54:44.657Z",
+      "summary_en": "Auto summary (fallback): nsfw_image_detection",
+      "summary_zh": "自动摘要（占位）: nsfw_image_detection",
+      "summary_es": "Resumen automático (fallback): nsfw_image_detection",
+      "summary": "自动摘要（占位）: nsfw_image_detection",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:sentence-transformers/all-MiniLM-L6-v2": {
+      "hash": "sha256:b8afdcde77fc5ecda097033fb0b4c8872c6420455799c36d5f46e7bb48198741",
+      "updated_at": "2025-09-20T14:54:44.657Z",
+      "summary_en": "Auto summary (fallback): all-MiniLM-L6-v2",
+      "summary_zh": "自动摘要（占位）: all-MiniLM-L6-v2",
+      "summary_es": "Resumen automático (fallback): all-MiniLM-L6-v2",
+      "summary": "自动摘要（占位）: all-MiniLM-L6-v2",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:timm/mobilenetv3_small_100.lamb_in1k": {
+      "hash": "sha256:2c25dfb967bb1d749064f3c567a15406a76b65050987dbfcd253a7c89bbb8c9a",
+      "updated_at": "2025-09-20T14:54:44.657Z",
+      "summary_en": "Auto summary (fallback): mobilenetv3_small_100.lamb_in1k",
+      "summary_zh": "自动摘要（占位）: mobilenetv3_small_100.lamb_in1k",
+      "summary_es": "Resumen automático (fallback): mobilenetv3_small_100.lamb_in1k",
+      "summary": "自动摘要（占位）: mobilenetv3_small_100.lamb_in1k",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:google-bert/bert-base-uncased": {
+      "hash": "sha256:1baefbfbc8459cc79e9e67f9057202eb8d0ae34ec18e8497f8493ea6d9e5248f",
+      "updated_at": "2025-09-20T14:54:44.657Z",
+      "summary_en": "Auto summary (fallback): bert-base-uncased",
+      "summary_zh": "自动摘要（占位）: bert-base-uncased",
+      "summary_es": "Resumen automático (fallback): bert-base-uncased",
+      "summary": "自动摘要（占位）: bert-base-uncased",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:dima806/fairface_age_image_detection": {
+      "hash": "sha256:b20909bd8daf12ddef0ce4a187f5ed97bfc96673fb353462a3dcfe4475a89af9",
+      "updated_at": "2025-09-20T14:54:44.657Z",
+      "summary_en": "Auto summary (fallback): fairface_age_image_detection",
+      "summary_zh": "自动摘要（占位）: fairface_age_image_detection",
+      "summary_es": "Resumen automático (fallback): fairface_age_image_detection",
+      "summary": "自动摘要（占位）: fairface_age_image_detection",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:tech4humans/yolov8s-signature-detector": {
+      "hash": "sha256:34f8ef61efa8834bf9a2955fa8ed662aff96c9885a9b6e76d24ac8a04286356f",
+      "updated_at": "2025-09-20T14:54:44.657Z",
+      "summary_en": "Auto summary (fallback): yolov8s-signature-detector",
+      "summary_zh": "自动摘要（占位）: yolov8s-signature-detector",
+      "summary_es": "Resumen automático (fallback): yolov8s-signature-detector",
+      "summary": "自动摘要（占位）: yolov8s-signature-detector",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:pyannote/segmentation-3.0": {
+      "hash": "sha256:e8297fe10c13f7a335b0cce9d0fe75a57cc2ba2b8e5ce3e3359657bb4848d2dd",
+      "updated_at": "2025-09-20T14:54:44.657Z",
+      "summary_en": "Auto summary (fallback): segmentation-3.0",
+      "summary_zh": "自动摘要（占位）: segmentation-3.0",
+      "summary_es": "Resumen automático (fallback): segmentation-3.0",
+      "summary": "自动摘要（占位）: segmentation-3.0",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:pyannote/wespeaker-voxceleb-resnet34-LM": {
+      "hash": "sha256:5f59d266b3d7cf7412f3115b76171e37e8fa60fd6e978015570a6401822917fb",
+      "updated_at": "2025-09-20T14:54:44.657Z",
+      "summary_en": "Auto summary (fallback): wespeaker-voxceleb-resnet34-LM",
+      "summary_zh": "自动摘要（占位）: wespeaker-voxceleb-resnet34-LM",
+      "summary_es": "Resumen automático (fallback): wespeaker-voxceleb-resnet34-LM",
+      "summary": "自动摘要（占位）: wespeaker-voxceleb-resnet34-LM",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:pyannote/speaker-diarization-3.1": {
+      "hash": "sha256:a2c22b202488a794d2e7ae517e166c93ac965df25aa3e72eca06d481f4b5b941",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): speaker-diarization-3.1",
+      "summary_zh": "自动摘要（占位）: speaker-diarization-3.1",
+      "summary_es": "Resumen automático (fallback): speaker-diarization-3.1",
+      "summary": "自动摘要（占位）: speaker-diarization-3.1",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:sentence-transformers/all-mpnet-base-v2": {
+      "hash": "sha256:9c375a16ee35c0da5d9f59fe758b5ed5e4bbd51c9acc203a2b4dfcb4d133763f",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): all-mpnet-base-v2",
+      "summary_zh": "自动摘要（占位）: all-mpnet-base-v2",
+      "summary_es": "Resumen automático (fallback): all-mpnet-base-v2",
+      "summary": "自动摘要（占位）: all-mpnet-base-v2",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:Bingsu/adetailer": {
+      "hash": "sha256:60c3223430584dacf026428594021df8dcc12a0aa608ce53c39754f789e524eb",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): adetailer",
+      "summary_zh": "自动摘要（占位）: adetailer",
+      "summary_es": "Resumen automático (fallback): adetailer",
+      "summary": "自动摘要（占位）: adetailer",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:openai/clip-vit-base-patch32": {
+      "hash": "sha256:db7a1c4fcd44c1d9a3e09371ae51bd69e8715aa5004201ad14f74c57a41d6a7c",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): clip-vit-base-patch32",
+      "summary_zh": "自动摘要（占位）: clip-vit-base-patch32",
+      "summary_es": "Resumen automático (fallback): clip-vit-base-patch32",
+      "summary": "自动摘要（占位）: clip-vit-base-patch32",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:openai-community/gpt2": {
+      "hash": "sha256:3460bcb23df926d8855f119569573b982b34d805716415d153219bc6461d76e3",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): gpt2",
+      "summary_zh": "自动摘要（占位）: gpt2",
+      "summary_es": "Resumen automático (fallback): gpt2",
+      "summary": "自动摘要（占位）: gpt2",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:distilbert/distilbert-base-uncased": {
+      "hash": "sha256:43dd15dcb1d178dbebc9a0480e275f19f9be5873dafe8e473f2b285aadf04875",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): distilbert-base-uncased",
+      "summary_zh": "自动摘要（占位）: distilbert-base-uncased",
+      "summary_es": "Resumen automático (fallback): distilbert-base-uncased",
+      "summary": "自动摘要（占位）: distilbert-base-uncased",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:FacebookAI/roberta-large": {
+      "hash": "sha256:715e6d3011d68164cb4b2b808943210d011bb2d367d37f3674cc8a3283cdca71",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): roberta-large",
+      "summary_zh": "自动摘要（占位）: roberta-large",
+      "summary_es": "Resumen automático (fallback): roberta-large",
+      "summary": "自动摘要（占位）: roberta-large",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:google/electra-base-discriminator": {
+      "hash": "sha256:2a0da06e56fb9f43ead1161f2a8b9b07b6251b9a53f5de8abec1f927e5115df3",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): electra-base-discriminator",
+      "summary_zh": "自动摘要（占位）: electra-base-discriminator",
+      "summary_es": "Resumen automático (fallback): electra-base-discriminator",
+      "summary": "自动摘要（占位）: electra-base-discriminator",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:FacebookAI/roberta-base": {
+      "hash": "sha256:eb9aa4b28eb45569bd702b07f75f648f170d150cf9121105b4d50b653a596ad9",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): roberta-base",
+      "summary_zh": "自动摘要（占位）: roberta-base",
+      "summary_es": "Resumen automático (fallback): roberta-base",
+      "summary": "自动摘要（占位）: roberta-base",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:facebook/opt-125m": {
+      "hash": "sha256:e80732d6a67211b996ff519762f8b399445c46b4a5f113a08e723f82aff50ad0",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): opt-125m",
+      "summary_zh": "自动摘要（占位）: opt-125m",
+      "summary_es": "Resumen automático (fallback): opt-125m",
+      "summary": "自动摘要（占位）: opt-125m",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:prajjwal1/bert-tiny": {
+      "hash": "sha256:6efdb4da2cf92716b68b6d0ffb5d45cf3667842fd2d6c712822f528873ba9e93",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): bert-tiny",
+      "summary_zh": "自动摘要（占位）: bert-tiny",
+      "summary_es": "Resumen automático (fallback): bert-tiny",
+      "summary": "自动摘要（占位）: bert-tiny",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": {
+      "hash": "sha256:91eb6c9eacaf2fdf49afa6c0a1e31f1e302fd1ffbe3a5a74a4f9393a1c69993d",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): paraphrase-multilingual-MiniLM-L12-v2",
+      "summary_zh": "自动摘要（占位）: paraphrase-multilingual-MiniLM-L12-v2",
+      "summary_es": "Resumen automático (fallback): paraphrase-multilingual-MiniLM-L12-v2",
+      "summary": "自动摘要（占位）: paraphrase-multilingual-MiniLM-L12-v2",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:amazon/chronos-t5-small": {
+      "hash": "sha256:956dba7b63c39a5ea3ff116b5b91eb7dc728a6f209ed2f3046e69ed6f037c7f4",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): chronos-t5-small",
+      "summary_zh": "自动摘要（占位）: chronos-t5-small",
+      "summary_es": "Resumen automático (fallback): chronos-t5-small",
+      "summary": "自动摘要（占位）: chronos-t5-small",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16": {
+      "hash": "sha256:ebeea46d219beb4b3f5b483fe00d0c4a90af27e98c152b8b2c3aad40ca915094",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): meta-llama-Llama-3.2-3B-Instruct-FP16",
+      "summary_zh": "自动摘要（占位）: meta-llama-Llama-3.2-3B-Instruct-FP16",
+      "summary_es": "Resumen automático (fallback): meta-llama-Llama-3.2-3B-Instruct-FP16",
+      "summary": "自动摘要（占位）: meta-llama-Llama-3.2-3B-Instruct-FP16",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:omni-research/Tarsier2-Recap-7b": {
+      "hash": "sha256:e97aa61e6e57adbe53696c9ae032e1721f43fd45abf92da2591286d4ab66e3e5",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Tarsier2-Recap-7b",
+      "summary_zh": "自动摘要（占位）: Tarsier2-Recap-7b",
+      "summary_es": "Resumen automático (fallback): Tarsier2-Recap-7b",
+      "summary": "自动摘要（占位）: Tarsier2-Recap-7b",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:openai/clip-vit-large-patch14": {
+      "hash": "sha256:26b0aa156d330825d16a37669b3470973c4187382452284e5487dbd012a5385a",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): clip-vit-large-patch14",
+      "summary_zh": "自动摘要（占位）: clip-vit-large-patch14",
+      "summary_es": "Resumen automático (fallback): clip-vit-large-patch14",
+      "summary": "自动摘要（占位）: clip-vit-large-patch14",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:trpakov/vit-face-expression": {
+      "hash": "sha256:cc6ee71bf1f29f35300559a7502a0bff5f95e0102d47cdd120e4eac8c0f4fb2e",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): vit-face-expression",
+      "summary_zh": "自动摘要（占位）: vit-face-expression",
+      "summary_es": "Resumen automático (fallback): vit-face-expression",
+      "summary": "自动摘要（占位）: vit-face-expression",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:google/vit-base-patch16-224-in21k": {
+      "hash": "sha256:156c62e5b3c9b70367b79bff35f864d3d41f4b2c54648efe1e69623171752966",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): vit-base-patch16-224-in21k",
+      "summary_zh": "自动摘要（占位）: vit-base-patch16-224-in21k",
+      "summary_es": "Resumen automático (fallback): vit-base-patch16-224-in21k",
+      "summary": "自动摘要（占位）: vit-base-patch16-224-in21k",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:FacebookAI/xlm-roberta-base": {
+      "hash": "sha256:0873d42da9fa17f005dca4a13c30b03fca7fe7c62fb07fd5b5ee1565b546be2c",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): xlm-roberta-base",
+      "summary_zh": "自动摘要（占位）: xlm-roberta-base",
+      "summary_es": "Resumen automático (fallback): xlm-roberta-base",
+      "summary": "自动摘要（占位）: xlm-roberta-base",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:facebook/contriever": {
+      "hash": "sha256:1b6a73220ea7e0222da4e64ac5f3ee52126bf0118a53a50e7c790dbc21b9a528",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): contriever",
+      "summary_zh": "自动摘要（占位）: contriever",
+      "summary_es": "Resumen automático (fallback): contriever",
+      "summary": "自动摘要（占位）: contriever",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:facebook/bart-base": {
+      "hash": "sha256:b7f16aeb01cda40a8b5c22532b9245a5a15d258fb9d889f25eac9d6b2c230cca",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): bart-base",
+      "summary_zh": "自动摘要（占位）: bart-base",
+      "summary_es": "Resumen automático (fallback): bart-base",
+      "summary": "自动摘要（占位）: bart-base",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:openai/gpt-oss-20b": {
+      "hash": "sha256:8a8d077aadb05e6a66f0aa04bea09d439786e1123fb8bb21483f6728142c293a",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): gpt-oss-20b",
+      "summary_zh": "自动摘要（占位）: gpt-oss-20b",
+      "summary_es": "Resumen automático (fallback): gpt-oss-20b",
+      "summary": "自动摘要（占位）: gpt-oss-20b",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:pyannote/segmentation": {
+      "hash": "sha256:e055a63d94ddaa557ecf5d3f254d3afc81c08b43a655bfbcf8ee315fdb826efc",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): segmentation",
+      "summary_zh": "自动摘要（占位）: segmentation",
+      "summary_es": "Resumen automático (fallback): segmentation",
+      "summary": "自动摘要（占位）: segmentation",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:meta-llama/Llama-3.2-1B-Instruct": {
+      "hash": "sha256:a3e7e74d9615f9de6b9bc59aac83848144562a935dbac613a3721460593e8dc8",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Llama-3.2-1B-Instruct",
+      "summary_zh": "自动摘要（占位）: Llama-3.2-1B-Instruct",
+      "summary_es": "Resumen automático (fallback): Llama-3.2-1B-Instruct",
+      "summary": "自动摘要（占位）: Llama-3.2-1B-Instruct",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:BAAI/bge-base-en-v1.5": {
+      "hash": "sha256:004ed51cffd01e67e916f636ee1f02ba389e3214e9e8b3030bb58cc442e5cc6c",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): bge-base-en-v1.5",
+      "summary_zh": "自动摘要（占位）: bge-base-en-v1.5",
+      "summary_es": "Resumen automático (fallback): bge-base-en-v1.5",
+      "summary": "自动摘要（占位）: bge-base-en-v1.5",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:Qwen/Qwen2.5-3B-Instruct": {
+      "hash": "sha256:05f6942c69dff15433426263e7b432b2caf068fb64cec93c7f66447db45e8648",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Qwen2.5-3B-Instruct",
+      "summary_zh": "自动摘要（占位）: Qwen2.5-3B-Instruct",
+      "summary_es": "Resumen automático (fallback): Qwen2.5-3B-Instruct",
+      "summary": "自动摘要（占位）: Qwen2.5-3B-Instruct",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:Qwen/Qwen2.5-7B-Instruct": {
+      "hash": "sha256:4e0afee927d6134cee5aa2c0fa6fbaeef12f95a44d210785f861e37485dbf2cc",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Qwen2.5-7B-Instruct",
+      "summary_zh": "自动摘要（占位）: Qwen2.5-7B-Instruct",
+      "summary_es": "Resumen automático (fallback): Qwen2.5-7B-Instruct",
+      "summary": "自动摘要（占位）: Qwen2.5-7B-Instruct",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:meta-llama/Llama-3.1-8B-Instruct": {
+      "hash": "sha256:fd36fe32d257c07e88492e7bdb971d6256a03c7b518634e67e2577dc900d560b",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Llama-3.1-8B-Instruct",
+      "summary_zh": "自动摘要（占位）: Llama-3.1-8B-Instruct",
+      "summary_es": "Resumen automático (fallback): Llama-3.1-8B-Instruct",
+      "summary": "自动摘要（占位）: Llama-3.1-8B-Instruct",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:pyannote/voice-activity-detection": {
+      "hash": "sha256:2d9725d1dae7f2b6523eeab0e06e2da2177fafcaf306cc641848c8850414c317",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): voice-activity-detection",
+      "summary_zh": "自动摘要（占位）: voice-activity-detection",
+      "summary_es": "Resumen automático (fallback): voice-activity-detection",
+      "summary": "自动摘要（占位）: voice-activity-detection",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:colbert-ir/colbertv2.0": {
+      "hash": "sha256:067afe5102fec80b1012edacceee281af60ada57d065398b9621cca6fb6150e5",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): colbertv2.0",
+      "summary_zh": "自动摘要（占位）: colbertv2.0",
+      "summary_es": "Resumen automático (fallback): colbertv2.0",
+      "summary": "自动摘要（占位）: colbertv2.0",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:BAAI/bge-m3": {
+      "hash": "sha256:802c99cc7086fed84413efc6484fb3566fba5ee623b61a455671cfbd5aed58b6",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): bge-m3",
+      "summary_zh": "自动摘要（占位）: bge-m3",
+      "summary_es": "Resumen automático (fallback): bge-m3",
+      "summary": "自动摘要（占位）: bge-m3",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:Qwen/Qwen3-0.6B": {
+      "hash": "sha256:5e8220c66908eafef564974c98cec0bdbcc8ceca6c5394b6105bef4d4f82cc4a",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Qwen3-0.6B",
+      "summary_zh": "自动摘要（占位）: Qwen3-0.6B",
+      "summary_es": "Resumen automático (fallback): Qwen3-0.6B",
+      "summary": "自动摘要（占位）: Qwen3-0.6B",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:nlpaueb/legal-bert-base-uncased": {
+      "hash": "sha256:826c86b62f1ccf32b4ac3a4ba2841ab5dac392874de065fa396d3eb62cb56d20",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): legal-bert-base-uncased",
+      "summary_zh": "自动摘要（占位）: legal-bert-base-uncased",
+      "summary_es": "Resumen automático (fallback): legal-bert-base-uncased",
+      "summary": "自动摘要（占位）: legal-bert-base-uncased",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:autogluon/chronos-bolt-base": {
+      "hash": "sha256:b512d0dd0ece185643cbd52f1d0f8259ebf8abab3d6d1f4f4b87d90099014d7f",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): chronos-bolt-base",
+      "summary_zh": "自动摘要（占位）: chronos-bolt-base",
+      "summary_es": "Resumen automático (fallback): chronos-bolt-base",
+      "summary": "自动摘要（占位）: chronos-bolt-base",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:Datadog/Toto-Open-Base-1.0": {
+      "hash": "sha256:521e43c7f7d8c7716a99c00e05a040aa75f61a1bf999b0a63a9fe26740fe70ee",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Toto-Open-Base-1.0",
+      "summary_zh": "自动摘要（占位）: Toto-Open-Base-1.0",
+      "summary_es": "Resumen automático (fallback): Toto-Open-Base-1.0",
+      "summary": "自动摘要（占位）: Toto-Open-Base-1.0",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:Comfy-Org/Wan_2.2_ComfyUI_Repackaged": {
+      "hash": "sha256:dd7d3ab1f017ecc0e4220c11684306193df5204d41c62c2c32f0e80b96eda82e",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Wan_2.2_ComfyUI_Repackaged",
+      "summary_zh": "自动摘要（占位）: Wan_2.2_ComfyUI_Repackaged",
+      "summary_es": "Resumen automático (fallback): Wan_2.2_ComfyUI_Repackaged",
+      "summary": "自动摘要（占位）: Wan_2.2_ComfyUI_Repackaged",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:facebook/esmfold_v1": {
+      "hash": "sha256:8fe7e95ad6f93984223120523e17494fd9bb67af9d01c5220c919d3fed248170",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): esmfold_v1",
+      "summary_zh": "自动摘要（占位）: esmfold_v1",
+      "summary_es": "Resumen automático (fallback): esmfold_v1",
+      "summary": "自动摘要（占位）: esmfold_v1",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:Qwen/Qwen2.5-1.5B-Instruct": {
+      "hash": "sha256:2849d4c0197e053b385feff4efc41f2a3c19a8c82b744056cb1981477fdfbd9d",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Qwen2.5-1.5B-Instruct",
+      "summary_zh": "自动摘要（占位）: Qwen2.5-1.5B-Instruct",
+      "summary_es": "Resumen automático (fallback): Qwen2.5-1.5B-Instruct",
+      "summary": "自动摘要（占位）: Qwen2.5-1.5B-Instruct",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:BAAI/bge-small-en-v1.5": {
+      "hash": "sha256:a3ae65e92e8be8bcdb9772270bdae9310a8b86d8b41f62b092ff4e1d8076539e",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): bge-small-en-v1.5",
+      "summary_zh": "自动摘要（占位）: bge-small-en-v1.5",
+      "summary_es": "Resumen automático (fallback): bge-small-en-v1.5",
+      "summary": "自动摘要（占位）: bge-small-en-v1.5",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:coqui/XTTS-v2": {
+      "hash": "sha256:46e69b8db9dbac7ec82653be6b21a796884e47ece6bf160feec65baede881630",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): XTTS-v2",
+      "summary_zh": "自动摘要（占位）: XTTS-v2",
+      "summary_es": "Resumen automático (fallback): XTTS-v2",
+      "summary": "自动摘要（占位）: XTTS-v2",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:thuml/sundial-base-128m": {
+      "hash": "sha256:3bdd646f8794f668a0d3f2f680dcf23ad876ae49e4461b87b1c527334cc28bf8",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): sundial-base-128m",
+      "summary_zh": "自动摘要（占位）: sundial-base-128m",
+      "summary_es": "Resumen automático (fallback): sundial-base-128m",
+      "summary": "自动摘要（占位）: sundial-base-128m",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:dphn/dolphin-2.9.1-yi-1.5-34b": {
+      "hash": "sha256:d78ecd3396ca1afc07f53e4a53cef635235dd2dc79d9525ff1010409cff0deb5",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): dolphin-2.9.1-yi-1.5-34b",
+      "summary_zh": "自动摘要（占位）: dolphin-2.9.1-yi-1.5-34b",
+      "summary_es": "Resumen automático (fallback): dolphin-2.9.1-yi-1.5-34b",
+      "summary": "自动摘要（占位）: dolphin-2.9.1-yi-1.5-34b",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:google-bert/bert-base-multilingual-cased": {
+      "hash": "sha256:5498785a5f1fa9373875e10c3371f54ef0d5933dd06e28e18556b0e84d61bc9c",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): bert-base-multilingual-cased",
+      "summary_zh": "自动摘要（占位）: bert-base-multilingual-cased",
+      "summary_es": "Resumen automático (fallback): bert-base-multilingual-cased",
+      "summary": "自动摘要（占位）: bert-base-multilingual-cased",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:Qwen/Qwen2-VL-2B-Instruct": {
+      "hash": "sha256:e0dfa5b613f0626516a9b46d6dacfe0a7fd243fed2a5e017574af2269498a916",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Qwen2-VL-2B-Instruct",
+      "summary_zh": "自动摘要（占位）: Qwen2-VL-2B-Instruct",
+      "summary_es": "Resumen automático (fallback): Qwen2-VL-2B-Instruct",
+      "summary": "自动摘要（占位）: Qwen2-VL-2B-Instruct",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:sentence-transformers/gtr-t5-base": {
+      "hash": "sha256:586417b2e038665639f42aa1085bf2abcad15037900839ac2d6ef3c3d6218a98",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): gtr-t5-base",
+      "summary_zh": "自动摘要（占位）: gtr-t5-base",
+      "summary_es": "Resumen automático (fallback): gtr-t5-base",
+      "summary": "自动摘要（占位）: gtr-t5-base",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:openai/whisper-large-v3": {
+      "hash": "sha256:0b18cc5ca71cbbd59a87b7f6e81476501297f5890953a2db1de82e6f861c954f",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): whisper-large-v3",
+      "summary_zh": "自动摘要（占位）: whisper-large-v3",
+      "summary_es": "Resumen automático (fallback): whisper-large-v3",
+      "summary": "自动摘要（占位）: whisper-large-v3",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:google-t5/t5-small": {
+      "hash": "sha256:0a4cafd9e0e2ab1012c497c9443808ff2b2edb86ea5714458db8da0b7b8822cc",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): t5-small",
+      "summary_zh": "自动摘要（占位）: t5-small",
+      "summary_es": "Resumen automático (fallback): t5-small",
+      "summary": "自动摘要（占位）: t5-small",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:jinaai/jina-embeddings-v3": {
+      "hash": "sha256:897495194cab4614b1b0e266df481db8180f56f3004218a7bd36f378d9e84fdf",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): jina-embeddings-v3",
+      "summary_zh": "自动摘要（占位）: jina-embeddings-v3",
+      "summary_es": "Resumen automático (fallback): jina-embeddings-v3",
+      "summary": "自动摘要（占位）: jina-embeddings-v3",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:google/t5gemma-b-b-prefixlm": {
+      "hash": "sha256:e214f3f61b830185e6db2fc527ce7ce834f680871f5fc0cd86f23871cd481dfc",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): t5gemma-b-b-prefixlm",
+      "summary_zh": "自动摘要（占位）: t5gemma-b-b-prefixlm",
+      "summary_es": "Resumen automático (fallback): t5gemma-b-b-prefixlm",
+      "summary": "自动摘要（占位）: t5gemma-b-b-prefixlm",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:trl-internal-testing/tiny-Qwen2ForCausalLM-2.5": {
+      "hash": "sha256:9fc23ca95002a99020bc369ca7f2d2fedbcca34f57553ae89d6c7a8787420145",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): tiny-Qwen2ForCausalLM-2.5",
+      "summary_zh": "自动摘要（占位）: tiny-Qwen2ForCausalLM-2.5",
+      "summary_es": "Resumen automático (fallback): tiny-Qwen2ForCausalLM-2.5",
+      "summary": "自动摘要（占位）: tiny-Qwen2ForCausalLM-2.5",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:Comfy-Org/Wan_2.1_ComfyUI_repackaged": {
+      "hash": "sha256:944ad69a1057ab5cda79642af307ee0bea65bb338adbb6f51f2611c95d358180",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): Wan_2.1_ComfyUI_repackaged",
+      "summary_zh": "自动摘要（占位）: Wan_2.1_ComfyUI_repackaged",
+      "summary_es": "Resumen automático (fallback): Wan_2.1_ComfyUI_repackaged",
+      "summary": "自动摘要（占位）: Wan_2.1_ComfyUI_repackaged",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "hf:Salesforce/moirai-2.0-R-small": {
+      "hash": "sha256:9730a522acd7a15cc077a9106f580e1d8d01f63c6d2b2d1d9166cf36a28cb908",
+      "updated_at": "2025-09-20T14:54:44.658Z",
+      "summary_en": "Auto summary (fallback): moirai-2.0-R-small",
+      "summary_zh": "自动摘要（占位）: moirai-2.0-R-small",
+      "summary_es": "Resumen automático (fallback): moirai-2.0-R-small",
+      "summary": "自动摘要（占位）: moirai-2.0-R-small",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:freeCodeCamp/freeCodeCamp": {
+      "hash": "sha256:25651c9dc3aa02645a2610d2168f4007b5796d165668d78c34e15e40a51b9432",
+      "updated_at": "2025-09-20T14:49:57Z",
+      "summary_en": "Auto summary (fallback): freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "summary_zh": "自动摘要（占位）: freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "summary_es": "Resumen automático (fallback): freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "summary": "自动摘要（占位）: freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:EbookFoundation/free-programming-books": {
+      "hash": "sha256:b796d0347ce11a97abe8a68d03493b5a9b7f4abd0610108cf598357b3e45c2b4",
+      "updated_at": "2025-09-20T14:53:33Z",
+      "summary_en": "Auto summary (fallback): :books: Freely available programming books",
+      "summary_zh": "自动摘要（占位）: :books: Freely available programming books",
+      "summary_es": "Resumen automático (fallback): :books: Freely available programming books",
+      "summary": "自动摘要（占位）: :books: Freely available programming books",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:sindresorhus/awesome": {
+      "hash": "sha256:5c9b9e8f90691cd7437996a8ebe23fe9c0989d5ecf4196e4dbccb8aa252f1395",
+      "updated_at": "2025-09-20T14:54:16Z",
+      "summary_en": "Auto summary (fallback): 😎 Awesome lists about all kinds of interesting topics",
+      "summary_zh": "自动摘要（占位）: 😎 Awesome lists about all kinds of interesting topics",
+      "summary_es": "Resumen automático (fallback): 😎 Awesome lists about all kinds of interesting topics",
+      "summary": "自动摘要（占位）: 😎 Awesome lists about all kinds of interesting topics",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:jwasham/coding-interview-university": {
+      "hash": "sha256:e8790c0f2e0910427643ccc4e2244ce69cb951e59559f78db0bde75ad90bbecf",
+      "updated_at": "2025-09-20T14:48:47Z",
+      "summary_en": "Auto summary (fallback): A complete computer science study plan to become a software engineer.",
+      "summary_zh": "自动摘要（占位）: A complete computer science study plan to become a software engineer.",
+      "summary_es": "Resumen automático (fallback): A complete computer science study plan to become a software engineer.",
+      "summary": "自动摘要（占位）: A complete computer science study plan to become a software engineer.",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:public-apis/public-apis": {
+      "hash": "sha256:86d3a30a645d892f4fab328900dd4fd4a45f400cd3592592bd0ed3edd8e292bc",
+      "updated_at": "2025-09-20T14:52:33Z",
+      "summary_en": "Auto summary (fallback): A collective list of free APIs",
+      "summary_zh": "自动摘要（占位）: A collective list of free APIs",
+      "summary_es": "Resumen automático (fallback): A collective list of free APIs",
+      "summary": "自动摘要（占位）: A collective list of free APIs",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:facebook/react": {
+      "hash": "sha256:61829e84279b1da2dabba3477a4fb273a4136374a80cb93cd3afabbea0fc0b41",
+      "updated_at": "2025-09-20T14:53:20Z",
+      "summary_en": "Auto summary (fallback): The library for web and native user interfaces.",
+      "summary_zh": "自动摘要（占位）: The library for web and native user interfaces.",
+      "summary_es": "Resumen automático (fallback): The library for web and native user interfaces.",
+      "summary": "自动摘要（占位）: The library for web and native user interfaces.",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:vuejs/vue": {
+      "hash": "sha256:c9e0fc815104d3eadc9175e957817950ff2ac2289456a0ae3e2c81368bea3cf2",
+      "updated_at": "2025-09-20T14:53:31Z",
+      "summary_en": "Auto summary (fallback): This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
+      "summary_zh": "自动摘要（占位）: This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
+      "summary_es": "Resumen automático (fallback): This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
+      "summary": "自动摘要（占位）: This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:TheAlgorithms/Python": {
+      "hash": "sha256:01e0f72f6f63870834a9b273c6ecf312bca557fcecb7bca8b727a4cc70eb1242",
+      "updated_at": "2025-09-20T14:36:59Z",
+      "summary_en": "Auto summary (fallback): All Algorithms implemented in Python",
+      "summary_zh": "自动摘要（占位）: All Algorithms implemented in Python",
+      "summary_es": "Resumen automático (fallback): All Algorithms implemented in Python",
+      "summary": "自动摘要（占位）: All Algorithms implemented in Python",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:trekhleb/javascript-algorithms": {
+      "hash": "sha256:fc59e3b417a351c996a2b8bd27619884bc9d8c4f423c92d3e3c3083b76ef7d28",
+      "updated_at": "2025-09-20T14:26:56Z",
+      "summary_en": "Auto summary (fallback): 📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+      "summary_zh": "自动摘要（占位）: 📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+      "summary_es": "Resumen automático (fallback): 📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+      "summary": "自动摘要（占位）: 📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:ossu/computer-science": {
+      "hash": "sha256:2ef3458d672d02215463f98098555a9202f0e5f4219aef5a67a1cf11f96931d1",
+      "updated_at": "2025-09-20T14:52:52Z",
+      "summary_en": "Auto summary (fallback): 🎓 Path to a free self-taught education in Computer Science!",
+      "summary_zh": "自动摘要（占位）: 🎓 Path to a free self-taught education in Computer Science!",
+      "summary_es": "Resumen automático (fallback): 🎓 Path to a free self-taught education in Computer Science!",
+      "summary": "自动摘要（占位）: 🎓 Path to a free self-taught education in Computer Science!",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:tensorflow/tensorflow": {
+      "hash": "sha256:82d3059146a2442041031a84bf9b71ab6665f58469711931e2f15689ca2fa70c",
+      "updated_at": "2025-09-20T14:28:22Z",
+      "summary_en": "Auto summary (fallback): An Open Source Machine Learning Framework for Everyone",
+      "summary_zh": "自动摘要（占位）: An Open Source Machine Learning Framework for Everyone",
+      "summary_es": "Resumen automático (fallback): An Open Source Machine Learning Framework for Everyone",
+      "summary": "自动摘要（占位）: An Open Source Machine Learning Framework for Everyone",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:trimstray/the-book-of-secret-knowledge": {
+      "hash": "sha256:903cdfa55d67305232acde3dbd7bd8878f2ceb5453c41daf66b0da93473d802e",
+      "updated_at": "2025-09-20T14:52:59Z",
+      "summary_en": "Auto summary (fallback): A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+      "summary_zh": "自动摘要（占位）: A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+      "summary_es": "Resumen automático (fallback): A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+      "summary": "自动摘要（占位）: A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:ohmyzsh/ohmyzsh": {
+      "hash": "sha256:e138aee4d69d6b04e8b8dcc50f5fe8b5716c4d0b694880a1c239203e05dc1f3a",
+      "updated_at": "2025-09-20T14:37:06Z",
+      "summary_en": "Auto summary (fallback): 🙃   A delightful community-driven (with 2,400+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS,",
+      "summary_zh": "自动摘要（占位）: 🙃   A delightful community-driven (with 2,400+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS,",
+      "summary_es": "Resumen automático (fallback): 🙃   A delightful community-driven (with 2,400+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS,",
+      "summary": "自动摘要（占位）: 🙃   A delightful community-driven (with 2,400+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS,",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:microsoft/vscode": {
+      "hash": "sha256:0c61bcc6b17559087094a3c80851e95d3c788d67c4f4192b67414f637c54144f",
+      "updated_at": "2025-09-20T14:26:29Z",
+      "summary_en": "Auto summary (fallback): Visual Studio Code",
+      "summary_zh": "自动摘要（占位）: Visual Studio Code",
+      "summary_es": "Resumen automático (fallback): Visual Studio Code",
+      "summary": "自动摘要（占位）: Visual Studio Code",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:twbs/bootstrap": {
+      "hash": "sha256:13b1d540caf798ac651d8fcc7b220fa3efe15c015c65704e6d15baefecaba28d",
+      "updated_at": "2025-09-20T14:27:03Z",
+      "summary_en": "Auto summary (fallback): The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "summary_zh": "自动摘要（占位）: The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "summary_es": "Resumen automático (fallback): The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "summary": "自动摘要（占位）: The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:github/gitignore": {
+      "hash": "sha256:ba0eec6109ef6d63c623b663284e5453f02b5595f2cc63cb45e59e9cbb3be8e3",
+      "updated_at": "2025-09-20T14:18:34Z",
+      "summary_en": "Auto summary (fallback): A collection of useful .gitignore templates",
+      "summary_zh": "自动摘要（占位）: A collection of useful .gitignore templates",
+      "summary_es": "Resumen automático (fallback): A collection of useful .gitignore templates",
+      "summary": "自动摘要（占位）: A collection of useful .gitignore templates",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:flutter/flutter": {
+      "hash": "sha256:2e09dec48b63a41700601e5653eec4336dfcf9d9877fca12d090815206b42a95",
+      "updated_at": "2025-09-20T14:51:07Z",
+      "summary_en": "Auto summary (fallback): Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "summary_zh": "自动摘要（占位）: Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "summary_es": "Resumen automático (fallback): Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "summary": "自动摘要（占位）: Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:AUTOMATIC1111/stable-diffusion-webui": {
+      "hash": "sha256:bc30c6f2c3fc9b9a4d8ed55ae4d6b2ec4556104e7113d4738ae7abcef22c0aca",
+      "updated_at": "2025-09-20T14:25:45Z",
+      "summary_en": "Auto summary (fallback): Stable Diffusion web UI",
+      "summary_zh": "自动摘要（占位）: Stable Diffusion web UI",
+      "summary_es": "Resumen automático (fallback): Stable Diffusion web UI",
+      "summary": "自动摘要（占位）: Stable Diffusion web UI",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:avelino/awesome-go": {
+      "hash": "sha256:6fcee39a2fe0873f0411187b07f6d7052555a780fe10b12eaf6f6f6239f646d5",
+      "updated_at": "2025-09-20T14:28:12Z",
+      "summary_en": "Auto summary (fallback): A curated list of awesome Go frameworks, libraries and software",
+      "summary_zh": "自动摘要（占位）: A curated list of awesome Go frameworks, libraries and software",
+      "summary_es": "Resumen automático (fallback): A curated list of awesome Go frameworks, libraries and software",
+      "summary": "自动摘要（占位）: A curated list of awesome Go frameworks, libraries and software",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:ollama/ollama": {
+      "hash": "sha256:dfca33cb11ec5ab4c2050732997f96f50a88ac8c36ee54441ccf4dc7d479205a",
+      "updated_at": "2025-09-20T14:19:44Z",
+      "summary_en": "Auto summary (fallback): Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models.",
+      "summary_zh": "自动摘要（占位）: Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models.",
+      "summary_es": "Resumen automático (fallback): Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models.",
+      "summary": "自动摘要（占位）: Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models.",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:Snailclimb/JavaGuide": {
+      "hash": "sha256:2956986323af9c0a8f6a51874c1c89d55d01f64b7ae8eaac5440f588d2d083ed",
+      "updated_at": "2025-09-20T14:43:25Z",
+      "summary_en": "Auto summary (fallback): 「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！",
+      "summary_zh": "自动摘要（占位）: 「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！",
+      "summary_es": "Resumen automático (fallback): 「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！",
+      "summary": "自动摘要（占位）: 「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:huggingface/transformers": {
+      "hash": "sha256:867cd0a58dd30da020a4d8a89879fa5ccf7bcb986664f69a3c87a7dbbcbdcd4f",
+      "updated_at": "2025-09-20T14:25:46Z",
+      "summary_en": "Auto summary (fallback): 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference a",
+      "summary_zh": "自动摘要（占位）: 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference a",
+      "summary_es": "Resumen automático (fallback): 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference a",
+      "summary": "自动摘要（占位）: 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference a",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:massgravel/Microsoft-Activation-Scripts": {
+      "hash": "sha256:cf80d403e74969b574ada5723cdf1e9031231346dd298cad4ad6bbe0538c2fe5",
+      "updated_at": "2025-09-20T14:44:02Z",
+      "summary_en": "Auto summary (fallback): Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
+      "summary_zh": "自动摘要（占位）: Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
+      "summary_es": "Resumen automático (fallback): Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
+      "summary": "自动摘要（占位）: Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:airbnb/javascript": {
+      "hash": "sha256:94b912cd89782a8ab66a19919294c24469ea098921c6361db4dfe25580749d43",
+      "updated_at": "2025-09-20T14:16:29Z",
+      "summary_en": "Auto summary (fallback): JavaScript Style Guide",
+      "summary_zh": "自动摘要（占位）: JavaScript Style Guide",
+      "summary_es": "Resumen automático (fallback): JavaScript Style Guide",
+      "summary": "自动摘要（占位）: JavaScript Style Guide",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:ytdl-org/youtube-dl": {
+      "hash": "sha256:bebf93ed8b483a8cc3fb6489a0887d6a87f9c4912b2e44934598f47a4f8acf26",
+      "updated_at": "2025-09-20T14:43:22Z",
+      "summary_en": "Auto summary (fallback): Command-line program to download videos from YouTube.com and other video sites",
+      "summary_zh": "自动摘要（占位）: Command-line program to download videos from YouTube.com and other video sites",
+      "summary_es": "Resumen automático (fallback): Command-line program to download videos from YouTube.com and other video sites",
+      "summary": "自动摘要（占位）: Command-line program to download videos from YouTube.com and other video sites",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:f/awesome-chatgpt-prompts": {
+      "hash": "sha256:a6db26d73e58667db2c02f081a3d66c70c7462903669f5bb56c0e6fac2d13991",
+      "updated_at": "2025-09-20T14:49:29Z",
+      "summary_en": "Auto summary (fallback): This repo includes ChatGPT prompt curation to use ChatGPT and other LLM tools better.",
+      "summary_zh": "自动摘要（占位）: This repo includes ChatGPT prompt curation to use ChatGPT and other LLM tools better.",
+      "summary_es": "Resumen automático (fallback): This repo includes ChatGPT prompt curation to use ChatGPT and other LLM tools better.",
+      "summary": "自动摘要（占位）: This repo includes ChatGPT prompt curation to use ChatGPT and other LLM tools better.",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:vercel/next.js": {
+      "hash": "sha256:d1cfdf9047f6b927d16cd8482d2aaf05394ba26d991005dca1b1a58e31fd6a4f",
+      "updated_at": "2025-09-20T14:26:28Z",
+      "summary_en": "Auto summary (fallback): The React Framework",
+      "summary_zh": "自动摘要（占位）: The React Framework",
+      "summary_es": "Resumen automático (fallback): The React Framework",
+      "summary": "自动摘要（占位）: The React Framework",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:golang/go": {
+      "hash": "sha256:6e5e1fb56e8afc6b721691c48fbf63fc3e4753ac16f410a6a1c9eb664f1ea4dd",
+      "updated_at": "2025-09-20T14:25:01Z",
+      "summary_en": "Auto summary (fallback): The Go programming language",
+      "summary_zh": "自动摘要（占位）: The Go programming language",
+      "summary_es": "Resumen automático (fallback): The Go programming language",
+      "summary": "自动摘要（占位）: The Go programming language",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:Genymobile/scrcpy": {
+      "hash": "sha256:b105b4bedf68377f1680168bc8526725ff82c78e72d411bef0ca642681c22163",
+      "updated_at": "2025-09-20T14:33:50Z",
+      "summary_en": "Auto summary (fallback): Display and control your Android device",
+      "summary_zh": "自动摘要（占位）: Display and control your Android device",
+      "summary_es": "Resumen automático (fallback): Display and control your Android device",
+      "summary": "自动摘要（占位）: Display and control your Android device",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:yangshun/tech-interview-handbook": {
+      "hash": "sha256:9266ee16ace233f833c7b45d38c681d003420caf16aab55d6ad9303bfa245370",
+      "updated_at": "2025-09-20T14:26:14Z",
+      "summary_en": "Auto summary (fallback): 💯 Curated coding interview preparation materials for busy software engineers",
+      "summary_zh": "自动摘要（占位）: 💯 Curated coding interview preparation materials for busy software engineers",
+      "summary_es": "Resumen automático (fallback): 💯 Curated coding interview preparation materials for busy software engineers",
+      "summary": "自动摘要（占位）: 💯 Curated coding interview preparation materials for busy software engineers",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:yt-dlp/yt-dlp": {
+      "hash": "sha256:f71d199d4d418b9eaf6677c60bb9df4ad44188a2e0e377d20540fc1bbe750086",
+      "updated_at": "2025-09-20T14:53:09Z",
+      "summary_en": "Auto summary (fallback): A feature-rich command-line audio/video downloader",
+      "summary_zh": "自动摘要（占位）: A feature-rich command-line audio/video downloader",
+      "summary_es": "Resumen automático (fallback): A feature-rich command-line audio/video downloader",
+      "summary": "自动摘要（占位）: A feature-rich command-line audio/video downloader",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:facebook/react-native": {
+      "hash": "sha256:15b4884d3569d309e611419adcbe0aad2465b664366faef04c190b12c49fe62e",
+      "updated_at": "2025-09-20T14:26:56Z",
+      "summary_en": "Auto summary (fallback): A framework for building native applications using React",
+      "summary_zh": "自动摘要（占位）: A framework for building native applications using React",
+      "summary_es": "Resumen automático (fallback): A framework for building native applications using React",
+      "summary": "自动摘要（占位）: A framework for building native applications using React",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:microsoft/PowerToys": {
+      "hash": "sha256:e687f3d570d36dfd08bbf07f83fb4fba673390ba4e7b7a15c80b4acc26fd74a8",
+      "updated_at": "2025-09-20T14:19:17Z",
+      "summary_en": "Auto summary (fallback): Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks",
+      "summary_zh": "自动摘要（占位）: Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks",
+      "summary_es": "Resumen automático (fallback): Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks",
+      "summary": "自动摘要（占位）: Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:Chalarangelo/30-seconds-of-code": {
+      "hash": "sha256:3f96ac4fdd2447a86f510b9b5c1ca3e58bba19cf4bcdc417b1f43ef0ab5b4157",
+      "updated_at": "2025-09-20T14:26:50Z",
+      "summary_en": "Auto summary (fallback): Coding articles to level up your development skills",
+      "summary_zh": "自动摘要（占位）: Coding articles to level up your development skills",
+      "summary_es": "Resumen automático (fallback): Coding articles to level up your development skills",
+      "summary": "自动摘要（占位）: Coding articles to level up your development skills",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:electron/electron": {
+      "hash": "sha256:005ef5792fd81e0d6ea10a39762fbed9f0eee8f5da1c8275e7e183c15876e7f4",
+      "updated_at": "2025-09-20T14:27:03Z",
+      "summary_en": "Auto summary (fallback): :electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS",
+      "summary_zh": "自动摘要（占位）: :electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS",
+      "summary_es": "Resumen automático (fallback): :electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS",
+      "summary": "自动摘要（占位）: :electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:kubernetes/kubernetes": {
+      "hash": "sha256:7ec41169606077671666a3d058004167922f0fbf389739a71b409915fe941a86",
+      "updated_at": "2025-09-20T14:16:53Z",
+      "summary_en": "Auto summary (fallback): Production-Grade Container Scheduling and Management",
+      "summary_zh": "自动摘要（占位）: Production-Grade Container Scheduling and Management",
+      "summary_es": "Resumen automático (fallback): Production-Grade Container Scheduling and Management",
+      "summary": "自动摘要（占位）: Production-Grade Container Scheduling and Management",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:langflow-ai/langflow": {
+      "hash": "sha256:b42ad9508c4fee436419b0d5c7e4638e63f1cfb1e970a0d54a09c0a1f2218ff9",
+      "updated_at": "2025-09-20T14:46:31Z",
+      "summary_en": "Auto summary (fallback): Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+      "summary_zh": "自动摘要（占位）: Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+      "summary_es": "Resumen automático (fallback): Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+      "summary": "自动摘要（占位）: Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:mrdoob/three.js": {
+      "hash": "sha256:26a6db5126890523c53a5d537cc08c2e0dac4fc27a29aaf56f418a67b69db52e",
+      "updated_at": "2025-09-20T14:43:59Z",
+      "summary_en": "Auto summary (fallback): JavaScript 3D Library.",
+      "summary_zh": "自动摘要（占位）: JavaScript 3D Library.",
+      "summary_es": "Resumen automático (fallback): JavaScript 3D Library.",
+      "summary": "自动摘要（占位）: JavaScript 3D Library.",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:langchain-ai/langchain": {
+      "hash": "sha256:d2b9b633e4cc97bab9797eafd2d6e3276a2d7c423fddb3a7a99617c4ca017e4e",
+      "updated_at": "2025-09-20T14:44:41Z",
+      "summary_en": "Auto summary (fallback): 🦜🔗 Build context-aware reasoning applications",
+      "summary_zh": "自动摘要（占位）: 🦜🔗 Build context-aware reasoning applications",
+      "summary_es": "Resumen automático (fallback): 🦜🔗 Build context-aware reasoning applications",
+      "summary": "自动摘要（占位）: 🦜🔗 Build context-aware reasoning applications",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:d3/d3": {
+      "hash": "sha256:6d188043ae77b95bc45f397e7df850baae906af8358f6194943894799c4cdb9a",
+      "updated_at": "2025-09-20T14:32:33Z",
+      "summary_en": "Auto summary (fallback): Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
+      "summary_zh": "自动摘要（占位）: Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
+      "summary_es": "Resumen automático (fallback): Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
+      "summary": "自动摘要（占位）: Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:axios/axios": {
+      "hash": "sha256:6cdfe3958d2750ca503293ed62dcbd4e4e9e99da593837488c4c569420e5bc4d",
+      "updated_at": "2025-09-20T14:52:27Z",
+      "summary_en": "Auto summary (fallback): Promise based HTTP client for the browser and node.js",
+      "summary_zh": "自动摘要（占位）: Promise based HTTP client for the browser and node.js",
+      "summary_es": "Resumen automático (fallback): Promise based HTTP client for the browser and node.js",
+      "summary": "自动摘要（占位）: Promise based HTTP client for the browser and node.js",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
+    },
+    "github:excalidraw/excalidraw": {
+      "hash": "sha256:dae7dbed5799d63b30f15144faed0bf78b7cc4d30ff3900f3c8b4b17644b8b67",
+      "updated_at": "2025-09-20T14:24:23Z",
+      "summary_en": "Auto summary (fallback): Virtual whiteboard for sketching hand-drawn like diagrams",
+      "summary_zh": "自动摘要（占位）: Virtual whiteboard for sketching hand-drawn like diagrams",
+      "summary_es": "Resumen automático (fallback): Virtual whiteboard for sketching hand-drawn like diagrams",
+      "summary": "自动摘要（占位）: Virtual whiteboard for sketching hand-drawn like diagrams",
+      "last_generated": "2025-09-20T14:54:50.748Z",
+      "fallback": true
     }
   }
 }

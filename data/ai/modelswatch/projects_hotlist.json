@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T14:39:08.451Z",
+  "updated_at": "2025-09-20T14:54:55.340Z",
   "by_category": {
     "framework_core": [
       {
@@ -179,6 +179,59 @@
           "hidden": false
         },
         "score_engineering": 0.19998399361893981
+      },
+      {
+        "id": "EbookFoundation/free-programming-books",
+        "source": "github",
+        "name": "free-programming-books",
+        "url": "https://github.com/EbookFoundation/free-programming-books",
+        "tags": [
+          "books",
+          "education",
+          "hacktoberfest",
+          "list",
+          "resource"
+        ],
+        "stats": {
+          "stars_total": 368881,
+          "forks_total": 64192,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:53:33Z",
+        "added_at": "2025-09-20",
+        "summary": ":books: Freely available programming books",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.1999936467058513
+      },
+      {
+        "id": "vuejs/vue",
+        "source": "github",
+        "name": "vue",
+        "url": "https://github.com/vuejs/vue",
+        "tags": [
+          "framework",
+          "frontend",
+          "javascript",
+          "vue"
+        ],
+        "stats": {
+          "stars_total": 209447,
+          "forks_total": 33767,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:53:31Z",
+        "added_at": "2025-09-20",
+        "summary": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19999349238982542
       }
     ],
     "deployment_serving": [
@@ -800,6 +853,63 @@
           "hidden": false
         },
         "score_engineering": 0.19993724356712061
+      },
+      {
+        "id": "ytdl-org/youtube-dl",
+        "source": "github",
+        "name": "youtube-dl",
+        "url": "https://github.com/ytdl-org/youtube-dl",
+        "tags": [],
+        "stats": {
+          "stars_total": 137325,
+          "forks_total": 10466,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:43:22Z",
+        "added_at": "2025-09-20",
+        "summary": "Command-line program to download videos from YouTube.com and other video sites",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19994650869778413
+      },
+      {
+        "id": "airbnb/javascript",
+        "source": "github",
+        "name": "javascript",
+        "url": "https://github.com/airbnb/javascript",
+        "tags": [
+          "arrow-functions",
+          "es2015",
+          "es2016",
+          "es2017",
+          "es2018",
+          "es6",
+          "eslint",
+          "javascript",
+          "linting",
+          "naming-conventions",
+          "style-guide",
+          "style-linter",
+          "styleguide",
+          "tc39"
+        ],
+        "stats": {
+          "stars_total": 147421,
+          "forks_total": 26781,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:16:29Z",
+        "added_at": "2025-09-20",
+        "summary": "JavaScript Style Guide",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19982212081611045
       }
     ]
   }

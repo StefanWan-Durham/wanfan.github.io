@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2025-09-20T14:39:08.778Z",
+  "updated_at": "2025-09-20T14:54:55.773Z",
   "period": "2025-W38",
   "sections": {
     "overview": {
-      "zh": "（本周摘要暂不可用） [empty]",
+      "zh": "（本周摘要暂不可用） [timeout]",
       "en": "(Weekly summary unavailable) [empty]",
       "es": "(Resumen semanal no disponible) [empty]"
     }
@@ -13,63 +13,63 @@
     "task_distribution": [
       {
         "task": "text_to_image",
-        "count": 7
+        "count": 9
       },
       {
         "task": "text_to_video",
-        "count": 7
+        "count": 9
       },
       {
         "task": "lightweight_visual_model",
-        "count": 7
+        "count": 9
       },
       {
         "task": "code_generation",
-        "count": 7
+        "count": 9
       },
       {
         "task": "image_text_alignment",
-        "count": 7
+        "count": 9
       },
       {
         "task": "multimodal_understanding_generation",
-        "count": 7
+        "count": 9
       },
       {
         "task": "lightweight_multimodal_model",
-        "count": 7
+        "count": 9
       },
       {
         "task": "model_compression",
-        "count": 7
+        "count": 9
       },
       {
         "task": "model_quantization",
-        "count": 7
+        "count": 9
       },
       {
         "task": "model_distillation",
-        "count": 7
+        "count": 9
       },
       {
         "task": "inference_acceleration",
-        "count": 7
+        "count": 9
       },
       {
         "task": "auto_evaluation_models",
-        "count": 7
+        "count": 9
       },
       {
         "task": "model_monitoring",
-        "count": 7
+        "count": 9
       },
       {
         "task": "model_iterative_update",
-        "count": 7
+        "count": 9
       },
       {
         "task": "molecular_generation",
-        "count": 7
+        "count": 9
       },
       {
         "task": "llm_pretraining",
