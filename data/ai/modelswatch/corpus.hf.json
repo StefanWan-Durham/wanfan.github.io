@@ -1,5 +1,5 @@
 {
-  "updated_at": "2025-09-20T14:35:50.331Z",
+  "updated_at": "2025-09-20T15:01:11.067Z",
   "items": [
     {
       "id": "timm/mobilenetv3_small_100.lamb_in1k",
@@ -36,7 +36,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "Falconsai/nsfw_image_detection",
@@ -73,7 +76,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "sentence-transformers/all-MiniLM-L6-v2",
@@ -143,7 +146,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "dima806/fairface_age_image_detection",
@@ -181,7 +187,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "google-bert/bert-base-uncased",
@@ -227,7 +233,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "tech4humans/yolov8s-signature-detector",
@@ -269,7 +275,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "object_detection"
+      ]
     },
     {
       "id": "pyannote/segmentation-3.0",
@@ -312,7 +321,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "pyannote/wespeaker-voxceleb-resnet34-LM",
@@ -355,7 +364,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "pyannote/speaker-diarization-3.1",
@@ -399,7 +408,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "sentence-transformers/all-mpnet-base-v2",
@@ -468,7 +477,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "Bingsu/adetailer",
@@ -502,7 +514,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "openai/clip-vit-base-patch32",
@@ -540,7 +552,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "openai-community/gpt2",
@@ -585,7 +597,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "FacebookAI/roberta-large",
@@ -630,7 +642,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "distilbert/distilbert-base-uncased",
@@ -674,7 +686,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "google/electra-base-discriminator",
@@ -713,7 +725,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "FacebookAI/roberta-base",
@@ -758,7 +770,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "facebook/opt-125m",
@@ -798,7 +810,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "prajjwal1/bert-tiny",
@@ -838,7 +850,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
@@ -922,16 +934,19 @@
       },
       "stats": {
         "downloads_total": 9687012,
-        "likes_total": 1012
+        "likes_total": 1013
       },
-      "score": 19880.024,
+      "score": 19880.524,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "amazon/chronos-t5-small",
@@ -975,7 +990,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     },
     {
       "id": "context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16",
@@ -1026,7 +1044,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "omni-research/Tarsier2-Recap-7b",
@@ -1058,7 +1076,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "openai/clip-vit-large-patch14",
@@ -1088,16 +1106,16 @@
       },
       "stats": {
         "downloads_total": 8363907,
-        "likes_total": 1861
+        "likes_total": 1862
       },
-      "score": 17658.314000000002,
+      "score": 17658.814000000002,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "trpakov/vit-face-expression",
@@ -1135,7 +1153,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "google/vit-base-patch16-224-in21k",
@@ -1175,7 +1193,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "FacebookAI/xlm-roberta-base",
@@ -1310,7 +1331,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "facebook/contriever",
@@ -1343,7 +1364,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "facebook/bart-base",
@@ -1382,7 +1403,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "pyannote/segmentation",
@@ -1424,7 +1445,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "openai/gpt-oss-20b",
@@ -1464,7 +1485,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "inference_acceleration"
+      ]
     },
     {
       "id": "meta-llama/Llama-3.2-1B-Instruct",
@@ -1515,7 +1539,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "BAAI/bge-base-en-v1.5",
@@ -1563,7 +1587,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "Qwen/Qwen2.5-3B-Instruct",
@@ -1605,7 +1629,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "Qwen/Qwen2.5-7B-Instruct",
@@ -1648,7 +1672,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "meta-llama/Llama-3.1-8B-Instruct",
@@ -1700,7 +1724,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "pyannote/voice-activity-detection",
@@ -1741,7 +1765,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "colbert-ir/colbertv2.0",
@@ -1783,7 +1807,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "BAAI/bge-m3",
@@ -1826,7 +1850,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "Qwen/Qwen3-0.6B",
@@ -1857,16 +1881,16 @@
       },
       "stats": {
         "downloads_total": 5780115,
-        "likes_total": 634
+        "likes_total": 635
       },
-      "score": 11877.23,
+      "score": 11877.73,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "nlpaueb/legal-bert-base-uncased",
@@ -1905,7 +1929,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "autogluon/chronos-bolt-base",
@@ -1945,7 +1969,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     },
     {
       "id": "Datadog/Toto-Open-Base-1.0",
@@ -1989,7 +2016,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
@@ -2019,7 +2046,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "facebook/esmfold_v1",
@@ -2052,7 +2082,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "Qwen/Qwen2.5-1.5B-Instruct",
@@ -2094,7 +2124,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "BAAI/bge-small-en-v1.5",
@@ -2142,7 +2172,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "coqui/XTTS-v2",
@@ -2173,7 +2203,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "tts"
+      ]
     },
     {
       "id": "thuml/sundial-base-128m",
@@ -2218,7 +2251,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "dphn/dolphin-2.9.1-yi-1.5-34b",
@@ -2267,7 +2300,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "code_generation"
+      ]
     },
     {
       "id": "google-bert/bert-base-multilingual-cased",
@@ -2410,7 +2446,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "Qwen/Qwen2-VL-2B-Instruct",
@@ -2453,7 +2489,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.935Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "sentence-transformers/gtr-t5-base",
@@ -2492,7 +2528,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "openai/whisper-large-v3",
@@ -2630,7 +2666,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "asr"
+      ]
     },
     {
       "id": "google-t5/t5-small",
@@ -2686,7 +2725,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "google/t5gemma-b-b-prefixlm",
@@ -2736,7 +2775,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "jinaai/jina-embeddings-v3",
@@ -2870,7 +2909,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
@@ -2907,7 +2946,7 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T15:01:12.778Z"
     },
     {
       "id": "Comfy-Org/Wan_2.1_ComfyUI_repackaged",
@@ -2937,7 +2976,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "Salesforce/moirai-2.0-R-small",
@@ -2976,7 +3018,10 @@
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-20T14:35:51.936Z"
+      "updated_at": "2025-09-20T15:01:12.778Z",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     }
   ]
 }

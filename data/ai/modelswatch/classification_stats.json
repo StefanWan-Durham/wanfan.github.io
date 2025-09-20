@@ -1,15 +1,57 @@
 {
-  "generated_at": "2025-09-20T14:39:08.891Z",
+  "generated_at": "2025-09-20T15:01:20.569Z",
   "hf": {
     "total": 60,
-    "with_tasks": 0,
-    "pct_with_tasks": 0,
-    "task_distribution": []
+    "with_tasks": 15,
+    "pct_with_tasks": 25,
+    "task_distribution": [
+      {
+        "task": "inference_acceleration",
+        "count": 4
+      },
+      {
+        "task": "time_series_forecasting",
+        "count": 3
+      },
+      {
+        "task": "image_classification",
+        "count": 2
+      },
+      {
+        "task": "text_to_image",
+        "count": 2
+      },
+      {
+        "task": "object_detection",
+        "count": 1
+      },
+      {
+        "task": "tts",
+        "count": 1
+      },
+      {
+        "task": "code_generation",
+        "count": 1
+      },
+      {
+        "task": "asr",
+        "count": 1
+      }
+    ]
   },
   "github": {
     "total": 42,
-    "with_tasks": 0,
-    "pct_with_tasks": 0,
-    "task_distribution": []
+    "with_tasks": 2,
+    "pct_with_tasks": 4.76,
+    "task_distribution": [
+      {
+        "task": "text_to_image",
+        "count": 1
+      },
+      {
+        "task": "tool_use",
+        "count": 1
+      }
+    ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T14:39:08.401Z",
+  "updated_at": "2025-09-20T15:01:20.011Z",
   "by_category": {
     "image_classification": [
       {
@@ -1073,6 +1073,160 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "BAAI/bge-m3",
+        "source": "hf",
+        "name": "bge-m3",
+        "url": "https://huggingface.co/BAAI/bge-m3",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "xlm-roberta",
+          "feature-extraction",
+          "sentence-similarity",
+          "arxiv:2402.03216",
+          "arxiv:2004.04906",
+          "arxiv:2106.14807",
+          "arxiv:2107.05720",
+          "arxiv:2004.12832",
+          "license:mit",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5822153,
+          "likes_total": 2365,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "image_text_alignment",
+          "inference_acceleration",
+          "auto_evaluation_models"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
+        ]
       }
     ],
     "text_to_video": [
@@ -1485,6 +1639,160 @@
           "model_monitoring",
           "model_iterative_update",
           "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-m3",
+        "source": "hf",
+        "name": "bge-m3",
+        "url": "https://huggingface.co/BAAI/bge-m3",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "xlm-roberta",
+          "feature-extraction",
+          "sentence-similarity",
+          "arxiv:2402.03216",
+          "arxiv:2004.04906",
+          "arxiv:2106.14807",
+          "arxiv:2107.05720",
+          "arxiv:2004.12832",
+          "license:mit",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5822153,
+          "likes_total": 2365,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "image_text_alignment",
+          "inference_acceleration",
+          "auto_evaluation_models"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
         ]
       }
     ],
@@ -2499,6 +2807,169 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-1.5B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-1.5B",
+          "base_model:finetune:Qwen/Qwen2.5-1.5B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5028303,
+          "likes_total": 514,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
+        ]
       }
     ],
     "llm_pretraining": [
@@ -3358,6 +3829,112 @@
           "hidden": false
         },
         "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-1.5B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-1.5B",
+          "base_model:finetune:Qwen/Qwen2.5-1.5B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5028303,
+          "likes_total": 514,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -5319,6 +5896,160 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "BAAI/bge-m3",
+        "source": "hf",
+        "name": "bge-m3",
+        "url": "https://huggingface.co/BAAI/bge-m3",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "xlm-roberta",
+          "feature-extraction",
+          "sentence-similarity",
+          "arxiv:2402.03216",
+          "arxiv:2004.04906",
+          "arxiv:2106.14807",
+          "arxiv:2107.05720",
+          "arxiv:2004.12832",
+          "license:mit",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5822153,
+          "likes_total": 2365,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "image_text_alignment",
+          "inference_acceleration",
+          "auto_evaluation_models"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
+        ]
       }
     ],
     "multimodal_understanding_generation": [
@@ -5655,6 +6386,112 @@
           "hidden": false
         },
         "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-1.5B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-1.5B",
+          "base_model:finetune:Qwen/Qwen2.5-1.5B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5028303,
+          "likes_total": 514,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -6773,6 +7610,169 @@
           "model_monitoring",
           "model_iterative_update",
           "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-1.5B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-1.5B",
+          "base_model:finetune:Qwen/Qwen2.5-1.5B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5028303,
+          "likes_total": 514,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
         ]
       }
     ],
@@ -7984,6 +8984,169 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-1.5B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-1.5B",
+          "base_model:finetune:Qwen/Qwen2.5-1.5B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5028303,
+          "likes_total": 514,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
+        ]
       }
     ],
     "model_quantization": [
@@ -8377,6 +9540,169 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-1.5B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-1.5B",
+          "base_model:finetune:Qwen/Qwen2.5-1.5B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5028303,
+          "likes_total": 514,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
+        ]
       }
     ],
     "model_distillation": [
@@ -8769,6 +10095,169 @@
           "model_monitoring",
           "model_iterative_update",
           "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-1.5B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-1.5B",
+          "base_model:finetune:Qwen/Qwen2.5-1.5B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5028303,
+          "likes_total": 514,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
         ]
       }
     ],
@@ -9234,6 +10723,160 @@
           "model_monitoring",
           "model_iterative_update",
           "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-m3",
+        "source": "hf",
+        "name": "bge-m3",
+        "url": "https://huggingface.co/BAAI/bge-m3",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "xlm-roberta",
+          "feature-extraction",
+          "sentence-similarity",
+          "arxiv:2402.03216",
+          "arxiv:2004.04906",
+          "arxiv:2106.14807",
+          "arxiv:2107.05720",
+          "arxiv:2004.12832",
+          "license:mit",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5822153,
+          "likes_total": 2365,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "image_text_alignment",
+          "inference_acceleration",
+          "auto_evaluation_models"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
         ]
       }
     ],
@@ -9889,6 +11532,160 @@
           "inference_acceleration",
           "auto_evaluation_models",
           "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-m3",
+        "source": "hf",
+        "name": "bge-m3",
+        "url": "https://huggingface.co/BAAI/bge-m3",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "xlm-roberta",
+          "feature-extraction",
+          "sentence-similarity",
+          "arxiv:2402.03216",
+          "arxiv:2004.04906",
+          "arxiv:2106.14807",
+          "arxiv:2107.05720",
+          "arxiv:2004.12832",
+          "license:mit",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5822153,
+          "likes_total": 2365,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "image_text_alignment",
+          "inference_acceleration",
+          "auto_evaluation_models"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
         ]
       }
     ],
@@ -11061,6 +12858,169 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-1.5B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-1.5B",
+          "base_model:finetune:Qwen/Qwen2.5-1.5B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5028303,
+          "likes_total": 514,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
+        ]
       }
     ],
     "model_iterative_update": [
@@ -11453,6 +13413,169 @@
           "model_monitoring",
           "model_iterative_update",
           "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-1.5B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-1.5B",
+          "base_model:finetune:Qwen/Qwen2.5-1.5B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5028303,
+          "likes_total": 514,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "BAAI/bge-small-en-v1.5",
+        "source": "hf",
+        "name": "bge-small-en-v1.5",
+        "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "mteb",
+          "en",
+          "arxiv:2401.03462",
+          "arxiv:2312.15503",
+          "arxiv:2311.13534",
+          "arxiv:2310.07554",
+          "arxiv:2309.07597",
+          "license:mit",
+          "model-index",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5000832,
+          "likes_total": 372,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T15:01:12.778Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999972098804356,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update"
         ]
       }
     ],
@@ -12182,6 +14305,112 @@
           "hidden": false
         },
         "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen3-0.6B",
+        "source": "hf",
+        "name": "Qwen3-0.6B",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen3",
+          "text-generation",
+          "conversational",
+          "arxiv:2505.09388",
+          "base_model:Qwen/Qwen3-0.6B-Base",
+          "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5780115,
+          "likes_total": 635,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-1.5B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-1.5B",
+          "base_model:finetune:Qwen/Qwen2.5-1.5B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 5028303,
+          "likes_total": 514,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:54:44.658Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999959035577732,
         "task_keys": [
           "text_to_image",
           "text_to_video",
