@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T15:01:20.072Z",
+  "updated_at": "2025-09-20T15:09:14.526Z",
   "by_category": {
     "framework_core": [
       {
@@ -297,6 +297,58 @@
           "hidden": false
         },
         "score_engineering": 0.19999027245879253
+      },
+      {
+        "id": "kubernetes/kubernetes",
+        "source": "github",
+        "name": "kubernetes",
+        "url": "https://github.com/kubernetes/kubernetes",
+        "tags": [
+          "cncf",
+          "containers",
+          "go",
+          "kubernetes"
+        ],
+        "stats": {
+          "stars_total": 117570,
+          "forks_total": 41394,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T15:08:05Z",
+        "added_at": "2025-09-20",
+        "summary": "Production-Grade Container Scheduling and Management",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19999463541145449
+      },
+      {
+        "id": "ossu/computer-science",
+        "source": "github",
+        "name": "computer-science",
+        "url": "https://github.com/ossu/computer-science",
+        "tags": [
+          "awesome-list",
+          "computer-science",
+          "courses",
+          "curriculum"
+        ],
+        "stats": {
+          "stars_total": 193341,
+          "forks_total": 24147,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T15:06:11Z",
+        "added_at": "2025-09-20",
+        "summary": "🎓 Path to a free self-taught education in Computer Science!",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.1999858395445298
       }
     ],
     "deployment_serving": [
