@@ -15,6 +15,7 @@ const ROOT = path.resolve(__dirname, '../../');
 const DATA_DIR = path.join(ROOT, 'data/ai/modelswatch');
 const SNAP_DIR = path.join(DATA_DIR, 'snapshots');
 const CACHE_FILE = path.join(DATA_DIR, 'summary_cache.json');
+const PENDING_FILE = path.join(DATA_DIR, 'pending_summaries.json');
 const CORPUS_GH = path.join(DATA_DIR, 'corpus.github.json');
 const CORPUS_HF = path.join(DATA_DIR, 'corpus.hf.json');
 const SCHEMA_VERSION = 1;
@@ -76,15 +77,18 @@ async function main(){
   const nowIso = new Date().toISOString();
   let reuse=0, gen=0, total=0;
   const toGen=[]; const meta=[];
+  const bilingual = /^(1|true|yes|on)$/i.test(process.env.BILINGUAL_MODE||'');
   function processList(list, source){
     for(const it of (list||[])){
       if(!it || !it.id) continue; total++;
       const key = `${source}:${it.id}`;
       const h = hashItem(it);
       const cached = cache.models[key];
-      if(cached && cached.hash === h && cached.summary_en && cached.summary_zh && cached.summary_es){
+      // In bilingual mode, only require en + zh; es can be empty (later UI will map to en)
+      const hasFull = bilingual ? (cached && cached.hash === h && cached.summary_en && cached.summary_zh) : (cached && cached.hash === h && cached.summary_en && cached.summary_zh && cached.summary_es);
+      if(hasFull){
         // merge
-        it.summary_en = cached.summary_en; it.summary_zh = cached.summary_zh; it.summary_es = cached.summary_es; it.summary = cached.summary || it.summary_zh || it.summary_en || it.summary_es || it.summary || it.description || '';
+        it.summary_en = cached.summary_en; it.summary_zh = cached.summary_zh; it.summary_es = bilingual ? (cached.summary_es || cached.summary_en) : cached.summary_es; it.summary = cached.summary || it.summary_zh || it.summary_en || it.summary_es || it.summary || it.description || '';
         reuse++;
       } else {
         toGen.push({ it, key, hash: h, source });
@@ -93,6 +97,25 @@ async function main(){
   }
   processList(itemsHF, 'hf');
   processList(itemsGH, 'github');
+  // Load pending queue (hash list) and promote those items to front of toGen (retry first)
+  let pendingHashes = [];
+  try {
+    if(fs.existsSync(PENDING_FILE)){
+      const pendingRaw = JSON.parse(fs.readFileSync(PENDING_FILE,'utf-8'));
+      if(Array.isArray(pendingRaw)) pendingHashes = pendingRaw.slice(0,500); // safety cap
+    }
+  } catch{}
+  if(pendingHashes.length){
+    // Stable partition: items whose hash in pending go to front
+    const inPending = []; const rest = [];
+    for(const e of toGen){ (pendingHashes.includes(e.hash) ? inPending : rest).push(e); }
+    if(inPending.length){
+      toGen.length = 0;
+      inPending.forEach(x=> toGen.push(x));
+      rest.forEach(x=> toGen.push(x));
+      console.log(`[snapshot-summaries] pending priority: ${inPending.length} items moved to front`);
+    }
+  }
   console.log('[snapshot-summaries] debug after processList total', total, 'toGen', toGen.length);
   // Optional limiting (post-cold-start cost control)
   // Env variables:
@@ -188,6 +211,7 @@ async function main(){
 
   let fallbackCount = 0;
   let generated = [];
+  const failedHashes = [];
   if(toGen.length){
     if(llmUnavailable || !API_KEY){
       generated = toGen.map(({it,key,hash})=>{
@@ -210,7 +234,7 @@ async function main(){
       if(useBatch){
         const prompts = toGen.map(x=> buildPrompt(x.it));
         await new Promise(resolveBatch=>{
-          const child = spawn('python', ['tools/tri_summarizer.py','--batch']);
+          const child = spawn('python', ['tools/tri_summarizer.py','--batch'], { env: { ...process.env, BILINGUAL_MODE: bilingual ? '1':'0' } });
             let out='';
             child.stdout.on('data', d=> { out += d.toString(); });
             child.stderr.on('data', d=> { process.stderr.write(d.toString()); });
@@ -224,12 +248,16 @@ async function main(){
                     const entry = toGen[idx]; if(!entry) return;
                     const { it, key, hash } = entry;
                     let en = r.en||''; let zh = r.zh||''; let es = r.es||'';
+                    if(bilingual){
+                      // Spanish fallback to English (UI will show English where Spanish expected)
+                      if(!es) es = en;
+                    }
                     if(!(en||zh||es) && ENABLE_FALLBACK){
                       const base = (it.summary || it.description || '').slice(0,160).trim();
                       const short = base || it.name || it.id;
                       en = en || `Auto summary (fallback:empty): ${short}`;
                       zh = zh || `自动摘要（占位:空响应）: ${short}`;
-                      es = es || `Resumen automático (fallback: vacío): ${short}`;
+                      if(!bilingual) es = es || `Resumen automático (fallback: vacío): ${short}`; else es = en || zh;
                     }
                     const neutral = zh || en || es || it.summary || it.description || '';
                     if(en||zh||es){
@@ -241,6 +269,7 @@ async function main(){
                       generated.push(true);
                     } else {
                       generated.push(false);
+                      failedHashes.push(hash);
                     }
                   });
                   const diag = parsed.diagnostics || {};
@@ -254,7 +283,8 @@ async function main(){
               resolveBatch();
             });
             // feed prompts
-            child.stdin.write(prompts.join('\n')+'\n');
+            // Send prompts as JSON array to leverage new batch input format (reduces line-splitting edge cases)
+            child.stdin.write(JSON.stringify(prompts)+'\n');
             child.stdin.end();
         });
       } else {
@@ -263,12 +293,13 @@ async function main(){
           const prompt = buildPrompt(it);
           const res = await llmRequest(prompt);
           let { en, zh, es } = res;
+          if(bilingual){ if(!es) es = en; }
           if(!(en||zh||es) && ENABLE_FALLBACK){
             const base = (it.summary || it.description || '').slice(0,160).trim();
             const short = base || it.name || it.id;
             en = en || `Auto summary (fallback): ${short}`;
             zh = zh || `自动摘要（占位）: ${short}`;
-            es = es || `Resumen automático (fallback): ${short}`;
+            if(!bilingual) es = es || `Resumen automático (fallback): ${short}`; else es = en || zh;
           }
           const neutral = zh || en || es || it.summary || it.description || '';
           if(en||zh||es){
@@ -278,6 +309,7 @@ async function main(){
             cache.models[key] = { hash, updated_at: it.updated_at || nowIso, summary_en: en, summary_zh: zh, summary_es: es, summary: neutral, last_generated: nowIso, fallback: isFallback };
             gen++; return true;
           }
+          failedHashes.push(hash);
           return false;
         });
         generated = per;
@@ -316,6 +348,17 @@ async function main(){
       cold_start_done: coldStartDone,
       original_to_generate: originalToGenCount
     });
+  } catch{}
+  // Write pending failures (dedupe); if none failed remove file
+  try {
+    if(failedHashes.length){
+      const unique = Array.from(new Set(failedHashes)).slice(0,2000);
+      fs.writeFileSync(PENDING_FILE, JSON.stringify(unique, null, 2));
+      console.log('[snapshot-summaries] wrote pending failures', unique.length);
+    } else if(fs.existsSync(PENDING_FILE)) {
+      fs.unlinkSync(PENDING_FILE);
+      console.log('[snapshot-summaries] cleared pending file (no failures)');
+    }
   } catch{}
   // Cold start marker auto-write
   try {

@@ -7,6 +7,7 @@
 ## 1. 目标
 - 冷启动阶段：不设限流，最大化一次性获取完整高质量三语摘要基线。
 - 稳态阶段：通过限流参数控制新增 LLM 调用量，保障成本可预测。
+- （可选）双语模式：仅生成英文 + 中文，西班牙语界面直接复用英文，进一步降低调用耗时与成本。
 - 提供重置（reset）后再冷启动再进入稳态的重复闭环。
 
 ---
@@ -56,6 +57,7 @@
 | `TRI_ENABLE_EXPAND` | 开启扩展补充信息 |
 | `SPEED_MODE=1` | 关闭 rewrite/expand，最低 tokens 模式 |
 | `BATCH_PROGRESS_INTERVAL` | Python 批处理进度输出间隔（条数） |
+| `BILINGUAL_MODE=1` | 启用双语模式（仅 en+zh；es 字段回退为英文） |
 
 ### 重置
 | 变量 | 用途 |
@@ -159,6 +161,7 @@ SPEED_MODE=1
 UNIFIED_JSON_NO_SEQ=1
 TRI_ENABLE_REWRITE=0
 TRI_ENABLE_EXPAND=0
+BILINGUAL_MODE=1
 ```
 
 ---

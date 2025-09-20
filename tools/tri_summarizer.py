@@ -24,11 +24,20 @@ if _REPO_ROOT not in sys.path:
 
 from tools.ai_llm import chat_once, LLMError  # type: ignore
 
-JSON_TEMPLATE_INSTRUCTION = (
-    "Return ONLY compact JSON with keys: summary_en, summary_zh, summary_es. "
-    "Constraints: summary_en 70-90 words; summary_zh 120-160 汉字; summary_es 70-90 words. "
-    "Factual, no marketing, cover purpose, core capabilities, strengths, typical use cases." 
-)
+def _build_json_instruction():
+    bilingual = os.getenv('BILINGUAL_MODE','0').lower() in ('1','true','yes','on')
+    if bilingual:
+        return (
+            "Return ONLY compact JSON with keys: summary_en, summary_zh. "
+            "Constraints: summary_en 70-90 words; summary_zh 120-160 汉字. "
+            "Factual, no marketing, cover purpose, core capabilities, strengths, typical use cases."
+        )
+    return (
+        "Return ONLY compact JSON with keys: summary_en, summary_zh, summary_es. "
+        "Constraints: summary_en 70-90 words; summary_zh 120-160 汉字; summary_es 70-90 words. "
+        "Factual, no marketing, cover purpose, core capabilities, strengths, typical use cases."
+    )
+JSON_TEMPLATE_INSTRUCTION = _build_json_instruction()
 
 TRANSLATE_ZH = (
     "将以下英文摘要翻译为 120-160 汉字的专业中文摘要，保持技术名词准确，语句精炼，不添加新信息："
@@ -42,9 +51,11 @@ def _now():
     return time.time()
 
 def _call_json(prompt: str, temperature: float) -> Dict[str, Any]:
+    bilingual = os.getenv('BILINGUAL_MODE','0').lower() in ('1','true','yes','on')
+    example = '{"summary_en":"...","summary_zh":"..."}' if bilingual else '{"summary_en":"...","summary_zh":"...","summary_es":"..."}'
     base_prompt = (
         f"{JSON_TEMPLATE_INSTRUCTION}\n---\n{prompt}\n---\nExample JSON format: "
-        '{"summary_en":"...","summary_zh":"...","summary_es":"..."}'
+        f"{example}"
     )
     text = chat_once(base_prompt, system="You are a precise multilingual summarizer.", temperature=temperature, max_tokens=900, want_json=True)
     # Some providers return raw JSON text; others may embed code fences.
@@ -203,6 +214,7 @@ def tri_summary(prompt: str) -> Dict[str, Any]:
     temperature = float(os.getenv("TRI_MODEL_TEMPERATURE", "0.35"))
     speed_mode = os.getenv('SPEED_MODE','0').lower() in ('1','true','yes','on')
     attempt_json_first = os.getenv("TRI_JSON_FIRST", "1").lower() in ("1","true","yes","on")
+    bilingual = os.getenv('BILINGUAL_MODE','0').lower() in ('1','true','yes','on')
     if speed_mode:
         # In speed mode, we may disable JSON-first if explicitly requested via TRI_JSON_FIRST=0
         # else keep behavior but disable rewrite/expand later.
@@ -217,14 +229,20 @@ def tri_summary(prompt: str) -> Dict[str, Any]:
             parsed = _call_json(prompt, temperature)
             en = (parsed.get("summary_en") or "").strip()
             zh = (parsed.get("summary_zh") or "").strip()
-            es = (parsed.get("summary_es") or "").strip()
+            if bilingual:
+                # In bilingual mode we intentionally skip Spanish; reuse EN later for es field
+                es = ''
+            else:
+                es = (parsed.get("summary_es") or "").strip()
         except Exception as e:
             meta["errors"].append(f"json_first_failed:{type(e).__name__}:{str(e)[:160]}")
             en = zh = es = ""
 
     # Optional: if UNIFIED_JSON_NO_SEQ set and we got ANY content from JSON path, skip sequential to save tokens.
     unified_no_seq = os.getenv('UNIFIED_JSON_NO_SEQ','0').lower() in ('1','true','yes','on')
-    if not (en and zh and es) and not (unified_no_seq and (en or zh or es)):
+    # For bilingual mode, completion criteria changes: need only en & zh
+    need_all = (not bilingual and not (en and zh and es)) or (bilingual and not (en and zh))
+    if need_all and not (unified_no_seq and (en or zh or es)):
         # sequential fallback
         meta["path"] = meta.get("path","") + ("+seq" if meta.get("path") else "seq")
         try:
@@ -243,11 +261,12 @@ def tri_summary(prompt: str) -> Dict[str, Any]:
             except Exception as e:
                 meta["errors"].append(f"zh_failed:{type(e).__name__}:{str(e)[:160]}")
                 zh = ""
-            try:
-                es = chat_once(f"{TRANSLATE_ES}\n---\n{en}", system="You are a professional translator.", temperature=0.25, max_tokens=600)
-            except Exception as e:
-                meta["errors"].append(f"es_failed:{type(e).__name__}:{str(e)[:160]}")
-                es = ""
+            if not bilingual:
+                try:
+                    es = chat_once(f"{TRANSLATE_ES}\n---\n{en}", system="You are a professional translator.", temperature=0.25, max_tokens=600)
+                except Exception as e:
+                    meta["errors"].append(f"es_failed:{type(e).__name__}:{str(e)[:160]}")
+                    es = ""
 
     raw_en, raw_zh, raw_es = en, zh, es
     # Enforce soft constraints
@@ -309,6 +328,10 @@ def tri_summary(prompt: str) -> Dict[str, Any]:
     if expanded:
         meta['expanded'] = expanded
     meta["elapsed_sec"] = round(_now()-t0,3)
+    if bilingual:
+        # Provide es as a direct alias to en for downstream compatibility (UI can treat Spanish as English fallback)
+        if not es:
+            es = en
     meta["ok"] = bool(en or zh or es)
     return {"en": en, "zh": zh, "es": es, "meta": meta}
 
@@ -371,33 +394,135 @@ def tri_summary_batch(prompts: List[str]) -> Dict[str, Any]:
     progress_interval = float(os.getenv('BATCH_PROGRESS_INTERVAL','0')) or 0.0
     next_progress = progress_interval if progress_interval>0 else None
     processed = 0
-    if concurrency == 1:
-        iterable = enumerate(prompts)
-        for idx, p in iterable:
-            r = tri_summary_cached(p)
-            results.append(r)
-            processed += 1
+    group_size = int(os.getenv('TRI_GROUP_JSON_SIZE','1') or '1')
+    bilingual = os.getenv('BILINGUAL_MODE','0').lower() in ('1','true','yes','on')
+    use_group = group_size > 1
+
+    # Pre-load cache hits quickly if using group mode (so we only aggregate the misses)
+    if use_group:
+        cache_hits_index = []
+        misses_index = []
+        for i,p in enumerate(prompts):
+            h = _hash_prompt(p)
+            _ensure_persist_loaded()
+            cached = None
+            if h in _CACHE:
+                cached = _CACHE[h]
+            elif _PERSIST_ENABLED and h in _PERSIST_CACHE:
+                entry = _PERSIST_CACHE[h]
+                cached = { 'en': entry.get('en',''), 'zh': entry.get('zh',''), 'es': entry.get('es',''), 'meta': { 'ok': True, 'path': 'persist', 'hash': h, 'cache_hit': True } }
+                _CACHE[h] = cached
+            if cached:
+                results.append({k: cached[k] for k in ('en','zh','es','meta')})
+                cache_hits_index.append(i)
+                processed += 1
+            else:
+                # placeholder; will fill later
+                results.append(None)  # type: ignore
+                misses_index.append(i)
+        if next_progress and processed >= next_progress:
+            sys.stderr.write(f"[tri_summarizer][progress] {processed}/{len(prompts)} done (cache)\n")
+            sys.stderr.flush()
+            next_progress += progress_interval
+
+        def _aggregate_call(chunk_indices: List[int]):
+            # Build a single prompt instructing JSON array mapping index-> summaries
+            sub_prompts = [(i, prompts[i]) for i in chunk_indices]
+            # Construct instruction
+            example_obj = '{"index":1,"summary_en":"...","summary_zh":"..."}' if bilingual else '{"index":1,"summary_en":"...","summary_zh":"...","summary_es":"..."}'
+            join_text = []
+            for idx, p in sub_prompts:
+                join_text.append(f"ITEM {idx}:\n{p}\n---")
+            joined = '\n'.join(join_text)
+            group_instruction = (
+                "You will receive multiple open-source AI project descriptions. For EACH item produce concise factual summaries. "
+                + ("Return ONLY JSON array; each element has keys: index, summary_en, summary_zh." if bilingual else "Return ONLY JSON array; each element has keys: index, summary_en, summary_zh, summary_es.")
+                + " summary_en 70-90 words; summary_zh 120-160 汉字; "
+                + ("" if bilingual else "summary_es 70-90 words; ")
+                + "NO marketing. Maintain order by index. If an item is unclear still output an empty string for missing summaries."
+            )
+            full_prompt = f"{group_instruction}\n---\n{joined}\nExample: [{example_obj}]"
+            try:
+                raw = chat_once(full_prompt, system="You are a precise multilingual summarizer.", temperature=float(os.getenv('TRI_MODEL_TEMPERATURE','0.35')), max_tokens= min(3000, 900*len(sub_prompts)), want_json=True)
+            except Exception as e:
+                raise
+            txt = raw.strip().strip('`')
+            try:
+                data = json.loads(txt)
+            except Exception:
+                # try extract bracket content
+                import re
+                m = re.search(r'\[[\s\S]*\]', txt)
+                if not m:
+                    raise
+                data = json.loads(m.group(0))
+            if not isinstance(data, list):
+                raise ValueError('aggregate JSON not list')
+            # index->record map
+            mapping = {}
+            for obj in data:
+                if isinstance(obj, dict) and 'index' in obj:
+                    mapping[int(obj['index'])] = obj
+            for idx,_prompt in sub_prompts:
+                obj = mapping.get(idx, {})
+                en = (obj.get('summary_en') or '').strip()
+                zh = (obj.get('summary_zh') or '').strip()
+                es = '' if bilingual else (obj.get('summary_es') or '').strip()
+                if bilingual and not es:
+                    es = en
+                h = _hash_prompt(_prompt)
+                meta = { 'ok': bool(en or zh or es), 'path': 'json_group', 'hash': h }
+                r = { 'en': en, 'zh': zh, 'es': es, 'meta': meta }
+                _CACHE[h] = r
+                if _PERSIST_ENABLED and en:
+                    _PERSIST_CACHE[h] = { 'en': en, 'zh': zh, 'es': es }
+                results[idx] = r
+        # Process misses in chunks
+        for start in range(0, len(misses_index), group_size):
+            chunk = misses_index[start:start+group_size]
+            try:
+                _aggregate_call(chunk)
+            except Exception as e:
+                # fallback per-item for this chunk
+                for idx in chunk:
+                    try:
+                        r = tri_summary_cached(prompts[idx])
+                    except Exception as e2:
+                        r = { 'en':'','zh':'','es':'','meta': { 'ok': False, 'errors':[f'agg_item_fail:{type(e2).__name__}'], 'path':'group_fallback' } }
+                    results[idx] = r
+            processed = sum(1 for v in results if v is not None)
             if next_progress and processed >= next_progress:
-                # Write to stderr to not pollute JSON consumers (call site may just capture stdout)
                 sys.stderr.write(f"[tri_summarizer][progress] {processed}/{len(prompts)} done\n")
                 sys.stderr.flush()
                 next_progress += progress_interval
     else:
-        with ThreadPoolExecutor(max_workers=concurrency) as ex:
-            future_map = {ex.submit(tri_summary_cached, p): i for i, p in enumerate(prompts)}
-            temp_results = [None]*len(prompts)
-            for fut in as_completed(future_map):
-                i = future_map[fut]
-                try:
-                    temp_results[i] = fut.result()
-                except Exception as e:
-                    temp_results[i] = {"en":"","zh":"","es":"","meta":{"ok":False,"errors":[f"batch_exc:{type(e).__name__}"],"path":"batch"}}
+        # Original path (no grouping)
+        if concurrency == 1:
+            iterable = enumerate(prompts)
+            for idx, p in iterable:
+                r = tri_summary_cached(p)
+                results.append(r)
                 processed += 1
                 if next_progress and processed >= next_progress:
                     sys.stderr.write(f"[tri_summarizer][progress] {processed}/{len(prompts)} done\n")
                     sys.stderr.flush()
                     next_progress += progress_interval
-            results.extend(temp_results)
+        else:
+            with ThreadPoolExecutor(max_workers=concurrency) as ex:
+                future_map = {ex.submit(tri_summary_cached, p): i for i, p in enumerate(prompts)}
+                temp_results = [None]*len(prompts)
+                for fut in as_completed(future_map):
+                    i = future_map[fut]
+                    try:
+                        temp_results[i] = fut.result()
+                    except Exception as e:
+                        temp_results[i] = {"en":"","zh":"","es":"","meta":{"ok":False,"errors":[f"batch_exc:{type(e).__name__}"],"path":"batch"}}
+                    processed += 1
+                    if next_progress and processed >= next_progress:
+                        sys.stderr.write(f"[tri_summarizer][progress] {processed}/{len(prompts)} done\n")
+                        sys.stderr.flush()
+                        next_progress += progress_interval
+                results.extend(temp_results)
     # aggregate meta
     for r in results:
         m = r["meta"]
@@ -448,7 +573,20 @@ def export_batch_diagnostics(path: str) -> None:
 if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1 and sys.argv[1] == '--batch':
-        prompts = [l.strip() for l in sys.stdin if l.strip()]
+        # Support JSON array input for multi-line prompts; fallback to line-based for backward compatibility.
+        data = sys.stdin.read()
+        ds = data.strip()
+        if ds.startswith('['):
+            try:
+                arr = json.loads(ds)
+                if isinstance(arr,list):
+                    prompts = [str(x) for x in arr]
+                else:
+                    prompts = []
+            except Exception:
+                prompts = [l.strip() for l in data.splitlines() if l.strip()]
+        else:
+            prompts = [l.strip() for l in data.splitlines() if l.strip()]
         bundle = tri_summary_batch(prompts)
         print(json.dumps(bundle, ensure_ascii=False, indent=2))
     else:

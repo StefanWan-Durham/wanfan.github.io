@@ -40,6 +40,7 @@ summarizeDiagnostics.python_fallback_success = 0;
 summarizeDiagnostics.python_fallback_errors = 0;
 
 export async function summarizeTriJSON(prompt, opts={}){
+  const BILINGUAL = /^(1|true|yes|on)$/i.test(process.env.BILINGUAL_MODE||'');
   if(USE_PYTHON_SUMMARIZER){
     if(DEBUG) console.log('[summarize_multi] USE_PYTHON_SUMMARIZER=on -> delegating to tri_summarizer.py');
     try {
@@ -47,7 +48,7 @@ export async function summarizeTriJSON(prompt, opts={}){
       const code = `import sys,os,json;sys.path.insert(0, os.getcwd());from tools.tri_summarizer import tri_summary;print(json.dumps(tri_summary(${JSON.stringify(prompt)}), ensure_ascii=False))`;
       const r = spawnSync('python', ['-c', code], { encoding:'utf-8' });
       if(r.status===0){
-        try { const parsed = JSON.parse(r.stdout); return { en: parsed.en||'', zh: parsed.zh||'', es: parsed.es||'' }; } catch(e){ if(DEBUG) console.log('[summarize_multi] python summarizer parse error', e.message); }
+        try { const parsed = JSON.parse(r.stdout); return { en: parsed.en||'', zh: parsed.zh||'', es: BILINGUAL ? (parsed.en||'') : (parsed.es||'') }; } catch(e){ if(DEBUG) console.log('[summarize_multi] python summarizer parse error', e.message); }
       } else {
         if(DEBUG) console.log('[summarize_multi] python summarizer failed', r.status, r.stderr?.slice(0,180));
       }
@@ -67,8 +68,8 @@ export async function summarizeTriJSON(prompt, opts={}){
   const body = JSON.stringify({
     model: MODEL,
     messages: [
-      { role: 'system', content: 'You are a precise summarizer. Output only valid JSON with keys summary_en, summary_zh, summary_es.' },
-      { role: 'user', content: `Given an open-source AI project description, produce tri-lingual factual summaries.\nReturn JSON keys: summary_en, summary_zh, summary_es.\nConstraints:\n- English: 70-90 words.\n- Chinese: 120-160 汉字。\n- Spanish: 70-90 words.\nFocus: purpose, core capabilities, notable strengths, typical use cases. Avoid marketing or hype.\nOutput ONLY JSON.\nFACTS:\n${prompt}` }
+      { role: 'system', content: BILINGUAL ? 'You are a precise summarizer. Output only valid JSON with keys summary_en, summary_zh.' : 'You are a precise summarizer. Output only valid JSON with keys summary_en, summary_zh, summary_es.' },
+      { role: 'user', content: BILINGUAL ? `Given an open-source AI project description, produce bilingual factual summaries (English + Chinese).\nReturn JSON keys: summary_en, summary_zh.\nConstraints:\n- English: 70-90 words.\n- Chinese: 120-160 汉字。\nFocus: purpose, core capabilities, notable strengths, typical use cases. Avoid marketing or hype.\nOutput ONLY JSON.\nFACTS:\n${prompt}` : `Given an open-source AI project description, produce tri-lingual factual summaries.\nReturn JSON keys: summary_en, summary_zh, summary_es.\nConstraints:\n- English: 70-90 words.\n- Chinese: 120-160 汉字。\n- Spanish: 70-90 words.\nFocus: purpose, core capabilities, notable strengths, typical use cases. Avoid marketing or hype.\nOutput ONLY JSON.\nFACTS:\n${prompt}` }
     ],
     temperature,
     max_tokens: 800
@@ -119,7 +120,7 @@ export async function summarizeTriJSON(prompt, opts={}){
                 if(m) parsed = tryParse(m[0]);
               }
               if(parsed){
-                en = parsed.summary_en||''; zh = parsed.summary_zh||''; es = parsed.summary_es||'';
+                  en = parsed.summary_en||''; zh = parsed.summary_zh||''; es = BILINGUAL ? (parsed.summary_en||'') : (parsed.summary_es||'');
               } else {
                 summarizeDiagnostics.parse_fail++;
               }
@@ -148,7 +149,7 @@ export async function summarizeTriJSON(prompt, opts={}){
       out = await attempt();
     }
   }
-  if(FORCE_PYTHON_FALLBACK || !(out.en||out.zh||out.es)){
+  if(FORCE_PYTHON_FALLBACK || !(out.en||out.zh||(BILINGUAL? false: out.es))){
     // PYTHON FALLBACK (Option B): invoke ai_llm.chat_once once, then heuristic split to tri-lingual via quick translation mini-prompts.
     if(DEBUG) console.log('[summarize_multi] invoking python fallback');
     summarizeDiagnostics.python_fallback_invoked++;
@@ -173,8 +174,11 @@ export async function summarizeTriJSON(prompt, opts={}){
             return '';
           }
           const zh = callTrans('zh','将以下英文精确翻译为 130-150 汉字中文摘要，保持技术名词准确，不加扩展解释，只保留核心事实：');
-          const es = callTrans('es','Traduce el siguiente resumen al español en 80-95 palabras, manteniendo términos técnicos y tono factual:');
-          out = { en: baseEn, zh: zh||'', es: es||'' };
+          let es = '';
+          if(!BILINGUAL){
+            es = callTrans('es','Traduce el siguiente resumen al español en 80-95 palabras, manteniendo términos técnicos y tono factual:');
+          }
+          out = { en: baseEn, zh: zh||'', es: BILINGUAL ? baseEn : (es||'') };
           if(out.en||out.zh||out.es){
             summarizeDiagnostics.success++;
             summarizeDiagnostics.python_fallback_success++;
