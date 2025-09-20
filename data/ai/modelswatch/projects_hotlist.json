@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T13:18:27.460Z",
+  "updated_at": "2025-09-20T14:39:08.451Z",
   "by_category": {
     "framework_core": [
       {
@@ -109,6 +109,76 @@
           "hidden": false
         },
         "score_engineering": 0.19999595220145608
+      },
+      {
+        "id": "jwasham/coding-interview-university",
+        "source": "github",
+        "name": "coding-interview-university",
+        "url": "https://github.com/jwasham/coding-interview-university",
+        "tags": [
+          "algorithm",
+          "algorithms",
+          "coding-interview",
+          "coding-interviews",
+          "computer-science",
+          "data-structures",
+          "interview",
+          "interview-prep",
+          "interview-preparation",
+          "programming-interviews",
+          "software-engineering",
+          "study-plan"
+        ],
+        "stats": {
+          "stars_total": 329002,
+          "forks_total": 80568,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:47Z",
+        "added_at": "2025-09-20",
+        "summary": "A complete computer science study plan to become a software engineer.",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19998445654538677
+      },
+      {
+        "id": "TheAlgorithms/Python",
+        "source": "github",
+        "name": "Python",
+        "url": "https://github.com/TheAlgorithms/Python",
+        "tags": [
+          "algorithm",
+          "algorithm-competitions",
+          "algorithms-implemented",
+          "algos",
+          "community-driven",
+          "education",
+          "hacktoberfest",
+          "interview",
+          "learn",
+          "practice",
+          "python",
+          "searches",
+          "sorting-algorithms",
+          "sorts"
+        ],
+        "stats": {
+          "stars_total": 207872,
+          "forks_total": 47898,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:41Z",
+        "added_at": "2025-09-20",
+        "summary": "All Algorithms implemented in Python",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19998399361893981
       }
     ],
     "deployment_serving": [
@@ -139,9 +209,79 @@
           "hidden": false
         },
         "score_engineering": 0.1896867232987965
+      },
+      {
+        "id": "__placeholder__:deployment_serving:0",
+        "source": "github",
+        "name": "(deployment_serving) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.451Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_engineering": -1,
+        "category_key": "deployment_serving"
       }
     ],
-    "optimization_compilers": [],
+    "optimization_compilers": [
+      {
+        "id": "__placeholder__:optimization_compilers:0",
+        "source": "github",
+        "name": "(optimization_compilers) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.451Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_engineering": -1,
+        "category_key": "optimization_compilers"
+      },
+      {
+        "id": "__placeholder__:optimization_compilers:1",
+        "source": "github",
+        "name": "(optimization_compilers) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.451Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_engineering": -1,
+        "category_key": "optimization_compilers"
+      }
+    ],
     "data_tooling": [
       {
         "id": "public-apis/public-apis",
@@ -237,9 +377,150 @@
         "score_engineering": 0.19858033573617936
       }
     ],
-    "agents_workflows": [],
-    "security_safety": [],
-    "mlops_monitoring": [],
+    "agents_workflows": [
+      {
+        "id": "__placeholder__:agents_workflows:0",
+        "source": "github",
+        "name": "(agents_workflows) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.451Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_engineering": -1,
+        "category_key": "agents_workflows"
+      },
+      {
+        "id": "__placeholder__:agents_workflows:1",
+        "source": "github",
+        "name": "(agents_workflows) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.451Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_engineering": -1,
+        "category_key": "agents_workflows"
+      }
+    ],
+    "security_safety": [
+      {
+        "id": "__placeholder__:security_safety:0",
+        "source": "github",
+        "name": "(security_safety) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.451Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_engineering": -1,
+        "category_key": "security_safety"
+      },
+      {
+        "id": "__placeholder__:security_safety:1",
+        "source": "github",
+        "name": "(security_safety) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.451Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_engineering": -1,
+        "category_key": "security_safety"
+      }
+    ],
+    "mlops_monitoring": [
+      {
+        "id": "__placeholder__:mlops_monitoring:0",
+        "source": "github",
+        "name": "(mlops_monitoring) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.451Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_engineering": -1,
+        "category_key": "mlops_monitoring"
+      },
+      {
+        "id": "__placeholder__:mlops_monitoring:1",
+        "source": "github",
+        "name": "(mlops_monitoring) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.451Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_engineering": -1,
+        "category_key": "mlops_monitoring"
+      }
+    ],
     "edge_embedded": [
       {
         "id": "microsoft/vscode",
@@ -338,6 +619,36 @@
           "hidden": false
         },
         "score_engineering": 0.19996601677636472
+      },
+      {
+        "id": "Genymobile/scrcpy",
+        "source": "github",
+        "name": "scrcpy",
+        "url": "https://github.com/Genymobile/scrcpy",
+        "tags": [
+          "android",
+          "c",
+          "ffmpeg",
+          "libav",
+          "mirroring",
+          "recording",
+          "screen",
+          "sdl2"
+        ],
+        "stats": {
+          "stars_total": 128359,
+          "forks_total": 12042,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:33:50Z",
+        "added_at": "2025-09-20",
+        "summary": "Display and control your Android device",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.1999754296729563
       }
     ],
     "ui_devex": [
@@ -432,6 +743,63 @@
           "hidden": false
         },
         "score_engineering": 0.19996323948986292
+      },
+      {
+        "id": "facebook/react",
+        "source": "github",
+        "name": "react",
+        "url": "https://github.com/facebook/react",
+        "tags": [
+          "declarative",
+          "frontend",
+          "javascript",
+          "library",
+          "react",
+          "ui"
+        ],
+        "stats": {
+          "stars_total": 239058,
+          "forks_total": 49357,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:26:04Z",
+        "added_at": "2025-09-20",
+        "summary": "The library for web and native user interfaces.",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19993948053181945
+      },
+      {
+        "id": "langchain-ai/langchain",
+        "source": "github",
+        "name": "langchain",
+        "url": "https://github.com/langchain-ai/langchain",
+        "tags": [
+          "ai",
+          "anthropic",
+          "gemini",
+          "langchain",
+          "llm",
+          "openai",
+          "python"
+        ],
+        "stats": {
+          "stars_total": 115832,
+          "forks_total": 19023,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:25:35Z",
+        "added_at": "2025-09-20",
+        "summary": "🦜🔗 Build context-aware reasoning applications",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19993724356712061
       }
     ]
   }

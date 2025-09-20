@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T13:18:27.352Z",
+  "updated_at": "2025-09-20T14:39:08.401Z",
   "by_category": {
     "image_classification": [
       {
@@ -975,6 +975,104 @@
           "auto_evaluation_models",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "source": "hf",
+        "name": "tiny-Qwen2ForCausalLM-2.5",
+        "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "trl",
+          "conversational",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4322548,
+          "likes_total": 1,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.936Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242069619436,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
     "text_to_video": [
@@ -1290,13 +1388,366 @@
           "auto_evaluation_models",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "source": "hf",
+        "name": "tiny-Qwen2ForCausalLM-2.5",
+        "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "trl",
+          "conversational",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4322548,
+          "likes_total": 1,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.936Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242069619436,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
-    "3d_reconstruction": [],
-    "nerf": [],
-    "super_resolution": [],
-    "denoising": [],
-    "restoration": [],
+    "3d_reconstruction": [
+      {
+        "id": "__placeholder__:3d_reconstruction:0",
+        "source": "hf",
+        "name": "(3d_reconstruction) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "3d_reconstruction"
+        ]
+      },
+      {
+        "id": "__placeholder__:3d_reconstruction:1",
+        "source": "hf",
+        "name": "(3d_reconstruction) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "3d_reconstruction"
+        ]
+      }
+    ],
+    "nerf": [
+      {
+        "id": "__placeholder__:nerf:0",
+        "source": "hf",
+        "name": "(nerf) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "nerf"
+        ]
+      },
+      {
+        "id": "__placeholder__:nerf:1",
+        "source": "hf",
+        "name": "(nerf) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "nerf"
+        ]
+      }
+    ],
+    "super_resolution": [
+      {
+        "id": "__placeholder__:super_resolution:0",
+        "source": "hf",
+        "name": "(super_resolution) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "super_resolution"
+        ]
+      },
+      {
+        "id": "__placeholder__:super_resolution:1",
+        "source": "hf",
+        "name": "(super_resolution) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "super_resolution"
+        ]
+      }
+    ],
+    "denoising": [
+      {
+        "id": "__placeholder__:denoising:0",
+        "source": "hf",
+        "name": "(denoising) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "denoising"
+        ]
+      },
+      {
+        "id": "__placeholder__:denoising:1",
+        "source": "hf",
+        "name": "(denoising) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "denoising"
+        ]
+      }
+    ],
+    "restoration": [
+      {
+        "id": "__placeholder__:restoration:0",
+        "source": "hf",
+        "name": "(restoration) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "restoration"
+        ]
+      },
+      {
+        "id": "__placeholder__:restoration:1",
+        "source": "hf",
+        "name": "(restoration) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "restoration"
+        ]
+      }
+    ],
     "medical_image_processing": [
       {
         "id": "timm/mobilenetv3_small_100.lamb_in1k",
@@ -1553,8 +2004,110 @@
         ]
       }
     ],
-    "vqa": [],
-    "visual_grounding": [],
+    "vqa": [
+      {
+        "id": "__placeholder__:vqa:0",
+        "source": "hf",
+        "name": "(vqa) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "vqa"
+        ]
+      },
+      {
+        "id": "__placeholder__:vqa:1",
+        "source": "hf",
+        "name": "(vqa) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "vqa"
+        ]
+      }
+    ],
+    "visual_grounding": [
+      {
+        "id": "__placeholder__:visual_grounding:0",
+        "source": "hf",
+        "name": "(visual_grounding) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "visual_grounding"
+        ]
+      },
+      {
+        "id": "__placeholder__:visual_grounding:1",
+        "source": "hf",
+        "name": "(visual_grounding) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "visual_grounding"
+        ]
+      }
+    ],
     "lightweight_visual_model": [
       {
         "id": "dima806/fairface_age_image_detection",
@@ -1827,6 +2380,125 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.1-8B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.1-8B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "base_model:meta-llama/Llama-3.1-8B",
+          "base_model:finetune:meta-llama/Llama-3.1-8B",
+          "license:llama3.1",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6827794,
+          "likes_total": 4641,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
     "llm_pretraining": [
@@ -2048,6 +2720,49 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "source": "hf",
+        "name": "tiny-Qwen2ForCausalLM-2.5",
+        "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "trl",
+          "conversational",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4322548,
+          "likes_total": 1,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.936Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242069619436,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
       }
     ],
     "instruction_tuning": [
@@ -2118,10 +2833,137 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "__placeholder__:instruction_tuning:0",
+        "source": "hf",
+        "name": "(instruction_tuning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "instruction_tuning"
+        ]
       }
     ],
-    "rlhf": [],
-    "rag": [],
+    "rlhf": [
+      {
+        "id": "__placeholder__:rlhf:0",
+        "source": "hf",
+        "name": "(rlhf) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "rlhf"
+        ]
+      },
+      {
+        "id": "__placeholder__:rlhf:1",
+        "source": "hf",
+        "name": "(rlhf) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "rlhf"
+        ]
+      }
+    ],
+    "rag": [
+      {
+        "id": "__placeholder__:rag:0",
+        "source": "hf",
+        "name": "(rag) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "rag"
+        ]
+      },
+      {
+        "id": "__placeholder__:rag:1",
+        "source": "hf",
+        "name": "(rag) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "rag"
+        ]
+      }
+    ],
     "code_generation": [
       {
         "id": "sentence-transformers/all-MiniLM-L6-v2",
@@ -2435,11 +3277,262 @@
           "auto_evaluation_models",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "source": "hf",
+        "name": "tiny-Qwen2ForCausalLM-2.5",
+        "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "trl",
+          "conversational",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4322548,
+          "likes_total": 1,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.936Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242069619436,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
-    "structured_reasoning": [],
-    "tool_use": [],
-    "lora_adapter": [],
+    "structured_reasoning": [
+      {
+        "id": "__placeholder__:structured_reasoning:0",
+        "source": "hf",
+        "name": "(structured_reasoning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "structured_reasoning"
+        ]
+      },
+      {
+        "id": "__placeholder__:structured_reasoning:1",
+        "source": "hf",
+        "name": "(structured_reasoning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "structured_reasoning"
+        ]
+      }
+    ],
+    "tool_use": [
+      {
+        "id": "__placeholder__:tool_use:0",
+        "source": "hf",
+        "name": "(tool_use) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "tool_use"
+        ]
+      },
+      {
+        "id": "__placeholder__:tool_use:1",
+        "source": "hf",
+        "name": "(tool_use) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "tool_use"
+        ]
+      }
+    ],
+    "lora_adapter": [
+      {
+        "id": "__placeholder__:lora_adapter:0",
+        "source": "hf",
+        "name": "(lora_adapter) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "lora_adapter"
+        ]
+      },
+      {
+        "id": "__placeholder__:lora_adapter:1",
+        "source": "hf",
+        "name": "(lora_adapter) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "lora_adapter"
+        ]
+      }
+    ],
     "multilingual_processing": [
       {
         "id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
@@ -3023,8 +4116,110 @@
         ]
       }
     ],
-    "low_resource_language": [],
-    "knowledge_editing": [],
+    "low_resource_language": [
+      {
+        "id": "__placeholder__:low_resource_language:0",
+        "source": "hf",
+        "name": "(low_resource_language) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "low_resource_language"
+        ]
+      },
+      {
+        "id": "__placeholder__:low_resource_language:1",
+        "source": "hf",
+        "name": "(low_resource_language) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "low_resource_language"
+        ]
+      }
+    ],
+    "knowledge_editing": [
+      {
+        "id": "__placeholder__:knowledge_editing:0",
+        "source": "hf",
+        "name": "(knowledge_editing) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "knowledge_editing"
+        ]
+      },
+      {
+        "id": "__placeholder__:knowledge_editing:1",
+        "source": "hf",
+        "name": "(knowledge_editing) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "knowledge_editing"
+        ]
+      }
+    ],
     "nlp_data_synthesis": [
       {
         "id": "timm/mobilenetv3_small_100.lamb_in1k",
@@ -3280,6 +4475,53 @@
           "hidden": false
         },
         "score_model": 0.09968851805914397,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
+      },
+      {
+        "id": "FacebookAI/roberta-base",
+        "source": "hf",
+        "name": "roberta-base",
+        "url": "https://huggingface.co/FacebookAI/roberta-base",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "safetensors",
+          "roberta",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1907.11692",
+          "arxiv:1806.02847",
+          "license:mit",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 11256563,
+          "likes_total": 528,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
         "task_keys": [
           "nlp_data_synthesis",
           "nlp_data_distillation",
@@ -3551,9 +4793,107 @@
           "training_data_anonymization",
           "training_data_copyright"
         ]
+      },
+      {
+        "id": "FacebookAI/roberta-base",
+        "source": "hf",
+        "name": "roberta-base",
+        "url": "https://huggingface.co/FacebookAI/roberta-base",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "safetensors",
+          "roberta",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1907.11692",
+          "arxiv:1806.02847",
+          "license:mit",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 11256563,
+          "likes_total": 528,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
       }
     ],
-    "dialogue_system_optimization": [],
+    "dialogue_system_optimization": [
+      {
+        "id": "__placeholder__:dialogue_system_optimization:0",
+        "source": "hf",
+        "name": "(dialogue_system_optimization) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "dialogue_system_optimization"
+        ]
+      },
+      {
+        "id": "__placeholder__:dialogue_system_optimization:1",
+        "source": "hf",
+        "name": "(dialogue_system_optimization) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "dialogue_system_optimization"
+        ]
+      }
+    ],
     "nlp_bias_mitigation": [
       {
         "id": "prajjwal1/bert-tiny",
@@ -3881,6 +5221,104 @@
           "auto_evaluation_models",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "source": "hf",
+        "name": "tiny-Qwen2ForCausalLM-2.5",
+        "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "trl",
+          "conversational",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4322548,
+          "likes_total": 1,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.936Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242069619436,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
     "multimodal_understanding_generation": [
@@ -4136,6 +5574,104 @@
           "auto_evaluation_models",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "source": "hf",
+        "name": "tiny-Qwen2ForCausalLM-2.5",
+        "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "trl",
+          "conversational",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4322548,
+          "likes_total": 1,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.936Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242069619436,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
     "asr": [
@@ -4360,9 +5896,85 @@
           "image_text_alignment",
           "tts"
         ]
+      },
+      {
+        "id": "__placeholder__:tts:0",
+        "source": "hf",
+        "name": "(tts) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "tts"
+        ]
       }
     ],
-    "slu": [],
+    "slu": [
+      {
+        "id": "__placeholder__:slu:0",
+        "source": "hf",
+        "name": "(slu) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "slu"
+        ]
+      },
+      {
+        "id": "__placeholder__:slu:1",
+        "source": "hf",
+        "name": "(slu) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "slu"
+        ]
+      }
+    ],
     "speaker_separation": [
       {
         "id": "pyannote/segmentation-3.0",
@@ -4529,9 +6141,162 @@
         ]
       }
     ],
-    "noise_separation": [],
-    "full_duplex_dialogue": [],
-    "avsr": [],
+    "noise_separation": [
+      {
+        "id": "__placeholder__:noise_separation:0",
+        "source": "hf",
+        "name": "(noise_separation) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "noise_separation"
+        ]
+      },
+      {
+        "id": "__placeholder__:noise_separation:1",
+        "source": "hf",
+        "name": "(noise_separation) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "noise_separation"
+        ]
+      }
+    ],
+    "full_duplex_dialogue": [
+      {
+        "id": "__placeholder__:full_duplex_dialogue:0",
+        "source": "hf",
+        "name": "(full_duplex_dialogue) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "full_duplex_dialogue"
+        ]
+      },
+      {
+        "id": "__placeholder__:full_duplex_dialogue:1",
+        "source": "hf",
+        "name": "(full_duplex_dialogue) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "full_duplex_dialogue"
+        ]
+      }
+    ],
+    "avsr": [
+      {
+        "id": "__placeholder__:avsr:0",
+        "source": "hf",
+        "name": "(avsr) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "avsr"
+        ]
+      },
+      {
+        "id": "__placeholder__:avsr:1",
+        "source": "hf",
+        "name": "(avsr) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "avsr"
+        ]
+      }
+    ],
     "multimodal_dialogue_system": [
       {
         "id": "Qwen/Qwen2-VL-2B-Instruct",
@@ -4590,6 +6355,31 @@
           "model_iterative_update",
           "molecular_generation",
           "multimodal_temporal_fusion"
+        ]
+      },
+      {
+        "id": "__placeholder__:multimodal_dialogue_system:0",
+        "source": "hf",
+        "name": "(multimodal_dialogue_system) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "multimodal_dialogue_system"
         ]
       }
     ],
@@ -4865,13 +6655,387 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.1-8B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.1-8B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "base_model:meta-llama/Llama-3.1-8B",
+          "base_model:finetune:meta-llama/Llama-3.1-8B",
+          "license:llama3.1",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6827794,
+          "likes_total": 4641,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
-    "gnn": [],
-    "kg_construction": [],
-    "kg_reasoning": [],
-    "general_recommendation": [],
-    "vertical_recommendation": [],
+    "gnn": [
+      {
+        "id": "__placeholder__:gnn:0",
+        "source": "hf",
+        "name": "(gnn) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "gnn"
+        ]
+      },
+      {
+        "id": "__placeholder__:gnn:1",
+        "source": "hf",
+        "name": "(gnn) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "gnn"
+        ]
+      }
+    ],
+    "kg_construction": [
+      {
+        "id": "__placeholder__:kg_construction:0",
+        "source": "hf",
+        "name": "(kg_construction) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "kg_construction"
+        ]
+      },
+      {
+        "id": "__placeholder__:kg_construction:1",
+        "source": "hf",
+        "name": "(kg_construction) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "kg_construction"
+        ]
+      }
+    ],
+    "kg_reasoning": [
+      {
+        "id": "__placeholder__:kg_reasoning:0",
+        "source": "hf",
+        "name": "(kg_reasoning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "kg_reasoning"
+        ]
+      },
+      {
+        "id": "__placeholder__:kg_reasoning:1",
+        "source": "hf",
+        "name": "(kg_reasoning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "kg_reasoning"
+        ]
+      }
+    ],
+    "general_recommendation": [
+      {
+        "id": "__placeholder__:general_recommendation:0",
+        "source": "hf",
+        "name": "(general_recommendation) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "general_recommendation"
+        ]
+      },
+      {
+        "id": "__placeholder__:general_recommendation:1",
+        "source": "hf",
+        "name": "(general_recommendation) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "general_recommendation"
+        ]
+      }
+    ],
+    "vertical_recommendation": [
+      {
+        "id": "__placeholder__:vertical_recommendation:0",
+        "source": "hf",
+        "name": "(vertical_recommendation) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "vertical_recommendation"
+        ]
+      },
+      {
+        "id": "__placeholder__:vertical_recommendation:1",
+        "source": "hf",
+        "name": "(vertical_recommendation) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "vertical_recommendation"
+        ]
+      }
+    ],
     "vector_retrieval": [
       {
         "id": "pyannote/segmentation",
@@ -4978,8 +7142,110 @@
         ]
       }
     ],
-    "vector_db_optimization": [],
-    "metric_learning": [],
+    "vector_db_optimization": [
+      {
+        "id": "__placeholder__:vector_db_optimization:0",
+        "source": "hf",
+        "name": "(vector_db_optimization) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "vector_db_optimization"
+        ]
+      },
+      {
+        "id": "__placeholder__:vector_db_optimization:1",
+        "source": "hf",
+        "name": "(vector_db_optimization) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "vector_db_optimization"
+        ]
+      }
+    ],
+    "metric_learning": [
+      {
+        "id": "__placeholder__:metric_learning:0",
+        "source": "hf",
+        "name": "(metric_learning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "metric_learning"
+        ]
+      },
+      {
+        "id": "__placeholder__:metric_learning:1",
+        "source": "hf",
+        "name": "(metric_learning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "metric_learning"
+        ]
+      }
+    ],
     "contrastive_learning": [
       {
         "id": "facebook/contriever",
@@ -5011,9 +7277,85 @@
         "task_keys": [
           "contrastive_learning"
         ]
+      },
+      {
+        "id": "__placeholder__:contrastive_learning:0",
+        "source": "hf",
+        "name": "(contrastive_learning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "contrastive_learning"
+        ]
       }
     ],
-    "ltr": [],
+    "ltr": [
+      {
+        "id": "__placeholder__:ltr:0",
+        "source": "hf",
+        "name": "(ltr) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "ltr"
+        ]
+      },
+      {
+        "id": "__placeholder__:ltr:1",
+        "source": "hf",
+        "name": "(ltr) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "ltr"
+        ]
+      }
+    ],
     "neural_retrieval": [
       {
         "id": "colbert-ir/colbertv2.0",
@@ -5051,6 +7393,31 @@
           "hidden": false
         },
         "score_model": 0.09984405994607617,
+        "task_keys": [
+          "neural_retrieval"
+        ]
+      },
+      {
+        "id": "__placeholder__:neural_retrieval:0",
+        "source": "hf",
+        "name": "(neural_retrieval) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
         "task_keys": [
           "neural_retrieval"
         ]
@@ -5498,6 +7865,125 @@
           "training_data_anonymization",
           "training_data_copyright"
         ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.1-8B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.1-8B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "base_model:meta-llama/Llama-3.1-8B",
+          "base_model:finetune:meta-llama/Llama-3.1-8B",
+          "license:llama3.1",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6827794,
+          "likes_total": 4641,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
     "model_quantization": [
@@ -5755,6 +8241,125 @@
           "hidden": false
         },
         "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.1-8B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.1-8B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "base_model:meta-llama/Llama-3.1-8B",
+          "base_model:finetune:meta-llama/Llama-3.1-8B",
+          "license:llama3.1",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6827794,
+          "likes_total": 4641,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -6046,9 +8651,179 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.1-8B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.1-8B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "base_model:meta-llama/Llama-3.1-8B",
+          "base_model:finetune:meta-llama/Llama-3.1-8B",
+          "license:llama3.1",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6827794,
+          "likes_total": 4641,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
-    "compilation_optimization": [],
+    "compilation_optimization": [
+      {
+        "id": "__placeholder__:compilation_optimization:0",
+        "source": "hf",
+        "name": "(compilation_optimization) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "compilation_optimization"
+        ]
+      },
+      {
+        "id": "__placeholder__:compilation_optimization:1",
+        "source": "hf",
+        "name": "(compilation_optimization) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "compilation_optimization"
+        ]
+      }
+    ],
     "inference_acceleration": [
       {
         "id": "sentence-transformers/all-MiniLM-L6-v2",
@@ -6362,14 +9137,418 @@
           "auto_evaluation_models",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "source": "hf",
+        "name": "tiny-Qwen2ForCausalLM-2.5",
+        "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "trl",
+          "conversational",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4322548,
+          "likes_total": 1,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.936Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242069619436,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
-    "federated_learning": [],
-    "privacy_computing": [],
-    "adversarial_attack": [],
-    "adversarial_defense": [],
-    "red_teaming": [],
-    "content_moderation": [],
+    "federated_learning": [
+      {
+        "id": "__placeholder__:federated_learning:0",
+        "source": "hf",
+        "name": "(federated_learning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "federated_learning"
+        ]
+      },
+      {
+        "id": "__placeholder__:federated_learning:1",
+        "source": "hf",
+        "name": "(federated_learning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "federated_learning"
+        ]
+      }
+    ],
+    "privacy_computing": [
+      {
+        "id": "__placeholder__:privacy_computing:0",
+        "source": "hf",
+        "name": "(privacy_computing) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "privacy_computing"
+        ]
+      },
+      {
+        "id": "__placeholder__:privacy_computing:1",
+        "source": "hf",
+        "name": "(privacy_computing) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "privacy_computing"
+        ]
+      }
+    ],
+    "adversarial_attack": [
+      {
+        "id": "__placeholder__:adversarial_attack:0",
+        "source": "hf",
+        "name": "(adversarial_attack) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "adversarial_attack"
+        ]
+      },
+      {
+        "id": "__placeholder__:adversarial_attack:1",
+        "source": "hf",
+        "name": "(adversarial_attack) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "adversarial_attack"
+        ]
+      }
+    ],
+    "adversarial_defense": [
+      {
+        "id": "__placeholder__:adversarial_defense:0",
+        "source": "hf",
+        "name": "(adversarial_defense) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "adversarial_defense"
+        ]
+      },
+      {
+        "id": "__placeholder__:adversarial_defense:1",
+        "source": "hf",
+        "name": "(adversarial_defense) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "adversarial_defense"
+        ]
+      }
+    ],
+    "red_teaming": [
+      {
+        "id": "__placeholder__:red_teaming:0",
+        "source": "hf",
+        "name": "(red_teaming) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "red_teaming"
+        ]
+      },
+      {
+        "id": "__placeholder__:red_teaming:1",
+        "source": "hf",
+        "name": "(red_teaming) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "red_teaming"
+        ]
+      }
+    ],
+    "content_moderation": [
+      {
+        "id": "__placeholder__:content_moderation:0",
+        "source": "hf",
+        "name": "(content_moderation) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "content_moderation"
+        ]
+      },
+      {
+        "id": "__placeholder__:content_moderation:1",
+        "source": "hf",
+        "name": "(content_moderation) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "content_moderation"
+        ]
+      }
+    ],
     "auto_evaluation_models": [
       {
         "id": "Falconsai/nsfw_image_detection",
@@ -6631,11 +9810,244 @@
           "training_data_anonymization",
           "training_data_copyright"
         ]
+      },
+      {
+        "id": "sentence-transformers/gtr-t5-base",
+        "source": "hf",
+        "name": "gtr-t5-base",
+        "url": "https://huggingface.co/sentence-transformers/gtr-t5-base",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "safetensors",
+          "t5",
+          "feature-extraction",
+          "sentence-similarity",
+          "en",
+          "arxiv:2112.07899",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4568689,
+          "likes_total": 25,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.936Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242069619436,
+        "task_keys": [
+          "auto_evaluation_models"
+        ]
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "source": "hf",
+        "name": "tiny-Qwen2ForCausalLM-2.5",
+        "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "trl",
+          "conversational",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4322548,
+          "likes_total": 1,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.936Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242069619436,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
       }
     ],
-    "edge_hw_sw_co_design": [],
-    "xai": [],
-    "ai_ethics_risk_assessment": [],
+    "edge_hw_sw_co_design": [
+      {
+        "id": "__placeholder__:edge_hw_sw_co_design:0",
+        "source": "hf",
+        "name": "(edge_hw_sw_co_design) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "edge_hw_sw_co_design"
+        ]
+      },
+      {
+        "id": "__placeholder__:edge_hw_sw_co_design:1",
+        "source": "hf",
+        "name": "(edge_hw_sw_co_design) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "edge_hw_sw_co_design"
+        ]
+      }
+    ],
+    "xai": [
+      {
+        "id": "__placeholder__:xai:0",
+        "source": "hf",
+        "name": "(xai) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "xai"
+        ]
+      },
+      {
+        "id": "__placeholder__:xai:1",
+        "source": "hf",
+        "name": "(xai) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "xai"
+        ]
+      }
+    ],
+    "ai_ethics_risk_assessment": [
+      {
+        "id": "__placeholder__:ai_ethics_risk_assessment:0",
+        "source": "hf",
+        "name": "(ai_ethics_risk_assessment) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "ai_ethics_risk_assessment"
+        ]
+      },
+      {
+        "id": "__placeholder__:ai_ethics_risk_assessment:1",
+        "source": "hf",
+        "name": "(ai_ethics_risk_assessment) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "ai_ethics_risk_assessment"
+        ]
+      }
+    ],
     "training_data_anonymization": [
       {
         "id": "timm/mobilenetv3_small_100.lamb_in1k",
@@ -6891,6 +10303,53 @@
           "hidden": false
         },
         "score_model": 0.09968851805914397,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
+      },
+      {
+        "id": "FacebookAI/roberta-base",
+        "source": "hf",
+        "name": "roberta-base",
+        "url": "https://huggingface.co/FacebookAI/roberta-base",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "safetensors",
+          "roberta",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1907.11692",
+          "arxiv:1806.02847",
+          "license:mit",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 11256563,
+          "likes_total": 528,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
         "task_keys": [
           "nlp_data_synthesis",
           "nlp_data_distillation",
@@ -7162,6 +10621,53 @@
           "training_data_anonymization",
           "training_data_copyright"
         ]
+      },
+      {
+        "id": "FacebookAI/roberta-base",
+        "source": "hf",
+        "name": "roberta-base",
+        "url": "https://huggingface.co/FacebookAI/roberta-base",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "safetensors",
+          "roberta",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1907.11692",
+          "arxiv:1806.02847",
+          "license:mit",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 11256563,
+          "likes_total": 528,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
       }
     ],
     "model_monitoring": [
@@ -7419,6 +10925,125 @@
           "hidden": false
         },
         "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.1-8B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.1-8B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "base_model:meta-llama/Llama-3.1-8B",
+          "base_model:finetune:meta-llama/Llama-3.1-8B",
+          "license:llama3.1",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6827794,
+          "likes_total": 4641,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -7710,11 +11335,283 @@
           "model_iterative_update",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.1-8B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.1-8B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "base_model:meta-llama/Llama-3.1-8B",
+          "base_model:finetune:meta-llama/Llama-3.1-8B",
+          "license:llama3.1",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6827794,
+          "likes_total": 4641,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
-    "fluid_simulation": [],
-    "material_design": [],
-    "drug_molecule_prediction": [],
+    "fluid_simulation": [
+      {
+        "id": "__placeholder__:fluid_simulation:0",
+        "source": "hf",
+        "name": "(fluid_simulation) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "fluid_simulation"
+        ]
+      },
+      {
+        "id": "__placeholder__:fluid_simulation:1",
+        "source": "hf",
+        "name": "(fluid_simulation) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "fluid_simulation"
+        ]
+      }
+    ],
+    "material_design": [
+      {
+        "id": "__placeholder__:material_design:0",
+        "source": "hf",
+        "name": "(material_design) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "material_design"
+        ]
+      },
+      {
+        "id": "__placeholder__:material_design:1",
+        "source": "hf",
+        "name": "(material_design) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "material_design"
+        ]
+      }
+    ],
+    "drug_molecule_prediction": [
+      {
+        "id": "__placeholder__:drug_molecule_prediction:0",
+        "source": "hf",
+        "name": "(drug_molecule_prediction) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "drug_molecule_prediction"
+        ]
+      },
+      {
+        "id": "__placeholder__:drug_molecule_prediction:1",
+        "source": "hf",
+        "name": "(drug_molecule_prediction) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "drug_molecule_prediction"
+        ]
+      }
+    ],
     "robotic_vision": [
       {
         "id": "openai/clip-vit-base-patch32",
@@ -7847,8 +11744,110 @@
         ]
       }
     ],
-    "robot_motion_planning": [],
-    "robot_environment_interaction": [],
+    "robot_motion_planning": [
+      {
+        "id": "__placeholder__:robot_motion_planning:0",
+        "source": "hf",
+        "name": "(robot_motion_planning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "robot_motion_planning"
+        ]
+      },
+      {
+        "id": "__placeholder__:robot_motion_planning:1",
+        "source": "hf",
+        "name": "(robot_motion_planning) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "robot_motion_planning"
+        ]
+      }
+    ],
+    "robot_environment_interaction": [
+      {
+        "id": "__placeholder__:robot_environment_interaction:0",
+        "source": "hf",
+        "name": "(robot_environment_interaction) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "robot_environment_interaction"
+        ]
+      },
+      {
+        "id": "__placeholder__:robot_environment_interaction:1",
+        "source": "hf",
+        "name": "(robot_environment_interaction) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.400Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "robot_environment_interaction"
+        ]
+      }
+    ],
     "molecular_generation": [
       {
         "id": "openai-community/gpt2",
@@ -8102,9 +12101,158 @@
           "auto_evaluation_models",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "source": "hf",
+        "name": "tiny-Qwen2ForCausalLM-2.5",
+        "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "trl",
+          "conversational",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4322548,
+          "likes_total": 1,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.936Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242069619436,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2309.00071",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-7B",
+          "base_model:finetune:Qwen/Qwen2.5-7B",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6920482,
+          "likes_total": 797,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:35:51.935Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09999242065761704,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
-    "bioinformatics_analysis": [],
+    "bioinformatics_analysis": [
+      {
+        "id": "__placeholder__:bioinformatics_analysis:0",
+        "source": "hf",
+        "name": "(bioinformatics_analysis) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "bioinformatics_analysis"
+        ]
+      },
+      {
+        "id": "__placeholder__:bioinformatics_analysis:1",
+        "source": "hf",
+        "name": "(bioinformatics_analysis) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "bioinformatics_analysis"
+        ]
+      }
+    ],
     "time_series_forecasting": [
       {
         "id": "amazon/chronos-t5-small",
@@ -8625,9 +12773,162 @@
         ]
       }
     ],
-    "radar_understanding": [],
-    "lidar_understanding": [],
-    "low_resource_medical_ai": [],
+    "radar_understanding": [
+      {
+        "id": "__placeholder__:radar_understanding:0",
+        "source": "hf",
+        "name": "(radar_understanding) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "radar_understanding"
+        ]
+      },
+      {
+        "id": "__placeholder__:radar_understanding:1",
+        "source": "hf",
+        "name": "(radar_understanding) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "radar_understanding"
+        ]
+      }
+    ],
+    "lidar_understanding": [
+      {
+        "id": "__placeholder__:lidar_understanding:0",
+        "source": "hf",
+        "name": "(lidar_understanding) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "lidar_understanding"
+        ]
+      },
+      {
+        "id": "__placeholder__:lidar_understanding:1",
+        "source": "hf",
+        "name": "(lidar_understanding) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "lidar_understanding"
+        ]
+      }
+    ],
+    "low_resource_medical_ai": [
+      {
+        "id": "__placeholder__:low_resource_medical_ai:0",
+        "source": "hf",
+        "name": "(low_resource_medical_ai) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "low_resource_medical_ai"
+        ]
+      },
+      {
+        "id": "__placeholder__:low_resource_medical_ai:1",
+        "source": "hf",
+        "name": "(low_resource_medical_ai) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "low_resource_medical_ai"
+        ]
+      }
+    ],
     "low_resource_voice_assistant": [
       {
         "id": "pyannote/segmentation-3.0",
@@ -8794,7 +13095,58 @@
         ]
       }
     ],
-    "ar_vr_interaction": [],
+    "ar_vr_interaction": [
+      {
+        "id": "__placeholder__:ar_vr_interaction:0",
+        "source": "hf",
+        "name": "(ar_vr_interaction) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "ar_vr_interaction"
+        ]
+      },
+      {
+        "id": "__placeholder__:ar_vr_interaction:1",
+        "source": "hf",
+        "name": "(ar_vr_interaction) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "ar_vr_interaction"
+        ]
+      }
+    ],
     "multimodal_temporal_fusion": [
       {
         "id": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
@@ -8914,6 +13266,57 @@
         ]
       }
     ],
-    "robot_dialogue_logic": []
+    "robot_dialogue_logic": [
+      {
+        "id": "__placeholder__:robot_dialogue_logic:0",
+        "source": "hf",
+        "name": "(robot_dialogue_logic) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "robot_dialogue_logic"
+        ]
+      },
+      {
+        "id": "__placeholder__:robot_dialogue_logic:1",
+        "source": "hf",
+        "name": "(robot_dialogue_logic) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T14:39:08.401Z",
+        "added_at": "2025-09-20",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
+          "robot_dialogue_logic"
+        ]
+      }
+    ]
   }
 }
