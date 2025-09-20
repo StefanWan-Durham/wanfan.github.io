@@ -1,70 +1,70 @@
 {
   "schema_version": 1,
-  "updated_at": "2025-09-20T14:54:55.773Z",
+  "updated_at": "2025-09-20T15:01:20.456Z",
   "period": "2025-W38",
   "sections": {
     "overview": {
       "zh": "（本周摘要暂不可用） [timeout]",
-      "en": "(Weekly summary unavailable) [empty]",
-      "es": "(Resumen semanal no disponible) [empty]"
+      "en": "(Weekly summary unavailable) [timeout]",
+      "es": "(Resumen semanal no disponible) [timeout]"
     }
   },
   "meta": {
     "task_distribution": [
       {
         "task": "text_to_image",
-        "count": 9
+        "count": 10
       },
       {
         "task": "text_to_video",
-        "count": 9
+        "count": 10
       },
       {
         "task": "lightweight_visual_model",
-        "count": 9
+        "count": 10
+      },
+      {
+        "task": "image_text_alignment",
+        "count": 10
+      },
+      {
+        "task": "lightweight_multimodal_model",
+        "count": 10
+      },
+      {
+        "task": "model_compression",
+        "count": 10
+      },
+      {
+        "task": "model_quantization",
+        "count": 10
+      },
+      {
+        "task": "model_distillation",
+        "count": 10
+      },
+      {
+        "task": "inference_acceleration",
+        "count": 10
+      },
+      {
+        "task": "auto_evaluation_models",
+        "count": 10
+      },
+      {
+        "task": "model_monitoring",
+        "count": 10
+      },
+      {
+        "task": "model_iterative_update",
+        "count": 10
       },
       {
         "task": "code_generation",
         "count": 9
       },
       {
-        "task": "image_text_alignment",
-        "count": 9
-      },
-      {
         "task": "multimodal_understanding_generation",
-        "count": 9
-      },
-      {
-        "task": "lightweight_multimodal_model",
-        "count": 9
-      },
-      {
-        "task": "model_compression",
-        "count": 9
-      },
-      {
-        "task": "model_quantization",
-        "count": 9
-      },
-      {
-        "task": "model_distillation",
-        "count": 9
-      },
-      {
-        "task": "inference_acceleration",
-        "count": 9
-      },
-      {
-        "task": "auto_evaluation_models",
-        "count": 9
-      },
-      {
-        "task": "model_monitoring",
-        "count": 9
-      },
-      {
-        "task": "model_iterative_update",
         "count": 9
       },
       {

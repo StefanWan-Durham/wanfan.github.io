@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T14:54:55.340Z",
+  "updated_at": "2025-09-20T15:01:20.072Z",
   "by_category": {
     "framework_core": [
       {
@@ -232,6 +232,71 @@
           "hidden": false
         },
         "score_engineering": 0.19999349238982542
+      },
+      {
+        "id": "flutter/flutter",
+        "source": "github",
+        "name": "flutter",
+        "url": "https://github.com/flutter/flutter",
+        "tags": [
+          "android",
+          "app-framework",
+          "cross-platform",
+          "dart",
+          "dart-platform",
+          "desktop",
+          "flutter",
+          "flutter-package",
+          "fuchsia",
+          "ios",
+          "linux-desktop",
+          "macos",
+          "material-design",
+          "mobile",
+          "mobile-development",
+          "skia",
+          "web",
+          "web-framework",
+          "windows"
+        ],
+        "stats": {
+          "stars_total": 172922,
+          "forks_total": 29237,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T15:00:43Z",
+        "added_at": "2025-09-20",
+        "summary": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19999713952662881
+      },
+      {
+        "id": "github/gitignore",
+        "source": "github",
+        "name": "gitignore",
+        "url": "https://github.com/github/gitignore",
+        "tags": [
+          "git",
+          "gitignore"
+        ],
+        "stats": {
+          "stars_total": 169490,
+          "forks_total": 83005,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T14:59:14Z",
+        "added_at": "2025-09-20",
+        "summary": "A collection of useful .gitignore templates",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19999027245879253
       }
     ],
     "deployment_serving": [
