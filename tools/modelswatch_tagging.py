@@ -140,7 +140,11 @@ def deepseek_classify(prompt: str, max_tokens: int = 256) -> Optional[List[str]]
     api_key = os.getenv('DEEPSEEK_API_KEY')
     if not api_key:
         return None
-    import requests
+    try:
+        import requests  # type: ignore
+    except Exception:
+        # Graceful fallback: requests not installed; skip LLM classification
+        return None
     url = 'https://api.deepseek.com/chat/completions'
     headers = {'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json'}
     payload = {

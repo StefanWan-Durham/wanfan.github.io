@@ -36,6 +36,9 @@ jobs:
           HOTLIST_DEBUG: 1
         run: |
           node -v
+          python -V
+          python -m pip install --upgrade pip >/dev/null 2>&1 || true
+          python -m pip install requests >/dev/null 2>&1 || true
           node tools/modelswatch/weekly.mjs
           # (generate_snapshot_summaries.mjs already invoked inside weekly.mjs after snapshots; skip duplicate call)
           # Coverage for tri-lingual summaries
@@ -43,6 +46,7 @@ jobs:
           node tools/modelswatch/seed_hotlists.mjs
           # Coverage report (write JSON + console)
           node tools/modelswatch/analyze_hotlist_coverage.mjs --hotlist data/ai/modelswatch/models_hotlist.json --categories data/ai/ai_categories.json --out data/ai/modelswatch/coverage_summary.json || echo "coverage script failed"
+          if [ ! -f data/ai/modelswatch/coverage_summary.json ]; then echo '{"note":"coverage summary not generated"}' > data/ai/modelswatch/coverage_summary.json; fi
           echo "--- coverage_summary.json ---" && cat data/ai/modelswatch/coverage_summary.json || true
           # Generate tri-lingual summaries (non-fatal on failure)
           node tools/modelswatch/generate_summaries.mjs || echo "summaries generation failed"
@@ -60,12 +64,12 @@ jobs:
             data/ai/modelswatch/snapshots/** \
             data/ai/modelswatch/models_hotlist.json \
             data/ai/modelswatch/projects_hotlist.json \
-            data/ai/modelswatch/coverage_summary.json
+            data/ai/modelswatch/coverage_summary.json \
             data/ai/modelswatch/weekly_summaries.json \
             data/ai/modelswatch/summary_cache.json \
             data/ai/modelswatch/summaries_coverage.json \
             data/ai/modelswatch/coverage_gaps.json \
-            data/ai/modelswatch/classification_stats.json
+            data/ai/modelswatch/classification_stats.json || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
