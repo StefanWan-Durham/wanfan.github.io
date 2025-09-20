@@ -3,10 +3,11 @@ import https from 'https';
 
 const API_KEY = process.env.DEEPSEEK_API_KEY || '';
 const MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-chat';
-let RAW_BASE = process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com';
+let RAW_BASE = process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com/v1';
 RAW_BASE = RAW_BASE.replace(/\/$/, '');
-// If user mistakenly supplies a /v1 at end, strip it so we control path composition uniformly.
-const BASE_URL = RAW_BASE.replace(/\/v1$/,'');
+// Ensure exactly one /v1 segment (DeepSeek OpenAI-compatible endpoint requirement)
+if(!/\/v1$/.test(RAW_BASE)) RAW_BASE = RAW_BASE + '/v1';
+const BASE_URL = RAW_BASE; // already includes /v1
 const CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT || 10000);
 const DEBUG = /^(1|true|yes|on)$/i.test(process.env.MODELSWATCH_DEBUG||'');
 
@@ -22,7 +23,10 @@ export const summarizeDiagnostics = {
   endpoint_fallbacks: 0,
   endpoints_tried: [],
   retries: 0,
-  last_error: ''
+  last_error: '',
+  last_status: 0,
+  last_body_excerpt: '',
+  timings: [] // ms per attempt
 };
 
 export async function summarizeTriJSON(prompt, opts={}){
@@ -41,18 +45,22 @@ export async function summarizeTriJSON(prompt, opts={}){
     temperature,
     max_tokens: 800
   });
-  async function attempt(endpoint){
+  async function attempt(){
     return await new Promise(resolve=>{
       summarizeDiagnostics.attempts++;
-      const url = `${BASE_URL}${endpoint}`;
+      const url = `${BASE_URL}/chat/completions`;
       if(DEBUG) console.log('[summarize_multi] POST', url);
-      summarizeDiagnostics.endpoints_tried.push(endpoint);
-      const req = https.request(url,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${API_KEY}`}},res=>{
+      summarizeDiagnostics.endpoints_tried.push('/chat/completions');
+      const started = Date.now();
+      const req = https.request(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json','User-Agent':'modelswatch-summarizer/1.0','Authorization':`Bearer ${API_KEY}`}},res=>{
         let data=''; res.on('data',d=>data+=d); res.on('end',()=>{
+          summarizeDiagnostics.timings.push(Date.now()-started);
           if(res.statusCode && res.statusCode>=400){
             summarizeDiagnostics.status_errors[res.statusCode] = (summarizeDiagnostics.status_errors[res.statusCode]||0)+1;
             if(DEBUG) console.log('[summarize_multi] status', res.statusCode, 'body length', data.length);
           }
+          summarizeDiagnostics.last_status = res.statusCode||0;
+          summarizeDiagnostics.last_body_excerpt = (data||'').slice(0,180);
           try {
             const j = JSON.parse(data||'{}');
             const txt = j.choices?.[0]?.message?.content?.trim() || '';
@@ -83,17 +91,14 @@ export async function summarizeTriJSON(prompt, opts={}){
       req.write(body); req.end();
     });
   }
-  const endpointOrder = ['/v1/chat/completions','/chat/completions'];
-  let out = { en:'', zh:'', es:'' };
-  for(let i=0;i<endpointOrder.length;i++){
-    out = await attempt(endpointOrder[i]);
-    if(out.en||out.zh||out.es) break;
-    if(i < endpointOrder.length-1) summarizeDiagnostics.endpoint_fallbacks++;
-  }
-  // Simple retry (one extra pass) if still empty and we had network errors
-  if(!(out.en||out.zh||out.es) && summarizeDiagnostics.network_error>0 && summarizeDiagnostics.retries < 1){
-    summarizeDiagnostics.retries++;
-    out = await attempt(endpointOrder[0]);
+  let out = await attempt();
+  if(!(out.en||out.zh||out.es) && summarizeDiagnostics.network_error>0 && summarizeDiagnostics.retries < 2){
+    // Backoff retries (2 attempts total if network errors)
+    for(let r=0; r<2 && !(out.en||out.zh||out.es); r++){
+      await new Promise(res=> setTimeout(res, 500*(r+1)));
+      summarizeDiagnostics.retries++;
+      out = await attempt();
+    }
   }
   return out;
 }

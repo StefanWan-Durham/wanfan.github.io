@@ -19,9 +19,10 @@ const SCHEMA_VERSION = 1;
 const FORCE = process.argv.includes('--force');
 const MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-chat';
 const API_KEY = process.env.DEEPSEEK_API_KEY || '';
-let RAW_BASE = process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com';
+let RAW_BASE = process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com/v1';
 RAW_BASE = RAW_BASE.replace(/\/$/, '');
-const BASE_URL = RAW_BASE.replace(/\/v1$/,'');
+if(!/\/v1$/.test(RAW_BASE)) RAW_BASE = RAW_BASE + '/v1';
+const BASE_URL = RAW_BASE; // ensure /v1 present
 const CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT || 10000);
 const READ_TIMEOUT = Number(process.env.LLM_READ_TIMEOUT || 20000);
 
@@ -64,6 +65,8 @@ function buildContext(){
   return { taskDist, totalModels, distinctTasks, topLine: top };
 }
 
+const weeklyDiagnostics = { attempts:0, success:0, last_status:0, last_body_excerpt:'', retries:0 };
+
 async function callLLM(prompt, lang){
   if(!API_KEY){ return { text: fallbackText(lang, 'no_api_key') }; }
   const payload = JSON.stringify({
@@ -75,26 +78,25 @@ async function callLLM(prompt, lang){
     temperature: 0.5,
     max_tokens: 400
   });
-  const endpoints = ['/v1/chat/completions','/chat/completions'];
-  for(let round=0; round<2; round++){
-    for(const ep of endpoints){
-      const url = `${BASE_URL}${ep}`;
-      const result = await new Promise(resolve=>{
-        const req = https.request(url,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${API_KEY}`}},res=>{
-          let data=''; res.on('data',d=>data+=d); res.on('end',()=>{
-            try { const j=JSON.parse(data||'{}'); const text=j.choices?.[0]?.message?.content?.trim(); if(text) return resolve({ ok:true, text }); }
-            catch(e){ /* ignore parse */ }
-            resolve({ ok:false, text:null });
-          });
+  const url = `${BASE_URL}/chat/completions`;
+  for(let attempt=0; attempt<3; attempt++){
+    weeklyDiagnostics.attempts++;
+    const result = await new Promise(resolve=>{
+      const req = https.request(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json','User-Agent':'modelswatch-weekly/1.0','Authorization':`Bearer ${API_KEY}`}},res=>{
+        let data=''; res.on('data',d=>data+=d); res.on('end',()=>{
+          weeklyDiagnostics.last_status = res.statusCode||0;
+          weeklyDiagnostics.last_body_excerpt = (data||'').slice(0,200);
+          try { const j=JSON.parse(data||'{}'); const text=j.choices?.[0]?.message?.content?.trim(); if(text){ weeklyDiagnostics.success++; return resolve(text); } } catch{}
+          resolve(null);
         });
-        req.on('error',()=>resolve({ ok:false, text:null }));
-        req.setTimeout(CONN_TIMEOUT,()=>{ req.destroy(); resolve({ ok:false, text:null }); });
-        req.write(payload); req.end();
       });
-      if(result.ok && result.text){
-        return { text: result.text };
-      }
-    }
+      req.on('error',()=>resolve(null));
+      req.setTimeout(CONN_TIMEOUT,()=>{ req.destroy(); resolve(null); });
+      req.write(payload); req.end();
+    });
+    if(result){ return { text: result }; }
+    weeklyDiagnostics.retries++;
+    await new Promise(r=>setTimeout(r, 400*(attempt+1)));
   }
   return { text: fallbackText(lang,'timeout') };
 }
@@ -145,6 +147,7 @@ async function main(){
   };
   writeJSON(OUT_FILE, out);
   console.log('[summaries] wrote', OUT_FILE);
+  try { writeJSON(path.join(DATA_DIR,'weekly_summaries_diagnostics.json'), weeklyDiagnostics); } catch{}
 }
 
 main().catch(e=>{ console.error(e); process.exit(1); });

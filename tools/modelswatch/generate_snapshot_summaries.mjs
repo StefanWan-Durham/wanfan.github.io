@@ -102,6 +102,7 @@ async function main(){
     console.log(`[snapshot-summaries] total=${total} reuse=${reuse} generated=0 failed=0 (fast-path)`);
   }
 
+  let fallbackCount = 0;
   const generated = await mapLimit(toGen, MAX_CONCURRENCY, async ({ it, key, hash })=>{
     if(!API_KEY) return null;
     const prompt = buildPrompt(it);
@@ -118,7 +119,9 @@ async function main(){
     const neutral = zh || en || es || it.summary || it.description || '';
     if(en||zh||es){
       it.summary_en = en; it.summary_zh = zh; it.summary_es = es; it.summary = neutral;
-      cache.models[key] = { hash, updated_at: it.updated_at || nowIso, summary_en: en, summary_zh: zh, summary_es: es, summary: neutral, last_generated: nowIso, fallback: !(res.en||res.zh||res.es) };
+      const isFallback = !(res.en||res.zh||res.es);
+      if(isFallback) fallbackCount++;
+      cache.models[key] = { hash, updated_at: it.updated_at || nowIso, summary_en: en, summary_zh: zh, summary_es: es, summary: neutral, last_generated: nowIso, fallback: isFallback };
       gen++; return true;
     }
     return false;
@@ -149,7 +152,8 @@ async function main(){
       parse_fail: summarizeDiagnostics.parse_fail,
       network_error: summarizeDiagnostics.network_error,
       status_errors: summarizeDiagnostics.status_errors,
-      endpoint_fallbacks: summarizeDiagnostics.endpoint_fallbacks
+      endpoint_fallbacks: summarizeDiagnostics.endpoint_fallbacks,
+      fallback_count: fallbackCount
     });
   } catch{}
 }
