@@ -1,31 +1,19 @@
 {
-  "updated_at": "2025-09-19T22:06:50.410Z",
+  "version": 1,
+  "updated_at": "2025-09-20T15:37:44.873Z",
   "items": [
     {
-      "id": "ollama/ollama",
+      "id": "kubernetes/kubernetes",
       "source": "github",
-      "name": "ollama",
-      "url": "https://github.com/ollama/ollama",
-      "license": "MIT",
+      "name": "kubernetes",
+      "url": "https://github.com/kubernetes/kubernetes",
+      "license": "Apache-2.0",
       "lang": "Go",
       "tags": [
-        "deepseek",
-        "gemma",
-        "gemma3",
-        "gemma3n",
+        "cncf",
+        "containers",
         "go",
-        "golang",
-        "gpt-oss",
-        "llama",
-        "llama2",
-        "llama3",
-        "llava",
-        "llm",
-        "llms",
-        "mistral",
-        "ollama",
-        "phi4",
-        "qwen"
+        "kubernetes"
       ],
       "categories": {
         "capabilities": [],
@@ -33,202 +21,85 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 152571,
-        "forks": 13171,
-        "issues": 2152
+        "stars": 117570,
+        "forks": 41394,
+        "issues": 2514
       },
-      "score": 155305.15682924385,
+      "score": 125948.74351550927,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "Ollama 是一个开源工具，用于在本地运行和部署大型语言模型。它支持多种主流开源模型，包括 OpenAI GPT-OSS、DeepSeek-R1、Gemma 3 和 Llama 系列等。基于 Go 语言开发，提供简洁的命令行界面，方便用户快速下载、配置和使用模型。适用于开发者和研究人员在本地环境中进行模型测试、推理和应用开发。",
-      "updated_at": "2025-09-18T19:03:08Z",
-      "summary_en": "Ollama is a Go-based tool for running large language models locally, including OpenAI's GPT-OSS, DeepSeek-R1, and Gemma 3. It simplifies setup and deployment, enabling offline inference and experimentation. Ideal for developers and researchers seeking privacy, cost efficiency, and control over model usage. Supports popular open-source models like Llama and Gemma variants.",
-      "summary_zh": "Ollama 是一个开源工具，用于在本地运行和部署大型语言模型。它支持多种主流开源模型，包括 OpenAI GPT-OSS、DeepSeek-R1、Gemma 3 和 Llama 系列等。基于 Go 语言开发，提供简洁的命令行界面，方便用户快速下载、配置和使用模型。适用于开发者和研究人员在本地环境中进行模型测试、推理和应用开发。",
-      "summary_es": "Ollama es una herramienta de código abierto escrita en Go que facilita la ejecución local de modelos de lenguaje como OpenAI GPT-OSS, DeepSeek-R1, Gemma 3 y otros. Permite a los desarrolladores desplegar y experimentar con LLMs sin dependencia de servicios en la nube. Su diseño ligero y multiplataforma lo hace ideal para prototyping, investigación y aplicaciones que requieren privacidad de datos."
+      "summary": "Kubernetes 是一个开源的容器编排平台，用于自动化部署、扩展和管理容器化应用。它由 Google 设计并捐赠给 CNCF，现已成为云原生应用的核心基础设施。Kubernetes 支持跨主机集群的容器调度、服务发现、负载均衡和自动修复，适用于大规模分布式系统的运维场景。其高度可扩展的架构和丰富的生态系统使其成为企业级容器管理的首选工具。",
+      "updated_at": "2025-09-20T15:08:05Z",
+      "summary_en": "Kubernetes is an open-source container orchestration platform for automating deployment, scaling, and management of containerized applications. It excels in managing large-scale, distributed systems with high availability and resilience. Widely used in cloud-native environments, it supports microservices, batch processing, and stateful applications. Its extensibility and robust ecosystem make it a foundational tool for modern DevOps and infrastructure automation.",
+      "summary_zh": "Kubernetes 是一个开源的容器编排平台，用于自动化部署、扩展和管理容器化应用。它由 Google 设计并捐赠给 CNCF，现已成为云原生应用的核心基础设施。Kubernetes 支持跨主机集群的容器调度、服务发现、负载均衡和自动修复，适用于大规模分布式系统的运维场景。其高度可扩展的架构和丰富的生态系统使其成为企业级容器管理的首选工具。",
+      "summary_es": "Kubernetes es una plataforma de código abierto para orquestar contenedores en producción. Permite automatizar el despliegue, escalado y gestión de aplicaciones en contenedores. Sus puntos fuertes incluyen alta disponibilidad, auto-reparación y escalabilidad automática. Es ampliamente usado en entornos cloud nativos y sistemas distribuidos.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：kubernetes"
     },
     {
-      "id": "massgravel/Microsoft-Activation-Scripts",
+      "id": "yt-dlp/yt-dlp",
       "source": "github",
-      "name": "Microsoft-Activation-Scripts",
-      "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
-      "license": "GPL-3.0",
-      "lang": "Batchfile",
-      "tags": [
-        "activator",
-        "hwid",
-        "kms",
-        "kms38",
-        "massgrave",
-        "massgravel",
-        "microsoft",
-        "microsoft365",
-        "office",
-        "office365",
-        "ohook",
-        "powershell",
-        "tsforge",
-        "windows",
-        "windows-10",
-        "windows-11"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 148794,
-        "forks": 14446,
-        "issues": 1
-      },
-      "score": 151783.17990023148,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Microsoft-Activation-Scripts 是一个开源工具，用于激活 Windows 和 Office 产品。它支持多种激活方式，包括 HWID、Ohook、KMS38 和在线 KMS，同时提供高级故障排除功能。该项目适用于需要临时或长期激活微软产品的用户，尤其适合技术爱好者或测试环境使用。所有功能基于脚本实现，无需安装第三方软件，操作简单且透明。",
-      "updated_at": "2025-09-18T19:13:06Z",
-      "summary_en": "Microsoft-Activation-Scripts is an open-source tool for activating Windows and Microsoft Office using multiple methods, including HWID, KMS, and Ohook. It supports troubleshooting and is designed for users seeking legitimate activation alternatives. The project is widely used due to its reliability and flexibility, though it operates in a legally gray area. It is applicable for testing and educational purposes but should be used responsibly.",
-      "summary_zh": "Microsoft-Activation-Scripts 是一个开源工具，用于激活 Windows 和 Office 产品。它支持多种激活方式，包括 HWID、Ohook、KMS38 和在线 KMS，同时提供高级故障排除功能。该项目适用于需要临时或长期激活微软产品的用户，尤其适合技术爱好者或测试环境使用。所有功能基于脚本实现，无需安装第三方软件，操作简单且透明。",
-      "summary_es": "Herramienta de código abierto para activar Windows y Office mediante métodos como HWID, KMS y Ohook. Incluye funciones avanzadas de diagnóstico y reparación de activaciones. Útil para entornos de prueba, laboratorios o usuarios que necesiten reactivar sistemas legítimos. Destaca por su transparencia y enfoque técnico sin componentes maliciosos."
-    },
-    {
-      "id": "airbnb/javascript",
-      "source": "github",
-      "name": "javascript",
-      "url": "https://github.com/airbnb/javascript",
-      "license": "MIT",
-      "lang": "JavaScript",
-      "tags": [
-        "arrow-functions",
-        "es2015",
-        "es2016",
-        "es2017",
-        "es2018",
-        "es6",
-        "eslint",
-        "javascript",
-        "linting",
-        "naming-conventions",
-        "style-guide",
-        "style-linter",
-        "styleguide",
-        "tc39"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 147412,
-        "forks": 26784,
-        "issues": 179
-      },
-      "score": 152868.7321378858,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Airbnb JavaScript 风格指南是一套广泛采用的代码规范，旨在提升 JavaScript 代码的可读性和一致性。它涵盖了 ES6+ 语法、箭头函数、命名约定等现代 JavaScript 特性，并集成了 ESLint 工具以自动检查代码风格。该指南适用于团队协作开发，尤其适合前端项目及大型应用，帮助开发者减少风格争议，提高代码质量。",
-      "updated_at": "2025-09-18T18:52:28Z",
-      "summary_en": "The Airbnb JavaScript Style Guide is a widely adopted set of coding conventions for writing consistent and maintainable JavaScript. It provides clear rules for syntax, formatting, and best practices, including ES6+ features like arrow functions and modern linting standards. This guide is essential for teams aiming to enforce code quality, reduce errors, and improve collaboration. It is particularly useful for projects using ESLint and developers seeking industry-standard JavaScript patterns.",
-      "summary_zh": "Airbnb JavaScript 风格指南是一套广泛采用的代码规范，旨在提升 JavaScript 代码的可读性和一致性。它涵盖了 ES6+ 语法、箭头函数、命名约定等现代 JavaScript 特性，并集成了 ESLint 工具以自动检查代码风格。该指南适用于团队协作开发，尤其适合前端项目及大型应用，帮助开发者减少风格争议，提高代码质量。",
-      "summary_es": "Guía de estilos de JavaScript de Airbnb. Proporciona convenciones de codificación para ES6+ con reglas de ESLint. Mejora la legibilidad y mantenibilidad del código. Ampliamente adoptada en proyectos empresariales y open source."
-    },
-    {
-      "id": "vercel/next.js",
-      "source": "github",
-      "name": "next.js",
-      "url": "https://github.com/vercel/next.js",
-      "license": "MIT",
-      "lang": "JavaScript",
-      "tags": [
-        "blog",
-        "browser",
-        "compiler",
-        "components",
-        "hybrid",
-        "nextjs",
-        "node",
-        "react",
-        "server-rendering",
-        "ssg",
-        "static",
-        "static-site-generator",
-        "universal",
-        "vercel"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 134520,
-        "forks": 29340,
-        "issues": 3344
-      },
-      "score": 140487.99131998458,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Next.js 是一个基于 React 的现代 Web 开发框架，专注于提供高性能和优秀的开发者体验。它支持服务端渲染（SSR）、静态站点生成（SSG）以及混合渲染模式，能够有效提升页面加载速度和 SEO 友好性。内置的自动代码分割、热模块替换和零配置部署等功能，简化了开发流程。适用于构建博客、电商网站、企业级应用等多种 Web 项目。",
-      "updated_at": "2025-09-18T19:18:02Z",
-      "summary_en": "Next.js is a React-based framework for building server-rendered and statically generated web applications. It excels in performance optimization, SEO, and developer experience with features like automatic code splitting and hybrid rendering. Ideal for blogs, e-commerce sites, and dynamic web apps, it supports both client-side and server-side rendering. Its extensive ecosystem and built-in optimizations make it a top choice for modern web development.",
-      "summary_zh": "Next.js 是一个基于 React 的现代 Web 开发框架，专注于提供高性能和优秀的开发者体验。它支持服务端渲染（SSR）、静态站点生成（SSG）以及混合渲染模式，能够有效提升页面加载速度和 SEO 友好性。内置的自动代码分割、热模块替换和零配置部署等功能，简化了开发流程。适用于构建博客、电商网站、企业级应用等多种 Web 项目。",
-      "summary_es": "Next.js es un framework de React para aplicaciones web modernas. Ofrece renderizado híbrido (SSR y SSG), optimizaciones automáticas y soporte nativo para TypeScript. Ideal para sitios estáticos, aplicaciones dinámicas y proyectos que requieren alto rendimiento SEO. Su arquitectura basada en componentes simplifica el desarrollo full-stack con React."
-    },
-    {
-      "id": "ytdl-org/youtube-dl",
-      "source": "github",
-      "name": "youtube-dl",
-      "url": "https://github.com/ytdl-org/youtube-dl",
+      "name": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
       "license": "Unlicense",
       "lang": "Python",
-      "tags": [],
+      "tags": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
       "categories": {
         "capabilities": [],
         "scenes": [],
         "lifecycle": []
       },
       "stats": {
-        "stars": 137307,
-        "forks": 10461,
-        "issues": 4138
+        "stars": 126952,
+        "forks": 10186,
+        "issues": 2059
       },
-      "score": 139498.71786319447,
+      "score": 129089.17214205247,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "youtube-dl 是一个命令行工具，用于从 YouTube 及其他视频网站下载视频。它支持多种格式和质量选项，用户可灵活选择下载内容。该工具基于 Python 开发，跨平台兼容，适用于 Windows、macOS 和 Linux。由于其强大的兼容性和开源特性，youtube-dl 被广泛用于个人备份、研究或离线观看等场景。",
-      "updated_at": "2025-09-18T15:53:30Z",
-      "summary_en": "youtube-dl is a command-line tool for downloading videos from YouTube and numerous other video platforms. It is widely used for archiving, offline viewing, and content backup. Its key strengths include broad site compatibility, extensive customization options, and robust community support. The tool is particularly valuable for researchers, educators, and users needing reliable, scriptable video retrieval.",
-      "summary_zh": "youtube-dl 是一个命令行工具，用于从 YouTube 及其他视频网站下载视频。它支持多种格式和质量选项，用户可灵活选择下载内容。该工具基于 Python 开发，跨平台兼容，适用于 Windows、macOS 和 Linux。由于其强大的兼容性和开源特性，youtube-dl 被广泛用于个人备份、研究或离线观看等场景。",
-      "summary_es": "youtube-dl es una herramienta de línea de comandos para descargar videos de YouTube y otros sitios. Su principal fortaleza es la compatibilidad con múltiples plataformas y formatos. Permite descargar videos en diferentes calidades y extraer solo audio. Es ampliamente usado para archivar contenido, análisis offline o acceso sin conexión."
+      "summary": "yt-dlp 是一款基于 Python 开发的命令行音视频下载工具，是 youtube-dl 的一个活跃分支。它支持从 YouTube 等上千个网站高效下载视频和音频，具备强大的格式选择、元数据提取和下载队列管理功能。其亮点包括对 SponsorBlock 的集成支持、多线程下载加速以及持续更新的网站兼容性。适用于需要批量下载或自动化处理网络媒体内容的开发者和高级用户。",
+      "updated_at": "2025-09-20T15:20:27Z",
+      "summary_en": "yt-dlp is a command-line tool for downloading audio and video from YouTube and other supported sites. It extends youtube-dl with additional features like sponsor blocking, format selection, and metadata extraction. Ideal for archiving content, offline viewing, or batch processing media. Its open-source nature and active development make it a robust choice for users needing reliable, customizable downloads.",
+      "summary_zh": "yt-dlp 是一款基于 Python 开发的命令行音视频下载工具，是 youtube-dl 的一个活跃分支。它支持从 YouTube 等上千个网站高效下载视频和音频，具备强大的格式选择、元数据提取和下载队列管理功能。其亮点包括对 SponsorBlock 的集成支持、多线程下载加速以及持续更新的网站兼容性。适用于需要批量下载或自动化处理网络媒体内容的开发者和高级用户。",
+      "summary_es": "yt-dlp es un descargador de audio y video de línea de comandos basado en Python. Destaca por su compatibilidad con múltiples plataformas, soporte para formatos y códecs, y funciones avanzadas como SponsorBlock. Ideal para automatización, archivado de contenido y extracción de medios en calidad original.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：yt-dlp"
     },
     {
-      "id": "f/awesome-chatgpt-prompts",
+      "id": "Chalarangelo/30-seconds-of-code",
       "source": "github",
-      "name": "awesome-chatgpt-prompts",
-      "url": "https://github.com/f/awesome-chatgpt-prompts",
-      "license": "CC0-1.0",
+      "name": "30-seconds-of-code",
+      "url": "https://github.com/Chalarangelo/30-seconds-of-code",
+      "license": "CC-BY-4.0",
       "lang": "JavaScript",
       "tags": [
-        "bots",
-        "chatbot",
-        "chatgpt",
-        "chatgpt-api",
-        "language"
+        "astro",
+        "awesome-list",
+        "css",
+        "education",
+        "es6-javascript",
+        "git",
+        "html",
+        "javascript",
+        "learn-to-code",
+        "learning-resources",
+        "nodejs",
+        "programming",
+        "snippets"
       ],
       "categories": {
         "capabilities": [],
@@ -236,75 +107,38 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 134188,
-        "forks": 17836,
-        "issues": 283
+        "stars": 125294,
+        "forks": 12320,
+        "issues": 0
       },
-      "score": 137855.0092597994,
+      "score": 127857.99517445988,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个开源的ChatGPT提示词集合项目，旨在帮助用户更高效地使用ChatGPT及其他大型语言模型。项目包含大量精心设计的提示词模板，覆盖写作、编程、翻译、创意生成等多种场景。用户可以通过这些模板快速上手，提升与AI交互的效果和效率。该项目适用于开发者、内容创作者以及对AI工具感兴趣的技术爱好者，支持自由使用和修改。",
-      "updated_at": "2025-09-18T17:59:23Z",
-      "summary_en": "A curated collection of prompts designed to enhance interactions with ChatGPT and other large language models. It provides practical examples for generating more accurate, creative, and context-aware responses. Useful for developers, writers, and researchers seeking to optimize AI-driven conversations. The prompts cover diverse applications, from creative writing to technical problem-solving.",
-      "summary_zh": "这是一个开源的ChatGPT提示词集合项目，旨在帮助用户更高效地使用ChatGPT及其他大型语言模型。项目包含大量精心设计的提示词模板，覆盖写作、编程、翻译、创意生成等多种场景。用户可以通过这些模板快速上手，提升与AI交互的效果和效率。该项目适用于开发者、内容创作者以及对AI工具感兴趣的技术爱好者，支持自由使用和修改。",
-      "summary_es": "Repositorio de prompts para ChatGPT y otros modelos de lenguaje. Facilita la interacción con IA mediante ejemplos prácticos y configurables. Ideal para desarrolladores, escritores y educadores que buscan optimizar respuestas o automatizar tareas. Incluye categorías temáticas y estructuras reutilizables."
+      "summary": "这是一个面向开发者的实用代码片段集合，专注于提供简洁高效的 JavaScript 代码示例。项目包含大量短小精悍的代码片段，涵盖数组操作、字符串处理、DOM 操作等常见开发场景。每个片段都配有清晰的使用说明和示例，帮助开发者快速掌握实用编程技巧。无论是初学者还是经验丰富的开发者，都可以通过这些代码片段提升开发效率和代码质量。该项目特别适合作为日常编程的参考手册和技能提升工具。",
+      "updated_at": "2025-09-20T15:30:24Z",
+      "summary_en": "30-seconds-of-code is a collection of concise JavaScript code snippets for common programming tasks. It serves as a quick reference for developers to improve efficiency and learn modern JavaScript techniques. Ideal for both beginners and experienced coders, it covers topics like ES6, DOM manipulation, and algorithms. The snippets are open-source and community-driven, making it a practical educational resource.",
+      "summary_zh": "这是一个面向开发者的实用代码片段集合，专注于提供简洁高效的 JavaScript 代码示例。项目包含大量短小精悍的代码片段，涵盖数组操作、字符串处理、DOM 操作等常见开发场景。每个片段都配有清晰的使用说明和示例，帮助开发者快速掌握实用编程技巧。无论是初学者还是经验丰富的开发者，都可以通过这些代码片段提升开发效率和代码质量。该项目特别适合作为日常编程的参考手册和技能提升工具。",
+      "summary_es": "Colección de fragmentos de código JavaScript concisos y útiles para tareas comunes. Ideal para aprendizaje rápido, referencia y optimización de flujos de trabajo. Cubre manipulación de datos, DOM, algoritmos y utilidades ES6+. Perfecto para desarrolladores que buscan soluciones prácticas y eficientes.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：30-seconds-of-code"
     },
     {
-      "id": "golang/go",
+      "id": "langflow-ai/langflow",
       "source": "github",
-      "name": "go",
-      "url": "https://github.com/golang/go",
-      "license": "BSD-3-Clause",
-      "lang": "Go",
-      "tags": [
-        "go",
-        "golang",
-        "language",
-        "programming-language"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 129914,
-        "forks": 18403,
-        "issues": 9573
-      },
-      "score": 133694.34718418212,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Go 是一种由 Google 开发的静态类型、编译型编程语言，以其简洁的语法和高效的并发支持著称。它内置了强大的标准库和工具链，特别适合构建高性能、可扩展的后端服务和分布式系统。Go 的垃圾回收机制和跨平台编译能力使其在云原生开发、微服务架构和 DevOps 工具链中广泛应用。该语言设计注重开发效率和运行性能的平衡，是许多大型科技公司的首选技术之一。",
-      "updated_at": "2025-09-18T17:32:34Z",
-      "summary_en": "Go is a statically typed, compiled programming language designed for simplicity, efficiency, and concurrency. It excels in building scalable network services, command-line tools, and distributed systems. Key strengths include fast compilation, built-in concurrency primitives, and a robust standard library. It is widely used in cloud infrastructure, microservices, and DevOps tooling.",
-      "summary_zh": "Go 是一种由 Google 开发的静态类型、编译型编程语言，以其简洁的语法和高效的并发支持著称。它内置了强大的标准库和工具链，特别适合构建高性能、可扩展的后端服务和分布式系统。Go 的垃圾回收机制和跨平台编译能力使其在云原生开发、微服务架构和 DevOps 工具链中广泛应用。该语言设计注重开发效率和运行性能的平衡，是许多大型科技公司的首选技术之一。",
-      "summary_es": "Go es un lenguaje de programación de código abierto desarrollado por Google. Destaca por su sintaxis simple, compilación rápida y ejecución eficiente. Es ideal para desarrollo de sistemas, servicios web escalables y herramientas CLI. Su fuerte concurrencia nativa lo hace popular en microservicios y computación distribuida."
-    },
-    {
-      "id": "yangshun/tech-interview-handbook",
-      "source": "github",
-      "name": "tech-interview-handbook",
-      "url": "https://github.com/yangshun/tech-interview-handbook",
+      "name": "langflow",
+      "url": "https://github.com/langflow-ai/langflow",
       "license": "MIT",
-      "lang": "TypeScript",
+      "lang": "Python",
       "tags": [
-        "algorithm",
-        "algorithm-interview",
-        "algorithm-interview-questions",
-        "algorithms",
-        "behavioral-interviews",
-        "coding-interviews",
-        "interview-practice",
-        "interview-preparation",
-        "interview-questions",
-        "system-design"
+        "agents",
+        "chatgpt",
+        "generative-ai",
+        "large-language-models",
+        "multiagent",
+        "react-flow"
       ],
       "categories": {
         "capabilities": [],
@@ -312,38 +146,44 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 129729,
-        "forks": 15776,
-        "issues": 54
+        "stars": 120538,
+        "forks": 7638,
+        "issues": 878
       },
-      "score": 132984.07029375,
+      "score": 122165.58483495371,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "这是一个面向软件工程师的面试准备开源项目，提供全面的技术面试学习资源。内容涵盖算法、数据结构、系统设计以及行为面试等关键领域，帮助开发者高效备战各类技术岗位面试。项目整理了常见面试题目、解题思路和最佳实践，尤其适合时间有限的工程师快速提升面试能力。所有内容遵循 MIT 协议开放使用，支持社区共同维护和更新。",
-      "updated_at": "2025-09-18T18:25:45Z",
-      "summary_en": "A comprehensive, open-source guide for software engineers preparing for technical interviews. It covers coding problems, algorithms, system design, and behavioral questions. Well-structured and community-vetted, it's ideal for self-paced learning and practice. Suitable for both beginners and experienced developers aiming to refine their interview skills.",
-      "summary_zh": "这是一个面向软件工程师的面试准备开源项目，提供全面的技术面试学习资源。内容涵盖算法、数据结构、系统设计以及行为面试等关键领域，帮助开发者高效备战各类技术岗位面试。项目整理了常见面试题目、解题思路和最佳实践，尤其适合时间有限的工程师快速提升面试能力。所有内容遵循 MIT 协议开放使用，支持社区共同维护和更新。",
-      "summary_es": "Repositorio con materiales de preparación para entrevistas técnicas de programación. Incluye algoritmos, preguntas de diseño de sistemas y entrevistas conductuales. Destaca por su enfoque práctico y contenido bien organizado. Ideal para desarrolladores que buscan optimizar su estudio."
+      "summary": "Langflow是一个基于MIT协议的开源工具，专为构建和部署AI驱动的智能体与工作流而设计。它采用直观的图形化界面，支持用户通过拖拽组件快速搭建复杂的多智能体系统和大语言模型应用。该工具兼容主流生成式AI框架，适用于自动化任务处理、对话系统开发以及多智能体协作场景。凭借其灵活性和易用性，Langflow已成为AI应用原型设计和生产部署的热门选择。",
+      "updated_at": "2025-09-20T15:25:56Z",
+      "task_keys": [
+        "tool_use"
+      ],
+      "summary_en": "Langflow is an open-source framework for creating and deploying AI agents and workflows. It enables developers to build multi-agent systems and generative AI applications using large language models like ChatGPT. Its integration with React Flow provides a visual interface for designing complex workflows. The tool is particularly useful for prototyping and scaling AI-driven automation and conversational agents.",
+      "summary_zh": "Langflow是一个基于MIT协议的开源工具，专为构建和部署AI驱动的智能体与工作流而设计。它采用直观的图形化界面，支持用户通过拖拽组件快速搭建复杂的多智能体系统和大语言模型应用。该工具兼容主流生成式AI框架，适用于自动化任务处理、对话系统开发以及多智能体协作场景。凭借其灵活性和易用性，Langflow已成为AI应用原型设计和生产部署的热门选择。",
+      "summary_es": "Langflow es una herramienta de código abierto para construir y desplegar agentes y flujos de trabajo impulsados por IA. Destaca por su interfaz visual basada en React Flow, facilitando el diseño de pipelines con modelos de lenguaje grandes y agentes multiagente. Es ideal para desarrolladores que buscan prototipar rápidamente aplicaciones de IA generativa o chatbots sin código extenso. Su licencia MIT y alta adopción lo hacen flexible para uso comercial y académico.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：langflow"
     },
     {
-      "id": "Genymobile/scrcpy",
+      "id": "electron/electron",
       "source": "github",
-      "name": "scrcpy",
-      "url": "https://github.com/Genymobile/scrcpy",
-      "license": "Apache-2.0",
-      "lang": "C",
+      "name": "electron",
+      "url": "https://github.com/electron/electron",
+      "license": "MIT",
+      "lang": "C++",
       "tags": [
-        "android",
-        "c",
-        "ffmpeg",
-        "libav",
-        "mirroring",
-        "recording",
-        "screen",
-        "sdl2"
+        "c-plus-plus",
+        "chrome",
+        "css",
+        "electron",
+        "html",
+        "javascript",
+        "nodejs",
+        "v8",
+        "works-with-codespaces"
       ],
       "categories": {
         "capabilities": [],
@@ -351,21 +191,185 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 128283,
-        "forks": 12033,
-        "issues": 2547
+        "stars": 118371,
+        "forks": 16420,
+        "issues": 908
       },
-      "score": 130789.53198356483,
+      "score": 121754.84853094135,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "scrcpy 是一款开源的 Android 设备屏幕镜像与控制工具，通过 USB 或 TCP/IP 连接，实现低延迟、高画质的屏幕投射。它基于 C 语言开发，使用 FFmpeg 和 SDL2 库处理视频流和显示，无需在 Android 设备上安装任何应用。适用于开发调试、演示或远程操作场景，支持屏幕录制和键鼠控制。由于其轻量级和跨平台特性，深受开发者喜爱。",
-      "updated_at": "2025-09-18T18:52:24Z",
-      "summary_en": "Scrcpy is an open-source tool for mirroring and controlling Android devices from a desktop computer via USB or TCP/IP. It provides low-latency screen streaming and supports input forwarding, making it ideal for developers, testers, and users needing remote device access. Built with C, FFmpeg, and SDL2, it is lightweight, efficient, and works across Windows, macOS, and Linux. Its simplicity and performance make it a go-to solution for Android screen sharing and debugging.",
-      "summary_zh": "scrcpy 是一款开源的 Android 设备屏幕镜像与控制工具，通过 USB 或 TCP/IP 连接，实现低延迟、高画质的屏幕投射。它基于 C 语言开发，使用 FFmpeg 和 SDL2 库处理视频流和显示，无需在 Android 设备上安装任何应用。适用于开发调试、演示或远程操作场景，支持屏幕录制和键鼠控制。由于其轻量级和跨平台特性，深受开发者喜爱。",
-      "summary_es": "Scrcpy es una herramienta de código abierto para mostrar y controlar dispositivos Android desde una computadora. Funciona a través de USB o Wi-Fi, sin requerir acceso root. Destaca por su baja latencia, alta calidad de imagen y soporte para grabación de pantalla. Ideal para desarrolladores, pruebas de aplicaciones y presentaciones."
+      "summary": "Electron 是一个开源框架，允许开发者使用 JavaScript、HTML 和 CSS 构建跨平台桌面应用程序。它基于 Chromium 和 Node.js，将 Web 技术引入桌面开发，支持 Windows、macOS 和 Linux 系统。其核心优势在于简化了桌面应用的开发流程，使前端开发者能够快速构建功能丰富的原生体验应用。Electron 适用于需要跨平台兼容性的项目，如代码编辑器、聊天工具和多媒体应用等。",
+      "updated_at": "2025-09-20T14:27:03Z",
+      "summary_en": "Electron is a framework for building cross-platform desktop applications using web technologies like JavaScript, HTML, and CSS. It combines the Chromium rendering engine and Node.js runtime, enabling developers to create native-feeling apps for Windows, macOS, and Linux. Widely used for applications such as Slack, Visual Studio Code, and Discord, it simplifies desktop development with a single codebase. While resource-intensive, it remains popular for its flexibility and broad ecosystem.",
+      "summary_zh": "Electron 是一个开源框架，允许开发者使用 JavaScript、HTML 和 CSS 构建跨平台桌面应用程序。它基于 Chromium 和 Node.js，将 Web 技术引入桌面开发，支持 Windows、macOS 和 Linux 系统。其核心优势在于简化了桌面应用的开发流程，使前端开发者能够快速构建功能丰富的原生体验应用。Electron 适用于需要跨平台兼容性的项目，如代码编辑器、聊天工具和多媒体应用等。",
+      "summary_es": "Electron es un framework de código abierto para crear aplicaciones de escritorio multiplataforma usando tecnologías web como JavaScript, HTML y CSS. Permite a los desarrolladores aprovechar herramientas y bibliotecas web modernas. Sus puntos fuertes incluyen compatibilidad nativa con Windows, macOS y Linux, y la integración con Node.js. Es ideal para aplicaciones como editores de código, clientes de mensajería y herramientas de desarrollo.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：electron"
+    },
+    {
+      "id": "langchain-ai/langchain",
+      "source": "github",
+      "name": "langchain",
+      "url": "https://github.com/langchain-ai/langchain",
+      "license": "MIT",
+      "lang": "Jupyter Notebook",
+      "tags": [
+        "ai",
+        "anthropic",
+        "gemini",
+        "langchain",
+        "llm",
+        "openai",
+        "python"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 115834,
+        "forks": 19024,
+        "issues": 221
+      },
+      "score": 119738.79637044754,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "LangChain是一个基于Python的开源框架，专注于构建上下文感知的推理应用。它支持集成多种大型语言模型（如OpenAI、Anthropic、Gemini等），帮助开发者高效构建基于AI的应用。其核心亮点包括模块化设计、链式调用能力以及对工具和外部数据源的灵活支持。适用于开发智能问答、自动化任务、内容生成等场景，尤其适合需要结合多模型与外部系统的复杂应用。",
+      "updated_at": "2025-09-20T15:30:55Z",
+      "summary_en": "LangChain is a Python framework for building applications powered by large language models (LLMs). It enables developers to create context-aware reasoning systems by integrating LLMs with external data sources and tools. Key use cases include chatbots, document analysis, and automated workflows. Its modular design supports flexibility and extensibility, making it suitable for both prototyping and production environments.",
+      "summary_zh": "LangChain是一个基于Python的开源框架，专注于构建上下文感知的推理应用。它支持集成多种大型语言模型（如OpenAI、Anthropic、Gemini等），帮助开发者高效构建基于AI的应用。其核心亮点包括模块化设计、链式调用能力以及对工具和外部数据源的灵活支持。适用于开发智能问答、自动化任务、内容生成等场景，尤其适合需要结合多模型与外部系统的复杂应用。",
+      "summary_es": "LangChain es un framework de Python para construir aplicaciones con modelos de lenguaje (LLMs). Permite integrar múltiples proveedores como OpenAI y Anthropic, facilitando el desarrollo de sistemas de razonamiento contextual. Sus puntos fuertes incluyen modularidad, escalabilidad y soporte para cadenas de herramientas y memoria. Ideal para chatbots, asistentes inteligentes y aplicaciones de procesamiento de lenguaje natural.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：langchain"
+    },
+    {
+      "id": "d3/d3",
+      "source": "github",
+      "name": "d3",
+      "url": "https://github.com/d3/d3",
+      "license": "ISC",
+      "lang": "Shell",
+      "tags": [
+        "chart",
+        "charts",
+        "d3",
+        "data-visualization",
+        "svg",
+        "visualization"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 111504,
+        "forks": 22837,
+        "issues": 23
+      },
+      "score": 116171.26126242283,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "D3.js 是一个基于 Web 标准的数据可视化 JavaScript 库，专注于使用 SVG、Canvas 和 HTML 实现高度定制化的动态图表。它提供了强大的数据绑定和操作能力，允许开发者通过数据驱动的方式操作文档对象模型（DOM）。其核心优势在于灵活性和表现力，支持从简单的柱状图到复杂的交互式可视化项目。适用于需要高度自定义数据展示效果的前端开发、数据分析及交互设计场景。",
+      "updated_at": "2025-09-20T14:32:33Z",
+      "summary_en": "D3 is a powerful JavaScript library for creating dynamic, interactive data visualizations in web browsers. It excels at binding data to DOM elements, enabling custom charts, maps, and graphs using SVG, Canvas, or HTML. Its flexibility makes it ideal for complex, bespoke visualizations where fine-grained control is needed. Widely used in data journalism, dashboards, and scientific applications, it requires JavaScript proficiency but offers unparalleled customization.",
+      "summary_zh": "D3.js 是一个基于 Web 标准的数据可视化 JavaScript 库，专注于使用 SVG、Canvas 和 HTML 实现高度定制化的动态图表。它提供了强大的数据绑定和操作能力，允许开发者通过数据驱动的方式操作文档对象模型（DOM）。其核心优势在于灵活性和表现力，支持从简单的柱状图到复杂的交互式可视化项目。适用于需要高度自定义数据展示效果的前端开发、数据分析及交互设计场景。",
+      "summary_es": "D3 es una biblioteca JavaScript para visualización de datos mediante SVG, Canvas y HTML. Permite crear visualizaciones interactivas y personalizadas. Sus puntos fuertes incluyen control total sobre elementos gráficos y manipulación basada en datos. Ideal para dashboards, análisis exploratorio y visualizaciones web complejas.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：d3"
+    },
+    {
+      "id": "mrdoob/three.js",
+      "source": "github",
+      "name": "three.js",
+      "url": "https://github.com/mrdoob/three.js",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "3d",
+        "augmented-reality",
+        "canvas",
+        "html5",
+        "javascript",
+        "svg",
+        "virtual-reality",
+        "webaudio",
+        "webgl",
+        "webgl2",
+        "webgpu",
+        "webxr"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 108643,
+        "forks": 36012,
+        "issues": 597
+      },
+      "score": 115945.35381643518,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "three.js 是一个基于 WebGL 的 JavaScript 3D 图形库，用于在浏览器中创建和渲染高性能的 3D 内容。它提供了丰富的 API 和内置功能，支持几何体、材质、光照、相机和动画等核心 3D 概念。该库适用于开发交互式 3D 应用、数据可视化、游戏、虚拟现实（VR）和增强现实（AR）项目。由于其轻量级和跨平台特性，three.js 被广泛应用于 Web 端 3D 图形开发。",
+      "updated_at": "2025-09-20T15:12:32Z",
+      "summary_en": "three.js is a widely-used JavaScript library for creating and displaying 3D graphics in web browsers. It leverages WebGL, WebGL2, and other web technologies to build interactive 3D applications, games, and visualizations. Its strengths include cross-platform compatibility, extensive documentation, and a large community. It is ideal for developers working on virtual reality, augmented reality, data visualization, and immersive web experiences.",
+      "summary_zh": "three.js 是一个基于 WebGL 的 JavaScript 3D 图形库，用于在浏览器中创建和渲染高性能的 3D 内容。它提供了丰富的 API 和内置功能，支持几何体、材质、光照、相机和动画等核心 3D 概念。该库适用于开发交互式 3D 应用、数据可视化、游戏、虚拟现实（VR）和增强现实（AR）项目。由于其轻量级和跨平台特性，three.js 被广泛应用于 Web 端 3D 图形开发。",
+      "summary_es": "Three.js es una biblioteca JavaScript para crear gráficos 3D en navegadores web. Utiliza WebGL para renderizado de alto rendimiento y soporta realidad virtual y aumentada. Es ideal para visualizaciones, juegos y aplicaciones interactivas. Su amplia adopción y comunidad activa la convierten en la opción estándar para 3D web.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：three.js"
+    },
+    {
+      "id": "axios/axios",
+      "source": "github",
+      "name": "axios",
+      "url": "https://github.com/axios/axios",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "hacktoberfest",
+        "http-client",
+        "javascript",
+        "nodejs",
+        "promise"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 107663,
+        "forks": 11202,
+        "issues": 282
+      },
+      "score": 110003.30732723765,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Axios 是一个基于 Promise 的 HTTP 客户端，适用于浏览器和 Node.js 环境。它提供了简洁的 API，支持请求和响应拦截、自动转换 JSON 数据以及取消请求等功能。其设计注重易用性和灵活性，能够处理常见的 HTTP 操作，如 GET、POST 等。Axios 适用于前端和后端开发，是处理异步网络请求的常用工具。",
+      "updated_at": "2025-09-20T14:52:27Z",
+      "summary_en": "Axios is a promise-based HTTP client for JavaScript, supporting both browser and Node.js environments. It simplifies making asynchronous HTTP requests with a clean, intuitive API. Key strengths include automatic JSON data transformation, request/response interception, and built-in CSRF protection. It is widely used for API interactions in web and server applications.",
+      "summary_zh": "Axios 是一个基于 Promise 的 HTTP 客户端，适用于浏览器和 Node.js 环境。它提供了简洁的 API，支持请求和响应拦截、自动转换 JSON 数据以及取消请求等功能。其设计注重易用性和灵活性，能够处理常见的 HTTP 操作，如 GET、POST 等。Axios 适用于前端和后端开发，是处理异步网络请求的常用工具。",
+      "summary_es": "Axios es un cliente HTTP basado en promesas, compatible con navegadores y Node.js. Ofrece una API sencilla para realizar solicitudes HTTP, manejo automático de JSON y protección contra XSRF. Es ampliamente usado en aplicaciones web y servicios backend por su flexibilidad y soporte para interceptores.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：axios"
     }
   ]
 }

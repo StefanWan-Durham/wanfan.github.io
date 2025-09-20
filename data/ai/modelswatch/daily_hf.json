@@ -1,159 +1,79 @@
 {
-  "updated_at": "2025-09-19T22:06:50.410Z",
+  "version": 1,
+  "updated_at": "2025-09-20T15:37:44.873Z",
   "items": [
     {
-      "id": "dphn/dolphin-2.9.1-yi-1.5-34b",
+      "id": "Datadog/Toto-Open-Base-1.0",
       "source": "hf",
-      "name": "dolphin-2.9.1-yi-1.5-34b",
-      "url": "https://huggingface.co/dphn/dolphin-2.9.1-yi-1.5-34b",
+      "name": "Toto-Open-Base-1.0",
+      "url": "https://huggingface.co/Datadog/Toto-Open-Base-1.0",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
         "transformers",
         "safetensors",
-        "llama",
-        "text-generation",
-        "generated_from_trainer",
-        "axolotl",
-        "conversational",
-        "dataset:cognitivecomputations/Dolphin-2.9",
-        "dataset:teknium/OpenHermes-2.5",
-        "dataset:m-a-p/CodeFeedback-Filtered-Instruction",
-        "dataset:cognitivecomputations/dolphin-coder",
-        "dataset:cognitivecomputations/samantha-data",
-        "dataset:microsoft/orca-math-word-problems-200k",
-        "dataset:Locutusque/function-calling-chatml",
-        "dataset:internlm/Agent-FLAN",
-        "base_model:01-ai/Yi-1.5-34B",
-        "base_model:finetune:01-ai/Yi-1.5-34B",
-        "license:apache-2.0",
-        "autotrain_compatible",
-        "text-generation-inference",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 4702460,
-        "hf_likes": 39
-      },
-      "score": 9424.42,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "dolphin-2.9.1-yi-1.5-34b 是一个基于 Yi-34B 架构的开源对话生成模型，由多个高质量数据集训练而成，包括 Dolphin-2.9、OpenHermes-2.5 和 CodeFeedback-Filtered-Instruction。该模型专注于自然语言理解和生成，支持多轮对话、代码生成和指令遵循任务。其亮点在于结合了通用对话能力和代码相关任务的优化，适用于聊天助手、编程辅助和自动化任务处理等场景。模型采用 transformers 和 safetensors 格式，便于集成和部署。",
-      "updated_at": "2025-09-18T19:21:47.074Z",
-      "summary_en": "Dolphin-2.9.1-Yi-1.5-34B is a 34-billion-parameter conversational AI model fine-tuned on datasets including Dolphin-2.9, OpenHermes-2.5, and CodeFeedback. It excels in text generation, dialogue, and code-related tasks, leveraging the Yi-1.5 base for strong reasoning and instruction-following capabilities. Suitable for developers and researchers, it supports applications in chatbots, coding assistance, and general-purpose AI interactions. The model is available via Hugging Face Transformers and Safetensors, ensuring ease of integration and deployment.",
-      "summary_zh": "dolphin-2.9.1-yi-1.5-34b 是一个基于 Yi-34B 架构的开源对话生成模型，由多个高质量数据集训练而成，包括 Dolphin-2.9、OpenHermes-2.5 和 CodeFeedback-Filtered-Instruction。该模型专注于自然语言理解和生成，支持多轮对话、代码生成和指令遵循任务。其亮点在于结合了通用对话能力和代码相关任务的优化，适用于聊天助手、编程辅助和自动化任务处理等场景。模型采用 transformers 和 safetensors 格式，便于集成和部署。",
-      "summary_es": "Modelo de lenguaje Dolphin 2.9.1 Yi 1.5 34B, basado en LLaMA y entrenado con conjuntos de datos de instrucciones conversacionales y de código. Destaca en generación de texto, diálogo natural y asistencia en programación. Usos principales: chatbots, soporte técnico y herramientas de desarrollo. Fuerzas: gran capacidad contextual (34B) y enfoque en respuestas útiles y seguras.",
-      "task_keys": [
-        "code_generation"
-      ]
-    },
-    {
-      "id": "Kijai/WanVideo_comfy",
-      "source": "hf",
-      "name": "WanVideo_comfy",
-      "url": "https://huggingface.co/Kijai/WanVideo_comfy",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "diffusion-single-file",
-        "comfyui",
-        "base_model:Wan-AI/Wan2.1-VACE-1.3B",
-        "base_model:finetune:Wan-AI/Wan2.1-VACE-1.3B",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 4092644,
-        "hf_likes": 1423
-      },
-      "score": 8896.788,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "WanVideo_comfy 是基于 Wan2.1-VACE-1.3B 模型微调的视频生成模型，专为 ComfyUI 用户设计。它支持单文件加载，简化了工作流配置，适用于快速生成高质量视频内容。该模型在风格一致性和细节表现上有所优化，适合动画制作、创意内容生成等场景。用户可通过 ComfyUI 界面灵活调整参数，实现个性化的视频输出。",
-      "updated_at": "2025-09-18T19:21:47.074Z",
-      "summary_en": "WanVideo_comfy is a single-file diffusion model fine-tuned from Wan2.1-VACE-1.3B, optimized for use with ComfyUI. It enables efficient video generation and editing tasks, leveraging a lightweight architecture for accessible deployment. The model is particularly suited for applications requiring rapid prototyping and creative workflows in video synthesis. Its high download count reflects strong community adoption and practical usability.",
-      "summary_zh": "WanVideo_comfy 是基于 Wan2.1-VACE-1.3B 模型微调的视频生成模型，专为 ComfyUI 用户设计。它支持单文件加载，简化了工作流配置，适用于快速生成高质量视频内容。该模型在风格一致性和细节表现上有所优化，适合动画制作、创意内容生成等场景。用户可通过 ComfyUI 界面灵活调整参数，实现个性化的视频输出。",
-      "summary_es": "WanVideo_comfy es un modelo de difusión optimizado para ComfyUI, basado en Wan2.1-VACE-1.3B. Destaca por su facilidad de uso y eficiencia en generación de video. Ideal para aplicaciones de edición y creación de contenido visual. Su alta tasa de descargas refleja adopción significativa en la comunidad.",
-      "task_keys": [
-        "text_to_image"
-      ]
-    },
-    {
-      "id": "nlpaueb/legal-bert-base-uncased",
-      "source": "hf",
-      "name": "legal-bert-base-uncased",
-      "url": "https://huggingface.co/nlpaueb/legal-bert-base-uncased",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "bert",
-        "pretraining",
-        "legal",
-        "fill-mask",
-        "en",
-        "license:cc-by-sa-4.0",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 5608821,
-        "hf_likes": 271
-      },
-      "score": 11353.142,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Legal-BERT-Base-Uncased 是一个基于 BERT 架构的预训练语言模型，专门针对法律领域文本进行优化。该模型在大量法律文档上进行了预训练，能够更好地理解法律术语、句法结构和语义关系。其核心用途包括法律文档分类、信息抽取、问答系统以及法律文本的掩码语言建模任务。该模型适用于法律科技、合规分析、合同解析等场景，为法律自然语言处理任务提供了强有力的基础模型支持。",
-      "updated_at": "2025-09-18T19:21:47.074Z",
-      "summary_en": "Legal-BERT-Base-Uncased is a BERT model pretrained on English legal texts, optimized for tasks like document classification, named entity recognition, and information extraction in the legal domain. It excels in understanding complex legal language and terminology, making it suitable for applications such as contract analysis, case law summarization, and compliance checking. The model supports multiple frameworks (PyTorch, TensorFlow, JAX) and is licensed under CC BY-SA 4.0 for open use. Its pretraining on legal corpora enhances performance in specialized legal NLP tasks.",
-      "summary_zh": "Legal-BERT-Base-Uncased 是一个基于 BERT 架构的预训练语言模型，专门针对法律领域文本进行优化。该模型在大量法律文档上进行了预训练，能够更好地理解法律术语、句法结构和语义关系。其核心用途包括法律文档分类、信息抽取、问答系统以及法律文本的掩码语言建模任务。该模型适用于法律科技、合规分析、合同解析等场景，为法律自然语言处理任务提供了强有力的基础模型支持。",
-      "summary_es": "Legal-BERT es un modelo preentrenado especializado en lenguaje jurídico en inglés. Basado en BERT, destaca en tareas como clasificación de documentos legales, análisis de sentencias y extracción de cláusulas. Su principal fortaleza es la comprensión contextual de terminología legal compleja. Ideal para automatización de procesos legales e investigación jurídica asistida."
-    },
-    {
-      "id": "autogluon/chronos-bolt-base",
-      "source": "hf",
-      "name": "chronos-bolt-base",
-      "url": "https://huggingface.co/autogluon/chronos-bolt-base",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "safetensors",
-        "t5",
-        "time series",
-        "forecasting",
-        "pretrained models",
-        "foundation models",
-        "time series foundation models",
-        "time-series",
         "time-series-forecasting",
-        "arxiv:1910.10683",
+        "foundation models",
+        "pretrained models",
+        "time series foundation models",
+        "time series",
+        "time-series",
+        "timeseries",
+        "forecasting",
+        "observability",
+        "dataset:Salesforce/GiftEvalPretrain",
+        "dataset:autogluon/chronos_datasets",
+        "arxiv:2505.14766",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 5156315,
+        "likes_total": 109
+      },
+      "score": 10367.130000000001,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Toto-Open-Base-1.0 是一个基于 Transformer 架构的开源时间序列预测基础模型，适用于多种时序数据分析任务。该模型采用预训练方式，能够有效捕捉时间序列中的长期依赖关系和复杂模式。其亮点在于支持多领域时序数据的统一建模，包括但不限于金融、气象和工业监控等场景。用户可基于该模型进行微调，以适应特定的预测需求，提升时序预测的准确性和泛化能力。",
+      "updated_at": "2025-09-20T15:32:29.126Z",
+      "summary_en": "Toto-Open-Base-1.0 is a pretrained foundation model for time-series forecasting, built on the Transformers architecture. It excels in handling diverse time-series data, offering robust performance for tasks like demand prediction, anomaly detection, and resource planning. Its strengths include adaptability to various domains and efficient fine-tuning for specific forecasting needs. This model is ideal for researchers and practitioners seeking a scalable, open-source solution for accurate and generalizable time-series analysis.",
+      "summary_zh": "Toto-Open-Base-1.0 是一个基于 Transformer 架构的开源时间序列预测基础模型，适用于多种时序数据分析任务。该模型采用预训练方式，能够有效捕捉时间序列中的长期依赖关系和复杂模式。其亮点在于支持多领域时序数据的统一建模，包括但不限于金融、气象和工业监控等场景。用户可基于该模型进行微调，以适应特定的预测需求，提升时序预测的准确性和泛化能力。",
+      "summary_es": "Toto-Open-Base-1.0 es un modelo base preentrenado para pronóstico de series temporales. Diseñado para capturar patrones complejos en datos secuenciales, es ideal para aplicaciones en finanzas, IoT y análisis operacional. Su arquitectura basada en transformers permite adaptaciones eficientes a dominios específicos con fine-tuning mínimo.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：Toto-Open-Base-1.0"
+    },
+    {
+      "id": "thuml/sundial-base-128m",
+      "source": "hf",
+      "name": "sundial-base-128m",
+      "url": "https://huggingface.co/thuml/sundial-base-128m",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "safetensors",
+        "sundial",
+        "time series",
+        "time-series",
+        "forecasting",
+        "foundation models",
+        "pretrained models",
+        "generative models",
+        "time series foundation models",
+        "time-series-forecasting",
+        "custom_code",
+        "dataset:thuml/UTSD",
+        "dataset:Salesforce/lotsa_data",
+        "dataset:autogluon/chronos_datasets",
+        "arxiv:2502.00816",
         "arxiv:2403.07815",
         "license:apache-2.0",
         "region:us"
@@ -164,243 +84,208 @@
         "lifecycle": []
       },
       "stats": {
-        "hf_downloads_7d": 5488213,
-        "hf_likes": 26
+        "downloads_total": 4856549,
+        "likes_total": 44
       },
-      "score": 10989.426,
+      "score": 9735.098,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
-      "summary": "Chronos-Bolt-Base 是一个基于 T5 架构的时间序列预测基础模型，由 AutoGluon 团队开发。该模型通过预训练学习时间序列的通用表示，能够适应多种预测任务而无需大量领域特定数据。其核心亮点在于利用 Transformer 结构捕捉长期依赖关系，并支持零样本或少样本预测，显著降低了时间序列建模的门槛。适用于金融、气象、工业监控等领域的多步预测场景，为研究人员和工程师提供了高效且灵活的解决方案。",
-      "updated_at": "2025-09-18T19:21:47.074Z",
-      "summary_en": "Chronos-Bolt-Base is a pretrained T5-based foundation model for time series forecasting. It excels at generating accurate probabilistic forecasts across diverse domains, including finance, energy, and retail. Its key strength lies in leveraging transfer learning to adapt to new datasets with minimal fine-tuning. The model is suitable for both univariate and multivariate forecasting tasks, offering a scalable and efficient alternative to traditional statistical methods.",
-      "summary_zh": "Chronos-Bolt-Base 是一个基于 T5 架构的时间序列预测基础模型，由 AutoGluon 团队开发。该模型通过预训练学习时间序列的通用表示，能够适应多种预测任务而无需大量领域特定数据。其核心亮点在于利用 Transformer 结构捕捉长期依赖关系，并支持零样本或少样本预测，显著降低了时间序列建模的门槛。适用于金融、气象、工业监控等领域的多步预测场景，为研究人员和工程师提供了高效且灵活的解决方案。",
-      "summary_es": "Chronos-Bolt-Base es un modelo de base para pronóstico de series temporales, basado en T5 y preentrenado con datos sintéticos. Destaca por su capacidad de adaptación a múltiples dominios y escalas temporales sin necesidad de ajuste fino. Es ideal para aplicaciones en finanzas, logística y monitorización industrial, ofreciendo predicciones rápidas y eficientes. Su arquitectura transformer permite capturar dependencias temporales complejas de manera robusta.",
+      "summary": "Sundial-base-128m 是一个基于 Transformer 架构的时间序列预测基础模型，参数量为 1.28 亿。该模型通过大规模时间序列数据预训练，具备较强的时序特征提取和生成能力。其核心亮点在于能够适应多种时间序列任务，包括单变量和多变量预测，同时支持零样本和少样本推理。适用于金融、气象、能源等领域的时序数据分析与预测场景。",
+      "updated_at": "2025-09-20T15:32:29.126Z",
+      "summary_en": "Sundial-base-128m is a pretrained foundation model for time series forecasting and generation. It supports a wide range of applications, including demand prediction, anomaly detection, and synthetic data generation. Its strengths lie in strong generalization across diverse time series domains and efficient fine-tuning for specific tasks. The model is applicable to both univariate and multivariate forecasting scenarios, making it a versatile tool for researchers and practitioners.",
+      "summary_zh": "Sundial-base-128m 是一个基于 Transformer 架构的时间序列预测基础模型，参数量为 1.28 亿。该模型通过大规模时间序列数据预训练，具备较强的时序特征提取和生成能力。其核心亮点在于能够适应多种时间序列任务，包括单变量和多变量预测，同时支持零样本和少样本推理。适用于金融、气象、能源等领域的时序数据分析与预测场景。",
+      "summary_es": "Sundial-base-128m es un modelo generativo preentrenado para series temporales. Destaca por su capacidad de predicción en múltiples dominios, usando arquitecturas eficientes. Es ideal para aplicaciones de forecasting en energía, finanzas o clima. Su diseño ligero facilita el despliegue en entornos con recursos limitados.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：sundial-base-128m"
+    },
+    {
+      "id": "jinaai/jina-embeddings-v3",
+      "source": "hf",
+      "name": "jina-embeddings-v3",
+      "url": "https://huggingface.co/jinaai/jina-embeddings-v3",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "onnx",
+        "safetensors",
+        "feature-extraction",
+        "sentence-similarity",
+        "mteb",
+        "sentence-transformers",
+        "custom_code",
+        "multilingual",
+        "af",
+        "am",
+        "ar",
+        "as",
+        "az",
+        "be",
+        "bg",
+        "bn",
+        "br",
+        "bs",
+        "ca",
+        "cs",
+        "cy",
+        "da",
+        "de",
+        "el",
+        "en",
+        "eo",
+        "es",
+        "et",
+        "eu",
+        "fa",
+        "fi",
+        "fr",
+        "fy",
+        "ga",
+        "gd",
+        "gl",
+        "gu",
+        "ha",
+        "he",
+        "hi",
+        "hr",
+        "hu",
+        "hy",
+        "id",
+        "is",
+        "it",
+        "ja",
+        "jv",
+        "ka",
+        "kk",
+        "km",
+        "kn",
+        "ko",
+        "ku",
+        "ky",
+        "la",
+        "lo",
+        "lt",
+        "lv",
+        "mg",
+        "mk",
+        "ml",
+        "mn",
+        "mr",
+        "ms",
+        "my",
+        "ne",
+        "nl",
+        "no",
+        "om",
+        "or",
+        "pa",
+        "pl",
+        "ps",
+        "pt",
+        "ro",
+        "ru",
+        "sa",
+        "sd",
+        "si",
+        "sk",
+        "sl",
+        "so",
+        "sq",
+        "sr",
+        "su",
+        "sv",
+        "sw",
+        "ta",
+        "te",
+        "th",
+        "tl",
+        "tr",
+        "ug",
+        "uk",
+        "ur",
+        "uz",
+        "vi",
+        "xh",
+        "yi",
+        "zh",
+        "arxiv:2409.10173",
+        "license:cc-by-nc-4.0",
+        "model-index",
+        "region:eu"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 4325612,
+        "likes_total": 1068
+      },
+      "score": 9185.224,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Jina Embeddings V3 是一个多语言文本嵌入模型，支持生成 8192 维的高质量向量表示。该模型基于 Transformer 架构，适用于特征提取、句子相似度计算等任务，在 MTEB 基准测试中表现优异。其亮点在于支持超长上下文（最大 8192 个 token）和跨语言语义理解，适用于多语言搜索、文档检索和语义匹配等场景。模型提供 PyTorch、ONNX 和 SafeTensors 格式，便于集成到现有系统中。",
+      "updated_at": "2025-09-20T15:32:29.126Z",
+      "summary_en": "Jina Embeddings v3 is a multilingual text embedding model designed for high-performance feature extraction and semantic similarity tasks. It supports multiple languages and is optimized for efficient inference via ONNX and PyTorch. The model excels in benchmarks like MTEB, making it suitable for applications such as search, clustering, and retrieval-augmented generation. Its open-source nature and integration with popular frameworks ensure broad applicability in both research and production environments.",
+      "summary_zh": "Jina Embeddings V3 是一个多语言文本嵌入模型，支持生成 8192 维的高质量向量表示。该模型基于 Transformer 架构，适用于特征提取、句子相似度计算等任务，在 MTEB 基准测试中表现优异。其亮点在于支持超长上下文（最大 8192 个 token）和跨语言语义理解，适用于多语言搜索、文档检索和语义匹配等场景。模型提供 PyTorch、ONNX 和 SafeTensors 格式，便于集成到现有系统中。",
+      "summary_es": "Jina Embeddings V3 es un modelo de embeddings multilingüe optimizado para similitud semántica y recuperación de información. Destaca por su alta eficiencia en tareas de búsqueda y clustering de texto, con soporte para 30 idiomas. Su arquitectura permite escalar a dominios técnicos y legales. Ideal para sistemas de recomendación y aplicaciones de IA conversacional.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：jina-embeddings-v3"
+    },
+    {
+      "id": "Salesforce/moirai-2.0-R-small",
+      "source": "hf",
+      "name": "moirai-2.0-R-small",
+      "url": "https://huggingface.co/Salesforce/moirai-2.0-R-small",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "safetensors",
+        "time series",
+        "forecasting",
+        "pretrained models",
+        "foundation models",
+        "time series foundation models",
+        "time-series",
+        "time-series-forecasting",
+        "arxiv:2403.07815",
+        "arxiv:2402.02592",
+        "license:cc-by-nc-4.0",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 4272176,
+        "likes_total": 20
+      },
+      "score": 8554.352,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Moirai-2.0-R-small 是 Salesforce 开发的一个小型时间序列预测基础模型，基于 Transformer 架构进行预训练。该模型支持多变量预测任务，能够处理多种时间序列数据，包括经济、天气和能源等领域的时序数据。其亮点在于统一的建模框架，能够灵活适应不同频率和长度的输入序列，同时具备零样本和少样本预测能力。适用于需要快速部署且资源受限的场景，如实时监控和短期预测任务。",
+      "updated_at": "2025-09-20T15:32:29.126Z",
       "task_keys": [
         "time_series_forecasting"
-      ]
-    },
-    {
-      "id": "colbert-ir/colbertv2.0",
-      "source": "hf",
-      "name": "colbertv2.0",
-      "url": "https://huggingface.co/colbert-ir/colbertv2.0",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "onnx",
-        "safetensors",
-        "bert",
-        "ColBERT",
-        "en",
-        "arxiv:2004.12832",
-        "arxiv:2007.00814",
-        "arxiv:2101.00436",
-        "arxiv:2112.01488",
-        "arxiv:2205.09707",
-        "license:mit",
-        "endpoints_compatible",
-        "region:us"
       ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 5388853,
-        "hf_likes": 285
-      },
-      "score": 10920.206,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "ColBERTv2.0 是一种基于 BERT 的高效检索模型，通过改进的交互式表示方法提升信息检索性能。它结合了深度语义理解和向量检索的优势，支持快速且准确的文档匹配。该模型适用于大规模文本检索、问答系统和搜索引擎优化等场景，尤其擅长处理复杂查询和长文档。支持 Transformers、PyTorch 和 ONNX 等多种框架，便于集成和部署。",
-      "updated_at": "2025-09-18T19:21:47.074Z",
-      "summary_en": "ColBERTv2.0 is a neural retrieval model that enhances dense passage retrieval with late interaction, combining BERT-based contextual embeddings with efficient similarity computation. It excels in information retrieval tasks, offering strong performance in both zero-shot and fine-tuned settings. The model is particularly useful for search engines, question answering, and document retrieval systems. Its support for ONNX and SafeTensors ensures compatibility and ease of deployment in production environments.",
-      "summary_zh": "ColBERTv2.0 是一种基于 BERT 的高效检索模型，通过改进的交互式表示方法提升信息检索性能。它结合了深度语义理解和向量检索的优势，支持快速且准确的文档匹配。该模型适用于大规模文本检索、问答系统和搜索引擎优化等场景，尤其擅长处理复杂查询和长文档。支持 Transformers、PyTorch 和 ONNX 等多种框架，便于集成和部署。",
-      "summary_es": "ColBERTv2.0 es un modelo de recuperación de información basado en BERT que indexa y busca documentos mediante representaciones densas y dispersas. Destaca por su eficiencia en búsqueda semántica, permitiendo consultas rápidas y precisas en grandes volúmenes de texto. Es ideal para sistemas de preguntas y respuestas, motores de búsqueda y aplicaciones que requieran recuperación contextualmente relevante. Soporta múltiples idiomas y se integra fácilmente con frameworks como PyTorch y ONNX.",
-      "task_keys": [
-        "neural_retrieval"
-      ]
-    },
-    {
-      "id": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
-      "source": "hf",
-      "name": "Wan_2.2_ComfyUI_Repackaged",
-      "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "diffusion-single-file",
-        "comfyui",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 5280276,
-        "hf_likes": 313
-      },
-      "score": 10717.052,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "Wan_2.2_ComfyUI_Repackaged 是一个基于 ComfyUI 框架的 Stable Diffusion 模型打包版本，专为简化图像生成流程而设计。该模型整合了 Wan 2.2 版本的权重，并针对 ComfyUI 进行了优化，支持单文件加载，极大提升了易用性和部署效率。其亮点在于无需复杂配置即可快速启动高质量图像生成任务，适用于艺术创作、概念设计和原型可视化等场景。该模型特别适合希望快速上手 Stable Diffusion 且偏好 ComfyUI 工作流的用户。",
-      "updated_at": "2025-09-18T19:21:47.074Z",
-      "summary_en": "Wan_2.2_ComfyUI_Repackaged is a single-file diffusion model optimized for use with ComfyUI, a popular node-based interface for stable diffusion workflows. It enables efficient image generation and manipulation, particularly suited for users seeking streamlined, high-performance inference without complex setup. Its repackaged format simplifies deployment and integration, making it ideal for artists, developers, and researchers focused on creative or experimental applications. The high download count reflects its practicality and broad appeal in the AI art community.",
-      "summary_zh": "Wan_2.2_ComfyUI_Repackaged 是一个基于 ComfyUI 框架的 Stable Diffusion 模型打包版本，专为简化图像生成流程而设计。该模型整合了 Wan 2.2 版本的权重，并针对 ComfyUI 进行了优化，支持单文件加载，极大提升了易用性和部署效率。其亮点在于无需复杂配置即可快速启动高质量图像生成任务，适用于艺术创作、概念设计和原型可视化等场景。该模型特别适合希望快速上手 Stable Diffusion 且偏好 ComfyUI 工作流的用户。",
-      "summary_es": "Wan_2.2_ComfyUI_Repackaged es un modelo de difusión optimizado para ComfyUI, enfocado en generación de imágenes. Destaca por su facilidad de uso, integración directa y alto rendimiento en inferencia. Ideal para artistas digitales y desarrolladores que buscan flujos de trabajo estables y eficientes en creación visual. Su formato single-file simplifica la implementación.",
-      "task_keys": [
-        "text_to_image"
-      ]
-    },
-    {
-      "id": "coqui/XTTS-v2",
-      "source": "hf",
-      "name": "XTTS-v2",
-      "url": "https://huggingface.co/coqui/XTTS-v2",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "coqui",
-        "text-to-speech",
-        "license:other",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 4799057,
-        "hf_likes": 3040
-      },
-      "score": 11118.114,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "XTTS-v2 是由 Coqui 开发的开源文本转语音模型，支持多语言语音合成与语音克隆功能。该模型基于先进的深度学习架构，能够根据少量参考音频生成自然且富有表现力的语音。其亮点在于支持跨语言语音转换，并具备优秀的音色保持能力，适用于配音、有声读物制作和多语言内容生成等场景。XTTS-v2 适合开发者、内容创作者及研究人员用于语音合成相关的应用开发与实验。",
-      "updated_at": "2025-09-18T19:21:47.074Z",
-      "summary_en": "XTTS-v2 is a multilingual text-to-speech model supporting voice cloning with just a few seconds of reference audio. It excels in generating natural, expressive speech across languages like English, Spanish, French, and German. Ideal for content creation, audiobooks, and accessibility tools, it offers high-quality output with minimal data. Its open-source nature encourages integration into diverse applications.",
-      "summary_zh": "XTTS-v2 是由 Coqui 开发的开源文本转语音模型，支持多语言语音合成与语音克隆功能。该模型基于先进的深度学习架构，能够根据少量参考音频生成自然且富有表现力的语音。其亮点在于支持跨语言语音转换，并具备优秀的音色保持能力，适用于配音、有声读物制作和多语言内容生成等场景。XTTS-v2 适合开发者、内容创作者及研究人员用于语音合成相关的应用开发与实验。",
-      "summary_es": "XTTS-v2 es un modelo de síntesis de voz que genera habla natural multilingüe a partir de texto. Destaca por su capacidad de clonación de voz con pocos datos de referencia, alta calidad y soporte para varios idiomas. Es ideal para aplicaciones de accesibilidad, narración automatizada y generación de contenido multimedia.",
-      "task_keys": [
-        "tts"
-      ]
-    },
-    {
-      "id": "google-t5/t5-small",
-      "source": "hf",
-      "name": "t5-small",
-      "url": "https://huggingface.co/google-t5/t5-small",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "rust",
-        "onnx",
-        "safetensors",
-        "t5",
-        "text2text-generation",
-        "summarization",
-        "translation",
-        "en",
-        "fr",
-        "ro",
-        "de",
-        "multilingual",
-        "dataset:c4",
-        "arxiv:1805.12471",
-        "arxiv:1708.00055",
-        "arxiv:1704.05426",
-        "arxiv:1606.05250",
-        "arxiv:1808.09121",
-        "arxiv:1810.12885",
-        "arxiv:1905.10044",
-        "arxiv:1910.09700",
-        "license:apache-2.0",
-        "text-generation-inference",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 4480628,
-        "hf_likes": 488
-      },
-      "score": 9205.256,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "t5-small是谷歌推出的轻量级文本生成模型，基于Transformer架构。它采用编码器-解码器结构，适用于多种文本转换任务，如摘要生成、翻译和问答。模型参数量较小，适合资源受限环境或快速实验场景。支持多种框架部署，包括PyTorch、TensorFlow和JAX。",
-      "updated_at": "2025-09-18T19:21:47.074Z",
-      "summary_en": "T5-small is a compact, versatile text-to-text transformer model from Google. It excels at tasks like summarization, translation, and question answering by framing all problems as text generation. Its small size makes it efficient for deployment in resource-constrained environments while maintaining solid performance. Ideal for prototyping, lightweight applications, and educational use in NLP workflows.",
-      "summary_zh": "t5-small是谷歌推出的轻量级文本生成模型，基于Transformer架构。它采用编码器-解码器结构，适用于多种文本转换任务，如摘要生成、翻译和问答。模型参数量较小，适合资源受限环境或快速实验场景。支持多种框架部署，包括PyTorch、TensorFlow和JAX。",
-      "summary_es": "T5-small es un modelo de texto a texto basado en Transformers, diseñado para tareas de generación y transformación de texto. Su arquitectura versátil permite resúmenes, traducción y respuesta a preguntas. Es eficiente en recursos, ideal para entornos con limitaciones computacionales. Ampliamente utilizado en procesamiento de lenguaje natural e integración en aplicaciones prácticas."
-    },
-    {
-      "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
-      "source": "hf",
-      "name": "tiny-Qwen2ForCausalLM-2.5",
-      "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "safetensors",
-        "qwen2",
-        "text-generation",
-        "trl",
-        "conversational",
-        "autotrain_compatible",
-        "text-generation-inference",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "hf_downloads_7d": 4417381,
-        "hf_likes": 1
-      },
-      "score": 8835.262,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "tiny-Qwen2ForCausalLM-2.5 是一个基于 Qwen2 架构的轻量级因果语言模型，专为文本生成任务设计。该模型支持 transformers 和 safetensors 格式，适用于对话生成、文本补全等场景。其亮点在于兼容 AutoTrain 和文本生成推理（TGI），便于快速部署和微调。该模型适合需要高效生成文本的应用，如聊天机器人或内容创作助手。",
-      "updated_at": "2025-09-18T19:21:47.074Z",
-      "summary_en": "tiny-Qwen2ForCausalLM-2.5 is a compact, open-source language model optimized for text generation and conversational tasks. It is compatible with popular frameworks like Transformers, TRL, and Text Generation Inference, making it suitable for deployment in lightweight applications such as chatbots and automated content creation. Its small size ensures efficient inference and easy integration, while supporting autotrain and endpoints compatibility enhances its adaptability for research and production use. Ideal for developers seeking a performant yet resource-efficient model for natural language processing.",
-      "summary_zh": "tiny-Qwen2ForCausalLM-2.5 是一个基于 Qwen2 架构的轻量级因果语言模型，专为文本生成任务设计。该模型支持 transformers 和 safetensors 格式，适用于对话生成、文本补全等场景。其亮点在于兼容 AutoTrain 和文本生成推理（TGI），便于快速部署和微调。该模型适合需要高效生成文本的应用，如聊天机器人或内容创作助手。",
-      "summary_es": "Modelo causal de lenguaje pequeño basado en Qwen2, optimizado para generación de texto conversacional. Destaca por su compatibilidad con transformers, safetensors y herramientas como TRL. Ideal para pruebas de inferencia rápida y prototipado de chatbots. Su tamaño reducido permite despliegue eficiente en entornos con recursos limitados."
+      "summary_en": "Moirai-2.0-R-small is a compact foundation model for time series forecasting, pretrained on diverse datasets. It supports zero-shot and few-shot predictions across various domains, including energy, weather, and economics. Its strengths lie in efficient parameter usage and strong generalization without task-specific fine-tuning. Ideal for researchers and practitioners seeking scalable, adaptable forecasting solutions with minimal data requirements.",
+      "summary_zh": "Moirai-2.0-R-small 是 Salesforce 开发的一个小型时间序列预测基础模型，基于 Transformer 架构进行预训练。该模型支持多变量预测任务，能够处理多种时间序列数据，包括经济、天气和能源等领域的时序数据。其亮点在于统一的建模框架，能够灵活适应不同频率和长度的输入序列，同时具备零样本和少样本预测能力。适用于需要快速部署且资源受限的场景，如实时监控和短期预测任务。",
+      "summary_es": "Moirai-2.0-R-small es un modelo de base para series temporales, preentrenado y de código abierto. Destaca por su capacidad de predicción en múltiples dominios y escalas temporales. Su diseño modular y eficiencia lo hacen adecuado para aplicaciones en finanzas, energía y logística. Incluye soporte para SafeTensors y está respaldado por investigación publicada en arXiv.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：moirai-2.0-R-small"
     }
   ]
 }
