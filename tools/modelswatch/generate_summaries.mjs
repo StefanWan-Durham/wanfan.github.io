@@ -19,7 +19,9 @@ const SCHEMA_VERSION = 1;
 const FORCE = process.argv.includes('--force');
 const MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-chat';
 const API_KEY = process.env.DEEPSEEK_API_KEY || '';
-const BASE_URL = (process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com').replace(/\/$/, '');
+let RAW_BASE = process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com';
+RAW_BASE = RAW_BASE.replace(/\/$/, '');
+const BASE_URL = RAW_BASE.replace(/\/v1$/,'');
 const CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT || 10000);
 const READ_TIMEOUT = Number(process.env.LLM_READ_TIMEOUT || 20000);
 
@@ -64,7 +66,7 @@ function buildContext(){
 
 async function callLLM(prompt, lang){
   if(!API_KEY){ return { text: fallbackText(lang, 'no_api_key') }; }
-  const body = JSON.stringify({
+  const payload = JSON.stringify({
     model: MODEL,
     messages: [
       { role: 'system', content: 'You are an analyst producing concise factual weekly summaries about open-source AI model trends.' },
@@ -73,31 +75,28 @@ async function callLLM(prompt, lang){
     temperature: 0.5,
     max_tokens: 400
   });
-  const url = `${BASE_URL}/v1/chat/completions`;
-  return new Promise((resolve)=>{
-    const req = https.request(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`
-      }
-    }, res => {
-      let data='';
-      res.on('data', d=> data+=d);
-      res.on('end', ()=>{
-        try {
-          const j = JSON.parse(data);
-          const text = j.choices?.[0]?.message?.content?.trim() || fallbackText(lang,'empty');
-          resolve({ text });
-        } catch(e){
-          console.warn('[summaries] parse error', e); resolve({ text: fallbackText(lang,'parse_error') });
-        }
+  const endpoints = ['/v1/chat/completions','/chat/completions'];
+  for(let round=0; round<2; round++){
+    for(const ep of endpoints){
+      const url = `${BASE_URL}${ep}`;
+      const result = await new Promise(resolve=>{
+        const req = https.request(url,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${API_KEY}`}},res=>{
+          let data=''; res.on('data',d=>data+=d); res.on('end',()=>{
+            try { const j=JSON.parse(data||'{}'); const text=j.choices?.[0]?.message?.content?.trim(); if(text) return resolve({ ok:true, text }); }
+            catch(e){ /* ignore parse */ }
+            resolve({ ok:false, text:null });
+          });
+        });
+        req.on('error',()=>resolve({ ok:false, text:null }));
+        req.setTimeout(CONN_TIMEOUT,()=>{ req.destroy(); resolve({ ok:false, text:null }); });
+        req.write(payload); req.end();
       });
-    });
-    req.on('error', e=>{ console.warn('[summaries] request error', e); resolve({ text: fallbackText(lang,'net_error') }); });
-    req.setTimeout(CONN_TIMEOUT, ()=>{ console.warn('[summaries] conn timeout'); req.destroy(); resolve({ text: fallbackText(lang,'timeout') }); });
-    req.write(body); req.end();
-  });
+      if(result.ok && result.text){
+        return { text: result.text };
+      }
+    }
+  }
+  return { text: fallbackText(lang,'timeout') };
 }
 
 function fallbackText(lang, reason){

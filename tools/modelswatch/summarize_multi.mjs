@@ -3,7 +3,10 @@ import https from 'https';
 
 const API_KEY = process.env.DEEPSEEK_API_KEY || '';
 const MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-chat';
-const BASE_URL = (process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com').replace(/\/$/, '');
+let RAW_BASE = process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com';
+RAW_BASE = RAW_BASE.replace(/\/$/, '');
+// If user mistakenly supplies a /v1 at end, strip it so we control path composition uniformly.
+const BASE_URL = RAW_BASE.replace(/\/v1$/,'');
 const CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT || 10000);
 const DEBUG = /^(1|true|yes|on)$/i.test(process.env.MODELSWATCH_DEBUG||'');
 
@@ -16,7 +19,10 @@ export const summarizeDiagnostics = {
   parse_fail: 0,
   network_error: 0,
   status_errors: {}, // statusCode -> count
-  endpoint_fallbacks: 0
+  endpoint_fallbacks: 0,
+  endpoints_tried: [],
+  retries: 0,
+  last_error: ''
 };
 
 export async function summarizeTriJSON(prompt, opts={}){
@@ -40,6 +46,7 @@ export async function summarizeTriJSON(prompt, opts={}){
       summarizeDiagnostics.attempts++;
       const url = `${BASE_URL}${endpoint}`;
       if(DEBUG) console.log('[summarize_multi] POST', url);
+      summarizeDiagnostics.endpoints_tried.push(endpoint);
       const req = https.request(url,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${API_KEY}`}},res=>{
         let data=''; res.on('data',d=>data+=d); res.on('end',()=>{
           if(res.statusCode && res.statusCode>=400){
@@ -71,19 +78,22 @@ export async function summarizeTriJSON(prompt, opts={}){
           }
         });
       });
-      req.on('error',e=>{ summarizeDiagnostics.network_error++; if(DEBUG) console.log('[summarize_multi] network error', e.message); resolve({ en:'', zh:'', es:''}); });
-      req.setTimeout(CONN_TIMEOUT,()=>{ req.destroy(); summarizeDiagnostics.network_error++; resolve({ en:'', zh:'', es:''}); });
+      req.on('error',e=>{ summarizeDiagnostics.network_error++; summarizeDiagnostics.last_error = e.message; if(DEBUG) console.log('[summarize_multi] network error', e.message); resolve({ en:'', zh:'', es:''}); });
+      req.setTimeout(CONN_TIMEOUT,()=>{ req.destroy(); summarizeDiagnostics.network_error++; summarizeDiagnostics.last_error = 'timeout'; resolve({ en:'', zh:'', es:''}); });
       req.write(body); req.end();
     });
   }
-  // Try modern endpoint first, fallback to legacy if empty
-  let out = await attempt('/v1/chat/completions');
-  if(!(out.en||out.zh||out.es)){
-    const legacy = await attempt('/chat/completions');
-    if(legacy.en||legacy.zh||legacy.es){
-      summarizeDiagnostics.endpoint_fallbacks++;
-      out = legacy;
-    }
+  const endpointOrder = ['/v1/chat/completions','/chat/completions'];
+  let out = { en:'', zh:'', es:'' };
+  for(let i=0;i<endpointOrder.length;i++){
+    out = await attempt(endpointOrder[i]);
+    if(out.en||out.zh||out.es) break;
+    if(i < endpointOrder.length-1) summarizeDiagnostics.endpoint_fallbacks++;
+  }
+  // Simple retry (one extra pass) if still empty and we had network errors
+  if(!(out.en||out.zh||out.es) && summarizeDiagnostics.network_error>0 && summarizeDiagnostics.retries < 1){
+    summarizeDiagnostics.retries++;
+    out = await attempt(endpointOrder[0]);
   }
   return out;
 }
