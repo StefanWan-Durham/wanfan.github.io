@@ -2,6 +2,7 @@
 /* Fetch trending/open-source GitHub repos and return normalized items. */
 import fs from 'fs';
 import path from 'path';
+import { debug, info } from './log.js';
 
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, 'data', 'ai', 'modelswatch');
@@ -59,7 +60,7 @@ export async function fetchGithubTop(){
     }
   }
   if (res.status === 304) {
-    console.log('GitHub search not modified');
+  debug('GitHub search not modified');
     // Try to reuse last written items if available
     try{ const prev = readJSON(lastOut); if(prev && Array.isArray(prev.items)) return prev.items; }catch{}
     return [];
@@ -93,6 +94,6 @@ export async function fetchGithubTop(){
 }
 if (import.meta.url === `file://${process.argv[1]}`) {
   fetchGithubTop().then(items=>{
-    console.log('GitHub items:', items.length);
+    info('GitHub items:', items.length);
   }).catch(e=>{ console.error(e); process.exit(1); });
 }

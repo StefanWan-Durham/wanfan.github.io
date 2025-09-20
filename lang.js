@@ -92,6 +92,10 @@ const translations = {
   mw_sort_delta7: '7日增量',
   mw_sort_stars: 'Stars',
   mw_sort_downloads: 'Downloads',
+  mw_sort_stars7: 'Stars 7日',
+  mw_sort_forks7: 'Forks 7日',
+  mw_sort_downloads7: '下载 7日',
+  mw_sort_likes7: 'Likes 7日',
   mw_top_overall: '全站 Top',
   mw_top_darkhorse: '黑马榜 · 7天增长',
   mw_top_github: 'GitHub Top',
@@ -99,9 +103,10 @@ const translations = {
   mw_top_new: '新上榜',
   mw_top_bycat: '分类 Top',
   // Model Watch modes
-  mw_mode_daily: '每日推荐',
-  mw_mode_gh_top: '开源项目热门榜',
-  mw_mode_hf_top: '开源模型热门榜',
+  // Updated mode labels
+  mw_mode_daily: '今日灵感',
+  mw_mode_gh_top: '工程热榜',
+  mw_mode_hf_top: '模型实验场',
   mw_section_gh: 'GitHub 开源项目',
   mw_section_hf: 'Hugging Face 开源模型',
   visit_label: '访问',
@@ -211,6 +216,21 @@ const translations = {
   theme_mode_light: '浅色模式',
   theme_switch_to_light: '切换为浅色模式',
   theme_switch_to_dark: '切换为深色模式'
+  ,
+  // Reason label badges (模型追踪器 Daily/Hotlists)
+  mw_reason_trending_growth: '飙升',
+  mw_reason_agent_workflow: 'Agent/工作流',
+  mw_reason_model_optimization: '模型优化',
+  mw_reason_distillation: '蒸馏',
+  mw_reason_benchmark_update: '基准更新',
+  mw_reason_security_safety: '安全',
+  mw_reason_new_release: '新发布',
+  mw_reason_notable: '值得关注',
+  mw_reason_multi: '多列',
+  // Mode new names (ensure i18n keys exist if reused)
+  mw_mode_daily_new: '今日灵感',
+  mw_mode_gh_hotlist: '工程热榜',
+  mw_mode_hf_lab: '模型实验场'
   },
   en: {
     site_title: 'Fan Wan · Personal Website',
@@ -289,6 +309,10 @@ const translations = {
   mw_sort_delta7: '7‑day growth',
   mw_sort_stars: 'Stars',
   mw_sort_downloads: 'Downloads',
+  mw_sort_stars7: 'Stars 7d',
+  mw_sort_forks7: 'Forks 7d',
+  mw_sort_downloads7: 'Downloads 7d',
+  mw_sort_likes7: 'Likes 7d',
   mw_top_overall: 'Top overall',
   mw_top_darkhorse: 'Dark horses · 7‑day growth',
   mw_top_github: 'GitHub Top',
@@ -296,9 +320,10 @@ const translations = {
   mw_top_new: 'Newcomers',
   mw_top_bycat: 'Top by category',
   // Model Watch modes
-  mw_mode_daily: 'Daily Picks',
-  mw_mode_gh_top: 'GitHub Top',
-  mw_mode_hf_top: 'Hugging Face Top',
+  // Updated mode labels
+  mw_mode_daily: 'Inspiration Today',
+  mw_mode_gh_top: 'Engineering Hotlist',
+  mw_mode_hf_top: 'Model Lab',
   mw_section_gh: 'GitHub open-source projects',
   mw_section_hf: 'Hugging Face open-source models',
   visit_label: 'Visit',
@@ -399,6 +424,21 @@ const translations = {
   theme_mode_light: 'Light mode',
   theme_switch_to_light: 'Switch to light theme',
   theme_switch_to_dark: 'Switch to dark theme'
+  ,
+  // Reason label badges
+  mw_reason_trending_growth: 'Surging',
+  mw_reason_agent_workflow: 'Agent Workflow',
+  mw_reason_model_optimization: 'Optimization',
+  mw_reason_distillation: 'Distillation',
+  mw_reason_benchmark_update: 'Benchmark Update',
+  mw_reason_security_safety: 'Security & Safety',
+  mw_reason_new_release: 'New Release',
+  mw_reason_notable: 'Notable',
+  mw_reason_multi: 'Multi',
+  // New mode names
+  mw_mode_daily_new: 'Inspiration Today',
+  mw_mode_gh_hotlist: 'Engineering Hotlist',
+  mw_mode_hf_lab: 'Model Lab'
   },
   es: {
     site_title: 'Fan Wan · Sitio personal',
@@ -480,6 +520,10 @@ const translations = {
   visit_label: 'Visitar',
   mw_sort_stars: 'Estrellas',
   mw_sort_downloads: 'Descargas',
+  mw_sort_stars7: 'Estrellas 7d',
+  mw_sort_forks7: 'Forks 7d',
+  mw_sort_downloads7: 'Descargas 7d',
+  mw_sort_likes7: 'Likes 7d',
   mw_top_overall: 'Top general',
   mw_top_darkhorse: 'Revelaciones · crecimiento 7 días',
   mw_top_github: 'Top de GitHub',
@@ -487,9 +531,10 @@ const translations = {
   mw_top_new: 'Nuevos',
   mw_top_bycat: 'Top por categoría',
   // Model Watch modes
-  mw_mode_daily: 'Recomendaciones diarias',
-  mw_mode_gh_top: 'Top de proyectos OSS',
-  mw_mode_hf_top: 'Top de modelos OSS',
+  // Updated mode labels
+  mw_mode_daily: 'Inspiración Hoy',
+  mw_mode_gh_top: 'Ranking Ingeniería',
+  mw_mode_hf_top: 'Laboratorio de Modelos',
   // AI Radar toolbar
   radar_search_placeholder: 'Búsqueda global…',
   radar_filter_source_all: 'Todas las fuentes',
@@ -587,6 +632,21 @@ const translations = {
   theme_mode_light: 'Modo claro',
   theme_switch_to_light: 'Cambiar a modo claro',
   theme_switch_to_dark: 'Cambiar a modo oscuro'
+  ,
+  // Reason label badges
+  mw_reason_trending_growth: 'En Auge',
+  mw_reason_agent_workflow: 'Flujo de Agentes',
+  mw_reason_model_optimization: 'Optimización',
+  mw_reason_distillation: 'Destilación',
+  mw_reason_benchmark_update: 'Actualización Benchmark',
+  mw_reason_security_safety: 'Seguridad',
+  mw_reason_new_release: 'Nuevo Lanzamiento',
+  mw_reason_notable: 'Destacado',
+  mw_reason_multi: 'Múltiple',
+  // New mode names
+  mw_mode_daily_new: 'Inspiración Hoy',
+  mw_mode_gh_hotlist: 'Ranking Ingeniería',
+  mw_mode_hf_lab: 'Laboratorio de Modelos'
   }
 };
 

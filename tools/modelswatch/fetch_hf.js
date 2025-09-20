@@ -2,6 +2,7 @@
 /* Fetch popular public HF models via REST (no auth required for public). */
 import fs from 'fs';
 import path from 'path';
+import { info } from './log.js';
 
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, 'data', 'ai', 'modelswatch');
@@ -20,6 +21,8 @@ async function hfList(){
 }
 
 function mapModel(m){
+  const downloads = m.downloads || 0;
+  const likes = m.likes || 0;
   return {
     id: m.id,
     source: 'hf',
@@ -30,8 +33,10 @@ function mapModel(m){
     tags: m.tags || [],
     categories: { capabilities: [], scenes: [], lifecycle: [] },
     stats: {
-      hf_downloads_7d: (m.downloads || 0),
-      hf_likes: m.likes || 0,
+      // Canonical cumulative fields (Phase 1 schema)
+      downloads_total: downloads,
+      likes_total: likes
+      // NOTE: Removed pseudo fields hf_downloads_7d / hf_likes (were misleading totals masquerading as 7d). Front-end now normalizes.
     },
     score: 0,
     timeline: { t: [], stars: [], downloads: [] },
@@ -41,8 +46,8 @@ function mapModel(m){
 }
 
 function scoreModel(it){
-  const dl = it.stats.hf_downloads_7d||0;
-  const likes = it.stats.hf_likes||0;
+  const dl = it.stats.downloads_total || 0;
+  const likes = it.stats.likes_total || 0;
   return dl*0.002 + likes*0.5;
 }
 
@@ -61,6 +66,6 @@ export async function fetchHFTop(){
 }
 if (import.meta.url === `file://${process.argv[1]}`) {
   fetchHFTop().then(items=>{
-    console.log('HF items:', items.length);
+    info('HF items:', items.length);
   }).catch(e=>{ console.error(e); process.exit(1); });
 }

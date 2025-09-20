@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { readFileSync, writeFileSync } from 'fs';
+import { info, warn } from './log.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { fetchGithubTop } from './fetch_github.js';
@@ -144,12 +145,24 @@ async function main(){
     writeJSON(path.join(outDir, 'top_hf.json'), { updated_at: now, items: hf2 });
   }else{
     // Weekly job updates only the weekly top files and corpus; it does NOT write daily_* files.
-    writeJSON(path.join(outDir, 'top_github.json'), { updated_at: now, items: gh });
-    writeJSON(path.join(outDir, 'top_hf.json'), { updated_at: now, items: hf });
+  writeJSON(path.join(outDir, 'top_github.json'), { updated_at: now, items: gh });
+  writeJSON(path.join(outDir, 'top_hf.json'), { updated_at: now, items: hf });
   }
   // Also refresh corpus files for daily picks
   writeJSON(path.join(outDir, 'corpus.github.json'), { updated_at: now, items: gh });
   writeJSON(path.join(outDir, 'corpus.hf.json'), { updated_at: now, items: hf });
+  info('[weekly] refreshed corpus + top files');
+  // Chain: build snapshots + update hotlists (model & project)
+  try {
+    const { spawnSync } = await import('child_process');
+    function runNode(script){
+      const r = spawnSync('node', [script], { stdio: 'inherit' });
+  if(r.status!==0) warn(`[weekly] script failed: ${script}`);
+    }
+    runNode('tools/modelswatch/build_snapshots.mjs');
+    runNode('tools/modelswatch/update_model_hotlist.mjs');
+    runNode('tools/modelswatch/update_project_hotlist.mjs');
+  }catch(e){ warn('[weekly] hotlist chain failed', e); }
 }
 
 main().catch(e=>{ console.error(e); process.exit(1); });

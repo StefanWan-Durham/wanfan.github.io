@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { info } from './log.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { fetchGithubTop } from './fetch_github.js';
 import { fetchHFTop } from './fetch_hf.js';
+import { SCHEMA_VERSION } from './schema.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '../../');
@@ -369,7 +371,7 @@ async function main(){
   // Diverse selection per source
   const gTop = selectDiverse(cg, NGH, { ...recent, quota:{...quotaGH}, alpha: ALPHA, cooldownDays: COOLDOWN, knownCaps });
   const hTop = selectDiverse(ch, NHF, { ...recent, quota:{...quotaHF}, alpha: ALPHA, cooldownDays: COOLDOWN, knownCaps });
-  console.log(`[daily] github candidates=${cg.length}, pick=${gTop.length}; hf candidates=${ch.length}, pick=${hTop.length}`);
+  info(`[daily] github candidates=${cg.length}, pick=${gTop.length}; hf candidates=${ch.length}, pick=${hTop.length}`);
   // Summarize with DeepSeek when available; limit concurrency to 3
   const gsum = await mapLimit(gTop, 3, async (it)=> {
     const { zh, en, es } = await smartSummarizeMulti(it);
@@ -382,18 +384,53 @@ async function main(){
     const neutral = zh || en || es || it.summary || it.description || '';
     return { ...it, summary: neutral, summary_en: en, summary_zh: zh, summary_es: es };
   });
-  writeJSON(path.join(dir,'daily_github.json'), { updated_at: now, items: gsum });
-  writeJSON(path.join(dir,'daily_hf.json'), { updated_at: now, items: hsum });
-  console.log(`[daily] wrote daily_github.json=${gsum.length}, daily_hf.json=${hsum.length}`);
+  // --- Reason label & text augmentation ---
+  function inferReasonLabel(it){
+    const s = (it.summary||'').toLowerCase();
+    const tags = (it.tags||[]).map(t=>String(t).toLowerCase());
+    if((it.stats?.stars_7d||0) > 200 || (it.stats?.downloads_7d||0) > 5000000) return 'trending_growth';
+    if(tags.includes('agent') || /agent/.test(s)) return 'agent_workflow';
+    if(tags.includes('quantization') || /quantiz|int8|int4|量化/.test(s)) return 'model_optimization';
+    if(/distill|蒸馏/.test(s)) return 'distillation';
+    if(/benchmark|evaluation|leaderboard|榜/.test(s)) return 'benchmark_update';
+    if(/security|安全|越狱|attack|防护/.test(s)) return 'security_safety';
+    if(/release|v\d+\.\d+/.test(s)) return 'new_release';
+    return 'notable';
+  }
+  function buildReasonText(it, label){
+    const name = it.name||it.id;
+    switch(label){
+      case 'trending_growth': return `短期增速显著，活跃度激增：${name}`;
+      case 'agent_workflow': return `Agent/工作流相关能力突出：${name}`;
+      case 'model_optimization': return `模型优化/量化相关实践：${name}`;
+      case 'distillation': return `蒸馏/轻量化成果：${name}`;
+      case 'benchmark_update': return `基准测试/评测更新：${name}`;
+      case 'security_safety': return `安全与对齐相关更新：${name}`;
+      case 'new_release': return `新版本发布：${name}`;
+      default: return `值得关注的项目：${name}`;
+    }
+  }
+  function decorate(items){
+    return items.map(it=>{
+      const label = inferReasonLabel(it);
+      const reason = buildReasonText(it, label);
+      return { ...it, reason_label: label, reason_text: reason };
+    });
+  }
+  const gDecorated = decorate(gsum);
+  const hDecorated = decorate(hsum);
+  writeJSON(path.join(dir,'daily_github.json'), { version:SCHEMA_VERSION, updated_at: now, items: gDecorated });
+  writeJSON(path.join(dir,'daily_hf.json'), { version:SCHEMA_VERSION, updated_at: now, items: hDecorated });
+  info(`[daily] wrote daily_github.json=${gsum.length}, daily_hf.json=${hsum.length}`);
 
   // --- Write combined archive for calendar browsing ---
   try{
     // ensure archiveDir exists
     try{ await import('fs/promises').then(fs=>fs.mkdir(archiveDir, { recursive: true })); }catch{}
-    const combined = { date: yyyyMmDd, updated_at: now, items: [...gsum, ...hsum] };
+  const combined = { version:SCHEMA_VERSION, date: yyyyMmDd, updated_at: now, items: [...gDecorated, ...hDecorated] };
     const archivePath = path.join(archiveDir, `${yyyyMmDd}.json`);
     writeJSON(archivePath, combined);
-    console.log(`[daily] archived ${combined.items.length} items -> ${archivePath}`);
+  info(`[daily] archived ${combined.items.length} items -> ${archivePath}`);
 
     // maintain dates.json (most-recent-first, unique)
     const datesPath = path.join(archiveDir, 'dates.json');
@@ -406,7 +443,7 @@ async function main(){
       // Trim to a reasonable length to keep repo small
       if(dates.length>120) dates = dates.slice(0,120);
       writeJSON(datesPath, dates);
-      console.log(`[daily] updated dates.json (${dates.length} dates)`);
+  info(`[daily] updated dates.json (${dates.length} dates)`);
     }
   }catch(e){ console.warn('[daily] archive write failed:', e.message||e); }
 }

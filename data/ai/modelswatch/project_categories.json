@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "updated_at": "",
+  "categories": [
+    { "key": "framework_core", "zh": "训练与推理框架", "en": "Framework/Core", "es": "Framework/Núcleo" },
+    { "key": "deployment_serving", "zh": "部署与服务化", "en": "Deployment & Serving", "es": "Despliegue y Servicio" },
+    { "key": "optimization_compilers", "zh": "优化与编译器", "en": "Optimization & Compilers", "es": "Optimización y Compiladores" },
+    { "key": "data_tooling", "zh": "数据与评测工具", "en": "Data & Evaluation", "es": "Datos y Evaluación" },
+    { "key": "agents_workflows", "zh": "Agent/自动化流程", "en": "Agents & Workflows", "es": "Agentes y Flujos" },
+    { "key": "security_safety", "zh": "安全与风控", "en": "Security & Safety", "es": "Seguridad" },
+    { "key": "mlops_monitoring", "zh": "MLOps/监控可视化", "en": "MLOps & Monitoring", "es": "MLOps y Monitoreo" },
+    { "key": "edge_embedded", "zh": "边缘/嵌入式", "en": "Edge/Embedded", "es": "Edge/Embebido" },
+    { "key": "ui_devex", "zh": "UI/DevEx", "en": "UI & DevEx", "es": "UI y DevEx" }
+  ]
+}

@@ -93,6 +93,14 @@
   .mw-title a:hover{text-decoration:underline}
     .mw-meta{font-size:.85rem;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
   .mw-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+  /* Reason + multi-list badges */
+  .mw-badges{display:flex;gap:4px;flex-wrap:wrap;margin:4px 0 2px}
+  .mw-badge{display:inline-flex;align-items:center;font-size:.65rem;font-weight:600;letter-spacing:.3px;padding:4px 8px;border-radius:999px;line-height:1;background:color-mix(in oklab,var(--surface-2),var(--primary) 14%);color:color-mix(in oklab,var(--primary-700,#1d4ed8),black 10%);border:1px solid color-mix(in oklab,var(--primary) 55%,var(--border));position:relative}
+  .mw-badge[data-type="reason"]{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-600) 100%);color:#fff;border-color:color-mix(in oklab,var(--primary-600),white 10%)}
+  .mw-badge[data-type="multi"]{background:color-mix(in oklab,var(--warning,#fbbf24),white 8%);color:#92400e;border-color:color-mix(in oklab,#f59e0b,#78350f 40%)}
+  :root[data-theme="dark"] .mw-badge{background:color-mix(in oklab,var(--primary-900,#1e3a8a),black 8%);color:#e2e8f0;border-color:color-mix(in oklab,var(--primary-500,#3b82f6),#1e293b 30%)}
+  :root[data-theme="dark"] .mw-badge[data-type="reason"]{background:linear-gradient(135deg,var(--primary-400,#60a5fa) 0%,var(--primary-700,#1d4ed8) 100%);color:#fff}
+  :root[data-theme="dark"] .mw-badge[data-type="multi"]{background:color-mix(in oklab,#92400e,#fbbf24 25%);color:#fff;border-color:#fbbf24}
     .mw-spark{width:100%;height:54px}
     .mw-aside{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
     @media (max-width:900px){.mw-aside{grid-template-columns:repeat(2,minmax(0,1fr));}}
@@ -145,6 +153,8 @@
     .mw-cas-dd .col:nth-child(2){ background: color-mix(in oklab, var(--surface), var(--primary) 3%); }
     .mw-cas-dd .col:last-child { border-right: none; background: color-mix(in oklab, var(--surface), var(--primary) 6%); }
     .mw-cas-dd .dd-foot { display:flex; justify-content: flex-end; gap:10px; padding: 10px; border-top: 1px solid var(--border); background: var(--surface-2); }
+    .mw-cas-dd.mw-single-col { width: min(92vw, 340px); }
+    .mw-cas-dd.mw-single-col .dd-body { grid-template-columns: 1fr; }
     .mw-list { display:grid; gap:6px; }
     .mw-item { display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:10px; cursor:pointer; position:relative; transition: background .15s ease, transform .08s ease; }
     .mw-item::before{content:""; position:absolute; left:4px; top:8px; bottom:8px; width:3px; border-radius:3px; background:transparent}
@@ -246,12 +256,12 @@
       <div class="container mw-wrap">
         <div class="card mw-card mw-toolbar" role="toolbar" aria-label="Filters">
           <div class="mw-modes" id="mw-modes">
-            <button class="btn primary" data-mode="daily" data-i18n="mw_mode_daily">每日推荐</button>
-            <button class="btn outline" data-mode="gh" data-i18n="mw_mode_gh_top">开源项目热门榜</button>
-            <button class="btn outline" data-mode="hf" data-i18n="mw_mode_hf_top">开源模型热门榜</button>
+            <button class="btn primary" data-mode="daily" data-i18n="mw_mode_daily">今日灵感</button>
+            <button class="btn outline" data-mode="gh" data-i18n="mw_mode_gh_top">工程热榜</button>
+            <button class="btn outline" data-mode="hf" data-i18n="mw_mode_hf_top">模型实验场</button>
           </div>
           <div class="mw-cas-inline" style="position:relative;display:flex;align-items:center;gap:12px">
-            <button class="btn outline small" id="mw-cas-trigger"><span class="i18n l-zh">按类别查看模型</span><span class="i18n l-en">Browse by Category</span><span class="i18n l-es">Ver por categoría</span></button>
+            <button class="btn outline small" id="mw-cas-trigger" data-mode-label="model"><span class="i18n l-zh">按类别查看模型</span><span class="i18n l-en">Browse by Category</span><span class="i18n l-es">Ver por categoría</span></button>
             <!-- 下拉面板：三级级联（单选/单选/多选） -->
             <div class="mw-cas-dd" id="mw-cas-dd" hidden>
               <div class="dd-body">
@@ -278,6 +288,10 @@
             <option value="delta7" data-i18n="mw_sort_delta7">7日增量</option>
             <option value="stars" data-i18n="mw_sort_stars">Stars</option>
             <option value="downloads" data-i18n="mw_sort_downloads">Downloads</option>
+            <option value="stars7" data-i18n="mw_sort_stars7">Stars 7日</option>
+            <option value="forks7" data-i18n="mw_sort_forks7">Forks 7日</option>
+            <option value="downloads7" data-i18n="mw_sort_downloads7">下载 7日</option>
+            <option value="likes7" data-i18n="mw_sort_likes7">Likes 7日</option>
           </select>
           <input id="mw-q" class="input" placeholder="搜索标题/摘要/来源…" data-i18n-placeholder="search_placeholder" />
           <button class="btn outline small" id="mw-cas-clear"><span class="i18n l-zh">清空筛选</span><span class="i18n l-en">Clear</span><span class="i18n l-es">Limpiar</span></button>
@@ -322,6 +336,7 @@
     const $ = (id)=>document.getElementById(id);
 
     let MODE = 'daily';
+    const SCHEMA_VERSION = 1; // Sync with backend schema.js
     let items = [];
     let catsLoaded = false;
   // no dedicated model picker
@@ -383,7 +398,9 @@
 
     function t(key, fallback){ try { const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh'; const tx=(window.translations?.[lang]?.[key]); return tx||fallback||key; } catch { return fallback||key; } }
 
-    function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');}
+    function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+    function normalizeStats(it){ if(!it||!it.stats) return it; const s=it.stats; if(s.hf_downloads_7d && !s.downloads_total) s.downloads_total = s.hf_downloads_7d; if(s.hf_likes && !s.likes_total) s.likes_total = s.hf_likes; return it; }
+    function normalizeArray(arr){ return (arr||[]).map(normalizeStats); }
     function rel(iso){ try{ const d=new Date(iso); const s=(Date.now()-d)/1000; if(s<60) return 'just now'; if(s<3600) return Math.floor(s/60)+'m'; if(s<86400) return Math.floor(s/3600)+'h'; return Math.floor(s/86400)+'d'; }catch{return ''} }
 
     // Compute a robust updated_at string (ISO) using meta.updated_at, max item.updated_at, or a date hint
@@ -698,12 +715,19 @@
     function card(it){
       const src = it.source==='github'?'GitHub':'HF';
       const tags = (it.tags||[]).slice(0,6).map(x=>`<span class="tag">${esc(x)}</span>`).join(' ');
-      const metrics = [
-        it.source==='github'?(`★ ${it.stats?.stars||0}`):(`⬇︎ ${it.stats?.hf_downloads_7d||0}`),
-        it.stats?.forks?(`⑂ ${it.stats.forks}`):'',
-        it.stats?.hf_likes?(`❤ ${it.stats.hf_likes}`):'',
-        it.stats?.stars_7d?(`+7d ${it.stats.stars_7d}`):''
-      ].filter(Boolean).join(' · ');
+      const metrics = (function(){
+        const p=[];
+        if(it.source==='github') p.push(`★ ${(it.stats?.stars||0)}`); else p.push(`⬇︎ ${(it.stats?.downloads_total||0)}`);
+        if(it.stats?.forks) p.push(`⑂ ${it.stats.forks}`);
+        if(it.stats?.likes_total) p.push(`❤ ${(it.stats?.likes_total)}`);
+        if(it.stats?.stars_7d) p.push(`★7d ${it.stats.stars_7d}`);
+        if(it.stats?.forks_7d) p.push(`⑂7d ${it.stats.forks_7d}`);
+        if(it.stats?.downloads_7d) p.push(`⬇︎7d ${(it.stats?.downloads_7d)}`);
+        if(it.stats?.likes_7d) p.push(`❤7d ${(it.stats?.likes_7d)}`);
+        if(it.score_model) p.push(`S ${Number(it.score_model).toFixed(2)}`);
+        if(it.score_engineering) p.push(`S ${Number(it.score_engineering).toFixed(2)}`);
+        return p.join(' · ');
+      })();
       const last = it.updated_at?` · ${rel(it.updated_at)}`:'';
       const color = getComputedStyle(document.documentElement).getPropertyValue('--secondary')||'#0ea5e9';
       const tms = (it.timeline?.t||[]).map(x=>Date.parse(x));
@@ -713,9 +737,29 @@
       const sgv = sparkline(tms, series, color);
       const url = it.url || (src==='GitHub'?`https://github.com/${esc(it.id)}`:`https://huggingface.co/${esc(it.id)}`);
       const sum = pickSummary(it);
+      // Reason badge translation
+      function reasonLabel(key){
+        if(!key) return '';
+        const lang = getLangSafe();
+        const mapKey = 'mw_reason_'+key.replace(/[^a-z0-9_]/g,'');
+        return (window.translations?.[lang]?.[mapKey]) || key;
+      }
+      const reason = it.reason_label ? `<span class="mw-badge" data-type="reason" title="${esc(it.reason_text||'')}">${esc(reasonLabel(it.reason_label))}</span>` : '';
+      // Multi-list detection placeholder: mark if appears both in daily and another source within current session (flag could be precomputed later)
+      let multi = '';
+      try{
+        if(it.__multi){
+          const lang = getLangSafe();
+          const mKey = 'mw_reason_multi';
+          const labelMulti = window.translations?.[lang]?.[mKey] || 'Multi';
+          multi = `<span class=\"mw-badge\" data-type=\"multi\" title=\"Appears in multiple lists\">${esc(labelMulti)}</span>`;
+        }
+      }catch{}
+      const badges = (reason||multi)? `<div class=\"mw-badges\">${reason}${multi}</div>` : '';
       return `<article class="card mw-card" data-id="${esc(it.id)}">
         <h4 class="mw-title"><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(it.name||it.id)}</a></h4>
         <div class="mw-meta">${src} · ${metrics}${last}</div>
+        ${badges}
         <div class="mw-tags">${tags}</div>
         <div>${sgv}</div>
         ${sum?`<p class=\"muted\" style=\"margin:.5rem 0 0 0; line-height:1.4\">${esc(sum)}</p>`:''}
@@ -785,20 +829,28 @@
       } else {
         out.sort((a,b)=>{
           if(key==='delta7'){
-            const av = (a.stats?.stars_7d ?? a.stats?.hf_downloads_7d ?? 0);
-            const bv = (b.stats?.stars_7d ?? b.stats?.hf_downloads_7d ?? 0);
+            const av = (a.stats?.stars_7d ?? a.stats?.downloads_7d ?? 0);
+            const bv = (b.stats?.stars_7d ?? b.stats?.downloads_7d ?? 0);
             return bv - av;
           }
-            if(key==='stars') return (b.stats?.stars||0) - (a.stats?.stars||0);
-            if(key==='downloads') return (b.stats?.hf_downloads_7d||0) - (a.stats?.hf_downloads_7d||0);
-            return (b.score||0) - (a.score||0);
+          if(key==='stars') return (b.stats?.stars||0) - (a.stats?.stars||0);
+          if(key==='downloads') return (b.stats?.downloads_total||0) - (a.stats?.downloads_total||0);
+          if(key==='stars7') return (b.stats?.stars_7d||0) - (a.stats?.stars_7d||0);
+          if(key==='forks7') return (b.stats?.forks_7d||0) - (a.stats?.forks_7d||0);
+          if(key==='downloads7') return (b.stats?.downloads_7d||0) - (a.stats?.downloads_7d||0);
+          if(key==='likes7') return (b.stats?.likes_7d||0) - (a.stats?.likes_7d||0);
+          return (b.score||b.score_model||b.score_engineering||0) - (a.score||a.score_model||a.score_engineering||0);
         });
       }
       return out;
     }
 
     function render(){
-    const arr = filterSort(items);
+    let arr = filterSort(items);
+    // Engineering category single-select filtering
+    if((window.__mw_mode_current||'')==='gh' && selectedEngineeringCategory){
+      arr = arr.filter(it=> it.category_key===selectedEngineeringCategory || it.__group===selectedEngineeringCategory);
+    }
   const dt = window.__mw_updated_at || '';
       const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh';
       // Removed explicit updated-at display per user request
@@ -812,12 +864,21 @@
         else subEl.textContent = `${modeLabel} · 共 ${arr.length} 项`;
       }
 
-      // Disable irrelevant sort options per mode
+      // Disable/hide irrelevant sort options per mode (hide by disabling + style)
+      const hideMatrix = {
+        gh: new Set(['downloads','downloads7','likes7']),
+        hf: new Set(['stars','stars7','forks7']),
+        daily: new Set(['forks7','downloads','downloads7','likes7','stars7'])
+      };
+      const hide = hideMatrix[MODE]||new Set();
       for(const opt of sortEl.options){
-        if(opt.value==='stars') opt.disabled = (MODE==='hf');
-        else if(opt.value==='downloads') opt.disabled = (MODE==='gh');
-        else opt.disabled = false;
+        const shouldHide = hide.has(opt.value);
+        opt.disabled = shouldHide;
+        opt.hidden = shouldHide;
       }
+      // If current sort now hidden -> fallback to score
+      if(sortEl.selectedOptions[0]?.hidden){ sortEl.value='score'; }
+      updateClearButtonVisibility();
 
       // no datalist population
 
@@ -840,11 +901,45 @@
           gridEl.innerHTML = ghHtml + sep + hfHtml;
         }
       }else{
-        // Normal grid for Top views
-        gridEl.classList.add('mw-grid');
-        gridEl.innerHTML = arr.map(card).join('');
+        // Hotlist grouping (engineering or model lab) when hotlist structure present
+        const grouping = window.__mw_hot_grouping;
+        if(grouping && arr.some(it=>it.__group)){
+          gridEl.classList.remove('mw-grid');
+          const order = [];
+          const bucket = {};
+          for(const it of arr){ const g=it.__group||'other'; if(!bucket[g]){ bucket[g]=[]; order.push(g);} bucket[g].push(it); }
+          const lang2 = getLangSafe();
+          function labelForGroup(k){ return TAG_LABELS?.[lang2]?.[k] || k; }
+          const sections = order.map(k=>{
+            let list = filterSort(bucket[k]);
+            if((window.__mw_mode_current||'')==='gh' && selectedEngineeringCategory && k!==selectedEngineeringCategory){ list = []; }
+            return `<details open data-group="${esc(k)}" class="mw-hot-group"><summary style="cursor:pointer;font-weight:600;margin:12px 0 6px;color:var(--secondary)">${esc(labelForGroup(k))} · ${list.length}</summary><div class="mw-grid">${list.map(card).join('')}</div></details>`;
+          });
+          gridEl.innerHTML = sections.join('');
+        }else{
+          gridEl.classList.add('mw-grid');
+            gridEl.innerHTML = arr.map(card).join('');
+        }
       }
     }
+
+    // Extend existing mode switching (modesEl listener defined earlier in file) by observing MODE changes
+    const origSetMode = (function(){ return null; })(); // placeholder to avoid ref errors
+    // Mutation observer pattern not needed; just patch after initial event binding
+    (function hookModeButtons(){
+      try{
+        const modesEl = document.getElementById('mw-modes');
+        if(!modesEl) return;
+        modesEl.addEventListener('click', (e)=>{
+          const btn = e.target.closest('button[data-mode]'); if(!btn) return;
+          const mode = btn.getAttribute('data-mode');
+          window.__mw_mode_current = mode; // expose
+          try{ setTriggerLabelForMode(mode); }catch{}
+        });
+        // initial label
+        setTriggerLabelForMode(MODE);
+      }catch{}
+    })();
 
     async function loadCategories(){
       try{
@@ -885,21 +980,51 @@
     }
 
     async function loadTopGH(){
+      // Prefer new engineering hotlist
+      try{
+        const hot = await fetch('../../data/ai/modelswatch/projects_hotlist.json',{cache:'no-store'}).then(r=>r.json());
+        if(hot?.by_category){
+          if(typeof hot.version==='number' && hot.version!==1){ console.warn('[mw] projects_hotlist version mismatch', hot.version); }
+          const out=[]; const multiCount={};
+          for(const [cat,list] of Object.entries(hot.by_category)){
+            (list||[]).forEach(it=>{ out.push(shallowNormalize({...it,__group:cat,__hot:'projects'})); multiCount[it.id]=(multiCount[it.id]||0)+1; });
+          }
+          out.forEach(o=>{ if(multiCount[o.id]>1) o.__multi=true; });
+          items = out; window.__mw_hot_grouping='projects';
+          window.__mw_updated_at = computeUpdatedAt(hot?.updated_at, out);
+          return;
+        }
+      }catch(e){ /* fallback */ }
       try{
         const g = await fetch('../../data/ai/modelswatch/top_github.json',{cache:'no-store'}).then(r=>r.json());
         const arr = (g?.items||[]).map(shallowNormalize);
-        items = arr;
+        items = arr; window.__mw_hot_grouping='';
         window.__mw_updated_at = computeUpdatedAt(g?.updated_at, arr);
-      }catch{ items=[]; window.__mw_updated_at=''; }
+      }catch{ items=[]; window.__mw_updated_at=''; window.__mw_hot_grouping=''; }
     }
 
     async function loadTopHF(){
+      // Prefer new models hotlist
+      try{
+        const hot = await fetch('../../data/ai/modelswatch/models_hotlist.json',{cache:'no-store'}).then(r=>r.json());
+        if(hot?.by_category){
+          if(typeof hot.version==='number' && hot.version!==1){ console.warn('[mw] models_hotlist version mismatch', hot.version); }
+          const out=[]; const multiCount={};
+          for(const [task,list] of Object.entries(hot.by_category)){
+            (list||[]).forEach(it=>{ out.push(shallowNormalize({...it,__group:task,__hot:'models'})); multiCount[it.id]=(multiCount[it.id]||0)+1; });
+          }
+          out.forEach(o=>{ if(multiCount[o.id]>1) o.__multi=true; });
+          items = out; window.__mw_hot_grouping='models';
+          window.__mw_updated_at = computeUpdatedAt(hot?.updated_at, out);
+          return;
+        }
+      }catch(e){ /* fallback */ }
       try{
         const h = await fetch('../../data/ai/modelswatch/top_hf.json',{cache:'no-store'}).then(r=>r.json());
         const arr = (h?.items||[]).map(shallowNormalize);
-        items = arr;
+        items = arr; window.__mw_hot_grouping='';
         window.__mw_updated_at = computeUpdatedAt(h?.updated_at, arr);
-      }catch{ items=[]; window.__mw_updated_at=''; }
+      }catch{ items=[]; window.__mw_updated_at=''; window.__mw_hot_grouping=''; }
     }
 
     async function loadAllDaily(){
@@ -1014,11 +1139,17 @@
         const mode = btn.getAttribute('data-mode');
         if(!mode || mode===MODE) return;
         MODE = mode;
+        window.__mw_mode_current = mode;
         [...modesEl.querySelectorAll('button')].forEach(b=>{
           b.classList.toggle('primary', b===btn);
           b.classList.toggle('outline', b!==btn);
         });
-        // reset sort for clarity but keep selection; reload dataset
+        // Auto default sort per mode
+        if(MODE==='gh'){ sortEl.value='score'; }
+        else if(MODE==='hf'){ sortEl.value='score'; }
+        else { sortEl.value='score'; }
+        // Reset engineering selection when leaving gh
+        if(MODE!=='gh'){ selectedEngineeringCategory = null; }
         if(MODE==='daily'){
           dateWrap.hidden = false;
           await loadDaily(selectedDate);
@@ -1026,6 +1157,9 @@
         else if(MODE==='gh') await loadTopGH();
         else await loadTopHF();
         if(MODE!=='daily') dateWrap.hidden = true; else setGlobalActive(false);
+        try{ setTriggerLabelForMode(MODE); }catch{}
+        updateTriggerLabel();
+        updateClearButtonVisibility();
         render();
       });
 
@@ -1068,7 +1202,7 @@
   })();
   </script>
 
-  <!-- Script: Cascading category filter (三级联动标签筛选逻辑) -->
+  <!-- Script: Cascading category filter (三级分类筛选) -->
   <script>
     // Card renderer (kept minimal & robust)
     function card(it){
@@ -1085,6 +1219,32 @@
     const casWrap = document.querySelector('.mw-cas-inline');
     const clearBtn = document.getElementById('mw-cas-clear');
     const triggerBtn = document.getElementById('mw-cas-trigger');
+    let PROJECT_CATEGORIES = [];
+    async function ensureProjectCategories(){
+      if(PROJECT_CATEGORIES.length) return;
+      try{
+        const pj = await fetch('../../data/ai/modelswatch/project_categories.json',{cache:'no-store'}).then(r=>r.json());
+        PROJECT_CATEGORIES = pj?.categories||[];
+      }catch{ PROJECT_CATEGORIES=[]; }
+    }
+    function setTriggerLabelForMode(mode){
+      const lang = getLangSafe();
+      if(mode==='gh'){
+        // Engineering hotlist
+        triggerBtn.dataset.modeLabel='project';
+        const zh='按类别查看项目', en='Browse Projects by Category', es='Ver proyectos por categoría';
+        triggerBtn.innerHTML = `<span>${lang==='en'?en:lang==='es'?es:zh}</span>`;
+      }else if(mode==='hf'){
+        triggerBtn.dataset.modeLabel='model';
+        const zh='按类别查看模型', en='Browse Models by Category', es='Ver modelos por categoría';
+        triggerBtn.innerHTML = `<span>${lang==='en'?en:lang==='es'?es:zh}</span>`;
+      }else{
+        triggerBtn.dataset.modeLabel='model';
+        const zh='按类别查看', en='Browse by Category', es='Ver por categoría';
+        triggerBtn.innerHTML = `<span>${lang==='en'?en:lang==='es'?es:zh}</span>`;
+      }
+    }
+    window.addEventListener('language-changed', (e)=>{ try{ setTriggerLabelForMode(window.__mw_mode_current||'daily'); }catch{} });
     const dd = document.getElementById('mw-cas-dd');
     const col1 = document.getElementById('mw-cas-c1');
     const col2 = document.getElementById('mw-cas-c2');
@@ -1094,6 +1254,8 @@
   const gridEl = document.getElementById('mw-grid');
   const subEl = document.getElementById('mw-sub');
   let mobileStage = 0; let selCat = null, selSub = null; const selectedTasks = new Set();
+  // Engineering (GitHub hotlist) single-select category filter state
+  let selectedEngineeringCategory = null; // holds category key
   // Initialize immediately with builtin tree so UI renders instantly; remote JSON (if any) will hydrate later.
   let CAT_TREE = null; // will be assigned after BUILTIN_TREE declared
   let CAT_REMOTE_LOADED = false; // whether remote categories replaced builtin
@@ -1113,7 +1275,7 @@
           ]},
           { key:'generative_vision', zh:'生成式视觉', en:'Generative Vision', es:'Visión Generativa', tasks:[
             { key:'text_to_image', zh:'文生图（Diffusion/GAN）', en:'Text-to-Image (Diffusion/GAN)', es:'Texto-a-Imagen (Diffusion/GAN)' },
-            { key:'text_to_video', zh:'文生视频', en:'Text-to-Video', es:'Texto-a-Video' },
+            { key:'text_to_video', zh:'文生视频', en:'Text-to-Video', es:'Texto-a-Vido' },
             { key:'3d_reconstruction', zh:'三维重建', en:'3D Reconstruction', es:'Reconstrucción 3D' },
             { key:'nerf', zh:'NeRF（神经辐射场）', en:'NeRF (Neural Radiance Fields)', es:'NeRF (Campos Radiantes Neuronales)' }
           ]},
@@ -1396,7 +1558,23 @@
     }
 
     function openDropdown(){
-      if(!dd) return; dd.hidden = false; mobileStage = 0; renderCol1(); renderCol2(); renderCol3(); if(isMobile()) { setMobileStage(0); updateMobileVisibility(); } setTimeout(()=> document.addEventListener('click', outsideClose),0);
+      if(!dd) return;
+      dd.hidden = false;
+      mobileStage = 0;
+      // When in engineering mode, render a simplified single-column category list
+      if((window.__mw_mode_current||'')==='gh'){
+        renderEngineeringCategories();
+        dd.classList.add('mw-single-col');
+        if(col2) col2.style.display='none';
+        if(col3) col3.style.display='none';
+      } else {
+        dd.classList.remove('mw-single-col');
+        if(col2) col2.style.display='';
+        if(col3) col3.style.display='';
+        renderCol1(); renderCol2(); renderCol3();
+        if(isMobile()) { setMobileStage(0); updateMobileVisibility(); }
+      }
+      setTimeout(()=> document.addEventListener('click', outsideClose),0);
     }
     function closeDropdown(){ if(!dd) return; dd.hidden = true; document.removeEventListener('click', outsideClose); }
     function outsideClose(e){ if(!dd) return; if(!dd.contains(e.target) && e.target!==triggerBtn && !triggerBtn?.contains(e.target)) closeDropdown(); }
@@ -1453,7 +1631,9 @@
     // Clear selection
     clearBtn.addEventListener('click', ()=>{
       // Reset cascader tasks, model picker, search, and sort
-  selectedTasks.clear(); updateTriggerLabel();
+      selectedTasks.clear();
+      selectedEngineeringCategory = null;
+      updateTriggerLabel();
       const qEl = document.getElementById('mw-q'); if(qEl){ qEl.value=''; }
       const sortEl = document.getElementById('mw-sort'); if(sortEl){ sortEl.value='score'; }
       applyFilter();
@@ -1461,16 +1641,68 @@
       try{ const evt = new Event('input'); qEl?.dispatchEvent(evt); }catch{}
       // Notify main to exit global mode
       try{ window.dispatchEvent(new CustomEvent('mw-global-toggle',{detail:{on:false}})); }catch{}
+      updateClearButtonVisibility();
     });
 
 
     function updateTriggerLabel(){
       if(!triggerBtn) return;
-      const cnt = selectedTasks.size;
-  const zh = triggerBtn.querySelector('.i18n.l-zh'); if(zh) zh.textContent = `按类别查看模型${cnt>0?` (${cnt})`:''}`;
-  const en = triggerBtn.querySelector('.i18n.l-en'); if(en) en.textContent = `Browse by Category${cnt>0?` (${cnt})`:''}`;
-  const es = triggerBtn.querySelector('.i18n.l-es'); if(es) es.textContent = `Ver por categoría${cnt>0?` (${cnt})`:''}`;
-      triggerBtn.classList.toggle('active', cnt>0);
+      const mode = window.__mw_mode_current||'daily';
+      if(mode==='gh'){
+        // Engineering: show selected category label if any
+        const lang = getLangSafe();
+        let baseZh='按类别查看项目', baseEn='Browse Projects by Category', baseEs='Ver proyectos por categoría';
+        const catObj = PROJECT_CATEGORIES.find(c=>c.key===selectedEngineeringCategory);
+        const catLabel = catObj ? (catObj[lang]||catObj.zh||catObj.en||catObj.es||catObj.key) : '';
+        const finalZh = catLabel? `${baseZh}：${catLabel}`: baseZh;
+        const finalEn = catLabel? `${baseEn}: ${catLabel}`: baseEn;
+        const finalEs = catLabel? `${baseEs}: ${catLabel}`: baseEs;
+        triggerBtn.innerHTML = `<span>${lang==='en'?finalEn: lang==='es'?finalEs: finalZh}</span>`;
+        triggerBtn.classList.toggle('active', !!catLabel);
+      } else {
+        const cnt = selectedTasks.size;
+        const zh = triggerBtn.querySelector('.i18n.l-zh'); if(zh) zh.textContent = `按类别查看模型${cnt>0?` (${cnt})`:''}`;
+        const en = triggerBtn.querySelector('.i18n.l-en'); if(en) en.textContent = `Browse by Category${cnt>0?` (${cnt})`:''}`;
+        const es = triggerBtn.querySelector('.i18n.l-es'); if(es) es.textContent = `Ver por categoría${cnt>0?` (${cnt})`:''}`;
+        triggerBtn.classList.toggle('active', cnt>0);
+      }
+    }
+
+    function updateClearButtonVisibility(){
+      if(!clearBtn) return;
+      const mode = window.__mw_mode_current||'daily';
+      const qActive = (document.getElementById('mw-q')?.value||'').trim().length>0; // query doesn't count toward showing clear per spec ("besides query")
+      let filtered = false;
+      if(mode==='gh') filtered = !!selectedEngineeringCategory; else filtered = selectedTasks.size>0;
+      clearBtn.style.display = filtered ? '' : 'none';
+    }
+
+    function renderEngineeringCategories(){
+      // Reuse col1 only; hide col2/col3
+      if(!dd) return;
+      ensureProjectCategories().then(()=>{
+        if(col1){
+          const list = document.createElement('div'); list.className='mw-list';
+          PROJECT_CATEGORIES.forEach(cat=>{
+            const item = document.createElement('div'); item.className='mw-item'+(selectedEngineeringCategory===cat.key?' active':'');
+            item.textContent = labelOf(cat) || cat.key;
+            item.dataset.key = cat.key;
+            item.addEventListener('click', e=>{
+              e.stopPropagation();
+              if(selectedEngineeringCategory===cat.key){ selectedEngineeringCategory = null; } else { selectedEngineeringCategory = cat.key; }
+              updateTriggerLabel();
+              closeDropdown();
+              // Trigger re-render main list (filter applied in render)
+              try{ window.dispatchEvent(new Event('mw-engineering-filter')); }catch{}
+              updateClearButtonVisibility();
+            });
+            list.appendChild(item);
+          });
+          col1.innerHTML=''; col1.appendChild(list);
+        }
+        if(col2) col2.innerHTML='<div class="mw-muted">—</div>';
+        if(col3) col3.innerHTML='<div class="mw-muted">—</div>';
+      });
     }
 
     // Rebuild labels on language change and update counts

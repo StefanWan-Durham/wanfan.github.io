@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "updated_at": "2025-09-20T09:22:56.500Z",
+  "by_category": {
+    "framework_core": [
+      {
+        "id": "trimstray/the-book-of-secret-knowledge",
+        "source": "github",
+        "name": "the-book-of-secret-knowledge",
+        "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+        "tags": [
+          "awesome",
+          "awesome-list",
+          "bsd",
+          "cheatsheets",
+          "devops",
+          "guidelines",
+          "hacking",
+          "hacks",
+          "howtos",
+          "linux",
+          "lists",
+          "manuals",
+          "one-liners",
+          "pentesters",
+          "resources",
+          "search-engines",
+          "security",
+          "security-researchers",
+          "sysops"
+        ],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-18T19:20:54Z",
+        "added_at": "2025-09-20",
+        "summary": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.18970919138245215
+      }
+    ],
+    "deployment_serving": [
+      {
+        "id": "langflow-ai/langflow",
+        "source": "github",
+        "name": "langflow",
+        "url": "https://github.com/langflow-ai/langflow",
+        "tags": [
+          "agents",
+          "chatgpt",
+          "generative-ai",
+          "large-language-models",
+          "multiagent",
+          "react-flow"
+        ],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-18T19:15:47Z",
+        "added_at": "2025-09-20",
+        "summary": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.1896867232987965
+      }
+    ],
+    "optimization_compilers": [],
+    "data_tooling": [
+      {
+        "id": "public-apis/public-apis",
+        "source": "github",
+        "name": "public-apis",
+        "url": "https://github.com/public-apis/public-apis",
+        "tags": [
+          "api",
+          "apis",
+          "dataset",
+          "development",
+          "free",
+          "list",
+          "lists",
+          "open-source",
+          "public",
+          "public-api",
+          "public-apis",
+          "resources",
+          "software"
+        ],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-18T19:18:36Z",
+        "added_at": "2025-09-20",
+        "summary": "A collective list of free APIs",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.18969909139344546
+      }
+    ],
+    "agents_workflows": [],
+    "security_safety": [],
+    "mlops_monitoring": [],
+    "edge_embedded": [
+      {
+        "id": "microsoft/vscode",
+        "source": "github",
+        "name": "vscode",
+        "url": "https://github.com/microsoft/vscode",
+        "tags": [
+          "editor",
+          "electron",
+          "microsoft",
+          "typescript",
+          "visual-studio-code"
+        ],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-18T19:19:57Z",
+        "added_at": "2025-09-20",
+        "summary": "Visual Studio Code",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.189705019582679
+      }
+    ],
+    "ui_devex": [
+      {
+        "id": "yt-dlp/yt-dlp",
+        "source": "github",
+        "name": "yt-dlp",
+        "url": "https://github.com/yt-dlp/yt-dlp",
+        "tags": [
+          "cli",
+          "downloader",
+          "python",
+          "sponsorblock",
+          "youtube-dl",
+          "youtube-downloader",
+          "yt-dlp"
+        ],
+        "stats": {
+          "stars_total": 0,
+          "forks_total": 0,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-18T19:20:04Z",
+        "added_at": "2025-09-20",
+        "summary": "A feature-rich command-line audio/video downloader",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.1897055319040255
+      }
+    ]
+  }
+}
