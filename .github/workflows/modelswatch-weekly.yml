@@ -48,7 +48,7 @@ jobs:
           UNIFIED_JSON_NO_SEQ: 1        # if JSON-first returns partial, skip sequential fallback
           SKIP_TOP_ENRICH: 1            # skip per-item enrichment in weekly top lists (avoid duplicate summarization)
           BATCH_PROGRESS_INTERVAL: 10   # every 10 items print progress to stderr during batch
-          RESET_MODELWATCH_ALL: ${{ secrets.RESET_MODELWATCH_ALL }}
+          RESET_MODELWATCH_ALL: ${{ vars.RESET_MODELWATCH_ALL }}
           RESET_MODELWATCH_CONFIRM: 1
         run: |
           node -v
