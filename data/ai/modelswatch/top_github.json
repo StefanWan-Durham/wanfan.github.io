@@ -1,5 +1,5 @@
 {
-  "updated_at": "2025-09-20T15:01:11.067Z",
+  "updated_at": "2025-09-20T15:09:05.507Z",
   "items": [
     {
       "id": "freeCodeCamp/freeCodeCamp",
@@ -32,18 +32,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 428294,
+        "stars": 428295,
         "forks": 41632,
         "issues": 315
       },
-      "score": 436720.3875114198,
+      "score": 436721.38748584106,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
-      "updated_at": "2025-09-20T14:55:49Z",
+      "updated_at": "2025-09-20T15:03:43Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -68,18 +68,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 401251,
+        "stars": 401252,
         "forks": 31635,
         "issues": 63
       },
-      "score": 407677.9870484568,
+      "score": 407678.9966679398,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "😎 Awesome lists about all kinds of interesting topics",
-      "updated_at": "2025-09-20T14:55:37Z",
+      "updated_at": "2025-09-20T15:07:41Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -105,10 +105,10 @@
       },
       "stats": {
         "stars": 368881,
-        "forks": 64192,
+        "forks": 64191,
         "issues": 26
       },
-      "score": 381819.3822645062,
+      "score": 381819.1639518904,
       "timeline": {
         "t": [],
         "stars": [],
@@ -152,7 +152,7 @@
         "forks": 38370,
         "issues": 589
       },
-      "score": 373268.97994969133,
+      "score": 373268.96163707564,
       "timeline": {
         "t": [],
         "stars": [],
@@ -191,18 +191,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 329002,
+        "stars": 329003,
         "forks": 80567,
         "issues": 84
       },
-      "score": 345215.3712305556,
+      "score": 345216.3855182485,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "A complete computer science study plan to become a software engineer.",
-      "updated_at": "2025-09-20T14:48:47Z",
+      "updated_at": "2025-09-20T15:02:52Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -228,18 +228,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 239061,
-        "forks": 49356,
-        "issues": 1040
+        "stars": 239062,
+        "forks": 49357,
+        "issues": 1039
       },
-      "score": 249032.1895175926,
+      "score": 249033.39570343363,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "The library for web and native user interfaces.",
-      "updated_at": "2025-09-20T14:56:41Z",
+      "updated_at": "2025-09-20T15:07:16Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -267,7 +267,7 @@
         "forks": 33767,
         "issues": 608
       },
-      "score": 216300.38218734568,
+      "score": 216300.36387472993,
       "timeline": {
         "t": [],
         "stars": [],
@@ -308,18 +308,53 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 207875,
+        "stars": 207877,
         "forks": 47899,
         "issues": 406
       },
-      "score": 217554.7992398148,
+      "score": 217556.7876787423,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "All Algorithms implemented in Python",
-      "updated_at": "2025-09-20T15:00:53Z",
+      "updated_at": "2025-09-20T15:03:48Z",
+      "summary_en": "",
+      "summary_zh": "",
+      "summary_es": ""
+    },
+    {
+      "id": "ossu/computer-science",
+      "source": "github",
+      "name": "computer-science",
+      "url": "https://github.com/ossu/computer-science",
+      "license": "MIT",
+      "lang": "HTML",
+      "tags": [
+        "awesome-list",
+        "computer-science",
+        "courses",
+        "curriculum"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 193341,
+        "forks": 24147,
+        "issues": 16
+      },
+      "score": 198270.3931957176,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "🎓 Path to a free self-taught education in Computer Science!",
+      "updated_at": "2025-09-20T15:06:11Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -351,7 +386,7 @@
         "forks": 30886,
         "issues": 373
       },
-      "score": 199618.12065185187,
+      "score": 199618.10233923612,
       "timeline": {
         "t": [],
         "stars": [],
@@ -359,41 +394,6 @@
       },
       "summary": "📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
       "updated_at": "2025-09-20T14:26:56Z",
-      "summary_en": "",
-      "summary_zh": "",
-      "summary_es": ""
-    },
-    {
-      "id": "ossu/computer-science",
-      "source": "github",
-      "name": "computer-science",
-      "url": "https://github.com/ossu/computer-science",
-      "license": "MIT",
-      "lang": "HTML",
-      "tags": [
-        "awesome-list",
-        "computer-science",
-        "courses",
-        "curriculum"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "stars": 193340,
-        "forks": 24147,
-        "issues": 16
-      },
-      "score": 198269.3914851852,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "🎓 Path to a free self-taught education in Computer Science!",
-      "updated_at": "2025-09-20T14:57:32Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -425,7 +425,7 @@
         "forks": 74847,
         "issues": 1703
       },
-      "score": 206771.32396975308,
+      "score": 206771.30565713733,
       "timeline": {
         "t": [],
         "stars": [],
@@ -471,18 +471,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 186880,
+        "stars": 186885,
         "forks": 11564,
         "issues": 99
       },
-      "score": 189292.78095277777,
+      "score": 189297.79512472992,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
-      "updated_at": "2025-09-20T14:52:59Z",
+      "updated_at": "2025-09-20T15:07:01Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -522,7 +522,7 @@
         "forks": 26220,
         "issues": 502
       },
-      "score": 186860.94418580248,
+      "score": 186860.92587318673,
       "timeline": {
         "t": [],
         "stars": [],
@@ -555,10 +555,10 @@
       },
       "stats": {
         "stars": 176852,
-        "forks": 35095,
+        "forks": 35096,
         "issues": 13614
       },
-      "score": 183970.9196101852,
+      "score": 183971.10129756946,
       "timeline": {
         "t": [],
         "stars": [],
@@ -596,7 +596,7 @@
         "forks": 79159,
         "issues": 577
       },
-      "score": 189366.72092191357,
+      "score": 189366.70260929782,
       "timeline": {
         "t": [],
         "stars": [],
@@ -646,7 +646,7 @@
         "forks": 29237,
         "issues": 12250
       },
-      "score": 178869.39885401234,
+      "score": 178869.3805413966,
       "timeline": {
         "t": [],
         "stars": [],
@@ -679,7 +679,7 @@
         "forks": 83005,
         "issues": 318
       },
-      "score": 186190.99542037037,
+      "score": 186190.97710775462,
       "timeline": {
         "t": [],
         "stars": [],
@@ -726,7 +726,7 @@
         "forks": 29048,
         "issues": 2425
       },
-      "score": 162479.51791265432,
+      "score": 162479.49960003857,
       "timeline": {
         "t": [],
         "stars": [],
@@ -762,18 +762,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 152770,
+        "stars": 152771,
         "forks": 12575,
         "issues": 156
       },
-      "score": 155384.92358395061,
+      "score": 155385.991382446,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "A curated list of awesome Go frameworks, libraries and software",
-      "updated_at": "2025-09-20T14:28:12Z",
+      "updated_at": "2025-09-20T15:05:24Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -810,18 +810,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 152692,
+        "stars": 152693,
         "forks": 13190,
         "issues": 2159
       },
-      "score": 155429.98863024692,
+      "score": 155430.98378213734,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models.",
-      "updated_at": "2025-09-20T14:56:18Z",
+      "updated_at": "2025-09-20T15:02:07Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -855,7 +855,7 @@
         "forks": 45987,
         "issues": 74
       },
-      "score": 161107.35880771605,
+      "score": 161107.3404951003,
       "timeline": {
         "t": [],
         "stars": [],
@@ -901,18 +901,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 150014,
+        "stars": 150015,
         "forks": 30462,
         "issues": 1984
       },
-      "score": 156206.3919095679,
+      "score": 156207.38856608796,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-      "updated_at": "2025-09-20T14:57:43Z",
+      "updated_at": "2025-09-20T15:04:11Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -952,7 +952,7 @@
         "forks": 14470,
         "issues": 0
       },
-      "score": 151992.9602351852,
+      "score": 151992.94192256944,
       "timeline": {
         "t": [],
         "stars": [],
@@ -997,7 +997,7 @@
         "forks": 26781,
         "issues": 178
       },
-      "score": 152876.1967320988,
+      "score": 152876.17841948304,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1027,7 +1027,7 @@
         "forks": 10466,
         "issues": 4138
       },
-      "score": 139518.15869197532,
+      "score": 139518.14037935957,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1069,10 +1069,10 @@
       },
       "stats": {
         "stars": 134570,
-        "forks": 29354,
+        "forks": 29355,
         "issues": 3347
       },
-      "score": 140540.79121512343,
+      "score": 140540.97290250772,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1108,7 +1108,7 @@
         "forks": 17845,
         "issues": 283
       },
-      "score": 137926.97285092593,
+      "score": 137926.95453831018,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1143,7 +1143,7 @@
         "forks": 18400,
         "issues": 9573
       },
-      "score": 133714.91621512346,
+      "score": 133714.8979025077,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1184,7 +1184,7 @@
         "forks": 15777,
         "issues": 54
       },
-      "score": 133012.3190314815,
+      "score": 133012.30071886574,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1219,18 +1219,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 128359,
+        "stars": 128361,
         "forks": 12042,
         "issues": 2548
       },
-      "score": 130867.33662407407,
+      "score": 130869.38428368056,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "Display and control your Android device",
-      "updated_at": "2025-09-20T14:33:50Z",
+      "updated_at": "2025-09-20T15:02:20Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -1261,7 +1261,7 @@
         "forks": 10186,
         "issues": 2061
       },
-      "score": 129085.19842962963,
+      "score": 129085.18011701388,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1305,7 +1305,7 @@
         "forks": 12320,
         "issues": 0
       },
-      "score": 127858.92042037037,
+      "score": 127858.90210775463,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1344,7 +1344,7 @@
         "forks": 24849,
         "issues": 1041
       },
-      "score": 128929.72065185185,
+      "score": 128929.70233923612,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1386,7 +1386,7 @@
         "forks": 7360,
         "issues": 7259
       },
-      "score": 125319.90294351852,
+      "score": 125319.88463090277,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1419,18 +1419,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 120522,
+        "stars": 120534,
         "forks": 7638,
         "issues": 877
       },
-      "score": 122149.56598364198,
+      "score": 122161.59902133489,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
-      "updated_at": "2025-09-20T14:46:31Z",
+      "updated_at": "2025-09-20T15:08:42Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": "",
@@ -1466,7 +1466,7 @@
         "forks": 16420,
         "issues": 908
       },
-      "score": 121754.92092191358,
+      "score": 121754.90260929785,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1497,18 +1497,18 @@
         "lifecycle": []
       },
       "stats": {
-        "stars": 117569,
+        "stars": 117570,
         "forks": 41394,
-        "issues": 2513
+        "issues": 2514
       },
-      "score": 125947.69738796297,
+      "score": 125948.79759386575,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "Production-Grade Container Scheduling and Management",
-      "updated_at": "2025-09-20T14:16:53Z",
+      "updated_at": "2025-09-20T15:08:05Z",
       "summary_en": "",
       "summary_zh": "",
       "summary_es": ""
@@ -1539,7 +1539,7 @@
         "forks": 19024,
         "issues": 221
       },
-      "score": 119735.76173981481,
+      "score": 119735.74342719908,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1576,7 +1576,7 @@
         "forks": 22837,
         "issues": 23
       },
-      "score": 116171.33365339505,
+      "score": 116171.31534077931,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1619,7 +1619,7 @@
         "forks": 36012,
         "issues": 597
       },
-      "score": 115944.36011944443,
+      "score": 115944.3418068287,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1655,7 +1655,7 @@
         "forks": 11202,
         "issues": 282
       },
-      "score": 110003.37971820986,
+      "score": 110003.36140559413,
       "timeline": {
         "t": [],
         "stars": [],
@@ -1693,7 +1693,7 @@
         "forks": 10858,
         "issues": 2376
       },
-      "score": 109529.51474907408,
+      "score": 109529.49643645834,
       "timeline": {
         "t": [],
         "stars": [],
