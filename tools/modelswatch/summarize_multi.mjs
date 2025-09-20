@@ -5,9 +5,26 @@ const API_KEY = process.env.DEEPSEEK_API_KEY || '';
 const MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-chat';
 const BASE_URL = (process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com').replace(/\/$/, '');
 const CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT || 10000);
+const DEBUG = /^(1|true|yes|on)$/i.test(process.env.MODELSWATCH_DEBUG||'');
+
+// Diagnostics counters (exported for writer)
+export const summarizeDiagnostics = {
+  api_key_present: !!API_KEY,
+  attempts: 0,
+  success: 0,
+  empty: 0,
+  parse_fail: 0,
+  network_error: 0,
+  status_errors: {}, // statusCode -> count
+  endpoint_fallbacks: 0
+};
 
 export async function summarizeTriJSON(prompt, opts={}){
-  if(!API_KEY) return { en:'', zh:'', es:'' };
+  if(!API_KEY){
+    if(DEBUG) console.log('[summarize_multi] No API key; skip generation');
+    summarizeDiagnostics.empty++;
+    return { en:'', zh:'', es:'' };
+  }
   const temperature = opts.temperature ?? 0.4;
   const body = JSON.stringify({
     model: MODEL,
@@ -18,13 +35,55 @@ export async function summarizeTriJSON(prompt, opts={}){
     temperature,
     max_tokens: 800
   });
-  const url = `${BASE_URL}/v1/chat/completions`;
-  return new Promise(resolve=>{
-    const req = https.request(url,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${API_KEY}`}},res=>{
-      let data=''; res.on('data',d=>data+=d); res.on('end',()=>{ try{ const j=JSON.parse(data); const txt=j.choices?.[0]?.message?.content?.trim()||''; let en='',zh='',es=''; if(txt){ try{ const parsed = JSON.parse(txt.replace(/```json|```/g,'')); en=parsed.summary_en||''; zh=parsed.summary_zh||''; es=parsed.summary_es||''; }catch{} } resolve({ en, zh, es }); }catch{ resolve({ en:'', zh:'', es:''}); } });
+  async function attempt(endpoint){
+    return await new Promise(resolve=>{
+      summarizeDiagnostics.attempts++;
+      const url = `${BASE_URL}${endpoint}`;
+      if(DEBUG) console.log('[summarize_multi] POST', url);
+      const req = https.request(url,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${API_KEY}`}},res=>{
+        let data=''; res.on('data',d=>data+=d); res.on('end',()=>{
+          if(res.statusCode && res.statusCode>=400){
+            summarizeDiagnostics.status_errors[res.statusCode] = (summarizeDiagnostics.status_errors[res.statusCode]||0)+1;
+            if(DEBUG) console.log('[summarize_multi] status', res.statusCode, 'body length', data.length);
+          }
+          try {
+            const j = JSON.parse(data||'{}');
+            const txt = j.choices?.[0]?.message?.content?.trim() || '';
+            let en='', zh='', es='';
+            if(txt){
+              const cleaned = txt.replace(/```json|```/g,'').trim();
+              function tryParse(str){ try { return JSON.parse(str); } catch { return null; } }
+              let parsed = tryParse(cleaned);
+              if(!parsed){
+                const m = cleaned.match(/\{[\s\S]*?\}/);
+                if(m) parsed = tryParse(m[0]);
+              }
+              if(parsed){ en=parsed.summary_en||''; zh=parsed.summary_zh||''; es=parsed.summary_es||''; }
+              else summarizeDiagnostics.parse_fail++;
+            } else {
+              summarizeDiagnostics.empty++;
+            }
+            if(en||zh||es) summarizeDiagnostics.success++; else summarizeDiagnostics.empty++;
+            resolve({ en, zh, es });
+          } catch {
+            summarizeDiagnostics.parse_fail++;
+            resolve({ en:'', zh:'', es:''});
+          }
+        });
+      });
+      req.on('error',e=>{ summarizeDiagnostics.network_error++; if(DEBUG) console.log('[summarize_multi] network error', e.message); resolve({ en:'', zh:'', es:''}); });
+      req.setTimeout(CONN_TIMEOUT,()=>{ req.destroy(); summarizeDiagnostics.network_error++; resolve({ en:'', zh:'', es:''}); });
+      req.write(body); req.end();
     });
-    req.on('error',()=>resolve({ en:'', zh:'', es:''}));
-    req.setTimeout(CONN_TIMEOUT,()=>{req.destroy(); resolve({ en:'', zh:'', es:''});});
-    req.write(body); req.end();
-  });
+  }
+  // Try modern endpoint first, fallback to legacy if empty
+  let out = await attempt('/v1/chat/completions');
+  if(!(out.en||out.zh||out.es)){
+    const legacy = await attempt('/chat/completions');
+    if(legacy.en||legacy.zh||legacy.es){
+      summarizeDiagnostics.endpoint_fallbacks++;
+      out = legacy;
+    }
+  }
+  return out;
 }

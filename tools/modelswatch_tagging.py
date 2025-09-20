@@ -304,6 +304,11 @@ def collect_files(selected: List[str]) -> List[Path]:
         return [ (ROOT / p).resolve() for p in selected ]
     files: List[Path] = []
     if DATA_DIR.exists():
+        # Include corpus files to ensure base items get task_keys (improves coverage stats)
+        for base_name in ('corpus.hf.json','corpus.github.json'):
+            p = DATA_DIR / base_name
+            if p.exists():
+                files.append(p)
         # daily combined archives
         dd = DATA_DIR / 'daily'
         if dd.exists():

@@ -34,6 +34,8 @@ jobs:
           HOTLIST_LIMIT_PER_CATEGORY: 2
           HOTLIST_MIN_SEED_PER_CATEGORY: 2
           HOTLIST_DEBUG: 1
+          MODELSWATCH_DEBUG: 1
+          SUMMARY_FALLBACK: 1
         run: |
           node -v
           python -V

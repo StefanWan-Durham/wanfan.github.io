@@ -7,7 +7,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import crypto from 'crypto';
-import { summarizeTriJSON } from './summarize_multi.mjs';
+import { summarizeTriJSON, summarizeDiagnostics } from './summarize_multi.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../../');
@@ -20,6 +20,7 @@ const SCHEMA_VERSION = 1;
 
 const API_KEY = process.env.DEEPSEEK_API_KEY || '';
 const MAX_CONCURRENCY = Number(process.env.SUMMARY_MAX_CONCURRENCY || 3);
+const ENABLE_FALLBACK = /^(1|true|yes)$/i.test(process.env.SUMMARY_FALLBACK||'');
 
 function readJSON(p){ try{return JSON.parse(fs.readFileSync(p,'utf-8'));}catch{return null;} }
 function writeJSON(p,obj){ fs.writeFileSync(p, JSON.stringify(obj,null,2)); }
@@ -105,14 +106,22 @@ async function main(){
     if(!API_KEY) return null;
     const prompt = buildPrompt(it);
     const res = await llmRequest(prompt);
-    const neutral = res.zh || res.en || res.es || it.summary || it.description || '';
-    if(res.en||res.zh||res.es){
-      it.summary_en = res.en; it.summary_zh = res.zh; it.summary_es = res.es; it.summary = neutral;
-      cache.models[key] = { hash, updated_at: it.updated_at || nowIso, summary_en: res.en, summary_zh: res.zh, summary_es: res.es, summary: neutral, last_generated: nowIso };
-      gen++; return true;
-    } else {
-      return false;
+    let { en, zh, es } = res;
+    if(!(en||zh||es) && ENABLE_FALLBACK){
+      // 生成一个极简 fallback，避免完整性全空；标记不放入 cache（或放入但可识别）。
+      const base = (it.summary || it.description || '').slice(0,160).trim();
+      const short = base || it.name || it.id;
+      en = en || `Auto summary (fallback): ${short}`;
+      zh = zh || `自动摘要（占位）: ${short}`;
+      es = es || `Resumen automático (fallback): ${short}`;
     }
+    const neutral = zh || en || es || it.summary || it.description || '';
+    if(en||zh||es){
+      it.summary_en = en; it.summary_zh = zh; it.summary_es = es; it.summary = neutral;
+      cache.models[key] = { hash, updated_at: it.updated_at || nowIso, summary_en: en, summary_zh: zh, summary_es: es, summary: neutral, last_generated: nowIso, fallback: !(res.en||res.zh||res.es) };
+      gen++; return true;
+    }
+    return false;
   });
 
   cache.generated_at = nowIso;
@@ -126,6 +135,23 @@ async function main(){
   if(toGen.length){
     console.log(`[snapshot-summaries] total=${total} reuse=${reuse} generated=${gen} failed=${failedCount} -> wrote hf_summaries.json & gh_summaries.json`);
   }
+  try {
+    writeJSON(path.join(DATA_DIR,'summaries_diagnostics.json'), {
+      generated_at: nowIso,
+      total_items_considered: total,
+      to_generate: toGen.length,
+      generated: gen,
+      failed: failedCount,
+      api_key_present: summarizeDiagnostics.api_key_present,
+      attempts: summarizeDiagnostics.attempts,
+      success: summarizeDiagnostics.success,
+      empty: summarizeDiagnostics.empty,
+      parse_fail: summarizeDiagnostics.parse_fail,
+      network_error: summarizeDiagnostics.network_error,
+      status_errors: summarizeDiagnostics.status_errors,
+      endpoint_fallbacks: summarizeDiagnostics.endpoint_fallbacks
+    });
+  } catch{}
 }
 
 main().then(()=>{ console.log('[snapshot-summaries] done'); }).catch(e=>{ console.error(e); process.exit(1); });
