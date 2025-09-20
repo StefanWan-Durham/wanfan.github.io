@@ -736,7 +736,10 @@
       "updated_at": "2025-09-20T10:59:15Z",
       "summary_en": "A web-based interface for Stable Diffusion, enabling easy access to AI image generation. It supports text-to-image, image-to-image, and inpainting workflows, making it versatile for creative and practical applications. Its user-friendly design and extensive customization options appeal to both beginners and advanced users. Widely used for art, design prototyping, and experimentation with generative models.",
       "summary_zh": "Stable Diffusion web UI 是一个基于 Gradio 构建的 Web 界面，用于运行 Stable Diffusion 图像生成模型。它提供了丰富的功能，包括文生图、图生图、图像修复、超分辨率以及多种自定义选项。该工具支持多种模型加载、插件扩展和参数调节，适合研究人员、艺术家和开发者进行 AI 图像生成实验和应用开发。用户可以通过直观的界面快速生成和优化高质量图像，适用于创意设计、内容制作和技术研究等场景。",
-      "summary_es": "Interfaz web para Stable Diffusion que permite generar imágenes mediante IA. Destaca por su facilidad de uso, amplia personalización y extensibilidad mediante complementos. Ideal para artistas digitales, diseñadores e investigadores que buscan crear y modificar imágenes con modelos de difusión."
+      "summary_es": "Interfaz web para Stable Diffusion que permite generar imágenes mediante IA. Destaca por su facilidad de uso, amplia personalización y extensibilidad mediante complementos. Ideal para artistas digitales, diseñadores e investigadores que buscan crear y modificar imágenes con modelos de difusión.",
+      "task_keys": [
+        "text_to_image"
+      ]
     },
     {
       "id": "avelino/awesome-go",
@@ -912,7 +915,10 @@
       "updated_at": "2025-09-20T10:59:45Z",
       "summary_en": "Transformers is a comprehensive open-source library for state-of-the-art machine learning models across text, vision, audio, and multimodal tasks. It supports both inference and training, making it highly versatile for research and production. Its strengths include ease of use, extensive pre-trained models, and broad applicability in NLP, computer vision, and beyond. This framework is widely adopted for tasks like translation, summarization, and image classification.",
       "summary_zh": "🤗 Transformers 是一个开源机器学习框架，专注于提供最先进的文本、视觉、音频及多模态模型。它支持模型的推理和训练，广泛应用于自然语言处理、计算机视觉和跨模态任务。该框架集成了大量预训练模型，如 BERT、GPT 和 T5，并提供了简洁的 API 接口，便于研究人员和开发者快速部署和微调模型。适用于学术研究、工业应用以及 AI 实验开发。",
-      "summary_es": "Transformers es un framework de código abierto para modelos de aprendizaje automático de última generación en texto, visión, audio y multimodal. Permite inferencia y entrenamiento con facilidad, destacando por su amplia gama de modelos preentrenados y su integración con PyTorch y TensorFlow. Ideal para procesamiento de lenguaje natural, visión por computadora y aplicaciones multimodales."
+      "summary_es": "Transformers es un framework de código abierto para modelos de aprendizaje automático de última generación en texto, visión, audio y multimodal. Permite inferencia y entrenamiento con facilidad, destacando por su amplia gama de modelos preentrenados y su integración con PyTorch y TensorFlow. Ideal para procesamiento de lenguaje natural, visión por computadora y aplicaciones multimodales.",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "massgravel/Microsoft-Activation-Scripts",
@@ -1430,7 +1436,10 @@
       "updated_at": "2025-09-20T11:03:25Z",
       "summary_en": "Langflow is an open-source platform for creating and deploying AI agents and workflows. It enables developers to build, test, and scale AI-driven applications with ease. Its strengths include a visual interface for workflow design and support for integration with various AI models and tools. Ideal for prototyping and production use in automation, chatbots, and data processing pipelines.",
       "summary_zh": "Langflow 是一个用于构建和部署 AI 驱动的智能体与工作流的开源工具。它通过可视化界面简化了复杂 AI 流程的设计与编排，支持用户快速搭建自定义 AI 应用。该工具兼容多种主流 AI 框架和模型，具备高度的灵活性和扩展性。适用于开发者和企业构建自动化任务处理、智能客服、数据分析等 AI 应用场景。",
-      "summary_es": "Langflow es una herramienta para crear y desplegar agentes y flujos de trabajo con IA. Permite diseñar pipelines visualmente, integrando modelos y APIs. Ideal para prototipado rápido y automatización de procesos inteligentes."
+      "summary_es": "Langflow es una herramienta para crear y desplegar agentes y flujos de trabajo con IA. Permite diseñar pipelines visualmente, integrando modelos y APIs. Ideal para prototipado rápido y automatización de procesos inteligentes.",
+      "task_keys": [
+        "tool_use"
+      ]
     },
     {
       "id": "electron/electron",
