@@ -12,6 +12,7 @@ const CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT || 10000);
 const DEBUG = /^(1|true|yes|on)$/i.test(process.env.MODELSWATCH_DEBUG||'');
 const FORCE_PYTHON_FALLBACK = /^(1|true|yes|on)$/i.test(process.env.FORCE_PYTHON_FALLBACK||'');
 const MAX_NETWORK_ERROR_STREAK = Number(process.env.SUMMARY_MAX_NETERR_STREAK || 25);
+const HARD_ABORT_AFTER_STREAK = Number(process.env.SUMMARY_HARD_ABORT_STREAK || 8); // after this, skip further HTTP for the rest of the run
 let networkErrorStreak = 0;
 const agent = new https.Agent({ keepAlive: true, maxSockets: 10 });
 
@@ -44,6 +45,10 @@ export async function summarizeTriJSON(prompt, opts={}){
     return { en:'', zh:'', es:'' };
   }
   const temperature = opts.temperature ?? 0.4;
+  // If we have exceeded a hard abort streak previously, go straight to python fallback (or empty)
+  if(networkErrorStreak >= HARD_ABORT_AFTER_STREAK && !FORCE_PYTHON_FALLBACK){
+    if(DEBUG) console.log('[summarize_multi] hard-abort active (streak', networkErrorStreak, ') -> skip HTTP, go fallback');
+  }
   const body = JSON.stringify({
     model: MODEL,
     messages: [
@@ -56,6 +61,10 @@ export async function summarizeTriJSON(prompt, opts={}){
   async function attempt(){
     if(networkErrorStreak >= MAX_NETWORK_ERROR_STREAK){
       if(DEBUG) console.log('[summarize_multi] abort further attempts due to network error streak', networkErrorStreak);
+      return { en:'', zh:'', es:'' };
+    }
+    if(networkErrorStreak >= HARD_ABORT_AFTER_STREAK && !FORCE_PYTHON_FALLBACK){
+      // soft skip (do not even open socket) – rely on fallback later
       return { en:'', zh:'', es:'' };
     }
     return await new Promise(resolve=>{
@@ -133,7 +142,7 @@ export async function summarizeTriJSON(prompt, opts={}){
       // Ask Python LLM to produce a neutral English summary first (we'll translate below to avoid multi JSON complexity in cross-language fallback)
       const pyPrompt = `Summarize the following open-source AI project in 90 concise English words. Focus on purpose, core capabilities, strengths, and typical use cases. Avoid marketing.\n---\n${prompt}`.replace(/`/g,'');
       // Import path fixed: ai_llm.py lives under tools/, so use tools.ai_llm
-      const pyCode = `from tools.ai_llm import chat_once;import json,sys;\ntext=chat_once(${JSON.stringify(pyPrompt)}, system='You are a precise summarizer.', temperature=0.3, max_tokens=512)\nprint(text.strip())`;
+      const pyCode = `import sys,os;sys.path.insert(0, os.getcwd());from tools.ai_llm import chat_once;import json;\ntext=chat_once(${JSON.stringify(pyPrompt)}, system='You are a precise summarizer.', temperature=0.3, max_tokens=512)\nprint(text.strip())`;
       const r = spawnSync('python',['-c',pyCode], { encoding:'utf-8' });
       if(r.status===0){
         const baseEn = (r.stdout||'').trim().replace(/\s+/g,' ').slice(0,900);
@@ -143,7 +152,7 @@ export async function summarizeTriJSON(prompt, opts={}){
           function callTrans(tag, instruction){
             if(cache.has(tag)) return cache.get(tag);
             const tPrompt = `${instruction}\n---\n${baseEn}`;
-            const tCode = `from tools.ai_llm import chat_once;print(chat_once(${JSON.stringify(tPrompt)}, system='You are a concise translator.', temperature=0.2, max_tokens=512).strip())`;
+            const tCode = `import sys,os;sys.path.insert(0, os.getcwd());from tools.ai_llm import chat_once;print(chat_once(${JSON.stringify(tPrompt)}, system='You are a concise translator.', temperature=0.2, max_tokens=512).strip())`;
             const tr = spawnSync('python',['-c',tCode], { encoding:'utf-8' });
             if(tr.status===0){ const val=(tr.stdout||'').trim(); cache.set(tag,val); return val; }
             return '';
@@ -154,8 +163,10 @@ export async function summarizeTriJSON(prompt, opts={}){
           if(out.en||out.zh||out.es){
             summarizeDiagnostics.success++;
             summarizeDiagnostics.python_fallback_success++;
+            if(DEBUG) console.log('[summarize_multi] python fallback success lengths', { en: out.en.length, zh: out.zh.length, es: out.es.length });
           }
         }
+          if(DEBUG) console.log('[summarize_multi] python fallback produced empty stdout');
       } else {
         if(DEBUG) console.log('[summarize_multi] python fallback failed status', r.status, 'stderr', r.stderr?.slice(0,200));
         summarizeDiagnostics.last_error = 'python_fallback_failed';
