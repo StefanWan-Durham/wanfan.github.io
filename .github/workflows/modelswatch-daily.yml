@@ -30,12 +30,19 @@ jobs:
           MODELSWATCH_DAILY_ALPHA: ${{ vars.MODELSWATCH_DAILY_ALPHA }}
         run: |
           node -v
+          # Build snapshots (weekly usually does, but ensure freshness)
+          node tools/modelswatch/build_snapshots.mjs || echo "snapshot build failed"
+          # Incremental tri-lingual snapshot summaries (reuses cache)
+          node tools/modelswatch/generate_snapshot_summaries.mjs || echo "snapshot summaries failed"
+          # Summary coverage JSON
+          node tools/modelswatch/summaries_coverage.mjs || echo "summaries coverage failed"
           node tools/modelswatch/daily.mjs
       - name: Commit and push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add data/ai/modelswatch/daily_*.json data/ai/modelswatch/daily/*.json data/ai/modelswatch/daily/dates.json data/ai/modelswatch/state.json
+          git add data/ai/modelswatch/snapshots/** data/ai/modelswatch/summary_cache.json data/ai/modelswatch/summaries_coverage.json || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

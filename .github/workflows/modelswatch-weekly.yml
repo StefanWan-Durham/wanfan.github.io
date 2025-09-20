@@ -33,6 +33,10 @@ jobs:
         run: |
           node -v
           node tools/modelswatch/weekly.mjs
+          # Snapshot tri-lingual summaries (cache-based incremental)
+          node tools/modelswatch/generate_snapshot_summaries.mjs || echo "snapshot summaries failed"
+          # Coverage for tri-lingual summaries
+          node tools/modelswatch/summaries_coverage.mjs || echo "summaries coverage failed"
           node tools/modelswatch/seed_hotlists.mjs
           # Coverage report (write JSON + console)
           node tools/modelswatch/analyze_hotlist_coverage.mjs --hotlist data/ai/modelswatch/models_hotlist.json --categories data/ai/ai_categories.json --out data/ai/modelswatch/coverage_summary.json || echo "coverage script failed"
@@ -50,7 +54,9 @@ jobs:
             data/ai/modelswatch/models_hotlist.json \
             data/ai/modelswatch/projects_hotlist.json \
             data/ai/modelswatch/coverage_summary.json
-            data/ai/modelswatch/weekly_summaries.json
+            data/ai/modelswatch/weekly_summaries.json \
+            data/ai/modelswatch/summary_cache.json \
+            data/ai/modelswatch/summaries_coverage.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

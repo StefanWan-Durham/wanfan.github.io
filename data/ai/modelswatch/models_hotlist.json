@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T12:15:19.530Z",
+  "updated_at": "2025-09-20T13:18:27.352Z",
   "by_category": {
     "image_classification": [
       {
@@ -919,6 +919,62 @@
           "auto_evaluation_models",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "meta-llama/Llama-3.2-1B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.2-1B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "arxiv:2405.16406",
+          "license:llama3.2",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7629316,
+          "likes_total": 1071,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Llama-3.2-1B-Instruct 是 Meta 推出的轻量级指令微调语言模型，参数量为 10 亿，专为高效推理和资源受限环境设计。该模型基于 Llama 3.2 架构，通过指令微调优化了对话和任务执行能力，支持多轮交互和复杂指令理解。其核心优势在于低计算资源需求，适合部署在边缘设备或轻量级应用中，例如聊天机器人、文本摘要和代码生成等场景。模型开源且支持商用，为开发者提供了低成本、高性能的自然语言处理解决方案。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
       }
     ],
     "text_to_video": [
@@ -1171,6 +1227,62 @@
           "text_to_image",
           "text_to_video",
           "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.2-1B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.2-1B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "arxiv:2405.16406",
+          "license:llama3.2",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7629316,
+          "likes_total": 1071,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Llama-3.2-1B-Instruct 是 Meta 推出的轻量级指令微调语言模型，参数量为 10 亿，专为高效推理和资源受限环境设计。该模型基于 Llama 3.2 架构，通过指令微调优化了对话和任务执行能力，支持多轮交互和复杂指令理解。其核心优势在于低计算资源需求，适合部署在边缘设备或轻量级应用中，例如聊天机器人、文本摘要和代码生成等场景。模型开源且支持商用，为开发者提供了低成本、高性能的自然语言处理解决方案。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
           "code_generation",
           "image_text_alignment",
           "multimodal_understanding_generation",
@@ -1661,6 +1773,60 @@
           "model_monitoring",
           "model_iterative_update"
         ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-3B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-3B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-3B",
+          "base_model:finetune:Qwen/Qwen2.5-3B",
+          "license:other",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7209456,
+          "likes_total": 311,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Qwen2.5-3B-Instruct 是阿里云推出的一款轻量级开源指令微调语言模型，参数量为 30 亿。该模型基于 Qwen2.5 架构优化，具备较强的推理能力和多语言支持，适用于对话生成、代码补全、文本摘要等任务。其亮点在于高效的计算性能和较低的资源占用，适合部署在资源受限的环境中，如个人设备或边缘计算场景。该模型可用于构建智能助手、自动化文档处理以及教育辅助工具等应用。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
     "llm_pretraining": [
@@ -1819,6 +1985,67 @@
           "multimodal_understanding_generation",
           "inference_acceleration",
           "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "google/t5gemma-b-b-prefixlm",
+        "source": "hf",
+        "name": "t5gemma-b-b-prefixlm",
+        "url": "https://huggingface.co/google/t5gemma-b-b-prefixlm",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "t5gemma",
+          "text2text-generation",
+          "arxiv:2504.06225",
+          "arxiv:2009.03300",
+          "arxiv:1905.07830",
+          "arxiv:1911.11641",
+          "arxiv:1905.10044",
+          "arxiv:1907.10641",
+          "arxiv:1911.01547",
+          "arxiv:1705.03551",
+          "arxiv:2107.03374",
+          "arxiv:2108.07732",
+          "arxiv:2110.14168",
+          "arxiv:2103.03874",
+          "arxiv:2304.06364",
+          "arxiv:2206.04615",
+          "base_model:google/t5gemma-b-b-prefixlm",
+          "base_model:finetune:google/t5gemma-b-b-prefixlm",
+          "license:gemma",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4427357,
+          "likes_total": 9,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "t5gemma-b-b-prefixlm 是 Google 推出的一个多模态语言模型，结合了 T5 和 Gemma 架构的优势，并引入了前缀语言建模（PrefixLM）机制。该模型支持文本和图像输入，能够执行多种生成和理解任务，如文本摘要、图像描述和跨模态推理。其亮点在于高效的参数利用和灵活的输入处理能力，适用于需要结合视觉与语言信息的应用场景，例如智能助手、内容生成和多模态搜索系统。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "model_monitoring",
+          "model_iterative_update",
           "molecular_generation"
         ]
       }
@@ -2145,6 +2372,62 @@
           "text_to_image",
           "text_to_video",
           "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.2-1B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.2-1B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "arxiv:2405.16406",
+          "license:llama3.2",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7629316,
+          "likes_total": 1071,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Llama-3.2-1B-Instruct 是 Meta 推出的轻量级指令微调语言模型，参数量为 10 亿，专为高效推理和资源受限环境设计。该模型基于 Llama 3.2 架构，通过指令微调优化了对话和任务执行能力，支持多轮交互和复杂指令理解。其核心优势在于低计算资源需求，适合部署在边缘设备或轻量级应用中，例如聊天机器人、文本摘要和代码生成等场景。模型开源且支持商用，为开发者提供了低成本、高性能的自然语言处理解决方案。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
           "code_generation",
           "image_text_alignment",
           "multimodal_understanding_generation",
@@ -2598,6 +2881,146 @@
           "training_data_copyright",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "jinaai/jina-embeddings-v3",
+        "source": "hf",
+        "name": "jina-embeddings-v3",
+        "url": "https://huggingface.co/jinaai/jina-embeddings-v3",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "onnx",
+          "safetensors",
+          "feature-extraction",
+          "sentence-similarity",
+          "mteb",
+          "sentence-transformers",
+          "custom_code",
+          "multilingual",
+          "af",
+          "am",
+          "ar",
+          "as",
+          "az",
+          "be",
+          "bg",
+          "bn",
+          "br",
+          "bs",
+          "ca",
+          "cs",
+          "cy",
+          "da",
+          "de",
+          "el",
+          "en",
+          "eo",
+          "es",
+          "et",
+          "eu",
+          "fa",
+          "fi",
+          "fr",
+          "fy",
+          "ga",
+          "gd",
+          "gl",
+          "gu",
+          "ha",
+          "he",
+          "hi",
+          "hr",
+          "hu",
+          "hy",
+          "id",
+          "is",
+          "it",
+          "ja",
+          "jv",
+          "ka",
+          "kk",
+          "km",
+          "kn",
+          "ko",
+          "ku",
+          "ky",
+          "la",
+          "lo",
+          "lt",
+          "lv",
+          "mg",
+          "mk",
+          "ml",
+          "mn",
+          "mr",
+          "ms",
+          "my",
+          "ne",
+          "nl",
+          "no",
+          "om",
+          "or",
+          "pa",
+          "pl",
+          "ps",
+          "pt",
+          "ro",
+          "ru",
+          "sa",
+          "sd",
+          "si",
+          "sk",
+          "sl",
+          "so",
+          "sq",
+          "sr",
+          "su",
+          "sv",
+          "sw",
+          "ta",
+          "te",
+          "th",
+          "tl",
+          "tr",
+          "ug",
+          "uk",
+          "ur",
+          "uz",
+          "vi",
+          "xh",
+          "yi",
+          "zh",
+          "arxiv:2409.10173",
+          "license:cc-by-nc-4.0",
+          "model-index",
+          "region:eu"
+        ],
+        "stats": {
+          "downloads_total": 4325612,
+          "likes_total": 1068,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Jina Embeddings V3 是一款由 Jina AI 开发的多语言文本嵌入模型，支持 100 多种语言，能够将文本转换为高维向量表示。该模型基于先进的 Transformer 架构，具备强大的语义理解能力，适用于跨语言检索、语义相似度计算和文档聚类等任务。其亮点在于支持 8K 上下文长度，能够处理长文本场景，同时保持了较高的计算效率。该模型适用于搜索引擎、推荐系统、智能问答等实际应用场景，为多语言文本处理提供了可靠的解决方案。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "lightweight_visual_model",
+          "code_generation",
+          "multilingual_processing",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "model_monitoring",
+          "model_iterative_update"
+        ]
       }
     ],
     "low_resource_language": [],
@@ -2811,6 +3234,52 @@
           "hidden": false
         },
         "score_model": 0.09983430447932475,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
+      },
+      {
+        "id": "distilbert/distilbert-base-uncased",
+        "source": "hf",
+        "name": "distilbert-base-uncased",
+        "url": "https://huggingface.co/distilbert/distilbert-base-uncased",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "safetensors",
+          "distilbert",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1910.01108",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 12020430,
+          "likes_total": 757,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "DistilBERT-base-uncased 是一个轻量化的 BERT 模型，通过知识蒸馏技术训练而成。它在保持较高性能的同时，显著减少了模型参数量和计算资源需求。该模型适用于文本分类、情感分析、命名实体识别等自然语言处理任务。特别适合资源受限或对推理速度有较高要求的场景。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
         "task_keys": [
           "nlp_data_synthesis",
           "nlp_data_distillation",
@@ -3036,10 +3505,139 @@
           "training_data_anonymization",
           "training_data_copyright"
         ]
+      },
+      {
+        "id": "distilbert/distilbert-base-uncased",
+        "source": "hf",
+        "name": "distilbert-base-uncased",
+        "url": "https://huggingface.co/distilbert/distilbert-base-uncased",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "safetensors",
+          "distilbert",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1910.01108",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 12020430,
+          "likes_total": 757,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "DistilBERT-base-uncased 是一个轻量化的 BERT 模型，通过知识蒸馏技术训练而成。它在保持较高性能的同时，显著减少了模型参数量和计算资源需求。该模型适用于文本分类、情感分析、命名实体识别等自然语言处理任务。特别适合资源受限或对推理速度有较高要求的场景。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
       }
     ],
     "dialogue_system_optimization": [],
-    "nlp_bias_mitigation": [],
+    "nlp_bias_mitigation": [
+      {
+        "id": "prajjwal1/bert-tiny",
+        "source": "hf",
+        "name": "bert-tiny",
+        "url": "https://huggingface.co/prajjwal1/bert-tiny",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "BERT",
+          "MNLI",
+          "NLI",
+          "transformer",
+          "pre-training",
+          "en",
+          "arxiv:1908.08962",
+          "arxiv:2110.01518",
+          "license:mit",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 9748754,
+          "likes_total": 129,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "bert-tiny是一个轻量级的BERT模型变体，适用于资源受限环境下的自然语言处理任务。该模型在保持BERT核心架构的基础上，显著减少了参数量和计算需求，使其能够在移动设备或边缘计算场景中高效运行。其亮点在于通过模型压缩技术实现了速度和性能的平衡，支持文本分类、命名实体识别等下游任务。适合需要快速推理且对硬件要求较低的NLP应用场景。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "nlp_bias_mitigation",
+          "model_compression",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
+      },
+      {
+        "id": "facebook/bart-base",
+        "source": "hf",
+        "name": "bart-base",
+        "url": "https://huggingface.co/facebook/bart-base",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "safetensors",
+          "bart",
+          "feature-extraction",
+          "en",
+          "arxiv:1910.13461",
+          "license:apache-2.0",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7927928,
+          "likes_total": 198,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "BART-base 是 Facebook 开发的一种基于 Transformer 的序列到序列预训练模型，适用于多种自然语言处理任务。它采用去噪自编码器结构，通过重构被破坏的文本进行预训练，具备强大的文本生成和理解能力。该模型在文本摘要、机器翻译、问答和对话生成等任务中表现优异，尤其擅长处理需要上下文理解和连贯生成的场景。BART-base 适合研究人员和开发者用于快速构建高效的 NLP 应用，或作为下游任务的基线模型。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "nlp_bias_mitigation"
+        ]
+      }
+    ],
     "image_text_alignment": [
       {
         "id": "timm/mobilenetv3_small_100.lamb_in1k",
@@ -3220,6 +3818,62 @@
           "text_to_image",
           "text_to_video",
           "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.2-1B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.2-1B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "arxiv:2405.16406",
+          "license:llama3.2",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7629316,
+          "likes_total": 1071,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Llama-3.2-1B-Instruct 是 Meta 推出的轻量级指令微调语言模型，参数量为 10 亿，专为高效推理和资源受限环境设计。该模型基于 Llama 3.2 架构，通过指令微调优化了对话和任务执行能力，支持多轮交互和复杂指令理解。其核心优势在于低计算资源需求，适合部署在边缘设备或轻量级应用中，例如聊天机器人、文本摘要和代码生成等场景。模型开源且支持商用，为开发者提供了低成本、高性能的自然语言处理解决方案。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
           "code_generation",
           "image_text_alignment",
           "multimodal_understanding_generation",
@@ -3419,6 +4073,62 @@
           "text_to_image",
           "text_to_video",
           "llm_pretraining",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
+      },
+      {
+        "id": "meta-llama/Llama-3.2-1B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.2-1B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "arxiv:2405.16406",
+          "license:llama3.2",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7629316,
+          "likes_total": 1071,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Llama-3.2-1B-Instruct 是 Meta 推出的轻量级指令微调语言模型，参数量为 10 亿，专为高效推理和资源受限环境设计。该模型基于 Llama 3.2 架构，通过指令微调优化了对话和任务执行能力，支持多轮交互和复杂指令理解。其核心优势在于低计算资源需求，适合部署在边缘设备或轻量级应用中，例如聊天机器人、文本摘要和代码生成等场景。模型开源且支持商用，为开发者提供了低成本、高性能的自然语言处理解决方案。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
           "code_generation",
           "image_text_alignment",
           "multimodal_understanding_generation",
@@ -4101,6 +4811,60 @@
           "model_monitoring",
           "model_iterative_update"
         ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-3B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-3B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-3B",
+          "base_model:finetune:Qwen/Qwen2.5-3B",
+          "license:other",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7209456,
+          "likes_total": 311,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Qwen2.5-3B-Instruct 是阿里云推出的一款轻量级开源指令微调语言模型，参数量为 30 亿。该模型基于 Qwen2.5 架构优化，具备较强的推理能力和多语言支持，适用于对话生成、代码补全、文本摘要等任务。其亮点在于高效的计算性能和较低的资源占用，适合部署在资源受限的环境中，如个人设备或边缘计算场景。该模型可用于构建智能助手、自动化文档处理以及教育辅助工具等应用。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
     "gnn": [],
@@ -4216,7 +4980,39 @@
     ],
     "vector_db_optimization": [],
     "metric_learning": [],
-    "contrastive_learning": [],
+    "contrastive_learning": [
+      {
+        "id": "facebook/contriever",
+        "source": "hf",
+        "name": "contriever",
+        "url": "https://huggingface.co/facebook/contriever",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "bert",
+          "arxiv:2112.09118",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 8066749,
+          "likes_total": 64,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Contriever是Facebook开发的一种基于对比学习的文本检索模型，适用于大规模无监督文本嵌入任务。它通过对比学习机制，无需标注数据即可学习高质量的文本表示，适用于信息检索、语义相似度计算和文档聚类等场景。模型支持高效的大规模文本索引和快速检索，特别适合处理海量文本数据。Contriever在多个基准测试中表现出色，为无监督文本表示学习提供了实用且高效的解决方案。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "contrastive_learning"
+        ]
+      }
+    ],
     "ltr": [],
     "neural_retrieval": [
       {
@@ -4659,6 +5455,49 @@
           "model_monitoring",
           "model_iterative_update"
         ]
+      },
+      {
+        "id": "prajjwal1/bert-tiny",
+        "source": "hf",
+        "name": "bert-tiny",
+        "url": "https://huggingface.co/prajjwal1/bert-tiny",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "BERT",
+          "MNLI",
+          "NLI",
+          "transformer",
+          "pre-training",
+          "en",
+          "arxiv:1908.08962",
+          "arxiv:2110.01518",
+          "license:mit",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 9748754,
+          "likes_total": 129,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "bert-tiny是一个轻量级的BERT模型变体，适用于资源受限环境下的自然语言处理任务。该模型在保持BERT核心架构的基础上，显著减少了参数量和计算需求，使其能够在移动设备或边缘计算场景中高效运行。其亮点在于通过模型压缩技术实现了速度和性能的平衡，支持文本分类、命名实体识别等下游任务。适合需要快速推理且对硬件要求较低的NLP应用场景。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "nlp_bias_mitigation",
+          "model_compression",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
       }
     ],
     "model_quantization": [
@@ -4879,6 +5718,60 @@
           "model_monitoring",
           "model_iterative_update"
         ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-3B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-3B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-3B",
+          "base_model:finetune:Qwen/Qwen2.5-3B",
+          "license:other",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7209456,
+          "likes_total": 311,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Qwen2.5-3B-Instruct 是阿里云推出的一款轻量级开源指令微调语言模型，参数量为 30 亿。该模型基于 Qwen2.5 架构优化，具备较强的推理能力和多语言支持，适用于对话生成、代码补全、文本摘要等任务。其亮点在于高效的计算性能和较低的资源占用，适合部署在资源受限的环境中，如个人设备或边缘计算场景。该模型可用于构建智能助手、自动化文档处理以及教育辅助工具等应用。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
     "model_distillation": [
@@ -5098,6 +5991,60 @@
           "auto_evaluation_models",
           "model_monitoring",
           "model_iterative_update"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-3B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-3B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-3B",
+          "base_model:finetune:Qwen/Qwen2.5-3B",
+          "license:other",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7209456,
+          "likes_total": 311,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Qwen2.5-3B-Instruct 是阿里云推出的一款轻量级开源指令微调语言模型，参数量为 30 亿。该模型基于 Qwen2.5 架构优化，具备较强的推理能力和多语言支持，适用于对话生成、代码补全、文本摘要等任务。其亮点在于高效的计算性能和较低的资源占用，适合部署在资源受限的环境中，如个人设备或边缘计算场景。该模型可用于构建智能助手、自动化文档处理以及教育辅助工具等应用。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
         ]
       }
     ],
@@ -5359,6 +6306,62 @@
           "auto_evaluation_models",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "meta-llama/Llama-3.2-1B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.2-1B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "arxiv:2405.16406",
+          "license:llama3.2",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7629316,
+          "likes_total": 1071,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Llama-3.2-1B-Instruct 是 Meta 推出的轻量级指令微调语言模型，参数量为 10 亿，专为高效推理和资源受限环境设计。该模型基于 Llama 3.2 架构，通过指令微调优化了对话和任务执行能力，支持多轮交互和复杂指令理解。其核心优势在于低计算资源需求，适合部署在边缘设备或轻量级应用中，例如聊天机器人、文本摘要和代码生成等场景。模型开源且支持商用，为开发者提供了低成本、高性能的自然语言处理解决方案。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
       }
     ],
     "federated_learning": [],
@@ -5575,6 +6578,52 @@
           "hidden": false
         },
         "score_model": 0.09983430447932475,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
+      },
+      {
+        "id": "distilbert/distilbert-base-uncased",
+        "source": "hf",
+        "name": "distilbert-base-uncased",
+        "url": "https://huggingface.co/distilbert/distilbert-base-uncased",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "safetensors",
+          "distilbert",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1910.01108",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 12020430,
+          "likes_total": 757,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "DistilBERT-base-uncased 是一个轻量化的 BERT 模型，通过知识蒸馏技术训练而成。它在保持较高性能的同时，显著减少了模型参数量和计算资源需求。该模型适用于文本分类、情感分析、命名实体识别等自然语言处理任务。特别适合资源受限或对推理速度有较高要求的场景。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
         "task_keys": [
           "nlp_data_synthesis",
           "nlp_data_distillation",
@@ -5803,6 +6852,52 @@
           "training_data_anonymization",
           "training_data_copyright"
         ]
+      },
+      {
+        "id": "distilbert/distilbert-base-uncased",
+        "source": "hf",
+        "name": "distilbert-base-uncased",
+        "url": "https://huggingface.co/distilbert/distilbert-base-uncased",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "safetensors",
+          "distilbert",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1910.01108",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 12020430,
+          "likes_total": 757,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "DistilBERT-base-uncased 是一个轻量化的 BERT 模型，通过知识蒸馏技术训练而成。它在保持较高性能的同时，显著减少了模型参数量和计算资源需求。该模型适用于文本分类、情感分析、命名实体识别等自然语言处理任务。特别适合资源受限或对推理速度有较高要求的场景。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
       }
     ],
     "training_data_copyright": [
@@ -6014,6 +7109,52 @@
           "hidden": false
         },
         "score_model": 0.09983430447932475,
+        "task_keys": [
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
+      },
+      {
+        "id": "distilbert/distilbert-base-uncased",
+        "source": "hf",
+        "name": "distilbert-base-uncased",
+        "url": "https://huggingface.co/distilbert/distilbert-base-uncased",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "safetensors",
+          "distilbert",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1910.01108",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 12020430,
+          "likes_total": 757,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "DistilBERT-base-uncased 是一个轻量化的 BERT 模型，通过知识蒸馏技术训练而成。它在保持较高性能的同时，显著减少了模型参数量和计算资源需求。该模型适用于文本分类、情感分析、命名实体识别等自然语言处理任务。特别适合资源受限或对推理速度有较高要求的场景。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
         "task_keys": [
           "nlp_data_synthesis",
           "nlp_data_distillation",
@@ -6241,6 +7382,60 @@
           "model_monitoring",
           "model_iterative_update"
         ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-3B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-3B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-3B",
+          "base_model:finetune:Qwen/Qwen2.5-3B",
+          "license:other",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7209456,
+          "likes_total": 311,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Qwen2.5-3B-Instruct 是阿里云推出的一款轻量级开源指令微调语言模型，参数量为 30 亿。该模型基于 Qwen2.5 架构优化，具备较强的推理能力和多语言支持，适用于对话生成、代码补全、文本摘要等任务。其亮点在于高效的计算性能和较低的资源占用，适合部署在资源受限的环境中，如个人设备或边缘计算场景。该模型可用于构建智能助手、自动化文档处理以及教育辅助工具等应用。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
+        ]
       }
     ],
     "model_iterative_update": [
@@ -6460,6 +7655,60 @@
           "auto_evaluation_models",
           "model_monitoring",
           "model_iterative_update"
+        ]
+      },
+      {
+        "id": "Qwen/Qwen2.5-3B-Instruct",
+        "source": "hf",
+        "name": "Qwen2.5-3B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "qwen2",
+          "text-generation",
+          "chat",
+          "conversational",
+          "en",
+          "arxiv:2407.10671",
+          "base_model:Qwen/Qwen2.5-3B",
+          "base_model:finetune:Qwen/Qwen2.5-3B",
+          "license:other",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7209456,
+          "likes_total": 311,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Qwen2.5-3B-Instruct 是阿里云推出的一款轻量级开源指令微调语言模型，参数量为 30 亿。该模型基于 Qwen2.5 架构优化，具备较强的推理能力和多语言支持，适用于对话生成、代码补全、文本摘要等任务。其亮点在于高效的计算性能和较低的资源占用，适合部署在资源受限的环境中，如个人设备或边缘计算场景。该模型可用于构建智能助手、自动化文档处理以及教育辅助工具等应用。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "lightweight_visual_model",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "molecular_generation"
         ]
       }
     ],
@@ -6797,6 +8046,62 @@
           "auto_evaluation_models",
           "molecular_generation"
         ]
+      },
+      {
+        "id": "meta-llama/Llama-3.2-1B-Instruct",
+        "source": "hf",
+        "name": "Llama-3.2-1B-Instruct",
+        "url": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "llama",
+          "text-generation",
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama-3",
+          "conversational",
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th",
+          "arxiv:2204.05149",
+          "arxiv:2405.16406",
+          "license:llama3.2",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 7629316,
+          "likes_total": 1071,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Llama-3.2-1B-Instruct 是 Meta 推出的轻量级指令微调语言模型，参数量为 10 亿，专为高效推理和资源受限环境设计。该模型基于 Llama 3.2 架构，通过指令微调优化了对话和任务执行能力，支持多轮交互和复杂指令理解。其核心优势在于低计算资源需求，适合部署在边缘设备或轻量级应用中，例如聊天机器人、文本摘要和代码生成等场景。模型开源且支持商用，为开发者提供了低成本、高性能的自然语言处理解决方案。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "code_generation",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
+          "auto_evaluation_models",
+          "molecular_generation"
+        ]
       }
     ],
     "bioinformatics_analysis": [],
@@ -7017,6 +8322,52 @@
           "time_series_forecasting",
           "time_series_anomaly_detection"
         ]
+      },
+      {
+        "id": "Salesforce/moirai-2.0-R-small",
+        "source": "hf",
+        "name": "moirai-2.0-R-small",
+        "url": "https://huggingface.co/Salesforce/moirai-2.0-R-small",
+        "tags": [
+          "safetensors",
+          "time series",
+          "forecasting",
+          "pretrained models",
+          "foundation models",
+          "time series foundation models",
+          "time-series",
+          "time-series-forecasting",
+          "arxiv:2403.07815",
+          "arxiv:2402.02592",
+          "license:cc-by-nc-4.0",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4272176,
+          "likes_total": 20,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Moirai-2.0-R-small 是 Salesforce 开发的一款轻量级多模态语言模型，专注于多语言和多任务处理。该模型支持文本、图像和音频输入，能够执行问答、摘要、翻译等多种任务。其设计亮点在于高效的参数利用和跨模态信息融合，适用于资源受限环境下的智能助手、内容分析和自动化处理场景。该模型在保持性能的同时显著降低了计算和存储需求，适合中小规模企业和研究团队使用。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "lightweight_visual_model",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_forecasting",
+          "time_series_anomaly_detection"
+        ]
       }
     ],
     "time_series_anomaly_detection": [
@@ -7221,6 +8572,52 @@
           "auto_evaluation_models",
           "training_data_anonymization",
           "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_forecasting",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "Salesforce/moirai-2.0-R-small",
+        "source": "hf",
+        "name": "moirai-2.0-R-small",
+        "url": "https://huggingface.co/Salesforce/moirai-2.0-R-small",
+        "tags": [
+          "safetensors",
+          "time series",
+          "forecasting",
+          "pretrained models",
+          "foundation models",
+          "time series foundation models",
+          "time-series",
+          "time-series-forecasting",
+          "arxiv:2403.07815",
+          "arxiv:2402.02592",
+          "license:cc-by-nc-4.0",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 4272176,
+          "likes_total": 20,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-20T11:03:41.139Z",
+        "added_at": "2025-09-20",
+        "summary": "Moirai-2.0-R-small 是 Salesforce 开发的一款轻量级多模态语言模型，专注于多语言和多任务处理。该模型支持文本、图像和音频输入，能够执行问答、摘要、翻译等多种任务。其设计亮点在于高效的参数利用和跨模态信息融合，适用于资源受限环境下的智能助手、内容分析和自动化处理场景。该模型在保持性能的同时显著降低了计算和存储需求，适合中小规模企业和研究团队使用。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09968851805914397,
+        "task_keys": [
+          "lightweight_visual_model",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
           "model_monitoring",
           "model_iterative_update",
           "time_series_forecasting",

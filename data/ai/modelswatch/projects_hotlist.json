@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T11:08:14.509Z",
+  "updated_at": "2025-09-20T13:18:27.460Z",
   "by_category": {
     "framework_core": [
       {
@@ -82,6 +82,33 @@
           "hidden": false
         },
         "score_engineering": 0.19997781697104866
+      },
+      {
+        "id": "sindresorhus/awesome",
+        "source": "github",
+        "name": "awesome",
+        "url": "https://github.com/sindresorhus/awesome",
+        "tags": [
+          "awesome",
+          "awesome-list",
+          "lists",
+          "resources",
+          "unicorns"
+        ],
+        "stats": {
+          "stars_total": 401228,
+          "forks_total": 31636,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T13:17:35Z",
+        "added_at": "2025-09-20",
+        "summary": "😎 Awesome lists about all kinds of interesting topics",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19999595220145608
       }
     ],
     "deployment_serving": [
@@ -180,6 +207,34 @@
           "hidden": false
         },
         "score_engineering": 0.19994557006221036
+      },
+      {
+        "id": "d3/d3",
+        "source": "github",
+        "name": "d3",
+        "url": "https://github.com/d3/d3",
+        "tags": [
+          "chart",
+          "charts",
+          "d3",
+          "data-visualization",
+          "svg",
+          "visualization"
+        ],
+        "stats": {
+          "stars_total": 111506,
+          "forks_total": 22837,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T08:10:43Z",
+        "added_at": "2025-09-20",
+        "summary": "Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19858033573617936
       }
     ],
     "agents_workflows": [],
@@ -250,6 +305,39 @@
           "hidden": false
         },
         "score_engineering": 0.19997257070824762
+      },
+      {
+        "id": "microsoft/PowerToys",
+        "source": "github",
+        "name": "PowerToys",
+        "url": "https://github.com/microsoft/PowerToys",
+        "tags": [
+          "color-picker",
+          "command-palette",
+          "desktop",
+          "fancyzones",
+          "keyboard-manager",
+          "microsoft-powertoys",
+          "powerrename",
+          "powertoys",
+          "windows",
+          "windows-10",
+          "windows-11"
+        ],
+        "stats": {
+          "stars_total": 123748,
+          "forks_total": 7360,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T13:11:07Z",
+        "added_at": "2025-09-20",
+        "summary": "Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19996601677636472
       }
     ],
     "ui_devex": [
@@ -312,6 +400,38 @@
           "hidden": false
         },
         "score_engineering": 0.19997866564414063
+      },
+      {
+        "id": "Snailclimb/JavaGuide",
+        "source": "github",
+        "name": "JavaGuide",
+        "url": "https://github.com/Snailclimb/JavaGuide",
+        "tags": [
+          "algorithms",
+          "interview",
+          "java",
+          "jvm",
+          "mysql",
+          "redis",
+          "spring",
+          "system",
+          "system-design",
+          "zookeeper"
+        ],
+        "stats": {
+          "stars_total": 151811,
+          "forks_total": 45990,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-20T13:10:31Z",
+        "added_at": "2025-09-20",
+        "summary": "「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19996323948986292
       }
     ]
   }

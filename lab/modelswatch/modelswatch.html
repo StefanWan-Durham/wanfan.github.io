@@ -277,6 +277,13 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v4H3z"/><path d="M8 7v14"/><path d="M16 7v14"/><path d="M3 11h18"/><path d="M3 17h18"/></svg>
             <span class="i18n l-zh">每周摘要</span><span class="i18n l-en">Weekly Summary</span><span class="i18n l-es">Resumen semanal</span>
           </h3>
+          <div id="mw-summary-coverage" style="display:none;margin:4px 0 8px;align-items:center;gap:8px;font-size:.7rem;font-weight:600;letter-spacing:.5px;color:var(--muted)">
+            <span class="i18n l-zh">三语摘要覆盖</span><span class="i18n l-en">Tri-lang coverage</span><span class="i18n l-es">Cobertura tri-idioma</span>
+            <div style="flex:1;height:6px;border-radius:4px;background:color-mix(in oklab,var(--border),var(--primary) 15%);position:relative;overflow:hidden">
+              <div id="mw-summary-coverage-bar" style="position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--primary) 0%,var(--primary-600,#1d4ed8) 100%);"></div>
+            </div>
+            <span id="mw-summary-coverage-label">0%</span>
+          </div>
           <div class="mw-summary-tabs" role="tablist" aria-label="Weekly summary language">
             <button data-lang="zh" class="active" role="tab" aria-selected="true">中文</button>
             <button data-lang="en" role="tab" aria-selected="false">EN</button>
@@ -475,6 +482,25 @@
       const obs = new MutationObserver(()=>{ const L=document.documentElement.getAttribute('lang')||'zh'; if(L!==currentLang){ currentLang=L; applyLangButtons(); render(); } });
       obs.observe(document.documentElement,{ attributes:true, attributeFilter:['lang'] });
       fetchSummary(); applyLangButtons();
+      // Tri-lingual coverage bar
+      (async function loadCoverage(){
+        const paths=[
+          '../../data/ai/modelswatch/summaries_coverage.json',
+          '/data/ai/modelswatch/summaries_coverage.json',
+          '../data/ai/modelswatch/summaries_coverage.json',
+          './data/ai/modelswatch/summaries_coverage.json'
+        ];
+        let data=null;
+        for(const p of paths){ try{ const r=await fetch(p,{cache:'no-store'}); if(r.ok){ data=await r.json(); break; } }catch{} }
+        if(!data) return;
+        const covBox = document.getElementById('mw-summary-coverage');
+        const bar = document.getElementById('mw-summary-coverage-bar');
+        const label = document.getElementById('mw-summary-coverage-label');
+        const pct = Number(data.today?.pct_full||0);
+        bar.style.width = pct+'%';
+        label.textContent = pct.toFixed(1)+'%';
+        covBox.style.display='flex';
+      })();
     })();
     function normalizeStats(it){ if(!it||!it.stats) return it; const s=it.stats; if(s.hf_downloads_7d && !s.downloads_total) s.downloads_total = s.hf_downloads_7d; if(s.hf_likes && !s.likes_total) s.likes_total = s.hf_likes; return it; }
     function normalizeArray(arr){ return (arr||[]).map(normalizeStats); }
@@ -783,10 +809,9 @@
 
     function pickSummary(it){
       const lang = getLang();
-      if(lang==='zh') return it.summary_zh || it.summary || it.description || '';
-      if(lang==='es') return it.summary_es || it.summary || it.description || '';
-      // default en
-      return it.summary_en || it.summary || it.description || '';
+      if(lang==='zh') return it.summary_zh || '';
+      if(lang==='es') return it.summary_es || '';
+      return it.summary_en || '';
     }
 
     function card(it){
@@ -813,7 +838,21 @@
       const series = (src==='GitHub') ? starSeries : dlSeries;
       const sgv = sparkline(tms, series, color);
       const url = it.url || (src==='GitHub'?`https://github.com/${esc(it.id)}`:`https://huggingface.co/${esc(it.id)}`);
-      const sum = pickSummary(it);
+      const lang = getLang();
+      let sum = pickSummary(it);
+      // fallback logic + missing indicator
+      if(!sum){
+        // Try neutral summary
+        sum = it.summary || it.description || '';
+        if(sum){
+          // Provide indicator that translation missing
+          let indicator='';
+          if(lang==='zh') indicator='（暂无中文摘要，显示通用/英文）';
+          else if(lang==='es') indicator='(Sin resumen en español, mostrando general/inglés)';
+          else indicator='(No localized summary)';
+          sum = indicator + ' ' + sum;
+        }
+      }
       // Reason badge translation
       function reasonLabel(key){
         if(!key) return '';
@@ -1099,7 +1138,31 @@
       }catch(e){ /* fallback */ }
       try{
         const g = await fetch('../../data/ai/modelswatch/top_github.json',{cache:'no-store'}).then(r=>r.json());
-        const arr = (g?.items||[]).map(shallowNormalize);
+        let arr = (g?.items||[]).map(shallowNormalize);
+        // Attempt to enrich from latest snapshot summaries sidecar (GitHub)
+        try{
+          const snapDate = await latestSnapshotDate();
+          if(snapDate){
+            const ghPath = `../../data/ai/modelswatch/snapshots/${snapDate}/gh_summaries.json`;
+            const snap = await fetch(ghPath,{cache:'no-store'}).then(r=> r.ok? r.json(): null).catch(()=>null);
+            if(snap?.items){
+              const map = new Map();
+              snap.items.forEach(it=> map.set(it.id, it));
+              arr = arr.map(it=>{
+                const m = map.get(it.id);
+                if(m){
+                  return { ...it,
+                    summary: m.summary || it.summary || '',
+                    summary_en: m.summary_en || it.summary_en || it.summary || '',
+                    summary_zh: m.summary_zh || it.summary_zh || '',
+                    summary_es: m.summary_es || it.summary_es || ''
+                  };
+                }
+                return it;
+              });
+            }
+          }
+        }catch{}
         items = arr; window.__mw_hot_grouping='';
         window.__mw_updated_at = computeUpdatedAt(g?.updated_at, arr);
       }catch{ items=[]; window.__mw_updated_at=''; window.__mw_hot_grouping=''; }
@@ -1123,7 +1186,31 @@
       }catch(e){ /* fallback */ }
       try{
         const h = await fetch('../../data/ai/modelswatch/top_hf.json',{cache:'no-store'}).then(r=>r.json());
-        const arr = (h?.items||[]).map(shallowNormalize);
+        let arr = (h?.items||[]).map(shallowNormalize);
+        // Enrich from latest snapshot summaries sidecar (HF)
+        try{
+          const snapDate = await latestSnapshotDate();
+            if(snapDate){
+              const hfPath = `../../data/ai/modelswatch/snapshots/${snapDate}/hf_summaries.json`;
+              const snap = await fetch(hfPath,{cache:'no-store'}).then(r=> r.ok? r.json(): null).catch(()=>null);
+              if(snap?.items){
+                const map = new Map();
+                snap.items.forEach(it=> map.set(it.id, it));
+                arr = arr.map(it=>{
+                  const m = map.get(it.id);
+                  if(m){
+                    return { ...it,
+                      summary: m.summary || it.summary || '',
+                      summary_en: m.summary_en || it.summary_en || it.summary || '',
+                      summary_zh: m.summary_zh || it.summary_zh || '',
+                      summary_es: m.summary_es || it.summary_es || ''
+                    };
+                  }
+                  return it;
+                });
+              }
+            }
+        }catch{}
         items = arr; window.__mw_hot_grouping='';
         window.__mw_updated_at = computeUpdatedAt(h?.updated_at, arr);
       }catch{ items=[]; window.__mw_updated_at=''; window.__mw_hot_grouping=''; }
@@ -1150,6 +1237,26 @@
         }
         itemsAll = merged; allLoaded = true;
       }catch{ itemsAll = []; allLoaded = false; }
+    }
+
+    // Discover the latest snapshot date directory by probing coverage then probing recent dates for sidecar existence
+    async function latestSnapshotDate(){
+      // 1. Try explicit pointer file
+      try{ const p = await fetch('../../data/ai/modelswatch/latest_snapshot.json',{cache:'no-store'}); if(p.ok){ const j = await p.json(); if(j?.latest) return j.latest; } }catch{}
+      // 2. Fallback: probe recent days
+      try{
+        const dates = candidateRecentDates(7);
+        for(const d of dates){
+          try{ const head = await fetch(`../../data/ai/modelswatch/snapshots/${d}/hf_summaries.json`,{method:'HEAD'}); if(head.ok) return d; }catch{}
+        }
+      }catch{}
+      // 3. final fallback today
+      return new Date().toISOString().slice(0,10);
+    }
+    function candidateRecentDates(n){
+      const out=[]; const now = new Date();
+      for(let i=0;i<n;i++){ const d = new Date(now.getTime()-i*86400000); out.push(d.toISOString().slice(0,10)); }
+      return out;
     }
 
     function shallowNormalize(it){
@@ -1187,9 +1294,7 @@
         base.tags = labels.length>0 ? labels : (it.tags||[]).map(stdTagLabel);
       }catch{}
       // Keep old deriveCategories if needed (not used for tags)
-      if ((!base.categories.capabilities?.length) && (!base.categories.scenes?.length) && (!base.categories.lifecycle?.length)){
-        base.categories = deriveCategories(base);
-      }
+      if ((!base.categories.capabilities?.length) && (!base.categories.scenes?.length) && (!base.categories.lifecycle?.length)) base.categories = deriveCategories(base);
       return base;
     }
 

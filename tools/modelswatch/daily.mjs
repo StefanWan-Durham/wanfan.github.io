@@ -318,6 +318,25 @@ async function main(){
   const now = nowDate.toISOString();
   // Use Beijing date (Asia/Shanghai, UTC+8) for archive/day keys
   const yyyyMmDd = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year:'numeric', month:'2-digit', day:'2-digit' }).format(nowDate);
+  // Pre-step: attempt to enrich corpus items from snapshot tri-lingual cache if available (no extra LLM cost here)
+  try {
+    const snapDir = path.join(dir, 'snapshots', yyyyMmDd);
+    const snapHFPath = path.join(snapDir, 'hf.json');
+    const snapGHPath = path.join(snapDir, 'gh.json');
+    if(existsSync(snapHFPath)){
+      try {
+        const snapHF = JSON.parse(readFileSync(snapHFPath,'utf8'));
+        // merge summaries into corpus later when matching by id
+        globalThis.__SNAP_SUMMARIES_HF = Array.isArray(snapHF.items)? snapHF.items : (Array.isArray(snapHF)? snapHF : []);
+      }catch{}
+    }
+    if(existsSync(snapGHPath)){
+      try {
+        const snapGH = JSON.parse(readFileSync(snapGHPath,'utf8'));
+        globalThis.__SNAP_SUMMARIES_GH = Array.isArray(snapGH.items)? snapGH.items : (Array.isArray(snapGH)? snapGH : []);
+      }catch{}
+    }
+  }catch{}
   let cg = readJSON(path.join(dir,'corpus.github.json')).items||[];
   let ch = readJSON(path.join(dir,'corpus.hf.json')).items||[];
   // Robustness: if corpus is missing/too small, fetch fresh tops directly
@@ -374,12 +393,22 @@ async function main(){
   info(`[daily] github candidates=${cg.length}, pick=${gTop.length}; hf candidates=${ch.length}, pick=${hTop.length}`);
   // Summarize with DeepSeek when available; limit concurrency to 3
   const gsum = await mapLimit(gTop, 3, async (it)=> {
+    // Reuse snapshot summaries if already present
+    const snap = (globalThis.__SNAP_SUMMARIES_GH||[]).find(s=>s.id===it.id);
+    if(snap && (snap.summary_zh||snap.summary_en||snap.summary_es)){
+      const neutral = snap.summary_zh || snap.summary_en || snap.summary_es || snap.summary || it.summary || it.description || '';
+      return { ...it, summary: neutral, summary_en: snap.summary_en, summary_zh: snap.summary_zh, summary_es: snap.summary_es };
+    }
     const { zh, en, es } = await smartSummarizeMulti(it);
-    // Neutral prefers Chinese, then English, then Spanish, then existing/desc
     const neutral = zh || en || es || it.summary || it.description || '';
     return { ...it, summary: neutral, summary_en: en, summary_zh: zh, summary_es: es };
   });
   const hsum = await mapLimit(hTop, 3, async (it)=> {
+    const snap = (globalThis.__SNAP_SUMMARIES_HF||[]).find(s=>s.id===it.id);
+    if(snap && (snap.summary_zh||snap.summary_en||snap.summary_es)){
+      const neutral = snap.summary_zh || snap.summary_en || snap.summary_es || snap.summary || it.summary || it.description || '';
+      return { ...it, summary: neutral, summary_en: snap.summary_en, summary_zh: snap.summary_zh, summary_es: snap.summary_es };
+    }
     const { zh, en, es } = await smartSummarizeMulti(it);
     const neutral = zh || en || es || it.summary || it.description || '';
     return { ...it, summary: neutral, summary_en: en, summary_zh: zh, summary_es: es };
