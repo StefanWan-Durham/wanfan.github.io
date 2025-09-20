@@ -1,6 +1,31 @@
 {
   "min": 2,
-  "model_tasks_underfilled": [],
+  "model_tasks_underfilled": [
+    {
+      "key": "nlp_bias_mitigation",
+      "count": 1
+    },
+    {
+      "key": "tts",
+      "count": 1
+    },
+    {
+      "key": "multimodal_dialogue_system",
+      "count": 1
+    },
+    {
+      "key": "ltr",
+      "count": 1
+    },
+    {
+      "key": "neural_retrieval",
+      "count": 1
+    },
+    {
+      "key": "multimodal_temporal_fusion",
+      "count": 1
+    }
+  ],
   "project_categories_underfilled": [],
-  "generated_at": "2025-09-20T15:44:20.096Z"
+  "generated_at": "2025-09-20T18:09:36.546Z"
 }

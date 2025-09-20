@@ -1,0 +1,1709 @@
+{
+  "date": "2025-09-21",
+  "items": [
+    {
+      "id": "freeCodeCamp/freeCodeCamp",
+      "source": "github",
+      "name": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "license": "BSD-3-Clause",
+      "lang": "TypeScript",
+      "tags": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "hacktoberfest",
+        "javascript",
+        "learn-to-code",
+        "math",
+        "nodejs",
+        "nonprofits",
+        "programming",
+        "react",
+        "teachers"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 428297,
+        "forks": 41636,
+        "issues": 315
+      },
+      "score": 436724.17890875775,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "freeCodeCamp是一个开源教育平台，提供全面的编程和计算机科学学习课程。核心功能包括互动编码挑战、基于项目的学习和免费认证。优势在于社区支持、非营利性质和实践导向方法。典型用例包括职业转型、初学者技能发展以及非营利教育项目，帮助用户免费获得实用的技术能力。",
+      "updated_at": "2025-09-20T17:43:19Z",
+      "summary_en": "freeCodeCamp is an open-source educational platform offering a comprehensive curriculum for learning programming and computer science. Its core capabilities include interactive coding challenges, project-based learning, and free certifications. Strengths include community support, nonprofit status, and a practical approach. Typical use cases are career transitions, skill development for beginners, and nonprofit educational initiatives.",
+      "summary_zh": "freeCodeCamp是一个开源教育平台，提供全面的编程和计算机科学学习课程。核心功能包括互动编码挑战、基于项目的学习和免费认证。优势在于社区支持、非营利性质和实践导向方法。典型用例包括职业转型、初学者技能发展以及非营利教育项目，帮助用户免费获得实用的技术能力。",
+      "summary_es": "freeCodeCamp es una plataforma educativa de código abierto que ofrece un plan de estudios completo para aprender programación y ciencias de la computación. Sus capacidades principales incluyen desafíos de codificación interactivos, aprendizaje basado en proyectos y certificaciones gratuitas. Fortalezas son el apoyo comunitario, estatus sin fines de lucro y enfoque práctico. Casos de uso típicos son transiciones profesionales, desarrollo de habilidades para principiantes e iniciativas educativas sin ánimo de lucro."
+    },
+    {
+      "id": "sindresorhus/awesome",
+      "source": "github",
+      "name": "awesome",
+      "url": "https://github.com/sindresorhus/awesome",
+      "license": "CC0-1.0",
+      "lang": "N/A",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 401290,
+        "forks": 31637,
+        "issues": 63
+      },
+      "score": 407717.39098437503,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Awesome 是一个 GitHub 仓库，作为精选的高质量列表集合，涵盖编程、设计、科学等多样化主题。其核心能力是将社区验证的资源组织成结构清晰、易于导航的列表。优势包括全面覆盖、可靠性和积极维护。典型用例涉及开发者、研究人员和爱好者，在多个领域寻找可信的学习资料、工具或灵感来源。",
+      "updated_at": "2025-09-20T17:48:32Z",
+      "summary_en": "Awesome is a GitHub repository that serves as a curated collection of high-quality lists covering diverse topics like programming, design, and science. Its core capability is organizing community-vetted resources into structured, easily navigable lists. Strengths include comprehensive coverage, reliability, and active maintenance. Typical use cases involve developers, researchers, and enthusiasts seeking trusted references for learning, tools, or inspiration across various fields.",
+      "summary_zh": "Awesome 是一个 GitHub 仓库，作为精选的高质量列表集合，涵盖编程、设计、科学等多样化主题。其核心能力是将社区验证的资源组织成结构清晰、易于导航的列表。优势包括全面覆盖、可靠性和积极维护。典型用例涉及开发者、研究人员和爱好者，在多个领域寻找可信的学习资料、工具或灵感来源。",
+      "summary_es": "Awesome es un repositorio de GitHub que sirve como colección curada de listas de alta calidad que cubren diversos temas como programación, diseño y ciencia. Su capacidad central es organizar recursos verificados por la comunidad en listas estructuradas y fácilmente navegables. Fortalezas incluyen cobertura integral, confiabilidad y mantenimiento activo. Los casos de uso típicos involucran a desarrolladores, investigadores y entusiastas que buscan referencias confiables para aprendizaje, herramientas o inspiración en varios campos."
+    },
+    {
+      "id": "EbookFoundation/free-programming-books",
+      "source": "github",
+      "name": "free-programming-books",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "license": "CC-BY-4.0",
+      "lang": "Python",
+      "tags": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 368900,
+        "forks": 64195,
+        "issues": 26
+      },
+      "score": 381838.98569888115,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "free-programming-books项目是一个全面的免费编程书籍和教育资源集合，旨在为开发者和学习者提供无需付费的高质量材料。核心功能包括按编程语言、主题和格式组织资源，优势在于其广泛的范围、社区贡献和多语言支持。典型用例包括自学、学术参考以及跨各种编程学科的专业发展，通过GitHub托管并接受社区维护和更新。",
+      "updated_at": "2025-09-20T17:46:15Z",
+      "summary_en": "The free-programming-books project is a comprehensive collection of freely available programming books and educational resources. It serves as a centralized repository for developers and learners to access high-quality materials without cost. Core capabilities include organizing resources by programming languages, topics, and formats. Strengths include its vast scope, community contributions, and multilingual support. Typical use cases include self-study, academic reference, and professional development across various programming disciplines.",
+      "summary_zh": "free-programming-books项目是一个全面的免费编程书籍和教育资源集合，旨在为开发者和学习者提供无需付费的高质量材料。核心功能包括按编程语言、主题和格式组织资源，优势在于其广泛的范围、社区贡献和多语言支持。典型用例包括自学、学术参考以及跨各种编程学科的专业发展，通过GitHub托管并接受社区维护和更新。",
+      "summary_es": "El proyecto free-programming-books es una colección completa de libros de programación y recursos educativos disponibles gratuitamente. Sirve como un repositorio centralizado para desarrolladores y estudiantes acceder a materiales de alta calidad sin costo. Capacidades principales incluyen organizar recursos por lenguajes de programación, temas y formatos. Fortalezas son su amplio alcance, contribuciones comunitarias y soporte multilingüe. Casos de uso típicos incluyen autoaprendizaje, referencia académica y desarrollo profesional en diversas disciplinas de programación."
+    },
+    {
+      "id": "public-apis/public-apis",
+      "source": "github",
+      "name": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source",
+        "public",
+        "public-api",
+        "public-apis",
+        "resources",
+        "software"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 365501,
+        "forks": 38369,
+        "issues": 589
+      },
+      "score": 373274.77910165896,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Public-apis是一个GitHub上的开源项目，提供精心整理的免费API集合目录。它作为开发者资源中心，涵盖娱乐、商业、技术等多个类别。项目优势包括社区驱动维护、详细的API文档和广泛的分类系统。典型用途包括寻找集成选项、探索新服务以及加速开发流程，所有资源均可免费使用，无需注册或付费。",
+      "updated_at": "2025-09-20T17:43:24Z",
+      "summary_en": "Public-apis is a comprehensive GitHub repository providing a curated list of free APIs for developers. It serves as a centralized directory covering diverse categories like entertainment, business, and technology. The project's strength lies in its community-driven maintenance, extensive categorization, and detailed API documentation. Typical use cases include finding integration options, exploring new services, and accelerating development projects without cost barriers.",
+      "summary_zh": "Public-apis是一个GitHub上的开源项目，提供精心整理的免费API集合目录。它作为开发者资源中心，涵盖娱乐、商业、技术等多个类别。项目优势包括社区驱动维护、详细的API文档和广泛的分类系统。典型用途包括寻找集成选项、探索新服务以及加速开发流程，所有资源均可免费使用，无需注册或付费。",
+      "summary_es": "Public-apis es un repositorio de GitHub que ofrece una lista curada de APIs gratuitas para desarrolladores. Funciona como directorio centralizado que cubre diversas categorías como entretenimiento, negocios y tecnología. Sus fortajas incluyen mantenimiento comunitario, documentación detallada y amplia categorización. Los casos de uso típicos son encontrar opciones de integración, explorar nuevos servicios y acelerar proyectos de desarrollo sin costos."
+    },
+    {
+      "id": "jwasham/coding-interview-university",
+      "source": "github",
+      "name": "coding-interview-university",
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "license": "CC-BY-SA-4.0",
+      "lang": "N/A",
+      "tags": [
+        "algorithm",
+        "algorithms",
+        "coding-interview",
+        "coding-interviews",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-prep",
+        "interview-preparation",
+        "programming-interviews",
+        "software-engineering",
+        "study-plan"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 329018,
+        "forks": 80570,
+        "issues": 84
+      },
+      "score": 345231.9443794367,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Coding Interview University 是一个全面的软件工程面试自学指南。它提供结构化的课程，涵盖计算机科学基础、算法、数据结构和系统设计。该项目包括实践编码练习、推荐资源和学习计划。其优势在于内容的全面性和社区驱动性质，帮助候选人系统性地培养在顶级科技公司技术面试中所需的技能，适用于计算机科学学生和职业转换者。",
+      "updated_at": "2025-09-20T17:28:24Z",
+      "summary_en": "Coding Interview University is a comprehensive self-study guide for software engineering interview preparation. It provides a structured curriculum covering computer science fundamentals, algorithms, data structures, and system design. The project includes practical coding exercises, recommended resources, and study schedules. Its strength lies in its thoroughness and community-driven content, helping candidates systematically build the skills needed for technical interviews at top tech companies.",
+      "summary_zh": "Coding Interview University 是一个全面的软件工程面试自学指南。它提供结构化的课程，涵盖计算机科学基础、算法、数据结构和系统设计。该项目包括实践编码练习、推荐资源和学习计划。其优势在于内容的全面性和社区驱动性质，帮助候选人系统性地培养在顶级科技公司技术面试中所需的技能，适用于计算机科学学生和职业转换者。",
+      "summary_es": "Coding Interview University es una guía de autoestudio completa para la preparación de entrevistas de ingeniería de software. Proporciona un plan de estudios estructurado que cubre fundamentos de informática, algoritmos, estructuras de datos y diseño de sistemas. El proyecto incluye ejercicios de codificación práctica, recursos recomendados y horarios de estudio. Su fortaleza radica en su exhaustividad y contenido impulsado por la comunidad, ayudando a los candidatos a desarrollar sistemáticamente las habilidades necesarias para entrevistas técnicas en empresas tecnológicas líderes."
+    },
+    {
+      "id": "facebook/react",
+      "source": "github",
+      "name": "react",
+      "url": "https://github.com/facebook/react",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 239064,
+        "forks": 49357,
+        "issues": 1041
+      },
+      "score": 249035.13878530092,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "React 是一个用于构建用户界面的声明式 JavaScript 库，主要面向 Web 和原生应用。其核心能力包括基于组件的架构、用于高效渲染的虚拟 DOM 以及单向数据流。优势在于可重用性、性能优化和强大的开发者工具。典型用例涵盖单页面应用至复杂企业级界面，支持可扩展且可维护的前端开发，广泛应用于现代软件开发中。",
+      "updated_at": "2025-09-20T15:59:35Z",
+      "summary_en": "React is a declarative JavaScript library for building user interfaces, primarily for web and native applications. Its core capabilities include component-based architecture, virtual DOM for efficient rendering, and unidirectional data flow. Strengths include reusability, performance optimization, and strong developer tools. Typical use cases range from single-page applications to complex enterprise UIs, enabling scalable and maintainable frontend development.",
+      "summary_zh": "React 是一个用于构建用户界面的声明式 JavaScript 库，主要面向 Web 和原生应用。其核心能力包括基于组件的架构、用于高效渲染的虚拟 DOM 以及单向数据流。优势在于可重用性、性能优化和强大的开发者工具。典型用例涵盖单页面应用至复杂企业级界面，支持可扩展且可维护的前端开发，广泛应用于现代软件开发中。",
+      "summary_es": "React es una biblioteca declarativa de JavaScript para construir interfaces de usuario, principalmente para aplicaciones web y nativas. Sus capacidades centrales incluyen arquitectura basada en componentes, DOM virtual para renderizado eficiente y flujo unidireccional de datos. Fortalezas abarcan reutilización, optimización de rendimiento y herramientas robustas para desarrolladores. Casos de uso típicos van desde aplicaciones de una sola página hasta interfaces empresariales complejas, permitiendo desarrollo frontend escalable y mantenible."
+    },
+    {
+      "id": "vuejs/vue",
+      "source": "github",
+      "name": "vue",
+      "url": "https://github.com/vuejs/vue",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "framework",
+        "frontend",
+        "javascript",
+        "vue"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 209446,
+        "forks": 33769,
+        "issues": 608
+      },
+      "score": 216299.61671739968,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Vue.js 是一个用于构建用户界面的渐进式 JavaScript 框架。它具有响应式数据绑定系统、基于组件的架构和虚拟 DOM 以实现高效渲染。核心功能包括声明式模板、计算属性和生命周期钩子。优势在于学习曲线平缓、灵活性高且文档优秀。典型用例涵盖从简单的交互式小部件到复杂的单页面应用程序和企业级项目。",
+      "updated_at": "2025-09-20T16:33:15Z",
+      "summary_en": "Vue.js is a progressive JavaScript framework for building user interfaces. It features a reactive data binding system, component-based architecture, and virtual DOM for efficient rendering. Core capabilities include declarative templates, computed properties, and lifecycle hooks. Strengths include gentle learning curve, flexibility, and excellent documentation. Typical use cases range from simple interactive widgets to complex single-page applications and enterprise-level projects.",
+      "summary_zh": "Vue.js 是一个用于构建用户界面的渐进式 JavaScript 框架。它具有响应式数据绑定系统、基于组件的架构和虚拟 DOM 以实现高效渲染。核心功能包括声明式模板、计算属性和生命周期钩子。优势在于学习曲线平缓、灵活性高且文档优秀。典型用例涵盖从简单的交互式小部件到复杂的单页面应用程序和企业级项目。",
+      "summary_es": "Vue.js es un framework JavaScript progresivo para construir interfaces de usuario. Cuenta con sistema de enlace de datos reactivo, arquitectura basada en componentes y DOM virtual para renderizado eficiente. Capacidades principales incluyen plantillas declarativas, propiedades computadas y hooks de ciclo de vida. Fortalezas son curva de aprendizaje suave, flexibilidad y documentación excelente. Casos de uso típicos van desde widgets interactivos simples hasta aplicaciones de página única complejas y proyectos empresariales."
+    },
+    {
+      "id": "TheAlgorithms/Python",
+      "source": "github",
+      "name": "Python",
+      "url": "https://github.com/TheAlgorithms/Python",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven",
+        "education",
+        "hacktoberfest",
+        "interview",
+        "learn",
+        "practice",
+        "python",
+        "searches",
+        "sorting-algorithms",
+        "sorts"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 207881,
+        "forks": 47900,
+        "issues": 406
+      },
+      "score": 217560.98650906637,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "TheAlgorithms/Python 是一个全面的 GitHub 代码库，包含用 Python 实现的各种算法。它主要用于教育目的，帮助用户学习和练习算法概念。核心功能包括排序、搜索和其他基础算法。优势在于社区驱动的开发和广泛的覆盖范围。典型用例包括面试准备、学术研究和算法竞赛。该项目由社区维护，支持 Hacktoberfest 等活动，适合不同层次的学习者。",
+      "updated_at": "2025-09-20T17:46:36Z",
+      "summary_en": "TheAlgorithms/Python is a comprehensive GitHub repository containing implementations of various algorithms in Python. It serves educational purposes, helping users learn and practice algorithmic concepts. Core capabilities include sorting, searching, and other fundamental algorithms. Strengths are community-driven development and extensive coverage. Typical use cases are interview preparation, academic study, and algorithm competitions.",
+      "summary_zh": "TheAlgorithms/Python 是一个全面的 GitHub 代码库，包含用 Python 实现的各种算法。它主要用于教育目的，帮助用户学习和练习算法概念。核心功能包括排序、搜索和其他基础算法。优势在于社区驱动的开发和广泛的覆盖范围。典型用例包括面试准备、学术研究和算法竞赛。该项目由社区维护，支持 Hacktoberfest 等活动，适合不同层次的学习者。",
+      "summary_es": "TheAlgorithms/Python es un repositorio completo de GitHub que contiene implementaciones de varios algoritmos en Python. Sirve para fines educativos, ayudando a los usuarios a aprender y practicar conceptos algorítmicos. Las capacidades principales incluyen algoritmos de ordenación, búsqueda y otros fundamentales. Sus fortalezas son el desarrollo impulsado por la comunidad y la cobertura extensa. Los casos de uso típicos son preparación de entrevistas, estudio académico y competiciones de algoritmos."
+    },
+    {
+      "id": "ossu/computer-science",
+      "source": "github",
+      "name": "computer-science",
+      "url": "https://github.com/ossu/computer-science",
+      "license": "MIT",
+      "lang": "HTML",
+      "tags": [
+        "awesome-list",
+        "computer-science",
+        "courses",
+        "curriculum"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 193355,
+        "forks": 24147,
+        "issues": 16
+      },
+      "score": 198284.37454918982,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "OSSU计算机科学项目提供了一个全面、免费的自学课程体系，涵盖所有计算机科学基础主题。它将来自多个平台的高质量在线课程组织成结构化学习路径，包括编程、算法、系统理论和数学基础。该课程设计相当于传统计算机科学学位，适合寻求系统基础知识而无需支付正规教育费用的自学者。项目基于社区驱动，持续更新课程推荐和资源，强调实践与理论结合的学习方法。",
+      "updated_at": "2025-09-20T17:41:26Z",
+      "summary_en": "The OSSU Computer Science project provides a comprehensive, free, self-taught curriculum covering all fundamental computer science topics. It organizes high-quality online courses from various platforms into a structured learning path, including programming, algorithms, systems, and theory. The curriculum is designed to be equivalent to a traditional computer science degree, suitable for independent learners seeking thorough foundational knowledge without formal education costs.",
+      "summary_zh": "OSSU计算机科学项目提供了一个全面、免费的自学课程体系，涵盖所有计算机科学基础主题。它将来自多个平台的高质量在线课程组织成结构化学习路径，包括编程、算法、系统理论和数学基础。该课程设计相当于传统计算机科学学位，适合寻求系统基础知识而无需支付正规教育费用的自学者。项目基于社区驱动，持续更新课程推荐和资源，强调实践与理论结合的学习方法。",
+      "summary_es": "El proyecto OSSU Computer Science ofrece un plan de estudios completo, gratuito y autodidacta que cubre todos los temas fundamentales de informática. Organiza cursos en línea de alta calidad de diversas plataformas en una ruta de aprendizaje estructurada, incluyendo programación, algoritmos, sistemas y teoría. El currículo está diseñado para equivaler a un título universitario tradicional, ideal para estudiantes independientes que buscan conocimientos fundamentales completos sin los costos de la educación formal."
+    },
+    {
+      "id": "trekhleb/javascript-algorithms",
+      "source": "github",
+      "name": "javascript-algorithms",
+      "url": "https://github.com/trekhleb/javascript-algorithms",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "algorithm",
+        "algorithms",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-preparation",
+        "javascript",
+        "javascript-algorithms"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 193341,
+        "forks": 30887,
+        "issues": 373
+      },
+      "score": 199618.2725815972,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "该GitHub仓库提供了一个全面的JavaScript算法和数据结构实现集合，专为计算机科学学习和技术面试准备设计。项目包含经典算法如排序、搜索、图算法以及各种数据结构（数组、链表、树等）的JavaScript代码实现。每个算法都有详细解释、代码示例和进一步阅读的参考资料链接。代码编写清晰、文档完善，适合开发者学习和参考，是提升编程和算法能力的实用资源。",
+      "updated_at": "2025-09-20T16:57:23Z",
+      "summary_en": "This GitHub repository provides a comprehensive collection of classic algorithms and data structures implemented in JavaScript. It serves as an educational resource for computer science students and developers preparing for technical interviews. The project includes detailed explanations, code examples, and references to further reading materials. It covers fundamental topics like sorting, searching, graph algorithms, and various data structures, all written in clean, well-documented JavaScript code.",
+      "summary_zh": "该GitHub仓库提供了一个全面的JavaScript算法和数据结构实现集合，专为计算机科学学习和技术面试准备设计。项目包含经典算法如排序、搜索、图算法以及各种数据结构（数组、链表、树等）的JavaScript代码实现。每个算法都有详细解释、代码示例和进一步阅读的参考资料链接。代码编写清晰、文档完善，适合开发者学习和参考，是提升编程和算法能力的实用资源。",
+      "summary_es": "Este repositorio de GitHub ofrece una colección completa de algoritmos clásicos y estructuras de datos implementados en JavaScript. Sirve como recurso educativo para estudiantes de informática y desarrolladores que se preparan para entrevistas técnicas. Incluye explicaciones detalladas, ejemplos de código y referencias a materiales de lectura adicional. Cubre temas fundamentales como ordenamiento, búsqueda, algoritmos de grafos y diversas estructuras de datos, todo escrito en código JavaScript limpio y bien documentado."
+    },
+    {
+      "id": "tensorflow/tensorflow",
+      "source": "github",
+      "name": "tensorflow",
+      "url": "https://github.com/tensorflow/tensorflow",
+      "license": "Apache-2.0",
+      "lang": "C++",
+      "tags": [
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "ml",
+        "neural-network",
+        "python",
+        "tensorflow"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 191702,
+        "forks": 74845,
+        "issues": 1701
+      },
+      "score": 206770.96131616514,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "TensorFlow是一个开源的机器学习框架，专为构建和训练神经网络而设计。它支持分布式计算，可在多设备上实现可扩展部署。核心功能包括灵活的模型构建、自动微分和广泛的库支持。优势在于生产就绪性、跨平台兼容性和强大的社区支持。典型应用场景涵盖图像识别、自然语言处理和预测分析。",
+      "updated_at": "2025-09-20T17:35:43Z",
+      "summary_en": "TensorFlow is an open-source machine learning framework designed for building and training neural networks. It supports distributed computing, enabling scalable deployment across multiple devices. Core capabilities include flexible model construction, automatic differentiation, and extensive library support. Strengths lie in its production readiness, cross-platform compatibility, and strong community. Typical use cases encompass image recognition, natural language processing, and predictive analytics.",
+      "summary_zh": "TensorFlow是一个开源的机器学习框架，专为构建和训练神经网络而设计。它支持分布式计算，可在多设备上实现可扩展部署。核心功能包括灵活的模型构建、自动微分和广泛的库支持。优势在于生产就绪性、跨平台兼容性和强大的社区支持。典型应用场景涵盖图像识别、自然语言处理和预测分析。",
+      "summary_es": "TensorFlow es un framework de aprendizaje automático de código abierto diseñado para construir y entrenar redes neuronales. Soporta computación distribuida, permitiendo despliegue escalable en múltiples dispositivos. Capacidades principales incluyen construcción flexible de modelos, diferenciación automática y amplio soporte de bibliotecas. Fortalezas radican en su preparación para producción, compatibilidad multiplataforma y comunidad sólida. Casos de uso típicos abarcan reconocimiento de imágenes, procesamiento de lenguaje natural y análisis predictivo."
+    },
+    {
+      "id": "trimstray/the-book-of-secret-knowledge",
+      "source": "github",
+      "name": "the-book-of-secret-knowledge",
+      "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+      "license": "MIT",
+      "lang": "N/A",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "bsd",
+        "cheatsheets",
+        "devops",
+        "guidelines",
+        "hacking",
+        "hacks",
+        "howtos",
+        "linux",
+        "lists",
+        "manuals",
+        "one-liners",
+        "pentesters",
+        "resources",
+        "search-engines",
+        "security",
+        "security-researchers",
+        "sysops"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 186903,
+        "forks": 11566,
+        "issues": 99
+      },
+      "score": 189316.18461863426,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "《秘密知识之书》是一个为IT专业人士、安全研究人员和系统管理员设计的综合性技术资源集合。它包含精心策划的列表、手册、速查表、博客、单行命令、CLI/网络工具和实用指南。核心能力在于将大量技术信息组织成易于访问的格式。优势包括BSD许可证、广泛覆盖安全和DevOps主题，以及日常操作中的实用性。典型用例包括快速参考、学习新工具，以及提升系统管理和安全实践。该项目在GitHub上拥有超过18万星标，体现了其社区认可和实用价值。",
+      "updated_at": "2025-09-20T17:45:47Z",
+      "summary_en": "The Book of Secret Knowledge is a comprehensive collection of technical resources for IT professionals, security researchers, and system administrators. It contains curated lists, manuals, cheatsheets, blogs, one-liners, CLI/web tools, and practical guides. Its core capabilities include organizing vast amounts of technical information into accessible formats. Strengths include its BSD license, extensive coverage of security and DevOps topics, and practical utility for daily operations. Typical use cases include quick reference, learning new tools, and enhancing system administration and security practices.",
+      "summary_zh": "《秘密知识之书》是一个为IT专业人士、安全研究人员和系统管理员设计的综合性技术资源集合。它包含精心策划的列表、手册、速查表、博客、单行命令、CLI/网络工具和实用指南。核心能力在于将大量技术信息组织成易于访问的格式。优势包括BSD许可证、广泛覆盖安全和DevOps主题，以及日常操作中的实用性。典型用例包括快速参考、学习新工具，以及提升系统管理和安全实践。该项目在GitHub上拥有超过18万星标，体现了其社区认可和实用价值。",
+      "summary_es": "The Book of Secret Knowledge es una colección integral de recursos técnicos para profesionales de TI, investigadores de seguridad y administradores de sistemas. Contiene listas curadas, manuales, hojas de referencia, blogs, one-liners, herramientas CLI/web y guías prácticas. Sus capacidades principales incluyen organizar grandes cantidades de información técnica en formatos accesibles. Fortalezas incluyen su licencia BSD, amplia cobertura de temas de seguridad y DevOps, y utilidad práctica para operaciones diarias. Casos de uso típicos incluyen referencia rápida, aprendizaje de nuevas herramientas y mejora de prácticas de administración y seguridad de sistemas."
+    },
+    {
+      "id": "ohmyzsh/ohmyzsh",
+      "source": "github",
+      "name": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "license": "MIT",
+      "lang": "Shell",
+      "tags": [
+        "cli",
+        "cli-app",
+        "hacktoberfest",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins",
+        "productivity",
+        "shell",
+        "terminal",
+        "theme",
+        "themes",
+        "zsh",
+        "zsh-configuration"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 181518,
+        "forks": 26220,
+        "issues": 502
+      },
+      "score": 186861.98913252316,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Oh My Zsh 是一个社区驱动的 Z shell (zsh) 配置管理框架。它提供超过 300 个插件，支持 Git、Docker、Node.js 等工具，以及 140 多种主题来定制终端外观。该框架包含自动更新功能，并拥有庞大的开发者社区贡献，旨在提升终端工作效率和用户体验，适用于日常开发环境和命令行操作。",
+      "updated_at": "2025-09-20T17:47:44Z",
+      "summary_en": "Oh My Zsh is a community-driven framework for managing Z shell (zsh) configurations. It provides over 300 plugins for tools like Git, Docker, and Node.js, plus 140+ themes to customize terminal appearance. The framework includes auto-update functionality and supports contributions from its large community of developers, enhancing productivity and terminal workflow efficiency.",
+      "summary_zh": "Oh My Zsh 是一个社区驱动的 Z shell (zsh) 配置管理框架。它提供超过 300 个插件，支持 Git、Docker、Node.js 等工具，以及 140 多种主题来定制终端外观。该框架包含自动更新功能，并拥有庞大的开发者社区贡献，旨在提升终端工作效率和用户体验，适用于日常开发环境和命令行操作。",
+      "summary_es": "Oh My Zsh es un framework comunitario para gestionar configuraciones de Z shell (zsh). Ofrece más de 300 plugins para herramientas como Git, Docker y Node.js, además de 140+ temas para personalizar la terminal. Incluye funcionalidad de actualización automática y aprovecha contribuciones de una amplia comunidad, mejorando la productividad y eficiencia en workflows de línea de comandos."
+    },
+    {
+      "id": "microsoft/vscode",
+      "source": "github",
+      "name": "vscode",
+      "url": "https://github.com/microsoft/vscode",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "editor",
+        "electron",
+        "microsoft",
+        "typescript",
+        "visual-studio-code"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 176855,
+        "forks": 35095,
+        "issues": 13618
+      },
+      "score": 183973.91463406637,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Visual Studio Code 是微软开发的一款免费开源代码编辑器。它支持多种编程语言，具备调试、语法高亮和 Git 集成等内置功能。其优势包括轻量级设计、丰富的扩展生态系统和跨平台兼容性。典型用例涵盖 Web 开发、脚本编写以及在 Windows、macOS 和 Linux 系统上的通用编程任务，提供高效且可定制的编码体验。",
+      "updated_at": "2025-09-20T17:15:33Z",
+      "summary_en": "Visual Studio Code is a free, open-source code editor developed by Microsoft. It supports multiple programming languages with built-in features like debugging, syntax highlighting, and Git integration. Its strengths include a lightweight design, extensive extension ecosystem, and cross-platform compatibility. Typical use cases involve web development, scripting, and general programming tasks across Windows, macOS, and Linux systems.",
+      "summary_zh": "Visual Studio Code 是微软开发的一款免费开源代码编辑器。它支持多种编程语言，具备调试、语法高亮和 Git 集成等内置功能。其优势包括轻量级设计、丰富的扩展生态系统和跨平台兼容性。典型用例涵盖 Web 开发、脚本编写以及在 Windows、macOS 和 Linux 系统上的通用编程任务，提供高效且可定制的编码体验。",
+      "summary_es": "Visual Studio Code es un editor de código gratuito y de código abierto desarrollado por Microsoft. Admite múltiples lenguajes de programación con funciones integradas como depuración, resaltado de sintaxis e integración con Git. Sus fortalezas incluyen diseño ligero, extenso ecosistema de extensiones y compatibilidad multiplataforma. Los casos de uso típicos involucran desarrollo web, scripting y tareas de programación general en sistemas Windows, macOS y Linux."
+    },
+    {
+      "id": "twbs/bootstrap",
+      "source": "github",
+      "name": "bootstrap",
+      "url": "https://github.com/twbs/bootstrap",
+      "license": "MIT",
+      "lang": "MDX",
+      "tags": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 173436,
+        "forks": 79158,
+        "issues": 577
+      },
+      "score": 189367.42308314043,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Bootstrap 是一个广泛使用的开源前端框架，用于构建响应式、移动优先的网站。它提供预设计的 HTML、CSS 和 JavaScript 组件，如网格系统、按钮和导航栏。核心功能包括响应式设计、跨浏览器兼容性以及通过 Sass 进行广泛定制。优势在于易用性、全面的文档和庞大的社区支持。典型用例涵盖从简单网站到需要一致设计和快速开发的复杂 Web 应用程序。",
+      "updated_at": "2025-09-20T16:36:00Z",
+      "summary_en": "Bootstrap is a widely-used open-source front-end framework for building responsive, mobile-first websites. It provides pre-designed HTML, CSS, and JavaScript components like grids, buttons, and navigation bars. Core capabilities include responsive design, cross-browser compatibility, and extensive customization through Sass. Strengths include ease of use, comprehensive documentation, and large community support. Typical use cases range from simple websites to complex web applications requiring consistent design and rapid development.",
+      "summary_zh": "Bootstrap 是一个广泛使用的开源前端框架，用于构建响应式、移动优先的网站。它提供预设计的 HTML、CSS 和 JavaScript 组件，如网格系统、按钮和导航栏。核心功能包括响应式设计、跨浏览器兼容性以及通过 Sass 进行广泛定制。优势在于易用性、全面的文档和庞大的社区支持。典型用例涵盖从简单网站到需要一致设计和快速开发的复杂 Web 应用程序。",
+      "summary_es": "Bootstrap es un framework front-end de código abierto muy utilizado para crear sitios web responsivos y con enfoque móvil. Ofrece componentes pre-diseñados de HTML, CSS y JavaScript como rejillas, botones y barras de navegación. Sus capacidades principales incluyen diseño responsivo, compatibilidad entre navegadores y amplia personalización mediante Sass. Sus fortalezas son la facilidad de uso, documentación exhaustiva y gran apoyo comunitario. Los casos de uso típicos van desde sitios web simples hasta aplicaciones web complejas que requieren diseño consistente y desarrollo rápido."
+    },
+    {
+      "id": "flutter/flutter",
+      "source": "github",
+      "name": "flutter",
+      "url": "https://github.com/flutter/flutter",
+      "license": "BSD-3-Clause",
+      "lang": "Dart",
+      "tags": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "dart",
+        "dart-platform",
+        "desktop",
+        "flutter",
+        "flutter-package",
+        "fuchsia",
+        "ios",
+        "linux-desktop",
+        "macos",
+        "material-design",
+        "mobile",
+        "mobile-development",
+        "skia",
+        "web",
+        "web-framework",
+        "windows"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 172933,
+        "forks": 29236,
+        "issues": 12250
+      },
+      "score": 178880.1647498071,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Flutter是由Google开发的开源UI框架，用于通过单一代码库构建移动端、网页和桌面端的原生编译应用程序。它采用Dart编程语言，提供丰富的预设计组件，遵循Material Design设计原则。核心功能包括热重载以实现快速开发、通过Skia图形引擎实现高性能渲染，以及原生编译确保最佳性能。典型应用场景包括跨平台移动应用开发、渐进式网页应用和桌面软件开发，特别适合需要一致用户体验和高性能要求的项目。",
+      "updated_at": "2025-09-20T17:37:12Z",
+      "summary_en": "Flutter is an open-source UI framework developed by Google for building natively compiled applications across mobile, web, and desktop from a single codebase. It uses the Dart programming language and provides a rich set of pre-designed widgets following Material Design principles. Core capabilities include hot reload for rapid development, high-performance rendering through the Skia graphics engine, and native compilation for optimal speed. Typical use cases include cross-platform mobile apps, progressive web applications, and desktop software development.",
+      "summary_zh": "Flutter是由Google开发的开源UI框架，用于通过单一代码库构建移动端、网页和桌面端的原生编译应用程序。它采用Dart编程语言，提供丰富的预设计组件，遵循Material Design设计原则。核心功能包括热重载以实现快速开发、通过Skia图形引擎实现高性能渲染，以及原生编译确保最佳性能。典型应用场景包括跨平台移动应用开发、渐进式网页应用和桌面软件开发，特别适合需要一致用户体验和高性能要求的项目。",
+      "summary_es": "Flutter es un framework de UI de código abierto desarrollado por Google para construir aplicaciones compiladas nativamente para móviles, web y escritorio desde una única base de código. Utiliza el lenguaje de programación Dart y proporciona un conjunto completo de widgets prediseñados que siguen los principios de Material Design. Sus capacidades principales incluyen recarga en caliente para desarrollo rápido, renderizado de alto rendimiento mediante el motor gráfico Skia y compilación nativa para optimizar la velocidad. Los casos de uso típicos incluyen aplicaciones móviles multiplataforma, aplicaciones web progresivas y desarrollo de software de escritorio."
+    },
+    {
+      "id": "github/gitignore",
+      "source": "github",
+      "name": "gitignore",
+      "url": "https://github.com/github/gitignore",
+      "license": "CC0-1.0",
+      "lang": "N/A",
+      "tags": [
+        "git",
+        "gitignore"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 169490,
+        "forks": 83003,
+        "issues": 318
+      },
+      "score": 186190.36640875772,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "GitHub gitignore 仓库提供全面的 .gitignore 模板集合，涵盖多种编程语言、框架和工具。其目的是帮助开发者从 Git 版本控制中排除不必要的文件。核心功能包括按技术分类的模板组织和社区贡献。优势在于广泛的覆盖范围和与 GitHub 的集成。典型用例包括初始化新项目和通过忽略构建产物、依赖项和操作系统特定文件来维护整洁的代码库，从而提高开发效率和版本控制管理。",
+      "updated_at": "2025-09-20T16:11:31Z",
+      "summary_en": "The GitHub gitignore repository provides a comprehensive collection of .gitignore templates for various programming languages, frameworks, and tools. Its purpose is to help developers exclude unnecessary files from Git version control. Core capabilities include template organization by technology and community contributions. Strengths include extensive coverage and GitHub integration. Typical use cases involve initializing new projects and maintaining clean repositories by ignoring build artifacts, dependencies, and OS-specific files.",
+      "summary_zh": "GitHub gitignore 仓库提供全面的 .gitignore 模板集合，涵盖多种编程语言、框架和工具。其目的是帮助开发者从 Git 版本控制中排除不必要的文件。核心功能包括按技术分类的模板组织和社区贡献。优势在于广泛的覆盖范围和与 GitHub 的集成。典型用例包括初始化新项目和通过忽略构建产物、依赖项和操作系统特定文件来维护整洁的代码库，从而提高开发效率和版本控制管理。",
+      "summary_es": "El repositorio GitHub gitignore ofrece una colección completa de plantillas .gitignore para varios lenguajes de programación, frameworks y herramientas. Su propósito es ayudar a los desarrolladores a excluir archivos innecesarios del control de versiones Git. Las capacidades principales incluyen la organización de plantillas por tecnología y contribuciones comunitarias. Las fortalezas son la cobertura extensa y la integración con GitHub. Los casos de uso típicos implican inicializar nuevos proyectos y mantener repositorios limpios ignorando artefactos de compilación, dependencias y archivos específicos del sistema operativo."
+    },
+    {
+      "id": "AUTOMATIC1111/stable-diffusion-webui",
+      "source": "github",
+      "name": "stable-diffusion-webui",
+      "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+      "license": "AGPL-3.0",
+      "lang": "Python",
+      "tags": [
+        "ai",
+        "ai-art",
+        "deep-learning",
+        "diffusion",
+        "gradio",
+        "image-generation",
+        "image2image",
+        "img2img",
+        "pytorch",
+        "stable-diffusion",
+        "text2image",
+        "torch",
+        "txt2img",
+        "unstable",
+        "upscaling",
+        "web"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 156572,
+        "forks": 29047,
+        "issues": 2425
+      },
+      "score": 162481.17998900462,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Stable Diffusion web UI 是一个基于 Gradio 的开源 Web 界面，专为 Stable Diffusion AI 图像生成模型设计。它提供文本生成图像、图像转换图像和超分辨率等核心功能，支持多种自定义选项和模型配置。该工具具有用户友好、高度可扩展的特点，广泛应用于数字艺术创作、研究和实验领域，深受艺术家和AI爱好者的欢迎。",
+      "updated_at": "2025-09-20T16:17:23Z",
+      "task_keys": [
+        "text_to_image"
+      ],
+      "summary_en": "Stable Diffusion web UI is an open-source web interface for the Stable Diffusion AI image generation model. It provides user-friendly access to text-to-image, image-to-image, and upscaling capabilities through a Gradio-based interface. The tool supports various customization options, model configurations, and extensions, making it popular among artists, researchers, and AI enthusiasts for creating and modifying digital artwork.",
+      "summary_zh": "Stable Diffusion web UI 是一个基于 Gradio 的开源 Web 界面，专为 Stable Diffusion AI 图像生成模型设计。它提供文本生成图像、图像转换图像和超分辨率等核心功能，支持多种自定义选项和模型配置。该工具具有用户友好、高度可扩展的特点，广泛应用于数字艺术创作、研究和实验领域，深受艺术家和AI爱好者的欢迎。",
+      "summary_es": "Stable Diffusion web UI es una interfaz web de código abierto para el modelo de generación de imágenes IA Stable Diffusion. Proporciona acceso fácil a funciones de texto a imagen, imagen a imagen y mejora de resolución mediante una interfaz basada en Gradio. La herramienta soporta diversas opciones de personalización y configuraciones de modelo, siendo popular entre artistas e investigadores para crear y modificar arte digital."
+    },
+    {
+      "id": "avelino/awesome-go",
+      "source": "github",
+      "name": "awesome-go",
+      "url": "https://github.com/avelino/awesome-go",
+      "license": "MIT",
+      "lang": "Go",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 152784,
+        "forks": 12575,
+        "issues": 156
+      },
+      "score": 155398.9804519676,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Awesome-go 是一个精心策划的 GitHub 仓库，收录了高质量的 Go 语言框架、库和软件。它作为开发人员寻找可靠 Go 资源的全面参考，由社区维护并按类别（如 Web 开发、数据库和实用工具）组织。其优势包括严格的筛选、定期更新以及对 Go 生态系统的广泛覆盖。典型用例包括为新项目发现工具、学习最佳实践以及寻找生产就绪的解决方案，帮助开发者高效构建和维护 Go 应用。",
+      "updated_at": "2025-09-20T17:43:59Z",
+      "summary_en": "Awesome-go is a curated GitHub repository listing high-quality Go frameworks, libraries, and software. It serves as a comprehensive reference for developers seeking reliable Go resources. The collection is community-maintained and organized by categories like web development, databases, and utilities. Its strengths include thorough vetting, regular updates, and broad coverage of the Go ecosystem. Typical use cases include discovering tools for new projects, learning best practices, and finding production-ready solutions.",
+      "summary_zh": "Awesome-go 是一个精心策划的 GitHub 仓库，收录了高质量的 Go 语言框架、库和软件。它作为开发人员寻找可靠 Go 资源的全面参考，由社区维护并按类别（如 Web 开发、数据库和实用工具）组织。其优势包括严格的筛选、定期更新以及对 Go 生态系统的广泛覆盖。典型用例包括为新项目发现工具、学习最佳实践以及寻找生产就绪的解决方案，帮助开发者高效构建和维护 Go 应用。",
+      "summary_es": "Awesome-go es un repositorio de GitHub curado que enumera frameworks, bibliotecas y software de Go de alta calidad. Sirve como referencia integral para desarrolladores que buscan recursos confiables de Go. La colección es mantenida por la comunidad y organizada por categorías como desarrollo web, bases de datos y utilidades. Sus fortalezas incluyen una rigurosa selección, actualizaciones regulares y una amplia cobertura del ecosistema de Go. Los casos de uso típicos incluyen descubrir herramientas para nuevos proyectos, aprender mejores prácticas y encontrar soluciones listas para producción."
+    },
+    {
+      "id": "ollama/ollama",
+      "source": "github",
+      "name": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "license": "MIT",
+      "lang": "Go",
+      "tags": [
+        "deepseek",
+        "gemma",
+        "gemma3",
+        "gemma3n",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llama2",
+        "llama3",
+        "llava",
+        "llm",
+        "llms",
+        "mistral",
+        "ollama",
+        "phi4",
+        "qwen"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 152698,
+        "forks": 13191,
+        "issues": 2160
+      },
+      "score": 155436.16718036265,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Ollama 是一个用 Go 语言编写的开源工具，用于在本地运行大型语言模型。它支持多种模型，如 OpenAI GPT-OSS、DeepSeek-R1、Gemma 3、Llama、Mistral 等，无需云依赖。核心功能包括模型管理、推理和 API 访问。优势在于离线操作、广泛的模型支持和易用性。典型用例涉及本地 AI 开发、测试和私有部署，适合开发者和研究人员快速上手和实验。",
+      "updated_at": "2025-09-20T17:38:15Z",
+      "summary_en": "Ollama is an open-source tool written in Go for running large language models locally. It enables users to deploy and interact with various models like OpenAI GPT-OSS, DeepSeek-R1, Gemma 3, Llama, Mistral, and others without cloud dependencies. Core capabilities include model management, inference, and API access. Strengths are offline operation, broad model support, and ease of use. Typical use cases involve local AI development, testing, and private deployments.",
+      "summary_zh": "Ollama 是一个用 Go 语言编写的开源工具，用于在本地运行大型语言模型。它支持多种模型，如 OpenAI GPT-OSS、DeepSeek-R1、Gemma 3、Llama、Mistral 等，无需云依赖。核心功能包括模型管理、推理和 API 访问。优势在于离线操作、广泛的模型支持和易用性。典型用例涉及本地 AI 开发、测试和私有部署，适合开发者和研究人员快速上手和实验。",
+      "summary_es": "Ollama es una herramienta de código abierto escrita en Go para ejecutar modelos de lenguaje grandes localmente. Permite a los usuarios implementar e interactuar con varios modelos como OpenAI GPT-OSS, DeepSeek-R1, Gemma 3, Llama, Mistral y otros sin dependencias de la nube. Capacidades principales incluyen gestión de modelos, inferencia y acceso API. Fortalezas son operación offline, amplio soporte de modelos y facilidad de uso. Casos de uso típicos involucran desarrollo de IA local, pruebas y despliegues privados."
+    },
+    {
+      "id": "Snailclimb/JavaGuide",
+      "source": "github",
+      "name": "JavaGuide",
+      "url": "https://github.com/Snailclimb/JavaGuide",
+      "license": "Apache-2.0",
+      "lang": "Java",
+      "tags": [
+        "algorithms",
+        "interview",
+        "java",
+        "jvm",
+        "mysql",
+        "redis",
+        "spring",
+        "system",
+        "system-design",
+        "zookeeper"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 151811,
+        "forks": 45986,
+        "issues": 74
+      },
+      "score": 161108.0461541281,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "JavaGuide 是一个面向 Java 开发者的综合性学习与面试指南，涵盖 Java 核心知识、JVM、算法、数据库（MySQL、Redis）、框架（Spring）和系统设计等内容。该项目在 GitHub 上拥有超过 15 万星标，被广泛用于 Java 面试准备和技能提升。其优势在于内容全面、结构清晰，注重实践应用，帮助开发者掌握关键技术和解决常见问题，适用于学习、复习和求职场景。",
+      "updated_at": "2025-09-20T16:45:58Z",
+      "summary_en": "JavaGuide is a comprehensive educational resource for Java developers, covering core knowledge required for Java programming and technical interviews. It includes topics such as Java fundamentals, JVM, algorithms, databases (MySQL, Redis), frameworks (Spring), and system design. With over 150,000 GitHub stars, it serves as a popular study guide and interview preparation material, emphasizing practical knowledge and real-world application scenarios for Java developers.",
+      "summary_zh": "JavaGuide 是一个面向 Java 开发者的综合性学习与面试指南，涵盖 Java 核心知识、JVM、算法、数据库（MySQL、Redis）、框架（Spring）和系统设计等内容。该项目在 GitHub 上拥有超过 15 万星标，被广泛用于 Java 面试准备和技能提升。其优势在于内容全面、结构清晰，注重实践应用，帮助开发者掌握关键技术和解决常见问题，适用于学习、复习和求职场景。",
+      "summary_es": "JavaGuide es un recurso educativo integral para desarrolladores Java, que cubre conocimientos esenciales para programación y entrevistas técnicas. Incluye temas como fundamentos de Java, JVM, algoritmos, bases de datos (MySQL, Redis), frameworks (Spring) y diseño de sistemas. Con más de 150,000 estrellas en GitHub, sirve como guía de estudio y preparación para entrevistas, enfocándose en conocimientos prácticos y casos de uso reales para desarrolladores Java."
+    },
+    {
+      "id": "huggingface/transformers",
+      "source": "github",
+      "name": "transformers",
+      "url": "https://github.com/huggingface/transformers",
+      "license": "Apache-2.0",
+      "lang": "Python",
+      "tags": [
+        "audio",
+        "deep-learning",
+        "deepseek",
+        "gemma",
+        "glm",
+        "hacktoberfest",
+        "llm",
+        "machine-learning",
+        "model-hub",
+        "natural-language-processing",
+        "nlp",
+        "pretrained-models",
+        "python",
+        "pytorch",
+        "pytorch-transformers",
+        "qwen",
+        "speech-recognition",
+        "transformer",
+        "vlm"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 150019,
+        "forks": 30465,
+        "issues": 1985
+      },
+      "score": 156211.98164795525,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Transformers 是 Hugging Face 开发的 Python 库，用于文本、视觉、音频和多模态领域的最先进机器学习模型。它支持训练和推理，提供数千个预训练模型，如大型语言模型（LLM）、视觉语言模型（VLM）和语音识别系统。核心优势包括庞大的模型中心、PyTorch/TensorFlow 兼容性以及易于微调。典型应用涵盖自然语言处理任务、计算机视觉、音频处理和多模态应用，适用于研究和生产环境。",
+      "updated_at": "2025-09-20T17:44:30Z",
+      "summary_en": "Transformers is a Python library by Hugging Face for state-of-the-art machine learning models in text, vision, audio, and multimodal domains. It supports both training and inference, offering thousands of pretrained models like LLMs, VLMs, and speech recognition systems. Core strengths include extensive model hub, PyTorch/TensorFlow compatibility, and easy fine-tuning. Typical use cases span NLP tasks, computer vision, audio processing, and multimodal applications.",
+      "summary_zh": "Transformers 是 Hugging Face 开发的 Python 库，用于文本、视觉、音频和多模态领域的最先进机器学习模型。它支持训练和推理，提供数千个预训练模型，如大型语言模型（LLM）、视觉语言模型（VLM）和语音识别系统。核心优势包括庞大的模型中心、PyTorch/TensorFlow 兼容性以及易于微调。典型应用涵盖自然语言处理任务、计算机视觉、音频处理和多模态应用，适用于研究和生产环境。",
+      "summary_es": "Transformers es una biblioteca de Python de Hugging Face para modelos de aprendizaje automático de vanguardia en texto, visión, audio y multimodalidad. Soporta entrenamiento e inferencia, ofreciendo miles de modelos preentrenados como LLM, VLM y sistemas de reconocimiento de voz. Sus fortalezas incluyen un amplio hub de modelos, compatibilidad con PyTorch/TensorFlow y fácil ajuste fino. Los casos de uso típicos abarcan tareas de PLN, visión por computadora, procesamiento de audio y aplicaciones multimodales."
+    },
+    {
+      "id": "massgravel/Microsoft-Activation-Scripts",
+      "source": "github",
+      "name": "Microsoft-Activation-Scripts",
+      "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+      "license": "GPL-3.0",
+      "lang": "Batchfile",
+      "tags": [
+        "activator",
+        "hwid",
+        "kms",
+        "kms38",
+        "massgrave",
+        "massgravel",
+        "microsoft",
+        "microsoft365",
+        "office",
+        "office365",
+        "ohook",
+        "powershell",
+        "tsforge",
+        "windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 149013,
+        "forks": 14471,
+        "issues": 1
+      },
+      "score": 152007.19823746145,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Microsoft-Activation-Scripts 是一个开源工具，用于激活 Microsoft Windows 和 Office 产品。它支持多种激活方法，包括 HWID、Ohook、TSforge、KMS38 和在线 KMS。该项目提供高级故障排除功能，专为寻求合法激活解决方案的用户设计。通过 PowerShell 脚本运行，已在 GitHub 上获得超过 14.9 万颗星，显示出广泛的用户认可和实用性。",
+      "updated_at": "2025-09-20T17:51:40Z",
+      "summary_en": "Microsoft-Activation-Scripts is an open-source tool for activating Microsoft Windows and Office products. It supports multiple activation methods including HWID, Ohook, TSforge, KMS38, and Online KMS. The project provides advanced troubleshooting capabilities and is designed for users seeking legitimate activation solutions. It operates through PowerShell scripts and has gained significant popularity with over 149,000 GitHub stars.",
+      "summary_zh": "Microsoft-Activation-Scripts 是一个开源工具，用于激活 Microsoft Windows 和 Office 产品。它支持多种激活方法，包括 HWID、Ohook、TSforge、KMS38 和在线 KMS。该项目提供高级故障排除功能，专为寻求合法激活解决方案的用户设计。通过 PowerShell 脚本运行，已在 GitHub 上获得超过 14.9 万颗星，显示出广泛的用户认可和实用性。",
+      "summary_es": "Microsoft-Activation-Scripts es una herramienta de código abierto para activar productos Microsoft Windows y Office. Admite múltiples métodos de activación, incluidos HWID, Ohook, TSforge, KMS38 y KMS en línea. El proyecto ofrece capacidades avanzadas de solución de problemas y está diseñado para usuarios que buscan soluciones de activación legítimas. Opera mediante scripts de PowerShell y ha ganado popularidad con más de 149,000 estrellas en GitHub."
+    },
+    {
+      "id": "airbnb/javascript",
+      "source": "github",
+      "name": "javascript",
+      "url": "https://github.com/airbnb/javascript",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "arrow-functions",
+        "es2015",
+        "es2016",
+        "es2017",
+        "es2018",
+        "es6",
+        "eslint",
+        "javascript",
+        "linting",
+        "naming-conventions",
+        "style-guide",
+        "style-linter",
+        "styleguide",
+        "tc39"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 147419,
+        "forks": 26781,
+        "issues": 178
+      },
+      "score": 152874.93712635033,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Airbnb的JavaScript风格指南提供了一套全面的编码标准，旨在确保JavaScript代码的一致性和可维护性。该指南详细涵盖了ES2015+特性、命名约定和现代开发最佳实践，以其清晰的解释和实用示例而广受欢迎。它通过ESLint配置帮助团队强制执行代码质量，典型应用场景包括团队入职培训、代码审查以及JavaScript项目中的自动化代码检查。",
+      "updated_at": "2025-09-20T15:58:52Z",
+      "summary_en": "Airbnb's JavaScript Style Guide provides comprehensive coding standards for writing consistent, maintainable JavaScript code. It covers ES2015+ features, naming conventions, and best practices for modern development. The guide is widely adopted for its clarity and practical examples, helping teams enforce code quality through ESLint configurations. Typical use cases include team onboarding, code reviews, and automated linting in JavaScript projects.",
+      "summary_zh": "Airbnb的JavaScript风格指南提供了一套全面的编码标准，旨在确保JavaScript代码的一致性和可维护性。该指南详细涵盖了ES2015+特性、命名约定和现代开发最佳实践，以其清晰的解释和实用示例而广受欢迎。它通过ESLint配置帮助团队强制执行代码质量，典型应用场景包括团队入职培训、代码审查以及JavaScript项目中的自动化代码检查。",
+      "summary_es": "La Guía de Estilo de JavaScript de Airbnb establece estándares completos para escribir código JavaScript consistente y mantenible. Cubre características de ES2015+, convenciones de nomenclatura y mejores prácticas para desarrollo moderno. La guía es ampliamente adoptada por su claridad y ejemplos prácticos, ayudando a los equipos a aplicar calidad de código mediante configuraciones de ESLint. Los casos de uso típicos incluyen incorporación de equipos, revisiones de código y linting automatizado en proyectos JavaScript."
+    },
+    {
+      "id": "ytdl-org/youtube-dl",
+      "source": "github",
+      "name": "youtube-dl",
+      "url": "https://github.com/ytdl-org/youtube-dl",
+      "license": "Unlicense",
+      "lang": "Python",
+      "tags": [],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 137329,
+        "forks": 10466,
+        "issues": 4138
+      },
+      "score": 139522.17192573304,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "youtube-dl 是一个命令行程序，用于从 YouTube 和众多其他视频网站下载视频。其核心功能包括提取多种格式的视频和音频、支持播放列表和字幕、绕过年龄限制。优势在于广泛的网站支持、高可靠性和活跃的社区开发。典型用例包括内容存档、离线观看以及需要直接下载的教育用途，适用于个人和学术场景。",
+      "updated_at": "2025-09-20T17:40:18Z",
+      "summary_en": "youtube-dl is a command-line program for downloading videos from YouTube and numerous other video sites. Its core capabilities include extracting video and audio in various formats, supporting playlists and subtitles, and bypassing age restrictions. Strengths are its extensive site support, reliability, and active community development. Typical use cases include archiving content, offline viewing, and educational purposes where direct downloading is needed.",
+      "summary_zh": "youtube-dl 是一个命令行程序，用于从 YouTube 和众多其他视频网站下载视频。其核心功能包括提取多种格式的视频和音频、支持播放列表和字幕、绕过年龄限制。优势在于广泛的网站支持、高可靠性和活跃的社区开发。典型用例包括内容存档、离线观看以及需要直接下载的教育用途，适用于个人和学术场景。",
+      "summary_es": "youtube-dl es un programa de línea de comandos para descargar videos de YouTube y muchos otros sitios de video. Sus capacidades principales incluyen extraer video y audio en varios formatos, soportar listas de reproducción y subtítulos, y evitar restricciones de edad. Sus fortalezas son el amplio soporte de sitios, confiabilidad y desarrollo comunitario activo. Los casos de uso típicos son archivar contenido, visualización sin conexión y fines educativos que requieren descarga directa."
+    },
+    {
+      "id": "vercel/next.js",
+      "source": "github",
+      "name": "next.js",
+      "url": "https://github.com/vercel/next.js",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "blog",
+        "browser",
+        "compiler",
+        "components",
+        "hybrid",
+        "nextjs",
+        "node",
+        "react",
+        "server-rendering",
+        "ssg",
+        "static",
+        "static-site-generator",
+        "universal",
+        "vercel"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 134570,
+        "forks": 29358,
+        "issues": 3349
+      },
+      "score": 140541.19488097995,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Next.js 是一个基于 React 的框架，用于构建服务器渲染和静态生成的 Web 应用程序。它提供混合渲染、自动代码分割和优化性能。核心功能包括服务器端渲染、静态站点生成和 API 路由。优势在于 SEO 优化、快速加载和简化部署。典型用例包括博客、电子商务网站和需要高性能、可扩展性的内容密集型应用。",
+      "updated_at": "2025-09-20T14:57:25Z",
+      "summary_en": "Next.js is a React framework for building server-rendered and statically generated web applications. It offers hybrid rendering, automatic code splitting, and optimized performance. Core capabilities include server-side rendering, static site generation, and API routes. Strengths include SEO optimization, fast loading, and simplified deployment. Typical use cases are blogs, e-commerce sites, and content-heavy applications requiring high performance and scalability.",
+      "summary_zh": "Next.js 是一个基于 React 的框架，用于构建服务器渲染和静态生成的 Web 应用程序。它提供混合渲染、自动代码分割和优化性能。核心功能包括服务器端渲染、静态站点生成和 API 路由。优势在于 SEO 优化、快速加载和简化部署。典型用例包括博客、电子商务网站和需要高性能、可扩展性的内容密集型应用。",
+      "summary_es": "Next.js es un framework de React para construir aplicaciones web con renderizado del servidor y generación estática. Ofrece renderizado híbrido, división automática de código y rendimiento optimizado. Capacidades principales incluyen renderizado del lado del servidor, generación de sitios estáticos y rutas API. Fortalezas son optimización SEO, carga rápida y despliegue simplificado. Casos de uso típicos son blogs, sitios de comercio electrónico y aplicaciones con mucho contenido que requieren alto rendimiento y escalabilidad."
+    },
+    {
+      "id": "f/awesome-chatgpt-prompts",
+      "source": "github",
+      "name": "awesome-chatgpt-prompts",
+      "url": "https://github.com/f/awesome-chatgpt-prompts",
+      "license": "CC0-1.0",
+      "lang": "JavaScript",
+      "tags": [
+        "bots",
+        "chatbot",
+        "chatgpt",
+        "chatgpt-api",
+        "language"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 134263,
+        "forks": 17847,
+        "issues": 283
+      },
+      "score": 137932.37196431326,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Awesome ChatGPT Prompts 是一个 GitHub 仓库，提供精选的提示词模板，用于优化与 ChatGPT 及其他大型语言模型的交互。它涵盖多个类别，如编程、写作和问题解决，帮助用户获得更准确、高效的 AI 响应。该项目作为实用资源，服务于开发者、研究人员和普通用户，旨在提升对话质量，支持各种典型用例，如代码生成、内容创作和知识查询。",
+      "updated_at": "2025-09-20T17:40:19Z",
+      "summary_en": "Awesome ChatGPT Prompts is a GitHub repository providing curated prompts to enhance interactions with ChatGPT and other large language models. It offers structured prompt templates across various categories, helping users achieve more precise and effective responses. The collection serves as a practical resource for developers, researchers, and general users to optimize AI conversations for tasks like coding, writing, and problem-solving.",
+      "summary_zh": "Awesome ChatGPT Prompts 是一个 GitHub 仓库，提供精选的提示词模板，用于优化与 ChatGPT 及其他大型语言模型的交互。它涵盖多个类别，如编程、写作和问题解决，帮助用户获得更准确、高效的 AI 响应。该项目作为实用资源，服务于开发者、研究人员和普通用户，旨在提升对话质量，支持各种典型用例，如代码生成、内容创作和知识查询。",
+      "summary_es": "Awesome ChatGPT Prompts es un repositorio de GitHub que ofrece prompts seleccionados para mejorar las interacciones con ChatGPT y otros modelos de lenguaje grande. Proporciona plantillas estructuradas en diversas categorías, ayudando a los usuarios a obtener respuestas más precisas y efectivas. Sirve como recurso práctico para desarrolladores, investigadores y usuarios generales, optimizando conversaciones de IA para tareas como programación, escritura y resolución de problemas."
+    },
+    {
+      "id": "golang/go",
+      "source": "github",
+      "name": "go",
+      "url": "https://github.com/golang/go",
+      "license": "BSD-3-Clause",
+      "lang": "Go",
+      "tags": [
+        "go",
+        "golang",
+        "language",
+        "programming-language"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 129935,
+        "forks": 18401,
+        "issues": 9571
+      },
+      "score": 133715.18600752315,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Go 是由 Google 开发的开源编程语言，专为构建高效、可靠和可扩展的软件而设计。其核心能力包括通过 goroutine 和 channel 实现的强大并发支持、快速编译、静态类型和垃圾回收。优势在于简洁性、高性能以及内置的测试和格式化工具。典型应用场景涵盖 Web 服务器、分布式系统、云服务和命令行工具，适用于现代软件开发需求。",
+      "updated_at": "2025-09-20T17:46:23Z",
+      "summary_en": "Go is an open-source programming language developed by Google, designed for building efficient, reliable, and scalable software. Its core capabilities include strong concurrency support with goroutines and channels, fast compilation, static typing, and garbage collection. Strengths are simplicity, performance, and built-in tools for testing and formatting. Typical use cases include web servers, distributed systems, cloud services, and command-line tools.",
+      "summary_zh": "Go 是由 Google 开发的开源编程语言，专为构建高效、可靠和可扩展的软件而设计。其核心能力包括通过 goroutine 和 channel 实现的强大并发支持、快速编译、静态类型和垃圾回收。优势在于简洁性、高性能以及内置的测试和格式化工具。典型应用场景涵盖 Web 服务器、分布式系统、云服务和命令行工具，适用于现代软件开发需求。",
+      "summary_es": "Go es un lenguaje de programación de código abierto desarrollado por Google, diseñado para construir software eficiente, confiable y escalable. Sus capacidades principales incluyen soporte robusto para concurrencia con goroutines y canales, compilación rápida, tipado estático y recolección de basura. Fortalezas son simplicidad, rendimiento y herramientas integradas para pruebas y formato. Casos de uso típicos incluyen servidores web, sistemas distribuidos, servicios en la nube y herramientas de línea de comandos."
+    },
+    {
+      "id": "yangshun/tech-interview-handbook",
+      "source": "github",
+      "name": "tech-interview-handbook",
+      "url": "https://github.com/yangshun/tech-interview-handbook",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "algorithm",
+        "algorithm-interview",
+        "algorithm-interview-questions",
+        "algorithms",
+        "behavioral-interviews",
+        "coding-interviews",
+        "interview-practice",
+        "interview-preparation",
+        "interview-questions",
+        "system-design"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 129764,
+        "forks": 15776,
+        "issues": 54
+      },
+      "score": 133019.1835769676,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Tech Interview Handbook 是一个为软件工程师准备的综合性技术面试资源，涵盖编码挑战、算法、系统设计和行为问题。其优势包括行业专家精选内容、实用示例和结构化学习路径。典型用例包括面试练习、技能评估以及科技岗位求职者的知识巩固，帮助用户高效准备各类技术面试场景。",
+      "updated_at": "2025-09-20T17:45:20Z",
+      "summary_en": "The Tech Interview Handbook is a comprehensive resource for software engineers preparing for technical interviews. It covers coding challenges, algorithms, system design, and behavioral questions. Strengths include curated content from industry experts, practical examples, and structured learning paths. Typical use cases involve interview practice, skill assessment, and knowledge reinforcement for job seekers in tech roles.",
+      "summary_zh": "Tech Interview Handbook 是一个为软件工程师准备的综合性技术面试资源，涵盖编码挑战、算法、系统设计和行为问题。其优势包括行业专家精选内容、实用示例和结构化学习路径。典型用例包括面试练习、技能评估以及科技岗位求职者的知识巩固，帮助用户高效准备各类技术面试场景。",
+      "summary_es": "El Tech Interview Handbook es un recurso integral para ingenieros de software que se preparan para entrevistas técnicas. Cubre desafíos de codificación, algoritmos, diseño de sistemas y preguntas conductuales. Sus fortalezas incluyen contenido seleccionado por expertos, ejemplos prácticos y rutas de aprendizaje estructuradas. Los casos de uso típicos son práctica de entrevistas, evaluación de habilidades y refuerzo de conocimientos para buscadores de empleo en roles tecnológicos."
+    },
+    {
+      "id": "Genymobile/scrcpy",
+      "source": "github",
+      "name": "scrcpy",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "license": "Apache-2.0",
+      "lang": "C",
+      "tags": [
+        "android",
+        "c",
+        "ffmpeg",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen",
+        "sdl2"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 128365,
+        "forks": 12044,
+        "issues": 2548
+      },
+      "score": 130873.71799054784,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "scrcpy 是一款开源应用程序，用于通过 USB 或 TCP/IP 从计算机显示和控制 Android 设备。它使用 H.264 编码低延迟流式传输设备屏幕，并允许无需 root 权限的输入控制。核心功能包括屏幕镜像、音频转发、设备录制和剪贴板同步。其优势在于轻量级设计、高性能和跨平台支持。典型用例是应用开发、演示和远程设备管理。",
+      "updated_at": "2025-09-20T17:17:00Z",
+      "summary_en": "scrcpy is an open-source application for displaying and controlling Android devices from a computer via USB or TCP/IP. It streams the device screen with low latency using H.264 encoding and allows input control without root access. Core capabilities include screen mirroring, audio forwarding, device recording, and clipboard synchronization. Strengths are its lightweight design, high performance, and cross-platform support. Typical use cases are app development, presentations, and remote device management.",
+      "summary_zh": "scrcpy 是一款开源应用程序，用于通过 USB 或 TCP/IP 从计算机显示和控制 Android 设备。它使用 H.264 编码低延迟流式传输设备屏幕，并允许无需 root 权限的输入控制。核心功能包括屏幕镜像、音频转发、设备录制和剪贴板同步。其优势在于轻量级设计、高性能和跨平台支持。典型用例是应用开发、演示和远程设备管理。",
+      "summary_es": "scrcpy es una aplicación de código abierto para mostrar y controlar dispositivos Android desde una computadora mediante USB o TCP/IP. Transmite la pantalla del dispositivo con baja latencia usando codificación H.264 y permite control de entrada sin acceso root. Capacidades principales incluyen mirroring de pantalla, reenvío de audio, grabación de dispositivos y sincronización del portapapeles. Fortalezas son su diseño ligero, alto rendimiento y soporte multiplataforma. Casos de uso típicos son desarrollo de apps, presentaciones y gestión remota de dispositivos."
+    },
+    {
+      "id": "yt-dlp/yt-dlp",
+      "source": "github",
+      "name": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "license": "Unlicense",
+      "lang": "Python",
+      "tags": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 126966,
+        "forks": 10187,
+        "issues": 2059
+      },
+      "score": 129103.35151678241,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "yt-dlp 是一个基于 youtube-dl 分支的命令行音视频下载工具，使用 Python 编写。它支持从数千个网站（包括 YouTube）下载内容，具备赞助商屏蔽、格式选择和元数据提取等功能。其优势在于活跃的维护、广泛的网站兼容性和高度可定制性。典型用例包括内容存档、离线观看和批量下载媒体文件，适用于需要高效下载和管理网络视频的用户。",
+      "updated_at": "2025-09-20T17:31:29Z",
+      "summary_en": "yt-dlp is a command-line audio/video downloader forked from youtube-dl, written in Python. It supports downloading from thousands of sites including YouTube, with features like sponsor blocking, format selection, and metadata extraction. Its strengths include active maintenance, extensive site compatibility, and customization options. Typical use cases include archiving content, offline viewing, and batch downloading media files.",
+      "summary_zh": "yt-dlp 是一个基于 youtube-dl 分支的命令行音视频下载工具，使用 Python 编写。它支持从数千个网站（包括 YouTube）下载内容，具备赞助商屏蔽、格式选择和元数据提取等功能。其优势在于活跃的维护、广泛的网站兼容性和高度可定制性。典型用例包括内容存档、离线观看和批量下载媒体文件，适用于需要高效下载和管理网络视频的用户。",
+      "summary_es": "yt-dlp es un descargador de audio/video por línea de comandos bifurcado de youtube-dl, escrito en Python. Soporta descargas de miles de sitios incluyendo YouTube, con funciones como bloqueo de sponsors, selección de formato y extracción de metadatos. Sus fortalezas incluyen mantenimiento activo, amplia compatibilidad de sitios y opciones de personalización. Los casos de uso típicos son archivar contenido, visualización offline y descarga por lotes de archivos multimedia."
+    },
+    {
+      "id": "Chalarangelo/30-seconds-of-code",
+      "source": "github",
+      "name": "30-seconds-of-code",
+      "url": "https://github.com/Chalarangelo/30-seconds-of-code",
+      "license": "CC-BY-4.0",
+      "lang": "JavaScript",
+      "tags": [
+        "astro",
+        "awesome-list",
+        "css",
+        "education",
+        "es6-javascript",
+        "git",
+        "html",
+        "javascript",
+        "learn-to-code",
+        "learning-resources",
+        "nodejs",
+        "programming",
+        "snippets"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 125295,
+        "forks": 12320,
+        "issues": 0
+      },
+      "score": 127858.934734375,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "30 Seconds of Code 是一个 GitHub 代码库，提供简洁的 JavaScript 代码片段用于教育目的。它涵盖 ES6、Node.js、HTML、CSS 和 Git 的实用示例，帮助开发者快速学习和实现常见编程任务。该项目优势包括广泛的代码集合、清晰的解释以及专注于现实应用场景以提升技能水平，适合编程学习和日常开发参考。",
+      "updated_at": "2025-09-20T17:24:14Z",
+      "summary_en": "30 Seconds of Code is a GitHub repository providing concise JavaScript code snippets for educational purposes. It offers practical examples covering ES6, Node.js, HTML, CSS, and Git to help developers quickly learn and implement common programming tasks. The project's strengths include its extensive collection, clear explanations, and focus on real-world use cases for skill enhancement.",
+      "summary_zh": "30 Seconds of Code 是一个 GitHub 代码库，提供简洁的 JavaScript 代码片段用于教育目的。它涵盖 ES6、Node.js、HTML、CSS 和 Git 的实用示例，帮助开发者快速学习和实现常见编程任务。该项目优势包括广泛的代码集合、清晰的解释以及专注于现实应用场景以提升技能水平，适合编程学习和日常开发参考。",
+      "summary_es": "30 Seconds of Code es un repositorio de GitHub que proporciona fragmentos de código JavaScript concisos con fines educativos. Ofrece ejemplos prácticos que cubren ES6, Node.js, HTML, CSS y Git para ayudar a los desarrolladores a aprender e implementar rápidamente tareas de programación comunes. Sus fortalezas incluyen una amplia colección, explicaciones claras y un enfoque en casos de uso reales para mejorar habilidades."
+    },
+    {
+      "id": "facebook/react-native",
+      "source": "github",
+      "name": "react-native",
+      "url": "https://github.com/facebook/react-native",
+      "license": "MIT",
+      "lang": "C++",
+      "tags": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "ios",
+        "mobile",
+        "mobile-development",
+        "react",
+        "react-native"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 123865,
+        "forks": 24847,
+        "issues": 1041
+      },
+      "score": 128934.33944116512,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "React Native 是 Facebook 开发的开源框架，用于使用 React 构建原生移动应用程序。它允许开发者通过单一代码库使用 JavaScript 创建 iOS 和 Android 的跨平台应用。核心功能包括原生 UI 组件、热重载和设备 API 访问。优势在于代码可重用性、庞大的社区支持以及接近原生应用的性能。典型用例包括为企业、社交平台和生产力工具开发移动应用，适用于需要快速迭代和跨平台部署的场景。",
+      "updated_at": "2025-09-20T17:26:16Z",
+      "summary_en": "React Native is an open-source framework developed by Facebook for building native mobile applications using React. It enables developers to create cross-platform apps for iOS and Android with a single codebase using JavaScript. Core capabilities include native UI components, hot reloading, and access to device APIs. Strengths include code reusability, large community support, and performance close to native apps. Typical use cases include developing mobile applications for businesses, social platforms, and productivity tools.",
+      "summary_zh": "React Native 是 Facebook 开发的开源框架，用于使用 React 构建原生移动应用程序。它允许开发者通过单一代码库使用 JavaScript 创建 iOS 和 Android 的跨平台应用。核心功能包括原生 UI 组件、热重载和设备 API 访问。优势在于代码可重用性、庞大的社区支持以及接近原生应用的性能。典型用例包括为企业、社交平台和生产力工具开发移动应用，适用于需要快速迭代和跨平台部署的场景。",
+      "summary_es": "React Native es un framework de código abierto desarrollado por Facebook para construir aplicaciones móviles nativas utilizando React. Permite a los desarrolladores crear aplicaciones multiplataforma para iOS y Android con un único código base usando JavaScript. Capacidades principales incluyen componentes de UI nativos, recarga en caliente y acceso a APIs del dispositivo. Fortalezas incluyen reutilización de código, gran soporte comunitario y rendimiento cercano a aplicaciones nativas. Casos de uso típicos incluyen desarrollo de aplicaciones móviles para empresas, plataformas sociales y herramientas de productividad."
+    },
+    {
+      "id": "microsoft/PowerToys",
+      "source": "github",
+      "name": "PowerToys",
+      "url": "https://github.com/microsoft/PowerToys",
+      "license": "MIT",
+      "lang": "C#",
+      "tags": [
+        "color-picker",
+        "command-palette",
+        "desktop",
+        "fancyzones",
+        "keyboard-manager",
+        "microsoft-powertoys",
+        "powerrename",
+        "powertoys",
+        "windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 123753,
+        "forks": 7361,
+        "issues": 7262
+      },
+      "score": 125325.19677141204,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Microsoft PowerToys 是一套免费的 Windows 实用工具集，旨在通过自定义操作系统提升生产力。核心功能包括 FancyZones 窗口管理、PowerRename 批量文件重命名、Color Picker 颜色选取和 Keyboard Manager 键盘重映射。优势在于官方 Microsoft 支持、开源性质和定期更新。典型用例涉及高级用户、开发者和专业人士，用于优化 Windows 工作流程效率，简化日常任务，如多窗口布局、文件处理和快捷操作定制。",
+      "updated_at": "2025-09-20T17:51:02Z",
+      "summary_en": "Microsoft PowerToys is a collection of free utilities for Windows that enhances productivity by customizing the operating system. Core capabilities include FancyZones for window management, PowerRename for batch file renaming, Color Picker for color selection, and Keyboard Manager for key remapping. Strengths are its official Microsoft support, open-source nature, and regular updates. Typical use cases involve power users, developers, and professionals seeking to optimize their Windows workflow efficiency.",
+      "summary_zh": "Microsoft PowerToys 是一套免费的 Windows 实用工具集，旨在通过自定义操作系统提升生产力。核心功能包括 FancyZones 窗口管理、PowerRename 批量文件重命名、Color Picker 颜色选取和 Keyboard Manager 键盘重映射。优势在于官方 Microsoft 支持、开源性质和定期更新。典型用例涉及高级用户、开发者和专业人士，用于优化 Windows 工作流程效率，简化日常任务，如多窗口布局、文件处理和快捷操作定制。",
+      "summary_es": "Microsoft PowerToys es una colección de utilidades gratuitas para Windows que mejora la productividad personalizando el sistema operativo. Capacidades principales incluyen FancyZones para gestión de ventanas, PowerRename para renombrado masivo de archivos, Color Picker para selección de colores y Keyboard Manager para reasignación de teclas. Fortalezas son su soporte oficial de Microsoft, naturaleza de código abierto y actualizaciones regulares. Casos de uso típicos involucran usuarios avanzados, desarrolladores y profesionales que buscan optimizar la eficiencia de su flujo de trabajo en Windows."
+    },
+    {
+      "id": "langflow-ai/langflow",
+      "source": "github",
+      "name": "langflow",
+      "url": "https://github.com/langflow-ai/langflow",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "agents",
+        "chatgpt",
+        "generative-ai",
+        "large-language-models",
+        "multiagent",
+        "react-flow"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 120576,
+        "forks": 7637,
+        "issues": 877
+      },
+      "score": 122203.32597665895,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Langflow是一个开源的可视化工作流构建工具，用于创建和部署AI代理与应用。它支持通过拖拽方式构建复杂的AI流程，利用大型语言模型如ChatGPT。核心功能包括多代理系统、可定制工作流和便捷部署。优势在于直观界面、适用于多种AI任务的灵活性以及强大的社区支持。典型用例涵盖聊天机器人开发、自动化内容生成和数据处理流程构建。该项目在GitHub上拥有超过12万星标，表明其广泛认可和活跃开发。",
+      "updated_at": "2025-09-20T17:20:27Z",
+      "task_keys": [
+        "tool_use"
+      ],
+      "summary_en": "Langflow is an open-source visual workflow builder for creating and deploying AI agents and applications. It enables drag-and-drop construction of complex AI pipelines using large language models like ChatGPT. Core capabilities include multi-agent systems, customizable workflows, and seamless deployment. Strengths include intuitive interface, flexibility for various AI tasks, and strong community support. Typical use cases involve building chatbots, automated content generation, and data processing pipelines.",
+      "summary_zh": "Langflow是一个开源的可视化工作流构建工具，用于创建和部署AI代理与应用。它支持通过拖拽方式构建复杂的AI流程，利用大型语言模型如ChatGPT。核心功能包括多代理系统、可定制工作流和便捷部署。优势在于直观界面、适用于多种AI任务的灵活性以及强大的社区支持。典型用例涵盖聊天机器人开发、自动化内容生成和数据处理流程构建。该项目在GitHub上拥有超过12万星标，表明其广泛认可和活跃开发。",
+      "summary_es": "Langflow es una herramienta visual de código abierto para crear y desplegar agentes y aplicaciones de IA. Permite la construcción mediante arrastrar y soltar de pipelines complejos utilizando modelos de lenguaje grande como ChatGPT. Capacidades principales incluyen sistemas multiagente, flujos personalizables y despliegue sencillo. Fortalezas son interfaz intuitiva, flexibilidad para diversas tareas de IA y fuerte soporte comunitario. Casos de uso típicos incluyen chatbots, generación automatizada de contenido y procesamiento de datos."
+    },
+    {
+      "id": "electron/electron",
+      "source": "github",
+      "name": "electron",
+      "url": "https://github.com/electron/electron",
+      "license": "MIT",
+      "lang": "C++",
+      "tags": [
+        "c-plus-plus",
+        "chrome",
+        "css",
+        "electron",
+        "html",
+        "javascript",
+        "nodejs",
+        "v8",
+        "works-with-codespaces"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 118372,
+        "forks": 16421,
+        "issues": 908
+      },
+      "score": 121756.18801369598,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Electron是一个开源框架，用于使用JavaScript、HTML和CSS等Web技术构建跨平台桌面应用程序。它将Chromium渲染引擎与Node.js运行时相结合，使开发者能够为Windows、macOS和Linux创建类似原生的应用。核心功能包括访问原生API、自动更新和调试工具。优势在于代码可重用性、庞大的生态系统和强大的社区支持。典型用例包括Web应用的桌面版本、开发工具和生产力软件，广泛应用于如Visual Studio Code和Slack等知名应用。",
+      "updated_at": "2025-09-20T17:47:15Z",
+      "summary_en": "Electron is an open-source framework for building cross-platform desktop applications using web technologies like JavaScript, HTML, and CSS. It combines the Chromium rendering engine with Node.js runtime, enabling developers to create native-like apps for Windows, macOS, and Linux. Core capabilities include access to native APIs, automatic updates, and debugging tools. Strengths include code reusability, large ecosystem, and strong community support. Typical use cases include desktop versions of web apps, development tools, and productivity software.",
+      "summary_zh": "Electron是一个开源框架，用于使用JavaScript、HTML和CSS等Web技术构建跨平台桌面应用程序。它将Chromium渲染引擎与Node.js运行时相结合，使开发者能够为Windows、macOS和Linux创建类似原生的应用。核心功能包括访问原生API、自动更新和调试工具。优势在于代码可重用性、庞大的生态系统和强大的社区支持。典型用例包括Web应用的桌面版本、开发工具和生产力软件，广泛应用于如Visual Studio Code和Slack等知名应用。",
+      "summary_es": "Electron es un framework de código abierto para construir aplicaciones de escritorio multiplataforma utilizando tecnologías web como JavaScript, HTML y CSS. Combina el motor de renderizado Chromium con el entorno de ejecución Node.js, permitiendo a los desarrolladores crear aplicaciones similares a nativas para Windows, macOS y Linux. Capacidades principales incluyen acceso a APIs nativas, actualizaciones automáticas y herramientas de depuración. Fortalezas son la reutilización de código, gran ecosistema y sólido soporte comunitario. Casos de uso típicos incluyen versiones de escritorio de aplicaciones web, herramientas de desarrollo y software de productividad."
+    },
+    {
+      "id": "kubernetes/kubernetes",
+      "source": "github",
+      "name": "kubernetes",
+      "url": "https://github.com/kubernetes/kubernetes",
+      "license": "Apache-2.0",
+      "lang": "Go",
+      "tags": [
+        "cncf",
+        "containers",
+        "go",
+        "kubernetes"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 117570,
+        "forks": 41394,
+        "issues": 2513
+      },
+      "score": 125948.54518962192,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Kubernetes是一个开源的容器编排平台，用于自动化容器化应用的部署、扩展和管理。它提供强大的调度能力、服务发现、负载均衡、自我修复功能以及存储编排。广泛应用于微服务架构、云原生应用和大规模分布式系统，支持混合云和多云环境，具备高可用性、可扩展性和跨平台兼容性。",
+      "updated_at": "2025-09-20T16:02:21Z",
+      "summary_en": "Kubernetes is an open-source container orchestration platform for automating deployment, scaling, and management of containerized applications. It provides robust scheduling, service discovery, load balancing, self-healing capabilities, and storage orchestration. Widely used for microservices architectures, cloud-native applications, and large-scale distributed systems across hybrid and multi-cloud environments.",
+      "summary_zh": "Kubernetes是一个开源的容器编排平台，用于自动化容器化应用的部署、扩展和管理。它提供强大的调度能力、服务发现、负载均衡、自我修复功能以及存储编排。广泛应用于微服务架构、云原生应用和大规模分布式系统，支持混合云和多云环境，具备高可用性、可扩展性和跨平台兼容性。",
+      "summary_es": "Kubernetes es una plataforma de orquestación de contenedores de código abierto para automatizar el despliegue, escalado y gestión de aplicaciones en contenedores. Proporciona programación robusta, descubrimiento de servicios, balanceo de carga, capacidades de auto-reparación y orquestación de almacenamiento. Ampliamente utilizado para arquitecturas de microservicios, aplicaciones nativas de la nube y sistemas distribuidos a gran escala."
+    },
+    {
+      "id": "langchain-ai/langchain",
+      "source": "github",
+      "name": "langchain",
+      "url": "https://github.com/langchain-ai/langchain",
+      "license": "MIT",
+      "lang": "Jupyter Notebook",
+      "tags": [
+        "ai",
+        "anthropic",
+        "gemini",
+        "langchain",
+        "llm",
+        "openai",
+        "python"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 115843,
+        "forks": 19025,
+        "issues": 221
+      },
+      "score": 119747.99052141204,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "LangChain是一个开源的Python框架，用于构建基于大型语言模型的上下文感知推理应用。它提供连接LLM与外部数据源、管理内存和编排多步骤工作流的工具。核心功能包括提示模板、文档加载和基于代理的推理。优势在于模块化设计、与OpenAI和Anthropic等提供商的广泛集成，以及支持复杂AI应用。典型用例包括聊天机器人、问答系统和自动化数据分析管道，帮助开发者高效创建智能应用。",
+      "updated_at": "2025-09-20T17:48:20Z",
+      "summary_en": "LangChain is an open-source Python framework for developing context-aware reasoning applications using large language models. It provides tools to connect LLMs with external data sources, manage memory, and orchestrate multi-step workflows. Core capabilities include prompt templating, document loading, and agent-based reasoning. Strengths include modular design, extensive integrations with providers like OpenAI and Anthropic, and support for complex AI applications. Typical use cases include chatbots, question-answering systems, and automated data analysis pipelines.",
+      "summary_zh": "LangChain是一个开源的Python框架，用于构建基于大型语言模型的上下文感知推理应用。它提供连接LLM与外部数据源、管理内存和编排多步骤工作流的工具。核心功能包括提示模板、文档加载和基于代理的推理。优势在于模块化设计、与OpenAI和Anthropic等提供商的广泛集成，以及支持复杂AI应用。典型用例包括聊天机器人、问答系统和自动化数据分析管道，帮助开发者高效创建智能应用。",
+      "summary_es": "LangChain es un framework de Python de código abierto para desarrollar aplicaciones de razonamiento conscientes del contexto utilizando modelos de lenguaje grandes. Proporciona herramientas para conectar LLM con fuentes de datos externas, gestionar memoria y orquestar flujos de trabajo de múltiples pasos. Capacidades principales incluyen plantillas de prompts, carga de documentos y razonamiento basado en agentes. Fortalezas incluyen diseño modular, integraciones extensas con proveedores como OpenAI y Anthropic, y soporte para aplicaciones complejas de IA. Casos de uso típicos incluyen chatbots, sistemas de preguntas y respuestas, y pipelines de análisis de datos automatizados."
+    },
+    {
+      "id": "d3/d3",
+      "source": "github",
+      "name": "d3",
+      "url": "https://github.com/d3/d3",
+      "license": "ISC",
+      "lang": "Shell",
+      "tags": [
+        "chart",
+        "charts",
+        "d3",
+        "data-visualization",
+        "svg",
+        "visualization"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 111504,
+        "forks": 22837,
+        "issues": 23
+      },
+      "score": 116170.93731925153,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "D3.js 是一个用于在网页浏览器中创建动态交互式数据可视化的 JavaScript 库。它利用 SVG、HTML5 和 Canvas 技术将数据绑定到 DOM 元素，实现对视觉表示的精确控制。核心功能包括数据处理、动画效果和交互处理。其优势在于高度灵活性、广泛的自定义选项以及强大的社区支持。典型应用场景包括数据仪表板、科学可视化图表和交互式报告生成。",
+      "updated_at": "2025-09-20T14:32:33Z",
+      "summary_en": "D3.js is a JavaScript library for creating dynamic, interactive data visualizations in web browsers. It uses SVG, HTML5, and Canvas to bind data to DOM elements, enabling precise control over visual representations. Core capabilities include data manipulation, animation, and interaction handling. Strengths include flexibility, extensive customization, and robust community support. Typical use cases include dashboards, scientific visualizations, and interactive reports.",
+      "summary_zh": "D3.js 是一个用于在网页浏览器中创建动态交互式数据可视化的 JavaScript 库。它利用 SVG、HTML5 和 Canvas 技术将数据绑定到 DOM 元素，实现对视觉表示的精确控制。核心功能包括数据处理、动画效果和交互处理。其优势在于高度灵活性、广泛的自定义选项以及强大的社区支持。典型应用场景包括数据仪表板、科学可视化图表和交互式报告生成。",
+      "summary_es": "D3.js es una biblioteca JavaScript para crear visualizaciones de datos dinámicas e interactivas en navegadores web. Utiliza SVG, HTML5 y Canvas para vincular datos a elementos DOM, permitiendo control preciso sobre representaciones visuales. Capacidades principales incluyen manipulación de datos, animación y manejo de interacciones. Fortalezas son flexibilidad, amplia personalización y sólido soporte comunitario. Casos de uso típicos incluyen dashboards, visualizaciones científicas e informes interactivos."
+    },
+    {
+      "id": "mrdoob/three.js",
+      "source": "github",
+      "name": "three.js",
+      "url": "https://github.com/mrdoob/three.js",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "3d",
+        "augmented-reality",
+        "canvas",
+        "html5",
+        "javascript",
+        "svg",
+        "virtual-reality",
+        "webaudio",
+        "webgl",
+        "webgl2",
+        "webgpu",
+        "webxr"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 108644,
+        "forks": 36010,
+        "issues": 597
+      },
+      "score": 115945.90718807871,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "three.js 是一个用于在网页浏览器中创建和显示三维计算机图形的 JavaScript 库。其核心功能包括使用 WebGL、WebGPU 等 API 渲染三维场景，支持几何体、材质、灯光、相机和动画。优势在于跨浏览器兼容性、详尽的文档和庞大的社区支持。典型应用场景包括交互式三维可视化、游戏、虚拟和增强现实体验，以及网站上的数据展示。",
+      "updated_at": "2025-09-20T17:12:20Z",
+      "summary_en": "three.js is a JavaScript library for creating and displaying 3D computer graphics in web browsers. Its core capabilities include rendering 3D scenes using WebGL, WebGPU, and other APIs, supporting geometries, materials, lights, cameras, and animations. Strengths are cross-browser compatibility, extensive documentation, and a large community. Typical use cases are interactive 3D visualizations, games, virtual and augmented reality experiences, and data presentations on websites.",
+      "summary_zh": "three.js 是一个用于在网页浏览器中创建和显示三维计算机图形的 JavaScript 库。其核心功能包括使用 WebGL、WebGPU 等 API 渲染三维场景，支持几何体、材质、灯光、相机和动画。优势在于跨浏览器兼容性、详尽的文档和庞大的社区支持。典型应用场景包括交互式三维可视化、游戏、虚拟和增强现实体验，以及网站上的数据展示。",
+      "summary_es": "three.js es una biblioteca de JavaScript para crear y mostrar gráficos 3D en navegadores web. Sus capacidades principales incluyen renderizar escenas 3D usando WebGL, WebGPU y otras APIs, soportando geometrías, materiales, luces, cámaras y animaciones. Sus fortalezas son la compatibilidad entre navegadores, documentación extensa y una gran comunidad. Los casos de uso típicos son visualizaciones 3D interactivas, juegos, experiencias de realidad virtual y aumentada, y presentaciones de datos en sitios web."
+    },
+    {
+      "id": "axios/axios",
+      "source": "github",
+      "name": "axios",
+      "url": "https://github.com/axios/axios",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "hacktoberfest",
+        "http-client",
+        "javascript",
+        "nodejs",
+        "promise"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 107663,
+        "forks": 11202,
+        "issues": 282
+      },
+      "score": 110002.98338406635,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Axios是一个基于Promise的HTTP客户端，适用于浏览器和Node.js环境。核心功能包括发起XMLHttpRequest和HTTP请求、拦截请求和响应、转换请求和响应数据以及自动JSON数据转换。主要优势在于简洁的API、基于Promise的异步处理、请求取消功能以及客户端XSRF保护。典型用例包括从API获取数据、处理表单提交以及管理Web应用中的HTTP通信，广泛应用于前端和后端开发项目。",
+      "updated_at": "2025-09-20T14:52:27Z",
+      "summary_en": "Axios is a promise-based HTTP client for JavaScript, supporting both browser and Node.js environments. Its core capabilities include making XMLHttpRequests and HTTP requests, intercepting requests and responses, transforming request and response data, and automatic JSON data transformation. Key strengths are its simple API, promise-based async handling, request cancellation, and client-side XSRF protection. Typical use cases involve fetching data from APIs, handling form submissions, and managing HTTP communications in web applications.",
+      "summary_zh": "Axios是一个基于Promise的HTTP客户端，适用于浏览器和Node.js环境。核心功能包括发起XMLHttpRequest和HTTP请求、拦截请求和响应、转换请求和响应数据以及自动JSON数据转换。主要优势在于简洁的API、基于Promise的异步处理、请求取消功能以及客户端XSRF保护。典型用例包括从API获取数据、处理表单提交以及管理Web应用中的HTTP通信，广泛应用于前端和后端开发项目。",
+      "summary_es": "Axios es un cliente HTTP basado en promesas para JavaScript, compatible con entornos de navegador y Node.js. Sus capacidades principales incluyen realizar solicitudes XMLHttpRequest y HTTP, interceptar solicitudes y respuestas, transformar datos de solicitud y respuesta, y transformación automática de datos JSON. Sus fortajas clave son su API simple, manejo asíncrono basado en promesas, cancelación de solicitudes y protección contra XSRF del lado del cliente. Los casos de uso típicos implican obtener datos de API, manejar envíos de formularios y gestionar comunicaciones HTTP en aplicaciones web."
+    },
+    {
+      "id": "excalidraw/excalidraw",
+      "source": "github",
+      "name": "excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "canvas",
+        "collaboration",
+        "diagrams",
+        "drawing",
+        "hacktoberfest",
+        "productivity",
+        "whiteboard"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 107264,
+        "forks": 10858,
+        "issues": 2377
+      },
+      "score": 109535.53157079476,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Excalidraw 是一个开源的虚拟白板工具，专为创建手绘风格图表而设计。其核心功能包括实时协作、绘图工具和图表制作。优势在于简洁性、直观界面和跨平台可访问性。典型用例涵盖头脑风暴会议、技术图表绘制、教育插图以及团队视觉规划项目。该工具支持多人同时编辑，适用于各种需要可视化协作的场景。",
+      "updated_at": "2025-09-20T17:22:52Z",
+      "summary_en": "Excalidraw is an open-source virtual whiteboard tool designed for creating hand-drawn style diagrams. Its core capabilities include real-time collaboration, sketching tools, and diagram creation. Strengths lie in its simplicity, intuitive interface, and cross-platform accessibility. Typical use cases involve brainstorming sessions, technical diagramming, educational illustrations, and team-based visual planning projects.",
+      "summary_zh": "Excalidraw 是一个开源的虚拟白板工具，专为创建手绘风格图表而设计。其核心功能包括实时协作、绘图工具和图表制作。优势在于简洁性、直观界面和跨平台可访问性。典型用例涵盖头脑风暴会议、技术图表绘制、教育插图以及团队视觉规划项目。该工具支持多人同时编辑，适用于各种需要可视化协作的场景。",
+      "summary_es": "Excalidraw es una herramienta de pizarra virtual de código abierto diseñada para crear diagramas de estilo dibujado a mano. Sus capacidades principales incluyen colaboración en tiempo real, herramientas de dibujo y creación de diagramas. Sus fortalezas radican en su simplicidad, interfaz intuitiva y accesibilidad multiplataforma. Los casos de uso típicos involucran sesiones de lluvia de ideas, diagramación técnica, ilustraciones educativas y proyectos de planificación visual en equipo."
+    }
+  ]
+}

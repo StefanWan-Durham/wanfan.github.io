@@ -1,88 +1,8 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T15:44:11.877Z",
+  "updated_at": "2025-09-20T18:09:28.377Z",
   "by_category": {
     "framework_core": [
-      {
-        "id": "trimstray/the-book-of-secret-knowledge",
-        "source": "github",
-        "name": "the-book-of-secret-knowledge",
-        "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
-        "tags": [
-          "awesome",
-          "awesome-list",
-          "bsd",
-          "cheatsheets",
-          "devops",
-          "guidelines",
-          "hacking",
-          "hacks",
-          "howtos",
-          "linux",
-          "lists",
-          "manuals",
-          "one-liners",
-          "pentesters",
-          "resources",
-          "search-engines",
-          "security",
-          "security-researchers",
-          "sysops"
-        ],
-        "stats": {
-          "stars_total": 0,
-          "forks_total": 0,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-18T19:20:54Z",
-        "added_at": "2025-09-20",
-        "summary": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.18970919138245215
-      },
-      {
-        "id": "ollama/ollama",
-        "source": "github",
-        "name": "ollama",
-        "url": "https://github.com/ollama/ollama",
-        "tags": [
-          "deepseek",
-          "gemma",
-          "gemma3",
-          "gemma3n",
-          "go",
-          "golang",
-          "gpt-oss",
-          "llama",
-          "llama2",
-          "llama3",
-          "llava",
-          "llm",
-          "llms",
-          "mistral",
-          "ollama",
-          "phi4",
-          "qwen"
-        ],
-        "stats": {
-          "stars_total": 152686,
-          "forks_total": 13190,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T11:03:27Z",
-        "added_at": "2025-09-20",
-        "summary": "Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models.",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19997781697104866
-      },
       {
         "id": "sindresorhus/awesome",
         "source": "github",
@@ -96,457 +16,57 @@
           "unicorns"
         ],
         "stats": {
-          "stars_total": 401228,
-          "forks_total": 31636,
+          "stars_total": 401290,
+          "forks_total": 31637,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T13:17:35Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T17:48:32Z",
+        "added_at": "2025-09-21",
         "summary": "😎 Awesome lists about all kinds of interesting topics",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19999595220145608
+        "score_engineering": 0.19990308082115438
       },
       {
-        "id": "jwasham/coding-interview-university",
+        "id": "ohmyzsh/ohmyzsh",
         "source": "github",
-        "name": "coding-interview-university",
-        "url": "https://github.com/jwasham/coding-interview-university",
+        "name": "ohmyzsh",
+        "url": "https://github.com/ohmyzsh/ohmyzsh",
         "tags": [
-          "algorithm",
-          "algorithms",
-          "coding-interview",
-          "coding-interviews",
-          "computer-science",
-          "data-structures",
-          "interview",
-          "interview-prep",
-          "interview-preparation",
-          "programming-interviews",
-          "software-engineering",
-          "study-plan"
-        ],
-        "stats": {
-          "stars_total": 329002,
-          "forks_total": 80568,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T14:35:47Z",
-        "added_at": "2025-09-20",
-        "summary": "A complete computer science study plan to become a software engineer.",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19998445654538677
-      },
-      {
-        "id": "TheAlgorithms/Python",
-        "source": "github",
-        "name": "Python",
-        "url": "https://github.com/TheAlgorithms/Python",
-        "tags": [
-          "algorithm",
-          "algorithm-competitions",
-          "algorithms-implemented",
-          "algos",
-          "community-driven",
-          "education",
+          "cli",
+          "cli-app",
           "hacktoberfest",
-          "interview",
-          "learn",
-          "practice",
-          "python",
-          "searches",
-          "sorting-algorithms",
-          "sorts"
+          "oh-my-zsh",
+          "oh-my-zsh-plugin",
+          "oh-my-zsh-theme",
+          "ohmyzsh",
+          "plugin-framework",
+          "plugins",
+          "productivity",
+          "shell",
+          "terminal",
+          "theme",
+          "themes",
+          "zsh",
+          "zsh-configuration"
         ],
         "stats": {
-          "stars_total": 207872,
-          "forks_total": 47898,
+          "stars_total": 181518,
+          "forks_total": 26220,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T14:35:41Z",
-        "added_at": "2025-09-20",
-        "summary": "All Algorithms implemented in Python",
+        "updated_at": "2025-09-20T17:47:44Z",
+        "added_at": "2025-09-21",
+        "summary": "🙃   A delightful community-driven (with 2,400+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19998399361893981
-      },
-      {
-        "id": "EbookFoundation/free-programming-books",
-        "source": "github",
-        "name": "free-programming-books",
-        "url": "https://github.com/EbookFoundation/free-programming-books",
-        "tags": [
-          "books",
-          "education",
-          "hacktoberfest",
-          "list",
-          "resource"
-        ],
-        "stats": {
-          "stars_total": 368881,
-          "forks_total": 64192,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T14:53:33Z",
-        "added_at": "2025-09-20",
-        "summary": ":books: Freely available programming books",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.1999936467058513
-      },
-      {
-        "id": "vuejs/vue",
-        "source": "github",
-        "name": "vue",
-        "url": "https://github.com/vuejs/vue",
-        "tags": [
-          "framework",
-          "frontend",
-          "javascript",
-          "vue"
-        ],
-        "stats": {
-          "stars_total": 209447,
-          "forks_total": 33767,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T14:53:31Z",
-        "added_at": "2025-09-20",
-        "summary": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19999349238982542
-      },
-      {
-        "id": "flutter/flutter",
-        "source": "github",
-        "name": "flutter",
-        "url": "https://github.com/flutter/flutter",
-        "tags": [
-          "android",
-          "app-framework",
-          "cross-platform",
-          "dart",
-          "dart-platform",
-          "desktop",
-          "flutter",
-          "flutter-package",
-          "fuchsia",
-          "ios",
-          "linux-desktop",
-          "macos",
-          "material-design",
-          "mobile",
-          "mobile-development",
-          "skia",
-          "web",
-          "web-framework",
-          "windows"
-        ],
-        "stats": {
-          "stars_total": 172922,
-          "forks_total": 29237,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T15:00:43Z",
-        "added_at": "2025-09-20",
-        "summary": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19999713952662881
-      },
-      {
-        "id": "github/gitignore",
-        "source": "github",
-        "name": "gitignore",
-        "url": "https://github.com/github/gitignore",
-        "tags": [
-          "git",
-          "gitignore"
-        ],
-        "stats": {
-          "stars_total": 169490,
-          "forks_total": 83005,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T14:59:14Z",
-        "added_at": "2025-09-20",
-        "summary": "A collection of useful .gitignore templates",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19999027245879253
-      },
-      {
-        "id": "kubernetes/kubernetes",
-        "source": "github",
-        "name": "kubernetes",
-        "url": "https://github.com/kubernetes/kubernetes",
-        "tags": [
-          "cncf",
-          "containers",
-          "go",
-          "kubernetes"
-        ],
-        "stats": {
-          "stars_total": 117570,
-          "forks_total": 41394,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T15:08:05Z",
-        "added_at": "2025-09-20",
-        "summary": "Production-Grade Container Scheduling and Management",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19999463541145449
-      },
-      {
-        "id": "ossu/computer-science",
-        "source": "github",
-        "name": "computer-science",
-        "url": "https://github.com/ossu/computer-science",
-        "tags": [
-          "awesome-list",
-          "computer-science",
-          "courses",
-          "curriculum"
-        ],
-        "stats": {
-          "stars_total": 193341,
-          "forks_total": 24147,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T15:06:11Z",
-        "added_at": "2025-09-20",
-        "summary": "🎓 Path to a free self-taught education in Computer Science!",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.1999858395445298
-      },
-      {
-        "id": "twbs/bootstrap",
-        "source": "github",
-        "name": "bootstrap",
-        "url": "https://github.com/twbs/bootstrap",
-        "tags": [
-          "bootstrap",
-          "css",
-          "css-framework",
-          "html",
-          "javascript",
-          "sass",
-          "scss"
-        ],
-        "stats": {
-          "stars_total": 173436,
-          "forks_total": 79159,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T15:23:43Z",
-        "added_at": "2025-09-20",
-        "summary": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19999775904033262
-      },
-      {
-        "id": "freeCodeCamp/freeCodeCamp",
-        "source": "github",
-        "name": "freeCodeCamp",
-        "url": "https://github.com/freeCodeCamp/freeCodeCamp",
-        "tags": [
-          "careers",
-          "certification",
-          "community",
-          "curriculum",
-          "d3",
-          "education",
-          "freecodecamp",
-          "hacktoberfest",
-          "javascript",
-          "learn-to-code",
-          "math",
-          "nodejs",
-          "nonprofits",
-          "programming",
-          "react",
-          "teachers"
-        ],
-        "stats": {
-          "stars_total": 428296,
-          "forks_total": 41632,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T15:22:31Z",
-        "added_at": "2025-09-20",
-        "summary": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19999220370134235
-      },
-      {
-        "id": "avelino/awesome-go",
-        "source": "github",
-        "name": "awesome-go",
-        "url": "https://github.com/avelino/awesome-go",
-        "tags": [
-          "awesome",
-          "awesome-list",
-          "go",
-          "golang",
-          "golang-library",
-          "hacktoberfest"
-        ],
-        "stats": {
-          "stars_total": 152771,
-          "forks_total": 12575,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T15:31:55Z",
-        "added_at": "2025-09-20",
-        "summary": "A curated list of awesome Go frameworks, libraries and software",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19999698497642987
-      },
-      {
-        "id": "huggingface/transformers",
-        "source": "github",
-        "name": "transformers",
-        "url": "https://github.com/huggingface/transformers",
-        "tags": [
-          "audio",
-          "deep-learning",
-          "deepseek",
-          "gemma",
-          "glm",
-          "hacktoberfest",
-          "llm",
-          "machine-learning",
-          "model-hub",
-          "natural-language-processing",
-          "nlp",
-          "pretrained-models",
-          "python",
-          "pytorch",
-          "pytorch-transformers",
-          "qwen",
-          "speech-recognition",
-          "transformer",
-          "vlm"
-        ],
-        "stats": {
-          "stars_total": 150014,
-          "forks_total": 30463,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T15:30:25Z",
-        "added_at": "2025-09-20",
-        "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.1999900407572338
-      },
-      {
-        "id": "f/awesome-chatgpt-prompts",
-        "source": "github",
-        "name": "awesome-chatgpt-prompts",
-        "url": "https://github.com/f/awesome-chatgpt-prompts",
-        "tags": [
-          "bots",
-          "chatbot",
-          "chatgpt",
-          "chatgpt-api",
-          "language"
-        ],
-        "stats": {
-          "stars_total": 134262,
-          "forks_total": 17845,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T15:39:27Z",
-        "added_at": "2025-09-20",
-        "summary": "This repo includes ChatGPT prompt curation to use ChatGPT and other LLM tools better.",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19997801995789413
-      },
-      {
-        "id": "Chalarangelo/30-seconds-of-code",
-        "source": "github",
-        "name": "30-seconds-of-code",
-        "url": "https://github.com/Chalarangelo/30-seconds-of-code",
-        "tags": [
-          "astro",
-          "awesome-list",
-          "css",
-          "education",
-          "es6-javascript",
-          "git",
-          "html",
-          "javascript",
-          "learn-to-code",
-          "learning-resources",
-          "nodejs",
-          "programming",
-          "snippets"
-        ],
-        "stats": {
-          "stars_total": 125294,
-          "forks_total": 12320,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T15:30:24Z",
-        "added_at": "2025-09-20",
-        "summary": "Coding articles to level up your development skills",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19993613080220962
+        "score_engineering": 0.19989937894652698
       }
     ],
     "deployment_serving": [
@@ -564,19 +84,19 @@
           "react-flow"
         ],
         "stats": {
-          "stars_total": 0,
-          "forks_total": 0,
+          "stars_total": 120576,
+          "forks_total": 7637,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-18T19:15:47Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T17:20:27Z",
+        "added_at": "2025-09-21",
         "summary": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.1896867232987965
+        "score_engineering": 0.19977317062440111
       },
       {
         "id": "__placeholder__:deployment_serving:0",
@@ -590,8 +110,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T14:39:08.451Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T18:09:28.377Z",
+        "added_at": "2025-09-21",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -615,8 +135,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T14:39:08.451Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T18:09:28.377Z",
+        "added_at": "2025-09-21",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -638,8 +158,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T14:39:08.451Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T18:09:28.377Z",
+        "added_at": "2025-09-21",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -672,19 +192,19 @@
           "software"
         ],
         "stats": {
-          "stars_total": 0,
-          "forks_total": 0,
+          "stars_total": 365501,
+          "forks_total": 38369,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-18T19:18:36Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T17:43:24Z",
+        "added_at": "2025-09-21",
         "summary": "A collective list of free APIs",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.18969909139344546
+        "score_engineering": 0.19987932831693567
       },
       {
         "id": "trekhleb/javascript-algorithms",
@@ -702,47 +222,19 @@
           "javascript-algorithms"
         ],
         "stats": {
-          "stars_total": 193338,
-          "forks_total": 30889,
+          "stars_total": 193341,
+          "forks_total": 30887,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T10:56:29Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T16:57:23Z",
+        "added_at": "2025-09-21",
         "summary": "📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19994557006221036
-      },
-      {
-        "id": "d3/d3",
-        "source": "github",
-        "name": "d3",
-        "url": "https://github.com/d3/d3",
-        "tags": [
-          "chart",
-          "charts",
-          "d3",
-          "data-visualization",
-          "svg",
-          "visualization"
-        ],
-        "stats": {
-          "stars_total": 111506,
-          "forks_total": 22837,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T08:10:43Z",
-        "added_at": "2025-09-20",
-        "summary": "Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19858033573617936
+        "score_engineering": 0.19966653008955276
       }
     ],
     "agents_workflows": [
@@ -758,8 +250,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T14:39:08.451Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T18:09:28.377Z",
+        "added_at": "2025-09-21",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -781,8 +273,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T14:39:08.451Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T18:09:28.377Z",
+        "added_at": "2025-09-21",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -806,8 +298,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T14:39:08.451Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T18:09:28.377Z",
+        "added_at": "2025-09-21",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -829,8 +321,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T14:39:08.451Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T18:09:28.377Z",
+        "added_at": "2025-09-21",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -854,8 +346,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T14:39:08.451Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T18:09:28.377Z",
+        "added_at": "2025-09-21",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -877,8 +369,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T14:39:08.451Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T18:09:28.377Z",
+        "added_at": "2025-09-21",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -890,33 +382,6 @@
       }
     ],
     "edge_embedded": [
-      {
-        "id": "microsoft/vscode",
-        "source": "github",
-        "name": "vscode",
-        "url": "https://github.com/microsoft/vscode",
-        "tags": [
-          "editor",
-          "electron",
-          "microsoft",
-          "typescript",
-          "visual-studio-code"
-        ],
-        "stats": {
-          "stars_total": 0,
-          "forks_total": 0,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-18T19:19:57Z",
-        "added_at": "2025-09-20",
-        "summary": "Visual Studio Code",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.189705019582679
-      },
       {
         "id": "massgravel/Microsoft-Activation-Scripts",
         "source": "github",
@@ -941,19 +406,19 @@
           "windows-11"
         ],
         "stats": {
-          "stars_total": 148966,
-          "forks_total": 14468,
+          "stars_total": 149013,
+          "forks_total": 14471,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T11:02:19Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T17:51:40Z",
+        "added_at": "2025-09-21",
         "summary": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19997257070824762
+        "score_engineering": 0.19991758049019248
       },
       {
         "id": "microsoft/PowerToys",
@@ -974,80 +439,50 @@
           "windows-11"
         ],
         "stats": {
-          "stars_total": 123748,
-          "forks_total": 7360,
+          "stars_total": 123753,
+          "forks_total": 7361,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T13:11:07Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T17:51:02Z",
+        "added_at": "2025-09-21",
         "summary": "Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19996601677636472
-      },
-      {
-        "id": "Genymobile/scrcpy",
-        "source": "github",
-        "name": "scrcpy",
-        "url": "https://github.com/Genymobile/scrcpy",
-        "tags": [
-          "android",
-          "c",
-          "ffmpeg",
-          "libav",
-          "mirroring",
-          "recording",
-          "screen",
-          "sdl2"
-        ],
-        "stats": {
-          "stars_total": 128359,
-          "forks_total": 12042,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T14:33:50Z",
-        "added_at": "2025-09-20",
-        "summary": "Display and control your Android device",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.1999754296729563
+        "score_engineering": 0.19991464962122182
       }
     ],
     "ui_devex": [
       {
-        "id": "yt-dlp/yt-dlp",
+        "id": "langchain-ai/langchain",
         "source": "github",
-        "name": "yt-dlp",
-        "url": "https://github.com/yt-dlp/yt-dlp",
+        "name": "langchain",
+        "url": "https://github.com/langchain-ai/langchain",
         "tags": [
-          "cli",
-          "downloader",
-          "python",
-          "sponsorblock",
-          "youtube-dl",
-          "youtube-downloader",
-          "yt-dlp"
+          "ai",
+          "anthropic",
+          "gemini",
+          "langchain",
+          "llm",
+          "openai",
+          "python"
         ],
         "stats": {
-          "stars_total": 0,
-          "forks_total": 0,
+          "stars_total": 115843,
+          "forks_total": 19025,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-18T19:20:04Z",
-        "added_at": "2025-09-20",
-        "summary": "A feature-rich command-line audio/video downloader",
+        "updated_at": "2025-09-20T17:48:20Z",
+        "added_at": "2025-09-21",
+        "summary": "🦜🔗 Build context-aware reasoning applications",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.1897055319040255
+        "score_engineering": 0.19990215534607064
       },
       {
         "id": "electron/electron",
@@ -1066,165 +501,19 @@
           "works-with-codespaces"
         ],
         "stats": {
-          "stars_total": 118367,
-          "forks_total": 16417,
+          "stars_total": 118372,
+          "forks_total": 16421,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T11:03:38Z",
-        "added_at": "2025-09-20",
+        "updated_at": "2025-09-20T17:47:15Z",
+        "added_at": "2025-09-21",
         "summary": ":electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19997866564414063
-      },
-      {
-        "id": "Snailclimb/JavaGuide",
-        "source": "github",
-        "name": "JavaGuide",
-        "url": "https://github.com/Snailclimb/JavaGuide",
-        "tags": [
-          "algorithms",
-          "interview",
-          "java",
-          "jvm",
-          "mysql",
-          "redis",
-          "spring",
-          "system",
-          "system-design",
-          "zookeeper"
-        ],
-        "stats": {
-          "stars_total": 151811,
-          "forks_total": 45990,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T13:10:31Z",
-        "added_at": "2025-09-20",
-        "summary": "「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19996323948986292
-      },
-      {
-        "id": "facebook/react",
-        "source": "github",
-        "name": "react",
-        "url": "https://github.com/facebook/react",
-        "tags": [
-          "declarative",
-          "frontend",
-          "javascript",
-          "library",
-          "react",
-          "ui"
-        ],
-        "stats": {
-          "stars_total": 239058,
-          "forks_total": 49357,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T14:26:04Z",
-        "added_at": "2025-09-20",
-        "summary": "The library for web and native user interfaces.",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19993948053181945
-      },
-      {
-        "id": "langchain-ai/langchain",
-        "source": "github",
-        "name": "langchain",
-        "url": "https://github.com/langchain-ai/langchain",
-        "tags": [
-          "ai",
-          "anthropic",
-          "gemini",
-          "langchain",
-          "llm",
-          "openai",
-          "python"
-        ],
-        "stats": {
-          "stars_total": 115832,
-          "forks_total": 19023,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T14:25:35Z",
-        "added_at": "2025-09-20",
-        "summary": "🦜🔗 Build context-aware reasoning applications",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19993724356712061
-      },
-      {
-        "id": "ytdl-org/youtube-dl",
-        "source": "github",
-        "name": "youtube-dl",
-        "url": "https://github.com/ytdl-org/youtube-dl",
-        "tags": [],
-        "stats": {
-          "stars_total": 137325,
-          "forks_total": 10466,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T14:43:22Z",
-        "added_at": "2025-09-20",
-        "summary": "Command-line program to download videos from YouTube.com and other video sites",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19994650869778413
-      },
-      {
-        "id": "airbnb/javascript",
-        "source": "github",
-        "name": "javascript",
-        "url": "https://github.com/airbnb/javascript",
-        "tags": [
-          "arrow-functions",
-          "es2015",
-          "es2016",
-          "es2017",
-          "es2018",
-          "es6",
-          "eslint",
-          "javascript",
-          "linting",
-          "naming-conventions",
-          "style-guide",
-          "style-linter",
-          "styleguide",
-          "tc39"
-        ],
-        "stats": {
-          "stars_total": 147421,
-          "forks_total": 26781,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-20T14:16:29Z",
-        "added_at": "2025-09-20",
-        "summary": "JavaScript Style Guide",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19982212081611045
+        "score_engineering": 0.19989714243049306
       }
     ]
   }
