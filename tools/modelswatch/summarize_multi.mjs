@@ -11,6 +11,7 @@ const BASE_URL = RAW_BASE; // already includes /v1
 const CONN_TIMEOUT = Number(process.env.LLM_CONN_TIMEOUT || 10000);
 const DEBUG = /^(1|true|yes|on)$/i.test(process.env.MODELSWATCH_DEBUG||'');
 const FORCE_PYTHON_FALLBACK = /^(1|true|yes|on)$/i.test(process.env.FORCE_PYTHON_FALLBACK||'');
+const USE_PYTHON_SUMMARIZER = /^(1|true|yes|on)$/i.test(process.env.USE_PYTHON_SUMMARIZER||'');
 const MAX_NETWORK_ERROR_STREAK = Number(process.env.SUMMARY_MAX_NETERR_STREAK || 25);
 const HARD_ABORT_AFTER_STREAK = Number(process.env.SUMMARY_HARD_ABORT_STREAK || 8); // after this, skip further HTTP for the rest of the run
 let networkErrorStreak = 0;
@@ -39,6 +40,20 @@ summarizeDiagnostics.python_fallback_success = 0;
 summarizeDiagnostics.python_fallback_errors = 0;
 
 export async function summarizeTriJSON(prompt, opts={}){
+  if(USE_PYTHON_SUMMARIZER){
+    if(DEBUG) console.log('[summarize_multi] USE_PYTHON_SUMMARIZER=on -> delegating to tri_summarizer.py');
+    try {
+      const { spawnSync } = await import('child_process');
+      const code = `import sys,os,json;sys.path.insert(0, os.getcwd());from tools.tri_summarizer import tri_summary;print(json.dumps(tri_summary(${JSON.stringify(prompt)}), ensure_ascii=False))`;
+      const r = spawnSync('python', ['-c', code], { encoding:'utf-8' });
+      if(r.status===0){
+        try { const parsed = JSON.parse(r.stdout); return { en: parsed.en||'', zh: parsed.zh||'', es: parsed.es||'' }; } catch(e){ if(DEBUG) console.log('[summarize_multi] python summarizer parse error', e.message); }
+      } else {
+        if(DEBUG) console.log('[summarize_multi] python summarizer failed', r.status, r.stderr?.slice(0,180));
+      }
+    } catch(e){ if(DEBUG) console.log('[summarize_multi] python summarizer exception', e.message); }
+    return { en:'', zh:'', es:'' };
+  }
   if(!API_KEY){
     if(DEBUG) console.log('[summarize_multi] No API key; skip generation');
     summarizeDiagnostics.empty++;

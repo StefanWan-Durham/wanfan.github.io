@@ -36,6 +36,12 @@ jobs:
           HOTLIST_DEBUG: 1
           MODELSWATCH_DEBUG: 1
           SUMMARY_FALLBACK: 1
+          USE_PYTHON_SUMMARIZER: 1
+          TRI_ENABLE_REWRITE: 1
+          TRI_ENABLE_EXPAND: 0
+          TRI_BATCH_CONCURRENCY: 2
+          TRI_CACHE_FILE: data/ai/modelswatch/tri_cache.json
+          TRI_CACHE_PERSIST: 1
         run: |
           node -v
           python -V
@@ -71,7 +77,10 @@ jobs:
             data/ai/modelswatch/summary_cache.json \
             data/ai/modelswatch/summaries_coverage.json \
             data/ai/modelswatch/coverage_gaps.json \
-            data/ai/modelswatch/classification_stats.json || true
+            data/ai/modelswatch/classification_stats.json \
+            data/ai/modelswatch/tri_cache.json \
+            data/ai/modelswatch/summaries_diagnostics.json \
+            data/ai/modelswatch/weekly_summaries_diagnostics.json || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
