@@ -489,7 +489,10 @@
       "summary_zh": "ColBERTv2.0 是一种基于 BERT 的检索模型，通过引入“上下文化晚期交互”（Contextualized Late Interaction）机制，显著提升了密集检索的效率与准确性。该模型将查询和文档分别编码为细粒度嵌入，并通过最大相似度计算实现高效匹配，适用于大规模文档检索和问答任务。相比传统检索方法，ColBERTv2.0 在保持高精度的同时大幅降低了计算开销，尤其适合需要快速响应的信息检索场景。其预训练版本支持多种下游任务，包括开放域问答和文档排序。",
       "summary_es": "ColBERTv2.0 es un modelo de recuperación de información basado en BERT que indexa y busca documentos mediante representaciones densas de tokens. Destaca por su eficiencia en búsquedas semánticas y su escalabilidad para grandes colecciones de texto. Es ideal para sistemas de preguntas-respuestas, motores de búsqueda mejorados y aplicaciones que requieren recuperación precisa de documentos.",
       "reason_label": "new_release",
-      "reason_text": "新版本发布：colbertv2.0"
+      "reason_text": "新版本发布：colbertv2.0",
+      "task_keys": [
+        "neural_retrieval"
+      ]
     },
     {
       "id": "coqui/XTTS-v2",
