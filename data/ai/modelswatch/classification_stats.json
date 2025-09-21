@@ -1,9 +1,9 @@
 {
-  "generated_at": "2025-09-20T18:09:36.577Z",
+  "generated_at": "2025-09-21T12:22:59.654Z",
   "hf": {
     "total": 60,
-    "with_tasks": 15,
-    "pct_with_tasks": 25,
+    "with_tasks": 16,
+    "pct_with_tasks": 26.67,
     "task_distribution": [
       {
         "task": "inference_acceleration",
@@ -35,6 +35,34 @@
       },
       {
         "task": "asr",
+        "count": 1
+      },
+      {
+        "task": "image_text_alignment",
+        "count": 1
+      },
+      {
+        "task": "multimodal_understanding_generation",
+        "count": 1
+      },
+      {
+        "task": "vqa",
+        "count": 1
+      },
+      {
+        "task": "visual_grounding",
+        "count": 1
+      },
+      {
+        "task": "lightweight_visual_model",
+        "count": 1
+      },
+      {
+        "task": "multilingual_processing",
+        "count": 1
+      },
+      {
+        "task": "dialogue_system_optimization",
         "count": 1
       }
     ]

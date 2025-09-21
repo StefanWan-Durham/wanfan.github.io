@@ -1,72 +1,76 @@
 {
   "version": 1,
-  "updated_at": "2025-09-20T18:09:28.377Z",
+  "updated_at": "2025-09-21T12:22:51.536Z",
   "by_category": {
     "framework_core": [
       {
-        "id": "sindresorhus/awesome",
+        "id": "trimstray/the-book-of-secret-knowledge",
         "source": "github",
-        "name": "awesome",
-        "url": "https://github.com/sindresorhus/awesome",
+        "name": "the-book-of-secret-knowledge",
+        "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
         "tags": [
           "awesome",
           "awesome-list",
+          "bsd",
+          "cheatsheets",
+          "devops",
+          "guidelines",
+          "hacking",
+          "hacks",
+          "howtos",
+          "linux",
           "lists",
+          "manuals",
+          "one-liners",
+          "pentesters",
           "resources",
-          "unicorns"
+          "search-engines",
+          "security",
+          "security-researchers",
+          "sysops"
         ],
         "stats": {
-          "stars_total": 401290,
-          "forks_total": 31637,
+          "stars_total": 187002,
+          "forks_total": 11568,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T17:48:32Z",
+        "updated_at": "2025-09-21T12:05:44Z",
         "added_at": "2025-09-21",
-        "summary": "😎 Awesome lists about all kinds of interesting topics",
+        "summary": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19990308082115438
+        "score_engineering": 0.19992073060521975
       },
       {
-        "id": "ohmyzsh/ohmyzsh",
+        "id": "avelino/awesome-go",
         "source": "github",
-        "name": "ohmyzsh",
-        "url": "https://github.com/ohmyzsh/ohmyzsh",
+        "name": "awesome-go",
+        "url": "https://github.com/avelino/awesome-go",
         "tags": [
-          "cli",
-          "cli-app",
-          "hacktoberfest",
-          "oh-my-zsh",
-          "oh-my-zsh-plugin",
-          "oh-my-zsh-theme",
-          "ohmyzsh",
-          "plugin-framework",
-          "plugins",
-          "productivity",
-          "shell",
-          "terminal",
-          "theme",
-          "themes",
-          "zsh",
-          "zsh-configuration"
+          "awesome",
+          "awesome-list",
+          "go",
+          "golang",
+          "golang-library",
+          "hacktoberfest"
         ],
         "stats": {
-          "stars_total": 181518,
-          "forks_total": 26220,
+          "stars_total": 152834,
+          "forks_total": 12576,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T17:47:44Z",
+        "updated_at": "2025-09-21T12:05:43Z",
         "added_at": "2025-09-21",
-        "summary": "🙃   A delightful community-driven (with 2,400+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
+        "summary": "A curated list of awesome Go frameworks, libraries and software",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19989937894652698
+        "score_engineering": 0.19992065347532315
       }
     ],
     "deployment_serving": [
@@ -84,19 +88,19 @@
           "react-flow"
         ],
         "stats": {
-          "stars_total": 120576,
-          "forks_total": 7637,
+          "stars_total": 120932,
+          "forks_total": 7641,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T17:20:27Z",
+        "updated_at": "2025-09-21T12:06:37Z",
         "added_at": "2025-09-21",
         "summary": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19977317062440111
+        "score_engineering": 0.19992481853232308
       },
       {
         "id": "__placeholder__:deployment_serving:0",
@@ -110,7 +114,7 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T18:09:28.377Z",
+        "updated_at": "2025-09-21T12:22:51.536Z",
         "added_at": "2025-09-21",
         "summary": "",
         "flags": {
@@ -135,7 +139,7 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T18:09:28.377Z",
+        "updated_at": "2025-09-21T12:22:51.536Z",
         "added_at": "2025-09-21",
         "summary": "",
         "flags": {
@@ -158,7 +162,7 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T18:09:28.377Z",
+        "updated_at": "2025-09-21T12:22:51.536Z",
         "added_at": "2025-09-21",
         "summary": "",
         "flags": {
@@ -192,49 +196,47 @@
           "software"
         ],
         "stats": {
-          "stars_total": 365501,
-          "forks_total": 38369,
+          "stars_total": 365596,
+          "forks_total": 38382,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T17:43:24Z",
+        "updated_at": "2025-09-21T12:06:45Z",
         "added_at": "2025-09-21",
         "summary": "A collective list of free APIs",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19987932831693567
+        "score_engineering": 0.19992543558518436
       },
       {
-        "id": "trekhleb/javascript-algorithms",
+        "id": "d3/d3",
         "source": "github",
-        "name": "javascript-algorithms",
-        "url": "https://github.com/trekhleb/javascript-algorithms",
+        "name": "d3",
+        "url": "https://github.com/d3/d3",
         "tags": [
-          "algorithm",
-          "algorithms",
-          "computer-science",
-          "data-structures",
-          "interview",
-          "interview-preparation",
-          "javascript",
-          "javascript-algorithms"
+          "chart",
+          "charts",
+          "d3",
+          "data-visualization",
+          "svg",
+          "visualization"
         ],
         "stats": {
-          "stars_total": 193341,
-          "forks_total": 30887,
+          "stars_total": 111510,
+          "forks_total": 22838,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T16:57:23Z",
+        "updated_at": "2025-09-21T12:01:19Z",
         "added_at": "2025-09-21",
-        "summary": "📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+        "summary": "Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19966653008955276
+        "score_engineering": 0.19990029222347647
       }
     ],
     "agents_workflows": [
@@ -250,7 +252,7 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T18:09:28.377Z",
+        "updated_at": "2025-09-21T12:22:51.536Z",
         "added_at": "2025-09-21",
         "summary": "",
         "flags": {
@@ -273,7 +275,7 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T18:09:28.377Z",
+        "updated_at": "2025-09-21T12:22:51.536Z",
         "added_at": "2025-09-21",
         "summary": "",
         "flags": {
@@ -298,7 +300,7 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T18:09:28.377Z",
+        "updated_at": "2025-09-21T12:22:51.536Z",
         "added_at": "2025-09-21",
         "summary": "",
         "flags": {
@@ -321,7 +323,7 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T18:09:28.377Z",
+        "updated_at": "2025-09-21T12:22:51.536Z",
         "added_at": "2025-09-21",
         "summary": "",
         "flags": {
@@ -346,7 +348,7 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T18:09:28.377Z",
+        "updated_at": "2025-09-21T12:22:51.536Z",
         "added_at": "2025-09-21",
         "summary": "",
         "flags": {
@@ -369,7 +371,7 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T18:09:28.377Z",
+        "updated_at": "2025-09-21T12:22:51.536Z",
         "added_at": "2025-09-21",
         "summary": "",
         "flags": {
@@ -383,42 +385,31 @@
     ],
     "edge_embedded": [
       {
-        "id": "massgravel/Microsoft-Activation-Scripts",
+        "id": "microsoft/vscode",
         "source": "github",
-        "name": "Microsoft-Activation-Scripts",
-        "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+        "name": "vscode",
+        "url": "https://github.com/microsoft/vscode",
         "tags": [
-          "activator",
-          "hwid",
-          "kms",
-          "kms38",
-          "massgrave",
-          "massgravel",
+          "editor",
+          "electron",
           "microsoft",
-          "microsoft365",
-          "office",
-          "office365",
-          "ohook",
-          "powershell",
-          "tsforge",
-          "windows",
-          "windows-10",
-          "windows-11"
+          "typescript",
+          "visual-studio-code"
         ],
         "stats": {
-          "stars_total": 149013,
-          "forks_total": 14471,
+          "stars_total": 176874,
+          "forks_total": 35106,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T17:51:40Z",
+        "updated_at": "2025-09-21T12:04:55Z",
         "added_at": "2025-09-21",
-        "summary": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
+        "summary": "Visual Studio Code",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19991758049019248
+        "score_engineering": 0.19991695127527925
       },
       {
         "id": "microsoft/PowerToys",
@@ -439,50 +430,50 @@
           "windows-11"
         ],
         "stats": {
-          "stars_total": 123753,
-          "forks_total": 7361,
+          "stars_total": 123771,
+          "forks_total": 7362,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T17:51:02Z",
+        "updated_at": "2025-09-21T12:04:43Z",
         "added_at": "2025-09-21",
         "summary": "Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19991464962122182
+        "score_engineering": 0.19991602573598063
       }
     ],
     "ui_devex": [
       {
-        "id": "langchain-ai/langchain",
+        "id": "yt-dlp/yt-dlp",
         "source": "github",
-        "name": "langchain",
-        "url": "https://github.com/langchain-ai/langchain",
+        "name": "yt-dlp",
+        "url": "https://github.com/yt-dlp/yt-dlp",
         "tags": [
-          "ai",
-          "anthropic",
-          "gemini",
-          "langchain",
-          "llm",
-          "openai",
-          "python"
+          "cli",
+          "downloader",
+          "python",
+          "sponsorblock",
+          "youtube-dl",
+          "youtube-downloader",
+          "yt-dlp"
         ],
         "stats": {
-          "stars_total": 115843,
-          "forks_total": 19025,
+          "stars_total": 127056,
+          "forks_total": 10194,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T17:48:20Z",
+        "updated_at": "2025-09-21T12:06:10Z",
         "added_at": "2025-09-21",
-        "summary": "🦜🔗 Build context-aware reasoning applications",
+        "summary": "A feature-rich command-line audio/video downloader",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19990215534607064
+        "score_engineering": 0.1999227359929766
       },
       {
         "id": "electron/electron",
@@ -501,19 +492,19 @@
           "works-with-codespaces"
         ],
         "stats": {
-          "stars_total": 118372,
+          "stars_total": 118375,
           "forks_total": 16421,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-20T17:47:15Z",
+        "updated_at": "2025-09-21T12:04:42Z",
         "added_at": "2025-09-21",
         "summary": ":electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19989714243049306
+        "score_engineering": 0.19991594860789916
       }
     ]
   }

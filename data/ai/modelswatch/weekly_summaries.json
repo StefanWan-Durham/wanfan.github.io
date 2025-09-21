@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2025-09-20T18:09:36.463Z",
+  "updated_at": "2025-09-21T12:22:59.540Z",
   "period": "2025-W38",
   "sections": {
     "overview": {
@@ -68,14 +68,6 @@
         "count": 2
       },
       {
-        "task": "vqa",
-        "count": 2
-      },
-      {
-        "task": "visual_grounding",
-        "count": 2
-      },
-      {
         "task": "lightweight_visual_model",
         "count": 2
       },
@@ -129,10 +121,6 @@
       },
       {
         "task": "nlp_data_distillation",
-        "count": 2
-      },
-      {
-        "task": "dialogue_system_optimization",
         "count": 2
       },
       {
@@ -350,6 +338,18 @@
       {
         "task": "robot_dialogue_logic",
         "count": 2
+      },
+      {
+        "task": "vqa",
+        "count": 1
+      },
+      {
+        "task": "visual_grounding",
+        "count": 1
+      },
+      {
+        "task": "dialogue_system_optimization",
+        "count": 1
       },
       {
         "task": "nlp_bias_mitigation",

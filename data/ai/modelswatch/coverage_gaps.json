@@ -2,6 +2,18 @@
   "min": 2,
   "model_tasks_underfilled": [
     {
+      "key": "vqa",
+      "count": 1
+    },
+    {
+      "key": "visual_grounding",
+      "count": 1
+    },
+    {
+      "key": "dialogue_system_optimization",
+      "count": 1
+    },
+    {
       "key": "nlp_bias_mitigation",
       "count": 1
     },
@@ -27,5 +39,5 @@
     }
   ],
   "project_categories_underfilled": [],
-  "generated_at": "2025-09-20T18:09:36.546Z"
+  "generated_at": "2025-09-21T12:22:59.622Z"
 }
