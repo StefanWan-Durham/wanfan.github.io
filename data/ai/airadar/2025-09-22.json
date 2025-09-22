@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-21T23:14:56.515194Z",
+  "generated_at": "2025-09-22T23:15:03.686524Z",
   "window_hours": 48,
-  "count": 15,
+  "count": 37,
   "items": [
     {
       "id": "168fb749acbfcbb6",
@@ -344,6 +344,558 @@
         "es": "La IA ha estado en el punto de mira principal desde que el término \"Vibe Coding\" es pronunciado por todos. Lo conozco y lo he utilizado en todas partes. Con el reciente auge empresarial de solucionar los problemas de la codificación de ambiente, ¿alguien ha creado algún sistema completo?"
       },
       "hotness": 0.901292
+    },
+    {
+      "id": "856afc26968eae2d",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/ai-to-be-trialled-at-unprecedented-scale-across-nhs-screening",
+      "title": "AI to be trialled at unprecedented scale across NHS screening",
+      "raw_excerpt": "Pioneering new cloud computer system will allow AI tools to be tested on an unprecedented scale across the NHS to boost early diagnosis",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-22T14:41:44Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "AI to be trialled at unprecedented scale across NHS screening",
+        "zh": "人工智能将在英国国民医疗服务体系筛查中开展前所未有的规模试验",
+        "es": "La inteligencia artificial se probará a una escala sin precedentes en las pruebas de cribado del Servicio Nacional de Salud."
+      },
+      "excerpt_i18n": {
+        "en": "Pioneering new cloud computer system will allow AI tools to be tested on an unprecedented scale across the NHS to boost early diagnosis",
+        "zh": "开创性新型云计算机系统将支持人工智能工具在英国国民医疗服务体系内进行前所未有的规模测试，以提升早期诊断能力。",
+        "es": "El innovador sistema informático en la nube permitirá probar herramientas de inteligencia artificial a una escala sin precedentes en el Servicio Nacional de Salud para potenciar el diagnóstico temprano."
+      },
+      "hotness": 0.883781
+    },
+    {
+      "id": "9a3bc97ea3a18d2d",
+      "source": {
+        "site": "https://www.microsoft.com/en-us/research/",
+        "feed": "https://www.microsoft.com/en-us/research/feed/"
+      },
+      "url": "https://www.microsoft.com/en-us/research/blog/using-ai-to-assist-in-rare-disease-diagnosis/",
+      "title": "Using AI to assist in rare disease diagnosis",
+      "raw_excerpt": "New research from Microsoft, Drexel, and the Broad explores how generative AI could support genetic professionals in rare disease diagnosis. The post Using AI to assist in rare disease diagnosis appeared first on Microsoft Research .",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-22T14:17:03Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "Using AI to assist in rare disease diagnosis",
+        "zh": "利用人工智能辅助罕见病诊断",
+        "es": "Utilizar la inteligencia artificial para ayudar en el diagnóstico de enfermedades raras"
+      },
+      "excerpt_i18n": {
+        "en": "New research from Microsoft, Drexel, and the Broad explores how generative AI could support genetic professionals in rare disease diagnosis. The post Using AI to assist in rare disease diagnosis appeared first on Microsoft Research .",
+        "zh": "微软、德雷塞尔和布罗德研究所的新研究探讨生成式AI如何辅助遗传学专家进行罕见病诊断。该文章《利用AI辅助罕见病诊断》由微软首发。",
+        "es": "Nueva investigación de Microsoft, Drexel y el Broad explora cómo la IA generativa podría apoyar a los profesionales genéticos en el diagnóstico de enfermedades raras. La publicación Usar IA para ayudar en el diagnóstico de enfermedades raras apareció primero en Microso"
+      },
+      "hotness": 0.878546
+    },
+    {
+      "id": "e86103c738d559db",
+      "source": {
+        "site": "https://deepmind.google/discover/blog/",
+        "feed": "https://www.deepmind.com/blog/rss.xml"
+      },
+      "url": "https://deepmind.google/discover/blog/strengthening-our-frontier-safety-framework/",
+      "title": "Strengthening our Frontier Safety Framework",
+      "raw_excerpt": "We’re strengthening the Frontier Safety Framework (FSF) to help identify and mitigate severe risks from advanced AI models.",
+      "tags": [
+        "Policy",
+        "Tools"
+      ],
+      "published_at": "2025-09-22T13:09:37Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "Strengthening our Frontier Safety Framework",
+        "zh": "加强边境安全框架",
+        "es": "Fortalecimiento de nuestro Marco de Seguridad Fronteriza"
+      },
+      "excerpt_i18n": {
+        "en": "We’re strengthening the Frontier Safety Framework (FSF) to help identify and mitigate severe risks from advanced AI models.",
+        "zh": "我们正在加强前沿安全框架，以帮助识别和减轻先进人工智能模型带来的严重风险。",
+        "es": "Estamos reforzando el Marco de Seguridad Fronteriza (FSF) para ayudar a identificar y mitigar los riesgos graves de los modelos avanzados de inteligencia artificial."
+      },
+      "hotness": 0.864403
+    },
+    {
+      "id": "f825b2a5b5952cf1",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://quesma.com/blog/introducing-compilebench/",
+      "title": "CompileBench: Can AI Compile 22-year-old Code?",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-22T12:59:30Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "CompileBench: Can AI Compile 22-year-old Code?",
+        "zh": "CompileBench：AI能否编译22年前的代码？",
+        "es": "CompileBench: ¿Puede la IA compilar código de 22 años?"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.862301
+    },
+    {
+      "id": "24afb374c9be89c8",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/22/1123889/the-download-the-llm-will-see-you-now-and-a-new-fusion-power-deal/",
+      "title": "The Download: the LLM will see you now, and a new fusion power deal",
+      "raw_excerpt": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. This medical startup uses LLMs to run appointments and make diagnoses Patients at a small number of clinics in Southern California run by the medical startup Akido Labs are spending relatively little time,&#8230;",
+      "tags": [],
+      "published_at": "2025-09-22T12:10:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "The Download: the LLM will see you now, and a new fusion power deal",
+        "zh": "下载：大型语言模型即将为您服务，以及一项新的核聚变电力协议",
+        "es": "La Descarga: el modelo de lenguaje grande te atenderá ahora, y un nuevo acuerdo sobre energía de fusión"
+      },
+      "excerpt_i18n": {
+        "en": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. This medical startup uses LLMs to run appointments and make diagnoses Patients at a small number of clinics in Southern California run by the medical startup Akido Labs are spending relatively little time,&#8230;",
+        "zh": "这是今天的《每日下载》内容，这是我们工作日发布的时事通讯，每日为您提供科技领域的动态。这家医疗初创公司运用大型语言模型进行诊疗预约和诊断。",
+        "es": "Esta es la edición de hoy de The Download, nuestro boletín diario que ofrece una dosis cotidiana de lo que ocurre en el mundo de la tecnología. Esta startup médica utiliza modelos de lenguaje grande para gestionar citas y realizar diagnósticos."
+      },
+      "hotness": 1.022507
+    },
+    {
+      "id": "72abbd27961b1ec2",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/NsQhQM7wpPb3rHZ8iWhP",
+      "title": "打破数据孤岛：使用 Snowflake ML 大规模构建、部署和服务模型 | 技术实践",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-22T11:53:44Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "zh": "打破数据孤岛：使用 Snowflake ML 大规模构建、部署和服务模型 | 技术实践",
+        "en": "Breaking Data Silos: Building, Deploying, and Serving Models at Scale with Snowflake ML | Technical Practice",
+        "es": "Rompiendo los silos de datos: construir, implementar y servir modelos a gran escala con Snowflake ML | Práctica técnica"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.84876
+    },
+    {
+      "id": "9e9b4060fdefa353",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/09vAM1z1zOoqBWcrvvOq",
+      "title": "LinkedIn使用现有的消息基础设施构建了企业级的多Agent AI",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-22T10:45:55Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "zh": "LinkedIn使用现有的消息基础设施构建了企业级的多Agent AI",
+        "en": "LinkedIn built an enterprise-level multi-agent AI using its existing messaging infrastructure.",
+        "es": "LinkedIn ha construido una IA multiagente empresarial utilizando la infraestructura de mensajería existente."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.835019
+    },
+    {
+      "id": "d97cd16fc7fd867d",
+      "source": {
+        "site": "https://about.fb.com/news/",
+        "feed": "https://about.fb.com/news/feed/"
+      },
+      "url": "https://about.fb.com/news/2025/09/accelerating-ai-adoption-across-federal-government/",
+      "title": "Accelerating AI Adoption Across the Federal Government",
+      "raw_excerpt": "The US General Services Administration (GSA) announced an initiative with Meta that supports the government-wide use of Meta’s Llama open source AI models. The post Accelerating AI Adoption Across the Federal Government appeared first on Meta Newsroom .",
+      "tags": [
+        "Policy",
+        "Industry"
+      ],
+      "published_at": "2025-09-22T10:00:41Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "Accelerating AI Adoption Across the Federal Government",
+        "zh": "加速人工智能在联邦政府各部门的应用",
+        "es": "Aceleración de la Adopción de la Inteligencia Artificial en la Administración Federal"
+      },
+      "excerpt_i18n": {
+        "en": "The US General Services Administration (GSA) announced an initiative with Meta that supports the government-wide use of Meta’s Llama open source AI models. The post Accelerating AI Adoption Across the Federal Government appeared first on Meta Newsroom .",
+        "zh": "美国总务管理局宣布与Meta合作，推动政府机构全面采用Meta的Llama开源人工智能模型。该计划旨在加速人工智能在整个联邦政府的应用进程。",
+        "es": "La Administración de Servicios Generales de EE. UU. (GSA) anunció una iniciativa con Meta que respalda el uso gubernamental de los modelos de IA de código abierto Llama de Meta. La publicación Acelerando la Adopción de la IA en Todo el Gobierno Federal"
+      },
+      "hotness": 0.825977
+    },
+    {
+      "id": "d560e63199dfae64",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/index/schoolai",
+      "title": "Creating a safe, observable AI infrastructure for 1 million classrooms",
+      "raw_excerpt": "Discover how SchoolAI, built on OpenAI’s GPT-4.1, image generation, and TTS, powers safe, teacher-guided AI tools for 1 million classrooms worldwide—boosting engagement, oversight, and personalized learning.",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-22T10:00:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "Creating a safe, observable AI infrastructure for 1 million classrooms",
+        "zh": "为100万间教室构建安全可观测的人工智能基础设施",
+        "es": "Creación de una infraestructura de IA segura y observable para un millón de aulas"
+      },
+      "excerpt_i18n": {
+        "en": "Discover how SchoolAI, built on OpenAI’s GPT-4.1, image generation, and TTS, powers safe, teacher-guided AI tools for 1 million classrooms worldwide—boosting engagement, oversight, and personalized learning.",
+        "zh": "了解基于OpenAI的GPT-4.1、图像生成和TTS技术的SchoolAI如何为全球100万间课堂提供安全的教师引导式AI工具，提升课堂参与度、教学监督及个性化学习效果。",
+        "es": "Descubre cómo SchoolAI, basado en GPT-4.1 de OpenAI, generación de imágenes y TTS, impulsa herramientas de IA seguras y guiadas por profesores para 1 millón de aulas en todo el mundo, aumentando la participación, la supervisión y el aprendizaje personalizado."
+      },
+      "hotness": 1.321347
+    },
+    {
+      "id": "7ae0270e7bb8e434",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/index/openai-nvidia-systems-partnership",
+      "title": "OpenAI and NVIDIA announce strategic partnership to deploy 10 gigawatts of NVIDIA systems",
+      "raw_excerpt": "OpenAI and NVIDIA announce a strategic partnership to deploy 10 gigawatts of AI datacenters powered by NVIDIA systems, with the first phase launching in 2026.",
+      "tags": [],
+      "published_at": "2025-09-22T08:45:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "OpenAI and NVIDIA announce strategic partnership to deploy 10 gigawatts of NVIDIA systems",
+        "zh": "OpenAI与NVIDIA宣布战略合作，将部署10吉瓦的NVIDIA系统。",
+        "es": "OpenAI y NVIDIA anuncian una asociación estratégica para desplegar 10 gigavatios de sistemas NVIDIA."
+      },
+      "excerpt_i18n": {
+        "en": "OpenAI and NVIDIA announce a strategic partnership to deploy 10 gigawatts of AI datacenters powered by NVIDIA systems, with the first phase launching in 2026.",
+        "zh": "OpenAI与英伟达宣布达成战略合作，将部署总容量达10吉瓦的AI数据中心，全部采用英伟达系统，首阶段工程计划于2026年启动。",
+        "es": "OpenAI y NVIDIA anuncian una asociación estratégica para desplegar 10 gigavatios de centros de datos de IA alimentados por sistemas NVIDIA, con una primera fase que se lanzará en 2026."
+      },
+      "hotness": 1.297709
+    },
+    {
+      "id": "bedc96c1cd3d6794",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/QtL2K8X5rYgjSh82.html",
+      "title": "手机秒变学习机，百度搜索正式推出 AI 伴学功能",
+      "raw_excerpt": "雷峰网讯 ﻿9 月 22 日，百度搜索教育新品交流会在北京中关村学说空间举办。会上正式推出 AI 伴学产品，其中包括 AI 精准练、AI 口语等重磅功能。产品入口目前集成于百度 App 内，据官方介绍，此举意在“让普通手机一键变身免费学习机，助力教育平权”。 AI 教育产品百花齐放，产品形态选择独立软件还是专门硬件，各个厂商招数不一。对于百度来说， 把教育产品集成在百度 App 内部，或许正是目前的全局最优解。 虽然是陪伴孩子，但 AI 伴学产品最初的用户往往是家长。从年龄来看，这部分人群和百度 App 的用户画像有所重合，用户迁移成本几乎为零。在此基础上，集成模块的产品形态又省去了实体学习机必然带来的硬件成本，真正实现了让家长无痛使用的产品体验。 产品功能方面，这款「学习机」除了拥有国内主流教材视频讲解、各地区小初高模拟题真题等海量优质学习资源，搭载独家的 AI 精准练、AI 口语、AI 作文批改等一系列精心打磨过的 AI 教育产品，还可以设置家长模式，实时掌控孩子的学习情况。 在 AI 伴学模式下，百度 App 首页原有的信息流会被“拍照搜题”、“在线答疑”等功能取代，且家长可通过设置密码等方式进行锁定，避免了孩子使用手机的过程中分心。 其中，AI 精准练是集「作业批改、学情分析、巩固练习 」三大能力于一体的个性化学习工具，旨在帮助孩子实现「知对错-找薄弱-促提升」的高效学习循环，支持小初高全学段、全学科题目检索，而且向家长学生全部免费开放使用。 值得一提的是，百度此前发布的数字人技术也在直播电商之外找到了新的用武之地，即此次同步推出的 AI 口语功能。 据介绍，为了打磨这些 AI 功能，百度教育团队专门研发了一套更聪明、更高效的模型，依托文心 4.5、DeepSeek 等底座大模型、百度文本检索引擎及自建知识图谱，实现了全流程智能化、个性化、精准化。 雷峰网文章",
+      "tags": [],
+      "published_at": "2025-09-22T08:43:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "zh": "手机秒变学习机，百度搜索正式推出 AI 伴学功能",
+        "en": "Turn your phone into an instant learning device with Baidu Search's newly launched AI study companion feature.",
+        "es": "El móvil se convierte al instante en un asistente de estudio, Baidu Search lanza oficialmente la función de acompañamiento educativo con IA."
+      },
+      "excerpt_i18n": {
+        "zh": "雷峰网讯 ﻿9 月 22 日，百度搜索教育新品交流会在北京中关村学说空间举办。会上正式推出 AI 伴学产品，其中包括 AI 精准练、AI 口语等重磅功能。产品入口目前集成于百度 App 内，据官方介绍，此举意在“让普通手机一键变身免费学习机，助力教育平权”。 AI 教育产品百花齐放，产品形态选择独立软件还是专门硬件，各个厂商招数不一。对于百度来说， 把教育产品集成在百度 App 内部，或许正是目前的全局最优解。 虽然是陪伴孩子，但 AI 伴学产品最初的用户往往是家长。从年龄来看，这部分人群和百度 App 的用户画像有所重合，用户迁移成本几乎为零。在此基础上，集成模块的产品形态又省去了实体学习机必然带来的硬件成本，真正实现了让家长无痛使用的产品体验。 产品功能方面，这款「学习机」除了拥有国内主流教材视频讲解、各地区小初高模拟题真题等海量优质学习资源，搭载独家的 AI 精准练、AI 口语、AI 作文批改等一系列精心打磨过的 AI 教育产品，还可以设置家长模式，实时掌控孩子的学习情况。 在 AI 伴学模式下，百度 App 首页原有的信息流会被“拍照搜题”、“在线答疑”等功能取代，且家长可通过设置密码等方式进行锁定，避免了孩子使用手机的过程中分心。 其中，AI 精准练是集「作业批改、学情分析、巩固练习 」三大能力于一体的个性化学习工具，旨在帮助孩子实现「知对错-找薄弱-促提升」的高效学习循环，支持小初高全学段、全学科题目检索，而且向家长学生全部免费开放使用。 值得一提的是，百度此前发布的数字人技术也在直播电商之外找到了新的用武之地，即此次同步推出的 AI 口语功能。 据介绍，为了打磨这些 AI 功能，百度教育团队专门研发了一套更聪明、更高效的模型，依托文心 4.5、DeepSeek 等底座大模型、百度文本检索引擎及自建知识图谱，实现了全流程智能化、个性化、精准化。 雷峰网文章",
+        "en": "On September 22, Leifeng News reported that Baidu Search held an education product launch event at the Zhongguancun Learning Space in Beijing. The event officially introduced an AI learning companion product, featuring key functions such as AI precision exercises and AI speaking practice. The product is currently integrated within the Baidu App, with the official aim to \"turn an ordinary smartphone into a free learning device with one click, promoting educational equity.\" \n\nAs AI education products flourish, companies vary in their approaches—some opt for standalone software, others for dedicated hardware. For Baidu, integrating the education product into its app may be the optimal solution. Although designed to accompany children, the initial users of the AI learning companion are often parents. This demographic overlaps with Baidu App's user profile, minimizing migration costs. Additionally, the integrated module eliminates hardware expenses associated with physical learning devices, offering a seamless experience for parents.\n\nFunctionally, this \"learning device\" includes video explanations aligned with national textbooks, a vast library of practice tests for primary to high school levels across regions, and exclusive AI features like precision exercises, speaking practice, and essay grading. It also offers a parent mode for real-time monitoring of children's progress. In AI companion mode, the Baidu App homepage replaces its standard information feed with features like \"photo-based problem search\" and \"online Q&A,\" allowing parents to oversee learning activities.",
+        "es": "El 22 de septiembre, Leifeng Net informó que la conferencia de intercambio sobre nuevos productos educativos de Baidu Search se celebró en el espacio académico de Zhongguancun, Beijing. En el evento se lanzó oficialmente el producto de acompañamiento educativo con IA, que incluye funciones destacadas como ejercicios precisos con IA y práctica oral con IA. La entrada al producto está actualmente integrada en la aplicación de Baidu. Según la presentación oficial, el objetivo es \"transformar un teléfono común en una herramienta de aprendizaje gratuita con un solo clic, promoviendo la equidad educativa\". Los productos educativos con IA están floreciendo, y cada fabricante elige diferentes enfoques, ya sea como software independiente o hardware especializado. Para Baidu, integrar el producto educativo dentro de su aplicación parece ser la solución óptima actual. Aunque está diseñado para acompañar a los niños, la IA"
+      },
+      "hotness": 0.810678
+    },
+    {
+      "id": "35490c95d772a9ba",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/DFlgCbTvwIaMcdZY.html",
+      "title": "全球AI云战场开打： 微软云、AWS 向左，谷歌、阿里云向右",
+      "raw_excerpt": "最近，几乎每位出差的人都会有同感：“北上广的机场核心位置，几乎被各大 AI 云厂商占满了！” 在云计算的赛道上，AI 云已经成为新一轮的入场券。它不仅关乎算力，更决定厂商能否摆脱价格战泥潭、重建护城河，以及在全球科技牌桌上争得一席之地。因此，过去两年里，国内云厂商在战略、组织等各个环节都全力投入，争夺市场领先地位的竞争愈发激烈，“第一”的争夺成为行业关注的核心。 对于大厂来说，“AI 云第一”不仅是数字排名，更是一种行业认可和市场号召力。谁能贴上这个标签，谁就更容易吸引客户、赢得市场份额。 但如果把眼光放宽点，在全球范围内，AI云的竞争格局更激烈，如今只剩4朵超级AI云：美国的AWS、微软和谷歌，以及中国的阿里云。 AI云不等于模型调用 谁是 AI 云 “第一”？取决于评判标准。不同群体基于不同视角，答案也各不相同。 有部分人认为，模型是评判AI云第一的核心要素。 理由也很简单，企业最终是要用模型来解决问题的，客户会用脚投票。尤其是在当下，很多公司都陷入了“AI焦虑”，迫切希望模型能真正帮上忙。谁的模型能不断迭代升级，在不同场景里都能答得准、算得快、还能带来新思路，谁就更容易在AI云的竞争中脱颖而出。 火山引擎所强调的“调用量”，其实也是这一逻辑的延伸——通过高频调用，来侧面证明其模型的成熟度与市场接受度。 但雷峰网认为，如果从市场规模上看，以模型调用为主的MaaS市场，远比不上千亿级别的云计算市场。更重要的是，如果从长远来看，随着AI应用进入更深层次的产业化阶段，要构建一朵真正的超级AI云，仅靠模型表现远远不够。 这就像一座大厦，地基坚实、结构完整，才能在风雨中稳固屹立，并为未来扩建和升级提供可靠支撑。因此，未来要真正评估谁才是AI 云第一，必须经历这四大硬核拷问： 第一，每年是否有千亿级的基础设施投入？ AI云真正的门槛不是宣传口号，而是实打实的资金实力。今年头部云厂商",
+      "tags": [],
+      "published_at": "2025-09-22T06:40:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "zh": "全球AI云战场开打： 微软云、AWS 向左，谷歌、阿里云向右",
+        "en": "The global AI cloud battle begins: Microsoft Cloud and AWS go left, while Google and Alibaba Cloud go right.",
+        "es": "El campo de batalla global de la nube de IA comienza: Microsoft Cloud y AWS hacia la izquierda, Google y Alibaba Cloud hacia la derecha."
+      },
+      "excerpt_i18n": {
+        "zh": "最近，几乎每位出差的人都会有同感：“北上广的机场核心位置，几乎被各大 AI 云厂商占满了！” 在云计算的赛道上，AI 云已经成为新一轮的入场券。它不仅关乎算力，更决定厂商能否摆脱价格战泥潭、重建护城河，以及在全球科技牌桌上争得一席之地。因此，过去两年里，国内云厂商在战略、组织等各个环节都全力投入，争夺市场领先地位的竞争愈发激烈，“第一”的争夺成为行业关注的核心。 对于大厂来说，“AI 云第一”不仅是数字排名，更是一种行业认可和市场号召力。谁能贴上这个标签，谁就更容易吸引客户、赢得市场份额。 但如果把眼光放宽点，在全球范围内，AI云的竞争格局更激烈，如今只剩4朵超级AI云：美国的AWS、微软和谷歌，以及中国的阿里云。 AI云不等于模型调用 谁是 AI 云 “第一”？取决于评判标准。不同群体基于不同视角，答案也各不相同。 有部分人认为，模型是评判AI云第一的核心要素。 理由也很简单，企业最终是要用模型来解决问题的，客户会用脚投票。尤其是在当下，很多公司都陷入了“AI焦虑”，迫切希望模型能真正帮上忙。谁的模型能不断迭代升级，在不同场景里都能答得准、算得快、还能带来新思路，谁就更容易在AI云的竞争中脱颖而出。 火山引擎所强调的“调用量”，其实也是这一逻辑的延伸——通过高频调用，来侧面证明其模型的成熟度与市场接受度。 但雷峰网认为，如果从市场规模上看，以模型调用为主的MaaS市场，远比不上千亿级别的云计算市场。更重要的是，如果从长远来看，随着AI应用进入更深层次的产业化阶段，要构建一朵真正的超级AI云，仅靠模型表现远远不够。 这就像一座大厦，地基坚实、结构完整，才能在风雨中稳固屹立，并为未来扩建和升级提供可靠支撑。因此，未来要真正评估谁才是AI 云第一，必须经历这四大硬核拷问： 第一，每年是否有千亿级的基础设施投入？ AI云真正的门槛不是宣传口号，而是实打实的资金实力。今年头部云厂商",
+        "en": "Recently, almost every business traveler would agree: \"The prime advertising spaces in Beijing, Shanghai, and Guangzhou airports are almost entirely occupied by major AI cloud providers!\" In the race of cloud computing, AI cloud has become the new entry ticket. It not only concerns computing power but also determines whether providers can escape the price war, rebuild their competitive moats, and secure a place at the global tech table. As a result, over the past two years, domestic cloud providers have invested heavily in strategy, organization, and every other aspect, intensifying the competition for market leadership, with the battle for \"first place\" becoming the industry's focal point. For major players, being \"number one in AI cloud\" is not just a numerical ranking but also industry recognition and market influence. Whoever claims this title finds it easier to attract clients and gain market share. However, broadening the perspective globally, the competition in AI cloud is even fiercer, now narrowed down to four super AI clouds: AWS, Microsoft, and Google from the U.S., along with China's Alibaba Cloud. AI cloud is not just about model access. Who is \"first\" in AI cloud? It depends on the criteria. Different groups, from different viewpoints, have varying answers. Some believe the model is the core factor in judging AI cloud leadership. The reasoning is straightforward: businesses ultimately use models to solve problems, and clients vote with their feet. Especially now, many companies are experiencing \"AI anxiety,\" urgently hoping models can genuinely assist. Whose models can continuously iterate, deliver accurate and fast results across various scenarios, and offer innovative approaches will more likely lead in AI cloud.",
+        "es": "Últimamente, casi cualquier persona que viaje por trabajo comparte la misma impresión: \"¡Las ubicaciones centrales de los aeropuertos de Beijing, Shanghái y Cantón están prácticamente copadas por los principales proveedores de nube de IA!\" En la carrera de la computación en la nube, la nube de IA se ha convertido en la nueva credencial de acceso. No solo se trata de capacidad de cálculo, sino que también determina si los proveedores pueden escapar del pantano de la guerra de precios, reconstruir su ventaja competitiva y ganar un lugar en la mesa global de tecnología. Por ello, en los últimos dos años, los proveedores nacionales de nube han invertido a fondo en todos los aspectos, desde la estrategia hasta la organización, y la competencia por el liderazgo del mercado se ha intensificado cada vez más, convirtiéndose la lucha por el \"primer puesto\" en el centro de atención de la industria. Para los grandes actores, ser \"el número uno en nube de IA\" no es solo una clasificación numérica, sino también un reconocimiento del sector y un poder de convocatoria en el mercado."
+      },
+      "hotness": 0.787031
+    },
+    {
+      "id": "419080d35674674a",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/ai/Ms2WQ4Ufh4PZWX8H.html",
+      "title": "硅基流动入局企业级 MaaS，重写大模型落地叙事",
+      "raw_excerpt": "2025 年，AI 大模型已从“概念验证”走到“价值兑现”的关键阶段。 越来越多企业开始思考：大模型不仅要能用，还要真正带来业务效率的提升与成本的可控。在这一背景下，硅基流动推出了企业级 MaaS平台。 作为覆盖算力纳管、模型训练、推理部署到场景应用的全链路解决方案，回应了大模型产业化落地的五大核心矛盾：适配速度、性能与成本、可靠性、质量、以及安全合规。不仅帮企业解决了落地过程中的关键挑战，更为产业提供了一套能够规模化复制的智能基础设施。 &nbsp; 破解大模型落地的五大挑战 大模型的产业化进程中，企业普遍面临模型适配、推理性能与成本、服务可靠性、输出质量和安全合规等五大挑战。硅基流动的企业级&nbsp;MaaS 平台，正是针对这些痛点，提供了系统性的解法： 快速引入，一键部署：预集成 100+ 主流开源与闭源大模型，结合多种算力卡推理加速包，实现开箱即用。依托硅基流动公有云能力，新模型最快可在 1–3 天内完成适配并同步至企业私有环境，大幅缩短上线周期。 高性能与低成本兼顾：通过智能路由、自研推理框架和动态扩缩容，实现性能与成本的最优平衡。上下文感知、KV Cache 感知、LoRA 感知等策略，加上算子优化、显存管理与量化加速，大幅提升吞吐并降低延迟。 高可靠与可观测：支持多集群容灾与无缝故障切换，保障服务持续稳定；多维度监控能力则覆盖模型性能、资源使用和业务指标，实现精细化治理。 测评驱动的质量优化：内置测评工具链，支持自定义测评集与结果比对，帮助企业完成模型选型与 Prompt 优化，同时支持一键调优和 Multi-LoRA 推理，进一步节省资源。 企业级安全与合规：通过多租户数据隔离、细粒度权限管控和全链路日志审计，为企业提供全方位的安全与合规保障。 这套能力组合，让企业能够高效、稳定、安全地拥抱大模型技术，并实现规模化落地。 从“试点成功”到“规模化应用” 过",
+      "tags": [],
+      "published_at": "2025-09-22T05:50:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "zh": "硅基流动入局企业级 MaaS，重写大模型落地叙事",
+        "en": "Silicon-based Flow enters the enterprise MaaS sector, rewriting the narrative for large model implementation.",
+        "es": "Silicon-based Flow entra en el MaaS empresarial, reescribiendo la narrativa de implementación de modelos grandes."
+      },
+      "excerpt_i18n": {
+        "zh": "2025 年，AI 大模型已从“概念验证”走到“价值兑现”的关键阶段。 越来越多企业开始思考：大模型不仅要能用，还要真正带来业务效率的提升与成本的可控。在这一背景下，硅基流动推出了企业级 MaaS平台。 作为覆盖算力纳管、模型训练、推理部署到场景应用的全链路解决方案，回应了大模型产业化落地的五大核心矛盾：适配速度、性能与成本、可靠性、质量、以及安全合规。不仅帮企业解决了落地过程中的关键挑战，更为产业提供了一套能够规模化复制的智能基础设施。 &nbsp; 破解大模型落地的五大挑战 大模型的产业化进程中，企业普遍面临模型适配、推理性能与成本、服务可靠性、输出质量和安全合规等五大挑战。硅基流动的企业级&nbsp;MaaS 平台，正是针对这些痛点，提供了系统性的解法： 快速引入，一键部署：预集成 100+ 主流开源与闭源大模型，结合多种算力卡推理加速包，实现开箱即用。依托硅基流动公有云能力，新模型最快可在 1–3 天内完成适配并同步至企业私有环境，大幅缩短上线周期。 高性能与低成本兼顾：通过智能路由、自研推理框架和动态扩缩容，实现性能与成本的最优平衡。上下文感知、KV Cache 感知、LoRA 感知等策略，加上算子优化、显存管理与量化加速，大幅提升吞吐并降低延迟。 高可靠与可观测：支持多集群容灾与无缝故障切换，保障服务持续稳定；多维度监控能力则覆盖模型性能、资源使用和业务指标，实现精细化治理。 测评驱动的质量优化：内置测评工具链，支持自定义测评集与结果比对，帮助企业完成模型选型与 Prompt 优化，同时支持一键调优和 Multi-LoRA 推理，进一步节省资源。 企业级安全与合规：通过多租户数据隔离、细粒度权限管控和全链路日志审计，为企业提供全方位的安全与合规保障。 这套能力组合，让企业能够高效、稳定、安全地拥抱大模型技术，并实现规模化落地。 从“试点成功”到“规模化应用” 过",
+        "en": "By 2025, AI large models have entered a critical phase of transitioning from \"proof of concept\" to \"value realization.\" More and more enterprises are beginning to consider that large models must not only be usable but also genuinely enhance business efficiency and ensure controllable costs. Against this backdrop, Silicon-based Flow has launched an enterprise-grade MaaS platform. As an end-to-end solution covering computing resource management, model training, inference deployment, and scenario application, it addresses the five core challenges in the industrialization of large models: adaptation speed, performance versus cost, reliability, quality, and security and compliance. It not only helps enterprises overcome key hurdles in implementation but also provides the industry with a scalable and replicable intelligent infrastructure. \n\nAddressing the Five Major Challenges of Large Model Deployment\nIn the industrialization of large models, enterprises commonly face five challenges: model adaptation, inference performance and cost, service reliability, output quality, and security and compliance. Silicon-based Flow's enterprise MaaS platform offers systematic solutions to these pain points:\n- Rapid integration and one-click deployment: Pre-integrated with 100+ mainstream open-source and proprietary large models, combined with various computing card inference acceleration packages, enabling out-of-the-box use. Leveraging Silicon-based Flow's public cloud capabilities, new models can be adapted and synchronized to private enterprise environments in as little as 1–3 days, significantly shortening deployment cycles.\n- Balancing high performance and low cost: Achieves optimal balance between performance and cost through intelligent routing, self-developed inference frameworks, and dynamic scaling. Context-aware, KV Cache-aware, LoRA...",
+        "es": "En 2025, los grandes modelos de IA han entrado en una fase crucial de pasar de la \"prueba de concepto\" a la \"materialización de valor\". Cada vez más empresas empiezan a considerar que estos modelos no solo deben ser utilizables, sino que también deben mejorar realmente la eficiencia operativa y controlar los costes. En este contexto, Silicone Flow ha lanzado una plataforma MaaS empresarial. Como solución integral que abarca desde la gestión de recursos computacionales y el entrenamiento de modelos hasta el despliegue de inferencias y aplicaciones prácticas, aborda las cinco contradicciones clave de la industrialización de los grandes modelos: velocidad de adaptación, rendimiento versus coste, fiabilidad, calidad, y seguridad y cumplimiento normativo. No solo ayuda a las empresas a resolver los desafíos críticos durante la implementación, sino que también proporciona a la industria una infraestructura inteligente escalable y replicable."
+      },
+      "hotness": 0.777617
+    },
+    {
+      "id": "350def00c46e4c0f",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/334929.html",
+      "title": "Data＋AI驱动技术服务升级，腾讯云智能顾问和腾讯云可观测发布全新AI能力，助力客户高效用云",
+      "raw_excerpt": "卓越架构＋Multi-Agent",
+      "tags": [],
+      "published_at": "2025-09-22T03:35:15Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "zh": "Data＋AI驱动技术服务升级，腾讯云智能顾问和腾讯云可观测发布全新AI能力，助力客户高效用云",
+        "en": "Data and AI-driven technology services are being upgraded, with Tencent Cloud Intelligent Advisor and Tencent Cloud Observability launching new AI capabilities to help customers use cloud services more efficiently.",
+        "es": "Los servicios tecnológicos se actualizan impulsados por datos e IA. El Asesor Inteligente de Tencent Cloud y la Observabilidad de Tencent Cloud lanzan nuevas capacidades de IA para ayudar a los clientes a utilizar la nube de manera eficiente."
+      },
+      "excerpt_i18n": {
+        "zh": "卓越架构＋Multi-Agent",
+        "en": "Superior Architecture + Multi-Agent",
+        "es": "Arquitectura Excepcional + Multi-Agente"
+      },
+      "hotness": 0.903363
+    },
+    {
+      "id": "b7f344456b347b4e",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/tada",
+      "title": "TADA: Improved Diffusion Sampling with Training-free Augmented Dynamics",
+      "raw_excerpt": "Diffusion models have demonstrated exceptional capabilities in generating high-fidelity images but typically suffer from inefficient sampling. Many solver designs and noise scheduling strategies have been proposed to dramatically improve sampling speeds. In this paper, we introduce a new sampling method that is up to 186% faster than the current state of the art solver for comparative FID on ImageNet512. This new sampling method is training-free and uses an ordinary differential equation (ODE) solver. The key to our method resides in using higher-dimensional initial noise, allowing to produce…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-22T00:00:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "TADA: Improved Diffusion Sampling with Training-free Augmented Dynamics",
+        "zh": "TADA：通过免训练增强动力学改进扩散采样",
+        "es": "TADA: Muestreo de Difusión Mejorado con Dinámicas Aumentadas sin Entrenamiento"
+      },
+      "excerpt_i18n": {
+        "en": "Diffusion models have demonstrated exceptional capabilities in generating high-fidelity images but typically suffer from inefficient sampling. Many solver designs and noise scheduling strategies have been proposed to dramatically improve sampling speeds. In this paper, we introduce a new sampling method that is up to 186% faster than the current state of the art solver for comparative FID on ImageNet512. This new sampling method is training-free and uses an ordinary differential equation (ODE) solver. The key to our method resides in using higher-dimensional initial noise, allowing to produce…",
+        "zh": "扩散模型在生成高保真图像方面展现出卓越能力，但通常存在采样效率低下的问题。为加速采样过程，研究者已提出多种求解器设计与噪声调度策略。",
+        "es": "Los modelos de difusión han demostrado capacidades excepcionales para generar imágenes de alta fidelidad, pero generalmente adolecen de un muestreo ineficiente. Se han propuesto muchos diseños de solucionadores y estrategias de programación de ruido para abordar"
+      },
+      "hotness": 0.714796
+    },
+    {
+      "id": "0b42c82cf4ad47be",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/on-inductive-biases",
+      "title": "On Inductive Biases That Enable Generalization of Diffusion Transformers",
+      "raw_excerpt": "Recent work studying the generalization of diffusion models with UNet-based denoisers reveals inductive biases that can be expressed via geometry-adaptive harmonic bases. However, in practice, more recent denoising networks are often based on transformers, e.g., the diffusion transformer (DiT). This raises the question: do transformer-based denoising networks exhibit inductive biases that can also be expressed via geometry-adaptive harmonic bases? To our surprise, we find that this is not the case. This discrepancy motivates our search for the inductive bias that can lead to good…",
+      "tags": [
+        "Funding",
+        "Research"
+      ],
+      "published_at": "2025-09-22T00:00:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "On Inductive Biases That Enable Generalization of Diffusion Transformers",
+        "zh": "扩散变换器的归纳偏置促进泛化能力",
+        "es": "Sesgos inductivos que permiten la generalización de transformadores de difusión"
+      },
+      "excerpt_i18n": {
+        "en": "Recent work studying the generalization of diffusion models with UNet-based denoisers reveals inductive biases that can be expressed via geometry-adaptive harmonic bases. However, in practice, more recent denoising networks are often based on transformers, e.g., the diffusion transformer (DiT). This raises the question: do transformer-based denoising networks exhibit inductive biases that can also be expressed via geometry-adaptive harmonic bases? To our surprise, we find that this is not the case. This discrepancy motivates our search for the inductive bias that can lead to good…",
+        "zh": "近期研究通过基于UNet的去噪器探讨扩散模型的泛化性，揭示了可通过几何自适应调和基表达的归纳偏置。然而实际应用中，较新的去噪网络架构已展现出更优性能。",
+        "es": "Los trabajos recientes que estudian la generalización de modelos de difusión con desruidores basados en UNet revelan sesgos inductivos que pueden expresarse mediante bases armónicas adaptativas a la geometría. Sin embargo, en la práctica, las redes de desruido más recientes"
+      },
+      "hotness": 0.714796
+    },
+    {
+      "id": "6d84690369c4dfe1",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/mobileclip2",
+      "title": "MobileCLIP2: Improving Multi-Modal Reinforced Training",
+      "raw_excerpt": "This paper received Featured Certification from Transactions on Machine Learning Research (TMLR) 2025.\nFoundation image-text models such as CLIP with zero-shot capabilities enable a wide array of applications. MobileCLIP is a recent family of image-text models at 3-15ms latency and 50-150M parameters with state-of-the-art zero-shot accuracy. The main ingredients in MobileCLIP were its low-latency and light architectures and a novel multi-modal reinforced training that made knowledge distillation from multiple caption-generators and CLIP teachers efficient, scalable, and reproducible. In this…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-22T00:00:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "MobileCLIP2: Improving Multi-Modal Reinforced Training",
+        "zh": "MobileCLIP2：增强多模态强化训练",
+        "es": "MobileCLIP2: Mejora del Entrenamiento Reforzado Multimodal"
+      },
+      "excerpt_i18n": {
+        "en": "This paper received Featured Certification from Transactions on Machine Learning Research (TMLR) 2025.\nFoundation image-text models such as CLIP with zero-shot capabilities enable a wide array of applications. MobileCLIP is a recent family of image-text models at 3-15ms latency and 50-150M parameters with state-of-the-art zero-shot accuracy. The main ingredients in MobileCLIP were its low-latency and light architectures and a novel multi-modal reinforced training that made knowledge distillation from multiple caption-generators and CLIP teachers efficient, scalable, and reproducible. In this…",
+        "zh": "该论文获得2025年机器学习研究汇刊（TMLR）特色认证。具备零样本能力的CLIP等基础图文模型支撑着广泛的应用场景。MobileCLIP",
+        "es": "Este artículo recibió la Certificación Destacada de Transactions on Machine Learning Research (TMLR) 2025.\nLos modelos fundacionales de imagen-texto como CLIP con capacidades zero-shot permiten una amplia gama de aplicaciones. MobileCLIP"
+      },
+      "hotness": 0.714796
+    },
+    {
+      "id": "32676f56b6693541",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/discrete-neural-flow",
+      "title": "Discrete Neural Flow Samplers with Locally Equivariant Transformer",
+      "raw_excerpt": "Sampling from unnormalised discrete distributions is a fundamental problem across various domains. While Markov chain Monte Carlo offers a principled approach, it often suffers from slow mixing and poor convergence. In this paper, we propose Discrete Neural Flow Samplers (DNFS), a trainable and efficient framework for discrete sampling. DNFS learns the rate matrix of a continuous-time Markov chain such that the resulting dynamics satisfy the Kolmogorov equation. As this objective involves the intractable partition function, we then employ control variates to reduce the variance of its Monte…",
+      "tags": [
+        "Research",
+        "Tools"
+      ],
+      "published_at": "2025-09-22T00:00:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "Discrete Neural Flow Samplers with Locally Equivariant Transformer",
+        "zh": "局部等变变换器的离散神经流采样器",
+        "es": "Muestreadores de Flujo Neural Discreto con Transformador Localmente Equivariante"
+      },
+      "excerpt_i18n": {
+        "en": "Sampling from unnormalised discrete distributions is a fundamental problem across various domains. While Markov chain Monte Carlo offers a principled approach, it often suffers from slow mixing and poor convergence. In this paper, we propose Discrete Neural Flow Samplers (DNFS), a trainable and efficient framework for discrete sampling. DNFS learns the rate matrix of a continuous-time Markov chain such that the resulting dynamics satisfy the Kolmogorov equation. As this objective involves the intractable partition function, we then employ control variates to reduce the variance of its Monte…",
+        "zh": "从未归一化离散分布中采样是各领域的基础问题。马尔可夫链蒙特卡罗虽提供理论方法，但常存在混合缓慢与收敛不佳的问题。",
+        "es": "El muestreo de distribuciones discretas no normalizadas es un problema fundamental en diversos ámbitos. Aunque las cadenas de Markov Monte Carlo ofrecen un enfoque basado en principios, a menudo adolecen de una lenta mezcla y una pobre convergencia. En t"
+      },
+      "hotness": 0.714796
+    },
+    {
+      "id": "7da6829cac7d4f20",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/flexible-language-modeling",
+      "title": "Flexible Language Modeling in Continuous Space with Transformer-based Autoregressive Flows",
+      "raw_excerpt": "Autoregressive models have driven remarkable progress in language modeling. Their foundational reliance on discrete tokens, unidirectional context, and single-pass decoding, while central to their success, also inspires the exploration of a design space that could offer new axes of modeling flexibility. In this work, we explore an alternative paradigm, shifting language modeling from a discrete token space to a continuous latent space. We propose a novel framework TarFlowLM, that employs transformer-based autoregressive normalizing flows to model these continuous representations. This approach…",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-22T00:00:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "Flexible Language Modeling in Continuous Space with Transformer-based Autoregressive Flows",
+        "zh": "基于Transformer自回归流的连续空间灵活语言建模",
+        "es": "Modelado Flexible del Lenguaje en Espacio Continuo con Flujos Autoregresivos Basados en Transformadores"
+      },
+      "excerpt_i18n": {
+        "en": "Autoregressive models have driven remarkable progress in language modeling. Their foundational reliance on discrete tokens, unidirectional context, and single-pass decoding, while central to their success, also inspires the exploration of a design space that could offer new axes of modeling flexibility. In this work, we explore an alternative paradigm, shifting language modeling from a discrete token space to a continuous latent space. We propose a novel framework TarFlowLM, that employs transformer-based autoregressive normalizing flows to model these continuous representations. This approach…",
+        "zh": "自回归模型在语言建模领域取得了显著进展。其核心依赖于离散标记、单向上下文和单次解码机制，这些特性既是成功的关键，也催生了",
+        "es": "Los modelos autoregresivos han impulsado un progreso notable en el modelado del lenguaje. Su dependencia fundamental de tokens discretos, contexto unidireccional y decodificación en una sola pasada, aunque central para su éxito, también inspira"
+      },
+      "hotness": 0.714796
+    },
+    {
+      "id": "ae046f29ef6e62a8",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/unigen-enhanced-training",
+      "title": "UniGen: Enhanced Training & Test-Time Strategies for Unified Multimodal Understanding and Generation",
+      "raw_excerpt": "We introduce UniGen, a unified multimodal large language model (MLLM) capable of image understanding and generation. We study the full training pipeline of UniGen from a data-centric perspective, including multi-stage pre-training, supervised fine-tuning, and direct preference optimization. More importantly, we propose a new Chain-of-Thought Verification (CoT-V) strategy for test-time scaling, which significantly boosts UniGen’s image generation quality using a simple Best-of-N test-time strategy. Specifically, CoT-V enables UniGen to act as both image generator and verifier at test time…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-22T00:00:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "UniGen: Enhanced Training & Test-Time Strategies for Unified Multimodal Understanding and Generation",
+        "zh": "UniGen：统一多模态理解与生成的增强训练及测试时策略",
+        "es": "UniGen: Estrategias Mejoradas de Entrenamiento y en Tiempo de Prueba para la Comprensión y Generación Multimodal Unificada"
+      },
+      "excerpt_i18n": {
+        "en": "We introduce UniGen, a unified multimodal large language model (MLLM) capable of image understanding and generation. We study the full training pipeline of UniGen from a data-centric perspective, including multi-stage pre-training, supervised fine-tuning, and direct preference optimization. More importantly, we propose a new Chain-of-Thought Verification (CoT-V) strategy for test-time scaling, which significantly boosts UniGen’s image generation quality using a simple Best-of-N test-time strategy. Specifically, CoT-V enables UniGen to act as both image generator and verifier at test time…",
+        "zh": "我们推出UniGen，这是一个统一的多模态大语言模型，能够实现图像理解与生成。我们从数据中心的视角研究了UniGen的完整训练流程，包括多阶段预训练。",
+        "es": "Presentamos UniGen, un modelo de lenguaje grande multimodal unificado (MLLM) capaz de comprender y generar imágenes. Estudiamos la canalización completa de entrenamiento de UniGen desde una perspectiva centrada en los datos, incluyendo el preentrenamiento"
+      },
+      "hotness": 0.714796
+    },
+    {
+      "id": "a01e8f56ac39639d",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/follow-the-energy",
+      "title": "Follow the Energy, Find the Path: Riemannian Metrics from Energy-Based Models",
+      "raw_excerpt": "What is the shortest path between two data points lying in a high-dimensional space? While the answer is trivial in Euclidean geometry, it becomes significantly more complex when the data lies on a curved manifold — requiring a Riemannian metric to describe the space’s local curvature. Estimating such a metric, however, remains a major challenge in high dimensions. In this work, we propose a method for deriving Riemannian metrics directly from pretrained Energy-Based Models (EBMs) — a class of generative models that assign low energy to high-density regions. These metrics define spatially…",
+      "tags": [],
+      "published_at": "2025-09-22T00:00:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "Follow the Energy, Find the Path: Riemannian Metrics from Energy-Based Models",
+        "zh": "循能觅径：基于能量模型的黎曼度量",
+        "es": "Sigue la Energía, Encuentra el Camino: Métricas Riemannianas a partir de Modelos Basados en Energía"
+      },
+      "excerpt_i18n": {
+        "en": "What is the shortest path between two data points lying in a high-dimensional space? While the answer is trivial in Euclidean geometry, it becomes significantly more complex when the data lies on a curved manifold — requiring a Riemannian metric to describe the space’s local curvature. Estimating such a metric, however, remains a major challenge in high dimensions. In this work, we propose a method for deriving Riemannian metrics directly from pretrained Energy-Based Models (EBMs) — a class of generative models that assign low energy to high-density regions. These metrics define spatially…",
+        "zh": "高维空间中两个数据点之间的最短路径是什么？在欧几里得几何中答案显而易见，但当数据位于弯曲流形上时问题会变得复杂许多——",
+        "es": "¿Cuál es el camino más corto entre dos puntos de datos situados en un espacio de alta dimensión? Si bien la respuesta es trivial en la geometría euclidiana, se vuelve significativamente más compleja cuando los datos se encuentran en una variedad curva, lo que requ..."
+      },
+      "hotness": 0.714796
+    },
+    {
+      "id": "3931135c938458cc",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/guiding-cross-modal",
+      "title": "Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment",
+      "raw_excerpt": "Despite Contrastive Language-Image Pretraining (CLIP)‘s remarkable capability to retrieve content across modalities, a substantial modality gap persists in its feature space. Intriguingly, we discover that off-the-shelf MLLMs (Multimodal Large Language Models) demonstrate powerful inherent modality alignment properties. While recent MLLM-based retrievers with unified architectures partially mitigate this gap, their reliance on coarse modality alignment mechanisms fundamentally limits their potential. In this work, We introduce MAPLE (Modality-Aligned Preference Learning for Embeddings), a…",
+      "tags": [],
+      "published_at": "2025-09-22T00:00:00Z",
+      "fetched_at": "2025-09-22T23:14:42.876601Z",
+      "title_i18n": {
+        "en": "Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment",
+        "zh": "基于偏好对齐的MLLM先验引导跨模态表征",
+        "es": "Guiando Representaciones Cross-Modal con Priores MLLM mediante Alineación de Preferencias"
+      },
+      "excerpt_i18n": {
+        "en": "Despite Contrastive Language-Image Pretraining (CLIP)‘s remarkable capability to retrieve content across modalities, a substantial modality gap persists in its feature space. Intriguingly, we discover that off-the-shelf MLLMs (Multimodal Large Language Models) demonstrate powerful inherent modality alignment properties. While recent MLLM-based retrievers with unified architectures partially mitigate this gap, their reliance on coarse modality alignment mechanisms fundamentally limits their potential. In this work, We introduce MAPLE (Modality-Aligned Preference Learning for Embeddings), a…",
+        "zh": "尽管对比语言-图像预训练（CLIP）在跨模态内容检索方面表现出卓越能力，但其特征空间仍存在显著的模态差异。有趣的是，我们发现现成的",
+        "es": "A pesar de la notable capacidad de Contrastive Language-Image Pretraining (CLIP) para recuperar contenido entre modalidades, persiste una brecha modal sustancial en su espacio de características. Curiosamente, descubrimos que los modelos disponibles"
+      },
+      "hotness": 0.714796
     }
   ]
 }
