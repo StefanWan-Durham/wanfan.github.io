@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-22T23:15:03.686524Z",
+  "generated_at": "2025-09-23T23:14:58.007034Z",
   "window_hours": 48,
-  "count": 31,
+  "count": 50,
   "items": [
     {
       "id": "f9ff7a935d89a019",
@@ -721,6 +721,482 @@
         "es": "Hacer clic para ver el texto original>"
       },
       "hotness": 0.913686
+    },
+    {
+      "id": "6be0c0afb5b01db3",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/Xc1pH6JxKvgK7zFI8wFy",
+      "title": "从技能到机遇：Snowflake 免费培训，帮你抢占 AI 数据人才快车道",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-23T15:13:08Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "zh": "从技能到机遇：Snowflake 免费培训，帮你抢占 AI 数据人才快车道",
+        "en": "From Skills to Opportunities: Snowflake's Free Training to Fast-Track Your Career as an AI Data Professional",
+        "es": "De las habilidades a las oportunidades: formación gratuita de Snowflake para impulsar tu carrera en el talento de datos para IA."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.890506
+    },
+    {
+      "id": "9bcf01c123efe0fa",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://verialabs.com/blog/from-mcp-to-shell/",
+      "title": "From MCP to shell: MCP auth flaws enable RCE in Claude Code, Gemini CLI and more",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T15:09:50Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "From MCP to shell: MCP auth flaws enable RCE in Claude Code, Gemini CLI and more",
+        "zh": "从MCP到Shell：MCP认证漏洞导致Claude Code、Gemini CLI等多款工具存在远程代码执行风险",
+        "es": "De MCP a shell: las vulnerabilidades de autenticación de MCP permiten la ejecución remota de código en Claude Code, Gemini CLI y más"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.889799
+    },
+    {
+      "id": "0cb900ba039c94e9",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://news.ycombinator.com/item?id=45347914",
+      "title": "Launch HN: Strata (YC X25) – One MCP server for AI to handle thousands of tools",
+      "raw_excerpt": "Hey HN! We are Klavis AI ( https://www.klavis.ai/ ) and we're launching Strata, one open-source MCP server that helps AI agents use thousands of API tools without getting overwhelmed. Instead of showing all available tools at once, Strata reveals them step-by-step based on what the AI actually needs. As a former Senior SWE on Google Gemini 's tool use team, I saw firsthand how AI would struggle with tools. If you've built AI agents, you've likely hit the same walls: (1) AI agents struggle to pick the right API from hundreds of options. (2) Tool descriptions and info consume massive token budgets. (3) Most servers cap at 40~50 tools to avoid these problems, limiting what you can build. Instead of flooding the AI with everything upfront, Strata works like a human would. It guides the AI agen",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-23T14:52:07Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Launch HN: Strata (YC X25) – One MCP server for AI to handle thousands of tools",
+        "zh": "HN发布：Strata（YC X25）——单一MCP服务器让AI处理数千种工具",
+        "es": "Lanzamiento HN: Strata (YC X25) – Un único servidor MCP para que la IA maneje miles de herramientas"
+      },
+      "excerpt_i18n": {
+        "en": "Hey HN! We are Klavis AI ( https://www.klavis.ai/ ) and we're launching Strata, one open-source MCP server that helps AI agents use thousands of API tools without getting overwhelmed. Instead of showing all available tools at once, Strata reveals them step-by-step based on what the AI actually needs. As a former Senior SWE on Google Gemini 's tool use team, I saw firsthand how AI would struggle with tools. If you've built AI agents, you've likely hit the same walls: (1) AI agents struggle to pick the right API from hundreds of options. (2) Tool descriptions and info consume massive token budgets. (3) Most servers cap at 40~50 tools to avoid these problems, limiting what you can build. Instead of flooding the AI with everything upfront, Strata works like a human would. It guides the AI agen",
+        "zh": "大家好！我们是Klavis AI（https://www.klavis.ai/），正式推出开源MCP服务器Strata。它能帮助AI代理调用数千个API工具而不会造成信息过载，通过智能筛选替代全量展示可用工具的方式。",
+        "es": "¡Hola HN! Somos Klavis AI ( https://www.klavis.ai/ ) y estamos lanzando Strata, un servidor MCP de código abierto que ayuda a los agentes de IA a utilizar miles de herramientas API sin agobiarse. En lugar de mostrar todas las herramientas disponibles"
+      },
+      "hotness": 0.886013
+    },
+    {
+      "id": "f6a9def85f021dce",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md",
+      "title": "Getting AI to work in complex codebases",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T14:27:36Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Getting AI to work in complex codebases",
+        "zh": "在复杂代码库中实现人工智能应用",
+        "es": "Lograr que la inteligencia artificial funcione en bases de código complejas"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 1.101
+    },
+    {
+      "id": "552af16dffb0e929",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/index/five-new-stargate-sites",
+      "title": "OpenAI, Oracle, and SoftBank expand Stargate with five new AI datacenter sites",
+      "raw_excerpt": "OpenAI, Oracle, and SoftBank announce five new Stargate AI datacenter sites, accelerating a $500B, 10-gigawatt U.S. infrastructure buildout to power next-generation AI and create tens of thousands of jobs.",
+      "tags": [],
+      "published_at": "2025-09-23T14:00:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "OpenAI, Oracle, and SoftBank expand Stargate with five new AI datacenter sites",
+        "zh": "OpenAI、甲骨文和软银将Stargate项目扩展至五个新的人工智能数据中心站点。",
+        "es": "OpenAI, Oracle y SoftBank amplían Stargate con cinco nuevos emplazamientos de centros de datos de inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": "OpenAI, Oracle, and SoftBank announce five new Stargate AI datacenter sites, accelerating a $500B, 10-gigawatt U.S. infrastructure buildout to power next-generation AI and create tens of thousands of jobs.",
+        "zh": "OpenAI、甲骨文和软银宣布新增五个星际之门人工智能数据中心站点，加速推进美国5000亿美元、10吉瓦的基础设施建设，以支持下一代人工智能发展并创造数万个就业岗位。",
+        "es": "OpenAI, Oracle y SoftBank anuncian cinco nuevas ubicaciones para centros de datos de IA Stargate, acelerando un despliegue de infraestructura estadounidense de 500.000 millones de dólares y 10 gigavatios para impulsar la inteligencia artificial de próxima generación y crear decenas de miles de empleos."
+      },
+      "hotness": 1.39995
+    },
+    {
+      "id": "85fdf4b66b9f3c6e",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/3AJq0UTJorHo6sItLtgp",
+      "title": "为 Coding Agent 构建智能上下文：Qoder 的 Context Engineering 实践｜QCon 上海",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-23T13:00:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "zh": "为 Coding Agent 构建智能上下文：Qoder 的 Context Engineering 实践｜QCon 上海",
+        "en": "Building Intelligent Context for Coding Agents: Qoder's Context Engineering Practice at QCon Shanghai",
+        "es": "Construcción de contexto inteligente para Coding Agent: Práctica de Context Engineering de Qoder en QCon Shanghái"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.862424
+    },
+    {
+      "id": "1e78eef501c074be",
+      "source": {
+        "site": "http://36kr.com",
+        "feed": "https://36kr.com/feed-newsflash"
+      },
+      "url": "https://36kr.com/newsflashes/3479301344385926?f=rss",
+      "title": "梅赛德斯-奔驰与字节跳动升级战略合作：覆盖智舱、智驾、营销等领域",
+      "raw_excerpt": "36氪获悉，今日，梅赛德斯-奔驰（中国）投资有限公司与北京字跳网络技术有限公司宣布签署升级战略合作备忘录，共同推动人工智能（AI）技术的跨业务融合。此次战略合作覆盖从智能辅助驾驶、智能座舱、智能化研发、数字化营销到客户运营的各个业务领域。",
+      "tags": [],
+      "published_at": "2025-09-23T12:48:21Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "zh": "梅赛德斯-奔驰与字节跳动升级战略合作：覆盖智舱、智驾、营销等领域",
+        "en": "Mercedes-Benz and ByteDance have upgraded their strategic partnership to encompass intelligent cockpit systems, autonomous driving technology, and marketing sectors.",
+        "es": "Mercedes-Benz y ByteDance amplían su colaboración estratégica: abarcando áreas como cabina inteligente, conducción autónoma y marketing."
+      },
+      "excerpt_i18n": {
+        "zh": "36氪获悉，今日，梅赛德斯-奔驰（中国）投资有限公司与北京字跳网络技术有限公司宣布签署升级战略合作备忘录，共同推动人工智能（AI）技术的跨业务融合。此次战略合作覆盖从智能辅助驾驶、智能座舱、智能化研发、数字化营销到客户运营的各个业务领域。",
+        "en": "According to 36Kr, Mercedes-Benz (China) Investment Co., Ltd. and Beijing Zitiao Network Technology Co., Ltd. announced today the signing of an upgraded strategic cooperation memorandum to jointly promote the cross-business integration of artificial intelligence (AI) technology. This strategic collaboration spans various business areas, including intelligent assisted driving, smart cockpits, intelligent R&D, digital marketing, and customer operations.",
+        "es": "Según 36Kr, hoy, Mercedes-Benz (China) Investment Co., Ltd. y Beijing Zitiao Network Technology Co., Ltd. anunciaron la firma de un memorándum de cooperación estratégica actualizado para impulsar conjuntamente la integración transversal de la tecnología de inteligencia artificial en diversos negocios. Esta colaboración estratégica abarca áreas como conducción asistente inteligente, cabina inteligente, desarrollo de inteligencia, marketing digital y operaciones de clientes."
+      },
+      "hotness": 0.86001
+    },
+    {
+      "id": "a83b785171476631",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/23/1123921/the-download-ais-retracted-papers-problem/",
+      "title": "The Download: AI’s retracted papers problem",
+      "raw_excerpt": "This is today&#8217;s edition of&#160;The Download,&#160;our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. AI models are using material from retracted scientific papers The news:&#160;Some AI chatbots rely on flawed research from retracted scientific papers to answer questions, according to recent studies. In one such study, researchers&#8230;",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T12:10:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "The Download: AI’s retracted papers problem",
+        "zh": "下载：人工智能领域的论文撤稿问题",
+        "es": "La Descarga: El problema de los artículos retirados de la IA"
+      },
+      "excerpt_i18n": {
+        "en": "This is today&#8217;s edition of&#160;The Download,&#160;our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. AI models are using material from retracted scientific papers The news:&#160;Some AI chatbots rely on flawed research from retracted scientific papers to answer questions, according to recent studies. In one such study, researchers&#8230;",
+        "zh": "这是今日版《下载》，我们的工作日通讯，每日提供科技界动态。人工智能模型正在使用已撤稿科学论文的材料。",
+        "es": "Esta es la edición de hoy de The Download, nuestro boletín diario que ofrece una dosis cotidiana de lo que ocurre en el mundo de la tecnología. Los modelos de IA están utilizando material de artículos científicos retractados."
+      },
+      "hotness": 1.02253
+    },
+    {
+      "id": "25e62f12eefb1f56",
+      "source": {
+        "site": "https://about.fb.com/news/",
+        "feed": "https://about.fb.com/news/feed/"
+      },
+      "url": "https://about.fb.com/news/2025/09/meta-supporting-us-national-security-with-ai/",
+      "title": "How Meta Is Supporting US National Security With AI",
+      "raw_excerpt": "Since making Llama AI models available to US government agencies and their contractors, a wide variety of organizations have adopted this technology to bolster our nation’s security. Today, dozens of industry stakeholders use Llama to empower America’s military and intelligence community with advanced, bespoke, and secure tools for their critical work. Partners like Amazon Web Services and Snowflake are expanding access to Llama for America’s military branches in highly sensitive environments and networks. Other partners are leveraging Llama’s capabilities to address the needs of service members and to develop cutting-edge products that advance their missions. Accelerating Innovation Organizations can use Llama to securely build and deploy new applications tailored to their highly speciali",
+      "tags": [
+        "Policy",
+        "Tools",
+        "Industry"
+      ],
+      "published_at": "2025-09-23T12:00:16Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "How Meta Is Supporting US National Security With AI",
+        "zh": "Meta如何利用人工智能支持美国国家安全",
+        "es": "Cómo Meta está apoyando la seguridad nacional de Estados Unidos con IA"
+      },
+      "excerpt_i18n": {
+        "en": "Since making Llama AI models available to US government agencies and their contractors, a wide variety of organizations have adopted this technology to bolster our nation’s security. Today, dozens of industry stakeholders use Llama to empower America’s military and intelligence community with advanced, bespoke, and secure tools for their critical work. Partners like Amazon Web Services and Snowflake are expanding access to Llama for America’s military branches in highly sensitive environments and networks. Other partners are leveraging Llama’s capabilities to address the needs of service members and to develop cutting-edge products that advance their missions. Accelerating Innovation Organizations can use Llama to securely build and deploy new applications tailored to their highly speciali",
+        "zh": "自Llama人工智能模型向美国政府机构及其承包商开放以来，众多组织已采用该技术以加强国家安全。目前已有数十家行业相关方",
+        "es": "Desde que se pusieron a disposición de las agencias gubernamentales estadounidenses y sus contratistas los modelos de IA Llama, una amplia variedad de organizaciones han adoptado esta tecnología para reforzar la seguridad de nuestra nación. Actualmente, docenas de actores clave de la industria"
+      },
+      "hotness": 0.850115
+    },
+    {
+      "id": "3a263ee0131b25f1",
+      "source": {
+        "site": "https://blogs.nvidia.com/",
+        "feed": "https://blogs.nvidia.com/feed/"
+      },
+      "url": "https://blogs.nvidia.com/blog/ai-energy-innovation-climate-research/",
+      "title": "At Climate Week NYC, NVIDIA Details AI’s Key Role in the Sustainable Energy Transition",
+      "raw_excerpt": "Energy efficiency in large language model inference has improved 100,000x in the past 10 years — demonstrating that accelerated computing is sustainable computing. At Climate Week NYC, taking place through Sept. 26 in New York City, NVIDIA is showcasing how accelerated computing is propelling the sustainable energy transition and advancing climate research. The summit brings Read Article",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T10:00:45Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "At Climate Week NYC, NVIDIA Details AI’s Key Role in the Sustainable Energy Transition",
+        "zh": "在纽约气候周上，英伟达详述人工智能在可持续能源转型中的关键作用。",
+        "es": "En la Semana del Clima de Nueva York, NVIDIA detalla el papel clave de la IA en la transición energética sostenible."
+      },
+      "excerpt_i18n": {
+        "en": "Energy efficiency in large language model inference has improved 100,000x in the past 10 years — demonstrating that accelerated computing is sustainable computing. At Climate Week NYC, taking place through Sept. 26 in New York City, NVIDIA is showcasing how accelerated computing is propelling the sustainable energy transition and advancing climate research. The summit brings Read Article",
+        "zh": "过去十年间，大型语言模型推理能效提升十万倍，这证明加速计算即是可持续计算。纽约气候周活动将持续至9月26日。",
+        "es": "La eficiencia energética en la inferencia de modelos lingüísticos grandes ha mejorado 100.000 veces en los últimos 10 años, lo que demuestra que la computación acelerada es computación sostenible. En la Semana del Clima de Nueva York, que se celebra hasta el 26 de septiembre en Ne"
+      },
+      "hotness": 0.82601
+    },
+    {
+      "id": "47fe5e1befe4ec0e",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/335455.html",
+      "title": "从技术闭环到场景落地：商汤大装置的AI Agent Infra实践",
+      "raw_excerpt": "加速智能时代创新效能",
+      "tags": [],
+      "published_at": "2025-09-23T09:27:55Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "zh": "从技术闭环到场景落地：商汤大装置的AI Agent Infra实践",
+        "en": "From Technical Closure to Scenario Implementation: SenseTime's AI Agent Infrastructure Practices",
+        "es": "Del cierre técnico a la aplicación en escenarios: la práctica de Infraestructura de Agentes de IA en la Plataforma SenseCore de SenseTime"
+      },
+      "excerpt_i18n": {
+        "zh": "加速智能时代创新效能",
+        "en": "Accelerating Innovation Efficiency in the Age of Intelligence",
+        "es": "Acelerar la eficacia innovadora en la era inteligente"
+      },
+      "hotness": 0.98341
+    },
+    {
+      "id": "62619b89fd29e6fc",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/335390.html",
+      "title": "全是套路！英伟达千亿美元投OpenAI，奥特曼拿钱买卡还让甲骨文赚差价",
+      "raw_excerpt": "英伟达+OpenAI+甲骨文，玩转AI圈千亿三角循环",
+      "tags": [],
+      "published_at": "2025-09-23T01:31:34Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "zh": "全是套路！英伟达千亿美元投OpenAI，奥特曼拿钱买卡还让甲骨文赚差价",
+        "en": "It's all a calculated move! Nvidia invests hundreds of billions in OpenAI, Altman uses the funds to buy chips while Oracle profits from the markup.",
+        "es": "¡Todo es una estrategia! Nvidia invierte cien mil millones de dólares en OpenAI, Altman usa el dinero para comprar tarjetas y deja que Oracle gane la diferencia."
+      },
+      "excerpt_i18n": {
+        "zh": "英伟达+OpenAI+甲骨文，玩转AI圈千亿三角循环",
+        "en": "NVIDIA, OpenAI, and Oracle form a trillion-dollar AI triangle cycle.",
+        "es": "Nvidia, OpenAI y Oracle dominan el círculo de billones de la IA en un triángulo estratégico."
+      },
+      "hotness": 0.876888
+    },
+    {
+      "id": "3dfa208918f507b9",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/classifier-free-guidance",
+      "title": "Classifier-Free Guidance is a Predictor-Corrector",
+      "raw_excerpt": "We investigate the theoretical foundations of classifier-free guidance (CFG). CFG is the dominant method of conditional sampling for text-to-image diffusion models, yet unlike other aspects of diffusion, it remains on shaky theoretical footing. In this paper, we disprove common misconceptions, by showing that CFG interacts differently with DDPM (Ho et al., 2020) and DDIM (Song et al., 2021), and neither sampler with CFG generates the gamma-powered distribution p(x|c)^γp(x)^{1−γ}. Then, we clarify the behavior of CFG by showing that it is a kind of predictor-corrector method (Song et al., 2020)…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T00:00:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Classifier-Free Guidance is a Predictor-Corrector",
+        "zh": "无分类器引导是一种预测器-校正器",
+        "es": "La Guía Libre de Clasificador es un Predictor-Corrector"
+      },
+      "excerpt_i18n": {
+        "en": "We investigate the theoretical foundations of classifier-free guidance (CFG). CFG is the dominant method of conditional sampling for text-to-image diffusion models, yet unlike other aspects of diffusion, it remains on shaky theoretical footing. In this paper, we disprove common misconceptions, by showing that CFG interacts differently with DDPM (Ho et al., 2020) and DDIM (Song et al., 2021), and neither sampler with CFG generates the gamma-powered distribution p(x|c)^γp(x)^{1−γ}. Then, we clarify the behavior of CFG by showing that it is a kind of predictor-corrector method (Song et al., 2020)…",
+        "zh": "我们研究无分类器引导的理论基础。该方法作为文生图扩散模型的主流条件采样技术，虽在扩散模型其他环节已有深入探索，其理论机制仍待完善。",
+        "es": "Investigamos los fundamentos teóricos de la guía sin clasificador (CFG). CFG es el método dominante de muestreo condicional para modelos de difusión de texto a imagen, y sin embargo, a diferencia de otros aspectos de la difusión, permanece sobre"
+      },
+      "hotness": 0.714812
+    },
+    {
+      "id": "0b7da1dfe4d9cda6",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/lens-of-indistinguishability",
+      "title": "Calibration through the Lens of Indistinguishability",
+      "raw_excerpt": "Calibration is a classical notion from the forecasting literature which aims to address the question: how should predicted probabilities be interpreted? In a world where we only get to observe (discrete) outcomes, how should we evaluate a predictor that hypothesizes (continuous) probabilities over possible outcomes? The study of calibration has seen a surge of recent interest, given the ubiquity of probabilistic predictions in machine learning. This survey describes recent work on the foundational questions of how to define and measure calibration error, and what these measures mean for…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T00:00:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Calibration through the Lens of Indistinguishability",
+        "zh": "基于不可区分性的校准",
+        "es": "Calibración a través del Lente de la Indistinguibilidad"
+      },
+      "excerpt_i18n": {
+        "en": "Calibration is a classical notion from the forecasting literature which aims to address the question: how should predicted probabilities be interpreted? In a world where we only get to observe (discrete) outcomes, how should we evaluate a predictor that hypothesizes (continuous) probabilities over possible outcomes? The study of calibration has seen a surge of recent interest, given the ubiquity of probabilistic predictions in machine learning. This survey describes recent work on the foundational questions of how to define and measure calibration error, and what these measures mean for…",
+        "zh": "校准是预测文献中的经典概念，旨在解决这个问题：预测概率应如何解读？在我们只能观察到离散结果的世界里，如何",
+        "es": "La calibración es un concepto clásico de la literatura sobre predicción que pretende responder a la pregunta: ¿cómo deben interpretarse las probabilidades pronosticadas? En un mundo donde solo podemos observar resultados (discretos), ¿cómo de"
+      },
+      "hotness": 0.714812
+    },
+    {
+      "id": "517e90b2448dc915",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/evaluating-sample-utility",
+      "title": "Evaluating Sample Utility for Data Selection by Mimicking Model Weights",
+      "raw_excerpt": "This paper was accepted at the DataWorld (Data Curation) Workshop at ICML 2025.\nMultimodal models are trained on large-scale web-crawled datasets, which often contain noise, bias, and irrelevant information. This motivates the use of data selection techniques, which can be divided into model-free variants, relying on heuristic rules and downstream datasets, and model-based approaches, such as those using influence functions. The former can be expensive to design and risks introducing unwanted dataset dependencies, while the latter are often computationally prohibitive. In this work, we propose…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T00:00:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Evaluating Sample Utility for Data Selection by Mimicking Model Weights",
+        "zh": "通过模拟模型权重评估数据选择的样本效用",
+        "es": "Evaluación de la utilidad de muestras para la selección de datos mediante la imitación de pesos del modelo"
+      },
+      "excerpt_i18n": {
+        "en": "This paper was accepted at the DataWorld (Data Curation) Workshop at ICML 2025.\nMultimodal models are trained on large-scale web-crawled datasets, which often contain noise, bias, and irrelevant information. This motivates the use of data selection techniques, which can be divided into model-free variants, relying on heuristic rules and downstream datasets, and model-based approaches, such as those using influence functions. The former can be expensive to design and risks introducing unwanted dataset dependencies, while the latter are often computationally prohibitive. In this work, we propose…",
+        "zh": "该论文被ICML 2025数据世界（数据策展）研讨会接收。多模态模型基于大规模网络爬取数据集进行训练，这些数据常包含噪声、偏见及无关信息，这促使",
+        "es": "Este artículo fue aceptado en el Taller DataWorld (Curación de Datos) en ICML 2025.\nLos modelos multimodales se entrenan con conjuntos de datos a gran escala obtenidos mediante rastreo web, que a menudo contienen ruido, sesgos e información irrelevante. Esto motiva"
+      },
+      "hotness": 0.714812
+    },
+    {
+      "id": "0efbb03e9e0ec807",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/atoken",
+      "title": "AToken: A Unified Tokenizer for Vision",
+      "raw_excerpt": "We present AToken, the first unified visual tokenizer that achieves both high-fidelity reconstruction and semantic understanding across images, videos, and 3D assets. Unlike existing tokenizers that specialize in either reconstruction or understanding for single modalities, AToken encodes these diverse visual inputs into a shared 4D latent space, unifying both tasks and modalities in a single framework. Specifically, we introduce a pure transformer architecture with 4D rotary position embeddings to process visual inputs of arbitrary resolutions and temporal durations. To ensure stable…",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-23T00:00:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "AToken: A Unified Tokenizer for Vision",
+        "zh": "AToken：视觉统一分词器",
+        "es": "AToken: Un Tokenizador Unificado para la Visión"
+      },
+      "excerpt_i18n": {
+        "en": "We present AToken, the first unified visual tokenizer that achieves both high-fidelity reconstruction and semantic understanding across images, videos, and 3D assets. Unlike existing tokenizers that specialize in either reconstruction or understanding for single modalities, AToken encodes these diverse visual inputs into a shared 4D latent space, unifying both tasks and modalities in a single framework. Specifically, we introduce a pure transformer architecture with 4D rotary position embeddings to process visual inputs of arbitrary resolutions and temporal durations. To ensure stable…",
+        "zh": "我们推出AToken——首个在图像、视频和3D资产领域同时实现高保真重建与语义理解的统一视觉标记器。与现有仅专注于单一模态的标记器不同，",
+        "es": "Presentamos AToken, el primer tokenizador visual unificado que logra tanto una reconstrucción de alta fidelidad como comprensión semántica en imágenes, vídeos y activos 3D. A diferencia de los tokenizadores existentes que se especializan en"
+      },
+      "hotness": 0.714812
+    },
+    {
+      "id": "3ca19829db2faf47",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/mm-spatial",
+      "title": "MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs",
+      "raw_excerpt": "Multimodal large language models (MLLMs) excel at 2D visual understanding but remain limited in their ability to reason about 3D space. In this work, we leverage large-scale high-quality 3D scene data with open-set annotations to introduce 1) a novel supervised fine-tuning dataset and 2) a new evaluation benchmark, focused on indoor scenes. Our Cubify Anything VQA (CA-VQA) data covers diverse spatial tasks including spatial relationship prediction, metric size and distance estimation, and 3D grounding. We show that CA-VQA enables us to train MM-Spatial, a strong generalist MLLM that also…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T00:00:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs",
+        "zh": "MM-Spatial：探索多模态大语言模型中的三维空间理解能力",
+        "es": "MM-Spatial: Exploración de la comprensión espacial 3D en modelos de lenguaje multimodal"
+      },
+      "excerpt_i18n": {
+        "en": "Multimodal large language models (MLLMs) excel at 2D visual understanding but remain limited in their ability to reason about 3D space. In this work, we leverage large-scale high-quality 3D scene data with open-set annotations to introduce 1) a novel supervised fine-tuning dataset and 2) a new evaluation benchmark, focused on indoor scenes. Our Cubify Anything VQA (CA-VQA) data covers diverse spatial tasks including spatial relationship prediction, metric size and distance estimation, and 3D grounding. We show that CA-VQA enables us to train MM-Spatial, a strong generalist MLLM that also…",
+        "zh": "多模态大语言模型在二维视觉理解方面表现出色，但在三维空间推理能力上仍存在局限。本研究利用具有开放集标注的大规模高质量三维场景数据，",
+        "es": "Los modelos lingüísticos multimodales de gran escala destacan en la comprensión visual bidimensional, pero siguen teniendo limitaciones en su capacidad para razonar sobre el espacio tridimensional. En este trabajo, aprovechamos datos de escenas tridimensionales a gran escala y de alta calidad con anotaciones de conjunto abierto."
+      },
+      "hotness": 0.714812
+    },
+    {
+      "id": "80171a479f71deb6",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/updates/nlis-workshop-2025",
+      "title": "Apple Workshop on Natural Language and Interactive Systems 2025",
+      "raw_excerpt": "Natural language processing (NLP) remains one of the most quickly evolving fields in AI, as new research continues to rapidly advance large language models (LLMs), systems for speech recognition and generation, language agents, and more. This technology is essential to many of today’s AI experiences, including Apple Intelligence and Siri, and fundamental research in NLP will be foundational to future AI.\nApple recently hosted the Workshop on Natural Language and Interactive Systems, bringing together Apple and members of the academic research community for a two-day event focused on recent…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T00:00:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Apple Workshop on Natural Language and Interactive Systems 2025",
+        "zh": "2025年苹果自然语言与交互系统研讨会",
+        "es": "Taller de Apple sobre Lenguaje Natural y Sistemas Interactivos 2025"
+      },
+      "excerpt_i18n": {
+        "en": "Natural language processing (NLP) remains one of the most quickly evolving fields in AI, as new research continues to rapidly advance large language models (LLMs), systems for speech recognition and generation, language agents, and more. This technology is essential to many of today’s AI experiences, including Apple Intelligence and Siri, and fundamental research in NLP will be foundational to future AI.\nApple recently hosted the Workshop on Natural Language and Interactive Systems, bringing together Apple and members of the academic research community for a two-day event focused on recent…",
+        "zh": "自然语言处理（NLP）仍是人工智能中发展最迅速的领域之一，新研究持续快速推动着大型语言模型、语音识别与生成系统的进步。",
+        "es": "El procesamiento del lenguaje natural (PLN) sigue siendo uno de los campos de la inteligencia artificial que evoluciona más rápidamente, ya que las nuevas investigaciones continúan avanzando con rapidez en los modelos de lenguaje extenso (LLM), los sistemas de reconocimiento y generación del habla, y el lenguaje"
+      },
+      "hotness": 0.714812
+    },
+    {
+      "id": "7e92bc0a03c2447f",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/index/cna-walter-fernandez",
+      "title": "CNA is transforming its newsroom with AI",
+      "raw_excerpt": "In this Executive Function series from OpenAI, discover how CNA is transforming its newsroom with AI. Editor-in-Chief Walter Fernandez shares insights on AI adoption, culture, and the future of journalism.",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-22T17:17:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "CNA is transforming its newsroom with AI",
+        "zh": "CNA正运用人工智能改造新闻编辑部",
+        "es": "CNA está transformando su redacción con inteligencia artificial"
+      },
+      "excerpt_i18n": {
+        "en": "In this Executive Function series from OpenAI, discover how CNA is transforming its newsroom with AI. Editor-in-Chief Walter Fernandez shares insights on AI adoption, culture, and the future of journalism.",
+        "zh": "在本期OpenAI执行功能系列中，探索CNA如何运用人工智能改造新闻编辑室。主编沃尔特·费尔南德斯将分享关于AI应用、文化转型及新闻业未来的见解。",
+        "es": "En esta serie de Función Ejecutiva de OpenAI, descubre cómo CNA está transformando su redacción con IA. El director editorial Walter Fernandez comparte perspectivas sobre la adopción de la IA, la cultura y el futuro del periodismo."
+      },
+      "hotness": 1.037979
     }
   ]
 }

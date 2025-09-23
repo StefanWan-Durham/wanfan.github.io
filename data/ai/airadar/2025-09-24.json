@@ -1,0 +1,643 @@
+{
+  "generated_at": "2025-09-23T23:14:58.007034Z",
+  "window_hours": 48,
+  "count": 27,
+  "items": [
+    {
+      "id": "3a4b5681c013a254",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://blog.cloudflare.com/deploy-your-own-ai-vibe-coding-platform/",
+      "title": "Deploy your own AI vibe coding platform – in one click",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T23:04:55Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Deploy your own AI vibe coding platform – in one click",
+        "zh": "一键部署专属AI编程平台",
+        "es": "Despliega tu propia plataforma de programación de ambiente IA con un solo clic."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.997584
+    },
+    {
+      "id": "ab1f0e929e813984",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45353855",
+      "title": "Ask HN: Do you find AI code review tools useful?",
+      "raw_excerpt": "I'm struggling to understand how these tools are actually useful. The AI doesn't have the product knowledge to catch logic bugs, and basic tests should eliminate syntactic bugs/endless loops etc. Perhaps codebase indexing could help, although it still wouldn't be able to understand the \"why\" behind the code. Curious if others feel the same",
+      "tags": [
+        "Tools",
+        "Industry"
+      ],
+      "published_at": "2025-09-23T22:53:05Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Ask HN: Do you find AI code review tools useful?",
+        "zh": "问HN：你觉得AI代码审查工具有用吗？",
+        "es": "Pregunta HN: ¿Encuentras útiles las herramientas de revisión de código con IA?"
+      },
+      "excerpt_i18n": {
+        "en": "I'm struggling to understand how these tools are actually useful. The AI doesn't have the product knowledge to catch logic bugs, and basic tests should eliminate syntactic bugs/endless loops etc. Perhaps codebase indexing could help, although it still wouldn't be able to understand the \"why\" behind the code. Curious if others feel the same",
+        "zh": "我难以理解这些工具的实际用处。AI缺乏产品知识来捕捉逻辑错误，而基础测试本应能消除语法错误和无限循环等问题。或许代码库索引能解决部分问题。",
+        "es": "Me cuesta entender cómo estas herramientas son realmente útiles. La IA no tiene el conocimiento del producto para detectar errores de lógica, y las pruebas básicas deberían eliminar errores sintácticos/bucles infinitos, etc. Quizás la indexación de la base de código..."
+      },
+      "hotness": 0.994747
+    },
+    {
+      "id": "21d7038f63d4646a",
+      "source": {
+        "site": "https://arstechnica.com",
+        "feed": "https://arstechnica.com/information-technology/feed/"
+      },
+      "url": "https://arstechnica.com/ai/2025/09/when-no-means-yes-why-ai-chatbots-cant-process-persian-social-etiquette/",
+      "title": "When “no” means “yes”: Why AI chatbots can’t process Persian social etiquette",
+      "raw_excerpt": "New study examines how a helpful AI response could become a cultural disaster in Iran.",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T22:23:22Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "When “no” means “yes”: Why AI chatbots can’t process Persian social etiquette",
+        "zh": "当拒绝意味着同意：为何AI聊天机器人难以理解波斯社交礼仪",
+        "es": "Cuando \"no\" significa \"sí\": Por qué los chatbots de IA no pueden procesar la etiqueta social persa"
+      },
+      "excerpt_i18n": {
+        "en": "New study examines how a helpful AI response could become a cultural disaster in Iran.",
+        "zh": "新研究探讨有益的人工智能回应如何在伊朗演变为文化灾难。",
+        "es": "Un nuevo estudio examina cómo una respuesta útil de la IA podría convertirse en un desastre cultural en Irán."
+      },
+      "hotness": 0.987658
+    },
+    {
+      "id": "3f8b3f1795fdef3e",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://gradpilot.com/ai-policies",
+      "title": "The State of AI in College Admissions",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T22:09:15Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "The State of AI in College Admissions",
+        "zh": "高校招生中的人工智能现状",
+        "es": "El estado de la IA en las admisiones universitarias"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.984308
+    },
+    {
+      "id": "adb8fd48a2a68ac3",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.hackster.io/adam-taylor/system-design-with-vitis-and-versal-aie-6a04ac",
+      "title": "System Design for AI Engines in FPGA",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T21:54:30Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "System Design for AI Engines in FPGA",
+        "zh": "FPGA中人工智能引擎的系统设计",
+        "es": "Diseño de sistemas para motores de IA en FPGA"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.98082
+    },
+    {
+      "id": "1d02d555b7d20d32",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.technologyreview.com/2025/09/23/1123897/ai-models-are-using-material-from-retracted-scientific-papers/",
+      "title": "AI models are using material from retracted scientific papers",
+      "raw_excerpt": "",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T21:41:17Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "AI models are using material from retracted scientific papers",
+        "zh": "AI模型正在使用已撤稿科学论文中的材料",
+        "es": "Los modelos de inteligencia artificial están utilizando material de artículos científicos retractados"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 1.173246
+    },
+    {
+      "id": "ba14f5a461fb6db9",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://showdown.scale.com/assets/SEAL_Showdown_Tech_Report.pdf",
+      "title": "Seal Showdown Technical Report (AI Benchmark) [pdf]",
+      "raw_excerpt": "",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T21:37:58Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Seal Showdown Technical Report (AI Benchmark) [pdf]",
+        "zh": "海豹对决技术报告（AI基准测试）[pdf]",
+        "es": "Enfrentamiento de Sellos Informe Técnico (Evaluación de IA) [pdf]"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.976925
+    },
+    {
+      "id": "6c2429dde701dc35",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://openai.com/index/five-new-stargate-sites/",
+      "title": "OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T21:31:25Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites",
+        "zh": "OpenAI、甲骨文和软银将Stargate项目扩展至五个新的人工智能数据中心站点。",
+        "es": "OpenAI, Oracle y SoftBank amplían Stargate con cinco nuevos emplazamientos de centros de datos de inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 1.560618
+    },
+    {
+      "id": "fdbdb60e5b23b505",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45352961",
+      "title": "Ask HN: Share a video-series of developing non-trivial things with AI?",
+      "raw_excerpt": "I often see claims like \"Ya, AI was rather bad at developing features ~6 months ago, but now it's _actually_ good!\". Every once in a while I go and try using it for more significant development work, but thus far I've been disappointed. Thus far for me, it's been great for brainstorming or making initial prototypes, but generally not good enough to ship a finished artifact that has to interact with other pieces. I don't want to waste time doing this test again. And maybe I'm just doing it wrong. If there is a video series of somebody using AI to develop something rather complex, I think that would be much better evidence than the usual unsupported claim, and it could show me what I'm doing wrong. I'm imagining this would be like a \"Let's play\" series, but for software development. If no su",
+      "tags": [],
+      "published_at": "2025-09-23T21:26:47Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Ask HN: Share a video-series of developing non-trivial things with AI?",
+        "zh": "HN提问：分享用AI开发复杂项目的视频系列？",
+        "es": "Pregunta en HN: ¿Compartís una serie de vídeos sobre desarrollar cosas no triviales con IA?"
+      },
+      "excerpt_i18n": {
+        "en": "I often see claims like \"Ya, AI was rather bad at developing features ~6 months ago, but now it's _actually_ good!\". Every once in a while I go and try using it for more significant development work, but thus far I've been disappointed. Thus far for me, it's been great for brainstorming or making initial prototypes, but generally not good enough to ship a finished artifact that has to interact with other pieces. I don't want to waste time doing this test again. And maybe I'm just doing it wrong. If there is a video series of somebody using AI to develop something rather complex, I think that would be much better evidence than the usual unsupported claim, and it could show me what I'm doing wrong. I'm imagining this would be like a \"Let's play\" series, but for software development. If no su",
+        "zh": "我经常看到类似说法：\"半年前AI开发功能确实不太行，但现在真的变厉害了！\"。每隔一段时间我都会尝试用它完成更重要的开发任务，但迄今为止仍不尽如人意。",
+        "es": "A menudo veo afirmaciones como \"Sí, la IA era bastante mala desarrollando funciones hace unos 6 meses, ¡pero ahora es realmente buena!\". De vez en cuando intento usarla para trabajos de desarrollo más significativos, pero hasta ahora he"
+      },
+      "hotness": 0.974299
+    },
+    {
+      "id": "b680a43c75234379",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus",
+      "title": "Context Engineering for AI Agents: Lessons",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T21:20:15Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Context Engineering for AI Agents: Lessons",
+        "zh": "AI智能体语境工程：经验总结",
+        "es": "Ingeniería de contexto para agentes de IA: Lecciones"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.972768
+    },
+    {
+      "id": "730b352845bf93f4",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.nature.com/articles/d41586-025-02979-9",
+      "title": "Bring us your LLMs: why peer review is good for AI models",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T21:10:58Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Bring us your LLMs: why peer review is good for AI models",
+        "zh": "请提交您的语言模型：同行评审对人工智能模型的益处",
+        "es": "Traednos vuestros modelos de lenguaje: por qué la revisión por pares es buena para los modelos de IA"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.970597
+    },
+    {
+      "id": "2cefcab29fd2ec55",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://hackaday.com/2025/09/23/using-moondream-ai-to-make-your-pi-see-like-a-human/",
+      "title": "Using Moondream AI to Make Your Pi \"See\" Like a Human",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T21:08:08Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Using Moondream AI to Make Your Pi \"See\" Like a Human",
+        "zh": "借助Moondream AI让您的树莓派实现类人视觉",
+        "es": "Hacer que tu Pi \"vea\" como un humano usando Moondream AI"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.969935
+    },
+    {
+      "id": "28778ec1dc91329f",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45352768",
+      "title": "Ask HN: Bring back Jack Tramiel via AI as a trusted advisor in new Commodore?",
+      "raw_excerpt": "Do you think this would be a good idea?",
+      "tags": [],
+      "published_at": "2025-09-23T21:08:03Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Ask HN: Bring back Jack Tramiel via AI as a trusted advisor in new Commodore?",
+        "zh": "问HN：通过人工智能让杰克·特拉梅尔作为新康懋达的可信顾问回归？",
+        "es": "Pregunta para HN: ¿Deberíamos revivir a Jack Tramiel mediante IA como asesor de confianza en la nueva Commodore?"
+      },
+      "excerpt_i18n": {
+        "en": "Do you think this would be a good idea?",
+        "zh": "你认为这是个好主意吗？",
+        "es": "¿Crees que sería una buena idea?"
+      },
+      "hotness": 0.969916
+    },
+    {
+      "id": "d74895638599194d",
+      "source": {
+        "site": "https://www.wired.com",
+        "feed": "https://www.wired.com/feed/category/business/latest/rss"
+      },
+      "url": "https://www.wired.com/story/openai-oracle-softbank-data-center-stargate-us/",
+      "title": "OpenAI Teams Up With Oracle and SoftBank to Build 5 New Stargate Data Centers",
+      "raw_excerpt": "The new sites will boost Stargate’s planned capacity to nearly 7 gigawatts—about equal to the output of seven large nuclear reactors.",
+      "tags": [],
+      "published_at": "2025-09-23T21:00:00Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "OpenAI Teams Up With Oracle and SoftBank to Build 5 New Stargate Data Centers",
+        "zh": "OpenAI与甲骨文和软银合作建设五座新型星际之门数据中心。",
+        "es": "OpenAI se asocia con Oracle y SoftBank para construir 5 nuevos centros de datos Stargate."
+      },
+      "excerpt_i18n": {
+        "en": "The new sites will boost Stargate’s planned capacity to nearly 7 gigawatts—about equal to the output of seven large nuclear reactors.",
+        "zh": "新站点将使星门的规划产能提升至近7吉瓦，约等于七座大型核反应堆的发电量。",
+        "es": "Los nuevos emplazamientos aumentarán la capacidad prevista de Stargate a casi 7 gigavatios, aproximadamente equivalente a la producción de siete grandes reactores nucleares."
+      },
+      "hotness": 0.968039
+    },
+    {
+      "id": "5cbc532081e6e733",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://qwen.ai/blog?id=99f0335c4ad9ff6153e517418d48535ab6d8afef&from=research.latest-advancements-list",
+      "title": "Qwen3-VL: Sharper Vision, Deeper Thought, Broader Action",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T20:59:17Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Qwen3-VL: Sharper Vision, Deeper Thought, Broader Action",
+        "zh": "Qwen3-VL：更锐利的视觉，更深邃的思考，更广泛的行动",
+        "es": "Qwen3-VL: Visión más aguda, pensamiento más profundo, acción más amplia"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.967872
+    },
+    {
+      "id": "dff4c0a5ddfc617b",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://github.com/RapidFireAI/rapidfireai",
+      "title": "Show HN: RapidFire AI: 16–24x More Experiment Throughput Without Extra GPUs",
+      "raw_excerpt": "We built RapidFire AI, an open-source Python tool to speed up LLM fine-tuning and post-training with a powerful level of control not found in most tools: Stop, resume, clone-modify and warm-start configs on the fly—so you can branch experiments while they’re running instead of starting from scratch or running one after another. - Works within your OSS stack: PyTorch, HuggingFace TRL/PEFT), MLflow. - Hyperparallel search: launch as many configs as you want together, even on a single GPU - Dynamic real-time control: stop laggards, resume them later to revisit, branch promising configs in flight. - Deterministic eval + run tracking: Metrics curves are automatically plotted and are comparable. - Apache License v2.0: No vendor lock in. Develop on your IDE, launch from CLI. Repo: https://github.",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-23T20:58:15Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Show HN: RapidFire AI: 16–24x More Experiment Throughput Without Extra GPUs",
+        "zh": "HN展示：RapidFire AI：无需额外GPU即可实现16至24倍实验吞吐量提升",
+        "es": "Mostrar HN: RapidFire AI: 16–24 veces Más Capacidad de Experimentación Sin GPUs Adicionales"
+      },
+      "excerpt_i18n": {
+        "en": "We built RapidFire AI, an open-source Python tool to speed up LLM fine-tuning and post-training with a powerful level of control not found in most tools: Stop, resume, clone-modify and warm-start configs on the fly—so you can branch experiments while they’re running instead of starting from scratch or running one after another. - Works within your OSS stack: PyTorch, HuggingFace TRL/PEFT), MLflow. - Hyperparallel search: launch as many configs as you want together, even on a single GPU - Dynamic real-time control: stop laggards, resume them later to revisit, branch promising configs in flight. - Deterministic eval + run tracking: Metrics curves are automatically plotted and are comparable. - Apache License v2.0: No vendor lock in. Develop on your IDE, launch from CLI. Repo: https://github.",
+        "zh": "我们开发了RapidFire AI，这是一款开源Python工具，旨在加速LLM微调与训练后优化。它提供大多数工具不具备的强力控制功能：可实时停止、恢复、克隆修改及热启动配置——让您",
+        "es": "Desarrollamos RapidFire AI, una herramienta de código abierto en Python para acelerar el ajuste fino y el post-entrenamiento de LLM con un potente nivel de control no presente en la mayoría de herramientas: parar, reanudar, clonar-modificar y configuraciones de inicio en caliente sobre la marcha, para que"
+      },
+      "hotness": 1.209539
+    },
+    {
+      "id": "c165f044150e3a3b",
+      "source": {
+        "site": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      "url": "https://aws.amazon.com/blogs/machine-learning/running-deep-research-ai-agents-on-amazon-bedrock-agentcore/",
+      "title": "Running deep research AI agents on Amazon Bedrock AgentCore",
+      "raw_excerpt": "AI agents are evolving beyond basic single-task helpers into more powerful systems that can plan, critique, and collaborate with other agents to solve complex problems. Deep Agents—a recently introduced framework built on LangGraph—bring these capabilities to life, enabling multi-agent workflows that mirror real-world team dynamics. The challenge, however, is not just building such agents but […]",
+      "tags": [
+        "Research",
+        "Tools"
+      ],
+      "published_at": "2025-09-23T20:35:23Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Running deep research AI agents on Amazon Bedrock AgentCore",
+        "zh": "在亚马逊Bedrock AgentCore上运行深度研究人工智能代理",
+        "es": "Ejecutando agentes de IA de investigación profunda en Amazon Bedrock AgentCore"
+      },
+      "excerpt_i18n": {
+        "en": "AI agents are evolving beyond basic single-task helpers into more powerful systems that can plan, critique, and collaborate with other agents to solve complex problems. Deep Agents—a recently introduced framework built on LangGraph—bring these capabilities to life, enabling multi-agent workflows that mirror real-world team dynamics. The challenge, however, is not just building such agents but […]",
+        "zh": "AI智能体正从单一任务助手进化成更强大的系统，能够通过规划、评估及多智能体协作解决复杂问题。Deep Agents作为近期推出的框架——",
+        "es": "Los agentes de inteligencia artificial están evolucionando más allá de los asistentes básicos de tarea única hacia sistemas más potentes que pueden planificar, criticar y colaborar con otros agentes para resolver problemas complejos. Deep Agents—un marco de trabajo introducido recientemente construido"
+      },
+      "hotness": 0.96232
+    },
+    {
+      "id": "be3f19ed3596be20",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/news/783991/google-labs-mixboard-ai-design-canvas",
+      "title": "Google&#8217;s Mixboard is an AI moodboard builder",
+      "raw_excerpt": "Google is launching a new AI concepting tool that lets you create moodboards to explore design ideas. The Mixboard Google Labs experiment gives users an open canvas to create projects from pre-populated board templates or text prompts using Google’s Gemini 2.5 Flash model. The experimental tool is available through public beta in the US. The [&#8230;]",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-23T20:30:59Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Google&#8217;s Mixboard is an AI moodboard builder",
+        "zh": "谷歌Mixboard是一款AI情绪板制作工具",
+        "es": "El Mixboard de Google es un creador de tableros de humor con inteligencia artificial"
+      },
+      "excerpt_i18n": {
+        "en": "Google is launching a new AI concepting tool that lets you create moodboards to explore design ideas. The Mixboard Google Labs experiment gives users an open canvas to create projects from pre-populated board templates or text prompts using Google’s Gemini 2.5 Flash model. The experimental tool is available through public beta in the US. The [&#8230;]",
+        "zh": "谷歌正在推出一款全新AI概念工具，用户可通过创建情绪板来探索设计创意。Mixboard谷歌实验室实验项目提供开放式画布，用户可直接使用预设模板创建项目。",
+        "es": "Google lanza una nueva herramienta de conceptualización con IA que permite crear paneles de inspiración para explorar ideas de diseño. El experimento Mixboard de Google Labs ofrece a los usuarios un lienzo abierto para crear proyectos a partir de plantillas de tablero predefinidas o"
+      },
+      "hotness": 1.009367
+    },
+    {
+      "id": "71917e11cbd33c1f",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.nibzard.com/ai-bottleneck/",
+      "title": "The Bottleneck in AI Development: Humans",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T20:28:19Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "The Bottleneck in AI Development: Humans",
+        "zh": "人工智能发展的瓶颈：人类",
+        "es": "El cuello de botella en el desarrollo de la inteligencia artificial: los humanos"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.960685
+    },
+    {
+      "id": "7313978251f9f62d",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.pdfchat.fr",
+      "title": "Show HN: I built an AI in 3 days at 16 y/o that lets you chat with your PDFs",
+      "raw_excerpt": "Hey, it's Safwan I'm 16 and obsessed with AI and coding. Last year, I was struggling with my homework - especially when teachers gave us long PDF documents to analyze for history and literature classes. The problem? I'd spend hours scrolling through 30-page PDFs trying to find specific quotes or information for my essays. My friends had the same issue - we were all wasting time instead of actually learning. I tried Ctrl+F, highlighting, even printing everything out... but I realized what we really needed was to ask questions to our documents like we would to a teacher. So during summer break, I taught myself more about AI and built the first version of PDF Chat. Now I can finish my research in minutes instead of hours, and I'm helping students and professionals worldwide do the same. Prett",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T20:00:30Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Show HN: I built an AI in 3 days at 16 y/o that lets you chat with your PDFs",
+        "zh": "16岁高中生3天开发AI工具：实现与PDF文档对话",
+        "es": "Mostrando en HN: Construí una IA en 3 días a los 16 años que te permite chatear con tus PDFs"
+      },
+      "excerpt_i18n": {
+        "en": "Hey, it's Safwan I'm 16 and obsessed with AI and coding. Last year, I was struggling with my homework - especially when teachers gave us long PDF documents to analyze for history and literature classes. The problem? I'd spend hours scrolling through 30-page PDFs trying to find specific quotes or information for my essays. My friends had the same issue - we were all wasting time instead of actually learning. I tried Ctrl+F, highlighting, even printing everything out... but I realized what we really needed was to ask questions to our documents like we would to a teacher. So during summer break, I taught myself more about AI and built the first version of PDF Chat. Now I can finish my research in minutes instead of hours, and I'm helping students and professionals worldwide do the same. Prett",
+        "zh": "我是萨夫万，今年16岁，痴迷于人工智能和编程。去年我在完成作业时遇到困难——尤其是历史课和文学课老师布置的长篇PDF文档分析任务。问题在于：",
+        "es": "Hola, soy Safwan, tengo 16 años y me apasiona la inteligencia artificial y la programación. El año pasado, tenía problemas con los deberes, especialmente cuando los profesores nos daban largos documentos en PDF para analizar en las clases de historia y literatura. El problema era que yo..."
+      },
+      "hotness": 0.954275
+    },
+    {
+      "id": "b55aed4b34c35087",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.theregister.com/2025/09/23/developers_genai_little_productivity_gains/",
+      "title": "AI coding hype overblown, Bain shrugs",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T19:57:20Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "AI coding hype overblown, Bain shrugs",
+        "zh": "贝恩公司对人工智能编程热潮不以为然",
+        "es": "La exageración sobre la programación con IA es exagerada, se encoge de hombros Bain."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.953548
+    },
+    {
+      "id": "a1ea907196e91497",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://play.google.com/store/apps/details?id=com.indest.aimoviequiz&hl=en_US",
+      "title": "Show HN: AI Movie Quiz – guess movies based on AI clips",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T19:56:55Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Show HN: AI Movie Quiz – guess movies based on AI clips",
+        "zh": "HN展示：AI电影竞猜——根据AI片段猜电影",
+        "es": "Mostrado en HN: Quiz de Películas con IA – adivina películas basándote en clips de IA"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.953452
+    },
+    {
+      "id": "4a27f29a09d35e73",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://leejo.github.io/2025/09/23/gaps/",
+      "title": "Musings on Generative AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T19:52:38Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Musings on Generative AI",
+        "zh": "关于生成式人工智能的思考",
+        "es": "Reflexiones sobre la inteligencia artificial generativa"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.95247
+    },
+    {
+      "id": "179a77056c8ef223",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.forbes.com/sites/sindhyavalloppillil/2025/09/23/from-goldman-to-ai-how-rishi-bali-is-building-wall-streets-transformation-layer-with-opcoai/",
+      "title": "From Goldman to AI: How Rishi Bali Is Building Wall St's AI Transformation Layer",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T19:47:59Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "From Goldman to AI: How Rishi Bali Is Building Wall St's AI Transformation Layer",
+        "zh": "从高盛到人工智能：里希·巴利如何构建华尔街的AI转型层",
+        "es": "De Goldman a la IA: Cómo Rishi Bali está construyendo la capa de transformación de IA para Wall Street"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.951404
+    },
+    {
+      "id": "633e5a49eaa08ecb",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://mobilesyrup.com/2025/09/11/apple-ai-model-update-trump-response/",
+      "title": "Apple has trained its AI to respond to Trump's nonsense: report",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-23T19:41:39Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Apple has trained its AI to respond to Trump's nonsense: report",
+        "zh": "据报道，苹果已训练其人工智能应对特朗普的荒谬言论。",
+        "es": "Apple ha entrenado a su inteligencia artificial para responder a las tonterías de Trump: informe"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.949955
+    },
+    {
+      "id": "23511570e75ead84",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/tech/783795/microsoft-ai-ceo-mustafa-suleyman-future-of-browser-interview-notepad",
+      "title": "Microsoft&#8217;s AI CEO on the future of the browser",
+      "raw_excerpt": "The AI browser wars are heating up. Google has Gemini in Chrome, Perplexity is building its Comet AI browser, and The Browser Company just got acquired by Atlassian for $610 million. Now, Microsoft wants to be part of the AI browser conversation. I sat down with Microsoft AI CEO Mustafa Suleyman today to talk about [&#8230;]",
+      "tags": [
+        "Funding"
+      ],
+      "published_at": "2025-09-23T18:37:04Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Microsoft&#8217;s AI CEO on the future of the browser",
+        "zh": "微软AI首席执行官谈浏览器未来",
+        "es": "El CEO de IA de Microsoft sobre el futuro del navegador"
+      },
+      "excerpt_i18n": {
+        "en": "The AI browser wars are heating up. Google has Gemini in Chrome, Perplexity is building its Comet AI browser, and The Browser Company just got acquired by Atlassian for $610 million. Now, Microsoft wants to be part of the AI browser conversation. I sat down with Microsoft AI CEO Mustafa Suleyman today to talk about [&#8230;]",
+        "zh": "AI浏览器大战正持续升温。谷歌在Chrome中内置Gemini，Perplexity正在开发Comet AI浏览器，The Browser Company刚被Atlassian以6.1亿美元收购。如今微软也意图加入这场竞争。",
+        "es": "La guerra de los navegadores con IA se está intensificando. Google tiene Gemini en Chrome, Perplexity está desarrollando su navegador Comet AI, y The Browser Company acaba de ser adquirida por Atlassian por 610 millones de dólares. Ahora, Microsoft quiere formar parte de"
+      },
+      "hotness": 0.982069
+    },
+    {
+      "id": "7450e0d32d9fa416",
+      "source": {
+        "site": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      "url": "https://aws.amazon.com/blogs/machine-learning/integrate-tokenization-with-amazon-bedrock-guardrails-for-secure-data-handling/",
+      "title": "Integrate tokenization with Amazon Bedrock Guardrails for secure data handling",
+      "raw_excerpt": "In this post, we show you how to integrate Amazon Bedrock Guardrails with third-party tokenization services to protect sensitive data while maintaining data reversibility. By combining these technologies, organizations can implement stronger privacy controls while preserving the functionality of their generative AI applications and related systems.",
+      "tags": [],
+      "published_at": "2025-09-23T17:31:04Z",
+      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "title_i18n": {
+        "en": "Integrate tokenization with Amazon Bedrock Guardrails for secure data handling",
+        "zh": "将标记化与亚马逊Bedrock护栏集成以实现安全数据处理",
+        "es": "Integrar la tokenización con Amazon Bedrock Guardrails para el manejo seguro de datos"
+      },
+      "excerpt_i18n": {
+        "en": "In this post, we show you how to integrate Amazon Bedrock Guardrails with third-party tokenization services to protect sensitive data while maintaining data reversibility. By combining these technologies, organizations can implement stronger privacy controls while preserving the functionality of their generative AI applications and related systems.",
+        "zh": "本文介绍如何将Amazon Bedrock护栏与第三方标记化服务结合，在保持数据可逆性的同时保护敏感信息。通过整合这些技术，企业能够",
+        "es": "En esta publicación, te mostramos cómo integrar las Barreras de Protección de Amazon Bedrock con servicios de tokenización de terceros para proteger datos sensibles manteniendo la reversibilidad de los datos. Al combinar estas tecnologías, las organizaciones p"
+      },
+      "hotness": 0.920564
+    }
+  ]
+}
