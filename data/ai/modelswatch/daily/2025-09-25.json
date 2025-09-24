@@ -1,7 +1,249 @@
 {
   "version": 1,
+  "date": "2025-09-25",
   "updated_at": "2025-09-24T22:06:45.213Z",
   "items": [
+    {
+      "id": "TheAlgorithms/Python",
+      "source": "github",
+      "name": "Python",
+      "url": "https://github.com/TheAlgorithms/Python",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven",
+        "education",
+        "hacktoberfest",
+        "interview",
+        "learn",
+        "practice",
+        "python",
+        "searches",
+        "sorting-algorithms",
+        "sorts"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 207927,
+        "forks": 47906,
+        "issues": 407
+      },
+      "score": 217608.11165860342,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个用Python实现各类算法的开源项目，内容涵盖从基础数据结构到复杂算法的多种实现。项目以教育为导向，代码结构清晰，注释详细，适合用于学习、面试准备和算法竞赛训练。所有实现均由社区开发者共同贡献，遵循MIT开源协议，支持自由使用和修改。该项目适合Python初学者和中级开发者用于提升算法能力与实践编程技巧。",
+      "updated_at": "2025-09-21T11:28:44Z",
+      "summary_en": "A comprehensive collection of algorithms implemented in Python, serving as an educational resource for learning and practice. It covers a wide range of topics from basic data structures to complex algorithms, making it ideal for students, interview preparation, and algorithm competitions. The code is community-driven, well-documented, and open-source under the MIT license. This repository is a valuable reference for understanding algorithm implementations and improving coding skills in Python.",
+      "summary_zh": "这是一个用Python实现各类算法的开源项目，内容涵盖从基础数据结构到复杂算法的多种实现。项目以教育为导向，代码结构清晰，注释详细，适合用于学习、面试准备和算法竞赛训练。所有实现均由社区开发者共同贡献，遵循MIT开源协议，支持自由使用和修改。该项目适合Python初学者和中级开发者用于提升算法能力与实践编程技巧。",
+      "summary_es": "Repositorio educativo con implementaciones en Python de algoritmos clásicos y modernos. Ideal para estudiantes y desarrolladores que buscan ejemplos prácticos de estructuras de datos, ordenamiento, grafos y matemáticas. Útil para preparar entrevistas técnicas y competencias de programación. Código comunitario bien documentado para aprendizaje y referencia.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：Python"
+    },
+    {
+      "id": "microsoft/vscode",
+      "source": "github",
+      "name": "vscode",
+      "url": "https://github.com/microsoft/vscode",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "editor",
+        "electron",
+        "microsoft",
+        "typescript",
+        "visual-studio-code"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 176874,
+        "forks": 35106,
+        "issues": 13630
+      },
+      "score": 183995.19541631945,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Visual Studio Code 是由微软开发的一款轻量级但功能强大的开源代码编辑器。它基于 Electron 框架构建，支持 Windows、macOS 和 Linux 系统。该编辑器内置了对 JavaScript、TypeScript 和 Node.js 的深度支持，并通过丰富的扩展市场提供了对其他语言和框架的强大扩展能力。VS Code 集成了调试、Git 版本控制、智能代码补全和终端等功能，适用于 Web 开发、脚本编写及跨平台应用开发等多种编程场景。",
+      "updated_at": "2025-09-21T12:04:55Z",
+      "summary_en": "Visual Studio Code is a free, open-source code editor developed by Microsoft. Built on Electron and written in TypeScript, it supports a wide range of programming languages and frameworks. Key strengths include its extensive extension ecosystem, integrated terminal, and built-in Git support. It is suitable for web development, scripting, and general-purpose coding across Windows, macOS, and Linux.",
+      "summary_zh": "Visual Studio Code 是由微软开发的一款轻量级但功能强大的开源代码编辑器。它基于 Electron 框架构建，支持 Windows、macOS 和 Linux 系统。该编辑器内置了对 JavaScript、TypeScript 和 Node.js 的深度支持，并通过丰富的扩展市场提供了对其他语言和框架的强大扩展能力。VS Code 集成了调试、Git 版本控制、智能代码补全和终端等功能，适用于 Web 开发、脚本编写及跨平台应用开发等多种编程场景。",
+      "summary_es": "Visual Studio Code es un editor de código fuente desarrollado por Microsoft, construido sobre Electron. Destaca por su amplia gama de extensiones, integración nativa con Git y soporte para debugging. Es ideal para desarrollo web, scripting y edición multiplataforma, siendo altamente personalizable y eficiente.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：vscode"
+    },
+    {
+      "id": "vuejs/vue",
+      "source": "github",
+      "name": "vue",
+      "url": "https://github.com/vuejs/vue",
+      "license": "MIT",
+      "lang": "TypeScript",
+      "tags": [
+        "framework",
+        "frontend",
+        "javascript",
+        "vue"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 209453,
+        "forks": 33770,
+        "issues": 608
+      },
+      "score": 216306.84510767748,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Vue 是一套用于构建用户界面的渐进式 JavaScript 框架，采用自底向上增量开发的设计。其核心库专注于视图层，易于上手并便于与其他库或已有项目整合。Vue 提供了响应式数据绑定和组件化系统，支持声明式渲染和虚拟 DOM，帮助开发者高效构建交互式前端应用。该框架适用于开发单页应用（SPA）和复杂的前端界面，尤其适合需要灵活架构和渐进增强的项目场景。",
+      "updated_at": "2025-09-21T10:59:59Z",
+      "summary_en": "Vue is a progressive JavaScript framework for building user interfaces. It excels at creating single-page applications and interactive web components with its reactive data binding and component-based architecture. Its gentle learning curve and flexible integration make it suitable for projects ranging from simple widgets to complex enterprise applications. Vue's template syntax and ecosystem tools like Vuex and Vue Router streamline development for modern frontend needs.",
+      "summary_zh": "Vue 是一套用于构建用户界面的渐进式 JavaScript 框架，采用自底向上增量开发的设计。其核心库专注于视图层，易于上手并便于与其他库或已有项目整合。Vue 提供了响应式数据绑定和组件化系统，支持声明式渲染和虚拟 DOM，帮助开发者高效构建交互式前端应用。该框架适用于开发单页应用（SPA）和复杂的前端界面，尤其适合需要灵活架构和渐进增强的项目场景。",
+      "summary_es": "Vue es un framework progresivo de JavaScript para construir interfaces de usuario. Su diseño incremental permite adoptarlo gradualmente, desde mejorar HTML estático hasta desarrollar aplicaciones de una sola página complejas. Destaca por su curva de aprendizaje suave, sintaxis de plantillas intuitiva y sistema reactivo eficiente. Es ideal para proyectos web interactivos, desde pequeños componentes hasta aplicaciones empresariales escalables.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：vue"
+    },
+    {
+      "id": "tensorflow/tensorflow",
+      "source": "github",
+      "name": "tensorflow",
+      "url": "https://github.com/tensorflow/tensorflow",
+      "license": "Apache-2.0",
+      "lang": "C++",
+      "tags": [
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "ml",
+        "neural-network",
+        "python",
+        "tensorflow"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 191709,
+        "forks": 74847,
+        "issues": 1754
+      },
+      "score": 206778.37134224537,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "TensorFlow 是由 Google 开源的一款端到端机器学习框架，支持从研究到生产的全流程开发。它提供丰富的工具链和灵活的架构，可用于构建和训练各类深度学习与机器学习模型。框架支持跨平台部署，涵盖移动设备、边缘计算和云端服务器等多种环境。TensorFlow 尤其适用于大规模数值计算和高性能神经网络训练，广泛应用于自然语言处理、计算机视觉及推荐系统等领域。",
+      "updated_at": "2025-09-21T11:54:31Z",
+      "summary_en": "TensorFlow is an open-source machine learning framework designed for building and deploying ML models at scale. It supports deep learning, neural networks, and distributed computing, with a focus on production-ready applications. Key strengths include flexibility for research and industry use, robust tooling like Keras integration, and deployment across platforms from mobile to cloud. It is widely applicable for tasks like image recognition, natural language processing, and predictive analytics.",
+      "summary_zh": "TensorFlow 是由 Google 开源的一款端到端机器学习框架，支持从研究到生产的全流程开发。它提供丰富的工具链和灵活的架构，可用于构建和训练各类深度学习与机器学习模型。框架支持跨平台部署，涵盖移动设备、边缘计算和云端服务器等多种环境。TensorFlow 尤其适用于大规模数值计算和高性能神经网络训练，广泛应用于自然语言处理、计算机视觉及推荐系统等领域。",
+      "summary_es": "TensorFlow es un framework de código abierto para machine learning y deep learning. Permite crear y entrenar redes neuronales de manera flexible, desde prototipos hasta implementaciones distribuidas a gran escala. Sus puntos fuertes incluyen la capacidad de ejecución en múltiples plataformas (CPU, GPU, TPU) y el soporte para despliegue en producción. Es ampliamente utilizado en investigación, desarrollo de modelos y aplicaciones industriales de inteligencia artificial.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：tensorflow"
+    },
+    {
+      "id": "trekhleb/javascript-algorithms",
+      "source": "github",
+      "name": "javascript-algorithms",
+      "url": "https://github.com/trekhleb/javascript-algorithms",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "algorithm",
+        "algorithms",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-preparation",
+        "javascript",
+        "javascript-algorithms"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 193349,
+        "forks": 30890,
+        "issues": 373
+      },
+      "score": 199626.91057835647,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个基于 JavaScript 的算法与数据结构开源实现库，覆盖了从基础到高级的多种经典算法和数据结构。每个实现都附带详细解释和进一步阅读的参考资料，便于理解原理与应用场景。该项目适合准备技术面试的开发者、计算机科学学生以及希望巩固算法基础的 JavaScript 使用者。通过清晰的代码示例和注释，它可作为学习和实践算法的重要参考资料。",
+      "updated_at": "2025-09-21T11:28:16Z",
+      "summary_en": "This repository provides a comprehensive collection of classic algorithms and data structures implemented in JavaScript. It serves as an educational resource for computer science students and developers preparing for technical interviews. Each implementation includes detailed explanations and references for deeper understanding. The project is particularly useful for learning algorithm concepts and JavaScript programming practices.",
+      "summary_zh": "这是一个基于 JavaScript 的算法与数据结构开源实现库，覆盖了从基础到高级的多种经典算法和数据结构。每个实现都附带详细解释和进一步阅读的参考资料，便于理解原理与应用场景。该项目适合准备技术面试的开发者、计算机科学学生以及希望巩固算法基础的 JavaScript 使用者。通过清晰的代码示例和注释，它可作为学习和实践算法的重要参考资料。",
+      "summary_es": "Repositorio con implementaciones en JavaScript de algoritmos y estructuras de datos clásicos. Incluye explicaciones detalladas y referencias para aprendizaje. Ideal para estudio autodidacta, preparación de entrevistas técnicas y como referencia de implementación. Cubre desde estructuras básicas hasta algoritmos avanzados de búsqueda y ordenación.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：javascript-algorithms"
+    },
+    {
+      "id": "ossu/computer-science",
+      "source": "github",
+      "name": "computer-science",
+      "url": "https://github.com/ossu/computer-science",
+      "license": "MIT",
+      "lang": "HTML",
+      "tags": [
+        "awesome-list",
+        "computer-science",
+        "courses",
+        "curriculum"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 193411,
+        "forks": 24151,
+        "issues": 16
+      },
+      "score": 198341.17068638117,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个面向自学者的计算机科学系统化学习路径项目。项目基于MIT开放课程体系，提供了从基础到进阶的完整课程清单，涵盖计算机科学核心领域。学习者可以按照推荐顺序自主学习来自全球顶尖大学的优质课程资源。该项目特别适合希望系统掌握计算机科学知识体系的转行人员或在校学生补充学习。所有课程资源均为免费获取，并持续维护更新。",
+      "updated_at": "2025-09-21T11:54:14Z",
+      "summary_en": "A free, self-paced curriculum for comprehensive computer science education, modeled after undergraduate degree programs. It aggregates high-quality online courses from platforms like Coursera and edX, covering core topics from programming to algorithms and systems. Ideal for self-learners seeking structured, university-level knowledge without formal enrollment. The open-source, community-driven approach ensures accessibility and continuous updates.",
+      "summary_zh": "这是一个面向自学者的计算机科学系统化学习路径项目。项目基于MIT开放课程体系，提供了从基础到进阶的完整课程清单，涵盖计算机科学核心领域。学习者可以按照推荐顺序自主学习来自全球顶尖大学的优质课程资源。该项目特别适合希望系统掌握计算机科学知识体系的转行人员或在校学生补充学习。所有课程资源均为免费获取，并持续维护更新。",
+      "summary_es": "Proyecto que ofrece un plan de estudios completo y gratuito para aprender informática de forma autodidacta. Incluye cursos fundamentales desde programación básica hasta temas avanzados como sistemas operativos y inteligencia artificial. Ideal para quienes buscan una educación estructurada con recursos de universidades reconocidas. Su enfoque modular permite adaptar el aprendizaje al ritmo de cada usuario.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：computer-science"
+    },
     {
       "id": "openai-community/gpt2",
       "source": "hf",
