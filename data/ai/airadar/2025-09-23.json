@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-23T23:14:58.007034Z",
+  "generated_at": "2025-09-24T23:15:13.754517Z",
   "window_hours": 48,
-  "count": 50,
+  "count": 51,
   "items": [
     {
       "id": "f9ff7a935d89a019",
@@ -1197,6 +1197,34 @@
         "es": "En esta serie de Función Ejecutiva de OpenAI, descubre cómo CNA está transformando su redacción con IA. El director editorial Walter Fernandez comparte perspectivas sobre la adopción de la IA, la cultura y el futuro del periodismo."
       },
       "hotness": 1.037979
+    },
+    {
+      "id": "ddb3ce3b05f5f7a2",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/23/1123897/ai-models-are-using-material-from-retracted-scientific-papers/",
+      "title": "AI models are using material from retracted scientific papers",
+      "raw_excerpt": "Some AI chatbots rely on flawed research from retracted scientific papers to answer questions, according to recent studies. The findings, confirmed by MIT Technology Review, raise questions about how reliable AI tools are at evaluating scientific research and could complicate efforts by countries and industries seeking to invest in AI tools for scientists. AI search&#8230;",
+      "tags": [
+        "Funding",
+        "Research",
+        "Tools"
+      ],
+      "published_at": "2025-09-23T09:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "AI models are using material from retracted scientific papers",
+        "zh": "AI模型正在使用已撤稿科学论文中的材料",
+        "es": "Los modelos de inteligencia artificial están utilizando material de artículos científicos retractados"
+      },
+      "excerpt_i18n": {
+        "en": "Some AI chatbots rely on flawed research from retracted scientific papers to answer questions, according to recent studies. The findings, confirmed by MIT Technology Review, raise questions about how reliable AI tools are at evaluating scientific research and could complicate efforts by countries and industries seeking to invest in AI tools for scientists. AI search&#8230;",
+        "zh": "近期研究表明，部分人工智能聊天机器人依赖已撤稿科学论文中的缺陷研究来回答问题。麻省理工科技评论证实，这些发现引发了对人工智能工具可靠性的质疑。",
+        "es": "Algunos chatbots de inteligencia artificial se basan en investigaciones defectuosas de artículos científicos retractados para responder preguntas, según estudios recientes. Estos hallazgos, confirmados por MIT Technology Review, plantean dudas sobre la fiabilidad de las herramientas de IA."
+      },
+      "hotness": 0.690675
     }
   ]
 }

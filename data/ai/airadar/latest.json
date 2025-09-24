@@ -1,56 +1,1181 @@
 {
-  "generated_at": "2025-09-23T23:14:58.007034Z",
+  "generated_at": "2025-09-24T23:15:13.754517Z",
   "window_hours": 48,
-  "count": 61,
+  "count": 65,
   "items": [
     {
-      "id": "3a4b5681c013a254",
+      "id": "29b1f0863f722b51",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/75mLkB95G8688rbvXiU1",
+      "title": "上任两年，吴泳铭为阿里 AI 定调：终局是 ASI",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-24T22:49:09Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "上任两年，吴泳铭为阿里 AI 定调：终局是 ASI",
+        "en": "After two years in office, Wu Yongming set the direction for Alibaba's AI: the ultimate goal is ASI.",
+        "es": "Tras dos años en el cargo, Wu Yongming establece el rumbo de la IA de Alibaba: el objetivo final es la ASI."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.993743
+    },
+    {
+      "id": "97ab963c0c80d640",
       "source": {
         "site": "https://news.ycombinator.com/newest",
         "feed": "https://hnrss.org/newest?q=AI"
       },
-      "url": "https://blog.cloudflare.com/deploy-your-own-ai-vibe-coding-platform/",
-      "title": "Deploy your own AI vibe coding platform – in one click",
+      "url": "https://paper.blitzy.com/blitzy_system_2_ai_platform_topping_swe_bench_verified.pdf",
+      "title": "Blitzy System 2 AI Platform: Topping SWE-Bench Verified [pdf]",
       "raw_excerpt": "",
       "tags": [],
-      "published_at": "2025-09-23T23:04:55Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "published_at": "2025-09-24T22:33:50Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
-        "en": "Deploy your own AI vibe coding platform – in one click",
-        "zh": "一键部署专属AI编程平台",
-        "es": "Despliega tu propia plataforma de programación de ambiente IA con un solo clic."
+        "en": "Blitzy System 2 AI Platform: Topping SWE-Bench Verified [pdf]",
+        "zh": "Blitzy System 2 AI平台：SWE-Bench验证排名首位[pdf]",
+        "es": "Plataforma de Inteligencia Artificial Blitzy System 2: Líder en SWE-Bench Verificado [pdf]"
       },
       "excerpt_i18n": {
         "en": ""
       },
-      "hotness": 0.997584
+      "hotness": 0.990086
     },
     {
-      "id": "ab1f0e929e813984",
+      "id": "6ed2f592f633b487",
       "source": {
         "site": "https://news.ycombinator.com/newest",
         "feed": "https://hnrss.org/newest?q=AI"
       },
-      "url": "https://news.ycombinator.com/item?id=45353855",
-      "title": "Ask HN: Do you find AI code review tools useful?",
-      "raw_excerpt": "I'm struggling to understand how these tools are actually useful. The AI doesn't have the product knowledge to catch logic bugs, and basic tests should eliminate syntactic bugs/endless loops etc. Perhaps codebase indexing could help, although it still wouldn't be able to understand the \"why\" behind the code. Curious if others feel the same",
-      "tags": [
-        "Tools",
-        "Industry"
-      ],
-      "published_at": "2025-09-23T22:53:05Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "url": "https://blog.arcade.dev/agentic-commerce-is-here-we-just-taught-ai-to-complete-purchases",
+      "title": "We just taught AI agents to complete real purchases",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T22:09:48Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
-        "en": "Ask HN: Do you find AI code review tools useful?",
-        "zh": "问HN：你觉得AI代码审查工具有用吗？",
-        "es": "Pregunta HN: ¿Encuentras útiles las herramientas de revisión de código con IA?"
+        "en": "We just taught AI agents to complete real purchases",
+        "zh": "我们刚刚教会人工智能代理完成真实购买",
+        "es": "Acabamos de enseñar a agentes de inteligencia artificial a realizar compras reales"
       },
       "excerpt_i18n": {
-        "en": "I'm struggling to understand how these tools are actually useful. The AI doesn't have the product knowledge to catch logic bugs, and basic tests should eliminate syntactic bugs/endless loops etc. Perhaps codebase indexing could help, although it still wouldn't be able to understand the \"why\" behind the code. Curious if others feel the same",
-        "zh": "我难以理解这些工具的实际用处。AI缺乏产品知识来捕捉逻辑错误，而基础测试本应能消除语法错误和无限循环等问题。或许代码库索引能解决部分问题。",
-        "es": "Me cuesta entender cómo estas herramientas son realmente útiles. La IA no tiene el conocimiento del producto para detectar errores de lógica, y las pruebas básicas deberían eliminar errores sintácticos/bucles infinitos, etc. Quizás la indexación de la base de código..."
+        "en": ""
       },
-      "hotness": 0.994747
+      "hotness": 0.984376
+    },
+    {
+      "id": "28b655ff17f80cda",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45366538",
+      "title": "Any creative ways to transfer context between AI models?",
+      "raw_excerpt": "did anyone find best ways to not repeat yourself to every AI?",
+      "tags": [],
+      "published_at": "2025-09-24T22:08:17Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Any creative ways to transfer context between AI models?",
+        "zh": "有哪些在AI模型间传递上下文的新颖方法？",
+        "es": "¿Existen formas creativas de transferir contexto entre modelos de inteligencia artificial?"
+      },
+      "excerpt_i18n": {
+        "en": "did anyone find best ways to not repeat yourself to every AI?",
+        "zh": "有没有人找到避免对每个AI重复指令的最佳方法？",
+        "es": "¿Alguien ha encontrado las mejores formas de no repetirse con cada inteligencia artificial?"
+      },
+      "hotness": 0.984017
+    },
+    {
+      "id": "4a8140a1be4e40aa",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/tech/784997/qualcomm-snapdragon-8-elite-gen-5",
+      "title": "Qualcomm announces the Snapdragon 8 Elite Gen 5",
+      "raw_excerpt": "Qualcomm has formally unveiled its latest flagship SoC, destined for Android flagships in the very near future: the Snapdragon 8 Elite Gen 5. The name was revealed by way of a blog post last week, and if it seems like the company skipped forward a generation or two, that’s kind of the point. It features [&#8230;]",
+      "tags": [],
+      "published_at": "2025-09-24T21:56:31Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Qualcomm announces the Snapdragon 8 Elite Gen 5",
+        "zh": "高通发布骁龙8精英版第五代",
+        "es": "Qualcomm anuncia el Snapdragon 8 Elite de 5.ª Generación"
+      },
+      "excerpt_i18n": {
+        "en": "Qualcomm has formally unveiled its latest flagship SoC, destined for Android flagships in the very near future: the Snapdragon 8 Elite Gen 5. The name was revealed by way of a blog post last week, and if it seems like the company skipped forward a generation or two, that’s kind of the point. It features [&#8230;]",
+        "zh": "高通正式发布最新旗舰SoC芯片Snapdragon 8 Elite Gen 5，该芯片将很快搭载于安卓旗舰机型。这款芯片的名称已通过上周的博客文章公布。",
+        "es": "Qualcomm ha presentado oficialmente su último SoC insignia, destinado a los teléfonos insignia Android en un futuro muy cercano: el Snapdragon 8 Elite Gen 5. El nombre fue revelado mediante una publicación de blog la semana pasada, y si parece que"
+      },
+      "hotness": 1.030296
+    },
+    {
+      "id": "53991c01964bb11a",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/speeches/we-must-ensure-ai-strengthens-peace-and-security-uk-statement-at-the-un-security-council",
+      "title": "We must ensure AI strengthens peace and security: UK Statement at the UN Security Council",
+      "raw_excerpt": "Statement by The Rt Hon David Lammy, Lord Chancellor and Secretary of State for Justice and Deputy Prime Minister, at the UN Security Council meeting on Artificial Intelligence.",
+      "tags": [],
+      "published_at": "2025-09-24T21:52:23Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "We must ensure AI strengthens peace and security: UK Statement at the UN Security Council",
+        "zh": "英国在联合国安理会声明：必须确保人工智能巩固和平与安全",
+        "es": "Debemos garantizar que la inteligencia artificial fortalezca la paz y la seguridad: Declaración del Reino Unido en el Consejo de Seguridad de la ONU"
+      },
+      "excerpt_i18n": {
+        "en": "Statement by The Rt Hon David Lammy, Lord Chancellor and Secretary of State for Justice and Deputy Prime Minister, at the UN Security Council meeting on Artificial Intelligence.",
+        "zh": "英国司法大臣兼副首相戴维·拉米在联合国安理会人工智能会议上的发言。",
+        "es": "Declaración de El Muy Honorable David Lammy, Lord Canciller y Secretario de Estado de Justicia y Viceprimer Ministro, en la reunión del Consejo de Seguridad de la ONU sobre Inteligencia Artificial."
+      },
+      "hotness": 0.980258
+    },
+    {
+      "id": "4052a3fb7eb71bbd",
+      "source": {
+        "site": "https://blogs.nvidia.com/",
+        "feed": "https://blogs.nvidia.com/feed/"
+      },
+      "url": "https://blogs.nvidia.com/blog/nemotron-open-source-ai/",
+      "title": "Open Secret: How NVIDIA Nemotron Models, Datasets and Techniques Fuel AI Development",
+      "raw_excerpt": "Open technologies — made available to developers and businesses to adopt, modify and innovate with — have been part of every major technology shift, from the birth of the internet to the early days of cloud computing. AI should follow the same path. That’s why the NVIDIA Nemotron family of multimodal AI models, datasets and Read Article",
+      "tags": [
+        "Research",
+        "Industry"
+      ],
+      "published_at": "2025-09-24T21:45:24Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Open Secret: How NVIDIA Nemotron Models, Datasets and Techniques Fuel AI Development",
+        "zh": "公开的秘密：英伟达Nemotron模型、数据集与技术如何推动人工智能发展",
+        "es": "Secreto a voces: cómo los modelos, conjuntos de datos y técnicas de NVIDIA Nemotron impulsan el desarrollo de la inteligencia artificial"
+      },
+      "excerpt_i18n": {
+        "en": "Open technologies — made available to developers and businesses to adopt, modify and innovate with — have been part of every major technology shift, from the birth of the internet to the early days of cloud computing. AI should follow the same path. That’s why the NVIDIA Nemotron family of multimodal AI models, datasets and Read Article",
+        "zh": "开放技术——供开发者和企业采纳、修改与创新——始终贯穿每一次重大技术变革，从互联网诞生到云计算兴起，人工智能时代亦不例外。",
+        "es": "Las tecnologías abiertas —disponibles para que desarrolladores y empresas las adopten, modifiquen e innoven con ellas— han formado parte de todos los grandes cambios tecnológicos, desde el nacimiento de internet hasta los primeros días de la computación en la nube. La inteligencia artificial."
+      },
+      "hotness": 0.978612
+    },
+    {
+      "id": "8f34021e564b2a11",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity?mc_cid=4dc392fe29",
+      "title": "AI-Generated \"Workslop\" Is Destroying Productivity",
+      "raw_excerpt": "",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-24T21:36:08Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "AI-Generated \"Workslop\" Is Destroying Productivity",
+        "zh": "人工智能生成的无用工作正在破坏生产力",
+        "es": "El \"trabajopaja\" generado por IA está destruyendo la productividad"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.976432
+    },
+    {
+      "id": "f8a9d80baa999ba1",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://github.com/worldveil/musical_mel_transform_torch",
+      "title": "Musical mel transform in Torch for Music AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T21:10:56Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Musical mel transform in Torch for Music AI",
+        "zh": "Torch音乐AI中的梅尔频谱变换",
+        "es": "Transformación mel musical en Torch para IA musical"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 1.21316
+    },
+    {
+      "id": "1eda33148dd7c8f7",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://techcrunch.com/2025/09/24/neon-the-no-2-social-app-on-the-apple-app-store-pays-users-to-record-their-phone-calls-and-sells-data-to-ai-firms/",
+      "title": "Neon pays users to record their phone calls and sells data to AI firms",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T20:36:07Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Neon pays users to record their phone calls and sells data to AI firms",
+        "zh": "Neon公司付费让用户录制通话并将数据出售给人工智能企业",
+        "es": "Neón paga a los usuarios por grabar sus llamadas telefónicas y vende los datos a empresas de inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 1.058672
+    },
+    {
+      "id": "a371b27aa1ccaf0a",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://finance.yahoo.com/news/neon-no-2-social-app-195058607.html",
+      "title": "Social app Neon pays users to record their phone calls, sells data to AI firms",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T20:26:36Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Social app Neon pays users to record their phone calls, sells data to AI firms",
+        "zh": "社交应用Neon付费让用户录制通话，并将数据出售给人工智能公司。",
+        "es": "La aplicación social Neon paga a los usuarios por grabar sus llamadas telefónicas y vende los datos a empresas de IA."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.960228
+    },
+    {
+      "id": "df7c0a319bb02470",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.mit.edu/2025/new-tool-makes-generative-ai-models-likely-create-breakthrough-materials-0922",
+      "title": "New tool makes generative AI models more likely to create breakthrough materials",
+      "raw_excerpt": "",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-24T20:25:48Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "New tool makes generative AI models more likely to create breakthrough materials",
+        "zh": "新工具提升生成式AI模型创造突破性材料的可能性",
+        "es": "Una nueva herramienta aumenta la probabilidad de que los modelos de inteligencia artificial generativa creen materiales innovadores."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.960043
+    },
+    {
+      "id": "ef30f4feeb73f8b7",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.agmwisdom.com",
+      "title": "I built an AI SaaS with real-time collaboration and a chat-to-live-page feature",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T20:10:49Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "I built an AI SaaS with real-time collaboration and a chat-to-live-page feature",
+        "zh": "我开发了一款具备实时协作和聊天转实时页面功能的AI软件即服务。",
+        "es": "Desarrollé un SaaS de IA con colaboración en tiempo real y una función de chat a página en vivo."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.956587
+    },
+    {
+      "id": "c574dee6b387fe86",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.clientlever.com/blog/future-of-work-2025-ai-remote-meetings",
+      "title": "AI, Remote Meetings, and the Rise of Smarter Client Tools",
+      "raw_excerpt": "",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-24T20:03:22Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "AI, Remote Meetings, and the Rise of Smarter Client Tools",
+        "zh": "人工智能、远程会议与智能客户工具的兴起",
+        "es": "Inteligencia artificial, reuniones a distancia y el auge de herramientas para clientes más inteligentes"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.954873
+    },
+    {
+      "id": "a4ad4560f2a79d81",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://budgetpixel.com",
+      "title": "We build AI gen platform budgetpixel.com",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T19:52:25Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "We build AI gen platform budgetpixel.com",
+        "zh": "我们打造AI生成平台budgetpixel.com",
+        "es": "Desarrollamos la plataforma de IA gen budgetpixel.com"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.95236
+    },
+    {
+      "id": "b7e60db4ef385fa2",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.youtube.com/watch?v=lUXy6Xp2j_I",
+      "title": "Blackstone's Jon Gray on AI as \"The Main Thing\", and Where to Invest Now [video]",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T19:45:24Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Blackstone's Jon Gray on AI as \"The Main Thing\", and Where to Invest Now [video]",
+        "zh": "黑石集团乔恩·格雷谈人工智能为\"重中之重\"及当前投资方向[视频]",
+        "es": "Jon Gray de Blackstone sobre la IA como \"Lo principal\" y dónde invertir ahora [vídeo]"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.950753
+    },
+    {
+      "id": "f00f4a2c53062823",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://english.elpais.com/technology/2025-09-24/people-cheat-much-more-if-they-use-ai-its-a-level-of-deception-we-havent-seen-before.html",
+      "title": "People cheat more if they use AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T19:36:25Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "People cheat more if they use AI",
+        "zh": "使用人工智能会增加作弊行为",
+        "es": "La gente engaña más si utiliza la inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.9487
+    },
+    {
+      "id": "5e5921484def0486",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://research.portexai.com/data-valuation-as-a-foundation-for-ai-progress/",
+      "title": "To surface novel training data, AI needs data valuation",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T19:28:01Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "To surface novel training data, AI needs data valuation",
+        "zh": "为发掘新颖训练数据，人工智能需进行数据价值评估。",
+        "es": "Para descubrir datos de entrenamiento novedosos, la IA necesita valoración de datos."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.946784
+    },
+    {
+      "id": "4c5e61819c12b72b",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.befoundr.ai/",
+      "title": "The co-founder you wish you had – validate, build, and grow your startup with AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T19:27:12Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "The co-founder you wish you had – validate, build, and grow your startup with AI",
+        "zh": "你梦寐以求的联合创始人——用人工智能验证、构建并发展你的初创企业",
+        "es": "El cofundador que desearías tener: valida, construye y haz crecer tu startup con inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.946598
+    },
+    {
+      "id": "71100f4e13eaf527",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.harpersbazaar.com/fashion/trends/a67961087/ralph-lauren-ask-ralph-ai-shopping-experience/",
+      "title": "I Let Ralph Lauren's New AI Dress Me",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T19:18:25Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "I Let Ralph Lauren's New AI Dress Me",
+        "zh": "我让拉夫·劳伦的新AI为我搭配服装",
+        "es": "Dejé que la nueva inteligencia artificial de Ralph Lauren me vistiera."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.944599
+    },
+    {
+      "id": "8877bf66c3277590",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://group.softbank/en/news/press/20250924",
+      "title": "OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T18:59:24Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites",
+        "zh": "OpenAI、甲骨文和软银扩建星际之门项目，新增五个AI数据中心站点。",
+        "es": "OpenAI, Oracle y SoftBank amplían Stargate con cinco nuevos emplazamientos de centros de datos de inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.940285
+    },
+    {
+      "id": "d71be7292da5c862",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://ifp.org/unlocking-a-million-times-more-data-for-ai/",
+      "title": "Unlocking a Million Times More Data for AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T18:54:20Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Unlocking a Million Times More Data for AI",
+        "zh": "为人工智能解锁百万倍数据",
+        "es": "Desbloqueando un millón de veces más datos para la IA"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.939139
+    },
+    {
+      "id": "97a5fe51e2ddb1f8",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://stytch.com/blog/how-to-implement-web-bot-auth-signing/",
+      "title": "How to sign Web Bot Auth for your AI agent, bot, or crawler (and why you should)",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T18:47:17Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "How to sign Web Bot Auth for your AI agent, bot, or crawler (and why you should)",
+        "zh": "如何为您的AI代理、机器人或爬虫签署网络机器人认证（及其必要性）",
+        "es": "Cómo firmar la autenticación de bot web para tu agente de IA, bot o rastreador (y por qué deberías hacerlo)"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.937547
+    },
+    {
+      "id": "42ccb97d66fd4566",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://minimal-reflections.pages.dev/posts/real-ai-art/",
+      "title": "Real AI Art",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T18:40:14Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Real AI Art",
+        "zh": "真正的AI艺术",
+        "es": "Arte con Inteligencia Artificial Real"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.935958
+    },
+    {
+      "id": "1b11070ae12e7fd3",
+      "source": {
+        "site": "https://www.wired.com",
+        "feed": "https://www.wired.com/feed/category/business/latest/rss"
+      },
+      "url": "https://www.wired.com/story/this-ai-powered-robot-keeps-going-even-if-you-attack-it-with-a-chainsaw/",
+      "title": "This AI-Powered Robot Keeps Going Even if You Attack It With a Chainsaw",
+      "raw_excerpt": "A single AI model trained to control numerous robotic bodies can operate unfamiliar hardware and adapt eerily well to serious injuries.",
+      "tags": [],
+      "published_at": "2025-09-24T18:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "This AI-Powered Robot Keeps Going Even if You Attack It With a Chainsaw",
+        "zh": "这款AI动力机器人即使遭受电锯攻击也能持续运行",
+        "es": "Este robot con inteligencia artificial sigue funcionando incluso si lo atacas con una motosierra."
+      },
+      "excerpt_i18n": {
+        "en": "A single AI model trained to control numerous robotic bodies can operate unfamiliar hardware and adapt eerily well to serious injuries.",
+        "zh": "单个经过训练的AI模型能操控多种机器人躯体，即使面对陌生硬件或严重损伤也能异常灵活地适应。",
+        "es": "Un único modelo de inteligencia artificial entrenado para controlar numerosos cuerpos robóticos puede operar hardware desconocido y adaptarse de forma inquietantemente eficaz a lesiones graves."
+      },
+      "hotness": 0.926938
+    },
+    {
+      "id": "a0a893c02dd3d7e8",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/north-east-ai-growth-zone-taskforce-launched-to-accelerate-jobs-skills-and-growth",
+      "title": "North East AI Growth Zone taskforce launched to accelerate jobs, skills and growth",
+      "raw_excerpt": "Thousands of jobs on the horizon with new training and apprenticeship routes expected to be created as new taskforce announced.",
+      "tags": [],
+      "published_at": "2025-09-24T17:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "North East AI Growth Zone taskforce launched to accelerate jobs, skills and growth",
+        "zh": "东北人工智能增长区工作组启动，旨在加速就业、技能与经济增长。",
+        "es": "Se lanza el grupo de trabajo Zona de Crecimiento de IA del Noreste para acelerar empleos, competencias y crecimiento"
+      },
+      "excerpt_i18n": {
+        "en": "Thousands of jobs on the horizon with new training and apprenticeship routes expected to be created as new taskforce announced.",
+        "zh": "新工作组宣布成立后，预计将通过培训与学徒制途径创造数千个就业岗位。",
+        "es": "Miles de empleos en el horizonte con nuevas vías de formación y aprendizaje que se espera crear tras el anuncio de un nuevo grupo de trabajo."
+      },
+      "hotness": 0.913649
+    },
+    {
+      "id": "3e8b5f12bac1833a",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://news.ycombinator.com/item?id=45362914",
+      "title": "Launch HN: Flywheel (YC S25) – Waymo for Excavators",
+      "raw_excerpt": "Hey HN,\nWe're Jash and Mahimana, cofounders of Flywheel AI ( https://useflywheel.ai ). We’re building a remote teleop and autonomous stack for excavators. Here's a video: https://www.youtube.com/watch?v=zCNmNm3lQGk . Interfacing with existing excavators for enabling remote teleop (or autonomy) is hard. Unlike cars which use drive-by-wire technology, most of the millions of excavators are fully hydraulic machines. The joysticks are connected to a pilot hydraulic circuit, which proportionally moves the cylinders in the main hydraulic circuit which ultimately moves the excavator joints. This means excavators mostly do not have an electronic component to control the joints. We solve this by mechanically actuating the joysticks and pedals inside the excavators. We do this with retrofits which w",
+      "tags": [],
+      "published_at": "2025-09-24T16:48:27Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Launch HN: Flywheel (YC S25) – Waymo for Excavators",
+        "zh": "HN发布：Flywheel（YC S25）——挖掘机界的Waymo",
+        "es": "Presentación en HN: Flywheel (YC S25) — El Waymo de las excavadoras"
+      },
+      "excerpt_i18n": {
+        "en": "Hey HN,\nWe're Jash and Mahimana, cofounders of Flywheel AI ( https://useflywheel.ai ). We’re building a remote teleop and autonomous stack for excavators. Here's a video: https://www.youtube.com/watch?v=zCNmNm3lQGk . Interfacing with existing excavators for enabling remote teleop (or autonomy) is hard. Unlike cars which use drive-by-wire technology, most of the millions of excavators are fully hydraulic machines. The joysticks are connected to a pilot hydraulic circuit, which proportionally moves the cylinders in the main hydraulic circuit which ultimately moves the excavator joints. This means excavators mostly do not have an electronic component to control the joints. We solve this by mechanically actuating the joysticks and pedals inside the excavators. We do this with retrofits which w",
+        "zh": "各位 HN 网友：\n我们是 Flywheel AI（https://useflywheel.ai）的联合创始人 Jash 和 Mahimana。我们正在为挖掘机构建远程遥操作与自动驾驶系统。演示视频：https://www.youtube.com/watch?v=zCNmNm3lQGk。",
+        "es": "Hola HN,\nSomos Jash y Mahimana, cofundadores de Flywheel AI ( https://useflywheel.ai ). Estamos desarrollando un sistema de teleoperación remota y pila autónoma para excavadoras. Aquí tenéis un vídeo: https://www.youtube.com/watch?v=zCNmNm3lQGk . Int"
+      },
+      "hotness": 0.911113
+    },
+    {
+      "id": "d54d66a0a219d14e",
+      "source": {
+        "site": "https://blogs.nvidia.com/",
+        "feed": "https://blogs.nvidia.com/feed/"
+      },
+      "url": "https://blogs.nvidia.com/blog/canada-all-in/",
+      "title": "Canada Goes All In on AI: NVIDIA Joins Nations’ Technology Leaders in Montreal to Shape Sovereign AI Strategy",
+      "raw_excerpt": "Canada’s role as a leader in artificial intelligence was on full display at this week’s All In Canada AI Ecosystem event. NVIDIA Vice President of Generative AI Software Kari Briski today joined Canada’s Minister of Artificial Intelligence and Digital Innovation Evan Solomon and Aiden Gomez, cofounder and CEO of Cohere, in a special address moderated Read Article",
+      "tags": [],
+      "published_at": "2025-09-24T16:20:41Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Canada Goes All In on AI: NVIDIA Joins Nations’ Technology Leaders in Montreal to Shape Sovereign AI Strategy",
+        "zh": "加拿大全力投入人工智能：NVIDIA与各国技术领袖齐聚蒙特利尔共商主权AI战略",
+        "es": "Canadá apuesta fuerte por la IA: NVIDIA se une a los líderes tecnológicos del país en Montreal para moldear la estrategia de IA soberana."
+      },
+      "excerpt_i18n": {
+        "en": "Canada’s role as a leader in artificial intelligence was on full display at this week’s All In Canada AI Ecosystem event. NVIDIA Vice President of Generative AI Software Kari Briski today joined Canada’s Minister of Artificial Intelligence and Digital Innovation Evan Solomon and Aiden Gomez, cofounder and CEO of Cohere, in a special address moderated Read Article",
+        "zh": "加拿大在本周\"全境人工智能生态系统\"活动中充分展现了其人工智能领域的领导地位。英伟达生成式AI软件副总裁卡里·布里斯基今日与加拿大艺术部长共同出席活动。",
+        "es": "El papel de Canadá como líder en inteligencia artificial quedó plenamente demostrado en el evento All In Canada AI Ecosystem de esta semana. Kari Briski, vicepresidenta de Software de Inteligencia Artificial Generativa de NVIDIA, se unió hoy a la ministra de Arti de Canadá"
+      },
+      "hotness": 0.905044
+    },
+    {
+      "id": "f5829d29e034fd30",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://zed.dev/blog/pricing-change-llm-usage-is-now-token-based",
+      "title": "Zed's Pricing Has Changed: LLM Usage Is Now Token-Based",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T16:13:49Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Zed's Pricing Has Changed: LLM Usage Is Now Token-Based",
+        "zh": "Zed定价调整：LLM使用现按Token计费",
+        "es": "El precio de Zed ha cambiado: el uso de LLM ahora se basa en tokens"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.90355
+    },
+    {
+      "id": "e25b7e8868f1594f",
+      "source": {
+        "site": "https://arstechnica.com",
+        "feed": "https://arstechnica.com/information-technology/feed/"
+      },
+      "url": "https://arstechnica.com/ai/2025/09/why-does-openai-need-six-giant-data-centers/",
+      "title": "Why does OpenAI need six giant data centers?",
+      "raw_excerpt": "OpenAI's new $400 billion announcement reveals both growing AI demand and circular investments.",
+      "tags": [],
+      "published_at": "2025-09-24T16:06:03Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Why does OpenAI need six giant data centers?",
+        "zh": "OpenAI为何需要六座巨型数据中心？",
+        "es": "¿Por qué necesita OpenAI seis grandes centros de datos?"
+      },
+      "excerpt_i18n": {
+        "en": "OpenAI's new $400 billion announcement reveals both growing AI demand and circular investments.",
+        "zh": "OpenAI新发布的4000亿美元公告既显示人工智能需求增长，也反映出循环投资现象。",
+        "es": "El nuevo anuncio de 400 000 millones de dólares de OpenAI revela tanto la creciente demanda de IA como las inversiones circulares."
+      },
+      "hotness": 0.901863
+    },
+    {
+      "id": "620fbe37064fc821",
+      "source": {
+        "site": "https://www.wired.com",
+        "feed": "https://www.wired.com/feed/category/business/latest/rss"
+      },
+      "url": "https://www.wired.com/story/semiconductor-software-startups-chips/",
+      "title": "A Former Apple Luminary Sets Out to Create the Ultimate GPU Software",
+      "raw_excerpt": "Demand for AI chips is booming—and so is the need for software to run them. Chris Lattner’s startup Modular just raised $250 million to build the best developer tools for AI hardware.",
+      "tags": [
+        "Funding",
+        "Tools"
+      ],
+      "published_at": "2025-09-24T16:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "A Former Apple Luminary Sets Out to Create the Ultimate GPU Software",
+        "zh": "前苹果杰出人物着手打造终极GPU软件",
+        "es": "Un exlumbrante de Apple se propone crear el software de GPU definitivo"
+      },
+      "excerpt_i18n": {
+        "en": "Demand for AI chips is booming—and so is the need for software to run them. Chris Lattner’s startup Modular just raised $250 million to build the best developer tools for AI hardware.",
+        "zh": "人工智能芯片需求激增，运行芯片的软件需求也随之高涨。克里斯·拉特纳的初创公司Modular刚融资2.5亿美元，旨在为AI硬件打造最优秀的开发者工具。",
+        "es": "La demanda de chips de IA está en auge, y también lo es la necesidad de software para ejecutarlos. La startup de Chris Lattner, Modular, acaba de recaudar 250 millones de dólares para crear las mejores herramientas de desarrollo para hardware de IA."
+      },
+      "hotness": 0.90055
+    },
+    {
+      "id": "bb9b32ae0d8ecd37",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://cjauvin.github.io/posts/learning-persian/",
+      "title": "Learning Persian with Anki, ChatGPT and YouTube",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-24T12:45:07Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Learning Persian with Anki, ChatGPT and YouTube",
+        "zh": "使用Anki、ChatGPT和YouTube学习波斯语",
+        "es": "Aprender persa con Anki, ChatGPT y YouTube"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.859286
+    },
+    {
+      "id": "158e7c4cdfc355bc",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/24/1124026/the-download-accidental-ai-relationships-and-future-contraception/",
+      "title": "The Download: accidental AI relationships, and the future of contraception",
+      "raw_excerpt": "This is today&#8217;s edition of&#160;The Download,&#160;our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. It’s surprisingly easy to stumble into a relationship with an AI chatbot The news: The first large-scale computational analysis of the Reddit community r/MyBoyfriendIsAI, which is dedicated to discussing AI relationships, found that&#8230;",
+      "tags": [],
+      "published_at": "2025-09-24T12:10:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "The Download: accidental AI relationships, and the future of contraception",
+        "zh": "下载：意外的人工智能关系与避孕技术的未来",
+        "es": "La Descarga: relaciones accidentales con la IA y el futuro de la anticoncepción"
+      },
+      "excerpt_i18n": {
+        "en": "This is today&#8217;s edition of&#160;The Download,&#160;our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. It’s surprisingly easy to stumble into a relationship with an AI chatbot The news: The first large-scale computational analysis of the Reddit community r/MyBoyfriendIsAI, which is dedicated to discussing AI relationships, found that&#8230;",
+        "zh": "这是今日版《下载》，我们的工作日通讯，每日为您提供科技界动态。人们很容易意外陷入与人工智能的恋爱关系。",
+        "es": "Esta es la edición de hoy de The Download, nuestro boletín diario que ofrece una dosis cotidiana de lo que ocurre en el mundo de la tecnología. Es sorprendentemente fácil tropezar con una relación con un"
+      },
+      "hotness": 1.022465
+    },
+    {
+      "id": "c30f94033f1d3448",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/gqP8zVEPKVq1acYNU0kJ",
+      "title": "同济子豪兄：当 AIGC 遇上烟花与画笔，人人都是 AI 魔法师",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-24T11:46:51Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "同济子豪兄：当 AIGC 遇上烟花与画笔，人人都是 AI 魔法师",
+        "en": "Tongji Zihao: When AIGC meets fireworks and paintbrushes, everyone becomes an AI magician."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.84732
+    },
+    {
+      "id": "6019bd5ab86967fb",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/XHNbL7gPSv8aeqOq7QaG",
+      "title": "银海：AI Agent 落地商业，解密电商行业效率革命",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-24T11:46:28Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "银海：AI Agent 落地商业，解密电商行业效率革命",
+        "en": "Silver Sea: AI Agents Commercialized, Decoding the Efficiency Revolution in E-commerce.",
+        "es": "Plataforma Silver Sea: Implementación de Agentes de IA en Negocios, Descifrando la Revolución de Eficiencia en la Industria del Comercio Electrónico"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.847242
+    },
+    {
+      "id": "896a71b7b68fff18",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/FtUk4PbwFmtmgwg37DUu",
+      "title": "Jack-cui：用 Qwen 秒搭数字人，Agent 创客开启“造物”新纪元",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-24T11:46:14Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "Jack-cui：用 Qwen 秒搭数字人，Agent 创客开启“造物”新纪元",
+        "en": "Jack-cui: Instantly Build Digital Humans with Qwen, Agent Makers Usher in a New Era of \"Creation\"",
+        "es": "Jack-cui: Crea al instante un humano digital con Qwen, los creadores de Agent inician una nueva era de \"creación\"."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.847195
+    },
+    {
+      "id": "c0a02a40d08c0da0",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/1zGOeTBfz5oOX4B0lRQy",
+      "title": "Lakehouse 之后，Agent Ready 成了数据 Infra 的新标配？",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-24T11:40:23Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "Lakehouse 之后，Agent Ready 成了数据 Infra 的新标配？",
+        "en": "After the lakehouse, has Agent Ready become the new standard for data infrastructure?",
+        "es": "¿Después de Lakehouse, Agent Ready se ha convertido en el nuevo estándar de la infraestructura de datos?"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.846003
+    },
+    {
+      "id": "50a314778081f588",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/Nj32xp0TtPaeMqRxWW64",
+      "title": "上百篇AI“著作”登期刊！ChatGPT 和 Gemini靠重写论文搞出的仿作，全冒充新研究成功了",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-24T10:37:34Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "上百篇AI“著作”登期刊！ChatGPT 和 Gemini靠重写论文搞出的仿作，全冒充新研究成功了",
+        "en": "Over a hundred AI-generated \"papers\" have been published in journals! ChatGPT and Gemini successfully passed off rewritten articles as new research.",
+        "es": "Cientos de obras sobre IA aparecen en revistas científicas. ChatGPT y Gemini crean imitaciones mediante la reescritura de artículos, haciéndolos pasar con éxito como nuevas investigaciones."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.833309
+    },
+    {
+      "id": "3c2dd5ba6682121b",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/24/1123999/the-ai-hype-index-cracking-the-chatbot-code/",
+      "title": "The AI Hype Index: Cracking the chatbot code",
+      "raw_excerpt": "Separating AI reality from hyped-up fiction isn’t always easy. That’s why we’ve created the AI Hype Index—a simple, at-a-glance summary of everything you need to know about the state of the industry. Millions of us use chatbots every day, even though we don’t really know how they work or how using them affects us. In&#8230;",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-24T09:40:19Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "The AI Hype Index: Cracking the chatbot code",
+        "zh": "AI热度指数：破解聊天机器人密码",
+        "es": "El Índice de Exageración de la IA: Descifrando el código de los chatbots"
+      },
+      "excerpt_i18n": {
+        "en": "Separating AI reality from hyped-up fiction isn’t always easy. That’s why we’ve created the AI Hype Index—a simple, at-a-glance summary of everything you need to know about the state of the industry. Millions of us use chatbots every day, even though we don’t really know how they work or how using them affects us. In&#8230;",
+        "zh": "区分人工智能的现实与过度炒作的虚构内容并非易事。为此我们创建了人工智能热度指数——通过简洁直观的行业现状汇总，为您提供所需的关键信息。目前已有数百万人使用c",
+        "es": "Distinguir la realidad de la inteligencia artificial de la ficción exagerada no siempre es fácil. Por eso hemos creado el Índice de Exageración de la IA: un resumen sencillo y rápido de todo lo que necesitas saber sobre el estado de la industria. Millones de nosotros utilizamos c"
+      },
+      "hotness": 0.986286
+    },
+    {
+      "id": "eba789f5fc6d49fe",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/24/1123915/relationship-ai-without-seeking-it/",
+      "title": "It’s surprisingly easy to stumble into a relationship with an AI chatbot",
+      "raw_excerpt": "It’s a tale as old as time. Looking for help with her art project, she strikes up a conversation with her assistant. One thing leads to another, and suddenly she has a boyfriend she’s introducing to her friends and family. The twist? Her new companion is an AI chatbot.&#160; The first large-scale computational analysis of&#8230;",
+      "tags": [],
+      "published_at": "2025-09-24T09:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "It’s surprisingly easy to stumble into a relationship with an AI chatbot",
+        "zh": "与AI聊天机器人建立关系竟出人意料地简单",
+        "es": "Es sorprendentemente fácil caer en una relación con un chatbot de inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": "It’s a tale as old as time. Looking for help with her art project, she strikes up a conversation with her assistant. One thing leads to another, and suddenly she has a boyfriend she’s introducing to her friends and family. The twist? Her new companion is an AI chatbot.&#160; The first large-scale computational analysis of&#8230;",
+        "zh": "这是一个老套的故事。为了寻求艺术项目的帮助，她与助手攀谈起来。一来二去，她突然就有了个要向亲友介绍的男朋友。",
+        "es": "Es una historia de siempre. Buscando ayuda para su proyecto de arte, entabla una conversación con su asistente. Una cosa lleva a la otra, y de repente tiene un novio al que presenta a sus amigos y familia."
+      },
+      "hotness": 0.976763
+    },
+    {
+      "id": "85cee75a7e99c08c",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/335869.html",
+      "title": "GPT-5编程测评大反转！表面不及格，实际63.1%的任务没交卷，全算上成绩比Claude高一倍",
+      "raw_excerpt": "谁会成为第一个突破30%的大模型呢？",
+      "tags": [],
+      "published_at": "2025-09-24T08:55:58Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "GPT-5编程测评大反转！表面不及格，实际63.1%的任务没交卷，全算上成绩比Claude高一倍",
+        "en": "GPT-5's programming evaluation took a surprising turn: while it appeared to fail, 63.1% of tasks were actually unsubmitted. When all tasks are counted, its score doubles that of Claude.",
+        "es": "¡Gran revés en la evaluación de programación de GPT-5! Aparentemente suspendió, pero en realidad no entregó el 63,1% de las tareas. Contando todos los resultados, su puntuación duplica la de Claude."
+      },
+      "excerpt_i18n": {
+        "zh": "谁会成为第一个突破30%的大模型呢？",
+        "en": "Which large model will be the first to surpass 30%?",
+        "es": "¿Quién será el primer modelo de gran tamaño en superar el 30%?"
+      },
+      "hotness": 0.975815
+    },
+    {
+      "id": "cebcd24942310206",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/ai/DpGZ15sEkuvhrNpC.html",
+      "title": "不靠英伟达，中科院在国产 GPU 上跑通 76B 类脑大模型",
+      "raw_excerpt": "过去几年，大模型几乎都依赖 Transformer，它支撑了 GPT、Claude、Gemini 等一众前沿模型的进步，但也一直被诟病：一旦文本变长，计算量和内存消耗就会成倍膨胀，百万级 token 几乎不可承受。与此同时，大模型训练几乎完全依赖 NVIDIA 的 GPU 体系。从算力到软件栈，整个行业被牢牢绑定在 CUDA 上，硬件自主化成了迟迟迈不过去的门槛。 正因为如此，业界一直在寻找“下一条路”。有人尝试混合架构，有人研究稀疏专家，也有人试水类脑计算。但这些探索往往停留在小规模实验，很少能真正跑到大模型层面。 直到最近，中科院团队抛出了一篇新论文，提出了一个全新系列的类脑大模型 SpikingBrain。他们通过引入 spiking 神经元、线性注意力和稀疏专家机制，不仅在超长文本处理上实现了 百倍加速，还首次在 国产 GPU 平台 MetaX 上稳定训练出 76B 规模的模型。 同时，SpikingBrain 的问世也证明了大模型并不是只能依赖 Transformer + NVIDIA 的组合，另一条通往未来的道路正在被打开。 论文链接：https://www.arxiv.org/pdf/2509.05276 大模型的新答案 在实验中，研究团队在超长上下文任务上取得了突破性成果。以 SpikingBrain-7B 为例，当输入长度达到 400 万 token 时，其 Time-to-First-Token（首个 token 生成延迟）比传统 Transformer 快了 100 倍。换句话说，原本需要长时间等待的超长文本任务，如今几乎可以做到即时响应。 由于脉冲神经元只在必要时才会“放电”，模型在推理过程中保持了 69.15% 的稀疏激活率——也就是说，大多数神经元在大部分时间处于静默状态，不参与计算。相比始终全量激活的 lf，这种机制显著降低了算力消耗和能耗。",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-24T08:24:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "不靠英伟达，中科院在国产 GPU 上跑通 76B 类脑大模型",
+        "en": "Without relying on NVIDIA, the Chinese Academy of Sciences successfully ran a 76B brain-inspired large model on a domestic GPU.",
+        "es": "Sin depender de Nvidia, la Academia China de Ciencias ejecuta con éxito un modelo cerebral grande de 76.000 millones de parámetros en GPU nacional."
+      },
+      "excerpt_i18n": {
+        "zh": "过去几年，大模型几乎都依赖 Transformer，它支撑了 GPT、Claude、Gemini 等一众前沿模型的进步，但也一直被诟病：一旦文本变长，计算量和内存消耗就会成倍膨胀，百万级 token 几乎不可承受。与此同时，大模型训练几乎完全依赖 NVIDIA 的 GPU 体系。从算力到软件栈，整个行业被牢牢绑定在 CUDA 上，硬件自主化成了迟迟迈不过去的门槛。 正因为如此，业界一直在寻找“下一条路”。有人尝试混合架构，有人研究稀疏专家，也有人试水类脑计算。但这些探索往往停留在小规模实验，很少能真正跑到大模型层面。 直到最近，中科院团队抛出了一篇新论文，提出了一个全新系列的类脑大模型 SpikingBrain。他们通过引入 spiking 神经元、线性注意力和稀疏专家机制，不仅在超长文本处理上实现了 百倍加速，还首次在 国产 GPU 平台 MetaX 上稳定训练出 76B 规模的模型。 同时，SpikingBrain 的问世也证明了大模型并不是只能依赖 Transformer + NVIDIA 的组合，另一条通往未来的道路正在被打开。 论文链接：https://www.arxiv.org/pdf/2509.05276 大模型的新答案 在实验中，研究团队在超长上下文任务上取得了突破性成果。以 SpikingBrain-7B 为例，当输入长度达到 400 万 token 时，其 Time-to-First-Token（首个 token 生成延迟）比传统 Transformer 快了 100 倍。换句话说，原本需要长时间等待的超长文本任务，如今几乎可以做到即时响应。 由于脉冲神经元只在必要时才会“放电”，模型在推理过程中保持了 69.15% 的稀疏激活率——也就是说，大多数神经元在大部分时间处于静默状态，不参与计算。相比始终全量激活的 lf，这种机制显著降低了算力消耗和能耗。",
+        "en": "In recent years, large models have almost universally relied on the Transformer architecture, which has driven advancements in cutting-edge models like GPT, Claude, and Gemini. However, it has long been criticized for its exponential increase in computational load and memory consumption as text length grows, making processing millions of tokens nearly unfeasible. At the same time, large model training has been almost entirely dependent on NVIDIA's GPU ecosystem. From computing power to software stacks, the industry is tightly bound to CUDA, making hardware autonomy a persistent barrier.\n\nAs a result, the industry has been searching for an alternative path. Some have experimented with hybrid architectures, others have explored sparse expert models, and some have ventured into brain-inspired computing. Yet these efforts often remain small-scale experiments, rarely scaling up to large models.\n\nRecently, a team from the Chinese Academy of Sciences published a new paper introducing a novel series of brain-inspired large models called SpikingBrain. By incorporating spiking neurons, linear attention, and sparse expert mechanisms, they achieved a hundredfold acceleration in ultra-long text processing and, for the first time, successfully trained a stable 76B model on the domestic GPU platform MetaX.\n\nThe emergence of SpikingBrain also demonstrates that large models are not limited to the Transformer + NVIDIA combination, opening up another path toward the future. Paper link: https://www.arxiv.o",
+        "es": "En los últimos años, casi todos los grandes modelos han dependido del Transformer, que ha impulsado el progreso de modelos avanzados como GPT, Claude y Gemini. Sin embargo, siempre ha sido criticado porque, una vez que el texto se alarga, el cálculo y el consumo de memoria se multiplican exponencialmente, haciendo que millones de tokens sean casi inmanejables. Al mismo tiempo, el entrenamiento de grandes modelos depende casi por completo del ecosistema de GPU de NVIDIA. Desde la capacidad de cálculo hasta el stack de software, toda la industria está firmemente vinculada a CUDA, convirtiendo la autonomía hardware en un obstáculo difícil de superar. Precisamente por ello, el sector siempre ha estado buscando \"el siguiente camino\". Algunos han probado arquitecturas híbridas, otros han investigado la especialización dispersa."
+      },
+      "hotness": 0.806947
+    },
+    {
+      "id": "b48ccfad29dde0ef",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/ai/lMeN2LzKU6x2iHic.html",
+      "title": "基础设施进入 Agent 时代：无问芯穹的“蜂群式”尝试",
+      "raw_excerpt": "智能体（AI Agent）正在成为人工智能演进的核心方向。它既是人机协同的桥梁，也是机器自主决策的载体，未来甚至可能成为智能社会的基础单元。 然而，今天支撑智能体的基础设施依旧停留在一种“机械拼装”的状态：大量的胶水代码勉强将分散的环节拼接在一起，算力资源在静默中闲置，昂贵的训练任务可能因一次突发故障而瞬间中断，庞大的运维团队则日复一日地陷入告警与排障的泥潭。 传统 IaaS 与 PaaS 的工具链加人工模式已经无法承载智能体生产的复杂性与动态性。 为了突破这一局限，我们需要基础设施本身实现一次范式级的进化，让它能够具备自主决策、协同和演化的能力，凭借智能体的主动性和智能性，做出比人工更快、更精准、更优的判断，承担过去依赖专家经验才能完成的复杂任务，从而实现更高效、更稳定、更普惠的 AI 创新。 正是在这样的背景下，无问芯穹推出了 “基础设施智能体蜂群”。 这一体系基于其多年在 AI-Native 基础设施的技术积累和服务经验，融合多智能体协同架构与行业实际场景需求，构建出一种新一代基础设施智能化方案。 蜂群通过封装模型筛选、平台管家、资源运营、答疑排障、智算运维等模块，形成了一个高度自治、动态协作的体系，打造了覆盖基础设施全生命周期的智能感知、智能决策与智能执行闭环，显著提升资源利用率和运维效率，以同样的投入实现百倍规模的运维能力扩展。 在传统模式中，算力平台的使用与运维往往是割裂的，开发、运维和运营团队各自为战，流程繁琐而低效。而在无问芯穹的蜂群体系中，这一切被统一在一个智能化的闭环中。 无论是算力池化后的弹性调度，还是跨地域集群的统一运营，亦或是高性能网络、存储与安全的协同管控，蜂群架构都能自适应地进行动态优化。这使得算力平台不再只是被动的资源提供者，而是以自治化的方式主动服务于研发任务和业务目标，最终带来资源利用率、能效比和可靠性的全面提升。 蜂群内部的不同智能体各",
+      "tags": [],
+      "published_at": "2025-09-24T08:18:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "基础设施进入 Agent 时代：无问芯穹的“蜂群式”尝试",
+        "en": "Infrastructure Enters the Agent Era: Innoqueen's \"Swarm-Style\" Experiment",
+        "es": "La infraestructura entra en la era de los agentes: el intento de enjambre de Wu Wen Xin Qiong."
+      },
+      "excerpt_i18n": {
+        "zh": "智能体（AI Agent）正在成为人工智能演进的核心方向。它既是人机协同的桥梁，也是机器自主决策的载体，未来甚至可能成为智能社会的基础单元。 然而，今天支撑智能体的基础设施依旧停留在一种“机械拼装”的状态：大量的胶水代码勉强将分散的环节拼接在一起，算力资源在静默中闲置，昂贵的训练任务可能因一次突发故障而瞬间中断，庞大的运维团队则日复一日地陷入告警与排障的泥潭。 传统 IaaS 与 PaaS 的工具链加人工模式已经无法承载智能体生产的复杂性与动态性。 为了突破这一局限，我们需要基础设施本身实现一次范式级的进化，让它能够具备自主决策、协同和演化的能力，凭借智能体的主动性和智能性，做出比人工更快、更精准、更优的判断，承担过去依赖专家经验才能完成的复杂任务，从而实现更高效、更稳定、更普惠的 AI 创新。 正是在这样的背景下，无问芯穹推出了 “基础设施智能体蜂群”。 这一体系基于其多年在 AI-Native 基础设施的技术积累和服务经验，融合多智能体协同架构与行业实际场景需求，构建出一种新一代基础设施智能化方案。 蜂群通过封装模型筛选、平台管家、资源运营、答疑排障、智算运维等模块，形成了一个高度自治、动态协作的体系，打造了覆盖基础设施全生命周期的智能感知、智能决策与智能执行闭环，显著提升资源利用率和运维效率，以同样的投入实现百倍规模的运维能力扩展。 在传统模式中，算力平台的使用与运维往往是割裂的，开发、运维和运营团队各自为战，流程繁琐而低效。而在无问芯穹的蜂群体系中，这一切被统一在一个智能化的闭环中。 无论是算力池化后的弹性调度，还是跨地域集群的统一运营，亦或是高性能网络、存储与安全的协同管控，蜂群架构都能自适应地进行动态优化。这使得算力平台不再只是被动的资源提供者，而是以自治化的方式主动服务于研发任务和业务目标，最终带来资源利用率、能效比和可靠性的全面提升。 蜂群内部的不同智能体各",
+        "en": "AI Agents are becoming the core direction of artificial intelligence evolution. They serve as both a bridge for human-machine collaboration and a vehicle for autonomous machine decision-making, potentially forming the foundational units of an intelligent society in the future. However, the infrastructure supporting AI Agents today remains in a state of \"mechanical assembly\": extensive glue code barely connects disparate components, computing resources lie idle in silence, expensive training tasks can be abruptly halted by a single failure, and large operations teams are mired daily in alerts and troubleshooting. The traditional toolchain and manual approach of IaaS and PaaS can no longer handle the complexity and dynamism of AI Agent production. To overcome these limitations, the infrastructure itself must undergo a paradigm-level evolution, enabling autonomous decision-making, collaboration, and adaptation. By leveraging the initiative and intelligence of AI Agents, it can make faster, more accurate, and superior judgments than humans, taking on complex tasks that previously relied on expert experience, thereby achieving more efficient, stable, and accessible AI innovation. Against this backdrop, Wu Wen Xin Qiong has launched the \"Infrastructure AI Agent Swarm.\" This system builds on years of technical expertise and service experience in AI-Native infrastructure, integrating multi-agent collaborative architecture with real-world industry needs to create a new generation of intelligent infrastructure solutions. The swarm encapsulates modules such as model selection, platform management, resource operation, troubleshooting, and intelligent computing maintenance, forming a highly integrated framework.",
+        "es": "Los agentes de IA se están convirtiendo en la dirección central de la evolución de la inteligencia artificial. Son tanto un puente para la colaboración humano-máquina como un vehículo para la toma de decisiones autónoma de las máquinas, y en el futuro incluso podrían convertirse en la unidad básica de la sociedad inteligente. Sin embargo, la infraestructura que sostiene a los agentes hoy sigue estancada en un estado de \"ensamblaje mecánico\": gran cantidad de código adhesivo une a duras penas eslabones dispersos, los recursos de computación permanecen inactivos en silencio, las costosas tareas de entrenamiento pueden interrumpirse instantáneamente por una falla imprevista, mientras que los equipos de operaciones se hunden día tras día en el pantano de alertas y solución de problemas. El modelo tradicional de IaaS y PaaS con cadenas de herramientas y intervención manual ya no puede soportar la complejidad de la producción de agentes."
+      },
+      "hotness": 0.805782
+    },
+    {
+      "id": "75d2d9db353dc407",
+      "source": {
+        "site": "https://www.qbitai.com",
+        "feed": "https://www.qbitai.com/feed"
+      },
+      "url": "https://www.qbitai.com/2025/09/335831.html",
+      "title": "阿里云与英伟达联合推动具身智能应用落地",
+      "raw_excerpt": "阿里云和英伟达在Physical AI（物理AI）领域达成合作",
+      "tags": [],
+      "published_at": "2025-09-24T07:26:13Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "阿里云与英伟达联合推动具身智能应用落地",
+        "en": "Alibaba Cloud and NVIDIA are jointly advancing the implementation of embodied intelligence applications.",
+        "es": "Aliyun y Nvidia colaboran para impulsar la implementación de aplicaciones de inteligencia encarnada."
+      },
+      "excerpt_i18n": {
+        "zh": "阿里云和英伟达在Physical AI（物理AI）领域达成合作",
+        "en": "Alibaba Cloud and NVIDIA have formed a partnership in the field of Physical AI.",
+        "es": "Aliyun y NVIDIA han establecido una colaboración en el ámbito de la Inteligencia Artificial Física (Physical AI)."
+      },
+      "hotness": 0.954963
+    },
+    {
+      "id": "2bea82a12cf6fc86",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/bLAHtuSeSfbiweF1.html",
+      "title": "华为联合六家企业发布面向制造等行业的AI创新解决方案",
+      "raw_excerpt": "[中国，上海，2025年9月19日]&nbsp;华为全联接大会2025期间，在制造与大企业峰会上，华为联合广汽集团、美云智数、国地共建人形机器人创新中心（以下简称“国地中心”）、正大CP&nbsp;AXTRA、联发集团、中国海诚工程科技股份有限公司，发布六大行业AI创新解决方案，为全球制作、零售、建筑地产等多个行业领域提供数智化跃升实践样板，加速驱动AI驱增长动能。 &nbsp; 华为联合多家伙伴发布AI创新解决方案 当数据成为核心生产要素、智能成为竞争关键变量，如何用好AI已经成为企业的一道必答题。行业中的领军企业正在通过场景聚焦、小步快跑的方式推进 AI 落地，经过一年多的实践证明，AI为企业创造的价值，正以超出预期的速度持续刷新认知。 峰会期间，六家企业与华为共同发布了面向行业的AI创新成果，这些方案均在实践中得以验证并取得良好表现，旨在助力更多企业加速AI落地。 广汽与华为联合的云车机解决方案：依托华为云“CloudDevice”重构车机算力及生态边界，以开放平台打破传统车机封闭壁垒。助力广汽实现汽车座舱屏幕体验升级； 美云智数与华为联合的AIGC（Artificial Intelligence Generated Content，生成式人工智能）智能化解决方案：基于华为昇腾底座，融合美云智数数字平台与智能化应用，打造一站式“出厂即用”企业智能化解决方案，解决企业AI落地难题，降低开发门槛，整合分散能力，加速场景应用，助力企业提质增效； 国地共建人形机器人创新中心与华为联合的异构人形机器人工业服务场景训练场方案：基于华为昇腾算力底座、华为云meadow数据仿真、云存储等华为全栈式能力，完成具身训练场从0到1，与1到N的孵化； 正大CP AXTRA与华为联合的边缘算力智慧零售方案：基于华为Atlas 300V Pro联合伙伴实现边缘AI一体方案，赋能CP AXTRA智",
+      "tags": [],
+      "published_at": "2025-09-24T07:16:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "华为联合六家企业发布面向制造等行业的AI创新解决方案",
+        "en": "Huawei, in collaboration with six other companies, has launched AI innovation solutions targeting industries such as manufacturing.",
+        "es": "Huawei y seis empresas asociadas presentan una solución innovadora de inteligencia artificial dirigida a sectores como la manufactura."
+      },
+      "excerpt_i18n": {
+        "zh": "[中国，上海，2025年9月19日]&nbsp;华为全联接大会2025期间，在制造与大企业峰会上，华为联合广汽集团、美云智数、国地共建人形机器人创新中心（以下简称“国地中心”）、正大CP&nbsp;AXTRA、联发集团、中国海诚工程科技股份有限公司，发布六大行业AI创新解决方案，为全球制作、零售、建筑地产等多个行业领域提供数智化跃升实践样板，加速驱动AI驱增长动能。 &nbsp; 华为联合多家伙伴发布AI创新解决方案 当数据成为核心生产要素、智能成为竞争关键变量，如何用好AI已经成为企业的一道必答题。行业中的领军企业正在通过场景聚焦、小步快跑的方式推进 AI 落地，经过一年多的实践证明，AI为企业创造的价值，正以超出预期的速度持续刷新认知。 峰会期间，六家企业与华为共同发布了面向行业的AI创新成果，这些方案均在实践中得以验证并取得良好表现，旨在助力更多企业加速AI落地。 广汽与华为联合的云车机解决方案：依托华为云“CloudDevice”重构车机算力及生态边界，以开放平台打破传统车机封闭壁垒。助力广汽实现汽车座舱屏幕体验升级； 美云智数与华为联合的AIGC（Artificial Intelligence Generated Content，生成式人工智能）智能化解决方案：基于华为昇腾底座，融合美云智数数字平台与智能化应用，打造一站式“出厂即用”企业智能化解决方案，解决企业AI落地难题，降低开发门槛，整合分散能力，加速场景应用，助力企业提质增效； 国地共建人形机器人创新中心与华为联合的异构人形机器人工业服务场景训练场方案：基于华为昇腾算力底座、华为云meadow数据仿真、云存储等华为全栈式能力，完成具身训练场从0到1，与1到N的孵化； 正大CP AXTRA与华为联合的边缘算力智慧零售方案：基于华为Atlas 300V Pro联合伙伴实现边缘AI一体方案，赋能CP AXTRA智",
+        "en": "[Shanghai, China, September 19, 2025] During the Manufacturing and Large Enterprise Summit at Huawei Connect 2025, Huawei, together with GAC Group, Midea Cloud Intelligence, the National-Local Humanoid Robot Innovation Center (referred to as the \"National-Local Center\"), CP AXTRA, Lianfa Group, and China Haisum Engineering Co., Ltd., launched six industry-specific AI innovation solutions. These provide practical models for digital and intelligent transformation across global manufacturing, retail, construction, real estate, and other sectors, accelerating AI-driven growth momentum.\n\nHuawei and multiple partners released AI innovation solutions. As data becomes a core production factor and intelligence a key competitive variable, leveraging AI effectively has become imperative for enterprises. Leading companies are advancing AI adoption through scenario-focused, iterative approaches. Over a year of practice has demonstrated that the value AI creates for businesses continues to exceed expectations at an accelerating pace.\n\nAt the summit, six enterprises jointly unveiled industry-oriented AI innovations with Huawei. These solutions, validated in practice with strong performance, aim to help more companies accelerate AI implementation.\n\nGAC and Huawei's cloud-based infotainment solution: Utilizing Huawei Cloud's \"CloudDevice\" to redefine computing power and ecosystem boundaries for in-vehicle systems, breaking traditional closed barriers with an open platform. It enhances the cockpit screen experience for GAC vehicles.\n\nMidea Cloud Intelligence and Huawei's AIGC (Artificial Intelligence Generated Content) collaboration:",
+        "es": "China, Shanghái, 19 de septiembre de 2025. Durante la Cumbre de Fabricación y Grandes Empresas en Huawei Connect 2025, Huawei, junto con GAC Group, Midea Cloud Intelligence, el Centro de Innovación de Robots Humanoides Nacional-Local, Zhengda CP AXTRA, Lianfa Group y China Haisum Engineering Co., Ltd., presentó seis soluciones innovadoras de IA para sectores industriales. Estas ofrecen modelos de práctica para la transformación digital e inteligente en fabricación global, retail, construcción, bienes raíces y otros campos, acelerando el impulso de crecimiento basado en IA. Huawei y múltiples socios lanzan soluciones innovadoras de IA. Cuando los datos se convierten en el núcleo productivo."
+      },
+      "hotness": 0.793848
+    },
+    {
+      "id": "426a5411669e3bdd",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/xuiKEzYZUj9nJVKs.html",
+      "title": "新一代边缘全栈开发平台！EdgeOne Pages 全面升级，加速 AI 开发部署",
+      "raw_excerpt": "腾讯云 EdgeOne Pages 全面升级，从静态网站托管平台，拓展为完整的 全栈应用开发与部署平台 ，深度兼容适配 Next.js 全栈框架及 Node.js 生态，并提供极简部署、Serverless API、CLI 本地调试、一体化安全加速等核心能力，进一步优化部署效率及开发体验。 由此，EdgeOne Pages 也成为国内首个边缘全栈开发平台。 过去，一个生产级全栈 Web 应用从代码交付到全球上线，涉及服务器、依赖、SSL、安全、CDN、CI/CD 与监控等繁琐环节，开发周期长，运维成本高。 现在，开发者只需专注创意构思及代码实现，EdgeOne Pages 能够一站式支持构建、部署、运维，帮助用户实现“所想即所得，所写即所上线”。 具体而言，本次升级实现了 Next.js 全栈支持 。EdgeOne Pages 进一步拓展了对 Next.js 多种渲染模式的深度支持，包括 SSR、ISR和SSG。用户可以基于业务实际需求，选择最合适的渲染模式，兼顾应用性能与功能。 此外，EdgeOne Pages 将 Node Functions 作为全栈能力核心引擎，无需管理服务器，即可运行 Node.js 服务端代码。用户可以直接使用 npm 生态中的海量模块，同时无需再将前后端项目分离，可以在同一项目中完成开发。面对复杂业务逻辑处理场景，EdgeOne Pages 将基于动态扩展机制，根据实际负载自动调整资源配置；对于纯 API 服务的业务场景，平台同样提供全面支持。 为配合全栈能力升级， EdgeOne CLI 工具同步更新 。支持同时启动静态与函数服务、自动框架检测、Next.js 插件集成等，实现完整项目的开发、构建、部署全流程覆盖，为用户提供更加流畅的开发体验。 值得一提的是，EdgeOne Pages 支持广泛的 AI 编程生态，能够通过 MCP（模型上下文",
+      "tags": [],
+      "published_at": "2025-09-24T07:12:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "新一代边缘全栈开发平台！EdgeOne Pages 全面升级，加速 AI 开发部署",
+        "en": "The next-generation edge full-stack development platform! EdgeOne Pages has been fully upgraded to accelerate AI development and deployment.",
+        "es": "¡La nueva generación de la plataforma integral de desarrollo en el edge! EdgeOne Pages se actualiza por completo, acelerando el desarrollo y despliegue de la IA."
+      },
+      "excerpt_i18n": {
+        "zh": "腾讯云 EdgeOne Pages 全面升级，从静态网站托管平台，拓展为完整的 全栈应用开发与部署平台 ，深度兼容适配 Next.js 全栈框架及 Node.js 生态，并提供极简部署、Serverless API、CLI 本地调试、一体化安全加速等核心能力，进一步优化部署效率及开发体验。 由此，EdgeOne Pages 也成为国内首个边缘全栈开发平台。 过去，一个生产级全栈 Web 应用从代码交付到全球上线，涉及服务器、依赖、SSL、安全、CDN、CI/CD 与监控等繁琐环节，开发周期长，运维成本高。 现在，开发者只需专注创意构思及代码实现，EdgeOne Pages 能够一站式支持构建、部署、运维，帮助用户实现“所想即所得，所写即所上线”。 具体而言，本次升级实现了 Next.js 全栈支持 。EdgeOne Pages 进一步拓展了对 Next.js 多种渲染模式的深度支持，包括 SSR、ISR和SSG。用户可以基于业务实际需求，选择最合适的渲染模式，兼顾应用性能与功能。 此外，EdgeOne Pages 将 Node Functions 作为全栈能力核心引擎，无需管理服务器，即可运行 Node.js 服务端代码。用户可以直接使用 npm 生态中的海量模块，同时无需再将前后端项目分离，可以在同一项目中完成开发。面对复杂业务逻辑处理场景，EdgeOne Pages 将基于动态扩展机制，根据实际负载自动调整资源配置；对于纯 API 服务的业务场景，平台同样提供全面支持。 为配合全栈能力升级， EdgeOne CLI 工具同步更新 。支持同时启动静态与函数服务、自动框架检测、Next.js 插件集成等，实现完整项目的开发、构建、部署全流程覆盖，为用户提供更加流畅的开发体验。 值得一提的是，EdgeOne Pages 支持广泛的 AI 编程生态，能够通过 MCP（模型上下文",
+        "en": "Tencent Cloud EdgeOne Pages has undergone a comprehensive upgrade, evolving from a static website hosting platform into a complete full-stack application development and deployment platform. It deeply integrates with and adapts to the Next.js full-stack framework and the Node.js ecosystem, offering core capabilities such as simplified deployment, Serverless API, CLI local debugging, and integrated security acceleration, further optimizing deployment efficiency and development experience. As a result, EdgeOne Pages has become the first edge full-stack development platform in China. Previously, deploying a production-ready full-stack web application from code delivery to global launch involved complex steps like server setup, dependencies, SSL, security, CDN, CI/CD, and monitoring, leading to long development cycles and high operational costs. Now, developers can focus solely on creative ideas and code implementation, as EdgeOne Pages provides end-to-end support for building, deploying, and maintaining applications, enabling users to achieve \"what you think is what you get, what you write is what goes live.\" Specifically, this upgrade delivers full support for Next.js. EdgeOne Pages has expanded its deep compatibility with various Next.js rendering modes, including SSR, ISR, and SSG. Users can select the most suitable rendering mode based on actual business needs, balancing application performance and functionality. Additionally, EdgeOne Pages uses Node Functions as the core engine for full-stack capabilities, eliminating the need to manage servers."
+      },
+      "hotness": 0.793084
+    },
+    {
+      "id": "ac3b88edb2b9d190",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/OHQAbYsPJCJR3rSc.html",
+      "title": "阿里 Qoder 限时五折狂欢开启，支持支付宝，性价比远超Cursor",
+      "raw_excerpt": "近期，阿里 Qoder 启动限时5折优惠活动，并支持支付宝付款，助力更多开发者深度体验 AI 编程的高效魅力。 Qoder是阿里巴巴推出的新一代Agentic编程平台，集成全球顶级的编程模型，具备最强上下文工程处理能力，可一次性检索10万个代码文件。Qoder在全球首发Repo Wiki功能，可基于代码库自动生成结构化项目文档知识库。得益于Qoder Agent 强大的代码检索能力，Qoder 的检索召回率领先业界标杆产品 12%，代码生成准确率领先业界标杆产品 13 %，对复杂工程的理解和生成能力全面提升。据实测，利用Qoder开发一个电商网站的全栈应用，原本需要数天的工作量可压缩至十分钟内完成。 目前，已经有数十万开发者在深度使用Qoder，团队也收集到大量来自开发者的真实反馈。Qoder 始终致力于服务广谱的开发者，并高度重视用户声音。因此，Qoder面向全球开发者启动 5 折限时优惠活动，同时支持支付宝付款方式。“这是一次诚意邀请。”Qoder负责人表示，“我们希望通过这次活动，让更多人感受到AI编程技术为开发效率带来的革新。” 除了降价，Qoder 在近期也升级了核心能力。以 Repo Wiki 为例，该功能一经上线就受到开发者的热烈响应。Repo Wiki 能基于代码自动为项目生成结构化的文档知识库，让隐藏在代码中的经验性知识，变为团队可共享的显性知识，目前 Repo Wiki 支持共享、编辑和导出，方便团队把经验沉淀为可复用的工程资产。 此外，针对 Credits 消耗速度问题，Qoder 发布全新「上下文压缩」功能，用户可实时查看当前会话的上下文用量，并在不同场景下适时采取相应措施。例如围绕同一主题持续深入开发导致上下文窗口快“撑满”时，点击「压缩当前会话」，将自动为会话划重点做总结，有效降低 Credits 消耗，同时提升 AI 响应速度。 目前，新用户可",
+      "tags": [],
+      "published_at": "2025-09-24T06:26:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "阿里 Qoder 限时五折狂欢开启，支持支付宝，性价比远超Cursor",
+        "en": "Ali Qoder's limited-time 50% off sale is now live, supports Alipay, and offers far better value than Cursor.",
+        "es": "La oferta relámpago de Ali Qoder con un 50% de descuento ya está disponible, compatible con Alipay, ofreciendo una relación calidad-precio muy superior a Cursor."
+      },
+      "excerpt_i18n": {
+        "zh": "近期，阿里 Qoder 启动限时5折优惠活动，并支持支付宝付款，助力更多开发者深度体验 AI 编程的高效魅力。 Qoder是阿里巴巴推出的新一代Agentic编程平台，集成全球顶级的编程模型，具备最强上下文工程处理能力，可一次性检索10万个代码文件。Qoder在全球首发Repo Wiki功能，可基于代码库自动生成结构化项目文档知识库。得益于Qoder Agent 强大的代码检索能力，Qoder 的检索召回率领先业界标杆产品 12%，代码生成准确率领先业界标杆产品 13 %，对复杂工程的理解和生成能力全面提升。据实测，利用Qoder开发一个电商网站的全栈应用，原本需要数天的工作量可压缩至十分钟内完成。 目前，已经有数十万开发者在深度使用Qoder，团队也收集到大量来自开发者的真实反馈。Qoder 始终致力于服务广谱的开发者，并高度重视用户声音。因此，Qoder面向全球开发者启动 5 折限时优惠活动，同时支持支付宝付款方式。“这是一次诚意邀请。”Qoder负责人表示，“我们希望通过这次活动，让更多人感受到AI编程技术为开发效率带来的革新。” 除了降价，Qoder 在近期也升级了核心能力。以 Repo Wiki 为例，该功能一经上线就受到开发者的热烈响应。Repo Wiki 能基于代码自动为项目生成结构化的文档知识库，让隐藏在代码中的经验性知识，变为团队可共享的显性知识，目前 Repo Wiki 支持共享、编辑和导出，方便团队把经验沉淀为可复用的工程资产。 此外，针对 Credits 消耗速度问题，Qoder 发布全新「上下文压缩」功能，用户可实时查看当前会话的上下文用量，并在不同场景下适时采取相应措施。例如围绕同一主题持续深入开发导致上下文窗口快“撑满”时，点击「压缩当前会话」，将自动为会话划重点做总结，有效降低 Credits 消耗，同时提升 AI 响应速度。 目前，新用户可",
+        "en": "Recently, Alibaba Qoder launched a limited-time 50% discount promotion and supports Alipay payments, helping more developers deeply experience the efficiency of AI programming. Qoder is a new-generation Agentic programming platform introduced by Alibaba, integrating world-class programming models with the strongest contextual engineering capabilities, capable of retrieving 100,000 code files at once. Qoder debuted the Repo Wiki feature globally, automatically generating a structured project documentation knowledge base from code repositories. Thanks to Qoder Agent's powerful code retrieval ability, Qoder's retrieval recall rate leads industry benchmarks by 12%, and code generation accuracy leads by 13%, with comprehensive improvements in understanding and generating complex projects. According to tests, developing a full-stack e-commerce website application with Qoder, which previously took days, can now be completed within ten minutes. Currently, hundreds of thousands of developers are using Qoder extensively, and the team has collected substantial feedback from them. Qoder is committed to serving a broad spectrum of developers and highly values user input. Therefore, Qoder has initiated a 50% limited-time discount for global developers, along with Alipay payment support. \"This is a sincere invitation,\" said the Qoder lead. \"We hope this event allows more people to experience the innovation AI programming brings to development efficiency.\" Beyond the price reduction, Qoder has also recently upgraded its core capabilities.",
+        "es": "Recientemente, Alibaba Qoder ha lanzado una oferta promocional limitada con un 50% de descuento y admite pagos mediante Alipay, facilitando que más desarrolladores experimenten la eficiencia de la programación con IA. Qoder es la nueva plataforma de programación agentiva de Alibaba, que integra los mejores modelos de programación del mundo, cuenta con la capacidad de procesamiento de contexto más potente y puede buscar en 100.000 archivos de código de una vez. Qoder es el primero a nivel mundial en presentar la función Repo Wiki, que genera automáticamente una base de conocimiento de documentación estructurada del proyecto basada en el repositorio de código. Gracias a la potente capacidad de búsqueda de código de Qoder Agent, su tasa de recuperación supera en un 12% a los productos de referencia de la industria."
+      },
+      "hotness": 0.784352
+    },
+    {
+      "id": "5733b8ab6b14835c",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/chips/ZfYwEN0VL5rsyopL.html",
+      "title": "灵巧手突破难、复杂数据稀缺，人形机器人如何突破量产「卡壳」？",
+      "raw_excerpt": "过去10年，“数字工厂”是工业界的流行语。那时候，制造企业把传感器嵌入产线，用数据分析指导排产和质控，效率得到释放，但工厂依然是冷冰冰的流水线。 “物理智能即机器对环境的感知、理解和灵巧操作，将是工业智能的未来。我们要让机器具备感知、连接、控制和解译的能力， 让工厂成为一个有思想、有触感和有行动力的智能系统。 ”ADI公司院士兼技术副总裁陈宝兴博士说到。 陈宝兴在会议线上拉出一条时间轴：从1950年图灵测试，到1956年达特茅斯会议，再到2012年的深度学习突破和2022年大模型的爆发，每一个节点都推动机器在思考、感知或表达上的进化。 “2025年到2030年，人形机器人将成为现实。” 陈宝兴说。过去，AI、自动化、机器人是三条平行的轨道，而现在，它们正在融汇为一个超级生态。 这种判断并非空穴来风。 市场需要柔性制造，能随时切换生产；社会面临劳动力短缺，工厂招不到工人；AI算法突破，则让机器人第一次有可能适应复杂环境。三股力量同时汇聚，把人形机器人推向了风口。 趋势之下，ADI已做好准备。 从给机器人“看清世界”的ToF摄像头模组，到让数据“跑起来”的GMSL、以太网高速连接，关节数据传输也搭好了60GHz无线“通道”。IMU模块和触觉传感器就是“关节”与“指尖神经”，而到了电机控制这关键一环，磁性编码及控制器、位置传感器更能稳稳把控每一步动作，从“眼睛”到“神经”再到“肌肉”，ADI正在让人形机器人从实验室走向工厂。 灵巧手成最难考题？低延迟、1克感知、高速互联是破局关键 “Optimus Gen3最难的就是灵巧手。” 雷峰网获悉，灵巧手是人形机器人量产的关键考题，实现类人灵巧，需要做到低延迟、精密电机控制、触觉传感、高速互联、高宽带数据共享五大技术的“齐步走”。 首先是低延迟，人类靠着“脊髓反射”能在20-50毫秒完成本能反应，而机器人要实现本能级反应， 控制环路的总延",
+      "tags": [],
+      "published_at": "2025-09-24T05:56:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "zh": "灵巧手突破难、复杂数据稀缺，人形机器人如何突破量产「卡壳」？",
+        "en": "How can humanoid robots overcome production bottlenecks when dexterous hands face technical hurdles and complex data is scarce?",
+        "es": "La destreza manual es difícil de perfeccionar y faltan datos complejos, ¿cómo supera el robot humanoide el cuello de botella en la producción en masa?"
+      },
+      "excerpt_i18n": {
+        "zh": "过去10年，“数字工厂”是工业界的流行语。那时候，制造企业把传感器嵌入产线，用数据分析指导排产和质控，效率得到释放，但工厂依然是冷冰冰的流水线。 “物理智能即机器对环境的感知、理解和灵巧操作，将是工业智能的未来。我们要让机器具备感知、连接、控制和解译的能力， 让工厂成为一个有思想、有触感和有行动力的智能系统。 ”ADI公司院士兼技术副总裁陈宝兴博士说到。 陈宝兴在会议线上拉出一条时间轴：从1950年图灵测试，到1956年达特茅斯会议，再到2012年的深度学习突破和2022年大模型的爆发，每一个节点都推动机器在思考、感知或表达上的进化。 “2025年到2030年，人形机器人将成为现实。” 陈宝兴说。过去，AI、自动化、机器人是三条平行的轨道，而现在，它们正在融汇为一个超级生态。 这种判断并非空穴来风。 市场需要柔性制造，能随时切换生产；社会面临劳动力短缺，工厂招不到工人；AI算法突破，则让机器人第一次有可能适应复杂环境。三股力量同时汇聚，把人形机器人推向了风口。 趋势之下，ADI已做好准备。 从给机器人“看清世界”的ToF摄像头模组，到让数据“跑起来”的GMSL、以太网高速连接，关节数据传输也搭好了60GHz无线“通道”。IMU模块和触觉传感器就是“关节”与“指尖神经”，而到了电机控制这关键一环，磁性编码及控制器、位置传感器更能稳稳把控每一步动作，从“眼睛”到“神经”再到“肌肉”，ADI正在让人形机器人从实验室走向工厂。 灵巧手成最难考题？低延迟、1克感知、高速互联是破局关键 “Optimus Gen3最难的就是灵巧手。” 雷峰网获悉，灵巧手是人形机器人量产的关键考题，实现类人灵巧，需要做到低延迟、精密电机控制、触觉传感、高速互联、高宽带数据共享五大技术的“齐步走”。 首先是低延迟，人类靠着“脊髓反射”能在20-50毫秒完成本能反应，而机器人要实现本能级反应， 控制环路的总延",
+        "en": "Over the past decade, \"digital factories\" have been a buzzword in the industry. During that time, manufacturers embedded sensors into production lines and used data analysis to guide scheduling and quality control, boosting efficiency, but factories remained cold assembly lines. Physical intelligence—machines perceiving, understanding, and dexterously manipulating their environment—will be the future of industrial intelligence. We aim to equip machines with the abilities to sense, connect, control, and interpret, transforming factories into thinking, tactile, and active intelligent systems, said Dr. Chen Baoxing, ADI Fellow and Vice President of Technology. Dr. Chen presented a timeline during the online conference: from the 1950 Turing Test, to the 1956 Dartmouth Conference, then the 2012 deep learning breakthrough and the 2022 explosion of large models—each milestone advanced machines in thinking, sensing, or expression. Humanoid robots will become a reality between 2025 and 2030, Chen stated. Previously, AI, automation, and robotics were three parallel tracks; now, they are converging into a super ecosystem. This outlook is well-founded. The market demands flexible manufacturing capable of switching production at any time; society faces labor shortages, with factories struggling to hire workers; and breakthroughs in AI algorithms are enabling robots to adapt to complex environments for the first time. These three forces are converging simultaneously, propelling humanoid robots into the spotlight. In response to this trend, ADI is prepared. From ToF camera modules that allow robots to \"see the world\" to high-speed GMSL and Ethernet connections that make data \"move,\" along with joint data,",
+        "es": "En la última década, \"fábrica digital\" fue un término de moda en la industria. En aquel entonces, las empresas manufactureras integraban sensores en las líneas de producción, utilizaban análisis de datos para guiar la planificación y el control de calidad, liberando eficiencia, pero las fábricas seguían siendo líneas de montaje frías. La inteligencia física, es decir, la percepción, comprensión y manipulación hábil del entorno por parte de las máquinas, será el futuro de la inteligencia industrial. Debemos dotar a las máquinas de capacidades de percepción, conexión, control e interpretación, convirtiendo la fábrica en un sistema inteligente con pensamiento, tacto y capacidad de acción, dijo el Dr. Chen Baoxing, miembro de ADI y vicepresidente de tecnología. Chen Baoxing desplegó una línea de tiempo durante la conferencia en línea: desde la prueba de Turing en 1950, hasta la conferencia de Dartmouth en 1956, y"
+      },
+      "hotness": 0.778709
+    },
+    {
+      "id": "fa5c96a42fdf95ee",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/global-affairs/openai-for-germany",
+      "title": "SAP and OpenAI partner to launch sovereign ‘OpenAI for Germany’",
+      "raw_excerpt": "SAP and OpenAI launch OpenAI for Germany, a 2026 partnership to bring secure, sovereign AI to Germany’s public sector, enabling safe, efficient public services.",
+      "tags": [],
+      "published_at": "2025-09-24T04:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "SAP and OpenAI partner to launch sovereign ‘OpenAI for Germany’",
+        "zh": "SAP与OpenAI合作推出德国专属版OpenAI计划。",
+        "es": "SAP y OpenAI se asocian para lanzar un 'OpenAI para Alemania' soberano."
+      },
+      "excerpt_i18n": {
+        "en": "SAP and OpenAI launch OpenAI for Germany, a 2026 partnership to bring secure, sovereign AI to Germany’s public sector, enabling safe, efficient public services.",
+        "zh": "SAP与OpenAI启动德国版OpenAI计划，双方于2026年达成合作，旨在为德国公共部门提供安全可控的人工智能技术，助力公共服务的便捷高效运行。",
+        "es": "SAP y OpenAI lanzan OpenAI para Alemania, una colaboración para 2026 que llevará inteligencia artificial segura y soberana al sector público alemán, permitiendo servicios públicos seguros y eficientes."
+      },
+      "hotness": 1.211631
+    },
+    {
+      "id": "00487594df491de5",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/simplefold",
+      "title": "SimpleFold: Folding Proteins is Simpler than You Think",
+      "raw_excerpt": "Protein folding models have achieved groundbreaking results since the introduction of AlphaFold2, typically built via a\ncombination of integrating domain-expertise into its architectural designs and training pipelines. Nonetheless, given the\nsuccess of generative models across different but related problems, it is natural to question whether these architectural\ndesigns are a necessity to build performant models. In this paper, we introduce SimpleFold, the first flow-matching based\nprotein folding model that solely uses general purpose transformer layers. Instead of relying on expensive…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-24T00:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "SimpleFold: Folding Proteins is Simpler than You Think",
+        "zh": "SimpleFold：蛋白质折叠比你想象的更简单",
+        "es": "SimpleFold: Plegar Proteínas es más Sencillo de lo que Piensas"
+      },
+      "excerpt_i18n": {
+        "en": "Protein folding models have achieved groundbreaking results since the introduction of AlphaFold2, typically built via a\ncombination of integrating domain-expertise into its architectural designs and training pipelines. Nonetheless, given the\nsuccess of generative models across different but related problems, it is natural to question whether these architectural\ndesigns are a necessity to build performant models. In this paper, we introduce SimpleFold, the first flow-matching based\nprotein folding model that solely uses general purpose transformer layers. Instead of relying on expensive…",
+        "zh": "自AlphaFold2问世以来，蛋白质折叠模型取得了突破性进展，其构建通常通过将领域专业知识融入架构设计和训练流程来实现。",
+        "es": "Los modelos de plegamiento de proteínas han logrado resultados revolucionarios desde la introducción de AlphaFold2, construidos generalmente mediante una combinación de integración de experiencia de dominio en sus diseños arquitectónicos y flujos de entrenamiento. N"
+      },
+      "hotness": 0.714767
     },
     {
       "id": "21d7038f63d4646a",
@@ -65,7 +1190,7 @@
         "Research"
       ],
       "published_at": "2025-09-23T22:23:22Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
         "en": "When “no” means “yes”: Why AI chatbots can’t process Persian social etiquette",
         "zh": "当拒绝意味着同意：为何AI聊天机器人难以理解波斯社交礼仪",
@@ -76,235 +1201,7 @@
         "zh": "新研究探讨有益的人工智能回应如何在伊朗演变为文化灾难。",
         "es": "Un nuevo estudio examina cómo una respuesta útil de la IA podría convertirse en un desastre cultural en Irán."
       },
-      "hotness": 0.987658
-    },
-    {
-      "id": "3f8b3f1795fdef3e",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://gradpilot.com/ai-policies",
-      "title": "The State of AI in College Admissions",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T22:09:15Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "The State of AI in College Admissions",
-        "zh": "高校招生中的人工智能现状",
-        "es": "El estado de la IA en las admisiones universitarias"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.984308
-    },
-    {
-      "id": "adb8fd48a2a68ac3",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://www.hackster.io/adam-taylor/system-design-with-vitis-and-versal-aie-6a04ac",
-      "title": "System Design for AI Engines in FPGA",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T21:54:30Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "System Design for AI Engines in FPGA",
-        "zh": "FPGA中人工智能引擎的系统设计",
-        "es": "Diseño de sistemas para motores de IA en FPGA"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.98082
-    },
-    {
-      "id": "1d02d555b7d20d32",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://www.technologyreview.com/2025/09/23/1123897/ai-models-are-using-material-from-retracted-scientific-papers/",
-      "title": "AI models are using material from retracted scientific papers",
-      "raw_excerpt": "",
-      "tags": [
-        "Research"
-      ],
-      "published_at": "2025-09-23T21:41:17Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "AI models are using material from retracted scientific papers",
-        "zh": "AI模型正在使用已撤稿科学论文中的材料",
-        "es": "Los modelos de inteligencia artificial están utilizando material de artículos científicos retractados"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 1.173246
-    },
-    {
-      "id": "ba14f5a461fb6db9",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://showdown.scale.com/assets/SEAL_Showdown_Tech_Report.pdf",
-      "title": "Seal Showdown Technical Report (AI Benchmark) [pdf]",
-      "raw_excerpt": "",
-      "tags": [
-        "Research"
-      ],
-      "published_at": "2025-09-23T21:37:58Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Seal Showdown Technical Report (AI Benchmark) [pdf]",
-        "zh": "海豹对决技术报告（AI基准测试）[pdf]",
-        "es": "Enfrentamiento de Sellos Informe Técnico (Evaluación de IA) [pdf]"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.976925
-    },
-    {
-      "id": "6c2429dde701dc35",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://openai.com/index/five-new-stargate-sites/",
-      "title": "OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T21:31:25Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites",
-        "zh": "OpenAI、甲骨文和软银将Stargate项目扩展至五个新的人工智能数据中心站点。",
-        "es": "OpenAI, Oracle y SoftBank amplían Stargate con cinco nuevos emplazamientos de centros de datos de inteligencia artificial."
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 1.560618
-    },
-    {
-      "id": "fdbdb60e5b23b505",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://news.ycombinator.com/item?id=45352961",
-      "title": "Ask HN: Share a video-series of developing non-trivial things with AI?",
-      "raw_excerpt": "I often see claims like \"Ya, AI was rather bad at developing features ~6 months ago, but now it's _actually_ good!\". Every once in a while I go and try using it for more significant development work, but thus far I've been disappointed. Thus far for me, it's been great for brainstorming or making initial prototypes, but generally not good enough to ship a finished artifact that has to interact with other pieces. I don't want to waste time doing this test again. And maybe I'm just doing it wrong. If there is a video series of somebody using AI to develop something rather complex, I think that would be much better evidence than the usual unsupported claim, and it could show me what I'm doing wrong. I'm imagining this would be like a \"Let's play\" series, but for software development. If no su",
-      "tags": [],
-      "published_at": "2025-09-23T21:26:47Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Ask HN: Share a video-series of developing non-trivial things with AI?",
-        "zh": "HN提问：分享用AI开发复杂项目的视频系列？",
-        "es": "Pregunta en HN: ¿Compartís una serie de vídeos sobre desarrollar cosas no triviales con IA?"
-      },
-      "excerpt_i18n": {
-        "en": "I often see claims like \"Ya, AI was rather bad at developing features ~6 months ago, but now it's _actually_ good!\". Every once in a while I go and try using it for more significant development work, but thus far I've been disappointed. Thus far for me, it's been great for brainstorming or making initial prototypes, but generally not good enough to ship a finished artifact that has to interact with other pieces. I don't want to waste time doing this test again. And maybe I'm just doing it wrong. If there is a video series of somebody using AI to develop something rather complex, I think that would be much better evidence than the usual unsupported claim, and it could show me what I'm doing wrong. I'm imagining this would be like a \"Let's play\" series, but for software development. If no su",
-        "zh": "我经常看到类似说法：\"半年前AI开发功能确实不太行，但现在真的变厉害了！\"。每隔一段时间我都会尝试用它完成更重要的开发任务，但迄今为止仍不尽如人意。",
-        "es": "A menudo veo afirmaciones como \"Sí, la IA era bastante mala desarrollando funciones hace unos 6 meses, ¡pero ahora es realmente buena!\". De vez en cuando intento usarla para trabajos de desarrollo más significativos, pero hasta ahora he"
-      },
-      "hotness": 0.974299
-    },
-    {
-      "id": "b680a43c75234379",
-      "source": {
-        "site": "https://news.ycombinator.com/",
-        "feed": "https://hnrss.org/frontpage"
-      },
-      "url": "https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus",
-      "title": "Context Engineering for AI Agents: Lessons",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T21:20:15Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Context Engineering for AI Agents: Lessons",
-        "zh": "AI智能体语境工程：经验总结",
-        "es": "Ingeniería de contexto para agentes de IA: Lecciones"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.972768
-    },
-    {
-      "id": "730b352845bf93f4",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://www.nature.com/articles/d41586-025-02979-9",
-      "title": "Bring us your LLMs: why peer review is good for AI models",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T21:10:58Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Bring us your LLMs: why peer review is good for AI models",
-        "zh": "请提交您的语言模型：同行评审对人工智能模型的益处",
-        "es": "Traednos vuestros modelos de lenguaje: por qué la revisión por pares es buena para los modelos de IA"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.970597
-    },
-    {
-      "id": "2cefcab29fd2ec55",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://hackaday.com/2025/09/23/using-moondream-ai-to-make-your-pi-see-like-a-human/",
-      "title": "Using Moondream AI to Make Your Pi \"See\" Like a Human",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T21:08:08Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Using Moondream AI to Make Your Pi \"See\" Like a Human",
-        "zh": "借助Moondream AI让您的树莓派实现类人视觉",
-        "es": "Hacer que tu Pi \"vea\" como un humano usando Moondream AI"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.969935
-    },
-    {
-      "id": "28778ec1dc91329f",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://news.ycombinator.com/item?id=45352768",
-      "title": "Ask HN: Bring back Jack Tramiel via AI as a trusted advisor in new Commodore?",
-      "raw_excerpt": "Do you think this would be a good idea?",
-      "tags": [],
-      "published_at": "2025-09-23T21:08:03Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Ask HN: Bring back Jack Tramiel via AI as a trusted advisor in new Commodore?",
-        "zh": "问HN：通过人工智能让杰克·特拉梅尔作为新康懋达的可信顾问回归？",
-        "es": "Pregunta para HN: ¿Deberíamos revivir a Jack Tramiel mediante IA como asesor de confianza en la nueva Commodore?"
-      },
-      "excerpt_i18n": {
-        "en": "Do you think this would be a good idea?",
-        "zh": "你认为这是个好主意吗？",
-        "es": "¿Crees que sería una buena idea?"
-      },
-      "hotness": 0.969916
+      "hotness": 0.698335
     },
     {
       "id": "d74895638599194d",
@@ -317,66 +1214,18 @@
       "raw_excerpt": "The new sites will boost Stargate’s planned capacity to nearly 7 gigawatts—about equal to the output of seven large nuclear reactors.",
       "tags": [],
       "published_at": "2025-09-23T21:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
         "en": "OpenAI Teams Up With Oracle and SoftBank to Build 5 New Stargate Data Centers",
-        "zh": "OpenAI与甲骨文和软银合作建设五座新型星际之门数据中心。",
+        "zh": "OpenAI与甲骨文和软银合作建设五座全新星际之门数据中心。",
         "es": "OpenAI se asocia con Oracle y SoftBank para construir 5 nuevos centros de datos Stargate."
       },
       "excerpt_i18n": {
         "en": "The new sites will boost Stargate’s planned capacity to nearly 7 gigawatts—about equal to the output of seven large nuclear reactors.",
-        "zh": "新站点将使星门的规划产能提升至近7吉瓦，约等于七座大型核反应堆的发电量。",
+        "zh": "新站点将使星门的规划产能提升至近7吉瓦，相当于七座大型核反应堆的发电量。",
         "es": "Los nuevos emplazamientos aumentarán la capacidad prevista de Stargate a casi 7 gigavatios, aproximadamente equivalente a la producción de siete grandes reactores nucleares."
       },
-      "hotness": 0.968039
-    },
-    {
-      "id": "5cbc532081e6e733",
-      "source": {
-        "site": "https://news.ycombinator.com/",
-        "feed": "https://hnrss.org/frontpage"
-      },
-      "url": "https://qwen.ai/blog?id=99f0335c4ad9ff6153e517418d48535ab6d8afef&from=research.latest-advancements-list",
-      "title": "Qwen3-VL: Sharper Vision, Deeper Thought, Broader Action",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T20:59:17Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Qwen3-VL: Sharper Vision, Deeper Thought, Broader Action",
-        "zh": "Qwen3-VL：更锐利的视觉，更深邃的思考，更广泛的行动",
-        "es": "Qwen3-VL: Visión más aguda, pensamiento más profundo, acción más amplia"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.967872
-    },
-    {
-      "id": "dff4c0a5ddfc617b",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://github.com/RapidFireAI/rapidfireai",
-      "title": "Show HN: RapidFire AI: 16–24x More Experiment Throughput Without Extra GPUs",
-      "raw_excerpt": "We built RapidFire AI, an open-source Python tool to speed up LLM fine-tuning and post-training with a powerful level of control not found in most tools: Stop, resume, clone-modify and warm-start configs on the fly—so you can branch experiments while they’re running instead of starting from scratch or running one after another. - Works within your OSS stack: PyTorch, HuggingFace TRL/PEFT), MLflow. - Hyperparallel search: launch as many configs as you want together, even on a single GPU - Dynamic real-time control: stop laggards, resume them later to revisit, branch promising configs in flight. - Deterministic eval + run tracking: Metrics curves are automatically plotted and are comparable. - Apache License v2.0: No vendor lock in. Develop on your IDE, launch from CLI. Repo: https://github.",
-      "tags": [
-        "Tools"
-      ],
-      "published_at": "2025-09-23T20:58:15Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Show HN: RapidFire AI: 16–24x More Experiment Throughput Without Extra GPUs",
-        "zh": "HN展示：RapidFire AI：无需额外GPU即可实现16至24倍实验吞吐量提升",
-        "es": "Mostrar HN: RapidFire AI: 16–24 veces Más Capacidad de Experimentación Sin GPUs Adicionales"
-      },
-      "excerpt_i18n": {
-        "en": "We built RapidFire AI, an open-source Python tool to speed up LLM fine-tuning and post-training with a powerful level of control not found in most tools: Stop, resume, clone-modify and warm-start configs on the fly—so you can branch experiments while they’re running instead of starting from scratch or running one after another. - Works within your OSS stack: PyTorch, HuggingFace TRL/PEFT), MLflow. - Hyperparallel search: launch as many configs as you want together, even on a single GPU - Dynamic real-time control: stop laggards, resume them later to revisit, branch promising configs in flight. - Deterministic eval + run tracking: Metrics curves are automatically plotted and are comparable. - Apache License v2.0: No vendor lock in. Develop on your IDE, launch from CLI. Repo: https://github.",
-        "zh": "我们开发了RapidFire AI，这是一款开源Python工具，旨在加速LLM微调与训练后优化。它提供大多数工具不具备的强力控制功能：可实时停止、恢复、克隆修改及热启动配置——让您",
-        "es": "Desarrollamos RapidFire AI, una herramienta de código abierto en Python para acelerar el ajuste fino y el post-entrenamiento de LLM con un potente nivel de control no presente en la mayoría de herramientas: parar, reanudar, clonar-modificar y configuraciones de inicio en caliente sobre la marcha, para que"
-      },
-      "hotness": 1.209539
+      "hotness": 0.684463
     },
     {
       "id": "c165f044150e3a3b",
@@ -392,7 +1241,7 @@
         "Tools"
       ],
       "published_at": "2025-09-23T20:35:23Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
         "en": "Running deep research AI agents on Amazon Bedrock AgentCore",
         "zh": "在亚马逊Bedrock AgentCore上运行深度研究人工智能代理",
@@ -400,220 +1249,10 @@
       },
       "excerpt_i18n": {
         "en": "AI agents are evolving beyond basic single-task helpers into more powerful systems that can plan, critique, and collaborate with other agents to solve complex problems. Deep Agents—a recently introduced framework built on LangGraph—bring these capabilities to life, enabling multi-agent workflows that mirror real-world team dynamics. The challenge, however, is not just building such agents but […]",
-        "zh": "AI智能体正从单一任务助手进化成更强大的系统，能够通过规划、评估及多智能体协作解决复杂问题。Deep Agents作为近期推出的框架——",
-        "es": "Los agentes de inteligencia artificial están evolucionando más allá de los asistentes básicos de tarea única hacia sistemas más potentes que pueden planificar, criticar y colaborar con otros agentes para resolver problemas complejos. Deep Agents—un marco de trabajo introducido recientemente construido"
+        "zh": "AI智能体正从单一任务助手进化为更强大的系统，能够通过规划、评估及多智能体协作解决复杂问题。Deep Agents作为近期推出的框架，构建于...",
+        "es": "Los agentes de inteligencia artificial están evolucionando más allá de los ayudantes básicos de tareas únicas hacia sistemas más potentes que pueden planificar, criticar y colaborar con otros agentes para resolver problemas complejos. Deep Agents—un marco de trabajo introducido recientemente construido"
       },
-      "hotness": 0.96232
-    },
-    {
-      "id": "be3f19ed3596be20",
-      "source": {
-        "site": "https://www.theverge.com",
-        "feed": "https://www.theverge.com/rss/full.xml"
-      },
-      "url": "https://www.theverge.com/news/783991/google-labs-mixboard-ai-design-canvas",
-      "title": "Google&#8217;s Mixboard is an AI moodboard builder",
-      "raw_excerpt": "Google is launching a new AI concepting tool that lets you create moodboards to explore design ideas. The Mixboard Google Labs experiment gives users an open canvas to create projects from pre-populated board templates or text prompts using Google’s Gemini 2.5 Flash model. The experimental tool is available through public beta in the US. The [&#8230;]",
-      "tags": [
-        "Tools"
-      ],
-      "published_at": "2025-09-23T20:30:59Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Google&#8217;s Mixboard is an AI moodboard builder",
-        "zh": "谷歌Mixboard是一款AI情绪板制作工具",
-        "es": "El Mixboard de Google es un creador de tableros de humor con inteligencia artificial"
-      },
-      "excerpt_i18n": {
-        "en": "Google is launching a new AI concepting tool that lets you create moodboards to explore design ideas. The Mixboard Google Labs experiment gives users an open canvas to create projects from pre-populated board templates or text prompts using Google’s Gemini 2.5 Flash model. The experimental tool is available through public beta in the US. The [&#8230;]",
-        "zh": "谷歌正在推出一款全新AI概念工具，用户可通过创建情绪板来探索设计创意。Mixboard谷歌实验室实验项目提供开放式画布，用户可直接使用预设模板创建项目。",
-        "es": "Google lanza una nueva herramienta de conceptualización con IA que permite crear paneles de inspiración para explorar ideas de diseño. El experimento Mixboard de Google Labs ofrece a los usuarios un lienzo abierto para crear proyectos a partir de plantillas de tablero predefinidas o"
-      },
-      "hotness": 1.009367
-    },
-    {
-      "id": "71917e11cbd33c1f",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://www.nibzard.com/ai-bottleneck/",
-      "title": "The Bottleneck in AI Development: Humans",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T20:28:19Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "The Bottleneck in AI Development: Humans",
-        "zh": "人工智能发展的瓶颈：人类",
-        "es": "El cuello de botella en el desarrollo de la inteligencia artificial: los humanos"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.960685
-    },
-    {
-      "id": "7313978251f9f62d",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://www.pdfchat.fr",
-      "title": "Show HN: I built an AI in 3 days at 16 y/o that lets you chat with your PDFs",
-      "raw_excerpt": "Hey, it's Safwan I'm 16 and obsessed with AI and coding. Last year, I was struggling with my homework - especially when teachers gave us long PDF documents to analyze for history and literature classes. The problem? I'd spend hours scrolling through 30-page PDFs trying to find specific quotes or information for my essays. My friends had the same issue - we were all wasting time instead of actually learning. I tried Ctrl+F, highlighting, even printing everything out... but I realized what we really needed was to ask questions to our documents like we would to a teacher. So during summer break, I taught myself more about AI and built the first version of PDF Chat. Now I can finish my research in minutes instead of hours, and I'm helping students and professionals worldwide do the same. Prett",
-      "tags": [
-        "Research"
-      ],
-      "published_at": "2025-09-23T20:00:30Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Show HN: I built an AI in 3 days at 16 y/o that lets you chat with your PDFs",
-        "zh": "16岁高中生3天开发AI工具：实现与PDF文档对话",
-        "es": "Mostrando en HN: Construí una IA en 3 días a los 16 años que te permite chatear con tus PDFs"
-      },
-      "excerpt_i18n": {
-        "en": "Hey, it's Safwan I'm 16 and obsessed with AI and coding. Last year, I was struggling with my homework - especially when teachers gave us long PDF documents to analyze for history and literature classes. The problem? I'd spend hours scrolling through 30-page PDFs trying to find specific quotes or information for my essays. My friends had the same issue - we were all wasting time instead of actually learning. I tried Ctrl+F, highlighting, even printing everything out... but I realized what we really needed was to ask questions to our documents like we would to a teacher. So during summer break, I taught myself more about AI and built the first version of PDF Chat. Now I can finish my research in minutes instead of hours, and I'm helping students and professionals worldwide do the same. Prett",
-        "zh": "我是萨夫万，今年16岁，痴迷于人工智能和编程。去年我在完成作业时遇到困难——尤其是历史课和文学课老师布置的长篇PDF文档分析任务。问题在于：",
-        "es": "Hola, soy Safwan, tengo 16 años y me apasiona la inteligencia artificial y la programación. El año pasado, tenía problemas con los deberes, especialmente cuando los profesores nos daban largos documentos en PDF para analizar en las clases de historia y literatura. El problema era que yo..."
-      },
-      "hotness": 0.954275
-    },
-    {
-      "id": "b55aed4b34c35087",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://www.theregister.com/2025/09/23/developers_genai_little_productivity_gains/",
-      "title": "AI coding hype overblown, Bain shrugs",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T19:57:20Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "AI coding hype overblown, Bain shrugs",
-        "zh": "贝恩公司对人工智能编程热潮不以为然",
-        "es": "La exageración sobre la programación con IA es exagerada, se encoge de hombros Bain."
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.953548
-    },
-    {
-      "id": "a1ea907196e91497",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://play.google.com/store/apps/details?id=com.indest.aimoviequiz&hl=en_US",
-      "title": "Show HN: AI Movie Quiz – guess movies based on AI clips",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T19:56:55Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Show HN: AI Movie Quiz – guess movies based on AI clips",
-        "zh": "HN展示：AI电影竞猜——根据AI片段猜电影",
-        "es": "Mostrado en HN: Quiz de Películas con IA – adivina películas basándote en clips de IA"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.953452
-    },
-    {
-      "id": "4a27f29a09d35e73",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://leejo.github.io/2025/09/23/gaps/",
-      "title": "Musings on Generative AI",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T19:52:38Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Musings on Generative AI",
-        "zh": "关于生成式人工智能的思考",
-        "es": "Reflexiones sobre la inteligencia artificial generativa"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.95247
-    },
-    {
-      "id": "179a77056c8ef223",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://www.forbes.com/sites/sindhyavalloppillil/2025/09/23/from-goldman-to-ai-how-rishi-bali-is-building-wall-streets-transformation-layer-with-opcoai/",
-      "title": "From Goldman to AI: How Rishi Bali Is Building Wall St's AI Transformation Layer",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T19:47:59Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "From Goldman to AI: How Rishi Bali Is Building Wall St's AI Transformation Layer",
-        "zh": "从高盛到人工智能：里希·巴利如何构建华尔街的AI转型层",
-        "es": "De Goldman a la IA: Cómo Rishi Bali está construyendo la capa de transformación de IA para Wall Street"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.951404
-    },
-    {
-      "id": "633e5a49eaa08ecb",
-      "source": {
-        "site": "https://news.ycombinator.com/newest",
-        "feed": "https://hnrss.org/newest?q=AI"
-      },
-      "url": "https://mobilesyrup.com/2025/09/11/apple-ai-model-update-trump-response/",
-      "title": "Apple has trained its AI to respond to Trump's nonsense: report",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T19:41:39Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Apple has trained its AI to respond to Trump's nonsense: report",
-        "zh": "据报道，苹果已训练其人工智能应对特朗普的荒谬言论。",
-        "es": "Apple ha entrenado a su inteligencia artificial para responder a las tonterías de Trump: informe"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.949955
-    },
-    {
-      "id": "23511570e75ead84",
-      "source": {
-        "site": "https://www.theverge.com",
-        "feed": "https://www.theverge.com/rss/full.xml"
-      },
-      "url": "https://www.theverge.com/tech/783795/microsoft-ai-ceo-mustafa-suleyman-future-of-browser-interview-notepad",
-      "title": "Microsoft&#8217;s AI CEO on the future of the browser",
-      "raw_excerpt": "The AI browser wars are heating up. Google has Gemini in Chrome, Perplexity is building its Comet AI browser, and The Browser Company just got acquired by Atlassian for $610 million. Now, Microsoft wants to be part of the AI browser conversation. I sat down with Microsoft AI CEO Mustafa Suleyman today to talk about [&#8230;]",
-      "tags": [
-        "Funding"
-      ],
-      "published_at": "2025-09-23T18:37:04Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Microsoft&#8217;s AI CEO on the future of the browser",
-        "zh": "微软AI首席执行官谈浏览器未来",
-        "es": "El CEO de IA de Microsoft sobre el futuro del navegador"
-      },
-      "excerpt_i18n": {
-        "en": "The AI browser wars are heating up. Google has Gemini in Chrome, Perplexity is building its Comet AI browser, and The Browser Company just got acquired by Atlassian for $610 million. Now, Microsoft wants to be part of the AI browser conversation. I sat down with Microsoft AI CEO Mustafa Suleyman today to talk about [&#8230;]",
-        "zh": "AI浏览器大战正持续升温。谷歌在Chrome中内置Gemini，Perplexity正在开发Comet AI浏览器，The Browser Company刚被Atlassian以6.1亿美元收购。如今微软也意图加入这场竞争。",
-        "es": "La guerra de los navegadores con IA se está intensificando. Google tiene Gemini en Chrome, Perplexity está desarrollando su navegador Comet AI, y The Browser Company acaba de ser adquirida por Atlassian por 610 millones de dólares. Ahora, Microsoft quiere formar parte de"
-      },
-      "hotness": 0.982069
+      "hotness": 0.68042
     },
     {
       "id": "7450e0d32d9fa416",
@@ -626,7 +1265,7 @@
       "raw_excerpt": "In this post, we show you how to integrate Amazon Bedrock Guardrails with third-party tokenization services to protect sensitive data while maintaining data reversibility. By combining these technologies, organizations can implement stronger privacy controls while preserving the functionality of their generative AI applications and related systems.",
       "tags": [],
       "published_at": "2025-09-23T17:31:04Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
         "en": "Integrate tokenization with Amazon Bedrock Guardrails for secure data handling",
         "zh": "将标记化与亚马逊Bedrock护栏集成以实现安全数据处理",
@@ -637,101 +1276,7 @@
         "zh": "本文介绍如何将Amazon Bedrock护栏与第三方标记化服务结合，在保持数据可逆性的同时保护敏感信息。通过整合这些技术，企业能够",
         "es": "En esta publicación, te mostramos cómo integrar las Barreras de Protección de Amazon Bedrock con servicios de tokenización de terceros para proteger datos sensibles manteniendo la reversibilidad de los datos. Al combinar estas tecnologías, las organizaciones p"
       },
-      "hotness": 0.920564
-    },
-    {
-      "id": "6be0c0afb5b01db3",
-      "source": {
-        "site": "https://www.infoq.cn",
-        "feed": "https://www.infoq.cn/feed"
-      },
-      "url": "https://www.infoq.cn/article/Xc1pH6JxKvgK7zFI8wFy",
-      "title": "从技能到机遇：Snowflake 免费培训，帮你抢占 AI 数据人才快车道",
-      "raw_excerpt": "点击查看原文>",
-      "tags": [],
-      "published_at": "2025-09-23T15:13:08Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "从技能到机遇：Snowflake 免费培训，帮你抢占 AI 数据人才快车道",
-        "en": "From Skills to Opportunities: Snowflake's Free Training to Fast-Track Your Career as an AI Data Professional",
-        "es": "De las habilidades a las oportunidades: formación gratuita de Snowflake para impulsar tu carrera en el talento de datos para IA."
-      },
-      "excerpt_i18n": {
-        "zh": "点击查看原文>",
-        "en": "View original text >",
-        "es": "Hacer clic para ver el texto original>"
-      },
-      "hotness": 0.890506
-    },
-    {
-      "id": "9bcf01c123efe0fa",
-      "source": {
-        "site": "https://news.ycombinator.com/",
-        "feed": "https://hnrss.org/frontpage"
-      },
-      "url": "https://verialabs.com/blog/from-mcp-to-shell/",
-      "title": "From MCP to shell: MCP auth flaws enable RCE in Claude Code, Gemini CLI and more",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T15:09:50Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "From MCP to shell: MCP auth flaws enable RCE in Claude Code, Gemini CLI and more",
-        "zh": "从MCP到Shell：MCP认证漏洞导致Claude Code、Gemini CLI等多款工具存在远程代码执行风险",
-        "es": "De MCP a shell: las vulnerabilidades de autenticación de MCP permiten la ejecución remota de código en Claude Code, Gemini CLI y más"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 0.889799
-    },
-    {
-      "id": "0cb900ba039c94e9",
-      "source": {
-        "site": "https://news.ycombinator.com/",
-        "feed": "https://hnrss.org/frontpage"
-      },
-      "url": "https://news.ycombinator.com/item?id=45347914",
-      "title": "Launch HN: Strata (YC X25) – One MCP server for AI to handle thousands of tools",
-      "raw_excerpt": "Hey HN! We are Klavis AI ( https://www.klavis.ai/ ) and we're launching Strata, one open-source MCP server that helps AI agents use thousands of API tools without getting overwhelmed. Instead of showing all available tools at once, Strata reveals them step-by-step based on what the AI actually needs. As a former Senior SWE on Google Gemini 's tool use team, I saw firsthand how AI would struggle with tools. If you've built AI agents, you've likely hit the same walls: (1) AI agents struggle to pick the right API from hundreds of options. (2) Tool descriptions and info consume massive token budgets. (3) Most servers cap at 40~50 tools to avoid these problems, limiting what you can build. Instead of flooding the AI with everything upfront, Strata works like a human would. It guides the AI agen",
-      "tags": [
-        "Tools"
-      ],
-      "published_at": "2025-09-23T14:52:07Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Launch HN: Strata (YC X25) – One MCP server for AI to handle thousands of tools",
-        "zh": "HN发布：Strata（YC X25）——单一MCP服务器让AI处理数千种工具",
-        "es": "Lanzamiento HN: Strata (YC X25) – Un único servidor MCP para que la IA maneje miles de herramientas"
-      },
-      "excerpt_i18n": {
-        "en": "Hey HN! We are Klavis AI ( https://www.klavis.ai/ ) and we're launching Strata, one open-source MCP server that helps AI agents use thousands of API tools without getting overwhelmed. Instead of showing all available tools at once, Strata reveals them step-by-step based on what the AI actually needs. As a former Senior SWE on Google Gemini 's tool use team, I saw firsthand how AI would struggle with tools. If you've built AI agents, you've likely hit the same walls: (1) AI agents struggle to pick the right API from hundreds of options. (2) Tool descriptions and info consume massive token budgets. (3) Most servers cap at 40~50 tools to avoid these problems, limiting what you can build. Instead of flooding the AI with everything upfront, Strata works like a human would. It guides the AI agen",
-        "zh": "大家好！我们是Klavis AI（https://www.klavis.ai/），正式推出开源MCP服务器Strata。它能帮助AI代理调用数千个API工具而不会造成信息过载，通过智能筛选替代全量展示可用工具的方式。",
-        "es": "¡Hola HN! Somos Klavis AI ( https://www.klavis.ai/ ) y estamos lanzando Strata, un servidor MCP de código abierto que ayuda a los agentes de IA a utilizar miles de herramientas API sin agobiarse. En lugar de mostrar todas las herramientas disponibles"
-      },
-      "hotness": 0.886013
-    },
-    {
-      "id": "f6a9def85f021dce",
-      "source": {
-        "site": "https://news.ycombinator.com/",
-        "feed": "https://hnrss.org/frontpage"
-      },
-      "url": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md",
-      "title": "Getting AI to work in complex codebases",
-      "raw_excerpt": "",
-      "tags": [],
-      "published_at": "2025-09-23T14:27:36Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Getting AI to work in complex codebases",
-        "zh": "在复杂代码库中实现人工智能应用",
-        "es": "Lograr que la inteligencia artificial funcione en bases de código complejas"
-      },
-      "excerpt_i18n": {
-        "en": ""
-      },
-      "hotness": 1.101
+      "hotness": 0.650896
     },
     {
       "id": "552af16dffb0e929",
@@ -744,66 +1289,18 @@
       "raw_excerpt": "OpenAI, Oracle, and SoftBank announce five new Stargate AI datacenter sites, accelerating a $500B, 10-gigawatt U.S. infrastructure buildout to power next-generation AI and create tens of thousands of jobs.",
       "tags": [],
       "published_at": "2025-09-23T14:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
         "en": "OpenAI, Oracle, and SoftBank expand Stargate with five new AI datacenter sites",
-        "zh": "OpenAI、甲骨文和软银将Stargate项目扩展至五个新的人工智能数据中心站点。",
+        "zh": "OpenAI、甲骨文和软银将星际之门扩展至五个新的人工智能数据中心站点。",
         "es": "OpenAI, Oracle y SoftBank amplían Stargate con cinco nuevos emplazamientos de centros de datos de inteligencia artificial."
       },
       "excerpt_i18n": {
         "en": "OpenAI, Oracle, and SoftBank announce five new Stargate AI datacenter sites, accelerating a $500B, 10-gigawatt U.S. infrastructure buildout to power next-generation AI and create tens of thousands of jobs.",
         "zh": "OpenAI、甲骨文和软银宣布新增五个星际之门人工智能数据中心站点，加速推进美国5000亿美元、10吉瓦的基础设施建设，以支持下一代人工智能发展并创造数万个就业岗位。",
-        "es": "OpenAI, Oracle y SoftBank anuncian cinco nuevas ubicaciones para centros de datos de IA Stargate, acelerando un despliegue de infraestructura estadounidense de 500.000 millones de dólares y 10 gigavatios para impulsar la inteligencia artificial de próxima generación y crear decenas de miles de empleos."
+        "es": "OpenAI, Oracle y SoftBank anuncian cinco nuevas ubicaciones para centros de datos de IA Stargate, acelerando un despliegue de infraestructuras en Estados Unidos de 500.000 millones de dólares y 10 gigavatios para impulsar la inteligencia artificial de próxima generación y crear decenas de miles de empleos."
       },
-      "hotness": 1.39995
-    },
-    {
-      "id": "85fdf4b66b9f3c6e",
-      "source": {
-        "site": "https://www.infoq.cn",
-        "feed": "https://www.infoq.cn/feed"
-      },
-      "url": "https://www.infoq.cn/article/3AJq0UTJorHo6sItLtgp",
-      "title": "为 Coding Agent 构建智能上下文：Qoder 的 Context Engineering 实践｜QCon 上海",
-      "raw_excerpt": "点击查看原文>",
-      "tags": [],
-      "published_at": "2025-09-23T13:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "为 Coding Agent 构建智能上下文：Qoder 的 Context Engineering 实践｜QCon 上海",
-        "en": "Building Intelligent Context for Coding Agents: Qoder's Context Engineering Practice at QCon Shanghai",
-        "es": "Construcción de contexto inteligente para Coding Agent: Práctica de Context Engineering de Qoder en QCon Shanghái"
-      },
-      "excerpt_i18n": {
-        "zh": "点击查看原文>",
-        "en": "View original text >",
-        "es": "Hacer clic para ver el texto original>"
-      },
-      "hotness": 0.862424
-    },
-    {
-      "id": "1e78eef501c074be",
-      "source": {
-        "site": "http://36kr.com",
-        "feed": "https://36kr.com/feed-newsflash"
-      },
-      "url": "https://36kr.com/newsflashes/3479301344385926?f=rss",
-      "title": "梅赛德斯-奔驰与字节跳动升级战略合作：覆盖智舱、智驾、营销等领域",
-      "raw_excerpt": "36氪获悉，今日，梅赛德斯-奔驰（中国）投资有限公司与北京字跳网络技术有限公司宣布签署升级战略合作备忘录，共同推动人工智能（AI）技术的跨业务融合。此次战略合作覆盖从智能辅助驾驶、智能座舱、智能化研发、数字化营销到客户运营的各个业务领域。",
-      "tags": [],
-      "published_at": "2025-09-23T12:48:21Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "梅赛德斯-奔驰与字节跳动升级战略合作：覆盖智舱、智驾、营销等领域",
-        "en": "Mercedes-Benz and ByteDance have upgraded their strategic partnership to encompass intelligent cockpit systems, autonomous driving technology, and marketing sectors.",
-        "es": "Mercedes-Benz y ByteDance amplían su colaboración estratégica: abarcando áreas como cabina inteligente, conducción autónoma y marketing."
-      },
-      "excerpt_i18n": {
-        "zh": "36氪获悉，今日，梅赛德斯-奔驰（中国）投资有限公司与北京字跳网络技术有限公司宣布签署升级战略合作备忘录，共同推动人工智能（AI）技术的跨业务融合。此次战略合作覆盖从智能辅助驾驶、智能座舱、智能化研发、数字化营销到客户运营的各个业务领域。",
-        "en": "According to 36Kr, Mercedes-Benz (China) Investment Co., Ltd. and Beijing Zitiao Network Technology Co., Ltd. announced today the signing of an upgraded strategic cooperation memorandum to jointly promote the cross-business integration of artificial intelligence (AI) technology. This strategic collaboration spans various business areas, including intelligent assisted driving, smart cockpits, intelligent R&D, digital marketing, and customer operations.",
-        "es": "Según 36Kr, hoy, Mercedes-Benz (China) Investment Co., Ltd. y Beijing Zitiao Network Technology Co., Ltd. anunciaron la firma de un memorándum de cooperación estratégica actualizado para impulsar conjuntamente la integración transversal de la tecnología de inteligencia artificial en diversos negocios. Esta colaboración estratégica abarca áreas como conducción asistente inteligente, cabina inteligente, desarrollo de inteligencia, marketing digital y operaciones de clientes."
-      },
-      "hotness": 0.86001
+      "hotness": 0.989851
     },
     {
       "id": "a83b785171476631",
@@ -818,18 +1315,18 @@
         "Research"
       ],
       "published_at": "2025-09-23T12:10:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
         "en": "The Download: AI’s retracted papers problem",
-        "zh": "下载：人工智能领域的论文撤稿问题",
-        "es": "La Descarga: El problema de los artículos retirados de la IA"
+        "zh": "下载：人工智能论文撤回问题",
+        "es": "La Descarga: El problema de los artículos retractados de la IA"
       },
       "excerpt_i18n": {
         "en": "This is today&#8217;s edition of&#160;The Download,&#160;our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. AI models are using material from retracted scientific papers The news:&#160;Some AI chatbots rely on flawed research from retracted scientific papers to answer questions, according to recent studies. In one such study, researchers&#8230;",
-        "zh": "这是今日版《下载》，我们的工作日通讯，每日提供科技界动态。人工智能模型正在使用已撤稿科学论文的材料。",
+        "zh": "这是今日版《下载》，我们的工作日通讯，每日提供科技界动态。人工智能模型正在使用被撤稿科学论文的材料。",
         "es": "Esta es la edición de hoy de The Download, nuestro boletín diario que ofrece una dosis cotidiana de lo que ocurre en el mundo de la tecnología. Los modelos de IA están utilizando material de artículos científicos retractados."
       },
-      "hotness": 1.02253
+      "hotness": 0.722992
     },
     {
       "id": "25e62f12eefb1f56",
@@ -846,7 +1343,7 @@
         "Industry"
       ],
       "published_at": "2025-09-23T12:00:16Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
         "en": "How Meta Is Supporting US National Security With AI",
         "zh": "Meta如何利用人工智能支持美国国家安全",
@@ -855,9 +1352,9 @@
       "excerpt_i18n": {
         "en": "Since making Llama AI models available to US government agencies and their contractors, a wide variety of organizations have adopted this technology to bolster our nation’s security. Today, dozens of industry stakeholders use Llama to empower America’s military and intelligence community with advanced, bespoke, and secure tools for their critical work. Partners like Amazon Web Services and Snowflake are expanding access to Llama for America’s military branches in highly sensitive environments and networks. Other partners are leveraging Llama’s capabilities to address the needs of service members and to develop cutting-edge products that advance their missions. Accelerating Innovation Organizations can use Llama to securely build and deploy new applications tailored to their highly speciali",
         "zh": "自Llama人工智能模型向美国政府机构及其承包商开放以来，众多组织已采用该技术以加强国家安全。目前已有数十家行业相关方",
-        "es": "Desde que se pusieron a disposición de las agencias gubernamentales estadounidenses y sus contratistas los modelos de IA Llama, una amplia variedad de organizaciones han adoptado esta tecnología para reforzar la seguridad de nuestra nación. Actualmente, docenas de actores clave de la industria"
+        "es": "Desde que se pusieron a disposición de las agencias gubernamentales estadounidenses y sus contratistas los modelos de IA Llama, una amplia variedad de organizaciones han adoptado esta tecnología para reforzar la seguridad de nuestra nación. Actualmente, docenas de actores clave del sector"
       },
-      "hotness": 0.850115
+      "hotness": 0.601084
     },
     {
       "id": "3a263ee0131b25f1",
@@ -872,7 +1369,7 @@
         "Research"
       ],
       "published_at": "2025-09-23T10:00:45Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
         "en": "At Climate Week NYC, NVIDIA Details AI’s Key Role in the Sustainable Energy Transition",
         "zh": "在纽约气候周上，英伟达详述人工智能在可持续能源转型中的关键作用。",
@@ -880,162 +1377,38 @@
       },
       "excerpt_i18n": {
         "en": "Energy efficiency in large language model inference has improved 100,000x in the past 10 years — demonstrating that accelerated computing is sustainable computing. At Climate Week NYC, taking place through Sept. 26 in New York City, NVIDIA is showcasing how accelerated computing is propelling the sustainable energy transition and advancing climate research. The summit brings Read Article",
-        "zh": "过去十年间，大型语言模型推理能效提升十万倍，这证明加速计算即是可持续计算。纽约气候周活动将持续至9月26日。",
-        "es": "La eficiencia energética en la inferencia de modelos lingüísticos grandes ha mejorado 100.000 veces en los últimos 10 años, lo que demuestra que la computación acelerada es computación sostenible. En la Semana del Clima de Nueva York, que se celebra hasta el 26 de septiembre en Ne"
+        "zh": "过去十年间，大型语言模型推理的能效提升了10万倍，这证明加速计算即是可持续计算。纽约气候周活动将持续至9月26日。",
+        "es": "La eficiencia energética en la inferencia de modelos de lenguaje grandes ha mejorado 100.000 veces en los últimos 10 años, lo que demuestra que la computación acelerada es computación sostenible. En la Semana del Clima de Nueva York, que se celebra hasta el 26 de septiembre en Ne"
       },
-      "hotness": 0.82601
+      "hotness": 0.58404
     },
     {
-      "id": "47fe5e1befe4ec0e",
+      "id": "ddb3ce3b05f5f7a2",
       "source": {
-        "site": "https://www.qbitai.com",
-        "feed": "https://www.qbitai.com/feed"
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
       },
-      "url": "https://www.qbitai.com/2025/09/335455.html",
-      "title": "从技术闭环到场景落地：商汤大装置的AI Agent Infra实践",
-      "raw_excerpt": "加速智能时代创新效能",
-      "tags": [],
-      "published_at": "2025-09-23T09:27:55Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "从技术闭环到场景落地：商汤大装置的AI Agent Infra实践",
-        "en": "From Technical Closure to Scenario Implementation: SenseTime's AI Agent Infrastructure Practices",
-        "es": "Del cierre técnico a la aplicación en escenarios: la práctica de Infraestructura de Agentes de IA en la Plataforma SenseCore de SenseTime"
-      },
-      "excerpt_i18n": {
-        "zh": "加速智能时代创新效能",
-        "en": "Accelerating Innovation Efficiency in the Age of Intelligence",
-        "es": "Acelerar la eficacia innovadora en la era inteligente"
-      },
-      "hotness": 0.98341
-    },
-    {
-      "id": "62619b89fd29e6fc",
-      "source": {
-        "site": "https://www.qbitai.com",
-        "feed": "https://www.qbitai.com/feed"
-      },
-      "url": "https://www.qbitai.com/2025/09/335390.html",
-      "title": "全是套路！英伟达千亿美元投OpenAI，奥特曼拿钱买卡还让甲骨文赚差价",
-      "raw_excerpt": "英伟达+OpenAI+甲骨文，玩转AI圈千亿三角循环",
-      "tags": [],
-      "published_at": "2025-09-23T01:31:34Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "全是套路！英伟达千亿美元投OpenAI，奥特曼拿钱买卡还让甲骨文赚差价",
-        "en": "It's all a calculated move! Nvidia invests hundreds of billions in OpenAI, Altman uses the funds to buy chips while Oracle profits from the markup.",
-        "es": "¡Todo es una estrategia! Nvidia invierte cien mil millones de dólares en OpenAI, Altman usa el dinero para comprar tarjetas y deja que Oracle gane la diferencia."
-      },
-      "excerpt_i18n": {
-        "zh": "英伟达+OpenAI+甲骨文，玩转AI圈千亿三角循环",
-        "en": "NVIDIA, OpenAI, and Oracle form a trillion-dollar AI triangle cycle.",
-        "es": "Nvidia, OpenAI y Oracle dominan el círculo de billones de la IA en un triángulo estratégico."
-      },
-      "hotness": 0.876888
-    },
-    {
-      "id": "3dfa208918f507b9",
-      "source": {
-        "site": "https://machinelearning.apple.com",
-        "feed": "https://machinelearning.apple.com/rss.xml"
-      },
-      "url": "https://machinelearning.apple.com/research/classifier-free-guidance",
-      "title": "Classifier-Free Guidance is a Predictor-Corrector",
-      "raw_excerpt": "We investigate the theoretical foundations of classifier-free guidance (CFG). CFG is the dominant method of conditional sampling for text-to-image diffusion models, yet unlike other aspects of diffusion, it remains on shaky theoretical footing. In this paper, we disprove common misconceptions, by showing that CFG interacts differently with DDPM (Ho et al., 2020) and DDIM (Song et al., 2021), and neither sampler with CFG generates the gamma-powered distribution p(x|c)^γp(x)^{1−γ}. Then, we clarify the behavior of CFG by showing that it is a kind of predictor-corrector method (Song et al., 2020)…",
+      "url": "https://www.technologyreview.com/2025/09/23/1123897/ai-models-are-using-material-from-retracted-scientific-papers/",
+      "title": "AI models are using material from retracted scientific papers",
+      "raw_excerpt": "Some AI chatbots rely on flawed research from retracted scientific papers to answer questions, according to recent studies. The findings, confirmed by MIT Technology Review, raise questions about how reliable AI tools are at evaluating scientific research and could complicate efforts by countries and industries seeking to invest in AI tools for scientists. AI search&#8230;",
       "tags": [
-        "Research"
-      ],
-      "published_at": "2025-09-23T00:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Classifier-Free Guidance is a Predictor-Corrector",
-        "zh": "无分类器引导是一种预测器-校正器",
-        "es": "La Guía Libre de Clasificador es un Predictor-Corrector"
-      },
-      "excerpt_i18n": {
-        "en": "We investigate the theoretical foundations of classifier-free guidance (CFG). CFG is the dominant method of conditional sampling for text-to-image diffusion models, yet unlike other aspects of diffusion, it remains on shaky theoretical footing. In this paper, we disprove common misconceptions, by showing that CFG interacts differently with DDPM (Ho et al., 2020) and DDIM (Song et al., 2021), and neither sampler with CFG generates the gamma-powered distribution p(x|c)^γp(x)^{1−γ}. Then, we clarify the behavior of CFG by showing that it is a kind of predictor-corrector method (Song et al., 2020)…",
-        "zh": "我们研究无分类器引导的理论基础。该方法作为文生图扩散模型的主流条件采样技术，虽在扩散模型其他环节已有深入探索，其理论机制仍待完善。",
-        "es": "Investigamos los fundamentos teóricos de la guía sin clasificador (CFG). CFG es el método dominante de muestreo condicional para modelos de difusión de texto a imagen, y sin embargo, a diferencia de otros aspectos de la difusión, permanece sobre"
-      },
-      "hotness": 0.714812
-    },
-    {
-      "id": "0b7da1dfe4d9cda6",
-      "source": {
-        "site": "https://machinelearning.apple.com",
-        "feed": "https://machinelearning.apple.com/rss.xml"
-      },
-      "url": "https://machinelearning.apple.com/research/lens-of-indistinguishability",
-      "title": "Calibration through the Lens of Indistinguishability",
-      "raw_excerpt": "Calibration is a classical notion from the forecasting literature which aims to address the question: how should predicted probabilities be interpreted? In a world where we only get to observe (discrete) outcomes, how should we evaluate a predictor that hypothesizes (continuous) probabilities over possible outcomes? The study of calibration has seen a surge of recent interest, given the ubiquity of probabilistic predictions in machine learning. This survey describes recent work on the foundational questions of how to define and measure calibration error, and what these measures mean for…",
-      "tags": [
-        "Research"
-      ],
-      "published_at": "2025-09-23T00:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Calibration through the Lens of Indistinguishability",
-        "zh": "基于不可区分性的校准",
-        "es": "Calibración a través del Lente de la Indistinguibilidad"
-      },
-      "excerpt_i18n": {
-        "en": "Calibration is a classical notion from the forecasting literature which aims to address the question: how should predicted probabilities be interpreted? In a world where we only get to observe (discrete) outcomes, how should we evaluate a predictor that hypothesizes (continuous) probabilities over possible outcomes? The study of calibration has seen a surge of recent interest, given the ubiquity of probabilistic predictions in machine learning. This survey describes recent work on the foundational questions of how to define and measure calibration error, and what these measures mean for…",
-        "zh": "校准是预测文献中的经典概念，旨在解决这个问题：预测概率应如何解读？在我们只能观察到离散结果的世界里，如何",
-        "es": "La calibración es un concepto clásico de la literatura sobre predicción que pretende responder a la pregunta: ¿cómo deben interpretarse las probabilidades pronosticadas? En un mundo donde solo podemos observar resultados (discretos), ¿cómo de"
-      },
-      "hotness": 0.714812
-    },
-    {
-      "id": "517e90b2448dc915",
-      "source": {
-        "site": "https://machinelearning.apple.com",
-        "feed": "https://machinelearning.apple.com/rss.xml"
-      },
-      "url": "https://machinelearning.apple.com/research/evaluating-sample-utility",
-      "title": "Evaluating Sample Utility for Data Selection by Mimicking Model Weights",
-      "raw_excerpt": "This paper was accepted at the DataWorld (Data Curation) Workshop at ICML 2025.\nMultimodal models are trained on large-scale web-crawled datasets, which often contain noise, bias, and irrelevant information. This motivates the use of data selection techniques, which can be divided into model-free variants, relying on heuristic rules and downstream datasets, and model-based approaches, such as those using influence functions. The former can be expensive to design and risks introducing unwanted dataset dependencies, while the latter are often computationally prohibitive. In this work, we propose…",
-      "tags": [
-        "Research"
-      ],
-      "published_at": "2025-09-23T00:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Evaluating Sample Utility for Data Selection by Mimicking Model Weights",
-        "zh": "通过模拟模型权重评估数据选择的样本效用",
-        "es": "Evaluación de la utilidad de muestras para la selección de datos mediante la imitación de pesos del modelo"
-      },
-      "excerpt_i18n": {
-        "en": "This paper was accepted at the DataWorld (Data Curation) Workshop at ICML 2025.\nMultimodal models are trained on large-scale web-crawled datasets, which often contain noise, bias, and irrelevant information. This motivates the use of data selection techniques, which can be divided into model-free variants, relying on heuristic rules and downstream datasets, and model-based approaches, such as those using influence functions. The former can be expensive to design and risks introducing unwanted dataset dependencies, while the latter are often computationally prohibitive. In this work, we propose…",
-        "zh": "该论文被ICML 2025数据世界（数据策展）研讨会接收。多模态模型基于大规模网络爬取数据集进行训练，这些数据常包含噪声、偏见及无关信息，这促使",
-        "es": "Este artículo fue aceptado en el Taller DataWorld (Curación de Datos) en ICML 2025.\nLos modelos multimodales se entrenan con conjuntos de datos a gran escala obtenidos mediante rastreo web, que a menudo contienen ruido, sesgos e información irrelevante. Esto motiva"
-      },
-      "hotness": 0.714812
-    },
-    {
-      "id": "0efbb03e9e0ec807",
-      "source": {
-        "site": "https://machinelearning.apple.com",
-        "feed": "https://machinelearning.apple.com/rss.xml"
-      },
-      "url": "https://machinelearning.apple.com/research/atoken",
-      "title": "AToken: A Unified Tokenizer for Vision",
-      "raw_excerpt": "We present AToken, the first unified visual tokenizer that achieves both high-fidelity reconstruction and semantic understanding across images, videos, and 3D assets. Unlike existing tokenizers that specialize in either reconstruction or understanding for single modalities, AToken encodes these diverse visual inputs into a shared 4D latent space, unifying both tasks and modalities in a single framework. Specifically, we introduce a pure transformer architecture with 4D rotary position embeddings to process visual inputs of arbitrary resolutions and temporal durations. To ensure stable…",
-      "tags": [
+        "Funding",
+        "Research",
         "Tools"
       ],
-      "published_at": "2025-09-23T00:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "published_at": "2025-09-23T09:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
-        "en": "AToken: A Unified Tokenizer for Vision",
-        "zh": "AToken：视觉统一分词器",
-        "es": "AToken: Un Tokenizador Unificado para la Visión"
+        "en": "AI models are using material from retracted scientific papers",
+        "zh": "AI模型正在使用已撤稿科学论文中的材料",
+        "es": "Los modelos de inteligencia artificial están utilizando material de artículos científicos retractados"
       },
       "excerpt_i18n": {
-        "en": "We present AToken, the first unified visual tokenizer that achieves both high-fidelity reconstruction and semantic understanding across images, videos, and 3D assets. Unlike existing tokenizers that specialize in either reconstruction or understanding for single modalities, AToken encodes these diverse visual inputs into a shared 4D latent space, unifying both tasks and modalities in a single framework. Specifically, we introduce a pure transformer architecture with 4D rotary position embeddings to process visual inputs of arbitrary resolutions and temporal durations. To ensure stable…",
-        "zh": "我们推出AToken——首个在图像、视频和3D资产领域同时实现高保真重建与语义理解的统一视觉标记器。与现有仅专注于单一模态的标记器不同，",
-        "es": "Presentamos AToken, el primer tokenizador visual unificado que logra tanto una reconstrucción de alta fidelidad como comprensión semántica en imágenes, vídeos y activos 3D. A diferencia de los tokenizadores existentes que se especializan en"
+        "en": "Some AI chatbots rely on flawed research from retracted scientific papers to answer questions, according to recent studies. The findings, confirmed by MIT Technology Review, raise questions about how reliable AI tools are at evaluating scientific research and could complicate efforts by countries and industries seeking to invest in AI tools for scientists. AI search&#8230;",
+        "zh": "近期研究表明，部分人工智能聊天机器人依赖已撤稿科学论文中的缺陷研究来回答问题。麻省理工科技评论证实，这些发现引发了对人工智能工具可靠性的质疑。",
+        "es": "Algunos chatbots de inteligencia artificial se basan en investigaciones defectuosas de artículos científicos retractados para responder preguntas, según estudios recientes. Estos hallazgos, confirmados por MIT Technology Review, plantean dudas sobre la fiabilidad de las herramientas de IA."
       },
-      "hotness": 0.714812
+      "hotness": 0.690675
     },
     {
       "id": "3ca19829db2faf47",
@@ -1050,18 +1423,96 @@
         "Research"
       ],
       "published_at": "2025-09-23T00:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
         "en": "MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs",
         "zh": "MM-Spatial：探索多模态大语言模型中的三维空间理解能力",
-        "es": "MM-Spatial: Exploración de la comprensión espacial 3D en modelos de lenguaje multimodal"
+        "es": "MM-Spatial: Exploración de la comprensión espacial 3D en modelos de lenguaje multimodales"
       },
       "excerpt_i18n": {
         "en": "Multimodal large language models (MLLMs) excel at 2D visual understanding but remain limited in their ability to reason about 3D space. In this work, we leverage large-scale high-quality 3D scene data with open-set annotations to introduce 1) a novel supervised fine-tuning dataset and 2) a new evaluation benchmark, focused on indoor scenes. Our Cubify Anything VQA (CA-VQA) data covers diverse spatial tasks including spatial relationship prediction, metric size and distance estimation, and 3D grounding. We show that CA-VQA enables us to train MM-Spatial, a strong generalist MLLM that also…",
         "zh": "多模态大语言模型在二维视觉理解方面表现出色，但在三维空间推理能力上仍存在局限。本研究利用具有开放集标注的大规模高质量三维场景数据，",
-        "es": "Los modelos lingüísticos multimodales de gran escala destacan en la comprensión visual bidimensional, pero siguen teniendo limitaciones en su capacidad para razonar sobre el espacio tridimensional. En este trabajo, aprovechamos datos de escenas tridimensionales a gran escala y de alta calidad con anotaciones de conjunto abierto."
+        "es": "Los modelos lingüísticos multimodales de gran escala sobresalen en la comprensión visual bidimensional, pero siguen teniendo limitaciones en su capacidad para razonar sobre el espacio tridimensional. En este trabajo, aprovechamos datos de escenas tridimensionales a gran escala y de alta calidad con anotaciones de conjunto abierto."
       },
-      "hotness": 0.714812
+      "hotness": 0.505417
+    },
+    {
+      "id": "0efbb03e9e0ec807",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/atoken",
+      "title": "AToken: A Unified Tokenizer for Vision",
+      "raw_excerpt": "We present AToken, the first unified visual tokenizer that achieves both high-fidelity reconstruction and semantic understanding across images, videos, and 3D assets. Unlike existing tokenizers that specialize in either reconstruction or understanding for single modalities, AToken encodes these diverse visual inputs into a shared 4D latent space, unifying both tasks and modalities in a single framework. Specifically, we introduce a pure transformer architecture with 4D rotary position embeddings to process visual inputs of arbitrary resolutions and temporal durations. To ensure stable…",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-23T00:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "AToken: A Unified Tokenizer for Vision",
+        "zh": "AToken：视觉统一分词器",
+        "es": "AToken: Un Tokenizador Unificado para la Visión"
+      },
+      "excerpt_i18n": {
+        "en": "We present AToken, the first unified visual tokenizer that achieves both high-fidelity reconstruction and semantic understanding across images, videos, and 3D assets. Unlike existing tokenizers that specialize in either reconstruction or understanding for single modalities, AToken encodes these diverse visual inputs into a shared 4D latent space, unifying both tasks and modalities in a single framework. Specifically, we introduce a pure transformer architecture with 4D rotary position embeddings to process visual inputs of arbitrary resolutions and temporal durations. To ensure stable…",
+        "zh": "我们推出AToken——首个在图像、视频和3D资产领域同时实现高保真重建与语义理解的统一视觉标记器。与现有仅专精于单一模态的标记器不同，",
+        "es": "Presentamos AToken, el primer tokenizador visual unificado que logra tanto una reconstrucción de alta fidelidad como comprensión semántica en imágenes, vídeos y recursos 3D. A diferencia de los tokenizadores existentes que se especializan en"
+      },
+      "hotness": 0.505417
+    },
+    {
+      "id": "3dfa208918f507b9",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/classifier-free-guidance",
+      "title": "Classifier-Free Guidance is a Predictor-Corrector",
+      "raw_excerpt": "We investigate the theoretical foundations of classifier-free guidance (CFG). CFG is the dominant method of conditional sampling for text-to-image diffusion models, yet unlike other aspects of diffusion, it remains on shaky theoretical footing. In this paper, we disprove common misconceptions, by showing that CFG interacts differently with DDPM (Ho et al., 2020) and DDIM (Song et al., 2021), and neither sampler with CFG generates the gamma-powered distribution p(x|c)^γp(x)^{1−γ}. Then, we clarify the behavior of CFG by showing that it is a kind of predictor-corrector method (Song et al., 2020)…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T00:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Classifier-Free Guidance is a Predictor-Corrector",
+        "zh": "无分类器引导是一种预测器-校正器",
+        "es": "La Guía Libre de Clasificador es un Predictor-Corrector"
+      },
+      "excerpt_i18n": {
+        "en": "We investigate the theoretical foundations of classifier-free guidance (CFG). CFG is the dominant method of conditional sampling for text-to-image diffusion models, yet unlike other aspects of diffusion, it remains on shaky theoretical footing. In this paper, we disprove common misconceptions, by showing that CFG interacts differently with DDPM (Ho et al., 2020) and DDIM (Song et al., 2021), and neither sampler with CFG generates the gamma-powered distribution p(x|c)^γp(x)^{1−γ}. Then, we clarify the behavior of CFG by showing that it is a kind of predictor-corrector method (Song et al., 2020)…",
+        "zh": "我们研究无分类器引导的理论基础。该方法作为文生图扩散模型的主流条件采样技术，虽在扩散模型其他环节已有深入探索，其理论体系仍待完善。",
+        "es": "Investigamos los fundamentos teóricos de la guía sin clasificador (CFG). CFG es el método dominante de muestreo condicional para modelos de difusión de texto a imagen, y sin embargo, a diferencia de otros aspectos de la difusión, permanece sobre"
+      },
+      "hotness": 0.505417
+    },
+    {
+      "id": "517e90b2448dc915",
+      "source": {
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
+      },
+      "url": "https://machinelearning.apple.com/research/evaluating-sample-utility",
+      "title": "Evaluating Sample Utility for Data Selection by Mimicking Model Weights",
+      "raw_excerpt": "This paper was accepted at the DataWorld (Data Curation) Workshop at ICML 2025.\nMultimodal models are trained on large-scale web-crawled datasets, which often contain noise, bias, and irrelevant information. This motivates the use of data selection techniques, which can be divided into model-free variants, relying on heuristic rules and downstream datasets, and model-based approaches, such as those using influence functions. The former can be expensive to design and risks introducing unwanted dataset dependencies, while the latter are often computationally prohibitive. In this work, we propose…",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-23T00:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
+      "title_i18n": {
+        "en": "Evaluating Sample Utility for Data Selection by Mimicking Model Weights",
+        "zh": "通过模拟模型权重评估数据选择的样本效用",
+        "es": "Evaluación de la utilidad de muestras para la selección de datos mediante la imitación de pesos del modelo"
+      },
+      "excerpt_i18n": {
+        "en": "This paper was accepted at the DataWorld (Data Curation) Workshop at ICML 2025.\nMultimodal models are trained on large-scale web-crawled datasets, which often contain noise, bias, and irrelevant information. This motivates the use of data selection techniques, which can be divided into model-free variants, relying on heuristic rules and downstream datasets, and model-based approaches, such as those using influence functions. The former can be expensive to design and risks introducing unwanted dataset dependencies, while the latter are often computationally prohibitive. In this work, we propose…",
+        "zh": "该论文被ICML 2025数据世界（数据管理）研讨会接收。多模态模型基于大规模网络爬取数据集进行训练，这些数据常包含噪声、偏见及无关信息，这促使",
+        "es": "Este artículo fue aceptado en el Taller DataWorld (Curación de Datos) en ICML 2025.\nLos modelos multimodales se entrenan con conjuntos de datos a gran escala obtenidos mediante rastreo web, que a menudo contienen ruido, sesgos e información irrelevante. Esto motiva"
+      },
+      "hotness": 0.505417
     },
     {
       "id": "80171a479f71deb6",
@@ -1076,7 +1527,7 @@
         "Research"
       ],
       "published_at": "2025-09-23T00:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
         "en": "Apple Workshop on Natural Language and Interactive Systems 2025",
         "zh": "2025年苹果自然语言与交互系统研讨会",
@@ -1084,406 +1535,36 @@
       },
       "excerpt_i18n": {
         "en": "Natural language processing (NLP) remains one of the most quickly evolving fields in AI, as new research continues to rapidly advance large language models (LLMs), systems for speech recognition and generation, language agents, and more. This technology is essential to many of today’s AI experiences, including Apple Intelligence and Siri, and fundamental research in NLP will be foundational to future AI.\nApple recently hosted the Workshop on Natural Language and Interactive Systems, bringing together Apple and members of the academic research community for a two-day event focused on recent…",
-        "zh": "自然语言处理（NLP）仍是人工智能中发展最迅速的领域之一，新研究持续快速推动着大型语言模型、语音识别与生成系统的进步。",
+        "zh": "自然语言处理（NLP）仍是人工智能中发展最迅速的领域之一，新研究持续快速推动着大型语言模型（LLM）、语音识别与生成系统的进步。",
         "es": "El procesamiento del lenguaje natural (PLN) sigue siendo uno de los campos de la inteligencia artificial que evoluciona más rápidamente, ya que las nuevas investigaciones continúan avanzando con rapidez en los modelos de lenguaje extenso (LLM), los sistemas de reconocimiento y generación del habla, y el lenguaje"
       },
-      "hotness": 0.714812
+      "hotness": 0.505417
     },
     {
-      "id": "7e92bc0a03c2447f",
+      "id": "0b7da1dfe4d9cda6",
       "source": {
-        "site": "https://openai.com/news",
-        "feed": "https://openai.com/blog/rss.xml"
+        "site": "https://machinelearning.apple.com",
+        "feed": "https://machinelearning.apple.com/rss.xml"
       },
-      "url": "https://openai.com/index/cna-walter-fernandez",
-      "title": "CNA is transforming its newsroom with AI",
-      "raw_excerpt": "In this Executive Function series from OpenAI, discover how CNA is transforming its newsroom with AI. Editor-in-Chief Walter Fernandez shares insights on AI adoption, culture, and the future of journalism.",
-      "tags": [
-        "Industry"
-      ],
-      "published_at": "2025-09-22T17:17:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "CNA is transforming its newsroom with AI",
-        "zh": "CNA正运用人工智能改造新闻编辑部",
-        "es": "CNA está transformando su redacción con inteligencia artificial"
-      },
-      "excerpt_i18n": {
-        "en": "In this Executive Function series from OpenAI, discover how CNA is transforming its newsroom with AI. Editor-in-Chief Walter Fernandez shares insights on AI adoption, culture, and the future of journalism.",
-        "zh": "在本期OpenAI执行功能系列中，探索CNA如何运用人工智能改造新闻编辑室。主编沃尔特·费尔南德斯将分享关于AI应用、文化转型及新闻业未来的见解。",
-        "es": "En esta serie de Función Ejecutiva de OpenAI, descubre cómo CNA está transformando su redacción con IA. El director editorial Walter Fernandez comparte perspectivas sobre la adopción de la IA, la cultura y el futuro del periodismo."
-      },
-      "hotness": 1.037979
-    },
-    {
-      "id": "cd9366ed2e11d3f4",
-      "source": {
-        "site": "https://blogs.nvidia.com/",
-        "feed": "https://blogs.nvidia.com/feed/"
-      },
-      "url": "https://blogs.nvidia.com/blog/openai-nvidia/",
-      "title": "NVIDIA, OpenAI Announce ‘the Biggest AI Infrastructure Deployment in History’",
-      "raw_excerpt": "OpenAI and NVIDIA just announced a landmark AI infrastructure partnership — an initiative that will scale OpenAI’s compute with multi-gigawatt data centers powered by millions of NVIDIA GPUs. To discuss what this means for the next generation of AI development and deployment, the two companies’ CEOs, and the president of OpenAI, spoke this morning with Read Article",
-      "tags": [],
-      "published_at": "2025-09-22T18:38:58Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "NVIDIA, OpenAI Announce ‘the Biggest AI Infrastructure Deployment in History’",
-        "zh": "英伟达与OpenAI宣布部署史上最大规模人工智能基础设施",
-        "es": "NVIDIA y OpenAI anuncian 'el mayor despliegue de infraestructura de IA de la historia'"
-      },
-      "excerpt_i18n": {
-        "en": "OpenAI and NVIDIA just announced a landmark AI infrastructure partnership — an initiative that will scale OpenAI’s compute with multi-gigawatt data centers powered by millions of NVIDIA GPUs. To discuss what this means for the next generation of AI development and deployment, the two companies’ CEOs, and the president of OpenAI, spoke this morning with Read Article",
-        "zh": "OpenAI与英伟达刚刚宣布达成一项具有里程碑意义的人工智能基础设施合作——该项目将通过配备数百万块英伟达GPU的千兆瓦级数据中心，扩展OpenAI的计算能力。此举意味着",
-        "es": "OpenAI y NVIDIA acaban de anunciar una asociación histórica en infraestructuras de IA, una iniciativa que escalará la capacidad de computación de OpenAI con centros de datos de múltiples gigavatios alimentados por millones de GPUs de NVIDIA. Para analizar lo que esto significa"
-      },
-      "hotness": 0.661662
-    },
-    {
-      "id": "4812a3af94fdc5a8",
-      "source": {
-        "site": "https://www.infoq.cn",
-        "feed": "https://www.infoq.cn/feed"
-      },
-      "url": "https://www.infoq.cn/article/IVP0C12QRUTi9yqxOvsI",
-      "title": "字节跳动 Developer AI 负责人朱元硕确认出席 QCon 上海，分享自主规划Agent在字节跳动的落地实践",
-      "raw_excerpt": "点击查看原文>",
-      "tags": [],
-      "published_at": "2025-09-22T18:21:18Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "字节跳动 Developer AI 负责人朱元硕确认出席 QCon 上海，分享自主规划Agent在字节跳动的落地实践",
-        "en": "Zhu Yuanshuo, Head of Developer AI at ByteDance, will attend QCon Shanghai to share the implementation practices of autonomous planning agents at ByteDance.",
-        "es": "El responsable de AI para desarrolladores de ByteDance, Zhu Yuanshuo, confirmó su asistencia a QCon Shanghai para compartir las prácticas de implementación de agentes de planificación autónoma en ByteDance."
-      },
-      "excerpt_i18n": {
-        "zh": "点击查看原文>",
-        "en": "View original text >",
-        "es": "Hacer clic para ver el texto original>"
-      },
-      "hotness": 0.658855
-    },
-    {
-      "id": "c126a36b0c4efce3",
-      "source": {
-        "site": "https://www.infoq.cn",
-        "feed": "https://www.infoq.cn/feed"
-      },
-      "url": "https://www.infoq.cn/article/gFIMpcXhw3aE655w4AUJ",
-      "title": "Snowflake 上的智能体 RAG | 技术实践",
-      "raw_excerpt": "点击查看原文>",
-      "tags": [],
-      "published_at": "2025-09-22T18:18:49Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "Snowflake 上的智能体 RAG | 技术实践",
-        "en": "Intelligent Agent RAG on Snowflake | Technical Implementation",
-        "es": "RAG de agentes en Snowflake | Práctica técnica"
-      },
-      "excerpt_i18n": {
-        "zh": "点击查看原文>",
-        "en": "View original text >",
-        "es": "Hacer clic para ver el texto original>"
-      },
-      "hotness": 0.658461
-    },
-    {
-      "id": "3947d60e9c03e8b2",
-      "source": {
-        "site": "https://aws.amazon.com/blogs/machine-learning/",
-        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
-      },
-      "url": "https://aws.amazon.com/blogs/machine-learning/rapid-ml-experimentation-for-enterprises-with-amazon-sagemaker-ai-and-comet/",
-      "title": "Rapid ML experimentation for enterprises with Amazon SageMaker AI and Comet",
-      "raw_excerpt": "In this post, we showed how to use SageMaker and Comet together to spin up fully managed ML environments with reproducibility and experiment tracking capabilities.",
-      "tags": [],
-      "published_at": "2025-09-22T17:12:33Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Rapid ML experimentation for enterprises with Amazon SageMaker AI and Comet",
-        "zh": "企业借助亚马逊SageMaker AI与Comet实现快速机器学习实验",
-        "es": "Experimentación rápida de aprendizaje automático para empresas con Amazon SageMaker AI y Comet"
-      },
-      "excerpt_i18n": {
-        "en": "In this post, we showed how to use SageMaker and Comet together to spin up fully managed ML environments with reproducibility and experiment tracking capabilities.",
-        "zh": "本文展示了如何结合使用SageMaker和Comet来搭建具备可复现性和实验追踪功能的完全托管式机器学习环境。",
-        "es": "En esta publicación, mostramos cómo usar SageMaker y Comet juntos para crear entornos de aprendizaje automático completamente gestionados con capacidades de reproducibilidad y seguimiento de experimentos."
-      },
-      "hotness": 0.648043
-    },
-    {
-      "id": "9fe80445c8a21f0f",
-      "source": {
-        "site": "https://www.infoq.cn",
-        "feed": "https://www.infoq.cn/feed"
-      },
-      "url": "https://www.infoq.cn/article/dLEP0OfOTS18WPvOCLYb",
-      "title": "Temporal 联手 OpenAI 推出 AI Agent 持久化方案，现已开放公开预览",
-      "raw_excerpt": "点击查看原文>",
-      "tags": [],
-      "published_at": "2025-09-22T17:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "Temporal 联手 OpenAI 推出 AI Agent 持久化方案，现已开放公开预览",
-        "en": "Temporal has partnered with OpenAI to launch an AI Agent persistence solution, now available for public preview.",
-        "es": "Temporal se une a OpenAI para lanzar una solución de persistencia para AI Agent, ya disponible en versión preliminar pública."
-      },
-      "excerpt_i18n": {
-        "zh": "点击查看原文>",
-        "en": "View original text >",
-        "es": "Hacer clic para ver el texto original>"
-      },
-      "hotness": 0.646088
-    },
-    {
-      "id": "9a3bc97ea3a18d2d",
-      "source": {
-        "site": "https://www.microsoft.com/en-us/research/",
-        "feed": "https://www.microsoft.com/en-us/research/feed/"
-      },
-      "url": "https://www.microsoft.com/en-us/research/blog/using-ai-to-assist-in-rare-disease-diagnosis/",
-      "title": "Using AI to assist in rare disease diagnosis",
-      "raw_excerpt": "New research from Microsoft, Drexel, and the Broad explores how generative AI could support genetic professionals in rare disease diagnosis. The post Using AI to assist in rare disease diagnosis appeared first on Microsoft Research .",
+      "url": "https://machinelearning.apple.com/research/lens-of-indistinguishability",
+      "title": "Calibration through the Lens of Indistinguishability",
+      "raw_excerpt": "Calibration is a classical notion from the forecasting literature which aims to address the question: how should predicted probabilities be interpreted? In a world where we only get to observe (discrete) outcomes, how should we evaluate a predictor that hypothesizes (continuous) probabilities over possible outcomes? The study of calibration has seen a surge of recent interest, given the ubiquity of probabilistic predictions in machine learning. This survey describes recent work on the foundational questions of how to define and measure calibration error, and what these measures mean for…",
       "tags": [
         "Research"
       ],
-      "published_at": "2025-09-22T14:17:03Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
+      "published_at": "2025-09-23T00:00:00Z",
+      "fetched_at": "2025-09-24T23:14:53.849910Z",
       "title_i18n": {
-        "en": "Using AI to assist in rare disease diagnosis",
-        "zh": "利用人工智能辅助罕见病诊断",
-        "es": "Utilizar la inteligencia artificial para ayudar en el diagnóstico de enfermedades raras"
+        "en": "Calibration through the Lens of Indistinguishability",
+        "zh": "基于不可区分性的校准",
+        "es": "Calibración a través del Lente de la Indistinguibilidad"
       },
       "excerpt_i18n": {
-        "en": "New research from Microsoft, Drexel, and the Broad explores how generative AI could support genetic professionals in rare disease diagnosis. The post Using AI to assist in rare disease diagnosis appeared first on Microsoft Research .",
-        "zh": "微软、德雷塞尔和布罗德研究所的新研究探讨生成式AI如何辅助遗传学专家进行罕见病诊断。该文章《利用AI辅助罕见病诊断》首发于微软博客。",
-        "es": "Nueva investigación de Microsoft, Drexel y Broad explora cómo la inteligencia artificial generativa podría apoyar a los genetistas en el diagnóstico de enfermedades raras. La publicación Usar IA para ayudar en el diagnóstico de enfermedades raras apareció primero en Microso"
+        "en": "Calibration is a classical notion from the forecasting literature which aims to address the question: how should predicted probabilities be interpreted? In a world where we only get to observe (discrete) outcomes, how should we evaluate a predictor that hypothesizes (continuous) probabilities over possible outcomes? The study of calibration has seen a surge of recent interest, given the ubiquity of probabilistic predictions in machine learning. This survey describes recent work on the foundational questions of how to define and measure calibration error, and what these measures mean for…",
+        "zh": "校准是预测文献中的经典概念，旨在解决：应如何解读预测概率？在只能观察到离散结果的世界里，如何",
+        "es": "La calibración es un concepto clásico de la literatura sobre predicciones que busca responder a la pregunta: ¿cómo deben interpretarse las probabilidades pronosticadas? En un mundo donde solo podemos observar resultados (discretos), ¿cómo de"
       },
-      "hotness": 0.62124
-    },
-    {
-      "id": "e86103c738d559db",
-      "source": {
-        "site": "https://deepmind.google/discover/blog/",
-        "feed": "https://www.deepmind.com/blog/rss.xml"
-      },
-      "url": "https://deepmind.google/discover/blog/strengthening-our-frontier-safety-framework/",
-      "title": "Strengthening our Frontier Safety Framework",
-      "raw_excerpt": "We’re strengthening the Frontier Safety Framework (FSF) to help identify and mitigate severe risks from advanced AI models.",
-      "tags": [
-        "Policy",
-        "Tools"
-      ],
-      "published_at": "2025-09-22T13:09:37Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Strengthening our Frontier Safety Framework",
-        "zh": "加强边境安全框架",
-        "es": "Fortalecimiento de nuestro Marco de Seguridad Fronteriza"
-      },
-      "excerpt_i18n": {
-        "en": "We’re strengthening the Frontier Safety Framework (FSF) to help identify and mitigate severe risks from advanced AI models.",
-        "zh": "我们正在加强前沿安全框架，以帮助识别和减轻先进人工智能模型带来的严重风险。",
-        "es": "Estamos reforzando el Marco de Seguridad Fronteriza (FSF) para ayudar a identificar y mitigar los riesgos graves de los modelos avanzados de inteligencia artificial."
-      },
-      "hotness": 0.611239
-    },
-    {
-      "id": "24afb374c9be89c8",
-      "source": {
-        "site": "https://www.technologyreview.com",
-        "feed": "https://www.technologyreview.com/feed/"
-      },
-      "url": "https://www.technologyreview.com/2025/09/22/1123889/the-download-the-llm-will-see-you-now-and-a-new-fusion-power-deal/",
-      "title": "The Download: the LLM will see you now, and a new fusion power deal",
-      "raw_excerpt": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. This medical startup uses LLMs to run appointments and make diagnoses Patients at a small number of clinics in Southern California run by the medical startup Akido Labs are spending relatively little time,&#8230;",
-      "tags": [],
-      "published_at": "2025-09-22T12:10:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "The Download: the LLM will see you now, and a new fusion power deal",
-        "zh": "下载：大型语言模型即将为您服务，以及新的核聚变能源协议",
-        "es": "La Descarga: el modelo de lenguaje grande te atenderá ahora, y un nuevo acuerdo sobre energía de fusión"
-      },
-      "excerpt_i18n": {
-        "en": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. This medical startup uses LLMs to run appointments and make diagnoses Patients at a small number of clinics in Southern California run by the medical startup Akido Labs are spending relatively little time,&#8230;",
-        "zh": "这是今日版《每日下载》，我们的工作日通讯，为您提供科技领域的每日动态。这家医疗初创公司运用大型语言模型进行预约和诊断。",
-        "es": "Esta es la edición de hoy de The Download, nuestro boletín diario que ofrece una dosis cotidiana de lo que ocurre en el mundo de la tecnología. Esta startup médica utiliza modelos de lenguaje extenso para gestionar consultas y realizar diagnósticos."
-      },
-      "hotness": 0.723038
-    },
-    {
-      "id": "d97cd16fc7fd867d",
-      "source": {
-        "site": "https://about.fb.com/news/",
-        "feed": "https://about.fb.com/news/feed/"
-      },
-      "url": "https://about.fb.com/news/2025/09/accelerating-ai-adoption-across-federal-government/",
-      "title": "Accelerating AI Adoption Across the Federal Government",
-      "raw_excerpt": "The US General Services Administration (GSA) announced an initiative with Meta that supports the government-wide use of Meta’s Llama open source AI models. The post Accelerating AI Adoption Across the Federal Government appeared first on Meta Newsroom .",
-      "tags": [
-        "Policy",
-        "Industry"
-      ],
-      "published_at": "2025-09-22T10:00:41Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Accelerating AI Adoption Across the Federal Government",
-        "zh": "加速人工智能在联邦政府中的普及",
-        "es": "Aceleración de la Adopción de la Inteligencia Artificial en la Administración Federal"
-      },
-      "excerpt_i18n": {
-        "en": "The US General Services Administration (GSA) announced an initiative with Meta that supports the government-wide use of Meta’s Llama open source AI models. The post Accelerating AI Adoption Across the Federal Government appeared first on Meta Newsroom .",
-        "zh": "美国总务管理局宣布与Meta合作，支持政府各部门使用Meta的Llama开源人工智能模型。该计划旨在加速人工智能在整个联邦政府的应用。",
-        "es": "La Administración de Servicios Generales de EE. UU. (GSA) anunció una iniciativa con Meta que respalda el uso gubernamental de los modelos de IA de código abierto Llama de Meta. La publicación Acelerando la Adopción de la IA en Todo el Gobierno Federal"
-      },
-      "hotness": 0.584068
-    },
-    {
-      "id": "d560e63199dfae64",
-      "source": {
-        "site": "https://openai.com/news",
-        "feed": "https://openai.com/blog/rss.xml"
-      },
-      "url": "https://openai.com/index/schoolai",
-      "title": "Creating a safe, observable AI infrastructure for 1 million classrooms",
-      "raw_excerpt": "Discover how SchoolAI, built on OpenAI’s GPT-4.1, image generation, and TTS, powers safe, teacher-guided AI tools for 1 million classrooms worldwide—boosting engagement, oversight, and personalized learning.",
-      "tags": [
-        "Tools"
-      ],
-      "published_at": "2025-09-22T10:00:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "Creating a safe, observable AI infrastructure for 1 million classrooms",
-        "zh": "为100万间教室构建安全可观测的人工智能基础设施",
-        "es": "Creación de una infraestructura de IA segura y observable para un millón de aulas"
-      },
-      "excerpt_i18n": {
-        "en": "Discover how SchoolAI, built on OpenAI’s GPT-4.1, image generation, and TTS, powers safe, teacher-guided AI tools for 1 million classrooms worldwide—boosting engagement, oversight, and personalized learning.",
-        "zh": "了解基于OpenAI的GPT-4.1、图像生成和语音合成技术打造的SchoolAI，如何为全球100万间教室提供教师引导的安全人工智能工具，提升课堂参与度、教学监督及个性化学习体验。",
-        "es": "Descubre cómo SchoolAI, basado en GPT-4.1 de OpenAI, generación de imágenes y TTS, impulsa herramientas de IA seguras y guiadas por profesores para 1 millón de aulas en todo el mundo, aumentando la participación, la supervisión y el aprendizaje personalizado."
-      },
-      "hotness": 0.934354
-    },
-    {
-      "id": "7ae0270e7bb8e434",
-      "source": {
-        "site": "https://openai.com/news",
-        "feed": "https://openai.com/blog/rss.xml"
-      },
-      "url": "https://openai.com/index/openai-nvidia-systems-partnership",
-      "title": "OpenAI and NVIDIA announce strategic partnership to deploy 10 gigawatts of NVIDIA systems",
-      "raw_excerpt": "OpenAI and NVIDIA announce a strategic partnership to deploy 10 gigawatts of AI datacenters powered by NVIDIA systems, with the first phase launching in 2026.",
-      "tags": [],
-      "published_at": "2025-09-22T08:45:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "en": "OpenAI and NVIDIA announce strategic partnership to deploy 10 gigawatts of NVIDIA systems",
-        "zh": "OpenAI与NVIDIA宣布战略合作，将部署10吉瓦的NVIDIA系统。",
-        "es": "OpenAI y NVIDIA anuncian una asociación estratégica para desplegar 10 gigavatios de sistemas NVIDIA."
-      },
-      "excerpt_i18n": {
-        "en": "OpenAI and NVIDIA announce a strategic partnership to deploy 10 gigawatts of AI datacenters powered by NVIDIA systems, with the first phase launching in 2026.",
-        "zh": "OpenAI与英伟达宣布达成战略合作，将部署由英伟达系统驱动的10吉瓦人工智能数据中心，首阶段工程计划于2026年启动。",
-        "es": "OpenAI y NVIDIA anuncian una asociación estratégica para desplegar 10 gigavatios de centros de datos de IA alimentados por sistemas NVIDIA, con una primera fase que se lanzará en 2026."
-      },
-      "hotness": 0.91764
-    },
-    {
-      "id": "bedc96c1cd3d6794",
-      "source": {
-        "site": "https://www.leiphone.com",
-        "feed": "https://www.leiphone.com/feed/"
-      },
-      "url": "https://www.leiphone.com/category/industrynews/QtL2K8X5rYgjSh82.html",
-      "title": "手机秒变学习机，百度搜索正式推出 AI 伴学功能",
-      "raw_excerpt": "雷峰网讯 ﻿9 月 22 日，百度搜索教育新品交流会在北京中关村学说空间举办。会上正式推出 AI 伴学产品，其中包括 AI 精准练、AI 口语等重磅功能。产品入口目前集成于百度 App 内，据官方介绍，此举意在“让普通手机一键变身免费学习机，助力教育平权”。 AI 教育产品百花齐放，产品形态选择独立软件还是专门硬件，各个厂商招数不一。对于百度来说， 把教育产品集成在百度 App 内部，或许正是目前的全局最优解。 虽然是陪伴孩子，但 AI 伴学产品最初的用户往往是家长。从年龄来看，这部分人群和百度 App 的用户画像有所重合，用户迁移成本几乎为零。在此基础上，集成模块的产品形态又省去了实体学习机必然带来的硬件成本，真正实现了让家长无痛使用的产品体验。 产品功能方面，这款「学习机」除了拥有国内主流教材视频讲解、各地区小初高模拟题真题等海量优质学习资源，搭载独家的 AI 精准练、AI 口语、AI 作文批改等一系列精心打磨过的 AI 教育产品，还可以设置家长模式，实时掌控孩子的学习情况。 在 AI 伴学模式下，百度 App 首页原有的信息流会被“拍照搜题”、“在线答疑”等功能取代，且家长可通过设置密码等方式进行锁定，避免了孩子使用手机的过程中分心。 其中，AI 精准练是集「作业批改、学情分析、巩固练习 」三大能力于一体的个性化学习工具，旨在帮助孩子实现「知对错-找薄弱-促提升」的高效学习循环，支持小初高全学段、全学科题目检索，而且向家长学生全部免费开放使用。 值得一提的是，百度此前发布的数字人技术也在直播电商之外找到了新的用武之地，即此次同步推出的 AI 口语功能。 据介绍，为了打磨这些 AI 功能，百度教育团队专门研发了一套更聪明、更高效的模型，依托文心 4.5、DeepSeek 等底座大模型、百度文本检索引擎及自建知识图谱，实现了全流程智能化、个性化、精准化。 雷峰网文章",
-      "tags": [],
-      "published_at": "2025-09-22T08:43:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "手机秒变学习机，百度搜索正式推出 AI 伴学功能",
-        "en": "Turn your phone into an instant learning companion with Baidu Search's newly launched AI study assistant feature.",
-        "es": "El móvil se convierte al instante en un asistente de estudio, Baidu Search lanza oficialmente la función de acompañamiento educativo con IA."
-      },
-      "excerpt_i18n": {
-        "zh": "雷峰网讯 ﻿9 月 22 日，百度搜索教育新品交流会在北京中关村学说空间举办。会上正式推出 AI 伴学产品，其中包括 AI 精准练、AI 口语等重磅功能。产品入口目前集成于百度 App 内，据官方介绍，此举意在“让普通手机一键变身免费学习机，助力教育平权”。 AI 教育产品百花齐放，产品形态选择独立软件还是专门硬件，各个厂商招数不一。对于百度来说， 把教育产品集成在百度 App 内部，或许正是目前的全局最优解。 虽然是陪伴孩子，但 AI 伴学产品最初的用户往往是家长。从年龄来看，这部分人群和百度 App 的用户画像有所重合，用户迁移成本几乎为零。在此基础上，集成模块的产品形态又省去了实体学习机必然带来的硬件成本，真正实现了让家长无痛使用的产品体验。 产品功能方面，这款「学习机」除了拥有国内主流教材视频讲解、各地区小初高模拟题真题等海量优质学习资源，搭载独家的 AI 精准练、AI 口语、AI 作文批改等一系列精心打磨过的 AI 教育产品，还可以设置家长模式，实时掌控孩子的学习情况。 在 AI 伴学模式下，百度 App 首页原有的信息流会被“拍照搜题”、“在线答疑”等功能取代，且家长可通过设置密码等方式进行锁定，避免了孩子使用手机的过程中分心。 其中，AI 精准练是集「作业批改、学情分析、巩固练习 」三大能力于一体的个性化学习工具，旨在帮助孩子实现「知对错-找薄弱-促提升」的高效学习循环，支持小初高全学段、全学科题目检索，而且向家长学生全部免费开放使用。 值得一提的是，百度此前发布的数字人技术也在直播电商之外找到了新的用武之地，即此次同步推出的 AI 口语功能。 据介绍，为了打磨这些 AI 功能，百度教育团队专门研发了一套更聪明、更高效的模型，依托文心 4.5、DeepSeek 等底座大模型、百度文本检索引擎及自建知识图谱，实现了全流程智能化、个性化、精准化。 雷峰网文章",
-        "en": "On September 22, Leifeng News reported that Baidu Search held an education product launch event at the Xue Shuo Space in Beijing's Zhongguancun, officially introducing its AI learning companion product. Key features include AI Precision Practice and AI Speaking. The product is currently integrated within the Baidu App, with the official aim to \"turn an ordinary smartphone into a free learning device with one click, promoting educational equity.\" \n\nIn the flourishing AI education market, approaches vary—some opt for standalone software, others for dedicated hardware. For Baidu, integrating the education product into its app appears to be the optimal current strategy. While designed to accompany children, the initial users are often parents, whose demographic aligns with Baidu App's user base, minimizing migration costs. This integrated approach also avoids the hardware expenses of physical learning devices, offering a seamless experience for parents.\n\nFunctionally, the \"learning device\" provides extensive resources like video explanations aligned with national textbooks and practice exams for primary to high school levels across regions. It incorporates exclusive AI tools such as Precision Practice, Speaking, and Essay Grading, along with a parent mode for real-time monitoring of children's progress. In AI companion mode, the Baidu App homepage replaces its usual feed with features like \"Photo Search for Answers\" and \"Online Q&A,\" allowing parents to oversee learning activities.",
-        "es": "El 22 de septiembre, Leifeng Wang informó que la conferencia de intercambio sobre nuevos productos educativos de Búsqueda de Baidu se celebró en el Espacio de Aprendizaje de Zhongguancun, Beijing. En el evento se lanzó oficialmente el producto de acompañamiento educativo con IA, que incluye funciones destacadas como Práctica Precisa con IA y Práctica Oral con IA. La entrada al producto está actualmente integrada en la aplicación de Baidu. Según la descripción oficial, el objetivo es \"transformar un teléfono común en una herramienta de aprendizaje gratuita con un solo clic, promoviendo la igualdad educativa\". Los productos educativos con IA están floreciendo, y cada fabricante elige diferentes enfoques, ya sea como software independiente o hardware especializado. Para Baidu, integrar el producto educativo dentro de su aplicación parece ser la solución óptima actual. Aunque está diseñado para acompañar a los niños, la IA"
-      },
-      "hotness": 0.573249
-    },
-    {
-      "id": "35490c95d772a9ba",
-      "source": {
-        "site": "https://www.leiphone.com",
-        "feed": "https://www.leiphone.com/feed/"
-      },
-      "url": "https://www.leiphone.com/category/industrynews/DFlgCbTvwIaMcdZY.html",
-      "title": "全球AI云战场开打： 微软云、AWS 向左，谷歌、阿里云向右",
-      "raw_excerpt": "最近，几乎每位出差的人都会有同感：“北上广的机场核心位置，几乎被各大 AI 云厂商占满了！” 在云计算的赛道上，AI 云已经成为新一轮的入场券。它不仅关乎算力，更决定厂商能否摆脱价格战泥潭、重建护城河，以及在全球科技牌桌上争得一席之地。因此，过去两年里，国内云厂商在战略、组织等各个环节都全力投入，争夺市场领先地位的竞争愈发激烈，“第一”的争夺成为行业关注的核心。 对于大厂来说，“AI 云第一”不仅是数字排名，更是一种行业认可和市场号召力。谁能贴上这个标签，谁就更容易吸引客户、赢得市场份额。 但如果把眼光放宽点，在全球范围内，AI云的竞争格局更激烈，如今只剩4朵超级AI云：美国的AWS、微软和谷歌，以及中国的阿里云。 AI云不等于模型调用 谁是 AI 云 “第一”？取决于评判标准。不同群体基于不同视角，答案也各不相同。 有部分人认为，模型是评判AI云第一的核心要素。 理由也很简单，企业最终是要用模型来解决问题的，客户会用脚投票。尤其是在当下，很多公司都陷入了“AI焦虑”，迫切希望模型能真正帮上忙。谁的模型能不断迭代升级，在不同场景里都能答得准、算得快、还能带来新思路，谁就更容易在AI云的竞争中脱颖而出。 火山引擎所强调的“调用量”，其实也是这一逻辑的延伸——通过高频调用，来侧面证明其模型的成熟度与市场接受度。 但雷峰网认为，如果从市场规模上看，以模型调用为主的MaaS市场，远比不上千亿级别的云计算市场。更重要的是，如果从长远来看，随着AI应用进入更深层次的产业化阶段，要构建一朵真正的超级AI云，仅靠模型表现远远不够。 这就像一座大厦，地基坚实、结构完整，才能在风雨中稳固屹立，并为未来扩建和升级提供可靠支撑。因此，未来要真正评估谁才是AI 云第一，必须经历这四大硬核拷问： 第一，每年是否有千亿级的基础设施投入？ AI云真正的门槛不是宣传口号，而是实打实的资金实力。今年头部云厂商",
-      "tags": [],
-      "published_at": "2025-09-22T06:40:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "全球AI云战场开打： 微软云、AWS 向左，谷歌、阿里云向右",
-        "en": "The global AI cloud battle begins: Microsoft Cloud and AWS go left, while Google and Alibaba Cloud go right.",
-        "es": "El campo de batalla global de la IA en la nube comienza: Microsoft Cloud y AWS hacia la izquierda, Google y Alibaba Cloud hacia la derecha."
-      },
-      "excerpt_i18n": {
-        "zh": "最近，几乎每位出差的人都会有同感：“北上广的机场核心位置，几乎被各大 AI 云厂商占满了！” 在云计算的赛道上，AI 云已经成为新一轮的入场券。它不仅关乎算力，更决定厂商能否摆脱价格战泥潭、重建护城河，以及在全球科技牌桌上争得一席之地。因此，过去两年里，国内云厂商在战略、组织等各个环节都全力投入，争夺市场领先地位的竞争愈发激烈，“第一”的争夺成为行业关注的核心。 对于大厂来说，“AI 云第一”不仅是数字排名，更是一种行业认可和市场号召力。谁能贴上这个标签，谁就更容易吸引客户、赢得市场份额。 但如果把眼光放宽点，在全球范围内，AI云的竞争格局更激烈，如今只剩4朵超级AI云：美国的AWS、微软和谷歌，以及中国的阿里云。 AI云不等于模型调用 谁是 AI 云 “第一”？取决于评判标准。不同群体基于不同视角，答案也各不相同。 有部分人认为，模型是评判AI云第一的核心要素。 理由也很简单，企业最终是要用模型来解决问题的，客户会用脚投票。尤其是在当下，很多公司都陷入了“AI焦虑”，迫切希望模型能真正帮上忙。谁的模型能不断迭代升级，在不同场景里都能答得准、算得快、还能带来新思路，谁就更容易在AI云的竞争中脱颖而出。 火山引擎所强调的“调用量”，其实也是这一逻辑的延伸——通过高频调用，来侧面证明其模型的成熟度与市场接受度。 但雷峰网认为，如果从市场规模上看，以模型调用为主的MaaS市场，远比不上千亿级别的云计算市场。更重要的是，如果从长远来看，随着AI应用进入更深层次的产业化阶段，要构建一朵真正的超级AI云，仅靠模型表现远远不够。 这就像一座大厦，地基坚实、结构完整，才能在风雨中稳固屹立，并为未来扩建和升级提供可靠支撑。因此，未来要真正评估谁才是AI 云第一，必须经历这四大硬核拷问： 第一，每年是否有千亿级的基础设施投入？ AI云真正的门槛不是宣传口号，而是实打实的资金实力。今年头部云厂商",
-        "en": "Recently, almost every business traveler would agree: \"The prime advertising spaces in Beijing, Shanghai, and Guangzhou airports are overwhelmingly dominated by major AI cloud providers!\" In the race for cloud computing, AI cloud has become the new entry ticket. It not only concerns computing power but also determines whether providers can escape the price war, rebuild their competitive moats, and secure a place at the global tech table. Consequently, over the past two years, domestic cloud providers have invested heavily in strategy, organization, and every other aspect, intensifying the competition for market leadership, with the battle for \"first place\" becoming the industry's focal point. For major players, being \"number one in AI cloud\" is not just a numerical ranking but also an industry endorsement and market influence. Whoever earns this label finds it easier to attract clients and gain market share. However, broadening the perspective globally, the competition in AI cloud is even fiercer, now narrowed down to four super AI clouds: AWS, Microsoft, and Google from the U.S., along with China's Alibaba Cloud. AI cloud is not just about model access. Who is \"first\" in AI cloud? It depends on the criteria. Different groups, from different viewpoints, have varying answers. Some believe the model is the core factor in judging AI cloud leadership. The reasoning is straightforward: businesses ultimately use models to solve problems, and clients vote with their feet. Especially now, many companies are experiencing \"AI anxiety,\" urgently hoping models can genuinely assist. Whose models can continuously iterate and upgrade, delivering accurate, fast responses across various scenarios while offering fresh insights, will more likely lead in the AI cloud arena.",
-        "es": "Últimamente, casi todo el que viaja por trabajo comparte una sensación: \"¡Las zonas clave de los aeropuertos de Beijing, Shanghai y Guangzhou están copadas por los principales proveedores de nube de IA!\" En la carrera de la computación en la nube, la nube de IA se ha convertido en la nueva entrada al juego. No solo se trata de capacidad de cálculo, sino que determina si los proveedores pueden escapar de la guerra de precios, reconstruir su ventaja competitiva y ganar un lugar en la mesa global de tecnología. Por eso, en los últimos dos años, los proveedores nacionales de nube han invertido a fondo en todos los aspectos, desde la estrategia hasta la organización, y la competencia por el liderazgo del mercado se ha intensificado. La lucha por ser el \"número uno\" se ha convertido en el centro de atención de la industria. Para los grandes actores, ser el \"número uno en nube de IA\" no es solo una clasificación numérica, sino un reconocimiento del sector y un poder de convocatoria en el mercado."
-      },
-      "hotness": 0.556528
-    },
-    {
-      "id": "419080d35674674a",
-      "source": {
-        "site": "https://www.leiphone.com",
-        "feed": "https://www.leiphone.com/feed/"
-      },
-      "url": "https://www.leiphone.com/category/ai/Ms2WQ4Ufh4PZWX8H.html",
-      "title": "硅基流动入局企业级 MaaS，重写大模型落地叙事",
-      "raw_excerpt": "2025 年，AI 大模型已从“概念验证”走到“价值兑现”的关键阶段。 越来越多企业开始思考：大模型不仅要能用，还要真正带来业务效率的提升与成本的可控。在这一背景下，硅基流动推出了企业级 MaaS平台。 作为覆盖算力纳管、模型训练、推理部署到场景应用的全链路解决方案，回应了大模型产业化落地的五大核心矛盾：适配速度、性能与成本、可靠性、质量、以及安全合规。不仅帮企业解决了落地过程中的关键挑战，更为产业提供了一套能够规模化复制的智能基础设施。 &nbsp; 破解大模型落地的五大挑战 大模型的产业化进程中，企业普遍面临模型适配、推理性能与成本、服务可靠性、输出质量和安全合规等五大挑战。硅基流动的企业级&nbsp;MaaS 平台，正是针对这些痛点，提供了系统性的解法： 快速引入，一键部署：预集成 100+ 主流开源与闭源大模型，结合多种算力卡推理加速包，实现开箱即用。依托硅基流动公有云能力，新模型最快可在 1–3 天内完成适配并同步至企业私有环境，大幅缩短上线周期。 高性能与低成本兼顾：通过智能路由、自研推理框架和动态扩缩容，实现性能与成本的最优平衡。上下文感知、KV Cache 感知、LoRA 感知等策略，加上算子优化、显存管理与量化加速，大幅提升吞吐并降低延迟。 高可靠与可观测：支持多集群容灾与无缝故障切换，保障服务持续稳定；多维度监控能力则覆盖模型性能、资源使用和业务指标，实现精细化治理。 测评驱动的质量优化：内置测评工具链，支持自定义测评集与结果比对，帮助企业完成模型选型与 Prompt 优化，同时支持一键调优和 Multi-LoRA 推理，进一步节省资源。 企业级安全与合规：通过多租户数据隔离、细粒度权限管控和全链路日志审计，为企业提供全方位的安全与合规保障。 这套能力组合，让企业能够高效、稳定、安全地拥抱大模型技术，并实现规模化落地。 从“试点成功”到“规模化应用” 过",
-      "tags": [],
-      "published_at": "2025-09-22T05:50:00Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "硅基流动入局企业级 MaaS，重写大模型落地叙事",
-        "en": "Silicon-based Flow enters the enterprise-level MaaS market, rewriting the narrative for large model implementation.",
-        "es": "Silicon-based Flow entra en el MaaS empresarial, reescribiendo la narrativa de implementación de modelos grandes."
-      },
-      "excerpt_i18n": {
-        "zh": "2025 年，AI 大模型已从“概念验证”走到“价值兑现”的关键阶段。 越来越多企业开始思考：大模型不仅要能用，还要真正带来业务效率的提升与成本的可控。在这一背景下，硅基流动推出了企业级 MaaS平台。 作为覆盖算力纳管、模型训练、推理部署到场景应用的全链路解决方案，回应了大模型产业化落地的五大核心矛盾：适配速度、性能与成本、可靠性、质量、以及安全合规。不仅帮企业解决了落地过程中的关键挑战，更为产业提供了一套能够规模化复制的智能基础设施。 &nbsp; 破解大模型落地的五大挑战 大模型的产业化进程中，企业普遍面临模型适配、推理性能与成本、服务可靠性、输出质量和安全合规等五大挑战。硅基流动的企业级&nbsp;MaaS 平台，正是针对这些痛点，提供了系统性的解法： 快速引入，一键部署：预集成 100+ 主流开源与闭源大模型，结合多种算力卡推理加速包，实现开箱即用。依托硅基流动公有云能力，新模型最快可在 1–3 天内完成适配并同步至企业私有环境，大幅缩短上线周期。 高性能与低成本兼顾：通过智能路由、自研推理框架和动态扩缩容，实现性能与成本的最优平衡。上下文感知、KV Cache 感知、LoRA 感知等策略，加上算子优化、显存管理与量化加速，大幅提升吞吐并降低延迟。 高可靠与可观测：支持多集群容灾与无缝故障切换，保障服务持续稳定；多维度监控能力则覆盖模型性能、资源使用和业务指标，实现精细化治理。 测评驱动的质量优化：内置测评工具链，支持自定义测评集与结果比对，帮助企业完成模型选型与 Prompt 优化，同时支持一键调优和 Multi-LoRA 推理，进一步节省资源。 企业级安全与合规：通过多租户数据隔离、细粒度权限管控和全链路日志审计，为企业提供全方位的安全与合规保障。 这套能力组合，让企业能够高效、稳定、安全地拥抱大模型技术，并实现规模化落地。 从“试点成功”到“规模化应用” 过",
-        "en": "By 2025, AI large models have entered a critical phase of transitioning from \"proof of concept\" to \"value realization.\" More and more enterprises are beginning to consider that large models must not only be usable but also genuinely enhance business efficiency and ensure controllable costs. In this context, Silicon-based Flow has launched an enterprise-grade MaaS platform. As an end-to-end solution covering computing resource management, model training, inference deployment, and scenario applications, it addresses the five core challenges in the industrialization of large models: adaptation speed, performance versus cost, reliability, quality, and security compliance. It not only helps enterprises overcome key hurdles in implementation but also provides the industry with a scalable and replicable intelligent infrastructure. \n\nAddressing the Five Major Challenges in Large Model Deployment\nIn the industrialization of large models, enterprises commonly face five challenges: model adaptation, inference performance and cost, service reliability, output quality, and security compliance. Silicon-based Flow's enterprise MaaS platform offers systematic solutions tailored to these pain points:\n\n- Rapid Integration, One-Click Deployment: Pre-integrated with 100+ mainstream open-source and proprietary large models, combined with various computing card inference acceleration packages, enabling out-of-the-box usability. Leveraging Silicon-based Flow's public cloud capabilities, new models can be adapted and synchronized to private enterprise environments in as little as 1–3 days, significantly shortening deployment cycles.\n\n- Balancing High Performance and Low Cost: Achieves optimal balance between performance and cost through intelligent routing, proprietary inference frameworks, and dynamic scaling. Features include context awareness, KV Cache awareness, and LoRA.",
-        "es": "En 2025, los grandes modelos de IA han entrado en una fase crucial, pasando de la \"prueba de concepto\" a la \"materialización de valor\". Cada vez más empresas reflexionan: los grandes modelos no solo deben ser utilizables, sino que también deben mejorar realmente la eficiencia empresarial y controlar los costes. En este contexto, Silica Flow ha lanzado una plataforma MaaS empresarial. Como solución integral que abarca desde la gestión de la potencia computacional, el entrenamiento de modelos, el despliegue de inferencias hasta las aplicaciones prácticas, responde a las cinco contradicciones clave de la industrialización de los grandes modelos: velocidad de adaptación, rendimiento y coste, fiabilidad, calidad, y seguridad y cumplimiento normativo. No solo ayuda a las empresas a resolver los desafíos críticos durante la implementación, sino que también proporciona a la industria una infraestructura inteligente escalable y replicable."
-      },
-      "hotness": 0.549871
-    },
-    {
-      "id": "350def00c46e4c0f",
-      "source": {
-        "site": "https://www.qbitai.com",
-        "feed": "https://www.qbitai.com/feed"
-      },
-      "url": "https://www.qbitai.com/2025/09/334929.html",
-      "title": "Data＋AI驱动技术服务升级，腾讯云智能顾问和腾讯云可观测发布全新AI能力，助力客户高效用云",
-      "raw_excerpt": "卓越架构＋Multi-Agent",
-      "tags": [],
-      "published_at": "2025-09-22T03:35:15Z",
-      "fetched_at": "2025-09-23T23:14:37.035798Z",
-      "title_i18n": {
-        "zh": "Data＋AI驱动技术服务升级，腾讯云智能顾问和腾讯云可观测发布全新AI能力，助力客户高效用云",
-        "en": "Data and AI-driven technology services are being upgraded, with Tencent Cloud Intelligent Advisor and Tencent Cloud Observability launching new AI capabilities to help customers use cloud services more efficiently.",
-        "es": "Los servicios tecnológicos se actualizan impulsados por datos e IA. El Asesor Inteligente de Tencent Cloud y la Plataforma de Observabilidad de Tencent Cloud lanzan nuevas capacidades de IA para ayudar a los clientes a utilizar la nube con mayor eficiencia."
-      },
-      "excerpt_i18n": {
-        "zh": "卓越架构＋Multi-Agent",
-        "en": "Superior Architecture + Multi-Agent",
-        "es": "Arquitectura Excepcional + Multi-Agente"
-      },
-      "hotness": 0.638789
+      "hotness": 0.505417
     }
   ]
 }
