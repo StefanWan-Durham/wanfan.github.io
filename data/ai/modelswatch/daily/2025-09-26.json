@@ -1,7 +1,263 @@
 {
   "version": 1,
+  "date": "2025-09-26",
   "updated_at": "2025-09-25T22:06:36.404Z",
   "items": [
+    {
+      "id": "sindresorhus/awesome",
+      "source": "github",
+      "name": "awesome",
+      "url": "https://github.com/sindresorhus/awesome",
+      "license": "CC0-1.0",
+      "lang": "N/A",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 401450,
+        "forks": 31647,
+        "issues": 64
+      },
+      "score": 407879.3968437886,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "《Awesome》是一个由社区驱动的开源项目，致力于收集整理各类高质量资源清单。项目收录了涵盖技术、设计、科学等众多领域的精选内容，为开发者、研究者和学习者提供系统化的参考资料。其亮点在于采用开放协议（CC0-1.0），允许自由使用和分发，并通过众包模式持续更新维护。适合需要快速获取特定领域权威资源或寻找学习材料的用户参考使用。",
+      "updated_at": "2025-09-21T12:05:32Z",
+      "summary_en": "The Awesome project is a curated collection of high-quality lists covering diverse topics in technology, science, and beyond. It serves as a centralized repository for developers, researchers, and enthusiasts to discover valuable resources, tools, and communities. Its strength lies in community-driven contributions and strict quality standards, ensuring reliable and up-to-date content. This makes it widely applicable for learning, reference, and exploration across numerous domains.",
+      "summary_zh": "《Awesome》是一个由社区驱动的开源项目，致力于收集整理各类高质量资源清单。项目收录了涵盖技术、设计、科学等众多领域的精选内容，为开发者、研究者和学习者提供系统化的参考资料。其亮点在于采用开放协议（CC0-1.0），允许自由使用和分发，并通过众包模式持续更新维护。适合需要快速获取特定领域权威资源或寻找学习材料的用户参考使用。",
+      "summary_es": "Proyecto que recopila listas curadas de recursos de alta calidad sobre diversos temas tecnológicos y no tecnológicos. Su fortaleza es la organización comunitaria y la exhaustividad, sirviendo como punto de partida para desarrolladores, investigadores y entusiastas. Ideal para descubrir herramientas, frameworks y bibliotecas en áreas específicas.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：awesome"
+    },
+    {
+      "id": "public-apis/public-apis",
+      "source": "github",
+      "name": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "license": "MIT",
+      "lang": "Python",
+      "tags": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source",
+        "public",
+        "public-api",
+        "public-apis",
+        "resources",
+        "software"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 365596,
+        "forks": 38382,
+        "issues": 590
+      },
+      "score": 373372.3996601466,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个汇集了数千个免费公共API的综合性目录项目。它按类别组织，覆盖天气、金融、娱乐、开发工具等多个领域，便于开发者快速查找和集成第三方服务。项目由社区共同维护，每个API条目都包含关键信息如认证方式和HTTPS支持。特别适合需要外部数据或功能的应用原型开发、学习及个人项目。",
+      "updated_at": "2025-09-21T12:06:45Z",
+      "summary_en": "Public-apis is a comprehensive, community-driven collection of free APIs for developers. It categorizes thousands of public APIs by topic, such as business, finance, and entertainment, making it easy to discover services for various applications. The project is valuable for prototyping, learning, and integrating external data without cost barriers. Its open-source nature and structured format support rapid development and experimentation across software projects.",
+      "summary_zh": "这是一个汇集了数千个免费公共API的综合性目录项目。它按类别组织，覆盖天气、金融、娱乐、开发工具等多个领域，便于开发者快速查找和集成第三方服务。项目由社区共同维护，每个API条目都包含关键信息如认证方式和HTTPS支持。特别适合需要外部数据或功能的应用原型开发、学习及个人项目。",
+      "summary_es": "Public-apis es un repositorio colaborativo que recopila APIs públicas y gratuitas para desarrolladores. Ofrece una amplia variedad de categorías, desde entretenimiento hasta finanzas, facilitando la búsqueda de servicios web. Su principal fortaleza es la organización y actualización constante por parte de la comunidad. Ideal para prototipado, aprendizaje y proyectos que requieren integración con datos externos.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：public-apis"
+    },
+    {
+      "id": "freeCodeCamp/freeCodeCamp",
+      "source": "github",
+      "name": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "license": "BSD-3-Clause",
+      "lang": "TypeScript",
+      "tags": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "hacktoberfest",
+        "javascript",
+        "learn-to-code",
+        "math",
+        "nodejs",
+        "nonprofits",
+        "programming",
+        "react",
+        "teachers"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 428401,
+        "forks": 41651,
+        "issues": 318
+      },
+      "score": 436831.18881909724,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "freeCodeCamp是一个开源编程学习平台，提供完整的计算机科学和软件开发课程体系。其课程涵盖数学基础、JavaScript、D3.js等核心技术，通过互动式编程挑战帮助学习者掌握实用技能。平台支持在线认证，并为社区贡献者提供协作开发机会。该项目特别适合编程初学者和希望系统学习全栈开发的自学者，所有教育资源均免费开放。",
+      "updated_at": "2025-09-21T12:02:04Z",
+      "summary_en": "freeCodeCamp is an open-source educational platform offering a comprehensive curriculum for learning programming, math, and computer science at no cost. It provides interactive coding challenges, projects, and certifications to help users build practical skills for careers in web development and data visualization. Strengths include its community-driven approach, support for multiple technologies like JavaScript and D3.js, and alignment with industry needs. It is widely applicable for self-learners, career changers, and educators seeking structured, hands-on learning resources.",
+      "summary_zh": "freeCodeCamp是一个开源编程学习平台，提供完整的计算机科学和软件开发课程体系。其课程涵盖数学基础、JavaScript、D3.js等核心技术，通过互动式编程挑战帮助学习者掌握实用技能。平台支持在线认证，并为社区贡献者提供协作开发机会。该项目特别适合编程初学者和希望系统学习全栈开发的自学者，所有教育资源均免费开放。",
+      "summary_es": "freeCodeCamp es una plataforma educativa de código abierto que ofrece un plan de estudios completo para aprender programación, matemáticas y ciencias de la computación de forma gratuita. Su currículo incluye tecnologías como JavaScript y D3, con proyectos prácticos y certificaciones. Destaca por su enfoque comunitario y colaborativo, ideal para quienes buscan iniciar o avanzar en carreras tecnológicas. Es utilizado globalmente por millones de estudiantes para adquirir habilidades técnicas de manera autodidacta.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：freeCodeCamp"
+    },
+    {
+      "id": "EbookFoundation/free-programming-books",
+      "source": "github",
+      "name": "free-programming-books",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "license": "CC-BY-4.0",
+      "lang": "Python",
+      "tags": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 369060,
+        "forks": 64204,
+        "issues": 27
+      },
+      "score": 382000.7910181713,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由EbookFoundation维护的开源项目，收录了大量免费编程书籍资源。项目按编程语言、技术领域等分类整理，涵盖从入门到进阶的各类教程与参考手册。所有资源均可自由访问，采用知识共享协议授权。适合开发者、学生及自学者快速查找可靠的学习资料，是技术教育领域的实用知识库。",
+      "updated_at": "2025-09-21T12:03:01Z",
+      "summary_en": "free-programming-books is a comprehensive, community-driven repository listing freely available programming books and educational resources. It serves as a central hub for learners and developers seeking no-cost materials across various programming languages, frameworks, and computing topics. The collection is regularly updated and covers diverse formats, including PDFs and online reads. It is ideal for self-study, academic use, and professional development, offering extensive, accessible knowledge without financial barriers.",
+      "summary_zh": "这是一个由EbookFoundation维护的开源项目，收录了大量免费编程书籍资源。项目按编程语言、技术领域等分类整理，涵盖从入门到进阶的各类教程与参考手册。所有资源均可自由访问，采用知识共享协议授权。适合开发者、学生及自学者快速查找可靠的学习资料，是技术教育领域的实用知识库。",
+      "summary_es": "Repositorio colaborativo que recopila libros gratuitos sobre programación, organizados por lenguajes y tecnologías. Ofrece material educativo en múltiples idiomas, desde tutoriales básicos hasta guías avanzadas. Ideal para estudiantes y desarrolladores que buscan recursos de aprendizaje accesibles. Su principal fortaleza es la amplia colección mantenida por la comunidad.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：free-programming-books"
+    },
+    {
+      "id": "jwasham/coding-interview-university",
+      "source": "github",
+      "name": "coding-interview-university",
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "license": "CC-BY-SA-4.0",
+      "lang": "N/A",
+      "tags": [
+        "algorithm",
+        "algorithms",
+        "coding-interview",
+        "coding-interviews",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-prep",
+        "interview-preparation",
+        "programming-interviews",
+        "software-engineering",
+        "study-plan"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 329107,
+        "forks": 80581,
+        "issues": 84
+      },
+      "score": 345323.19584070216,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个面向软件工程师求职的计算机科学自学指南。项目提供从数据结构、算法到系统设计等面试必备知识的完整学习路径。内容涵盖技术面试的各个核心领域，包括编程题练习、系统设计概念及计算机科学基础理论。适合准备技术面试的开发者系统性地查漏补缺，尤其对转行或需要巩固基础的工程师具有实用价值。该项目通过分阶段的学习计划，帮助用户构建扎实的计算机科学知识体系。",
+      "updated_at": "2025-09-21T12:05:06Z",
+      "summary_en": "A comprehensive self-study guide for software engineering interviews, covering algorithms, data structures, and computer science fundamentals. It provides a structured curriculum for technical interview preparation, including coding problems and system design topics. The plan is suitable for aspiring engineers and career changers seeking foundational knowledge. Its open-source nature allows community contributions and adaptations for various learning paces.",
+      "summary_zh": "这是一个面向软件工程师求职的计算机科学自学指南。项目提供从数据结构、算法到系统设计等面试必备知识的完整学习路径。内容涵盖技术面试的各个核心领域，包括编程题练习、系统设计概念及计算机科学基础理论。适合准备技术面试的开发者系统性地查漏补缺，尤其对转行或需要巩固基础的工程师具有实用价值。该项目通过分阶段的学习计划，帮助用户构建扎实的计算机科学知识体系。",
+      "summary_es": "Plan de estudios completo para preparar entrevistas técnicas de desarrollo de software. Incluye algoritmos, estructuras de datos y fundamentos de ciencias de la computación. Ideal para repasar conceptos clave y practicar problemas de programación. Útil para entrevistas en grandes empresas tecnológicas.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：coding-interview-university"
+    },
+    {
+      "id": "facebook/react",
+      "source": "github",
+      "name": "react",
+      "url": "https://github.com/facebook/react",
+      "license": "MIT",
+      "lang": "JavaScript",
+      "tags": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 239086,
+        "forks": 49367,
+        "issues": 1046
+      },
+      "score": 249059.27697496142,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "React是由Facebook开发的开源JavaScript库，专注于构建用户界面。它采用声明式编程范式，使开发者能够通过组件化方式高效创建可复用的UI模块。该库支持Web和原生应用开发，通过虚拟DOM技术优化渲染性能。React适用于构建交互式单页应用、动态数据展示界面等场景，是现代化前端开发的核心工具之一。",
+      "updated_at": "2025-09-21T11:13:45Z",
+      "summary_en": "React is a declarative JavaScript library for building interactive user interfaces for web and native applications. It enables developers to create reusable UI components that efficiently update and render in response to data changes. Its virtual DOM implementation optimizes performance, making it suitable for dynamic, high-traffic applications. React is widely used for single-page applications, mobile apps with React Native, and complex frontend systems requiring modular and maintainable code.",
+      "summary_zh": "React是由Facebook开发的开源JavaScript库，专注于构建用户界面。它采用声明式编程范式，使开发者能够通过组件化方式高效创建可复用的UI模块。该库支持Web和原生应用开发，通过虚拟DOM技术优化渲染性能。React适用于构建交互式单页应用、动态数据展示界面等场景，是现代化前端开发的核心工具之一。",
+      "summary_es": "React es una biblioteca JavaScript declarativa para construir interfaces de usuario web y nativas. Sus principales fortalezas incluyen componentes reutilizables, un DOM virtual para alto rendimiento y un enfoque basado en estados. Ideal para desarrollar aplicaciones dinámicas y escalables, desde SPA hasta apps móviles con React Native.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：react"
+    },
     {
       "id": "facebook/opt-125m",
       "source": "hf",
