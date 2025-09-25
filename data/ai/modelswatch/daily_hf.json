@@ -93,7 +93,10 @@
       "summary_zh": "这是一个基于Vision Transformer（ViT）的图像分类模型，专门用于从人脸图像中识别年龄。该模型在FairFace数据集上对Google的ViT基础模型进行了微调，能够将输入的人脸图像划分为不同的年龄段。其技术亮点在于采用了经过公平性优化的数据集，有助于减少模型在年龄识别任务中的偏见。该模型适用于需要自动化年龄分析的场景，如用户画像分析、内容推荐系统或人机交互应用，为开发者提供了一个可靠的年龄识别工具。",
       "summary_es": "Este modelo clasifica la edad en imágenes faciales usando Vision Transformer (ViT), basado en el dataset FairFace. Especializado en estimación de edad, fue afinado desde google/vit-base-patch16-224-in21k. Ideal para análisis demográfico, estudios de mercado o aplicaciones de visión artificial que requieran precisión en diversidad étnica y de edad.",
       "reason_label": "notable",
-      "reason_text": "值得关注的项目：fairface_age_image_detection"
+      "reason_text": "值得关注的项目：fairface_age_image_detection",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "timm/mobilenetv3_small_100.lamb_in1k",
@@ -180,7 +183,11 @@
       "summary_zh": "这是一个基于Vision Transformer (ViT)架构的NSFW（不适宜工作场所）图像检测模型。该模型能够对输入图像进行二分类，自动识别内容是否属于NSFW类别，适用于内容审核、安全过滤等场景。基于Transformer的视觉模型使其在图像分类任务中具备较强的特征提取能力。模型兼容PyTorch和SafeTensors格式，支持通过AutoTrain或云端端点进行部署，适用于需要自动化内容审核的互联网平台或应用。",
       "summary_es": "Modelo de clasificación de imágenes basado en Vision Transformer (ViT) para detectar contenido NSFW. Especializado en identificar material inapropiado con alta precisión, utilizando arquitecturas modernas de transformers. Casos de uso incluyen moderación automática en plataformas digitales y filtrado de contenido sensible. Implementado en PyTorch y compatible con AutoTrain.",
       "reason_label": "security_safety",
-      "reason_text": "安全与对齐相关更新：nsfw_image_detection"
+      "reason_text": "安全与对齐相关更新：nsfw_image_detection",
+      "task_keys": [
+        "image_classification",
+        "content_moderation"
+      ]
     },
     {
       "id": "sentence-transformers/all-MiniLM-L6-v2",
