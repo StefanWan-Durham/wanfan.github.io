@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-24T23:15:13.754517Z",
+  "generated_at": "2025-09-25T23:15:11.931871Z",
   "window_hours": 48,
-  "count": 31,
+  "count": 45,
   "items": [
     {
       "id": "29b1f0863f722b51",
@@ -718,6 +718,356 @@
         "es": "La demanda de chips de IA está en auge, y también lo es la necesidad de software para ejecutarlos. La startup de Chris Lattner, Modular, acaba de recaudar 250 millones de dólares para crear las mejores herramientas de desarrollo para hardware de IA."
       },
       "hotness": 0.90055
+    },
+    {
+      "id": "fef89d653a46e1e6",
+      "source": {
+        "site": "https://deepmind.google/discover/blog/",
+        "feed": "https://www.deepmind.com/blog/rss.xml"
+      },
+      "url": "https://deepmind.google/discover/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/",
+      "title": "Gemini Robotics 1.5 brings AI agents into the physical world",
+      "raw_excerpt": "New era of physical agents will help robots perceive, plan, think, use tools and act to solve complex tasks.",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-25T15:59:29Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "en": "Gemini Robotics 1.5 brings AI agents into the physical world",
+        "zh": "Gemini Robotics 1.5将AI智能体引入物理世界",
+        "es": "Gemini Robotics 1.5 introduce agentes de IA en el mundo físico"
+      },
+      "excerpt_i18n": {
+        "en": "New era of physical agents will help robots perceive, plan, think, use tools and act to solve complex tasks.",
+        "zh": "物理智能体新时代将助力机器人感知环境、规划路径、思考决策、使用工具并执行动作，以解决复杂任务。",
+        "es": "Una nueva era de agentes físicos ayudará a los robots a percibir, planificar, pensar, utilizar herramientas y actuar para resolver tareas complejas."
+      },
+      "hotness": 0.900445
+    },
+    {
+      "id": "cc8ebf6172593fb6",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://news.ycombinator.com/item?id=45373008",
+      "title": "Launch HN: Webhound (YC S23) – Research agent that builds datasets from the web",
+      "raw_excerpt": "We're the team behind Webhound ( https://webhound.ai ), an AI agent that builds datasets from the web based on natural language prompts. You describe what you're trying to find. The agent figures out how to structure the data and where to look, then searches, extracts the results, and outputs everything in a CSV you can export. We've set up a special no-signup version for the HN community at https://hn.webhound.ai - just click \"Continue as Guest\" to try it without signing up. Here's a demo: https://youtu.be/fGaRfPdK1Sk We started building it after getting tired of doing this kind of research manually. Open 50 tabs, copy everything into a spreadsheet, realize it's inconsistent, start over. It felt like something an LLM should be able to handle. Some examples of how people have used it in th",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-25T14:28:24Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "en": "Launch HN: Webhound (YC S23) – Research agent that builds datasets from the web",
+        "zh": "HN发布：Webhound（YC S23）——从网络构建数据集的研究代理",
+        "es": "Lanzamiento HN: Webhound (YC S23) – Agente de investigación que construye conjuntos de datos desde la web"
+      },
+      "excerpt_i18n": {
+        "en": "We're the team behind Webhound ( https://webhound.ai ), an AI agent that builds datasets from the web based on natural language prompts. You describe what you're trying to find. The agent figures out how to structure the data and where to look, then searches, extracts the results, and outputs everything in a CSV you can export. We've set up a special no-signup version for the HN community at https://hn.webhound.ai - just click \"Continue as Guest\" to try it without signing up. Here's a demo: https://youtu.be/fGaRfPdK1Sk We started building it after getting tired of doing this kind of research manually. Open 50 tabs, copy everything into a spreadsheet, realize it's inconsistent, start over. It felt like something an LLM should be able to handle. Some examples of how people have used it in th",
+        "zh": "我们是Webhound（https://webhound.ai）背后的团队，这是一个基于自然语言提示从网络构建数据集的AI智能体。您只需描述需要查找的内容，该智能体便会自动规划数据结构。",
+        "es": "Somos el equipo detrás de Webhound ( https://webhound.ai ), un agente de inteligencia artificial que construye conjuntos de datos a partir de la web basándose en instrucciones en lenguaje natural. Tú describes lo que intentas encontrar. El agente determina cómo estructurar la"
+      },
+      "hotness": 0.88092
+    },
+    {
+      "id": "7af4cff64172c50a",
+      "source": {
+        "site": "https://blogs.nvidia.com/",
+        "feed": "https://blogs.nvidia.com/feed/"
+      },
+      "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-mecha-break/",
+      "title": "Pilots Wanted: Stream ‘Mecha BREAK’ on GeForce NOW",
+      "raw_excerpt": "Suit up and head for the cloud. Mecha BREAK, the popular third-person shooter, is now available to stream on GeForce NOW with NVIDIA DLSS 4 technology. Catch it this week as part of 10 new titles joining the nearly 5,000 games supported on GeForce NOW, in addition to Capcom’s Phoenix Wright: Ace Attorney Trilogy. This Read Article",
+      "tags": [],
+      "published_at": "2025-09-25T13:00:00Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "en": "Pilots Wanted: Stream ‘Mecha BREAK’ on GeForce NOW",
+        "zh": "飞行员招募：在GeForce NOW平台畅玩《机甲突破》",
+        "es": "Se buscan pilotos: transmite 'Mecha BREAK' en GeForce NOW"
+      },
+      "excerpt_i18n": {
+        "en": "Suit up and head for the cloud. Mecha BREAK, the popular third-person shooter, is now available to stream on GeForce NOW with NVIDIA DLSS 4 technology. Catch it this week as part of 10 new titles joining the nearly 5,000 games supported on GeForce NOW, in addition to Capcom’s Phoenix Wright: Ace Attorney Trilogy. This Read Article",
+        "zh": "整装待发，直冲云端。热门第三人称射击游戏《机甲突破》现已在GeForce NOW平台上线，搭载英伟达DLSS 4技术。本周共有10款新作加入近5000款游戏阵容，敬请把握体验时机。",
+        "es": "Prepárate y dirígete a la nube. Mecha BREAK, el popular shooter en tercera persona, ya está disponible para transmitir en GeForce NOW con tecnología NVIDIA DLSS 4. Disfrútalo esta semana como parte de los 10 nuevos títulos que se unen a los casi 5.000"
+      },
+      "hotness": 0.862376
+    },
+    {
+      "id": "57815502fa85d569",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/25/1124079/the-download-threats-vulnerable-languages-and-trump-medical-claims/",
+      "title": "The Download: growing threats to vulnerable languages, and fact-checking Trump’s medical claims",
+      "raw_excerpt": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. How AI and Wikipedia have sent vulnerable languages into a doom spiral Wikipedia is the most ambitious multilingual project after the Bible: There are editions in over 340 languages, and a further 400&#8230;",
+      "tags": [],
+      "published_at": "2025-09-25T12:10:00Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "en": "The Download: growing threats to vulnerable languages, and fact-checking Trump’s medical claims",
+        "zh": "下载：脆弱语言面临日益严重的威胁，以及核查特朗普医疗声明的真实性",
+        "es": "La Descarga: crecientes amenazas a las lenguas vulnerables y verificación de las afirmaciones médicas de Trump"
+      },
+      "excerpt_i18n": {
+        "en": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. How AI and Wikipedia have sent vulnerable languages into a doom spiral Wikipedia is the most ambitious multilingual project after the Bible: There are editions in over 340 languages, and a further 400&#8230;",
+        "zh": "这是今天的《每日下载》内容，这是我们工作日发布的时事通讯，每日为您呈现科技领域的动态。人工智能与维基百科如何将弱势语言推向消亡漩涡。",
+        "es": "Esta es la edición de hoy de The Download, nuestro boletín diario que ofrece una dosis cotidiana de lo que ocurre en el mundo de la tecnología. Cómo la IA y Wikipedia han llevado a las lenguas vulnerables a una espiral de extinción."
+      },
+      "hotness": 1.022473
+    },
+    {
+      "id": "a26efe85de543e68",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/g1owAQLkxG5Ehg52mfGf",
+      "title": "AI 应用开发的破局之路：字节跳动 Eino 框架实践",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-25T12:01:24Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "zh": "AI 应用开发的破局之路：字节跳动 Eino 框架实践",
+        "en": "Breaking Through in AI Application Development: ByteDance's Eino Framework in Practice",
+        "es": "El camino para desbloquear el desarrollo de aplicaciones de IA: la práctica del marco Eino de ByteDance"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.850299
+    },
+    {
+      "id": "38673d89db0441d3",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/LvuewMfivXuJfDMW.html",
+      "title": "吴泳铭掌舵两年，阿里AI起飞",
+      "raw_excerpt": "9 月 24 日下午，云栖小镇 D2-9 场馆，一场以 1688 AI 为主题的论坛开场。场馆面积不小，但将近 3 小时的分享，座位早早被占满，后排空地也被人群挤得寸步难行。 热度不仅限于这一场。 不论是在硬核技术主题论坛，还是充满机器人、汽车的应用馆，四处人头攒动。 一位连续多年参会的从业者笑言：“今年的云栖大会场馆是前脚掌踩后脚跟，比过去几年都热闹。” 一位理想员工发微博说，本是一个产业链产品技术的交流会议，没想到工作人员反馈，现场收获了相当可观的线索和订单。 今年是云栖大会举办的第 10 个年头，每年的云栖大会都是了解最新技术趋势的窗口。随着大模型技术的发展，这几年的云栖大会成为了 AI 行业的风向标，也是观察阿里在云与 AI 战略上下一步棋的绝佳场合。 执掌阿里两年来，阿里巴巴集团CEO吴泳铭反复强调“用户为先，AI驱动”战略，他旗帜鲜明地提出，AI技术对所有行业的改变升级以及AI与云计算的深度结合，是未来十年技术领域最大的行业机会。 在阿里内部，阿里全方位践行AI投入承诺并收获成效。 不仅是阿里云，高德、钉钉等业务也全面AI化，在AI to C领域，阿里发布首款自研AI眼镜夸克AI眼镜。电商业务中，AI工具“全站推广”持续带动淘天商家经营效率提升，在商家的渗透率连续多季持续提升。淘宝使用大模型让“猜你喜欢”更精准，测试显示用户加购次数和停留时长均提升超5%。阿里巴巴国际站的商家也采用AI驱动工具用于市场营销、采购和产品上架。 今年云栖大会上，一场开场23分钟的演讲让阿里市值狂飙，这位技术派掌门人又释放了哪些信号？阿里在 AI 云赛道的两年变革，又如何在这里得到印证？ 从云栖大会，看阿里AI路线 今年雷峰网参加云栖大会最大的感受是，大模型浪潮奔涌两年后，阿里对AI路线规划愈发清晰。 论坛第一天，阿里CEO吴泳铭在演讲中，有一个核心关键词不断被提及：ASI，即超级人工",
+      "tags": [],
+      "published_at": "2025-09-25T11:38:00Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "zh": "吴泳铭掌舵两年，阿里AI起飞",
+        "en": "Wu Yongming has been at the helm for two years, and Alibaba's AI has taken off.",
+        "es": "Tras dos años bajo el mando de Wu Yongming, el impulso de la IA de Alibaba despega."
+      },
+      "excerpt_i18n": {
+        "zh": "9 月 24 日下午，云栖小镇 D2-9 场馆，一场以 1688 AI 为主题的论坛开场。场馆面积不小，但将近 3 小时的分享，座位早早被占满，后排空地也被人群挤得寸步难行。 热度不仅限于这一场。 不论是在硬核技术主题论坛，还是充满机器人、汽车的应用馆，四处人头攒动。 一位连续多年参会的从业者笑言：“今年的云栖大会场馆是前脚掌踩后脚跟，比过去几年都热闹。” 一位理想员工发微博说，本是一个产业链产品技术的交流会议，没想到工作人员反馈，现场收获了相当可观的线索和订单。 今年是云栖大会举办的第 10 个年头，每年的云栖大会都是了解最新技术趋势的窗口。随着大模型技术的发展，这几年的云栖大会成为了 AI 行业的风向标，也是观察阿里在云与 AI 战略上下一步棋的绝佳场合。 执掌阿里两年来，阿里巴巴集团CEO吴泳铭反复强调“用户为先，AI驱动”战略，他旗帜鲜明地提出，AI技术对所有行业的改变升级以及AI与云计算的深度结合，是未来十年技术领域最大的行业机会。 在阿里内部，阿里全方位践行AI投入承诺并收获成效。 不仅是阿里云，高德、钉钉等业务也全面AI化，在AI to C领域，阿里发布首款自研AI眼镜夸克AI眼镜。电商业务中，AI工具“全站推广”持续带动淘天商家经营效率提升，在商家的渗透率连续多季持续提升。淘宝使用大模型让“猜你喜欢”更精准，测试显示用户加购次数和停留时长均提升超5%。阿里巴巴国际站的商家也采用AI驱动工具用于市场营销、采购和产品上架。 今年云栖大会上，一场开场23分钟的演讲让阿里市值狂飙，这位技术派掌门人又释放了哪些信号？阿里在 AI 云赛道的两年变革，又如何在这里得到印证？ 从云栖大会，看阿里AI路线 今年雷峰网参加云栖大会最大的感受是，大模型浪潮奔涌两年后，阿里对AI路线规划愈发清晰。 论坛第一天，阿里CEO吴泳铭在演讲中，有一个核心关键词不断被提及：ASI，即超级人工",
+        "en": "On the afternoon of September 24, a forum themed around 1688 AI kicked off at the D2-9 venue in Yunqi Town. The venue was spacious, but nearly three hours into the event, seats were fully occupied early on, and the standing area at the back was packed to the point of being impassable. The buzz wasn't limited to this session alone. Whether at forums focused on hardcore technology or exhibition halls filled with robots and cars, crowds were everywhere. A veteran attendee joked, \"This year's Yunqi Conference is so crowded you're stepping on heels—it's livelier than in previous years.\" An employee from Li Auto posted on Weibo that what started as an industry chain product and tech exchange unexpectedly generated significant leads and orders on-site, according to staff feedback. This year marks the 10th anniversary of the Yunqi Conference, an annual event that serves as a window into the latest tech trends. With the advancement of large model technology, recent editions have become a barometer for the AI industry and a prime opportunity to observe Alibaba's next moves in cloud and AI strategy. Since taking the helm at Alibaba two years ago, Group CEO Wu Yongming has repeatedly emphasized the \"user-first, AI-driven\" strategy, clearly stating that AI's transformative impact across all industries and its deep integration with cloud computing represent the biggest opportunity in the tech sector over the next decade. Internally, Alibaba is fully committed to its AI investment, yielding results. Beyond Alibaba Cloud, businesses like Amap and DingTalk are also undergoing comprehensive AI integration. In the AI-to-C domain, Alibaba launched its first self-developed AI glasses, Kua.",
+        "es": "El 24 de septiembre por la tarde, comenzó un foro sobre 1688 AI en el pabellón D2-9 de Yunqi Town. Aunque el espacio era amplio, casi 3 horas de presentaciones hicieron que los asientos se ocuparan pronto y las zonas traseras quedaran abarrotadas. El entusiasmo no se limitó a este evento. Tanto en foros técnicos especializados como en pabellones de aplicaciones con robots y coches, había multitudes por todas partes. Un asistente habitual comentó con humor: \"Este año en Yunqi Conference la gente está tan apretada que no cabe un alfiler, más animado que en años anteriores\". Un empleado de Li Auto publicó en Weibo que, siendo originalmente una conferencia de intercambio tecnológico para productos de la cadena de suministro, el personal informó que el sitio"
+      },
+      "hotness": 0.845524
+    },
+    {
+      "id": "5fa6698c8cc732c8",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/index/more-ways-to-work-with-your-team",
+      "title": "More ways to work with your team and tools in ChatGPT",
+      "raw_excerpt": "ChatGPT business plans now support shared projects, smarter connectors, and enhanced compliance features to help teams work faster and more securely.",
+      "tags": [
+        "Policy",
+        "Tools"
+      ],
+      "published_at": "2025-09-25T11:00:00Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "en": "More ways to work with your team and tools in ChatGPT",
+        "zh": "在ChatGPT中与团队和工具协作的更多方式",
+        "es": "Más formas de trabajar con tu equipo y herramientas en ChatGPT"
+      },
+      "excerpt_i18n": {
+        "en": "ChatGPT business plans now support shared projects, smarter connectors, and enhanced compliance features to help teams work faster and more securely.",
+        "zh": "ChatGPT企业版方案现已支持共享项目、更智能的连接器及增强的合规功能，助力团队更高效安全地协作。",
+        "es": "Los planes empresariales de ChatGPT ahora incluyen proyectos compartidos, conectores más inteligentes y funciones de cumplimiento mejoradas para ayudar a los equipos a trabajar más rápido y con mayor seguridad."
+      },
+      "hotness": 1.340522
+    },
+    {
+      "id": "f2548786653c2612",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/iot/Ja5p8vfPCLpzaP9I.html",
+      "title": "海康威视：做得好安防，能否做得好工业？",
+      "raw_excerpt": "作者丨路遥 编辑丨余快 近日中国国际工业博览会上，不少人恍然：海康入局工业了。 其实，从大众熟知的安防领域，到深入工业的“毛细血管”，海康的工业路，已悄悄走了十余年。 过去的海康，以安防立身，以智能物联为千行百业搭台而闻名。 如今，它进一步沉到制造现场，为制造业带来的不仅是一个个场景的智能化改变，更拓展了价值创造的更多可能。 因此，海康面临的一大课题在于，如何进一步扎实根基，让自身的工业能力始终保持鲜活与独特。 在千行百业的场景中持续思考与实践，造就了海康当下的技术优势，并将深刻影响其未来所能创造价值的深度与广度。 对于工业，刚刚亮相中国国际工业博览会的海康，已给出明确回应：携“物联感知+AI”，扎进工业深处。 工博会上，上百款软硬件产品、海康观澜大模型具体场景应用一起登场，这不是试水，而是展示了其综合能力的重要一隅。 那么，什么是“物联感知+AI”？做得好安防的海康，能否做得好工业？ 海康做工业，一场技术和市场的双向奔赴 提及海康，多数人的第一印象仍是“安防巨头”，但早在2015年，它就攥着工业相机这把钥匙，悄悄推开了工业领域的大门。 海康做工业，绝非“跨界跟风”，而是技术积累到一定阶段的自然破局。 事实上，工业是海康技术能力开花结果的“新战场”，在安防领域打磨的可见光、红外、X光、声波等感知技术，恰好与工业场景的数字化需求高度契合。 安防要“看清异常”，工业要“感知数据”；安防要“智能预警”，工业要“预测性维护”，二者都既需要感知，又需要智能。 20余年来，从可见光起步，一路拓展至X光、紫外、红外、毫米波、激光、融合光谱、声波等多维感知，构建起覆盖30000多种硬件型号的“产品矩阵”，可以给机器装上“眼耳鼻舌”，设备振动、物料温度、产品缺陷、物质成分等，都能被转化为可分析的数字数据，解决工业“物理世界数字化”的核心痛点。 市场端，中国工业也正面临着“数字化饥渴”。 中国",
+      "tags": [],
+      "published_at": "2025-09-25T09:56:00Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "zh": "海康威视：做得好安防，能否做得好工业？",
+        "en": "Hikvision: Excelling in security, can it succeed in the industrial sector?",
+        "es": "Hikvision: Si lo hace bien en seguridad, ¿podrá hacerlo bien en la industria?"
+      },
+      "excerpt_i18n": {
+        "zh": "作者丨路遥 编辑丨余快 近日中国国际工业博览会上，不少人恍然：海康入局工业了。 其实，从大众熟知的安防领域，到深入工业的“毛细血管”，海康的工业路，已悄悄走了十余年。 过去的海康，以安防立身，以智能物联为千行百业搭台而闻名。 如今，它进一步沉到制造现场，为制造业带来的不仅是一个个场景的智能化改变，更拓展了价值创造的更多可能。 因此，海康面临的一大课题在于，如何进一步扎实根基，让自身的工业能力始终保持鲜活与独特。 在千行百业的场景中持续思考与实践，造就了海康当下的技术优势，并将深刻影响其未来所能创造价值的深度与广度。 对于工业，刚刚亮相中国国际工业博览会的海康，已给出明确回应：携“物联感知+AI”，扎进工业深处。 工博会上，上百款软硬件产品、海康观澜大模型具体场景应用一起登场，这不是试水，而是展示了其综合能力的重要一隅。 那么，什么是“物联感知+AI”？做得好安防的海康，能否做得好工业？ 海康做工业，一场技术和市场的双向奔赴 提及海康，多数人的第一印象仍是“安防巨头”，但早在2015年，它就攥着工业相机这把钥匙，悄悄推开了工业领域的大门。 海康做工业，绝非“跨界跟风”，而是技术积累到一定阶段的自然破局。 事实上，工业是海康技术能力开花结果的“新战场”，在安防领域打磨的可见光、红外、X光、声波等感知技术，恰好与工业场景的数字化需求高度契合。 安防要“看清异常”，工业要“感知数据”；安防要“智能预警”，工业要“预测性维护”，二者都既需要感知，又需要智能。 20余年来，从可见光起步，一路拓展至X光、紫外、红外、毫米波、激光、融合光谱、声波等多维感知，构建起覆盖30000多种硬件型号的“产品矩阵”，可以给机器装上“眼耳鼻舌”，设备振动、物料温度、产品缺陷、物质成分等，都能被转化为可分析的数字数据，解决工业“物理世界数字化”的核心痛点。 市场端，中国工业也正面临着“数字化饥渴”。 中国",
+        "en": "Author: Lu Yao  Editor: Yu Kuai  \nAt the recent China International Industry Fair, many were surprised to realize that Hikvision has entered the industrial sector. In fact, Hikvision has quietly been on this industrial path for over a decade, transitioning from its well-known security domain to penetrating the intricate \"capillaries\" of industry.  \nPreviously known for establishing itself in security and building platforms with smart IoT for various sectors, Hikvision is now delving deeper into manufacturing sites. It brings not only intelligent transformations to individual scenarios but also expands the possibilities for value creation.  \nA key challenge for Hikvision is how to solidify its foundation further, ensuring its industrial capabilities remain dynamic and distinctive. Continuous reflection and practice across diverse industrial scenarios have shaped Hikvision’s current technological edge, which will profoundly influence the depth and breadth of value it can generate in the future.  \nAt the Industry Fair, Hikvision made a clear statement about its industrial ambitions: diving deep into industry with \"IoT sensing + AI.\" Showcasing over a hundred hardware and software products, along with specific applications of its Guanlan large model, this was not a tentative step but a display of a significant part of its comprehensive capabilities.  \nSo, what is \"IoT sensing + AI\"? Can Hikvision, excelling in security, succeed in industry?  \nHikvision’s move into industry represents a convergence of technology and market forces. While most still see it as a \"security giant,\" as early as 2015, it was already quietly entering the industrial field with industrial cameras as its key. This is not a case of \"jumping on the bandwagon\" but the result of accumulated technological expertise.",
+        "es": "Autor: Lu Yao. Editor: Yu Kuai. Recientemente, en la Feria Internacional de la Industria de China, muchos se dieron cuenta: Hikvision ha entrado en el sector industrial. En realidad, desde el conocido campo de la seguridad hasta adentrarse en los \"capilares\" de la industria, el camino industrial de Hikvision ha sido recorrido en silencio durante más de diez años. En el pasado, Hikvision se consolidó con la seguridad y se hizo famosa por conectar múltiples industrias con la internet de las cosas inteligente. Hoy, se sumerge aún más en el entorno manufacturero, aportando no solo cambios inteligentes en diversos escenarios, sino también expandiendo las posibilidades de creación de valor. Por lo tanto, un gran desafío para Hikvision es cómo consolidar aún más sus bases, manteniendo siempre su capacidad industrial fresca y única. Reflexionando continuamente en los escenarios de múltiples industrias."
+      },
+      "hotness": 0.82502
+    },
+    {
+      "id": "7572eb11179f50a5",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/index/gdpval",
+      "title": "Measuring the performance of our models on real-world tasks",
+      "raw_excerpt": "OpenAI introduces GDPval, a new evaluation that measures model performance on real-world economically valuable tasks across 44 occupations.",
+      "tags": [],
+      "published_at": "2025-09-25T09:00:00Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "en": "Measuring the performance of our models on real-world tasks",
+        "zh": "衡量模型在现实任务中的表现",
+        "es": "Medir el rendimiento de nuestros modelos en tareas del mundo real"
+      },
+      "excerpt_i18n": {
+        "en": "OpenAI introduces GDPval, a new evaluation that measures model performance on real-world economically valuable tasks across 44 occupations.",
+        "zh": "OpenAI推出GDPval新评估体系，通过44种职业的真实经济价值任务来衡量模型性能。",
+        "es": "OpenAI presenta GDPval, una nueva evaluación que mide el rendimiento de los modelos en tareas de valor económico del mundo real en 44 ocupaciones."
+      },
+      "hotness": 1.30236
+    },
+    {
+      "id": "fc5a59fa91f9026d",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/25/1124005/ai-wikipedia-vulnerable-languages-doom-spiral/",
+      "title": "How AI and Wikipedia have sent vulnerable languages into a doom spiral",
+      "raw_excerpt": "When Kenneth Wehr started managing the Greenlandic-language version of Wikipedia four years ago, his first act was to delete almost everything. It had to go, he thought, if it had any chance of surviving. Wehr, who’s 26, isn’t from Greenland—he grew up in Germany—but he had become obsessed with the island, an autonomous Danish territory,&#8230;",
+      "tags": [],
+      "published_at": "2025-09-25T09:00:00Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "en": "How AI and Wikipedia have sent vulnerable languages into a doom spiral",
+        "zh": "人工智能与维基百科如何将濒危语言推向消亡漩涡",
+        "es": "Cómo la inteligencia artificial y Wikipedia han llevado a las lenguas vulnerables a una espiral de extinción"
+      },
+      "excerpt_i18n": {
+        "en": "When Kenneth Wehr started managing the Greenlandic-language version of Wikipedia four years ago, his first act was to delete almost everything. It had to go, he thought, if it had any chance of surviving. Wehr, who’s 26, isn’t from Greenland—he grew up in Germany—but he had become obsessed with the island, an autonomous Danish territory,&#8230;",
+        "zh": "四年前肯尼斯·韦尔开始管理格陵兰语版维基百科时，他的首个举措是删除了几乎所有内容。这位26岁的管理者认为，若想保留这个语言版本，就必须彻底清理。",
+        "es": "Cuando Kenneth Wehr empezó a gestionar la versión en groenlandés de Wikipedia hace cuatro años, su primer acto fue borrar casi todo. Tenía que desaparecer, pensó, si quería que tuviera alguna posibilidad de sobrevivir. Wehr, que tiene 26 años,"
+      },
+      "hotness": 0.97677
+    },
+    {
+      "id": "64d13e46c64b5c5a",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/MQdDFtdCBYVxT11e.html",
+      "title": "天猫精灵未来酒店4.0发布，AI Agent联盟开启酒店智能新纪元",
+      "raw_excerpt": "2025云栖大会上，天猫精灵未来酒店4.0的三大AI解决方案与“未来酒店AI Agent联盟”的成立，标志着酒店业从单点智能迈向全域智能，一场以生态共赢为核心的产业变革正式开启。 2025年9月24日，杭州云栖小镇国际会展中心，天猫精灵未来酒店在2025云栖大会上重磅发布未来酒店4.0，包括AI驱动的桌面营销系统、颠覆传统话机的音箱新通话、多智能体协作的超级AI助理团队等三大核心解决方案，助力酒店行业从“功能智能”向“场景智能”跃迁。 发布会上，天猫精灵未来酒店还携手德胧集团、首旅如家、钉钉酒旅、比利信息、美宿在途等生态伙伴，共同发起“未来酒店AI Agent联盟”，致力于共创技术标准、共建开放生态、共享智能红利。 行业困局，酒店业亟待打破传统模式枷锁 据《2025中国酒店业发展报告》显示，截至2024年底，国内酒店连锁化率回落至40.09%，行业正从高速增长转入高质量发展。中国酒店业正身处“规模泡沫”与“价值深耕”的十字路口。 同时，人力成本持续攀升，传统服务模式效率低下；用户需求日益碎片化，Z世代消费者追求沉浸式体验；行业利润增长乏力，降本增效仍是核心挑战。“酒店业需要从规模数量竞争转向价值密度竞争，即每间房承载的数智化含量、文化体验和运营效率决定生死。”行业报告指出。 天猫精灵破局，三大方案直击行业痛点 天猫精灵未来酒店4.0的三大解决方案，分别针对酒店业的收入增长、服务体验和运营效率痛点，提供了全面升级的路径。 AI驱动的桌面营销系统，重构酒店的收入模式：系统能通过智能推荐引擎覆盖用户和酒店服务场景，实现真正匹配用户潜在需求的精准营销，为酒店创造更多非房收入。 颠覆传统话机的音箱新通话，重塑客户服务体验：搭载阿里巴巴通义大模型技术，实现更自然的语音交互，让住客通过一句话就能完成服务请求，响应率高达98%。 多智能体协作的超级AI助理团队，突破运营效率瓶颈：通过多个A",
+      "tags": [],
+      "published_at": "2025-09-25T08:35:00Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "zh": "天猫精灵未来酒店4.0发布，AI Agent联盟开启酒店智能新纪元",
+        "en": "Tmall Genie Future Hotel 4.0 Launches, AI Agent Alliance Ushers in a New Era of Hotel Intelligence.",
+        "es": "Tmall Genie Future Hotel 4.0 se lanza, la Alianza de Agentes de IA inicia una nueva era de inteligencia hotelera."
+      },
+      "excerpt_i18n": {
+        "zh": "2025云栖大会上，天猫精灵未来酒店4.0的三大AI解决方案与“未来酒店AI Agent联盟”的成立，标志着酒店业从单点智能迈向全域智能，一场以生态共赢为核心的产业变革正式开启。 2025年9月24日，杭州云栖小镇国际会展中心，天猫精灵未来酒店在2025云栖大会上重磅发布未来酒店4.0，包括AI驱动的桌面营销系统、颠覆传统话机的音箱新通话、多智能体协作的超级AI助理团队等三大核心解决方案，助力酒店行业从“功能智能”向“场景智能”跃迁。 发布会上，天猫精灵未来酒店还携手德胧集团、首旅如家、钉钉酒旅、比利信息、美宿在途等生态伙伴，共同发起“未来酒店AI Agent联盟”，致力于共创技术标准、共建开放生态、共享智能红利。 行业困局，酒店业亟待打破传统模式枷锁 据《2025中国酒店业发展报告》显示，截至2024年底，国内酒店连锁化率回落至40.09%，行业正从高速增长转入高质量发展。中国酒店业正身处“规模泡沫”与“价值深耕”的十字路口。 同时，人力成本持续攀升，传统服务模式效率低下；用户需求日益碎片化，Z世代消费者追求沉浸式体验；行业利润增长乏力，降本增效仍是核心挑战。“酒店业需要从规模数量竞争转向价值密度竞争，即每间房承载的数智化含量、文化体验和运营效率决定生死。”行业报告指出。 天猫精灵破局，三大方案直击行业痛点 天猫精灵未来酒店4.0的三大解决方案，分别针对酒店业的收入增长、服务体验和运营效率痛点，提供了全面升级的路径。 AI驱动的桌面营销系统，重构酒店的收入模式：系统能通过智能推荐引擎覆盖用户和酒店服务场景，实现真正匹配用户潜在需求的精准营销，为酒店创造更多非房收入。 颠覆传统话机的音箱新通话，重塑客户服务体验：搭载阿里巴巴通义大模型技术，实现更自然的语音交互，让住客通过一句话就能完成服务请求，响应率高达98%。 多智能体协作的超级AI助理团队，突破运营效率瓶颈：通过多个A",
+        "en": "At the 2025 Yunqi Conference, Tmall Genie Future Hotel 4.0's three major AI solutions and the establishment of the \"Future Hotel AI Agent Alliance\" marked the hotel industry's shift from single-point intelligence to comprehensive intelligence, initiating an industry transformation centered on ecosystem collaboration. On September 24, 2025, at the Hangzhou Yunqi Town International Convention and Exhibition Center, Tmall Genie Future Hotel unveiled Future Hotel 4.0 at the 2025 Yunqi Conference, featuring three core solutions: an AI-driven desktop marketing system, a speaker-based new calling system that replaces traditional phones, and a multi-agent collaborative super AI assistant team, helping the hotel industry transition from \"functional intelligence\" to \"scenario intelligence.\" During the launch, Tmall Genie Future Hotel also partnered with Delonix Group, BTG Homeinns, DingTalk Travel, Billy Info, and Meisu Zait to establish the \"Future Hotel AI Agent Alliance,\" committed to co-creating technical standards, building an open ecosystem, and sharing intelligent benefits. \n\nIndustry challenges: The hotel sector urgently needs to break free from traditional models. According to the \"2025 China Hotel Industry Development Report,\" by the end of 2024, the domestic hotel chain rate had dropped to 40.09%, indicating a shift from rapid growth to high-quality development. China's hotel industry stands at a crossroads between \"scale bubbles\" and \"value refinement.\" Meanwhile, labor costs continue to rise, traditional service models remain inefficient, user demands are increasingly fragmented, Gen Z consumers seek immersive experiences, and industry profit growth is sluggish, with cost reduction and efficiency improvement remaining core challenges. The hotel industry must move beyond competition based on scale and quantity.",
+        "es": "En la Cumbre de la Nube 2025, las tres soluciones de IA del Hotel del Futuro 4.0 de Tmall Genie y el establecimiento de la \"Alianza de Agentes de IA para Hoteles del Futuro\" marcan la transición de la industria hotelera de la inteligencia puntual a la inteligencia integral, iniciando una transformación industrial centrada en la colaboración ecológica. El 24 de septiembre de 2025, en el Centro Internacional de Convenciones y Exposiciones de Cloud Town en Hangzhou, Tmall Genie presentó el Hotel del Futuro 4.0 durante la Cumbre de la Nube, incluyendo tres soluciones clave: un sistema de marketing de escritorio impulsado por IA, un nuevo sistema de comunicación por altavoz que revoluciona los teléfonos tradicionales y un equipo de asistente superinteligente con colaboración multiagente, facilitando la evolución de la industria hotelera de la \"inteligencia funcional\" a la \"inteligencia contextual\"."
+      },
+      "hotness": 0.809092
+    },
+    {
+      "id": "ffce330aed321677",
+      "source": {
+        "site": "https://www.wired.com",
+        "feed": "https://www.wired.com/feed/category/business/latest/rss"
+      },
+      "url": "https://www.wired.com/story/meta-poaches-openai-researcher-yang-song/",
+      "title": "Meta Poaches OpenAI Scientist to Help Lead AI Lab",
+      "raw_excerpt": "Yang Song, who previously led the strategic explorations team at OpenAI, is the new “research principal” of Meta Superintelligence Labs.",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-25T04:26:31Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "en": "Meta Poaches OpenAI Scientist to Help Lead AI Lab",
+        "zh": "Meta挖角OpenAI科学家协助领导人工智能实验室。",
+        "es": "Meta ficha a un científico de OpenAI para ayudar a dirigir el laboratorio de inteligencia artificial"
+      },
+      "excerpt_i18n": {
+        "en": "Yang Song, who previously led the strategic explorations team at OpenAI, is the new “research principal” of Meta Superintelligence Labs.",
+        "zh": "杨松此前负责OpenAI战略探索团队，现为Meta超级智能实验室研究负责人。",
+        "es": "Yang Song, quien anteriormente dirigió el equipo de exploraciones estratégicas en OpenAI, es el nuevo \"investigador principal\" de Meta Superintelligence Labs."
+      },
+      "hotness": 0.762123
+    },
+    {
+      "id": "46ff20ef2bfdd406",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/index/introducing-chatgpt-pulse",
+      "title": "Introducing ChatGPT Pulse",
+      "raw_excerpt": "Today we're releasing a preview of ChatGPT Pulse to Pro users on mobile. Pulse is a new experience where ChatGPT proactively does research to deliver personalized updates based on your chats, feedback, and connected apps like your calendar.",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-25T00:00:00Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "en": "Introducing ChatGPT Pulse",
+        "zh": "推出ChatGPT脉搏",
+        "es": "Presentando ChatGPT Pulse"
+      },
+      "excerpt_i18n": {
+        "en": "Today we're releasing a preview of ChatGPT Pulse to Pro users on mobile. Pulse is a new experience where ChatGPT proactively does research to deliver personalized updates based on your chats, feedback, and connected apps like your calendar.",
+        "zh": "今日我们面向移动端Pro用户推出ChatGPT Pulse预览版。Pulse是一种新体验，ChatGPT会主动研究您的对话记录、反馈及关联应用，据此提供个性化更新。",
+        "es": "Hoy lanzamos una vista previa de ChatGPT Pulse para usuarios Pro en móviles. Pulse es una nueva experiencia donde ChatGPT investiga de forma proactiva para ofrecerte actualizaciones personalizadas basadas en tus chats, comentarios y aplicaciones conectadas."
+      },
+      "hotness": 1.143636
+    },
+    {
+      "id": "45a03eed9d7cfadc",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/index/eneos-materials",
+      "title": "Transforming the manufacturing industry with ChatGPT",
+      "raw_excerpt": "By deploying ChatGPT Enterprise, ENEOS Materials transformed operations with faster research, safer plant design, and streamlined HR processes. Over 80% of employees report major workflow improvements, strengthening competitiveness in manufacturing.",
+      "tags": [
+        "Research",
+        "Industry"
+      ],
+      "published_at": "2025-09-24T17:00:00Z",
+      "fetched_at": "2025-09-25T23:14:45.049960Z",
+      "title_i18n": {
+        "en": "Transforming the manufacturing industry with ChatGPT",
+        "zh": "利用ChatGPT变革制造业",
+        "es": "Transformando la industria manufacturera con ChatGPT"
+      },
+      "excerpt_i18n": {
+        "en": "By deploying ChatGPT Enterprise, ENEOS Materials transformed operations with faster research, safer plant design, and streamlined HR processes. Over 80% of employees report major workflow improvements, strengthening competitiveness in manufacturing.",
+        "zh": "通过部署ChatGPT企业版，ENEOS材料公司实现了运营转型：加速研发进程、提升工厂设计安全性并优化人力资源流程。超过80%的员工反馈工作流程显著改善，从而增强了企业竞争力。",
+        "es": "Al implementar ChatGPT Enterprise, ENEOS Materials transformó sus operaciones con una investigación más rápida, un diseño de plantas más seguro y procesos de RR. HH. optimizados. Más del 80 % de los empleados informan de mejoras significativas en los flujos de trabajo, lo que fortalece la competitividad."
+      },
+      "hotness": 1.033684
     }
   ]
 }
