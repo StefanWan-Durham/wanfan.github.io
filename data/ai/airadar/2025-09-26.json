@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-25T23:15:11.931871Z",
+  "generated_at": "2025-09-26T23:15:07.576268Z",
   "window_hours": 48,
-  "count": 29,
+  "count": 40,
   "items": [
     {
       "id": "7c8ce8c8a1a08e16",
@@ -664,6 +664,274 @@
         "en": ""
       },
       "hotness": 1.46182
+    },
+    {
+      "id": "14729b5dc6b1eb15",
+      "source": {
+        "site": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      "url": "https://aws.amazon.com/blogs/machine-learning/build-multi-agent-site-reliability-engineering-assistants-with-amazon-bedrock-agentcore/",
+      "title": "Build multi-agent site reliability engineering assistants with Amazon Bedrock AgentCore",
+      "raw_excerpt": "In this post, we demonstrate how to build a multi-agent SRE assistant using Amazon Bedrock AgentCore, LangGraph, and the Model Context Protocol (MCP). This system deploys specialized AI agents that collaborate to provide the deep, contextual intelligence that modern SRE teams need for effective incident response and infrastructure management.",
+      "tags": [],
+      "published_at": "2025-09-26T15:58:34Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Build multi-agent site reliability engineering assistants with Amazon Bedrock AgentCore",
+        "zh": "使用Amazon Bedrock AgentCore构建多代理站点可靠性工程助手",
+        "es": "Crea asistentes de ingeniería de fiabilidad del sitio multiagente con Amazon Bedrock AgentCore"
+      },
+      "excerpt_i18n": {
+        "en": "In this post, we demonstrate how to build a multi-agent SRE assistant using Amazon Bedrock AgentCore, LangGraph, and the Model Context Protocol (MCP). This system deploys specialized AI agents that collaborate to provide the deep, contextual intelligence that modern SRE teams need for effective incident response and infrastructure management.",
+        "zh": "本文展示如何利用Amazon Bedrock AgentCore、LangGraph和模型上下文协议（MCP）构建多代理SRE助手。该系统部署了多个专用AI代理，通过协同工作来提供",
+        "es": "En esta publicación, demostramos cómo construir un asistente de SRE multiagente utilizando Amazon Bedrock AgentCore, LangGraph y el Model Context Protocol (MCP). Este sistema despliega agentes de IA especializados que colaboran para ofrecer"
+      },
+      "hotness": 0.900262
+    },
+    {
+      "id": "1e2f72f0e9227163",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/PpPT38RyuPxR7uqvbe2F",
+      "title": "Agent+Code，打开AI开发新范式",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-26T14:30:26Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "zh": "Agent+Code，打开AI开发新范式",
+        "en": "Agent+Code: Pioneering a New Paradigm for AI Development",
+        "es": "Agent+Code, abriendo un nuevo paradigma para el desarrollo de IA"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.881367
+    },
+    {
+      "id": "07c251afe3f57943",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/NcEofSRALjIDurz5j4g4",
+      "title": "曙光网络发布新一代工业边缘 AI 计算平台：以智控一体解锁工业大模型边缘落地",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-26T13:31:32Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "zh": "曙光网络发布新一代工业边缘 AI 计算平台：以智控一体解锁工业大模型边缘落地",
+        "en": "Shuguang Network launches a new-generation industrial edge AI computing platform: enabling industrial large model deployment at the edge through integrated intelligent control.",
+        "es": "Red Semaforo lanza la nueva generación de plataforma de computación de IA industrial en el edge: desbloquea la implementación edge de grandes modelos industriales mediante la integración inteligente y de control."
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el original>"
+      },
+      "hotness": 0.868961
+    },
+    {
+      "id": "2c4fdc2b33d44935",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/article/VW024mbsF3EjlViVzFcX",
+      "title": "DeepSeek 时代下工程师如何借力 AI 突围？",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-26T10:46:50Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "zh": "DeepSeek 时代下工程师如何借力 AI 突围？",
+        "en": "How can engineers leverage AI to break through in the DeepSeek era?",
+        "es": "¿Cómo pueden los ingenieros aprovechar la IA para destacar en la era de DeepSeek?"
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.83519
+    },
+    {
+      "id": "b0c4c2bd5d41d331",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/81G0TidYjGxepbgU.html",
+      "title": "剪映创作者交流会：全面引入AI能力，打造一站式创作工具",
+      "raw_excerpt": "日前，剪映举办2025创作者交流大会，以“All in AI，All in One，创作，无限新可能”为主题，全面介绍了剪映各项AI能力，并与创作者共同探讨AI如何重塑创作流程、降低创作门槛。 &nbsp;剪映产品负责人表示，剪映的终极目标是成为每一位创作者的“全能伙伴”，从前端灵感到后期输出，实现无缝闭环。她强调：“AI时代，创作不应被技术门槛束缚，而应回归灵感与情感的表达。” AI全面赋能，从“工具”到“创作伙伴” &nbsp;AI成为此次剪映创作者交流大会的分享重点。目前，剪映已在“轨道编辑”“音频处理”“图像生成”等核心环节实现全面AI化，并上线“AI文字成片”。该功能依托seedance、dreamontage等字节跳动自研模型与DeepSeek-R1模型，能够实现从文案灵感到分镜生成、视频合成的全流程自动化，并带来“一镜到底”的电影级运镜效果，极大提升视频的视觉质感。 音频方面，剪映上线了AI配音3.0，可以生成超仿真音色，几乎难以分辨人声与AI声，未来还将支持多方言、多语种。此外，“AI音乐改词翻唱”“AI音效生成”等功能，也为创作者提供了更灵活、低成本的配乐解决方案。 &nbsp;画面和特效的部分，剪映将dreamontage模型应用到了AI转场功能，用户只需要上传多帧图片或视频，都可以实现丝滑运镜。 针对专业创作者对精细剪辑的需求，剪映专业版在过去一年持续“听劝”升级，新增多时间线、智能搜索、二级调色、立体声处理等高级功能，显著提升素材处理与视频精修效率。同时，基于大语言模型的“AI粗剪”功能，可一键完成从文案到画面的智能编排，助力影视综创作者高效应对海量素材。 &nbsp;近期剪映还全量上线了seedream4.0模型，以满足用户生图需求，只需输入提示词就能实现批量创意图片生产，告别之前需要先在其他工具生成素材再导入剪映进行剪辑的繁琐流程。 一站式支持，",
+      "tags": [
+        "Funding"
+      ],
+      "published_at": "2025-09-26T10:20:00Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "zh": "剪映创作者交流会：全面引入AI能力，打造一站式创作工具",
+        "en": "CapCut Creator Exchange: Fully Integrating AI Capabilities to Build an All-in-One Creative Tool",
+        "es": "Encuentro de creadores de Jianying: Introducción integral de capacidades de IA para crear una herramienta de creación integral."
+      },
+      "excerpt_i18n": {
+        "zh": "日前，剪映举办2025创作者交流大会，以“All in AI，All in One，创作，无限新可能”为主题，全面介绍了剪映各项AI能力，并与创作者共同探讨AI如何重塑创作流程、降低创作门槛。 &nbsp;剪映产品负责人表示，剪映的终极目标是成为每一位创作者的“全能伙伴”，从前端灵感到后期输出，实现无缝闭环。她强调：“AI时代，创作不应被技术门槛束缚，而应回归灵感与情感的表达。” AI全面赋能，从“工具”到“创作伙伴” &nbsp;AI成为此次剪映创作者交流大会的分享重点。目前，剪映已在“轨道编辑”“音频处理”“图像生成”等核心环节实现全面AI化，并上线“AI文字成片”。该功能依托seedance、dreamontage等字节跳动自研模型与DeepSeek-R1模型，能够实现从文案灵感到分镜生成、视频合成的全流程自动化，并带来“一镜到底”的电影级运镜效果，极大提升视频的视觉质感。 音频方面，剪映上线了AI配音3.0，可以生成超仿真音色，几乎难以分辨人声与AI声，未来还将支持多方言、多语种。此外，“AI音乐改词翻唱”“AI音效生成”等功能，也为创作者提供了更灵活、低成本的配乐解决方案。 &nbsp;画面和特效的部分，剪映将dreamontage模型应用到了AI转场功能，用户只需要上传多帧图片或视频，都可以实现丝滑运镜。 针对专业创作者对精细剪辑的需求，剪映专业版在过去一年持续“听劝”升级，新增多时间线、智能搜索、二级调色、立体声处理等高级功能，显著提升素材处理与视频精修效率。同时，基于大语言模型的“AI粗剪”功能，可一键完成从文案到画面的智能编排，助力影视综创作者高效应对海量素材。 &nbsp;近期剪映还全量上线了seedream4.0模型，以满足用户生图需求，只需输入提示词就能实现批量创意图片生产，告别之前需要先在其他工具生成素材再导入剪映进行剪辑的繁琐流程。 一站式支持，",
+        "en": "Recently, CapCut held its 2025 Creator Exchange Conference under the theme \"All in AI, All in One, Creation, Infinite New Possibilities,\" comprehensively showcasing its AI capabilities and discussing with creators how AI is reshaping the creative process and lowering barriers to creation. The CapCut product lead stated that the ultimate goal is to become an \"all-in-one partner\" for every creator, achieving a seamless closed loop from initial inspiration to final output. She emphasized that in the AI era, creation should not be constrained by technical barriers but should return to the expression of inspiration and emotion.\n\nAI was a key focus at the conference. CapCut has now fully integrated AI into core areas such as track editing, audio processing, and image generation, and has launched the \"AI Text-to-Video\" feature. This function, powered by ByteDance's self-developed models like Seedance and Dreamontage, as well as the DeepSeek-R1 model, automates the entire process from script idea to storyboard generation and video synthesis, delivering a cinematic one-shot camera effect that significantly enhances visual quality.\n\nIn audio, CapCut introduced AI Voiceover 3.0, which produces highly realistic voice tones that are nearly indistinguishable from human speech, with future support planned for multiple dialects and languages. Additionally, features like \"AI Music Lyric Adaptation\" and \"AI Sound Effect Generation\" offer creators more flexible and cost-effective music solutions.",
+        "es": "Recientemente, CapCut celebró su conferencia de intercambio para creadores 2025 bajo el lema \"All in AI, All in One, creación, infinitas nuevas posibilidades\", presentando de forma integral las capacidades de IA de la plataforma y debatiendo con los creadores cómo la IA puede remodelar los flujos de trabajo creativos y reducir las barreras de entrada. La responsable del producto afirmó que el objetivo final de CapCut es convertirse en el \"compañero todoterreno\" de cada creador, logrando un ciclo cerrado sin interrupciones desde la inspiración inicial hasta el resultado final. Subrayó: \"En la era de la IA, la creación no debe verse limitada por barreras técnicas, sino que debe centrarse en la expresión de la inspiración y las emociones\". La IA impulsa completamente la transición de \"herramienta\" a \"compañero de creación\"."
+      },
+      "hotness": 0.829813
+    },
+    {
+      "id": "d98677e03549547a",
+      "source": {
+        "site": "https://www.gov.uk",
+        "feed": "https://www.gov.uk/search/news-and-communications.atom"
+      },
+      "url": "https://www.gov.uk/government/news/uk-supports-lebanons-national-renewable-energy-vision",
+      "title": "UK Supports Lebanon’s National Renewable Energy Vision",
+      "raw_excerpt": "British Ambassador Hamish Cowell launched, with the Minister of Energy launched the Lebanon’s National Renewable Energy Action Plan (NREAP 2025–2030).",
+      "tags": [],
+      "published_at": "2025-09-26T09:36:16Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "UK Supports Lebanon’s National Renewable Energy Vision",
+        "zh": "英国支持黎巴嫩国家可再生能源愿景",
+        "es": "El Reino Unido respalda la Visión Nacional de Energía Renovable del Líbano"
+      },
+      "excerpt_i18n": {
+        "en": "British Ambassador Hamish Cowell launched, with the Minister of Energy launched the Lebanon’s National Renewable Energy Action Plan (NREAP 2025–2030).",
+        "zh": "英国大使哈米什·考埃尔与能源部长共同启动了黎巴嫩国家可再生能源行动计划（2025-2030年）。",
+        "es": "El embajador británico Hamish Cowell lanzó, junto con el ministro de Energía, el Plan Nacional de Acción de Energías Renovables del Líbano (NREAP 2025-2030)."
+      },
+      "hotness": 0.821125
+    },
+    {
+      "id": "bf55ea7bb7c346f7",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/OFTEiLvwMLzyxwby.html",
+      "title": "淘宝Vision未来旗舰店上海首店开业 让香水可“见”",
+      "raw_excerpt": "9月26日，淘宝Vision未来旗舰店上海首店开业，吸引一大波消费者前来打卡探店，排队体验“飞行汽车”和“看见香水”的全新交互。 淘宝Vision未来旗舰店是淘宝最新打造的未来购物空间，通过“AI+3D+XR”技术的融合，为品牌构建一个提升线下门店效率的解决方案，支持品牌在有限空间里无限展示SKU，并供用户随心选配，带给消费者身临其境的体验。 “今天淘宝Vision未来旗舰店首次来上海，希望让更多消费者和商家体验到未来的购物技术。”启动仪式上，淘宝网站和XR业务负责人赵昆与他1:1复刻的高斯数字人同台亮相，一起宣布上海店正式营业，并且前两个月免费开放，让科技更加普惠。 &nbsp; 今年6月，淘宝Vision未来旗舰店首家概念店在阿里巴巴总部试运行。随着上海首店开业，淘宝Vision未来旗舰店正式开启全国布局，深圳、长沙、郑州等城市的线下空间也将陆续亮相，在十一黄金周开门迎客。 继和大疆、小米汽车、魅可、COLMO、Vidda、芝华仕等品牌深度合作空间试飞、空间试车、虚拟试妆、智能家居等创新项目后，淘宝Vision又迎新的品牌合作：和寓义首创以“看见香水”为主题的“空间试香”，并和汇天一起打造了国内首个“飞行汽车”虚拟体验。 在香水的选购场景中，如何让消费者更直观地感受香调，一直是一个挑战。淘宝Vision带来了一个全新解决方案：用户戴上 Apple Vision Pro，就能看见调香师想要传递的画面，现场试喷香水后，对应的前中后调还会以3D立体形式展现，比如橘子、茉莉、草地和树林的香气，让用户在嗅觉和视觉的碰撞中“看见香水”。 “这个体验既先锋又实用，无论线上还是线下，都能更精准找到让自己怦然心动的那款味道。”有用户体验后评价。 “我们一直想用科技、艺术、浪漫的方式呈现多感官闻香之旅，今年终于找到了契机——联合淘宝Vision团队打造了全球首个XR沉浸式看香实验展，让香水",
+      "tags": [],
+      "published_at": "2025-09-26T09:17:00Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "zh": "淘宝Vision未来旗舰店上海首店开业 让香水可“见”",
+        "en": "Taobao Vision's Future Flagship Store opens its first Shanghai location, making fragrances visible.",
+        "es": "La tienda insignia futura de Taobao Vision inaugura su primera sede en Shanghái, haciendo visible el perfume."
+      },
+      "excerpt_i18n": {
+        "zh": "9月26日，淘宝Vision未来旗舰店上海首店开业，吸引一大波消费者前来打卡探店，排队体验“飞行汽车”和“看见香水”的全新交互。 淘宝Vision未来旗舰店是淘宝最新打造的未来购物空间，通过“AI+3D+XR”技术的融合，为品牌构建一个提升线下门店效率的解决方案，支持品牌在有限空间里无限展示SKU，并供用户随心选配，带给消费者身临其境的体验。 “今天淘宝Vision未来旗舰店首次来上海，希望让更多消费者和商家体验到未来的购物技术。”启动仪式上，淘宝网站和XR业务负责人赵昆与他1:1复刻的高斯数字人同台亮相，一起宣布上海店正式营业，并且前两个月免费开放，让科技更加普惠。 &nbsp; 今年6月，淘宝Vision未来旗舰店首家概念店在阿里巴巴总部试运行。随着上海首店开业，淘宝Vision未来旗舰店正式开启全国布局，深圳、长沙、郑州等城市的线下空间也将陆续亮相，在十一黄金周开门迎客。 继和大疆、小米汽车、魅可、COLMO、Vidda、芝华仕等品牌深度合作空间试飞、空间试车、虚拟试妆、智能家居等创新项目后，淘宝Vision又迎新的品牌合作：和寓义首创以“看见香水”为主题的“空间试香”，并和汇天一起打造了国内首个“飞行汽车”虚拟体验。 在香水的选购场景中，如何让消费者更直观地感受香调，一直是一个挑战。淘宝Vision带来了一个全新解决方案：用户戴上 Apple Vision Pro，就能看见调香师想要传递的画面，现场试喷香水后，对应的前中后调还会以3D立体形式展现，比如橘子、茉莉、草地和树林的香气，让用户在嗅觉和视觉的碰撞中“看见香水”。 “这个体验既先锋又实用，无论线上还是线下，都能更精准找到让自己怦然心动的那款味道。”有用户体验后评价。 “我们一直想用科技、艺术、浪漫的方式呈现多感官闻香之旅，今年终于找到了契机——联合淘宝Vision团队打造了全球首个XR沉浸式看香实验展，让香水",
+        "en": "On September 26, Taobao Vision Future Flagship Store opened its first Shanghai location, attracting a large wave of consumers to visit and queue up to experience new interactions like the \"flying car\" and \"seeing perfume.\" Taobao Vision Future Flagship Store is Taobao's latest future shopping space, integrating AI, 3D, and XR technologies to provide brands with a solution that enhances offline store efficiency. It enables brands to display unlimited SKUs in limited space, allowing users to customize selections freely and delivering an immersive experience. \"Today marks Taobao Vision Future Flagship Store's debut in Shanghai, aiming to let more consumers and merchants experience future shopping technology,\" said Zhao Kun, head of Taobao's website and XR business, at the launch ceremony. He appeared on stage with his 1:1 replicated Gauss digital human to announce the store's official opening, with free access for the first two months to make the technology more inclusive. In June this year, the first concept store of Taobao Vision Future Flagship Store began trial operations at Alibaba's headquarters. With the Shanghai opening, Taobao Vision Future Flagship Store officially launched its nationwide expansion, with offline spaces in cities like Shenzhen, Changsha, and Zhengzhou set to open during the National Day holiday. Following deep collaborations with brands like DJI, Xiaomi Auto, M·A·C, COLMO, Vidda, and Cheers for innovative projects such as space test flights, space test drives, virtual makeup trials, and smart home experiences, Taobao Vision has welcomed new brand partnerships: a first-of-its-kind \"space fragrance testing\" themed \"seeing perfume\" with To Define, and collaborations with Huitian.",
+        "es": "El 26 de septiembre, la primera tienda insignia de Taobao Vision en Shanghái abrió sus puertas, atrayendo a una gran cantidad de consumidores que hicieron cola para experimentar la nueva interacción del \"coche volador\" y \"ver perfumes\". Taobao Vision es el espacio de compras futurista más reciente creado por Taobao, que combina tecnologías de \"IA + 3D + XR\" para ofrecer a las marcas una solución que mejora la eficiencia de las tiendas físicas, permitiendo mostrar SKU ilimitados en un espacio limitado y ofreciendo a los usuarios una experiencia de personalización inmersiva. \"Hoy, Taobao Vision llega por primera vez a Shanghái, con el objetivo de que más consumidores y comerciantes experimenten la tecnología de compras del futuro\"."
+      },
+      "hotness": 0.817326
+    },
+    {
+      "id": "582facbc49f512ae",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/digitalindustry/CIVlQ0TuWa4IBiXC.html",
+      "title": "想读懂阿里的企业级 Agent 打法，首先要懂瓴羊",
+      "raw_excerpt": "2025年，AI Agent之战打得如火如荼。聚焦到企业级AI Agent赛道，战况步入规模化竞争的“深水区”，局面堪称是“组队抱团打群架”：参与玩家多数为大厂出身，自有其生态、流量或数据场景优势，叠加蓬勃发展的AI全栈能力。 年初至今，阿里瓴羊的企业级Agent、字节跳动的HiAgent 2.0、百度智能云千帆AgentBuilder和腾讯混元多Agent框架相继登场亮相，目标毫无意外地一致——先向客服、营销、数据分析、企业内部服务、运营、法务等高频场景出击。 在相似的出击目标之中，在这场热闹的“群架”背后，究竟是怎样的决定性因素，可以让企业级AI Agent玩家真正与竞争对手拉开身位？ 从Palantir身上， 看到企业级AI Agent的“标准答案” 过去一周，AI概念股迎来普涨。阿里集团CEO吴泳铭在云栖大会上表示，公司正在积极推进三年3800亿元的AI基础设施建设计划，并将持续追加更大投入。这一消息刺激阿里股价盘中涨幅一度超过9%，市值增长近3000亿港元。 几乎同一时间，大洋彼岸的Palantir也因与波音达成AI战略合作而备受资本市场关注。这家在过去一年里备受热捧被硅谷奉为“学习标杆”的数据智能公司，9 月以来股价累计上涨 14.43%，年初至今涨幅高达 137.11%，过去 52 周涨幅更是达到 382.07%，远超同期美股大盘表现。 这两家公司的市场表现共同指向一个趋势： 企业级AI Agent的竞争，正从技术概念的喧嚣，转向实实在在的价值交付能力的比拼。 相较于To C Agent，企业级AI Agent的竞争更为“等级森严”。其本质不再是模型参数规模的“暴力比拼”，而是对数据沉淀、行业知识及稳定交付的综合考验。这意味着，只有能深度融入企业核心业务流程、理解业务语义、并能将数据转化为可量化业务结果的Agent，才能真正赢得市场。 国外把这套打法跑通的最显",
+      "tags": [],
+      "published_at": "2025-09-26T08:25:00Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "zh": "想读懂阿里的企业级 Agent 打法，首先要懂瓴羊",
+        "en": "To understand Alibaba's enterprise-level Agent strategy, one must first grasp Ling Yang.",
+        "es": "Para comprender la estrategia empresarial de Agent de Alibaba, primero hay que entender Ling Yang."
+      },
+      "excerpt_i18n": {
+        "zh": "2025年，AI Agent之战打得如火如荼。聚焦到企业级AI Agent赛道，战况步入规模化竞争的“深水区”，局面堪称是“组队抱团打群架”：参与玩家多数为大厂出身，自有其生态、流量或数据场景优势，叠加蓬勃发展的AI全栈能力。 年初至今，阿里瓴羊的企业级Agent、字节跳动的HiAgent 2.0、百度智能云千帆AgentBuilder和腾讯混元多Agent框架相继登场亮相，目标毫无意外地一致——先向客服、营销、数据分析、企业内部服务、运营、法务等高频场景出击。 在相似的出击目标之中，在这场热闹的“群架”背后，究竟是怎样的决定性因素，可以让企业级AI Agent玩家真正与竞争对手拉开身位？ 从Palantir身上， 看到企业级AI Agent的“标准答案” 过去一周，AI概念股迎来普涨。阿里集团CEO吴泳铭在云栖大会上表示，公司正在积极推进三年3800亿元的AI基础设施建设计划，并将持续追加更大投入。这一消息刺激阿里股价盘中涨幅一度超过9%，市值增长近3000亿港元。 几乎同一时间，大洋彼岸的Palantir也因与波音达成AI战略合作而备受资本市场关注。这家在过去一年里备受热捧被硅谷奉为“学习标杆”的数据智能公司，9 月以来股价累计上涨 14.43%，年初至今涨幅高达 137.11%，过去 52 周涨幅更是达到 382.07%，远超同期美股大盘表现。 这两家公司的市场表现共同指向一个趋势： 企业级AI Agent的竞争，正从技术概念的喧嚣，转向实实在在的价值交付能力的比拼。 相较于To C Agent，企业级AI Agent的竞争更为“等级森严”。其本质不再是模型参数规模的“暴力比拼”，而是对数据沉淀、行业知识及稳定交付的综合考验。这意味着，只有能深度融入企业核心业务流程、理解业务语义、并能将数据转化为可量化业务结果的Agent，才能真正赢得市场。 国外把这套打法跑通的最显",
+        "en": "In 2025, the AI Agent competition is intensifying. In the enterprise AI Agent sector, the battle has entered the \"deep-water zone\" of large-scale competition, resembling a \"team brawl\": most players are major tech firms with inherent advantages in ecosystems, traffic, or data scenarios, combined with rapidly advancing full-stack AI capabilities. Since the beginning of the year, Alibaba's Lingyang Enterprise Agent, ByteDance's HiAgent 2.0, Baidu Intelligent Cloud's Qianfan AgentBuilder, and Tencent's Hunyuan Multi-Agent Framework have all debuted, targeting high-frequency scenarios like customer service, marketing, data analysis, internal enterprise services, operations, and legal affairs. Amid these similar goals and the bustling \"brawl,\" what decisive factors can truly set enterprise AI Agent players apart from their competitors? Looking at Palantir reveals the \"standard answer\" for enterprise AI Agents. Over the past week, AI concept stocks saw broad gains. Alibaba Group CEO Eddie Wu stated at the Yunqi Conference that the company is actively advancing a three-year 380 billion yuan AI infrastructure plan and will continue to increase investments. This news drove Alibaba's stock up over 9% intraday, boosting its market cap by nearly 300 billion HKD. Around the same time, Palantir gained significant market attention due to an AI strategic partnership with Boeing. Over the past year, this Silicon Valley-favored company has been highly regarded.",
+        "es": "En 2025, la batalla de los agentes de IA se libra con intensidad. En el ámbito de los agentes de IA empresariales, la competencia ha entrado en una fase de escalada masiva, una situación comparable a \"formar equipos para pelear en grupo\": la mayoría de los participantes provienen de grandes empresas, con sus propias ventajas en ecosistemas, tráfico o escenarios de datos, combinadas con capacidades de pila completa de IA en pleno desarrollo. Desde principios de año, han aparecido sucesivamente el agente empresarial de Alibaba Lingyang, HiAgent 2.0 de ByteDance, el Constructor de Agentes Qianfan de Baidu Intelligent Cloud y el marco multiagente Hunyuan de Tencent, todos con el mismo objetivo predecible: dirigirse primero a servicios como atención al cliente, marketing, análisis de datos y servicios internos empresariales."
+      },
+      "hotness": 0.807161
+    },
+    {
+      "id": "f1cf4d0a58320b68",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/chips/x2eguckYpEt6LBLg.html",
+      "title": "天玑 9500 的双 NPU 架构设计，如何让手机 AI 功能从 “尝鲜” 变成 “刚需”？",
+      "raw_excerpt": "高性能、低功耗是手机处理器持续迭代的核心方向，去年 MediaTek 的年度旗舰天玑 9400 处理器通过采用 PC级 的 Armv9 架构，让单核性能大幅提升。 雷峰网消息，9月22日，天玑 9500 正式发布，延续全大核架构， 单核性能相较上一代提升32%，多核性能提升17%。 在持续提升性能以适应游戏玩家需求的同时，天玑 9500 在功层面也实现突破， 超大核功耗相较上一代 X925峰值性能下降低 55%，多核功耗相较上一代峰值性能下降低 37%。 AI 是当前处理器迭代的关键话题，为适配端侧智能体 AI 的全面落地，天玑 9500 创新性地采用 “超性能 + 超能效” 双 NPU 架构， 超性能 NPU 990 的峰值性能较上一代提升 111% ，重构了 AI 算力供给模式。 第三代全大核 CPU 架构，单核性能提升32% 天玑 9500 采用业界先进的第三代 3 纳米制程工艺，晶体管数量突破 300 亿个，相比前代制程，晶体管密度得到显著提升。 天玑 9500 的 CPU 架构采用了 “1+3+4” 的全大核设计，包含 1 个主频高达 4.21GHz 的 C1-Ultra 超大核，3 个 C1-Premium 超大核和 4 个 C1-Pro 大核。这种全大核架构与传统的大小核异构设计不同，在多核并行场景下，能够保持一致的性能水准，避免了小核在处理复杂任务时的性能瓶颈。 率先集成矩阵运算指令集 SME2，在处理矩阵运算相关的任务时，如机器学习、图形处理等，能够实现更高效的计算，加快任务处理速度。同时，它还率先支持 4 通道 UFS 4.1 闪存架构，读写速度提升 100% ，大模型载入速度提升 40%。 与上一代相比，天玑 9500 单核性能提升 32%，多核性能提升 17%。在 GeekBench 6.4 测试中，单核成绩达到 4007 分，多核成绩高达 1121",
+      "tags": [],
+      "published_at": "2025-09-26T07:35:00Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "zh": "天玑 9500 的双 NPU 架构设计，如何让手机 AI 功能从 “尝鲜” 变成 “刚需”？",
+        "en": "How does the dual NPU architecture design of the Dimensity 9500 transform mobile AI features from \"novelty\" to \"necessity\"?",
+        "es": "¿Cómo el diseño de doble NPU del Dimensity 9500 transforma las funciones de IA del móvil de \"algo novedoso\" a \"imprescindible\"?"
+      },
+      "excerpt_i18n": {
+        "zh": "高性能、低功耗是手机处理器持续迭代的核心方向，去年 MediaTek 的年度旗舰天玑 9400 处理器通过采用 PC级 的 Armv9 架构，让单核性能大幅提升。 雷峰网消息，9月22日，天玑 9500 正式发布，延续全大核架构， 单核性能相较上一代提升32%，多核性能提升17%。 在持续提升性能以适应游戏玩家需求的同时，天玑 9500 在功层面也实现突破， 超大核功耗相较上一代 X925峰值性能下降低 55%，多核功耗相较上一代峰值性能下降低 37%。 AI 是当前处理器迭代的关键话题，为适配端侧智能体 AI 的全面落地，天玑 9500 创新性地采用 “超性能 + 超能效” 双 NPU 架构， 超性能 NPU 990 的峰值性能较上一代提升 111% ，重构了 AI 算力供给模式。 第三代全大核 CPU 架构，单核性能提升32% 天玑 9500 采用业界先进的第三代 3 纳米制程工艺，晶体管数量突破 300 亿个，相比前代制程，晶体管密度得到显著提升。 天玑 9500 的 CPU 架构采用了 “1+3+4” 的全大核设计，包含 1 个主频高达 4.21GHz 的 C1-Ultra 超大核，3 个 C1-Premium 超大核和 4 个 C1-Pro 大核。这种全大核架构与传统的大小核异构设计不同，在多核并行场景下，能够保持一致的性能水准，避免了小核在处理复杂任务时的性能瓶颈。 率先集成矩阵运算指令集 SME2，在处理矩阵运算相关的任务时，如机器学习、图形处理等，能够实现更高效的计算，加快任务处理速度。同时，它还率先支持 4 通道 UFS 4.1 闪存架构，读写速度提升 100% ，大模型载入速度提升 40%。 与上一代相比，天玑 9500 单核性能提升 32%，多核性能提升 17%。在 GeekBench 6.4 测试中，单核成绩达到 4007 分，多核成绩高达 1121",
+        "en": "High performance and low power consumption are the core directions for the continuous iteration of mobile processors. Last year, MediaTek's annual flagship Dimensity 9400 processor significantly boosted single-core performance by adopting a PC-level Armv9 architecture. According to Leifeng.com, on September 22, the Dimensity 9500 was officially launched, continuing the all-big-core architecture with a 32% increase in single-core performance and a 17% improvement in multi-core performance compared to the previous generation. While continuously enhancing performance to meet gamers' demands, the Dimensity 9500 also achieved breakthroughs in power efficiency, reducing the power consumption of the super core by 55% and multi-core power consumption by 37% under peak performance compared to the previous generation's X925. AI is a key focus in current processor iterations; to support the full deployment of on-device intelligent AI, the Dimensity 9500 innovatively adopts a dual NPU architecture of \"super performance + ultra efficiency,\" with the super performance NPU 990's peak performance increasing by 111% over the previous generation, redefining the AI computing supply model. The third-generation all-big-core CPU architecture delivers a 32% boost in single-core performance. The Dimensity 9500 uses the industry-leading third-generation 3nm process technology, with transistor count exceeding 30 billion, significantly increasing transistor density compared to the previous process. Its CPU architecture features a \"1+3+4\" all-big-core design, including one C1-Ultra core with a frequency of up to 4.21GHz.",
+        "es": "El alto rendimiento y bajo consumo son la dirección central de la iteración continua de los procesadores para móviles. El año pasado, el procesador insignia anual de MediaTek, el Dimensity 9400, adoptó la arquitectura Armv9 de nivel PC, logrando una mejora significativa en el rendimiento de un solo núcleo. Según Leifeng Wang, el 22 de septiembre se lanzó oficialmente el Dimensity 9500, que mantiene la arquitectura de núcleos grandes y mejora el rendimiento de un solo núcleo en un 32% y el multinúcleo en un 17% respecto a la generación anterior. Mientras continúa elevando el rendimiento para adaptarse a las necesidades de los jugadores, el Dimensity 9500 también logra avances en el consumo energético: el consumo del núcleo ultra grande se reduce en un 55% bajo rendimiento máximo comparado con el X925 de la generación anterior, y el consumo multinúcleo en condiciones de rendimiento máximo también disminuye respecto a la generación anterior."
+      },
+      "hotness": 0.797506
+    },
+    {
+      "id": "c547f7d66e0d2b60",
+      "source": {
+        "site": "https://openai.com/news",
+        "feed": "https://openai.com/blog/rss.xml"
+      },
+      "url": "https://openai.com/index/aarp-partnership-older-adults-online-safety",
+      "title": "Partnering with AARP to help keep older adults safe online",
+      "raw_excerpt": "OpenAI and AARP are partnering to help older adults stay safe online with new AI training, scam-spotting tools, and nationwide programs through OpenAI Academy and OATS’s Senior Planet initiative.",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-26T06:00:00Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Partnering with AARP to help keep older adults safe online",
+        "zh": "与AARP合作保障老年人网络安全",
+        "es": "Colaboración con AARP para ayudar a proteger a los adultos mayores en internet"
+      },
+      "excerpt_i18n": {
+        "en": "OpenAI and AARP are partnering to help older adults stay safe online with new AI training, scam-spotting tools, and nationwide programs through OpenAI Academy and OATS’s Senior Planet initiative.",
+        "zh": "OpenAI与AARP合作推出新举措，通过AI培训课程、诈骗识别工具及全国性项目，借助OpenAI学院和OATS的\"老年星球\"计划帮助老年人安全使用网络。",
+        "es": "OpenAI y AARP se asocian para ayudar a las personas mayores a mantenerse seguras en línea con nueva formación en inteligencia artificial, herramientas para detectar estafas y programas a nivel nacional a través de la iniciativa OpenAI Academy y Senior Planet de OATS."
+      },
+      "hotness": 1.247166
+    },
+    {
+      "id": "3aa421dbbafa1196",
+      "source": {
+        "site": "https://www.leiphone.com",
+        "feed": "https://www.leiphone.com/feed/"
+      },
+      "url": "https://www.leiphone.com/category/industrynews/b19U8qK9TlpOJbZ4.html",
+      "title": "全部中国车企使用阿里云全栈AI",
+      "raw_excerpt": "AI和汽车行业正在加速融合。记者从2025云栖大会获悉，阿里云全栈AI已支撑全部中国车企。 在激烈的智能汽车产业竞争中，AI已经成为中国汽车厂商构建全球竞争力的关键。中国一汽、比亚迪、吉利、蔚来、小鹏、理想、零跑、长城等知名中国车企都已使用阿里云全栈AI，加快智能化突破。 辅助驾驶和智能座舱作为整车智能化提升用户体验的直接入口需要强大的AI技术支撑，阿里通义系列大模型为众多车企提供了技术原型。 基于阿里云灵骏智算，小鹏汽车建成国内汽车行业首个万卡规模AI算力集群，为世界基座大模型、VLA和VLM模型的训练赋能。 此前，阿里云正式发布面向辅助驾驶领域的训练与推理加速框架PAI-TurboX。该框架通过系统性优化，显著提升感知、规划控制及世界模型的训推效率，目前已应用于多家车企的研发。有数据显示，在多个主流辅助驾驶模型的训练任务中实现50%以上的时间压缩。 在智能座舱方面，阿里云与比亚迪座舱团队联合开发。比亚迪腾势基于通义万相上线“AI壁纸”功能，打造行业首创的个性化车载体验，并基于通义星尘，上线“心理伴聊”等场景。零跑汽车、蔚来等知名车企也用阿里AI打造了新一代智能座舱。 AI不仅是在汽车行业丰富了C端用户体验，在车企内部提效上阿里大模型也在展现新能效，助力车企加速研发效率。 吉利汽车超1500人研发使用通义灵码专属版，AI 生成占比超过30%，尤其在通用代码逻辑开发，代码检查测试环节，代码开发效率提升超20%，通义灵码也已入职蔚来座舱部门，日常开发中由AI生成的代码占比达30%以上。中国一汽基于阿里通义大模型打造了汽车行业首个面向全集团运营管理的AI Agent，大大提升了企业运营效率。 当前，中企出海成为大趋势，阿里云全栈AI正支撑越来越多的中国汽车厂商的全球化布局。相关数据显示，95%的中国车企出海都选择了阿里云。 继在国内深度合作之后，理想汽车与阿里云在海外也展开紧密",
+      "tags": [],
+      "published_at": "2025-09-26T03:21:00Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "zh": "全部中国车企使用阿里云全栈AI",
+        "en": "All Chinese automakers utilize Alibaba Cloud's full-stack AI.",
+        "es": "Todas las empresas automovilísticas chinas utilizan la pila completa de IA de Alibaba Cloud."
+      },
+      "excerpt_i18n": {
+        "zh": "AI和汽车行业正在加速融合。记者从2025云栖大会获悉，阿里云全栈AI已支撑全部中国车企。 在激烈的智能汽车产业竞争中，AI已经成为中国汽车厂商构建全球竞争力的关键。中国一汽、比亚迪、吉利、蔚来、小鹏、理想、零跑、长城等知名中国车企都已使用阿里云全栈AI，加快智能化突破。 辅助驾驶和智能座舱作为整车智能化提升用户体验的直接入口需要强大的AI技术支撑，阿里通义系列大模型为众多车企提供了技术原型。 基于阿里云灵骏智算，小鹏汽车建成国内汽车行业首个万卡规模AI算力集群，为世界基座大模型、VLA和VLM模型的训练赋能。 此前，阿里云正式发布面向辅助驾驶领域的训练与推理加速框架PAI-TurboX。该框架通过系统性优化，显著提升感知、规划控制及世界模型的训推效率，目前已应用于多家车企的研发。有数据显示，在多个主流辅助驾驶模型的训练任务中实现50%以上的时间压缩。 在智能座舱方面，阿里云与比亚迪座舱团队联合开发。比亚迪腾势基于通义万相上线“AI壁纸”功能，打造行业首创的个性化车载体验，并基于通义星尘，上线“心理伴聊”等场景。零跑汽车、蔚来等知名车企也用阿里AI打造了新一代智能座舱。 AI不仅是在汽车行业丰富了C端用户体验，在车企内部提效上阿里大模型也在展现新能效，助力车企加速研发效率。 吉利汽车超1500人研发使用通义灵码专属版，AI 生成占比超过30%，尤其在通用代码逻辑开发，代码检查测试环节，代码开发效率提升超20%，通义灵码也已入职蔚来座舱部门，日常开发中由AI生成的代码占比达30%以上。中国一汽基于阿里通义大模型打造了汽车行业首个面向全集团运营管理的AI Agent，大大提升了企业运营效率。 当前，中企出海成为大趋势，阿里云全栈AI正支撑越来越多的中国汽车厂商的全球化布局。相关数据显示，95%的中国车企出海都选择了阿里云。 继在国内深度合作之后，理想汽车与阿里云在海外也展开紧密",
+        "en": "AI and the automotive industry are accelerating their integration. According to reports from the 2025 Yunqi Conference, Alibaba Cloud's full-stack AI now supports all Chinese automakers. In the fiercely competitive smart vehicle sector, AI has become key for Chinese car manufacturers to build global competitiveness. Leading Chinese automakers such as FAW, BYD, Geely, NIO, XPeng, Li Auto, Leapmotor, and Great Wall are already using Alibaba Cloud's full-stack AI to accelerate intelligent breakthroughs. \n\nAdvanced driver-assistance systems and smart cockpits, as direct entry points for enhancing the user experience through vehicle intelligence, require robust AI support. Alibaba's Tongyi series of large models provide technical prototypes for many automakers. Leveraging Alibaba Cloud's Lingjun intelligent computing, XPeng has built the automotive industry's first 10,000-card AI computing cluster in China, empowering the training of world-class foundation models, VLA, and VLM models. \n\nPreviously, Alibaba Cloud officially launched PAI-TurboX, a training and inference acceleration framework for the ADAS field. Through systematic optimization, it significantly improves the training and inference efficiency of perception, planning control, and world models, and is already applied in R&D by multiple automakers. Data shows it achieves over 50% time compression in training tasks for several mainstream ADAS models. \n\nIn smart cockpits, Alibaba Cloud collaborated with BYD's cockpit team. BYD's Denza brand launched the \"AI Wallpaper\" feature based on Tongyi Wanxiang, creating an industry-first personalized in-car experience, and introduced scenarios like \"Psychological Companion Chat\" using Tongyi Xingchen. Leapmotor, NIO, and other well-known automakers have also developed next-generation smart cockpits with Alibaba's AI. AI is not only advancing in the automotive",
+        "es": "La IA y la industria automotriz se integran cada vez más rápido. Según se supo en la Conferencia Cloud Summit 2025, la IA de pila completa de Alibaba Cloud da soporte a todos los fabricantes de automóviles chinos. En la feroz competencia de la industria de vehículos inteligentes, la IA se ha convertido en clave para que los fabricantes chinos construyan competitividad global. Marcas como FAW, BYD, Geely, NIO, XPeng, Li Auto, Leapmotor y Great Wall ya utilizan la IA de Alibaba Cloud para acelerar avances inteligentes. La conducción asistida y los habitáculos inteligentes, como puertas de entrada directa para mejorar la experiencia del usuario, requieren un sólido respaldo de IA. Los modelos de la serie Tongyi de Alibaba sirven como prototipo tecnológico para múltiples fabricantes. Con la computación inteligente Lingjun de Alibaba Cloud, XPeng ha establecido el mayor clúster de computación de IA en la industria automotriz china."
+      },
+      "hotness": 0.750213
     }
   ]
 }

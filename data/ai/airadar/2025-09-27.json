@@ -1,0 +1,690 @@
+{
+  "generated_at": "2025-09-26T23:15:07.576268Z",
+  "window_hours": 48,
+  "count": 29,
+  "items": [
+    {
+      "id": "3f2e53db8011717e",
+      "source": {
+        "site": "https://arstechnica.com",
+        "feed": "https://arstechnica.com/information-technology/feed/"
+      },
+      "url": "https://arstechnica.com/ai/2025/09/can-ai-detect-hedgehogs-from-space-maybe-if-you-find-brambles-first/",
+      "title": "Can AI detect hedgehogs from space? Maybe if you find brambles first.",
+      "raw_excerpt": "Cambridge researchers use satellite-based bramble detection as a proxy for mapping hedgehog habitats.",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-26T22:22:13Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Can AI detect hedgehogs from space? Maybe if you find brambles first.",
+        "zh": "人工智能能从太空探测刺猬吗？或许得先找到荆棘丛。",
+        "es": "¿Puede la inteligencia artificial detectar erizos desde el espacio? Quizás si encuentras zarzales primero."
+      },
+      "excerpt_i18n": {
+        "en": "Cambridge researchers use satellite-based bramble detection as a proxy for mapping hedgehog habitats.",
+        "zh": "剑桥研究人员利用卫星探测荆棘作为刺猬栖息地的测绘指标。",
+        "es": "Investigadores de Cambridge utilizan la detección de zarzas mediante satélite como indicador para cartografiar los hábitats de erizos."
+      },
+      "hotness": 0.987347
+    },
+    {
+      "id": "d028fde27b85fce4",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://getprompta.com/",
+      "title": "Prompta – AI Prompt Testing Tool with Version Control",
+      "raw_excerpt": "",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-26T22:21:26Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Prompta – AI Prompt Testing Tool with Version Control",
+        "zh": "Prompta – 带版本控制的AI提示词测试工具",
+        "es": "Prompta - Herramienta de Pruebas de Prompts de IA con Control de Versiones"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.987161
+    },
+    {
+      "id": "e45989943ea251ec",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+      "title": "The GenAI Divide: State of AI in Business 2025 [pdf]",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T21:58:58Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "The GenAI Divide: State of AI in Business 2025 [pdf]",
+        "zh": "GenAI鸿沟：2025年企业人工智能现状报告 [pdf]",
+        "es": "La brecha de la IA generativa: Estado de la IA en los negocios 2025 [pdf]"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.981837
+    },
+    {
+      "id": "97f8f650028d7665",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/news/786837/microsoft-photos-ai-auto-categorize-test",
+      "title": "Microsoft Photos will soon auto-categorize your pictures",
+      "raw_excerpt": "Microsoft is testing a way that will make it easier to sift through all the clutter in your photo library. An update coming to all Windows 11 Insiders on Copilot Plus PCs introduces a new AI-powered feature on the Photos app that will place images of receipts, screenshots, identity documents, and handwritten notes in their [&#8230;]",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-26T21:40:35Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Microsoft Photos will soon auto-categorize your pictures",
+        "zh": "微软照片即将自动分类您的图片",
+        "es": "Microsoft Photos pronto categorizará automáticamente tus imágenes"
+      },
+      "excerpt_i18n": {
+        "en": "Microsoft is testing a way that will make it easier to sift through all the clutter in your photo library. An update coming to all Windows 11 Insiders on Copilot Plus PCs introduces a new AI-powered feature on the Photos app that will place images of receipts, screenshots, identity documents, and handwritten notes in their [&#8230;]",
+        "zh": "微软正在测试一项功能，旨在简化照片库中杂乱内容的筛选流程。面向所有Copilot Plus PC的Windows 11预览体验成员，照片应用将迎来更新，新增基于人工智能的功能。",
+        "es": "Microsoft está probando una forma que facilitará clasificar todo el desorden en tu biblioteca de fotos. Una actualización que llegará a todos los usuarios del programa Windows Insider en PCs Copilot Plus introduce una nueva función con tecnología de IA en la aplicación Fotos."
+      },
+      "hotness": 1.026378
+    },
+    {
+      "id": "fa1ce98b5333401b",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://research.ibm.com/blog/why-von-neumann-architecture-is-impeding-the-power-of-ai-computing",
+      "title": "The von Neumann bottleneck is impeding AI computing?",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T21:12:56Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "The von Neumann bottleneck is impeding AI computing?",
+        "zh": "冯·诺依曼瓶颈是否阻碍了人工智能计算？",
+        "es": "¿Está el cuello de botella de von Neumann obstaculizando la computación de la inteligencia artificial?"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.971019
+    },
+    {
+      "id": "b38360a7616ed0db",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45390813",
+      "title": "Help: Solo built AI social network with no distribution",
+      "raw_excerpt": "Hey guys, I solo built an AI video social network but have no money or distribution for it. How can I hack my way through this?",
+      "tags": [],
+      "published_at": "2025-09-26T20:41:04Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Help: Solo built AI social network with no distribution",
+        "zh": "帮助：独立开发无分发功能的AI社交网络",
+        "es": "Ayuda: Solo creó una red social de IA sin distribución."
+      },
+      "excerpt_i18n": {
+        "en": "Hey guys, I solo built an AI video social network but have no money or distribution for it. How can I hack my way through this?",
+        "zh": "大家好，我独自开发了一个AI视频社交网络，但缺乏资金和推广渠道。有什么办法能突破困境吗？",
+        "es": "Hola chicos, he creado yo solo una red social de vídeos con IA pero no tengo dinero ni distribución para ella. ¿Cómo puedo apañármelas para sacarla adelante?"
+      },
+      "hotness": 0.963601
+    },
+    {
+      "id": "5bce2aea52ce898d",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45390627",
+      "title": "Show HN: Embeddable Interactive Components in AI Responses for Enhanced Learning",
+      "raw_excerpt": "Hey folks, I was frustrated by how static and passive most AI-generated educational content is. A perfect explanation is great, but it doesn't guarantee \"learning\". To fix this, I built a system to dynamically inject and render interactive elements into the LLM's response, turning what would rather be walls of just text into a live learning environment. An example of it in action is this super cool explanation on the rules of basketball - https://thirdpen.app/article/FN3IbjLa/lens Or a simple DSA question of how bubble sort algorithm works: https://thirdpen.app/article/QRV7MYmu/lens We are able to see in this examples that \"learning\" with AI does not have to be just about text. I would love to confirm whether or not we're innovating in the right direction with this. you can try it here: ht",
+      "tags": [],
+      "published_at": "2025-09-26T20:18:51Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Show HN: Embeddable Interactive Components in AI Responses for Enhanced Learning",
+        "zh": "嵌入交互式组件于AI响应以增强学习体验",
+        "es": "Mostrar HN: Componentes Interactivos Integrables en Respuestas de IA para un Aprendizaje Mejorado"
+      },
+      "excerpt_i18n": {
+        "en": "Hey folks, I was frustrated by how static and passive most AI-generated educational content is. A perfect explanation is great, but it doesn't guarantee \"learning\". To fix this, I built a system to dynamically inject and render interactive elements into the LLM's response, turning what would rather be walls of just text into a live learning environment. An example of it in action is this super cool explanation on the rules of basketball - https://thirdpen.app/article/FN3IbjLa/lens Or a simple DSA question of how bubble sort algorithm works: https://thirdpen.app/article/QRV7MYmu/lens We are able to see in this examples that \"learning\" with AI does not have to be just about text. I would love to confirm whether or not we're innovating in the right direction with this. you can try it here: ht",
+        "zh": "大家好，我对大多数AI生成教育内容的静态和被动特性感到失望。完美的解释固然重要，但并不能保证\"学习效果\"。为此，我开发了一个动态注入系统。",
+        "es": "Hola a todos, me frustraba lo estática y pasiva que es la mayor parte del contenido educativo generado por IA. Una explicación perfecta está muy bien, pero no garantiza el aprendizaje. Para solucionarlo, construí un sistema que inyecta dinámicamente y"
+      },
+      "hotness": 0.958462
+    },
+    {
+      "id": "b4c42e9ec83fc08e",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://interjectedfuture.com/three-ways-i-learn-with-ai/",
+      "title": "Three ways I learn with AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T20:14:56Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Three ways I learn with AI",
+        "zh": "我用AI学习的三种方法",
+        "es": "Tres formas en las que aprendo con inteligencia artificial"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.957559
+    },
+    {
+      "id": "965f8b766f05c944",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.bloomberg.com/news/articles/2025-09-26/the-ai-boom-needs-a-market-for-compute-just-like-oil-and-spectrum",
+      "title": "The AI Boom Needs a Market for Compute",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T20:04:47Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "The AI Boom Needs a Market for Compute",
+        "zh": "人工智能热潮需要算力市场",
+        "es": "El auge de la inteligencia artificial necesita un mercado para la capacidad de cómputo"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.955222
+    },
+    {
+      "id": "2598109bd16a85af",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.theregister.com/2025/09/26/accenture_ai_jobs/",
+      "title": "If you can't use AI then it's bye bye, Accenture tells staff",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T20:02:27Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "If you can't use AI then it's bye bye, Accenture tells staff",
+        "zh": "埃森哲告知员工：不会用人工智能就请离职。",
+        "es": "Si no puedes usar la inteligencia artificial, entonces es adiós, le dice Accenture al personal."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.954686
+    },
+    {
+      "id": "00ed1910ddbb2bce",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45390429",
+      "title": "Ask HN: Am I missing out by not being at one the high growth AI companies?",
+      "raw_excerpt": "Context - A senior engineer in Bay Area with 10+ years of experience. Current company is a unicorn startup, pays well, work seems impactful, but revenue growth at the company is slowing down. A lot of colleagues have moved on to the foundational model companies, fast growing/hot startups.",
+      "tags": [],
+      "published_at": "2025-09-26T19:57:29Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Ask HN: Am I missing out by not being at one the high growth AI companies?",
+        "zh": "问HN：没去高增长AI公司工作，我是否错失良机？",
+        "es": "Pregunta para HN: ¿Me estoy perdiendo algo por no estar en una de las empresas de IA de alto crecimiento?"
+      },
+      "excerpt_i18n": {
+        "en": "Context - A senior engineer in Bay Area with 10+ years of experience. Current company is a unicorn startup, pays well, work seems impactful, but revenue growth at the company is slowing down. A lot of colleagues have moved on to the foundational model companies, fast growing/hot startups.",
+        "zh": "背景 - 一位在湾区拥有10年以上经验的高级工程师。目前就职于一家独角兽初创公司，薪酬优厚，工作似乎很有影响力，但公司收入增长正在放缓。许多同事已陆续离职。",
+        "es": "Contexto: Un ingeniero senior en el Área de la Bahía con más de 10 años de experiencia. Su empresa actual es una startup unicornio, paga bien, el trabajo parece tener impacto, pero el crecimiento de ingresos de la empresa se está ralentizando. Muchos colegas se han"
+      },
+      "hotness": 0.953546
+    },
+    {
+      "id": "4fa74a071b078831",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/column/786759/humanoid-robots-meta",
+      "title": "Humanoid robots are Meta&#8217;s next &#8216;AR-size bet&#8217;",
+      "raw_excerpt": "This is Sources by Alex Heath, a newsletter about AI and the tech industry, syndicated just for The Verge subscribers once a week. Building humanoid robots is Meta's next \"AR size bet,\" a top executive told me recently. That suggests the company plans to spend billions of dollars on the effort. During a recent conversation [&#8230;]",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-26T19:45:00Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Humanoid robots are Meta&#8217;s next &#8216;AR-size bet&#8217;",
+        "zh": "人形机器人是Meta的下一个增强现实规模赌注",
+        "es": "Los robots humanoides son la próxima gran apuesta de Meta en realidad aumentada."
+      },
+      "excerpt_i18n": {
+        "en": "This is Sources by Alex Heath, a newsletter about AI and the tech industry, syndicated just for The Verge subscribers once a week. Building humanoid robots is Meta's next \"AR size bet,\" a top executive told me recently. That suggests the company plans to spend billions of dollars on the effort. During a recent conversation [&#8230;]",
+        "zh": "这是Alex Heath主理的《消息源》简报，聚焦人工智能与科技行业动态，每周专为The Verge订户独家推送。一位高管近日向我透露，研发人形机器人已成为Meta公司继增强现实后的下一个重大战略布局。",
+        "es": "Este es Sources de Alex Heath, un boletín sobre inteligencia artificial y la industria tecnológica, distribuido exclusivamente para suscriptores de The Verge una vez por semana. Construir robots humanoides es la próxima \"apuesta del tamaño de la realidad aumentada\" de Meta, según me comentó recientemente un alto ejecutivo."
+      },
+      "hotness": 0.998219
+    },
+    {
+      "id": "5975a2ed1467bbe3",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://worldview.stratfor.com/article/coming-violent-backlash-against-ai",
+      "title": "The Coming Violent Backlash Against AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T19:41:54Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "The Coming Violent Backlash Against AI",
+        "zh": "人工智能即将引发的暴力反弹",
+        "es": "La inminente reacción violenta contra la inteligencia artificial"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.949976
+    },
+    {
+      "id": "e6eadd92fcad052e",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://futurism.com/future-society/ai-productivity-research",
+      "title": "Companies Are Being Torn Apart by AI \"Workslop,\" Stanford Research Finds",
+      "raw_excerpt": "",
+      "tags": [
+        "Research"
+      ],
+      "published_at": "2025-09-26T19:24:12Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Companies Are Being Torn Apart by AI \"Workslop,\" Stanford Research Finds",
+        "zh": "斯坦福大学研究发现：人工智能“工作泛滥”正撕裂企业",
+        "es": "Las empresas están siendo desgarradas por el taller de trabajo de IA, según halla una investigación de Stanford"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.945938
+    },
+    {
+      "id": "6639e888915f0562",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://genkit.dev",
+      "title": "AI Framework for Full-Stack Apps by Google",
+      "raw_excerpt": "",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-26T19:05:56Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "AI Framework for Full-Stack Apps by Google",
+        "zh": "谷歌全栈应用人工智能框架",
+        "es": "Marco de IA para aplicaciones de pila completa de Google"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.941788
+    },
+    {
+      "id": "9344008bf870c48b",
+      "source": {
+        "site": "https://www.technologyreview.com",
+        "feed": "https://www.technologyreview.com/feed/"
+      },
+      "url": "https://www.technologyreview.com/2025/09/26/1124343/us-investigators-are-using-ai-to-detect-child-abuse-images-made-by-ai/",
+      "title": "US investigators are using AI to detect child abuse images made by AI",
+      "raw_excerpt": "Generative AI has enabled the production of child sexual abuse images to skyrocket. Now the leading investigator of child exploitation in the US is experimenting with using AI to distinguish AI-generated images from material depicting real victims, according to a new government filing. The Department of Homeland Security’s Cyber Crimes Center, which investigates child exploitation&#8230;",
+      "tags": [
+        "Policy",
+        "Industry"
+      ],
+      "published_at": "2025-09-26T19:03:34Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "US investigators are using AI to detect child abuse images made by AI",
+        "zh": "美国调查人员正利用人工智能检测由AI生成的儿童虐待图像",
+        "es": "Los investigadores estadounidenses están utilizando la inteligencia artificial para detectar imágenes de abuso infantil generadas por inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": "Generative AI has enabled the production of child sexual abuse images to skyrocket. Now the leading investigator of child exploitation in the US is experimenting with using AI to distinguish AI-generated images from material depicting real victims, according to a new government filing. The Department of Homeland Security’s Cyber Crimes Center, which investigates child exploitation&#8230;",
+        "zh": "生成式人工智能导致儿童性虐待图像产量激增。目前美国儿童剥削问题首席调查官正尝试利用AI技术区分人工智能生成图像与真实素材。",
+        "es": "La inteligencia artificial generativa ha permitido que la producción de imágenes de abuso sexual infantil se dispare. Ahora, el principal investigador de explotación infantil en Estados Unidos está experimentando con el uso de inteligencia artificial para distinguir las imágenes generadas por IA de las reales."
+      },
+      "hotness": 1.129502
+    },
+    {
+      "id": "76d2051cd90b2651",
+      "source": {
+        "site": "https://www.infoq.cn",
+        "feed": "https://www.infoq.cn/feed"
+      },
+      "url": "https://www.infoq.cn/video/oo1akmsHwR7rDSYShse5",
+      "title": "从模型为王到应用为王：AI 中间件的基建之战 ｜InfoQ《极客有约》",
+      "raw_excerpt": "点击查看原文>",
+      "tags": [],
+      "published_at": "2025-09-26T18:44:58Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "zh": "从模型为王到应用为王：AI 中间件的基建之战 ｜InfoQ《极客有约》",
+        "en": "From Model Dominance to Application Dominance: The Infrastructure Battle of AI Middleware | InfoQ's Geek Interview",
+        "es": "Del modelo como rey a la aplicación como rey: La batalla de infraestructura del middleware de IA | InfoQ \"Cita con los Geeks\""
+      },
+      "excerpt_i18n": {
+        "zh": "点击查看原文>",
+        "en": "View original text >",
+        "es": "Hacer clic para ver el texto original>"
+      },
+      "hotness": 0.937048
+    },
+    {
+      "id": "f716aa2fe5445826",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://substack.com/inbox/post/174635503",
+      "title": "Agentic AI as Unlimited Junior Analysts",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T18:44:25Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Agentic AI as Unlimited Junior Analysts",
+        "zh": "自主人工智能如同无限初级分析师",
+        "es": "Inteligencia artificial agente como analistas juniors ilimitados"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.936924
+    },
+    {
+      "id": "75e647e49058af50",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://errantscience.com/blog/2025/09/17/anxiety-ai-adoption-and-more-anxiety/",
+      "title": "Anxiety, AI Adoption and More Anxiety",
+      "raw_excerpt": "",
+      "tags": [
+        "Industry"
+      ],
+      "published_at": "2025-09-26T18:38:28Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Anxiety, AI Adoption and More Anxiety",
+        "zh": "焦虑、人工智能应用与更多焦虑",
+        "es": "Ansiedad, adopción de la IA y más ansiedad"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.935583
+    },
+    {
+      "id": "59cf41b5c387fc17",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.theverge.com/ai-artificial-intelligence/785407/peter-thiel-antichrist-tech-regulation",
+      "title": "Latest argument against regulating AI: that would be the Antichrist",
+      "raw_excerpt": "",
+      "tags": [
+        "Policy"
+      ],
+      "published_at": "2025-09-26T18:32:49Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Latest argument against regulating AI: that would be the Antichrist",
+        "zh": "反对监管人工智能的最新论点：这将是反基督者",
+        "es": "Último argumento contra regular la inteligencia artificial: eso sería el Anticristo"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.981027
+    },
+    {
+      "id": "8281b6969e034cd5",
+      "source": {
+        "site": "https://www.theverge.com",
+        "feed": "https://www.theverge.com/rss/full.xml"
+      },
+      "url": "https://www.theverge.com/news/786697/youtube-labs-ai-experiment-music-radio-hosts",
+      "title": "YouTube’s new AI experiment adds AI hosts to your music",
+      "raw_excerpt": "YouTube is adding AI hosts to radio and mixes in the YouTube Music app as part of a new test available through its new Labs program. The hosts are designed to “deepen your listening experience by sharing relevant stories, fan trivia, and fun commentary about your favorite music,” YouTube says in a blog post. If [&#8230;]",
+      "tags": [],
+      "published_at": "2025-09-26T18:26:36Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "YouTube’s new AI experiment adds AI hosts to your music",
+        "zh": "YouTube新AI实验为音乐播放添加AI主持人",
+        "es": "El nuevo experimento de IA de YouTube añade presentadores de IA a tu música."
+      },
+      "excerpt_i18n": {
+        "en": "YouTube is adding AI hosts to radio and mixes in the YouTube Music app as part of a new test available through its new Labs program. The hosts are designed to “deepen your listening experience by sharing relevant stories, fan trivia, and fun commentary about your favorite music,” YouTube says in a blog post. If [&#8230;]",
+        "zh": "YouTube正在YouTube Music应用中为电台和混音内容添加AI主持人，这是通过其新推出的Labs项目进行的一项测试。这些AI主持人旨在通过分享相关故事来深化用户的聆听体验。",
+        "es": "YouTube está añadiendo presentadores de IA a la radio y las mezclas en la aplicación YouTube Music como parte de una nueva prueba disponible a través de su nuevo programa Labs. Los presentadores están diseñados para \"profundizar tu experiencia auditiva compartiendo historias relevantes."
+      },
+      "hotness": 0.979561
+    },
+    {
+      "id": "d253bc7c706c8a50",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://spectrum.ieee.org/ai-impact-on-job-market",
+      "title": "AI's Impact on the Job Market: Software Roles at Risk",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T18:23:12Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "AI's Impact on the Job Market: Software Roles at Risk",
+        "zh": "人工智能对就业市场的影响：软件岗位面临风险",
+        "es": "Impacto de la IA en el mercado laboral: los puestos de software en riesgo"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.932152
+    },
+    {
+      "id": "d8eaa58c03e08bc3",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://www.tooljet.ai",
+      "title": "Show HN: Build no-code internal tools using AI",
+      "raw_excerpt": "",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-26T18:22:49Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Show HN: Build no-code internal tools using AI",
+        "zh": "HN展示：用AI构建无代码内部工具",
+        "es": "Mostrar HN: Crea herramientas internas sin código usando IA"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.932066
+    },
+    {
+      "id": "22ca1b4fbd5afef3",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://news.ycombinator.com/item?id=45389355",
+      "title": "Running Multiple AI Agents for Planning and Reviews: What's Your Approach?",
+      "raw_excerpt": "Hey HN, I’ve been experimenting with coding agents for about a year. I paid for Cursor and liked it until I hit the monthly limit, then tried Claude Code and now use it most. I also keep a ChatGPT subscription because I created a couple of Custom GPTs that others still use. Codex is now part of the ChatGPT plan, and Gemini CLI provides 1,000 free requests per day. I suspect I’m not getting full value from all these tools. How do you handle multiple providers? I use them for brainstorming and switching personas. For planning, I ask Claude Code to spawn subagents (Gemini, Codex, Cursor). I run other coding CLIs via Roundtable MCP https://github.com/askbudi/roundtable/ , assign each one planning tasks, and then merge their plans. For landing pages, I send subagents to critique and iterate. Th",
+      "tags": [
+        "Tools"
+      ],
+      "published_at": "2025-09-26T18:11:59Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Running Multiple AI Agents for Planning and Reviews: What's Your Approach?",
+        "zh": "运行多个AI代理进行规划与评审：您采用何种方法？",
+        "es": "Ejecución de múltiples agentes de IA para planificación y revisiones: ¿cuál es tu enfoque?"
+      },
+      "excerpt_i18n": {
+        "en": "Hey HN, I’ve been experimenting with coding agents for about a year. I paid for Cursor and liked it until I hit the monthly limit, then tried Claude Code and now use it most. I also keep a ChatGPT subscription because I created a couple of Custom GPTs that others still use. Codex is now part of the ChatGPT plan, and Gemini CLI provides 1,000 free requests per day. I suspect I’m not getting full value from all these tools. How do you handle multiple providers? I use them for brainstorming and switching personas. For planning, I ask Claude Code to spawn subagents (Gemini, Codex, Cursor). I run other coding CLIs via Roundtable MCP https://github.com/askbudi/roundtable/ , assign each one planning tasks, and then merge their plans. For landing pages, I send subagents to critique and iterate. Th",
+        "zh": "各位 HN 网友，我研究编程助手已有一年。付费使用 Cursor 直到触及月限额，后来尝试 Claude Code 并成为主力工具。同时保留 ChatGPT 订阅，因为",
+        "es": "Hola HN, llevo aproximadamente un año experimentando con agentes de programación. Pagué por Cursor y me gustó hasta que alcancé el límite mensual, luego probé Claude Code y ahora lo uso mayoritariamente. También mantengo una suscripción a ChatGPT porque"
+      },
+      "hotness": 0.929639
+    },
+    {
+      "id": "43da15f5cd00daba",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://guptadeepak.com/the-complete-guide-to-b2b-saas-top-of-funnel-growth-strategies-ai-powered-growth-in-2025/",
+      "title": "AI-Driven Top-of-Funnel Growth Strategies for B2B SaaS in 2025",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T17:56:26Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "AI-Driven Top-of-Funnel Growth Strategies for B2B SaaS in 2025",
+        "zh": "2025年B2B SaaS领域AI驱动的漏斗顶端增长策略",
+        "es": "Estrategias de crecimiento impulsadas por IA para la parte superior del embudo de ventas en SaaS B2B para 2025"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.926166
+    },
+    {
+      "id": "34423c4b980b0698",
+      "source": {
+        "site": "https://news.ycombinator.com/newest",
+        "feed": "https://hnrss.org/newest?q=AI"
+      },
+      "url": "https://americanexpress.io/how-gen-ai-is-elevating-the-human-connection-at-american-express/",
+      "title": "How Gen AI Is Elevating Human Connection at American Express",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T17:53:01Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "How Gen AI Is Elevating Human Connection at American Express",
+        "zh": "Gen AI如何提升美国运通的人际连接",
+        "es": "Cómo la IA generativa está elevando la conexión humana en American Express"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.925405
+    },
+    {
+      "id": "003021a556704152",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://suno.com/studio-welcome",
+      "title": "Suno Studio, a Generative AI DAW",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T17:17:54Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Suno Studio, a Generative AI DAW",
+        "zh": "Suno Studio是一款生成式AI数字音频工作站。",
+        "es": "Suno Studio, una estación de trabajo de audio digital con inteligencia artificial generativa"
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.917616
+    },
+    {
+      "id": "06e8a92541077232",
+      "source": {
+        "site": "https://news.ycombinator.com/",
+        "feed": "https://hnrss.org/frontpage"
+      },
+      "url": "https://apply.gauntletai.com/",
+      "title": "Gauntlet AI (YC S17) is looking for engineers who want to master AI",
+      "raw_excerpt": "",
+      "tags": [],
+      "published_at": "2025-09-26T17:00:46Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Gauntlet AI (YC S17) is looking for engineers who want to master AI",
+        "zh": "Gauntlet AI（YC S17）正在招募希望掌握人工智能的工程师",
+        "es": "Gauntlet AI (YC S17) busca ingenieros que quieran dominar la inteligencia artificial."
+      },
+      "excerpt_i18n": {
+        "en": ""
+      },
+      "hotness": 0.91384
+    },
+    {
+      "id": "e03b7a921cbd7599",
+      "source": {
+        "site": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      "url": "https://aws.amazon.com/blogs/machine-learning/building-health-care-agents-using-amazon-bedrock-agentcore/",
+      "title": "Building health care agents using Amazon Bedrock AgentCore",
+      "raw_excerpt": "In this solution, we demonstrate how the user (a parent) can interact with a Strands or LangGraph agent in conversational style and get information about the immunization history and schedule of their child, inquire about the available slots, and book appointments. With some changes, AI agents can be made event-driven so that they can automatically send reminders, book appointments, and so on.",
+      "tags": [],
+      "published_at": "2025-09-26T16:03:41Z",
+      "fetched_at": "2025-09-26T23:14:47.934246Z",
+      "title_i18n": {
+        "en": "Building health care agents using Amazon Bedrock AgentCore",
+        "zh": "使用亚马逊基石代理核心构建医疗保健代理",
+        "es": "Creación de agentes de atención médica utilizando Amazon Bedrock AgentCore"
+      },
+      "excerpt_i18n": {
+        "en": "In this solution, we demonstrate how the user (a parent) can interact with a Strands or LangGraph agent in conversational style and get information about the immunization history and schedule of their child, inquire about the available slots, and book appointments. With some changes, AI agents can be made event-driven so that they can automatically send reminders, book appointments, and so on.",
+        "zh": "在该方案中，我们演示了用户（家长）如何以对话方式与Strands或LangGraph智能体交互，获取子女的免疫接种历史记录与时间安排信息，并咨询相关事项。",
+        "es": "En esta solución, demostramos cómo el usuario (un padre) puede interactuar con un agente de Strands o LangGraph en estilo conversacional y obtener información sobre el historial y el calendario de vacunación de su hijo, consultar sobre"
+      },
+      "hotness": 0.901371
+    }
+  ]
+}
