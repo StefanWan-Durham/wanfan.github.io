@@ -528,7 +528,12 @@
       "summary_zh": "CLIP-ViT-Base-Patch32是OpenAI发布的多模态预训练模型，通过对比学习将图像与文本映射到统一语义空间。该模型采用ViT-Base架构，以32×32像素块处理图像，配合文本编码器实现跨模态理解。其核心优势在于支持零样本图像分类，无需针对特定任务微调即可根据自然语言描述完成图像识别。典型应用包括图文匹配、内容检索和跨模态分析，适用于需要快速适配新分类场景的视觉任务。模型基于Transformer架构，提供PyTorch、TensorFlow和JAX多框架支持。",
       "summary_es": "CLIP-ViT-Base-Patch32 es un modelo multimodal que conecta imágenes y texto mediante aprendizaje contrastivo. Combina un codificador ViT-Base para imágenes con un transformador para texto, permitiendo clasificación de imágenes zero-shot y búsqueda multimodal. Sus puntos fuertes incluyen versatilidad para múltiples tareas sin fine-tuning y compatibilidad con varios frameworks. Es útil para aplicaciones como filtrado de contenido, recuperación de imágenes y sistemas de recomendación visual.",
       "reason_label": "notable",
-      "reason_text": "值得关注的项目：clip-vit-base-patch32"
+      "reason_text": "值得关注的项目：clip-vit-base-patch32",
+      "task_keys": [
+        "image_classification",
+        "contrastive_learning",
+        "content_moderation"
+      ]
     },
     {
       "id": "context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16",
