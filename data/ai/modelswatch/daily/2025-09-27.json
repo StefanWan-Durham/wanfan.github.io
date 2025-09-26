@@ -1,7 +1,422 @@
 {
   "version": 1,
+  "date": "2025-09-27",
   "updated_at": "2025-09-26T22:06:33.382Z",
   "items": [
+    {
+      "id": "trimstray/the-book-of-secret-knowledge",
+      "source": "github",
+      "name": "the-book-of-secret-knowledge",
+      "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+      "license": "MIT",
+      "lang": "N/A",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "bsd",
+        "cheatsheets",
+        "devops",
+        "guidelines",
+        "hacking",
+        "hacks",
+        "howtos",
+        "linux",
+        "lists",
+        "manuals",
+        "one-liners",
+        "pentesters",
+        "resources",
+        "search-engines",
+        "security",
+        "security-researchers",
+        "sysops"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 187002,
+        "forks": 11568,
+        "issues": 99
+      },
+      "score": 189415.59730675156,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "《秘密知识之书》是一个系统管理与网络安全领域的综合资源集合，收录了大量实用清单、速查表、操作指南和工具推荐。内容涵盖Linux系统运维、DevOps实践、安全攻防技巧及各类命令行工具使用方法，适合运维工程师和安全研究人员快速查阅。项目以分类清晰、内容实用著称，包含大量单行命令和实战技巧，能有效提升工作效率。所有资源均经过社区验证，可作为日常技术工作的参考手册使用。",
+      "updated_at": "2025-09-21T12:05:44Z",
+      "summary_en": "A curated collection of resources for system administrators, DevOps engineers, and security professionals. It compiles cheatsheets, how-tos, tools, and guidelines covering Linux, networking, and security practices. The repository serves as a quick reference for troubleshooting, automation, and hardening systems. Its strength lies in community-driven, practical content applicable to daily operations and learning.",
+      "summary_zh": "《秘密知识之书》是一个系统管理与网络安全领域的综合资源集合，收录了大量实用清单、速查表、操作指南和工具推荐。内容涵盖Linux系统运维、DevOps实践、安全攻防技巧及各类命令行工具使用方法，适合运维工程师和安全研究人员快速查阅。项目以分类清晰、内容实用著称，包含大量单行命令和实战技巧，能有效提升工作效率。所有资源均经过社区验证，可作为日常技术工作的参考手册使用。",
+      "summary_es": "Resumen: Compendio colaborativo de recursos técnicos para administradores de sistemas y DevOps. Incluye listas de comandos, guías de configuración, herramientas CLI y buenas prácticas para entornos Unix/Linux. Destaca por su enfoque práctico y contenido actualizado constantemente por la comunidad. Ideal como referencia rápida para troubleshooting y automatización.",
+      "reason_label": "security_safety",
+      "reason_text": "安全与对齐相关更新：the-book-of-secret-knowledge"
+    },
+    {
+      "id": "avelino/awesome-go",
+      "source": "github",
+      "name": "awesome-go",
+      "url": "https://github.com/avelino/awesome-go",
+      "license": "MIT",
+      "lang": "Go",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 152834,
+        "forks": 12576,
+        "issues": 155
+      },
+      "score": 155449.1972681713,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "awesome-go 是一个精心整理的 Go 语言资源精选列表，收录了大量高质量的框架、库和软件项目。该项目按照功能领域分类，覆盖网络编程、数据库操作、Web开发、命令行工具等常见应用场景。作为开发者常用的参考目录，它能有效帮助用户快速发现和选用可靠的 Go 生态组件。无论是入门学习还是项目开发，awesome-go 都为 Go 语言开发者提供了实用且持续更新的资源索引。",
+      "updated_at": "2025-09-21T12:05:43Z",
+      "summary_en": "A curated collection of high-quality Go frameworks, libraries, and software. It serves as a comprehensive reference for developers seeking reliable tools for building applications in Go. The list is community-maintained and covers a wide range of use cases, from web development to system tools. Ideal for both beginners exploring the ecosystem and experienced developers looking for best-in-class solutions.",
+      "summary_zh": "awesome-go 是一个精心整理的 Go 语言资源精选列表，收录了大量高质量的框架、库和软件项目。该项目按照功能领域分类，覆盖网络编程、数据库操作、Web开发、命令行工具等常见应用场景。作为开发者常用的参考目录，它能有效帮助用户快速发现和选用可靠的 Go 生态组件。无论是入门学习还是项目开发，awesome-go 都为 Go 语言开发者提供了实用且持续更新的资源索引。",
+      "summary_es": "Lista curada de frameworks, bibliotecas y software destacados para Go. Incluye herramientas para desarrollo web, sistemas, bases de datos y más. Ideal para descubrir recursos probados por la comunidad. Facilita el inicio de proyectos y la adopción de mejores prácticas en Go.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：awesome-go"
+    },
+    {
+      "id": "twbs/bootstrap",
+      "source": "github",
+      "name": "bootstrap",
+      "url": "https://github.com/twbs/bootstrap",
+      "license": "MIT",
+      "lang": "MDX",
+      "tags": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 173438,
+        "forks": 79163,
+        "issues": 578
+      },
+      "score": 189370.34441323302,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Bootstrap是GitHub上最受欢迎的前端开发框架，采用MIT开源协议。它基于HTML、CSS和JavaScript，提供丰富的响应式组件与工具集，支持Sass定制化开发。该框架的核心优势在于移动优先的设计理念，能够快速构建适配多端设备的现代化网页界面。通过预置的栅格系统和UI组件，开发者可显著减少重复代码编写，提升开发效率。适用于企业官网、管理后台、移动端应用等多种Web项目场景。",
+      "updated_at": "2025-09-21T10:16:29Z",
+      "summary_en": "Bootstrap is a leading open-source front-end framework for building responsive, mobile-first websites. It provides a comprehensive set of CSS and JavaScript components, such as grids, buttons, and modals, to streamline web development. Its key strengths include cross-browser compatibility, extensive documentation, and a flexible grid system. It is widely applicable for rapid prototyping, consistent UI design, and projects requiring quick deployment of modern, scalable interfaces.",
+      "summary_zh": "Bootstrap是GitHub上最受欢迎的前端开发框架，采用MIT开源协议。它基于HTML、CSS和JavaScript，提供丰富的响应式组件与工具集，支持Sass定制化开发。该框架的核心优势在于移动优先的设计理念，能够快速构建适配多端设备的现代化网页界面。通过预置的栅格系统和UI组件，开发者可显著减少重复代码编写，提升开发效率。适用于企业官网、管理后台、移动端应用等多种Web项目场景。",
+      "summary_es": "Bootstrap es un framework front-end líder para crear sitios web responsivos y mobile-first. Utiliza HTML, CSS y JavaScript, con soporte para Sass. Sus puntos fuertes incluyen un sistema de grillas flexible, componentes predefinidos y amplia documentación. Ideal para prototipado rápido y desarrollo de interfaces consistentes en múltiples dispositivos.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：bootstrap"
+    },
+    {
+      "id": "ohmyzsh/ohmyzsh",
+      "source": "github",
+      "name": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "license": "MIT",
+      "lang": "Shell",
+      "tags": [
+        "cli",
+        "cli-app",
+        "hacktoberfest",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins",
+        "productivity",
+        "shell",
+        "terminal",
+        "theme",
+        "themes",
+        "zsh",
+        "zsh-configuration"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 181538,
+        "forks": 26223,
+        "issues": 504
+      },
+      "score": 186882.29854131944,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Oh My Zsh 是一个基于 Zsh 的社区驱动配置管理框架，旨在提升命令行使用体验。它提供了超过 300 个可选插件，支持 Git、Docker、Python 等常用开发工具，并包含 140 多种主题供用户自定义终端外观。该框架内置自动更新工具，便于用户及时获取社区最新功能。适用于希望提高终端效率、简化配置流程的开发者和系统管理员。",
+      "updated_at": "2025-09-21T09:56:40Z",
+      "summary_en": "Oh My Zsh is a community-driven framework for managing Zsh shell configurations. It offers over 300 plugins for tools like Git, Docker, and Python, plus 140+ themes to customize the terminal interface. Its auto-update feature simplifies maintenance, and the plugin framework enhances productivity for developers and power users. It is widely used for streamlining command-line workflows.",
+      "summary_zh": "Oh My Zsh 是一个基于 Zsh 的社区驱动配置管理框架，旨在提升命令行使用体验。它提供了超过 300 个可选插件，支持 Git、Docker、Python 等常用开发工具，并包含 140 多种主题供用户自定义终端外观。该框架内置自动更新工具，便于用户及时获取社区最新功能。适用于希望提高终端效率、简化配置流程的开发者和系统管理员。",
+      "summary_es": "Ohmyzsh es un marco de configuración para la shell zsh, impulsado por la comunidad. Ofrece más de 300 complementos y 140 temas para personalizar y mejorar la línea de comandos. Facilita la gestión de configuraciones, automatización de tareas y mejora la productividad en entornos de desarrollo. Ideal para usuarios que buscan optimizar su flujo de trabajo en terminal.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：ohmyzsh"
+    },
+    {
+      "id": "github/gitignore",
+      "source": "github",
+      "name": "gitignore",
+      "url": "https://github.com/github/gitignore",
+      "license": "CC0-1.0",
+      "lang": "N/A",
+      "tags": [
+        "git",
+        "gitignore"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 169503,
+        "forks": 82999,
+        "issues": 318
+      },
+      "score": 186202.62620335646,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "这是一个由GitHub官方维护的.gitignore模板集合，收录了针对不同编程语言、开发框架、操作系统和工具的配置文件模板。项目采用CC0协议，允许用户自由使用和修改。通过选择合适的模板，开发者可以快速生成.gitignore文件，有效避免将临时文件、编译产物或敏感信息误提交到Git仓库。该项目极大简化了Git版本控制中的文件排除配置，尤其适合需要快速初始化新项目的开发者使用。",
+      "updated_at": "2025-09-21T10:51:49Z",
+      "summary_en": "A comprehensive collection of .gitignore templates for various programming languages, frameworks, and tools. It helps developers exclude unnecessary files from version control, reducing repository clutter and preventing sensitive data leaks. Ideal for any Git-based project to maintain clean commits and improve collaboration. Widely adopted for its accuracy and extensive coverage across diverse tech stacks.",
+      "summary_zh": "这是一个由GitHub官方维护的.gitignore模板集合，收录了针对不同编程语言、开发框架、操作系统和工具的配置文件模板。项目采用CC0协议，允许用户自由使用和修改。通过选择合适的模板，开发者可以快速生成.gitignore文件，有效避免将临时文件、编译产物或敏感信息误提交到Git仓库。该项目极大简化了Git版本控制中的文件排除配置，尤其适合需要快速初始化新项目的开发者使用。",
+      "summary_es": "El proyecto gitignore ofrece una colección de plantillas para archivos .gitignore, organizadas por lenguajes, entornos y herramientas. Su principal utilidad es evitar que archivos innecesarios (como dependencias, logs o binarios) sean rastreados por Git. Esencial para mantener repositorios limpios, se integra fácilmente en proyectos nuevos o existentes. Su amplia cobertura y mantenimiento comunitario lo convierten en un recurso estándar para desarrolladores.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：gitignore"
+    },
+    {
+      "id": "flutter/flutter",
+      "source": "github",
+      "name": "flutter",
+      "url": "https://github.com/flutter/flutter",
+      "license": "BSD-3-Clause",
+      "lang": "Dart",
+      "tags": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "dart",
+        "dart-platform",
+        "desktop",
+        "flutter",
+        "flutter-package",
+        "fuchsia",
+        "ios",
+        "linux-desktop",
+        "macos",
+        "material-design",
+        "mobile",
+        "mobile-development",
+        "skia",
+        "web",
+        "web-framework",
+        "windows"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 173028,
+        "forks": 29244,
+        "issues": 12256
+      },
+      "score": 178976.56732989967,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Flutter是Google推出的开源UI工具包，用于构建高质量的原生界面应用。它采用Dart语言开发，通过自绘引擎实现跨平台一致性，支持iOS、Android、Web及桌面端。其热重载功能可实时预览修改效果，大幅提升开发效率。适用于需要快速迭代、追求高性能和统一视觉体验的移动及多端应用开发场景。",
+      "updated_at": "2025-09-21T10:26:23Z",
+      "summary_en": "Flutter is an open-source UI framework for building natively compiled applications for mobile, web, and desktop from a single codebase. It uses the Dart language and provides a rich set of pre-designed widgets for creating visually appealing, high-performance apps. Key strengths include fast development with hot reload, consistent UI across platforms, and strong community support. It is widely used for cross-platform mobile apps and expanding to desktop and embedded devices.",
+      "summary_zh": "Flutter是Google推出的开源UI工具包，用于构建高质量的原生界面应用。它采用Dart语言开发，通过自绘引擎实现跨平台一致性，支持iOS、Android、Web及桌面端。其热重载功能可实时预览修改效果，大幅提升开发效率。适用于需要快速迭代、追求高性能和统一视觉体验的移动及多端应用开发场景。",
+      "summary_es": "Flutter es un framework de código abierto para crear aplicaciones nativas compiladas desde un único código base. Utiliza el lenguaje Dart y ofrece alto rendimiento con renderizado propio. Sus casos de uso principales incluyen desarrollo móvil (iOS/Android), escritorio y web. Destaca por su hot reload, widgets personalizables y amplia comunidad.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：flutter"
+    },
+    {
+      "id": "AUTOMATIC1111/stable-diffusion-webui",
+      "source": "github",
+      "name": "stable-diffusion-webui",
+      "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+      "license": "AGPL-3.0",
+      "lang": "Python",
+      "tags": [
+        "ai",
+        "ai-art",
+        "deep-learning",
+        "diffusion",
+        "gradio",
+        "image-generation",
+        "image2image",
+        "img2img",
+        "pytorch",
+        "stable-diffusion",
+        "text2image",
+        "torch",
+        "txt2img",
+        "unstable",
+        "upscaling",
+        "web"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 156589,
+        "forks": 29054,
+        "issues": 2425
+      },
+      "score": 162499.73307064042,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "Stable Diffusion web UI 是基于 Stable Diffusion 模型的图形化开源工具，通过 Gradio 框架提供直观的 Web 界面，大幅降低了 AI 图像生成的使用门槛。该项目支持文生图、图生图、图像修复、自定义模型加载等丰富功能，并内置了提示词补全、参数调优等实用工具。其模块化设计便于用户安装扩展插件，满足个性化创作需求。适用于数字艺术创作、设计原型生成、AI 技术研究等场景，为开发者与创作者提供了高度可定制的一站式解决方案。",
+      "updated_at": "2025-09-21T11:37:59Z",
+      "task_keys": [
+        "text_to_image"
+      ],
+      "summary_en": "Stable Diffusion web UI is a popular open-source interface for running Stable Diffusion models locally. It enables users to generate, edit, and manipulate images via text prompts and various tools like img2img and inpainting. Built with Gradio and PyTorch, it supports extensive customization, extensions, and GPU acceleration. This tool is widely used by artists, researchers, and hobbyists for creative projects and AI experimentation.",
+      "summary_zh": "Stable Diffusion web UI 是基于 Stable Diffusion 模型的图形化开源工具，通过 Gradio 框架提供直观的 Web 界面，大幅降低了 AI 图像生成的使用门槛。该项目支持文生图、图生图、图像修复、自定义模型加载等丰富功能，并内置了提示词补全、参数调优等实用工具。其模块化设计便于用户安装扩展插件，满足个性化创作需求。适用于数字艺术创作、设计原型生成、AI 技术研究等场景，为开发者与创作者提供了高度可定制的一站式解决方案。",
+      "summary_es": "Interfaz web para Stable Diffusion que permite generar y transformar imágenes mediante IA. Soporta múltiples modelos, personalización de parámetros y extensiones. Destaca por su interfaz accesible, funciones avanzadas como inpainting y controlNet, y activa comunidad. Ideal para artistas digitales, diseñadores e investigadores en creación visual.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：stable-diffusion-webui"
+    },
+    {
+      "id": "Snailclimb/JavaGuide",
+      "source": "github",
+      "name": "JavaGuide",
+      "url": "https://github.com/Snailclimb/JavaGuide",
+      "license": "Apache-2.0",
+      "lang": "Java",
+      "tags": [
+        "algorithms",
+        "interview",
+        "java",
+        "jvm",
+        "mysql",
+        "redis",
+        "spring",
+        "system",
+        "system-design",
+        "zookeeper"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 151818,
+        "forks": 45986,
+        "issues": 74
+      },
+      "score": 161115.12300119599,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "JavaGuide 是一份面向 Java 开发者的综合性学习与面试指南，内容覆盖 Java 核心知识、JVM、常用框架（如 Spring）、数据库（MySQL、Redis）及系统设计等关键技术领域。该项目结构清晰、内容实用，既适合系统学习 Java 技术栈，也可作为求职面试前的复习资料。其亮点在于持续更新，紧跟技术趋势，并提供了大量面试常见问题与解答。无论是初学者夯实基础，还是中高级开发者查漏补缺，JavaGuide 都是一个可靠的知识库和参考工具。",
+      "updated_at": "2025-09-21T11:33:38Z",
+      "summary_en": "JavaGuide is a comprehensive open-source guide for Java developers, focusing on core knowledge areas like JVM, Spring, MySQL, and system design. It serves as a study resource and interview preparation tool, covering algorithms, Redis, and ZooKeeper. With high popularity and an Apache-2.0 license, it is widely applicable for learning and career advancement in Java development.",
+      "summary_zh": "JavaGuide 是一份面向 Java 开发者的综合性学习与面试指南，内容覆盖 Java 核心知识、JVM、常用框架（如 Spring）、数据库（MySQL、Redis）及系统设计等关键技术领域。该项目结构清晰、内容实用，既适合系统学习 Java 技术栈，也可作为求职面试前的复习资料。其亮点在于持续更新，紧跟技术趋势，并提供了大量面试常见问题与解答。无论是初学者夯实基础，还是中高级开发者查漏补缺，JavaGuide 都是一个可靠的知识库和参考工具。",
+      "summary_es": "JavaGuide es una guía integral para aprendizaje y entrevistas de Java. Cubre conocimientos esenciales como JVM, Spring, MySQL, Redis y diseño de sistemas. Ideal para desarrolladores que buscan reforzar fundamentos o prepararse para procesos técnicos. Incluye algoritmos y ejemplos prácticos para dominar tecnologías clave del ecosistema Java.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：JavaGuide"
+    },
+    {
+      "id": "huggingface/transformers",
+      "source": "github",
+      "name": "transformers",
+      "url": "https://github.com/huggingface/transformers",
+      "license": "Apache-2.0",
+      "lang": "Python",
+      "tags": [
+        "audio",
+        "deep-learning",
+        "deepseek",
+        "gemma",
+        "glm",
+        "hacktoberfest",
+        "llm",
+        "machine-learning",
+        "model-hub",
+        "natural-language-processing",
+        "nlp",
+        "pretrained-models",
+        "python",
+        "pytorch",
+        "pytorch-transformers",
+        "qwen",
+        "speech-recognition",
+        "transformer",
+        "vlm"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "stars": 150037,
+        "forks": 30477,
+        "issues": 1988
+      },
+      "score": 156232.35062465278,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "🤗 Transformers 是由 Hugging Face 开源的机器学习库，提供用于自然语言处理、计算机视觉、音频和多模态任务的预训练模型与训练框架。它支持包括 BERT、GPT、T5 等在内的多种前沿模型结构，并内置模型中心（Model Hub），便于用户快速加载和共享模型。该库统一了不同模态模型的调用接口，支持从推理到全流程训练，大幅降低了研究和工程落地的门槛。Transformers 适用于文本生成、情感分析、图像分类、语音识别等广泛场景，是 AI 开发者与研究人员常用的核心工具之一。",
+      "updated_at": "2025-09-21T11:45:34Z",
+      "summary_en": "🤗 Transformers is a versatile open-source library for state-of-the-art machine learning models across text, vision, audio, and multimodal tasks. It supports both inference and training, offering a unified API for models like LLMs, GLM, and DeepSeek. Strengths include a vast model hub, ease of use, and broad applicability in NLP, computer vision, and audio processing. Ideal for researchers and developers building or deploying cutting-edge AI applications.",
+      "summary_zh": "🤗 Transformers 是由 Hugging Face 开源的机器学习库，提供用于自然语言处理、计算机视觉、音频和多模态任务的预训练模型与训练框架。它支持包括 BERT、GPT、T5 等在内的多种前沿模型结构，并内置模型中心（Model Hub），便于用户快速加载和共享模型。该库统一了不同模态模型的调用接口，支持从推理到全流程训练，大幅降低了研究和工程落地的门槛。Transformers 适用于文本生成、情感分析、图像分类、语音识别等广泛场景，是 AI 开发者与研究人员常用的核心工具之一。",
+      "summary_es": "Transformers es una biblioteca de código abierto que proporciona modelos de última generación para procesamiento de lenguaje natural, visión por computadora, audio y multimodal. Ofrece una API unificada para más de 100,000 modelos preentrenados, facilitando tareas como clasificación, traducción y generación de texto. Sus puntos fuertes incluyen soporte para frameworks como PyTorch y TensorFlow, y herramientas para fine-tuning. Es ampliamente usado en investigación y aplicaciones industriales de IA.",
+      "reason_label": "notable",
+      "reason_text": "值得关注的项目：transformers"
+    },
     {
       "id": "omni-research/Tarsier2-Recap-7b",
       "source": "hf",
