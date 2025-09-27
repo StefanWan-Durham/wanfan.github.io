@@ -44,7 +44,6 @@ jobs:
           TRI_CACHE_PERSIST: 1
           # Ensure snapshot summaries are generated via the Python batch summarizer
           BILINGUAL_MODE: 1
-          SNAPSHOT_USE_BATCH: 1
           # Optional rate-limits for cold-start control (uncomment to enable)
           # SNAPSHOT_MAX_NEW: 40
           # New performance toggles
