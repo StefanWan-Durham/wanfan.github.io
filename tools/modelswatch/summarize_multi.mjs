@@ -72,7 +72,8 @@ export async function summarizeTriJSON(prompt, opts={}){
       { role: 'user', content: BILINGUAL ? `Given an open-source AI project description, produce bilingual factual summaries (English + Chinese).\nReturn JSON keys: summary_en, summary_zh.\nConstraints:\n- English: 70-90 words.\n- Chinese: 120-160 汉字。\nFocus: purpose, core capabilities, notable strengths, typical use cases. Avoid marketing or hype.\nOutput ONLY JSON.\nFACTS:\n${prompt}` : `Given an open-source AI project description, produce tri-lingual factual summaries.\nReturn JSON keys: summary_en, summary_zh, summary_es.\nConstraints:\n- English: 70-90 words.\n- Chinese: 120-160 汉字。\n- Spanish: 70-90 words.\nFocus: purpose, core capabilities, notable strengths, typical use cases. Avoid marketing or hype.\nOutput ONLY JSON.\nFACTS:\n${prompt}` }
     ],
     temperature,
-    max_tokens: 800
+    // Increase token budget to reduce Chinese truncation risk
+    max_tokens: 1400
   });
   async function attempt(){
     if(networkErrorStreak >= MAX_NETWORK_ERROR_STREAK){

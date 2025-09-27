@@ -10,6 +10,9 @@ import { summarizeTriJSON } from './summarize_multi.mjs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '../../');
 const outDir = path.join(root, 'data/ai/modelswatch');
+// Ensure outDir exists (fresh checkouts may not have the data tree)
+import fs from 'fs';
+try{ fs.mkdirSync(outDir, { recursive: true }); }catch(e){}
 
 function writeJSON(p, obj){ writeFileSync(p, JSON.stringify(obj, null, 2)); }
 

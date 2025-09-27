@@ -57,7 +57,8 @@ def _call_json(prompt: str, temperature: float) -> Dict[str, Any]:
         f"{JSON_TEMPLATE_INSTRUCTION}\n---\n{prompt}\n---\nExample JSON format: "
         f"{example}"
     )
-    text = chat_once(base_prompt, system="You are a precise multilingual summarizer.", temperature=temperature, max_tokens=900, want_json=True)
+    # Allow a larger completion budget to avoid truncation of Chinese summaries
+    text = chat_once(base_prompt, system="You are a precise multilingual summarizer.", temperature=temperature, max_tokens=1400, want_json=True)
     # Some providers return raw JSON text; others may embed code fences.
     cleaned = text.strip().strip('`')
     try:
@@ -335,32 +336,46 @@ def tri_summary(prompt: str) -> Dict[str, Any]:
     meta["ok"] = bool(en or zh or es)
     return {"en": en, "zh": zh, "es": es, "meta": meta}
 
+
 def tri_summary_cached(prompt: str) -> Dict[str, Any]:
-    """Wrapper adding in-memory cache (lifecycle of process)."""
+    """Wrapper adding in-memory + optional persistent cache (lifecycle of process).
+
+    Behavior:
+      - Check in-memory _CACHE first
+      - If not present and persistent cache enabled, check _PERSIST_CACHE and populate _CACHE
+      - Otherwise call tri_summary(), populate caches and return result
+    """
     _ensure_persist_loaded()
     h = _hash_prompt(prompt)
+
+    # In-memory cache hit
     if h in _CACHE:
         _DIAG["cache_hits"] += 1
         cached = _CACHE[h]
-        # shallow copy to avoid mutation propagation
-        cpy = {k: cached[k] for k in ("en","zh","es","meta")}
-        cpy["meta"] = dict(cached["meta"], cache_hit=True)
+        # shallow copy to avoid mutation by callers
+        cpy = {k: cached[k] for k in ("en", "zh", "es", "meta")}
+        cpy["meta"] = dict(cached.get("meta", {}), cache_hit=True)
         return cpy
-    # check persistent cache
+
+    # Persistent cache hit
     if _PERSIST_ENABLED and h in _PERSIST_CACHE:
         _DIAG["cache_hits"] += 1
         entry = _PERSIST_CACHE[h]
         res = { 'en': entry.get('en',''), 'zh': entry.get('zh',''), 'es': entry.get('es',''), 'meta': { 'ok': True, 'path': 'persist', 'hash': h, 'cache_hit': True } }
         _CACHE[h] = res
         return res
+
+    # Miss -> compute
     _DIAG["cache_misses"] += 1
     res = tri_summary(prompt)
+    # store in-memory cache
     _CACHE[h] = res
-    res["meta"]["cache_hit"] = False
+    # annotate meta
+    res.setdefault("meta", {})["cache_hit"] = False
     res["meta"]["hash"] = h
-    if _PERSIST_ENABLED and res['en']:
-        # store minimal persist entry (only if we have at least English)
-        _PERSIST_CACHE[h] = { 'en': res['en'], 'zh': res['zh'], 'es': res['es'] }
+    # optionally persist minimal entry
+    if _PERSIST_ENABLED and res.get('en'):
+        _PERSIST_CACHE[h] = { 'en': res.get('en',''), 'zh': res.get('zh',''), 'es': res.get('es','') }
     return res
 
 def tri_summary_batch(prompts: List[str]) -> Dict[str, Any]:
@@ -417,7 +432,7 @@ def tri_summary_batch(prompts: List[str]) -> Dict[str, Any]:
                 cache_hits_index.append(i)
                 processed += 1
             else:
-                # placeholder; will fill later
+                # cache miss; mark slot for later grouped aggregation
                 results.append(None)  # type: ignore
                 misses_index.append(i)
         if next_progress and processed >= next_progress:

@@ -2,6 +2,8 @@
 /* Build daily snapshots for HF models & GitHub repos to enable 7d delta calculations. */
 import fs from 'fs';
 import { info } from './log.js';
+import { fetchGithubTop } from './fetch_github.js';
+import { fetchHFTop } from './fetch_hf.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -53,8 +55,17 @@ function mapGH(items){
 
 async function main(){
   const key = todayKey();
-  const hfCorpus = readJSON(path.join(dataDir, 'corpus.hf.json')) || { items: [] };
-  const ghCorpus = readJSON(path.join(dataDir, 'corpus.github.json')) || { items: [] };
+  let hfCorpus = readJSON(path.join(dataDir, 'corpus.hf.json')) || { items: [] };
+  let ghCorpus = readJSON(path.join(dataDir, 'corpus.github.json')) || { items: [] };
+  // Prefer live fetch to capture daily-changing stats when possible
+  try{
+    const liveGH = await fetchGithubTop();
+    if(Array.isArray(liveGH) && liveGH.length >= 6){ ghCorpus = { items: liveGH }; info('[build_snapshots] using live github top list for snapshot'); }
+  }catch(e){ /* ignore live fetch failures */ }
+  try{
+    const liveHF = await fetchHFTop();
+    if(Array.isArray(liveHF) && liveHF.length >= 6){ hfCorpus = { items: liveHF }; info('[build_snapshots] using live hf top list for snapshot'); }
+  }catch(e){ /* ignore live fetch failures */ }
   const hfSnap = mapHF(hfCorpus.items||[]);
   const ghSnap = mapGH(ghCorpus.items||[]);
   const outDir = path.join(snapRoot, key);

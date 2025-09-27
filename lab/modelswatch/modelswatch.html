@@ -27,26 +27,48 @@
   <script defer src="../../script.js"></script>
   <style>
     .mw-wrap{max-width:1200px;margin:0 auto;padding:0 12px}
-    /* Weekly summary block */
-    #mw-weekly-summary{position:relative;margin:18px 0 24px;padding:18px 20px;border:1px solid color-mix(in oklab,var(--border),var(--primary) 20%);border-radius:18px;background:linear-gradient(145deg,color-mix(in oklab,var(--surface-2),var(--primary) 4%),color-mix(in oklab,var(--surface-2),var(--primary) 10%));box-shadow:0 6px 18px -4px rgba(37,99,235,.18),0 2px 4px rgba(0,0,0,.06);overflow:hidden}
-    #mw-weekly-summary:before{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;background:radial-gradient(circle at 30% 30%,color-mix(in oklab,var(--primary) 65%,white 10%),transparent 70%);opacity:.18;pointer-events:none}
-    #mw-weekly-summary h3{margin:0 0 10px;font-size:1.05rem;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--secondary);letter-spacing:.5px}
-    #mw-weekly-summary h3 svg{width:18px;height:18px;color:var(--primary)}
-    #mw-weekly-summary .mw-summary-text{margin:0 0 10px;line-height:1.55;font-size:.92rem;white-space:pre-wrap}
-    #mw-weekly-summary .mw-summary-tabs{display:flex;gap:6px;margin:0 0 10px;flex-wrap:wrap}
-    #mw-weekly-summary .mw-summary-tabs button{border:1px solid color-mix(in oklab,var(--border),var(--primary) 25%);background:color-mix(in oklab,var(--surface),white 4%);padding:4px 10px;border-radius:999px;font-size:.7rem;font-weight:600;letter-spacing:.4px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;color:var(--text)}
-    #mw-weekly-summary .mw-summary-tabs button.active{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-600) 100%);color:#fff;border-color:color-mix(in oklab,var(--primary-600),white 8%);box-shadow:0 4px 12px rgba(37,99,235,.35)}
-    #mw-weekly-summary .mw-task-dist{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0}
-    #mw-weekly-summary .mw-task-pill{font-size:.62rem;padding:4px 8px;border:1px solid color-mix(in oklab,var(--primary) 55%,var(--border));border-radius:999px;background:color-mix(in oklab,var(--surface-2),var(--primary) 12%);font-weight:600;letter-spacing:.3px;display:inline-flex;align-items:center;gap:4px;line-height:1}
-    #mw-weekly-summary .mw-task-pill span{color:color-mix(in oklab,var(--primary-700,#1d4ed8),black 5%)}
-    :root[data-theme="dark"] #mw-weekly-summary{background:linear-gradient(145deg,color-mix(in oklab,var(--surface-2),black 8%),color-mix(in oklab,var(--surface-2),var(--primary-900,#1e3a8a) 35%));box-shadow:0 10px 28px -6px rgba(15,23,42,.6),0 4px 10px -2px rgba(0,0,0,.55)}
-    :root[data-theme="dark"] #mw-weekly-summary .mw-task-pill{background:color-mix(in oklab,var(--primary-900,#1e3a8a),black 12%);color:#e2e8f0;border-color:color-mix(in oklab,var(--primary-500,#3b82f6),#1e293b 55%)}
-    :root[data-theme="dark"] #mw-weekly-summary .mw-summary-tabs button{background:color-mix(in oklab,var(--surface-2),black 12%);color:#e2e8f0;border-color:color-mix(in oklab,var(--border),var(--primary) 28%)}
-    :root[data-theme="dark"] #mw-weekly-summary .mw-summary-tabs button.active{background:linear-gradient(135deg,var(--primary-400,#60a5fa) 0%,var(--primary-700,#1d4ed8) 100%);color:#fff}
-    #mw-weekly-summary .mw-empty{font-size:.8rem;color:var(--muted);margin:0}
-    @media (max-width:680px){#mw-weekly-summary{padding:16px 16px;border-radius:16px}#mw-weekly-summary h3{font-size:1rem}#mw-weekly-summary .mw-summary-text{font-size:.9rem}}
+  /* Weekly summary removed per request */
     /* Toolbar layout */
   .mw-toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;padding:14px 12px}
+  /* Compact toolbar tweaks: keep controls centered and reduce spacing/font-size so they fit on one line on desktop */
+  .mw-toolbar.compact-override{justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;padding:10px 10px}
+  /* Ensure the mode buttons take a full row to avoid overflowing other controls */
+  .mw-toolbar.compact-override .mw-modes{flex:0 0 100%;display:flex;justify-content:center;margin:0 0 8px 0}
+  .mw-modes .btn{min-width:100px;padding:8px 12px;font-size:0.95rem}
+  .mw-ds-badge{margin-left:6px;margin-top:0;padding:4px 8px;font-size:.78rem}
+  .mw-ds-badge .mw-ds-tag{width:22px;height:22px;border-radius:6px;font-size:.78rem}
+  /* Make DS badge visually balanced with controls: fixed height, centered, subtle shadow */
+  /* Data-source badge: use theme-aware tokens so it has good contrast in light/dark */
+  .mw-ds-badge{height:34px;padding:0 8px;font-size:.82rem;display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:color-mix(in oklab, var(--surface-2), var(--surface) 6%);border:1px solid color-mix(in oklab, var(--border), var(--primary) 12%);box-shadow:0 6px 18px -12px rgba(16,24,40,.12);color:var(--text)}
+  .mw-ds-badge .mw-ds-tag{width:24px;height:24px;border-radius:8px;font-size:.82rem;display:inline-grid;place-items:center;background:linear-gradient(135deg, color-mix(in oklab, var(--primary), white 12%), color-mix(in oklab, var(--primary-600, var(--primary)), black 6%));color:#fff}
+  .mw-ds-badge .mw-ds-label{display:inline-block;font-weight:700;color:var(--text)}
+
+  /* Slight upward nudge to visually center the DS badge with neighboring controls */
+  .mw-ds-badge{align-self:center;transform:translateY(-3px)}
+  .mw-cas-inline{display:flex;align-items:center}
+  .mw-cas-inline .btn{padding:6px 10px;font-size:.9rem;height:34px;line-height:1;display:inline-flex;align-items:center}
+  #mw-datewrap{gap:6px}
+  #mw-date{height:34px;padding:4px 6px;font-size:.92rem}
+  /* Make toolbar children compact by default; allow the search box to flex-grow */
+  .mw-toolbar.compact-override > *{flex:0 0 auto}
+  .mw-toolbar .input{height:34px;padding:6px 10px;font-size:.96rem;min-width:100px;border-radius:10px;border:1px solid var(--border);background:color-mix(in oklab,var(--surface-2),white 3%)}
+  /* Search box: flexible and more prominent */
+  #mw-q{flex:1 1 480px;min-width:220px;max-width:920px;padding-left:40px;background:color-mix(in oklab,var(--surface-2),white 6%);box-shadow:0 8px 22px -16px rgba(16,24,40,.12);border:1px solid color-mix(in oklab,var(--border),var(--primary) 10%)}
+  /* add subtle search icon spacing if present */
+  #mw-q::placeholder{color:color-mix(in oklab,var(--muted),var(--text) 24%)}
+  /* Responsive fallback: allow wrapping on narrower screens */
+  @media (max-width:1100px){
+    .mw-toolbar.compact-override{flex-wrap:wrap}
+    #mw-q{min-width:160px;max-width:100%}
+    .mw-modes .btn{min-width:110px}
+  }
+  /* Data-source badge styling */
+  /* Fallback/augment for toolbar variant: keep gradient feel but respect theme tokens for contrast */
+  .mw-ds-badge{margin-left:12px;margin-top:6px;padding:6px 10px;border-radius:999px;font-weight:700;display:inline-flex;align-items:center;gap:8px;font-size:.85rem}
+  @media (prefers-color-scheme: light) { .mw-ds-badge{background:linear-gradient(90deg,#eef2ff,#e6f0ff);color:#0f172a;border:1px solid rgba(59,130,246,0.12)} }
+  @media (prefers-color-scheme: dark) { .mw-ds-badge{background:color-mix(in oklab, var(--surface-2), black 6%);color:var(--text);border:1px solid color-mix(in oklab, var(--border), var(--primary) 12%)} }
+  .mw-ds-badge .mw-ds-tag{display:inline-grid;width:28px;height:28px;place-items:center;border-radius:8px;font-size:.88rem;background:linear-gradient(135deg, color-mix(in oklab, var(--primary), white 12%), color-mix(in oklab, var(--primary-600, var(--primary)), black 6%));color:#fff}
+  @media (max-width:760px){ .mw-ds-badge{display:none;} }
   /* Modes row: first row full-width */
   .mw-modes{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%;margin-bottom:6px}
     /* Distinct, polished style for the three mode buttons (different from tag chips) */
@@ -171,6 +193,10 @@
     .mw-cas-dd .col:nth-child(2){ background: color-mix(in oklab, var(--surface), var(--primary) 3%); }
     .mw-cas-dd .col:last-child { border-right: none; background: color-mix(in oklab, var(--surface), var(--primary) 6%); }
     .mw-cas-dd .dd-foot { display:flex; justify-content: flex-end; gap:10px; padding: 10px; border-top: 1px solid var(--border); background: var(--surface-2); }
+  /* Cascader 'All dates' toggle visual states */
+  #mw-toggle-all-cas{border-radius:8px;padding:6px 10px;font-weight:600}
+  #mw-toggle-all-cas.active{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-600) 100%);color:#fff;border-color:color-mix(in oklab,var(--primary-600),white 10%);box-shadow:0 8px 18px rgba(37,99,235,0.18)}
+  @media (prefers-color-scheme: dark){ #mw-toggle-all-cas.active{box-shadow:0 10px 24px rgba(59,130,246,0.25)} }
     .mw-cas-dd.mw-single-col { width: min(92vw, 340px); }
     .mw-cas-dd.mw-single-col .dd-body { grid-template-columns: 1fr; }
     .mw-list { display:grid; gap:6px; }
@@ -272,33 +298,14 @@
 
     <section class="section">
       <div class="container mw-wrap">
-        <section id="mw-weekly-summary" hidden aria-live="polite">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v4H3z"/><path d="M8 7v14"/><path d="M16 7v14"/><path d="M3 11h18"/><path d="M3 17h18"/></svg>
-            <span class="i18n l-zh">每周摘要</span><span class="i18n l-en">Weekly Summary</span><span class="i18n l-es">Resumen semanal</span>
-          </h3>
-          <div id="mw-summary-coverage" style="display:none;margin:4px 0 8px;align-items:center;gap:8px;font-size:.7rem;font-weight:600;letter-spacing:.5px;color:var(--muted)">
-            <span class="i18n l-zh">三语摘要覆盖</span><span class="i18n l-en">Tri-lang coverage</span><span class="i18n l-es">Cobertura tri-idioma</span>
-            <div style="flex:1;height:6px;border-radius:4px;background:color-mix(in oklab,var(--border),var(--primary) 15%);position:relative;overflow:hidden">
-              <div id="mw-summary-coverage-bar" style="position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--primary) 0%,var(--primary-600,#1d4ed8) 100%);"></div>
-            </div>
-            <span id="mw-summary-coverage-label">0%</span>
-          </div>
-          <div class="mw-summary-tabs" role="tablist" aria-label="Weekly summary language">
-            <button data-lang="zh" class="active" role="tab" aria-selected="true">中文</button>
-            <button data-lang="en" role="tab" aria-selected="false">EN</button>
-            <button data-lang="es" role="tab" aria-selected="false">ES</button>
-          </div>
-          <p class="mw-summary-text"></p>
-          <div class="mw-task-dist" aria-label="Task distribution"></div>
-          <p class="mw-empty" hidden></p>
-        </section>
-        <div class="card mw-card mw-toolbar" role="toolbar" aria-label="Filters">
+        <!-- Weekly summary removed -->
+  <div class="card mw-card mw-toolbar compact-override" role="toolbar" aria-label="Filters">
           <div class="mw-modes" id="mw-modes">
             <button class="btn primary" data-mode="daily" data-i18n="mw_mode_daily">今日灵感</button>
             <button class="btn outline" data-mode="gh" data-i18n="mw_mode_gh_top">工程热榜</button>
             <button class="btn outline" data-mode="hf" data-i18n="mw_mode_hf_top">模型实验场</button>
           </div>
+          <div id="mw-datasource" class="mw-ds-badge" aria-hidden="true"><span class="mw-ds-tag">DS</span><span class="mw-ds-label">数据源：—</span></div>
           <div class="mw-cas-inline" style="position:relative;display:flex;align-items:center;gap:12px">
             <button class="btn outline small" id="mw-cas-trigger" data-mode-label="model"><span class="i18n l-zh">按类别查看模型</span><span class="i18n l-en">Browse by Category</span><span class="i18n l-es">Ver por categoría</span></button>
             <!-- 下拉面板：三级级联（单选/单选/多选） -->
@@ -309,7 +316,19 @@
                 <div class="col" id="mw-cas-c3"><div class="mw-muted">—</div></div>
               </div>
               <div class="dd-foot">
-                <button class="btn outline small" id="mw-cas-close"><span class="i18n l-zh">完成</span><span class="i18n l-en">Done</span><span class="i18n l-es">Listo</span></button>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <button id="mw-toggle-all-cas" class="btn outline small" title="跨历史搜索（可能较慢）" aria-pressed="false">
+                    <span class="i18n l-zh">跨历史搜索</span>
+                    <span class="i18n l-en">All dates</span>
+                    <span class="i18n l-es">Todas fechas</span>
+                  </button>
+                  <button class="btn outline small" id="mw-cas-close" title="应用当前所选的类别/任务并显示结果" aria-label="应用筛选">
+                    <span class="i18n l-zh">应用筛选</span>
+                    <span class="i18n l-en">Apply filters</span>
+                    <span class="i18n l-es">Aplicar filtros</span>
+                  </button>
+                  <span id="mw-load-progress" style="margin-left:8px;color:var(--muted);font-size:0.92rem;display:none">加载中…</span>
+                </div>
               </div>
             </div>
           </div>
@@ -322,6 +341,9 @@
               <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           </div>
+          <button id="mw-view-snapshot" class="btn outline small" title="View snapshot" aria-label="View snapshot" disabled>
+            <span class="i18n l-zh">查看快照</span><span class="i18n l-en">View snapshot</span><span class="i18n l-es">Ver instantánea</span>
+          </button>
           <select id="mw-sort" class="input">
             <option value="score" data-i18n="mw_sort_score">综合分</option>
             <option value="delta7" data-i18n="mw_sort_delta7">7日增量</option>
@@ -385,6 +407,7 @@
     // Global aggregation cache for Daily across all dates
     let itemsAll = [];
     let allLoaded = false;
+  let useAllDatesForFilter = false; // when true, filters/search operate on itemsAll (all dates)
     let globalActive = false;
 
     function isGlobalActive(){ return globalActive; }
@@ -395,6 +418,45 @@
         subEl.hidden = globalActive;
       }catch{}
     }
+
+    // Transient hint / toast helper (injects minimal styles and shows a short message)
+    (function(){
+      let _hintStyleInjected = false;
+      function ensureHintStyle(){
+        if(_hintStyleInjected) return;
+        _hintStyleInjected = true;
+        try{
+          const s = document.createElement('style');
+          s.textContent = `
+          /* Transient hint: use theme tokens so contrast is correct in light/dark */
+          .mw-transient-hint{position:fixed;right:20px;top:86px;z-index:1200;padding:8px 12px;border-radius:8px;font-size:13px;opacity:0;transform:translateY(-6px);transition:opacity .22s ease,transform .22s ease;box-shadow:0 6px 18px rgba(2,6,23,0.18);}
+          .mw-transient-hint.show{opacity:1;transform:translateY(0)}
+          /* Light theme: subtle dark text on pale surface */
+          @media (prefers-color-scheme: light) { .mw-transient-hint{background: color-mix(in oklab, var(--surface), white 92%); color: var(--text); border:1px solid color-mix(in oklab, var(--border), black 6%);} }
+          /* Dark theme: light text on slightly elevated dark surface */
+          @media (prefers-color-scheme: dark) { .mw-transient-hint{background: color-mix(in oklab, var(--surface), black 6%); color: var(--text); border:1px solid color-mix(in oklab, var(--border), black 10%);} }
+          /* Override if explicit theme attribute present */
+          :root[data-theme="light"] .mw-transient-hint{background: color-mix(in oklab, var(--surface), white 92%); color: var(--text); border:1px solid color-mix(in oklab, var(--border), black 6%);} 
+          :root[data-theme="dark"] .mw-transient-hint{background: color-mix(in oklab, var(--surface), black 6%); color: var(--text); border:1px solid color-mix(in oklab, var(--border), black 10%);} 
+          @media(max-width:800px){ .mw-transient-hint{left:12px;right:12px;top:64px} }
+          `;
+          document.head.appendChild(s);
+        }catch{}
+      }
+      window.showTransientHint = function(msg, ms){
+        try{
+          ensureHintStyle();
+          let el = document.getElementById('mw-transient-hint');
+          if(!el){ el = document.createElement('div'); el.id = 'mw-transient-hint'; el.className = 'mw-transient-hint'; document.body.appendChild(el); }
+          el.textContent = msg;
+          // trigger show
+          requestAnimationFrame(()=> el.classList.add('show'));
+          if(ms===undefined) ms = 2800;
+          clearTimeout(el._mw_to);
+          el._mw_to = setTimeout(()=>{ try{ el.classList.remove('show'); }catch{}; }, ms);
+        }catch{}
+      };
+    })();
 
     // Fallback canonical categories and labels (used if categories.json not found)
     let CANON = {
@@ -435,70 +497,7 @@
     function t(key, fallback){ try { const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh'; const tx=(window.translations?.[lang]?.[key]); return tx||fallback||key; } catch { return fallback||key; } }
 
     function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-    // ================= Weekly Summary Loader =================
-    (function initWeeklySummary(){
-      const el = document.getElementById('mw-weekly-summary');
-      if(!el) return;
-      const summaryP = el.querySelector('.mw-summary-text');
-      const distBox = el.querySelector('.mw-task-dist');
-      const emptyP = el.querySelector('.mw-empty');
-      const tabs = el.querySelectorAll('.mw-summary-tabs button');
-      let summaryData = null;
-  let currentLang = getLang();
-      function applyLangButtons(){
-        tabs.forEach(btn=>{
-          const L = btn.getAttribute('data-lang');
-            if(L === currentLang){ btn.classList.add('active'); btn.setAttribute('aria-selected','true'); }
-            else { btn.classList.remove('active'); btn.setAttribute('aria-selected','false'); }
-        });
-      }
-      function render(){
-        if(!summaryData){ el.hidden=true; return; }
-        const sec = summaryData.sections?.overview || {};
-  const txt = sec[currentLang] || sec[getLang()] || sec.en || sec.zh || '';
-        summaryP.textContent = txt;
-        emptyP.hidden = !!txt;
-        if(!txt){ emptyP.textContent = currentLang==='zh'? '暂无摘要': (currentLang==='es'? 'Sin resumen disponible' : 'No summary available'); }
-        const dist = (summaryData.meta?.task_distribution||[]).slice(0,14);
-        distBox.innerHTML = dist.map(d=>`<span class="mw-task-pill" title="${d.task}"><span>${d.task}</span><strong>${d.count}</strong></span>`).join('');
-        el.hidden = false;
-      }
-      async function fetchSummary(){
-        const paths=[
-          '../../data/ai/modelswatch/weekly_summaries.json',
-          '/data/ai/modelswatch/weekly_summaries.json',
-          '../data/ai/modelswatch/weekly_summaries.json',
-          './data/ai/modelswatch/weekly_summaries.json'
-        ];
-        for(const p of paths){
-          try{ const r = await fetch(p,{cache:'no-store'}); if(r.ok){ summaryData = await r.json(); break; } }catch{}
-        }
-        if(summaryData){ render(); }
-      }
-      tabs.forEach(btn=> btn.addEventListener('click',()=>{ const L=btn.getAttribute('data-lang'); if(L){ currentLang=L; applyLangButtons(); render(); }}));
-      const obs = new MutationObserver(()=>{ const L=document.documentElement.getAttribute('lang')||'zh'; if(L!==currentLang){ currentLang=L; applyLangButtons(); render(); } });
-      obs.observe(document.documentElement,{ attributes:true, attributeFilter:['lang'] });
-      fetchSummary(); applyLangButtons();
-      // Tri-lingual coverage bar
-      (async function loadCoverage(){
-        const paths=[
-          '../../data/ai/modelswatch/summaries_coverage.json',
-          '/data/ai/modelswatch/summaries_coverage.json',
-          '../data/ai/modelswatch/summaries_coverage.json',
-          './data/ai/modelswatch/summaries_coverage.json'
-        ];
-        let data=null;
-        for(const p of paths){ try{ const r=await fetch(p,{cache:'no-store'}); if(r.ok){ data=await r.json(); break; } }catch{} }
-        if(!data) return;
-        const covBox = document.getElementById('mw-summary-coverage');
-        const bar = document.getElementById('mw-summary-coverage-bar');
-        const label = document.getElementById('mw-summary-coverage-label');
-        const pct = Number(data.today?.pct_full||0);
-        bar.style.width = pct+'%';
-        label.textContent = pct.toFixed(1)+'%';
-        covBox.style.display='flex';
-      })();
-    })();
+    // Weekly summary removed per request
     function normalizeStats(it){ if(!it||!it.stats) return it; const s=it.stats; if(s.hf_downloads_7d && !s.downloads_total) s.downloads_total = s.hf_downloads_7d; if(s.hf_likes && !s.likes_total) s.likes_total = s.hf_likes; return it; }
     function normalizeArray(arr){ return (arr||[]).map(normalizeStats); }
     function rel(iso){ try{ const d=new Date(iso); const s=(Date.now()-d)/1000; if(s<60) return 'just now'; if(s<3600) return Math.floor(s/60)+'m'; if(s<86400) return Math.floor(s/3600)+'h'; return Math.floor(s/86400)+'d'; }catch{return ''} }
@@ -527,6 +526,11 @@
       return cands.reduce((a,b)=> a>b?a:b);
     }
 
+    // Recent-repeat configuration: penalize items that appeared in the past K days
+    const RECENT_REPEAT_DAYS = 90; // default as requested
+    const RECENT_REPEAT_PENALTY = 40; // numerical score penalty applied when item seen in recent window
+    let _recentIdSet = null; // cached Set of normalized keys seen in recent window
+
     // No top chips anymore
 
     function sparkline(ts=[], vals=[], color){
@@ -554,6 +558,58 @@
         </defs>
         <path d="${d}" fill="none" stroke="url(#sg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>`;
+    }
+
+    // Normalize an item's identity for robust deduplication across sources/urls/naming
+    function normalizeKey(it){
+      try{
+        const raw = (it && (it.id || it.url || it.name)) || '';
+        if(!raw) return '';
+        let s = String(raw).trim().toLowerCase();
+        // remove protocol
+        s = s.replace(/^https?:\/\//,'');
+        // remove www
+        s = s.replace(/^www\./,'');
+        // remove trailing slash
+        s = s.replace(/\/?$/,'');
+        // canonicalize GitHub repo urls (owner/repo)
+        s = s.replace(/^github\.com\//,'');
+        // canonicalize HF model urls
+        s = s.replace(/^huggingface\.co\//,'');
+        // strip common query/hash
+        s = s.split(/[?#]/)[0];
+        // collapse multiple non-alphanum into single dash for safer key
+        s = s.replace(/[^a-z0-9\/]+/g,'-');
+        // trim dashes
+        s = s.replace(/(^-+|-+$)/g,'');
+        return s;
+      }catch{ return String((it && (it.id||it.url||it.name))||'').toLowerCase(); }
+    }
+
+    // Collect normalized ids for the recent window (non-blocking). Returns a Set.
+    async function getRecentIdSet(days){
+      try{
+        if(_recentIdSet) return _recentIdSet;
+        _recentIdSet = new Set();
+        const n = Number(days) || RECENT_REPEAT_DAYS;
+        // prefer availableDates if present (most recent first)
+        let dates = Array.isArray(availableDates) && availableDates.length? availableDates.slice() : [];
+        if(dates.length===0){ dates = candidateRecentDates(Math.min(n, 30)); }
+        // take most recent 'n' dates (availableDates is expected sorted desc)
+        dates = dates.slice(0, n);
+        const chunk = 8;
+        for(let i=0;i<dates.length;i+=chunk){
+          const batch = dates.slice(i, i+chunk);
+          const res = await Promise.allSettled(batch.map(d=> fetch(`../../data/ai/modelswatch/daily/${d}.json`, {cache:'no-store'}).then(r=> r.ok? r.json(): null).catch(()=>null)));
+          for(const r of res){
+            if(r.status==='fulfilled' && r.value && Array.isArray(r.value.items)){
+              for(const it of r.value.items){ const k = normalizeKey(it); if(k) _recentIdSet.add(k); }
+            }
+          }
+        }
+  // recent id set populated
+        return _recentIdSet;
+      }catch(e){ console.warn('[mw] getRecentIdSet error', e); return _recentIdSet || new Set(); }
     }
 
     // Simple keyword mapping to canonical categories (multilingual hints)
@@ -816,7 +872,8 @@
 
     function card(it){
       const src = it.source==='github'?'GitHub':'HF';
-      const tags = (it.tags||[]).slice(0,6).map(x=>`<span class="tag">${esc(x)}</span>`).join(' ');
+  // tags will be computed after task badges so we can filter out duplicates
+  let tags = '';
       const metrics = (function(){
         const p=[];
         if(it.source==='github') p.push(`★ ${(it.stats?.stars||0)}`); else p.push(`⬇︎ ${(it.stats?.downloads_total||0)}`);
@@ -897,7 +954,24 @@
         }
       }catch{}
       const badges = (reason||multi)? `<div class=\"mw-badges\">${reason}${multi}</div>` : '';
-      return `<article class="card mw-card" data-id="${esc(it.id)}">
+      // Build tag chips now that task badges (multi) were computed. Filter out any
+      // tag label that matches a task badge label (language-aware) to avoid
+      // duplicated labels appearing both as badges and as tag chips.
+      try{
+        const rawTags = Array.isArray(it.tags) ? (it.tags||[]).slice(0,6) : [];
+        const taskLabelSet = new Set();
+        if(Array.isArray(it.task_keys) && it.task_keys.length){
+          const _lang = getLang();
+          for(const k of it.task_keys){
+            try{ taskLabelSet.add((taskLabel(k, _lang)||'').toString().trim().toLowerCase()); }catch{}
+          }
+        }
+        const filtered = rawTags.filter(t=> !taskLabelSet.has((t||'').toString().trim().toLowerCase()));
+        tags = filtered.map(x=>`<span class="tag">${esc(x)}</span>`).join(' ');
+      }catch{}
+
+      const dk = (it.task_keys && it.task_keys.length) ? esc((it.task_keys||[]).join(' ')) : '';
+      return `<article class="card mw-card" data-id="${esc(it.id)}" data-task-keys="${dk}">
         <h4 class="mw-title"><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(it.name||it.id)}</a></h4>
         <div class="mw-meta">${src} · ${metrics}${last}</div>
         ${badges}
@@ -930,6 +1004,11 @@
       // small boost for more matching tags
       const tg = (it.tags||[]).join(' ').toLowerCase();
       for(const tk of tokens){ if(tg.includes(tk)) score+=3; }
+      // Apply recent-repeat penalty when available
+      try{
+        const k = normalizeKey(it);
+        if(_recentIdSet && k && _recentIdSet.has(k)) score -= RECENT_REPEAT_PENALTY;
+      }catch{}
       return score;
     }
     function highlightText(html, tokens){
@@ -948,7 +1027,9 @@
       for(const it of arr){
         // Skip placeholder/invalid entries produced upstream
         try{ if(it && it.flags && it.flags.placeholder) continue; }catch{}
-        const key = `${it.source||''}::${it.id||it.url||it.name||''}`;
+        // prefer normalized key for cross-source dedupe; fall back to source-prefixed raw id
+        const nk = normalizeKey(it);
+        const key = nk ? `norm::${nk}` : `${it.source||''}::${it.id||it.url||it.name||''}`;
         if(seen.has(key)) continue; seen.add(key); out.push(it);
       }
   // no model-id exact filter (covered by search)
@@ -982,29 +1063,79 @@
           if(key==='forks7') return (b.stats?.forks_7d||0) - (a.stats?.forks_7d||0);
           if(key==='downloads7') return (b.stats?.downloads_7d||0) - (a.stats?.downloads_7d||0);
           if(key==='likes7') return (b.stats?.likes_7d||0) - (a.stats?.likes_7d||0);
-          return (b.score||b.score_model||b.score_engineering||0) - (a.score||a.score_model||a.score_engineering||0);
+          // Base values
+          const va = (a.score||a.score_model||a.score_engineering||0);
+          const vb = (b.score||b.score_model||b.score_engineering||0);
+          // Apply recent penalty if exactly one item was seen in the recent window
+          try{
+            if(_recentIdSet){
+              const ka = normalizeKey(a);
+              const kb = normalizeKey(b);
+              const ra = ka && _recentIdSet.has(ka);
+              const rb = kb && _recentIdSet.has(kb);
+              if(ra && !rb) return (vb - va) + RECENT_REPEAT_PENALTY;
+              if(rb && !ra) return (vb - va) - RECENT_REPEAT_PENALTY;
+              // if both recent or both not recent -> fallthrough to base compare
+            }
+          }catch{}
+          return vb - va;
         });
       }
       return out;
     }
 
     function render(){
-    let arr = filterSort(items);
-    // Engineering category single-select filtering
-    if((window.__mw_mode_current||'')==='gh' && selectedEngineeringCategory){
-      arr = arr.filter(it=> it.category_key===selectedEngineeringCategory || it.__group===selectedEngineeringCategory);
+      // Determine current mode using window.__mw_mode_current if present, else fallback to MODE
+      const currentMode = (window.__mw_mode_current || MODE || '').toString().trim();
+  // Base array: optionally use itemsAll (all dates) when toggle enabled and loaded.
+  // Support both daily and hf modes for cross-date filtering when the prebuilt
+  // aggregation is available (itemsAll populated by loadAllDaily or loadAllHF).
+  const applyAllDates = useAllDatesForFilter && itemsAll && itemsAll.length;
+  let baseArr = (applyAllDates && (currentMode === 'daily' || currentMode === 'hf')) ? itemsAll : items;
+  let arr = filterSort(baseArr);
+  // Data-layer filtering: when tasks selected, filter the array itself for HF (and for Daily when global mode active)
+  try{
+    if(selectedTasks && selectedTasks.size>0){
+      const curMode = currentMode;
+      const applyAtData = (curMode === 'hf') || (curMode === 'daily' && typeof isGlobalActive === 'function' && isGlobalActive());
+      if(applyAtData){
+        arr = arr.filter(it => {
+          try{
+            const keys = (it.task_keys && it.task_keys.length) ? it.task_keys : computeMatchedTaskKeys(it);
+            for(const k of keys || []){ if(selectedTasks.has(k)) return true; }
+          }catch{}
+          return false;
+        });
+      }
     }
+  }catch{}
+  // Compute per-task counts from the final array so the cascader UI can show only
+  // categories/tasks that have matched items after filtering. Expose as a simple
+  // lookup on window for the cascader render helpers to consult.
+  try{
+    const counts = {};
+    for(const it of arr || []){
+      try{
+        if(Array.isArray(it.task_keys)){
+          for(const k of it.task_keys){ counts[k] = (counts[k]||0) + 1; }
+        }
+      }catch{}
+    }
+    window.__mw_task_counts = counts;
+  }catch{ window.__mw_task_counts = {}; }
+      // No per-category filtering for GH mode — GH shows full hotlist. HF mode filtering is applied via applyFilter (task selection).
   const dt = window.__mw_updated_at || '';
-      const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh';
+  const lang = localStorage.getItem('lang')||document.documentElement.lang||'zh';
       // Removed explicit updated-at display per user request
       let modeLabel = MODE==='daily'? (window.translations?.[lang]?.mw_mode_daily || 'Daily Picks') : MODE==='gh'? (window.translations?.[lang]?.mw_mode_gh_top || 'GitHub Top') : (window.translations?.[lang]?.mw_mode_hf_top || 'HF Top');
-      if(isGlobalActive()){
+        if(isGlobalActive()){
         subEl.hidden = true;
       }else{
         subEl.hidden = false;
-        if (lang==='en') subEl.textContent = `${modeLabel} · Items ${arr.length}`;
-        else if (lang==='es') subEl.textContent = `${modeLabel} · Elementos ${arr.length}`;
-        else subEl.textContent = `${modeLabel} · 共 ${arr.length} 项`;
+        const allSuffix = useAllDatesForFilter? (lang==='zh'? ' · (跨历史)' : lang==='es'? ' · (Todas fechas)' : ' · (All dates)') : '';
+        if (lang==='en') subEl.textContent = `${modeLabel} · Items ${arr.length}${allSuffix}`;
+        else if (lang==='es') subEl.textContent = `${modeLabel} · Elementos ${arr.length}${allSuffix}`;
+        else subEl.textContent = `${modeLabel} · 共 ${arr.length} 项${allSuffix}`;
       }
 
       // Disable/hide irrelevant sort options per mode (hide by disabling + style)
@@ -1053,17 +1184,23 @@
           for(const it of arr){ const g=it.__group||'other'; if(!bucket[g]){ bucket[g]=[]; order.push(g);} bucket[g].push(it); }
           const lang2 = getLang();
           function labelForGroup(k){ return TAG_LABELS?.[lang2]?.[k] || k; }
-          const sections = order.map(k=>{
+          const sections = [];
+          for(const k of order){
             let list = filterSort(bucket[k]);
-            if((window.__mw_mode_current||'')==='gh' && selectedEngineeringCategory && k!==selectedEngineeringCategory){ list = []; }
-            return `<details open data-group="${esc(k)}" class="mw-hot-group"><summary style="cursor:pointer;font-weight:600;margin:12px 0 6px;color:var(--secondary)">${esc(labelForGroup(k))} · ${list.length}</summary><div class="mw-grid">${list.map(card).join('')}</div></details>`;
-          });
+            // Skip empty groups after any data-layer filtering so only relevant
+            // categories are shown when a task filter is active.
+            if(!list || list.length===0) continue;
+            sections.push(`<details open data-group="${esc(k)}" class="mw-hot-group"><summary style="cursor:pointer;font-weight:600;margin:12px 0 6px;color:var(--secondary)">${esc(labelForGroup(k))} · ${list.length}</summary><div class="mw-grid">${list.map(card).join('')}</div></details>`);
+          }
           gridEl.innerHTML = sections.join('');
+          try{ cleanEmptyGroups(); }catch{}
+          // Group summaries are non-interactive in this build; keep sections static
         }else{
           gridEl.classList.add('mw-grid');
             gridEl.innerHTML = arr.map(card).join('');
         }
       }
+      // No post-render GH category enforcement in this build.
     }
 
     // Extend existing mode switching (modesEl listener defined earlier in file) by observing MODE changes
@@ -1078,9 +1215,11 @@
           const mode = btn.getAttribute('data-mode');
           window.__mw_mode_current = mode; // expose
           try{ setTriggerLabelForMode(mode); }catch{}
+          try{ showCascaderTriggerForMode(mode); }catch{}
         });
-        // initial label
+        // initial label & visibility
         setTriggerLabelForMode(MODE);
+        try{ showCascaderTriggerForMode(MODE); }catch{}
       }catch{}
     })();
 
@@ -1099,9 +1238,10 @@
         if(dateStr){
           // load combined archive for the specified date
           const d = await fetch(`../../data/ai/modelswatch/daily/${dateStr}.json`,{cache:'no-store'}).then(r=>r.json());
-          const arr = (d?.items||[]).map(shallowNormalize);
-          items = arr;
-          window.__mw_updated_at = computeUpdatedAt(d?.updated_at, arr, dateStr);
+            const arr = (d?.items||[]).map(shallowNormalize);
+            items = arr;
+            window.__mw_updated_at = computeUpdatedAt(d?.updated_at, arr, dateStr);
+            try{ setDataSourceLabel('Daily', dateStr||'archive'); }catch{}
         }else{
           const [g,h] = await Promise.all([
             fetch('../../data/ai/modelswatch/daily_github.json',{cache:'no-store'}).then(r=>r.json()),
@@ -1109,21 +1249,78 @@
           ]);
           const gi = (g?.items||[]).map(shallowNormalize);
           const hi = (h?.items||[]).map(shallowNormalize);
-          // merge + dedupe
+          // merge + dedupe (prefer normalized key)
           const seen = new Set(); const merged=[];
-          for(const it of [...gi, ...hi]){ const k = `${it.source||''}::${it.id||it.url||it.name||''}`; if(seen.has(k)) continue; seen.add(k); merged.push(it); }
+          for(const it of [...gi, ...hi]){ const nk = normalizeKey(it); const k = nk ? `norm::${nk}` : `${it.source||''}::${it.id||it.url||it.name||''}`; if(seen.has(k)) continue; seen.add(k); merged.push(it); }
           items = merged;
           // choose the newer meta among g/h
           const gIso = toIso(g?.updated_at);
           const hIso = toIso(h?.updated_at);
           const newerMeta = (gIso && hIso) ? (gIso>hIso?gIso:hIso) : (gIso || hIso || '');
           window.__mw_updated_at = computeUpdatedAt(newerMeta, merged);
+          try{ setDataSourceLabel('Daily', newerMeta||'merged'); }catch{}
         }
       }catch{ items=[]; window.__mw_updated_at=''; }
     }
 
+    // Populate the date control (replace input value list) so only availableDates are selectable
+    function populateDateControl(){
+      try{
+        // if availableDates empty leave the native date input
+        if(!Array.isArray(availableDates) || availableDates.length===0) return;
+        // If browser supports datalist we can keep input but restrict; simpler: replace with <select>
+        const parent = dateInput.parentElement;
+        if(!parent) return;
+        // create select if not already
+        if(dateInput.tagName.toLowerCase()==='select') return; // already replaced
+        const sel = document.createElement('select'); sel.id = 'mw-date'; sel.className = 'input';
+        availableDates.slice().reverse().forEach(d=>{ const opt = document.createElement('option'); opt.value=d; opt.textContent=d; sel.appendChild(opt); });
+        // replace node
+        parent.replaceChild(sel, dateInput);
+        // rebind controls
+        dateInput = document.getElementById('mw-date');
+        dateInput.addEventListener('change', async ()=>{
+          const v = dateInput.value;
+          selectedDate = (v && availableDates.includes(v)) ? v : '';
+          await loadDaily(selectedDate);
+          setGlobalActive(false);
+          render();
+        });
+      }catch{}
+    }
+
     async function loadTopGH(){
-      // Prefer new engineering hotlist
+      // Use snapshot sidecar as authoritative source when available (B option)
+      try{
+        const snapDate = await latestSnapshotDate();
+        if(snapDate){
+          try{
+            const ghPath = `../../data/ai/modelswatch/snapshots/${snapDate}/gh_summaries.json`;
+            const snap = await fetch(ghPath,{cache:'no-store'}).then(r=> r.ok? r.json(): null).catch(()=>null);
+            if(snap?.items){
+              // detect placeholder-heavy snapshots generated when LLM unavailable
+              const total = snap.items.length;
+              const ph = (snap.items||[]).filter(it=>{
+                const s = (it.summary||it.summary_zh||it.summary_en||'').toString();
+                return /自动摘要（占位|占位:无法连接|占位:空响应|placeholder/i.test(s);
+              }).length;
+              const phRatio = total? (ph/total) : 0;
+              if(phRatio <= 0.5){
+                const arr = (snap.items||[]).map(it=> shallowNormalize({...it, __hot:'projects'}));
+                items = arr;
+                window.__mw_hot_grouping = 'projects';
+                window.__mw_updated_at = computeUpdatedAt(snap?.updated_at || snap?.generated_at, arr);
+                try{ setDataSourceLabel('Snapshot', snapDate); }catch{}
+                // snapshot loaded
+                return;
+              } else {
+                console.warn('[mw] snapshot', snapDate, 'appears placeholder-heavy (ratio=' + phRatio.toFixed(2) + '), skipping');
+              }
+            }
+          }catch{}
+        }
+      }catch{}
+      // Fallback: prefer engineering hotlist if snapshot missing or skipped
       try{
         const hot = await fetch('../../data/ai/modelswatch/projects_hotlist.json',{cache:'no-store'}).then(r=>r.json());
         if(hot?.by_category){
@@ -1135,13 +1332,15 @@
           out.forEach(o=>{ if(multiCount[o.id]>1) o.__multi=true; });
           items = out; window.__mw_hot_grouping='projects';
           window.__mw_updated_at = computeUpdatedAt(hot?.updated_at, out);
+          try{ setDataSourceLabel('Hotlist', 'projects_hotlist.json'); }catch{}
+          // hotlist loaded
           return;
         }
       }catch(e){ /* fallback */ }
+      // Last resort: top_github with best-effort enrichment from snapshot if present
       try{
         const g = await fetch('../../data/ai/modelswatch/top_github.json',{cache:'no-store'}).then(r=>r.json());
         let arr = (g?.items||[]).map(shallowNormalize);
-        // Attempt to enrich from latest snapshot summaries sidecar (GitHub)
         try{
           const snapDate = await latestSnapshotDate();
           if(snapDate){
@@ -1165,13 +1364,44 @@
             }
           }
         }catch{}
-        items = arr; window.__mw_hot_grouping='';
-        window.__mw_updated_at = computeUpdatedAt(g?.updated_at, arr);
+  items = arr; window.__mw_hot_grouping='';
+  window.__mw_updated_at = computeUpdatedAt(g?.updated_at, arr);
+  try{ setDataSourceLabel('Top List', 'top_github.json'); }catch{}
+  // top_github fallback loaded
       }catch{ items=[]; window.__mw_updated_at=''; window.__mw_hot_grouping=''; }
     }
 
     async function loadTopHF(){
-      // Prefer new models hotlist
+      // Use snapshot sidecar as authoritative source when available (B option)
+      try{
+        const snapDate = await latestSnapshotDate();
+        if(snapDate){
+          try{
+            const hfPath = `../../data/ai/modelswatch/snapshots/${snapDate}/hf_summaries.json`;
+            const snap = await fetch(hfPath,{cache:'no-store'}).then(r=> r.ok? r.json(): null).catch(()=>null);
+            if(snap?.items){
+              // detect placeholder-heavy snapshots generated when LLM unavailable
+              const total = snap.items.length;
+              const ph = (snap.items||[]).filter(it=>{
+                const s = (it.summary||it.summary_zh||it.summary_en||'').toString();
+                return /自动摘要（占位|占位:无法连接|占位:空响应|placeholder/i.test(s);
+              }).length;
+              const phRatio = total? (ph/total) : 0;
+              if(phRatio <= 0.5){
+                const arr = (snap.items||[]).map(it=> shallowNormalize({...it, __hot:'models'}));
+                items = arr;
+                window.__mw_hot_grouping = 'models';
+                window.__mw_updated_at = computeUpdatedAt(snap?.updated_at || snap?.generated_at, arr);
+                try{ setDataSourceLabel('Snapshot', snapDate); }catch{}
+                return;
+              } else {
+                console.warn('[mw] snapshot', snapDate, 'appears placeholder-heavy (ratio=' + phRatio.toFixed(2) + '), skipping');
+              }
+            }
+          }catch{}
+        }
+      }catch{}
+      // Fallback: prefer models hotlist if snapshot missing or skipped
       try{
         const hot = await fetch('../../data/ai/modelswatch/models_hotlist.json',{cache:'no-store'}).then(r=>r.json());
         if(hot?.by_category){
@@ -1183,62 +1413,97 @@
           out.forEach(o=>{ if(multiCount[o.id]>1) o.__multi=true; });
           items = out; window.__mw_hot_grouping='models';
           window.__mw_updated_at = computeUpdatedAt(hot?.updated_at, out);
+          try{ setDataSourceLabel('Hotlist', 'models_hotlist.json'); }catch{}
           return;
         }
       }catch(e){ /* fallback */ }
+      // Last resort: top_hf with best-effort enrichment from snapshot if present
       try{
         const h = await fetch('../../data/ai/modelswatch/top_hf.json',{cache:'no-store'}).then(r=>r.json());
         let arr = (h?.items||[]).map(shallowNormalize);
-        // Enrich from latest snapshot summaries sidecar (HF)
         try{
           const snapDate = await latestSnapshotDate();
-            if(snapDate){
-              const hfPath = `../../data/ai/modelswatch/snapshots/${snapDate}/hf_summaries.json`;
-              const snap = await fetch(hfPath,{cache:'no-store'}).then(r=> r.ok? r.json(): null).catch(()=>null);
-              if(snap?.items){
-                const map = new Map();
-                snap.items.forEach(it=> map.set(it.id, it));
-                arr = arr.map(it=>{
-                  const m = map.get(it.id);
-                  if(m){
-                    return { ...it,
-                      summary: m.summary || it.summary || '',
-                      summary_en: m.summary_en || it.summary_en || it.summary || '',
-                      summary_zh: m.summary_zh || it.summary_zh || '',
-                      summary_es: m.summary_es || it.summary_es || ''
-                    };
-                  }
-                  return it;
-                });
-              }
+          if(snapDate){
+            const hfPath = `../../data/ai/modelswatch/snapshots/${snapDate}/hf_summaries.json`;
+            const snap = await fetch(hfPath,{cache:'no-store'}).then(r=> r.ok? r.json(): null).catch(()=>null);
+            if(snap?.items){
+              const map = new Map();
+              snap.items.forEach(it=> map.set(it.id, it));
+              arr = arr.map(it=>{
+                const m = map.get(it.id);
+                if(m){
+                  return { ...it,
+                    summary: m.summary || it.summary || '',
+                    summary_en: m.summary_en || it.summary_en || it.summary || '',
+                    summary_zh: m.summary_zh || it.summary_zh || '',
+                    summary_es: m.summary_es || it.summary_es || ''
+                  };
+                }
+                return it;
+              });
             }
+          }
         }catch{}
-        items = arr; window.__mw_hot_grouping='';
-        window.__mw_updated_at = computeUpdatedAt(h?.updated_at, arr);
+  items = arr; window.__mw_hot_grouping='';
+  window.__mw_updated_at = computeUpdatedAt(h?.updated_at, arr);
+  try{ setDataSourceLabel('Top List', 'top_hf.json'); }catch{}
       }catch{ items=[]; window.__mw_updated_at=''; window.__mw_hot_grouping=''; }
     }
 
-    async function loadAllDaily(){
+    // loadAllDaily optionally accepts a progress callback(progressCount, total)
+    async function loadAllDaily(progressCb){
       if(allLoaded) return;
       try{
         if(availableDates.length===0){
           try{ availableDates = await fetch('../../data/ai/modelswatch/daily/dates.json',{cache:'no-store'}).then(r=>r.json()); }
           catch{ availableDates = []; }
+          try{ populateDateControl(); }catch{}
         }
         const seen = new Set(); const merged = [];
         const chunk = 6;
+        let loadedCount = 0;
+        const total = availableDates.length || 0;
         for(let i=0;i<availableDates.length;i+=chunk){
           const batch = availableDates.slice(i,i+chunk);
-          const res = await Promise.allSettled(batch.map(d=> fetch(`../../data/ai/modelswatch/daily/${d}.json`,{cache:'no-store'}).then(r=>r.json())));
+          const res = await Promise.allSettled(batch.map(d=> fetch(`../../data/ai/modelswatch/daily/${d}.json`,{cache:'no-store'}).then(r=> r.ok? r.json(): null).catch(()=>null)));
           for(const r of res){
-            if(r.status==='fulfilled'){
+            if(r.status==='fulfilled' && r.value){
               const arr = (r.value?.items||[]).map(shallowNormalize);
-              for(const it of arr){ const k = `${it.source||''}::${it.id||it.url||it.name||''}`; if(seen.has(k)) continue; seen.add(k); merged.push(it); }
+              for(const it of arr){ const nk = normalizeKey(it); const k = nk ? `norm::${nk}` : `${it.source||''}::${it.id||it.url||it.name||''}`; if(seen.has(k)) continue; seen.add(k); merged.push(it); }
             }
+            loadedCount++;
+            try{ if(typeof progressCb === 'function') progressCb(loadedCount, total); }catch{}
           }
         }
         itemsAll = merged; allLoaded = true;
       }catch{ itemsAll = []; allLoaded = false; }
+    }
+
+    // Load prebuilt HF aggregation (produced by CI) to enable cross-date HF search
+    async function loadAllHF(progressCb){
+      try{
+        const base = '../../data/ai/modelswatch';
+        const allPath = `${base}/all_dates_hf.json`;
+        const countsPath = `${base}/task_counts_history.json`;
+        // fetch counts first (small)
+        try{
+          const r = await fetch(countsPath,{cache:'no-store'});
+          if(r.ok){ const j = await r.json(); window.__mw_task_counts = j.counts || {}; }
+        }catch(e){ /* ignore, will compute later if missing */ }
+        // fetch aggregated items (may be larger)
+        const r2 = await fetch(allPath,{cache:'no-store'});
+        if(!r2.ok) { itemsAll = []; allLoaded = false; return false; }
+        const j2 = await r2.json();
+        const arr = (j2?.items||[]).map(shallowNormalize);
+        itemsAll = arr; allLoaded = true;
+        // recompute counts if not provided
+        if(!window.__mw_task_counts || Object.keys(window.__mw_task_counts).length===0){
+          const counts = {};
+          for(const it of itemsAll || []){ if(Array.isArray(it.task_keys)) for(const k of it.task_keys) counts[k] = (counts[k]||0)+1; }
+          window.__mw_task_counts = counts;
+        }
+        return true;
+      }catch(e){ console.warn('[mw] loadAllHF error', e); itemsAll = []; allLoaded = false; return false; }
     }
 
     // Resolve latest snapshot date: pointer file -> recent probe -> today fallback
@@ -1249,6 +1514,78 @@
         try{ const head = await fetch(`../../data/ai/modelswatch/snapshots/${d}/hf_summaries.json`,{method:'HEAD'}); if(head.ok) return d; }catch{}
       }
       return new Date().toISOString().slice(0,10);
+    }
+    // Update the small data-source badge in the toolbar. kind is one of: 'Snapshot','Hotlist','Top List','Daily'
+    function setDataSourceLabel(kind, hint){
+      try{
+        const el = document.getElementById('mw-datasource');
+        if(!el) return;
+        const tag = el.querySelector('.mw-ds-tag');
+        const label = el.querySelector('.mw-ds-label');
+        const lang = (typeof getLang === 'function') ? getLang() : 'en';
+        let disp = '';
+        if(kind === 'Snapshot'){
+          if(lang==='zh') disp = `快照：${hint || ''}`;
+          else if(lang==='es') disp = `Snapshot: ${hint || ''}`;
+          else disp = `Snapshot · ${hint || ''}`;
+        }else if(kind === 'Hotlist'){
+          if(lang==='zh') disp = `热表：${hint || ''}`;
+          else if(lang==='es') disp = `Hotlist · ${hint || ''}`;
+          else disp = `Hotlist · ${hint || ''}`;
+        }else if(kind === 'Top List'){
+          if(lang==='zh') disp = `榜单：${hint || ''}`;
+          else if(lang==='es') disp = `Top · ${hint || ''}`;
+          else disp = `Top List · ${hint || ''}`;
+        }else if(kind === 'Daily'){
+          if(lang==='zh') disp = `今日灵感：${hint || ''}`;
+          else if(lang==='es') disp = `Daily · ${hint || ''}`;
+          else disp = `Daily · ${hint || ''}`;
+        }else{
+          disp = (hint? `${kind} · ${hint}` : kind);
+        }
+        if(tag) tag.textContent = 'DS';
+          if(label) label.textContent = disp;
+        el.style.display = '';
+      }catch{}
+    }
+    // Try to load snapshot sidecar for a given date and mode ('gh' or 'hf').
+    // Returns true if snapshot loaded successfully and items updated.
+  let snapshotLastCount = 0;
+    async function loadSnapshotForMode(dateStr, mode){
+      try{
+        if(!dateStr) return false;
+        let rel = '';
+        let grouping = '';
+        if(mode==='gh'){
+          rel = `../../data/ai/modelswatch/snapshots/${dateStr}/gh_summaries.json`;
+          grouping = 'projects';
+        }else if(mode==='hf'){
+          rel = `../../data/ai/modelswatch/snapshots/${dateStr}/hf_summaries.json`;
+          grouping = 'models';
+        }else{
+          return false;
+        }
+        const snap = await fetch(rel, {cache:'no-store'}).then(r=> r.ok? r.json(): null).catch(()=>null);
+  if(!snap || !Array.isArray(snap.items) || snap.items.length===0) return false;
+        // basic placeholder-safety: ensure not dominated by placeholder summaries
+        const total = snap.items.length;
+        const ph = (snap.items||[]).filter(it=>{
+          const s = (it.summary||it.summary_zh||it.summary_en||'').toString();
+          return /自动摘要（占位|占位:无法连接|占位:空响应|placeholder/i.test(s);
+        }).length;
+        const phRatio = total? (ph/total) : 0;
+        if(phRatio > 0.9){
+          console.warn('[mw] snapshot', dateStr, 'looks placeholder-heavy (ratio=', phRatio.toFixed(2), '), refusing to load');
+          return false;
+        }
+  const arr = (snap.items||[]).map(it=> shallowNormalize({...it, __hot: grouping}));
+  items = arr;
+  snapshotLastCount = Array.isArray(snap.items) ? snap.items.length : (arr.length||0);
+  window.__mw_hot_grouping = grouping;
+  window.__mw_updated_at = computeUpdatedAt(snap?.updated_at || snap?.generated_at, arr);
+  try{ setDataSourceLabel('Snapshot', dateStr); }catch{}
+  return true;
+      }catch(e){ console.warn('[mw] loadSnapshotForMode error', e); return false; }
     }
     function candidateRecentDates(n){
       const out=[]; const now = new Date();
@@ -1283,15 +1620,25 @@
         let labels = [];
         if(providedKeys.length){
           labels = labelsFromTaskKeys(providedKeys);
+          base.task_keys = providedKeys.slice();
         }
         if(labels.length===0){
           const keys = computeMatchedTaskKeys({ ...it, ...base });
           labels = labelsFromTaskKeys(keys);
+          base.task_keys = Array.isArray(keys)? keys.slice() : [];
         }
         base.tags = labels.length>0 ? labels : (it.tags||[]).map(stdTagLabel);
       }catch{}
       // Keep old deriveCategories if needed (not used for tags)
       if ((!base.categories.capabilities?.length) && (!base.categories.scenes?.length) && (!base.categories.lifecycle?.length)) base.categories = deriveCategories(base);
+      // Preserve special grouping/hotlist fields if provided by upstream data
+      try{
+        if(it && typeof it === 'object'){
+          if(it.__group) base.__group = it.__group;
+          if(it.__hot) base.__hot = it.__hot;
+          if(it.category_key) base.category_key = it.category_key;
+        }
+      }catch{}
       return base;
     }
 
@@ -1300,15 +1647,15 @@
     await loadTaskMap();
       // Load date list for daily archives
       try{ availableDates = await fetch('../../data/ai/modelswatch/daily/dates.json', {cache:'no-store'}).then(r=>r.json()); if(!Array.isArray(availableDates)) availableDates = []; }catch{ availableDates = []; }
-      // set bounds for native calendar (if we have dates)
+          // set bounds for native calendar (if we have dates)
       if(availableDates.length>0){
         dateInput.min = availableDates[availableDates.length-1];
         dateInput.max = availableDates[0];
         dateInput.value = availableDates[0];
         selectedDate = '';
       }
-      // show date controls in Daily mode only
-      dateWrap.hidden = (MODE !== 'daily');
+      // show date controls (always visible so users can pick a date; in GH/HF a separate "View snapshot" action loads snapshots)
+      dateWrap.hidden = false;
       await loadDaily(selectedDate);
       render();
       sortEl.onchange = async ()=>{
@@ -1352,29 +1699,52 @@
         if(MODE==='gh'){ sortEl.value='score'; }
         else if(MODE==='hf'){ sortEl.value='score'; }
         else { sortEl.value='score'; }
-        // Reset engineering selection when leaving gh
-        if(MODE!=='gh'){ selectedEngineeringCategory = null; }
+          // Reset engineering/model-task selection on any mode change so GH/HF show the full hotlist by default
+          try{
+            // clear engineering single-select (GH) removed
+          }catch{}
+          try{
+            // clear model/task multi-select (if present)
+            if(typeof selectedTasks !== 'undefined' && selectedTasks && typeof selectedTasks.clear === 'function') selectedTasks.clear();
+          }catch{}
+          try{
+            // clear any active search query so filterSort doesn't prefilter GH/HF
+            query = '';
+            if(typeof qEl !== 'undefined' && qEl) { qEl.value = ''; try{ qEl.dispatchEvent(new Event('input')); }catch{} }
+          }catch{}
+          try{
+            // ensure global aggregation mode is off when switching modes
+            if(typeof setGlobalActive === 'function') setGlobalActive(false);
+          }catch{}
+          try{
+            // show a small transient hint to indicate filters cleared
+            if(typeof showTransientHint === 'function') showTransientHint((getLang()==='zh')? '已清除筛选，显示全部热表' : (getLang()==='es')? 'Filtros borrados, mostrando todo' : 'Filters cleared — showing full hotlist');
+          }catch{}
         if(MODE==='daily'){
-          dateWrap.hidden = false;
           await loadDaily(selectedDate);
         }
         else if(MODE==='gh') await loadTopGH();
         else await loadTopHF();
-        if(MODE!=='daily') dateWrap.hidden = true; else setGlobalActive(false);
+        // Keep date controls visible for all modes; users can pick a date and click "View snapshot" when in GH/HF.
+        if(MODE==='daily') setGlobalActive(false);
         try{ setTriggerLabelForMode(MODE); }catch{}
         updateTriggerLabel();
         updateClearButtonVisibility();
+        try{ updateViewSnapshotButtonState(); }catch{}
         render();
       });
 
       // date interactions
-      dateInput.addEventListener('change', async ()=>{
-        const v = dateInput.value;
-        selectedDate = (v && availableDates.includes(v)) ? v : '';
-        await loadDaily(selectedDate);
-        setGlobalActive(false);
-        render();
-      });
+        dateInput.addEventListener('change', async ()=>{
+          const v = dateInput.value;
+          selectedDate = (v && availableDates.includes(v)) ? v : '';
+          if(MODE === 'daily'){
+            await loadDaily(selectedDate);
+            setGlobalActive(false);
+          }
+          try{ updateViewSnapshotButtonState(); }catch{}
+          render();
+        });
       prevBtn.addEventListener('click', async ()=>{
         if(availableDates.length===0) return;
         let cur = dateInput.value || availableDates[0];
@@ -1383,8 +1753,11 @@
         if(idx+1 < availableDates.length){
           dateInput.value = availableDates[idx+1];
           selectedDate = dateInput.value;
-          await loadDaily(selectedDate);
-          setGlobalActive(false);
+          if(MODE === 'daily'){
+            await loadDaily(selectedDate);
+            setGlobalActive(false);
+          }
+          try{ updateViewSnapshotButtonState(); }catch{}
           render();
         }
       });
@@ -1395,11 +1768,91 @@
         if(idx>0){
           dateInput.value = availableDates[idx-1];
           selectedDate = dateInput.value;
-          await loadDaily(selectedDate);
-          setGlobalActive(false);
+          if(MODE === 'daily'){
+            await loadDaily(selectedDate);
+            setGlobalActive(false);
+          }
+          try{ updateViewSnapshotButtonState(); }catch{}
           render();
         }
       });
+
+      // View snapshot control (GH/HF): explicit action to load snapshot for selected date
+      const viewSnapBtn = document.getElementById('mw-view-snapshot');
+  const toggleAllBtn = document.getElementById('mw-toggle-all');
+      // Compute a stable base label for the button per current language so we
+      // don't rely on parsing DOM textContent which can be mutated.
+      function computeSnapshotBaseLabel(){
+        const L = getLang();
+        if(L==='zh') return '查看快照';
+        if(L==='es') return 'Ver instantánea';
+        return 'View snapshot';
+      }
+      // Initialize base label and ensure the button shows it (no count yet).
+      try{ if(viewSnapBtn){ viewSnapBtn.dataset.baseLabel = computeSnapshotBaseLabel(); viewSnapBtn.textContent = viewSnapBtn.dataset.baseLabel; } }catch{}
+
+      function updateViewSnapshotButtonState(){
+        try{
+          if(!viewSnapBtn) return;
+          // enabled when a date is selected and mode is gh or hf
+          const enabled = !!selectedDate && (MODE==='gh' || MODE==='hf');
+          viewSnapBtn.disabled = !enabled;
+          viewSnapBtn.title = enabled ? 'View snapshot for selected date (will show number of items after loading)' : 'Select a date and switch to GH/HF to view snapshot';
+          // When the selected date or mode changes, clear any previous snapshot count
+          // because counts are tied to a specific date. Always show the base label.
+          try{ viewSnapBtn.dataset.baseLabel = viewSnapBtn.dataset.baseLabel || computeSnapshotBaseLabel(); }catch{}
+          try{ if(!enabled){ snapshotLastCount = 0; viewSnapBtn.textContent = viewSnapBtn.dataset.baseLabel; } else { /* enabled but no snapshot loaded yet */ snapshotLastCount = 0; viewSnapBtn.textContent = viewSnapBtn.dataset.baseLabel; } }catch{}
+        }catch{}
+      }
+      if(viewSnapBtn){
+        viewSnapBtn.addEventListener('click', async ()=>{
+          if(!selectedDate){ alert('请选择有效日期以查看快照'); return; }
+          if(!(MODE==='gh' || MODE==='hf')){ alert('请先切换到 工程热榜 或 模型实验场 模式'); return; }
+          const ok = await loadSnapshotForMode(selectedDate, MODE);
+          if(!ok){ alert('未找到对应日期的快照或快照不可用: ' + selectedDate); }
+          else{
+            // Show snapshot count in button for visibility using stable base label
+            try{
+              const base = viewSnapBtn.dataset.baseLabel || computeSnapshotBaseLabel();
+              if(snapshotLastCount && typeof snapshotLastCount==='number'){
+                viewSnapBtn.textContent = `${base} · ${snapshotLastCount}`;
+              }else{
+                viewSnapBtn.textContent = base;
+              }
+            }catch{}
+          }
+          render();
+        });
+        // Keep button language in sync when user changes language
+        window.addEventListener('language-changed', ()=>{
+          try{
+            const base = computeSnapshotBaseLabel();
+            viewSnapBtn.dataset.baseLabel = base;
+            // If no count shown, ensure label updates; if count shown retain count suffix
+            try{
+              if(snapshotLastCount && typeof snapshotLastCount === 'number' && snapshotLastCount>0){ viewSnapBtn.textContent = `${base} · ${snapshotLastCount}`; }
+              else { viewSnapBtn.textContent = base; }
+            }catch{}
+          }catch{}
+        });
+      }
+      if(toggleAllBtn){
+        toggleAllBtn.addEventListener('click', async ()=>{
+          useAllDatesForFilter = !useAllDatesForFilter;
+          toggleAllBtn.setAttribute('aria-pressed', useAllDatesForFilter? 'true' : 'false');
+          // If enabling, ensure itemsAll is loaded (may be slow)
+          if(useAllDatesForFilter){
+            try{ if(!allLoaded) await loadAllDaily(); }catch{};
+            try{ setDataSourceLabel('Daily', 'All dates'); }catch{}
+          }else{
+            // revert datasource label to current mode's label
+            try{ if(MODE==='daily') setDataSourceLabel('Daily', window.__mw_updated_at||''); else setDataSourceLabel(MODE==='gh'?'Top List': 'Top List', window.__mw_updated_at||''); }catch{}
+          }
+          render();
+        });
+      }
+      // Populate recent id cache in background (non-blocking): when ready, re-render to apply penalties
+      try{ getRecentIdSet(RECENT_REPEAT_DAYS).then(()=>{ try{ render(); }catch{} }); }catch{}
     }
 
     init();
@@ -1412,22 +1865,12 @@
     const casWrap = document.querySelector('.mw-cas-inline');
     const clearBtn = document.getElementById('mw-cas-clear');
     const triggerBtn = document.getElementById('mw-cas-trigger');
-    let PROJECT_CATEGORIES = [];
-    async function ensureProjectCategories(){
-      if(PROJECT_CATEGORIES.length) return;
-      try{
-        const pj = await fetch('../../data/ai/modelswatch/project_categories.json',{cache:'no-store'}).then(r=>r.json());
-        PROJECT_CATEGORIES = pj?.categories||[];
-      }catch{ PROJECT_CATEGORIES=[]; }
-    }
+  // Project categories (GH) removed — we only keep model-lab (HF) category UI
+    // Project categories file and GH project browsing removed. No network fetch required.
     function setTriggerLabelForMode(mode){
   const lang = getLang();
-      if(mode==='gh'){
-        // Engineering hotlist
-        triggerBtn.dataset.modeLabel='project';
-        const zh='按类别查看项目', en='Browse Projects by Category', es='Ver proyectos por categoría';
-        triggerBtn.innerHTML = `<span>${lang==='en'?en:lang==='es'?es:zh}</span>`;
-      }else if(mode==='hf'){
+      const cur = (window.__mw_mode_current || mode || MODE || '').toString().trim();
+      if(cur==='hf'){
         triggerBtn.dataset.modeLabel='model';
         const zh='按类别查看模型', en='Browse Models by Category', es='Ver modelos por categoría';
         triggerBtn.innerHTML = `<span>${lang==='en'?en:lang==='es'?es:zh}</span>`;
@@ -1436,6 +1879,21 @@
         const zh='按类别查看', en='Browse by Category', es='Ver por categoría';
         triggerBtn.innerHTML = `<span>${lang==='en'?en:lang==='es'?es:zh}</span>`;
       }
+    }
+    // Show/hide the cascader trigger depending on mode (hide in daily)
+    function showCascaderTriggerForMode(mode){
+      try{
+        if(!triggerBtn) return;
+        const raw = (mode===undefined || mode===null) ? (window.__mw_mode_current||MODE||'') : mode;
+        const m = String(raw||'').trim().toLowerCase();
+        const prev = triggerBtn.style.display;
+  // show cascader only in HF (模型实验场); hide in daily and GH
+        if(m === 'hf'){
+          triggerBtn.style.display = '';
+        }else{
+          triggerBtn.style.display = 'none';
+        }
+      }catch(e){ try{ console.warn('[mw] showCascaderTriggerForMode error', e); }catch{} }
     }
     window.addEventListener('language-changed', (e)=>{ try{ setTriggerLabelForMode(window.__mw_mode_current||'daily'); }catch{} });
     const dd = document.getElementById('mw-cas-dd');
@@ -1446,9 +1904,9 @@
   // Global grid/sub header elements (restored after earlier refactor removal)
   const gridEl = document.getElementById('mw-grid');
   const subEl = document.getElementById('mw-sub');
+  const toggleAllCasBtn = document.getElementById('mw-toggle-all-cas');
   let mobileStage = 0; let selCat = null, selSub = null; const selectedTasks = new Set();
-  // Engineering (GitHub hotlist) single-select category filter state
-  let selectedEngineeringCategory = null; // holds category key
+    // Engineering (GitHub hotlist) single-select category filter state removed
   // Initialize immediately with builtin tree so UI renders instantly; remote JSON (if any) will hydrate later.
   let CAT_TREE = null; // will be assigned after BUILTIN_TREE declared
   let CAT_REMOTE_LOADED = false; // whether remote categories replaced builtin
@@ -1566,7 +2024,7 @@
         const obj = JSON.parse(raw);
         if(!obj || !obj.ts || !Array.isArray(obj.data)) return false;
         if(Date.now() - obj.ts > CAT_CACHE_TTL) return false;
-        CAT_TREE = obj.data; CAT_REMOTE_LOADED = true; console.log('[Cascader] loaded categories from cache'); return true;
+  CAT_TREE = obj.data; CAT_REMOTE_LOADED = true; return true;
       }catch{ return false; }
     }
     function cacheCats(){
@@ -1588,7 +2046,7 @@
       try{ cats = await Promise.any(fetches); }catch{ cats = null; }
       controllers.forEach(c=>{ try{ c.abort(); }catch{} });
       if(Array.isArray(cats) && cats.length){
-        CAT_TREE = cats; CAT_REMOTE_LOADED = true; cacheCats(); console.log('[Cascader] remote categories loaded');
+  CAT_TREE = cats; CAT_REMOTE_LOADED = true; cacheCats();
         return true;
       }
       // if remote fails leave existing (builtin or cache) in place
@@ -1611,10 +2069,10 @@
   { key: 'optimization_system_security', zh: '优化、系统与安全', en: 'Optimization, System & Security', es: 'Optimización, Sistemas y Seguridad' },
   { key: 'emerging_temporal', zh: '新兴交叉与时序模态', en: 'Emerging Interdisciplinary & Temporal Modalities', es: 'Interdisciplinario Emergente y Modalidades Temporales' }
     ];
-    console.log('[Cascader] TOP_CATS initialized', { count: TOP_CATS.length, sample: TOP_CATS.map(c=>c.key) });
+  // TOP_CATS initialized
 
     // Safety: if cascader container missing, skip all without affecting rest of page
-    if(!casWrap){ console.debug('[Cascader] no container, aborting cascader init'); }
+  if(!casWrap){ /* cascader container missing; skip cascader init */ }
 
     function findCatByKey(key){
       if(!CAT_TREE) return null;
@@ -1671,30 +2129,46 @@
     // Dropdown cascader rendering
     function renderCol1(){
       if(!casWrap||!col1) return;
-      console.log('[Cascader] renderCol1 start', { selCat, hasTree: !!CAT_TREE, topCount: Array.isArray(TOP_CATS)?TOP_CATS.length:'n/a' });
+  // renderCol1 start
       const list = document.createElement('div'); list.className = 'mw-list';
       if(!Array.isArray(TOP_CATS) || TOP_CATS.length===0){
         list.innerHTML = '<div class="mw-muted">(no categories)</div>';
         console.warn('[Cascader] TOP_CATS empty at renderCol1');
       }
       TOP_CATS.forEach(meta=>{
-        console.log('[Cascader] renderCol1 item', meta.key, labelOf(meta));
-        const item = document.createElement('div'); item.className = 'mw-item' + (selCat===meta.key?' active':''); item.dataset.key = meta.key;
-        let lbl = labelOf(meta);
-        if(!lbl){
-          console.warn('[Cascader] empty label for top category key=', meta.key, meta);
-          lbl = meta.key || '(?)';
-        }
-        item.textContent = lbl;
-        item.addEventListener('click', (e)=>{
-          e.stopPropagation();
-          selCat = meta.key; selSub = null; // reset second level when switching
-          // fast background load (already triggered on init); if still not remote loaded, try again but don't block UI
-          if(!CAT_REMOTE_LOADED){ loadAiCategories().then(changed=>{ if(changed){ if(selCat===meta.key) { renderCol2(); renderCol3(); }}}); }
-          renderCol1(); renderCol2(); renderCol3();
-          if(isMobile()) setMobileStage(1);
-        });
-        list.appendChild(item);
+          // When a filter is active, only show top categories that contain
+          // tasks with matched items according to window.__mw_task_counts.
+          try{
+            const counts = window.__mw_task_counts || {};
+            const activeFilter = selectedTasks && selectedTasks.size>0;
+            if(activeFilter){
+              const cat = findCatByKey(meta.key);
+              if(cat){
+                let any = false;
+                (cat.subcategories||[]).forEach(sub=>{
+                  (sub.tasks||[]).forEach(t=>{ if((counts[t.key]||0) > 0) any = true; });
+                });
+                if(!any) return; // skip this top-level category
+              }
+            }
+          }catch{}
+          // render item: meta.key
+          const item = document.createElement('div'); item.className = 'mw-item' + (selCat===meta.key?' active':''); item.dataset.key = meta.key;
+          let lbl = labelOf(meta);
+          if(!lbl){
+            console.warn('[Cascader] empty label for top category key=', meta.key, meta);
+            lbl = meta.key || '(?)';
+          }
+          item.textContent = lbl;
+          item.addEventListener('click', (e)=>{
+            e.stopPropagation();
+            selCat = meta.key; selSub = null; // reset second level when switching
+            // fast background load (already triggered on init); if still not remote loaded, try again but don't block UI
+            if(!CAT_REMOTE_LOADED){ loadAiCategories().then(changed=>{ if(changed){ if(selCat===meta.key) { renderCol2(); renderCol3(); }}}); }
+            renderCol1(); renderCol2(); renderCol3();
+            if(isMobile()) setMobileStage(1);
+          });
+          list.appendChild(item);
       });
       col1.innerHTML = ''; 
       if(isMobile()) addMobileNavHeader(col1, 'Categories');
@@ -1710,6 +2184,16 @@
       if(isMobile()) addMobileNavHeader(col2, labelOf(cat), true);
       const list = document.createElement('div'); list.className = 'mw-list';
       (cat.subcategories||[]).forEach(sub=>{
+        try{
+          const counts = window.__mw_task_counts || {};
+          const activeFilter = selectedTasks && selectedTasks.size>0;
+          if(activeFilter){
+            // skip subcategories that have no tasks with matched items
+            let any = false;
+            (sub.tasks||[]).forEach(t=>{ if((counts[t.key]||0) > 0) any = true; });
+            if(!any) return;
+          }
+        }catch{}
         const item = document.createElement('div'); item.className = 'mw-item' + (selSub===sub.key?' active':''); item.dataset.key = sub.key;
         item.textContent = labelOf(sub);
         item.addEventListener('click', (e)=>{ 
@@ -1732,6 +2216,11 @@
       if(isMobile()) addMobileNavHeader(col3, labelOf(sub), true);
       const list = document.createElement('div'); list.className = 'mw-list';
       (sub.tasks||[]).forEach(tsk=>{
+        try{
+          const counts = window.__mw_task_counts || {};
+          const activeFilter = selectedTasks && selectedTasks.size>0;
+          if(activeFilter && ((counts[tsk.key]||0) === 0)) return; // hide tasks with zero matches
+        }catch{}
         const item = document.createElement('div'); item.className = 'mw-item' + (selectedTasks.has(tsk.key)?' active':'');
         const box = document.createElement('span'); box.className = 'mw-check'; box.dataset.on = selectedTasks.has(tsk.key)?'1':'0'; box.innerHTML = selectedTasks.has(tsk.key)?'✓':'';
         const label = document.createElement('span'); label.textContent = labelOf(tsk);
@@ -1739,9 +2228,8 @@
         const toggle = (e)=>{
           e?.stopPropagation();
           if(selectedTasks.has(tsk.key)) selectedTasks.delete(tsk.key); else selectedTasks.add(tsk.key);
-          applyFilter(); renderCol3(); updateTriggerLabel();
-          // Notify main script to toggle global mode in Daily
-          const on = selectedTasks.size>0; window.dispatchEvent(new CustomEvent('mw-global-toggle',{detail:{on}}));
+          // Do not apply filter immediately. Apply only when user clicks "应用筛选".
+          renderCol3(); updateTriggerLabel();
           // Ensure clear button visibility updates immediately after task selection
           try{ updateClearButtonVisibility(); }catch{}
         };
@@ -1756,44 +2244,121 @@
       if(!dd) return;
       dd.hidden = false;
       mobileStage = 0;
-      // When in engineering mode, render a simplified single-column category list
-      if((window.__mw_mode_current||'')==='gh'){
-        renderEngineeringCategories();
-        dd.classList.add('mw-single-col');
-        if(col2) col2.style.display='none';
-        if(col3) col3.style.display='none';
-      } else {
-        dd.classList.remove('mw-single-col');
-        if(col2) col2.style.display='';
-        if(col3) col3.style.display='';
-        renderCol1(); renderCol2(); renderCol3();
-        if(isMobile()) { setMobileStage(0); updateMobileVisibility(); }
-      }
+      dd.classList.remove('mw-single-col');
+      if(col2) col2.style.display='';
+      if(col3) col3.style.display='';
+      renderCol1(); renderCol2(); renderCol3();
+      if(isMobile()) { setMobileStage(0); updateMobileVisibility(); }
       setTimeout(()=> document.addEventListener('click', outsideClose),0);
     }
     function closeDropdown(){ if(!dd) return; dd.hidden = true; document.removeEventListener('click', outsideClose); }
     function outsideClose(e){ if(!dd) return; if(!dd.contains(e.target) && e.target!==triggerBtn && !triggerBtn?.contains(e.target)) closeDropdown(); }
     if(triggerBtn){ triggerBtn.addEventListener('click', e=>{ e.stopPropagation(); if(dd?.hidden) openDropdown(); else closeDropdown(); }); }
-    if(closeBtn){ closeBtn.addEventListener('click', ()=> closeDropdown()); }
+    if(closeBtn){
+      closeBtn.addEventListener('click', async ()=>{
+        try{
+          const mode = window.__mw_mode_current || MODE;
+          if(mode === 'hf'){
+            // For HF (model lab), render then apply DOM-level filter so selectedTasks take effect.
+            closeDropdown();
+            try{ render(); }catch{}
+            try{ 
+              // Ensure the cascader columns are refreshed so the visible category/task
+              // names reflect the new filtered dataset (window.__mw_task_counts).
+              try{ renderCol1(); renderCol2(); renderCol3(); }catch{}
+              setTimeout(()=>{ try{ applyFilter(); updateClearButtonVisibility(); }catch{} }, 0);
+            }catch{}
+            return;
+          }
+          // For daily mode: if cross-date toggle is active, ensure data loaded.
+          if(mode === 'daily'){
+            if(useAllDatesForFilter && !allLoaded){
+              const progEl = document.getElementById('mw-load-progress');
+              if(progEl){ progEl.style.display='inline'; progEl.textContent = '加载中…'; }
+              try{ await loadAllDaily((loaded,total)=>{ if(progEl) progEl.textContent = `加载中… ${loaded}/${total}`; }); }catch(e){}
+              if(progEl){ progEl.style.display='none'; progEl.textContent=''; }
+            }
+            try{ window.dispatchEvent(new CustomEvent('mw-global-toggle',{detail:{on: selectedTasks.size>0}})); }catch{}
+            closeDropdown();
+            try{ render(); }catch{}
+            return;
+          }
+        }catch(e){ }
+      });
+    }
+
+    // Cascader 'All dates' toggle handling (placed near cascader init)
+    if(toggleAllCasBtn){
+      toggleAllCasBtn.addEventListener('click', async (e)=>{
+        e.stopPropagation();
+        useAllDatesForFilter = !useAllDatesForFilter;
+        toggleAllCasBtn.setAttribute('aria-pressed', useAllDatesForFilter? 'true':'false');
+        toggleAllCasBtn.classList.toggle('active', useAllDatesForFilter);
+        const progEl = document.getElementById('mw-load-progress');
+        try{
+          if(useAllDatesForFilter){
+              // show loading UI
+              try{ toggleAllCasBtn.disabled = true; }catch{}
+              if(progEl){ progEl.style.display='inline'; progEl.textContent = '加载中…'; }
+              // If current mode is HF, prefer the prebuilt HF aggregation for speed
+              if((window.__mw_mode_current||MODE) === 'hf'){
+                try{
+                  const ok = await loadAllHF();
+                  if(!ok) { console.warn('[mw] loadAllHF failed, falling back to loadAllDaily'); await loadAllDaily(); }
+                  try{ setDataSourceLabel('Daily', 'All dates'); }catch{}
+                }catch(e){ console.warn('[mw] loadAllHF error', e); await loadAllDaily(); }
+              }else{
+                // load with progress callback for daily
+                await loadAllDaily((loaded, total)=>{
+                  try{ if(progEl){ progEl.textContent = `加载中… ${loaded}/${total}`; } }catch{};
+                });
+                try{ setDataSourceLabel('Daily', 'All dates'); }catch{}
+              }
+            }else{
+              try{ if(MODE==='daily') setDataSourceLabel('Daily', window.__mw_updated_at||''); else setDataSourceLabel(MODE==='gh'?'Top List':'Top List', window.__mw_updated_at||''); }catch{}
+            }
+        }catch(e){ console.warn('[mw] loadAllDaily error', e); }
+        finally{
+          try{ toggleAllCasBtn.disabled = false; }catch{}
+          if(progEl){
+            setTimeout(()=>{
+              try{
+                progEl.style.display = useAllDatesForFilter? 'inline' : 'none';
+                if(!useAllDatesForFilter) progEl.textContent = '';
+              }catch{}
+            }, 400);
+          }
+        }
+        render();
+      });
+    }
 
     function normalize(str){ return String(str||'').trim().toLowerCase(); }
 
     function itemMatchesTasks(cardEl){
-      if(selectedTasks.size===0) return true;
-      // Collect visible labels (from tags inside the card)
-      const tagEls = cardEl.querySelectorAll('.mw-tags .tag');
-      const labels = new Set();
-      tagEls.forEach(t=> labels.add(normalize(t.textContent)));
-      const title = normalize(cardEl.querySelector('.mw-title')?.textContent||'');
-      const sum = normalize(cardEl.querySelector('.muted')?.textContent||'');
-      // Build label set of selected tasks (current language first, but fallback all languages)
-      const want = new Set();
-      // Map selected keys to labels from CAT_TREE
-      const map = new Map(); // key -> {zh,en,es}
-      CAT_TREE?.forEach(c=> (c.subcategories||[]).forEach(s=> (s.tasks||[]).forEach(t=>{ map.set(t.key, t); })));
-      selectedTasks.forEach(k=>{ const t = map.get(k)||{}; ['zh','en','es'].forEach(L=>{ if(t[L]) want.add(normalize(t[L])); }); });
-      // OR logic: match if any label present as exact tag OR appears in title/summary
-      for(const w of want){ if(labels.has(w) || title.includes(w) || sum.includes(w)) return true; }
+      if(!selectedTasks || selectedTasks.size===0) return true;
+      try{
+        // Prefer explicit data-task-keys attribute if present on the card
+        const dk = cardEl.getAttribute && cardEl.getAttribute('data-task-keys');
+        if(dk){
+          const keys = dk.split(/\s+/).filter(Boolean);
+          for(const k of keys){ if(selectedTasks.has(k)) return true; }
+        }
+      }catch{}
+      // Fallback: Collect visible labels (from tags inside the card)
+      try{
+        const tagEls = cardEl.querySelectorAll('.mw-tags .tag');
+        const labels = new Set();
+        tagEls.forEach(t=> labels.add(normalize(t.textContent)));
+        const title = normalize(cardEl.querySelector('.mw-title')?.textContent||'');
+        const sum = normalize(cardEl.querySelector('.muted')?.textContent||'');
+        // Build label set of selected tasks (current language first, but fallback all languages)
+        const want = new Set();
+        const map = new Map(); // key -> {zh,en,es}
+        CAT_TREE?.forEach(c=> (c.subcategories||[]).forEach(s=> (s.tasks||[]).forEach(t=>{ map.set(t.key, t); })));
+        selectedTasks.forEach(k=>{ const t = map.get(k)||{}; ['zh','en','es'].forEach(L=>{ if(t[L]) want.add(normalize(t[L])); }); });
+        for(const w of want){ if(labels.has(w) || title.includes(w) || sum.includes(w)) return true; }
+      }catch{}
       return false;
     }
 
@@ -1801,11 +2366,16 @@
       // Show/hide cards and add highlight class
       const cards = gridEl.querySelectorAll('.mw-card');
       let shown = 0;
+  const curMode = (window.__mw_mode_current || MODE || '').toString().trim();
+  // GH project-category browsing removed; no group requirement
+  const requireGroup = false;
       cards.forEach(card=>{
-        const hit = itemMatchesTasks(card);
-        card.style.display = hit? '' : 'none';
-        card.classList.toggle('mw-hit', hit && selectedTasks.size>0);
-        if(hit) shown++;
+        const hitTasks = itemMatchesTasks(card);
+        let ok = hitTasks;
+        // GH group filtering removed
+        card.style.display = ok? '' : 'none';
+        card.classList.toggle('mw-hit', ok && selectedTasks.size>0);
+        if(ok) shown++;
       });
       // Update subtle count suffix
       try{
@@ -1817,6 +2387,30 @@
         subEl.setAttribute('data-base', base);
         subEl.textContent = base + suffix;
       }catch{}
+      try{ cleanEmptyGroups(); }catch{}
+    }
+
+    // Remove any empty grouping sections (details.mw-hot-group) that contain
+    // no visible cards. This helps ensure category headings disappear when
+    // filters leave their group empty.
+    function cleanEmptyGroups(){
+      try{
+        const groups = gridEl.querySelectorAll('details.mw-hot-group');
+        groups.forEach(g=>{
+          try{
+            const innerGrid = g.querySelector('.mw-grid');
+            if(!innerGrid) return;
+            // Count visible cards inside this group's grid
+            const cards = Array.from(innerGrid.querySelectorAll('.mw-card'));
+            const anyVisible = cards.some(c => {
+              try{ return c.offsetParent !== null && getComputedStyle(c).display !== 'none'; }catch{ return false; }
+            });
+            if(!anyVisible){
+              g.remove();
+            }
+          }catch{}
+        });
+      }catch{}
     }
 
     // Re-apply filter whenever grid re-renders (mode switch, search, date change)
@@ -1825,9 +2419,8 @@
 
     // Clear selection
     clearBtn.addEventListener('click', ()=>{
-      // Reset cascader tasks, model picker, search, and sort
-      selectedTasks.clear();
-      selectedEngineeringCategory = null;
+  // Reset cascader tasks, model picker, search, and sort
+  selectedTasks.clear();
       updateTriggerLabel();
       const qEl = document.getElementById('mw-q'); if(qEl){ qEl.value=''; }
       const sortEl = document.getElementById('mw-sort'); if(sortEl){ sortEl.value='score'; }
@@ -1843,68 +2436,23 @@
     function updateTriggerLabel(){
       if(!triggerBtn) return;
       const mode = window.__mw_mode_current||'daily';
-      if(mode==='gh'){
-        // Engineering: show selected category label if any
-  const lang = getLang();
-        let baseZh='按类别查看项目', baseEn='Browse Projects by Category', baseEs='Ver proyectos por categoría';
-        const catObj = PROJECT_CATEGORIES.find(c=>c.key===selectedEngineeringCategory);
-        const catLabel = catObj ? (catObj[lang]||catObj.zh||catObj.en||catObj.es||catObj.key) : '';
-        const finalZh = catLabel? `${baseZh}：${catLabel}`: baseZh;
-        const finalEn = catLabel? `${baseEn}: ${catLabel}`: baseEn;
-        const finalEs = catLabel? `${baseEs}: ${catLabel}`: baseEs;
-        triggerBtn.innerHTML = `<span>${lang==='en'?finalEn: lang==='es'?finalEs: finalZh}</span>`;
-        triggerBtn.classList.toggle('active', !!catLabel);
-      } else {
-        const cnt = selectedTasks.size;
-        const zh = triggerBtn.querySelector('.i18n.l-zh'); if(zh) zh.textContent = `按类别查看模型${cnt>0?` (${cnt})`:''}`;
-        const en = triggerBtn.querySelector('.i18n.l-en'); if(en) en.textContent = `Browse by Category${cnt>0?` (${cnt})`:''}`;
-        const es = triggerBtn.querySelector('.i18n.l-es'); if(es) es.textContent = `Ver por categoría${cnt>0?` (${cnt})`:''}`;
-        triggerBtn.classList.toggle('active', cnt>0);
-      }
+      // Only provide model-lab label; GH category browsing removed so do not show engineering label
+      const cnt = selectedTasks.size;
+      const zh = triggerBtn.querySelector('.i18n.l-zh'); if(zh) zh.textContent = `按类别查看模型${cnt>0?` (${cnt})`:''}`;
+      const en = triggerBtn.querySelector('.i18n.l-en'); if(en) en.textContent = `Browse Models by Category${cnt>0?` (${cnt})`:''}`;
+      const es = triggerBtn.querySelector('.i18n.l-es'); if(es) es.textContent = `Ver modelos por categoría${cnt>0?` (${cnt})`:''}`;
+      triggerBtn.classList.toggle('active', cnt>0);
     }
 
     function updateClearButtonVisibility(){
       if(!clearBtn) return;
       const mode = window.__mw_mode_current||'daily';
-      // Show clear button only when a category (engineering) or task selection (model lab) is active
-      let filtered = false;
-      if(mode==='gh') {
-        filtered = !!selectedEngineeringCategory;
-      } else if(mode==='hf') {
-        filtered = selectedTasks.size>0; // tasks chosen in model lab
-      } else {
-        filtered = selectedTasks.size>0; // daily global multi-view also can use selection to expand view
-      }
+      // Show clear button only when a task selection (model lab) is active
+      const filtered = selectedTasks.size>0;
       clearBtn.style.display = filtered ? '' : 'none';
     }
 
-    function renderEngineeringCategories(){
-      // Reuse col1 only; hide col2/col3
-      if(!dd) return;
-      ensureProjectCategories().then(()=>{
-        if(col1){
-          const list = document.createElement('div'); list.className='mw-list';
-          PROJECT_CATEGORIES.forEach(cat=>{
-            const item = document.createElement('div'); item.className='mw-item'+(selectedEngineeringCategory===cat.key?' active':'');
-            item.textContent = labelOf(cat) || cat.key;
-            item.dataset.key = cat.key;
-            item.addEventListener('click', e=>{
-              e.stopPropagation();
-              if(selectedEngineeringCategory===cat.key){ selectedEngineeringCategory = null; } else { selectedEngineeringCategory = cat.key; }
-              updateTriggerLabel();
-              closeDropdown();
-              // Trigger re-render main list (filter applied in render)
-              try{ window.dispatchEvent(new Event('mw-engineering-filter')); }catch{}
-              updateClearButtonVisibility();
-            });
-            list.appendChild(item);
-          });
-          col1.innerHTML=''; col1.appendChild(list);
-        }
-        if(col2) col2.innerHTML='<div class="mw-muted">—</div>';
-        if(col3) col3.innerHTML='<div class="mw-muted">—</div>';
-      });
-    }
+    // renderEngineeringCategories removed — GH project category browsing is no longer supported in this build
 
     // Rebuild labels on language change and update counts
     window.addEventListener('language-changed', ()=>{ if(!dd.hidden){ renderCol1(); renderCol2(); renderCol3(); } updateTriggerLabel(); });
@@ -1930,6 +2478,26 @@
       // initial lazy state: do not force load; render top column immediately
       renderCol1(); renderCol2(); renderCol3();
       applyFilter(); updateTriggerLabel();
+    })();
+    // Robust enforcement: re-apply cascader trigger visibility after navigation/load/hash changes and a couple of timed retries.
+    (function enforceCascaderVisibility(){
+      function applyFromUrl(){
+        try{
+          const params = new URLSearchParams(window.location.search || '');
+          const p = (params.get('mode')||'').toString().trim().toLowerCase();
+          const candidate = p || (window.__mw_mode_current||'') || (typeof MODE !== 'undefined' ? MODE : '');
+          showCascaderTriggerForMode(candidate || 'daily');
+          try{ /* cascader visibility enforced */ }catch(e){}
+        }catch(e){ try{ console.warn('[mw] enforceCascaderVisibility error', e); }catch{} }
+      }
+      window.addEventListener('popstate', applyFromUrl);
+      window.addEventListener('hashchange', applyFromUrl);
+      window.addEventListener('load', applyFromUrl);
+      // run a few times after load to catch late initializers
+      setTimeout(applyFromUrl, 120);
+      setTimeout(applyFromUrl, 600);
+      // also run immediately once
+      applyFromUrl();
     })();
   </script>
 </body>

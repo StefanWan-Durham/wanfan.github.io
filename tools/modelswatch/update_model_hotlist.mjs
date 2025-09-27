@@ -181,6 +181,10 @@ async function main(){
   }
   const taskMap = mapTaskKeysByTask(categories);
 
+  // Load summary cache to merge multilingual summaries into hotlist entries
+  const summaryCachePath = path.join(dataDir, 'summary_cache.json');
+  const SUMMARY_CACHE = (readJSON(summaryCachePath) || {}).models || {};
+
   const existingIds = new Set();
   for(const arr of Object.values(hotlist.by_category)) arr.forEach(it=> existingIds.add(it.id));
 
@@ -212,10 +216,24 @@ async function main(){
       },
       updated_at: snapT.last_modified || it.updated_at || new Date().toISOString(),
       added_at: today,
+      // Prefer multilingual summaries from the persistent summary cache (if available)
       summary: it.summary || '',
+      summary_en: '',
+      summary_zh: '',
+      summary_es: '',
       flags: { pinned:false, hidden:false },
       task_keys
     };
+    // Try to find a matching summary in the summary cache. summary cache keys include source prefix like 'hf:...'
+    const scKeyCandidates = [ `hf:${id}`, id ];
+    let sc = null;
+    for(const k of scKeyCandidates){ if(SUMMARY_CACHE[k]){ sc = SUMMARY_CACHE[k]; break; } }
+    if(sc){
+      entry.summary_en = sc.summary_en || sc.summary || '';
+      entry.summary_zh = sc.summary_zh || sc.summary || '';
+      entry.summary_es = sc.summary_es || sc.summary || '';
+      entry.summary = sc.summary || entry.summary || entry.summary_en || entry.summary_zh || entry.summary_es || '';
+    }
     candidates.push(entry);
   }
 
@@ -280,26 +298,6 @@ async function main(){
           appended += extra.length;
         }
       }
-    } else if(already.length < MIN_SEED_PER_TASK){
-      // Insert placeholder to guarantee visibility; flagged placeholder:true so UI can style/hide.
-      const need = MIN_SEED_PER_TASK - already.length;
-      for(let i=0;i<need;i++){
-        already.push({
-          id: `__placeholder__:${tk}:${i}`,
-          source: 'hf',
-          name: `(${tk}) placeholder` ,
-          url: '',
-          tags: [],
-          stats: { downloads_total:0, likes_total:0, downloads_7d:0, likes_7d:0 },
-          updated_at: new Date().toISOString(),
-          added_at: today,
-          summary: '',
-          flags: { pinned:false, hidden:false, placeholder:true },
-          score_model: -1,
-          task_keys: [tk]
-        });
-        appended += 1;
-      }
     }
   }
 
@@ -318,8 +316,34 @@ async function main(){
     console.log(`[update_model_hotlist] backfilled task_keys for ${backfilled} existing entries`);
   }
 
+  // Merge summary fields from SUMMARY_CACHE into existing hotlist entries where possible
+  let summaryMerged = 0;
+  for(const arr of Object.values(hotlist.by_category)){
+    for(const e of arr){
+      // Skip explicit placeholders (will be removed later)
+      if(e.flags && e.flags.placeholder) continue;
+      const src = e.source || 'hf';
+      const tryKeys = [ `${src}:${e.id}`, e.id ];
+      let sc = null;
+      for(const k of tryKeys){ if(SUMMARY_CACHE[k]){ sc = SUMMARY_CACHE[k]; break; } }
+      if(sc){
+        if(!e.summary || e.summary === ''){ e.summary = sc.summary || ''; }
+        if(!e.summary_en) e.summary_en = sc.summary_en || sc.summary || '';
+        if(!e.summary_zh) e.summary_zh = sc.summary_zh || sc.summary || '';
+        if(!e.summary_es) e.summary_es = sc.summary_es || sc.summary || '';
+        summaryMerged++;
+      }
+    }
+  }
+  if(summaryMerged) console.log(`[update_model_hotlist] merged summaries for ${summaryMerged} existing hotlist entries`);
+
   hotlist.updated_at = new Date().toISOString();
   hotlist.version = SCHEMA_VERSION;
+  // Remove any leftover placeholder entries before writing out the hotlist so the UI and consumers
+  // don't see synthetic placeholder cards.
+  for(const k of Object.keys(hotlist.by_category)){
+    hotlist.by_category[k] = (hotlist.by_category[k]||[]).filter(e=> !(e.flags && e.flags.placeholder));
+  }
   writeJSON(hotlistPath, hotlist);
   info(`[update_model_hotlist] appended ${appended} new entries across ${taskKeys.length} tasks`);
 }
