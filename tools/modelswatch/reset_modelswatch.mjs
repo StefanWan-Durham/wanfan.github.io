@@ -81,13 +81,11 @@ function main(){
     targets.push(path.join(DATA_DIR,'models_hotlist.json'));
     targets.push(path.join(DATA_DIR,'projects_hotlist.json'));
   }
-  targets.push(path.join(DATA_DIR,'weekly_summaries.json'));
   if(!f.keepCaches){
     targets.push(path.join(DATA_DIR,'summary_cache.json'));
     targets.push(path.join(DATA_DIR,'tri_cache.json'));
   }
   targets.push(path.join(DATA_DIR,'summaries_diagnostics.json'));
-  targets.push(path.join(DATA_DIR,'weekly_summaries_diagnostics.json'));
   targets.push(path.join(DATA_DIR,'summaries_coverage.json'));
   targets.push(path.join(DATA_DIR,'coverage_summary.json'));
   targets.push(path.join(DATA_DIR,'coverage_gaps.json'));

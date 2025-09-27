@@ -39,10 +39,10 @@
 
 ---
 ## 3. 工作流触发
-- 周：`.github/workflows/modelswatch-weekly.yml`
+- 周：已停用（weekly summary generation removed）
 - 日：`.github/workflows/modelswatch-daily.yml`
 
-周流程相对全面（分类 + 热榜 + 覆盖 + 周摘要）；日流程偏增量与每日 picks。
+周流程（以前）包含分类、热榜、覆盖与周摘要；目前周度自动汇总功能已移除，保留历史产物以供审计。如需恢复，请参考仓库历史版本的 `tools/modelswatch/generate_summaries.mjs` 并在 CI 中配置 `DEEPSEEK_API_KEY` 与超时参数。
 
 ---
 ## 4. 快照构建与合并
@@ -182,10 +182,8 @@ Z 值：基于候选集合的均值/方差，方差近 0 时退化为 0 防止�
 特点：在冷启动拿到高质量完整基线后，再逐步进入有成本上限的稳态增量模式。
 
 ---
-## 13. 周度汇总
-脚本：`generate_summaries.mjs`（在 weekly 流程调用）
-- 汇总当周任务分布、生成 `weekly_summaries.json`。
-- 若内容为空（生成失败或无有效数据）写入占位文本。
+## 13. 周度汇总（已停用）
+本仓库曾包含周度汇总生成功能（`generate_summaries.mjs`），用于基于 `models_hotlist.json` 与覆盖率统计生成 `weekly_summaries.json`。该功能当前已停用，仓库保留历史产物 `data/ai/modelswatch/weekly_summaries.json` 与诊断文件以便审计。
 
 ---
 ## 14. 质量与监控脚本

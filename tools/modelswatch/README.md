@@ -44,7 +44,7 @@ These previously held cumulative totals but were ambiguously named. They are no 
 Schema versioning:
   See schema.js (SCHEMA_VERSION=1). Hotlists and daily files embed { version } and front-end warns on mismatch.
 
-Recommended weekly pipeline order (first run / maintenance):
+Recommended pipeline order (first run / maintenance):
   1. node tools/modelswatch/weekly.mjs  (refresh corpus & tops)
   2. node tools/modelswatch/build_snapshots.mjs
   3. node tools/modelswatch/update_model_hotlist.mjs
