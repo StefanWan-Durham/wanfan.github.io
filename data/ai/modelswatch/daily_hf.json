@@ -99,7 +99,10 @@
       "summary_zh": "Sundial-base-128m是由THUML开发的1.28亿参数时间序列基础模型，专门用于时间序列预测和生成任务。该模型基于Salesforce/lotsa_data、AutoGluon/chronos_datasets等多个数据集训练，具备强大的时序模式处理能力。核心优势包括高效的预测精度、灵活的生成能力以及广泛的应用适应性。典型用例涵盖金融预测、气象预报、工业监控等领域，采用Apache 2.0开源许可和Safetensors格式确保安全部署。",
       "summary_es": "Sundial-base-128m es un modelo fundacional de series temporales de 128 millones de parámetros desarrollado por THUML. Se especializa en predicción y generación de series temporales, entrenado con múltiples conjuntos de datos incluyendo Salesforce/lotsa_data y AutoGluon/chronos_datasets. El modelo demuestra fuertes capacidades para manejar diversos patrones temporales y está diseñado para aplicaciones en pronóstico financiero, predicción meteorológica y monitoreo industrial. Utiliza licencia Apache 2.0 y formato Safetensors para despliegue seguro.",
       "reason_label": "security_safety",
-      "reason_text": "安全与对齐相关更新：sundial-base-128m"
+      "reason_text": "安全与对齐相关更新：sundial-base-128m",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
     },
     {
       "id": "Salesforce/moirai-2.0-R-small",
