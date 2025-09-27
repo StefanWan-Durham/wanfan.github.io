@@ -1,117 +1,79 @@
 {
   "version": 1,
-  "updated_at": "2025-09-27T09:09:04.760Z",
+  "updated_at": "2025-09-27T15:21:59.009Z",
   "by_category": {
     "framework_core": [
       {
-        "id": "sindresorhus/awesome",
+        "id": "yangshun/tech-interview-handbook",
         "source": "github",
-        "name": "awesome",
-        "url": "https://github.com/sindresorhus/awesome",
-        "tags": [
-          "awesome",
-          "awesome-list",
-          "lists",
-          "resources",
-          "unicorns"
-        ],
-        "stats": {
-          "stars_total": 402886,
-          "forks_total": 31710,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-27T06:54:07Z",
-        "added_at": "2025-09-27",
-        "summary": "😎 Awesome lists about all kinds of interesting topics",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19993850667773216,
-        "summary_en": "Awesome is a curated GitHub repository serving as a master list of high-quality resource collections across diverse topics. Its core purpose is to organize and index specialized 'awesome lists' created by the community, covering technology, programming, science, and entertainment. Key strengths include rigorous curation standards, comprehensive topic coverage, and community-driven maintenance. It functions primarily as a discovery hub, enabling users to efficiently find expert-vetted resources. Typical use cases involve developers seeking learning materials, researchers exploring domain knowledge, and individuals discovering tools for specific interests.",
-        "summary_zh": "Awesome 是一个托管在 GitHub 上的精选仓库，其核心目的是作为一个主列表，系统性地组织和索引由社区创建的各种高质量资源集合。这些资源涵盖技术、编程、科学、娱乐等多个领域。该项目的主要能力在于其严格的策展标准、广泛的主题覆盖度以及社区驱动的维护模式。其关键优势包括资源质量可靠、分类清晰且易于导航。典型使用场景包括开发者寻找学习资料和工具、研究人员探索特定领域的知识库，以及普通用户发现感兴趣主题的优质内容。它",
-        "summary_es": "Awesome is a curated GitHub repository serving as a master list of high-quality resource collections across diverse topics. Its core purpose is to organize and index specialized 'awesome lists' created by the community, covering technology, programming, science, and entertainment. Key strengths include rigorous curation standards, comprehensive topic coverage, and community-driven maintenance. It functions primarily as a discovery hub, enabling users to efficiently find expert-vetted resources. Typical use cases involve developers seeking learning materials, researchers exploring domain knowledge, and individuals discovering tools for specific interests."
-      },
-      {
-        "id": "AUTOMATIC1111/stable-diffusion-webui",
-        "source": "github",
-        "name": "stable-diffusion-webui",
-        "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-        "tags": [
-          "ai",
-          "ai-art",
-          "deep-learning",
-          "diffusion",
-          "gradio",
-          "image-generation",
-          "image2image",
-          "img2img",
-          "pytorch",
-          "stable-diffusion",
-          "text2image",
-          "torch",
-          "txt2img",
-          "unstable",
-          "upscaling",
-          "web"
-        ],
-        "stats": {
-          "stars_total": 156911,
-          "forks_total": 29104,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-27T06:53:05Z",
-        "added_at": "2025-09-27",
-        "summary": "Stable Diffusion web UI",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.19993372425521738,
-        "summary_en": "The Stable Diffusion web UI is a browser-based interface for the Stable Diffusion AI image generation model. Its primary purpose is to make advanced AI image creation accessible through an intuitive graphical interface without requiring command-line expertise. Core capabilities include text-to-image generation, image-to-image transformation, inpainting, outpainting, and image upscaling. Strengths include comprehensive feature coverage, extensive customization options through extensions, and user-friendly operation. Typical use cases encompass digital art creation, concept visualization, photo editing enhancement, and experimental AI art exploration by both professionals and hobbyists.",
-        "summary_zh": "Stable Diffusion web UI 是一个基于浏览器的界面，专门用于运行 Stable Diffusion AI 图像生成模型。其主要目的是通过直观的图形界面使高级AI图像创作变得易于访问，无需命令行专业知识。核心功能包括文本到图像生成、图像到图像转换、图像修复、扩展绘画和图像超分辨率放大。优势在于功能全面，通过扩展支持高度自定义，且操作友好。典型应用场景涵盖数字艺术创作、概念可视化、照片编辑增强，以及专业人士和爱好者进行的实验性AI艺术探索。该项目作为最流行的Stable Diffusion界面之一，显",
-        "summary_es": "The Stable Diffusion web UI is a browser-based interface for the Stable Diffusion AI image generation model. Its primary purpose is to make advanced AI image creation accessible through an intuitive graphical interface without requiring command-line expertise. Core capabilities include text-to-image generation, image-to-image transformation, inpainting, outpainting, and image upscaling. Strengths include comprehensive feature coverage, extensive customization options through extensions, and user-friendly operation. Typical use cases encompass digital art creation, concept visualization, photo editing enhancement, and experimental AI art exploration by both professionals and hobbyists."
-      },
-      {
-        "id": "TheAlgorithms/Python",
-        "source": "github",
-        "name": "Python",
-        "url": "https://github.com/TheAlgorithms/Python",
+        "name": "tech-interview-handbook",
+        "url": "https://github.com/yangshun/tech-interview-handbook",
         "tags": [
           "algorithm",
-          "algorithm-competitions",
-          "algorithms-implemented",
-          "algos",
-          "community-driven",
-          "education",
-          "hacktoberfest",
-          "interview",
-          "learn",
-          "practice",
-          "python",
-          "searches",
-          "sorting-algorithms",
-          "sorts"
+          "algorithm-interview",
+          "algorithm-interview-questions",
+          "algorithms",
+          "behavioral-interviews",
+          "coding-interviews",
+          "interview-practice",
+          "interview-preparation",
+          "interview-questions",
+          "system-design"
         ],
         "stats": {
-          "stars_total": 209342,
-          "forks_total": 48183,
-          "stars_7d": 1465,
-          "forks_7d": 285
+          "stars_total": 130542,
+          "forks_total": 15837,
+          "stars_7d": 0,
+          "forks_7d": 0
         },
-        "updated_at": "2025-09-27T06:32:10Z",
+        "updated_at": "2025-09-27T15:06:41Z",
         "added_at": "2025-09-27",
-        "summary": "TheAlgorithms/Python 是一个全面的 GitHub 代码库，收录了使用 Python 实现的众多算法和数据结构。其主要目的是教育性质，为学习计算机科学的学生、开发者以及准备技术面试的人员提供学习资源。该项目涵盖了排序、搜索、图算法、动态编程等计算机科学核心主题。其优势在于社区驱动的开发模式、广泛的算法覆盖范围以及实用的代码示例。典型使用场景包括算法学习研究、技术面试准备，以及通过实际的 Python 代码实现来理解高效的编程技术和算法思想。该项目作为开源社",
+        "summary": "《技术面试手册》为软件工程师面试提供全面的准备材料，涵盖编码算法、系统设计和行为问题。核心能力包括精选内容、实用示例和面试策略。优势在于覆盖面广、实用性强且由社区驱动更新。典型用例包括技术面试自学、基础知识复习和问题解决练习。适用于不同经验水平的工程师寻求结构化指导，帮助应对各类技术岗位评估。",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 1.9838880881186394,
-        "summary_en": "TheAlgorithms/Python is a comprehensive GitHub repository containing implementations of numerous algorithms and data structures in Python. Its primary purpose is educational, serving as a learning resource for students, developers, and anyone preparing for technical interviews. The collection covers fundamental topics like sorting, searching, graph algorithms, and dynamic programming. Strengths include its community-driven development, extensive coverage of computer science concepts, and practical code examples. Typical use cases include algorithm study, interview preparation, and understanding efficient coding techniques through real Python implementations.",
-        "summary_zh": "TheAlgorithms/Python 是一个全面的 GitHub 代码库，收录了使用 Python 实现的众多算法和数据结构。其主要目的是教育性质，为学习计算机科学的学生、开发者以及准备技术面试的人员提供学习资源。该项目涵盖了排序、搜索、图算法、动态编程等计算机科学核心主题。其优势在于社区驱动的开发模式、广泛的算法覆盖范围以及实用的代码示例。典型使用场景包括算法学习研究、技术面试准备，以及通过实际的 Python 代码实现来理解高效的编程技术和算法思想。该项目作为开源社",
-        "summary_es": "TheAlgorithms/Python is a comprehensive GitHub repository containing implementations of numerous algorithms and data structures in Python. Its primary purpose is educational, serving as a learning resource for students, developers, and anyone preparing for technical interviews. The collection covers fundamental topics like sorting, searching, graph algorithms, and dynamic programming. Strengths include its community-driven development, extensive coverage of computer science concepts, and practical code examples. Typical use cases include algorithm study, interview preparation, and understanding efficient coding techniques through real Python implementations."
+        "score_engineering": 0.19992918892736855,
+        "summary_en": "The Tech Interview Handbook provides comprehensive preparation materials for software engineering interviews. It covers coding algorithms, system design, and behavioral questions. Core capabilities include curated content, practical examples, and interview strategies. Strengths are its extensive coverage, real-world relevance, and community-driven updates. Typical use cases are self-study for technical interviews, brushing up on fundamentals, and practicing problem-solving. It serves engineers at various experience levels seeking structured guidance.",
+        "summary_zh": "《技术面试手册》为软件工程师面试提供全面的准备材料，涵盖编码算法、系统设计和行为问题。核心能力包括精选内容、实用示例和面试策略。优势在于覆盖面广、实用性强且由社区驱动更新。典型用例包括技术面试自学、基础知识复习和问题解决练习。适用于不同经验水平的工程师寻求结构化指导，帮助应对各类技术岗位评估。",
+        "summary_es": "The Tech Interview Handbook provides comprehensive preparation materials for software engineering interviews. It covers coding algorithms, system design, and behavioral questions. Core capabilities include curated content, practical examples, and interview strategies. Strengths are its extensive coverage, real-world relevance, and community-driven updates. Typical use cases are self-study for technical interviews, brushing up on fundamentals, and practicing problem-solving. It serves engineers at various experience levels seeking structured guidance."
+      },
+      {
+        "id": "jwasham/coding-interview-university",
+        "source": "github",
+        "name": "coding-interview-university",
+        "url": "https://github.com/jwasham/coding-interview-university",
+        "tags": [
+          "algorithm",
+          "algorithms",
+          "coding-interview",
+          "coding-interviews",
+          "computer-science",
+          "data-structures",
+          "interview",
+          "interview-prep",
+          "interview-preparation",
+          "programming-interviews",
+          "software-engineering",
+          "study-plan"
+        ],
+        "stats": {
+          "stars_total": 330034,
+          "forks_total": 80719,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-27T15:05:56Z",
+        "added_at": "2025-09-27",
+        "summary": "Coding Interview University 是一个全面的自学课程，旨在帮助个人准备软件工程的技术面试。该项目提供结构化的学习路径，涵盖计算机科学基础概念、算法和数据结构。包含学习材料、练习题和面试准备策略。主要优势在于其系统性的方法和广泛覆盖编码面试常见考点。典型使用场景包括求职者准备大型科技公司的技术面试，以及计算机科学专业学生巩固知识。该项目通过详细的课程安排和实践练习，帮助用户系统掌握面试所需的核心技能。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.1999257179646352,
+        "summary_en": "Coding Interview University is a comprehensive self-study curriculum designed to prepare individuals for software engineering technical interviews. It provides a structured learning path covering fundamental computer science concepts, algorithms, and data structures. The project includes study materials, practice problems, and interview preparation strategies. Its main strength lies in its systematic approach and extensive coverage of topics commonly tested in coding interviews. Typical use cases include job seekers preparing for technical interviews at major tech companies and computer science students reinforcing their knowledge.",
+        "summary_zh": "Coding Interview University 是一个全面的自学课程，旨在帮助个人准备软件工程的技术面试。该项目提供结构化的学习路径，涵盖计算机科学基础概念、算法和数据结构。包含学习材料、练习题和面试准备策略。主要优势在于其系统性的方法和广泛覆盖编码面试常见考点。典型使用场景包括求职者准备大型科技公司的技术面试，以及计算机科学专业学生巩固知识。该项目通过详细的课程安排和实践练习，帮助用户系统掌握面试所需的核心技能。",
+        "summary_es": "Coding Interview University is a comprehensive self-study curriculum designed to prepare individuals for software engineering technical interviews. It provides a structured learning path covering fundamental computer science concepts, algorithms, and data structures. The project includes study materials, practice problems, and interview preparation strategies. Its main strength lies in its systematic approach and extensive coverage of topics commonly tested in coding interviews. Typical use cases include job seekers preparing for technical interviews at major tech companies and computer science students reinforcing their knowledge."
       }
     ],
     "deployment_serving": [
@@ -129,25 +91,118 @@
           "react-flow"
         ],
         "stats": {
-          "stars_total": 123820,
-          "forks_total": 7684,
+          "stars_total": 123987,
+          "forks_total": 7685,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-27T06:40:57Z",
+        "updated_at": "2025-09-27T15:07:49Z",
         "added_at": "2025-09-27",
-        "summary": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+        "summary": "Langflow是一个开源的可视化框架，专门用于构建和部署AI驱动的工作流与智能体。其核心能力在于通过React Flow提供拖放式界面，无需编写代码即可构建复杂的语言模型流水线。主要优势包括与ChatGPT等大型语言模型的无缝集成、多智能体系统支持以及灵活的部署选项。典型应用场景涵盖创建定制聊天机器人、自动化内容生成流水线、开发AI助手以及原型设计复杂AI应用，其中可视化工作流设计能够显著加速开发和测试流程。该工具特别适合需要快速迭代和",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19987757791531252,
-        "summary_en": "Langflow is an open-source visual framework designed for building and deploying AI-powered agents and workflows. Its core capability lies in providing a drag-and-drop interface using React Flow, enabling users to visually construct complex language model pipelines without extensive coding. Key strengths include support for multi-agent systems, integration with various large language models like ChatGPT, and flexibility for prototyping and production deployment. Typical use cases range from creating custom chatbots and automated content generation systems to developing sophisticated multi-step reasoning applications for research and enterprise solutions.",
-        "summary_zh": "Langflow是一个开源的视觉化框架，专门用于构建和部署人工智能驱动的智能体和流程。其核心能力在于提供基于React Flow的拖放式界面，使用户无需大量编码即可可视化构建复杂的语言模型管道。主要优势包括支持多智能体系统、集成ChatGPT等多种大语言模型，以及适用于原型设计和生产部署的灵活性。典型应用场景涵盖创建定制聊天机器人、自动化内容生成系统，以及为研究和企业解决方案开发复杂的多步骤推理应用程序，特别适合需要快速迭代和",
-        "summary_es": "Langflow is an open-source visual framework designed for building and deploying AI-powered agents and workflows. Its core capability lies in providing a drag-and-drop interface using React Flow, enabling users to visually construct complex language model pipelines without extensive coding. Key strengths include support for multi-agent systems, integration with various large language models like ChatGPT, and flexibility for prototyping and production deployment. Typical use cases range from creating custom chatbots and automated content generation systems to developing sophisticated multi-step reasoning applications for research and enterprise solutions."
+        "score_engineering": 0.19993443405205238,
+        "summary_en": "Langflow is an open-source visual framework designed for building and deploying AI-powered workflows and agents. Its core capability lies in providing a drag-and-drop interface using React Flow to construct complex language model pipelines without coding. Key strengths include seamless integration with large language models like ChatGPT, support for multi-agent systems, and flexible deployment options. Typical use cases encompass creating custom chatbots, automating content generation pipelines, developing AI assistants, and prototyping complex AI applications where visual workflow design accelerates development and testing processes.",
+        "summary_zh": "Langflow是一个开源的可视化框架，专门用于构建和部署AI驱动的工作流与智能体。其核心能力在于通过React Flow提供拖放式界面，无需编写代码即可构建复杂的语言模型流水线。主要优势包括与ChatGPT等大型语言模型的无缝集成、多智能体系统支持以及灵活的部署选项。典型应用场景涵盖创建定制聊天机器人、自动化内容生成流水线、开发AI助手以及原型设计复杂AI应用，其中可视化工作流设计能够显著加速开发和测试流程。该工具特别适合需要快速迭代和",
+        "summary_es": "Langflow is an open-source visual framework designed for building and deploying AI-powered workflows and agents. Its core capability lies in providing a drag-and-drop interface using React Flow to construct complex language model pipelines without coding. Key strengths include seamless integration with large language models like ChatGPT, support for multi-agent systems, and flexible deployment options. Typical use cases encompass creating custom chatbots, automating content generation pipelines, developing AI assistants, and prototyping complex AI applications where visual workflow design accelerates development and testing processes."
+      },
+      {
+        "id": "freeCodeCamp/freeCodeCamp",
+        "source": "github",
+        "name": "freeCodeCamp",
+        "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+        "tags": [
+          "careers",
+          "certification",
+          "community",
+          "curriculum",
+          "d3",
+          "education",
+          "freecodecamp",
+          "javascript",
+          "learn-to-code",
+          "math",
+          "nodejs",
+          "nonprofits",
+          "programming",
+          "react",
+          "teachers"
+        ],
+        "stats": {
+          "stars_total": 429052,
+          "forks_total": 41779
+        },
+        "updated_at": "2025-09-27T15:00:48Z",
+        "added_at": "",
+        "summary": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+        "flags": {
+          "seeded": true
+        },
+        "score_engineering": 2677.8601952436234
       }
     ],
-    "optimization_compilers": [],
+    "optimization_compilers": [
+      {
+        "id": "freeCodeCamp/freeCodeCamp",
+        "source": "github",
+        "name": "freeCodeCamp",
+        "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+        "tags": [
+          "careers",
+          "certification",
+          "community",
+          "curriculum",
+          "d3",
+          "education",
+          "freecodecamp",
+          "javascript",
+          "learn-to-code",
+          "math",
+          "nodejs",
+          "nonprofits",
+          "programming",
+          "react",
+          "teachers"
+        ],
+        "stats": {
+          "stars_total": 429052,
+          "forks_total": 41779
+        },
+        "updated_at": "2025-09-27T15:00:48Z",
+        "added_at": "",
+        "summary": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+        "flags": {
+          "seeded": true
+        },
+        "score_engineering": 2677.8601952436234
+      },
+      {
+        "id": "sindresorhus/awesome",
+        "source": "github",
+        "name": "awesome",
+        "url": "https://github.com/sindresorhus/awesome",
+        "tags": [
+          "awesome",
+          "awesome-list",
+          "lists",
+          "resources",
+          "unicorns"
+        ],
+        "stats": {
+          "stars_total": 402968,
+          "forks_total": 31711
+        },
+        "updated_at": "2025-09-27T14:56:09Z",
+        "added_at": "",
+        "summary": "😎 Awesome lists about all kinds of interesting topics",
+        "flags": {
+          "seeded": true
+        },
+        "score_engineering": 2501.2180436370186
+      }
+    ],
     "data_tooling": [
       {
         "id": "public-apis/public-apis",
@@ -170,22 +225,22 @@
           "software"
         ],
         "stats": {
-          "stars_total": 366447,
-          "forks_total": 38514,
+          "stars_total": 366509,
+          "forks_total": 38519,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-27T06:51:59Z",
+        "updated_at": "2025-09-27T15:06:22Z",
         "added_at": "2025-09-27",
-        "summary": "A collective list of free APIs",
+        "summary": "Public-apis 是一个 GitHub 上的综合性资源库，主要用途是作为免费公共 API 的精选目录，为开发者提供集中化、可搜索的多样化网络 API 集合。核心能力包括按主题分类、按认证要求筛选以及 HTTPS 支持标识。该项目的主要优势在于覆盖范围广泛、由社区驱动维护且完全开源。典型使用场景包括开发者在原型设计、学习或为应用程序集成第三方服务时，无需成本障碍即可查找合适的 API。该资源库通过分类整理和详细标注，显著提高了 API 发现的效率，成为开发社区中广泛使用",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19992863341501582,
-        "summary_en": "Public-apis is a comprehensive GitHub repository that serves as a curated directory of free APIs available for developers. Its primary purpose is to provide a centralized, searchable collection of public web APIs across various categories. Core capabilities include organizing APIs by type, providing essential metadata like authentication requirements and HTTPS support, and maintaining updated links. Key strengths are its extensive coverage, community-driven updates, and open-source nature. Typical use cases include API discovery for software projects, educational reference, and rapid prototyping when developers need to integrate external services without extensive research.",
-        "summary_zh": "Public-apis 是一个 GitHub 上的综合性资源库，作为开发者可用的免费 API 的精选目录。其主要目的是提供一个集中化、可搜索的公共网络 API 集合，涵盖多种类别。核心功能包括按类型组织 API、提供认证要求和 HTTPS 支持等基本元数据，并保持链接更新。关键优势在于其广泛的覆盖范围、社区驱动的更新以及开源性质。典型用例包括为软件项目发现 API、教育参考，以及当开发者需要集成外部服务而无需大量研究时的快速原型设计。该资源库通过分类和过滤功能帮助用户高效",
-        "summary_es": "Public-apis is a comprehensive GitHub repository that serves as a curated directory of free APIs available for developers. Its primary purpose is to provide a centralized, searchable collection of public web APIs across various categories. Core capabilities include organizing APIs by type, providing essential metadata like authentication requirements and HTTPS support, and maintaining updated links. Key strengths are its extensive coverage, community-driven updates, and open-source nature. Typical use cases include API discovery for software projects, educational reference, and rapid prototyping when developers need to integrate external services without extensive research."
+        "score_engineering": 0.19992772340241982,
+        "summary_en": "Public-apis is a comprehensive GitHub repository that serves as a curated directory of free APIs available for public use. Its primary purpose is to provide developers with a centralized, searchable collection of diverse web APIs across multiple categories. Core capabilities include categorization by topic, filtering by authentication requirements, and HTTPS support indicators. Key strengths include its extensive coverage, community-driven maintenance, and open-source nature. Typical use cases involve developers searching for APIs for prototyping, learning, or integrating third-party services into applications without cost barriers.",
+        "summary_zh": "Public-apis 是一个 GitHub 上的综合性资源库，主要用途是作为免费公共 API 的精选目录，为开发者提供集中化、可搜索的多样化网络 API 集合。核心能力包括按主题分类、按认证要求筛选以及 HTTPS 支持标识。该项目的主要优势在于覆盖范围广泛、由社区驱动维护且完全开源。典型使用场景包括开发者在原型设计、学习或为应用程序集成第三方服务时，无需成本障碍即可查找合适的 API。该资源库通过分类整理和详细标注，显著提高了 API 发现的效率，成为开发社区中广泛使用",
+        "summary_es": "Public-apis is a comprehensive GitHub repository that serves as a curated directory of free APIs available for public use. Its primary purpose is to provide developers with a centralized, searchable collection of diverse web APIs across multiple categories. Core capabilities include categorization by topic, filtering by authentication requirements, and HTTPS support indicators. Key strengths include its extensive coverage, community-driven maintenance, and open-source nature. Typical use cases involve developers searching for APIs for prototyping, learning, or integrating third-party services into applications without cost barriers."
       },
       {
         "id": "trekhleb/javascript-algorithms",
@@ -203,132 +258,240 @@
           "javascript-algorithms"
         ],
         "stats": {
-          "stars_total": 193402,
-          "forks_total": 30889,
+          "stars_total": 193412,
+          "forks_total": 30891,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-27T06:23:52Z",
+        "updated_at": "2025-09-27T15:00:10Z",
         "added_at": "2025-09-27",
-        "summary": "📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+        "summary": "该GitHub仓库使用JavaScript全面实现了各类算法和数据结构，主要目的是作为计算机科学基础和技术面试准备的教育资源。核心能力包括提供带详细解释的代码示例，涵盖排序、搜索、图算法及常见数据结构等关键主题。突出优势在于专注于JavaScript实现、清晰的文档说明以及相关延伸阅读链接。典型应用场景包括开发者自学、学生课程辅助学习以及求职者的编程面试练习。仓库内容组织系统，适合不同层次的学习者从基础到高级逐步掌握算法知识。",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.1997985524468938,
-        "summary_en": "This GitHub repository provides a comprehensive collection of classic algorithms and data structures implemented in JavaScript. Its primary purpose is educational, serving as a learning resource for computer science fundamentals and interview preparation. Core capabilities include implementations of sorting, searching, graph algorithms, and various data structures like trees and linked lists. Strengths include clear code examples, detailed explanations, and links to further reading materials. Typical use cases involve studying algorithm concepts, practicing coding interviews, and understanding JavaScript implementation patterns for computational problems.",
-        "summary_zh": "该GitHub仓库提供了一个用JavaScript实现的经典算法和数据结构的全面集合。其主要目的是教育性的，作为计算机科学基础和面试准备的学习资源。核心能力包括排序、搜索、图算法以及各种数据结构（如树和链表）的实现。优势在于清晰的代码示例、详细的解释以及进一步阅读材料的链接。典型用例包括学习算法概念、练习编程面试以及理解计算问题的JavaScript实现模式。该项目的价值在于将理论算法知识与具体的JavaScript编程实践相结合，适合开发者系统性地提升",
-        "summary_es": "This GitHub repository provides a comprehensive collection of classic algorithms and data structures implemented in JavaScript. Its primary purpose is educational, serving as a learning resource for computer science fundamentals and interview preparation. Core capabilities include implementations of sorting, searching, graph algorithms, and various data structures like trees and linked lists. Strengths include clear code examples, detailed explanations, and links to further reading materials. Typical use cases involve studying algorithm concepts, practicing coding interviews, and understanding JavaScript implementation patterns for computational problems."
-      },
-      {
-        "id": "d3/d3",
-        "source": "github",
-        "name": "d3",
-        "url": "https://github.com/d3/d3",
-        "tags": [
-          "chart",
-          "charts",
-          "d3",
-          "data-visualization",
-          "svg",
-          "visualization"
-        ],
-        "stats": {
-          "stars_total": 111546,
-          "forks_total": 22846,
-          "stars_7d": 42,
-          "forks_7d": 9
-        },
-        "updated_at": "2025-09-27T03:51:11Z",
-        "added_at": "2025-09-27",
-        "summary": "D3.js是一个JavaScript库，用于在Web浏览器中使用SVG、Canvas和HTML创建动态、交互式数据可视化。其核心能力在于将数据绑定到DOM元素并应用数据驱动的转换。主要优势包括对可视化元素的精细控制、广泛的定制选项以及强大的数据操作工具。典型用例涉及构建复杂图表、交互式仪表板、网络图以及需要精确控制视觉表示的自定义数据驱动图形，特别适用于需要高度定制化和复杂交互的数据展示场景。",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": -0.4135529186481619,
-        "summary_en": "D3.js is a JavaScript library for creating dynamic, interactive data visualizations in web browsers using SVG, Canvas, and HTML. Its core capability lies in binding data to DOM elements and applying data-driven transformations. Key strengths include fine-grained control over visualization elements, extensive customization options, and robust data manipulation utilities. Typical use cases involve building complex charts, interactive dashboards, network diagrams, and custom data-driven graphics where precise control over the visual representation is required.",
-        "summary_zh": "D3.js是一个JavaScript库，用于在Web浏览器中使用SVG、Canvas和HTML创建动态、交互式数据可视化。其核心能力在于将数据绑定到DOM元素并应用数据驱动的转换。主要优势包括对可视化元素的精细控制、广泛的定制选项以及强大的数据操作工具。典型用例涉及构建复杂图表、交互式仪表板、网络图以及需要精确控制视觉表示的自定义数据驱动图形，特别适用于需要高度定制化和复杂交互的数据展示场景。",
-        "summary_es": "D3.js is a JavaScript library for creating dynamic, interactive data visualizations in web browsers using SVG, Canvas, and HTML. Its core capability lies in binding data to DOM elements and applying data-driven transformations. Key strengths include fine-grained control over visualization elements, extensive customization options, and robust data manipulation utilities. Typical use cases involve building complex charts, interactive dashboards, network diagrams, and custom data-driven graphics where precise control over the visual representation is required."
+        "score_engineering": 0.19989903213065996,
+        "summary_en": "This GitHub repository provides comprehensive implementations of algorithms and data structures using JavaScript. Its primary purpose is educational, serving as a learning resource for computer science fundamentals and technical interview preparation. Core capabilities include detailed code examples with explanations, covering essential topics like sorting, searching, graph algorithms, and common data structures. Key strengths are the JavaScript implementation focus, clear documentation, and links to further readings. Typical use cases include self-study for developers, academic supplement for students, and coding interview practice for job seekers.",
+        "summary_zh": "该GitHub仓库使用JavaScript全面实现了各类算法和数据结构，主要目的是作为计算机科学基础和技术面试准备的教育资源。核心能力包括提供带详细解释的代码示例，涵盖排序、搜索、图算法及常见数据结构等关键主题。突出优势在于专注于JavaScript实现、清晰的文档说明以及相关延伸阅读链接。典型应用场景包括开发者自学、学生课程辅助学习以及求职者的编程面试练习。仓库内容组织系统，适合不同层次的学习者从基础到高级逐步掌握算法知识。",
+        "summary_es": "This GitHub repository provides comprehensive implementations of algorithms and data structures using JavaScript. Its primary purpose is educational, serving as a learning resource for computer science fundamentals and technical interview preparation. Core capabilities include detailed code examples with explanations, covering essential topics like sorting, searching, graph algorithms, and common data structures. Key strengths are the JavaScript implementation focus, clear documentation, and links to further readings. Typical use cases include self-study for developers, academic supplement for students, and coding interview practice for job seekers."
       }
     ],
-    "agents_workflows": [],
-    "security_safety": [],
-    "mlops_monitoring": [],
-    "edge_embedded": [
+    "agents_workflows": [
       {
-        "id": "Genymobile/scrcpy",
+        "id": "freeCodeCamp/freeCodeCamp",
         "source": "github",
-        "name": "scrcpy",
-        "url": "https://github.com/Genymobile/scrcpy",
+        "name": "freeCodeCamp",
+        "url": "https://github.com/freeCodeCamp/freeCodeCamp",
         "tags": [
-          "android",
-          "c",
-          "ffmpeg",
-          "libav",
-          "mirroring",
-          "recording",
-          "screen",
-          "sdl2"
+          "careers",
+          "certification",
+          "community",
+          "curriculum",
+          "d3",
+          "education",
+          "freecodecamp",
+          "javascript",
+          "learn-to-code",
+          "math",
+          "nodejs",
+          "nonprofits",
+          "programming",
+          "react",
+          "teachers"
         ],
         "stats": {
-          "stars_total": 129018,
-          "forks_total": 12093,
-          "stars_7d": 0,
-          "forks_7d": 0
+          "stars_total": 429052,
+          "forks_total": 41779
         },
-        "updated_at": "2025-09-27T06:40:22Z",
-        "added_at": "2025-09-27",
-        "summary": "Display and control your Android device",
+        "updated_at": "2025-09-27T15:00:48Z",
+        "added_at": "",
+        "summary": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
         "flags": {
-          "pinned": false,
-          "hidden": false
+          "seeded": true
         },
-        "score_engineering": 0.19987487896932665,
-        "summary_en": "scrcpy is an open-source application for displaying and controlling Android devices from a computer via USB or TCP/IP. It streams the device screen to the desktop and allows keyboard/mouse input without requiring root access. Core capabilities include real-time mirroring, audio forwarding, screen recording, clipboard synchronization, and device power control. Strengths are high performance with low latency, minimal CPU usage, and cross-platform support for Windows, macOS, and Linux. Typical use cases involve app development testing, presentations, gaming, and remote device management.",
-        "summary_zh": "scrcpy 是一款开源应用程序，用于通过 USB 或 TCP/IP 在计算机上显示和控制 Android 设备。它将设备屏幕实时流式传输到桌面，并支持键盘和鼠标输入，无需 root 权限。核心功能包括实时镜像、音频转发、屏幕录制、剪贴板同步和设备电源控制。其优势在于高性能、低延迟、CPU 占用率低，并支持 Windows、macOS 和 Linux 跨平台运行。典型应用场景涵盖应用开发测试、演示、游戏和远程设备管理。",
-        "summary_es": "scrcpy is an open-source application for displaying and controlling Android devices from a computer via USB or TCP/IP. It streams the device screen to the desktop and allows keyboard/mouse input without requiring root access. Core capabilities include real-time mirroring, audio forwarding, screen recording, clipboard synchronization, and device power control. Strengths are high performance with low latency, minimal CPU usage, and cross-platform support for Windows, macOS, and Linux. Typical use cases involve app development testing, presentations, gaming, and remote device management."
+        "score_engineering": 2677.8601952436234
       },
       {
-        "id": "massgravel/Microsoft-Activation-Scripts",
+        "id": "sindresorhus/awesome",
         "source": "github",
-        "name": "Microsoft-Activation-Scripts",
-        "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+        "name": "awesome",
+        "url": "https://github.com/sindresorhus/awesome",
         "tags": [
-          "activator",
-          "hwid",
-          "kms",
-          "kms38",
-          "massgrave",
-          "massgravel",
-          "microsoft",
-          "microsoft365",
-          "office",
-          "office365",
-          "ohook",
-          "powershell",
-          "tsforge",
+          "awesome",
+          "awesome-list",
+          "lists",
+          "resources",
+          "unicorns"
+        ],
+        "stats": {
+          "stars_total": 402968,
+          "forks_total": 31711
+        },
+        "updated_at": "2025-09-27T14:56:09Z",
+        "added_at": "",
+        "summary": "😎 Awesome lists about all kinds of interesting topics",
+        "flags": {
+          "seeded": true
+        },
+        "score_engineering": 2501.2180436370186
+      }
+    ],
+    "security_safety": [
+      {
+        "id": "freeCodeCamp/freeCodeCamp",
+        "source": "github",
+        "name": "freeCodeCamp",
+        "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+        "tags": [
+          "careers",
+          "certification",
+          "community",
+          "curriculum",
+          "d3",
+          "education",
+          "freecodecamp",
+          "javascript",
+          "learn-to-code",
+          "math",
+          "nodejs",
+          "nonprofits",
+          "programming",
+          "react",
+          "teachers"
+        ],
+        "stats": {
+          "stars_total": 429052,
+          "forks_total": 41779
+        },
+        "updated_at": "2025-09-27T15:00:48Z",
+        "added_at": "",
+        "summary": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+        "flags": {
+          "seeded": true
+        },
+        "score_engineering": 2677.8601952359113
+      },
+      {
+        "id": "sindresorhus/awesome",
+        "source": "github",
+        "name": "awesome",
+        "url": "https://github.com/sindresorhus/awesome",
+        "tags": [
+          "awesome",
+          "awesome-list",
+          "lists",
+          "resources",
+          "unicorns"
+        ],
+        "stats": {
+          "stars_total": 402968,
+          "forks_total": 31711
+        },
+        "updated_at": "2025-09-27T14:56:09Z",
+        "added_at": "",
+        "summary": "😎 Awesome lists about all kinds of interesting topics",
+        "flags": {
+          "seeded": true
+        },
+        "score_engineering": 2501.2180436293074
+      }
+    ],
+    "mlops_monitoring": [
+      {
+        "id": "freeCodeCamp/freeCodeCamp",
+        "source": "github",
+        "name": "freeCodeCamp",
+        "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+        "tags": [
+          "careers",
+          "certification",
+          "community",
+          "curriculum",
+          "d3",
+          "education",
+          "freecodecamp",
+          "javascript",
+          "learn-to-code",
+          "math",
+          "nodejs",
+          "nonprofits",
+          "programming",
+          "react",
+          "teachers"
+        ],
+        "stats": {
+          "stars_total": 429052,
+          "forks_total": 41779
+        },
+        "updated_at": "2025-09-27T15:00:48Z",
+        "added_at": "",
+        "summary": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+        "flags": {
+          "seeded": true
+        },
+        "score_engineering": 2677.8601952359113
+      },
+      {
+        "id": "sindresorhus/awesome",
+        "source": "github",
+        "name": "awesome",
+        "url": "https://github.com/sindresorhus/awesome",
+        "tags": [
+          "awesome",
+          "awesome-list",
+          "lists",
+          "resources",
+          "unicorns"
+        ],
+        "stats": {
+          "stars_total": 402968,
+          "forks_total": 31711
+        },
+        "updated_at": "2025-09-27T14:56:09Z",
+        "added_at": "",
+        "summary": "😎 Awesome lists about all kinds of interesting topics",
+        "flags": {
+          "seeded": true
+        },
+        "score_engineering": 2501.2180436293074
+      }
+    ],
+    "edge_embedded": [
+      {
+        "id": "microsoft/PowerToys",
+        "source": "github",
+        "name": "PowerToys",
+        "url": "https://github.com/microsoft/PowerToys",
+        "tags": [
+          "color-picker",
+          "command-palette",
+          "desktop",
+          "fancyzones",
+          "keyboard-manager",
+          "microsoft-powertoys",
+          "powerrename",
+          "powertoys",
           "windows",
           "windows-10",
           "windows-11"
         ],
         "stats": {
-          "stars_total": 149914,
-          "forks_total": 14516,
+          "stars_total": 123929,
+          "forks_total": 7379,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-27T06:31:22Z",
+        "updated_at": "2025-09-27T15:02:46Z",
         "added_at": "2025-09-27",
-        "summary": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
+        "summary": "Microsoft PowerToys 是一个开源工具集，旨在通过提供高级自定义功能来增强 Windows 系统的生产力。核心功能包括 FancyZones 窗口布局管理、PowerRename 批量文件重命名、Color Picker 颜色拾取器和 Keyboard Manager 键盘键位重映射。主要优势在于与 Windows 系统的深度集成、持续更新维护以及完全免费使用。典型应用场景涵盖高级用户优化工作流程、开发人员提升操作效率，以及普通用户通过改进的窗口管理、文件整理和键盘自定义功能来提高日常使用效率。该项目特别适用于需要精细控制 Windows 界面和操作习惯的用户群体。",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19983324270680264,
-        "summary_en": "Microsoft Activation Scripts is an open-source tool designed to activate Microsoft Windows and Office products without licensing fees. It employs multiple activation methods including HWID (permanent digital license), Ohook (Office activation), KMS38 (activation until 2038), and Online KMS (180-day renewable). The project operates entirely offline after download, supports all Windows versions from 7 to 11 and Office versions from 2010 to 2021, and includes troubleshooting features. Typical use cases include activating systems for testing, educational purposes, or in environments where purchasing licenses isn't feasible.",
-        "summary_zh": "Microsoft Activation Scripts 是一个开源工具，旨在无需购买许可证的情况下激活微软Windows和Office产品。该项目提供多种激活方法：HWID（永久数字许可证激活）、Ohook（Office激活）、KMS38（激活至2038年）和在线KMS（180天可续期激活）。核心优势包括完全离线操作、支持Windows 7至11和Office 2010至2021的所有版本，并内置高级故障排除功能。典型应用场景包括系统测试、教育环境使用，以及在无法购买正版许可证的情况下临时激活操作系统和办公软件。该项目通过PowerShell脚本实现，不包含恶意软件，但用户需注意潜在的法律风险。",
-        "summary_es": "Microsoft Activation Scripts is an open-source tool designed to activate Microsoft Windows and Office products without licensing fees. It employs multiple activation methods including HWID (permanent digital license), Ohook (Office activation), KMS38 (activation until 2038), and Online KMS (180-day renewable). The project operates entirely offline after download, supports all Windows versions from 7 to 11 and Office versions from 2010 to 2021, and includes troubleshooting features. Typical use cases include activating systems for testing, educational purposes, or in environments where purchasing licenses isn't feasible."
+        "score_engineering": 0.19991106345297716,
+        "summary_en": "Microsoft PowerToys is an open-source collection of utilities designed to enhance Windows productivity by providing advanced customization tools. Core capabilities include FancyZones for window management, PowerRename for batch file renaming, Color Picker for color identification, and Keyboard Manager for key remapping. Strengths include seamless Windows integration, regular updates, and being free. Typical use cases involve power users optimizing workflows, developers streamlining tasks, and general users seeking efficiency improvements through enhanced window management, file organization, and keyboard customization.",
+        "summary_zh": "Microsoft PowerToys 是一个开源工具集，旨在通过提供高级自定义功能来增强 Windows 系统的生产力。核心功能包括 FancyZones 窗口布局管理、PowerRename 批量文件重命名、Color Picker 颜色拾取器和 Keyboard Manager 键盘键位重映射。主要优势在于与 Windows 系统的深度集成、持续更新维护以及完全免费使用。典型应用场景涵盖高级用户优化工作流程、开发人员提升操作效率，以及普通用户通过改进的窗口管理、文件整理和键盘自定义功能来提高日常使用效率。该项目特别适用于需要精细控制 Windows 界面和操作习惯的用户群体。",
+        "summary_es": "Microsoft PowerToys is an open-source collection of utilities designed to enhance Windows productivity by providing advanced customization tools. Core capabilities include FancyZones for window management, PowerRename for batch file renaming, Color Picker for color identification, and Keyboard Manager for key remapping. Strengths include seamless Windows integration, regular updates, and being free. Typical use cases involve power users optimizing workflows, developers streamlining tasks, and general users seeking efficiency improvements through enhanced window management, file organization, and keyboard customization."
       },
       {
         "id": "microsoft/vscode",
@@ -343,119 +506,97 @@
           "visual-studio-code"
         ],
         "stats": {
-          "stars_total": 177040,
-          "forks_total": 35212,
-          "stars_7d": 189,
-          "forks_7d": 116
+          "stars_total": 177052,
+          "forks_total": 35221,
+          "stars_7d": 0,
+          "forks_7d": 0
         },
-        "updated_at": "2025-09-27T06:29:10Z",
+        "updated_at": "2025-09-27T14:57:18Z",
         "added_at": "2025-09-27",
-        "summary": "Visual Studio Code 是微软开发的一款免费开源代码编辑器，主要目标是为跨平台开发提供轻量级但功能强大的环境。核心功能包括智能代码补全、语法高亮、调试工具、Git 集成以及通过扩展实现高度自定义。其突出优势在于快速性能、直观界面和庞大的扩展生态系统，支持多种编程语言。典型应用场景涵盖网页开发、脚本编写到大型应用程序编程，既满足个人开发者需求，也适用于企业团队的高效编码工作。该工具通过社区驱动不断优化，平衡了简洁性与专",
+        "summary": "Visual Studio Code 是微软开发的一款免费开源代码编辑器，主要目的是提供轻量级但功能强大的开发环境。核心功能包括智能代码补全、调试工具、Git 集成以及通过扩展实现的高度自定义。其关键优势在于跨平台支持、快速性能表现和丰富的语言支持生态系统。典型应用场景涵盖网页开发、脚本编写以及各种编程语言和框架下的大规模应用程序编程，支持从简单编辑到复杂项目管理的多样化开发需求。",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.12471747309996131,
-        "summary_en": "Visual Studio Code is a free, open-source code editor developed by Microsoft. Its primary purpose is to provide a lightweight yet powerful development environment across platforms. Core capabilities include intelligent code completion, syntax highlighting, debugging, Git integration, and extensive customization through extensions. Key strengths are its fast performance, intuitive interface, and vast extension ecosystem supporting numerous programming languages. Typical use cases range from web development and scripting to large-scale application programming, serving both individual developers and enterprise teams seeking an efficient coding tool.",
-        "summary_zh": "Visual Studio Code 是微软开发的一款免费开源代码编辑器，主要目标是为跨平台开发提供轻量级但功能强大的环境。核心功能包括智能代码补全、语法高亮、调试工具、Git 集成以及通过扩展实现高度自定义。其突出优势在于快速性能、直观界面和庞大的扩展生态系统，支持多种编程语言。典型应用场景涵盖网页开发、脚本编写到大型应用程序编程，既满足个人开发者需求，也适用于企业团队的高效编码工作。该工具通过社区驱动不断优化，平衡了简洁性与专",
-        "summary_es": "Visual Studio Code is a free, open-source code editor developed by Microsoft. Its primary purpose is to provide a lightweight yet powerful development environment across platforms. Core capabilities include intelligent code completion, syntax highlighting, debugging, Git integration, and extensive customization through extensions. Key strengths are its fast performance, intuitive interface, and vast extension ecosystem supporting numerous programming languages. Typical use cases range from web development and scripting to large-scale application programming, serving both individual developers and enterprise teams seeking an efficient coding tool."
+        "score_engineering": 0.19988576766585678,
+        "summary_en": "Visual Studio Code is a free, open-source code editor developed by Microsoft. Its primary purpose is to provide a lightweight yet powerful development environment. Core capabilities include intelligent code completion, debugging, Git integration, and extensive customization through extensions. Key strengths are its cross-platform support, fast performance, and rich ecosystem of language support. Typical use cases range from web development and scripting to large-scale application programming across various programming languages and frameworks.",
+        "summary_zh": "Visual Studio Code 是微软开发的一款免费开源代码编辑器，主要目的是提供轻量级但功能强大的开发环境。核心功能包括智能代码补全、调试工具、Git 集成以及通过扩展实现的高度自定义。其关键优势在于跨平台支持、快速性能表现和丰富的语言支持生态系统。典型应用场景涵盖网页开发、脚本编写以及各种编程语言和框架下的大规模应用程序编程，支持从简单编辑到复杂项目管理的多样化开发需求。",
+        "summary_es": "Visual Studio Code is a free, open-source code editor developed by Microsoft. Its primary purpose is to provide a lightweight yet powerful development environment. Core capabilities include intelligent code completion, debugging, Git integration, and extensive customization through extensions. Key strengths are its cross-platform support, fast performance, and rich ecosystem of language support. Typical use cases range from web development and scripting to large-scale application programming across various programming languages and frameworks."
       }
     ],
     "ui_devex": [
       {
-        "id": "langchain-ai/langchain",
+        "id": "electron/electron",
         "source": "github",
-        "name": "langchain",
-        "url": "https://github.com/langchain-ai/langchain",
+        "name": "electron",
+        "url": "https://github.com/electron/electron",
         "tags": [
-          "ai",
-          "anthropic",
-          "gemini",
-          "langchain",
-          "llm",
-          "openai",
-          "python"
-        ],
-        "stats": {
-          "stars_total": 116291,
-          "forks_total": 19122,
-          "stars_7d": 0,
-          "forks_7d": 0
-        },
-        "updated_at": "2025-09-27T06:53:32Z",
-        "added_at": "2025-09-27",
-        "summary": "🦜🔗 Build context-aware reasoning applications",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_engineering": 0.1999358069090255,
-        "summary_en": "LangChain is an open-source Python framework for developing applications powered by large language models (LLMs). Its primary purpose is to build context-aware reasoning systems that can chain multiple LLM calls and tools together. Core capabilities include prompt management, memory for conversation history, agent-based decision making, and integration with various LLM providers like OpenAI and Anthropic. Strengths include modular architecture, extensive documentation, and active community support. Typical use cases include chatbots, document analysis, code generation, and automated workflow systems that require sequential reasoning steps.",
-        "summary_zh": "LangChain是一个开源的Python框架，专门用于开发基于大语言模型（LLM）的应用程序。其主要目的是构建具有上下文感知能力的推理系统，能够将多个LLM调用和工具链接在一起。核心功能包括提示词管理、对话历史记忆、基于代理的决策制定，以及支持OpenAI、Anthropic等多种LLM提供商的集成。该框架的优势在于模块化架构、详尽的文档和活跃的社区支持。典型应用场景包括聊天机器人、文档分析、代码生成以及需要顺序推理步骤的自动化工作流系统。LangChain通过标准化LLM应用开发流程，降",
-        "summary_es": "LangChain is an open-source Python framework for developing applications powered by large language models (LLMs). Its primary purpose is to build context-aware reasoning systems that can chain multiple LLM calls and tools together. Core capabilities include prompt management, memory for conversation history, agent-based decision making, and integration with various LLM providers like OpenAI and Anthropic. Strengths include modular architecture, extensive documentation, and active community support. Typical use cases include chatbots, document analysis, code generation, and automated workflow systems that require sequential reasoning steps."
-      },
-      {
-        "id": "facebook/react",
-        "source": "github",
-        "name": "react",
-        "url": "https://github.com/facebook/react",
-        "tags": [
-          "declarative",
-          "frontend",
+          "c-plus-plus",
+          "chrome",
+          "css",
+          "electron",
+          "html",
           "javascript",
-          "library",
-          "react",
-          "ui"
+          "nodejs",
+          "v8",
+          "works-with-codespaces"
         ],
         "stats": {
-          "stars_total": 239274,
-          "forks_total": 49421,
+          "stars_total": 118461,
+          "forks_total": 16443,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-27T06:52:03Z",
+        "updated_at": "2025-09-27T15:07:00Z",
         "added_at": "2025-09-27",
-        "summary": "The library for web and native user interfaces.",
+        "summary": "Electron是一个开源框架，用于使用Web技术构建跨平台桌面应用程序。它将Chromium渲染引擎与Node.js运行时相结合，使开发者能够使用JavaScript、HTML和CSS创建类似原生的桌面应用。核心功能包括访问原生操作系统API、自动更新、崩溃报告和调试工具。主要优势在于代码可在Windows、macOS和Linux间重用，拥有丰富的生态系统，以及熟悉的Web开发工作流程。典型应用场景包括生产力工具、代码编辑器、通信应用和开发环境，如Visual Studio Code和Slack等知名软件均基于Electron构建。该框架特别适合需要快速开发跨平台桌面应用的团队。",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19992894194709557,
-        "summary_en": "React is a JavaScript library developed by Facebook for building user interfaces, primarily for web applications but also supporting native mobile development through React Native. Its core capability lies in a declarative programming model that enables efficient UI updates through a virtual DOM. Key strengths include component reusability, one-way data flow, and strong developer tools. Typical use cases range from single-page applications and dynamic web interfaces to complex enterprise-level frontends, benefiting from React's performance optimization and extensive ecosystem.",
-        "summary_zh": "React是由Facebook开发的JavaScript库，主要用于构建用户界面，支持Web应用和通过React Native实现原生移动开发。其核心能力基于声明式编程模型，利用虚拟DOM实现高效UI更新。主要优势包括组件可重用性、单向数据流和强大的开发者工具。典型应用场景涵盖单页应用、动态Web界面到复杂企业级前端，受益于React的性能优化和丰富生态系统。该库专注于提供可预测的UI开发方式，通过状态管理简化复杂交互逻辑，已成为现代前端开发的主流选择之一。",
-        "summary_es": "React is a JavaScript library developed by Facebook for building user interfaces, primarily for web applications but also supporting native mobile development through React Native. Its core capability lies in a declarative programming model that enables efficient UI updates through a virtual DOM. Key strengths include component reusability, one-way data flow, and strong developer tools. Typical use cases range from single-page applications and dynamic web interfaces to complex enterprise-level frontends, benefiting from React's performance optimization and extensive ecosystem."
+        "score_engineering": 0.19993065446306,
+        "summary_en": "Electron is an open-source framework for building cross-platform desktop applications using web technologies. It combines the Chromium rendering engine with Node.js runtime, enabling developers to create native-like desktop apps with JavaScript, HTML, and CSS. Core capabilities include access to native operating system APIs, automatic updates, crash reporting, and debugging tools. Its main strengths are code reusability across Windows, macOS, and Linux, extensive ecosystem, and familiar web development workflow. Typical use cases include productivity tools, code editors, communication apps, and development environments like Visual Studio Code and Slack.",
+        "summary_zh": "Electron是一个开源框架，用于使用Web技术构建跨平台桌面应用程序。它将Chromium渲染引擎与Node.js运行时相结合，使开发者能够使用JavaScript、HTML和CSS创建类似原生的桌面应用。核心功能包括访问原生操作系统API、自动更新、崩溃报告和调试工具。主要优势在于代码可在Windows、macOS和Linux间重用，拥有丰富的生态系统，以及熟悉的Web开发工作流程。典型应用场景包括生产力工具、代码编辑器、通信应用和开发环境，如Visual Studio Code和Slack等知名软件均基于Electron构建。该框架特别适合需要快速开发跨平台桌面应用的团队。",
+        "summary_es": "Electron is an open-source framework for building cross-platform desktop applications using web technologies. It combines the Chromium rendering engine with Node.js runtime, enabling developers to create native-like desktop apps with JavaScript, HTML, and CSS. Core capabilities include access to native operating system APIs, automatic updates, crash reporting, and debugging tools. Its main strengths are code reusability across Windows, macOS, and Linux, extensive ecosystem, and familiar web development workflow. Typical use cases include productivity tools, code editors, communication apps, and development environments like Visual Studio Code and Slack."
       },
       {
-        "id": "yt-dlp/yt-dlp",
+        "id": "airbnb/javascript",
         "source": "github",
-        "name": "yt-dlp",
-        "url": "https://github.com/yt-dlp/yt-dlp",
+        "name": "javascript",
+        "url": "https://github.com/airbnb/javascript",
         "tags": [
-          "cli",
-          "downloader",
-          "python",
-          "sponsorblock",
-          "youtube-dl",
-          "youtube-downloader",
-          "yt-dlp"
+          "arrow-functions",
+          "es2015",
+          "es2016",
+          "es2017",
+          "es2018",
+          "es6",
+          "eslint",
+          "javascript",
+          "linting",
+          "naming-conventions",
+          "style-guide",
+          "style-linter",
+          "styleguide",
+          "tc39"
         ],
         "stats": {
-          "stars_total": 128170,
-          "forks_total": 10271,
-          "stars_7d": 1217,
-          "forks_7d": 85
+          "stars_total": 147452,
+          "forks_total": 26782,
+          "stars_7d": 0,
+          "forks_7d": 0
         },
-        "updated_at": "2025-09-27T06:50:22Z",
+        "updated_at": "2025-09-27T15:04:34Z",
         "added_at": "2025-09-27",
-        "summary": "yt-dlp 是从 youtube-dl 分支而来的命令行音视频下载工具，旨在从数千个网站提取媒体内容。其核心功能包括下载视频、音频、字幕和缩略图，支持 MP4、WebM、MP3 等格式。优势在于广泛的网站兼容性、通过 SponsorBlock 集成实现赞助片段屏蔽，以及频繁更新以绕过限制。典型用例包括内容存档、离线观看，以及批量下载播放列表或频道，适用于个人或研究目的。",
+        "summary": "Airbnb JavaScript 风格指南是一套全面的 JavaScript 编码规范，旨在确保代码的一致性和可维护性。该指南详细规定了 ES6+ 特性、箭头函数、命名约定和现代语法的使用规则，可作为团队通过 ESLint 等工具强制执行代码质量的参考标准。其优势包括行业广泛采用、详尽文档说明以及与 TC39 标准的对齐。典型应用场景涵盖团队代码库标准化、新开发人员入职培训，以及集成到 CI/CD 管道中实现自动化风格检查。该开源项目在 GitHub 上获得超过 14 万星标，体现了其社区认可度。",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 1.0051214047846442,
-        "summary_en": "yt-dlp is a command-line audio/video downloader forked from youtube-dl, designed to extract media from thousands of sites. Its core capabilities include downloading videos, audio, subtitles, and thumbnails, with support for formats like MP4, WebM, and MP3. Strengths are extensive site compatibility, sponsor blocking via SponsorBlock integration, and frequent updates to bypass restrictions. Typical use cases are archiving content, offline viewing, and batch downloading playlists or channels for personal or research purposes.",
-        "summary_zh": "yt-dlp 是从 youtube-dl 分支而来的命令行音视频下载工具，旨在从数千个网站提取媒体内容。其核心功能包括下载视频、音频、字幕和缩略图，支持 MP4、WebM、MP3 等格式。优势在于广泛的网站兼容性、通过 SponsorBlock 集成实现赞助片段屏蔽，以及频繁更新以绕过限制。典型用例包括内容存档、离线观看，以及批量下载播放列表或频道，适用于个人或研究目的。",
-        "summary_es": "yt-dlp is a command-line audio/video downloader forked from youtube-dl, designed to extract media from thousands of sites. Its core capabilities include downloading videos, audio, subtitles, and thumbnails, with support for formats like MP4, WebM, and MP3. Strengths are extensive site compatibility, sponsor blocking via SponsorBlock integration, and frequent updates to bypass restrictions. Typical use cases are archiving content, offline viewing, and batch downloading playlists or channels for personal or research purposes."
+        "score_engineering": 0.19991939325415733,
+        "summary_en": "The Airbnb JavaScript Style Guide is a comprehensive coding standard for writing consistent and maintainable JavaScript code. It provides detailed rules covering ES6+ features, arrow functions, naming conventions, and modern syntax. The guide serves as a reference for teams to enforce code quality through linting tools like ESLint. Its strengths include industry adoption, thorough documentation, and alignment with TC39 standards. Typical use cases include team codebase standardization, onboarding new developers, and integrating with CI/CD pipelines for automated style enforcement.",
+        "summary_zh": "Airbnb JavaScript 风格指南是一套全面的 JavaScript 编码规范，旨在确保代码的一致性和可维护性。该指南详细规定了 ES6+ 特性、箭头函数、命名约定和现代语法的使用规则，可作为团队通过 ESLint 等工具强制执行代码质量的参考标准。其优势包括行业广泛采用、详尽文档说明以及与 TC39 标准的对齐。典型应用场景涵盖团队代码库标准化、新开发人员入职培训，以及集成到 CI/CD 管道中实现自动化风格检查。该开源项目在 GitHub 上获得超过 14 万星标，体现了其社区认可度。",
+        "summary_es": "The Airbnb JavaScript Style Guide is a comprehensive coding standard for writing consistent and maintainable JavaScript code. It provides detailed rules covering ES6+ features, arrow functions, naming conventions, and modern syntax. The guide serves as a reference for teams to enforce code quality through linting tools like ESLint. Its strengths include industry adoption, thorough documentation, and alignment with TC39 standards. Typical use cases include team codebase standardization, onboarding new developers, and integrating with CI/CD pipelines for automated style enforcement."
       }
     ]
   }

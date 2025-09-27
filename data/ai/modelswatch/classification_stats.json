@@ -1,9 +1,9 @@
 {
-  "generated_at": "2025-09-27T07:07:32.095Z",
+  "generated_at": "2025-09-27T15:22:07.018Z",
   "hf": {
     "total": 60,
-    "with_tasks": 17,
-    "pct_with_tasks": 28.33,
+    "with_tasks": 18,
+    "pct_with_tasks": 30,
     "task_distribution": [
       {
         "task": "inference_acceleration",
@@ -15,6 +15,14 @@
       },
       {
         "task": "image_classification",
+        "count": 2
+      },
+      {
+        "task": "asr",
+        "count": 2
+      },
+      {
+        "task": "multimodal_understanding_generation",
         "count": 2
       },
       {
@@ -38,19 +46,7 @@
         "count": 1
       },
       {
-        "task": "asr",
-        "count": 1
-      },
-      {
         "task": "image_text_alignment",
-        "count": 1
-      },
-      {
-        "task": "multimodal_understanding_generation",
-        "count": 1
-      },
-      {
-        "task": "vqa",
         "count": 1
       },
       {
@@ -58,11 +54,11 @@
         "count": 1
       },
       {
-        "task": "lightweight_visual_model",
+        "task": "vqa",
         "count": 1
       },
       {
-        "task": "multimodal_dialogue_system",
+        "task": "lightweight_multimodal_model",
         "count": 1
       }
     ]
