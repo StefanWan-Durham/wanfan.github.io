@@ -1,10 +1,10 @@
 {
-  "generated_at": "2025-09-27T15:07:54.608Z",
-  "total_items_considered": 102,
-  "to_generate": 102,
-  "generated": 102,
+  "generated_at": "2025-09-27T16:19:01.212Z",
+  "total_items_considered": 0,
+  "to_generate": 0,
+  "generated": 0,
   "failed": 0,
-  "api_key_present": true,
+  "api_key_present": false,
   "attempts": 0,
   "success": 0,
   "empty": 0,
@@ -15,5 +15,5 @@
   "fallback_count": 0,
   "skipped_due_to_limit": 0,
   "cold_start_done": false,
-  "original_to_generate": 102
+  "original_to_generate": 0
 }

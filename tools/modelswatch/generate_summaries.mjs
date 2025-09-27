@@ -128,7 +128,8 @@ async function main(){
   const results = {};
   for(const L of langs){
     const { text } = await callLLM(prompts[L], L);
-    results[L] = truncate(text, 1200);
+    // Allow longer weekly summary text to avoid mid-sentence truncation for Chinese
+    results[L] = truncate(text, 3000);
   }
 
   const out = {

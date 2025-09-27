@@ -69,11 +69,11 @@ export async function summarizeTriJSON(prompt, opts={}){
     model: MODEL,
     messages: [
       { role: 'system', content: BILINGUAL ? 'You are a precise summarizer. Output only valid JSON with keys summary_en, summary_zh.' : 'You are a precise summarizer. Output only valid JSON with keys summary_en, summary_zh, summary_es.' },
-      { role: 'user', content: BILINGUAL ? `Given an open-source AI project description, produce bilingual factual summaries (English + Chinese).\nReturn JSON keys: summary_en, summary_zh.\nConstraints:\n- English: 70-90 words.\n- Chinese: 120-160 汉字。\nFocus: purpose, core capabilities, notable strengths, typical use cases. Avoid marketing or hype.\nOutput ONLY JSON.\nFACTS:\n${prompt}` : `Given an open-source AI project description, produce tri-lingual factual summaries.\nReturn JSON keys: summary_en, summary_zh, summary_es.\nConstraints:\n- English: 70-90 words.\n- Chinese: 120-160 汉字。\n- Spanish: 70-90 words.\nFocus: purpose, core capabilities, notable strengths, typical use cases. Avoid marketing or hype.\nOutput ONLY JSON.\nFACTS:\n${prompt}` }
+      { role: 'user', content: BILINGUAL ? `Given an open-source AI project description, produce bilingual factual summaries (English + Chinese).\nReturn JSON keys: summary_en, summary_zh.\nConstraints (guideline):\n- English: ~70-120 words.\n- Chinese: up to 300 汉字 (aim for a complete, factual paragraph).\nFocus: purpose, core capabilities, notable strengths, typical use cases. Avoid marketing or hype.\nOutput ONLY JSON.\nFACTS:\n${prompt}` : `Given an open-source AI project description, produce tri-lingual factual summaries.\nReturn JSON keys: summary_en, summary_zh, summary_es.\nConstraints (guideline):\n- English: ~70-120 words.\n- Chinese: up to 300 汉字 (aim for a complete, factual paragraph).\n- Spanish: ~70-120 words.\nFocus: purpose, core capabilities, notable strengths, typical use cases. Avoid marketing or hype.\nOutput ONLY JSON.\nFACTS:\n${prompt}` }
     ],
     temperature,
     // Increase token budget to reduce Chinese truncation risk
-    max_tokens: 1400
+    max_tokens: 1600
   });
   async function attempt(){
     if(networkErrorStreak >= MAX_NETWORK_ERROR_STREAK){
@@ -174,7 +174,7 @@ export async function summarizeTriJSON(prompt, opts={}){
             if(tr.status===0){ const val=(tr.stdout||'').trim(); cache.set(tag,val); return val; }
             return '';
           }
-          const zh = callTrans('zh','将以下英文精确翻译为 130-150 汉字中文摘要，保持技术名词准确，不加扩展解释，只保留核心事实：');
+          const zh = callTrans('zh','将以下英文精确翻译为不超过300汉字的中文摘要，保持技术名词准确，不加扩展解释，只保留核心事实：');
           let es = '';
           if(!BILINGUAL){
             es = callTrans('es','Traduce el siguiente resumen al español en 80-95 palabras, manteniendo términos técnicos y tono factual:');

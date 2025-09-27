@@ -216,7 +216,8 @@ async function main(){
     if(llmUnavailable || !API_KEY){
       generated = toGen.map(({it,key,hash})=>{
         if(ENABLE_FALLBACK){
-          const base = (it.summary || it.description || '').slice(0,160).trim();
+          // Keep a longer fallback snippet so placeholder summaries are more informative
+          const base = (it.summary || it.description || '').slice(0,600).trim();
           const short = base || it.name || it.id;
           const en = `Auto summary (fallback:${llmUnavailable? 'unavailable':'no-key'}) : ${short}`;
           const zh = `自动摘要（占位:${llmUnavailable? '无法连接':'缺少密钥'}）: ${short}`;
@@ -322,6 +323,8 @@ async function main(){
   // Write enriched summary arrays into companion files (do not mutate original minimal snapshot maps)
   const enrichedHFPath = path.join(dayDir, 'hf_summaries.json');
   const enrichedGHPath = path.join(dayDir, 'gh_summaries.json');
+  // Ensure directory exists to avoid write errors when snapshots folder is not present
+  try { fs.mkdirSync(dayDir, { recursive: true }); } catch(e) { /* ignore */ }
   writeJSON(enrichedHFPath, { date: day, items: itemsHF });
   writeJSON(enrichedGHPath, { date: day, items: itemsGH });
   const failedCount = (generated||[]).filter(v=>v===false).length;

@@ -28,12 +28,26 @@ const outPath = argVal('--out','OUT_JSON') || '';
 
 function readJSON(p){ try{ return JSON.parse(fs.readFileSync(p,'utf-8')); }catch(e){ return null; } }
 
-const hotlistRaw = readJSON(hotlistPath) || [];
+let hotlistRaw = readJSON(hotlistPath) || {};
 let hotlist = [];
-if(Array.isArray(hotlistRaw)) hotlist = hotlistRaw;
-else if(hotlistRaw && Array.isArray(hotlistRaw.models)) hotlist = hotlistRaw.models;
-else if(hotlistRaw && Array.isArray(hotlistRaw.items)) hotlist = hotlistRaw.items;
-else hotlist = [];
+// Support multiple hotlist shapes:
+//  - array of models
+//  - { models: [...] } or { items: [...] }
+//  - { by_category: { taskKey: [ ...models ] } }
+if (Array.isArray(hotlistRaw)) {
+  hotlist = hotlistRaw;
+} else if (hotlistRaw && Array.isArray(hotlistRaw.models)) {
+  hotlist = hotlistRaw.models;
+} else if (hotlistRaw && Array.isArray(hotlistRaw.items)) {
+  hotlist = hotlistRaw.items;
+} else if (hotlistRaw && typeof hotlistRaw === 'object' && hotlistRaw.by_category && typeof hotlistRaw.by_category === 'object') {
+  // Flatten by_category map into a single array of entries
+  for (const v of Object.values(hotlistRaw.by_category)) {
+    if (Array.isArray(v)) hotlist.push(...v);
+  }
+} else {
+  hotlist = [];
+}
 
 let catsRaw = readJSON(categoriesPath);
 let cats = [];

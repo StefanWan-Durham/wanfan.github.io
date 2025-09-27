@@ -89,6 +89,20 @@ function generateHeuristicVariants(taskKey){
   return [...variants].filter(v=> v.length>=3);
 }
 
+function normalizeStringToTokens(s){
+  if(!s) return [];
+  return String(s).toLowerCase()
+    .replace(/[:@#\/=]/g,' ') // split common separators
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g,' ') // keep CJK and alphanum
+    .split(/\s+/).filter(Boolean);
+}
+
+function normalizeTagForMatch(tag){
+  if(!tag) return '';
+  // drop dataset:, base_model:, license:, region:, arxiv: prefixes
+  return String(tag).toLowerCase().replace(/^(dataset:|base_model:|license:|region:|arxiv:)/,'').replace(/[^a-z0-9\u4e00-\u9fff]+/g,' ').trim();
+}
+
 function normalizeZh(str){
   if(!str) return [];
   // Remove full-width and half-width parentheses content
@@ -131,16 +145,45 @@ function categorizeModel(it, taskMap, aliasMap){
   const idLow = String(it.id||'').toLowerCase();
   const nameLow = String(it.name||'').toLowerCase();
   const combined = `${idLow} ${nameLow} ${(it.summary||'').toLowerCase()} ${(it.description||'').toLowerCase()}`;
-  const tagSet = new Set((it.tags||[]).map(t=>String(t).toLowerCase()));
+  // Build both raw and normalized tag sets for more robust matching
+  const rawTags = (it.tags||[]).map(t=>String(t).toLowerCase());
+  const tagSet = new Set(rawTags);
+  const normTags = new Set(rawTags.map(normalizeTagForMatch).filter(Boolean));
   const keys = new Set();
   const debugHits = [];
   for(const [k] of taskMap.entries()){
     const tk = k.toLowerCase();
+    // exact tag or id match
     if(tagSet.has(tk) || idLow.includes(tk)) { keys.add(k); continue; }
-    const tokens = tk.split(/[_-]/).filter(t=>t.length>=3);
-    if(tokens.some(tok=> combined.includes(tok) || [...tagSet].some(tag=> tag.includes(tok)))){ keys.add(k); continue; }
+    // normalized tag match (e.g., image-classification -> image classification)
+    if([...normTags].some(nt=> nt.includes(tk.replace(/[_-]/g,' ')) || tk.replace(/[_-]/g,' ').includes(nt))){ keys.add(k); continue; }
+
+    // token overlap fuzzy match between task key/name/aliases and combined text/tags
+    const tkTokens = normalizeStringToTokens(tk).filter(t=> t.length>=2);
+    if(tkTokens.length){
+      const combinedTokens = new Set(normalizeStringToTokens(combined));
+      const normTagTokens = new Set(Array.from(normTags).flatMap(t=> normalizeStringToTokens(t)));
+      let common = 0;
+      for(const tkn of tkTokens){ if(combinedTokens.has(tkn) || normTagTokens.has(tkn)) common++; }
+      // match if at least two tokens overlap or majority of tkTokens overlap
+      if(common >= 2 || (common>0 && common / tkTokens.length >= 0.6)) { keys.add(k); continue; }
+    }
+
+    // alias-based matching (aliases expanded and normalized in buildAliasMap)
     const aliases = aliasMap[tk] || [];
-    if(aliases.some(alias => combined.includes(alias) || [...tagSet].some(tag=> tag.includes(alias)))){ keys.add(k); continue; }
+    if(aliases.some(alias => {
+      const nal = String(alias).toLowerCase();
+      if(nal.length<2) return false;
+      if(combined.includes(nal)) return true;
+      if(tagSet.has(nal)) return true;
+      const nalTokens = normalizeStringToTokens(nal);
+      if(nalTokens.length>=2){
+        const combinedTokens = new Set(normalizeStringToTokens(combined));
+        let common = 0; for(const tkn of nalTokens) if(combinedTokens.has(tkn)) common++;
+        if(common >= 2 || (common>0 && common / nalTokens.length >= 0.6)) return true;
+      }
+      return false;
+    })){ keys.add(k); continue; }
   }
   if(DEBUG){
     if(keys.size){
@@ -163,10 +206,15 @@ function computeScore(entry){
 async function main(){
   const today = dateKey(0);
   const day7 = dateKey(7);
-  const snapToday = loadSnapshot(today, 'hf.json');
-  const snap7 = loadSnapshot(day7, 'hf.json');
+  const snapTodayHF = loadSnapshot(today, 'hf.json');
+  const snap7HF = loadSnapshot(day7, 'hf.json');
+  const snapTodayGH = loadSnapshot(today, 'github.json');
+  const snap7GH = loadSnapshot(day7, 'github.json');
 
-  const corpus = readJSON(path.join(dataDir, 'corpus.hf.json')) || { items: [] };
+  // Merge corpora: prefer HF then GitHub so we have more candidates
+  const corpusHF = readJSON(path.join(dataDir, 'corpus.hf.json')) || { items: [] };
+  const corpusGH = readJSON(path.join(dataDir, 'corpus.github.json')) || { items: [] };
+  const corpus = { items: [ ...(corpusHF.items||[]), ...(corpusGH.items||[]) ] };
   // Categories file actually resides one level up: data/ai/ai_categories.json
   const catFile = readJSON(path.join(root, 'data/ai/ai_categories.json')) || readJSON(path.join(dataDir, 'ai_categories.json'));
   const hotlistPath = path.join(dataDir, 'models_hotlist.json');
@@ -196,21 +244,32 @@ async function main(){
   const candidates=[];
   for(const it of corpus.items||[]){
     const id = it.id || it.repo_id || it.url || it.name; if(!id) continue;
-    const snapT = snapToday[id] || { downloads:0, likes:0, last_modified: it.updated_at };
-    const snapP = snap7[id] || { downloads: snapT.downloads, likes: snapT.likes, last_modified: it.updated_at };
-    const downloads_7d = Math.max(0, (snapT.downloads||0) - (snapP.downloads||0));
-    const likes_7d = Math.max(0, (snapT.likes||0) - (snapP.likes||0));
-  const task_keys = categorizeModel(it, taskMap, aliasMap);
-    if(task_keys.length===0) continue; // skip unclassified
+    // Determine source and snapshot maps
+    const src = (it.source || '').toLowerCase() || (id && id.includes('/') && id.split('/').length===2 ? 'github' : 'hf');
+    let snapT = {};
+    let snapP = {};
+    if(src === 'github'){
+      snapT = snapTodayGH[id] || { stars:0, last_modified: it.updated_at };
+      snapP = snap7GH[id] || { stars: snapT.stars, last_modified: it.updated_at };
+    } else {
+      snapT = snapTodayHF[id] || { downloads:0, likes:0, last_modified: it.updated_at };
+      snapP = snap7HF[id] || { downloads: snapT.downloads, likes: snapT.likes, last_modified: it.updated_at };
+    }
+    // Treat GitHub star delta as downloads_7d for scoring consistency
+    const downloads_7d = src === 'github' ? Math.max(0, (snapT.stars||0) - (snapP.stars||0)) : Math.max(0, (snapT.downloads||0) - (snapP.downloads||0));
+    const likes_7d = src === 'github' ? 0 : Math.max(0, (snapT.likes||0) - (snapP.likes||0));
+    const task_keys = categorizeModel(it, taskMap, aliasMap);
+    // Keep unclassified items (we'll expose a separate global_github list below)
+    // if(task_keys.length===0) continue; // previously skipped unclassified
     const entry = {
       id,
-      source: 'hf',
+      source: src,
       name: it.name || id.split('/').pop(),
-      url: it.url || `https://huggingface.co/${id}`,
+      url: it.url || (src==='github' ? `https://github.com/${id}` : `https://huggingface.co/${id}`),
       tags: it.tags||[],
       stats: {
-        downloads_total: snapT.downloads||0,
-        likes_total: snapT.likes||0,
+        downloads_total: src==='github' ? (snapT.stars||0) : (snapT.downloads||0),
+        likes_total: src==='github' ? 0 : (snapT.likes||0),
         downloads_7d,
         likes_7d
       },
@@ -250,8 +309,22 @@ async function main(){
     console.log('[update_model_hotlist][debug] top task distribution:', top.map(([k,v])=> `${k}:${v}`).join(' '));
   }
 
+  // Create a top-level global_github list to allow UI to show more GH snapshot items
+  try{
+    const GH_GLOBAL_LIMIT = Number(process.env.HOTLIST_GLOBAL_GH_LIMIT || '24');
+    const ghCandidates = candidates.filter(c=> c.source==='github' || (c.source && c.source.toLowerCase()==='github'));
+    ghCandidates.sort((a,b)=> (b.score_model||0) - (a.score_model||0));
+    const topGh = ghCandidates.slice(0, GH_GLOBAL_LIMIT).map(p=>({
+      id: p.id, source: p.source, name: p.name, url: p.url, tags: p.tags, stats: p.stats,
+      updated_at: p.updated_at, summary: p.summary || p.summary_en || p.summary_zh || '', score_model: p.score_model || 0
+    }));
+    hotlist.global_github = topGh;
+    console.log('[update_model_hotlist] global_github list built, items=', topGh.length);
+  }catch(e){ /* non-fatal */ }
+
   // Group by task key and append
   let appended=0;
+  const appendedCounts = {}; // track per-task appended counts for logging
   for(const tk of taskKeys){
     const already = hotlist.by_category[tk] || (hotlist.by_category[tk]=[]);
     const pool = candidates.filter(c=> c.task_keys.includes(tk) && !existingIds.has(c.id));
@@ -275,6 +348,7 @@ async function main(){
             task_keys: p.task_keys
         })));
         appended += primary.length;
+        appendedCounts[tk] = (appendedCounts[tk]||0) + primary.length;
       }
       // Seeding: ensure minimum bucket size
       if(already.length < MIN_SEED_PER_TASK){
@@ -296,19 +370,30 @@ async function main(){
             task_keys: p.task_keys
           })));
           appended += extra.length;
+          appendedCounts[tk] = (appendedCounts[tk]||0) + extra.length;
         }
       }
     }
   }
 
-  // Backfill task_keys for existing entries missing them (using candidate map)
-  const candMap = new Map(candidates.map(c=> [c.id, c.task_keys]));
+  // Backfill task_keys and score_model for existing entries using candidate data where available
+  const candidateMap = new Map(candidates.map(c=> [c.id, c]));
   let backfilled = 0;
   for(const arr of Object.values(hotlist.by_category)){
     arr.forEach(e=>{
+      // backfill task_keys
       if(!e.task_keys || !e.task_keys.length){
-        const tk = candMap.get(e.id);
+        const cand = candidateMap.get(e.id);
+        const tk = cand ? cand.task_keys : null;
         if(tk && tk.length){ e.task_keys = tk; backfilled++; }
+      }
+      // backfill or normalize score_model so sorting works consistently
+      const cand = candidateMap.get(e.id);
+      if(cand && typeof cand.score_model === 'number'){
+        e.score_model = cand.score_model;
+      } else {
+        // preserve existing numeric score_model if present, otherwise default to 0
+        e.score_model = (typeof e.score_model === 'number') ? e.score_model : 0;
       }
     });
   }
@@ -337,6 +422,10 @@ async function main(){
   }
   if(summaryMerged) console.log(`[update_model_hotlist] merged summaries for ${summaryMerged} existing hotlist entries`);
 
+  // Ensure each category array is sorted by computed score_model so consumers display correct ordering
+  for(const k of Object.keys(hotlist.by_category)){
+    try{ hotlist.by_category[k].sort((a,b)=> (b.score_model||0) - (a.score_model||0)); }catch(e){ /* ignore sort errors */ }
+  }
   hotlist.updated_at = new Date().toISOString();
   hotlist.version = SCHEMA_VERSION;
   // Remove any leftover placeholder entries before writing out the hotlist so the UI and consumers
@@ -346,6 +435,19 @@ async function main(){
   }
   writeJSON(hotlistPath, hotlist);
   info(`[update_model_hotlist] appended ${appended} new entries across ${taskKeys.length} tasks`);
+
+  // Non-destructive logging: print per-task appended counts (sorted desc) so CI logs show which tasks gained items
+  try{
+    const taskEntries = Object.entries(appendedCounts).filter(([,c])=> c>0).sort((a,b)=> b[1]-a[1]);
+    if(taskEntries.length){
+      console.log('[update_model_hotlist] per-task appended counts:');
+      for(const [tk,c] of taskEntries){
+        console.log('  ', tk.padEnd(36), c);
+      }
+    } else {
+      console.log('[update_model_hotlist] no new per-task appends in this run');
+    }
+  }catch(e){ /* non-fatal logging error */ }
 }
 
 main().catch(e=>{ console.error(e); process.exit(1); });
