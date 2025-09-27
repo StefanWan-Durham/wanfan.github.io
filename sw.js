@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fw-site-v5';
+const CACHE_NAME = 'fw-site-v6';
 const ASSETS = [
   './',
   './index.html',
@@ -58,6 +58,32 @@ self.addEventListener('fetch', (event) => {
       }
     })());
     return;
+  }
+
+  // Treat dynamic JSON/data under /data/ai/ (modelswatch, scholarpush, blog index, etc.)
+  // as network-first so the UI receives fresh model/snapshot data without
+  // requiring a manual refresh. This is conservative: only affects same-origin
+  // requests under the /data/ai/ path which are used by the dynamic pages.
+  try {
+    const url = new URL(req.url);
+    if (url.pathname.startsWith('/data/ai/')) {
+      event.respondWith((async () => {
+        try {
+          const res = await fetch(req);
+          if (res && (res.ok || res.type === 'opaque')) {
+            const clone = res.clone();
+            event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(req, clone)).catch(()=>{}));
+          }
+          return res;
+        } catch (e) {
+          const cached = await caches.match(req);
+          return cached || Promise.reject(e);
+        }
+      })());
+      return;
+    }
+  } catch (e) {
+    // If URL parsing fails, fall through to default handlers below
   }
 
   // Stale-while-revalidate for other assets (images, fonts, etc.)
