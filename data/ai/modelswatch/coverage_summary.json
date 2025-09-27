@@ -1,101 +1,74 @@
 {
   "hotlistPath": "data/ai/modelswatch/models_hotlist.json",
-  "totalModels": 0,
-  "modelsWithTasks": 0,
-  "distinctTasks": 0,
+  "totalModels": 325,
+  "modelsWithTasks": 325,
+  "distinctTasks": 88,
   "taxonomyTasks": 91,
   "zeroTasks": [
-    "image_classification",
-    "object_detection",
-    "semantic_segmentation",
-    "instance_segmentation",
-    "panoptic_segmentation",
-    "text_to_image",
-    "text_to_video",
-    "3d_reconstruction",
-    "nerf",
-    "super_resolution",
-    "denoising",
-    "restoration",
-    "medical_image_processing",
-    "remote_sensing_image_processing",
-    "vqa",
-    "visual_grounding",
-    "lightweight_visual_model",
-    "llm_pretraining",
-    "instruction_tuning",
     "rlhf",
     "rag",
-    "code_generation",
-    "structured_reasoning",
-    "tool_use",
-    "lora_adapter",
-    "multilingual_processing",
-    "low_resource_language",
-    "knowledge_editing",
-    "nlp_data_synthesis",
-    "nlp_data_distillation",
-    "dialogue_system_optimization",
-    "nlp_bias_mitigation",
-    "image_text_alignment",
-    "multimodal_understanding_generation",
-    "asr",
-    "tts",
-    "slu",
-    "speaker_separation",
-    "noise_separation",
-    "full_duplex_dialogue",
-    "avsr",
-    "multimodal_dialogue_system",
-    "lightweight_multimodal_model",
-    "gnn",
-    "kg_construction",
-    "kg_reasoning",
-    "general_recommendation",
-    "vertical_recommendation",
-    "vector_retrieval",
-    "vector_db_optimization",
-    "metric_learning",
-    "contrastive_learning",
-    "ltr",
-    "neural_retrieval",
-    "graph_augmented_reco",
-    "model_compression",
-    "model_quantization",
-    "model_distillation",
-    "compilation_optimization",
-    "inference_acceleration",
-    "federated_learning",
-    "privacy_computing",
-    "adversarial_attack",
-    "adversarial_defense",
-    "red_teaming",
-    "content_moderation",
-    "auto_evaluation_models",
-    "edge_hw_sw_co_design",
-    "xai",
-    "ai_ethics_risk_assessment",
-    "training_data_anonymization",
-    "training_data_copyright",
-    "model_monitoring",
-    "model_iterative_update",
-    "fluid_simulation",
-    "material_design",
-    "drug_molecule_prediction",
-    "robotic_vision",
-    "robot_motion_planning",
-    "robot_environment_interaction",
-    "molecular_generation",
-    "bioinformatics_analysis",
-    "time_series_forecasting",
-    "time_series_anomaly_detection",
-    "radar_understanding",
-    "lidar_understanding",
-    "low_resource_medical_ai",
-    "low_resource_voice_assistant",
-    "ar_vr_interaction",
-    "multimodal_temporal_fusion",
-    "robot_dialogue_logic"
+    "gnn"
   ],
-  "topTasks": []
+  "topTasks": [
+    {
+      "key": "image_text_alignment",
+      "count": 234
+    },
+    {
+      "key": "remote_sensing_image_processing",
+      "count": 232
+    },
+    {
+      "key": "semantic_segmentation",
+      "count": 223
+    },
+    {
+      "key": "instance_segmentation",
+      "count": 221
+    },
+    {
+      "key": "panoptic_segmentation",
+      "count": 221
+    },
+    {
+      "key": "inference_acceleration",
+      "count": 221
+    },
+    {
+      "key": "code_generation",
+      "count": 213
+    },
+    {
+      "key": "molecular_generation",
+      "count": 212
+    },
+    {
+      "key": "graph_augmented_reco",
+      "count": 211
+    },
+    {
+      "key": "multimodal_understanding_generation",
+      "count": 207
+    },
+    {
+      "key": "ai_ethics_risk_assessment",
+      "count": 205
+    },
+    {
+      "key": "multimodal_temporal_fusion",
+      "count": 204
+    },
+    {
+      "key": "general_recommendation",
+      "count": 204
+    },
+    {
+      "key": "vertical_recommendation",
+      "count": 204
+    },
+    {
+      "key": "content_moderation",
+      "count": 204
+    }
+  ]
 }

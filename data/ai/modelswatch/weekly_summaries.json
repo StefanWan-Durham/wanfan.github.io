@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2025-09-27T15:22:06.901Z",
+  "updated_at": "2025-09-27T16:29:28.324Z",
   "period": "2025-W39",
   "sections": {
     "overview": {
@@ -12,163 +12,319 @@
   "meta": {
     "task_distribution": [
       {
-        "task": "image_classification",
-        "count": 2
-      },
-      {
-        "task": "object_detection",
-        "count": 2
-      },
-      {
         "task": "semantic_segmentation",
-        "count": 2
+        "count": 8
       },
       {
         "task": "instance_segmentation",
-        "count": 2
+        "count": 8
       },
       {
         "task": "panoptic_segmentation",
-        "count": 2
-      },
-      {
-        "task": "text_to_image",
-        "count": 2
-      },
-      {
-        "task": "text_to_video",
-        "count": 2
-      },
-      {
-        "task": "medical_image_processing",
-        "count": 2
+        "count": 8
       },
       {
         "task": "remote_sensing_image_processing",
-        "count": 2
-      },
-      {
-        "task": "lightweight_visual_model",
-        "count": 2
-      },
-      {
-        "task": "llm_pretraining",
-        "count": 2
+        "count": 8
       },
       {
         "task": "code_generation",
-        "count": 2
-      },
-      {
-        "task": "multilingual_processing",
-        "count": 2
-      },
-      {
-        "task": "nlp_data_synthesis",
-        "count": 2
-      },
-      {
-        "task": "nlp_data_distillation",
-        "count": 2
+        "count": 8
       },
       {
         "task": "image_text_alignment",
-        "count": 2
+        "count": 8
       },
       {
         "task": "multimodal_understanding_generation",
-        "count": 2
-      },
-      {
-        "task": "asr",
-        "count": 2
-      },
-      {
-        "task": "speaker_separation",
-        "count": 2
-      },
-      {
-        "task": "lightweight_multimodal_model",
-        "count": 2
-      },
-      {
-        "task": "vector_retrieval",
-        "count": 2
+        "count": 8
       },
       {
         "task": "graph_augmented_reco",
-        "count": 2
-      },
-      {
-        "task": "model_compression",
-        "count": 2
-      },
-      {
-        "task": "model_quantization",
-        "count": 2
-      },
-      {
-        "task": "model_distillation",
-        "count": 2
+        "count": 8
       },
       {
         "task": "inference_acceleration",
-        "count": 2
-      },
-      {
-        "task": "auto_evaluation_models",
-        "count": 2
-      },
-      {
-        "task": "training_data_anonymization",
-        "count": 2
-      },
-      {
-        "task": "training_data_copyright",
-        "count": 2
-      },
-      {
-        "task": "model_monitoring",
-        "count": 2
-      },
-      {
-        "task": "model_iterative_update",
-        "count": 2
-      },
-      {
-        "task": "robotic_vision",
-        "count": 2
+        "count": 8
       },
       {
         "task": "molecular_generation",
-        "count": 2
+        "count": 8
       },
       {
-        "task": "time_series_forecasting",
-        "count": 2
+        "task": "denoising",
+        "count": 7
       },
       {
-        "task": "time_series_anomaly_detection",
-        "count": 2
-      },
-      {
-        "task": "low_resource_voice_assistant",
-        "count": 2
-      },
-      {
-        "task": "vqa",
-        "count": 1
-      },
-      {
-        "task": "visual_grounding",
-        "count": 1
-      },
-      {
-        "task": "instruction_tuning",
-        "count": 1
+        "task": "tool_use",
+        "count": 7
       },
       {
         "task": "nlp_bias_mitigation",
+        "count": 7
+      },
+      {
+        "task": "general_recommendation",
+        "count": 7
+      },
+      {
+        "task": "vertical_recommendation",
+        "count": 7
+      },
+      {
+        "task": "adversarial_defense",
+        "count": 7
+      },
+      {
+        "task": "content_moderation",
+        "count": 7
+      },
+      {
+        "task": "ai_ethics_risk_assessment",
+        "count": 7
+      },
+      {
+        "task": "robot_environment_interaction",
+        "count": 7
+      },
+      {
+        "task": "time_series_forecasting",
+        "count": 7
+      },
+      {
+        "task": "multimodal_temporal_fusion",
+        "count": 7
+      },
+      {
+        "task": "nlp_data_synthesis",
+        "count": 6
+      },
+      {
+        "task": "text_to_video",
+        "count": 5
+      },
+      {
+        "task": "llm_pretraining",
+        "count": 5
+      },
+      {
+        "task": "low_resource_language",
+        "count": 5
+      },
+      {
+        "task": "asr",
+        "count": 5
+      },
+      {
+        "task": "image_classification",
+        "count": 4
+      },
+      {
+        "task": "text_to_image",
+        "count": 4
+      },
+      {
+        "task": "lightweight_visual_model",
+        "count": 4
+      },
+      {
+        "task": "nlp_data_distillation",
+        "count": 4
+      },
+      {
+        "task": "lightweight_multimodal_model",
+        "count": 4
+      },
+      {
+        "task": "low_resource_voice_assistant",
+        "count": 4
+      },
+      {
+        "task": "object_detection",
+        "count": 3
+      },
+      {
+        "task": "medical_image_processing",
+        "count": 3
+      },
+      {
+        "task": "multilingual_processing",
+        "count": 3
+      },
+      {
+        "task": "speaker_separation",
+        "count": 3
+      },
+      {
+        "task": "vector_retrieval",
+        "count": 3
+      },
+      {
+        "task": "model_compression",
+        "count": 3
+      },
+      {
+        "task": "model_quantization",
+        "count": 3
+      },
+      {
+        "task": "model_distillation",
+        "count": 3
+      },
+      {
+        "task": "auto_evaluation_models",
+        "count": 3
+      },
+      {
+        "task": "training_data_anonymization",
+        "count": 3
+      },
+      {
+        "task": "training_data_copyright",
+        "count": 3
+      },
+      {
+        "task": "model_monitoring",
+        "count": 3
+      },
+      {
+        "task": "model_iterative_update",
+        "count": 3
+      },
+      {
+        "task": "material_design",
+        "count": 3
+      },
+      {
+        "task": "robotic_vision",
+        "count": 3
+      },
+      {
+        "task": "time_series_anomaly_detection",
+        "count": 3
+      },
+      {
+        "task": "low_resource_medical_ai",
+        "count": 3
+      },
+      {
+        "task": "3d_reconstruction",
+        "count": 2
+      },
+      {
+        "task": "super_resolution",
+        "count": 2
+      },
+      {
+        "task": "restoration",
+        "count": 2
+      },
+      {
+        "task": "visual_grounding",
+        "count": 2
+      },
+      {
+        "task": "instruction_tuning",
+        "count": 2
+      },
+      {
+        "task": "structured_reasoning",
+        "count": 2
+      },
+      {
+        "task": "lora_adapter",
+        "count": 2
+      },
+      {
+        "task": "knowledge_editing",
+        "count": 2
+      },
+      {
+        "task": "dialogue_system_optimization",
+        "count": 2
+      },
+      {
+        "task": "multimodal_dialogue_system",
+        "count": 2
+      },
+      {
+        "task": "kg_construction",
+        "count": 2
+      },
+      {
+        "task": "vector_db_optimization",
+        "count": 2
+      },
+      {
+        "task": "metric_learning",
+        "count": 2
+      },
+      {
+        "task": "contrastive_learning",
+        "count": 2
+      },
+      {
+        "task": "ltr",
+        "count": 2
+      },
+      {
+        "task": "neural_retrieval",
+        "count": 2
+      },
+      {
+        "task": "compilation_optimization",
+        "count": 2
+      },
+      {
+        "task": "federated_learning",
+        "count": 2
+      },
+      {
+        "task": "privacy_computing",
+        "count": 2
+      },
+      {
+        "task": "adversarial_attack",
+        "count": 2
+      },
+      {
+        "task": "edge_hw_sw_co_design",
+        "count": 2
+      },
+      {
+        "task": "fluid_simulation",
+        "count": 2
+      },
+      {
+        "task": "drug_molecule_prediction",
+        "count": 2
+      },
+      {
+        "task": "bioinformatics_analysis",
+        "count": 2
+      },
+      {
+        "task": "radar_understanding",
+        "count": 2
+      },
+      {
+        "task": "lidar_understanding",
+        "count": 2
+      },
+      {
+        "task": "ar_vr_interaction",
+        "count": 2
+      },
+      {
+        "task": "robot_dialogue_logic",
+        "count": 2
+      },
+      {
+        "task": "nerf",
+        "count": 1
+      },
+      {
+        "task": "vqa",
         "count": 1
       },
       {
@@ -176,32 +332,36 @@
         "count": 1
       },
       {
-        "task": "ltr",
+        "task": "slu",
         "count": 1
       },
       {
-        "task": "neural_retrieval",
+        "task": "noise_separation",
         "count": 1
       },
       {
-        "task": "3d_reconstruction",
-        "count": 0
+        "task": "full_duplex_dialogue",
+        "count": 1
       },
       {
-        "task": "nerf",
-        "count": 0
+        "task": "avsr",
+        "count": 1
       },
       {
-        "task": "super_resolution",
-        "count": 0
+        "task": "kg_reasoning",
+        "count": 1
       },
       {
-        "task": "denoising",
-        "count": 0
+        "task": "red_teaming",
+        "count": 1
       },
       {
-        "task": "restoration",
-        "count": 0
+        "task": "xai",
+        "count": 1
+      },
+      {
+        "task": "robot_motion_planning",
+        "count": 1
       },
       {
         "task": "rlhf",
@@ -212,167 +372,7 @@
         "count": 0
       },
       {
-        "task": "structured_reasoning",
-        "count": 0
-      },
-      {
-        "task": "tool_use",
-        "count": 0
-      },
-      {
-        "task": "lora_adapter",
-        "count": 0
-      },
-      {
-        "task": "low_resource_language",
-        "count": 0
-      },
-      {
-        "task": "knowledge_editing",
-        "count": 0
-      },
-      {
-        "task": "dialogue_system_optimization",
-        "count": 0
-      },
-      {
-        "task": "slu",
-        "count": 0
-      },
-      {
-        "task": "noise_separation",
-        "count": 0
-      },
-      {
-        "task": "full_duplex_dialogue",
-        "count": 0
-      },
-      {
-        "task": "avsr",
-        "count": 0
-      },
-      {
-        "task": "multimodal_dialogue_system",
-        "count": 0
-      },
-      {
         "task": "gnn",
-        "count": 0
-      },
-      {
-        "task": "kg_construction",
-        "count": 0
-      },
-      {
-        "task": "kg_reasoning",
-        "count": 0
-      },
-      {
-        "task": "general_recommendation",
-        "count": 0
-      },
-      {
-        "task": "vertical_recommendation",
-        "count": 0
-      },
-      {
-        "task": "vector_db_optimization",
-        "count": 0
-      },
-      {
-        "task": "metric_learning",
-        "count": 0
-      },
-      {
-        "task": "contrastive_learning",
-        "count": 0
-      },
-      {
-        "task": "compilation_optimization",
-        "count": 0
-      },
-      {
-        "task": "federated_learning",
-        "count": 0
-      },
-      {
-        "task": "privacy_computing",
-        "count": 0
-      },
-      {
-        "task": "adversarial_attack",
-        "count": 0
-      },
-      {
-        "task": "adversarial_defense",
-        "count": 0
-      },
-      {
-        "task": "red_teaming",
-        "count": 0
-      },
-      {
-        "task": "content_moderation",
-        "count": 0
-      },
-      {
-        "task": "edge_hw_sw_co_design",
-        "count": 0
-      },
-      {
-        "task": "xai",
-        "count": 0
-      },
-      {
-        "task": "ai_ethics_risk_assessment",
-        "count": 0
-      },
-      {
-        "task": "fluid_simulation",
-        "count": 0
-      },
-      {
-        "task": "material_design",
-        "count": 0
-      },
-      {
-        "task": "drug_molecule_prediction",
-        "count": 0
-      },
-      {
-        "task": "robot_motion_planning",
-        "count": 0
-      },
-      {
-        "task": "robot_environment_interaction",
-        "count": 0
-      },
-      {
-        "task": "bioinformatics_analysis",
-        "count": 0
-      },
-      {
-        "task": "radar_understanding",
-        "count": 0
-      },
-      {
-        "task": "lidar_understanding",
-        "count": 0
-      },
-      {
-        "task": "low_resource_medical_ai",
-        "count": 0
-      },
-      {
-        "task": "ar_vr_interaction",
-        "count": 0
-      },
-      {
-        "task": "multimodal_temporal_fusion",
-        "count": 0
-      },
-      {
-        "task": "robot_dialogue_logic",
         "count": 0
       }
     ],

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2025-09-27T15:21:59.009Z",
+  "updated_at": "2025-09-27T16:29:20.360Z",
   "by_category": {
     "framework_core": [
       {
@@ -74,6 +74,91 @@
         "summary_en": "Coding Interview University is a comprehensive self-study curriculum designed to prepare individuals for software engineering technical interviews. It provides a structured learning path covering fundamental computer science concepts, algorithms, and data structures. The project includes study materials, practice problems, and interview preparation strategies. Its main strength lies in its systematic approach and extensive coverage of topics commonly tested in coding interviews. Typical use cases include job seekers preparing for technical interviews at major tech companies and computer science students reinforcing their knowledge.",
         "summary_zh": "Coding Interview University 是一个全面的自学课程，旨在帮助个人准备软件工程的技术面试。该项目提供结构化的学习路径，涵盖计算机科学基础概念、算法和数据结构。包含学习材料、练习题和面试准备策略。主要优势在于其系统性的方法和广泛覆盖编码面试常见考点。典型使用场景包括求职者准备大型科技公司的技术面试，以及计算机科学专业学生巩固知识。该项目通过详细的课程安排和实践练习，帮助用户系统掌握面试所需的核心技能。",
         "summary_es": "Coding Interview University is a comprehensive self-study curriculum designed to prepare individuals for software engineering technical interviews. It provides a structured learning path covering fundamental computer science concepts, algorithms, and data structures. The project includes study materials, practice problems, and interview preparation strategies. Its main strength lies in its systematic approach and extensive coverage of topics commonly tested in coding interviews. Typical use cases include job seekers preparing for technical interviews at major tech companies and computer science students reinforcing their knowledge."
+      },
+      {
+        "id": "ohmyzsh/ohmyzsh",
+        "source": "github",
+        "name": "ohmyzsh",
+        "url": "https://github.com/ohmyzsh/ohmyzsh",
+        "tags": [
+          "cli",
+          "cli-app",
+          "hacktoberfest",
+          "oh-my-zsh",
+          "oh-my-zsh-plugin",
+          "oh-my-zsh-theme",
+          "ohmyzsh",
+          "plugin-framework",
+          "plugins",
+          "productivity",
+          "shell",
+          "terminal",
+          "theme",
+          "themes",
+          "zsh",
+          "zsh-configuration"
+        ],
+        "stats": {
+          "stars_total": 181667,
+          "forks_total": 26231,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-27T16:24:30Z",
+        "added_at": "2025-09-28",
+        "summary": "Oh My Zsh 是一个社区驱动的 Zsh shell 配置管理框架，旨在简化终端使用并提升效率。核心功能包括插件管理、主题定制和自动更新机制。其优势在于提供 300 多个插件（支持 Git、Docker、编程语言等工具）和 140 余种视觉主题，覆盖广泛开发需求。典型应用场景为开发者通过预配置工具快速优化命令行工作流，避免手动配置的复杂性，同时增强终端美观性和功能性。该项目由 2400 多名贡献者维护，强调易用性和社区协作。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19997759701100135,
+        "summary_en": "Oh My Zsh is a community-driven framework for managing Zsh shell configurations. Its core purpose is to simplify and enhance terminal usage through extensive customization options. Key capabilities include managing plugins, themes, and automatic updates. Strengths include over 300 plugins supporting various technologies like Git, Docker, and programming languages, plus 140+ visual themes. Typical use cases involve developers seeking to boost command-line productivity with pre-configured tools and aesthetic improvements without manual configuration overhead.",
+        "summary_zh": "Oh My Zsh 是一个社区驱动的 Zsh shell 配置管理框架，旨在简化终端使用并提升效率。核心功能包括插件管理、主题定制和自动更新机制。其优势在于提供 300 多个插件（支持 Git、Docker、编程语言等工具）和 140 余种视觉主题，覆盖广泛开发需求。典型应用场景为开发者通过预配置工具快速优化命令行工作流，避免手动配置的复杂性，同时增强终端美观性和功能性。该项目由 2400 多名贡献者维护，强调易用性和社区协作。",
+        "summary_es": "Oh My Zsh is a community-driven framework for managing Zsh shell configurations. Its core purpose is to simplify and enhance terminal usage through extensive customization options. Key capabilities include managing plugins, themes, and automatic updates. Strengths include over 300 plugins supporting various technologies like Git, Docker, and programming languages, plus 140+ visual themes. Typical use cases involve developers seeking to boost command-line productivity with pre-configured tools and aesthetic improvements without manual configuration overhead."
+      },
+      {
+        "id": "flutter/flutter",
+        "source": "github",
+        "name": "flutter",
+        "url": "https://github.com/flutter/flutter",
+        "tags": [
+          "android",
+          "app-framework",
+          "cross-platform",
+          "dart",
+          "dart-platform",
+          "desktop",
+          "flutter",
+          "flutter-package",
+          "fuchsia",
+          "ios",
+          "linux-desktop",
+          "macos",
+          "material-design",
+          "mobile",
+          "mobile-development",
+          "skia",
+          "web",
+          "web-framework",
+          "windows"
+        ],
+        "stats": {
+          "stars_total": 173144,
+          "forks_total": 29263,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-27T16:23:54Z",
+        "added_at": "2025-09-28",
+        "summary": "Flutter是由Google开发的开源UI软件开发工具包，用于从单一代码库构建移动端、网页和桌面的原生编译应用程序。其核心能力基于Dart编程语言和Skia图形引擎，可在不同平台上提供高性能、视觉一致的应用程序。主要优势包括热重载实现快速开发、遵循Material Design原则的可定制组件，以及原生编译确保最佳性能。典型应用场景涵盖跨平台移动应用开发、渐进式网页应用和桌面软件开发，支持iOS、Android、Web、Windows、macOS和Linux等多个平台。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19997481956366406,
+        "summary_en": "Flutter is an open-source UI software development kit created by Google for building natively compiled applications for mobile, web, and desktop from a single codebase. Its core capability lies in using the Dart programming language and Skia graphics engine to deliver high-performance, visually consistent apps across platforms. Key strengths include hot reload for rapid development, customizable widgets following Material Design principles, and native compilation for optimal performance. Typical use cases encompass cross-platform mobile apps, progressive web applications, and desktop software development.",
+        "summary_zh": "Flutter是由Google开发的开源UI软件开发工具包，用于从单一代码库构建移动端、网页和桌面的原生编译应用程序。其核心能力基于Dart编程语言和Skia图形引擎，可在不同平台上提供高性能、视觉一致的应用程序。主要优势包括热重载实现快速开发、遵循Material Design原则的可定制组件，以及原生编译确保最佳性能。典型应用场景涵盖跨平台移动应用开发、渐进式网页应用和桌面软件开发，支持iOS、Android、Web、Windows、macOS和Linux等多个平台。",
+        "summary_es": "Flutter is an open-source UI software development kit created by Google for building natively compiled applications for mobile, web, and desktop from a single codebase. Its core capability lies in using the Dart programming language and Skia graphics engine to deliver high-performance, visually consistent apps across platforms. Key strengths include hot reload for rapid development, customizable widgets following Material Design principles, and native compilation for optimal performance. Typical use cases encompass cross-platform mobile apps, progressive web applications, and desktop software development."
       }
     ],
     "deployment_serving": [
@@ -140,7 +225,10 @@
         "flags": {
           "seeded": true
         },
-        "score_engineering": 2677.8601952436234
+        "score_engineering": 2677.8601952436234,
+        "summary_en": "freeCodeCamp is an open-source educational platform providing free coding curriculum and certifications. Its purpose is to make programming education accessible worldwide. Core capabilities include interactive coding challenges, project-based learning, and comprehensive certifications in web development, data science, and mathematics. Strengths include its nonprofit status, large community support, and practical skill development. Typical use cases involve career changers learning programming fundamentals, students supplementing formal education, and professionals seeking certification in specific technologies like JavaScript, React, and Node.js.",
+        "summary_zh": "freeCodeCamp是一个开源教育平台，旨在通过免费课程和认证使编程教育普及化。核心功能包括交互式编程挑战、基于项目的学习体系以及涵盖网页开发、数据科学和数学的完整认证路径。平台优势在于其非营利性质、庞大的社区支持以及注重实践技能培养。典型应用场景包括职业转型者学习编程基础、在校学生补充正规教育、以及专业人士获取JavaScript、React、Node.js等特定技术认证。课程内容由全球志愿者维护，强调实战能力，帮助学习者构建作品集并准备技术职位",
+        "summary_es": "freeCodeCamp is an open-source educational platform providing free coding curriculum and certifications. Its purpose is to make programming education accessible worldwide. Core capabilities include interactive coding challenges, project-based learning, and comprehensive certifications in web development, data science, and mathematics. Strengths include its nonprofit status, large community support, and practical skill development. Typical use cases involve career changers learning programming fundamentals, students supplementing formal education, and professionals seeking certification in specific technologies like JavaScript, React, and Node.js."
       }
     ],
     "optimization_compilers": [
@@ -176,7 +264,10 @@
         "flags": {
           "seeded": true
         },
-        "score_engineering": 2677.8601952436234
+        "score_engineering": 2677.8601952436234,
+        "summary_en": "freeCodeCamp is an open-source educational platform providing free coding curriculum and certifications. Its purpose is to make programming education accessible worldwide. Core capabilities include interactive coding challenges, project-based learning, and comprehensive certifications in web development, data science, and mathematics. Strengths include its nonprofit status, large community support, and practical skill development. Typical use cases involve career changers learning programming fundamentals, students supplementing formal education, and professionals seeking certification in specific technologies like JavaScript, React, and Node.js.",
+        "summary_zh": "freeCodeCamp是一个开源教育平台，旨在通过免费课程和认证使编程教育普及化。核心功能包括交互式编程挑战、基于项目的学习体系以及涵盖网页开发、数据科学和数学的完整认证路径。平台优势在于其非营利性质、庞大的社区支持以及注重实践技能培养。典型应用场景包括职业转型者学习编程基础、在校学生补充正规教育、以及专业人士获取JavaScript、React、Node.js等特定技术认证。课程内容由全球志愿者维护，强调实战能力，帮助学习者构建作品集并准备技术职位",
+        "summary_es": "freeCodeCamp is an open-source educational platform providing free coding curriculum and certifications. Its purpose is to make programming education accessible worldwide. Core capabilities include interactive coding challenges, project-based learning, and comprehensive certifications in web development, data science, and mathematics. Strengths include its nonprofit status, large community support, and practical skill development. Typical use cases involve career changers learning programming fundamentals, students supplementing formal education, and professionals seeking certification in specific technologies like JavaScript, React, and Node.js."
       },
       {
         "id": "sindresorhus/awesome",
@@ -200,7 +291,10 @@
         "flags": {
           "seeded": true
         },
-        "score_engineering": 2501.2180436370186
+        "score_engineering": 2501.2180436370186,
+        "summary_en": "The Awesome project is a curated collection of high-quality lists covering diverse topics in technology and beyond. Its primary purpose is to serve as a centralized repository for discovering valuable resources, tools, and information across various domains. Core capabilities include organizing community-contributed lists with consistent formatting and quality standards. Key strengths are its massive scale with over 400,000 GitHub stars, comprehensive topic coverage, and rigorous curation process. Typical use cases include developers seeking learning resources, researchers exploring new fields, and professionals looking for recommended tools in specific technology stacks.",
+        "summary_zh": "Awesome项目是一个精心策划的高质量列表集合，涵盖技术及其他领域的多样化主题。其主要目的是作为发现各领域宝贵资源、工具和信息的集中存储库。核心功能包括以统一格式和质量标准组织社区贡献的列表。关键优势在于其庞大的规模（GitHub星标超过40万）、全面的主题覆盖范围以及严格的筛选流程。典型应用场景包括开发者寻找学习资源、研究人员探索新领域，以及专业人士在特定技术栈中寻找推荐工具。该项目通过社区驱动的维护方式，确",
+        "summary_es": "The Awesome project is a curated collection of high-quality lists covering diverse topics in technology and beyond. Its primary purpose is to serve as a centralized repository for discovering valuable resources, tools, and information across various domains. Core capabilities include organizing community-contributed lists with consistent formatting and quality standards. Key strengths are its massive scale with over 400,000 GitHub stars, comprehensive topic coverage, and rigorous curation process. Typical use cases include developers seeking learning resources, researchers exploring new fields, and professionals looking for recommended tools in specific technology stacks."
       }
     ],
     "data_tooling": [
@@ -274,6 +368,37 @@
         "summary_en": "This GitHub repository provides comprehensive implementations of algorithms and data structures using JavaScript. Its primary purpose is educational, serving as a learning resource for computer science fundamentals and technical interview preparation. Core capabilities include detailed code examples with explanations, covering essential topics like sorting, searching, graph algorithms, and common data structures. Key strengths are the JavaScript implementation focus, clear documentation, and links to further readings. Typical use cases include self-study for developers, academic supplement for students, and coding interview practice for job seekers.",
         "summary_zh": "该GitHub仓库使用JavaScript全面实现了各类算法和数据结构，主要目的是作为计算机科学基础和技术面试准备的教育资源。核心能力包括提供带详细解释的代码示例，涵盖排序、搜索、图算法及常见数据结构等关键主题。突出优势在于专注于JavaScript实现、清晰的文档说明以及相关延伸阅读链接。典型应用场景包括开发者自学、学生课程辅助学习以及求职者的编程面试练习。仓库内容组织系统，适合不同层次的学习者从基础到高级逐步掌握算法知识。",
         "summary_es": "This GitHub repository provides comprehensive implementations of algorithms and data structures using JavaScript. Its primary purpose is educational, serving as a learning resource for computer science fundamentals and technical interview preparation. Core capabilities include detailed code examples with explanations, covering essential topics like sorting, searching, graph algorithms, and common data structures. Key strengths are the JavaScript implementation focus, clear documentation, and links to further readings. Typical use cases include self-study for developers, academic supplement for students, and coding interview practice for job seekers."
+      },
+      {
+        "id": "d3/d3",
+        "source": "github",
+        "name": "d3",
+        "url": "https://github.com/d3/d3",
+        "tags": [
+          "chart",
+          "charts",
+          "d3",
+          "data-visualization",
+          "svg",
+          "visualization"
+        ],
+        "stats": {
+          "stars_total": 111549,
+          "forks_total": 22846,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-27T15:22:41Z",
+        "added_at": "2025-09-28",
+        "summary": "D3.js是一个用于在Web浏览器中创建动态、交互式数据可视化的JavaScript库。其核心能力是将数据绑定到文档对象模型（DOM）元素，实现基于数据集的动态操作。主要优势包括对SVG、HTML5和CSS等Web标准的广泛支持，提供对视觉呈现的精细控制。该库擅长生成复杂的图表、图形和地图。典型应用场景包括构建自定义仪表板、科学可视化以及交互式报告，特别是在预构建图表库无法满足特定设计或功能需求的情况下。D3.js通过数据驱动的方法，使开发者能够创建高度定制化的可视",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19969164543552048,
+        "summary_en": "D3.js is a JavaScript library for creating dynamic, interactive data visualizations in web browsers. Its core capability is binding data to Document Object Model (DOM) elements, enabling manipulation based on datasets. Key strengths include extensive support for web standards like SVG, HTML5, and CSS, providing fine-grained control over visual representation. It excels at producing complex charts, graphs, and maps. Typical use cases involve building custom dashboards, scientific visualizations, and interactive reports where pre-built charting libraries are insufficient for specific design or functionality requirements.",
+        "summary_zh": "D3.js是一个用于在Web浏览器中创建动态、交互式数据可视化的JavaScript库。其核心能力是将数据绑定到文档对象模型（DOM）元素，实现基于数据集的动态操作。主要优势包括对SVG、HTML5和CSS等Web标准的广泛支持，提供对视觉呈现的精细控制。该库擅长生成复杂的图表、图形和地图。典型应用场景包括构建自定义仪表板、科学可视化以及交互式报告，特别是在预构建图表库无法满足特定设计或功能需求的情况下。D3.js通过数据驱动的方法，使开发者能够创建高度定制化的可视",
+        "summary_es": "D3.js is a JavaScript library for creating dynamic, interactive data visualizations in web browsers. Its core capability is binding data to Document Object Model (DOM) elements, enabling manipulation based on datasets. Key strengths include extensive support for web standards like SVG, HTML5, and CSS, providing fine-grained control over visual representation. It excels at producing complex charts, graphs, and maps. Typical use cases involve building custom dashboards, scientific visualizations, and interactive reports where pre-built charting libraries are insufficient for specific design or functionality requirements."
       }
     ],
     "agents_workflows": [
@@ -309,7 +434,10 @@
         "flags": {
           "seeded": true
         },
-        "score_engineering": 2677.8601952436234
+        "score_engineering": 2677.8601952436234,
+        "summary_en": "freeCodeCamp is an open-source educational platform providing free coding curriculum and certifications. Its purpose is to make programming education accessible worldwide. Core capabilities include interactive coding challenges, project-based learning, and comprehensive certifications in web development, data science, and mathematics. Strengths include its nonprofit status, large community support, and practical skill development. Typical use cases involve career changers learning programming fundamentals, students supplementing formal education, and professionals seeking certification in specific technologies like JavaScript, React, and Node.js.",
+        "summary_zh": "freeCodeCamp是一个开源教育平台，旨在通过免费课程和认证使编程教育普及化。核心功能包括交互式编程挑战、基于项目的学习体系以及涵盖网页开发、数据科学和数学的完整认证路径。平台优势在于其非营利性质、庞大的社区支持以及注重实践技能培养。典型应用场景包括职业转型者学习编程基础、在校学生补充正规教育、以及专业人士获取JavaScript、React、Node.js等特定技术认证。课程内容由全球志愿者维护，强调实战能力，帮助学习者构建作品集并准备技术职位",
+        "summary_es": "freeCodeCamp is an open-source educational platform providing free coding curriculum and certifications. Its purpose is to make programming education accessible worldwide. Core capabilities include interactive coding challenges, project-based learning, and comprehensive certifications in web development, data science, and mathematics. Strengths include its nonprofit status, large community support, and practical skill development. Typical use cases involve career changers learning programming fundamentals, students supplementing formal education, and professionals seeking certification in specific technologies like JavaScript, React, and Node.js."
       },
       {
         "id": "sindresorhus/awesome",
@@ -333,7 +461,10 @@
         "flags": {
           "seeded": true
         },
-        "score_engineering": 2501.2180436370186
+        "score_engineering": 2501.2180436370186,
+        "summary_en": "The Awesome project is a curated collection of high-quality lists covering diverse topics in technology and beyond. Its primary purpose is to serve as a centralized repository for discovering valuable resources, tools, and information across various domains. Core capabilities include organizing community-contributed lists with consistent formatting and quality standards. Key strengths are its massive scale with over 400,000 GitHub stars, comprehensive topic coverage, and rigorous curation process. Typical use cases include developers seeking learning resources, researchers exploring new fields, and professionals looking for recommended tools in specific technology stacks.",
+        "summary_zh": "Awesome项目是一个精心策划的高质量列表集合，涵盖技术及其他领域的多样化主题。其主要目的是作为发现各领域宝贵资源、工具和信息的集中存储库。核心功能包括以统一格式和质量标准组织社区贡献的列表。关键优势在于其庞大的规模（GitHub星标超过40万）、全面的主题覆盖范围以及严格的筛选流程。典型应用场景包括开发者寻找学习资源、研究人员探索新领域，以及专业人士在特定技术栈中寻找推荐工具。该项目通过社区驱动的维护方式，确",
+        "summary_es": "The Awesome project is a curated collection of high-quality lists covering diverse topics in technology and beyond. Its primary purpose is to serve as a centralized repository for discovering valuable resources, tools, and information across various domains. Core capabilities include organizing community-contributed lists with consistent formatting and quality standards. Key strengths are its massive scale with over 400,000 GitHub stars, comprehensive topic coverage, and rigorous curation process. Typical use cases include developers seeking learning resources, researchers exploring new fields, and professionals looking for recommended tools in specific technology stacks."
       }
     ],
     "security_safety": [
@@ -369,7 +500,10 @@
         "flags": {
           "seeded": true
         },
-        "score_engineering": 2677.8601952359113
+        "score_engineering": 2677.8601952359113,
+        "summary_en": "freeCodeCamp is an open-source educational platform providing free coding curriculum and certifications. Its purpose is to make programming education accessible worldwide. Core capabilities include interactive coding challenges, project-based learning, and comprehensive certifications in web development, data science, and mathematics. Strengths include its nonprofit status, large community support, and practical skill development. Typical use cases involve career changers learning programming fundamentals, students supplementing formal education, and professionals seeking certification in specific technologies like JavaScript, React, and Node.js.",
+        "summary_zh": "freeCodeCamp是一个开源教育平台，旨在通过免费课程和认证使编程教育普及化。核心功能包括交互式编程挑战、基于项目的学习体系以及涵盖网页开发、数据科学和数学的完整认证路径。平台优势在于其非营利性质、庞大的社区支持以及注重实践技能培养。典型应用场景包括职业转型者学习编程基础、在校学生补充正规教育、以及专业人士获取JavaScript、React、Node.js等特定技术认证。课程内容由全球志愿者维护，强调实战能力，帮助学习者构建作品集并准备技术职位",
+        "summary_es": "freeCodeCamp is an open-source educational platform providing free coding curriculum and certifications. Its purpose is to make programming education accessible worldwide. Core capabilities include interactive coding challenges, project-based learning, and comprehensive certifications in web development, data science, and mathematics. Strengths include its nonprofit status, large community support, and practical skill development. Typical use cases involve career changers learning programming fundamentals, students supplementing formal education, and professionals seeking certification in specific technologies like JavaScript, React, and Node.js."
       },
       {
         "id": "sindresorhus/awesome",
@@ -393,7 +527,10 @@
         "flags": {
           "seeded": true
         },
-        "score_engineering": 2501.2180436293074
+        "score_engineering": 2501.2180436293074,
+        "summary_en": "The Awesome project is a curated collection of high-quality lists covering diverse topics in technology and beyond. Its primary purpose is to serve as a centralized repository for discovering valuable resources, tools, and information across various domains. Core capabilities include organizing community-contributed lists with consistent formatting and quality standards. Key strengths are its massive scale with over 400,000 GitHub stars, comprehensive topic coverage, and rigorous curation process. Typical use cases include developers seeking learning resources, researchers exploring new fields, and professionals looking for recommended tools in specific technology stacks.",
+        "summary_zh": "Awesome项目是一个精心策划的高质量列表集合，涵盖技术及其他领域的多样化主题。其主要目的是作为发现各领域宝贵资源、工具和信息的集中存储库。核心功能包括以统一格式和质量标准组织社区贡献的列表。关键优势在于其庞大的规模（GitHub星标超过40万）、全面的主题覆盖范围以及严格的筛选流程。典型应用场景包括开发者寻找学习资源、研究人员探索新领域，以及专业人士在特定技术栈中寻找推荐工具。该项目通过社区驱动的维护方式，确",
+        "summary_es": "The Awesome project is a curated collection of high-quality lists covering diverse topics in technology and beyond. Its primary purpose is to serve as a centralized repository for discovering valuable resources, tools, and information across various domains. Core capabilities include organizing community-contributed lists with consistent formatting and quality standards. Key strengths are its massive scale with over 400,000 GitHub stars, comprehensive topic coverage, and rigorous curation process. Typical use cases include developers seeking learning resources, researchers exploring new fields, and professionals looking for recommended tools in specific technology stacks."
       }
     ],
     "mlops_monitoring": [
@@ -429,7 +566,10 @@
         "flags": {
           "seeded": true
         },
-        "score_engineering": 2677.8601952359113
+        "score_engineering": 2677.8601952359113,
+        "summary_en": "freeCodeCamp is an open-source educational platform providing free coding curriculum and certifications. Its purpose is to make programming education accessible worldwide. Core capabilities include interactive coding challenges, project-based learning, and comprehensive certifications in web development, data science, and mathematics. Strengths include its nonprofit status, large community support, and practical skill development. Typical use cases involve career changers learning programming fundamentals, students supplementing formal education, and professionals seeking certification in specific technologies like JavaScript, React, and Node.js.",
+        "summary_zh": "freeCodeCamp是一个开源教育平台，旨在通过免费课程和认证使编程教育普及化。核心功能包括交互式编程挑战、基于项目的学习体系以及涵盖网页开发、数据科学和数学的完整认证路径。平台优势在于其非营利性质、庞大的社区支持以及注重实践技能培养。典型应用场景包括职业转型者学习编程基础、在校学生补充正规教育、以及专业人士获取JavaScript、React、Node.js等特定技术认证。课程内容由全球志愿者维护，强调实战能力，帮助学习者构建作品集并准备技术职位",
+        "summary_es": "freeCodeCamp is an open-source educational platform providing free coding curriculum and certifications. Its purpose is to make programming education accessible worldwide. Core capabilities include interactive coding challenges, project-based learning, and comprehensive certifications in web development, data science, and mathematics. Strengths include its nonprofit status, large community support, and practical skill development. Typical use cases involve career changers learning programming fundamentals, students supplementing formal education, and professionals seeking certification in specific technologies like JavaScript, React, and Node.js."
       },
       {
         "id": "sindresorhus/awesome",
@@ -453,7 +593,10 @@
         "flags": {
           "seeded": true
         },
-        "score_engineering": 2501.2180436293074
+        "score_engineering": 2501.2180436293074,
+        "summary_en": "The Awesome project is a curated collection of high-quality lists covering diverse topics in technology and beyond. Its primary purpose is to serve as a centralized repository for discovering valuable resources, tools, and information across various domains. Core capabilities include organizing community-contributed lists with consistent formatting and quality standards. Key strengths are its massive scale with over 400,000 GitHub stars, comprehensive topic coverage, and rigorous curation process. Typical use cases include developers seeking learning resources, researchers exploring new fields, and professionals looking for recommended tools in specific technology stacks.",
+        "summary_zh": "Awesome项目是一个精心策划的高质量列表集合，涵盖技术及其他领域的多样化主题。其主要目的是作为发现各领域宝贵资源、工具和信息的集中存储库。核心功能包括以统一格式和质量标准组织社区贡献的列表。关键优势在于其庞大的规模（GitHub星标超过40万）、全面的主题覆盖范围以及严格的筛选流程。典型应用场景包括开发者寻找学习资源、研究人员探索新领域，以及专业人士在特定技术栈中寻找推荐工具。该项目通过社区驱动的维护方式，确",
+        "summary_es": "The Awesome project is a curated collection of high-quality lists covering diverse topics in technology and beyond. Its primary purpose is to serve as a centralized repository for discovering valuable resources, tools, and information across various domains. Core capabilities include organizing community-contributed lists with consistent formatting and quality standards. Key strengths are its massive scale with over 400,000 GitHub stars, comprehensive topic coverage, and rigorous curation process. Typical use cases include developers seeking learning resources, researchers exploring new fields, and professionals looking for recommended tools in specific technology stacks."
       }
     ],
     "edge_embedded": [
@@ -522,6 +665,80 @@
         "summary_en": "Visual Studio Code is a free, open-source code editor developed by Microsoft. Its primary purpose is to provide a lightweight yet powerful development environment. Core capabilities include intelligent code completion, debugging, Git integration, and extensive customization through extensions. Key strengths are its cross-platform support, fast performance, and rich ecosystem of language support. Typical use cases range from web development and scripting to large-scale application programming across various programming languages and frameworks.",
         "summary_zh": "Visual Studio Code 是微软开发的一款免费开源代码编辑器，主要目的是提供轻量级但功能强大的开发环境。核心功能包括智能代码补全、调试工具、Git 集成以及通过扩展实现的高度自定义。其关键优势在于跨平台支持、快速性能表现和丰富的语言支持生态系统。典型应用场景涵盖网页开发、脚本编写以及各种编程语言和框架下的大规模应用程序编程，支持从简单编辑到复杂项目管理的多样化开发需求。",
         "summary_es": "Visual Studio Code is a free, open-source code editor developed by Microsoft. Its primary purpose is to provide a lightweight yet powerful development environment. Core capabilities include intelligent code completion, debugging, Git integration, and extensive customization through extensions. Key strengths are its cross-platform support, fast performance, and rich ecosystem of language support. Typical use cases range from web development and scripting to large-scale application programming across various programming languages and frameworks."
+      },
+      {
+        "id": "Genymobile/scrcpy",
+        "source": "github",
+        "name": "scrcpy",
+        "url": "https://github.com/Genymobile/scrcpy",
+        "tags": [
+          "android",
+          "c",
+          "ffmpeg",
+          "libav",
+          "mirroring",
+          "recording",
+          "screen",
+          "sdl2"
+        ],
+        "stats": {
+          "stars_total": 129034,
+          "forks_total": 12094,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-27T16:24:24Z",
+        "added_at": "2025-09-28",
+        "summary": "scrcpy 是一款开源应用程序，用于通过 USB 或 TCP/IP 从计算机显示和控制 Android 设备。它使用 H.264 编码实时流式传输设备屏幕，延迟低，并通过键盘和鼠标输入实现完全控制。核心功能包括屏幕镜像、音频转发、剪贴板同步和设备录制，无需 root 权限。其优势在于高性能、资源占用少和跨平台兼容性（Windows、macOS、Linux）。典型应用场景涉及应用程序开发测试、演示、游戏和远程设备管理。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19997713410043294,
+        "summary_en": "scrcpy is an open-source application for displaying and controlling Android devices from a computer via USB or TCP/IP. It streams the device screen in real-time with low latency using H.264 encoding and allows full control through keyboard and mouse input. Core capabilities include screen mirroring, audio forwarding, clipboard synchronization, and device recording without requiring root access. Its strengths are high performance, minimal resource usage, and cross-platform compatibility (Windows, macOS, Linux). Typical use cases involve app development testing, presentations, gaming, and remote device management.",
+        "summary_zh": "scrcpy 是一款开源应用程序，用于通过 USB 或 TCP/IP 从计算机显示和控制 Android 设备。它使用 H.264 编码实时流式传输设备屏幕，延迟低，并通过键盘和鼠标输入实现完全控制。核心功能包括屏幕镜像、音频转发、剪贴板同步和设备录制，无需 root 权限。其优势在于高性能、资源占用少和跨平台兼容性（Windows、macOS、Linux）。典型应用场景涉及应用程序开发测试、演示、游戏和远程设备管理。",
+        "summary_es": "scrcpy is an open-source application for displaying and controlling Android devices from a computer via USB or TCP/IP. It streams the device screen in real-time with low latency using H.264 encoding and allows full control through keyboard and mouse input. Core capabilities include screen mirroring, audio forwarding, clipboard synchronization, and device recording without requiring root access. Its strengths are high performance, minimal resource usage, and cross-platform compatibility (Windows, macOS, Linux). Typical use cases involve app development testing, presentations, gaming, and remote device management."
+      },
+      {
+        "id": "massgravel/Microsoft-Activation-Scripts",
+        "source": "github",
+        "name": "Microsoft-Activation-Scripts",
+        "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+        "tags": [
+          "activator",
+          "hwid",
+          "kms",
+          "kms38",
+          "massgrave",
+          "massgravel",
+          "microsoft",
+          "microsoft365",
+          "office",
+          "office365",
+          "ohook",
+          "powershell",
+          "tsforge",
+          "windows",
+          "windows-10",
+          "windows-11"
+        ],
+        "stats": {
+          "stars_total": 150001,
+          "forks_total": 14522,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-27T16:22:25Z",
+        "added_at": "2025-09-28",
+        "summary": "Microsoft Activation Scripts 是一个开源工具，旨在无需官方许可即可激活微软Windows和Office产品。该项目采用多种激活方法，包括HWID（硬件ID）、Ohook、TSforge、KMS38和在线KMS，以绕过微软的激活系统。该工具通过PowerShell脚本运行，并提供高级故障排除功能。其主要优势在于提供免费的激活替代方案，但在软件许可合规性方面处于法律灰色地带。典型使用场景包括激活Windows 10/11和Office 365安装，适用于希望避免购买官方许可证的用户。该项目在GitHub上拥有大量关注者，体现了其在特定用户群体中的受欢迎程度。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19996795326220226,
+        "summary_en": "Microsoft Activation Scripts is an open-source tool designed to activate Microsoft Windows and Office products without official licensing. It employs multiple activation methods including HWID (Hardware ID), Ohook, TSforge, KMS38, and Online KMS to bypass Microsoft's activation system. The project provides advanced troubleshooting capabilities and operates through PowerShell scripts. Its primary strength lies in offering free activation alternatives, though it exists in a legal gray area regarding software licensing compliance. Typical use cases include activating Windows 10/11 and Office 365 installations where users seek to avoid purchasing official licenses.",
+        "summary_zh": "Microsoft Activation Scripts 是一个开源工具，旨在无需官方许可即可激活微软Windows和Office产品。该项目采用多种激活方法，包括HWID（硬件ID）、Ohook、TSforge、KMS38和在线KMS，以绕过微软的激活系统。该工具通过PowerShell脚本运行，并提供高级故障排除功能。其主要优势在于提供免费的激活替代方案，但在软件许可合规性方面处于法律灰色地带。典型使用场景包括激活Windows 10/11和Office 365安装，适用于希望避免购买官方许可证的用户。该项目在GitHub上拥有大量关注者，体现了其在特定用户群体中的受欢迎程度。",
+        "summary_es": "Microsoft Activation Scripts is an open-source tool designed to activate Microsoft Windows and Office products without official licensing. It employs multiple activation methods including HWID (Hardware ID), Ohook, TSforge, KMS38, and Online KMS to bypass Microsoft's activation system. The project provides advanced troubleshooting capabilities and operates through PowerShell scripts. Its primary strength lies in offering free activation alternatives, though it exists in a legal gray area regarding software licensing compliance. Typical use cases include activating Windows 10/11 and Office 365 installations where users seek to avoid purchasing official licenses."
       }
     ],
     "ui_devex": [
@@ -597,6 +814,69 @@
         "summary_en": "The Airbnb JavaScript Style Guide is a comprehensive coding standard for writing consistent and maintainable JavaScript code. It provides detailed rules covering ES6+ features, arrow functions, naming conventions, and modern syntax. The guide serves as a reference for teams to enforce code quality through linting tools like ESLint. Its strengths include industry adoption, thorough documentation, and alignment with TC39 standards. Typical use cases include team codebase standardization, onboarding new developers, and integrating with CI/CD pipelines for automated style enforcement.",
         "summary_zh": "Airbnb JavaScript 风格指南是一套全面的 JavaScript 编码规范，旨在确保代码的一致性和可维护性。该指南详细规定了 ES6+ 特性、箭头函数、命名约定和现代语法的使用规则，可作为团队通过 ESLint 等工具强制执行代码质量的参考标准。其优势包括行业广泛采用、详尽文档说明以及与 TC39 标准的对齐。典型应用场景涵盖团队代码库标准化、新开发人员入职培训，以及集成到 CI/CD 管道中实现自动化风格检查。该开源项目在 GitHub 上获得超过 14 万星标，体现了其社区认可度。",
         "summary_es": "The Airbnb JavaScript Style Guide is a comprehensive coding standard for writing consistent and maintainable JavaScript code. It provides detailed rules covering ES6+ features, arrow functions, naming conventions, and modern syntax. The guide serves as a reference for teams to enforce code quality through linting tools like ESLint. Its strengths include industry adoption, thorough documentation, and alignment with TC39 standards. Typical use cases include team codebase standardization, onboarding new developers, and integrating with CI/CD pipelines for automated style enforcement."
+      },
+      {
+        "id": "facebook/react",
+        "source": "github",
+        "name": "react",
+        "url": "https://github.com/facebook/react",
+        "tags": [
+          "declarative",
+          "frontend",
+          "javascript",
+          "library",
+          "react",
+          "ui"
+        ],
+        "stats": {
+          "stars_total": 239282,
+          "forks_total": 49425,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-27T16:24:11Z",
+        "added_at": "2025-09-28",
+        "summary": "React是Facebook开发的JavaScript库，主要用于构建Web和原生应用的用户界面。其核心能力在于通过声明式编程范式创建可复用的UI组件。主要优势包括高效的虚拟DOM实现优化渲染性能、基于组件的架构促进代码复用、以及单向数据流确保状态可预测性。典型应用场景涵盖单页面应用、复杂交互界面，以及通过React Native开发的跨平台移动应用。该库强调组件化开发模式，支持开发可扩展、易维护的前端解决方案，特别适用于需要高效更新和复杂状态管理的现代应用程序开发。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.1999761311312107,
+        "summary_en": "React is a JavaScript library developed by Facebook for building user interfaces, primarily for web and native applications. Its core capability lies in creating reusable UI components through a declarative programming paradigm. Key strengths include efficient virtual DOM implementation for optimized rendering, component-based architecture for code reusability, and unidirectional data flow. Typical use cases encompass single-page applications, complex interactive interfaces, and cross-platform mobile apps using React Native. The library emphasizes predictable state management and facilitates development of scalable, maintainable frontend solutions.",
+        "summary_zh": "React是Facebook开发的JavaScript库，主要用于构建Web和原生应用的用户界面。其核心能力在于通过声明式编程范式创建可复用的UI组件。主要优势包括高效的虚拟DOM实现优化渲染性能、基于组件的架构促进代码复用、以及单向数据流确保状态可预测性。典型应用场景涵盖单页面应用、复杂交互界面，以及通过React Native开发的跨平台移动应用。该库强调组件化开发模式，支持开发可扩展、易维护的前端解决方案，特别适用于需要高效更新和复杂状态管理的现代应用程序开发。",
+        "summary_es": "React is a JavaScript library developed by Facebook for building user interfaces, primarily for web and native applications. Its core capability lies in creating reusable UI components through a declarative programming paradigm. Key strengths include efficient virtual DOM implementation for optimized rendering, component-based architecture for code reusability, and unidirectional data flow. Typical use cases encompass single-page applications, complex interactive interfaces, and cross-platform mobile apps using React Native. The library emphasizes predictable state management and facilitates development of scalable, maintainable frontend solutions."
+      },
+      {
+        "id": "yt-dlp/yt-dlp",
+        "source": "github",
+        "name": "yt-dlp",
+        "url": "https://github.com/yt-dlp/yt-dlp",
+        "tags": [
+          "cli",
+          "downloader",
+          "python",
+          "sponsorblock",
+          "youtube-dl",
+          "youtube-downloader",
+          "yt-dlp"
+        ],
+        "stats": {
+          "stars_total": 128277,
+          "forks_total": 10276,
+          "stars_7d": 0,
+          "forks_7d": 0
+        },
+        "updated_at": "2025-09-27T16:17:34Z",
+        "added_at": "2025-09-28",
+        "summary": "yt-dlp 是从 youtube-dl 分支而来的命令行音视频下载工具，支持从数千个网站（包括 YouTube）下载媒体内容。核心功能包括提取高质量视频/音频、支持 mkv/mp4 等格式，并集成 SponsorBlock 以跳过广告片段。其优势在于活跃的维护、广泛的网站兼容性以及后处理等自定义选项。典型用途包括内容存档、离线观看以及为个人或研究目的进行媒体格式转换，适用于需要高效批量下载的场景。",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_engineering": 0.19994550441651124,
+        "summary_en": "yt-dlp is a command-line audio/video downloader forked from youtube-dl, designed to download media from thousands of sites including YouTube. Its core capabilities include extracting high-quality video/audio, supporting formats like mkv/mp4, and integrating SponsorBlock to skip sponsored segments. Strengths are active maintenance, extensive site support, and customization options like post-processing. Typical use cases are archiving content, offline viewing, and media format conversion for personal or research purposes.",
+        "summary_zh": "yt-dlp 是从 youtube-dl 分支而来的命令行音视频下载工具，支持从数千个网站（包括 YouTube）下载媒体内容。核心功能包括提取高质量视频/音频、支持 mkv/mp4 等格式，并集成 SponsorBlock 以跳过广告片段。其优势在于活跃的维护、广泛的网站兼容性以及后处理等自定义选项。典型用途包括内容存档、离线观看以及为个人或研究目的进行媒体格式转换，适用于需要高效批量下载的场景。",
+        "summary_es": "yt-dlp is a command-line audio/video downloader forked from youtube-dl, designed to download media from thousands of sites including YouTube. Its core capabilities include extracting high-quality video/audio, supporting formats like mkv/mp4, and integrating SponsorBlock to skip sponsored segments. Strengths are active maintenance, extensive site support, and customization options like post-processing. Typical use cases are archiving content, offline viewing, and media format conversion for personal or research purposes."
       }
     ]
   }

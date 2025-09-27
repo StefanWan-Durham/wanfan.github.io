@@ -2,35 +2,11 @@
   "min": 2,
   "model_tasks_underfilled": [
     {
-      "key": "3d_reconstruction",
-      "count": 0
-    },
-    {
       "key": "nerf",
-      "count": 0
-    },
-    {
-      "key": "super_resolution",
-      "count": 0
-    },
-    {
-      "key": "denoising",
-      "count": 0
-    },
-    {
-      "key": "restoration",
-      "count": 0
+      "count": 1
     },
     {
       "key": "vqa",
-      "count": 1
-    },
-    {
-      "key": "visual_grounding",
-      "count": 1
-    },
-    {
-      "key": "instruction_tuning",
       "count": 1
     },
     {
@@ -42,186 +18,46 @@
       "count": 0
     },
     {
-      "key": "structured_reasoning",
-      "count": 0
-    },
-    {
-      "key": "tool_use",
-      "count": 0
-    },
-    {
-      "key": "lora_adapter",
-      "count": 0
-    },
-    {
-      "key": "low_resource_language",
-      "count": 0
-    },
-    {
-      "key": "knowledge_editing",
-      "count": 0
-    },
-    {
-      "key": "dialogue_system_optimization",
-      "count": 0
-    },
-    {
-      "key": "nlp_bias_mitigation",
-      "count": 1
-    },
-    {
       "key": "tts",
       "count": 1
     },
     {
       "key": "slu",
-      "count": 0
+      "count": 1
     },
     {
       "key": "noise_separation",
-      "count": 0
+      "count": 1
     },
     {
       "key": "full_duplex_dialogue",
-      "count": 0
+      "count": 1
     },
     {
       "key": "avsr",
-      "count": 0
-    },
-    {
-      "key": "multimodal_dialogue_system",
-      "count": 0
+      "count": 1
     },
     {
       "key": "gnn",
       "count": 0
     },
     {
-      "key": "kg_construction",
-      "count": 0
-    },
-    {
       "key": "kg_reasoning",
-      "count": 0
-    },
-    {
-      "key": "general_recommendation",
-      "count": 0
-    },
-    {
-      "key": "vertical_recommendation",
-      "count": 0
-    },
-    {
-      "key": "vector_db_optimization",
-      "count": 0
-    },
-    {
-      "key": "metric_learning",
-      "count": 0
-    },
-    {
-      "key": "contrastive_learning",
-      "count": 0
-    },
-    {
-      "key": "ltr",
       "count": 1
-    },
-    {
-      "key": "neural_retrieval",
-      "count": 1
-    },
-    {
-      "key": "compilation_optimization",
-      "count": 0
-    },
-    {
-      "key": "federated_learning",
-      "count": 0
-    },
-    {
-      "key": "privacy_computing",
-      "count": 0
-    },
-    {
-      "key": "adversarial_attack",
-      "count": 0
-    },
-    {
-      "key": "adversarial_defense",
-      "count": 0
     },
     {
       "key": "red_teaming",
-      "count": 0
-    },
-    {
-      "key": "content_moderation",
-      "count": 0
-    },
-    {
-      "key": "edge_hw_sw_co_design",
-      "count": 0
+      "count": 1
     },
     {
       "key": "xai",
-      "count": 0
-    },
-    {
-      "key": "ai_ethics_risk_assessment",
-      "count": 0
-    },
-    {
-      "key": "fluid_simulation",
-      "count": 0
-    },
-    {
-      "key": "material_design",
-      "count": 0
-    },
-    {
-      "key": "drug_molecule_prediction",
-      "count": 0
+      "count": 1
     },
     {
       "key": "robot_motion_planning",
-      "count": 0
-    },
-    {
-      "key": "robot_environment_interaction",
-      "count": 0
-    },
-    {
-      "key": "bioinformatics_analysis",
-      "count": 0
-    },
-    {
-      "key": "radar_understanding",
-      "count": 0
-    },
-    {
-      "key": "lidar_understanding",
-      "count": 0
-    },
-    {
-      "key": "low_resource_medical_ai",
-      "count": 0
-    },
-    {
-      "key": "ar_vr_interaction",
-      "count": 0
-    },
-    {
-      "key": "multimodal_temporal_fusion",
-      "count": 0
-    },
-    {
-      "key": "robot_dialogue_logic",
-      "count": 0
+      "count": 1
     }
   ],
   "project_categories_underfilled": [],
-  "generated_at": "2025-09-27T15:22:06.986Z"
+  "generated_at": "2025-09-27T16:29:28.428Z"
 }
