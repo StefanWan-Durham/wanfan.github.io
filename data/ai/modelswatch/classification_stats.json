@@ -1,13 +1,13 @@
 {
-  "generated_at": "2025-09-21T12:22:59.654Z",
+  "generated_at": "2025-09-27T07:07:32.095Z",
   "hf": {
     "total": 60,
-    "with_tasks": 16,
-    "pct_with_tasks": 26.67,
+    "with_tasks": 17,
+    "pct_with_tasks": 28.33,
     "task_distribution": [
       {
         "task": "inference_acceleration",
-        "count": 4
+        "count": 5
       },
       {
         "task": "time_series_forecasting",
@@ -18,15 +18,19 @@
         "count": 2
       },
       {
-        "task": "text_to_image",
-        "count": 2
-      },
-      {
         "task": "object_detection",
         "count": 1
       },
       {
+        "task": "instruction_tuning",
+        "count": 1
+      },
+      {
         "task": "tts",
+        "count": 1
+      },
+      {
+        "task": "text_to_image",
         "count": 1
       },
       {
@@ -58,11 +62,7 @@
         "count": 1
       },
       {
-        "task": "multilingual_processing",
-        "count": 1
-      },
-      {
-        "task": "dialogue_system_optimization",
+        "task": "multimodal_dialogue_system",
         "count": 1
       }
     ]

@@ -1,243 +1,190 @@
 {
   "version": 1,
-  "updated_at": "2025-09-21T12:22:51.475Z",
+  "updated_at": "2025-09-27T07:07:24.011Z",
   "by_category": {
     "image_classification": [
       {
-        "id": "openai/clip-vit-base-patch32",
+        "id": "timm/mobilenetv3_small_100.lamb_in1k",
         "source": "hf",
-        "name": "clip-vit-base-patch32",
-        "url": "https://huggingface.co/openai/clip-vit-base-patch32",
+        "name": "mobilenetv3_small_100.lamb_in1k",
+        "url": "https://huggingface.co/timm/mobilenetv3_small_100.lamb_in1k",
         "tags": [
-          "transformers",
+          "timm",
           "pytorch",
-          "tf",
-          "jax",
-          "clip",
-          "zero-shot-image-classification",
-          "vision",
-          "arxiv:2103.00020",
-          "arxiv:1908.04913",
-          "endpoints_compatible",
+          "safetensors",
+          "image-classification",
+          "transformers",
+          "dataset:imagenet-1k",
+          "arxiv:2110.00476",
+          "arxiv:1905.02244",
+          "license:apache-2.0",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 15096939,
-          "likes_total": 767,
+          "downloads_total": 126091014,
+          "likes_total": 38,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
-          "image_classification",
-          "text_to_image",
-          "medical_image_processing",
-          "remote_sensing_image_processing",
-          "image_text_alignment",
-          "robotic_vision"
+          "image_classification"
         ]
       },
       {
-        "id": "openai/clip-vit-large-patch14",
+        "id": "Falconsai/nsfw_image_detection",
         "source": "hf",
-        "name": "clip-vit-large-patch14",
-        "url": "https://huggingface.co/openai/clip-vit-large-patch14",
+        "name": "nsfw_image_detection",
+        "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
         "tags": [
           "transformers",
           "pytorch",
-          "tf",
-          "jax",
           "safetensors",
-          "clip",
-          "zero-shot-image-classification",
-          "vision",
-          "arxiv:2103.00020",
-          "arxiv:1908.04913",
+          "vit",
+          "image-classification",
+          "arxiv:2010.11929",
+          "license:apache-2.0",
+          "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 8287393,
-          "likes_total": 1864,
+          "downloads_total": 98988953,
+          "likes_total": 826,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "image_classification",
+          "object_detection",
           "text_to_image",
           "medical_image_processing",
           "remote_sensing_image_processing",
           "image_text_alignment",
-          "robotic_vision"
+          "auto_evaluation_models",
+          "time_series_anomaly_detection"
         ]
       }
     ],
     "object_detection": [
       {
-        "id": "pyannote/segmentation",
+        "id": "Falconsai/nsfw_image_detection",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "nsfw_image_detection",
+        "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
         "tags": [
-          "pyannote-audio",
+          "transformers",
           "pytorch",
-          "pyannote",
-          "pyannote-audio-model",
-          "audio",
-          "voice",
-          "speech",
-          "speaker",
-          "speaker-segmentation",
-          "voice-activity-detection",
-          "overlapped-speech-detection",
-          "resegmentation",
-          "arxiv:2104.04045",
-          "license:mit",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "arxiv:2010.11929",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 98988953,
+          "likes_total": 826,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
+          "image_classification",
           "object_detection",
-          "semantic_segmentation",
-          "instance_segmentation",
-          "panoptic_segmentation",
-          "lightweight_visual_model",
-          "speaker_separation",
-          "lightweight_multimodal_model",
-          "vector_retrieval",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "model_monitoring",
-          "model_iterative_update",
-          "time_series_anomaly_detection",
-          "low_resource_voice_assistant"
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "image_text_alignment",
+          "auto_evaluation_models",
+          "time_series_anomaly_detection"
         ]
       },
       {
-        "id": "pyannote/voice-activity-detection",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "voice-activity-detection",
-        "url": "https://huggingface.co/pyannote/voice-activity-detection",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
-          "pyannote-audio",
-          "pyannote",
-          "pyannote-audio-pipeline",
-          "audio",
-          "voice",
-          "speech",
-          "speaker",
-          "voice-activity-detection",
-          "automatic-speech-recognition",
-          "dataset:ami",
-          "dataset:dihard",
-          "dataset:voxconverse",
-          "license:mit",
+          "transformers",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 6201537,
-          "likes_total": 210,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
+          "image_classification",
           "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
           "nlp_data_synthesis",
           "nlp_data_distillation",
-          "asr",
-          "speaker_separation",
-          "vector_retrieval",
-          "graph_augmented_reco",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
           "auto_evaluation_models",
           "training_data_anonymization",
           "training_data_copyright",
-          "time_series_anomaly_detection",
-          "low_resource_voice_assistant"
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
         ]
       }
     ],
     "semantic_segmentation": [
       {
-        "id": "Bingsu/adetailer",
+        "id": "pyannote/segmentation-3.0",
         "source": "hf",
-        "name": "adetailer",
-        "url": "https://huggingface.co/Bingsu/adetailer",
-        "tags": [
-          "ultralytics",
-          "pytorch",
-          "dataset:wider_face",
-          "dataset:skytnt/anime-segmentation",
-          "doi:10.57967/hf/3633",
-          "license:apache-2.0",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 15383187,
-          "likes_total": 616,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "semantic_segmentation",
-          "instance_segmentation",
-          "panoptic_segmentation",
-          "nlp_data_synthesis",
-          "nlp_data_distillation",
-          "ltr",
-          "training_data_anonymization",
-          "training_data_copyright"
-        ]
-      },
-      {
-        "id": "pyannote/segmentation",
-        "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -247,28 +194,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -285,54 +233,54 @@
           "model_iterative_update",
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
+        ]
+      },
+      {
+        "id": "Bingsu/adetailer",
+        "source": "hf",
+        "name": "adetailer",
+        "url": "https://huggingface.co/Bingsu/adetailer",
+        "tags": [
+          "ultralytics",
+          "pytorch",
+          "dataset:wider_face",
+          "dataset:skytnt/anime-segmentation",
+          "doi:10.57967/hf/3633",
+          "license:apache-2.0",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 15202018,
+          "likes_total": 617,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "semantic_segmentation",
+          "instance_segmentation",
+          "panoptic_segmentation",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "ltr",
+          "training_data_anonymization",
+          "training_data_copyright"
         ]
       }
     ],
     "instance_segmentation": [
       {
-        "id": "Bingsu/adetailer",
+        "id": "pyannote/segmentation-3.0",
         "source": "hf",
-        "name": "adetailer",
-        "url": "https://huggingface.co/Bingsu/adetailer",
-        "tags": [
-          "ultralytics",
-          "pytorch",
-          "dataset:wider_face",
-          "dataset:skytnt/anime-segmentation",
-          "doi:10.57967/hf/3633",
-          "license:apache-2.0",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 15383187,
-          "likes_total": 616,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "semantic_segmentation",
-          "instance_segmentation",
-          "panoptic_segmentation",
-          "nlp_data_synthesis",
-          "nlp_data_distillation",
-          "ltr",
-          "training_data_anonymization",
-          "training_data_copyright"
-        ]
-      },
-      {
-        "id": "pyannote/segmentation",
-        "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -342,28 +290,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -380,54 +329,54 @@
           "model_iterative_update",
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
+        ]
+      },
+      {
+        "id": "Bingsu/adetailer",
+        "source": "hf",
+        "name": "adetailer",
+        "url": "https://huggingface.co/Bingsu/adetailer",
+        "tags": [
+          "ultralytics",
+          "pytorch",
+          "dataset:wider_face",
+          "dataset:skytnt/anime-segmentation",
+          "doi:10.57967/hf/3633",
+          "license:apache-2.0",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 15202018,
+          "likes_total": 617,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "semantic_segmentation",
+          "instance_segmentation",
+          "panoptic_segmentation",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "ltr",
+          "training_data_anonymization",
+          "training_data_copyright"
         ]
       }
     ],
     "panoptic_segmentation": [
       {
-        "id": "Bingsu/adetailer",
+        "id": "pyannote/segmentation-3.0",
         "source": "hf",
-        "name": "adetailer",
-        "url": "https://huggingface.co/Bingsu/adetailer",
-        "tags": [
-          "ultralytics",
-          "pytorch",
-          "dataset:wider_face",
-          "dataset:skytnt/anime-segmentation",
-          "doi:10.57967/hf/3633",
-          "license:apache-2.0",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 15383187,
-          "likes_total": 616,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "semantic_segmentation",
-          "instance_segmentation",
-          "panoptic_segmentation",
-          "nlp_data_synthesis",
-          "nlp_data_distillation",
-          "ltr",
-          "training_data_anonymization",
-          "training_data_copyright"
-        ]
-      },
-      {
-        "id": "pyannote/segmentation",
-        "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -437,28 +386,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -476,98 +426,142 @@
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
         ]
+      },
+      {
+        "id": "Bingsu/adetailer",
+        "source": "hf",
+        "name": "adetailer",
+        "url": "https://huggingface.co/Bingsu/adetailer",
+        "tags": [
+          "ultralytics",
+          "pytorch",
+          "dataset:wider_face",
+          "dataset:skytnt/anime-segmentation",
+          "doi:10.57967/hf/3633",
+          "license:apache-2.0",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 15202018,
+          "likes_total": 617,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "semantic_segmentation",
+          "instance_segmentation",
+          "panoptic_segmentation",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "ltr",
+          "training_data_anonymization",
+          "training_data_copyright"
+        ]
       }
     ],
     "text_to_image": [
       {
-        "id": "openai/clip-vit-base-patch32",
+        "id": "Falconsai/nsfw_image_detection",
         "source": "hf",
-        "name": "clip-vit-base-patch32",
-        "url": "https://huggingface.co/openai/clip-vit-base-patch32",
+        "name": "nsfw_image_detection",
+        "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
         "tags": [
           "transformers",
           "pytorch",
-          "tf",
-          "jax",
-          "clip",
-          "zero-shot-image-classification",
-          "vision",
-          "arxiv:2103.00020",
-          "arxiv:1908.04913",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "arxiv:2010.11929",
+          "license:apache-2.0",
+          "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 15096939,
-          "likes_total": 767,
+          "downloads_total": 98988953,
+          "likes_total": 826,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "image_classification",
+          "object_detection",
           "text_to_image",
           "medical_image_processing",
           "remote_sensing_image_processing",
           "image_text_alignment",
-          "robotic_vision"
+          "auto_evaluation_models",
+          "time_series_anomaly_detection"
         ]
       },
       {
-        "id": "openai-community/gpt2",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "gpt2",
-        "url": "https://huggingface.co/openai-community/gpt2",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
           "transformers",
-          "pytorch",
-          "tf",
-          "jax",
-          "tflite",
-          "rust",
-          "onnx",
           "safetensors",
-          "gpt2",
-          "text-generation",
-          "exbert",
-          "en",
-          "doi:10.57967/hf/0039",
-          "license:mit",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
           "autotrain_compatible",
-          "text-generation-inference",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12339920,
-          "likes_total": 2951,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
+          "image_classification",
+          "object_detection",
           "text_to_image",
-          "text_to_video",
-          "code_generation",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
           "image_text_alignment",
-          "multimodal_understanding_generation",
-          "inference_acceleration",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
           "auto_evaluation_models",
-          "molecular_generation"
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
         ]
       }
     ],
@@ -598,19 +592,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12339920,
-          "likes_total": 2951,
+          "downloads_total": 12038015,
+          "likes_total": 2955,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -623,48 +617,34 @@
         ]
       },
       {
-        "id": "facebook/opt-125m",
+        "id": "omni-research/Tarsier2-Recap-7b",
         "source": "hf",
-        "name": "opt-125m",
-        "url": "https://huggingface.co/facebook/opt-125m",
+        "name": "Tarsier2-Recap-7b",
+        "url": "https://huggingface.co/omni-research/Tarsier2-Recap-7b",
         "tags": [
-          "transformers",
-          "pytorch",
-          "tf",
-          "jax",
-          "opt",
-          "text-generation",
-          "en",
-          "arxiv:2205.01068",
-          "arxiv:2005.14165",
-          "license:other",
-          "autotrain_compatible",
-          "text-generation-inference",
+          "safetensors",
+          "video LLM",
+          "arxiv:2501.07888",
+          "license:apache-2.0",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 9875029,
-          "likes_total": 217,
+          "downloads_total": 10123337,
+          "likes_total": 19,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
-          "text_to_image",
           "text_to_video",
-          "code_generation",
-          "image_text_alignment",
-          "multimodal_understanding_generation",
-          "inference_acceleration",
-          "auto_evaluation_models",
-          "molecular_generation"
+          "llm_pretraining"
         ]
       }
     ],
@@ -681,8 +661,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -706,8 +686,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -733,8 +713,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -758,8 +738,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -785,8 +765,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -810,8 +790,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -837,8 +817,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -862,8 +842,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -889,8 +869,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -914,8 +894,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -930,171 +910,197 @@
     ],
     "medical_image_processing": [
       {
-        "id": "openai/clip-vit-base-patch32",
+        "id": "Falconsai/nsfw_image_detection",
         "source": "hf",
-        "name": "clip-vit-base-patch32",
-        "url": "https://huggingface.co/openai/clip-vit-base-patch32",
+        "name": "nsfw_image_detection",
+        "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
         "tags": [
           "transformers",
           "pytorch",
-          "tf",
-          "jax",
-          "clip",
-          "zero-shot-image-classification",
-          "vision",
-          "arxiv:2103.00020",
-          "arxiv:1908.04913",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "arxiv:2010.11929",
+          "license:apache-2.0",
+          "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 15096939,
-          "likes_total": 767,
+          "downloads_total": 98988953,
+          "likes_total": 826,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "image_classification",
+          "object_detection",
           "text_to_image",
           "medical_image_processing",
           "remote_sensing_image_processing",
           "image_text_alignment",
-          "robotic_vision"
+          "auto_evaluation_models",
+          "time_series_anomaly_detection"
         ]
       },
       {
-        "id": "openai/clip-vit-large-patch14",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "clip-vit-large-patch14",
-        "url": "https://huggingface.co/openai/clip-vit-large-patch14",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
           "transformers",
-          "pytorch",
-          "tf",
-          "jax",
           "safetensors",
-          "clip",
-          "zero-shot-image-classification",
-          "vision",
-          "arxiv:2103.00020",
-          "arxiv:1908.04913",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 8287393,
-          "likes_total": 1864,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "image_classification",
+          "object_detection",
           "text_to_image",
           "medical_image_processing",
           "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
           "image_text_alignment",
-          "robotic_vision"
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
         ]
       }
     ],
     "remote_sensing_image_processing": [
       {
-        "id": "openai/clip-vit-base-patch32",
+        "id": "Falconsai/nsfw_image_detection",
         "source": "hf",
-        "name": "clip-vit-base-patch32",
-        "url": "https://huggingface.co/openai/clip-vit-base-patch32",
+        "name": "nsfw_image_detection",
+        "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
         "tags": [
           "transformers",
           "pytorch",
-          "tf",
-          "jax",
-          "clip",
-          "zero-shot-image-classification",
-          "vision",
-          "arxiv:2103.00020",
-          "arxiv:1908.04913",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "arxiv:2010.11929",
+          "license:apache-2.0",
+          "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 15096939,
-          "likes_total": 767,
+          "downloads_total": 98988953,
+          "likes_total": 826,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "image_classification",
+          "object_detection",
           "text_to_image",
           "medical_image_processing",
           "remote_sensing_image_processing",
           "image_text_alignment",
-          "robotic_vision"
+          "auto_evaluation_models",
+          "time_series_anomaly_detection"
         ]
       },
       {
-        "id": "openai/clip-vit-large-patch14",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "clip-vit-large-patch14",
-        "url": "https://huggingface.co/openai/clip-vit-large-patch14",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
           "transformers",
-          "pytorch",
-          "tf",
-          "jax",
           "safetensors",
-          "clip",
-          "zero-shot-image-classification",
-          "vision",
-          "arxiv:2103.00020",
-          "arxiv:1908.04913",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 8287393,
-          "likes_total": 1864,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "image_classification",
+          "object_detection",
           "text_to_image",
           "medical_image_processing",
           "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
           "image_text_alignment",
-          "robotic_vision"
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
         ]
       }
     ],
@@ -1122,27 +1128,26 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 4278243,
-          "likes_total": 1249,
+          "downloads_total": 4324866,
+          "likes_total": 1266,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.0999698378058775,
         "task_keys": [
           "image_text_alignment",
           "multimodal_understanding_generation",
           "vqa",
           "visual_grounding",
           "lightweight_visual_model",
-          "multilingual_processing",
-          "dialogue_system_optimization"
+          "multimodal_dialogue_system"
         ]
       }
     ],
@@ -1170,36 +1175,89 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 4278243,
-          "likes_total": 1249,
+          "downloads_total": 4324866,
+          "likes_total": 1266,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.0999698378058775,
         "task_keys": [
           "image_text_alignment",
           "multimodal_understanding_generation",
           "vqa",
           "visual_grounding",
           "lightweight_visual_model",
-          "multilingual_processing",
-          "dialogue_system_optimization"
+          "multimodal_dialogue_system"
         ]
       }
     ],
     "lightweight_visual_model": [
       {
-        "id": "pyannote/segmentation",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 60653441,
+          "likes_total": 41,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "pyannote/segmentation-3.0",
+        "source": "hf",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -1209,28 +1267,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -1247,63 +1306,6 @@
           "model_iterative_update",
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
-        ]
-      },
-      {
-        "id": "BAAI/bge-base-en-v1.5",
-        "source": "hf",
-        "name": "bge-base-en-v1.5",
-        "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
-        "tags": [
-          "sentence-transformers",
-          "pytorch",
-          "onnx",
-          "safetensors",
-          "bert",
-          "feature-extraction",
-          "sentence-similarity",
-          "transformers",
-          "mteb",
-          "en",
-          "arxiv:2401.03462",
-          "arxiv:2312.15503",
-          "arxiv:2311.13534",
-          "arxiv:2310.07554",
-          "arxiv:2309.07597",
-          "license:mit",
-          "model-index",
-          "autotrain_compatible",
-          "text-embeddings-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 7468962,
-          "likes_total": 347,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "text_to_image",
-          "text_to_video",
-          "lightweight_visual_model",
-          "image_text_alignment",
-          "lightweight_multimodal_model",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "inference_acceleration",
-          "auto_evaluation_models",
-          "model_monitoring",
-          "model_iterative_update"
         ]
       }
     ],
@@ -1328,19 +1330,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 11129059,
+          "downloads_total": 13835783,
           "likes_total": 65,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "llm_pretraining",
           "training_data_anonymization",
@@ -1360,19 +1362,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 8924832,
-          "likes_total": 18,
+          "downloads_total": 10123337,
+          "likes_total": 19,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "text_to_video",
           "llm_pretraining"
@@ -1381,51 +1383,66 @@
     ],
     "instruction_tuning": [
       {
-        "id": "__placeholder__:instruction_tuning:0",
+        "id": "google/gemma-3-1b-it",
         "source": "hf",
-        "name": "(instruction_tuning) placeholder",
-        "url": "",
-        "tags": [],
+        "name": "gemma-3-1b-it",
+        "url": "https://huggingface.co/google/gemma-3-1b-it",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "gemma3_text",
+          "text-generation",
+          "conversational",
+          "arxiv:1905.07830",
+          "arxiv:1905.10044",
+          "arxiv:1911.11641",
+          "arxiv:1904.09728",
+          "arxiv:1705.03551",
+          "arxiv:1911.01547",
+          "arxiv:1907.10641",
+          "arxiv:1903.00161",
+          "arxiv:2009.03300",
+          "arxiv:2304.06364",
+          "arxiv:2103.03874",
+          "arxiv:2110.14168",
+          "arxiv:2311.12022",
+          "arxiv:2108.07732",
+          "arxiv:2107.03374",
+          "arxiv:2210.03057",
+          "arxiv:2106.03193",
+          "arxiv:1910.11856",
+          "arxiv:2502.12404",
+          "arxiv:2502.21228",
+          "arxiv:2404.16816",
+          "arxiv:2104.12756",
+          "arxiv:2311.16502",
+          "arxiv:2203.10244",
+          "arxiv:2404.12390",
+          "arxiv:1810.12440",
+          "arxiv:1908.02660",
+          "arxiv:2312.11805",
+          "base_model:google/gemma-3-1b-pt",
+          "base_model:finetune:google/gemma-3-1b-pt",
+          "license:gemma",
+          "autotrain_compatible",
+          "text-generation-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
         "stats": {
-          "downloads_total": 0,
-          "likes_total": 0,
+          "downloads_total": 5836125,
+          "likes_total": 629,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
-          "hidden": false,
-          "placeholder": true
+          "hidden": false
         },
-        "score_model": -1,
-        "task_keys": [
-          "instruction_tuning"
-        ]
-      },
-      {
-        "id": "__placeholder__:instruction_tuning:1",
-        "source": "hf",
-        "name": "(instruction_tuning) placeholder",
-        "url": "",
-        "tags": [],
-        "stats": {
-          "downloads_total": 0,
-          "likes_total": 0,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false,
-          "placeholder": true
-        },
-        "score_model": -1,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "instruction_tuning"
         ]
@@ -1444,8 +1461,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -1469,8 +1486,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -1496,8 +1513,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -1521,8 +1538,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -1562,19 +1579,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12339920,
-          "likes_total": 2951,
+          "downloads_total": 12038015,
+          "likes_total": 2955,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -1607,19 +1624,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 9875029,
-          "likes_total": 217,
+          "downloads_total": 8845823,
+          "likes_total": 218,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -1645,8 +1662,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -1670,8 +1687,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -1697,8 +1714,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -1722,8 +1739,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -1749,8 +1766,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -1774,8 +1791,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -1905,168 +1922,87 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7971501,
-          "likes_total": 730,
+          "downloads_total": 7789212,
+          "likes_total": 732,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "multilingual_processing",
           "auto_evaluation_models"
         ]
       },
       {
-        "id": "google-bert/bert-base-multilingual-cased",
+        "id": "google-t5/t5-small",
         "source": "hf",
-        "name": "bert-base-multilingual-cased",
-        "url": "https://huggingface.co/google-bert/bert-base-multilingual-cased",
+        "name": "t5-small",
+        "url": "https://huggingface.co/google-t5/t5-small",
         "tags": [
           "transformers",
           "pytorch",
           "tf",
           "jax",
+          "rust",
+          "onnx",
           "safetensors",
-          "bert",
-          "fill-mask",
-          "multilingual",
-          "af",
-          "sq",
-          "ar",
-          "an",
-          "hy",
-          "ast",
-          "az",
-          "ba",
-          "eu",
-          "bar",
-          "be",
-          "bn",
-          "inc",
-          "bs",
-          "br",
-          "bg",
-          "my",
-          "ca",
-          "ceb",
-          "ce",
-          "zh",
-          "cv",
-          "hr",
-          "cs",
-          "da",
-          "nl",
+          "t5",
+          "text2text-generation",
+          "summarization",
+          "translation",
           "en",
-          "et",
-          "fi",
           "fr",
-          "gl",
-          "ka",
-          "de",
-          "el",
-          "gu",
-          "ht",
-          "he",
-          "hi",
-          "hu",
-          "is",
-          "io",
-          "id",
-          "ga",
-          "it",
-          "ja",
-          "jv",
-          "kn",
-          "kk",
-          "ky",
-          "ko",
-          "la",
-          "lv",
-          "lt",
-          "roa",
-          "nds",
-          "lm",
-          "mk",
-          "mg",
-          "ms",
-          "ml",
-          "mr",
-          "mn",
-          "min",
-          "ne",
-          "new",
-          "nb",
-          "nn",
-          "oc",
-          "fa",
-          "pms",
-          "pl",
-          "pt",
-          "pa",
           "ro",
-          "ru",
-          "sco",
-          "sr",
-          "scn",
-          "sk",
-          "sl",
-          "aze",
-          "es",
-          "su",
-          "sw",
-          "sv",
-          "tl",
-          "tg",
-          "th",
-          "ta",
-          "tt",
-          "te",
-          "tr",
-          "uk",
-          "ud",
-          "uz",
-          "vi",
-          "vo",
-          "war",
-          "cy",
-          "fry",
-          "pnb",
-          "yo",
-          "dataset:wikipedia",
-          "arxiv:1810.04805",
+          "de",
+          "multilingual",
+          "dataset:c4",
+          "arxiv:1805.12471",
+          "arxiv:1708.00055",
+          "arxiv:1704.05426",
+          "arxiv:1606.05250",
+          "arxiv:1808.09121",
+          "arxiv:1810.12885",
+          "arxiv:1905.10044",
+          "arxiv:1910.09700",
           "license:apache-2.0",
-          "autotrain_compatible",
+          "text-generation-inference",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 4551506,
-          "likes_total": 530,
+          "downloads_total": 4867673,
+          "likes_total": 492,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
+          "text_to_image",
+          "text_to_video",
+          "code_generation",
           "multilingual_processing",
           "nlp_data_synthesis",
           "nlp_data_distillation",
-          "auto_evaluation_models",
+          "image_text_alignment",
+          "multimodal_understanding_generation",
+          "inference_acceleration",
           "training_data_anonymization",
-          "training_data_copyright"
+          "training_data_copyright",
+          "molecular_generation"
         ]
       }
     ],
@@ -2083,8 +2019,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -2108,8 +2044,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -2135,8 +2071,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -2160,8 +2096,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -2176,83 +2112,99 @@
     ],
     "nlp_data_synthesis": [
       {
-        "id": "Bingsu/adetailer",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "adetailer",
-        "url": "https://huggingface.co/Bingsu/adetailer",
-        "tags": [
-          "ultralytics",
-          "pytorch",
-          "dataset:wider_face",
-          "dataset:skytnt/anime-segmentation",
-          "doi:10.57967/hf/3633",
-          "license:apache-2.0",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 15383187,
-          "likes_total": 616,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "semantic_segmentation",
-          "instance_segmentation",
-          "panoptic_segmentation",
-          "nlp_data_synthesis",
-          "nlp_data_distillation",
-          "ltr",
-          "training_data_anonymization",
-          "training_data_copyright"
-        ]
-      },
-      {
-        "id": "FacebookAI/roberta-large",
-        "source": "hf",
-        "name": "roberta-large",
-        "url": "https://huggingface.co/FacebookAI/roberta-large",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
           "transformers",
-          "pytorch",
-          "tf",
-          "jax",
-          "onnx",
           "safetensors",
-          "roberta",
-          "fill-mask",
-          "exbert",
-          "en",
-          "dataset:bookcorpus",
-          "dataset:wikipedia",
-          "arxiv:1907.11692",
-          "arxiv:1806.02847",
-          "license:mit",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
           "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12229272,
-          "likes_total": 246,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "google-bert/bert-base-uncased",
+        "source": "hf",
+        "name": "bert-base-uncased",
+        "url": "https://huggingface.co/google-bert/bert-base-uncased",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "coreml",
+          "onnx",
+          "safetensors",
+          "bert",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1810.04805",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 55171860,
+          "likes_total": 2417,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "nlp_data_synthesis",
           "nlp_data_distillation",
@@ -2264,83 +2216,99 @@
     ],
     "nlp_data_distillation": [
       {
-        "id": "Bingsu/adetailer",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "adetailer",
-        "url": "https://huggingface.co/Bingsu/adetailer",
-        "tags": [
-          "ultralytics",
-          "pytorch",
-          "dataset:wider_face",
-          "dataset:skytnt/anime-segmentation",
-          "doi:10.57967/hf/3633",
-          "license:apache-2.0",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 15383187,
-          "likes_total": 616,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "semantic_segmentation",
-          "instance_segmentation",
-          "panoptic_segmentation",
-          "nlp_data_synthesis",
-          "nlp_data_distillation",
-          "ltr",
-          "training_data_anonymization",
-          "training_data_copyright"
-        ]
-      },
-      {
-        "id": "FacebookAI/roberta-large",
-        "source": "hf",
-        "name": "roberta-large",
-        "url": "https://huggingface.co/FacebookAI/roberta-large",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
           "transformers",
-          "pytorch",
-          "tf",
-          "jax",
-          "onnx",
           "safetensors",
-          "roberta",
-          "fill-mask",
-          "exbert",
-          "en",
-          "dataset:bookcorpus",
-          "dataset:wikipedia",
-          "arxiv:1907.11692",
-          "arxiv:1806.02847",
-          "license:mit",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
           "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12229272,
-          "likes_total": 246,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "google-bert/bert-base-uncased",
+        "source": "hf",
+        "name": "bert-base-uncased",
+        "url": "https://huggingface.co/google-bert/bert-base-uncased",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "coreml",
+          "onnx",
+          "safetensors",
+          "bert",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1810.04805",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 55171860,
+          "likes_total": 2417,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "nlp_data_synthesis",
           "nlp_data_distillation",
@@ -2352,48 +2320,52 @@
     ],
     "dialogue_system_optimization": [
       {
-        "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "id": "__placeholder__:dialogue_system_optimization:0",
         "source": "hf",
-        "name": "Qwen2.5-VL-7B-Instruct",
-        "url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
-        "tags": [
-          "transformers",
-          "safetensors",
-          "qwen2_5_vl",
-          "image-to-text",
-          "multimodal",
-          "image-text-to-text",
-          "conversational",
-          "en",
-          "arxiv:2309.00071",
-          "arxiv:2409.12191",
-          "arxiv:2308.12966",
-          "license:apache-2.0",
-          "text-generation-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
+        "name": "(dialogue_system_optimization) placeholder",
+        "url": "",
+        "tags": [],
         "stats": {
-          "downloads_total": 4278243,
-          "likes_total": 1249,
+          "downloads_total": 0,
+          "likes_total": 0,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
-          "hidden": false
+          "hidden": false,
+          "placeholder": true
         },
-        "score_model": 0.09996306318906102,
+        "score_model": -1,
         "task_keys": [
-          "image_text_alignment",
-          "multimodal_understanding_generation",
-          "vqa",
-          "visual_grounding",
-          "lightweight_visual_model",
-          "multilingual_processing",
+          "dialogue_system_optimization"
+        ]
+      },
+      {
+        "id": "__placeholder__:dialogue_system_optimization:1",
+        "source": "hf",
+        "name": "(dialogue_system_optimization) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
           "dialogue_system_optimization"
         ]
       }
@@ -2419,19 +2391,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 5596750,
+          "downloads_total": 5590506,
           "likes_total": 271,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "llm_pretraining",
           "nlp_data_synthesis",
@@ -2444,94 +2416,99 @@
     ],
     "image_text_alignment": [
       {
-        "id": "openai/clip-vit-base-patch32",
+        "id": "Falconsai/nsfw_image_detection",
         "source": "hf",
-        "name": "clip-vit-base-patch32",
-        "url": "https://huggingface.co/openai/clip-vit-base-patch32",
+        "name": "nsfw_image_detection",
+        "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
         "tags": [
           "transformers",
           "pytorch",
-          "tf",
-          "jax",
-          "clip",
-          "zero-shot-image-classification",
-          "vision",
-          "arxiv:2103.00020",
-          "arxiv:1908.04913",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "arxiv:2010.11929",
+          "license:apache-2.0",
+          "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 15096939,
-          "likes_total": 767,
+          "downloads_total": 98988953,
+          "likes_total": 826,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "image_classification",
+          "object_detection",
           "text_to_image",
           "medical_image_processing",
           "remote_sensing_image_processing",
           "image_text_alignment",
-          "robotic_vision"
+          "auto_evaluation_models",
+          "time_series_anomaly_detection"
         ]
       },
       {
-        "id": "openai-community/gpt2",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "gpt2",
-        "url": "https://huggingface.co/openai-community/gpt2",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
           "transformers",
-          "pytorch",
-          "tf",
-          "jax",
-          "tflite",
-          "rust",
-          "onnx",
           "safetensors",
-          "gpt2",
-          "text-generation",
-          "exbert",
-          "en",
-          "doi:10.57967/hf/0039",
-          "license:mit",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
           "autotrain_compatible",
-          "text-generation-inference",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12339920,
-          "likes_total": 2951,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
+          "image_classification",
+          "object_detection",
           "text_to_image",
-          "text_to_video",
-          "code_generation",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
           "image_text_alignment",
-          "multimodal_understanding_generation",
-          "inference_acceleration",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
           "auto_evaluation_models",
-          "molecular_generation"
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
         ]
       }
     ],
@@ -2562,19 +2539,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12339920,
-          "likes_total": 2951,
+          "downloads_total": 12038015,
+          "likes_total": 2955,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -2607,19 +2584,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 9875029,
-          "likes_total": 217,
+          "downloads_total": 8845823,
+          "likes_total": 218,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -2633,6 +2610,55 @@
       }
     ],
     "asr": [
+      {
+        "id": "pyannote/speaker-diarization-3.1",
+        "source": "hf",
+        "name": "speaker-diarization-3.1",
+        "url": "https://huggingface.co/pyannote/speaker-diarization-3.1",
+        "tags": [
+          "pyannote-audio",
+          "pyannote",
+          "pyannote-audio-pipeline",
+          "audio",
+          "voice",
+          "speech",
+          "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
+          "voice-activity-detection",
+          "overlapped-speech-detection",
+          "automatic-speech-recognition",
+          "arxiv:2111.14448",
+          "arxiv:2012.01477",
+          "license:mit",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 16721804,
+          "likes_total": 1169,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "object_detection",
+          "asr",
+          "speaker_separation",
+          "vector_retrieval",
+          "graph_augmented_reco",
+          "auto_evaluation_models",
+          "time_series_anomaly_detection",
+          "low_resource_voice_assistant"
+        ]
+      },
       {
         "id": "pyannote/voice-activity-detection",
         "source": "hf",
@@ -2655,19 +2681,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 6201537,
-          "likes_total": 210,
+          "downloads_total": 4994060,
+          "likes_total": 211,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "nlp_data_synthesis",
@@ -2681,142 +2707,6 @@
           "training_data_copyright",
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
-        ]
-      },
-      {
-        "id": "openai/whisper-large-v3",
-        "source": "hf",
-        "name": "whisper-large-v3",
-        "url": "https://huggingface.co/openai/whisper-large-v3",
-        "tags": [
-          "transformers",
-          "pytorch",
-          "jax",
-          "safetensors",
-          "whisper",
-          "automatic-speech-recognition",
-          "audio",
-          "hf-asr-leaderboard",
-          "en",
-          "zh",
-          "de",
-          "es",
-          "ru",
-          "ko",
-          "fr",
-          "ja",
-          "pt",
-          "tr",
-          "pl",
-          "ca",
-          "nl",
-          "ar",
-          "sv",
-          "it",
-          "id",
-          "hi",
-          "fi",
-          "vi",
-          "he",
-          "uk",
-          "el",
-          "ms",
-          "cs",
-          "ro",
-          "da",
-          "hu",
-          "ta",
-          "no",
-          "th",
-          "ur",
-          "hr",
-          "bg",
-          "lt",
-          "la",
-          "mi",
-          "ml",
-          "cy",
-          "sk",
-          "te",
-          "fa",
-          "lv",
-          "bn",
-          "sr",
-          "az",
-          "sl",
-          "kn",
-          "et",
-          "mk",
-          "br",
-          "eu",
-          "is",
-          "hy",
-          "ne",
-          "mn",
-          "bs",
-          "kk",
-          "sq",
-          "sw",
-          "gl",
-          "mr",
-          "pa",
-          "si",
-          "km",
-          "sn",
-          "yo",
-          "so",
-          "af",
-          "oc",
-          "ka",
-          "be",
-          "tg",
-          "sd",
-          "gu",
-          "am",
-          "yi",
-          "lo",
-          "uz",
-          "fo",
-          "ht",
-          "ps",
-          "tk",
-          "nn",
-          "mt",
-          "sa",
-          "lb",
-          "my",
-          "bo",
-          "tl",
-          "mg",
-          "as",
-          "tt",
-          "haw",
-          "ln",
-          "ha",
-          "ba",
-          "jw",
-          "su",
-          "arxiv:2212.04356",
-          "license:apache-2.0",
-          "endpoints_compatible",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 4515271,
-          "likes_total": 4926,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "asr"
         ]
       }
     ],
@@ -2833,19 +2723,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 5051839,
-          "likes_total": 3043,
+          "downloads_total": 5511182,
+          "likes_total": 3058,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "tts"
         ]
@@ -2864,8 +2754,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -2889,8 +2779,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -2905,10 +2795,10 @@
     ],
     "speaker_separation": [
       {
-        "id": "pyannote/segmentation",
+        "id": "pyannote/segmentation-3.0",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -2918,28 +2808,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -2959,52 +2850,57 @@
         ]
       },
       {
-        "id": "pyannote/voice-activity-detection",
+        "id": "pyannote/wespeaker-voxceleb-resnet34-LM",
         "source": "hf",
-        "name": "voice-activity-detection",
-        "url": "https://huggingface.co/pyannote/voice-activity-detection",
+        "name": "wespeaker-voxceleb-resnet34-LM",
+        "url": "https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM",
         "tags": [
           "pyannote-audio",
+          "pytorch",
           "pyannote",
-          "pyannote-audio-pipeline",
+          "pyannote-audio-model",
+          "wespeaker",
           "audio",
           "voice",
           "speech",
           "speaker",
-          "voice-activity-detection",
-          "automatic-speech-recognition",
-          "dataset:ami",
-          "dataset:dihard",
-          "dataset:voxconverse",
-          "license:mit",
+          "speaker-recognition",
+          "speaker-verification",
+          "speaker-identification",
+          "speaker-embedding",
+          "dataset:voxceleb",
+          "license:cc-by-4.0",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 6201537,
-          "likes_total": 210,
+          "downloads_total": 17865623,
+          "likes_total": 76,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
-          "object_detection",
+          "lightweight_visual_model",
           "nlp_data_synthesis",
           "nlp_data_distillation",
-          "asr",
           "speaker_separation",
+          "lightweight_multimodal_model",
           "vector_retrieval",
           "graph_augmented_reco",
-          "auto_evaluation_models",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
           "training_data_anonymization",
           "training_data_copyright",
-          "time_series_anomaly_detection",
+          "model_monitoring",
+          "model_iterative_update",
           "low_resource_voice_assistant"
         ]
       }
@@ -3022,8 +2918,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3047,8 +2943,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3074,8 +2970,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3099,8 +2995,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3126,8 +3022,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3151,8 +3047,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3167,71 +3063,111 @@
     ],
     "multimodal_dialogue_system": [
       {
-        "id": "Qwen/Qwen2-VL-2B-Instruct",
+        "id": "Qwen/Qwen2.5-VL-7B-Instruct",
         "source": "hf",
-        "name": "Qwen2-VL-2B-Instruct",
-        "url": "https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct",
+        "name": "Qwen2.5-VL-7B-Instruct",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
         "tags": [
           "transformers",
           "safetensors",
-          "qwen2_vl",
+          "qwen2_5_vl",
           "image-to-text",
           "multimodal",
           "image-text-to-text",
           "conversational",
           "en",
+          "arxiv:2309.00071",
           "arxiv:2409.12191",
           "arxiv:2308.12966",
-          "base_model:Qwen/Qwen2-VL-2B",
-          "base_model:finetune:Qwen/Qwen2-VL-2B",
           "license:apache-2.0",
           "text-generation-inference",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 4461990,
-          "likes_total": 450,
+          "downloads_total": 4324866,
+          "likes_total": 1266,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.0999698378058775,
         "task_keys": [
-          "image_classification",
-          "text_to_image",
-          "text_to_video",
-          "medical_image_processing",
-          "remote_sensing_image_processing",
-          "lightweight_visual_model",
-          "code_generation",
           "image_text_alignment",
           "multimodal_understanding_generation",
-          "multimodal_dialogue_system",
-          "lightweight_multimodal_model",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "inference_acceleration",
-          "model_monitoring",
-          "model_iterative_update",
-          "molecular_generation",
-          "multimodal_temporal_fusion"
+          "vqa",
+          "visual_grounding",
+          "lightweight_visual_model",
+          "multimodal_dialogue_system"
         ]
       }
     ],
     "lightweight_multimodal_model": [
       {
-        "id": "pyannote/segmentation",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 60653441,
+          "likes_total": 41,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "pyannote/segmentation-3.0",
+        "source": "hf",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -3241,28 +3177,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -3280,63 +3217,6 @@
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
         ]
-      },
-      {
-        "id": "BAAI/bge-base-en-v1.5",
-        "source": "hf",
-        "name": "bge-base-en-v1.5",
-        "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
-        "tags": [
-          "sentence-transformers",
-          "pytorch",
-          "onnx",
-          "safetensors",
-          "bert",
-          "feature-extraction",
-          "sentence-similarity",
-          "transformers",
-          "mteb",
-          "en",
-          "arxiv:2401.03462",
-          "arxiv:2312.15503",
-          "arxiv:2311.13534",
-          "arxiv:2310.07554",
-          "arxiv:2309.07597",
-          "license:mit",
-          "model-index",
-          "autotrain_compatible",
-          "text-embeddings-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 7468962,
-          "likes_total": 347,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "text_to_image",
-          "text_to_video",
-          "lightweight_visual_model",
-          "image_text_alignment",
-          "lightweight_multimodal_model",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "inference_acceleration",
-          "auto_evaluation_models",
-          "model_monitoring",
-          "model_iterative_update"
-        ]
       }
     ],
     "gnn": [
@@ -3352,8 +3232,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3377,8 +3257,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3404,8 +3284,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3429,8 +3309,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3456,8 +3336,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3481,8 +3361,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3508,8 +3388,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3533,8 +3413,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3560,8 +3440,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3585,8 +3465,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3601,10 +3481,10 @@
     ],
     "vector_retrieval": [
       {
-        "id": "pyannote/segmentation",
+        "id": "pyannote/segmentation-3.0",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -3614,28 +3494,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -3655,52 +3536,57 @@
         ]
       },
       {
-        "id": "pyannote/voice-activity-detection",
+        "id": "pyannote/wespeaker-voxceleb-resnet34-LM",
         "source": "hf",
-        "name": "voice-activity-detection",
-        "url": "https://huggingface.co/pyannote/voice-activity-detection",
+        "name": "wespeaker-voxceleb-resnet34-LM",
+        "url": "https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM",
         "tags": [
           "pyannote-audio",
+          "pytorch",
           "pyannote",
-          "pyannote-audio-pipeline",
+          "pyannote-audio-model",
+          "wespeaker",
           "audio",
           "voice",
           "speech",
           "speaker",
-          "voice-activity-detection",
-          "automatic-speech-recognition",
-          "dataset:ami",
-          "dataset:dihard",
-          "dataset:voxconverse",
-          "license:mit",
+          "speaker-recognition",
+          "speaker-verification",
+          "speaker-identification",
+          "speaker-embedding",
+          "dataset:voxceleb",
+          "license:cc-by-4.0",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 6201537,
-          "likes_total": 210,
+          "downloads_total": 17865623,
+          "likes_total": 76,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
-          "object_detection",
+          "lightweight_visual_model",
           "nlp_data_synthesis",
           "nlp_data_distillation",
-          "asr",
           "speaker_separation",
+          "lightweight_multimodal_model",
           "vector_retrieval",
           "graph_augmented_reco",
-          "auto_evaluation_models",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
           "training_data_anonymization",
           "training_data_copyright",
-          "time_series_anomaly_detection",
+          "model_monitoring",
+          "model_iterative_update",
           "low_resource_voice_assistant"
         ]
       }
@@ -3718,8 +3604,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3743,8 +3629,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3770,8 +3656,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3795,8 +3681,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3822,8 +3708,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3847,8 +3733,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -3877,19 +3763,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 15383187,
-          "likes_total": 616,
+          "downloads_total": 15202018,
+          "likes_total": 617,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "semantic_segmentation",
           "instance_segmentation",
@@ -3926,75 +3812,25 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 6056741,
-          "likes_total": 285,
+          "downloads_total": 6540699,
+          "likes_total": 286,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "neural_retrieval"
         ]
       }
     ],
     "graph_augmented_reco": [
-      {
-        "id": "pyannote/voice-activity-detection",
-        "source": "hf",
-        "name": "voice-activity-detection",
-        "url": "https://huggingface.co/pyannote/voice-activity-detection",
-        "tags": [
-          "pyannote-audio",
-          "pyannote",
-          "pyannote-audio-pipeline",
-          "audio",
-          "voice",
-          "speech",
-          "speaker",
-          "voice-activity-detection",
-          "automatic-speech-recognition",
-          "dataset:ami",
-          "dataset:dihard",
-          "dataset:voxconverse",
-          "license:mit",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 6201537,
-          "likes_total": 210,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "object_detection",
-          "nlp_data_synthesis",
-          "nlp_data_distillation",
-          "asr",
-          "speaker_separation",
-          "vector_retrieval",
-          "graph_augmented_reco",
-          "auto_evaluation_models",
-          "training_data_anonymization",
-          "training_data_copyright",
-          "time_series_anomaly_detection",
-          "low_resource_voice_assistant"
-        ]
-      },
       {
         "id": "pyannote/wespeaker-voxceleb-resnet34-LM",
         "source": "hf",
@@ -4019,19 +3855,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 18459011,
-          "likes_total": 74,
+          "downloads_total": 17865623,
+          "likes_total": 76,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.893Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306315049502,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "lightweight_visual_model",
           "nlp_data_synthesis",
@@ -4049,14 +3885,117 @@
           "model_iterative_update",
           "low_resource_voice_assistant"
         ]
+      },
+      {
+        "id": "pyannote/speaker-diarization-3.1",
+        "source": "hf",
+        "name": "speaker-diarization-3.1",
+        "url": "https://huggingface.co/pyannote/speaker-diarization-3.1",
+        "tags": [
+          "pyannote-audio",
+          "pyannote",
+          "pyannote-audio-pipeline",
+          "audio",
+          "voice",
+          "speech",
+          "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
+          "voice-activity-detection",
+          "overlapped-speech-detection",
+          "automatic-speech-recognition",
+          "arxiv:2111.14448",
+          "arxiv:2012.01477",
+          "license:mit",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 16721804,
+          "likes_total": 1169,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "object_detection",
+          "asr",
+          "speaker_separation",
+          "vector_retrieval",
+          "graph_augmented_reco",
+          "auto_evaluation_models",
+          "time_series_anomaly_detection",
+          "low_resource_voice_assistant"
+        ]
       }
     ],
     "model_compression": [
       {
-        "id": "pyannote/segmentation",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 60653441,
+          "likes_total": 41,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "pyannote/segmentation-3.0",
+        "source": "hf",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -4066,28 +4005,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -4104,72 +4044,69 @@
           "model_iterative_update",
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
-        ]
-      },
-      {
-        "id": "BAAI/bge-base-en-v1.5",
-        "source": "hf",
-        "name": "bge-base-en-v1.5",
-        "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
-        "tags": [
-          "sentence-transformers",
-          "pytorch",
-          "onnx",
-          "safetensors",
-          "bert",
-          "feature-extraction",
-          "sentence-similarity",
-          "transformers",
-          "mteb",
-          "en",
-          "arxiv:2401.03462",
-          "arxiv:2312.15503",
-          "arxiv:2311.13534",
-          "arxiv:2310.07554",
-          "arxiv:2309.07597",
-          "license:mit",
-          "model-index",
-          "autotrain_compatible",
-          "text-embeddings-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 7468962,
-          "likes_total": 347,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "text_to_image",
-          "text_to_video",
-          "lightweight_visual_model",
-          "image_text_alignment",
-          "lightweight_multimodal_model",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "inference_acceleration",
-          "auto_evaluation_models",
-          "model_monitoring",
-          "model_iterative_update"
         ]
       }
     ],
     "model_quantization": [
       {
-        "id": "pyannote/segmentation",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 60653441,
+          "likes_total": 41,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "pyannote/segmentation-3.0",
+        "source": "hf",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -4179,28 +4116,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -4217,72 +4155,69 @@
           "model_iterative_update",
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
-        ]
-      },
-      {
-        "id": "BAAI/bge-base-en-v1.5",
-        "source": "hf",
-        "name": "bge-base-en-v1.5",
-        "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
-        "tags": [
-          "sentence-transformers",
-          "pytorch",
-          "onnx",
-          "safetensors",
-          "bert",
-          "feature-extraction",
-          "sentence-similarity",
-          "transformers",
-          "mteb",
-          "en",
-          "arxiv:2401.03462",
-          "arxiv:2312.15503",
-          "arxiv:2311.13534",
-          "arxiv:2310.07554",
-          "arxiv:2309.07597",
-          "license:mit",
-          "model-index",
-          "autotrain_compatible",
-          "text-embeddings-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 7468962,
-          "likes_total": 347,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "text_to_image",
-          "text_to_video",
-          "lightweight_visual_model",
-          "image_text_alignment",
-          "lightweight_multimodal_model",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "inference_acceleration",
-          "auto_evaluation_models",
-          "model_monitoring",
-          "model_iterative_update"
         ]
       }
     ],
     "model_distillation": [
       {
-        "id": "pyannote/segmentation",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 60653441,
+          "likes_total": 41,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "pyannote/segmentation-3.0",
+        "source": "hf",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -4292,28 +4227,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -4330,63 +4266,6 @@
           "model_iterative_update",
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
-        ]
-      },
-      {
-        "id": "BAAI/bge-base-en-v1.5",
-        "source": "hf",
-        "name": "bge-base-en-v1.5",
-        "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
-        "tags": [
-          "sentence-transformers",
-          "pytorch",
-          "onnx",
-          "safetensors",
-          "bert",
-          "feature-extraction",
-          "sentence-similarity",
-          "transformers",
-          "mteb",
-          "en",
-          "arxiv:2401.03462",
-          "arxiv:2312.15503",
-          "arxiv:2311.13534",
-          "arxiv:2310.07554",
-          "arxiv:2309.07597",
-          "license:mit",
-          "model-index",
-          "autotrain_compatible",
-          "text-embeddings-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 7468962,
-          "likes_total": 347,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "text_to_image",
-          "text_to_video",
-          "lightweight_visual_model",
-          "image_text_alignment",
-          "lightweight_multimodal_model",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "inference_acceleration",
-          "auto_evaluation_models",
-          "model_monitoring",
-          "model_iterative_update"
         ]
       }
     ],
@@ -4403,8 +4282,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4428,8 +4307,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4443,6 +4322,74 @@
       }
     ],
     "inference_acceleration": [
+      {
+        "id": "sentence-transformers/all-MiniLM-L6-v2",
+        "source": "hf",
+        "name": "all-MiniLM-L6-v2",
+        "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+        "tags": [
+          "sentence-transformers",
+          "pytorch",
+          "tf",
+          "rust",
+          "onnx",
+          "safetensors",
+          "openvino",
+          "bert",
+          "feature-extraction",
+          "sentence-similarity",
+          "transformers",
+          "en",
+          "dataset:s2orc",
+          "dataset:flax-sentence-embeddings/stackexchange_xml",
+          "dataset:ms_marco",
+          "dataset:gooaq",
+          "dataset:yahoo_answers_topics",
+          "dataset:code_search_net",
+          "dataset:search_qa",
+          "dataset:eli5",
+          "dataset:snli",
+          "dataset:multi_nli",
+          "dataset:wikihow",
+          "dataset:natural_questions",
+          "dataset:trivia_qa",
+          "dataset:embedding-data/sentence-compression",
+          "dataset:embedding-data/flickr30k-captions",
+          "dataset:embedding-data/altlex",
+          "dataset:embedding-data/simple-wiki",
+          "dataset:embedding-data/QQP",
+          "dataset:embedding-data/SPECTER",
+          "dataset:embedding-data/PAQ_pairs",
+          "dataset:embedding-data/WikiAnswers",
+          "arxiv:1904.06472",
+          "arxiv:2102.07033",
+          "arxiv:2104.08727",
+          "arxiv:1704.05179",
+          "arxiv:1810.09305",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "text-embeddings-inference",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 90137861,
+          "likes_total": 3932,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "inference_acceleration"
+        ]
+      },
       {
         "id": "sentence-transformers/all-mpnet-base-v2",
         "source": "hf",
@@ -4493,71 +4440,21 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 16696575,
-          "likes_total": 1156,
+          "downloads_total": 16922032,
+          "likes_total": 1163,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "inference_acceleration"
-        ]
-      },
-      {
-        "id": "openai-community/gpt2",
-        "source": "hf",
-        "name": "gpt2",
-        "url": "https://huggingface.co/openai-community/gpt2",
-        "tags": [
-          "transformers",
-          "pytorch",
-          "tf",
-          "jax",
-          "tflite",
-          "rust",
-          "onnx",
-          "safetensors",
-          "gpt2",
-          "text-generation",
-          "exbert",
-          "en",
-          "doi:10.57967/hf/0039",
-          "license:mit",
-          "autotrain_compatible",
-          "text-generation-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 12339920,
-          "likes_total": 2951,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "text_to_image",
-          "text_to_video",
-          "code_generation",
-          "image_text_alignment",
-          "multimodal_understanding_generation",
-          "inference_acceleration",
-          "auto_evaluation_models",
-          "molecular_generation"
         ]
       }
     ],
@@ -4574,8 +4471,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4599,8 +4496,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4626,8 +4523,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4651,8 +4548,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4678,8 +4575,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4703,8 +4600,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4730,8 +4627,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4755,8 +4652,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4782,8 +4679,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4807,8 +4704,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4834,8 +4731,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4859,8 +4756,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -4875,100 +4772,99 @@
     ],
     "auto_evaluation_models": [
       {
-        "id": "openai-community/gpt2",
+        "id": "Falconsai/nsfw_image_detection",
         "source": "hf",
-        "name": "gpt2",
-        "url": "https://huggingface.co/openai-community/gpt2",
+        "name": "nsfw_image_detection",
+        "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
         "tags": [
           "transformers",
           "pytorch",
-          "tf",
-          "jax",
-          "tflite",
-          "rust",
-          "onnx",
           "safetensors",
-          "gpt2",
-          "text-generation",
-          "exbert",
-          "en",
-          "doi:10.57967/hf/0039",
-          "license:mit",
+          "vit",
+          "image-classification",
+          "arxiv:2010.11929",
+          "license:apache-2.0",
           "autotrain_compatible",
-          "text-generation-inference",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12339920,
-          "likes_total": 2951,
+          "downloads_total": 98988953,
+          "likes_total": 826,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
+          "image_classification",
+          "object_detection",
           "text_to_image",
-          "text_to_video",
-          "code_generation",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
           "image_text_alignment",
-          "multimodal_understanding_generation",
-          "inference_acceleration",
           "auto_evaluation_models",
-          "molecular_generation"
+          "time_series_anomaly_detection"
         ]
       },
       {
-        "id": "FacebookAI/roberta-large",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "roberta-large",
-        "url": "https://huggingface.co/FacebookAI/roberta-large",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
           "transformers",
-          "pytorch",
-          "tf",
-          "jax",
-          "onnx",
           "safetensors",
-          "roberta",
-          "fill-mask",
-          "exbert",
-          "en",
-          "dataset:bookcorpus",
-          "dataset:wikipedia",
-          "arxiv:1907.11692",
-          "arxiv:1806.02847",
-          "license:mit",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
           "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12229272,
-          "likes_total": 246,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
           "nlp_data_synthesis",
           "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
           "auto_evaluation_models",
           "training_data_anonymization",
-          "training_data_copyright"
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
         ]
       }
     ],
@@ -4985,8 +4881,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5010,8 +4906,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5037,8 +4933,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5062,8 +4958,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5089,8 +4985,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5114,8 +5010,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5130,83 +5026,99 @@
     ],
     "training_data_anonymization": [
       {
-        "id": "Bingsu/adetailer",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "adetailer",
-        "url": "https://huggingface.co/Bingsu/adetailer",
-        "tags": [
-          "ultralytics",
-          "pytorch",
-          "dataset:wider_face",
-          "dataset:skytnt/anime-segmentation",
-          "doi:10.57967/hf/3633",
-          "license:apache-2.0",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 15383187,
-          "likes_total": 616,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "semantic_segmentation",
-          "instance_segmentation",
-          "panoptic_segmentation",
-          "nlp_data_synthesis",
-          "nlp_data_distillation",
-          "ltr",
-          "training_data_anonymization",
-          "training_data_copyright"
-        ]
-      },
-      {
-        "id": "FacebookAI/roberta-large",
-        "source": "hf",
-        "name": "roberta-large",
-        "url": "https://huggingface.co/FacebookAI/roberta-large",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
           "transformers",
-          "pytorch",
-          "tf",
-          "jax",
-          "onnx",
           "safetensors",
-          "roberta",
-          "fill-mask",
-          "exbert",
-          "en",
-          "dataset:bookcorpus",
-          "dataset:wikipedia",
-          "arxiv:1907.11692",
-          "arxiv:1806.02847",
-          "license:mit",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
           "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12229272,
-          "likes_total": 246,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "google-bert/bert-base-uncased",
+        "source": "hf",
+        "name": "bert-base-uncased",
+        "url": "https://huggingface.co/google-bert/bert-base-uncased",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "coreml",
+          "onnx",
+          "safetensors",
+          "bert",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1810.04805",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 55171860,
+          "likes_total": 2417,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "nlp_data_synthesis",
           "nlp_data_distillation",
@@ -5218,83 +5130,99 @@
     ],
     "training_data_copyright": [
       {
-        "id": "Bingsu/adetailer",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "adetailer",
-        "url": "https://huggingface.co/Bingsu/adetailer",
-        "tags": [
-          "ultralytics",
-          "pytorch",
-          "dataset:wider_face",
-          "dataset:skytnt/anime-segmentation",
-          "doi:10.57967/hf/3633",
-          "license:apache-2.0",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 15383187,
-          "likes_total": 616,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "semantic_segmentation",
-          "instance_segmentation",
-          "panoptic_segmentation",
-          "nlp_data_synthesis",
-          "nlp_data_distillation",
-          "ltr",
-          "training_data_anonymization",
-          "training_data_copyright"
-        ]
-      },
-      {
-        "id": "FacebookAI/roberta-large",
-        "source": "hf",
-        "name": "roberta-large",
-        "url": "https://huggingface.co/FacebookAI/roberta-large",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
           "transformers",
-          "pytorch",
-          "tf",
-          "jax",
-          "onnx",
           "safetensors",
-          "roberta",
-          "fill-mask",
-          "exbert",
-          "en",
-          "dataset:bookcorpus",
-          "dataset:wikipedia",
-          "arxiv:1907.11692",
-          "arxiv:1806.02847",
-          "license:mit",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
           "autotrain_compatible",
           "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12229272,
-          "likes_total": 246,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "google-bert/bert-base-uncased",
+        "source": "hf",
+        "name": "bert-base-uncased",
+        "url": "https://huggingface.co/google-bert/bert-base-uncased",
+        "tags": [
+          "transformers",
+          "pytorch",
+          "tf",
+          "jax",
+          "rust",
+          "coreml",
+          "onnx",
+          "safetensors",
+          "bert",
+          "fill-mask",
+          "exbert",
+          "en",
+          "dataset:bookcorpus",
+          "dataset:wikipedia",
+          "arxiv:1810.04805",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 55171860,
+          "likes_total": 2417,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "nlp_data_synthesis",
           "nlp_data_distillation",
@@ -5306,10 +5234,64 @@
     ],
     "model_monitoring": [
       {
-        "id": "pyannote/segmentation",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 60653441,
+          "likes_total": 41,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "pyannote/segmentation-3.0",
+        "source": "hf",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -5319,28 +5301,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -5357,72 +5340,69 @@
           "model_iterative_update",
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
-        ]
-      },
-      {
-        "id": "BAAI/bge-base-en-v1.5",
-        "source": "hf",
-        "name": "bge-base-en-v1.5",
-        "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
-        "tags": [
-          "sentence-transformers",
-          "pytorch",
-          "onnx",
-          "safetensors",
-          "bert",
-          "feature-extraction",
-          "sentence-similarity",
-          "transformers",
-          "mteb",
-          "en",
-          "arxiv:2401.03462",
-          "arxiv:2312.15503",
-          "arxiv:2311.13534",
-          "arxiv:2310.07554",
-          "arxiv:2309.07597",
-          "license:mit",
-          "model-index",
-          "autotrain_compatible",
-          "text-embeddings-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 7468962,
-          "likes_total": 347,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "text_to_image",
-          "text_to_video",
-          "lightweight_visual_model",
-          "image_text_alignment",
-          "lightweight_multimodal_model",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "inference_acceleration",
-          "auto_evaluation_models",
-          "model_monitoring",
-          "model_iterative_update"
         ]
       }
     ],
     "model_iterative_update": [
       {
-        "id": "pyannote/segmentation",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
+        "tags": [
+          "transformers",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 60653441,
+          "likes_total": 41,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "image_classification",
+          "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "pyannote/segmentation-3.0",
+        "source": "hf",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -5432,28 +5412,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -5470,63 +5451,6 @@
           "model_iterative_update",
           "time_series_anomaly_detection",
           "low_resource_voice_assistant"
-        ]
-      },
-      {
-        "id": "BAAI/bge-base-en-v1.5",
-        "source": "hf",
-        "name": "bge-base-en-v1.5",
-        "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
-        "tags": [
-          "sentence-transformers",
-          "pytorch",
-          "onnx",
-          "safetensors",
-          "bert",
-          "feature-extraction",
-          "sentence-similarity",
-          "transformers",
-          "mteb",
-          "en",
-          "arxiv:2401.03462",
-          "arxiv:2312.15503",
-          "arxiv:2311.13534",
-          "arxiv:2310.07554",
-          "arxiv:2309.07597",
-          "license:mit",
-          "model-index",
-          "autotrain_compatible",
-          "text-embeddings-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 7468962,
-          "likes_total": 347,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "text_to_image",
-          "text_to_video",
-          "lightweight_visual_model",
-          "image_text_alignment",
-          "lightweight_multimodal_model",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "inference_acceleration",
-          "auto_evaluation_models",
-          "model_monitoring",
-          "model_iterative_update"
         ]
       }
     ],
@@ -5543,8 +5467,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5568,8 +5492,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5595,8 +5519,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5620,8 +5544,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5647,8 +5571,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5672,8 +5596,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5706,19 +5630,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 15096939,
-          "likes_total": 767,
+          "downloads_total": 15179264,
+          "likes_total": 770,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "image_classification",
           "text_to_image",
@@ -5748,19 +5672,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 8287393,
-          "likes_total": 1864,
+          "downloads_total": 8008452,
+          "likes_total": 1865,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "image_classification",
           "text_to_image",
@@ -5784,8 +5708,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5809,8 +5733,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5836,8 +5760,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5861,8 +5785,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -5902,19 +5826,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 12339920,
-          "likes_total": 2951,
+          "downloads_total": 12038015,
+          "likes_total": 2955,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -5947,19 +5871,19 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 9875029,
-          "likes_total": 217,
+          "downloads_total": 8845823,
+          "likes_total": 218,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "text_to_image",
           "text_to_video",
@@ -5985,8 +5909,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6010,8 +5934,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6025,48 +5949,6 @@
       }
     ],
     "time_series_forecasting": [
-      {
-        "id": "amazon/chronos-t5-small",
-        "source": "hf",
-        "name": "chronos-t5-small",
-        "url": "https://huggingface.co/amazon/chronos-t5-small",
-        "tags": [
-          "transformers",
-          "safetensors",
-          "t5",
-          "text2text-generation",
-          "time series",
-          "forecasting",
-          "pretrained models",
-          "foundation models",
-          "time series foundation models",
-          "time-series",
-          "time-series-forecasting",
-          "arxiv:2403.07815",
-          "arxiv:1910.10683",
-          "license:apache-2.0",
-          "text-generation-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
-        "stats": {
-          "downloads_total": 7826603,
-          "likes_total": 132,
-          "downloads_7d": 0,
-          "likes_7d": 0
-        },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
-        "summary": "",
-        "flags": {
-          "pinned": false,
-          "hidden": false
-        },
-        "score_model": 0.09996306318906102,
-        "task_keys": [
-          "time_series_forecasting"
-        ]
-      },
       {
         "id": "Datadog/Toto-Open-Base-1.0",
         "source": "hf",
@@ -6092,21 +5974,78 @@
           "region:us"
         ],
         "stats": {
-          "downloads_total": 5681266,
-          "likes_total": 109,
+          "downloads_total": 6369903,
+          "likes_total": 112,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "lightweight_visual_model",
+          "nlp_data_synthesis",
+          "nlp_data_distillation",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
+          "auto_evaluation_models",
+          "training_data_anonymization",
+          "training_data_copyright",
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_forecasting",
+          "time_series_anomaly_detection"
+        ]
+      },
+      {
+        "id": "thuml/sundial-base-128m",
+        "source": "hf",
+        "name": "sundial-base-128m",
+        "url": "https://huggingface.co/thuml/sundial-base-128m",
+        "tags": [
+          "safetensors",
+          "sundial",
+          "time series",
+          "time-series",
+          "forecasting",
+          "foundation models",
+          "pretrained models",
+          "generative models",
+          "time series foundation models",
+          "time-series-forecasting",
+          "custom_code",
+          "dataset:thuml/UTSD",
+          "dataset:Salesforce/lotsa_data",
+          "dataset:autogluon/chronos_datasets",
+          "arxiv:2502.00816",
+          "arxiv:2403.07815",
+          "license:apache-2.0",
+          "region:us"
+        ],
+        "stats": {
+          "downloads_total": 6093403,
+          "likes_total": 47,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false
+        },
+        "score_model": 0.09996983784444612,
+        "task_keys": [
+          "lightweight_visual_model",
+          "code_generation",
           "nlp_data_synthesis",
           "nlp_data_distillation",
           "lightweight_multimodal_model",
@@ -6125,107 +6064,99 @@
     ],
     "time_series_anomaly_detection": [
       {
-        "id": "pyannote/segmentation",
+        "id": "Falconsai/nsfw_image_detection",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "nsfw_image_detection",
+        "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
         "tags": [
-          "pyannote-audio",
+          "transformers",
           "pytorch",
-          "pyannote",
-          "pyannote-audio-model",
-          "audio",
-          "voice",
-          "speech",
-          "speaker",
-          "speaker-segmentation",
-          "voice-activity-detection",
-          "overlapped-speech-detection",
-          "resegmentation",
-          "arxiv:2104.04045",
-          "license:mit",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "arxiv:2010.11929",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 98988953,
+          "likes_total": 826,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
+          "image_classification",
           "object_detection",
-          "semantic_segmentation",
-          "instance_segmentation",
-          "panoptic_segmentation",
-          "lightweight_visual_model",
-          "speaker_separation",
-          "lightweight_multimodal_model",
-          "vector_retrieval",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "model_monitoring",
-          "model_iterative_update",
-          "time_series_anomaly_detection",
-          "low_resource_voice_assistant"
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "image_text_alignment",
+          "auto_evaluation_models",
+          "time_series_anomaly_detection"
         ]
       },
       {
-        "id": "pyannote/voice-activity-detection",
+        "id": "dima806/fairface_age_image_detection",
         "source": "hf",
-        "name": "voice-activity-detection",
-        "url": "https://huggingface.co/pyannote/voice-activity-detection",
+        "name": "fairface_age_image_detection",
+        "url": "https://huggingface.co/dima806/fairface_age_image_detection",
         "tags": [
-          "pyannote-audio",
-          "pyannote",
-          "pyannote-audio-pipeline",
-          "audio",
-          "voice",
-          "speech",
-          "speaker",
-          "voice-activity-detection",
-          "automatic-speech-recognition",
-          "dataset:ami",
-          "dataset:dihard",
-          "dataset:voxconverse",
-          "license:mit",
+          "transformers",
+          "safetensors",
+          "vit",
+          "image-classification",
+          "dataset:nateraw/fairface",
+          "base_model:google/vit-base-patch16-224-in21k",
+          "base_model:finetune:google/vit-base-patch16-224-in21k",
+          "license:apache-2.0",
+          "autotrain_compatible",
+          "endpoints_compatible",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 6201537,
-          "likes_total": 210,
+          "downloads_total": 60653441,
+          "likes_total": 41,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
+          "image_classification",
           "object_detection",
+          "text_to_image",
+          "medical_image_processing",
+          "remote_sensing_image_processing",
+          "lightweight_visual_model",
           "nlp_data_synthesis",
           "nlp_data_distillation",
-          "asr",
-          "speaker_separation",
-          "vector_retrieval",
-          "graph_augmented_reco",
+          "image_text_alignment",
+          "lightweight_multimodal_model",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
           "auto_evaluation_models",
           "training_data_anonymization",
           "training_data_copyright",
-          "time_series_anomaly_detection",
-          "low_resource_voice_assistant"
+          "model_monitoring",
+          "model_iterative_update",
+          "time_series_anomaly_detection"
         ]
       }
     ],
@@ -6242,8 +6173,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6267,8 +6198,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6294,8 +6225,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6319,8 +6250,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6346,8 +6277,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6371,8 +6302,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6387,10 +6318,10 @@
     ],
     "low_resource_voice_assistant": [
       {
-        "id": "pyannote/segmentation",
+        "id": "pyannote/segmentation-3.0",
         "source": "hf",
-        "name": "segmentation",
-        "url": "https://huggingface.co/pyannote/segmentation",
+        "name": "segmentation-3.0",
+        "url": "https://huggingface.co/pyannote/segmentation-3.0",
         "tags": [
           "pyannote-audio",
           "pytorch",
@@ -6400,28 +6331,29 @@
           "voice",
           "speech",
           "speaker",
+          "speaker-diarization",
+          "speaker-change-detection",
           "speaker-segmentation",
           "voice-activity-detection",
           "overlapped-speech-detection",
           "resegmentation",
-          "arxiv:2104.04045",
           "license:mit",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 7771470,
-          "likes_total": 638,
+          "downloads_total": 18518237,
+          "likes_total": 605,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
           "object_detection",
           "semantic_segmentation",
@@ -6441,52 +6373,57 @@
         ]
       },
       {
-        "id": "pyannote/voice-activity-detection",
+        "id": "pyannote/wespeaker-voxceleb-resnet34-LM",
         "source": "hf",
-        "name": "voice-activity-detection",
-        "url": "https://huggingface.co/pyannote/voice-activity-detection",
+        "name": "wespeaker-voxceleb-resnet34-LM",
+        "url": "https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM",
         "tags": [
           "pyannote-audio",
+          "pytorch",
           "pyannote",
-          "pyannote-audio-pipeline",
+          "pyannote-audio-model",
+          "wespeaker",
           "audio",
           "voice",
           "speech",
           "speaker",
-          "voice-activity-detection",
-          "automatic-speech-recognition",
-          "dataset:ami",
-          "dataset:dihard",
-          "dataset:voxconverse",
-          "license:mit",
+          "speaker-recognition",
+          "speaker-verification",
+          "speaker-identification",
+          "speaker-embedding",
+          "dataset:voxceleb",
+          "license:cc-by-4.0",
           "region:us"
         ],
         "stats": {
-          "downloads_total": 6201537,
-          "likes_total": 210,
+          "downloads_total": 17865623,
+          "likes_total": 76,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:54:22.087Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_model": 0.09996306318906102,
+        "score_model": 0.09996983784444612,
         "task_keys": [
-          "object_detection",
+          "lightweight_visual_model",
           "nlp_data_synthesis",
           "nlp_data_distillation",
-          "asr",
           "speaker_separation",
+          "lightweight_multimodal_model",
           "vector_retrieval",
           "graph_augmented_reco",
-          "auto_evaluation_models",
+          "model_compression",
+          "model_quantization",
+          "model_distillation",
           "training_data_anonymization",
           "training_data_copyright",
-          "time_series_anomaly_detection",
+          "model_monitoring",
+          "model_iterative_update",
           "low_resource_voice_assistant"
         ]
       }
@@ -6504,8 +6441,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6529,8 +6466,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.010Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6545,61 +6482,52 @@
     ],
     "multimodal_temporal_fusion": [
       {
-        "id": "Qwen/Qwen2-VL-2B-Instruct",
+        "id": "__placeholder__:multimodal_temporal_fusion:0",
         "source": "hf",
-        "name": "Qwen2-VL-2B-Instruct",
-        "url": "https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct",
-        "tags": [
-          "transformers",
-          "safetensors",
-          "qwen2_vl",
-          "image-to-text",
-          "multimodal",
-          "image-text-to-text",
-          "conversational",
-          "en",
-          "arxiv:2409.12191",
-          "arxiv:2308.12966",
-          "base_model:Qwen/Qwen2-VL-2B",
-          "base_model:finetune:Qwen/Qwen2-VL-2B",
-          "license:apache-2.0",
-          "text-generation-inference",
-          "endpoints_compatible",
-          "region:us"
-        ],
+        "name": "(multimodal_temporal_fusion) placeholder",
+        "url": "",
+        "tags": [],
         "stats": {
-          "downloads_total": 4461990,
-          "likes_total": 450,
+          "downloads_total": 0,
+          "likes_total": 0,
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:53.894Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.011Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
-          "hidden": false
+          "hidden": false,
+          "placeholder": true
         },
-        "score_model": 0.09996306318906102,
+        "score_model": -1,
         "task_keys": [
-          "image_classification",
-          "text_to_image",
-          "text_to_video",
-          "medical_image_processing",
-          "remote_sensing_image_processing",
-          "lightweight_visual_model",
-          "code_generation",
-          "image_text_alignment",
-          "multimodal_understanding_generation",
-          "multimodal_dialogue_system",
-          "lightweight_multimodal_model",
-          "model_compression",
-          "model_quantization",
-          "model_distillation",
-          "inference_acceleration",
-          "model_monitoring",
-          "model_iterative_update",
-          "molecular_generation",
+          "multimodal_temporal_fusion"
+        ]
+      },
+      {
+        "id": "__placeholder__:multimodal_temporal_fusion:1",
+        "source": "hf",
+        "name": "(multimodal_temporal_fusion) placeholder",
+        "url": "",
+        "tags": [],
+        "stats": {
+          "downloads_total": 0,
+          "likes_total": 0,
+          "downloads_7d": 0,
+          "likes_7d": 0
+        },
+        "updated_at": "2025-09-27T07:07:24.011Z",
+        "added_at": "2025-09-27",
+        "summary": "",
+        "flags": {
+          "pinned": false,
+          "hidden": false,
+          "placeholder": true
+        },
+        "score_model": -1,
+        "task_keys": [
           "multimodal_temporal_fusion"
         ]
       }
@@ -6617,8 +6545,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.011Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -6642,8 +6570,8 @@
           "downloads_7d": 0,
           "likes_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.474Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.011Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,

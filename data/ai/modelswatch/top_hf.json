@@ -1,5 +1,5 @@
 {
-  "updated_at": "2025-09-21T12:06:52.259Z",
+  "updated_at": "2025-09-27T06:54:20.581Z",
   "items": [
     {
       "id": "timm/mobilenetv3_small_100.lamb_in1k",
@@ -26,17 +26,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 130903980,
-        "likes_total": 37
+        "downloads_total": 126091014,
+        "likes_total": 38
       },
-      "score": 261826.46,
+      "score": 252201.028,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.893Z",
+      "updated_at": "2025-09-27T06:54:22.087Z",
       "task_keys": [
         "image_classification"
       ]
@@ -66,17 +66,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 96871313,
-        "likes_total": 822
+        "downloads_total": 98988953,
+        "likes_total": 826
       },
-      "score": 194153.62600000002,
+      "score": 198390.90600000002,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.893Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "sentence-transformers/all-MiniLM-L6-v2",
@@ -136,17 +136,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 87829966,
-        "likes_total": 3907
+        "downloads_total": 90137861,
+        "likes_total": 3932
       },
-      "score": 177613.432,
+      "score": 182241.722,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.893Z",
+      "updated_at": "2025-09-27T06:54:22.087Z",
       "task_keys": [
         "inference_acceleration"
       ]
@@ -177,17 +177,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 58904599,
+        "downloads_total": 60653441,
         "likes_total": 41
       },
-      "score": 117829.698,
+      "score": 121327.382,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.893Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "google-bert/bert-base-uncased",
@@ -223,17 +223,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 55932506,
-        "likes_total": 2414
+        "downloads_total": 55171860,
+        "likes_total": 2417
       },
-      "score": 113072.012,
+      "score": 111552.22,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.893Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "tech4humans/yolov8s-signature-detector",
@@ -265,17 +265,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 43141280,
-        "likes_total": 39
+        "downloads_total": 41151738,
+        "likes_total": 44
       },
-      "score": 86302.06,
+      "score": 82325.476,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.893Z",
+      "updated_at": "2025-09-27T06:54:22.087Z",
       "task_keys": [
         "object_detection"
       ]
@@ -311,17 +311,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 18789102,
-        "likes_total": 591
+        "downloads_total": 18518237,
+        "likes_total": 605
       },
-      "score": 37873.704,
+      "score": 37338.974,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.893Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "pyannote/wespeaker-voxceleb-resnet34-LM",
@@ -354,61 +354,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 18459011,
-        "likes_total": 74
+        "downloads_total": 17865623,
+        "likes_total": 76
       },
-      "score": 36955.022,
+      "score": 35769.246,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.893Z"
-    },
-    {
-      "id": "pyannote/speaker-diarization-3.1",
-      "source": "hf",
-      "name": "speaker-diarization-3.1",
-      "url": "https://huggingface.co/pyannote/speaker-diarization-3.1",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "pyannote-audio",
-        "pyannote",
-        "pyannote-audio-pipeline",
-        "audio",
-        "voice",
-        "speech",
-        "speaker",
-        "speaker-diarization",
-        "speaker-change-detection",
-        "voice-activity-detection",
-        "overlapped-speech-detection",
-        "automatic-speech-recognition",
-        "arxiv:2111.14448",
-        "arxiv:2012.01477",
-        "license:mit",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 16895629,
-        "likes_total": 1137
-      },
-      "score": 34359.758,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.893Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "sentence-transformers/all-mpnet-base-v2",
@@ -467,20 +423,64 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 16696575,
-        "likes_total": 1156
+        "downloads_total": 16922032,
+        "likes_total": 1163
       },
-      "score": 33971.15,
+      "score": 34425.564,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
+      "updated_at": "2025-09-27T06:54:22.087Z",
       "task_keys": [
         "inference_acceleration"
       ]
+    },
+    {
+      "id": "pyannote/speaker-diarization-3.1",
+      "source": "hf",
+      "name": "speaker-diarization-3.1",
+      "url": "https://huggingface.co/pyannote/speaker-diarization-3.1",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "pyannote-audio",
+        "pyannote",
+        "pyannote-audio-pipeline",
+        "audio",
+        "voice",
+        "speech",
+        "speaker",
+        "speaker-diarization",
+        "speaker-change-detection",
+        "voice-activity-detection",
+        "overlapped-speech-detection",
+        "automatic-speech-recognition",
+        "arxiv:2111.14448",
+        "arxiv:2012.01477",
+        "license:mit",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 16721804,
+        "likes_total": 1169
+      },
+      "score": 34028.108,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "Bingsu/adetailer",
@@ -504,17 +504,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 15383187,
-        "likes_total": 616
+        "downloads_total": 15202018,
+        "likes_total": 617
       },
-      "score": 31074.374,
+      "score": 30712.536,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "openai/clip-vit-base-patch32",
@@ -542,23 +542,23 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 15096939,
-        "likes_total": 767
+        "downloads_total": 15179264,
+        "likes_total": 770
       },
-      "score": 30577.378,
+      "score": 30743.528000000002,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
-      "id": "openai-community/gpt2",
+      "id": "google/electra-base-discriminator",
       "source": "hf",
-      "name": "gpt2",
-      "url": "https://huggingface.co/openai-community/gpt2",
+      "name": "electra-base-discriminator",
+      "url": "https://huggingface.co/google/electra-base-discriminator",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
@@ -566,18 +566,12 @@
         "pytorch",
         "tf",
         "jax",
-        "tflite",
         "rust",
-        "onnx",
-        "safetensors",
-        "gpt2",
-        "text-generation",
-        "exbert",
+        "electra",
+        "pretraining",
         "en",
-        "doi:10.57967/hf/0039",
-        "license:mit",
-        "autotrain_compatible",
-        "text-generation-inference",
+        "arxiv:1406.2661",
+        "license:apache-2.0",
         "endpoints_compatible",
         "region:us"
       ],
@@ -587,17 +581,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 12339920,
-        "likes_total": 2951
+        "downloads_total": 13835783,
+        "likes_total": 65
       },
-      "score": 26155.34,
+      "score": 27704.066,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "FacebookAI/roberta-large",
@@ -632,17 +626,62 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 12229272,
-        "likes_total": 246
+        "downloads_total": 13086830,
+        "likes_total": 247
       },
-      "score": 24581.544,
+      "score": 26297.16,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "openai-community/gpt2",
+      "source": "hf",
+      "name": "gpt2",
+      "url": "https://huggingface.co/openai-community/gpt2",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "tflite",
+        "rust",
+        "onnx",
+        "safetensors",
+        "gpt2",
+        "text-generation",
+        "exbert",
+        "en",
+        "doi:10.57967/hf/0039",
+        "license:mit",
+        "autotrain_compatible",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 12038015,
+        "likes_total": 2955
+      },
+      "score": 25553.53,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "distilbert/distilbert-base-uncased",
@@ -676,17 +715,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 11913020,
-        "likes_total": 758
+        "downloads_total": 11838763,
+        "likes_total": 762
       },
-      "score": 24205.04,
+      "score": 24058.526,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "FacebookAI/roberta-base",
@@ -721,37 +760,30 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 11214297,
-        "likes_total": 528
+        "downloads_total": 11504577,
+        "likes_total": 529
       },
-      "score": 22692.594,
+      "score": 23273.654000000002,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
-      "id": "google/electra-base-discriminator",
+      "id": "omni-research/Tarsier2-Recap-7b",
       "source": "hf",
-      "name": "electra-base-discriminator",
-      "url": "https://huggingface.co/google/electra-base-discriminator",
+      "name": "Tarsier2-Recap-7b",
+      "url": "https://huggingface.co/omni-research/Tarsier2-Recap-7b",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "rust",
-        "electra",
-        "pretraining",
-        "en",
-        "arxiv:1406.2661",
+        "safetensors",
+        "video LLM",
+        "arxiv:2501.07888",
         "license:apache-2.0",
-        "endpoints_compatible",
         "region:us"
       ],
       "categories": {
@@ -760,97 +792,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 11129059,
-        "likes_total": 65
+        "downloads_total": 10123337,
+        "likes_total": 19
       },
-      "score": 22290.618000000002,
+      "score": 20256.174,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "facebook/opt-125m",
-      "source": "hf",
-      "name": "opt-125m",
-      "url": "https://huggingface.co/facebook/opt-125m",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "opt",
-        "text-generation",
-        "en",
-        "arxiv:2205.01068",
-        "arxiv:2005.14165",
-        "license:other",
-        "autotrain_compatible",
-        "text-generation-inference",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 9875029,
-        "likes_total": 217
-      },
-      "score": 19858.558,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "prajjwal1/bert-tiny",
-      "source": "hf",
-      "name": "bert-tiny",
-      "url": "https://huggingface.co/prajjwal1/bert-tiny",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "BERT",
-        "MNLI",
-        "NLI",
-        "transformer",
-        "pre-training",
-        "en",
-        "arxiv:1908.08962",
-        "arxiv:2110.01518",
-        "license:mit",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 9595121,
-        "likes_total": 129
-      },
-      "score": 19254.742000000002,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
@@ -933,51 +885,78 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 9573294,
-        "likes_total": 1014
+        "downloads_total": 9770630,
+        "likes_total": 1021
       },
-      "score": 19653.588,
+      "score": 20051.760000000002,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
+      "updated_at": "2025-09-27T06:54:22.087Z",
       "task_keys": [
         "inference_acceleration"
       ]
     },
     {
-      "id": "context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16",
+      "id": "facebook/opt-125m",
       "source": "hf",
-      "name": "meta-llama-Llama-3.2-3B-Instruct-FP16",
-      "url": "https://huggingface.co/context-labs/meta-llama-Llama-3.2-3B-Instruct-FP16",
+      "name": "opt-125m",
+      "url": "https://huggingface.co/facebook/opt-125m",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
         "transformers",
-        "safetensors",
-        "llama",
-        "text-generation",
-        "facebook",
-        "meta",
         "pytorch",
-        "llama-3",
-        "conversational",
+        "tf",
+        "jax",
+        "opt",
+        "text-generation",
         "en",
-        "de",
-        "fr",
-        "it",
-        "pt",
-        "hi",
-        "es",
-        "th",
-        "arxiv:2204.05149",
-        "arxiv:2405.16406",
-        "license:llama3.2",
+        "arxiv:2205.01068",
+        "arxiv:2005.14165",
+        "license:other",
         "autotrain_compatible",
         "text-generation-inference",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 8845823,
+        "likes_total": 218
+      },
+      "score": 17800.646,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "trpakov/vit-face-expression",
+      "source": "hf",
+      "name": "vit-face-expression",
+      "url": "https://huggingface.co/trpakov/vit-face-expression",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "onnx",
+        "safetensors",
+        "vit",
+        "image-classification",
+        "doi:10.57967/hf/2289",
+        "license:apache-2.0",
+        "autotrain_compatible",
         "endpoints_compatible",
         "region:us"
       ],
@@ -987,30 +966,38 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 9025392,
-        "likes_total": 7
+        "downloads_total": 8789751,
+        "likes_total": 80
       },
-      "score": 18054.284,
+      "score": 17619.502,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
-      "id": "omni-research/Tarsier2-Recap-7b",
+      "id": "prajjwal1/bert-tiny",
       "source": "hf",
-      "name": "Tarsier2-Recap-7b",
-      "url": "https://huggingface.co/omni-research/Tarsier2-Recap-7b",
+      "name": "bert-tiny",
+      "url": "https://huggingface.co/prajjwal1/bert-tiny",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
-        "safetensors",
-        "video LLM",
-        "arxiv:2501.07888",
-        "license:apache-2.0",
+        "transformers",
+        "pytorch",
+        "BERT",
+        "MNLI",
+        "NLI",
+        "transformer",
+        "pre-training",
+        "en",
+        "arxiv:1908.08962",
+        "arxiv:2110.01518",
+        "license:mit",
+        "endpoints_compatible",
         "region:us"
       ],
       "categories": {
@@ -1019,17 +1006,50 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 8924832,
-        "likes_total": 18
+        "downloads_total": 8534175,
+        "likes_total": 129
       },
-      "score": 17858.664,
+      "score": 17132.85,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "facebook/contriever",
+      "source": "hf",
+      "name": "contriever",
+      "url": "https://huggingface.co/facebook/contriever",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "bert",
+        "arxiv:2112.09118",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 8050059,
+        "likes_total": 66
+      },
+      "score": 16133.118,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "openai/clip-vit-large-patch14",
@@ -1058,131 +1078,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 8287393,
-        "likes_total": 1864
+        "downloads_total": 8008452,
+        "likes_total": 1865
       },
-      "score": 17506.786,
+      "score": 16949.404000000002,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "trpakov/vit-face-expression",
-      "source": "hf",
-      "name": "vit-face-expression",
-      "url": "https://huggingface.co/trpakov/vit-face-expression",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "onnx",
-        "safetensors",
-        "vit",
-        "image-classification",
-        "doi:10.57967/hf/2289",
-        "license:apache-2.0",
-        "autotrain_compatible",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 8254929,
-        "likes_total": 80
-      },
-      "score": 16549.858,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "google/vit-base-patch16-224-in21k",
-      "source": "hf",
-      "name": "vit-base-patch16-224-in21k",
-      "url": "https://huggingface.co/google/vit-base-patch16-224-in21k",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "safetensors",
-        "vit",
-        "image-feature-extraction",
-        "vision",
-        "dataset:imagenet-21k",
-        "arxiv:2010.11929",
-        "arxiv:2006.03677",
-        "license:apache-2.0",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 8138717,
-        "likes_total": 372
-      },
-      "score": 16463.434,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
-      "task_keys": [
-        "image_classification"
-      ]
-    },
-    {
-      "id": "facebook/contriever",
-      "source": "hf",
-      "name": "contriever",
-      "url": "https://huggingface.co/facebook/contriever",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "bert",
-        "arxiv:2112.09118",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 8071747,
-        "likes_total": 64
-      },
-      "score": 16175.494,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "FacebookAI/xlm-roberta-base",
@@ -1307,40 +1213,38 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 7971501,
-        "likes_total": 730
+        "downloads_total": 7789212,
+        "likes_total": 732
       },
-      "score": 16308.002,
+      "score": 15944.424,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
-      "id": "amazon/chronos-t5-small",
+      "id": "Qwen/Qwen2.5-3B-Instruct",
       "source": "hf",
-      "name": "chronos-t5-small",
-      "url": "https://huggingface.co/amazon/chronos-t5-small",
+      "name": "Qwen2.5-3B-Instruct",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
         "transformers",
         "safetensors",
-        "t5",
-        "text2text-generation",
-        "time series",
-        "forecasting",
-        "pretrained models",
-        "foundation models",
-        "time series foundation models",
-        "time-series",
-        "time-series-forecasting",
-        "arxiv:2403.07815",
-        "arxiv:1910.10683",
-        "license:apache-2.0",
+        "qwen2",
+        "text-generation",
+        "chat",
+        "conversational",
+        "en",
+        "arxiv:2407.10671",
+        "base_model:Qwen/Qwen2.5-3B",
+        "base_model:finetune:Qwen/Qwen2.5-3B",
+        "license:other",
+        "autotrain_compatible",
         "text-generation-inference",
         "endpoints_compatible",
         "region:us"
@@ -1351,81 +1255,45 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 7826603,
-        "likes_total": 132
+        "downloads_total": 7781072,
+        "likes_total": 310
       },
-      "score": 15719.206,
+      "score": 15717.144,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
-      "task_keys": [
-        "time_series_forecasting"
-      ]
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
-      "id": "pyannote/segmentation",
+      "id": "BAAI/bge-base-en-v1.5",
       "source": "hf",
-      "name": "segmentation",
-      "url": "https://huggingface.co/pyannote/segmentation",
+      "name": "bge-base-en-v1.5",
+      "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
-        "pyannote-audio",
+        "sentence-transformers",
         "pytorch",
-        "pyannote",
-        "pyannote-audio-model",
-        "audio",
-        "voice",
-        "speech",
-        "speaker",
-        "speaker-segmentation",
-        "voice-activity-detection",
-        "overlapped-speech-detection",
-        "resegmentation",
-        "arxiv:2104.04045",
-        "license:mit",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 7771470,
-        "likes_total": 638
-      },
-      "score": 15861.94,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "facebook/bart-base",
-      "source": "hf",
-      "name": "bart-base",
-      "url": "https://huggingface.co/facebook/bart-base",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
+        "onnx",
         "safetensors",
-        "bart",
+        "bert",
         "feature-extraction",
+        "sentence-similarity",
+        "transformers",
+        "mteb",
         "en",
-        "arxiv:1910.13461",
-        "license:apache-2.0",
+        "arxiv:2401.03462",
+        "arxiv:2312.15503",
+        "arxiv:2311.13534",
+        "arxiv:2310.07554",
+        "arxiv:2309.07597",
+        "license:mit",
+        "model-index",
+        "autotrain_compatible",
+        "text-embeddings-inference",
         "endpoints_compatible",
         "region:us"
       ],
@@ -1435,17 +1303,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 7662269,
-        "likes_total": 198
+        "downloads_total": 7652629,
+        "likes_total": 348
       },
-      "score": 15423.538,
+      "score": 15479.258,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "meta-llama/Llama-3.2-1B-Instruct",
@@ -1486,150 +1354,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 7557620,
-        "likes_total": 1071
+        "downloads_total": 7361915,
+        "likes_total": 1082
       },
-      "score": 15650.74,
+      "score": 15264.83,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "openai/gpt-oss-20b",
-      "source": "hf",
-      "name": "gpt-oss-20b",
-      "url": "https://huggingface.co/openai/gpt-oss-20b",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "safetensors",
-        "gpt_oss",
-        "text-generation",
-        "vllm",
-        "conversational",
-        "arxiv:2508.10925",
-        "license:apache-2.0",
-        "autotrain_compatible",
-        "endpoints_compatible",
-        "8-bit",
-        "mxfp4",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 7503160,
-        "likes_total": 3557
-      },
-      "score": 16784.82,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
-      "task_keys": [
-        "inference_acceleration"
-      ]
-    },
-    {
-      "id": "BAAI/bge-base-en-v1.5",
-      "source": "hf",
-      "name": "bge-base-en-v1.5",
-      "url": "https://huggingface.co/BAAI/bge-base-en-v1.5",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "sentence-transformers",
-        "pytorch",
-        "onnx",
-        "safetensors",
-        "bert",
-        "feature-extraction",
-        "sentence-similarity",
-        "transformers",
-        "mteb",
-        "en",
-        "arxiv:2401.03462",
-        "arxiv:2312.15503",
-        "arxiv:2311.13534",
-        "arxiv:2310.07554",
-        "arxiv:2309.07597",
-        "license:mit",
-        "model-index",
-        "autotrain_compatible",
-        "text-embeddings-inference",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 7468962,
-        "likes_total": 347
-      },
-      "score": 15111.424,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "Qwen/Qwen2.5-3B-Instruct",
-      "source": "hf",
-      "name": "Qwen2.5-3B-Instruct",
-      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "safetensors",
-        "qwen2",
-        "text-generation",
-        "chat",
-        "conversational",
-        "en",
-        "arxiv:2407.10671",
-        "base_model:Qwen/Qwen2.5-3B",
-        "base_model:finetune:Qwen/Qwen2.5-3B",
-        "license:other",
-        "autotrain_compatible",
-        "text-generation-inference",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 7220665,
-        "likes_total": 311
-      },
-      "score": 14596.83,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "meta-llama/Llama-3.1-8B-Instruct",
@@ -1671,17 +1406,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 6846729,
-        "likes_total": 4641
+        "downloads_total": 7222308,
+        "likes_total": 4675
       },
-      "score": 16013.958,
+      "score": 16782.116,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "Qwen/Qwen2.5-7B-Instruct",
@@ -1714,38 +1449,82 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 6795171,
-        "likes_total": 797
+        "downloads_total": 7112822,
+        "likes_total": 803
       },
-      "score": 13988.842,
+      "score": 14627.144,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
-      "id": "pyannote/voice-activity-detection",
+      "id": "openai/gpt-oss-20b",
       "source": "hf",
-      "name": "voice-activity-detection",
-      "url": "https://huggingface.co/pyannote/voice-activity-detection",
+      "name": "gpt-oss-20b",
+      "url": "https://huggingface.co/openai/gpt-oss-20b",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "gpt_oss",
+        "text-generation",
+        "vllm",
+        "conversational",
+        "arxiv:2508.10925",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "endpoints_compatible",
+        "8-bit",
+        "mxfp4",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 6823231,
+        "likes_total": 3608
+      },
+      "score": 15450.462,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z",
+      "task_keys": [
+        "inference_acceleration"
+      ]
+    },
+    {
+      "id": "pyannote/segmentation",
+      "source": "hf",
+      "name": "segmentation",
+      "url": "https://huggingface.co/pyannote/segmentation",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
         "pyannote-audio",
+        "pytorch",
         "pyannote",
-        "pyannote-audio-pipeline",
+        "pyannote-audio-model",
         "audio",
         "voice",
         "speech",
         "speaker",
+        "speaker-segmentation",
         "voice-activity-detection",
-        "automatic-speech-recognition",
-        "dataset:ami",
-        "dataset:dihard",
-        "dataset:voxconverse",
+        "overlapped-speech-detection",
+        "resegmentation",
+        "arxiv:2104.04045",
         "license:mit",
         "region:us"
       ],
@@ -1755,17 +1534,56 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 6201537,
-        "likes_total": 210
+        "downloads_total": 6591894,
+        "likes_total": 641
       },
-      "score": 12508.074,
+      "score": 13504.288,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "facebook/bart-base",
+      "source": "hf",
+      "name": "bart-base",
+      "url": "https://huggingface.co/facebook/bart-base",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "safetensors",
+        "bart",
+        "feature-extraction",
+        "en",
+        "arxiv:1910.13461",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 6551358,
+        "likes_total": 199
+      },
+      "score": 13202.216,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "colbert-ir/colbertv2.0",
@@ -1797,81 +1615,38 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 6056741,
-        "likes_total": 285
+        "downloads_total": 6540699,
+        "likes_total": 286
       },
-      "score": 12255.982,
+      "score": 13224.398000000001,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
-      "id": "Qwen/Qwen3-0.6B",
+      "id": "google/vit-base-patch16-224-in21k",
       "source": "hf",
-      "name": "Qwen3-0.6B",
-      "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+      "name": "vit-base-patch16-224-in21k",
+      "url": "https://huggingface.co/google/vit-base-patch16-224-in21k",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
         "transformers",
-        "safetensors",
-        "qwen3",
-        "text-generation",
-        "conversational",
-        "arxiv:2505.09388",
-        "base_model:Qwen/Qwen3-0.6B-Base",
-        "base_model:finetune:Qwen/Qwen3-0.6B-Base",
-        "license:apache-2.0",
-        "autotrain_compatible",
-        "text-generation-inference",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 5871880,
-        "likes_total": 637
-      },
-      "score": 12062.26,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "BAAI/bge-m3",
-      "source": "hf",
-      "name": "bge-m3",
-      "url": "https://huggingface.co/BAAI/bge-m3",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "sentence-transformers",
         "pytorch",
-        "onnx",
-        "xlm-roberta",
-        "feature-extraction",
-        "sentence-similarity",
-        "arxiv:2402.03216",
-        "arxiv:2004.04906",
-        "arxiv:2106.14807",
-        "arxiv:2107.05720",
-        "arxiv:2004.12832",
-        "license:mit",
-        "autotrain_compatible",
-        "text-embeddings-inference",
-        "endpoints_compatible",
+        "tf",
+        "jax",
+        "safetensors",
+        "vit",
+        "image-feature-extraction",
+        "vision",
+        "dataset:imagenet-21k",
+        "arxiv:2010.11929",
+        "arxiv:2006.03677",
+        "license:apache-2.0",
         "region:us"
       ],
       "categories": {
@@ -1880,17 +1655,20 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 5808603,
-        "likes_total": 2367
+        "downloads_total": 6436693,
+        "likes_total": 372
       },
-      "score": 12800.706,
+      "score": 13059.386,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z",
+      "task_keys": [
+        "image_classification"
+      ]
     },
     {
       "id": "Datadog/Toto-Open-Base-1.0",
@@ -1924,36 +1702,37 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 5681266,
-        "likes_total": 109
+        "downloads_total": 6369903,
+        "likes_total": 112
       },
-      "score": 11417.032000000001,
+      "score": 12795.806,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
-      "id": "nlpaueb/legal-bert-base-uncased",
+      "id": "Qwen/Qwen3-0.6B",
       "source": "hf",
-      "name": "legal-bert-base-uncased",
-      "url": "https://huggingface.co/nlpaueb/legal-bert-base-uncased",
+      "name": "Qwen3-0.6B",
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
         "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "bert",
-        "pretraining",
-        "legal",
-        "fill-mask",
-        "en",
-        "license:cc-by-sa-4.0",
+        "safetensors",
+        "qwen3",
+        "text-generation",
+        "conversational",
+        "arxiv:2505.09388",
+        "base_model:Qwen/Qwen3-0.6B-Base",
+        "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "text-generation-inference",
         "endpoints_compatible",
         "region:us"
       ],
@@ -1963,17 +1742,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 5596750,
-        "likes_total": 271
+        "downloads_total": 6303480,
+        "likes_total": 649
       },
-      "score": 11329,
+      "score": 12931.460000000001,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "thuml/sundial-base-128m",
@@ -2008,17 +1787,130 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 5380391,
-        "likes_total": 45
+        "downloads_total": 6093403,
+        "likes_total": 47
       },
-      "score": 10783.282000000001,
+      "score": 12210.306,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "BAAI/bge-m3",
+      "source": "hf",
+      "name": "bge-m3",
+      "url": "https://huggingface.co/BAAI/bge-m3",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "sentence-transformers",
+        "pytorch",
+        "onnx",
+        "xlm-roberta",
+        "feature-extraction",
+        "sentence-similarity",
+        "arxiv:2402.03216",
+        "arxiv:2004.04906",
+        "arxiv:2106.14807",
+        "arxiv:2107.05720",
+        "arxiv:2004.12832",
+        "license:mit",
+        "autotrain_compatible",
+        "text-embeddings-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 5914036,
+        "likes_total": 2377
+      },
+      "score": 13016.572,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "google/gemma-3-1b-it",
+      "source": "hf",
+      "name": "gemma-3-1b-it",
+      "url": "https://huggingface.co/google/gemma-3-1b-it",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "gemma3_text",
+        "text-generation",
+        "conversational",
+        "arxiv:1905.07830",
+        "arxiv:1905.10044",
+        "arxiv:1911.11641",
+        "arxiv:1904.09728",
+        "arxiv:1705.03551",
+        "arxiv:1911.01547",
+        "arxiv:1907.10641",
+        "arxiv:1903.00161",
+        "arxiv:2009.03300",
+        "arxiv:2304.06364",
+        "arxiv:2103.03874",
+        "arxiv:2110.14168",
+        "arxiv:2311.12022",
+        "arxiv:2108.07732",
+        "arxiv:2107.03374",
+        "arxiv:2210.03057",
+        "arxiv:2106.03193",
+        "arxiv:1910.11856",
+        "arxiv:2502.12404",
+        "arxiv:2502.21228",
+        "arxiv:2404.16816",
+        "arxiv:2104.12756",
+        "arxiv:2311.16502",
+        "arxiv:2203.10244",
+        "arxiv:2404.12390",
+        "arxiv:1810.12440",
+        "arxiv:1908.02660",
+        "arxiv:2312.11805",
+        "base_model:google/gemma-3-1b-pt",
+        "base_model:finetune:google/gemma-3-1b-pt",
+        "license:gemma",
+        "autotrain_compatible",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 5836125,
+        "likes_total": 629
+      },
+      "score": 11986.75,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z",
+      "task_keys": [
+        "instruction_tuning"
+      ]
     },
     {
       "id": "autogluon/chronos-bolt-base",
@@ -2048,33 +1940,39 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 5256572,
-        "likes_total": 26
+        "downloads_total": 5768507,
+        "likes_total": 27
       },
-      "score": 10526.144,
+      "score": 11550.514000000001,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
+      "updated_at": "2025-09-27T06:54:22.087Z",
       "task_keys": [
         "time_series_forecasting"
       ]
     },
     {
-      "id": "facebook/esmfold_v1",
+      "id": "nlpaueb/legal-bert-base-uncased",
       "source": "hf",
-      "name": "esmfold_v1",
-      "url": "https://huggingface.co/facebook/esmfold_v1",
+      "name": "legal-bert-base-uncased",
+      "url": "https://huggingface.co/nlpaueb/legal-bert-base-uncased",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
         "transformers",
         "pytorch",
-        "esm",
-        "license:mit",
+        "tf",
+        "jax",
+        "bert",
+        "pretraining",
+        "legal",
+        "fill-mask",
+        "en",
+        "license:cc-by-sa-4.0",
         "endpoints_compatible",
         "region:us"
       ],
@@ -2084,50 +1982,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 5169161,
-        "likes_total": 42
+        "downloads_total": 5590506,
+        "likes_total": 271
       },
-      "score": 10359.322,
+      "score": 11316.512,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
-      "source": "hf",
-      "name": "Wan_2.2_ComfyUI_Repackaged",
-      "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "diffusion-single-file",
-        "comfyui",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 5076158,
-        "likes_total": 326
-      },
-      "score": 10315.316,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
-      "task_keys": [
-        "text_to_image"
-      ]
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "coqui/XTTS-v2",
@@ -2148,19 +2013,61 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 5051839,
-        "likes_total": 3043
+        "downloads_total": 5511182,
+        "likes_total": 3058
       },
-      "score": 11625.178,
+      "score": 12551.364,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
+      "updated_at": "2025-09-27T06:54:22.087Z",
       "task_keys": [
         "tts"
+      ]
+    },
+    {
+      "id": "Salesforce/moirai-2.0-R-small",
+      "source": "hf",
+      "name": "moirai-2.0-R-small",
+      "url": "https://huggingface.co/Salesforce/moirai-2.0-R-small",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "safetensors",
+        "time series",
+        "forecasting",
+        "pretrained models",
+        "foundation models",
+        "time series foundation models",
+        "time-series",
+        "time-series-forecasting",
+        "arxiv:2403.07815",
+        "arxiv:2402.02592",
+        "license:cc-by-nc-4.0",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 5405450,
+        "likes_total": 22
+      },
+      "score": 10821.9,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z",
+      "task_keys": [
+        "time_series_forecasting"
       ]
     },
     {
@@ -2193,17 +2100,130 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 5025112,
-        "likes_total": 513
+        "downloads_total": 5112842,
+        "likes_total": 514
       },
-      "score": 10306.724,
+      "score": 10482.684000000001,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "Qwen/Qwen3-32B",
+      "source": "hf",
+      "name": "Qwen3-32B",
+      "url": "https://huggingface.co/Qwen/Qwen3-32B",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3",
+        "text-generation",
+        "conversational",
+        "arxiv:2309.00071",
+        "arxiv:2505.09388",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 5068819,
+        "likes_total": 541
+      },
+      "score": 10408.138,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
+      "source": "hf",
+      "name": "Wan_2.2_ComfyUI_Repackaged",
+      "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "diffusion-single-file",
+        "comfyui",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 5046382,
+        "likes_total": 343
+      },
+      "score": 10264.264000000001,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z",
+      "task_keys": [
+        "text_to_image"
+      ]
+    },
+    {
+      "id": "pyannote/voice-activity-detection",
+      "source": "hf",
+      "name": "voice-activity-detection",
+      "url": "https://huggingface.co/pyannote/voice-activity-detection",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "pyannote-audio",
+        "pyannote",
+        "pyannote-audio-pipeline",
+        "audio",
+        "voice",
+        "speech",
+        "speaker",
+        "voice-activity-detection",
+        "automatic-speech-recognition",
+        "dataset:ami",
+        "dataset:dihard",
+        "dataset:voxconverse",
+        "license:mit",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 4994060,
+        "likes_total": 211
+      },
+      "score": 10093.62,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "BAAI/bge-small-en-v1.5",
@@ -2241,37 +2261,54 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 4976585,
+        "downloads_total": 4870908,
         "likes_total": 372
       },
-      "score": 10139.17,
+      "score": 9927.816,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
-      "id": "Salesforce/moirai-2.0-R-small",
+      "id": "google-t5/t5-small",
       "source": "hf",
-      "name": "moirai-2.0-R-small",
-      "url": "https://huggingface.co/Salesforce/moirai-2.0-R-small",
+      "name": "t5-small",
+      "url": "https://huggingface.co/google-t5/t5-small",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "rust",
+        "onnx",
         "safetensors",
-        "time series",
-        "forecasting",
-        "pretrained models",
-        "foundation models",
-        "time series foundation models",
-        "time-series",
-        "time-series-forecasting",
-        "arxiv:2403.07815",
-        "arxiv:2402.02592",
-        "license:cc-by-nc-4.0",
+        "t5",
+        "text2text-generation",
+        "summarization",
+        "translation",
+        "en",
+        "fr",
+        "ro",
+        "de",
+        "multilingual",
+        "dataset:c4",
+        "arxiv:1805.12471",
+        "arxiv:1708.00055",
+        "arxiv:1704.05426",
+        "arxiv:1606.05250",
+        "arxiv:1808.09121",
+        "arxiv:1810.12885",
+        "arxiv:1905.10044",
+        "arxiv:1910.09700",
+        "license:apache-2.0",
+        "text-generation-inference",
+        "endpoints_compatible",
         "region:us"
       ],
       "categories": {
@@ -2280,20 +2317,17 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 4759058,
-        "likes_total": 20
+        "downloads_total": 4867673,
+        "likes_total": 492
       },
-      "score": 9528.116,
+      "score": 9981.346,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
-      "task_keys": [
-        "time_series_forecasting"
-      ]
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "dphn/dolphin-2.9.1-yi-1.5-34b",
@@ -2332,20 +2366,53 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 4705950,
+        "downloads_total": 4696809,
         "likes_total": 39
       },
-      "score": 9431.4,
+      "score": 9413.118,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
+      "updated_at": "2025-09-27T06:54:22.087Z",
       "task_keys": [
         "code_generation"
       ]
+    },
+    {
+      "id": "facebook/esmfold_v1",
+      "source": "hf",
+      "name": "esmfold_v1",
+      "url": "https://huggingface.co/facebook/esmfold_v1",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "esm",
+        "license:mit",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 4678208,
+        "likes_total": 42
+      },
+      "score": 9377.416000000001,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
       "id": "sentence-transformers/gtr-t5-base",
@@ -2374,17 +2441,422 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 4568501,
+        "downloads_total": 4568340,
         "likes_total": 25
       },
-      "score": 9149.502,
+      "score": 9149.18,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "jinaai/jina-embeddings-v3",
+      "source": "hf",
+      "name": "jina-embeddings-v3",
+      "url": "https://huggingface.co/jinaai/jina-embeddings-v3",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "onnx",
+        "safetensors",
+        "feature-extraction",
+        "sentence-similarity",
+        "mteb",
+        "sentence-transformers",
+        "custom_code",
+        "multilingual",
+        "af",
+        "am",
+        "ar",
+        "as",
+        "az",
+        "be",
+        "bg",
+        "bn",
+        "br",
+        "bs",
+        "ca",
+        "cs",
+        "cy",
+        "da",
+        "de",
+        "el",
+        "en",
+        "eo",
+        "es",
+        "et",
+        "eu",
+        "fa",
+        "fi",
+        "fr",
+        "fy",
+        "ga",
+        "gd",
+        "gl",
+        "gu",
+        "ha",
+        "he",
+        "hi",
+        "hr",
+        "hu",
+        "hy",
+        "id",
+        "is",
+        "it",
+        "ja",
+        "jv",
+        "ka",
+        "kk",
+        "km",
+        "kn",
+        "ko",
+        "ku",
+        "ky",
+        "la",
+        "lo",
+        "lt",
+        "lv",
+        "mg",
+        "mk",
+        "ml",
+        "mn",
+        "mr",
+        "ms",
+        "my",
+        "ne",
+        "nl",
+        "no",
+        "om",
+        "or",
+        "pa",
+        "pl",
+        "ps",
+        "pt",
+        "ro",
+        "ru",
+        "sa",
+        "sd",
+        "si",
+        "sk",
+        "sl",
+        "so",
+        "sq",
+        "sr",
+        "su",
+        "sv",
+        "sw",
+        "ta",
+        "te",
+        "th",
+        "tl",
+        "tr",
+        "ug",
+        "uk",
+        "ur",
+        "uz",
+        "vi",
+        "xh",
+        "yi",
+        "zh",
+        "arxiv:2409.10173",
+        "license:cc-by-nc-4.0",
+        "model-index",
+        "region:eu"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 4464170,
+        "likes_total": 1071
+      },
+      "score": 9463.84,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "autogluon/chronos-bolt-small",
+      "source": "hf",
+      "name": "chronos-bolt-small",
+      "url": "https://huggingface.co/autogluon/chronos-bolt-small",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "safetensors",
+        "t5",
+        "time series",
+        "forecasting",
+        "pretrained models",
+        "foundation models",
+        "time series foundation models",
+        "time-series",
+        "time-series-forecasting",
+        "arxiv:1910.10683",
+        "arxiv:2403.07815",
+        "license:apache-2.0",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 4418540,
+        "likes_total": 18
+      },
+      "score": 8846.08,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z",
+      "task_keys": [
+        "time_series_forecasting"
+      ]
+    },
+    {
+      "id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+      "source": "hf",
+      "name": "tiny-Qwen2ForCausalLM-2.5",
+      "url": "https://huggingface.co/trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen2",
+        "text-generation",
+        "trl",
+        "conversational",
+        "autotrain_compatible",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 4364467,
+        "likes_total": 1
+      },
+      "score": 8729.434,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z"
+    },
+    {
+      "id": "openai/whisper-large-v3",
+      "source": "hf",
+      "name": "whisper-large-v3",
+      "url": "https://huggingface.co/openai/whisper-large-v3",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "jax",
+        "safetensors",
+        "whisper",
+        "automatic-speech-recognition",
+        "audio",
+        "hf-asr-leaderboard",
+        "en",
+        "zh",
+        "de",
+        "es",
+        "ru",
+        "ko",
+        "fr",
+        "ja",
+        "pt",
+        "tr",
+        "pl",
+        "ca",
+        "nl",
+        "ar",
+        "sv",
+        "it",
+        "id",
+        "hi",
+        "fi",
+        "vi",
+        "he",
+        "uk",
+        "el",
+        "ms",
+        "cs",
+        "ro",
+        "da",
+        "hu",
+        "ta",
+        "no",
+        "th",
+        "ur",
+        "hr",
+        "bg",
+        "lt",
+        "la",
+        "mi",
+        "ml",
+        "cy",
+        "sk",
+        "te",
+        "fa",
+        "lv",
+        "bn",
+        "sr",
+        "az",
+        "sl",
+        "kn",
+        "et",
+        "mk",
+        "br",
+        "eu",
+        "is",
+        "hy",
+        "ne",
+        "mn",
+        "bs",
+        "kk",
+        "sq",
+        "sw",
+        "gl",
+        "mr",
+        "pa",
+        "si",
+        "km",
+        "sn",
+        "yo",
+        "so",
+        "af",
+        "oc",
+        "ka",
+        "be",
+        "tg",
+        "sd",
+        "gu",
+        "am",
+        "yi",
+        "lo",
+        "uz",
+        "fo",
+        "ht",
+        "ps",
+        "tk",
+        "nn",
+        "mt",
+        "sa",
+        "lb",
+        "my",
+        "bo",
+        "tl",
+        "mg",
+        "as",
+        "tt",
+        "haw",
+        "ln",
+        "ha",
+        "ba",
+        "jw",
+        "su",
+        "arxiv:2212.04356",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 4355478,
+        "likes_total": 4946
+      },
+      "score": 11183.956,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z",
+      "task_keys": [
+        "asr"
+      ]
+    },
+    {
+      "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "source": "hf",
+      "name": "Qwen2.5-VL-7B-Instruct",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
+      "license": "N/A",
+      "lang": "N/A",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen2_5_vl",
+        "image-to-text",
+        "multimodal",
+        "image-text-to-text",
+        "conversational",
+        "en",
+        "arxiv:2309.00071",
+        "arxiv:2409.12191",
+        "arxiv:2308.12966",
+        "license:apache-2.0",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "categories": {
+        "capabilities": [],
+        "scenes": [],
+        "lifecycle": []
+      },
+      "stats": {
+        "downloads_total": 4324866,
+        "likes_total": 1266
+      },
+      "score": 9282.732,
+      "timeline": {
+        "t": [],
+        "stars": [],
+        "downloads": []
+      },
+      "summary": "",
+      "updated_at": "2025-09-27T06:54:22.087Z",
+      "task_keys": [
+        "image_text_alignment",
+        "multimodal_understanding_generation",
+        "vqa",
+        "visual_grounding",
+        "lightweight_visual_model",
+        "multimodal_dialogue_system"
+      ]
     },
     {
       "id": "google-bert/bert-base-multilingual-cased",
@@ -2517,464 +2989,41 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 4551506,
-        "likes_total": 530
+        "downloads_total": 4312953,
+        "likes_total": 532
       },
-      "score": 9368.012,
+      "score": 8891.906,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
+      "updated_at": "2025-09-27T06:54:22.087Z"
     },
     {
-      "id": "google-t5/t5-small",
+      "id": "cross-encoder/ms-marco-MiniLM-L6-v2",
       "source": "hf",
-      "name": "t5-small",
-      "url": "https://huggingface.co/google-t5/t5-small",
+      "name": "ms-marco-MiniLM-L6-v2",
+      "url": "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2",
       "license": "N/A",
       "lang": "N/A",
       "tags": [
-        "transformers",
-        "pytorch",
-        "tf",
-        "jax",
-        "rust",
-        "onnx",
-        "safetensors",
-        "t5",
-        "text2text-generation",
-        "summarization",
-        "translation",
-        "en",
-        "fr",
-        "ro",
-        "de",
-        "multilingual",
-        "dataset:c4",
-        "arxiv:1805.12471",
-        "arxiv:1708.00055",
-        "arxiv:1704.05426",
-        "arxiv:1606.05250",
-        "arxiv:1808.09121",
-        "arxiv:1810.12885",
-        "arxiv:1905.10044",
-        "arxiv:1910.09700",
-        "license:apache-2.0",
-        "text-generation-inference",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 4517967,
-        "likes_total": 489
-      },
-      "score": 9280.434,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "openai/whisper-large-v3",
-      "source": "hf",
-      "name": "whisper-large-v3",
-      "url": "https://huggingface.co/openai/whisper-large-v3",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "jax",
-        "safetensors",
-        "whisper",
-        "automatic-speech-recognition",
-        "audio",
-        "hf-asr-leaderboard",
-        "en",
-        "zh",
-        "de",
-        "es",
-        "ru",
-        "ko",
-        "fr",
-        "ja",
-        "pt",
-        "tr",
-        "pl",
-        "ca",
-        "nl",
-        "ar",
-        "sv",
-        "it",
-        "id",
-        "hi",
-        "fi",
-        "vi",
-        "he",
-        "uk",
-        "el",
-        "ms",
-        "cs",
-        "ro",
-        "da",
-        "hu",
-        "ta",
-        "no",
-        "th",
-        "ur",
-        "hr",
-        "bg",
-        "lt",
-        "la",
-        "mi",
-        "ml",
-        "cy",
-        "sk",
-        "te",
-        "fa",
-        "lv",
-        "bn",
-        "sr",
-        "az",
-        "sl",
-        "kn",
-        "et",
-        "mk",
-        "br",
-        "eu",
-        "is",
-        "hy",
-        "ne",
-        "mn",
-        "bs",
-        "kk",
-        "sq",
-        "sw",
-        "gl",
-        "mr",
-        "pa",
-        "si",
-        "km",
-        "sn",
-        "yo",
-        "so",
-        "af",
-        "oc",
-        "ka",
-        "be",
-        "tg",
-        "sd",
-        "gu",
-        "am",
-        "yi",
-        "lo",
-        "uz",
-        "fo",
-        "ht",
-        "ps",
-        "tk",
-        "nn",
-        "mt",
-        "sa",
-        "lb",
-        "my",
-        "bo",
-        "tl",
-        "mg",
-        "as",
-        "tt",
-        "haw",
-        "ln",
-        "ha",
-        "ba",
-        "jw",
-        "su",
-        "arxiv:2212.04356",
-        "license:apache-2.0",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 4515271,
-        "likes_total": 4926
-      },
-      "score": 11493.542,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
-      "task_keys": [
-        "asr"
-      ]
-    },
-    {
-      "id": "Qwen/Qwen2-VL-2B-Instruct",
-      "source": "hf",
-      "name": "Qwen2-VL-2B-Instruct",
-      "url": "https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "safetensors",
-        "qwen2_vl",
-        "image-to-text",
-        "multimodal",
-        "image-text-to-text",
-        "conversational",
-        "en",
-        "arxiv:2409.12191",
-        "arxiv:2308.12966",
-        "base_model:Qwen/Qwen2-VL-2B",
-        "base_model:finetune:Qwen/Qwen2-VL-2B",
-        "license:apache-2.0",
-        "text-generation-inference",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 4461990,
-        "likes_total": 450
-      },
-      "score": 9148.98,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "google/t5gemma-b-b-prefixlm",
-      "source": "hf",
-      "name": "t5gemma-b-b-prefixlm",
-      "url": "https://huggingface.co/google/t5gemma-b-b-prefixlm",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "safetensors",
-        "t5gemma",
-        "text2text-generation",
-        "arxiv:2504.06225",
-        "arxiv:2009.03300",
-        "arxiv:1905.07830",
-        "arxiv:1911.11641",
-        "arxiv:1905.10044",
-        "arxiv:1907.10641",
-        "arxiv:1911.01547",
-        "arxiv:1705.03551",
-        "arxiv:2107.03374",
-        "arxiv:2108.07732",
-        "arxiv:2110.14168",
-        "arxiv:2103.03874",
-        "arxiv:2304.06364",
-        "arxiv:2206.04615",
-        "base_model:google/t5gemma-b-b-prefixlm",
-        "base_model:finetune:google/t5gemma-b-b-prefixlm",
-        "license:gemma",
-        "endpoints_compatible",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 4427257,
-        "likes_total": 9
-      },
-      "score": 8859.014000000001,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "jinaai/jina-embeddings-v3",
-      "source": "hf",
-      "name": "jina-embeddings-v3",
-      "url": "https://huggingface.co/jinaai/jina-embeddings-v3",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
-        "pytorch",
-        "onnx",
-        "safetensors",
-        "feature-extraction",
-        "sentence-similarity",
-        "mteb",
         "sentence-transformers",
-        "custom_code",
-        "multilingual",
-        "af",
-        "am",
-        "ar",
-        "as",
-        "az",
-        "be",
-        "bg",
-        "bn",
-        "br",
-        "bs",
-        "ca",
-        "cs",
-        "cy",
-        "da",
-        "de",
-        "el",
-        "en",
-        "eo",
-        "es",
-        "et",
-        "eu",
-        "fa",
-        "fi",
-        "fr",
-        "fy",
-        "ga",
-        "gd",
-        "gl",
-        "gu",
-        "ha",
-        "he",
-        "hi",
-        "hr",
-        "hu",
-        "hy",
-        "id",
-        "is",
-        "it",
-        "ja",
-        "jv",
-        "ka",
-        "kk",
-        "km",
-        "kn",
-        "ko",
-        "ku",
-        "ky",
-        "la",
-        "lo",
-        "lt",
-        "lv",
-        "mg",
-        "mk",
-        "ml",
-        "mn",
-        "mr",
-        "ms",
-        "my",
-        "ne",
-        "nl",
-        "no",
-        "om",
-        "or",
-        "pa",
-        "pl",
-        "ps",
-        "pt",
-        "ro",
-        "ru",
-        "sa",
-        "sd",
-        "si",
-        "sk",
-        "sl",
-        "so",
-        "sq",
-        "sr",
-        "su",
-        "sv",
-        "sw",
-        "ta",
-        "te",
-        "th",
-        "tl",
-        "tr",
-        "ug",
-        "uk",
-        "ur",
-        "uz",
-        "vi",
-        "xh",
-        "yi",
-        "zh",
-        "arxiv:2409.10173",
-        "license:cc-by-nc-4.0",
-        "model-index",
-        "region:eu"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 4305369,
-        "likes_total": 1068
-      },
-      "score": 9144.738,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z"
-    },
-    {
-      "id": "Qwen/Qwen2.5-VL-7B-Instruct",
-      "source": "hf",
-      "name": "Qwen2.5-VL-7B-Instruct",
-      "url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "transformers",
+        "pytorch",
+        "jax",
+        "onnx",
         "safetensors",
-        "qwen2_5_vl",
-        "image-to-text",
-        "multimodal",
-        "image-text-to-text",
-        "conversational",
+        "openvino",
+        "bert",
+        "text-classification",
+        "transformers",
+        "text-ranking",
         "en",
-        "arxiv:2309.00071",
-        "arxiv:2409.12191",
-        "arxiv:2308.12966",
+        "dataset:sentence-transformers/msmarco",
+        "base_model:cross-encoder/ms-marco-MiniLM-L12-v2",
+        "base_model:quantized:cross-encoder/ms-marco-MiniLM-L12-v2",
         "license:apache-2.0",
-        "text-generation-inference",
-        "endpoints_compatible",
         "region:us"
       ],
       "categories": {
@@ -2983,58 +3032,19 @@
         "lifecycle": []
       },
       "stats": {
-        "downloads_total": 4278243,
-        "likes_total": 1249
+        "downloads_total": 4298690,
+        "likes_total": 149
       },
-      "score": 9180.986,
+      "score": 8671.880000000001,
       "timeline": {
         "t": [],
         "stars": [],
         "downloads": []
       },
       "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
+      "updated_at": "2025-09-27T06:54:22.087Z",
       "task_keys": [
-        "image_text_alignment",
-        "multimodal_understanding_generation",
-        "vqa",
-        "visual_grounding",
-        "lightweight_visual_model",
-        "multilingual_processing",
-        "dialogue_system_optimization"
-      ]
-    },
-    {
-      "id": "Comfy-Org/Wan_2.1_ComfyUI_repackaged",
-      "source": "hf",
-      "name": "Wan_2.1_ComfyUI_repackaged",
-      "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
-      "license": "N/A",
-      "lang": "N/A",
-      "tags": [
-        "diffusion-single-file",
-        "comfyui",
-        "region:us"
-      ],
-      "categories": {
-        "capabilities": [],
-        "scenes": [],
-        "lifecycle": []
-      },
-      "stats": {
-        "downloads_total": 4251525,
-        "likes_total": 747
-      },
-      "score": 8876.55,
-      "timeline": {
-        "t": [],
-        "stars": [],
-        "downloads": []
-      },
-      "summary": "",
-      "updated_at": "2025-09-21T12:06:53.894Z",
-      "task_keys": [
-        "text_to_image"
+        "inference_acceleration"
       ]
     }
   ]

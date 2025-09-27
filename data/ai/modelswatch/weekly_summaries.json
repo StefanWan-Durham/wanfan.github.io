@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2025-09-21T12:22:59.540Z",
-  "period": "2025-W38",
+  "updated_at": "2025-09-27T07:07:31.977Z",
+  "period": "2025-W39",
   "sections": {
     "overview": {
       "zh": "（本周摘要暂不可用） [timeout]",
@@ -76,10 +76,6 @@
         "count": 2
       },
       {
-        "task": "instruction_tuning",
-        "count": 2
-      },
-      {
         "task": "rlhf",
         "count": 2
       },
@@ -121,6 +117,10 @@
       },
       {
         "task": "nlp_data_distillation",
+        "count": 2
+      },
+      {
+        "task": "dialogue_system_optimization",
         "count": 2
       },
       {
@@ -336,6 +336,10 @@
         "count": 2
       },
       {
+        "task": "multimodal_temporal_fusion",
+        "count": 2
+      },
+      {
         "task": "robot_dialogue_logic",
         "count": 2
       },
@@ -348,7 +352,7 @@
         "count": 1
       },
       {
-        "task": "dialogue_system_optimization",
+        "task": "instruction_tuning",
         "count": 1
       },
       {
@@ -369,10 +373,6 @@
       },
       {
         "task": "neural_retrieval",
-        "count": 1
-      },
-      {
-        "task": "multimodal_temporal_fusion",
         "count": 1
       }
     ],

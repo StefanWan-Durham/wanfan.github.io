@@ -1,76 +1,72 @@
 {
   "version": 1,
-  "updated_at": "2025-09-21T12:22:51.536Z",
+  "updated_at": "2025-09-27T07:07:24.077Z",
   "by_category": {
     "framework_core": [
       {
-        "id": "trimstray/the-book-of-secret-knowledge",
+        "id": "sindresorhus/awesome",
         "source": "github",
-        "name": "the-book-of-secret-knowledge",
-        "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+        "name": "awesome",
+        "url": "https://github.com/sindresorhus/awesome",
         "tags": [
           "awesome",
           "awesome-list",
-          "bsd",
-          "cheatsheets",
-          "devops",
-          "guidelines",
-          "hacking",
-          "hacks",
-          "howtos",
-          "linux",
           "lists",
-          "manuals",
-          "one-liners",
-          "pentesters",
           "resources",
-          "search-engines",
-          "security",
-          "security-researchers",
-          "sysops"
+          "unicorns"
         ],
         "stats": {
-          "stars_total": 187002,
-          "forks_total": 11568,
+          "stars_total": 402886,
+          "forks_total": 31710,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:05:44Z",
-        "added_at": "2025-09-21",
-        "summary": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+        "updated_at": "2025-09-27T06:54:07Z",
+        "added_at": "2025-09-27",
+        "summary": "😎 Awesome lists about all kinds of interesting topics",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19992073060521975
+        "score_engineering": 0.19993850667773216
       },
       {
-        "id": "avelino/awesome-go",
+        "id": "AUTOMATIC1111/stable-diffusion-webui",
         "source": "github",
-        "name": "awesome-go",
-        "url": "https://github.com/avelino/awesome-go",
+        "name": "stable-diffusion-webui",
+        "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
         "tags": [
-          "awesome",
-          "awesome-list",
-          "go",
-          "golang",
-          "golang-library",
-          "hacktoberfest"
+          "ai",
+          "ai-art",
+          "deep-learning",
+          "diffusion",
+          "gradio",
+          "image-generation",
+          "image2image",
+          "img2img",
+          "pytorch",
+          "stable-diffusion",
+          "text2image",
+          "torch",
+          "txt2img",
+          "unstable",
+          "upscaling",
+          "web"
         ],
         "stats": {
-          "stars_total": 152834,
-          "forks_total": 12576,
+          "stars_total": 156911,
+          "forks_total": 29104,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:05:43Z",
-        "added_at": "2025-09-21",
-        "summary": "A curated list of awesome Go frameworks, libraries and software",
+        "updated_at": "2025-09-27T06:53:05Z",
+        "added_at": "2025-09-27",
+        "summary": "Stable Diffusion web UI",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19992065347532315
+        "score_engineering": 0.19993372425521738
       }
     ],
     "deployment_serving": [
@@ -88,19 +84,19 @@
           "react-flow"
         ],
         "stats": {
-          "stars_total": 120932,
-          "forks_total": 7641,
+          "stars_total": 123820,
+          "forks_total": 7684,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:37Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:40:57Z",
+        "added_at": "2025-09-27",
         "summary": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19992481853232308
+        "score_engineering": 0.19987757791531252
       },
       {
         "id": "__placeholder__:deployment_serving:0",
@@ -114,8 +110,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.536Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.077Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -139,8 +135,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.536Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.077Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -162,8 +158,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.536Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.077Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -196,47 +192,49 @@
           "software"
         ],
         "stats": {
-          "stars_total": 365596,
-          "forks_total": 38382,
+          "stars_total": 366447,
+          "forks_total": 38514,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:45Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T06:51:59Z",
+        "added_at": "2025-09-27",
         "summary": "A collective list of free APIs",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19992543558518436
+        "score_engineering": 0.19992863341501582
       },
       {
-        "id": "d3/d3",
+        "id": "trekhleb/javascript-algorithms",
         "source": "github",
-        "name": "d3",
-        "url": "https://github.com/d3/d3",
+        "name": "javascript-algorithms",
+        "url": "https://github.com/trekhleb/javascript-algorithms",
         "tags": [
-          "chart",
-          "charts",
-          "d3",
-          "data-visualization",
-          "svg",
-          "visualization"
+          "algorithm",
+          "algorithms",
+          "computer-science",
+          "data-structures",
+          "interview",
+          "interview-preparation",
+          "javascript",
+          "javascript-algorithms"
         ],
         "stats": {
-          "stars_total": 111510,
-          "forks_total": 22838,
+          "stars_total": 193402,
+          "forks_total": 30889,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:01:19Z",
-        "added_at": "2025-09-21",
-        "summary": "Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
+        "updated_at": "2025-09-27T06:23:52Z",
+        "added_at": "2025-09-27",
+        "summary": "📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19990029222347647
+        "score_engineering": 0.1997985524468938
       }
     ],
     "agents_workflows": [
@@ -252,8 +250,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.536Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.077Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -275,8 +273,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.536Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.077Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -300,8 +298,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.536Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.077Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -323,8 +321,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.536Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.077Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -348,8 +346,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.536Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.077Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -371,8 +369,8 @@
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:22:51.536Z",
-        "added_at": "2025-09-21",
+        "updated_at": "2025-09-27T07:07:24.077Z",
+        "added_at": "2025-09-27",
         "summary": "",
         "flags": {
           "pinned": false,
@@ -385,126 +383,131 @@
     ],
     "edge_embedded": [
       {
-        "id": "microsoft/vscode",
+        "id": "Genymobile/scrcpy",
         "source": "github",
-        "name": "vscode",
-        "url": "https://github.com/microsoft/vscode",
+        "name": "scrcpy",
+        "url": "https://github.com/Genymobile/scrcpy",
         "tags": [
-          "editor",
-          "electron",
-          "microsoft",
-          "typescript",
-          "visual-studio-code"
+          "android",
+          "c",
+          "ffmpeg",
+          "libav",
+          "mirroring",
+          "recording",
+          "screen",
+          "sdl2"
         ],
         "stats": {
-          "stars_total": 176874,
-          "forks_total": 35106,
+          "stars_total": 129018,
+          "forks_total": 12093,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:04:55Z",
-        "added_at": "2025-09-21",
-        "summary": "Visual Studio Code",
+        "updated_at": "2025-09-27T06:40:22Z",
+        "added_at": "2025-09-27",
+        "summary": "Display and control your Android device",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19991695127527925
+        "score_engineering": 0.19987487896932665
       },
       {
-        "id": "microsoft/PowerToys",
+        "id": "massgravel/Microsoft-Activation-Scripts",
         "source": "github",
-        "name": "PowerToys",
-        "url": "https://github.com/microsoft/PowerToys",
+        "name": "Microsoft-Activation-Scripts",
+        "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
         "tags": [
-          "color-picker",
-          "command-palette",
-          "desktop",
-          "fancyzones",
-          "keyboard-manager",
-          "microsoft-powertoys",
-          "powerrename",
-          "powertoys",
+          "activator",
+          "hwid",
+          "kms",
+          "kms38",
+          "massgrave",
+          "massgravel",
+          "microsoft",
+          "microsoft365",
+          "office",
+          "office365",
+          "ohook",
+          "powershell",
+          "tsforge",
           "windows",
           "windows-10",
           "windows-11"
         ],
         "stats": {
-          "stars_total": 123771,
-          "forks_total": 7362,
+          "stars_total": 149914,
+          "forks_total": 14516,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:04:43Z",
-        "added_at": "2025-09-21",
-        "summary": "Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks",
+        "updated_at": "2025-09-27T06:31:22Z",
+        "added_at": "2025-09-27",
+        "summary": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19991602573598063
+        "score_engineering": 0.19983324270680264
       }
     ],
     "ui_devex": [
       {
-        "id": "yt-dlp/yt-dlp",
+        "id": "langchain-ai/langchain",
         "source": "github",
-        "name": "yt-dlp",
-        "url": "https://github.com/yt-dlp/yt-dlp",
+        "name": "langchain",
+        "url": "https://github.com/langchain-ai/langchain",
         "tags": [
-          "cli",
-          "downloader",
-          "python",
-          "sponsorblock",
-          "youtube-dl",
-          "youtube-downloader",
-          "yt-dlp"
+          "ai",
+          "anthropic",
+          "gemini",
+          "langchain",
+          "llm",
+          "openai",
+          "python"
         ],
         "stats": {
-          "stars_total": 127056,
-          "forks_total": 10194,
+          "stars_total": 116291,
+          "forks_total": 19122,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:06:10Z",
-        "added_at": "2025-09-21",
-        "summary": "A feature-rich command-line audio/video downloader",
+        "updated_at": "2025-09-27T06:53:32Z",
+        "added_at": "2025-09-27",
+        "summary": "🦜🔗 Build context-aware reasoning applications",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.1999227359929766
+        "score_engineering": 0.1999358069090255
       },
       {
-        "id": "electron/electron",
+        "id": "facebook/react",
         "source": "github",
-        "name": "electron",
-        "url": "https://github.com/electron/electron",
+        "name": "react",
+        "url": "https://github.com/facebook/react",
         "tags": [
-          "c-plus-plus",
-          "chrome",
-          "css",
-          "electron",
-          "html",
+          "declarative",
+          "frontend",
           "javascript",
-          "nodejs",
-          "v8",
-          "works-with-codespaces"
+          "library",
+          "react",
+          "ui"
         ],
         "stats": {
-          "stars_total": 118375,
-          "forks_total": 16421,
+          "stars_total": 239274,
+          "forks_total": 49421,
           "stars_7d": 0,
           "forks_7d": 0
         },
-        "updated_at": "2025-09-21T12:04:42Z",
-        "added_at": "2025-09-21",
-        "summary": ":electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS",
+        "updated_at": "2025-09-27T06:52:03Z",
+        "added_at": "2025-09-27",
+        "summary": "The library for web and native user interfaces.",
         "flags": {
           "pinned": false,
           "hidden": false
         },
-        "score_engineering": 0.19991594860789916
+        "score_engineering": 0.19992894194709557
       }
     ]
   }
