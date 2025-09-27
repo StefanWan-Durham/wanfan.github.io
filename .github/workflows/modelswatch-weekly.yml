@@ -42,6 +42,11 @@ jobs:
           TRI_BATCH_CONCURRENCY: 2
           TRI_CACHE_FILE: data/ai/modelswatch/tri_cache.json
           TRI_CACHE_PERSIST: 1
+          # Ensure snapshot summaries are generated via the Python batch summarizer
+          BILINGUAL_MODE: 1
+          SNAPSHOT_USE_BATCH: 1
+          # Optional rate-limits for cold-start control (uncomment to enable)
+          # SNAPSHOT_MAX_NEW: 40
           # New performance toggles
           SNAPSHOT_USE_BATCH: 1         # use single python batch call for snapshot summaries
           SPEED_MODE: 1                 # disable rewrite/expand for speed

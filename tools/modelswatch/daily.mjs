@@ -321,19 +321,27 @@ async function main(){
   // Pre-step: attempt to enrich corpus items from snapshot tri-lingual cache if available (no extra LLM cost here)
   try {
     const snapDir = path.join(dir, 'snapshots', yyyyMmDd);
-    const snapHFPath = path.join(snapDir, 'hf.json');
-    const snapGHPath = path.join(snapDir, 'gh.json');
+    // use sidecar summaries produced by snapshot summarizer
+    const snapHFPath = path.join(snapDir, 'hf_summaries.json');
+    const snapGHPath = path.join(snapDir, 'gh_summaries.json');
+    // load local summary cache if present to avoid LLM calls
+    const summaryCachePath = path.join(dir, 'summary_cache.json');
+    let SUMMARY_CACHE = {};
+    try{ if(existsSync(summaryCachePath)) SUMMARY_CACHE = JSON.parse(readFileSync(summaryCachePath,'utf8'))||{}; }catch{}
     if(existsSync(snapHFPath)){
       try {
         const snapHF = JSON.parse(readFileSync(snapHFPath,'utf8'));
         // merge summaries into corpus later when matching by id
         globalThis.__SNAP_SUMMARIES_HF = Array.isArray(snapHF.items)? snapHF.items : (Array.isArray(snapHF)? snapHF : []);
+        // populate SUMMARY_CACHE from sidecar for fast lookup
+        if(Array.isArray(snapHF.items)) snapHF.items.forEach(s=>{ if(s && s.id) SUMMARY_CACHE[s.id] = s; });
       }catch{}
     }
     if(existsSync(snapGHPath)){
       try {
         const snapGH = JSON.parse(readFileSync(snapGHPath,'utf8'));
         globalThis.__SNAP_SUMMARIES_GH = Array.isArray(snapGH.items)? snapGH.items : (Array.isArray(snapGH)? snapGH : []);
+        if(Array.isArray(snapGH.items)) snapGH.items.forEach(s=>{ if(s && s.id) SUMMARY_CACHE[s.id] = s; });
       }catch{}
     }
   }catch{}
@@ -393,21 +401,42 @@ async function main(){
   info(`[daily] github candidates=${cg.length}, pick=${gTop.length}; hf candidates=${ch.length}, pick=${hTop.length}`);
   // Summarize with DeepSeek when available; limit concurrency to 3
   const gsum = await mapLimit(gTop, 3, async (it)=> {
-    // Reuse snapshot summaries if already present
+    // Consult in-memory summary cache populated from sidecars
+    try{ if(typeof SUMMARY_CACHE !== 'undefined' && SUMMARY_CACHE[it.id]){
+      const snap = SUMMARY_CACHE[it.id];
+      const neutral = snap.summary_zh || snap.summary_en || snap.summary_es || snap.summary || it.summary || it.description || '';
+      return { ...it, summary: neutral, summary_en: snap.summary_en, summary_zh: snap.summary_zh, summary_es: snap.summary_es };
+    }}catch{}
+    // Also consult global sidecar arrays as fallback
     const snap = (globalThis.__SNAP_SUMMARIES_GH||[]).find(s=>s.id===it.id);
     if(snap && (snap.summary_zh||snap.summary_en||snap.summary_es)){
       const neutral = snap.summary_zh || snap.summary_en || snap.summary_es || snap.summary || it.summary || it.description || '';
       return { ...it, summary: neutral, summary_en: snap.summary_en, summary_zh: snap.summary_zh, summary_es: snap.summary_es };
     }
+    // If the item itself already has a summary fields, reuse without calling LLM
+    if(it.summary || it.summary_en || it.summary_zh || it.summary_es) {
+      const neutral = it.summary_zh || it.summary_en || it.summary_es || it.summary || it.description || '';
+      return { ...it, summary: neutral, summary_en: it.summary_en, summary_zh: it.summary_zh, summary_es: it.summary_es };
+    }
+    // Last resort: call LLM once for tri-lingual outputs
     const { zh, en, es } = await smartSummarizeMulti(it);
     const neutral = zh || en || es || it.summary || it.description || '';
     return { ...it, summary: neutral, summary_en: en, summary_zh: zh, summary_es: es };
   });
   const hsum = await mapLimit(hTop, 3, async (it)=> {
+    try{ if(typeof SUMMARY_CACHE !== 'undefined' && SUMMARY_CACHE[it.id]){
+      const snap = SUMMARY_CACHE[it.id];
+      const neutral = snap.summary_zh || snap.summary_en || snap.summary_es || snap.summary || it.summary || it.description || '';
+      return { ...it, summary: neutral, summary_en: snap.summary_en, summary_zh: snap.summary_zh, summary_es: snap.summary_es };
+    }}catch{}
     const snap = (globalThis.__SNAP_SUMMARIES_HF||[]).find(s=>s.id===it.id);
     if(snap && (snap.summary_zh||snap.summary_en||snap.summary_es)){
       const neutral = snap.summary_zh || snap.summary_en || snap.summary_es || snap.summary || it.summary || it.description || '';
       return { ...it, summary: neutral, summary_en: snap.summary_en, summary_zh: snap.summary_zh, summary_es: snap.summary_es };
+    }
+    if(it.summary || it.summary_en || it.summary_zh || it.summary_es) {
+      const neutral = it.summary_zh || it.summary_en || it.summary_es || it.summary || it.description || '';
+      return { ...it, summary: neutral, summary_en: it.summary_en, summary_zh: it.summary_zh, summary_es: it.summary_es };
     }
     const { zh, en, es } = await smartSummarizeMulti(it);
     const neutral = zh || en || es || it.summary || it.description || '';

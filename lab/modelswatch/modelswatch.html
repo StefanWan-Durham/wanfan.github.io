@@ -806,9 +806,12 @@
 
     function pickSummary(it){
       const lang = getLang();
-      if(lang==='zh') return it.summary_zh || '';
-      if(lang==='es') return it.summary_es || '';
-      return it.summary_en || '';
+      // Prefer language-specific summary, but gracefully fall back to any available summary
+      if(!it) return '';
+      if(lang==='zh') return it.summary_zh || it.summary || it.summary_en || it.summary_es || '';
+      if(lang==='es') return it.summary_es || it.summary || it.summary_en || it.summary_zh || '';
+      // en
+      return it.summary_en || it.summary || it.summary_zh || it.summary_es || '';
     }
 
     function card(it){
@@ -943,6 +946,8 @@
       const seen = new Set();
       let out = [];
       for(const it of arr){
+        // Skip placeholder/invalid entries produced upstream
+        try{ if(it && it.flags && it.flags.placeholder) continue; }catch{}
         const key = `${it.source||''}::${it.id||it.url||it.name||''}`;
         if(seen.has(key)) continue; seen.add(key); out.push(it);
       }
