@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - 'assets/blog/*.svg'
-  - 'scripts/render-all-og.mjs'
+      - 'scripts/render-all-og.mjs'
       - 'package.json'
 
 jobs:
